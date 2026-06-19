@@ -84,4 +84,5 @@ def load_competitor(handle: str) -> dict | None:
 
 
 def list_cached_competitors() -> list[str]:
-    return [p.stem.replace("competitor_", "@") for p in CACHE_DIR.glob("competitor_*.json")]
+    """Returns handles without @ prefix."""
+    return [p.stem.replace("competitor_", "") for p in CACHE_DIR.glob("competitor_*.json")]

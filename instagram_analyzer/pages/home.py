@@ -6,6 +6,7 @@ from datetime import datetime
 from cache import load_analysis, cache_age_str, list_cached_competitors, load_competitor
 from prompts import what_to_post_today
 from config import CLAUDE_MODEL, AI_MAX_TOKENS_CAPTION
+from live_feed import load_live_settings, cache_is_stale, refresh_and_save, cache_age_hours
 
 
 def _days_since_last_post(posts: pd.DataFrame) -> int:
@@ -88,8 +89,34 @@ def render():
     profile = cached["profile"]
     age = cache_age_str()
 
+    # ── Data freshness bar ────────────────────────────────────────────────────
+    live_cfg = load_live_settings()
+    handle = live_cfg.get("handle", "")
+    refresh_hours = live_cfg.get("refresh_hours", 24)
+    apify_token = st.session_state.get("apify_key", "")
+    age_h = cache_age_hours()
+    stale = cache_is_stale(refresh_hours)
+
+    source_label = f"@{handle} (live)" if handle else "Instagram export ZIP"
+    freshness_icon = "🟡 Stale" if stale else "🟢 Fresh"
+
+    col_status, col_refresh = st.columns([5, 1])
+    with col_status:
+        st.caption(f"{freshness_icon} · {age} · Source: {source_label}")
+    with col_refresh:
+        can_refresh = bool(handle and apify_token)
+        if st.button("🔄 Refresh", help="Pull latest posts from Instagram now", disabled=not can_refresh):
+            with st.spinner(f"Refreshing @{handle}..."):
+                new_posts, err = refresh_and_save(handle, apify_token)
+                if err:
+                    st.error(f"Refresh failed: {err}")
+                else:
+                    st.toast(f"{len(new_posts)} posts loaded", icon="✅")
+                    st.rerun()
+        if not can_refresh:
+            st.caption("Set handle + Apify key in ⚙️ Settings")
+
     # ── Key metrics ───────────────────────────────────────────────────────────
-    st.caption(f"Data from your Instagram export · {age}")
 
     posts["engagement"] = posts["likes"] + posts["comments"]
     avg_eng = posts["engagement"].mean()

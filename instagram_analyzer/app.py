@@ -11,10 +11,53 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# ── Auto-refresh live feed on startup ─────────────────────────────────────────
+# Runs once per session. If auto_refresh is on and cache is stale, silently
+# re-scrapes the user's own profile before rendering any page.
+if not st.session_state.get("_startup_checked"):
+    st.session_state["_startup_checked"] = True
+    try:
+        from live_feed import load_live_settings, cache_is_stale, refresh_and_save
+        live = load_live_settings()
+        handle = live.get("handle", "")
+        auto = live.get("auto_refresh", False)
+        hours = live.get("refresh_hours", 24)
+        apify_token = os.getenv("APIFY_API_TOKEN", "")
+
+        if handle and auto and apify_token and cache_is_stale(hours):
+            with st.spinner(f"Auto-refreshing data for @{handle}..."):
+                posts, err = refresh_and_save(handle, apify_token)
+                if not err:
+                    st.toast(f"Data refreshed — {len(posts)} posts from @{handle}", icon="✅")
+                else:
+                    st.toast(f"Auto-refresh failed: {err}", icon="⚠️")
+
+        # Restore live settings into session state
+        if handle:
+            st.session_state.setdefault("live_handle", handle)
+            st.session_state.setdefault("auto_refresh", auto)
+            st.session_state.setdefault("refresh_hours", hours)
+    except Exception:
+        pass  # Never block startup
+
 # ── Sidebar nav ───────────────────────────────────────────────────────────────
 with st.sidebar:
     st.title("📈 Instagram Growth OS")
     st.markdown("---")
+
+    # Show data freshness indicator
+    try:
+        from live_feed import cache_age_hours, load_live_settings
+        from cache import cache_age_str
+        age_h = cache_age_hours()
+        live_cfg = load_live_settings()
+        threshold = live_cfg.get("refresh_hours", 24)
+        if age_h < 9999:
+            icon = "🟢" if age_h < threshold else "🟡"
+            st.caption(f"{icon} Data: {cache_age_str()}")
+    except Exception:
+        pass
+
     page = st.radio("", [
         "🏠 Home",
         "📊 My Analytics",
@@ -35,7 +78,7 @@ with st.sidebar:
         "⚙️ Settings",
     ], label_visibility="collapsed")
     st.markdown("---")
-    st.caption("Upload your Instagram export ZIP in **My Analytics** to unlock all features.")
+    st.caption("Set up Live Feed in ⚙️ Settings to auto-refresh your data daily.")
 
 # ── Route to pages — app.py is routing only, no logic here ───────────────────
 if page == "🏠 Home":
