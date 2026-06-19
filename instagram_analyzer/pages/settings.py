@@ -26,11 +26,20 @@ def render():
         help="Get yours at apify.com — needed for live competitor scraping",
     )
 
-    if st.button("Save Keys", type="primary"):
+    follower_count = st.number_input(
+        "Follower Count (for engagement rate %)",
+        min_value=0,
+        value=st.session_state.get("follower_count", 0),
+        step=100,
+        help="Used in Post Scoring to calculate engagement rate %. Not stored persistently.",
+    )
+
+    if st.button("Save Settings", type="primary"):
         st.session_state["api_key"] = anthropic_key
         st.session_state["apify_key"] = apify_key
+        st.session_state["follower_count"] = int(follower_count)
         os.environ["APIFY_API_TOKEN"] = apify_key
-        st.success("Keys saved for this session.")
+        st.success("Settings saved for this session.")
 
     st.markdown("---")
 
