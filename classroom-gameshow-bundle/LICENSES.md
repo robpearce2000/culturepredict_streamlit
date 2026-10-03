@@ -1,10 +1,10 @@
 # Licences
 
-## The Classroom Gameshow Bundle
+## Showtime: Classroom Gameshows
 
 The games, artwork, sounds, host character and question packs were made for this product. All rights reserved by the author (Rob Pearce) unless stated below.
 
-The GCSE Combined Science starter packs are AQA-style practice questions written for this bundle, following the topic headings of the AQA GCSE Combined Science: Trilogy specification. They are not produced or endorsed by AQA. AQA is a registered trade mark of AQA Education.
+The GCSE Combined Science starter packs are AQA-style practice questions written for Showtime, following the topic headings of the AQA GCSE Combined Science: Trilogy specification. They are not produced or endorsed by AQA. AQA is a registered trade mark of AQA Education.
 
 ## Third-party components (all included inside the single HTML file)
 

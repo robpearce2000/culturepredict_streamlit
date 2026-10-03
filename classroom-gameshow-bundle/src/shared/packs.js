@@ -5,7 +5,7 @@
      Subject: ...   Topic: ...   Q: ...   A: ...
    The GCSE packs follow the AQA GCSE Combined Science: Trilogy
    topic list. They are "AQA-style" practice questions written for
-   this bundle. They are not produced or endorsed by AQA.
+   Showtime. They are not produced or endorsed by AQA.
    ========================================================= */
 CGB.PACKS = {};
 

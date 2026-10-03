@@ -1,4 +1,4 @@
-# The Classroom Gameshow Bundle
+# Showtime: Classroom Gameshows
 
 Two 3D revision quiz games for the front of the classroom, **Over the Edge** and **Outpace**, packaged as one offline HTML file with a shared launcher, a shared question bank and a host mascot.
 

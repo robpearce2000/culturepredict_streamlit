@@ -1,6 +1,6 @@
 'use strict';
 /* =========================================================
-   THE HOST: the bundle mascot, a stylised cartoon presenter.
+   THE HOST: the Showtime mascot, a stylised cartoon presenter.
    Built from simple shapes so it can be customised. The same
    settings are used on the launcher and in Over the Edge.
    ========================================================= */

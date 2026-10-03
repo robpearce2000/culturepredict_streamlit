@@ -2,9 +2,9 @@
 
 ## Short title
 
-The Classroom Gameshow Bundle: 2 offline 3D revision quiz games
+Showtime: Classroom Gameshows (2 offline 3D revision quiz games)
 
-(Alternative, 50 characters: **Classroom Gameshow Bundle: 3D revision quiz games**)
+(Alternative, 49 characters: **Showtime: Classroom Gameshows for revision**)
 
 ## Summary line
 
@@ -12,7 +12,7 @@ Two whole-class revision games for your interactive whiteboard, with a shared qu
 
 ## Description
 
-Turn any revision lesson into a gameshow. **The Classroom Gameshow Bundle** contains two original 3D quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
+Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains two original 3D quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
 
 **Over the Edge**
 Answer correctly to win a counter, choose one of four lanes and watch it bounce down the peg board onto a moving shelf. Every counter pushed over the edge wins prize money, and star wildcard counters bring bonuses and steals. In the final, two players (or two teams) work together to push the gold jackpot counter over the edge. Hosted by Professor Pip, a cartoon host you can rename and restyle.
@@ -48,7 +48,7 @@ revision game, quiz, gameshow, interactive whiteboard, GCSE science, combined sc
 
 ## Images
 
-- `cover.png`: bundle wordmark, Professor Pip and both games
+- `cover.png`: Showtime wordmark, Professor Pip and both games
 - `over-the-edge.png`: Over the Edge in play
 - `outpace.png`: Outpace Deal Round
 - `question-bank.png`: the shared question bank

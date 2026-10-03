@@ -516,7 +516,7 @@ function makeCoinMesh(kind, owner) {
 }
 
 /* =========================================================
-   THE HOST (shared bundle mascot) with speech captions
+   THE HOST (shared Showtime mascot) with speech captions
    ========================================================= */
 const host = CGB.createHost(scene, { position: HOST_POS, rotationY: -0.42 });
 CGB.hostListeners.push(() => host.rebuild());
@@ -782,7 +782,7 @@ function onTrayFall(b, inWin) {
   if (b.mesh) {
     falling.push({ mesh: b.mesh, vx: b.vx * S * 0.5, vy: 0.5, vz: 1.6 + Math.max(0, b.vy) * S + Math.random() * 0.6, spin: 5 + Math.random() * 4, floorY: inWin ? -0.6 : -7 });
   }
-  if (G.attract) return;
+  if (G.attract || G.phase === 'summary') return;   // nothing scores once the results are showing
   const pos = new THREE.Vector3(TX(b.x), 0.5, TZ(PHY.D) + 0.4);
   if (b.kind === 'jackpot') { onJackpotFall(inWin, pos); return; }
   if (!inWin) { SFX.lost(); popLost(pos); G.dropLost++; renderScores(); return; }
@@ -853,6 +853,8 @@ function resize() {
   const needH = Math.tan(THREE.MathUtils.degToRad(31));
   const vfov = Math.max(THREE.MathUtils.degToRad(46), 2 * Math.atan(needH / camera.aspect));
   camera.fov = THREE.MathUtils.radToDeg(vfov);
+  // on narrow stages (portrait tablets) drop the picture a little so the header sign clears the menu buttons
+  if (w < 900) camera.setViewOffset(w, h, 0, -Math.round(Math.min(64, h * 0.11)), w, h); else camera.clearViewOffset();
   camera.updateProjectionMatrix();
 }
 window.addEventListener('resize', resize);
@@ -1250,7 +1252,7 @@ wireSeg('segF', 'finalN');
   paint();
 })();
 
-/* Host editor (changes the bundle mascot everywhere) */
+/* Host editor (changes the Showtime mascot everywhere) */
 function saveHost() { CGB.saveHost(); hostSay('How do I look?', 'present', 1200); }
 function swatchRow(id, list, key, label) {
   const el = $(id);

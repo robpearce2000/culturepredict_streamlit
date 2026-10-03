@@ -5,7 +5,7 @@
 Two stand-alone tutoring games packaged as one product.
 
 ### New
-- **Launcher**: bundle wordmark, the host as mascot, a card for each game, space for future games, global settings, the question bank and an About panel with credits and licences.
+- **Launcher**: Showtime wordmark, the host as mascot, a card for each game, space for future games, global settings, the question bank and an About panel with credits and licences.
 - **Shared question bank** used by both games: list, choose, add by pasting text, rename, edit, delete (with a confirm tap), copy a built-in pack, and save or load a JSON backup of all sets and history.
 - **GCSE Combined Science starter pack (AQA-style)**: 191 questions across all seven Biology, ten Chemistry and seven Physics topic areas, in separate subject packs and a full mix. Builds on the v1 mixed set; every question checked for GCSE accuracy.
 - **Shared wrong-answer history** per player name across both games, with the "pick more questions from weak topics" option in both.
@@ -30,7 +30,7 @@ Two stand-alone tutoring games packaged as one product.
 - New bottom dock layout: the pass buttons can no longer cover the question card.
 - Camera keeps both atoms on screen on portrait tablets.
 - Wrong answers saved as they happen; short synthesised sound effects added; softer catch flash, off with reduced motion.
-- Uses the bundle UI kit and fonts (no web font downloads).
+- Uses the Showtime UI kit and fonts (no web font downloads).
 - Rules and timings unchanged.
 
 ### Removed

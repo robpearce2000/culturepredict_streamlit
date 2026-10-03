@@ -1,7 +1,7 @@
 'use strict';
 /* =========================================================
    BRAND ARTWORK, drawn in code as SVG (no image files)
-   - Bundle wordmark
+   - Showtime wordmark
    - Over the Edge and Outpace logos
    - Launcher card art for each game
    ========================================================= */
@@ -17,28 +17,28 @@ CGB.brand = (() => {
     return `<path d="${d}Z" fill="${fill}"/>`;
   }
 
-  /* The bundle wordmark. Text lengths are fixed so it lays out the same with any fallback font. */
+  /* The Showtime wordmark. Text lengths are fixed so it lays out the same with any fallback font. */
   function wordmark(opts) {
     opts = opts || {};
-    const title = opts.title !== false ? '<title>The Classroom Gameshow Bundle</title>' : '';
-    return `<svg viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Classroom Gameshow Bundle">${title}
+    const title = opts.title !== false ? '<title>Showtime: Classroom Gameshows</title>' : '';
+    // marquee bulbs around the main word
+    let bulbs = '';
+    for (let i = 0; i < 17; i++) { const x = 80 + i * 52.5; bulbs += `<circle cx="${x.toFixed(1)}" cy="34" r="9" fill="${i % 2 ? SUN : '#fff'}" stroke="${INK}" stroke-width="3"/><circle cx="${x.toFixed(1)}" cy="266" r="9" fill="${i % 2 ? '#fff' : SUN}" stroke="${INK}" stroke-width="3"/>`; }
+    return `<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Showtime: Classroom Gameshows">${title}
   <g>
-    ${star(70, 120, 34, SUN, 0.2)}${star(940, 95, 26, TAN, 0.5)}${star(905, 300, 18, TEAL, 0.1)}${star(110, 330, 16, SUN, 0.7)}
-    <circle cx="160" cy="70" r="9" fill="${TEAL}"/><circle cx="860" cy="200" r="7" fill="${SUN}"/><circle cx="60" cy="230" r="6" fill="${TAN}"/>
+    ${star(36, 150, 30, SUN, 0.2)}${star(966, 140, 26, TAN, 0.5)}${star(950, 330, 16, TEAL, 0.1)}${star(52, 340, 16, SUN, 0.7)}
+  </g>
+  <rect x="58" y="16" width="884" height="268" rx="34" fill="${INK}" stroke="#fff" stroke-width="6"/>
+  ${bulbs}
+  <g transform="rotate(-2.5 500 160)">
+    ${T(508, 222, 196, 'SHOWTIME', `fill="${TAN}" stroke="${INK}" stroke-width="16" stroke-linejoin="round" paint-order="stroke" textLength="780" lengthAdjust="spacingAndGlyphs"`)}
+    ${T(500, 210, 196, 'SHOWTIME', `fill="#fff" stroke="${INK}" stroke-width="16" stroke-linejoin="round" paint-order="stroke" textLength="780" lengthAdjust="spacingAndGlyphs"`)}
   </g>
   <g>
-    <rect x="245" y="22" width="510" height="76" rx="38" fill="${INK}" stroke="#fff" stroke-width="5"/>
-    ${T(500, 79, 54, 'THE CLASSROOM', `fill="${SUN}" textLength="430" lengthAdjust="spacingAndGlyphs"`)}
-  </g>
-  <g transform="rotate(-3 500 205)">
-    ${T(508, 278, 200, 'GAMESHOW', `fill="${TAN}" stroke="${INK}" stroke-width="16" stroke-linejoin="round" paint-order="stroke" textLength="880" lengthAdjust="spacingAndGlyphs"`)}
-    ${T(500, 266, 200, 'GAMESHOW', `fill="#fff" stroke="${INK}" stroke-width="16" stroke-linejoin="round" paint-order="stroke" textLength="880" lengthAdjust="spacingAndGlyphs"`)}
-  </g>
-  <g>
-    <path d="M250 318 L750 318 L728 362 L750 406 L250 406 L272 362 Z" fill="${TEAL_D}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>
-    <path d="M250 318 L196 330 L214 362 L196 394 L250 406 Z" fill="#064442" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>
-    <path d="M750 318 L804 330 L786 362 L804 394 L750 406 Z" fill="#064442" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>
-    ${T(500, 386, 66, 'BUNDLE', `fill="#fff" textLength="300" lengthAdjust="spacingAndGlyphs"`)}
+    <path d="M150 296 L850 296 L828 342 L850 388 L150 388 L172 342 Z" fill="${TEAL_D}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M150 296 L96 308 L114 342 L96 376 L150 388 Z" fill="#064442" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M850 296 L904 308 L886 342 L904 376 L850 388 Z" fill="#064442" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>
+    ${T(500, 365, 54, 'CLASSROOM GAMESHOWS', `fill="#fff" textLength="600" lengthAdjust="spacingAndGlyphs"`)}
   </g>
 </svg>`;
   }

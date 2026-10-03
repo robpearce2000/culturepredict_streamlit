@@ -165,7 +165,7 @@ CGB.bankUI = (() => {
       const blob = new Blob([data], { type: 'application/json' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'gameshow-bundle-backup-' + new Date().toISOString().slice(0, 10) + '.json';
+      a.download = 'showtime-backup-' + new Date().toISOString().slice(0, 10) + '.json';
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(() => URL.revokeObjectURL(a.href), 4000);
       setStatus('bankBackupStatus', 'Backup file saved to your downloads.');
@@ -176,7 +176,7 @@ CGB.bankUI = (() => {
       const rd = new FileReader();
       rd.onload = () => {
         let data = null;
-        try { data = JSON.parse(rd.result); } catch (err) { setStatus('bankBackupStatus', 'That file could not be read. Choose a .json backup made by this bundle.', true); return; }
+        try { data = JSON.parse(rd.result); } catch (err) { setStatus('bankBackupStatus', 'That file could not be read. Choose a .json backup made by Showtime.', true); return; }
         const r = B.importData(data);
         setStatus('bankBackupStatus', r.ok ? `Imported: ${r.added} new set${r.added === 1 ? '' : 's'}, ${r.updated} updated, ${r.entries} history entr${r.entries === 1 ? 'y' : 'ies'} added.` : r.error, !r.ok);
       };
@@ -203,7 +203,7 @@ CGB.app = (() => {
     current = id;
     if (id === 'launcher') {
       $('launcher').hidden = false;
-      document.title = 'The Classroom Gameshow Bundle';
+      document.title = 'Showtime: Classroom Gameshows';
       if (mascot) mascot.resume();
       renderActive();
       const card = prev !== 'launcher' && document.querySelector(`[data-play="${prev}"]`);
@@ -214,7 +214,7 @@ CGB.app = (() => {
       if (mascot) mascot.pause();
       $('game-' + id).hidden = false;
       if (!g.ready) { g.init($('game-' + id)); g.ready = true; }
-      document.title = g.title + ' | The Classroom Gameshow Bundle';
+      document.title = g.title + ' | Showtime: Classroom Gameshows';
       g.enter();
     }
     const want = id === 'launcher' ? '' : '#' + id;

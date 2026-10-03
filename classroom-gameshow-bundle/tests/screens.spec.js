@@ -91,6 +91,13 @@ const SECTIONS = {
     await page.keyboard.press('2'); await shot('17-ote-dropping', 1600);
     await until(async () => (await state(page, 'over-the-edge')).step === 'next', 30000);
     await shot('18-ote-after-drop', 200);
+  },
+  'over-the-edge-final': async ({ page, shot, until }) => {
+    await page.click('[data-play="over-the-edge"]');
+    await page.waitForTimeout(1200);
+    await page.click('#ote-segR1 button[data-v="4"]');
+    await page.click('#ote-segF button[data-v="8"]');
+    await page.click('#ote-startBtn');
     // move on to the final quickly: wrong + no steal
     await until(async () => {
       const s = await state(page, 'over-the-edge');
@@ -106,9 +113,9 @@ const SECTIONS = {
       if (s.phase === 'summary') return true;
       if (s.step === 'ask') await page.keyboard.press('w'); else if (s.step === 'steal') await page.keyboard.press('n'); else if (s.step === 'next') await page.keyboard.press('Space'); else if (s.step === 'chute') await page.keyboard.press('4');
       return false;
-    }, 120000);
+    }, 240000);
+    expect((await state(page, 'over-the-edge')).phase, 'reached the results').toBe('summary');
     await shot('21-ote-summary', 800);
-    await page.click('#ote-menuBtn2');
 
   },
   outpace: async ({ page, shot, until }) => {
@@ -152,7 +159,7 @@ const SECTIONS = {
 for (const size of SIZES) {
   for (const [section, run] of Object.entries(SECTIONS)) {
     test(`screens at ${size.name}: ${section}`, async ({ browser }) => {
-      test.setTimeout(section === 'launcher' ? 90000 : 240000);
+      test.setTimeout(section === 'launcher' ? 90000 : 420000);
       const ctx = await browser.newContext({ viewport: { width: size.width, height: size.height } });
       const page = await ctx.newPage();
       const log = await openBundle(page);

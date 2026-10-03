@@ -198,7 +198,7 @@ CGB.bank = (() => {
   }
   /* Merge a backup into this device. Nothing already here is deleted. */
   function importData(data) {
-    if (!data || data.format !== 'classroom-gameshow-bundle-backup') return { ok: false, error: 'This file is not a Classroom Gameshow Bundle backup.' };
+    if (!data || data.format !== 'classroom-gameshow-bundle-backup') return { ok: false, error: 'This file is not a Showtime: Classroom Gameshows backup.' };
     let added = 0, updated = 0, entries = 0;
     (Array.isArray(data.sets) ? data.sets : []).forEach(s => {
       const c = cleanSet(s); if (!c) return;

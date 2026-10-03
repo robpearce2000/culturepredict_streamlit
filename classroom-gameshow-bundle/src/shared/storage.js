@@ -2,7 +2,7 @@
 /* =========================================================
    STORAGE
    Everything lives in localStorage on this device. Every call is
-   wrapped so the bundle still runs (without saving) if storage is
+   wrapped so Showtime still runs (without saving) if storage is
    blocked, full or unavailable.
    ========================================================= */
 window.CGB = window.CGB || {};
