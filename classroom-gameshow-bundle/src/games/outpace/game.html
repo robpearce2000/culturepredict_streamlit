@@ -1,1 +1,104 @@
-<section id="game-outpace" class="game" hidden></section>
+<section id="game-outpace" class="game op" aria-label="Outpace" hidden>
+  <div class="op-stage" id="op-stage">
+    <div class="op-labels" id="op-labels" aria-hidden="true">
+      <div class="op-tag you" id="op-tagYou"></div>
+      <div class="op-tag hunter" id="op-tagHunter">▼ HUNTER</div>
+      <div class="op-tag home" id="op-tagHome">⚑ HOME</div>
+    </div>
+  </div>
+  <div class="op-flash" id="op-flash"></div>
+
+  <nav class="topbar" aria-label="Game menu">
+    <button class="btn" type="button" id="op-menuBtn">◀ Menu <span class="kbd">Esc</span></button>
+    <button class="btn" type="button" id="op-muteBtn">Sound on</button>
+    <button class="btn" type="button" id="op-settingsBtn">Settings</button>
+  </nav>
+
+  <!-- SETUP -->
+  <div class="op-screen active" id="op-home">
+    <div class="op-panel op-home-card">
+      <div class="op-logo" id="op-logo"></div>
+      <p class="op-sub">Answer right to edge home. Answer wrong and the Hunter closes in.</p>
+      <div class="op-rules">
+        <strong>Deal Round:</strong> each player picks a deal. A bigger deal gives the Hunter a shorter gap to catch you. Reach home to bank the points; if you are caught you bank half.
+        <strong>Final Sprint:</strong> together you have 60 seconds. Take turns: each correct answer is +1 and each wrong answer is −1. Reach the target to escape with the pot. Each player can pass once: that question is skipped and their partner answers a new one.
+      </div>
+      <div class="op-names">
+        <label><span>Player 1</span><input id="op-name0" type="text" maxlength="16" value="Player 1" autocomplete="off"></label>
+        <label><span>Player 2</span><input id="op-name1" type="text" maxlength="16" value="Player 2" autocomplete="off"></label>
+      </div>
+      <div class="field">
+        <label class="lab" for="op-setSelect">Question set (shared with every game)</label>
+        <select class="cgb-select" id="op-setSelect"></select>
+        <button class="linkish" id="op-openBank" type="button">Manage the question bank</button>
+      </div>
+      <label class="check"><input type="checkbox" id="op-focusWeak"> Pick more questions from topics each player got wrong before</label>
+      <button class="btn go" id="op-startBtn" type="button" style="width:100%;margin-top:14px">Start Outpace <span class="kbd">Enter</span></button>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="op-screen" id="op-summary">
+    <div class="op-panel op-sum-card">
+      <div class="op-kicker">Game summary</div>
+      <div class="op-verdict" id="op-finalVerdict"></div>
+      <div class="op-sum-grid" id="op-summaryPlayers"></div>
+      <div class="op-sum-btns">
+        <button class="btn go" id="op-playAgainBtn" type="button">Play again <span class="kbd">Enter</span></button>
+        <button class="btn plain" id="op-setupBtn" type="button">Change players or questions</button>
+        <button class="btn plain" id="op-menuBtn2" type="button">Back to menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEAL ROUND HUD -->
+  <div class="op-hud" id="op-hud-deal">
+    <div class="op-top">
+      <div class="op-kicker" id="op-dealLabel">PLAYER 1: CHOOSE YOUR DEAL</div>
+      <div class="op-deals" id="op-dealRow">
+        <button class="op-deal" type="button" data-tier="low"><span class="k">1</span><b>Cautious</b><span class="pts">300 points</span><span class="gap">Hunter starts 5 steps back</span></button>
+        <button class="op-deal" type="button" data-tier="mid"><span class="k">2</span><b>Standard</b><span class="pts">600 points</span><span class="gap">Hunter starts 3 steps back</span></button>
+        <button class="op-deal" type="button" data-tier="high"><span class="k">3</span><b>Bold</b><span class="pts">1,000 points</span><span class="gap">Hunter starts 1 step back</span></button>
+      </div>
+      <div class="op-status" id="op-dealStatus" role="status"></div>
+    </div>
+    <div class="op-dock">
+      <div class="op-panel op-qcard" id="op-qcard" hidden>
+        <div class="qtag" id="op-dealQTag"></div>
+        <div class="qtext" id="op-dealQText"></div>
+        <div class="qanswer" id="op-dealQAnswer"></div>
+        <div class="op-btn-row" id="op-dealBtnRow"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL SPRINT HUD -->
+  <div class="op-hud" id="op-hud-sprint">
+    <div class="op-top">
+      <div class="op-kicker">Final Sprint</div>
+      <div class="op-timer" id="op-sprintTimer" role="timer" aria-live="off">1:00</div>
+      <div class="op-track"><div class="op-fill" id="op-sprintFill"></div></div>
+      <div class="op-target" id="op-sprintTarget">Target: 0 correct</div>
+    </div>
+    <div class="op-dock">
+      <div class="op-sprint-row">
+        <div class="op-chip" id="op-chip0"><span class="nm" id="op-chipName0">Player 1</span><button class="op-pass" type="button" id="op-pass0">Pass <span class="kbd">H</span></button></div>
+        <div class="op-score"><span class="lbl">Team score</span><span class="num" id="op-sprintScore">0</span></div>
+        <div class="op-chip" id="op-chip1"><span class="nm" id="op-chipName1">Player 2</span><button class="op-pass" type="button" id="op-pass1">Pass <span class="kbd">H</span></button></div>
+      </div>
+      <div class="op-panel op-qcard" id="op-sprintCard">
+        <div class="qtag" id="op-sprintQTag"></div>
+        <div class="qtext" id="op-sprintQText"></div>
+        <div class="qanswer" id="op-sprintQAnswer"></div>
+        <div class="op-btn-row" id="op-sprintBtnRow"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="op-roundend" id="op-roundEnd" role="dialog" aria-modal="false" aria-labelledby="op-roundEndVerdict">
+    <div class="op-verdict" id="op-roundEndVerdict"></div>
+    <div class="op-detail" id="op-roundEndDetail"></div>
+    <button class="btn go" type="button" id="op-roundEndContinue">Continue <span class="kbd">Enter</span></button>
+  </div>
+  <div class="cgb-nogl" id="op-nogl" hidden></div>
+</section>
