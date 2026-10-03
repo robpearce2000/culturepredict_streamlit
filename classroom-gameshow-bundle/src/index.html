@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src data:; img-src data: blob:; media-src 'none'; connect-src 'none'; form-action 'none'">
+<meta name="description" content="Two 3D revision quiz games for the classroom: Over the Edge and Outpace. Works offline.">
+<title>Showtime: Classroom Gameshows</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="shared/ui.css">
+<link rel="stylesheet" href="games/over-the-edge/game.css">
+<link rel="stylesheet" href="games/outpace/game.css">
+</head>
+<body>
+
+<!-- ================= LAUNCHER ================= -->
+<main id="launcher" aria-label="Showtime: Classroom Gameshows">
+  <svg class="rays" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="rgba(255,255,255,0.05)"><path d="M50 -10 L30 110 L40 110 Z"/><path d="M50 -10 L55 110 L68 110 Z"/><path d="M50 -10 L80 110 L95 110 Z"/><path d="M50 -10 L5 110 L15 110 Z"/><path d="M50 -10 L105 90 L110 100 Z"/><path d="M50 -10 L-10 80 L-10 95 Z"/></g>
+  </svg>
+  <div class="wrap">
+    <header class="l-hero">
+      <h1 class="l-wordmark" id="wordmark" style="margin:0"></h1>
+      <div class="l-mascot" id="mascot"><div class="hello" id="mascotHello"></div></div>
+    </header>
+
+    <section class="l-cards" aria-label="Games">
+      <article class="gcard">
+        <div class="art" id="artOTE"></div>
+        <div class="body">
+          <h3>Over the Edge</h3>
+          <p>Answer right to win a counter, drop it down a lane and push the pile over the edge. Team up in the final to win the jackpot.</p>
+          <button class="btn brand" type="button" data-play="over-the-edge">Play Over the Edge</button>
+        </div>
+      </article>
+      <article class="gcard">
+        <div class="art" id="artOP"></div>
+        <div class="body">
+          <h3>Outpace</h3>
+          <p>Pick a deal, then answer your way home before the Hunter catches you. Finish with a 60-second Final Sprint.</p>
+          <button class="btn brand" type="button" data-play="outpace">Play Outpace</button>
+        </div>
+      </article>
+      <article class="gcard soon" aria-label="More shows coming soon">
+        <h3>More shows coming soon</h3>
+        <p>New games will appear here and use the same question bank.</p>
+      </article>
+    </section>
+
+    <section class="l-bar" aria-label="Question bank">
+      <div class="l-active">Questions in use: <strong id="activeSetName"></strong> (<span id="activeSetCount"></span>)</div>
+      <div class="group">
+        <button class="btn go" type="button" id="openBank" style="font-size:1.15rem">Question bank</button>
+        <button class="btn plain" type="button" id="openAbout">About</button>
+      </div>
+    </section>
+    <section class="l-bar" aria-label="Settings">
+      <div class="group settings-row" id="launcherSettings"></div>
+    </section>
+    <p class="l-foot">Everything is saved on this computer only. Nothing is sent anywhere. <span id="storageNote" hidden>This browser is blocking storage, so changes will be lost when you close the page.</span></p>
+  </div>
+</main>
+
+<!-- ================= GAMES ================= -->
+<!-- @include games/over-the-edge/game.html -->
+<!-- @include games/outpace/game.html -->
+
+<!-- ================= MODALS ================= -->
+<div class="modal" id="bankModal" role="dialog" aria-modal="true" aria-labelledby="bankTitle" hidden>
+  <div class="cgb-panel">
+    <div class="modal-head"><h2 id="bankTitle">Question bank</h2><button class="btn plain sm" type="button" data-close="bankModal">Close <span class="kbd">Esc</span></button></div>
+    <div class="modal-body">
+      <p class="hint" style="margin-top:0">Choose the set to use. Both games use the same set and share each player's wrong-answer history.</p>
+      <div class="bank-list" id="bankList"></div>
+      <div class="bank-section" id="bankForm">
+        <h3 id="bankFormTitle">Add a question set</h3>
+        <div class="field"><label class="lab" for="bankName">Set name</label><input class="cgb-input" id="bankName" type="text" maxlength="60" placeholder="For example: Bonding lesson 2"></div>
+        <div class="field">
+          <label class="lab" for="bankText">Questions</label>
+          <div class="fmt" aria-hidden="true">Subject: Chemistry
+Topic: Bonding
+Q: What type of bonding is in sodium chloride?
+A: Ionic</div>
+          <p class="hint" style="margin:6px 0">Subject and Topic lines apply to every question under them until the next Topic line. Each Q: line needs an A: line straight after it.</p>
+          <textarea class="cgb-textarea" id="bankText" spellcheck="false" aria-describedby="bankFormStatus"></textarea>
+        </div>
+        <div class="row-btns" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn ok" type="button" id="bankSave">Save as new set</button><button class="btn plain" type="button" id="bankCancel" hidden>Cancel</button></div>
+        <div class="status" id="bankFormStatus" role="status" style="margin-top:8px"></div>
+      </div>
+      <div class="bank-section">
+        <h3>Players' wrong answers</h3>
+        <p class="hint" style="margin-top:0">Saved by player name. Use the same name in either game to keep a player's history together.</p>
+        <div class="players-list" id="bankPlayers"></div>
+      </div>
+      <div class="bank-section">
+        <h3>Backup</h3>
+        <p class="hint" style="margin-top:0">Save all your sets and players' history to a file, then load it on another computer. Loading a backup adds to what is here; it never deletes anything.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn teal" type="button" id="bankExport">Save backup file</button><button class="btn plain" type="button" id="bankImport">Load backup file</button><input type="file" id="bankImportFile" accept=".json,application/json" hidden></div>
+        <div class="status" id="bankBackupStatus" role="status" style="margin-top:8px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" hidden>
+  <div class="cgb-panel">
+    <div class="modal-head"><h2 id="settingsTitle">Settings</h2><button class="btn plain sm" type="button" data-close="settingsModal">Close <span class="kbd">Esc</span></button></div>
+    <div class="modal-body"><div class="set-grid" id="modalSettings"></div></div>
+  </div>
+</div>
+
+<div class="modal small" id="leaveModal" role="dialog" aria-modal="true" aria-labelledby="leaveTitle" hidden>
+  <div class="cgb-panel">
+    <div class="modal-head"><h2 id="leaveTitle">Leave this game?</h2></div>
+    <div class="modal-body"><p class="hint" style="margin:0;font-size:1rem">The scores in this game will be lost. Wrong answers already logged are kept.</p></div>
+    <div class="modal-foot"><button class="btn plain" type="button" data-close="leaveModal" data-autofocus>Keep playing</button><button class="btn no" type="button" id="leaveConfirm">Back to menu</button></div>
+  </div>
+</div>
+
+<div class="modal" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle" hidden>
+  <div class="cgb-panel">
+    <div class="modal-head"><h2 id="aboutTitle">About</h2><button class="btn plain sm" type="button" data-close="aboutModal">Close <span class="kbd">Esc</span></button></div>
+    <div class="modal-body about">
+      <p><strong>Showtime: Classroom Gameshows</strong>, first edition, version <span id="aboutVersion"></span>.</p>
+      <p>Two revision games for the classroom, inspired by classic TV quiz formats: Over the Edge and Outpace. Game design and question packs by Rob Pearce.</p>
+      <p>The GCSE Combined Science starter packs are AQA-style practice questions written for Showtime. They are not produced or endorsed by AQA.</p>
+      <h3>Privacy</h3>
+      <p>Showtime makes no network connections. Question sets, player names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a player's history there at any time.</p>
+      <h3>Third-party software and fonts</h3>
+      <p>three.js r128 and its post-processing examples (MIT licence). Lilita One by Juan Montoreano and Nunito by The Nunito Project Authors (SIL Open Font License 1.1).</p>
+      <pre><!-- @text vendor/three-LICENSE.txt --></pre>
+      <pre><!-- @text fonts/OFL-LilitaOne.txt --></pre>
+      <pre><!-- @text fonts/OFL-Nunito.txt --></pre>
+    </div>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="vendor/EffectComposer.js"></script>
+<script src="vendor/RenderPass.js"></script>
+<script src="vendor/ShaderPass.js"></script>
+<script src="vendor/CopyShader.js"></script>
+<script src="vendor/LuminosityHighPassShader.js"></script>
+<script src="vendor/UnrealBloomPass.js"></script>
+<script src="shared/storage.js"></script>
+<script src="shared/settings.js"></script>
+<script src="shared/packs.js"></script>
+<script src="shared/bank.js"></script>
+<script src="shared/sfx.js"></script>
+<script src="shared/host.js"></script>
+<script src="shared/brand.js"></script>
+<script src="shared/app.js"></script>
+<script src="games/over-the-edge/game.js"></script>
+<script src="games/outpace/game.js"></script>
+<script>CGB.app.init();</script>
+</body>
+</html>
