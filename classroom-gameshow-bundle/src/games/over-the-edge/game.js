@@ -558,9 +558,33 @@ function placeBubble() {
   const w = wrap.clientWidth, h = wrap.clientHeight;
   const hx = (headWorld.x + 1) / 2 * w;
   let x = hx, y = (1 - headWorld.y) / 2 * h;
-  const bw = bubble.offsetWidth;
+  const bw = bubble.offsetWidth, bh = bubble.offsetHeight + 14;   // include the tail
   x = Math.min(w - bw / 2 - 10, Math.max(bw / 2 + 10, x));
-  y = Math.max(bubble.offsetHeight + 64, Math.min(h - 10, y));   // keep clear of the menu bar
+  y = Math.max(bh + 60, Math.min(h - 10, y));   // keep clear of the menu bar
+  // never sit on top of the round banner or behind a setup or results card
+  const base = wrap.getBoundingClientRect();
+  const rel = el => { const r = el.getBoundingClientRect(); return { l: r.left - base.left, t: r.top - base.top, r: r.right - base.left, b: r.bottom - base.top }; };
+  const hits = (o, yy) => !(x + bw / 2 < o.l || x - bw / 2 > o.r || yy < o.t || yy - bh > o.b);
+  let hidden = false;
+  const banner = $('banner');
+  if (banner.classList.contains('show')) {
+    const parts = [banner.querySelector('.verdict'), banner.querySelector('.detail')].filter(el => el.offsetParent).map(rel);
+    if (parts.length) {
+      const o = { l: Math.min(...parts.map(p => p.l)) - 8, t: Math.min(...parts.map(p => p.t)) - 8, r: Math.max(...parts.map(p => p.r)) + 8, b: Math.max(...parts.map(p => p.b)) + 8 };
+      if (hits(o, y)) {
+        if (o.b + bh <= h - 10) y = o.b + bh;          // move below the banner
+        else if (o.t - bh >= 60) y = o.t;               // or above it
+        else hidden = true;
+      }
+    }
+  }
+  ['home', 'summary'].forEach(id => {
+    const ov = $(id);
+    if (ov.classList.contains('hidden')) return;
+    const card = ov.querySelector('.ote-card');
+    if (card && hits(rel(card), y)) hidden = true;
+  });
+  bubble.classList.toggle('muted', hidden);
   bubble.style.left = x + 'px'; bubble.style.top = y + 'px';
   // point the tail at the host even when the bubble is pushed in from the edge
   const tail = Math.max(18, Math.min(bw - 18, bw / 2 + (hx - x)));
@@ -1165,6 +1189,7 @@ function showSummary() {
   $('sumCard').innerHTML = `<div class="sum-head">${head}</div><div class="sum-grid">${cols}</div>
     <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change settings</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>`;
   $('summary').classList.remove('hidden');
+  clearLabels();
   $('againBtn').onclick = () => startGame();
   $('homeBtn').onclick = () => goHome();
   $('menuBtn2').onclick = () => CGB.app.requestLauncher();
@@ -1172,7 +1197,8 @@ function showSummary() {
     btn.onclick = () => CGB.armButton(btn, 'Tap again to clear', () => { bank.clearHistory(G.players[+btn.dataset.clear].name); showSummary(); });
   });
   render();
-  $('againBtn').focus();
+  $('summary').scrollTop = 0; $('sumCard').scrollTop = 0;
+  $('againBtn').focus({ preventScroll: true });
 }
 function goHome() {
   dropTimers.forEach(clearTimeout); dropTimers = [];

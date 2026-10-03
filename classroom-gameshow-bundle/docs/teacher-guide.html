@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>The Classroom Gameshow Bundle: Teacher guide</title>
+<link rel="stylesheet" href="../src/fonts/fonts.css">
+<style>
+  @page { size: A4; margin: 13mm 14mm 14mm; }
+  :root { --ink: #1B1F3B; --soft: #4A4F6E; --paper: #FFF9F0; --raised: #FFF0DA; --line: #EBD9BC; --teal: #0A6663; --tan: #B83A06; --sun: #FFC93C; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Nunito', 'Segoe UI', Arial, sans-serif; font-weight: 600; color: var(--ink); font-size: 10.4pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2, h3 { font-family: 'Lilita One', 'Arial Rounded MT Bold', sans-serif; font-weight: 400; letter-spacing: 0.3px; margin: 0; }
+  h2 { font-size: 17pt; color: var(--ink); margin: 12px 0 5px; padding-bottom: 3px; border-bottom: 3px solid var(--line); }
+  h3 { font-size: 12.5pt; color: var(--teal); margin: 9px 0 3px; }
+  p { margin: 0 0 6px; }
+  ul, ol { margin: 0 0 6px; padding-left: 18px; }
+  li { margin-bottom: 2px; }
+  strong { font-weight: 900; }
+  .page { page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .hero { background: #141834; color: #fff; border-radius: 16px; padding: 12px 16px 14px; display: grid; grid-template-columns: 1fr 210px; gap: 12px; align-items: center; }
+  .hero svg { width: 100%; height: auto; display: block; }
+  .hero p { color: #E3E6FF; font-size: 10.5pt; margin: 6px 0 0; }
+  .hero .sub { font-family: 'Lilita One', sans-serif; font-size: 15pt; color: var(--sun); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card { background: var(--paper); border: 2px solid var(--line); border-radius: 12px; padding: 8px 11px; }
+  .card h3 { margin-top: 0; }
+  img.shot { width: 100%; border: 2px solid var(--ink); border-radius: 8px; display: block; margin: 4px 0 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.6pt; margin-bottom: 6px; }
+  th, td { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--raised); font-weight: 900; }
+  kbd { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 8.6pt; border: 1.5px solid var(--ink); border-radius: 4px; padding: 0 4px; white-space: nowrap; }
+  pre { background: var(--raised); border-radius: 8px; padding: 7px 10px; font-size: 8.8pt; line-height: 1.4; margin: 4px 0 6px; white-space: pre-wrap; }
+  .note { background: #E3F6F5; border-left: 5px solid var(--teal); border-radius: 8px; padding: 6px 10px; margin: 6px 0; }
+  .warn { background: #FDE7D6; border-left: 5px solid var(--tan); border-radius: 8px; padding: 6px 10px; margin: 6px 0; }
+  .small { font-size: 8.8pt; color: var(--soft); }
+  .foot { font-size: 8pt; color: var(--soft); margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="hero">
+    <div>
+      <div id="wm"></div>
+      <div class="sub">Teacher guide · first edition</div>
+      <p>Two 3D revision games for the front of the classroom, inspired by classic TV quiz formats. They share one question bank and run from a single file, with no internet connection, logins or installs.</p>
+    </div>
+    <img id="mascot" src="mascot.png" alt="" style="width:100%">
+  </div>
+
+  <h2>What's in the bundle</h2>
+  <div class="two">
+    <div class="card">
+      <h3>Over the Edge</h3>
+      <p>Two players take turns to answer. A correct answer wins a counter: choose a lane from 1 to 4 and watch it bounce down the pegs onto the moving shelf. Every counter pushed over the front edge wins £100. In the final, the players team up to push the gold jackpot counter over the edge for £5,000.</p>
+    </div>
+    <div class="card">
+      <h3>Outpace</h3>
+      <p>In the Deal Round each player picks a deal (a bigger prize gives the Hunter a shorter gap) and answers their way home before being caught. Then the pair face a 60-second Final Sprint: +1 for each right answer, −1 for each wrong one, against a target set by their pot.</p>
+    </div>
+  </div>
+  <ul>
+    <li><strong>One shared question bank.</strong> Pick a set once and both games use it. Add your own sets by pasting plain text.</li>
+    <li><strong>Starter packs.</strong> 191 AQA-style questions for GCSE Combined Science (Biology, Chemistry and Physics packs plus an all-in-one mix), and a 61-question Homeostasis lesson set. These are written to match the AQA specification topics; they are not produced or endorsed by AQA.</li>
+    <li><strong>Wrong-answer tracking.</strong> Every wrong answer is saved against the player's name in both games, so each player's weakest topics follow them from game to game.</li>
+    <li><strong>A friendly host.</strong> Professor Pip presents Over the Edge and greets you on the menu. You can rename and restyle him.</li>
+  </ul>
+
+  <h2>Getting started</h2>
+  <ol>
+    <li>Save <strong>classroom-gameshow-bundle.html</strong> somewhere on your computer, such as your Documents folder or a memory stick. Keep the same copy each lesson, because your question sets are saved for that browser.</li>
+    <li>Double-click it. It opens in your web browser (Chrome, Edge, Firefox or Safari). No internet connection is needed.</li>
+    <li>Put it on the board in full screen (press <kbd>F11</kbd> on Windows, or <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>F</kbd> on a Mac).</li>
+    <li>On the menu, check the <strong>Questions in use</strong> line, then choose a game.</li>
+  </ol>
+  <div class="note"><strong>Tip:</strong> if a game feels slow on an older classroom PC, set <strong>Graphics</strong> to <strong>Low</strong> on the menu. It turns off shadows and glow effects without changing the game.</div>
+
+  <h2>Setting up a game</h2>
+  <p>Each game opens on a setup card. Type the two players' names (or team names), check the question set and press <strong>Start</strong> (or <kbd>Enter</kbd>).</p>
+  <ul>
+    <li><strong>Over the Edge</strong> also lets you choose the number of Round 1 questions per player (4, 6 or 8), the number of final questions (8, 12 or 16) and how hard the jackpot is to win.</li>
+    <li>Tick <strong>Pick more questions from topics each player got wrong before</strong> to steer questions towards each player's weak topics.</li>
+    <li>Use <strong>◀ Menu</strong> (or <kbd>Esc</kbd>) in the top corner to go back to the menu at any time. You will be asked first if a game is in progress.</li>
+  </ul>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <h2>Running the games</h2>
+  <div class="two">
+    <div>
+      <h3>Over the Edge</h3>
+      <img class="shot" src="../dist/listing/over-the-edge.png" alt="Over the Edge in play">
+      <ol>
+        <li>Read the question aloud. Press <strong>Show answer</strong> if you want the class to see it.</li>
+        <li>Mark it <strong>Correct</strong> or <strong>Wrong</strong>. If wrong, the other player can steal it.</li>
+        <li>The winner picks a lane (1 to 4) with the buttons, the keys, or by tapping the machine.</li>
+        <li>Watch for <strong>★ wildcard counters</strong>: a bonus drop, £250, or a steal of up to £150.</li>
+        <li>In the final, the pair work as a team. Each correct answer wins two counters.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>Outpace</h3>
+      <img class="shot" src="../dist/listing/outpace.png" alt="Outpace in play">
+      <ol>
+        <li>Player 1 picks a deal: <strong>Cautious</strong> (300 points, Hunter 5 steps back), <strong>Standard</strong> (600, 3 back) or <strong>Bold</strong> (1,000, 1 back).</li>
+        <li>Show the answer, then mark it. Right moves the player a step home; wrong moves the Hunter a step closer.</li>
+        <li>Reach home to bank the deal. If caught, the player banks half.</li>
+        <li>After both players, the <strong>Final Sprint</strong> starts: 60 seconds, taking turns. Each player can <strong>pass</strong> once.</li>
+        <li>Reach the target to escape with the pot. If not, the Hunter catches the team.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2>Keyboard shortcuts</h2>
+  <p>Everything also works by mouse or by touch on an interactive whiteboard. Keys are shown on the buttons.</p>
+  <div class="two">
+    <table>
+      <tr><th colspan="2">Over the Edge</th></tr>
+      <tr><td><kbd>C</kbd></td><td>Correct (or a steal is correct)</td></tr>
+      <tr><td><kbd>W</kbd></td><td>Wrong</td></tr>
+      <tr><td><kbd>N</kbd></td><td>No attempt at the steal</td></tr>
+      <tr><td><kbd>A</kbd></td><td>Show or hide the answer</td></tr>
+      <tr><td><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd></td><td>Drop the counter down that lane</td></tr>
+      <tr><td><kbd>Space</kbd> or <kbd>Enter</kbd></td><td>Next question</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Start, or play again from the results</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Back to the menu</td></tr>
+    </table>
+    <table>
+      <tr><th colspan="2">Outpace</th></tr>
+      <tr><td><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></td><td>Choose the Cautious, Standard or Bold deal</td></tr>
+      <tr><td><kbd>A</kbd> or <kbd>Space</kbd></td><td>Show the answer</td></tr>
+      <tr><td><kbd>C</kbd></td><td>Correct (after the answer is shown)</td></tr>
+      <tr><td><kbd>W</kbd></td><td>Wrong (after the answer is shown)</td></tr>
+      <tr><td><kbd>H</kbd></td><td>Pass this question to your partner (Final Sprint, once each)</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Continue after Escaped or Caught; start; play again</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Back to the menu</td></tr>
+    </table>
+  </div>
+
+  <h2>Tips for running it with a class</h2>
+  <ul>
+    <li><strong>Teams, not just two pupils.</strong> Split the room into two halves and type team names. Let each team confer for ten seconds, then take one answer from a nominated pupil.</li>
+    <li><strong>Everyone answers.</strong> Ask the whole class to write each answer on mini whiteboards before you reveal it, so the game drives retrieval practice for everyone.</li>
+    <li><strong>Use "Any two" answers generously.</strong> Many answers list several acceptable points. You are the judge, so accept good alternatives.</li>
+    <li><strong>Short on time?</strong> In Over the Edge choose 4 Round 1 questions and 8 final questions: a game then takes about 15 minutes. Outpace usually takes 10 to 15 minutes.</li>
+    <li><strong>Revisit weak topics.</strong> The results screen lists each player's missed questions and their weakest topics across all games. Use it to plan a starter for next lesson.</li>
+  </ul>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <h2>Adding your own questions</h2>
+  <p>Open <strong>Question bank</strong> on the menu (or <strong>Manage the question bank</strong> on a setup card). Type a name for the set, paste your questions in this format, and press <strong>Save as new set</strong>:</p>
+  <pre>Subject: Chemistry
+Topic: Bonding
+Q: What type of bonding is in sodium chloride?
+A: Ionic
+Q: Why can metals conduct electricity?
+A: They have delocalised electrons that can move through the structure
+
+Topic: Rates of reaction
+Q: Give two ways to increase the rate of a reaction.
+A: Any two: increase temperature, increase concentration, increase surface area, add a catalyst</pre>
+  <ul>
+    <li>The <strong>Subject</strong> and <strong>Topic</strong> lines apply to every question below them until the next one. Topics drive the weak-topic tracking, so keep topic names consistent between sets.</li>
+    <li>Every <strong>Q:</strong> line needs an <strong>A:</strong> line straight after it. Blank lines are ignored. Question sets from earlier versions of these games use the same format and paste straight in.</li>
+    <li>A new set becomes the set in use for both games straight away. Use the round buttons to switch sets.</li>
+    <li><strong>Rename</strong>, <strong>Edit questions</strong> or <strong>Delete</strong> your own sets from the list. Deleting asks you to tap twice.</li>
+    <li>The built-in packs cannot be changed, but <strong>Copy to edit</strong> makes your own copy that you can trim or add to.</li>
+  </ul>
+  <img class="shot" src="../dist/listing/question-bank.png" alt="The question bank" style="width:78%;margin:6px auto">
+
+  <h3>Moving to another computer: backups</h3>
+  <p>Press <strong>Save backup file</strong> to download one file containing all your own sets and every player's wrong-answer history. On the other computer, open the bundle, choose <strong>Question bank → Load backup file</strong> and pick that file. Loading a backup only adds; it never deletes anything already there, and loading the same file twice adds nothing new.</p>
+
+  <h3>Players' wrong answers</h3>
+  <p>History is saved by player name, so use the same spelling each time (capital letters do not matter). The question bank lists every saved player; <strong>Clear</strong> removes one player's history. A player's history can also be cleared from the results screen.</p>
+
+  <h2>Settings and accessibility</h2>
+  <table>
+    <tr><th>Setting</th><th>What it does</th></tr>
+    <tr><td>Sound</td><td>All sounds are short effects made by the browser. There is no music.</td></tr>
+    <tr><td>Text size</td><td><strong>Large</strong> makes every panel, question and button bigger for the back of the room.</td></tr>
+    <tr><td>Reduced motion</td><td>Stops camera sway, screen shake and the flash when the Hunter catches someone, and shows the host's words at once. It starts switched on if your computer asks for reduced motion.</td></tr>
+    <tr><td>Graphics</td><td><strong>Low</strong> turns off shadows and glow and draws at standard resolution, for older PCs.</td></tr>
+  </table>
+  <p>Colours meet the WCAG AA contrast guidelines. Nothing relies on colour alone: players are also marked ● and ■, wildcard counters carry a ★, the Hunter and the runner are labelled, and buttons show ✓ and ✗ as well as green and red.</p>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <h2>Privacy and data protection</h2>
+  <div class="note">
+    <p><strong>No data leaves the computer.</strong> The bundle makes no network connections at all: no analytics, no tracking, no accounts and no adverts. It even includes a browser security rule that blocks connections.</p>
+    <p>Question sets, player names, wrong-answer history, the host's look and your settings are saved only in the web browser on the computer you are using (in its local storage). They are not sent to us or anyone else.</p>
+    <p>For UK GDPR, this means the school stays in control: data stays on the school's device, you can delete a player's history at any time from the question bank, and a backup file is only created when you choose to save one. If you use pupils' names, treat backup files like any other file containing pupil data. You can also use first names, initials or team names instead.</p>
+  </div>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <tr><th style="width:36%">Problem</th><th>What to try</th></tr>
+    <tr><td>The file opens as text, or in a preview pane</td><td>Download or copy it to your computer first, then double-click it. Previews in email, Teams or OneDrive cannot run it.</td></tr>
+    <tr><td>"3D graphics are switched off"</td><td>Try another browser (Chrome, Edge, Firefox or Safari). If it still appears, ask IT to turn on hardware acceleration in the browser settings.</td></tr>
+    <tr><td>The game is jerky or slow</td><td>Set <strong>Graphics</strong> to <strong>Low</strong>. Close other tabs and video calls.</td></tr>
+    <tr><td>No sound</td><td>Check <strong>Sound</strong> is on, the board's speakers are on, and the volume is up. Browsers only play sound after the first click or key press.</td></tr>
+    <tr><td>My question sets have gone</td><td>Sets are saved in one browser on one computer. Open the same file in the same browser you used before. Private or guest windows forget everything when closed, and some school setups clear browser data at log-off: keep a backup file and load it when needed.</td></tr>
+    <tr><td>"This browser is blocking storage" message</td><td>The games still work, but nothing is kept after you close the page. Use a normal (not private) window, or keep a backup file.</td></tr>
+    <tr><td>"No Q: and A: pairs found"</td><td>Check each question line starts with <strong>Q:</strong> and is followed by a line starting with <strong>A:</strong>.</td></tr>
+    <tr><td>Text is hard to read from the back</td><td>Turn on <strong>Large</strong> text size and use full screen (<kbd>F11</kbd>).</td></tr>
+    <tr><td>I pressed a key and nothing happened</td><td>Click once on the game area first, so the browser knows the keys are for the game. Keys are ignored while you type in a box.</td></tr>
+  </table>
+
+  <h2>About</h2>
+  <p>The Classroom Gameshow Bundle, first edition (version 1.0.0). Game design and question packs by Rob Pearce. The games are original works inspired by classic TV quiz formats and are not connected with any television programme or broadcaster. AQA is a registered trade mark of AQA Education; the starter packs are AQA-style practice questions and are not endorsed by AQA.</p>
+  <p class="small">Built with three.js (MIT licence). Fonts: Lilita One and Nunito (SIL Open Font License 1.1). Full licence texts are in the About panel on the menu.</p>
+</section>
+
+<script src="../src/vendor/three.min.js"></script>
+<script>window.CGB = {};</script>
+<script src="../src/shared/brand.js"></script>
+<script>document.getElementById('wm').innerHTML = CGB.brand.wordmark();</script>
+</body>
+</html>

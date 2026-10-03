@@ -714,6 +714,7 @@ function animate() {
     }
   }
 
+  if (++shiftFrame % 6 === 0) updateViewShift();
   placeTags();
   if (useBloom) composer.render(); else renderer.render(scene, camera);
 }
@@ -726,7 +727,8 @@ function placeTag(el, obj, dy, show) {
   if (!show) { el.classList.remove('show'); return; }
   tagV.set(obj.x, obj.y + dy, obj.z).project(camera);
   const w = wrap.clientWidth, h = wrap.clientHeight;
-  el.style.left = ((tagV.x + 1) / 2 * w) + 'px';
+  const half = el.offsetWidth / 2 + 8;
+  el.style.left = Math.min(w - half, Math.max(half, (tagV.x + 1) / 2 * w)) + 'px';
   el.style.top = ((1 - tagV.y) / 2 * h) + 'px';
   el.classList.toggle('show', tagV.z < 1 && Math.abs(tagV.x) < 1.1);
 }
@@ -739,10 +741,28 @@ function placeTags() {
   placeTag($('tagHome'), homePos, -0.35, visible && currentRoundType === 'deal');
 }
 
+/* Shift the picture so the race sits in the clear band between the top HUD and the bottom dock */
+let viewShift = 0, shiftFrame = 0;
+function updateViewShift() {
+  const h = wrap.clientHeight, w = wrap.clientWidth;
+  if (!w || !h) return;
+  let want = 0;
+  const hud = Object.values(huds).find(el => el.classList.contains('active'));
+  if (hud) {
+    const top = hud.querySelector('.op-top').getBoundingClientRect().bottom;
+    const dock = hud.querySelector('.op-dock').getBoundingClientRect().top;
+    if (dock > top) want = Math.round(h / 2 - (top + dock) / 2);
+  }
+  if (Math.abs(want - viewShift) < 2) return;
+  viewShift += (want - viewShift) * (reduced() ? 1 : 0.25);
+  if (Math.abs(viewShift) < 1) { camera.clearViewOffset(); viewShift = 0; }
+  else camera.setViewOffset(w, h, 0, viewShift, w, h);
+}
 function resize() {
   const w = wrap.clientWidth, h = wrap.clientHeight;
   if (!w || !h) return;
   camera.aspect = w / h;
+  if (viewShift) camera.setViewOffset(w, h, 0, viewShift, w, h);
   camera.updateProjectionMatrix();
   renderer.setSize(w, h, false);
   composer.setSize(w, h);
@@ -1014,6 +1034,7 @@ function paintPass() {
     const b = $('pass' + i);
     b.disabled = used || state.sprintTurn !== i;
     b.innerHTML = used ? 'Pass used' : 'Pass <span class="kbd">H</span>';
+    b.classList.toggle('used', used);
     $('chip' + i).classList.toggle('turn', state.sprintTurn === i);
   });
 }

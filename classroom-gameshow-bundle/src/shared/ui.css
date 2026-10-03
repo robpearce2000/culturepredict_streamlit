@@ -87,8 +87,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 #launcher .wrap { position: relative; max-width: 1240px; margin: 0 auto; padding: 18px 24px 24px; min-height: 100%; display: flex; flex-direction: column; gap: 18px; }
 .l-hero { display: grid; grid-template-columns: minmax(0, 1fr) 260px; align-items: center; gap: 12px; }
 .l-wordmark svg { width: 100%; height: auto; max-height: 34vh; display: block; }
-.l-mascot { position: relative; height: 290px; }
-.l-mascot canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.l-mascot { position: relative; height: 350px; }
+.l-mascot canvas { position: absolute; left: 0; right: 0; bottom: 0; top: 84px; width: 100%; height: calc(100% - 84px); }
 .l-mascot .hello { position: absolute; left: -10px; top: 6px; background: var(--white); color: var(--ink); border: 3px solid var(--ink); border-radius: 16px; padding: 7px 12px; font-weight: 900; font-size: 0.95rem; max-width: 190px; z-index: 2; }
 .l-mascot .hello::after { content: ''; position: absolute; right: 22px; bottom: -13px; border: 10px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
 .l-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
@@ -143,14 +143,14 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 }
 @media (max-width: 820px) {
   .l-hero { grid-template-columns: minmax(0, 1fr) 190px; }
-  .l-mascot { height: 230px; }
+  .l-mascot { height: 290px; }
   .l-mascot .hello { font-size: 0.82rem; max-width: 150px; }
   .set-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   .l-cards { grid-template-columns: 1fr; }
   .l-hero { grid-template-columns: 1fr; }
-  .l-mascot { height: 200px; }
+  .l-mascot { height: 270px; }
   .bank-item { grid-template-columns: auto minmax(0, 1fr); }
   .bank-item .acts { grid-column: 1 / -1; justify-content: flex-start; }
 }

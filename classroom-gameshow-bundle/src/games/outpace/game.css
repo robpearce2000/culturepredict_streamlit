@@ -87,7 +87,8 @@
 .op-chip.turn .nm::after { content: '  ◀ turn'; font-size: 0.75rem; color: var(--op-gold); }
 .op-chip:last-child { align-items: flex-end; }
 .op-pass { background: transparent; color: var(--op-text); border: 2px solid var(--op-line); border-radius: 999px; padding: 4px 12px; font-weight: 900; font-size: 0.82rem; cursor: pointer; min-height: 34px; }
-.op-pass[disabled] { opacity: 0.45; cursor: not-allowed; text-decoration: line-through; }
+.op-pass[disabled] { opacity: 0.45; cursor: not-allowed; }
+.op-pass.used { text-decoration: line-through; }
 .op-score { background: var(--op-gold); color: var(--ink); border: 3px solid var(--ink); border-radius: 14px; padding: 4px 18px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
 .op-score .lbl { font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; }
 .op-score .num { font-family: var(--display); font-size: 2.2rem; line-height: 1; }
