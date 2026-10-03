@@ -59,7 +59,7 @@ node tools/check-banned.js        # searches dist, guide and listing text for te
 node tools/check-contrast.js      # WCAG AA contrast for every colour pair in the UI
 ```
 
-The tests open the built file from `file://` and check: zero network requests and console errors; launcher to each game and back; a full keyboard-only game of each game to the summary; a pasted set appearing in both games; JSON backup export and re-import with no loss; wrong answers from one game appearing in the other; working with storage blocked. `tests/screens.spec.js` takes screenshots of every screen at 1920×1080, 1366×768 and 768×1024 into `screenshots/` and fails if banners, speech bubbles, floating labels or panels overlap.
+The tests open the built file from `file://` and check: zero network requests and console errors; launcher to each game and back; a full keyboard-only game of each game to the summary; a pasted set appearing in both games; JSON backup export and re-import with no loss; wrong answers from one game appearing in the other; working with storage blocked. `tests/screens.spec.js` takes screenshots of every screen at 1920×1080, 1366×768 and 768×1024 (12 batches, each with its own time limit) into `screenshots/` and fails if banners, speech bubbles, floating labels or panels overlap.
 
 ## Question format
 

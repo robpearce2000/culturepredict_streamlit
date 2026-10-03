@@ -24,7 +24,7 @@ Two stand-alone tutoring games packaged as one product.
 - Physics, scoring and difficulty unchanged.
 
 ### Outpace (the race game; working title replaced)
-- New name and logo. The chaser is now **the Hunter**; the offer round is the **Deal Round** with Cautious, Standard and Bold deals; the final is the **Final Sprint**; "help" is now **pass**.
+- New name and logo. The pursuer is now **the Hunter**; the first round is the **Deal Round** with Cautious, Standard and Bold deals; the final is the **Final Sprint**; "help" is now **pass**.
 - Runner and Hunter recoloured gold and magenta with name tags; track and home cell restyled.
 - Full keyboard control (there were no shortcuts before).
 - New bottom dock layout: the pass buttons can no longer cover the question card.

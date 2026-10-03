@@ -35,11 +35,22 @@ async function until(page, fn, ms) {
   await page.waitForTimeout(1500);
 
   // Mascot on its own (transparent) for the cover
-  await page.evaluate(() => { document.getElementById('mascotHello').style.display = 'none'; });
+  await page.evaluate(() => {
+    document.getElementById('mascotHello').style.display = 'none';
+    // transparent page so only the host is captured
+    ['launcher'].forEach(id => { document.getElementById(id).style.background = 'transparent'; });
+    document.querySelector('#launcher .rays').style.display = 'none';
+    document.documentElement.style.background = document.body.style.background = 'transparent';
+  });
   await page.waitForTimeout(2500);
   const mascot = await page.locator('#mascot').screenshot({ omitBackground: true });
   fs.writeFileSync(path.join(ROOT, 'docs', 'mascot.png'), mascot);   // used by the teacher guide
-  await page.evaluate(() => { document.getElementById('mascotHello').style.display = ''; });
+  await page.evaluate(() => {
+    document.getElementById('mascotHello').style.display = '';
+    document.getElementById('launcher').style.background = '';
+    document.querySelector('#launcher .rays').style.display = '';
+    document.documentElement.style.background = document.body.style.background = '';
+  });
 
   // Question bank, with one of the teacher's own sets added
   await page.evaluate(() => {
