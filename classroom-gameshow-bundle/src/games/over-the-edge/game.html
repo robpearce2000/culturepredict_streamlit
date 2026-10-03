@@ -1,0 +1,75 @@
+<section id="game-over-the-edge" class="game ote" aria-label="Over the Edge" hidden>
+<div class="ote-app">
+  <div class="ote-stage" id="ote-stageWrap">
+    <div class="ote-labels" id="ote-labels" aria-hidden="true"></div>
+    <div class="ote-bubble" id="ote-bubble" aria-hidden="true"><span class="who" id="ote-bubbleWho"></span><span id="ote-bubbleText"></span></div>
+    <nav class="topbar" aria-label="Game menu">
+      <button class="btn" type="button" id="ote-menuBtn">◀ Menu <span class="kbd">Esc</span></button>
+      <button class="btn" type="button" id="ote-muteBtn">Sound on</button>
+      <button class="btn" type="button" id="ote-settingsBtn">Settings</button>
+    </nav>
+    <div class="cgb-banner ote-banner" id="ote-banner" role="status"><div class="verdict"></div><div class="detail"></div></div>
+  </div>
+  <aside class="ote-panel" id="ote-panel" aria-live="polite">
+    <div class="ote-scores">
+      <div class="score-card" id="ote-pc0" style="--pc: var(--p0); --pct: var(--p0-text)"><div class="name" data-mark="●"></div><div class="num">£0</div><div class="meta"></div></div>
+      <div class="score-card" id="ote-pc1" style="--pc: var(--p1); --pct: var(--p1-text)"><div class="name" data-mark="■"></div><div class="num">£0</div><div class="meta"></div></div>
+      <div class="ote-team" id="ote-teamCard">
+        <div class="row"><span class="lbl">Team pot</span><span class="val" id="ote-teamVal">£0</span></div>
+        <div class="meter" role="progressbar" aria-label="Jackpot counter progress" aria-valuemin="0" aria-valuemax="100" id="ote-jackBar"><i id="ote-jackMeter"></i></div>
+        <div class="meter-cap" id="ote-jackCap">Jackpot counter: on the shelf</div>
+      </div>
+    </div>
+    <div class="ote-round"><span id="ote-roundName">Ready</span><span id="ote-qCount"></span></div>
+    <div class="ote-qcard" id="ote-qcard">
+      <div class="qwho" id="ote-qWho"></div>
+      <div class="qtag" id="ote-qTag"></div>
+      <div class="qtext" id="ote-qText">Set up the game to begin.</div>
+      <div class="qanswer" id="ote-qAnswer"></div>
+    </div>
+    <div class="ote-actions" id="ote-actions"></div>
+    <div class="ote-feed" id="ote-feed"></div>
+    <div class="keys" id="ote-keys"><span class="kbd">C</span> correct · <span class="kbd">W</span> wrong · <span class="kbd">N</span> no attempt · <span class="kbd">A</span> answer · <span class="kbd">1</span>–<span class="kbd">4</span> lane · <span class="kbd">Space</span> next · <span class="kbd">Esc</span> menu</div>
+  </aside>
+</div>
+
+<div id="ote-home" class="ote-overlay">
+  <div class="cgb-panel ote-card">
+    <div class="ote-logo" id="ote-logo"></div>
+    <div class="ote-rules">Get a question right to win a counter. Pick a lane from 1 to 4, watch it bounce through the pegs onto the moving top shelf, and every counter pushed over the front edge wins £100. Counters that fall off the sides are lost. Look out for the star wildcard counters. In the final, both players team up: every correct answer wins two counters, and pushing the gold jackpot counter over the edge adds £5,000.</div>
+    <div class="ote-names">
+      <label style="--pc: var(--p0); --pct: var(--p0-text)"><span>● Player 1</span><input id="ote-name0" type="text" maxlength="16" value="Player 1" autocomplete="off"></label>
+      <label style="--pc: var(--p1); --pct: var(--p1-text)"><span>■ Player 2</span><input id="ote-name1" type="text" maxlength="16" value="Player 2" autocomplete="off"></label>
+    </div>
+    <div class="field">
+      <label class="lab" for="ote-setSelect">Question set (shared with every game)</label>
+      <select class="cgb-select" id="ote-setSelect"></select>
+      <button class="linkish" id="ote-openBank" type="button">Manage the question bank</button>
+    </div>
+    <div class="ote-two">
+      <div class="field"><span class="lab" id="ote-labR1">Round 1 questions each</span><div class="seg" id="ote-segR1" role="group" aria-labelledby="ote-labR1"><button type="button" data-v="4">4</button><button type="button" data-v="6">6</button><button type="button" data-v="8">8</button></div></div>
+      <div class="field"><span class="lab" id="ote-labF">Final questions</span><div class="seg" id="ote-segF" role="group" aria-labelledby="ote-labF"><button type="button" data-v="8">8</button><button type="button" data-v="12">12</button><button type="button" data-v="16">16</button></div></div>
+    </div>
+    <div class="field"><span class="lab" id="ote-labD">Jackpot difficulty</span><div class="seg" id="ote-segDiff" role="group" aria-labelledby="ote-labD"><button type="button" data-v="easy">Easy</button><button type="button" data-v="normal">Normal</button><button type="button" data-v="hard">Hard</button></div></div>
+    <label class="check" style="margin:4px 0 12px"><input type="checkbox" id="ote-focusWeak"> Pick more questions from topics each player got wrong before</label>
+    <button class="linkish" id="ote-toggleHost" type="button" aria-expanded="false" aria-controls="ote-hostEditor">Customise the host</button>
+    <div class="ote-collapse" id="ote-hostEditor">
+      <div class="ote-hostgrid">
+        <div class="full"><label class="lab" for="ote-hostName">Host name</label><input class="cgb-input" type="text" id="ote-hostName" maxlength="20"></div>
+        <div><span class="lab">Skin</span><div class="swatches" id="ote-swSkin"></div></div>
+        <div><span class="lab">Hair colour</span><div class="swatches" id="ote-swHair"></div></div>
+        <div><span class="lab">Hair style</span><div class="seg" id="ote-segStyle"></div></div>
+        <div><span class="lab">Facial hair</span><div class="seg" id="ote-segBeard"></div></div>
+        <div><span class="lab">Suit</span><div class="swatches" id="ote-swSuit"></div></div>
+        <div><span class="lab">Glasses</span><div class="seg" id="ote-segGlasses"></div></div>
+      </div>
+    </div>
+    <button class="btn go" id="ote-startBtn" type="button" style="width:100%; margin-top:14px;">Start the game <span class="kbd">Enter</span></button>
+  </div>
+</div>
+
+<div id="ote-summary" class="ote-overlay ote-summary hidden">
+  <div class="cgb-panel ote-card" id="ote-sumCard"></div>
+</div>
+<div class="ote-nogl" id="ote-nogl" hidden></div>
+</section>

@@ -1,0 +1,111 @@
+/* =========================================================
+   OVER THE EDGE: game layout. Uses the shared UI kit.
+   Set identity: deep teal studio, aqua light strips, coral and
+   sunflower accents, hazard-stripe front edge.
+   ========================================================= */
+.ote { --ote-bg: #0B2A3A; --ote-accent: #0A6663; background: var(--ote-bg); }
+.ote-app { display: flex; height: 100%; }
+.ote-stage { position: relative; flex: 1; min-width: 0; height: 100%; overflow: hidden; background: var(--ote-bg); }
+.ote-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.ote-labels { position: absolute; inset: 0; pointer-events: none; z-index: 3; overflow: hidden; }
+.ote .flabel { position: absolute; transform: translate(-50%, -50%); font-family: var(--display); font-size: 2.1rem; letter-spacing: 1px; white-space: nowrap; color: var(--sun); paint-order: stroke fill; -webkit-text-stroke: 6px var(--ink); text-shadow: 0 4px 0 var(--ink); }
+.ote .flabel.small { font-size: 1.25rem; color: #fff; -webkit-text-stroke: 5px var(--ink); }
+.ote .flabel.huge { font-size: 4.4rem; }
+.ote .flabel.wild { color: #9FFCF0; }
+
+.ote-bubble { position: absolute; z-index: 6; min-width: 190px; max-width: min(300px, 40%); background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 18px; padding: 10px 14px 12px; font-weight: 800; font-size: 1.05rem; line-height: 1.3; box-shadow: 0 6px 0 rgba(0,0,0,0.3); transform: translate(-50%, -100%); opacity: 0; transition: opacity .2s; pointer-events: none; }
+.ote-bubble.show { opacity: 1; }
+.ote-bubble::after { content: ''; position: absolute; left: var(--tail, 50%); bottom: -14px; margin-left: -10px; border: 11px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
+.ote-bubble .who { display: block; font-size: 0.74rem; color: var(--ote-accent); font-weight: 900; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.6px; }
+
+.ote-banner { left: 50%; top: 30%; transform: translate(-50%, -50%) scale(0.92); width: min(62%, 720px); }
+.ote-banner.show { transform: translate(-50%, -50%) scale(1); }
+
+/* Side panel */
+.ote-panel { width: 25rem; max-width: 46vw; flex: none; height: 100%; background: var(--paper); border-left: 6px solid var(--ink); display: flex; flex-direction: column; padding: 14px 16px 10px; gap: 11px; overflow-y: auto; }
+.ote-scores { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+.ote-scores .score-card { transition: box-shadow .3s, transform .3s; }
+.ote-scores .score-card.active { box-shadow: 0 0 0 4px var(--pc); transform: translateY(-2px); }
+.ote-scores .score-card.active .name::after { content: ' ◀ turn'; font-size: 0.72rem; color: var(--ink-soft); }
+.ote-team { grid-column: 1 / -1; background: #FFF3CC; border: 3px solid var(--ink); border-radius: var(--radius); padding: 10px 12px; display: none; }
+.ote-team .row { display: flex; justify-content: space-between; align-items: baseline; }
+.ote-team .lbl { font-weight: 900; color: var(--ink); }
+.ote-team .val { font-family: var(--display); font-size: 2.2rem; line-height: 1; color: var(--ink); }
+.ote .meter { height: 14px; background: rgba(27,31,59,0.15); border-radius: 8px; overflow: hidden; margin-top: 8px; position: relative; border: 2px solid var(--ink); }
+.ote .meter > i { position: absolute; left: 0; top: 0; bottom: 0; width: 0%; background: repeating-linear-gradient(-45deg, #FFC93C 0 10px, #E0A21E 10px 20px); transition: width .4s; }
+.ote .meter-cap { font-size: 0.8rem; font-weight: 800; color: var(--ink); margin-top: 5px; }
+
+.ote-round { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-bottom: 3px solid var(--line); padding-bottom: 6px; }
+#ote-roundName { font-family: var(--display); font-size: 1.45rem; letter-spacing: 0.3px; color: var(--ote-accent); }
+#ote-qCount { font-size: 0.82rem; font-weight: 900; color: var(--ink-soft); white-space: nowrap; }
+
+.ote-qcard { background: #fff; border: 3px solid var(--line); border-left: 8px solid var(--pc, var(--ote-accent)); border-radius: 16px; padding: 12px 15px; min-height: 140px; }
+.ote-qcard .qwho { font-weight: 900; font-size: 1rem; color: var(--pct, var(--ote-accent)); margin-bottom: 2px; }
+.ote-qcard .qtag { font-size: 0.8rem; font-weight: 800; color: var(--ink-soft); margin-bottom: 8px; }
+.ote-qcard .qtext { font-size: 1.32rem; line-height: 1.36; font-weight: 800; color: var(--ink); overflow-wrap: anywhere; }
+.ote-qcard .qanswer { margin-top: 12px; padding: 10px 12px; background: #E3F6F5; border-radius: 10px; border: 2px solid #9ED9D6; color: #064442; font-weight: 800; font-size: 1.02rem; line-height: 1.4; display: none; }
+.ote-qcard .qanswer::before { content: 'Answer: '; font-weight: 900; }
+.ote-qcard .qanswer.show { display: block; }
+
+.ote-actions { display: flex; flex-direction: column; gap: 10px; }
+.ote-actions .act-row { display: flex; gap: 10px; }
+.ote-actions .act-row > .btn { flex: 1; }
+.ote-chutes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.ote-chute-btn { font-family: var(--display); font-size: 2.2rem; padding: 6px 0 4px; min-height: 64px; border-radius: 12px; cursor: pointer; background: #fff; color: var(--ink); border: 3px solid var(--ink); box-shadow: 0 5px 0 var(--pc); line-height: 1; }
+.ote-chute-btn:hover { background: var(--raised); }
+.ote-chute-btn small { display: block; font-family: var(--body); font-size: 0.7rem; font-weight: 900; color: var(--ink-soft); }
+.ote-dropmsg { font-weight: 900; font-size: 1.12rem; line-height: 1.25; color: var(--pct, var(--ink)); }
+.ote-dropmsg small { display: block; font-size: 0.86rem; color: var(--ink-soft); font-weight: 800; margin-top: 3px; }
+.ote-feed { margin-top: auto; display: flex; flex-direction: column; gap: 3px; }
+.ote-feed div { font-size: 0.8rem; font-weight: 800; color: var(--ink-soft); }
+.ote-feed div:first-child { color: var(--ink); }
+.ote .keys { border-top: 3px solid var(--line); padding-top: 6px; }
+
+/* Overlays (setup and summary) */
+.ote-overlay { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: flex-start; padding: 70px 20px 20px 4vw; overflow-y: auto; background: linear-gradient(90deg, rgba(8,20,30,0.7), rgba(8,20,30,0.15) 70%); }
+.ote-overlay.hidden { display: none; }
+.ote-card { padding: 20px 24px 22px; width: 100%; max-width: 600px; max-height: 100%; overflow-y: auto; }
+.ote-logo svg { display: block; width: 100%; max-width: 380px; height: auto; margin: 0 auto 6px; }
+.ote-rules { font-size: 0.95rem; font-weight: 700; color: var(--ink-soft); line-height: 1.5; background: var(--raised); border-radius: 12px; padding: 10px 14px; margin-bottom: 14px; }
+.ote-names { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.ote-names label { display: block; background: #fff; border-radius: 12px; padding: 8px 12px; border: 2px solid var(--line); border-bottom: 6px solid var(--pc); }
+.ote-names span { font-size: 0.8rem; font-weight: 900; color: var(--pct); }
+.ote-names input { width: 100%; background: transparent; border: none; color: var(--ink); font-weight: 900; font-size: 1.3rem; padding: 2px 0; font-family: var(--body); }
+.ote-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ote-collapse { display: none; margin-top: 8px; }
+.ote-collapse.show { display: block; }
+.ote .swatches { display: flex; gap: 6px; flex-wrap: wrap; }
+.ote .sw { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px var(--line); cursor: pointer; padding: 0; }
+.ote .sw.on { box-shadow: 0 0 0 4px var(--ink); }
+.ote-hostgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; background: var(--raised); border-radius: 12px; padding: 12px; }
+.ote-hostgrid .full { grid-column: 1 / -1; }
+
+.ote-summary { justify-content: center; padding-left: 20px; background: rgba(8,20,30,0.7); }
+.ote-summary .ote-card { max-width: 980px; margin: 0 auto; }
+.ote .sum-head { text-align: center; margin-bottom: 16px; }
+.ote .sum-head .big { font-family: var(--display); font-size: 3.1rem; line-height: 1.05; color: var(--ink); }
+.ote .sum-head .small { font-weight: 800; color: var(--ink-soft); margin-top: 6px; }
+.ote .sum-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.ote .sum-p { background: #fff; border-radius: 14px; padding: 14px 16px; border: 2px solid var(--line); border-top: 8px solid var(--pc); }
+.ote .sum-p h3 { font-family: var(--display); font-size: 1.8rem; margin: 0; color: var(--ink); font-weight: 400; overflow-wrap: anywhere; }
+.ote .sum-stats { font-size: 0.9rem; font-weight: 800; color: var(--ink-soft); margin: 2px 0 10px; }
+.ote .sum-sub { font-size: 0.82rem; font-weight: 900; color: var(--ote-accent); margin: 12px 0 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.ote .missed { font-size: 0.92rem; padding: 7px 0; border-bottom: 1px dashed var(--line); line-height: 1.4; font-weight: 700; }
+.ote .missed .a { color: #064442; font-weight: 900; }
+.ote .missed .t { font-size: 0.76rem; color: var(--ink-soft); }
+.ote .trow { display: flex; justify-content: space-between; gap: 10px; font-size: 0.92rem; font-weight: 800; padding: 4px 0; }
+.ote .trow span:last-child { color: var(--no); white-space: nowrap; }
+.ote .none { color: var(--ink-soft); font-size: 0.9rem; font-style: italic; }
+.ote .sum-btns { display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+.ote .sum-btns .btn { min-width: 200px; }
+.ote-nogl { position: absolute; inset: 0; z-index: 50; background: var(--ote-bg); padding: 16px; }
+
+@media (max-width: 860px), (orientation: portrait) and (max-width: 1100px) {
+  .ote-app { flex-direction: column; }
+  .ote-stage { flex: none; height: 50%; }
+  .ote-panel { width: 100%; max-width: none; height: 50%; border-left: none; border-top: 6px solid var(--ink); }
+  .ote-overlay { justify-content: center; padding-left: 16px; padding-right: 16px; }
+  .ote .sum-grid, .ote-names, .ote-two, .ote-hostgrid { grid-template-columns: 1fr; }
+  .ote-banner { width: 90%; top: 40%; }
+  .ote-bubble { max-width: min(280px, 55%); font-size: 0.95rem; }
+}
