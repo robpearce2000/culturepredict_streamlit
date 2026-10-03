@@ -729,7 +729,12 @@ function placeTag(el, obj, dy, show) {
   const w = wrap.clientWidth, h = wrap.clientHeight;
   const half = el.offsetWidth / 2 + 8;
   el.style.left = Math.min(w - half, Math.max(half, (tagV.x + 1) / 2 * w)) + 'px';
-  el.style.top = ((1 - tagV.y) / 2 * h) + 'px';
+  // keep tags inside the clear band so they never sit on the HUD panels
+  const below = el !== $('tagYou');
+  let y = (1 - tagV.y) / 2 * h;
+  if (below) y = Math.max(band.top + 4, Math.min(band.bottom - el.offsetHeight - 4, y));
+  else y = Math.max(band.top + el.offsetHeight + 4, Math.min(band.bottom - 4, y));
+  el.style.top = y + 'px';
   el.classList.toggle('show', tagV.z < 1 && Math.abs(tagV.x) < 1.1);
 }
 const homePos = new THREE.Vector3(HOME_BASE_X, 0.2, 0);
@@ -743,6 +748,7 @@ function placeTags() {
 
 /* Shift the picture so the race sits in the clear band between the top HUD and the bottom dock */
 let viewShift = 0, shiftFrame = 0;
+const band = { top: 0, bottom: 10000 };   // clear area between the top HUD and the bottom dock
 function updateViewShift() {
   const h = wrap.clientHeight, w = wrap.clientWidth;
   if (!w || !h) return;
@@ -752,7 +758,9 @@ function updateViewShift() {
     const top = hud.querySelector('.op-top').getBoundingClientRect().bottom;
     const dock = hud.querySelector('.op-dock').getBoundingClientRect().top;
     if (dock > top) want = Math.round(h / 2 - (top + dock) / 2);
-  }
+    const base = wrap.getBoundingClientRect().top;
+    band.top = top - base; band.bottom = dock - base;
+  } else { band.top = 0; band.bottom = h; }
   if (Math.abs(want - viewShift) < 2) return;
   viewShift += (want - viewShift) * (reduced() ? 1 : 0.25);
   if (Math.abs(viewShift) < 1) { camera.clearViewOffset(); viewShift = 0; }

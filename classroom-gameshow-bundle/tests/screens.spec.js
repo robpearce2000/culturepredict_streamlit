@@ -57,20 +57,11 @@ async function findProblems(page) {
   }, WATCH);
 }
 
-for (const size of SIZES) {
-  test(`screens at ${size.name}`, async ({ browser }) => {
-    test.setTimeout(420000);
-    const ctx = await browser.newContext({ viewport: { width: size.width, height: size.height } });
-    const page = await ctx.newPage();
-    const log = await openBundle(page);
-    const problems = [];
-    async function shot(name, settle) {
-      await page.waitForTimeout(settle == null ? 600 : settle);
-      await page.screenshot({ path: path.join(OUT, size.name, name + '.png') });
-      (await findProblems(page)).forEach(p => problems.push(`${name}: ${p}`));
-    }
-    const until = async (fn, ms) => { const end = Date.now() + (ms || 30000); while (Date.now() < end) { if (await fn()) return true; await page.waitForTimeout(150); } return false; };
-
+/* Each size runs as three smaller batches (launcher, Over the Edge, Outpace),
+   each in a fresh page with its own time limit, so one slow screen can't stall the sweep. */
+test.describe.configure({ mode: 'parallel' });
+const SECTIONS = {
+  launcher: async ({ page, shot }) => {
     // ---------- Launcher ----------
     await page.waitForTimeout(1500);
     await shot('01-launcher');
@@ -81,7 +72,10 @@ for (const size of SIZES) {
     await page.click('#launcherSettings [data-key="textSize"] button:nth-child(2)');
     await shot('05-launcher-large-text');
 
+  },
+  'over-the-edge': async ({ page, shot, until }) => {
     // ---------- Over the Edge (large text stays on for the first screens) ----------
+    await page.evaluate(() => CGB.settings.set('textSize', 'large'));
     await page.click('[data-play="over-the-edge"]');
     await shot('10-ote-setup-large-text', 1500);
     await page.click('#game-over-the-edge #ote-settingsBtn'); await shot('11-settings-modal'); await page.keyboard.press('Escape');
@@ -116,6 +110,8 @@ for (const size of SIZES) {
     await shot('21-ote-summary', 800);
     await page.click('#ote-menuBtn2');
 
+  },
+  outpace: async ({ page, shot, until }) => {
     // ---------- Outpace ----------
     await page.click('[data-play="outpace"]');
     await shot('30-op-setup', 1200);
@@ -150,9 +146,28 @@ for (const size of SIZES) {
     await until(async () => (await state(page, 'outpace')).phase === 'summary', 60000);
     await shot('39-op-summary', 800);
 
-    await ctx.close();
-    expect(log.errors, 'console errors').toEqual([]);
-    expect(log.requests, 'network requests').toEqual([]);
-    expect(problems, 'layout problems').toEqual([]);
-  });
+  }
+};
+
+for (const size of SIZES) {
+  for (const [section, run] of Object.entries(SECTIONS)) {
+    test(`screens at ${size.name}: ${section}`, async ({ browser }) => {
+      test.setTimeout(section === 'launcher' ? 90000 : 240000);
+      const ctx = await browser.newContext({ viewport: { width: size.width, height: size.height } });
+      const page = await ctx.newPage();
+      const log = await openBundle(page);
+      const problems = [];
+      async function shot(name, settle) {
+        await page.waitForTimeout(settle == null ? 600 : settle);
+        await page.screenshot({ path: path.join(OUT, size.name, name + '.png'), timeout: 60000 });
+        (await findProblems(page)).forEach(p => problems.push(`${name}: ${p}`));
+      }
+      const until = async (fn, ms) => { const end = Date.now() + (ms || 30000); while (Date.now() < end) { if (await fn()) return true; await page.waitForTimeout(150); } return false; };
+      await run({ page, shot, until });
+      await ctx.close();
+      expect(log.errors, 'console errors').toEqual([]);
+      expect(log.requests, 'network requests').toEqual([]);
+      expect(problems, 'layout problems').toEqual([]);
+    });
+  }
 }
