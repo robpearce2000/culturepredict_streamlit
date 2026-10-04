@@ -108,17 +108,27 @@ function buildBoard() {
   const cats = (chosen.length ? chosen : all.slice(0, S.nCats).map(t => t.topic)).map(name => all.find(t => t.topic === name)).filter(Boolean);
   const weak = $('focusWeak').checked ? new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.q))) : null;
   S.cats = cats.map(t => {
-    // order by difficulty, split into five bands (easiest to hardest) and take one from each band,
-    // preferring questions a team got wrong before when that option is on
-    const qs = t.qs.slice().sort((a, b) => bank.estimateLevel(a) - bank.estimateLevel(b));
-    const n = qs.length;
+    // Row k (100 to 500 points) takes a question tagged Difficulty k+1. Untagged questions get a
+    // level from their place in the topic's estimated order. If a row has no question at its
+    // level, the nearest level is used, then any question left. Questions a team got wrong
+    // before are preferred when that option is on.
+    const untagged = t.qs.filter(q => !q.level).sort((a, b) => bank.estimateLevel(a) - bank.estimateLevel(b));
+    const levelOf = q => q.level || 1 + Math.floor(untagged.indexOf(q) * 5 / untagged.length);
+    const left = t.qs.slice();
     const rnd = a => a[Math.floor(Math.random() * a.length)];
-    const picks = VALUES.map((v, k) => {
-      if (n < 5) return qs[k] || null;
-      const band = qs.slice(Math.floor(k * n / 5), Math.floor((k + 1) * n / 5));
-      const missed = weak ? band.filter(q => weak.has(q.q)) : [];
-      return rnd(missed.length ? missed : band);
-    });
+    const take = (k, exact) => {
+      if (!left.length) return null;
+      const gap = exact ? 0 : Math.min(...left.map(q => Math.abs(levelOf(q) - (k + 1))));
+      const pool = left.filter(q => Math.abs(levelOf(q) - (k + 1)) === gap);
+      if (!pool.length) return null;
+      const missed = weak ? pool.filter(q => weak.has(q.q)) : [];
+      const q = rnd(missed.length ? missed : pool);
+      left.splice(left.indexOf(q), 1);
+      return q;
+    };
+    // exact levels first, so a short row never uses up another row's question
+    const picks = VALUES.map((v, k) => take(k, true));
+    VALUES.forEach((v, k) => { if (!picks[k]) picks[k] = take(k, false); });
     return { topic: t.topic, subject: t.subject, tiles: picks.map((q, k) => ({ value: VALUES[k], q, used: !q, wonBy: -1, star: false, empty: !q })) };
   });
   if ($('optStar').checked) {
@@ -379,7 +389,8 @@ return {
   enter() { active = true; if (S.phase === 'home') { $('names').innerHTML = ''; renderNames(); renderTopics(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => S.phase === 'board' || S.phase === 'question',
-  _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) })
+  _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
+  _board: () => S.cats
 };
 }
 
@@ -389,6 +400,7 @@ CGB.registerGame('category-clash', {
   enter() { if (game) game.enter(); },
   exit() { if (game) game.exit(); },
   inProgress() { return !!(game && game.inProgress()); },
-  state() { return game && game._state(); }
+  state() { return game && game._state(); },
+  board() { return game && game._board(); }
 });
 })();

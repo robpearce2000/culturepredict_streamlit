@@ -6,7 +6,7 @@
 .op-stage { position: absolute; inset: 0; }
 .op-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .op-labels { position: absolute; inset: 0; pointer-events: none; z-index: 2; overflow: hidden; }
-.op-tag { position: absolute; left: 0; top: 0; transform: translate(-50%, -100%); font-family: var(--display); font-size: 1.15rem; letter-spacing: 0.5px; padding: 3px 12px 2px; border-radius: 999px; border: 3px solid var(--ink); white-space: nowrap; opacity: 0; transition: opacity .2s; }
+.op-tag { position: absolute; left: 0; top: 0; transform: translate(-50%, -100%); font-family: var(--display); font-size: clamp(1.35rem, 2.1vw, 2rem); letter-spacing: 0.5px; padding: 4px 16px 3px; border-radius: 999px; border: 3px solid var(--ink); white-space: nowrap; opacity: 0; transition: opacity .2s; }
 .op-tag.show { opacity: 1; }
 .op-tag.you { background: var(--op-gold); color: var(--ink); }
 .op-tag.hunter { background: #C026D3; color: #fff; transform: translate(-50%, 0); }
@@ -73,6 +73,10 @@
 .op-qcard .qanswer.shown { display: block; }
 .op-btn-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 .op-btn-row .btn { min-width: 160px; }
+.op-btn-row .btn.plain { min-width: 0; }
+.op-marked { font-family: var(--display); font-size: 1.6rem; padding: 6px 18px; border-radius: 12px; color: #fff; }
+.op-marked.ok { background: var(--ok); }
+.op-marked.no { background: var(--no); }
 
 .op-timer { font-family: var(--display); font-size: 3rem; line-height: 1; color: var(--op-text); }
 .op-timer.low { color: var(--op-hunter); }

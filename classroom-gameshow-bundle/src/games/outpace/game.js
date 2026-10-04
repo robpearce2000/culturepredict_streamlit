@@ -290,8 +290,48 @@ const cellMat = new THREE.MeshStandardMaterial({ color: 0x252C6B, roughness: 0.5
 const homeMat = new THREE.MeshStandardMaterial({ color: 0x12A4A0, emissive: 0x0A4F4D, roughness: 0.4, metalness: 0.2 });
 const trimMat = new THREE.MeshStandardMaterial({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.5, roughness: 0.3 });
 const homeTrimMat = new THREE.MeshStandardMaterial({ color: 0x9FFCF0, emissive: 0x4FF0D8, emissiveIntensity: 0.8, roughness: 0.3 });
+/* Painted tile tops: chevrons pointing home and the number of steps left */
+const tileTex = {};
+function tileTexture(i) {
+  if (tileTex[i]) return tileTex[i];
+  const c = document.createElement('canvas'); c.width = 256; c.height = 160;
+  const g = c.getContext('2d');
+  const home = i === 0;
+  g.lineJoin = g.lineCap = 'round';
+  // chevrons point left, towards home
+  g.strokeStyle = home ? 'rgba(255,255,255,0.35)' : 'rgba(180,190,255,0.55)'; g.lineWidth = 12;
+  [[40, 80], [216, 80]].forEach(([x, y]) => { g.beginPath(); g.moveTo(x + 18, y - 30); g.lineTo(x - 12, y); g.lineTo(x + 18, y + 30); g.stroke(); });
+  g.fillStyle = '#fff'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.font = home ? '64px "Lilita One", sans-serif' : '104px "Lilita One", sans-serif';
+  g.strokeStyle = 'rgba(10,12,40,0.9)'; g.lineWidth = 10;
+  g.strokeText(home ? 'HOME' : String(i), 128, home ? 84 : 88);
+  g.fillText(home ? 'HOME' : String(i), 128, home ? 84 : 88);
+  const t = new THREE.CanvasTexture(c);
+  t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  return (tileTex[i] = t);
+}
+const tileTopGeo = new THREE.PlaneGeometry(CELL_SPACING - 0.2, 0.86);
+/* Finish post at home: two glowing posts and a HOME sign facing the class */
+const finishGroup = new THREE.Group();
+(function buildFinish() {
+  const postMat = new THREE.MeshStandardMaterial({ color: 0x9FFCF0, emissive: 0x2BD9C2, emissiveIntensity: 0.9, roughness: 0.3 });
+  const postGeo = new THREE.CylinderGeometry(0.06, 0.06, 1.9, 12);
+  [-0.5, 0.5].forEach(z => { const m = new THREE.Mesh(postGeo, postMat); m.position.set(0, 0.95, z); finishGroup.add(m); });
+  const c = document.createElement('canvas'); c.width = 512; c.height = 160;
+  const g = c.getContext('2d');
+  g.fillStyle = '#0A6663'; g.fillRect(0, 0, 512, 160);
+  g.fillStyle = '#9FFCF0'; g.fillRect(0, 0, 512, 12); g.fillRect(0, 148, 512, 12);
+  g.fillStyle = '#fff'; g.font = '108px "Lilita One", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText('HOME', 256, 86);
+  const tex = new THREE.CanvasTexture(c);
+  const sign = new THREE.Mesh(new THREE.PlaneGeometry(1.7, 0.53), new THREE.MeshBasicMaterial({ map: tex }));
+  sign.position.set(0, 1.95, 0.5);
+  finishGroup.add(sign);
+})();
 function buildTrack(totalCells) {
   trackGroup.clear();
+  finishGroup.position.set(cellX(0) - CELL_SPACING / 2 + 0.02, 0, 0);
+  trackGroup.add(finishGroup);
   for (let i = 0; i < totalCells; i++) {
     const mesh = new THREE.Mesh(cellGeo, i === 0 ? homeMat : cellMat);
     mesh.position.set(cellX(i), 0.08, 0);
@@ -301,6 +341,10 @@ function buildTrack(totalCells) {
     const trim = new THREE.Mesh(trimGeo, i === 0 ? homeTrimMat : trimMat);
     trim.position.set(cellX(i), 0.17, (CELL_SPACING - 0.14) / 2 - 0.05);
     trackGroup.add(trim);
+    const top = new THREE.Mesh(tileTopGeo, new THREE.MeshBasicMaterial({ map: tileTexture(i), transparent: true, depthWrite: false }));
+    top.rotation.x = -Math.PI / 2;
+    top.position.set(cellX(i), 0.165, 0);
+    trackGroup.add(top);
   }
 }
 let currentRoundType = 'deal'; // 'deal' | 'sprint'
@@ -460,6 +504,14 @@ function framingZ(spread) {
   return Math.max(5.0 + spread * 0.85, fitZ);
 }
 
+function dealFraming() {
+  const minX = cellX(0) - CELL_SPACING / 2 - 1.6, maxX = cellX(TRACK_STEPS + MAX_GAP) + CELL_SPACING / 2 + 0.7;
+  const hHalf = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect;
+  const dist = (maxX - minX) / 2 / hHalf + 1.2;
+  const tilt = THREE.MathUtils.degToRad(24);
+  return { x: (minX + maxX) / 2, y: 0.35 + dist * Math.sin(tilt), z: dist * Math.cos(tilt) };
+}
+
 const clock = new THREE.Clock();
 let active = false, rafId = 0;
 function animate() {
@@ -502,12 +554,22 @@ function animate() {
       hunterGroup.position.x += hunterVelX;
     }
 
-    const midX = (runnerGroup.position.x + hunterGroup.position.x) / 2;
-    const spread = Math.abs(hunterGroup.position.x - runnerGroup.position.x);
-    const desiredZ = framingZ(spread);
-    camera.position.x += (midX - camera.position.x) * 0.05;
-    camera.position.z += (desiredZ - camera.position.z) * 0.05;
-    camera.lookAt(midX, 0.6, 0);
+    if (currentRoundType === 'deal') {
+      // the whole track, from the finish post to the Hunter's furthest start, fills the width
+      const f = dealFraming();
+      camera.position.x += (f.x - camera.position.x) * 0.06;
+      camera.position.y += (f.y - camera.position.y) * 0.06;
+      camera.position.z += (f.z - camera.position.z) * 0.06;
+      camera.lookAt(camera.position.x, 0.35, 0);
+    } else {
+      const midX = (runnerGroup.position.x + hunterGroup.position.x) / 2;
+      const spread = Math.abs(hunterGroup.position.x - runnerGroup.position.x);
+      const desiredZ = framingZ(spread);
+      camera.position.x += (midX - camera.position.x) * 0.05;
+      camera.position.y += (2.4 - camera.position.y) * 0.05;
+      camera.position.z += (desiredZ - camera.position.z) * 0.05;
+      camera.lookAt(midX, 0.6, 0);
+    }
 
     if (shakeAmt > 0.001) {
       camera.position.x += (Math.random() - 0.5) * shakeAmt;
@@ -854,6 +916,9 @@ function startDealRound(playerIdx) {
   runnerGroup.userData.targetX = cellX(runnerCellIndex);
   hunterGroup.userData.targetX = cellX(hunterCellIndex);
   $('tagYou').textContent = '▲ ' + state.players[playerIdx].name;
+  const f = dealFraming();                 // start already framed on the whole track
+  camera.position.set(f.x, f.y, f.z);
+  camera.lookAt(f.x, 0.35, 0);
 
   showHud('deal');
   $('dealLabel').textContent = state.players[playerIdx].name + ': choose your deal';
@@ -887,13 +952,13 @@ function dealStatus() {
   $('dealStatus').textContent = `${runnerCellIndex} step${runnerCellIndex === 1 ? '' : 's'} to home · Hunter ${gap} step${gap === 1 ? '' : 's'} behind`;
 }
 
+/* Correct and Wrong work at any time, as in the other games: marking shows the
+   answer for a moment before play moves on. Show answer (A) is optional. */
 function renderAnswerButtons(rowId, answerId, onAnswer, labels) {
   const row = $(rowId);
-  if (!state.answerShown) {
-    row.innerHTML = `<button class="btn go" type="button" data-a="reveal">Show answer <span class="kbd">A</span></button>`;
-  } else {
-    row.innerHTML = `<button class="btn ok" type="button" data-a="correct">✓ ${labels[0]} <span class="kbd">C</span></button><button class="btn no" type="button" data-a="wrong">✗ ${labels[1]} <span class="kbd">W</span></button>`;
-  }
+  row.classList.remove('marked');
+  row.innerHTML = `<button class="btn ok" type="button" data-a="correct">✓ ${labels[0]} <span class="kbd">C</span></button><button class="btn no" type="button" data-a="wrong">✗ ${labels[1]} <span class="kbd">W</span></button>` +
+    (state.answerShown ? '' : `<button class="btn plain" type="button" data-a="reveal">Show answer <span class="kbd">A</span></button>`);
   $(answerId).classList.toggle('shown', state.answerShown);
   row.onclick = e => {
     const b = e.target.closest('button[data-a]'); if (!b) return;
@@ -901,14 +966,23 @@ function renderAnswerButtons(rowId, answerId, onAnswer, labels) {
     else onAnswer(b.dataset.a === 'correct');
   };
 }
+const ids = () => state.phase === 'deal' ? ['dealBtnRow', 'dealQAnswer'] : ['sprintBtnRow', 'sprintQAnswer'];
 function revealAnswer() {
   if (state.answerShown || state.awaitingNext || !state.currentQuestion) return;
   if (state.phase === 'sprint' && state.sprintTimeLeft <= 0) return;
   state.answerShown = true;
-  if (state.phase === 'deal') renderAnswerButtons('dealBtnRow', 'dealQAnswer', answerDeal, ['Correct', 'Wrong']);
-  else if (state.phase === 'sprint') renderAnswerButtons('sprintBtnRow', 'sprintQAnswer', answerSprint, ['Correct +1', 'Wrong −1']);
-  const ok = document.querySelector(state.phase === 'deal' ? '#op-dealBtnRow .btn.ok' : '#op-sprintBtnRow .btn.ok');
-  if (ok) ok.focus({ preventScroll: true });
+  const [row, ans] = ids();
+  $(ans).classList.add('shown');
+  const btn = $(row).querySelector('[data-a="reveal"]');
+  if (btn) { if (document.activeElement === btn) $(row).querySelector('.btn.ok').focus({ preventScroll: true }); btn.remove(); }
+}
+/* Show the answer with the verdict in place of the buttons */
+function showMarked(correct, text) {
+  const [row, ans] = ids();
+  state.answerShown = true;
+  $(ans).classList.add('shown');
+  $(row).classList.add('marked');
+  $(row).innerHTML = `<div class="op-marked ${correct ? 'ok' : 'no'}" role="status">${correct ? '✓' : '✗'} ${text}</div>`;
 }
 
 function askDealQuestion() {
@@ -924,8 +998,13 @@ function askDealQuestion() {
 }
 
 function answerDeal(correct) {
-  if (state.phase !== 'deal' || !state.answerShown || state.awaitingNext) return;
+  if (state.phase !== 'deal' || !state.dealReward || state.awaitingNext || !state.currentQuestion) return;
   state.awaitingNext = true;
+  showMarked(correct, correct ? 'Correct: one step closer to home' : 'Wrong: the Hunter moves closer');
+  later(() => moveDeal(correct), MARK_PAUSE);
+}
+const MARK_PAUSE = 1300;
+function moveDeal(correct) {
   $('qcard').hidden = true;
   if (correct) {
     SFX.correct();
@@ -1058,7 +1137,8 @@ function askSprintQuestion() {
 }
 
 function answerSprint(correct) {
-  if (state.phase !== 'sprint' || state.sprintTimeLeft <= 0 || !state.answerShown) return;
+  if (state.phase !== 'sprint' || state.sprintTimeLeft <= 0 || state.awaitingNext || !state.currentQuestion) return;
+  state.awaitingNext = true;
   if (correct) {
     SFX.correct();
     state.sprintNetScore++;
@@ -1071,12 +1151,15 @@ function answerSprint(correct) {
   }
   runnerGroup.userData.targetX = runnerTargetX(Math.min(state.sprintNetScore, state.sprintTarget), state.sprintTarget);
   $('sprintScore').textContent = state.sprintNetScore;
-  state.sprintTurn = state.sprintTurn === 0 ? 1 : 0;
-  if (state.sprintTimeLeft > 0) askSprintQuestion();
+  showMarked(correct, correct ? 'Correct +1' : 'Wrong −1');
+  later(() => {
+    state.sprintTurn = state.sprintTurn === 0 ? 1 : 0;
+    if (state.phase === 'sprint' && state.sprintTimeLeft > 0) askSprintQuestion();
+  }, 900);
 }
 
 function usePass(idx) {
-  if (state.phase !== 'sprint' || state.sprintPassUsed[idx] || state.sprintTimeLeft <= 0) return;
+  if (state.phase !== 'sprint' || state.sprintPassUsed[idx] || state.sprintTimeLeft <= 0 || state.awaitingNext) return;
   if (state.sprintTurn !== idx) return;
   state.sprintPassUsed[idx] = true;
   state.sprintTurn = idx === 0 ? 1 : 0;
@@ -1169,9 +1252,9 @@ document.addEventListener('keydown', e => {
     return;
   }
   if (state.phase === 'deal' || state.phase === 'sprint') {
-    if (!state.answerShown && (k === 'a' || (k === ' ' && !isButton))) { e.preventDefault(); revealAnswer(); }
-    else if (state.answerShown && k === 'c') (state.phase === 'deal' ? answerDeal : answerSprint)(true);
-    else if (state.answerShown && k === 'w') (state.phase === 'deal' ? answerDeal : answerSprint)(false);
+    if (k === 'a' || (k === ' ' && !isButton)) { e.preventDefault(); revealAnswer(); }
+    else if (k === 'c') (state.phase === 'deal' ? answerDeal : answerSprint)(true);
+    else if (k === 'w') (state.phase === 'deal' ? answerDeal : answerSprint)(false);
     else if (state.phase === 'sprint' && k === 'h') usePass(state.sprintTurn);
   }
 });

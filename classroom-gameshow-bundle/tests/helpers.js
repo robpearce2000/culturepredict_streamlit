@@ -47,8 +47,9 @@ async function playOutpace(page, opts) {
     if (s.roundEnd) await page.keyboard.press('Enter');
     else if (s.phase === 'deal' && !s.dealReward) await page.keyboard.press('3');
     else if ((s.phase === 'deal' || s.phase === 'sprint') && !s.awaitingNext) {
-      if (!s.answerShown) await page.keyboard.press('a');
-      else { await page.keyboard.press(s.phase === 'sprint' && n++ % 3 ? 'c' : 'w'); }
+      // mark straight away most of the time; now and then show the answer first (optional)
+      if (!s.answerShown && n % 5 === 4) { n++; await page.keyboard.press('a'); }
+      else { await page.keyboard.press(s.phase === 'sprint' && n % 3 ? 'c' : 'w'); n++; }
       if (s.phase === 'sprint' && opts.shortSprint && s.timeLeft > 3) await page.evaluate(() => CGB.games.outpace.setTime(2.5));
     }
     await page.waitForTimeout(150);

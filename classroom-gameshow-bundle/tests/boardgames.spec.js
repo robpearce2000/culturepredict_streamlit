@@ -118,3 +118,34 @@ test('Difficulty lines order Category Clash values', async ({ page }) => {
     await page.keyboard.press('c'); await page.keyboard.press('Enter');
   }
 });
+
+test('Category Clash fills a row from the nearest difficulty when a level is missing', async ({ page }) => {
+  await openBundle(page);
+  await page.evaluate(() => {
+    const lines = ['Subject: Test', 'Topic: Lopsided', 'Difficulty: 1'];
+    for (let i = 1; i <= 4; i++) lines.push(`Q: Easy ${i}?`, `A: E${i}`);
+    lines.push('Difficulty: 5', 'Q: Hard one?', 'A: H');
+    CGB.bank.addSet('Lopsided set', lines.join('\n'));
+  });
+  await page.click('[data-play="category-clash"]');
+  await page.click('#cc-startBtn');
+  const tiles = await page.evaluate(() => CGB.games['category-clash'].board().map(c => c.tiles.map(t => t.q && t.q.q)));
+  expect(tiles[0].filter(Boolean).length).toBe(5);
+  expect(tiles[0][4]).toBe('Hard one?');
+  expect(tiles[0][0]).toMatch(/^Easy/);
+});
+
+test('every built-in question has a difficulty from 1 to 5, and each topic spans the range', async ({ page }) => {
+  await openBundle(page);
+  const r = await page.evaluate(() => {
+    const out = { untagged: 0, narrow: [] };
+    CGB.bank.all().filter(s => s.builtin).forEach(s => {
+      const topics = {};
+      s.questions.forEach(q => { if (!(q.level >= 1 && q.level <= 5)) out.untagged++; (topics[q.topic] = topics[q.topic] || new Set()).add(q.level); });
+      Object.entries(topics).forEach(([t, l]) => { if (l.size < 5) out.narrow.push(s.id + ': ' + t); });
+    });
+    return out;
+  });
+  expect(r.untagged).toBe(0);
+  expect(r.narrow).toEqual([]);
+});

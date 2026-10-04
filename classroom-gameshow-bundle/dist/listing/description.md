@@ -14,11 +14,11 @@ Four whole-class revision games for your interactive whiteboard, with a shared q
 
 Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains four original quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
 
-**Over the Edge** (2 players or teams)
+**Over the Edge** (2 teams)
 Answer correctly to win a counter, choose one of four lanes and watch it bounce down the peg board onto a moving 3D shelf. Every counter pushed over the edge wins prize money, and star wildcard counters bring bonuses and steals. In the final, both sides team up to push the gold jackpot counter over the edge. Hosted by Marty Marquee, a cartoon host you can rename and restyle.
 
-**Outpace** (2 players or teams)
-Pick a deal, then answer your way home before the Hunter catches you. Bigger deals give the Hunter a shorter gap. Then both players face a 60-second Final Sprint against a target set by their combined pot.
+**Outpace** (2 teams)
+Pick a deal, then answer your way home before the Hunter catches you. Bigger deals give the Hunter a shorter gap. Then both teams face a 60-second Final Sprint against a target set by their combined pot.
 
 **Category Clash** (2 to 4 teams)
 A board of categories and points values for whole-class revision across several topics at once. Teams take turns to pick a tile; harder questions are worth more, wrong answers can be stolen by another team, and one hidden star tile is worth double. Optional answer timer.
@@ -29,7 +29,7 @@ A tactical race across a board of lettered hexagons. Each letter is the first le
 **One question bank for every game**
 - 191 AQA-style GCSE Combined Science questions across Biology, Chemistry and Physics, plus a 61-question Homeostasis lesson set
 - Add your own sets in seconds by pasting simple text (Subject, Topic, Q, A), for any subject. Add an optional Difficulty line to set the points in Category Clash
-- Wrong answers are saved for each player or team and follow them between games, so you can see the weakest topics and steer questions towards them
+- Wrong answers are saved for each team and follow them between games, so you can see the weakest topics and steer questions towards them
 - Save a backup file to move your sets and history to another computer
 
 **Made for real classrooms**
@@ -40,7 +40,7 @@ A tactical race across a board of lettered hexagons. Each letter is the first le
 - Short teacher guide (PDF) with set-up steps, shortcuts, classroom tips and troubleshooting
 
 **Privacy**
-No data leaves your computer. There are no accounts, no tracking and no analytics. Question sets and pupil history are stored only in your browser on your device, and you can clear any player's history at any time.
+No data leaves your computer. There are no accounts, no tracking and no analytics. Question sets and pupil history are stored only in your browser on your device, and you can clear any team's history at any time.
 
 **What's included**
 - showtime-classroom-gameshows.html (the games)

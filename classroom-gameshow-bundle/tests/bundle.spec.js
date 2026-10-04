@@ -87,3 +87,16 @@ test('a full game of Outpace with keyboard shortcuts reaches the summary', async
   expect(log.errors).toEqual([]);
   expect(log.requests).toEqual([]);
 });
+
+test('Outpace: C marks a question straight away and shows the answer', async ({ page }) => {
+  await openBundle(page, '#outpace');
+  await page.click('#op-startBtn');
+  await page.keyboard.press('2');
+  await expect(page.locator('#op-qcard')).toBeVisible();
+  await expect(page.locator('#op-dealBtnRow [data-a="correct"]')).toBeVisible();
+  await expect(page.locator('#op-dealQAnswer')).toBeHidden();
+  await page.keyboard.press('c');
+  await expect(page.locator('#op-dealQAnswer')).toBeVisible();
+  await expect(page.locator('#op-dealBtnRow .op-marked.ok')).toBeVisible();
+  expect((await state(page, 'outpace')).awaitingNext).toBe(true);
+});
