@@ -22,7 +22,7 @@ src/
     packs.js                 built-in question packs in the plain-text format
     bank.js                  question bank: subjects and exam boards, sets, set in use, picker, wrong-answer history, backup
     sfx.js                   Web Audio synthesised sound effects (no audio files)
-    host.js                  Marty Marquee, the customisable 2D (SVG) host, mascot and corner host
+    host.js                  the customisable 2D (SVG) host (nameless unless named), mascot and corner host
     brand.js                 wordmark, game logos and launcher art, drawn as SVG
     ui.css                   shared UI kit: tokens, buttons, panels, score cards, banners, modals, launcher
     app.js                   launcher (subject panel, host editor), routing, bank manager, settings, about, setup-card fitting

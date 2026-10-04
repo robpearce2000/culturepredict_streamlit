@@ -105,10 +105,12 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 #launcher { position: fixed; inset: 0; overflow-y: auto; overflow-x: hidden; color: #fff; background: radial-gradient(ellipse at 50% -10%, #3A3F86 0%, var(--night-2) 38%, var(--night) 75%); }
 #launcher .rays { position: absolute; inset: 0; pointer-events: none; opacity: 0.5; }
 #launcher .wrap { position: relative; max-width: 1240px; margin: 0 auto; padding: 18px 24px 24px; min-height: 100%; display: flex; flex-direction: column; gap: 18px; }
-.l-hero { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr) 220px; align-items: center; gap: 18px; }
+.l-hero { display: grid; grid-template-columns: minmax(230px, 0.62fr) minmax(0, 1.25fr) minmax(200px, 0.55fr); align-items: center; gap: 18px; }
 /* subject panel: choose the subject and exam board first; every game follows it */
 .l-subject { background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 14px 16px 12px; display: flex; flex-direction: column; gap: 10px; }
-.l-subject h2 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; margin: 0; color: var(--sun); }
+.l-subject h2 { font-family: var(--display); font-weight: 400; font-size: 1.5rem; margin: 0; color: var(--sun); }
+.l-subject .l-pick { flex: 1 1 0; min-width: 0; min-height: 40px; font-weight: 800; }
+.l-subject #openBank { align-self: flex-start; }
 .l-chips { display: flex; flex-wrap: wrap; gap: 7px; }
 .l-chips .chip { background: rgba(255,255,255,0.1); color: #fff; border: 2px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 6px 13px; font: inherit; font-weight: 900; font-size: 0.95rem; cursor: pointer; min-height: 38px; }
 .l-chips .chip:hover { border-color: #fff; }
@@ -116,16 +118,20 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .l-chips .chip.on::before { content: '✓ '; }
 .l-chips .chip[data-empty] { border-style: dashed; }
 .l-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.l-row .lab { margin: 0; min-width: 6.5em; }
+.l-row { flex-wrap: nowrap; }
+.l-row .lab { margin: 0; min-width: 5.6em; color: #fff; }
 .l-qrow .cgb-select { flex: 1 1 200px; min-width: 0; width: auto; }
 .l-note { margin: 0; font-size: 0.88rem; font-weight: 700; color: #FFE7A8; }
 .l-host { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .l-host .btn { border-color: var(--ink); }
 .l-wordmark svg { width: 100%; height: auto; max-height: 34vh; display: block; }
-.l-mascot { position: relative; height: 320px; width: 100%; }
-.l-mascot .host-wrap { position: absolute; left: 0; right: 0; bottom: 0; top: 76px; width: auto; height: auto; }
-.l-mascot .hello { position: absolute; left: -10px; top: 6px; background: var(--white); color: var(--ink); border: 3px solid var(--ink); border-radius: 16px; padding: 7px 12px; font-weight: 900; font-size: 0.95rem; max-width: 190px; z-index: 2; }
-.l-mascot .hello::after { content: ''; position: absolute; right: 22px; bottom: -13px; border: 10px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
+.l-mascot { position: relative; height: 320px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+/* the bubble sits in the flow above the host, so it can never cover him */
+.l-mascot .hello { position: relative; flex: none; background: var(--white); color: var(--ink); border: 3px solid var(--ink); border-radius: 16px; padding: 7px 12px; font-weight: 900; font-size: 0.95rem; max-width: 220px; z-index: 2; margin-bottom: 14px; text-align: center; }
+.l-mascot .hello .who { display: block; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-deep, #0A6663); }
+.l-mascot .hello .who[hidden] { display: none; }
+.l-mascot .hello::after { content: ''; position: absolute; left: 50%; margin-left: -10px; bottom: -13px; border: 10px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
+.l-mascot .host-wrap { position: relative; flex: 1 1 auto; min-height: 0; width: 100%; height: auto; }
 .l-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .gcard { background: var(--paper); color: var(--ink); border-radius: 22px; border: 4px solid var(--ink); box-shadow: 0 8px 0 rgba(0,0,0,0.35); overflow: hidden; display: flex; flex-direction: column; }
 .gcard .art { aspect-ratio: 16 / 8.2; background: var(--night-2); position: relative; }
@@ -134,6 +140,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .gcard h3 { font-family: var(--display); font-weight: 400; font-size: 1.8rem; margin: 0; line-height: 1; letter-spacing: 0.5px; }
 .gcard p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.4; flex: 1; }
 .gcard .btn { align-self: stretch; }
+.gcard .btn.play { height: 52px; min-height: 52px; padding: 0 16px; font-size: 1.35rem; white-space: nowrap; }
 .gcard.soon { grid-column: 1 / -1; background: transparent; border: 4px dashed rgba(255,255,255,0.45); box-shadow: none; color: #fff; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 16px; text-align: center; padding: 12px 20px; }
 .gcard.soon h3 { font-size: 1.7rem; color: var(--sun); }
 .gcard.soon p { color: #E3E6FF; flex: 0 1 auto; margin: 0; }
@@ -175,7 +182,12 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 @media (max-width: 1100px) {
   .l-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .l-hero { grid-template-columns: minmax(0, 1fr) 200px; }
-  .l-subject { grid-column: 1 / -1; grid-row: 2; }
+  .l-wordmark { grid-column: 1; grid-row: 1; }
+  .l-host { grid-column: 2; grid-row: 1; }
+  .l-subject { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; }
+  .l-subject h2, .l-subject .l-note { grid-column: 1 / -1; }
+  .l-subject .l-row { flex-direction: column; align-items: stretch; gap: 4px; }
+  .l-subject .l-pick { flex: none; }
 }
 @media (max-width: 820px) {
   .l-hero { grid-template-columns: minmax(0, 1fr) 190px; }
@@ -186,14 +198,15 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 @media (max-width: 600px) {
   .l-cards { grid-template-columns: 1fr; }
   .l-hero { grid-template-columns: 1fr; }
-  .l-subject { grid-row: auto; }
+  .l-wordmark, .l-host, .l-subject { grid-column: 1; grid-row: auto; }
+  .l-subject { grid-template-columns: 1fr; }
   .l-mascot { height: 240px; }
   .bank-item { grid-template-columns: auto minmax(0, 1fr); }
   .bank-item .acts { grid-column: 1 / -1; justify-content: flex-start; }
 }
 .cgb-nogl { position: absolute; inset: 0; z-index: 50; background: var(--night); padding: 16px; }
 
-/* ---------- Marty Marquee (2D host) ---------- */
+/* ---------- The host (2D) ---------- */
 .host-wrap { position: relative; width: 100%; height: 100%; pointer-events: none; }
 .host-wrap svg.host-art { width: 100%; height: 100%; display: block; overflow: visible; }
 .host-arm, .host-fore { transition: transform .38s cubic-bezier(.3, 1.35, .5, 1); }
@@ -275,6 +288,10 @@ details.howto:not([open]) { margin-bottom: 8px; }
 @media (min-width: 1000px) and (max-height: 860px) {
   .l-mascot { height: 252px; }
   .l-wordmark svg { max-height: 30vh; }
+  .l-subject { gap: 6px; padding: 10px 14px 10px; }
+  .l-subject h2 { font-size: 1.3rem; }
+  .l-subject .l-pick { min-height: 36px; padding-top: 4px; padding-bottom: 4px; }
+  .l-subject .l-note { font-size: 0.8rem; line-height: 1.3; }
   .gcard .art { aspect-ratio: 16 / 7.2; }
 }
 
@@ -376,6 +393,20 @@ details.tnames[open] > summary { margin-bottom: 8px; }
 .bank-item .tag.sj { display: inline-flex; align-items: center; gap: 4px; }
 .bank-item .tag.sj select { font: inherit; font-size: 0.8rem; border: 1px solid var(--line); border-radius: 6px; padding: 1px 4px; background: #fff; }
 @media (max-width: 600px) { .bank-two { grid-template-columns: 1fr; } }
+
+/* "Start game": after setup, before the first countdown (every game) */
+.start-gate { position: absolute; inset: 0; z-index: 40; display: grid; place-items: center; background: rgba(10, 14, 30, 0.45); padding: 16px; }
+.start-gate[hidden] { display: none; }
+.start-gate-card { background: var(--paper, #FFF7EC); color: var(--ink, #1B1F3B); border: 4px solid var(--ink, #1B1F3B); border-radius: 22px; box-shadow: 0 14px 40px rgba(0,0,0,0.4); padding: 22px 26px; max-width: 520px; width: 100%; text-align: center; display: grid; gap: 14px; }
+.start-gate-note { margin: 0; font-weight: 800; font-size: 1.05rem; line-height: 1.4; }
+.start-gate-btn { font-size: 1.6rem; padding: 16px 28px; width: 100%; }
+
+/* SHOWTIME sign bulbs twinkle gently, each on its own timing; still and lit with reduced motion */
+@keyframes bulb-twinkle { 0%, 100% { opacity: 1; } 45% { opacity: 1; } 60% { opacity: 0.45; } 75% { opacity: 1; } }
+.l-wordmark .bulb { animation: bulb-twinkle var(--tw, 3s) ease-in-out var(--td, 0s) infinite; }
+html[data-motion="reduced"] .l-wordmark .bulb { animation: none !important; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { html:not([data-motion="full"]) .l-wordmark .bulb { animation: none; } }
+.hc-name[hidden], .ote-bubble .who[hidden] { display: none; }
 
 </style>
 <style>
@@ -615,7 +646,7 @@ details.tnames[open] > summary { margin-bottom: 8px; }
   .op-deal .gap { display: inline; margin-left: 6px; }
   .op-deal .pts { display: inline; }
 }
-/* Marty sits in the top panel's own row, so he never covers the track, questions or controls */
+/* The host sits in the top panel's own row, so he never covers the track, questions or controls */
 .op-hostrow { display: flex; justify-content: center; min-height: 62px; }
 .op-hostrow .hc-bubble { max-width: min(420px, 60vw); }
 /* whole class */
@@ -900,23 +931,26 @@ details.tnames[open] > summary { margin-bottom: 8px; }
   </svg>
   <div class="wrap">
     <header class="l-hero">
-      <h1 class="l-wordmark" id="wordmark" style="margin:0"></h1>
       <section class="l-subject" id="subjectPanel" aria-labelledby="subjectTitle">
-        <h2 id="subjectTitle">Choose your subject</h2>
-        <div class="l-chips" id="subjectChips" role="radiogroup" aria-labelledby="subjectTitle"></div>
+        <h2 id="subjectTitle">Your class</h2>
         <div class="l-row">
-          <span class="lab" id="labBoard">Exam board</span>
-          <div class="seg" id="boardSeg" role="group" aria-labelledby="labBoard"></div>
+          <label class="lab" for="subjectSelect">Subject</label>
+          <select class="cgb-select l-pick" id="subjectSelect"></select>
+        </div>
+        <div class="l-row">
+          <label class="lab" for="boardSelect">Exam board</label>
+          <select class="cgb-select l-pick" id="boardSelect"></select>
         </div>
         <div class="l-row l-qrow">
           <label class="lab" for="launcherSet">Questions</label>
-          <select class="cgb-select" id="launcherSet"></select>
-          <button class="btn go sm" type="button" id="openBank">Question bank</button>
+          <select class="cgb-select l-pick" id="launcherSet"></select>
         </div>
+        <button class="btn go sm" type="button" id="openBank">Question bank</button>
         <p class="l-note" id="subjectNote" role="status"></p>
       </section>
+      <h1 class="l-wordmark" id="wordmark" style="margin:0"></h1>
       <div class="l-host">
-        <div class="l-mascot" id="mascot"><div class="hello" id="mascotHello"></div></div>
+        <div class="l-mascot" id="mascot"><div class="hello" id="mascotHello"><b class="who" id="mascotWho" hidden></b><span id="mascotLine">Choose your subject, then pick a game!</span></div></div>
         <button class="btn plain sm" type="button" id="openHost">Customise the host</button>
       </div>
     </header>
@@ -927,7 +961,7 @@ details.tnames[open] > summary { margin-bottom: 8px; }
         <div class="body">
           <h3>Over the Edge</h3>
           <p>Every team that answers right wins a counter to drop down a lane. Push the pile over the edge, then play for the jackpot together.</p>
-          <button class="btn brand" type="button" data-play="over-the-edge">Play Over the Edge</button>
+          <button class="btn brand play" type="button" data-play="over-the-edge" aria-label="Play Over the Edge">Play</button>
         </div>
       </article>
       <article class="gcard">
@@ -935,7 +969,7 @@ details.tnames[open] > summary { margin-bottom: 8px; }
         <div class="body">
           <h3>Outpace</h3>
           <p>The whole class is one runner. Pick a deal, then answer your way home before the Hunter catches you.</p>
-          <button class="btn brand" type="button" data-play="outpace">Play Outpace</button>
+          <button class="btn brand play" type="button" data-play="outpace" aria-label="Play Outpace">Play</button>
         </div>
       </article>
       <article class="gcard">
@@ -943,7 +977,7 @@ details.tnames[open] > summary { margin-bottom: 8px; }
         <div class="body">
           <h3>Category Clash</h3>
           <p>Teams take turns to pick a category and a points value, and every team answers. Harder questions are worth more.</p>
-          <button class="btn brand" type="button" data-play="category-clash">Play Category Clash</button>
+          <button class="btn brand play" type="button" data-play="category-clash" aria-label="Play Category Clash">Play</button>
         </div>
       </article>
       <article class="gcard">
@@ -951,7 +985,7 @@ details.tnames[open] > summary { margin-bottom: 8px; }
         <div class="body">
           <h3>Hex Hunt</h3>
           <p>Two halves of the class race to build a path across the hexagon board. Each letter is the first letter of the answer.</p>
-          <button class="btn brand" type="button" data-play="hex-hunt">Play Hex Hunt</button>
+          <button class="btn brand play" type="button" data-play="hex-hunt" aria-label="Play Hex Hunt">Play</button>
         </div>
       </article>
       <article class="gcard soon" aria-label="More shows coming soon">
@@ -1304,7 +1338,7 @@ A: Ionic</div>
     <div class="modal-body host-editor">
       <div class="host-preview" id="hostPreview" aria-hidden="true"></div>
       <div class="host-grid">
-        <div class="full"><label class="lab" for="hostName">Host name</label><input class="cgb-input" type="text" id="hostName" maxlength="20"></div>
+        <div class="full"><label class="lab" for="hostName">Host name</label><input class="cgb-input" type="text" id="hostName" maxlength="20" placeholder="No name (optional)"></div>
         <div><span class="lab">Skin</span><div class="swatches" id="swSkin"></div></div>
         <div><span class="lab">Hair colour</span><div class="swatches" id="swHair"></div></div>
         <div><span class="lab">Hair style</span><div class="seg" id="segStyle"></div></div>
@@ -3701,7 +3735,7 @@ CGB.bank = (() => {
   CGB.COUNTDOWN = 20;    // seconds to think before "3, 2, 1, show me!" (Space skips it)
   CGB.TEAM_RULE = 'A team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.';
 
-  /* Marty's reaction to a marked question: "Five out of six teams! Brilliant!" */
+  /* The host's reaction to a marked question: "Five out of six teams! Brilliant!" */
   const WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'];
   CGB.classLine = (c, n) => {
     if (n > 1 && c === n) return pick([`All ${WORDS[n].toLowerCase()} teams! Brilliant!`, 'Every single team! Fantastic!']);
@@ -3899,6 +3933,36 @@ CGB.bank = (() => {
     };
   };
 
+  /* ---------- "Start game": shown after setup, before anything starts ----------
+     Every game shows the same large button over its game screen when the teacher finishes
+     setup. Nothing ticks until it is pressed (Enter, Space, click or tap), which gives the
+     teacher a moment to explain the rules and get the whiteboards out. Esc still leaves. */
+  CGB.createStartGate = function (root, note) {
+    const el = document.createElement('div');
+    el.className = 'start-gate';
+    el.hidden = true;
+    el.innerHTML = `<div class="start-gate-card" role="dialog" aria-modal="false" aria-label="Ready to start">
+      <p class="start-gate-note">${note}</p>
+      <button class="btn go start-gate-btn" type="button">Start game <span class="kbd">Enter</span></button></div>`;
+    root.appendChild(el);
+    let go = null;
+    function start() { if (!go) return; const f = go; go = null; el.hidden = true; f(); }
+    el.querySelector('button').addEventListener('click', start);
+    document.addEventListener('keydown', e => {
+      if (!go || el.hidden || (CGB.modal && CGB.modal.isOpen()) || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopImmediatePropagation(); start(); }
+    }, true);
+    return {
+      // show the button; onStart runs once when it is pressed
+      show(onStart) {
+        go = onStart; el.hidden = false;
+        el.querySelector('button').focus({ preventScroll: true });
+      },
+      hide() { go = null; el.hidden = true; },
+      get open() { return !!go; }
+    };
+  };
+
   /* ---------- What the class found hardest: no individual student data ---------- */
   CGB.createMisconceptions = function () {
     let list = [];
@@ -3966,7 +4030,7 @@ CGB.sfx = (() => {
 <script>
 'use strict';
 /* =========================================================
-   THE HOST: Marty Marquee, the Showtime mascot.
+   THE HOST: the Showtime mascot. He has no name unless the teacher gives him one.
    A 2D cartoon drawn as SVG in the same ink-outlined sticker
    style as the Showtime logos. Arms pose with CSS transforms,
    he blinks, talks and pulls faces. The look is customisable
@@ -3982,23 +4046,28 @@ CGB.hostOpts = {
   glasses: [['no', 'No'], ['yes', 'Yes']]
 };
 CGB.hostCfg = (() => {
-  const defaults = { name: 'Marty Marquee', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
+  const defaults = { name: '', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
   const saved = CGB.store.getJSON('host', {});
   const cfg = Object.assign({}, defaults, saved && typeof saved === 'object' ? saved : {});
   // guard against out-of-range values from older saves
-  if (cfg.name === 'Professor Pip') cfg.name = defaults.name;   // the host's earlier default name
+  // a name saved by an earlier version that is just one of its default names counts as no name
+  cfg.name = String(cfg.name || '').trim();
+  // (the old defaults are kept reversed, so no default name appears anywhere in the shipped file)
+  if (['pip rosseforp', 'eeuqram ytram', 'tsoh'].includes(cfg.name.toLowerCase().split('').reverse().join(''))) cfg.name = '';
   ['skin', 'hair', 'suit'].forEach(k => { if (!(cfg[k] >= 0 && cfg[k] < CGB.hostOpts[k].length)) cfg[k] = defaults[k]; });
   ['style', 'beard', 'glasses'].forEach(k => { if (!CGB.hostOpts[k].some(o => o[0] === cfg[k])) cfg[k] = defaults[k]; });
   return cfg;
 })();
 CGB.hostListeners = [];
+/* The host's name, or '' when the teacher hasn't given him one (then no name label is shown) */
+CGB.hostName = () => String(CGB.hostCfg.name || '').trim();
 CGB.saveHost = function () {
   CGB.store.setJSON('host', CGB.hostCfg);
   CGB.hostListeners.forEach(fn => { try { fn(); } catch (e) { /* ignore */ } });
 };
 
 /* Arm angles in degrees: [upper arm, forearm]. 0 = hanging straight down.
-   A = the arm on the viewer's left (Marty's right), B = the viewer's right. */
+   A = the arm on the viewer's left (the host's right), B = the viewer's right. */
 CGB.HOST_POSES = {
   idle:    { A: [14, 10], B: [-14, -10], face: 'smile' },
   present: { A: [52, -28], B: [-14, -10], face: 'smile' },
@@ -4103,7 +4172,7 @@ CGB.hostSVG = function (cfg) {
 </svg>`;
 };
 
-/* Mount Marty in a container element. Returns a small controller. */
+/* Mount the host in a container element. Returns a small controller. */
 CGB.createHost2D = function (container, opts) {
   opts = opts || {};
   const wrap = document.createElement('div');
@@ -4154,7 +4223,7 @@ CGB.createHost2D = function (container, opts) {
   };
 };
 
-/* A small corner presence for the games without a stage: Marty's head and shoulders
+/* A small corner presence for the games without a stage: the host's head and shoulders
    with a caption bubble beside him. It sits in the page layout (never on top of the
    board, track, questions or controls). Captions only; no voice. */
 CGB.createHostCorner = function (container, opts) {
@@ -4168,7 +4237,8 @@ CGB.createHostCorner = function (container, opts) {
   let hideTimer = null;
   function say(text, gesture, ms) {
     if (!text) return;
-    box.querySelector('.hc-name').textContent = CGB.hostCfg.name || 'Host';
+    const nm = box.querySelector('.hc-name');
+    nm.textContent = CGB.hostName(); nm.hidden = !CGB.hostName();
     box.querySelector('.hc-text').textContent = text;
     bubble.classList.add('show');
     if (gesture) host.gesture(gesture, ms || 1800);
@@ -4207,7 +4277,9 @@ CGB.brand = (() => {
     const title = opts.title !== false ? '<title>Showtime: Classroom Gameshows</title>' : '';
     // marquee bulbs around the main word
     let bulbs = '';
-    for (let i = 0; i < 17; i++) { const x = 80 + i * 52.5; bulbs += `<circle cx="${x.toFixed(1)}" cy="34" r="9" fill="${i % 2 ? SUN : '#fff'}" stroke="${INK}" stroke-width="3"/><circle cx="${x.toFixed(1)}" cy="266" r="9" fill="${i % 2 ? '#fff' : SUN}" stroke="${INK}" stroke-width="3"/>`; }
+    // each bulb twinkles on its own (fixed, varied) timing, so they never all flash together
+    const tw = k => `--tw:${(2.6 + ((k * 37) % 23) / 10).toFixed(1)}s;--td:-${(((k * 53) % 41) / 10).toFixed(1)}s`;
+    for (let i = 0; i < 17; i++) { const x = 80 + i * 52.5; bulbs += `<circle class="bulb" style="${tw(i)}" cx="${x.toFixed(1)}" cy="34" r="9" fill="${i % 2 ? SUN : '#fff'}" stroke="${INK}" stroke-width="3"/><circle class="bulb" style="${tw(i + 17)}" cx="${x.toFixed(1)}" cy="266" r="9" fill="${i % 2 ? '#fff' : SUN}" stroke="${INK}" stroke-width="3"/>`; }
     return `<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Showtime: Classroom Gameshows">${title}
   <g>
     ${star(36, 150, 30, SUN, 0.2)}${star(966, 140, 26, TAN, 0.5)}${star(950, 330, 16, TEAL, 0.1)}${star(52, 340, 16, SUN, 0.7)}
@@ -4638,8 +4710,9 @@ CGB.hostEditor = (() => {
     segRow('segStyle', CGB.hostOpts.style, 'style');
     segRow('segBeard', CGB.hostOpts.beard, 'beard');
     segRow('segGlasses', CGB.hostOpts.glasses, 'glasses');
-    $('hostName').value = CGB.hostCfg.name;
-    $('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim() || 'Host'; CGB.store.setJSON('host', CGB.hostCfg); });
+    $('hostName').value = CGB.hostName();
+    // empty means nameless: no name label anywhere
+    $('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim(); CGB.store.setJSON('host', CGB.hostCfg); CGB.hostListeners.forEach(fn => { try { fn(); } catch (x) { /* ignore */ } }); });
     $('hostName').addEventListener('change', () => CGB.saveHost());
   }
   function open() {
@@ -4709,17 +4782,15 @@ CGB.app = (() => {
   /* The subject panel: subject, exam board and the question set in use */
   function renderSubject() {
     const B = CGB.bank, esc = CGB.escapeHtml, sj = B.subject(), bd = B.board();
-    $('subjectChips').innerHTML = B.SUBJECTS.map(x => {
-      const n = B.available(x.id).length;
-      return `<button type="button" class="chip${x.id === sj ? ' on' : ''}" role="radio" aria-checked="${x.id === sj}" data-subject="${x.id}"${n ? '' : ' data-empty="1"'}>${esc(x.label)}</button>`;
-    }).join('');
-    $('boardSeg').innerHTML = B.BOARDS.map(x => `<button type="button" data-board="${x.id}" aria-pressed="${x.id === bd}">${esc(x.label)}</button>`).join('');
+    // compact dropdowns: native selects work with mouse, touch and keyboard everywhere
+    $('subjectSelect').innerHTML = B.SUBJECTS.map(x => `<option value="${x.id}"${x.id === sj ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
+    $('boardSelect').innerHTML = B.BOARDS.map(x => `<option value="${x.id}"${x.id === bd ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
     B.fillSelect($('launcherSet'));
     const note = B.subjectNote();
     $('subjectNote').textContent = note;
     $('subjectNote').hidden = !note;
   }
-  /* The mascot on the launcher: Marty waves hello now and then */
+  /* The mascot on the launcher: the host waves hello now and then */
   function createMascot() {
     const box = $('mascot');
     const host = CGB.createHost2D(box, { className: 'host-launcher' });
@@ -4741,19 +4812,14 @@ CGB.app = (() => {
     CGB.renderSettings($('launcherSettings'), true);
     CGB.renderSettings($('modalSettings'), false);
     CGB.bankUI.init();
-    $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Choose your subject, then pick a game.`;
-    CGB.hostListeners.push(() => { $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Choose your subject, then pick a game.`; });
+    // the greeting never introduces him; his name label shows only if the teacher has given him one
+    const paintHello = () => { const n = CGB.hostName(); $('mascotWho').textContent = n; $('mascotWho').hidden = !n; };
+    paintHello();
+    CGB.hostListeners.push(paintHello);
     document.querySelectorAll('[data-play]').forEach(b => b.addEventListener('click', () => show(b.dataset.play)));
     $('openBank').addEventListener('click', () => CGB.bankUI.open());
-    $('subjectChips').addEventListener('click', e => { const b = e.target.closest('[data-subject]'); if (b) CGB.bank.setSubject(b.dataset.subject); });
-    $('subjectChips').addEventListener('keydown', e => {      // arrow keys move between subjects, as in a radio group
-      const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key]; if (!d) return;
-      e.preventDefault();
-      const ids = CGB.bank.SUBJECTS.map(x => x.id), i = (ids.indexOf(CGB.bank.subject()) + d + ids.length) % ids.length;
-      CGB.bank.setSubject(ids[i]);
-      const b = $('subjectChips').querySelector(`[data-subject="${ids[i]}"]`); if (b) b.focus();
-    });
-    $('boardSeg').addEventListener('click', e => { const b = e.target.closest('[data-board]'); if (b) CGB.bank.setBoard(b.dataset.board); });
+    $('subjectSelect').addEventListener('change', e => CGB.bank.setSubject(e.target.value));
+    $('boardSelect').addEventListener('change', e => CGB.bank.setBoard(e.target.value));
     $('launcherSet').addEventListener('change', e => CGB.bank.setActive(e.target.value));
     $('openHost').addEventListener('click', () => CGB.hostEditor.open());
     $('openAbout').addEventListener('click', () => CGB.modal.open('aboutModal'));
@@ -4772,7 +4838,7 @@ CGB.app = (() => {
   /* "Change" on a setup card: back to the main screen with the subject panel in focus */
   function chooseSubject() {
     show('launcher');
-    const b = document.querySelector('#subjectChips .chip.on'); if (b) b.focus();
+    $('subjectSelect').focus();
   }
   return { init, show, requestLauncher, chooseSubject, get current() { return current; } };
 })();
@@ -5002,6 +5068,7 @@ const WILDCARDS = [
 /* Fixed settings: 6 questions in Round 1 and 4 in the final (under 10 minutes with a class),
    a 20-second countdown before "show me", and the jackpot counter set at Normal difficulty */
 const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
+const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The 20-second countdown for the first question starts when you press Start.');
 const G = {
   nTeams: +CGB.store.get('ote.nTeams') || 4,
   laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, fallPool: [], nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
@@ -5405,7 +5472,7 @@ let typeTimer = null, hideTimer = null;
 function hostSay(text, gesture, ms) {
   if (!text) return;
   if (gesture) hostGesture(gesture, ms || 1800);
-  $('bubbleWho').textContent = CGB.hostCfg.name || 'Host';
+  $('bubbleWho').textContent = CGB.hostName(); $('bubbleWho').hidden = !CGB.hostName();
   const el = $('bubbleText');
   clearInterval(typeTimer); clearTimeout(hideTimer);
   el.textContent = '';
@@ -5435,7 +5502,7 @@ function placeBubble() {
   const rel = el => { const r = el.getBoundingClientRect(); return { l: r.left - base.left, t: r.top - base.top, r: r.right - base.left, b: r.bottom - base.top }; };
   const hits = (o, yy) => !(x + bw / 2 < o.l || x - bw / 2 > o.r || yy < o.t || yy - bh > o.b);
   let hidden = false;
-  // things the bubble must not cover: the round banner and Marty's own head
+  // things the bubble must not cover: the round banner and the host's own head
   const avoid = [];
   const banner = $('banner');
   if (banner.classList.contains('show')) {
@@ -5522,7 +5589,7 @@ function clearLabels() { labels.forEach(L => L.el.remove()); labels.length = 0; 
 const tmpV = new THREE.Vector3();
 function updateLabels(dt) {
   const w = wrap.clientWidth, h = wrap.clientHeight;
-  // keep labels clear of Marty: anything that would land on him moves to his left
+  // keep labels clear of the host: anything that would land on him moves to his left
   const body = labels.length && !$('host').classList.contains('away') ? $('host').querySelector('.host-body') : null;
   const base = body ? wrap.getBoundingClientRect() : null;
   const hb = body ? body.getBoundingClientRect() : null;
@@ -5801,16 +5868,19 @@ CGB.settings.onChange(k => {
 });
 
 function updateCamera(dt, now) {
-  const inBoard = drops.length > 0;
+  // while setup (or the Start game button) is showing the camera holds one still view of the
+  // machine: the decorative drops behind the setup card don't move it, and there is no sway
+  const still = G.phase === 'home' || G.step === 'ready';
+  const inBoard = drops.length > 0 && !still;
   let t = CAM.play;
   if (inBoard) t = CAM.board;
   else if (G.phase === 'final' && G.jackpot && !G.jackpotFell && jackpotProgress() > 0.7) t = CAM.jackpot;
   else if (G.phase === 'home') t = CAM.home;
   const shot = Object.keys(CAM).find(k => CAM[k] === t);
   if (shot !== hostFit.shot) fitHost(shot);
-  const k = 1 - Math.exp(-dt * 1.5);
+  const k = G.phase === 'home' ? 1 : 1 - Math.exp(-dt * 1.5);    // the setup view is set at once, then held
   Object.keys(cam).forEach(key => { cam[key] += (t[key] - cam[key]) * k; });
-  const sway = CGB.settings.reduced() ? 0 : Math.sin(now * 0.00022) * SWAY;
+  const sway = CGB.settings.reduced() || still ? 0 : Math.sin(now * 0.00022) * SWAY;
   camera.position.set(cam.x + sway, cam.y, cam.z);
   camera.lookAt(cam.lx, cam.ly, 0);
 }
@@ -6042,9 +6112,15 @@ function startGame() {
   G.phase = 'r1'; G.qIndex = 0; G.qTotal = R1_QUESTIONS;
   $('home').classList.add('hidden'); $('summary').classList.add('hidden');
   $('roundName').textContent = 'Round 1: Counter Drop';
-  showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
-  hostSay(`Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!`, 'cheer', 2200);
-  nextQuestion(true);
+  $('qCount').textContent = `${G.qTotal} questions, then the final`;
+  G.step = 'ready'; G.q = null;
+  render();
+  // nothing ticks until the teacher presses Start game
+  gate.show(() => {
+    showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
+    hostSay(`Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!`, 'cheer', 2200);
+    nextQuestion(true);
+  });
 }
 function nextQuestion(quiet) {
   resetChuteGlow();
@@ -6141,7 +6217,7 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  dropTimers = []; round.stop(); G.laneQueue = [];
+  dropTimers = []; round.stop(); G.laneQueue = []; gate.hide();
   $('summary').classList.add('hidden');
   $('home').classList.remove('hidden');
   updateHost(true);
@@ -6264,7 +6340,7 @@ return {
     updateHost(true);
     if (G.phase === 'home') {
       renderClassNames(true); renderPack(); renderScores();
-      setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! I'm ${CGB.hostCfg.name || 'your host'}. Set up the game and let's play.`, 'present', 1800); }, 700);
+      setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! Set up the game and let's play.`, 'present', 1800); }, 700);
       $('startBtn').focus();
     }
   },
@@ -6280,7 +6356,7 @@ return {
     const sr = wrap.getBoundingClientRect(), hr = hostRect();
     return { stage: { w: sr.width, h: sr.height }, machine: machineRect(), machineRight: hostFit.machineRight, hidden: hostFit.hidden, host: { left: hr.left - sr.left, right: hr.right - sr.left, top: hr.top - sr.top, bottom: hr.bottom - sr.top }, away: $('host').classList.contains('away') };
   },
-  _state: () => ({ dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
+  _state: () => ({ camera: camera.position.toArray().map(v => +v.toFixed(4)), dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
 };
 }
 
@@ -7462,7 +7538,7 @@ paintGroups();
 renderGroupNames();
 $('startBtn').addEventListener('click', startGame);
 
-/* Marty: one corner host that moves to whichever panel is showing; captions only */
+/* The host: one corner host that moves to whichever panel is showing; captions only */
 const hostC = CGB.createHostCorner(document.createElement('div'));
 function hostSay(slot, text, gesture, ms) { const el = $(slot); if (hostC.el.parentElement !== el) el.appendChild(hostC.el); hostC.say(text, gesture, ms); }
 /* ---------- Every team answers, the class moves as one runner ---------- */
@@ -7586,8 +7662,12 @@ function startGame() {
   state.wrongAnswers = state.players.map(() => []);
   picker.reset();
   $('roundEnd').classList.remove('show');
-  startDealRound();
+  // the track is shown with nothing ticking until the teacher presses Start game
+  state.phase = 'ready';
+  hideAll();
+  gate.show(startDealRound);
 }
+const gate = CGB.createStartGate(document.getElementById('game-outpace'), 'The class votes for a deal, then every team answers each question on a whiteboard. Nothing starts until you press Start.');
 const pickQuestion = () => picker.pick(state.players.map(p => p.name));
 
 /* ============ DEAL ROUND ============ */
@@ -7775,7 +7855,7 @@ $('menuBtn2').addEventListener('click', () => CGB.app.requestLauncher());
 
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  clearTimers(); roundDeal.stop(); roundSprint.stop(); clearTimeout(sprintNextT);
+  clearTimers(); roundDeal.stop(); roundSprint.stop(); clearTimeout(sprintNextT); gate.hide();
   state.phase = 'home';
   roundEndNext = null;
   $('roundEnd').classList.remove('show');
@@ -8086,7 +8166,7 @@ function openTile(c, r) {
   paintQBoard(); round.think();
   $('qcard').focus({ preventScroll: true });   // keys now go to the question, not the board behind it
 }
-/* Marty in the corner: short captions at the big moments */
+/* The host in the corner: short captions at the big moments */
 const hostC = CGB.createHostCorner($('host'));
 const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
 /* ---------- Whole class: every team answers, the teacher marks each team ---------- */
@@ -8180,13 +8260,19 @@ function startGame() {
   S.order = []; S.catchUp = -1; misc.reset(); round.stop();
   startClassRound(); S.turn = S.order[0];
   buildBoard();
-  S.phase = 'board';
+  S.phase = 'ready';
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('play').hidden = false; $('q').hidden = true;
   renderBoard();
-  hostC.say(`Welcome to Category Clash! ${S.teams[0].name}, you pick first.`, 'wave', 2000);
-  const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
+  // the board is on show, with nothing to pick until the teacher presses Start game
+  gate.show(() => {
+    S.phase = 'board';
+    renderBoard();
+    hostC.say(`Welcome to Category Clash! ${S.teams[0].name}, you pick first.`, 'wave', 2000);
+    const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
+  });
 }
+const gate = CGB.createStartGate(document.getElementById('game-category-clash'), 'Teams take turns to pick a tile, and every team answers on a whiteboard. Nothing starts until you press Start.');
 $('startBtn').addEventListener('click', startGame);
 $('endBtn').addEventListener('click', () => CGB.armButton($('endBtn'), 'Tap again to end', () => { round.stop(); $('q').hidden = true; showSummary(); }));
 
@@ -8217,6 +8303,7 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
+  gate.hide();
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home'; S.open = null;
@@ -8544,7 +8631,7 @@ function undoClassResult() {
   S.step = 'ask'; undoSnap = null;
   renderBoard();
 }
-/* Marty in the corner: short captions at the big moments */
+/* The host in the corner: short captions at the big moments */
 const hostC = CGB.createHostCorner($('host'));
 const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
 function newQuestionHere() {
@@ -8604,12 +8691,18 @@ function startGame() {
   misc.reset(); round.stop();
   newBoard();
   if (!S.cells.some(c => c.q)) { $('setHint').textContent = 'This set has no answers that start with a letter. Choose another set.'; return; }
-  S.phase = 'board';
+  S.phase = 'ready';
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('win').hidden = true; $('q').hidden = true; $('play').hidden = false;
   renderBoard();
-  hostC.say(`Welcome to Hex Hunt! ${S.teams[0].name} go left to right, ${S.teams[1].name} top to bottom.`, 'wave', 2200);
+  // the board is on show, with nothing to pick until the teacher presses Start game
+  gate.show(() => {
+    S.phase = 'board';
+    renderBoard();
+    hostC.say(`Welcome to Hex Hunt! ${S.teams[0].name} go left to right, ${S.teams[1].name} top to bottom.`, 'wave', 2200);
+  });
 }
+const gate = CGB.createStartGate(document.getElementById('game-hex-hunt'), 'Two halves of the class race to link their edges, answering on whiteboards. Nothing starts until you press Start.');
 $('startBtn').addEventListener('click', startGame);
 
 function showSummary() {
@@ -8630,6 +8723,7 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
+  gate.hide();
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home';

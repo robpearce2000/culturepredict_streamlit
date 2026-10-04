@@ -88,7 +88,7 @@
   .op-deal .gap { display: inline; margin-left: 6px; }
   .op-deal .pts { display: inline; }
 }
-/* Marty sits in the top panel's own row, so he never covers the track, questions or controls */
+/* The host sits in the top panel's own row, so he never covers the track, questions or controls */
 .op-hostrow { display: flex; justify-content: center; min-height: 62px; }
 .op-hostrow .hc-bubble { max-width: min(420px, 60vw); }
 /* whole class */

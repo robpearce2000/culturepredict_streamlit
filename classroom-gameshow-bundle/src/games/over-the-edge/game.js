@@ -221,6 +221,7 @@ const WILDCARDS = [
 /* Fixed settings: 6 questions in Round 1 and 4 in the final (under 10 minutes with a class),
    a 20-second countdown before "show me", and the jackpot counter set at Normal difficulty */
 const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
+const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The 20-second countdown for the first question starts when you press Start.');
 const G = {
   nTeams: +CGB.store.get('ote.nTeams') || 4,
   laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, fallPool: [], nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
@@ -624,7 +625,7 @@ let typeTimer = null, hideTimer = null;
 function hostSay(text, gesture, ms) {
   if (!text) return;
   if (gesture) hostGesture(gesture, ms || 1800);
-  $('bubbleWho').textContent = CGB.hostCfg.name || 'Host';
+  $('bubbleWho').textContent = CGB.hostName(); $('bubbleWho').hidden = !CGB.hostName();
   const el = $('bubbleText');
   clearInterval(typeTimer); clearTimeout(hideTimer);
   el.textContent = '';
@@ -654,7 +655,7 @@ function placeBubble() {
   const rel = el => { const r = el.getBoundingClientRect(); return { l: r.left - base.left, t: r.top - base.top, r: r.right - base.left, b: r.bottom - base.top }; };
   const hits = (o, yy) => !(x + bw / 2 < o.l || x - bw / 2 > o.r || yy < o.t || yy - bh > o.b);
   let hidden = false;
-  // things the bubble must not cover: the round banner and Marty's own head
+  // things the bubble must not cover: the round banner and the host's own head
   const avoid = [];
   const banner = $('banner');
   if (banner.classList.contains('show')) {
@@ -741,7 +742,7 @@ function clearLabels() { labels.forEach(L => L.el.remove()); labels.length = 0; 
 const tmpV = new THREE.Vector3();
 function updateLabels(dt) {
   const w = wrap.clientWidth, h = wrap.clientHeight;
-  // keep labels clear of Marty: anything that would land on him moves to his left
+  // keep labels clear of the host: anything that would land on him moves to his left
   const body = labels.length && !$('host').classList.contains('away') ? $('host').querySelector('.host-body') : null;
   const base = body ? wrap.getBoundingClientRect() : null;
   const hb = body ? body.getBoundingClientRect() : null;
@@ -1020,16 +1021,19 @@ CGB.settings.onChange(k => {
 });
 
 function updateCamera(dt, now) {
-  const inBoard = drops.length > 0;
+  // while setup (or the Start game button) is showing the camera holds one still view of the
+  // machine: the decorative drops behind the setup card don't move it, and there is no sway
+  const still = G.phase === 'home' || G.step === 'ready';
+  const inBoard = drops.length > 0 && !still;
   let t = CAM.play;
   if (inBoard) t = CAM.board;
   else if (G.phase === 'final' && G.jackpot && !G.jackpotFell && jackpotProgress() > 0.7) t = CAM.jackpot;
   else if (G.phase === 'home') t = CAM.home;
   const shot = Object.keys(CAM).find(k => CAM[k] === t);
   if (shot !== hostFit.shot) fitHost(shot);
-  const k = 1 - Math.exp(-dt * 1.5);
+  const k = G.phase === 'home' ? 1 : 1 - Math.exp(-dt * 1.5);    // the setup view is set at once, then held
   Object.keys(cam).forEach(key => { cam[key] += (t[key] - cam[key]) * k; });
-  const sway = CGB.settings.reduced() ? 0 : Math.sin(now * 0.00022) * SWAY;
+  const sway = CGB.settings.reduced() || still ? 0 : Math.sin(now * 0.00022) * SWAY;
   camera.position.set(cam.x + sway, cam.y, cam.z);
   camera.lookAt(cam.lx, cam.ly, 0);
 }
@@ -1261,9 +1265,15 @@ function startGame() {
   G.phase = 'r1'; G.qIndex = 0; G.qTotal = R1_QUESTIONS;
   $('home').classList.add('hidden'); $('summary').classList.add('hidden');
   $('roundName').textContent = 'Round 1: Counter Drop';
-  showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
-  hostSay(`Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!`, 'cheer', 2200);
-  nextQuestion(true);
+  $('qCount').textContent = `${G.qTotal} questions, then the final`;
+  G.step = 'ready'; G.q = null;
+  render();
+  // nothing ticks until the teacher presses Start game
+  gate.show(() => {
+    showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
+    hostSay(`Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!`, 'cheer', 2200);
+    nextQuestion(true);
+  });
 }
 function nextQuestion(quiet) {
   resetChuteGlow();
@@ -1404,7 +1414,7 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  dropTimers = []; round.stop(); G.laneQueue = [];
+  dropTimers = []; round.stop(); G.laneQueue = []; gate.hide();
   $('summary').classList.add('hidden');
   $('home').classList.remove('hidden');
   updateHost(true);
@@ -1528,7 +1538,7 @@ return {
     updateHost(true);
     if (G.phase === 'home') {
       renderClassNames(true); renderPack(); renderScores();
-      setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! I'm ${CGB.hostCfg.name || 'your host'}. Set up the game and let's play.`, 'present', 1800); }, 700);
+      setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! Set up the game and let's play.`, 'present', 1800); }, 700);
       $('startBtn').focus();
     }
   },
@@ -1544,7 +1554,7 @@ return {
     const sr = wrap.getBoundingClientRect(), hr = hostRect();
     return { stage: { w: sr.width, h: sr.height }, machine: machineRect(), machineRight: hostFit.machineRight, hidden: hostFit.hidden, host: { left: hr.left - sr.left, right: hr.right - sr.left, top: hr.top - sr.top, bottom: hr.bottom - sr.top }, away: $('host').classList.contains('away') };
   },
-  _state: () => ({ dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
+  _state: () => ({ camera: camera.position.toArray().map(v => +v.toFixed(4)), dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
 };
 }
 

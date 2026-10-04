@@ -251,8 +251,9 @@ CGB.hostEditor = (() => {
     segRow('segStyle', CGB.hostOpts.style, 'style');
     segRow('segBeard', CGB.hostOpts.beard, 'beard');
     segRow('segGlasses', CGB.hostOpts.glasses, 'glasses');
-    $('hostName').value = CGB.hostCfg.name;
-    $('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim() || 'Host'; CGB.store.setJSON('host', CGB.hostCfg); });
+    $('hostName').value = CGB.hostName();
+    // empty means nameless: no name label anywhere
+    $('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim(); CGB.store.setJSON('host', CGB.hostCfg); CGB.hostListeners.forEach(fn => { try { fn(); } catch (x) { /* ignore */ } }); });
     $('hostName').addEventListener('change', () => CGB.saveHost());
   }
   function open() {
@@ -322,17 +323,15 @@ CGB.app = (() => {
   /* The subject panel: subject, exam board and the question set in use */
   function renderSubject() {
     const B = CGB.bank, esc = CGB.escapeHtml, sj = B.subject(), bd = B.board();
-    $('subjectChips').innerHTML = B.SUBJECTS.map(x => {
-      const n = B.available(x.id).length;
-      return `<button type="button" class="chip${x.id === sj ? ' on' : ''}" role="radio" aria-checked="${x.id === sj}" data-subject="${x.id}"${n ? '' : ' data-empty="1"'}>${esc(x.label)}</button>`;
-    }).join('');
-    $('boardSeg').innerHTML = B.BOARDS.map(x => `<button type="button" data-board="${x.id}" aria-pressed="${x.id === bd}">${esc(x.label)}</button>`).join('');
+    // compact dropdowns: native selects work with mouse, touch and keyboard everywhere
+    $('subjectSelect').innerHTML = B.SUBJECTS.map(x => `<option value="${x.id}"${x.id === sj ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
+    $('boardSelect').innerHTML = B.BOARDS.map(x => `<option value="${x.id}"${x.id === bd ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
     B.fillSelect($('launcherSet'));
     const note = B.subjectNote();
     $('subjectNote').textContent = note;
     $('subjectNote').hidden = !note;
   }
-  /* The mascot on the launcher: Marty waves hello now and then */
+  /* The mascot on the launcher: the host waves hello now and then */
   function createMascot() {
     const box = $('mascot');
     const host = CGB.createHost2D(box, { className: 'host-launcher' });
@@ -354,19 +353,14 @@ CGB.app = (() => {
     CGB.renderSettings($('launcherSettings'), true);
     CGB.renderSettings($('modalSettings'), false);
     CGB.bankUI.init();
-    $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Choose your subject, then pick a game.`;
-    CGB.hostListeners.push(() => { $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Choose your subject, then pick a game.`; });
+    // the greeting never introduces him; his name label shows only if the teacher has given him one
+    const paintHello = () => { const n = CGB.hostName(); $('mascotWho').textContent = n; $('mascotWho').hidden = !n; };
+    paintHello();
+    CGB.hostListeners.push(paintHello);
     document.querySelectorAll('[data-play]').forEach(b => b.addEventListener('click', () => show(b.dataset.play)));
     $('openBank').addEventListener('click', () => CGB.bankUI.open());
-    $('subjectChips').addEventListener('click', e => { const b = e.target.closest('[data-subject]'); if (b) CGB.bank.setSubject(b.dataset.subject); });
-    $('subjectChips').addEventListener('keydown', e => {      // arrow keys move between subjects, as in a radio group
-      const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key]; if (!d) return;
-      e.preventDefault();
-      const ids = CGB.bank.SUBJECTS.map(x => x.id), i = (ids.indexOf(CGB.bank.subject()) + d + ids.length) % ids.length;
-      CGB.bank.setSubject(ids[i]);
-      const b = $('subjectChips').querySelector(`[data-subject="${ids[i]}"]`); if (b) b.focus();
-    });
-    $('boardSeg').addEventListener('click', e => { const b = e.target.closest('[data-board]'); if (b) CGB.bank.setBoard(b.dataset.board); });
+    $('subjectSelect').addEventListener('change', e => CGB.bank.setSubject(e.target.value));
+    $('boardSelect').addEventListener('change', e => CGB.bank.setBoard(e.target.value));
     $('launcherSet').addEventListener('change', e => CGB.bank.setActive(e.target.value));
     $('openHost').addEventListener('click', () => CGB.hostEditor.open());
     $('openAbout').addEventListener('click', () => CGB.modal.open('aboutModal'));
@@ -385,7 +379,7 @@ CGB.app = (() => {
   /* "Change" on a setup card: back to the main screen with the subject panel in focus */
   function chooseSubject() {
     show('launcher');
-    const b = document.querySelector('#subjectChips .chip.on'); if (b) b.focus();
+    $('subjectSelect').focus();
   }
   return { init, show, requestLauncher, chooseSubject, get current() { return current; } };
 })();

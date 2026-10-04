@@ -21,7 +21,7 @@
   CGB.COUNTDOWN = 20;    // seconds to think before "3, 2, 1, show me!" (Space skips it)
   CGB.TEAM_RULE = 'A team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.';
 
-  /* Marty's reaction to a marked question: "Five out of six teams! Brilliant!" */
+  /* The host's reaction to a marked question: "Five out of six teams! Brilliant!" */
   const WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'];
   CGB.classLine = (c, n) => {
     if (n > 1 && c === n) return pick([`All ${WORDS[n].toLowerCase()} teams! Brilliant!`, 'Every single team! Fantastic!']);
@@ -216,6 +216,39 @@
       get undoable() { return phase === 'done' && undoable; },
       marks: () => marks.slice(),
       times: () => Object.assign({}, times)
+    };
+  };
+
+  /* ---------- "Start game": shown after setup, before anything starts ----------
+     Every game shows the same large button over its game screen when the teacher finishes
+     setup. Nothing ticks until it is pressed (Enter, Space, click or tap), which gives the
+     teacher a moment to explain the rules and get the whiteboards out. Esc still leaves. */
+  CGB.createStartGate = function (root, note) {
+    const el = document.createElement('div');
+    el.className = 'start-gate';
+    el.hidden = true;
+    el.innerHTML = `<div class="start-gate-card" role="dialog" aria-modal="false" aria-label="Ready to start">
+      <p class="start-gate-note">${note}</p>
+      <button class="btn go start-gate-btn" type="button">Start game <span class="kbd">Enter</span></button></div>`;
+    root.appendChild(el);
+    let go = null;
+    function start() { if (!go) return; const f = go; go = null; el.hidden = true; f(); }
+    el.querySelector('button').addEventListener('click', start);
+    document.addEventListener('keydown', e => {
+      if (!go || el.hidden || (CGB.modal && CGB.modal.isOpen()) || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopImmediatePropagation(); start(); }
+    }, true);
+    return {
+      // show the button; onStart runs once when it is pressed
+      show(onStart) {
+        /* @test-only */
+        if (window.__SHOWTIME_NOGATE__) { onStart(); return; }
+        /* @end-test-only */
+        go = onStart; el.hidden = false;
+        el.querySelector('button').focus({ preventScroll: true });
+      },
+      hide() { go = null; el.hidden = true; },
+      get open() { return !!go; }
     };
   };
 

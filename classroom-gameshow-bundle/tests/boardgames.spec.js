@@ -157,7 +157,7 @@ test('questions without a tier get one from their wording', async ({ page }) => 
 
 test('Category Clash columns are topics the teacher can choose, remembered for the set', async ({ page }) => {
   const log = await openBundle(page);
-  await page.click('#subjectChips [data-subject="biology"]');
+  await page.selectOption('#subjectSelect', 'biology');
   await page.click('[data-play="category-clash"]');
   // by default the topics are picked each game
   await expect(page.locator('#cc-topicSum')).toContainText('picked for you each game');
@@ -193,7 +193,7 @@ test('Category Clash columns are topics the teacher can choose, remembered for t
   await expect(page.locator('#cc-topicSum')).toContainText('picked for you each game');
   // only topics within the chosen subject: a Chemistry board has only Chemistry topics
   await page.keyboard.press('Escape');
-  await page.click('#subjectChips [data-subject="chemistry"]');
+  await page.selectOption('#subjectSelect', 'chemistry');
   await page.click('[data-play="category-clash"]');
   await page.click('#cc-startBtn');
   const subs = await page.evaluate(() => CGB.games['category-clash'].board().map(c => c.subject));

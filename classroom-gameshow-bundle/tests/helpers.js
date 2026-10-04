@@ -23,15 +23,17 @@ async function openBundle(page, hash, opts) {
   page.on('console', m => { if (m.type() === 'error' || m.type() === 'warning') log.errors.push(m.type() + ': ' + m.text()); });
   page.on('pageerror', e => log.errors.push('pageerror: ' + e.message));
   try { test.info().annotations.push({ type: 'seed', description: String(SEED) }); } catch (e) { /* outside a test */ }
-  await page.addInitScript(([seed, quality]) => {
+  await page.addInitScript(([seed, quality, gate]) => {
     window.__SHOWTIME_SEED__ = seed;
+    // most tests skip the "Start game" step after setup (it has tests of its own); the shipped file always shows it
+    if (!gate) window.__SHOWTIME_NOGATE__ = true;
     try {
       if (quality) {
         const k = 'cgb.settings', cur = JSON.parse(localStorage.getItem(k) || '{}');
         if (!cur.quality) { cur.quality = quality; localStorage.setItem(k, JSON.stringify(cur)); }
       }
     } catch (e) { /* storage blocked: the game falls back to its defaults */ }
-  }, [SEED, opts.quality || 'low']);
+  }, [SEED, opts.quality || 'low', !!opts.gate]);
   await page.goto('file://' + (opts.product ? DIST : TEST_BUILD) + (hash || ''));
   await page.waitForFunction(() => window.CGB && CGB.app);
   return log;

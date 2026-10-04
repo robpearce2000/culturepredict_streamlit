@@ -210,6 +210,18 @@ Choices made while building the first edition without the owner available. Each 
 | **The gold outline is the keyboard cursor,** so it now appears only once the arrow keys (or Enter) are used, with a small hint ("Gold outline: your keyboard choice · Enter pick"). The first key press shows it without moving it; clicking a hexagon hides it again. | Its purpose was unclear when it was always showing. |
 | **Hex Hunt marking is one press:** two big buttons, one per half ("had more right"), and **Neither**. Pressing one marks the question at once (keys 1, 2 and N); Undo (U) is kept. A level count goes to the half that chose the hexagon (the hint says so). The half that lost (both, for Neither) has the question saved to its weak topics; Neither puts it on the "Reteach these" list. | The brief. Percentages took longer to enter than to judge. |
 
+## Overnight Part 3: Start game, steady camera, home screen and a nameless host
+
+| Decision | Reason |
+|---|---|
+| **A "Start game" button (Enter) in all four games**, shared code with identical wording and style, shown over the game screen after setup. Only Over the Edge started a countdown straight after setup, but every game has a countdown, so all four get the same step: nothing ticks and nothing can be picked until it is pressed. It also takes Space, a click or a tap; Esc still leaves. | The brief: the same button in every game with a countdown, and a moment to explain the rules and get whiteboards out. The tests skip it by default with a test-only flag (it has its own test); the full-graphics playthroughs on the shipped file press it. |
+| **Over the Edge's camera is still while the setup card (or the Start game button) is showing:** one fixed view of the machine, set at once, with no sway and no cutting to the peg board for the decorative drops behind the card. Normal camera moves start with the first question. | The brief. |
+| **Home screen:** the subject panel ("Your class": Subject, Exam board and Questions as compact dropdowns, and the Question bank button) is on the left, the SHOWTIME wordmark in the middle and the host on the right. On tablets the wordmark and host share the top row and the panel spans the width below. The dropdowns are native selects, which work with mouse, touch (the device's own picker) and keyboard without any custom code. | The brief. Native controls are the most reliable on interactive whiteboards and tablets. |
+| **The host's bubble sits in the page flow above his head**, centred with its tail pointing down, so it cannot overlap him at any size; a test checks the bubble against the host's box and drawing at all three sizes. It says "Choose your subject, then pick a game!". | The brief. |
+| **Twinkling bulbs:** each of the 34 bulbs dims briefly on its own cycle (2.6–4.8 s, staggered start), so they never flash together; with reduced motion (the setting or the operating system's) they stay lit and still. | The brief. |
+| **Play buttons say "Play"** (with "Play Over the Edge" and so on for screen readers) and have a fixed height, so all four are exactly the same size. | The brief. "Play Category Clash" wrapped to two lines. |
+| **The host is nameless by default.** No name label, no "I'm …" introductions, an empty name box with "No name (optional)" in the customiser. A name typed there appears as the label on his bubbles everywhere; clearing it makes him nameless again. A saved name that is just one of the old defaults counts as no name; those old names are stored reversed in the code, so no default name appears anywhere in the shipped file (a test checks). | Rob's addition to the brief. |
+
 ## Things not done
 
 | Item | Reason |

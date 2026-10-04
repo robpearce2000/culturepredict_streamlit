@@ -78,12 +78,12 @@ test('choosing a subject filters the question sets everywhere and is remembered'
   let page = first;
   const log = await openBundle(page);
   // default: Combined Science, AQA
-  await expect(page.locator('#subjectChips .chip.on')).toHaveText(/Combined Science/);
-  await expect(page.locator('#boardSeg [aria-pressed="true"]')).toHaveText(/AQA/);
+  await expect(page.locator('#subjectSelect option:checked')).toHaveText(/Combined Science/);
+  await expect(page.locator('#boardSelect option:checked')).toHaveText(/AQA/);
   const combined = await page.locator('#launcherSet option').allTextContents();
   expect(combined.length).toBe(5);
   // Biology: only the Biology packs
-  await page.click('#subjectChips [data-subject="biology"]');
+  await page.selectOption('#subjectSelect', 'biology');
   const bio = await page.locator('#launcherSet option').allTextContents();
   expect(bio.map(t => t.replace(/ \(\d+\)$/, ''))).toEqual(['Combined Science: Biology', 'Homeostasis L1']);
   await page.selectOption('#launcherSet', { label: await page.locator('#launcherSet option').nth(1).textContent() });
@@ -102,7 +102,7 @@ test('choosing a subject filters the question sets everywhere and is remembered'
   expect(inSet).toBe(true);
   // remembered after closing the page, along with the set chosen for that subject
   page = await reopen(page);
-  await expect(page.locator('#subjectChips .chip.on')).toHaveText(/Biology/);
+  await expect(page.locator('#subjectSelect option:checked')).toHaveText(/Biology/);
   expect(await page.evaluate(() => CGB.bank.active().id)).toBe('homeostasis-l1');
   // other games can read the choice (Outpace and Category Clash will follow it)
   expect(await page.evaluate(() => [CGB.bank.subject(), CGB.bank.board()])).toEqual(['biology', 'aqa']);
@@ -112,7 +112,7 @@ test('choosing a subject filters the question sets everywhere and is remembered'
 test('a subject with no built-in pack says so, holds the Start buttons, and takes the teacher\'s own set', async ({ page: first }) => {
   let page = first;
   const log = await openBundle(page);
-  await page.click('#subjectChips [data-subject="maths"]');
+  await page.selectOption('#subjectSelect', 'maths');
   await expect(page.locator('#subjectNote')).toContainText('Built-in Maths packs are coming soon');
   await expect(page.locator('#launcherSet')).toBeDisabled();
   for (const id of GAMES) {
@@ -124,7 +124,7 @@ test('a subject with no built-in pack says so, holds the Start buttons, and take
     // "Change" goes back to the subject choice
     await card(page, id).locator('.packline [data-pack]').click();
     await expect(page.locator('#launcher')).toBeVisible();
-    await expect(page.locator('#subjectChips .chip.on')).toBeFocused();
+    await expect(page.locator('#subjectSelect')).toBeFocused();
   }
   // the teacher adds a Maths set: the subject is filled in for them
   await page.click('#openBank');
@@ -142,15 +142,15 @@ test('a subject with no built-in pack says so, holds the Start buttons, and take
   expect((await state(page, 'over-the-edge')).q.topic).toBe('Fractions');
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
   // it only shows under Maths
-  await page.click('#subjectChips [data-subject="physics"]');
+  await page.selectOption('#subjectSelect', 'physics');
   await expect(page.locator('#launcherSet option', { hasText: 'Fractions' })).toHaveCount(0);
   // and can be moved to another subject from the Question bank
-  await page.click('#subjectChips [data-subject="maths"]');
+  await page.selectOption('#subjectSelect', 'maths');
   await page.click('#openBank');
   await page.selectOption('#bankList select[data-subj]', 'physics');
   await expect(page.locator('#bankList .bank-item')).toHaveCount(0);
   await page.keyboard.press('Escape');
-  await page.click('#subjectChips [data-subject="physics"]');
+  await page.selectOption('#subjectSelect', 'physics');
   await expect(page.locator('#launcherSet option', { hasText: 'Fractions' })).toHaveCount(1);
   expect(log.errors).toEqual([]);
 });
@@ -158,14 +158,14 @@ test('a subject with no built-in pack says so, holds the Start buttons, and take
 test('the exam board choice is shown, remembered, and notes that the built-in packs are AQA-style', async ({ page: first }) => {
   let page = first;
   await openBundle(page);
-  await page.click('#boardSeg [data-board="edexcel"]');
-  await expect(page.locator('#boardSeg [aria-pressed="true"]')).toHaveText(/Edexcel/);
+  await page.selectOption('#boardSelect', 'edexcel');
+  await expect(page.locator('#boardSelect option:checked')).toHaveText(/Edexcel/);
   await expect(page.locator('#subjectNote')).toContainText('AQA-style. Edexcel packs are coming soon');
   expect(await page.locator('#launcherSet option').count()).toBe(5);   // nothing hidden until Edexcel packs exist
   await openGame(page, 'hex-hunt');
   await expect(page.locator('#hh-pack')).toContainText('Combined Science · Edexcel');
   page = await reopen(page);
-  await expect(page.locator('#boardSeg [aria-pressed="true"]')).toHaveText(/Edexcel/);
+  await expect(page.locator('#boardSelect option:checked')).toHaveText(/Edexcel/);
 });
 
 test('sets saved before subjects existed show under every subject', async ({ page: first }) => {
@@ -178,7 +178,7 @@ test('sets saved before subjects existed show under every subject', async ({ pag
   page = await reopen(page);
   expect(await page.evaluate(() => CGB.bank.active().id)).toBe('set-old');   // the set in use is kept
   for (const sj of ['history', 'chemistry']) {
-    await page.click(`#subjectChips [data-subject="${sj}"]`);
+    await page.selectOption('#subjectSelect', sj);
     await expect(page.locator('#launcherSet option', { hasText: 'Old set' })).toHaveCount(1);
   }
 });
@@ -195,7 +195,8 @@ test('the host is customised from the main screen and changes everywhere', async
   await page.click('#segGlasses button[data-v="no"]');
   await expect(page.locator('#swSuit .sw[data-i="3"]')).toHaveAttribute('aria-pressed', 'true');
   await page.keyboard.press('Escape');
-  await expect(page.locator('#mascotHello')).toContainText("Hello, I'm Ms Quiz!");
+  await expect(page.locator('#mascotWho')).toHaveText('Ms Quiz');                 // the name label appears once he has a name
+  await expect(page.locator('#mascotLine')).toHaveText('Choose your subject, then pick a game!');
   // gone from Over the Edge's setup; the game's host uses the new name
   await openGame(page, 'over-the-edge');
   await expect(page.locator('#game-over-the-edge')).not.toContainText('Customise the host');
@@ -205,5 +206,130 @@ test('the host is customised from the main screen and changes everywhere', async
   page = await reopen(page);
   const cfg = await page.evaluate(() => CGB.hostCfg);
   expect(cfg.name).toBe('Ms Quiz'); expect(cfg.suit).toBe(3); expect(cfg.glasses).toBe('no');
+  expect(log.errors).toEqual([]);
+});
+
+test('every game waits on a Start game button after setup, with no countdown until it is pressed', async ({ page }) => {
+  const log = await openBundle(page, '', { gate: true });
+  const after = { 'over-the-edge': s => s.round === 'think', outpace: s => s.phase === 'deal', 'category-clash': s => s.phase === 'board', 'hex-hunt': s => s.phase === 'board' };
+  for (const id of GAMES) {
+    await openGame(page, id);
+    await page.keyboard.press('Enter');                           // Enter on the setup card starts the game...
+    const gate = page.locator(`#game-${id} .start-gate`);
+    await expect(gate).toBeVisible();                             // ...and the same Start game button appears in every game
+    await expect(gate.locator('.start-gate-btn')).toHaveText(/^Start game\s*Enter$/);
+    await expect(card(page, id)).toBeHidden();
+    await page.waitForTimeout(1500);
+    const s = await state(page, id);
+    expect(after[id](s)).toBe(false);                             // nothing has started, so nothing is ticking
+    expect(s.round === 'think').toBe(false);
+    await expect(page.locator(`#game-${id} .cm-count:visible, #game-${id} [id$="count"]:visible`)).toHaveCount(0);
+    if (id === 'hex-hunt') await gate.locator('.start-gate-btn').click(); else await page.keyboard.press('Enter');
+    await expect(gate).toBeHidden();
+    await expect.poll(async () => after[id](await state(page, id))).toBe(true);
+    await page.keyboard.press('Escape'); const leave = page.locator('#leaveConfirm'); if (await leave.isVisible()) await leave.click();
+    await expect(page.locator('#launcher')).toBeVisible();
+  }
+  expect(log.errors).toEqual([]);
+});
+
+test('the Over the Edge camera holds still while the setup card is showing', async ({ page }) => {
+  await openBundle(page);
+  await openGame(page, 'over-the-edge');
+  await expect(card(page, 'over-the-edge')).toBeVisible();
+  await page.waitForTimeout(3000);                                // let it settle on the setup view
+  const seen = [];
+  for (let i = 0; i < 8; i++) { seen.push((await state(page, 'over-the-edge')).camera); await page.waitForTimeout(500); }
+  // through four seconds of decorative drops, the camera does not move
+  seen.forEach(p => p.forEach((v, k) => expect(Math.abs(v - seen[0][k])).toBeLessThan(0.002)));
+});
+
+test('the host has no name unless the teacher gives him one, and clearing it makes him nameless again', async ({ page: first }) => {
+  let page = first;
+  const log = await openBundle(page);
+  // nameless by default: the greeting doesn't introduce him and there is no name label
+  await expect(page.locator('#mascotLine')).toHaveText('Choose your subject, then pick a game!');
+  await expect(page.locator('#mascotWho')).toBeHidden();
+  await expect(page.locator('#mascotHello')).not.toContainText("I'm");
+  // no name label in Over the Edge's bubble or the corner host of the other games
+  await openGame(page, 'over-the-edge');
+  await expect(page.locator('#ote-bubble')).toHaveClass(/show/, { timeout: 8000 });
+  await expect(page.locator('#ote-bubbleWho')).toBeHidden();
+  await expect(page.locator('#ote-bubbleText')).not.toContainText("I'm");
+  await page.keyboard.press('Escape');
+  await openGame(page, 'category-clash');
+  await page.click('#cc-startBtn');
+  await expect(page.locator('#game-category-clash .hc-bubble')).toHaveClass(/show/);
+  await expect(page.locator('#game-category-clash .hc-name')).toBeHidden();
+  await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+  // the customiser shows an empty name box
+  await page.click('#openHost');
+  await expect(page.locator('#hostName')).toHaveValue('');
+  // a name: shown as the label on his bubbles
+  await page.fill('#hostName', 'Mr Pearce');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#mascotWho')).toHaveText('Mr Pearce');
+  await openGame(page, 'hex-hunt');
+  await page.click('#hh-startBtn');
+  await expect(page.locator('#game-hex-hunt .hc-name')).toHaveText('Mr Pearce');
+  await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+  // cleared: nameless again
+  await page.click('#openHost');
+  await page.fill('#hostName', '');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#mascotWho')).toBeHidden();
+  // a name saved by an earlier version that is just the old default counts as no name
+  await page.evaluate(() => localStorage.setItem('cgb.host', JSON.stringify({ name: ['Marty', 'Marquee'].join(' '), suit: 1 })));
+  page = await reopen(page);
+  expect(await page.evaluate(() => CGB.hostName())).toBe('');
+  await expect(page.locator('#mascotWho')).toBeHidden();
+  // and no default name appears anywhere in the shipped file
+  const fs = require('fs');
+  const shipped = fs.readFileSync(require('./helpers').DIST, 'utf8');
+  expect(shipped).not.toMatch(/Marty|Marquee|Professor Pip/);
+  expect(log.errors).toEqual([]);
+});
+
+test('launcher: subject and exam board dropdowns, the bubble clear of the host, and four equal Play buttons', async ({ page }) => {
+  const log = await openBundle(page);
+  for (const [w, h] of [[1920, 1080], [1366, 768], [768, 1024]]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.waitForTimeout(300);
+    // the speech bubble never overlaps the host
+    const [bub, fig] = await Promise.all([page.locator('#mascotHello').boundingBox(), page.locator('#mascot .host-wrap').boundingBox()]);
+    const svg = await page.locator('#mascot .host-wrap svg').boundingBox();
+    const overlap = (a, b) => a.x < b.x + b.width && b.x < a.x + a.width && a.y < b.y + b.height && b.y < a.y + a.height;
+    expect(overlap(bub, fig), `bubble over host at ${w}x${h}`).toBe(false);
+    if (svg) expect(overlap(bub, svg), `bubble over host drawing at ${w}x${h}`).toBe(false);
+    // the four Play buttons say Play and are exactly the same size
+    const play = page.locator('.gcard [data-play]');
+    await expect(play).toHaveText(['Play', 'Play', 'Play', 'Play']);
+    const boxes = await play.evaluateAll(bs => bs.map(b => { const r = b.getBoundingClientRect(); return [Math.round(r.width * 10), Math.round(r.height * 10)]; }));
+    boxes.forEach(b => expect(b).toEqual(boxes[0]));
+    // the wordmark sits in the middle and the subject panel to its left on wide screens
+    if (w >= 1366) {
+      const [word, subj] = await Promise.all([page.locator('#wordmark').boundingBox(), page.locator('#subjectPanel').boundingBox()]);
+      expect(Math.abs(word.x + word.width / 2 - w / 2)).toBeLessThan(w * 0.08);
+      expect(subj.x + subj.width).toBeLessThanOrEqual(word.x + 1);
+    }
+  }
+  // the subject picker is a compact dropdown showing the chosen subject: keyboard...
+  await expect(page.locator('#subjectSelect option:checked')).toHaveText('Combined Science');
+  await page.focus('#subjectSelect');
+  await page.keyboard.press('ArrowDown');
+  await expect.poll(() => page.evaluate(() => CGB.bank.subject())).not.toBe('combined');
+  // ...and mouse or touch
+  await page.selectOption('#subjectSelect', 'physics');
+  expect(await page.evaluate(() => CGB.bank.subject())).toBe('physics');
+  await page.selectOption('#boardSelect', 'edexcel');
+  expect(await page.evaluate(() => CGB.bank.board())).toBe('edexcel');
+  // the sign's bulbs twinkle on varied timings, and are still with reduced motion
+  const anim = await page.locator('#wordmark .bulb').evaluateAll(bs => bs.map(b => getComputedStyle(b).animationName + ' ' + getComputedStyle(b).animationDuration + ' ' + getComputedStyle(b).animationDelay));
+  expect(anim.length).toBeGreaterThan(20);
+  expect(anim.every(a => a.startsWith('bulb-twinkle'))).toBe(true);
+  expect(new Set(anim).size).toBeGreaterThan(10);
+  await page.evaluate(() => CGB.settings.set('reducedMotion', true));
+  const still = await page.locator('#wordmark .bulb').evaluateAll(bs => bs.map(b => getComputedStyle(b).animationName + ' ' + getComputedStyle(b).opacity));
+  expect(still.every(a => a === 'none 1')).toBe(true);
   expect(log.errors).toEqual([]);
 });

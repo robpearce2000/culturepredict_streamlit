@@ -1,6 +1,6 @@
 'use strict';
 /* =========================================================
-   THE HOST: Marty Marquee, the Showtime mascot.
+   THE HOST: the Showtime mascot. He has no name unless the teacher gives him one.
    A 2D cartoon drawn as SVG in the same ink-outlined sticker
    style as the Showtime logos. Arms pose with CSS transforms,
    he blinks, talks and pulls faces. The look is customisable
@@ -16,23 +16,28 @@ CGB.hostOpts = {
   glasses: [['no', 'No'], ['yes', 'Yes']]
 };
 CGB.hostCfg = (() => {
-  const defaults = { name: 'Marty Marquee', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
+  const defaults = { name: '', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
   const saved = CGB.store.getJSON('host', {});
   const cfg = Object.assign({}, defaults, saved && typeof saved === 'object' ? saved : {});
   // guard against out-of-range values from older saves
-  if (cfg.name === 'Professor Pip') cfg.name = defaults.name;   // the host's earlier default name
+  // a name saved by an earlier version that is just one of its default names counts as no name
+  cfg.name = String(cfg.name || '').trim();
+  // (the old defaults are kept reversed, so no default name appears anywhere in the shipped file)
+  if (['pip rosseforp', 'eeuqram ytram', 'tsoh'].includes(cfg.name.toLowerCase().split('').reverse().join(''))) cfg.name = '';
   ['skin', 'hair', 'suit'].forEach(k => { if (!(cfg[k] >= 0 && cfg[k] < CGB.hostOpts[k].length)) cfg[k] = defaults[k]; });
   ['style', 'beard', 'glasses'].forEach(k => { if (!CGB.hostOpts[k].some(o => o[0] === cfg[k])) cfg[k] = defaults[k]; });
   return cfg;
 })();
 CGB.hostListeners = [];
+/* The host's name, or '' when the teacher hasn't given him one (then no name label is shown) */
+CGB.hostName = () => String(CGB.hostCfg.name || '').trim();
 CGB.saveHost = function () {
   CGB.store.setJSON('host', CGB.hostCfg);
   CGB.hostListeners.forEach(fn => { try { fn(); } catch (e) { /* ignore */ } });
 };
 
 /* Arm angles in degrees: [upper arm, forearm]. 0 = hanging straight down.
-   A = the arm on the viewer's left (Marty's right), B = the viewer's right. */
+   A = the arm on the viewer's left (the host's right), B = the viewer's right. */
 CGB.HOST_POSES = {
   idle:    { A: [14, 10], B: [-14, -10], face: 'smile' },
   present: { A: [52, -28], B: [-14, -10], face: 'smile' },
@@ -137,7 +142,7 @@ CGB.hostSVG = function (cfg) {
 </svg>`;
 };
 
-/* Mount Marty in a container element. Returns a small controller. */
+/* Mount the host in a container element. Returns a small controller. */
 CGB.createHost2D = function (container, opts) {
   opts = opts || {};
   const wrap = document.createElement('div');
@@ -188,7 +193,7 @@ CGB.createHost2D = function (container, opts) {
   };
 };
 
-/* A small corner presence for the games without a stage: Marty's head and shoulders
+/* A small corner presence for the games without a stage: the host's head and shoulders
    with a caption bubble beside him. It sits in the page layout (never on top of the
    board, track, questions or controls). Captions only; no voice. */
 CGB.createHostCorner = function (container, opts) {
@@ -202,7 +207,8 @@ CGB.createHostCorner = function (container, opts) {
   let hideTimer = null;
   function say(text, gesture, ms) {
     if (!text) return;
-    box.querySelector('.hc-name').textContent = CGB.hostCfg.name || 'Host';
+    const nm = box.querySelector('.hc-name');
+    nm.textContent = CGB.hostName(); nm.hidden = !CGB.hostName();
     box.querySelector('.hc-text').textContent = text;
     bubble.classList.add('show');
     if (gesture) host.gesture(gesture, ms || 1800);

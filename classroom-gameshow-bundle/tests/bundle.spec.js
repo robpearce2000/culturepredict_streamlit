@@ -131,6 +131,7 @@ test('@hq a full-length game of Over the Edge at High graphics, on the shipped f
   const log = await openBundle(page, '#over-the-edge', { product: true, quality: 'high' });
   expect(await page.evaluate(() => CGB.settings.get('quality'))).toBe('high');
   await page.click('#ote-startBtn');
+  await page.click('#game-over-the-edge .start-gate-btn');   // the shipped file always has the Start game step
   const s = await playOverTheEdge(page, { timeout: 540000 });
   expect(s.phase).toBe('summary');
   await expect(page.locator('#ote-summary')).toBeVisible();
@@ -144,6 +145,7 @@ test('@hq a full game of Outpace at High graphics, with the full 60-second sprin
   const log = await openBundle(page, '#outpace', { product: true, quality: 'high' });
   expect(await page.evaluate(() => CGB.settings.get('quality'))).toBe('high');
   await page.click('#op-startBtn');
+  await page.click('#game-outpace .start-gate-btn');   // the shipped file always has the Start game step
   const s = await playOutpace(page, { timeout: 540000 });
   expect(s.phase).toBe('summary');
   expect(log.errors).toEqual([]);

@@ -224,7 +224,7 @@ function openTile(c, r) {
   paintQBoard(); round.think();
   $('qcard').focus({ preventScroll: true });   // keys now go to the question, not the board behind it
 }
-/* Marty in the corner: short captions at the big moments */
+/* The host in the corner: short captions at the big moments */
 const hostC = CGB.createHostCorner($('host'));
 const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
 /* ---------- Whole class: every team answers, the teacher marks each team ---------- */
@@ -318,13 +318,19 @@ function startGame() {
   S.order = []; S.catchUp = -1; misc.reset(); round.stop();
   startClassRound(); S.turn = S.order[0];
   buildBoard();
-  S.phase = 'board';
+  S.phase = 'ready';
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('play').hidden = false; $('q').hidden = true;
   renderBoard();
-  hostC.say(`Welcome to Category Clash! ${S.teams[0].name}, you pick first.`, 'wave', 2000);
-  const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
+  // the board is on show, with nothing to pick until the teacher presses Start game
+  gate.show(() => {
+    S.phase = 'board';
+    renderBoard();
+    hostC.say(`Welcome to Category Clash! ${S.teams[0].name}, you pick first.`, 'wave', 2000);
+    const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
+  });
 }
+const gate = CGB.createStartGate(document.getElementById('game-category-clash'), 'Teams take turns to pick a tile, and every team answers on a whiteboard. Nothing starts until you press Start.');
 $('startBtn').addEventListener('click', startGame);
 $('endBtn').addEventListener('click', () => CGB.armButton($('endBtn'), 'Tap again to end', () => { round.stop(); $('q').hidden = true; showSummary(); }));
 
@@ -355,6 +361,7 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
+  gate.hide();
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home'; S.open = null;

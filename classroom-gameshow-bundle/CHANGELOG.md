@@ -24,6 +24,16 @@
 - **Every letter really is where the answer starts** ("the", "a" and "an" are skipped, and answers that are explanations, lists or numbers stay off the board).
 - The gold outline is the keyboard cursor, so it only appears when you use the arrow keys, with a small hint.
 
+### Every game
+- **A Start game button after setup.** Nothing ticks until you press it, so you can explain the rules and get the whiteboards out.
+- **The host has no name** unless you give him one in Customise the host; with a name, it shows on his speech bubbles.
+
+### Home screen
+- The subject, exam board and question set are compact dropdowns on the left; the SHOWTIME sign is in the middle, and its bulbs twinkle (still with reduced motion).
+- The host's speech bubble no longer covers his head.
+- The four game buttons just say Play and are all the same size.
+- Over the Edge's camera stays still behind its setup card.
+
 
 ## 1.4.1 – Ten-minute games (October 2026)
 

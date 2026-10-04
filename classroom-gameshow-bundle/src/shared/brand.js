@@ -23,7 +23,9 @@ CGB.brand = (() => {
     const title = opts.title !== false ? '<title>Showtime: Classroom Gameshows</title>' : '';
     // marquee bulbs around the main word
     let bulbs = '';
-    for (let i = 0; i < 17; i++) { const x = 80 + i * 52.5; bulbs += `<circle cx="${x.toFixed(1)}" cy="34" r="9" fill="${i % 2 ? SUN : '#fff'}" stroke="${INK}" stroke-width="3"/><circle cx="${x.toFixed(1)}" cy="266" r="9" fill="${i % 2 ? '#fff' : SUN}" stroke="${INK}" stroke-width="3"/>`; }
+    // each bulb twinkles on its own (fixed, varied) timing, so they never all flash together
+    const tw = k => `--tw:${(2.6 + ((k * 37) % 23) / 10).toFixed(1)}s;--td:-${(((k * 53) % 41) / 10).toFixed(1)}s`;
+    for (let i = 0; i < 17; i++) { const x = 80 + i * 52.5; bulbs += `<circle class="bulb" style="${tw(i)}" cx="${x.toFixed(1)}" cy="34" r="9" fill="${i % 2 ? SUN : '#fff'}" stroke="${INK}" stroke-width="3"/><circle class="bulb" style="${tw(i + 17)}" cx="${x.toFixed(1)}" cy="266" r="9" fill="${i % 2 ? '#fff' : SUN}" stroke="${INK}" stroke-width="3"/>`; }
     return `<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Showtime: Classroom Gameshows">${title}
   <g>
     ${star(36, 150, 30, SUN, 0.2)}${star(966, 140, 26, TAN, 0.5)}${star(950, 330, 16, TEAL, 0.1)}${star(52, 340, 16, SUN, 0.7)}

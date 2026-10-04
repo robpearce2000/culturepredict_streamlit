@@ -75,6 +75,7 @@ async function until(page, fn, ms, arg) {
   await page.waitForTimeout(1500);
   await page.click('#ote-segTeams button[data-v="6"]');
   await page.click('#ote-startBtn');
+  await page.click('#game-over-the-edge .start-gate-btn');
   await page.waitForTimeout(3500);
   await markRound('over-the-edge', ['c', '4']);
   await page.waitForTimeout(600);
@@ -89,6 +90,7 @@ async function until(page, fn, ms, arg) {
   await page.waitForTimeout(1000);
   await page.click('#op-segGroups button[data-v="6"]');
   await page.click('#op-startBtn');
+  await page.click('#game-outpace .start-gate-btn');
   await page.keyboard.press('2');
   await page.waitForTimeout(1200);
   await markRound('outpace', ['1', '2', '4', '5']);
@@ -102,6 +104,7 @@ async function until(page, fn, ms, arg) {
   await page.waitForTimeout(600);
   await page.click('#cc-segTeams button[data-v="6"]');
   await page.click('#cc-startBtn');
+  await page.click('#game-category-clash .start-gate-btn');
   const ccMarks = [[0, 0, ['1', '2', '3']], [1, 0, ['c']], [2, 1, ['2', '5']], [3, 0, ['c', '6']], [0, 1, ['1', '3', '4', '5']], [3, 2, ['w', '2']]];
   for (const [c, r, keys] of ccMarks) {
     await page.locator(`#cc-board .cc-tile[data-c="${c}"][data-r="${r}"]`).click();
@@ -121,6 +124,7 @@ async function until(page, fn, ms, arg) {
   await page.click('[data-play="hex-hunt"]');
   await page.waitForTimeout(600);
   await page.click('#hh-startBtn');
+  await page.click('#game-hex-hunt .start-gate-btn');
   const hexMoves = [[[0, 1], '1'], [[1, 0], '2'], [[1, 2], '1'], [[2, 1], '2']];
   for (const [[c, r], side] of hexMoves) {
     await page.locator(`#hh-board .hh-hex[data-c="${c}"][data-r="${r}"]`).click();

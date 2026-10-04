@@ -1163,7 +1163,7 @@ paintGroups();
 renderGroupNames();
 $('startBtn').addEventListener('click', startGame);
 
-/* Marty: one corner host that moves to whichever panel is showing; captions only */
+/* The host: one corner host that moves to whichever panel is showing; captions only */
 const hostC = CGB.createHostCorner(document.createElement('div'));
 function hostSay(slot, text, gesture, ms) { const el = $(slot); if (hostC.el.parentElement !== el) el.appendChild(hostC.el); hostC.say(text, gesture, ms); }
 /* ---------- Every team answers, the class moves as one runner ---------- */
@@ -1287,8 +1287,12 @@ function startGame() {
   state.wrongAnswers = state.players.map(() => []);
   picker.reset();
   $('roundEnd').classList.remove('show');
-  startDealRound();
+  // the track is shown with nothing ticking until the teacher presses Start game
+  state.phase = 'ready';
+  hideAll();
+  gate.show(startDealRound);
 }
+const gate = CGB.createStartGate(document.getElementById('game-outpace'), 'The class votes for a deal, then every team answers each question on a whiteboard. Nothing starts until you press Start.');
 const pickQuestion = () => picker.pick(state.players.map(p => p.name));
 
 /* ============ DEAL ROUND ============ */
@@ -1476,7 +1480,7 @@ $('menuBtn2').addEventListener('click', () => CGB.app.requestLauncher());
 
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  clearTimers(); roundDeal.stop(); roundSprint.stop(); clearTimeout(sprintNextT);
+  clearTimers(); roundDeal.stop(); roundSprint.stop(); clearTimeout(sprintNextT); gate.hide();
   state.phase = 'home';
   roundEndNext = null;
   $('roundEnd').classList.remove('show');

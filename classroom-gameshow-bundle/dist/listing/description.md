@@ -16,7 +16,7 @@ Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** cont
 
 **Built for a whole class of 30**
 Split the class into 2 to 6 teams with mini whiteboards. No pupil devices are needed. In every game, every team answers every question:
-- Choose your subject and question set once on the menu; each game then asks only how many teams are playing
+- Choose your subject and question set once on the menu; each game then asks only how many teams are playing, and waits on a Start game button so nothing ticks until the class is ready
 - Show the question with a 20-second countdown, then press Space for a big "3, 2, 1, show me!" and every team holds up its board
 - Tap 1 to 6 to mark each team right or wrong (under 10 seconds for six teams), then Enter to reveal the answer and play on. Made a mistake? Undo it.
 - Team captains change every question, so everyone takes a turn
@@ -48,7 +48,7 @@ A tactical race across a board of lettered hexagons. Each letter is the first le
 - Opens by double-clicking in Chrome, Edge, Firefox or Safari, even with no internet connection
 - Full keyboard shortcuts, plus mouse and touch for interactive whiteboards
 - Large text option for the back of the room, reduced motion option, and a low-graphics mode for older PCs
-- A cartoon host, Marty Marquee, whom you can rename and restyle from the menu
+- A cartoon host you can name (your own name works well) and restyle from the menu
 - Colours meet WCAG AA contrast, and nothing relies on colour alone
 - Short teacher guide (PDF) with set-up steps, a "Running it with a class" page, shortcuts, classroom tips and troubleshooting
 
@@ -67,7 +67,7 @@ revision game, quiz, gameshow, interactive whiteboard, GCSE science, combined sc
 
 ## Images
 
-- `cover.png`: Showtime wordmark, Marty Marquee and all four games
+- `cover.png`: Showtime wordmark, the host and all four games
 - `over-the-edge.png`: Over the Edge with six teams, five correct teams' counters dropping
 - `outpace.png`: Outpace with the whole class as one runner, four of six teams correct
 - `category-clash.png`: Category Clash with six teams, a question just marked

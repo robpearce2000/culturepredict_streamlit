@@ -265,7 +265,7 @@ function undoClassResult() {
   S.step = 'ask'; undoSnap = null;
   renderBoard();
 }
-/* Marty in the corner: short captions at the big moments */
+/* The host in the corner: short captions at the big moments */
 const hostC = CGB.createHostCorner($('host'));
 const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
 function newQuestionHere() {
@@ -325,12 +325,18 @@ function startGame() {
   misc.reset(); round.stop();
   newBoard();
   if (!S.cells.some(c => c.q)) { $('setHint').textContent = 'This set has no answers that start with a letter. Choose another set.'; return; }
-  S.phase = 'board';
+  S.phase = 'ready';
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('win').hidden = true; $('q').hidden = true; $('play').hidden = false;
   renderBoard();
-  hostC.say(`Welcome to Hex Hunt! ${S.teams[0].name} go left to right, ${S.teams[1].name} top to bottom.`, 'wave', 2200);
+  // the board is on show, with nothing to pick until the teacher presses Start game
+  gate.show(() => {
+    S.phase = 'board';
+    renderBoard();
+    hostC.say(`Welcome to Hex Hunt! ${S.teams[0].name} go left to right, ${S.teams[1].name} top to bottom.`, 'wave', 2200);
+  });
 }
+const gate = CGB.createStartGate(document.getElementById('game-hex-hunt'), 'Two halves of the class race to link their edges, answering on whiteboards. Nothing starts until you press Start.');
 $('startBtn').addEventListener('click', startGame);
 
 function showSummary() {
@@ -351,6 +357,7 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
+  gate.hide();
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home';

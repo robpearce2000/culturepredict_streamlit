@@ -31,3 +31,11 @@
 - **One-press marking:** two big half buttons and Neither; Undo kept.
 
 Tests: fairness simulation, drop order and flicker check, Category Clash tiers/topics (5 tests), Hex Hunt letters and one-press marking; quick suite, @hq Over the Edge, and the screenshot sweep for the three games at all three sizes pass. Banned-term and contrast checks pass.
+
+## Part 3: Start game button, steady camera, home screen, nameless host — done
+
+- **Start game** (Enter) after setup in all four games: same shared button and wording; nothing ticks until it is pressed. Test: every game, no countdown before the press.
+- **Over the Edge camera** holds one still view behind the setup card (and the Start game button). Test: camera position unchanged over four seconds of decorative drops.
+- **Home screen:** "Your class" panel on the left with Subject, Exam board and Questions as compact dropdowns (native selects: mouse, touch and keyboard); SHOWTIME in the middle with twinkling bulbs on varied timings (still with reduced motion); the host on the right with his bubble above his head ("Choose your subject, then pick a game!"), never overlapping him at any size; four identical **Play** buttons. Tests for each.
+- **Nameless host:** no default name anywhere (bubbles, captions, launcher, customiser, guide, listing text, shipped file); a typed name shows as his label everywhere; clearing it or an old saved default makes him nameless. Tests for both cases, including the shipped file containing no default name.
+- Quick suite (51 tests), setup tests, launcher sweep at all sizes, @hq Over the Edge and Outpace on the shipped file, banned-term and contrast checks pass.

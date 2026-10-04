@@ -22,23 +22,26 @@
   </svg>
   <div class="wrap">
     <header class="l-hero">
-      <h1 class="l-wordmark" id="wordmark" style="margin:0"></h1>
       <section class="l-subject" id="subjectPanel" aria-labelledby="subjectTitle">
-        <h2 id="subjectTitle">Choose your subject</h2>
-        <div class="l-chips" id="subjectChips" role="radiogroup" aria-labelledby="subjectTitle"></div>
+        <h2 id="subjectTitle">Your class</h2>
         <div class="l-row">
-          <span class="lab" id="labBoard">Exam board</span>
-          <div class="seg" id="boardSeg" role="group" aria-labelledby="labBoard"></div>
+          <label class="lab" for="subjectSelect">Subject</label>
+          <select class="cgb-select l-pick" id="subjectSelect"></select>
+        </div>
+        <div class="l-row">
+          <label class="lab" for="boardSelect">Exam board</label>
+          <select class="cgb-select l-pick" id="boardSelect"></select>
         </div>
         <div class="l-row l-qrow">
           <label class="lab" for="launcherSet">Questions</label>
-          <select class="cgb-select" id="launcherSet"></select>
-          <button class="btn go sm" type="button" id="openBank">Question bank</button>
+          <select class="cgb-select l-pick" id="launcherSet"></select>
         </div>
+        <button class="btn go sm" type="button" id="openBank">Question bank</button>
         <p class="l-note" id="subjectNote" role="status"></p>
       </section>
+      <h1 class="l-wordmark" id="wordmark" style="margin:0"></h1>
       <div class="l-host">
-        <div class="l-mascot" id="mascot"><div class="hello" id="mascotHello"></div></div>
+        <div class="l-mascot" id="mascot"><div class="hello" id="mascotHello"><b class="who" id="mascotWho" hidden></b><span id="mascotLine">Choose your subject, then pick a game!</span></div></div>
         <button class="btn plain sm" type="button" id="openHost">Customise the host</button>
       </div>
     </header>
@@ -49,7 +52,7 @@
         <div class="body">
           <h3>Over the Edge</h3>
           <p>Every team that answers right wins a counter to drop down a lane. Push the pile over the edge, then play for the jackpot together.</p>
-          <button class="btn brand" type="button" data-play="over-the-edge">Play Over the Edge</button>
+          <button class="btn brand play" type="button" data-play="over-the-edge" aria-label="Play Over the Edge">Play</button>
         </div>
       </article>
       <article class="gcard">
@@ -57,7 +60,7 @@
         <div class="body">
           <h3>Outpace</h3>
           <p>The whole class is one runner. Pick a deal, then answer your way home before the Hunter catches you.</p>
-          <button class="btn brand" type="button" data-play="outpace">Play Outpace</button>
+          <button class="btn brand play" type="button" data-play="outpace" aria-label="Play Outpace">Play</button>
         </div>
       </article>
       <article class="gcard">
@@ -65,7 +68,7 @@
         <div class="body">
           <h3>Category Clash</h3>
           <p>Teams take turns to pick a category and a points value, and every team answers. Harder questions are worth more.</p>
-          <button class="btn brand" type="button" data-play="category-clash">Play Category Clash</button>
+          <button class="btn brand play" type="button" data-play="category-clash" aria-label="Play Category Clash">Play</button>
         </div>
       </article>
       <article class="gcard">
@@ -73,7 +76,7 @@
         <div class="body">
           <h3>Hex Hunt</h3>
           <p>Two halves of the class race to build a path across the hexagon board. Each letter is the first letter of the answer.</p>
-          <button class="btn brand" type="button" data-play="hex-hunt">Play Hex Hunt</button>
+          <button class="btn brand play" type="button" data-play="hex-hunt" aria-label="Play Hex Hunt">Play</button>
         </div>
       </article>
       <article class="gcard soon" aria-label="More shows coming soon">
@@ -148,7 +151,7 @@ A: Ionic</div>
     <div class="modal-body host-editor">
       <div class="host-preview" id="hostPreview" aria-hidden="true"></div>
       <div class="host-grid">
-        <div class="full"><label class="lab" for="hostName">Host name</label><input class="cgb-input" type="text" id="hostName" maxlength="20"></div>
+        <div class="full"><label class="lab" for="hostName">Host name</label><input class="cgb-input" type="text" id="hostName" maxlength="20" placeholder="No name (optional)"></div>
         <div><span class="lab">Skin</span><div class="swatches" id="swSkin"></div></div>
         <div><span class="lab">Hair colour</span><div class="swatches" id="swHair"></div></div>
         <div><span class="lab">Hair style</span><div class="seg" id="segStyle"></div></div>

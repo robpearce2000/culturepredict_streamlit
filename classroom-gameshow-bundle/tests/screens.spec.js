@@ -95,9 +95,9 @@ const SECTIONS = {
     await page.keyboard.press('Escape');
     await page.click('#openAbout'); await shot('04-about'); await page.keyboard.press('Escape');
     await page.click('#openHost'); await shot('06-host-menu', 900); await page.keyboard.press('Escape');
-    await page.click('#subjectChips [data-subject="history"]'); await page.click('#boardSeg [data-board="edexcel"]');
+    await page.selectOption('#subjectSelect', 'history'); await page.selectOption('#boardSelect', 'edexcel');
     await shot('07-launcher-no-pack', 300);
-    await page.click('#subjectChips [data-subject="combined"]'); await page.click('#boardSeg [data-board="aqa"]');
+    await page.selectOption('#subjectSelect', 'combined'); await page.selectOption('#boardSelect', 'aqa');
     await page.click('#launcherSettings [data-key="textSize"] button:nth-child(2)');
     await shot('05-launcher-large-text');
   },
