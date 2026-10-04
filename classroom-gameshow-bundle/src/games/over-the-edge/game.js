@@ -30,7 +30,7 @@ function pusherFront(t) { const ph = (1 - Math.cos(2 * Math.PI * t / PHY.PERIOD)
 function makeTray() { return { lower: [], upper: [], t: 0, pf: PHY.PF_MIN, nextId: 1, onTransfer: null }; }
 function mkBody(tray, x, y, o) {
   o = o || {}; const r = o.r || PHY.R;
-  return { id: tray.nextId++, x, y, vx: 0, vy: 0, r, m: (r * r) / (PHY.R * PHY.R) * (o.heavy || 1), kind: o.kind || 'std', owner: o.owner == null ? -1 : o.owner, wildcard: o.wildcard || null, rot: Math.random() * 6.28, mesh: null, anim: 0, base: null, rider: null, ox: 0, oy: 0, h: 0, hv: 0 };
+  return { id: tray.nextId++, x, y, vx: 0, vy: 0, r, m: (r * r) / (PHY.R * PHY.R) * (o.heavy || 1), kind: o.kind || 'std', owner: o.owner == null ? -1 : o.owner, wildcard: o.wildcard || null, rot: CGB.random() * 6.28, mesh: null, anim: 0, base: null, rider: null, ox: 0, oy: 0, h: 0, hv: 0 };
 }
 function addLower(tray, x, y, o) { const b = mkBody(tray, x, y, o); tray.lower.push(b); return b; }
 function addUpper(tray, x, y, o) { const b = mkBody(tray, x, y, o); tray.upper.push(b); return b; }
@@ -90,7 +90,7 @@ function stepTray(tray, dt, onFall) {
       if (tray.onTransfer) moved.forEach(m => tray.onTransfer(m));
     }
     for (const T of [tray.lower, tray.upper]) for (const b of T) {
-      if (!b.base || Math.random() > 0.001) continue;
+      if (!b.base || CGB.random() > 0.001) continue;
       const tx = b.base.x + (b.ox >= 0 ? 1 : -1) * (b.r * 2 + 1), ty = b.base.y + 4;
       if (tx > b.r && tx < PHY.W - b.r && overlapInfo(T, tx, ty, b.r, b).worst < 2) { b.base.rider = null; b.base = null; b.x = tx; b.y = ty; b.h = Math.max(b.h, 0.16); }
     }
@@ -111,7 +111,7 @@ function stepTray(tray, dt, onFall) {
 }
 function upperLanding(tray, x) {
   const r = PHY.R; x = Math.min(PHY.W - r, Math.max(r, x));
-  if (Math.random() < 0.25) {
+  if (CGB.random() < 0.25) {
     let best = null, bd = 1e9;
     for (const b of tray.upper) {
       if (b.base || b.rider || Math.abs(b.x - x) > r * 2) continue;
@@ -130,19 +130,19 @@ function fillTray(tray) {
   const r = PHY.R, dx = r * 2.02, dy = r * 1.76;
   let row = 0;
   for (let y = PHY.PF_MAX + r + 1; y < PHY.D - r * 0.3; y += dy, row++)
-    for (let x = r + (row % 2 ? dx / 2 : 1); x < PHY.W - r; x += dx) if (Math.random() < 0.93) addLower(tray, x + (Math.random() - 0.5) * 3, y + (Math.random() - 0.5) * 3);
+    for (let x = r + (row % 2 ? dx / 2 : 1); x < PHY.W - r; x += dx) if (CGB.random() < 0.93) addLower(tray, x + (CGB.random() - 0.5) * 3, y + (CGB.random() - 0.5) * 3);
   row = 0;
   for (let y = PHY.WALL + r + 1; y < PHY.PF_MAX - r * 0.2; y += dy, row++)
-    for (let x = r + (row % 2 ? dx / 2 : 1); x < PHY.W - r; x += dx) if (Math.random() < 0.97) addUpper(tray, x, y);
+    for (let x = r + (row % 2 ? dx / 2 : 1); x < PHY.W - r; x += dx) if (CGB.random() < 0.97) addUpper(tray, x, y);
   for (let i = 0; i < 240; i++) stepTray(tray, 1 / 60, null);
   // a few ready-made stacks
   for (let k = 0; k < 6; k++) {
     const T = k < 3 ? tray.upper : tray.lower;
     const free = T.filter(b => !b.base && !b.rider && b.kind === 'std');
-    const pair = free.slice(0, -1)[Math.floor(Math.random() * (free.length - 1))];
+    const pair = free.slice(0, -1)[Math.floor(CGB.random() * (free.length - 1))];
     if (!pair) continue;
     const top = (k < 3 ? addUpper : addLower)(tray, pair.x, pair.y);
-    top.base = pair; pair.rider = top; top.ox = (Math.random() - 0.5) * 12; top.oy = (Math.random() - 0.5) * 12;
+    top.base = pair; pair.rider = top; top.ox = (CGB.random() - 0.5) * 12; top.oy = (CGB.random() - 0.5) * 12;
   }
 }
 
@@ -169,10 +169,10 @@ function stepPegCoin(c, dt) {
         const vn = c.vx * nx + c.vy * ny;
         if (vn < 0) {
           c.vx -= (1 + PEG.E) * vn * nx; c.vy -= (1 + PEG.E) * vn * ny;
-          c.vx += (Math.random() - 0.5) * 22; c.spin += c.vx * 0.02;
+          c.vx += (CGB.random() - 0.5) * 22; c.spin += c.vx * 0.02;
           if (-vn > 60) { SFX.peg(); p.flash = 1; }
         }
-        if (Math.abs(nx) < 0.08) c.vx += (Math.random() < 0.5 ? -1 : 1) * 25;
+        if (Math.abs(nx) < 0.08) c.vx += (CGB.random() < 0.5 ? -1 : 1) * 25;
       }
     }
     if (c.x < PEG.R) { c.x = PEG.R; c.vx = Math.abs(c.vx) * 0.5; }
@@ -668,7 +668,7 @@ function placeBubble() {
   const tail = Math.max(18, Math.min(bw - 18, bw / 2 + (hx - x)));
   bubble.style.setProperty('--tail', tail + 'px');
 }
-const pick = a => a[Math.floor(Math.random() * a.length)];
+const pick = a => a[Math.floor(CGB.random() * a.length)];
 const LINES = {
   intro: ["Welcome to Over the Edge! Let's see who's been revising.", "Hello and welcome! Two teams, one machine, and a lot of revision."],
   ask: ["{n}, here's your question.", "This one's for you, {n}.", "Over to you, {n}.", "{n}, have a think about this one."],
@@ -754,8 +754,9 @@ function updateLabels(dt) {
 
 /* Moving coins: peg board, flight to the top shelf, falling off */
 const drops = [], transits = [], falling = [];
-function launchDrop(chute, owner, onLand) {
-  const c = { x: PEG.CHUTES[chute] + (Math.random() - 0.5) * 10, y: 4, vx: (Math.random() - 0.5) * 30, vy: 0, spin: (Math.random() - 0.5) * 4, ang: 0, done: false, owner, onLand };
+function launchDrop(chute, owner, onLand, rnd) {
+  rnd = rnd || CGB.random;
+  const c = { x: PEG.CHUTES[chute] + (rnd() - 0.5) * 10, y: 4, vx: (rnd() - 0.5) * 30, vy: 0, spin: (rnd() - 0.5) * 4, ang: 0, done: false, owner, onLand };
   c.mesh = makeCoinMesh('std', owner);
   drops.push(c);
   chuteMats[chute].emissive.setHex(owner >= 0 ? COLORS.hex[owner] : SET.aqua); chuteMats[chute].emissiveIntensity = 1.2;
@@ -793,7 +794,7 @@ function updateTransits(dt) {
       let b;
       if (T.onto && tray.upper.includes(T.onto) && !T.onto.rider) {
         b = addUpper(tray, T.onto.x, T.onto.y, { owner: T.owner });
-        b.base = T.onto; T.onto.rider = b; b.ox = (Math.random() - 0.5) * 12; b.oy = (Math.random() - 0.5) * 12;
+        b.base = T.onto; T.onto.rider = b; b.ox = (CGB.random() - 0.5) * 12; b.oy = (CGB.random() - 0.5) * 12;
       } else {
         const LL = T.onto ? upperLanding(tray, T.L.x) : T.L;
         b = addUpper(tray, LL.x, LL.y, { owner: T.owner });
@@ -857,9 +858,9 @@ function newTray(withWildcards) {
   fillTray(tray);
   if (withWildcards) {
     const cand = tray.lower.filter(b => !b.base && !b.rider && b.y > 220 && b.y < 360 && b.x > 90 && b.x < 390);
-    const ids = WILDCARDS.map(m => m.id).sort(() => Math.random() - 0.5);
+    const ids = WILDCARDS.map(m => m.id).sort(() => CGB.random() - 0.5);
     for (let i = 0; i < 3 && cand.length; i++) {
-      const b = cand.splice(Math.floor(Math.random() * cand.length), 1)[0];
+      const b = cand.splice(Math.floor(CGB.random() * cand.length), 1)[0];
       b.kind = 'wildcard'; b.wildcard = ids[i];
     }
   }
@@ -1195,12 +1196,13 @@ function chooseChute(i) {
   G.pending = G.dropCount; G.landed = 0; G.settleAt = Infinity;
   const owner = G.dropper;
   hostSay(line('dropping'), 'point', 2200);
+  // counters are released 0.65 s apart in simulation time, so a run plays out the same at any frame rate
   for (let k = 0; k < G.dropCount; k++) {
-    dropTimers.push(setTimeout(() => launchDrop(i, owner, () => {
+    dropTimers.push({ at: simT + k * 0.65, go: () => launchDrop(i, owner, () => {
       G.lastDropper = owner;
       G.landed++;
-      if (G.landed >= G.pending) G.settleAt = performance.now() + PHY.PERIOD * 1000 * 1.4;
-    }), k * 650));
+      if (G.landed >= G.pending) G.settleAt = simT + PHY.PERIOD * 1.4;
+    }) });
   }
   render();
 }
@@ -1247,17 +1249,39 @@ function endRound() {
 function setupFinal() {
   const diff = { easy: [4, 0.5], normal: [12, 0.6], hard: [24, 0.8] }[G.finalDiff] || [12, 0.6];
   const jx = PHY.W / 2, jy = PHY.D - PHY.JR - diff[0];
+  clearSpace(jx, jy);
+  const J = addLower(tray, jx, jy, { r: PHY.JR, kind: 'jackpot', heavy: diff[1] });
+  J.mesh = makeCoinMesh('jackpot', -1);
+  J.anim = 1;
+  G.jackpot = J; G.jackpotY0 = jy;
+}
+/* Remove the counters where the jackpot counter is about to go */
+function clearSpace(jx, jy) {
   tray.lower = tray.lower.filter(b => {
     const keep = Math.hypot(b.x - jx, b.y - jy) > PHY.JR + b.r - 2 && !(b.base && Math.hypot(b.base.x - jx, b.base.y - jy) <= PHY.JR + b.r - 2);
     if (!keep) { if (b.mesh) scene.remove(b.mesh); if (b.rider) { b.rider.base = null; } if (b.base) b.base.rider = null; }
     return keep;
   });
   tray.lower.forEach(b => { if (b.base && !tray.lower.includes(b.base)) b.base = null; if (b.rider && !tray.lower.includes(b.rider)) b.rider = null; });
-  const J = addLower(tray, jx, jy, { r: PHY.JR, kind: 'jackpot', heavy: diff[1] });
-  J.mesh = makeCoinMesh('jackpot', -1);
-  J.anim = 1;
-  G.jackpot = J; G.jackpotY0 = jy;
 }
+
+/* @test-only: shortcuts for tests, removed from the shipped file by build.js */
+CGB.test.ote = {
+  // manual clock: the game only moves on when a test calls advance(), so physics is exactly repeatable
+  manual(on) { manualClock = !!on; simAcc = 0; },
+  advance(seconds) { const n = Math.round(seconds / STEP); for (let i = 0; i < n; i++) simulate(STEP); },
+  toFinal() { if (G.phase === 'r1' && G.step !== 'dropping') { G.step = null; endRound(); } },
+  // put the jackpot counter's centre this fraction of its radius short of where it falls
+  jackpotNear(frac) {
+    const J = G.jackpot; if (!J || G.jackpotFell) return;
+    const y = PHY.D + PHY.JR * 0.1 - PHY.JR * (frac == null ? 0.4 : frac);
+    tray.lower = tray.lower.filter(b => b !== J); clearSpace(J.x, y); tray.lower.push(J); J.y = y; J.vx = J.vy = 0;
+  },
+  simTime: () => simT,
+  info: () => ({ jackpotWon: !!G.jackpotWon, jackpotFell: !!G.jackpotFell, progress: jackpotProgress(), team: G.team,
+    tray: tray.lower.map(b => `${b.kind}:${b.x.toFixed(2)},${b.y.toFixed(2)}`).join(';') })
+};
+/* @end-test-only */
 
 /* =========================================================
    SUMMARY
@@ -1296,7 +1320,7 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  dropTimers.forEach(clearTimeout); dropTimers = [];
+  dropTimers = [];
   $('summary').classList.add('hidden');
   $('home').classList.remove('hidden');
   updateHost(true);
@@ -1411,22 +1435,37 @@ let lastAttract = 0;
 function attractTick(now) {
   if (now - lastAttract < 3400 || drops.length || transits.length) return;
   lastAttract = now;
-  launchDrop(Math.floor(Math.random() * 4), -1, null);
+  launchDrop(Math.floor(Math.random() * 4), -1, null, Math.random);   // decoration on the setup screen: not part of play
 }
 newTray(false);
 resize();
 render();
 $('qText').textContent = 'Set up the game to begin.';
 let lastT = performance.now(), rafId = 0;
+/* The game advances in fixed 1/60 s steps of simulation time (up to 4 per frame), so
+   the physics gives the same result whatever the frame rate. */
+const STEP = 1 / 60, MAX_STEPS = 4;
+let simT = 0, simAcc = 0, manualClock = false;
+/* @test-only */ if (window.__SHOWTIME_MANUAL__) manualClock = true; /* @end-test-only */
+function simulate(h) {
+  simT += h;
+  for (let k = dropTimers.length - 1; k >= 0; k--) if (dropTimers[k].at <= simT) dropTimers.splice(k, 1)[0].go();
+  stepTray(tray, h, onTrayFall);
+  tray.lower.forEach(b => { if (b.anim > 0) b.anim = Math.max(0, b.anim - h * 1.1); });
+  updateDrops(h);
+  updateTransits(h);
+  if (G.step === 'dropping' && G.landed >= G.pending && simT >= G.settleAt) finishDrop();
+}
 function loop(now) {
   if (!active) return;
   rafId = requestAnimationFrame(loop);
-  const dt = Math.min(0.033, Math.max(0, (now - lastT) / 1000));
+  const raw = Math.max(0, (now - lastT) / 1000), dt = Math.min(0.033, raw);
   lastT = now;
-  stepTray(tray, dt, onTrayFall);
-  tray.lower.forEach(b => { if (b.anim > 0) b.anim = Math.max(0, b.anim - dt * 1.1); });
-  updateDrops(dt);
-  updateTransits(dt);
+  if (!manualClock) {
+    simAcc = Math.min(simAcc + raw, STEP * MAX_STEPS);
+    let n = 0;
+    while (simAcc >= STEP && n < MAX_STEPS) { simulate(STEP); simAcc -= STEP; n++; }
+  }
   updateFalling(dt);
   syncTray(dt);
   pusher.position.z = TZ(tray.pf);
@@ -1437,7 +1476,6 @@ function loop(now) {
   placeBubble();
   dust.rotation.y += dt * 0.01;
   if (G.attract) attractTick(now);
-  if (G.step === 'dropping' && G.landed >= G.pending && now >= G.settleAt) finishDrop();
   if (G.phase === 'final') updateJackpotMeter(now);
   if (useBloom) composer.render(); else renderer.render(scene, camera);
 }

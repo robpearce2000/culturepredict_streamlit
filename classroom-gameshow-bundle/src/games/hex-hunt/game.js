@@ -47,7 +47,7 @@ function buildDeck() {
   const set = bank.active();
   const eligible = set.questions.filter(q => firstLetter(q.a));
   const weak = S.focusWeak ? new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.topic))) : null;
-  const shuffled = eligible.map(q => [Math.random() - (weak && weak.has(q.topic) ? 0.5 : 0), q]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
+  const shuffled = eligible.map(q => [CGB.random() - (weak && weak.has(q.topic) ? 0.5 : 0), q]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
   deck = shuffled;
   return eligible.length;
 }

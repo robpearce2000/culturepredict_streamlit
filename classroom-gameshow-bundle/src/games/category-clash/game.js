@@ -66,7 +66,7 @@ let chosen = [];
 function autoPickTopics(shuffle) {
   const all = topicsOf(bank.active());
   const full = all.filter(t => t.qs.length >= 5), rest = all.filter(t => t.qs.length < 5);
-  const mix = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
+  const mix = a => a.map(v => [CGB.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
   // take topics from each subject in turn, so a mixed set gives a mixed board
   const spread = list => {
     const bySub = new Map(); list.forEach(t => { if (!bySub.has(t.subject)) bySub.set(t.subject, []); bySub.get(t.subject).push(t); });
@@ -115,7 +115,7 @@ function buildBoard() {
     const untagged = t.qs.filter(q => !q.level).sort((a, b) => bank.estimateLevel(a) - bank.estimateLevel(b));
     const levelOf = q => q.level || 1 + Math.floor(untagged.indexOf(q) * 5 / untagged.length);
     const left = t.qs.slice();
-    const rnd = a => a[Math.floor(Math.random() * a.length)];
+    const rnd = a => a[Math.floor(CGB.random() * a.length)];
     const take = (k, exact) => {
       if (!left.length) return null;
       const gap = exact ? 0 : Math.min(...left.map(q => Math.abs(levelOf(q) - (k + 1))));
@@ -133,7 +133,7 @@ function buildBoard() {
   });
   if ($('optStar').checked) {
     const live = S.cats.flatMap(c => c.tiles.filter(t => !t.empty && t.value >= 200));
-    if (live.length) live[Math.floor(Math.random() * live.length)].star = true;
+    if (live.length) live[Math.floor(CGB.random() * live.length)].star = true;
   }
   S.cursor = { c: 0, r: 0 };
 }

@@ -1263,6 +1263,14 @@ document.addEventListener('keydown', e => {
 goHome();
 resize();
 
+/* @test-only: shortcuts for tests, removed from the shipped file by build.js */
+CGB.test.outpace = {
+  setTime(sec) { state.sprintTimeLeft = sec; },
+  // skip the Deal Round: both teams have banked, start the Final Sprint with this pot
+  toSprint(pot) { clearTimers(); roundEndNext = null; $('roundEnd').classList.remove('show'); state.pot = pot == null ? 600 : pot; startSprint(); }
+};
+/* @end-test-only */
+
 return {
   enter() {
     active = true;
@@ -1277,8 +1285,7 @@ return {
     if (state.phase !== 'home') goHome();
   },
   inProgress: () => ['deal', 'dealEnd', 'sprint', 'finish'].includes(state.phase),
-  _state: () => ({ phase: state.phase, pot: state.pot, answerShown: state.answerShown, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, q: state.currentQuestion, dealReward: state.dealReward, awaitingNext: state.awaitingNext }),
-  _setTime: s => { state.sprintTimeLeft = s; }
+  _state: () => ({ phase: state.phase, pot: state.pot, answerShown: state.answerShown, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, q: state.currentQuestion, dealReward: state.dealReward, awaitingNext: state.awaitingNext })
 };
 }
 
@@ -1288,7 +1295,6 @@ CGB.registerGame('outpace', {
   enter() { if (game) game.enter(); },
   exit() { if (game) game.exit(); },
   inProgress() { return !!(game && game.inProgress()); },
-  state() { return game && game._state(); },
-  setTime(s) { if (game) game._setTime(s); }
+  state() { return game && game._state(); }
 });
 })();

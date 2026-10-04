@@ -212,9 +212,9 @@ CGB.bank = (() => {
         if (focusWeak && playerName) {
           const weak = new Set(wrongLog(playerName).map(e => e.topic));
           const weakPool = pool.filter(i => weak.has(bank[i].topic));
-          if (weakPool.length && Math.random() < 0.6) pool = weakPool;
+          if (weakPool.length && CGB.random() < 0.6) pool = weakPool;
         }
-        const i = pool[Math.floor(Math.random() * pool.length)];
+        const i = pool[Math.floor(CGB.random() * pool.length)];
         used.add(i);
         return bank[i];
       }

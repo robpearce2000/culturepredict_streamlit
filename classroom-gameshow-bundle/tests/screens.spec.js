@@ -102,13 +102,10 @@ const SECTIONS = {
     await page.click('#ote-segR1 button[data-v="4"]');
     await page.click('#ote-segF button[data-v="8"]');
     await page.click('#ote-startBtn');
-    // move on to the final quickly: wrong + no steal
-    await until(async () => {
-      const s = await state(page, 'over-the-edge');
-      if (s.phase === 'final') return true;
-      if (s.step === 'ask') await page.keyboard.press('w'); else if (s.step === 'steal') await page.keyboard.press('n'); else if (s.step === 'next') await page.keyboard.press('Space'); else if (s.step === 'chute') await page.keyboard.press('1');
-      return false;
-    }, 90000);
+    // straight to the final (Round 1 is covered by the other batch and the gameplay tests)
+    await page.waitForTimeout(600);
+    await page.evaluate(() => CGB.test.ote.toFinal());
+    await until(async () => (await state(page, 'over-the-edge')).phase === 'final', 30000);
     await shot('19-ote-final', 1200);
     await page.keyboard.press('c'); await page.keyboard.press('3');
     await shot('20-ote-final-drop', 2500);
@@ -208,7 +205,7 @@ const SECTIONS = {
     await shot('36-op-sprint', 1200);
     await page.keyboard.press('a'); await page.keyboard.press('c');
     await page.keyboard.press('a'); await shot('37-op-sprint-answer', 800);
-    await page.evaluate(() => CGB.games.outpace.setTime(9));
+    await page.evaluate(() => CGB.test.outpace.setTime(9));
     await shot('38-op-sprint-low-time', 600);
     await until(async () => (await state(page, 'outpace')).phase === 'summary', 60000);
     await shot('39-op-summary', 800);
@@ -222,7 +219,7 @@ for (const size of SIZES) {
       test.setTimeout(section === 'launcher' ? 90000 : 420000);
       const ctx = await browser.newContext({ viewport: { width: size.width, height: size.height } });
       const page = await ctx.newPage();
-      const log = await openBundle(page);
+      const log = await openBundle(page, '', { quality: 'high' });   // screenshots at full quality
       const problems = [];
       async function shot(name, settle) {
         await page.waitForTimeout(settle == null ? 600 : settle);
