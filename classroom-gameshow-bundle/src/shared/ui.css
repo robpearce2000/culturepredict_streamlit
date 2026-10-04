@@ -213,6 +213,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .host-brow { transition: transform .25s; }
 .host-mouth > * { display: none; }
 .host-wrap[data-face="smile"] .m-smile, .host-wrap[data-face="grin"] .m-grin, .host-wrap[data-face="unsure"] .m-unsure, .host-wrap[data-face="groan"] .m-groan { display: inline; }
+.host-wrap[data-face="gasp"] .m-groan { display: inline; }
+.host-wrap[data-face="gasp"] .host-brow { transform: translateY(-7px); }
 .host-wrap.talking .host-mouth > * { display: none; }
 .host-wrap.talking .host-mouth > .m-talk { display: inline; animation: pipTalk .16s ease-in-out infinite alternate; transform-origin: 150px 146px; }
 @keyframes pipTalk { from { transform: scaleY(0.25); } to { transform: scaleY(1.1); } }

@@ -46,7 +46,8 @@ CGB.HOST_POSES = {
   cheer:   { A: [158, -14], B: [-158, 14], face: 'grin' },
   clap:    { A: [6, -96], B: [-6, 96], face: 'grin' },
   shrug:   { A: [26, 118], B: [-26, -118], face: 'unsure' },
-  groan:   { A: [152, -128], B: [-152, 128], face: 'groan' }
+  groan:   { A: [152, -128], B: [-152, 128], face: 'groan' },
+  gasp:    { A: [36, -132], B: [-36, 132], face: 'gasp' }
 };
 
 CGB.hostSVG = function (cfg) {

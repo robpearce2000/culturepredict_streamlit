@@ -456,6 +456,7 @@ function applyTheme(force) {
   runnerGroup.add(runnerChar.group); hunterGroup.add(hunterChar.group);
   scene.background.setHex(th.bg); scene.fog.color.setHex(th.bg);
   cellMat.color.setHex(th.cell);
+  trimBevelMat.color.setHex(th.cell).offsetHSL(0, 0, 0.1);   // the tiles' raised tops follow the look
   const old = floor.material.map; floor.material.map = themeFloorTexture(th); floor.material.color.set(th.floorBg); floor.material.needsUpdate = true; if (old) old.dispose();
 }
 
@@ -528,8 +529,9 @@ const CELL_SPACING = 1.55;
 const trackGroup = new THREE.Group();
 scene.add(trackGroup);
 function cellX(i) { return HOME_BASE_X + i * CELL_SPACING; }
-const trimGeo = new THREE.BoxGeometry(CELL_SPACING - 0.14 - 0.04, 0.02, 0.06);
-const cellGeo = new THREE.BoxGeometry(CELL_SPACING - 0.14, 0.16, 0.9);
+const trimGeo = new THREE.BoxGeometry(CELL_SPACING - 0.14 - 0.04, 0.05, 0.06);
+const cellGeo = new THREE.BoxGeometry(CELL_SPACING - 0.14, 0.3, 0.96);   // chunky step tiles
+const bevelGeo = new THREE.BoxGeometry(CELL_SPACING - 0.24, 0.04, 0.86);   // a raised, lighter top: reads as a bevelled edge
 const cellMat = new THREE.MeshStandardMaterial({ color: 0x252C6B, roughness: 0.55, metalness: 0.15 });
 const homeMat = new THREE.MeshStandardMaterial({ color: 0x12A4A0, emissive: 0x0A4F4D, roughness: 0.4, metalness: 0.2 });
 const trimMat = new THREE.MeshStandardMaterial({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.5, roughness: 0.3 });
@@ -554,39 +556,244 @@ function tileTexture(i) {
   t.anisotropy = renderer.capabilities.getMaxAnisotropy();
   return (tileTex[i] = t);
 }
-const tileTopGeo = new THREE.PlaneGeometry(CELL_SPACING - 0.2, 0.86);
-/* Finish post at home: two glowing posts and a HOME sign facing the class */
+const tileTopGeo = new THREE.PlaneGeometry(CELL_SPACING - 0.26, 0.84);
+const trimBevelMat = new THREE.MeshStandardMaterial({ color: 0x3A4396, roughness: 0.4, metalness: 0.2 });
+const railMat = new THREE.MeshStandardMaterial({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.9, roughness: 0.3 });
+const plinthMat = new THREE.MeshStandardMaterial({ color: 0x0A0D22, roughness: 0.8 });
+/* The finish arch at home: two chunky pillars and a beam across the track, studded with bulbs,
+   with a HOME sign facing the class. The bulbs run a light show when the class gets home. */
 const finishGroup = new THREE.Group();
-(function buildFinish() {
-  const postMat = new THREE.MeshStandardMaterial({ color: 0x9FFCF0, emissive: 0x2BD9C2, emissiveIntensity: 0.9, roughness: 0.3 });
-  const postGeo = new THREE.CylinderGeometry(0.06, 0.06, 1.9, 12);
-  [-0.5, 0.5].forEach(z => { const m = new THREE.Mesh(postGeo, postMat); m.position.set(0, 0.95, z); finishGroup.add(m); });
+const archBulbSets = [];     // one instanced mesh of bulbs per arch: a single draw call each
+const BULB_REST = [0xFFC93C, 0x9FFCF0, 0xFFFFFF].map(c => new THREE.Color(c));
+function buildArch(group, label) {
+  const pillarMat = new THREE.MeshStandardMaterial({ color: 0x0A6663, emissive: 0x0A4F4D, emissiveIntensity: 0.6, roughness: 0.35, metalness: 0.3 });
+  const glow = new THREE.MeshStandardMaterial({ color: 0x9FFCF0, emissive: 0x2BD9C2, emissiveIntensity: 1.1, roughness: 0.3 });
+  const pillarGeo = new THREE.BoxGeometry(0.26, 2.3, 0.26);
+  [-0.66, 0.66].forEach(z => {
+    const m = new THREE.Mesh(pillarGeo, pillarMat); m.position.set(0, 1.0, z); group.add(m);
+    const strip = new THREE.Mesh(new THREE.BoxGeometry(0.05, 2.1, 0.05), glow); strip.position.set(0, 1.0, z + (z > 0 ? 0.14 : -0.14)); group.add(strip);
+  });
+  const beam = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.34, 1.66), pillarMat); beam.position.set(0, 2.25, 0); group.add(beam);
+  const spots = [];
+  for (let k = 0; k < 7; k++) spots.push([0, 2.44, -0.66 + k * 0.22]);
+  for (let k = 0; k < 5; k++) [-0.66, 0.66].forEach(z => spots.push([0.15, 0.25 + k * 0.42, z]));
+  const bulbs = new THREE.InstancedMesh(new THREE.SphereGeometry(0.055, 8, 6), new THREE.MeshBasicMaterial(), spots.length);
+  const d = new THREE.Object3D();
+  spots.forEach((p, i) => { d.position.set(p[0], p[1], p[2]); d.updateMatrix(); bulbs.setMatrixAt(i, d.matrix); bulbs.setColorAt(i, BULB_REST[i % 3]); });
+  group.add(bulbs); archBulbSets.push(bulbs);
   const c = document.createElement('canvas'); c.width = 512; c.height = 160;
   const g = c.getContext('2d');
   g.fillStyle = '#0A6663'; g.fillRect(0, 0, 512, 160);
   g.fillStyle = '#9FFCF0'; g.fillRect(0, 0, 512, 12); g.fillRect(0, 148, 512, 12);
   g.fillStyle = '#fff'; g.font = '108px "Lilita One", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
-  g.fillText('HOME', 256, 86);
-  const tex = new THREE.CanvasTexture(c);
-  const sign = new THREE.Mesh(new THREE.PlaneGeometry(1.7, 0.53), new THREE.MeshBasicMaterial({ map: tex }));
-  sign.position.set(0, 1.95, 0.5);
-  finishGroup.add(sign);
-})();
+  g.fillText(label, 256, 86);
+  const sign = new THREE.Mesh(new THREE.PlaneGeometry(1.7, 0.53), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(c) }));
+  sign.position.set(0, 2.72, 0.2);
+  group.add(sign);
+}
+buildArch(finishGroup, 'HOME');
 function buildTrack(totalCells) {
   trackGroup.clear();
   finishGroup.position.set(cellX(0) - CELL_SPACING / 2 + 0.02, 0, 0);
   trackGroup.add(finishGroup);
   for (let i = 0; i < totalCells; i++) {
     const mesh = new THREE.Mesh(cellGeo, i === 0 ? homeMat : cellMat);
-    mesh.position.set(cellX(i), 0.08, 0);
+    mesh.position.set(cellX(i), 0.0, 0);
     trackGroup.add(mesh);
-    const trim = new THREE.Mesh(trimGeo, i === 0 ? homeTrimMat : trimMat);
-    trim.position.set(cellX(i), 0.17, (CELL_SPACING - 0.14) / 2 - 0.05);
-    trackGroup.add(trim);
+    const bevel = new THREE.Mesh(bevelGeo, i === 0 ? homeTrimMat : trimBevelMat);
+    bevel.position.set(cellX(i), 0.17, 0);
+    trackGroup.add(bevel);
     const top = new THREE.Mesh(tileTopGeo, new THREE.MeshBasicMaterial({ map: tileTexture(i), transparent: true, depthWrite: false }));
     top.rotation.x = -Math.PI / 2;
-    top.position.set(cellX(i), 0.165, 0);
+    top.position.set(cellX(i), 0.196, 0);
     trackGroup.add(top);
+  }
+  // side rails and a plinth along the whole track
+  const len = totalCells * CELL_SPACING, midX = cellX(0) + (totalCells - 1) * CELL_SPACING / 2;
+  [-0.56, 0.56].forEach(z => { const r = new THREE.Mesh(new THREE.BoxGeometry(len, 0.1, 0.08), railMat); r.position.set(midX, 0.2, z); trackGroup.add(r); });
+  const plinth = new THREE.Mesh(new THREE.BoxGeometry(len + 0.4, 0.12, 1.4), plinthMat); plinth.position.set(midX, -0.2, 0); trackGroup.add(plinth);
+}
+/* ============ THE STUDIO SET ============
+   A backdrop with light strips, two lighting rigs with soft beams, a Final Sprint track with
+   its own finish arch, and a countdown clock built into the set. All of it is unlit or uses the
+   existing lights (no new lights, no shadows), so it costs little to draw. */
+const setGroup = new THREE.Group();
+scene.add(setGroup);
+const stripMat = new THREE.MeshBasicMaterial({ color: 0x5A63C8 });
+const stripRest = new THREE.Color(0x5A63C8), stripRed = new THREE.Color(0xFF3B4E), stripGold = new THREE.Color(0xFFC93C);
+(function buildSet() {
+  // a neon line along the foot of the backdrop (it turns red for the last ten seconds of the sprint)
+  const line = new THREE.Mesh(new THREE.BoxGeometry(44, 0.08, 0.08), stripMat); line.position.set(0, 0.2, -6.8); setGroup.add(line);
+  // two lighting rigs overhead with soft beams falling on the track
+  const truss = new THREE.MeshStandardMaterial({ color: 0x2A2F55, roughness: 0.6, metalness: 0.6 });
+  const beamMat = new THREE.MeshBasicMaterial({ color: 0xBFC6FF, transparent: true, opacity: 0.07, depthWrite: false, blending: THREE.AdditiveBlending });
+  const coneGeo = new THREE.ConeGeometry(1.2, 4.6, 20, 1, true);
+  [-1.4, 1.6].forEach(z => {
+    const bar = new THREE.Mesh(new THREE.BoxGeometry(26, 0.14, 0.14), truss); bar.position.set(0, 5.2, z - 2.2); setGroup.add(bar);
+  });
+  [-5.5, -1.5, 2.5, 6.5].forEach((x, i) => {
+    const lamp = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.22, 0.3, 12), truss); lamp.position.set(x, 4.95, i % 2 ? -0.6 : -3.6); setGroup.add(lamp);
+    const cone = new THREE.Mesh(coneGeo, beamMat); cone.position.set(x, 2.75, (i % 2 ? -0.6 : -3.6) * 0.6); cone.userData.beam = true; setGroup.add(cone);
+  });
+})();
+const beams = setGroup.children.filter(o => o.userData.beam);
+// the soft light beams are see-through, which is the costly kind of drawing: High graphics only,
+// and off as soon as the automatic step-down starts
+const showBeams = () => beams.forEach(b => { b.visible = CGB.settings.get('quality') !== 'low' && perf.level < 1; });
+showBeams();
+
+/* Final Sprint track: from the start line to the target, marked in steps, with its own arch */
+const sprintGroup = new THREE.Group();
+scene.add(sprintGroup);
+const sprintArch = new THREE.Group();
+buildArch(sprintArch, 'HOME');
+let sprintTex = null;
+function buildSprintTrack(target) {
+  sprintGroup.children.slice().forEach(o => { sprintGroup.remove(o); if (o !== sprintArch) disposeTree(o); });
+  if (sprintTex) { sprintTex.dispose(); sprintTex = null; }
+  const startX = HOME_BASE_X, endX = runnerTargetX(target, target), len = HUNTER_X + 1.2 - (endX - 0.9);
+  const c = document.createElement('canvas'); c.width = 2048; c.height = 128;
+  const g = c.getContext('2d');
+  const px = x => (x - (endX - 0.9)) / len * 2048;
+  g.fillStyle = '#1E2460'; g.fillRect(0, 0, 2048, 128);
+  const step = (startX - endX) / target;
+  for (let k = 0; k < target; k++) {             // one band for each step still to go
+    const x0 = px(endX + k * step), x1 = px(endX + (k + 1) * step);
+    g.fillStyle = k % 2 ? '#2A3180' : '#323B96'; g.fillRect(x0, 8, x1 - x0, 112);
+    if (x1 - x0 > 34 || k % 5 === 4 || k === 0) {
+      g.fillStyle = '#fff'; g.font = `${Math.min(84, Math.max(40, (x1 - x0) * 0.8))}px "Lilita One", sans-serif`; g.textAlign = 'center'; g.textBaseline = 'middle';
+      g.fillText(String(k + 1), (x0 + x1) / 2, 66);   // steps still to go: 1 next to home
+    }
+  }
+  g.fillStyle = '#12A4A0'; g.fillRect(0, 8, px(endX), 112);
+  g.fillStyle = '#9FFCF0'; g.fillRect(px(startX) - 4, 0, 8, 128);   // the start line
+  sprintTex = new THREE.CanvasTexture(c);
+  sprintTex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  const deck = new THREE.Mesh(new THREE.BoxGeometry(len, 0.3, 0.96), [plinthMat, plinthMat, new THREE.MeshBasicMaterial({ map: sprintTex }), plinthMat, cellMat, plinthMat]);
+  deck.position.set(endX - 0.9 + len / 2, 0.0, 0); sprintGroup.add(deck);
+  [-0.56, 0.56].forEach(z => { const r = new THREE.Mesh(new THREE.BoxGeometry(len, 0.1, 0.08), railMat); r.position.set(deck.position.x, 0.2, z); sprintGroup.add(r); });
+  sprintArch.position.set(endX - 0.45, 0, 0);
+  sprintGroup.add(sprintArch);
+  setClock.position.set((startX + endX) / 2 + 1.0, 2.35, -2.0);   // over the track, behind the race
+}
+
+/* The countdown clock built into the set for the Final Sprint; it turns red in the last ten seconds */
+const clockCanvas = document.createElement('canvas'); clockCanvas.width = 256; clockCanvas.height = 112;
+const clockTex = new THREE.CanvasTexture(clockCanvas);
+const setClock = new THREE.Group();
+(function buildClock() {
+  const frame = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.92, 0.12), new THREE.MeshStandardMaterial({ color: 0x14183A, roughness: 0.5, metalness: 0.4 }));
+  setClock.add(frame);
+  const face = new THREE.Mesh(new THREE.PlaneGeometry(1.76, 0.78), new THREE.MeshBasicMaterial({ map: clockTex }));
+  face.position.z = 0.065; setClock.add(face);
+  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 2.2, 8), new THREE.MeshStandardMaterial({ color: 0x2A2F55, metalness: 0.6, roughness: 0.5 }));
+  pole.position.y = -1.5; setClock.add(pole);
+})();
+setClock.visible = false;
+scene.add(setClock);
+let clockShown = '';
+function paintSetClock(secs, low) {
+  const txt = Math.floor(secs / 60) + ':' + String(secs % 60).padStart(2, '0');
+  if (txt + low === clockShown) return;
+  clockShown = txt + low;
+  const g = clockCanvas.getContext('2d');
+  g.fillStyle = low ? '#3A0710' : '#070A1E'; g.fillRect(0, 0, 256, 112);
+  g.fillStyle = low ? '#FF4D5E' : '#FFC93C'; g.font = '88px "Lilita One", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText(txt, 128, 60);
+  clockTex.needsUpdate = true;
+}
+
+/* Lighting mood: normal, red for the last ten seconds of the sprint, gold for an escape */
+const ambientLight = scene.children.find(o => o.isAmbientLight);
+const ambientRest = ambientLight ? ambientLight.color.clone() : null, keyRest = keyLight.color.clone();
+let mood = 'normal';
+function setMood(m) {
+  if (m === mood) return;
+  mood = m;
+  const red = m === 'red', gold = m === 'gold';
+  stripMat.color.copy(red ? stripRed : gold ? stripGold : stripRest);
+  keyLight.color.copy(red ? new THREE.Color(0xFF8A8A) : keyRest);
+  if (ambientLight) ambientLight.color.copy(red ? new THREE.Color(0x6A2A3E) : ambientRest);
+  beams.forEach(b => b.material.color.setHex(red ? 0xFF6B7A : gold ? 0xFFE08A : 0xBFC6FF));
+}
+
+/* Confetti for an escape: one instanced mesh, so it is a single draw call */
+const CONFETTI = 140;
+const confettiMesh = new THREE.InstancedMesh(new THREE.PlaneGeometry(0.07, 0.12), new THREE.MeshBasicMaterial({ side: THREE.DoubleSide }), CONFETTI);
+confettiMesh.visible = false;
+confettiMesh.frustumCulled = false;
+scene.add(confettiMesh);
+const confetti = [], confettiDummy = new THREE.Object3D();
+const confettiCols = [0xFFC93C, 0x2BD9C2, 0xFF7A59, 0xFFFFFF, 0xE879F9].map(h => new THREE.Color(h));
+for (let i = 0; i < CONFETTI; i++) { confetti.push({ p: new THREE.Vector3(), v: new THREE.Vector3(), r: 0, rv: 0 }); confettiMesh.setColorAt(i, confettiCols[i % confettiCols.length]); }
+let confettiT = 0;
+function burstConfetti(x) {
+  if (reduced()) return;
+  const n = CGB.settings.get('quality') === 'low' ? 60 : CONFETTI;
+  confettiMesh.count = n;
+  confetti.forEach((c, i) => {
+    c.p.set(x + (Math.random() - 0.5) * 0.4, 2.4, (Math.random() - 0.5) * 1.2);
+    c.v.set((Math.random() - 0.7) * 0.09, 0.03 + Math.random() * 0.08, (Math.random() - 0.5) * 0.06);
+    c.r = Math.random() * 6; c.rv = (Math.random() - 0.5) * 0.4;
+  });
+  confettiMesh.visible = true; confettiT = 2.6;
+}
+function updateConfetti(dt) {
+  if (!confettiMesh.visible) return;
+  confettiT -= dt;
+  if (confettiT <= 0) { confettiMesh.visible = false; return; }
+  for (let i = 0; i < confettiMesh.count; i++) {
+    const c = confetti[i];
+    c.v.y -= 0.0022; c.v.multiplyScalar(0.985); c.p.add(c.v); c.r += c.rv;
+    confettiDummy.position.copy(c.p); confettiDummy.rotation.set(c.r, c.r * 0.7, 0);
+    confettiDummy.updateMatrix(); confettiMesh.setMatrixAt(i, confettiDummy.matrix);
+  }
+  confettiMesh.instanceMatrix.needsUpdate = true;
+}
+let lightShow = 0;
+const showCol = new THREE.Color();
+function updateArchLights(t) {
+  if (lightShow <= 0) return;
+  lightShow -= 1 / 60;
+  const done = lightShow <= 0;
+  archBulbSets.forEach(m => {
+    for (let i = 0; i < m.count; i++) m.setColorAt(i, done ? BULB_REST[i % 3] : showCol.setHSL((t * 0.9 + i * 0.07) % 1, 1, 0.62));
+    m.instanceColor.needsUpdate = true;
+  });
+}
+
+/* Surge and lunge: a streak behind whoever moves, for half a second */
+function makeTrail(color) {
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.2, 1.6, 10), new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0, depthWrite: false }));
+  m.rotation.z = Math.PI / 2; scene.add(m); m.userData.life = 0; return m;
+}
+const runnerTrail = makeTrail(COL.runner), hunterTrail = makeTrail(COL.hunter);
+let hunterLunge = 0;   // a short jump towards the runner, then back (sprint), in scene units
+function updateTrails(dt) {
+  [[runnerTrail, runnerGroup, 1], [hunterTrail, hunterGroup, 1]].forEach(([m, grp, side]) => {
+    if (m.userData.life <= 0) { m.visible = false; return; }
+    m.userData.life -= dt;
+    m.visible = grp.visible;
+    const dir = m.userData.dir || 1;
+    m.position.set(grp.position.x + dir * 0.95 * side, grp.position.y, 0);
+    m.material.opacity = Math.max(0, m.userData.life / 0.5) * 0.55;
+  });
+}
+function streak(m, dir) { if (reduced()) return; m.userData.life = 0.5; m.userData.dir = dir; m.rotation.z = dir > 0 ? Math.PI / 2 : -Math.PI / 2; }
+
+/* The gap meter in the panel: home, the class, the Hunter and the steps between them */
+function paintGap() {
+  if (currentRoundType === 'deal') {
+    const n = TRACK_STEPS + MAX_GAP + 1, gap = Math.max(0, hunterCellIndex - runnerCellIndex);
+    let cells = '';
+    for (let i = 0; i < n; i++) {
+      const cls = i === 0 ? 'home' : i === runnerCellIndex ? 'you' : i === hunterCellIndex ? 'hunter' : i > runnerCellIndex && i < hunterCellIndex ? 'gap' : '';
+      cells += `<i class="${cls}"></i>`;
+    }
+    $('dealGap').innerHTML = `<span class="op-gapnum"><b>${gap}</b> step${gap === 1 ? '' : 's'} ahead of the Hunter</span><span class="op-gapbar" aria-hidden="true">${cells}</span><span class="op-gapnum"><b>${runnerCellIndex}</b> to home</span>`;
+  } else {
+    const left = Math.max(0, state.sprintTarget - state.sprintNetScore);
+    $('sprintGap').innerHTML = `<span class="op-gapnum"><b>${left}</b> step${left === 1 ? '' : 's'} to home</span>`;
   }
 }
 let currentRoundType = 'deal'; // 'deal' | 'sprint'
@@ -630,6 +837,9 @@ function resetAtomsForRound(roundType) {
   auraMesh.visible = true;
   tether.visible = (roundType === 'sprint');
   trackGroup.visible = (roundType === 'deal');
+  sprintGroup.visible = setClock.visible = (roundType === 'sprint');
+  setMood('normal'); confettiMesh.visible = false; lightShow = 0; hunterLunge = 0; slowMo = 1;
+  runnerTrail.userData.life = hunterTrail.userData.life = 0;
   tetherColor.copy(tetherRest);
   tetherTargetColor.copy(tetherRest);
   tetherPulse = 0;
@@ -650,6 +860,7 @@ function resetAtomsForRound(roundType) {
 function pulseCorrect() {
   runnerVelX -= 0.3;
   shake(0.06);
+  streak(runnerTrail, 1);                         // the class surges forward a step
   if (currentRoundType === 'sprint') {
     tetherPulse = 1;
     tetherTargetColor.setHex(COL.runner);
@@ -658,6 +869,9 @@ function pulseCorrect() {
 }
 function pulseWrong() {
   shake(0.1);
+  streak(hunterTrail, 1);                         // the Hunter lunges, with a burst of speed
+  if (currentRoundType === 'deal') hunterVelX -= reduced() ? 0 : 0.22;
+  else if (!reduced()) hunterLunge = 1;
   if (currentRoundType === 'sprint') {
     runnerVelX += 0.3;
     tetherPulse = 1;
@@ -687,17 +901,9 @@ function triggerExplosionAt(collideX) {
   shockwave.scale.setScalar(1);
   shockwaveMat.opacity = 0.9;
 
-  if (reduced()) camera.position.set(0, 1.4, 3.2);
-  else {
-    const shakeStart = performance.now();
-    (function shakeCam() {
-      const el = performance.now() - shakeStart;
-      if (el > 550 || !active) { camera.position.set(0, 1.4, 3.2); return; }
-      const decay = 1 - el / 550;
-      camera.position.set((Math.random() - 0.5) * 0.5 * decay, 1.4 + (Math.random() - 0.5) * 0.3 * decay, 3.2 + (Math.random() - 0.5) * 0.2 * decay);
-      requestAnimationFrame(shakeCam);
-    })();
-  }
+  // the camera swings round the catch in slow motion (still, with reduced motion)
+  explodeX = collideX;
+  slowMo = reduced() ? 1 : 0.28;
 
   explosionParts.forEach(p => {
     p.mesh.visible = true;
@@ -731,9 +937,20 @@ function triggerEscapeSequence(callback) {
     sceneMode = 'deal-escape';
   } else {
     sceneMode = 'escape';
+    escapeConfetti = false;
     escapeBaseX = runnerGroup.position.x;
     escapeYankIndex = 0;
   }
+}
+/* Space or Enter skips a catch or escape sequence: everything settles at once */
+function skipSequence() {
+  if (!onSequenceComplete || !/^(buildup|explode|deal-caught|deal-escape|escape)$/.test(sceneMode)) return false;
+  explosionParts.forEach(p => { p.mesh.visible = false; });
+  shockwave.visible = false; victoryRing.visible = false; tether.visible = false;
+  flareLight.intensity = 0; escapeStreakMat.opacity = 0; confettiMesh.visible = false; lightShow = 0.01;
+  flashEl.style.opacity = 0;
+  finishSequence();
+  return true;
 }
 function finishSequence() {
   sceneMode = 'idle-done';
@@ -758,10 +975,17 @@ function dealFraming() {
 
 const clock = new THREE.Clock();
 let active = false, rafId = 0;
+let lastFrame = performance.now(), slowMo = 1, lookX = 0, explodeX = 0, escapeConfetti = false;
+const V3 = new THREE.Vector3();
 function animate() {
   if (!active) return;
   rafId = requestAnimationFrame(animate);
   const t = clock.getElapsedTime();
+  const nowMs = performance.now(), dt = Math.min(0.05, (nowMs - lastFrame) / 1000);
+  lastFrame = nowMs;
+  updateConfetti(dt);
+  updateArchLights(t);
+  updateTrails(dt);
 
   watchPerformance(performance.now());
   if (runnerChar) runnerChar.update(t);
@@ -799,20 +1023,40 @@ function animate() {
     }
 
     if (currentRoundType === 'deal') {
-      // the whole track, from the finish post to the Hunter's furthest start, fills the width
-      const f = dealFraming();
-      camera.position.x += (f.x - camera.position.x) * 0.06;
-      camera.position.y += (f.y - camera.position.y) * 0.06;
-      camera.position.z += (f.z - camera.position.z) * 0.06;
-      camera.lookAt(camera.position.x, 0.35, 0);
+      let fx, fy, fz, lx, ly = 0.35;
+      if (state.dealReward && !reduced()) {
+        // during the questions: beside and a little behind the class, with the Hunter in view
+        // behind it and room ahead towards home, so the gap is plain to see
+        const rx = runnerGroup.position.x, hx = hunterGroup.position.x;
+        const lo = Math.min(rx, hx) - 1.3, hi = Math.max(rx, hx) + 0.9, mid = (lo + hi) / 2;
+        fz = framingZ(hi - lo - 1.2) * 0.95; fx = mid + 0.8; fy = 1.5 + fz * 0.14; lx = mid - 0.15; ly = 0.5;
+      } else {
+        // choosing the deal (and always with reduced motion): the whole track, from the finish
+        // arch to the Hunter's furthest start, fills the width
+        const f = dealFraming(); fx = f.x; fy = f.y; fz = f.z; lx = f.x;
+      }
+      camera.position.x += (fx - camera.position.x) * 0.06;
+      camera.position.y += (fy - camera.position.y) * 0.06;
+      camera.position.z += (fz - camera.position.z) * 0.06;
+      lookX += (lx - lookX) * 0.08;
+      camera.lookAt(lookX, ly, 0);
     } else {
-      const midX = (runnerGroup.position.x + hunterGroup.position.x) / 2;
-      const spread = Math.abs(hunterGroup.position.x - runnerGroup.position.x);
-      const desiredZ = framingZ(spread);
-      camera.position.x += (midX - camera.position.x) * 0.05;
+      // Final Sprint: the class and the Hunter, from slightly behind the class; with reduced
+      // motion one still view of the whole sprint track
+      const wide = reduced();
+      const endX = runnerTargetX(1, 1) - 1.2;
+      const lo = wide ? endX : Math.min(runnerGroup.position.x, hunterGroup.position.x), hi = wide ? HUNTER_X + 0.8 : Math.max(runnerGroup.position.x, hunterGroup.position.x);
+      const midX = (lo + hi) / 2;
+      const desiredZ = framingZ(hi - lo);
+      camera.position.x += (midX + (wide ? 0 : 0.5) - camera.position.x) * 0.05;
       camera.position.y += (2.4 - camera.position.y) * 0.05;
       camera.position.z += (desiredZ - camera.position.z) * 0.05;
-      camera.lookAt(midX, 0.6, 0);
+      lookX += (midX - lookX) * 0.08;
+      camera.lookAt(lookX, 0.6, 0);
+      if (sceneMode === 'idle') {      // the Hunter's lunge on a missed question
+        hunterLunge = Math.max(0, hunterLunge - dt * 2.4);
+        hunterGroup.position.x = HUNTER_X - Math.sin(hunterLunge * Math.PI) * 0.7;
+      }
     }
 
     if (shakeAmt > 0.001) {
@@ -905,16 +1149,25 @@ function animate() {
 
   if (sceneMode === 'explode') {
     const elapsed = (performance.now() - sequenceStart) / 1000;
+    // slow motion for the first moments, easing back to full speed
+    const sm = reduced() ? 1 : Math.min(1, slowMo + elapsed * 0.75);
+    const simT = reduced() ? elapsed : Math.max(0, elapsed - (1 - slowMo) * Math.min(elapsed, 0.95) * 0.6);
     explosionParts.forEach(p => {
-      p.mesh.position.add(p.vel);
-      p.vel.y -= 0.002;
-      p.vel.multiplyScalar(0.985);
-      p.mesh.scale.multiplyScalar(0.965);
+      p.mesh.position.addScaledVector(p.vel, sm);
+      p.vel.y -= 0.002 * sm;
+      p.vel.multiplyScalar(1 - 0.015 * sm);
+      p.mesh.scale.multiplyScalar(1 - 0.035 * sm);
     });
-    shockwave.scale.setScalar(1 + elapsed * 14);
-    shockwaveMat.opacity = Math.max(0, 0.9 - elapsed * 1.3);
-    flareLight.intensity = Math.max(0, 22 - elapsed * 40);
-    if (elapsed > 1.6 && onSequenceComplete) {
+    shockwave.scale.setScalar(1 + simT * 14);
+    shockwaveMat.opacity = Math.max(0, 0.9 - simT * 1.3);
+    flareLight.intensity = Math.max(0, 22 - simT * 40);
+    if (reduced()) { camera.position.set(explodeX, 1.4, 3.4); camera.lookAt(explodeX, 0.6, 0); }
+    else {
+      const a = -0.5 + Math.min(1, elapsed / 2.0) * 0.9, r = 4.4, shk = Math.max(0, 0.55 - elapsed) * 0.5;
+      camera.position.set(explodeX + Math.sin(a) * r + (Math.random() - 0.5) * shk, 2.1 + elapsed * 0.15, Math.cos(a) * r);
+      camera.lookAt(explodeX, 0.6, 0);
+    }
+    if (elapsed > (reduced() ? 1.6 : 2.1) && onSequenceComplete) {
       shockwave.visible = false;
       finishSequence();
     }
@@ -927,16 +1180,21 @@ function animate() {
     const TOTAL_DURATION = 1.3;
 
     const zoomProgress = Math.min(1, elapsed / ZOOM_DURATION);
-    const px = runnerGroup.position.x;
-    camera.position.x += (px - camera.position.x) * 0.06;
-    camera.position.z += (1.8 - camera.position.z) * 0.05;
-    camera.position.y += (0.9 - camera.position.y) * 0.05;
-    camera.lookAt(px, 0.62, 0);
+    const px = runnerGroup.position.x, archX = finishGroup.position.x;
+    if (!reduced()) {
+      camera.position.x += (archX + 1.0 - camera.position.x) * 0.06;
+      camera.position.z += (3.1 - camera.position.z) * 0.05;
+      camera.position.y += (1.4 - camera.position.y) * 0.05;
+      camera.lookAt(archX + 0.2, 1.0, 0);
+    }
+    // the class bursts through the finish arch
+    if (elapsed >= BURST_AT) runnerGroup.position.x += (archX - 1.5 - runnerGroup.position.x) * 0.12;
 
     if (runnerChar) runnerChar.boost(zoomProgress);
 
     if (elapsed >= BURST_AT && !snapFlashDone) {
       snapFlashDone = true;
+      burstConfetti(archX); lightShow = reduced() ? 0 : 2.4; setMood('gold');
       victoryRing.visible = true;
       victoryRing.position.set(px, 0.05, 0);
       victoryRing.scale.setScalar(1);
@@ -952,7 +1210,7 @@ function animate() {
       flareLight.intensity = Math.max(0, 16 - burstElapsed * 26);
     }
 
-    if (elapsed > TOTAL_DURATION && onSequenceComplete) {
+    if (elapsed > (reduced() ? TOTAL_DURATION : 2.3) && onSequenceComplete) {
       victoryRing.visible = false;
       flareLight.color.setHex(COL.spark);
       finishSequence();
@@ -1010,8 +1268,10 @@ function animate() {
         runnerGroup.position.x = escapeBaseX - progress * 6;
         escapeStreak.position.set(runnerGroup.position.x + 1, 0.6, 0);
         escapeStreakMat.opacity = 0.5 * (1 - progress);
-        camera.position.lerp(new THREE.Vector3(-2.5, 1.6, 3.6), 0.05);
-        if (progress >= 1 && launchElapsed > 0.85 && onSequenceComplete) {
+        const archX = sprintArch.position.x;
+        if (!escapeConfetti && runnerGroup.position.x < archX) { escapeConfetti = true; burstConfetti(archX); lightShow = reduced() ? 0 : 2.4; setMood('gold'); }
+        if (!reduced()) { camera.position.lerp(V3.set(archX + 2.6, 1.7, 4.4), 0.05); lookX += (archX + 0.8 - lookX) * 0.06; camera.lookAt(lookX, 0.9, 0); }
+        if (progress >= 1 && launchElapsed > (reduced() ? 0.85 : 1.9) && onSequenceComplete) {
           runnerGroup.visible = false;
           escapeStreakMat.opacity = 0;
           finishSequence();
@@ -1110,6 +1370,7 @@ function resize() {
   measureTags();
 }
 function applyQuality() {
+  showBeams();
   useBloom = bloomAllowed();
   renderer.setPixelRatio(opPixelRatio());
   composer.setPixelRatio(opPixelRatio());
@@ -1202,7 +1463,8 @@ const roundDeal = CGB.createClassRound({
     if (ok) { SFX.correct(); runnerCellIndex--; runnerGroup.userData.targetX = cellX(runnerCellIndex); pulseCorrect(); }
     else { SFX.wrong(); hunterCellIndex--; hunterGroup.userData.targetX = cellX(hunterCellIndex); pulseWrong(); }
     dealStatus();
-    hostSay('hostDeal', CGB.classLine(c, n), CGB.classGesture(c, n), 1500);
+    if (!ok && hunterCellIndex - runnerCellIndex === 1) hostSay('hostDeal', 'The Hunter is right behind you!', 'gasp', 1500);
+    else hostSay('hostDeal', CGB.classLine(c, n), CGB.classGesture(c, n), 1500);
   },
   onUndo() {
     const u = dealSnap; if (!u) return;
@@ -1352,6 +1614,7 @@ $('dealRow').addEventListener('click', e => {
 function dealStatus() {
   const gap = hunterCellIndex - runnerCellIndex;
   $('dealStatus').textContent = `${runnerCellIndex} step${runnerCellIndex === 1 ? '' : 's'} to home · Hunter ${gap} step${gap === 1 ? '' : 's'} behind`;
+  paintGap();
 }
 
 function askDealQuestion() {
@@ -1402,6 +1665,7 @@ function startSprint() {
   state.sprintNetScore = 0;
   state.sprintTarget = classTarget();
   state.sprintTimeLeft = 60;
+  buildSprintTrack(state.sprintTarget);
   hostSay('hostSprint', `Final Sprint! Sixty seconds. Every correct team is a step. You need ${state.sprintTarget}!`, 'point', 1800);
 
   paintSprintTarget();
@@ -1428,6 +1692,7 @@ function startSprint() {
 
 function paintSprintTarget() {
   $('sprintTarget').textContent = `${state.sprintNetScore} of ${state.sprintTarget} steps · one for each correct team (pot ${state.pot} points)`;
+  paintGap();
 }
 function updateSprintTimer() {
   const secs = Math.max(0, Math.ceil(state.sprintTimeLeft));
@@ -1435,6 +1700,8 @@ function updateSprintTimer() {
   const s = secs % 60;
   $('sprintTimer').textContent = m + ':' + String(s).padStart(2, '0');
   $('sprintTimer').classList.toggle('low', state.sprintTimeLeft <= 10);
+  paintSetClock(secs, state.sprintTimeLeft <= 10);
+  if (state.phase === 'sprint') setMood(state.sprintTimeLeft <= 10 ? 'red' : 'normal');
   const fill = $('sprintFill');
   fill.style.width = Math.max(0, state.sprintTimeLeft / 60 * 100) + '%';
   fill.classList.toggle('low', state.sprintTimeLeft <= 10);
@@ -1507,6 +1774,7 @@ document.addEventListener('keydown', e => {
   const isButton = e.target.matches && e.target.matches('button');
   const inField = e.target.matches && e.target.matches('input, textarea, select');
   const k = e.key.toLowerCase();
+  if ((k === 'enter' || k === ' ') && skipSequence()) { e.preventDefault(); return; }
   if (roundEndNext) {
     if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); continueRoundEnd(); }
     return;
@@ -1537,6 +1805,7 @@ resize();
 /* @test-only: shortcuts for tests, removed from the shipped file by build.js */
 CGB.test.outpace = {
   setTime(sec) { state.sprintTimeLeft = sec; },
+  scene3d() { return { mode: sceneMode, mood, clock: setClock.visible, arch: !!finishGroup.parent, sprintTrack: sprintGroup.visible && sprintGroup.children.length > 0, confetti: confettiMesh.visible, camera: camera.position.toArray() }; },
   // skip the Deal Round: start the Final Sprint with this pot
   toSprint(pot) { clearTimers(); roundEndNext = null; $('roundEnd').classList.remove('show'); state.pot = pot == null ? 600 : pot; startSprint(); }
 };
