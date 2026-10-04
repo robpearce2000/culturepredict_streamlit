@@ -88,7 +88,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .l-hero { display: grid; grid-template-columns: minmax(0, 1fr) 260px; align-items: center; gap: 12px; }
 .l-wordmark svg { width: 100%; height: auto; max-height: 34vh; display: block; }
 .l-mascot { position: relative; height: 350px; }
-.l-mascot canvas { position: absolute; left: 0; right: 0; bottom: 0; top: 84px; width: 100%; height: calc(100% - 84px); }
+.l-mascot .pip-wrap { position: absolute; left: 0; right: 0; bottom: 0; top: 76px; width: auto; height: auto; }
 .l-mascot .hello { position: absolute; left: -10px; top: 6px; background: var(--white); color: var(--ink); border: 3px solid var(--ink); border-radius: 16px; padding: 7px 12px; font-weight: 900; font-size: 0.95rem; max-width: 190px; z-index: 2; }
 .l-mascot .hello::after { content: ''; position: absolute; right: 22px; bottom: -13px; border: 10px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
 .l-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
@@ -155,3 +155,33 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
   .bank-item .acts { grid-column: 1 / -1; justify-content: flex-start; }
 }
 .cgb-nogl { position: absolute; inset: 0; z-index: 50; background: var(--night); padding: 16px; }
+
+/* ---------- Professor Pip (2D host) ---------- */
+.pip-wrap { position: relative; width: 100%; height: 100%; pointer-events: none; }
+.pip-wrap svg.pip { width: 100%; height: 100%; display: block; overflow: visible; }
+.pip-arm, .pip-fore { transition: transform .38s cubic-bezier(.3, 1.35, .5, 1); }
+.pip-body { animation: pipBob 3.2s ease-in-out infinite; transform-origin: 150px 420px; }
+@keyframes pipBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+.pip-wrap[data-pose="cheer"] .pip-body { animation: pipHop .42s ease-in-out infinite alternate; }
+@keyframes pipHop { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+.pip-wrap[data-pose="wave"] .pip-arm-b .pip-fore { animation: pipWave .45s ease-in-out infinite alternate; }
+@keyframes pipWave { from { transform: rotate(-12deg); } to { transform: rotate(-58deg); } }
+.pip-wrap[data-pose="clap"] .pip-arm-a .pip-fore { animation: pipClapA .22s ease-in-out infinite alternate; }
+.pip-wrap[data-pose="clap"] .pip-arm-b .pip-fore { animation: pipClapB .22s ease-in-out infinite alternate; }
+@keyframes pipClapA { from { transform: rotate(-96deg); } to { transform: rotate(-70deg); } }
+@keyframes pipClapB { from { transform: rotate(96deg); } to { transform: rotate(70deg); } }
+.pip-eye { transition: transform .06s; }
+.pip-wrap.blink .pip-eye { transform: scaleY(0.12); }
+.pip-head, .pip-iris { transition: transform .4s ease; }
+.pip-head { transform-origin: 150px 170px; }
+.pip-wrap[data-look="left"] .pip-head { transform: rotate(-5deg); }
+.pip-wrap[data-look="left"] .pip-iris { transform: translateX(-4px); }
+.pip-wrap[data-face="grin"] .pip-brow { transform: translateY(-5px); }
+.pip-wrap[data-face="groan"] .pip-brow-a { transform: rotate(10deg); transform-origin: 127px 78px; }
+.pip-wrap[data-face="groan"] .pip-brow-b { transform: rotate(-10deg); transform-origin: 173px 78px; }
+.pip-brow { transition: transform .25s; }
+.pip-mouth > * { display: none; }
+.pip-wrap[data-face="smile"] .m-smile, .pip-wrap[data-face="grin"] .m-grin, .pip-wrap[data-face="unsure"] .m-unsure, .pip-wrap[data-face="groan"] .m-groan { display: inline; }
+.pip-wrap.talking .pip-mouth > * { display: none; }
+.pip-wrap.talking .pip-mouth > .m-talk { display: inline; animation: pipTalk .16s ease-in-out infinite alternate; transform-origin: 150px 146px; }
+@keyframes pipTalk { from { transform: scaleY(0.25); } to { transform: scaleY(1.1); } }

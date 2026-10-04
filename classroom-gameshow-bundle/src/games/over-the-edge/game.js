@@ -234,7 +234,6 @@ const TX = x => (x - PHY.W / 2) * S, TZ = y => (y - 180) * S;
 const BOARD_BOTTOM = UH + 0.6, BOARD_Z = TZ(PHY.WALL) - 0.3;
 const BX = x => (x - PEG.W / 2) * S, BY = y => BOARD_BOTTOM + (PEG.H - y) * S;
 const COIN_T = 0.16, JACK_T = 0.26;
-const HOST_POS = new THREE.Vector3(9.9, -4.6, 2.6);
 
 /* Set palette (original to this game) */
 const SET = { bg: 0x0B2A3A, aqua: 0x4FF0D8, coral: 0xFF6B4A, sun: 0xFFC93C, teal: 0x127C82, navy: 0x16324A };
@@ -283,9 +282,6 @@ key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.
 scene.add(key); scene.add(key.target);
 const coralBack = new THREE.PointLight(0xff8a66, 0.55, 40); coralBack.position.set(0, 9, -10); scene.add(coralBack);
 const aquaL = new THREE.PointLight(0x4ff0d8, 0.65, 26); aquaL.position.set(-10, 6, 4); scene.add(aquaL);
-const hostLight = new THREE.SpotLight(0xfff4e6, 0.25, 30, Math.PI / 7, 0.6, 1);
-hostLight.position.set(12, 10, 12); hostLight.target.position.copy(HOST_POS).add(new THREE.Vector3(0, 6, 0));
-scene.add(hostLight); scene.add(hostLight.target);
 
 function canvasTex(w, h, draw) {
   const c = document.createElement('canvas'); c.width = w; c.height = h;
@@ -337,8 +333,6 @@ const floor = new THREE.Mesh(new THREE.CircleGeometry(40, 64), new THREE.MeshSta
 floor.rotation.x = -Math.PI / 2; floor.position.y = -4.6; floor.receiveShadow = true; scene.add(floor);
 const ring = new THREE.Mesh(new THREE.RingGeometry(11.5, 11.8, 96), glow(0x9ffcf0, 1.2));
 ring.rotation.x = -Math.PI / 2; ring.position.set(1.5, -4.58, 0); scene.add(ring);
-const hostDisc = new THREE.Mesh(new THREE.CircleGeometry(2.2, 48), new THREE.MeshStandardMaterial({ color: SET.coral, emissive: 0x8a2a14, emissiveIntensity: 0.6, metalness: 0.3, roughness: 0.3 }));
-hostDisc.rotation.x = -Math.PI / 2; hostDisc.position.set(HOST_POS.x, -4.57, HOST_POS.z); scene.add(hostDisc);
 
 /* Machine materials */
 const chrome = new THREE.MeshStandardMaterial({ color: 0xe8ecf2, metalness: 1.0, roughness: 0.18 });
@@ -518,20 +512,16 @@ function makeCoinMesh(kind, owner) {
 /* =========================================================
    THE HOST (shared Showtime mascot) with speech captions
    ========================================================= */
-const host = CGB.createHost(scene, { position: HOST_POS, rotationY: -0.42 });
-CGB.hostListeners.push(() => host.rebuild());
+const host = CGB.createHost2D($('host'), { className: 'pip-ote' });
 function hostGesture(name, ms) { host.gesture(name, ms); }
-function updateHost(dt, now) {
-  host.update(dt, now, {
-    rest: (G.step === 'chute' || G.step === 'dropping') ? 'present' : 'idle',
-    watching: drops.length || transits.length || G.step === 'dropping'
-  });
+function updateHost() {
+  host.setRest((G.step === 'chute' || G.step === 'dropping') ? 'present' : 'idle');
+  host.setLook(drops.length || transits.length || G.step === 'dropping' ? 'left' : '');
 }
 
 /* Speech bubble */
 const bubble = $('bubble');
 let typeTimer = null, hideTimer = null;
-const headWorld = new THREE.Vector3();
 function hostSay(text, gesture, ms) {
   if (!text) return;
   if (gesture) hostGesture(gesture, ms || 1800);
@@ -551,13 +541,12 @@ function hostSay(text, gesture, ms) {
 }
 function hideBubble() { clearInterval(typeTimer); clearTimeout(hideTimer); bubble.classList.remove('show'); }
 function placeBubble() {
-  if (!host.group || !bubble.classList.contains('show')) return;
-  host.parts.head.getWorldPosition(headWorld);
-  headWorld.y += 2.0;
-  headWorld.project(camera);
+  if (!bubble.classList.contains('show')) return;
+  const hp = host.headPoint(); if (!hp) return;
   const w = wrap.clientWidth, h = wrap.clientHeight;
-  const hx = (headWorld.x + 1) / 2 * w;
-  let x = hx, y = (1 - headWorld.y) / 2 * h;
+  const wr = wrap.getBoundingClientRect();
+  const hx = hp.x - wr.left;
+  let x = hx, y = hp.y - wr.top - 6;
   const bw = bubble.offsetWidth, bh = bubble.offsetHeight + 14;   // include the tail
   x = Math.min(w - bw / 2 - 10, Math.max(bw / 2 + 10, x));
   y = Math.max(bh + 60, Math.min(h - 10, y));   // keep clear of the menu bar
@@ -1340,7 +1329,7 @@ function loop(now) {
   pusher.position.z = TZ(tray.pf);
   updateChuteGlow(now);
   updateCamera(dt, now);
-  updateHost(dt, now);
+  updateHost();
   updateLabels(dt);
   placeBubble();
   dust.rotation.y += dt * 0.01;

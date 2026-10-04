@@ -235,41 +235,15 @@ CGB.app = (() => {
     $('activeSetCount').textContent = s.questions.length + ' questions';
   }
 
-  /* The mascot on the launcher: a small 3D scene with the host waving hello */
+  /* The mascot on the launcher: Pip waves hello now and then */
   function createMascot() {
     const box = $('mascot');
-    const renderer = CGB.createRenderer({ alpha: true });
-    if (!renderer) { box.hidden = true; return null; }
-    renderer.setClearColor(0x000000, 0);
-    box.appendChild(renderer.domElement);
-    const scene = new THREE.Scene();
-    const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
-    cam.position.set(0, 4.2, 23); cam.lookAt(0, 2.9, 0);
-    scene.add(new THREE.HemisphereLight(0xfff3e0, 0x30365e, 0.9));
-    const key = new THREE.DirectionalLight(0xffffff, 0.8); key.position.set(4, 10, 8); scene.add(key);
-    const rim = new THREE.DirectionalLight(0x4ff0d8, 0.5); rim.position.set(-6, 6, -6); scene.add(rim);
-    const host = CGB.createHost(scene, { position: new THREE.Vector3(0, -2.6, 0), rotationY: 0.25 });
-    CGB.hostListeners.push(() => host.rebuild());
-    let raf = 0, last = performance.now(), running = false, nextWave = performance.now() + 600;
-    function size() {
-      const w = box.clientWidth, h = box.clientHeight; if (!w || !h) return;
-      renderer.setPixelRatio(CGB.settings.pixelRatio());
-      renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
-    }
-    function frame(now) {
-      if (!running) return;
-      raf = requestAnimationFrame(frame);
-      const dt = Math.min(0.05, (now - last) / 1000); last = now;
-      if (now > nextWave) { host.gesture(Math.random() < 0.6 ? 'wave' : 'present', 2200); host.talk(900); nextWave = now + 7000 + Math.random() * 4000; }
-      host.update(dt, now, { rest: 'idle' });
-      renderer.render(scene, cam);
-    }
-    window.addEventListener('resize', size);
-    CGB.settings.onChange(k => { if (k === 'quality') size(); });
-    size();
+    const host = CGB.createHost2D(box, { className: 'pip-launcher' });
+    let timer = 0;
+    const loop = () => { host.gesture(Math.random() < 0.65 ? 'wave' : 'present', 2200); host.talk(900); timer = setTimeout(loop, 7000 + Math.random() * 4000); };
     return {
-      resume() { if (running) return; running = true; last = performance.now(); size(); raf = requestAnimationFrame(frame); },
-      pause() { running = false; cancelAnimationFrame(raf); },
+      resume() { clearTimeout(timer); timer = setTimeout(loop, 600); },
+      pause() { clearTimeout(timer); },
       wave() { host.gesture('wave', 2200); host.talk(900); }
     };
   }
