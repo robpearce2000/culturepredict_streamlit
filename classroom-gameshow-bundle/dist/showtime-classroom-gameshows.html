@@ -826,6 +826,47 @@ html[data-motion="reduced"] .l-wordmark .bulb { animation: none !important; opac
 .cc-tsub { font-size: 0.78rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--teal-deep, #0A6663); width: 100%; }
 .cc-topicchips.grouped .chip { font-size: 0.82rem; min-height: 30px; padding: 3px 9px; }
 
+/* ---------- The studio: a lit wall of 3D tiles (presentation only) ---------- */
+.cc-play { background:
+    radial-gradient(ellipse 22% 60% at 18% -8%, rgba(255,214,150,0.22), transparent 70%),
+    radial-gradient(ellipse 22% 60% at 50% -10%, rgba(255,214,150,0.26), transparent 70%),
+    radial-gradient(ellipse 22% 60% at 82% -8%, rgba(255,214,150,0.22), transparent 70%),
+    linear-gradient(180deg, transparent 72%, rgba(0,0,0,0.35) 100%); }
+.cc-cat, .cc-tile, .cc-team, .cc-head { transition: filter 0.35s, transform 0.15s; }
+/* the lights dim on everything except the ★ tile */
+.cc-play.dim .cc-cat, .cc-play.dim .cc-tile:not(.star-spin), .cc-play.dim .cc-team, .cc-play.dim .cc-head { filter: brightness(0.3) saturate(0.6); }
+.cc-board { perspective: 1400px; transform-origin: 50% 45%; transition: transform 0.45s cubic-bezier(.2,.8,.25,1); }
+.cc-play.pushed .cc-board { transform: scale(1.02); }
+.cc-cat { box-shadow: inset 0 2px 0 rgba(255,255,255,0.12), 0 6px 14px rgba(0,0,0,0.45); background: linear-gradient(180deg, #2A2F55, var(--ink)); }
+/* bevelled tiles: a lit top edge, a shaded bottom edge and a deep drop to the wall */
+.cc-tile { transform-style: preserve-3d; box-shadow: inset 0 4px 0 rgba(255,255,255,0.32), inset 0 -6px 0 rgba(0,0,0,0.18), inset 4px 0 0 rgba(255,255,255,0.12), inset -4px 0 0 rgba(0,0,0,0.1), 0 6px 0 #7A2604, 0 14px 20px rgba(0,0,0,0.45); transition: transform 0.15s, filter 0.15s; }
+.cc-tile:not([disabled]):hover { transform: translateY(-2px); }
+.cc-tile.used { box-shadow: inset 0 3px 0 rgba(255,255,255,0.06), 0 4px 10px rgba(0,0,0,0.4); }
+.cc-tile.used.won { background: linear-gradient(180deg, color-mix(in srgb, var(--tc) 92%, #fff), var(--tc)); color: var(--ink); border-color: var(--ink); box-shadow: inset 0 4px 0 rgba(255,255,255,0.4), inset 0 -5px 0 rgba(0,0,0,0.12), 0 4px 0 rgba(0,0,0,0.35); }
+.cc-tile.used.won .mk { color: var(--ink); }
+.cc-tile.empty { box-shadow: none; }
+.cc-tile.flipping { animation: cc-flip-out 0.4s ease-in forwards; }
+@keyframes cc-flip-out { to { transform: rotateY(90deg) scale(1.1); opacity: 0.4; } }
+.cc-tile.flip-in { animation: cc-flip-in 0.5s cubic-bezier(.2,.8,.25,1); }
+@keyframes cc-flip-in { from { transform: rotateX(-90deg); } to { transform: none; } }
+.cc-qcard { transform-origin: 50% 50%; backface-visibility: hidden; }
+.cc-q { perspective: 1600px; }
+/* the ★ tile: the lights dim, it spins and bursts with gold light */
+.cc-tile.star-spin { z-index: 30; animation: cc-star 1.5s cubic-bezier(.3,.6,.3,1) forwards; }
+.cc-tile.star-spin::after { content: '★'; position: absolute; inset: -40%; display: grid; place-items: center; font-size: 3em; -webkit-text-stroke: 0; color: #FFE08A; background: radial-gradient(circle, rgba(255,214,90,0.95) 0%, rgba(255,190,40,0.55) 30%, transparent 62%); border-radius: 50%; opacity: 0; animation: cc-burst 1.5s ease-out forwards; pointer-events: none; }
+@keyframes cc-star { 0% { transform: none; } 50% { transform: translateZ(80px) rotateY(360deg) scale(1.25); } 100% { transform: translateZ(120px) rotateY(720deg) scale(1.35); } }
+@keyframes cc-burst { 0%, 45% { opacity: 0; transform: scale(0.3); } 70% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0; transform: scale(1.8); } }
+/* a light sweep across a team's panel when it wins points */
+.cc-team { position: relative; overflow: hidden; }
+.cc-team.sweep::after { content: ''; position: absolute; top: 0; bottom: 0; left: -60%; width: 50%; background: linear-gradient(100deg, transparent, rgba(255,236,170,0.85), transparent); animation: cc-sweep 0.9s ease-out forwards; pointer-events: none; }
+@keyframes cc-sweep { to { left: 120%; } }
+/* reduced motion: no flips, spins or sweeps, just the plain change */
+html[data-motion="reduced"] .cc-tile, html[data-motion="reduced"] .cc-board { animation: none !important; transition: none !important; transform: none !important; }
+html[data-motion="reduced"] .cc-tile::after, html[data-motion="reduced"] .cc-team::after { display: none; }
+/* low graphics: flat shading, no deep shadows */
+html[data-quality="low"] .cc-tile { box-shadow: inset 0 3px 0 rgba(255,255,255,0.3), 0 5px 0 #7A2604; }
+html[data-quality="low"] .cc-play { background: none; }
+
 </style>
 <style>
 /* =========================================================
@@ -856,19 +897,41 @@ html[data-motion="reduced"] .l-wordmark .bulb { animation: none !important; opac
 .hh-boardwrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
 .hh-board { width: 100%; height: 100%; display: block; }
 .hh-hex { cursor: pointer; }
-.hh-hex path { fill: var(--hh-hex); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; transition: fill .25s; }
-.hh-hex:hover path { fill: #34408A; }
+.hh-hex .face { fill: var(--hh-hex); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; transition: fill .25s; }
+.hh-hex .side { fill: #0C1230; stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+.hh-hex .bev { fill: none; stroke: rgba(255,255,255,0.22); stroke-width: 3; pointer-events: none; }
+.hh-hex:hover .face { fill: #34408A; }
 .hh-hex text { font-family: var(--display); fill: #fff; text-anchor: middle; pointer-events: none; }
 .hh-hex .mk { font-family: var(--body); font-weight: 900; fill: var(--ink); }
-.hh-hex.own-0 path { fill: var(--ha); }
-.hh-hex.own-1 path { fill: var(--hb); }
+.hh-hex.own-0 .face { fill: var(--ha); }
+.hh-hex.own-1 .face { fill: var(--hb); }
+.hh-hex.own-0 .side { fill: color-mix(in srgb, var(--ha) 45%, #000); }
+.hh-hex.own-1 .side { fill: color-mix(in srgb, var(--hb) 45%, #000); }
 .hh-hex.own-0 text.lt, .hh-hex.own-1 text.lt { fill: #fff; opacity: 0.6; }
 .hh-hex.own-0 .mk, .hh-hex.own-1 .mk { fill: #fff; }
-.hh-hex.cursor path { stroke: var(--sun); stroke-width: 9; }
-.hh-hex.path path { stroke: #fff; stroke-width: 8; animation: hhGlow 1s ease-in-out infinite alternate; }
+.hh-hex.cursor .face { stroke: var(--sun); stroke-width: 9; }
+.hh-hex.path .face { stroke: #fff; stroke-width: 8; animation: hhGlow 1s ease-in-out infinite alternate; }
 @keyframes hhGlow { from { filter: brightness(1); } to { filter: brightness(1.35); } }
-.hh-edge-0 { fill: var(--ha); }
-.hh-edge-1 { fill: var(--hb); }
+.hh-edge-0 { fill: var(--ha); filter: drop-shadow(0 0 calc(var(--g0, 0) * 16px) var(--ha)); opacity: calc(0.7 + var(--g0, 0) * 0.3); }
+.hh-edge-1 { fill: var(--hb); filter: drop-shadow(0 0 calc(var(--g1, 0) * 16px) var(--hb)); opacity: calc(0.7 + var(--g1, 0) * 0.3); }
+
+/* claiming a hexagon: it pops up and flashes with a ring of light */
+.hh-hex { transform-box: fill-box; transform-origin: 50% 50%; }
+.hh-hex.claim { animation: hhClaim 0.6s cubic-bezier(.3,1.6,.5,1); }
+@keyframes hhClaim { 0% { transform: scale(0.85); } 45% { transform: scale(1.14) translateY(-4px); } 100% { transform: none; } }
+.hh-hex .burst { fill: none; stroke: #fff; stroke-width: 6; transform-box: fill-box; transform-origin: 50% 50%; animation: hhBurst 0.7s ease-out forwards; pointer-events: none; }
+@keyframes hhBurst { from { opacity: 0.9; transform: scale(0.6); } to { opacity: 0; transform: scale(1.6); } }
+/* the winning chain lights up hex by hex */
+.hh-hex.chain .face { animation: hhChain 0.5s ease-out both; animation-delay: calc(var(--i) * 0.14s); stroke: #fff; stroke-width: 8; }
+@keyframes hhChain { from { filter: brightness(0.6); } 50% { filter: brightness(2.1); } to { filter: brightness(1.35); } }
+.hh-board { transition: transform 0.5s ease; }
+.hh-boardwrap { overflow: hidden; }
+.hh-confetti { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.hh-confetti i { position: absolute; top: -20px; left: var(--x); width: 10px; height: 16px; background: var(--c); border-radius: 2px; transform: rotate(var(--r)); animation: hhFall 2.2s ease-in var(--d) forwards; }
+@keyframes hhFall { to { transform: translateY(110vh) rotate(calc(var(--r) + 540deg)); } }
+html[data-motion="reduced"] .hh-hex, html[data-motion="reduced"] .hh-hex .face, html[data-motion="reduced"] .hh-board { animation: none !important; transition: none !important; }
+html[data-motion="reduced"] .hh-hex .burst, html[data-motion="reduced"] .hh-confetti { display: none; }
+html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filter: none; }
 .hh-teams { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .hh-team { background: #fff; color: var(--ink); border: 3px solid var(--ink); border-bottom: 8px solid var(--tc); border-radius: 14px; padding: 6px 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; min-width: 0; }
 .hh-team .nm { font-weight: 900; font-size: 1.05rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
@@ -5740,6 +5803,10 @@ function clearTray() {
   tray.onTransfer = b => { b.h = UH; b.hv = 0; };
 }
 function newTray(withWildcards) {
+  // decorative counters still dropping or landing from the setup screen go too: they must not
+  // land in (and change) a real game
+  drops.concat(transits).forEach(c => scene.remove(c.mesh));
+  drops.length = 0; transits.length = 0;
   clearTray();
   fillTray(tray);
   if (withWildcards) {
@@ -8024,7 +8091,7 @@ function finishDealRound(escaped) {
   state.pot += reward;
   state.dealOutcomes.push({ label: `Deal Round ${state.dealRound + 1}`, escaped, reward });
   $('dealStatus').textContent = '';
-  hostSay('hostDeal', escaped ? `Home safe! ${reward} points banked.` : `Caught! Still, ${reward} points go in the pot.`, escaped ? 'cheer' : 'shrug', 2000);
+  hostSay('hostDeal', escaped ? `Home safe! ${reward} points banked.` : `Caught! Still, ${reward} points go in the pot.`, escaped ? 'cheer' : 'groan', 2000);
   showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.className} bank ${reward} points. Class pot: ${state.pot}`, () => {
     state.dealRound++;
     if (state.dealRound < state.dealRounds) startDealRound(); else startSprint();
@@ -8405,7 +8472,7 @@ function renderBoard() {
       if (t.empty) return `<button type="button" class="cc-tile used empty${cur}" disabled aria-label="${esc(c.topic)} ${t.value}: no question">—</button>`;
       if (t.used) {
         const lead = t.wonBy >= 0 ? `<span class="mk">${TEAM[t.wonBy].mark}</span>` : `<span class="mk">${t.right ? '✓' : '✗'}</span>`;
-        return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${t.wonBy >= 0 ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${t.right} of ${S.teams.length} teams correct">${lead}${t.right} of ${S.teams.length} correct</button>`;
+        return `<button type="button" class="cc-tile used${t.wonBy >= 0 ? ' won' : ''}${cur}" disabled style="--tc:${t.wonBy >= 0 ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${t.right} of ${S.teams.length} teams correct">${lead}${t.right} of ${S.teams.length} correct</button>`;
       }
       return `<button type="button" class="cc-tile${cur}" data-c="${ci}" data-r="${r}" aria-label="${esc(c.topic)} for ${t.value} points">${t.value}</button>`;
     }).join('');
@@ -8446,10 +8513,54 @@ function openTile(c, r) {
   $('qAnswer').textContent = t.q.a;
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = '';
+  paintQBoard();
+  const tileEl = $('board').querySelector(`.cc-tile[data-c="${c}"][data-r="${r}"]`);
+  if (t.star) { SFX.star(); hostC.say('A star tile! This one is worth double.', 'cheer', 1600); starReveal(tileEl); return; }
+  SFX.open();
+  showQuestionCard(tileEl);
+}
+/* ---------- 3D moments (presentation only) ----------
+   A picked tile flips over and the question card grows out of it while the board pushes in a
+   little; the ★ tile gets a moment of its own first. With reduced motion everything fades. */
+const playEl = $('play');
+function showQuestionCard(tileEl) {
+  S.step = 'ask';
   $('q').hidden = false;
-  if (t.star) { SFX.star(); hostC.say('A star tile! This one is worth double.', 'cheer', 1600); } else SFX.open();
-  paintQBoard(); round.think();
-  $('qcard').focus({ preventScroll: true });   // keys now go to the question, not the board behind it
+  playEl.classList.add('pushed');
+  const card = $('qcard');
+  if (tileEl && !CGB.settings.reduced()) {
+    tileEl.classList.add('flipping');
+    // the card starts where the tile is and grows to its place (it is measured, then animated)
+    const a = tileEl.getBoundingClientRect(), b = card.getBoundingClientRect();
+    if (a.width && b.width) {
+      const sx = a.width / b.width, sy = a.height / b.height;
+      card.style.transition = 'none';
+      card.style.transform = `translate(${a.left + a.width / 2 - (b.left + b.width / 2)}px, ${a.top + a.height / 2 - (b.top + b.height / 2)}px) scale(${sx.toFixed(3)}, ${sy.toFixed(3)}) rotateY(90deg)`;
+      card.getBoundingClientRect();
+      card.style.transition = 'transform 0.42s cubic-bezier(.2,.8,.25,1)';
+      card.style.transform = '';
+    }
+  }
+  round.think();
+  card.focus({ preventScroll: true });   // keys now go to the question, not the board behind it
+}
+let revealT = 0, revealTile = null;
+function starReveal(tileEl) {
+  S.step = 'reveal';
+  if (CGB.settings.reduced() || !tileEl) { showQuestionCard(tileEl); return; }
+  revealTile = tileEl;
+  playEl.classList.add('dim', 'pushed');
+  tileEl.classList.add('star-spin');
+  revealT = setTimeout(endStarReveal, 1500);
+}
+// Space or Enter skips the ★ moment
+function endStarReveal() {
+  if (S.step !== 'reveal') return;
+  clearTimeout(revealT);
+  playEl.classList.remove('dim');
+  if (revealTile) revealTile.classList.remove('star-spin');
+  showQuestionCard(revealTile);
+  revealTile = null;
 }
 /* The host in the corner: short captions at the big moments */
 const hostC = CGB.createHostCorner($('host'));
@@ -8524,7 +8635,9 @@ function boardDone() { return S.cats.every(c => c.tiles.every(t => t.used || (S.
 function closeQuestion() {
   if (S.step !== 'done') return;
   tileOpen().used = true;
+  const justC = S.open.c, justR = S.open.r, winners = S.teams.map((x, i) => (undoSnap && x.score > undoSnap.scores[i]) ? i : -1).filter(i => i >= 0);
   $('q').hidden = true;
+  playEl.classList.remove('pushed');
   S.phase = 'board'; S.open = null;
   round.stop(); nextClassTurn();
   if (S.cats.every(c => c.tiles.every(t => t.used))) { showSummary(); return; }
@@ -8532,6 +8645,11 @@ function closeQuestion() {
   const free = []; S.cats.forEach((c, ci) => c.tiles.forEach((t, r) => { if (!t.used) free.push({ c: ci, r }); }));
   if (!free.some(f => f.c === S.cursor.c && f.r === S.cursor.r)) S.cursor = free[0];
   renderBoard();
+  // the answered tile flips back showing the winning team's colour; winners' panels catch the light
+  const done = $('board').querySelectorAll('.cc-tile')[justR * S.cats.length + justC];
+  if (done) done.classList.add('flip-in');
+  const panels = $('teams').querySelectorAll('.cc-team');
+  winners.forEach(i => { if (panels[i]) panels[i].classList.add('sweep'); });
   const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
 }
 
@@ -8589,6 +8707,7 @@ function showSummary() {
 }
 function goHome() {
   gate.hide();
+  clearTimeout(revealT); playEl.classList.remove('dim', 'pushed');
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home'; S.open = null;
@@ -8622,6 +8741,7 @@ document.addEventListener('keydown', e => {
     return;
   }
   if (S.phase === 'question') {
+    if (S.step === 'reveal') { if (k === 'enter' || k === ' ') { e.preventDefault(); endStarReveal(); } return; }
     if (round.handleKey(k)) { e.preventDefault(); return; }
     if ((k === 'enter' || k === ' ') && S.step === 'done' && !isButton) { e.preventDefault(); closeQuestion(); }
   }
@@ -8751,6 +8871,23 @@ function winningPath(t) {
   return null;
 }
 
+/* How far across the board a team's longest connected group reaches (0 to 1) */
+function progressOf(t) {
+  const n = S.size, seen = new Set();
+  let best = 0;
+  S.cells.forEach(cell => {
+    if (cell.owner !== t || seen.has(cell.c + ',' + cell.r)) return;
+    let lo = n, hi = -1; const queue = [[cell.c, cell.r]]; seen.add(cell.c + ',' + cell.r);
+    while (queue.length) {
+      const [c, r] = queue.shift(), v = t === 0 ? c : r;
+      lo = Math.min(lo, v); hi = Math.max(hi, v);
+      for (const [x, y] of neighbours(c, r)) { const k = x + ',' + y; if (!seen.has(k) && cellAt(x, y).owner === t) { seen.add(k); queue.push([x, y]); } }
+    }
+    best = Math.max(best, (hi - lo + 1) / n);
+  });
+  return best;
+}
+
 /* ---------- Rendering ---------- */
 function renderBoard() {
   const n = S.size;
@@ -8758,19 +8895,28 @@ function renderBoard() {
   const svg = $('board');
   svg.setAttribute('viewBox', `0 0 ${w.toFixed(0)} ${h.toFixed(0)}`);
   const pathSet = new Set(S.path || []);
-  let out = '';
+  const chain = S.phase === 'celebrate' && S.path ? S.path.slice().reverse() : null;
+  // each team's two edges glow more strongly as its longest chain reaches further across
+  const glow = [0, 1].map(progressOf);
+  let out = `<g class="hh-edges" style="--g0:${glow[0].toFixed(2)};--g1:${glow[1].toFixed(2)}">`;
   // team edges: Team 1 owns left and right, Team 2 owns top and bottom
   out += `<rect class="hh-edge-0" x="6" y="${PAD}" width="18" height="${h - PAD * 2}" rx="9"/><rect class="hh-edge-0" x="${w - 24}" y="${PAD}" width="18" height="${h - PAD * 2}" rx="9"/>`;
-  out += `<rect class="hh-edge-1" x="${PAD}" y="6" width="${w - PAD * 2}" height="18" rx="9"/><rect class="hh-edge-1" x="${PAD}" y="${h - 24}" width="${w - PAD * 2}" height="18" rx="9"/>`;
+  out += `<rect class="hh-edge-1" x="${PAD}" y="6" width="${w - PAD * 2}" height="18" rx="9"/><rect class="hh-edge-1" x="${PAD}" y="${h - 24}" width="${w - PAD * 2}" height="18" rx="9"/></g>`;
   S.cells.forEach(cell => {
     const { x, y } = centre(cell.c, cell.r);
     const cls = ['hh-hex'];
     if (cell.owner >= 0) cls.push('own-' + cell.owner);
     // the gold outline is the keyboard cursor, so it only shows once the arrow keys are used
     if (S.keyboard && S.cursor.c === cell.c && S.cursor.r === cell.r && S.phase === 'board') cls.push('cursor');
-    if (pathSet.has(cell.c + ',' + cell.r)) cls.push('path');
+    const key = cell.c + ',' + cell.r;
+    if (pathSet.has(key)) cls.push('path');
+    if (key === S.justClaimed) cls.push('claim');
+    const ci = chain ? chain.indexOf(key) : -1;
+    if (ci >= 0) cls.push('chain');
     const label = cell.owner >= 0 ? `${cell.letter}, won by ${S.teams[cell.owner].name}` : `Letter ${cell.letter}`;
-    out += `<g class="${cls.join(' ')}" data-c="${cell.c}" data-r="${cell.r}" role="gridcell" aria-label="${esc(label)}"><path d="${CGB.brand.hexPath(x, y, R - 3)}"/>`;
+    // a raised tile: the side (drawn lower and darker), the face, and a bevel highlight on the face
+    out += `<g class="${cls.join(' ')}" data-c="${cell.c}" data-r="${cell.r}" role="gridcell" aria-label="${esc(label)}"${ci >= 0 ? ` style="--i:${ci}"` : ''}><path class="side" d="${CGB.brand.hexPath(x, y + 7, R - 3)}"/><path class="face" d="${CGB.brand.hexPath(x, y, R - 3)}"/><path class="bev" d="${CGB.brand.hexPath(x, y - 1.5, R - 11)}"/>`;
+    if (key === S.justClaimed) out += `<circle class="burst" cx="${x}" cy="${y}" r="${R - 8}"/>`;
     if (cell.owner >= 0) out += `<text class="lt" x="${x}" y="${y + 2}" font-size="38">${cell.letter}</text><text class="mk" x="${x}" y="${y + 30}" font-size="22">${TEAM[cell.owner].mark}</text>`;
     else out += `<text class="lt" x="${x}" y="${y + 17}" font-size="48">${cell.letter}</text>`;
     out += '</g>';
@@ -8899,6 +9045,8 @@ function classResult(c) {
   }
   SFX.claim();
   cell.owner = w; S.teams[w].won++; S.picker = w;
+  S.justClaimed = cell.c + ',' + cell.r;          // it pops up with a burst of light when the board is next drawn
+  setTimeout(() => { if (S.justClaimed === cell.c + ',' + cell.r) S.justClaimed = null; }, 1200);
   $('qMsg').textContent = `The hexagon goes to ${S.teams[w].name}.`;
   hostC.say(`${S.teams[w].name} take it!`, 'clap', 1500);
   const path = winningPath(w);
@@ -8945,12 +9093,41 @@ function backToBoard() {
 }
 
 /* ---------- The result ---------- */
+/* The winning chain lights up hex by hex from edge to edge while the view sweeps along it, then
+   a celebration burst; Space or Enter skips straight to the result. Reduced motion: no sweep. */
+let celebT = 0;
 function roundWon(i) {
   round.stop();
   $('q').hidden = true;
-  S.phase = 'won';
   S.winner = i;
   SFX.win();
+  if (CGB.settings.reduced() || !S.path || !S.path.length) { showWin(i); return; }
+  S.phase = 'celebrate';
+  renderBoard();
+  hostC.say(`${S.teams[i].name} link their edges!`, 'cheer', 2200);
+  const step = 140, total = S.path.length * step + 900;
+  const svg = $('board'), chain = S.path.slice().reverse();
+  const at = k => { const [c, r] = chain[k].split(',').map(Number), p = centre(c, r), vb = svg.viewBox.baseVal; return { x: p.x / vb.width * 100, y: p.y / vb.height * 100 }; };
+  const a = at(0), b = at(chain.length - 1);
+  svg.style.transition = 'none'; svg.style.transformOrigin = `${a.x}% ${a.y}%`; svg.style.transform = 'scale(1.18)';
+  svg.getBoundingClientRect();
+  svg.style.transition = `transform-origin ${(chain.length * step) / 1000}s linear, transform 0.5s ease`;
+  svg.style.transformOrigin = `${b.x}% ${b.y}%`;
+  celebT = setTimeout(() => { svg.style.transform = ''; burstCelebration(i); celebT = setTimeout(() => showWin(i), 800); }, chain.length * step + 100);
+}
+function burstCelebration(i) {
+  const wrap = $('board').parentElement, box = document.createElement('div');
+  box.className = 'hh-confetti';
+  const cols = [TEAM[i].css, '#FFC93C', '#ffffff', TEAM[i].light];
+  box.innerHTML = Array.from({ length: CGB.settings.get('quality') === 'low' ? 24 : 48 }, (v, k) => `<i style="--x:${(Math.random() * 100).toFixed(1)}%;--d:${(Math.random() * 0.5).toFixed(2)}s;--c:${cols[k % cols.length]};--r:${Math.round(Math.random() * 360)}deg"></i>`).join('');
+  wrap.appendChild(box);
+  setTimeout(() => box.remove(), 2600);
+}
+function skipCelebration() { if (S.phase !== 'celebrate') return; clearTimeout(celebT); showWin(S.winner); }
+function showWin(i) {
+  clearTimeout(celebT);
+  const svg = $('board'); svg.style.transition = 'none'; svg.style.transform = ''; svg.style.transformOrigin = '';
+  S.phase = 'won';
   renderBoard();
   $('winTitle').textContent = `${S.teams[i].name} win!`;
   $('winDetail').textContent = `${TEAM[i].mark} Joined ${TEAM[i].goal} in ${S.path.length} hexagons`;
@@ -9009,6 +9186,7 @@ function showSummary() {
 }
 function goHome() {
   gate.hide();
+  clearTimeout(celebT);
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home';
@@ -9046,6 +9224,7 @@ document.addEventListener('keydown', e => {
   const inField = e.target.matches && e.target.matches('input, textarea, select');
   if (S.phase === 'home') { if (k === 'enter' && !(e.target.matches && e.target.matches('button, select, textarea, summary'))) { e.preventDefault(); startGame(); } return; }
   if (S.phase === 'summary') { if (k === 'enter' && !isButton) { e.preventDefault(); startGame(); } return; }
+  if (S.phase === 'celebrate') { if (k === 'enter' || k === ' ') { e.preventDefault(); skipCelebration(); } return; }
   if (S.phase === 'won') { if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); continueAfterWin(); } return; }
   if (inField) return;
   if (S.phase === 'board') {

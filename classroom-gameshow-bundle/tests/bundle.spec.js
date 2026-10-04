@@ -156,13 +156,15 @@ test('@hq a full game of Outpace at High graphics, with the full 60-second sprin
 async function oteFinal(page) {
   await page.addInitScript(() => { window.__SHOWTIME_MANUAL__ = true; });   // the clock only moves when the test says
   await openBundle(page, '#over-the-edge');
+  await page.evaluate(() => CGB.test.seed(11));   // the same starting pile every run, however long the page took to open
   await page.click('#ote-startBtn');
   await page.evaluate(() => { CGB.test.ote.manual(true); CGB.test.ote.toFinal(); });
   await expect.poll(async () => (await state(page, 'over-the-edge')).phase).toBe('final');
 }
 /* One final question: team 1 alone is right and drops its two counters down this lane */
 async function dropFinalCounter(page, lane) {
-  await expect.poll(async () => (await state(page, 'over-the-edge')).step).toBe('ask');
+  // the final's next question follows its banner on a timer, which a busy test machine can stretch
+  await expect.poll(async () => (await state(page, 'over-the-edge')).step, { timeout: 15000 }).toBe('ask');
   await mark(page, 'over-the-edge', i => i === 0);
   await expect.poll(async () => (await state(page, 'over-the-edge')).step).toBe('lanes');
   await page.keyboard.press(String(lane));

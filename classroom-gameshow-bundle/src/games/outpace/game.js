@@ -1632,7 +1632,7 @@ function finishDealRound(escaped) {
   state.pot += reward;
   state.dealOutcomes.push({ label: `Deal Round ${state.dealRound + 1}`, escaped, reward });
   $('dealStatus').textContent = '';
-  hostSay('hostDeal', escaped ? `Home safe! ${reward} points banked.` : `Caught! Still, ${reward} points go in the pot.`, escaped ? 'cheer' : 'shrug', 2000);
+  hostSay('hostDeal', escaped ? `Home safe! ${reward} points banked.` : `Caught! Still, ${reward} points go in the pot.`, escaped ? 'cheer' : 'groan', 2000);
   showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.className} bank ${reward} points. Class pot: ${state.pot}`, () => {
     state.dealRound++;
     if (state.dealRound < state.dealRounds) startDealRound(); else startSprint();

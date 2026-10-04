@@ -100,6 +100,23 @@ function winningPath(t) {
   return null;
 }
 
+/* How far across the board a team's longest connected group reaches (0 to 1) */
+function progressOf(t) {
+  const n = S.size, seen = new Set();
+  let best = 0;
+  S.cells.forEach(cell => {
+    if (cell.owner !== t || seen.has(cell.c + ',' + cell.r)) return;
+    let lo = n, hi = -1; const queue = [[cell.c, cell.r]]; seen.add(cell.c + ',' + cell.r);
+    while (queue.length) {
+      const [c, r] = queue.shift(), v = t === 0 ? c : r;
+      lo = Math.min(lo, v); hi = Math.max(hi, v);
+      for (const [x, y] of neighbours(c, r)) { const k = x + ',' + y; if (!seen.has(k) && cellAt(x, y).owner === t) { seen.add(k); queue.push([x, y]); } }
+    }
+    best = Math.max(best, (hi - lo + 1) / n);
+  });
+  return best;
+}
+
 /* ---------- Rendering ---------- */
 function renderBoard() {
   const n = S.size;
@@ -107,19 +124,28 @@ function renderBoard() {
   const svg = $('board');
   svg.setAttribute('viewBox', `0 0 ${w.toFixed(0)} ${h.toFixed(0)}`);
   const pathSet = new Set(S.path || []);
-  let out = '';
+  const chain = S.phase === 'celebrate' && S.path ? S.path.slice().reverse() : null;
+  // each team's two edges glow more strongly as its longest chain reaches further across
+  const glow = [0, 1].map(progressOf);
+  let out = `<g class="hh-edges" style="--g0:${glow[0].toFixed(2)};--g1:${glow[1].toFixed(2)}">`;
   // team edges: Team 1 owns left and right, Team 2 owns top and bottom
   out += `<rect class="hh-edge-0" x="6" y="${PAD}" width="18" height="${h - PAD * 2}" rx="9"/><rect class="hh-edge-0" x="${w - 24}" y="${PAD}" width="18" height="${h - PAD * 2}" rx="9"/>`;
-  out += `<rect class="hh-edge-1" x="${PAD}" y="6" width="${w - PAD * 2}" height="18" rx="9"/><rect class="hh-edge-1" x="${PAD}" y="${h - 24}" width="${w - PAD * 2}" height="18" rx="9"/>`;
+  out += `<rect class="hh-edge-1" x="${PAD}" y="6" width="${w - PAD * 2}" height="18" rx="9"/><rect class="hh-edge-1" x="${PAD}" y="${h - 24}" width="${w - PAD * 2}" height="18" rx="9"/></g>`;
   S.cells.forEach(cell => {
     const { x, y } = centre(cell.c, cell.r);
     const cls = ['hh-hex'];
     if (cell.owner >= 0) cls.push('own-' + cell.owner);
     // the gold outline is the keyboard cursor, so it only shows once the arrow keys are used
     if (S.keyboard && S.cursor.c === cell.c && S.cursor.r === cell.r && S.phase === 'board') cls.push('cursor');
-    if (pathSet.has(cell.c + ',' + cell.r)) cls.push('path');
+    const key = cell.c + ',' + cell.r;
+    if (pathSet.has(key)) cls.push('path');
+    if (key === S.justClaimed) cls.push('claim');
+    const ci = chain ? chain.indexOf(key) : -1;
+    if (ci >= 0) cls.push('chain');
     const label = cell.owner >= 0 ? `${cell.letter}, won by ${S.teams[cell.owner].name}` : `Letter ${cell.letter}`;
-    out += `<g class="${cls.join(' ')}" data-c="${cell.c}" data-r="${cell.r}" role="gridcell" aria-label="${esc(label)}"><path d="${CGB.brand.hexPath(x, y, R - 3)}"/>`;
+    // a raised tile: the side (drawn lower and darker), the face, and a bevel highlight on the face
+    out += `<g class="${cls.join(' ')}" data-c="${cell.c}" data-r="${cell.r}" role="gridcell" aria-label="${esc(label)}"${ci >= 0 ? ` style="--i:${ci}"` : ''}><path class="side" d="${CGB.brand.hexPath(x, y + 7, R - 3)}"/><path class="face" d="${CGB.brand.hexPath(x, y, R - 3)}"/><path class="bev" d="${CGB.brand.hexPath(x, y - 1.5, R - 11)}"/>`;
+    if (key === S.justClaimed) out += `<circle class="burst" cx="${x}" cy="${y}" r="${R - 8}"/>`;
     if (cell.owner >= 0) out += `<text class="lt" x="${x}" y="${y + 2}" font-size="38">${cell.letter}</text><text class="mk" x="${x}" y="${y + 30}" font-size="22">${TEAM[cell.owner].mark}</text>`;
     else out += `<text class="lt" x="${x}" y="${y + 17}" font-size="48">${cell.letter}</text>`;
     out += '</g>';
@@ -248,6 +274,8 @@ function classResult(c) {
   }
   SFX.claim();
   cell.owner = w; S.teams[w].won++; S.picker = w;
+  S.justClaimed = cell.c + ',' + cell.r;          // it pops up with a burst of light when the board is next drawn
+  setTimeout(() => { if (S.justClaimed === cell.c + ',' + cell.r) S.justClaimed = null; }, 1200);
   $('qMsg').textContent = `The hexagon goes to ${S.teams[w].name}.`;
   hostC.say(`${S.teams[w].name} take it!`, 'clap', 1500);
   const path = winningPath(w);
@@ -294,12 +322,41 @@ function backToBoard() {
 }
 
 /* ---------- The result ---------- */
+/* The winning chain lights up hex by hex from edge to edge while the view sweeps along it, then
+   a celebration burst; Space or Enter skips straight to the result. Reduced motion: no sweep. */
+let celebT = 0;
 function roundWon(i) {
   round.stop();
   $('q').hidden = true;
-  S.phase = 'won';
   S.winner = i;
   SFX.win();
+  if (CGB.settings.reduced() || !S.path || !S.path.length) { showWin(i); return; }
+  S.phase = 'celebrate';
+  renderBoard();
+  hostC.say(`${S.teams[i].name} link their edges!`, 'cheer', 2200);
+  const step = 140, total = S.path.length * step + 900;
+  const svg = $('board'), chain = S.path.slice().reverse();
+  const at = k => { const [c, r] = chain[k].split(',').map(Number), p = centre(c, r), vb = svg.viewBox.baseVal; return { x: p.x / vb.width * 100, y: p.y / vb.height * 100 }; };
+  const a = at(0), b = at(chain.length - 1);
+  svg.style.transition = 'none'; svg.style.transformOrigin = `${a.x}% ${a.y}%`; svg.style.transform = 'scale(1.18)';
+  svg.getBoundingClientRect();
+  svg.style.transition = `transform-origin ${(chain.length * step) / 1000}s linear, transform 0.5s ease`;
+  svg.style.transformOrigin = `${b.x}% ${b.y}%`;
+  celebT = setTimeout(() => { svg.style.transform = ''; burstCelebration(i); celebT = setTimeout(() => showWin(i), 800); }, chain.length * step + 100);
+}
+function burstCelebration(i) {
+  const wrap = $('board').parentElement, box = document.createElement('div');
+  box.className = 'hh-confetti';
+  const cols = [TEAM[i].css, '#FFC93C', '#ffffff', TEAM[i].light];
+  box.innerHTML = Array.from({ length: CGB.settings.get('quality') === 'low' ? 24 : 48 }, (v, k) => `<i style="--x:${(Math.random() * 100).toFixed(1)}%;--d:${(Math.random() * 0.5).toFixed(2)}s;--c:${cols[k % cols.length]};--r:${Math.round(Math.random() * 360)}deg"></i>`).join('');
+  wrap.appendChild(box);
+  setTimeout(() => box.remove(), 2600);
+}
+function skipCelebration() { if (S.phase !== 'celebrate') return; clearTimeout(celebT); showWin(S.winner); }
+function showWin(i) {
+  clearTimeout(celebT);
+  const svg = $('board'); svg.style.transition = 'none'; svg.style.transform = ''; svg.style.transformOrigin = '';
+  S.phase = 'won';
   renderBoard();
   $('winTitle').textContent = `${S.teams[i].name} win!`;
   $('winDetail').textContent = `${TEAM[i].mark} Joined ${TEAM[i].goal} in ${S.path.length} hexagons`;
@@ -358,6 +415,7 @@ function showSummary() {
 }
 function goHome() {
   gate.hide();
+  clearTimeout(celebT);
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home';
@@ -395,6 +453,7 @@ document.addEventListener('keydown', e => {
   const inField = e.target.matches && e.target.matches('input, textarea, select');
   if (S.phase === 'home') { if (k === 'enter' && !(e.target.matches && e.target.matches('button, select, textarea, summary'))) { e.preventDefault(); startGame(); } return; }
   if (S.phase === 'summary') { if (k === 'enter' && !isButton) { e.preventDefault(); startGame(); } return; }
+  if (S.phase === 'celebrate') { if (k === 'enter' || k === ' ') { e.preventDefault(); skipCelebration(); } return; }
   if (S.phase === 'won') { if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); continueAfterWin(); } return; }
   if (inField) return;
   if (S.phase === 'board') {

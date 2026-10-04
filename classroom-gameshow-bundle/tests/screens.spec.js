@@ -11,6 +11,10 @@ const SIZES = [
   { name: 'tablet-768x1024', width: 768, height: 1024 }
 ];
 const OUT = path.join(__dirname, '..', 'screenshots');
+/* The sweep runs at High graphics by default; SWEEP=low runs it at Low graphics and SWEEP=reduced
+   at High with reduced motion (each into its own folder) */
+const VARIANT = process.env.SWEEP || 'high';
+const SUFFIX = VARIANT === 'high' ? '' : '-' + VARIANT;
 
 /* Elements that must never collide with each other (when visible) */
 const WATCH = [
@@ -24,7 +28,8 @@ const WATCH = [
   '.cc-head .cc-turn', '.cc-head .cc-end', '.cc-q:not([hidden]) .cc-qcard', '.cc-screen.active .cgb-panel',
   '.hh-head > *', '.hh-q:not([hidden]) .hh-qcard', '.hh-win:not([hidden]) > *', '.hh-screen.active .cgb-panel', '.ote-host .host-head', '.ote-host .host-body',
   '.host-foot .hc-bust', '.host-foot .hc-bubble.show', '.op-hostrow .hc-bust', '.op-hostrow .hc-bubble.show',
-  '.cm-team', '.hh-side'
+  '.cm-team', '.hh-side',
+  '.start-gate:not([hidden]) .start-gate-card', '.hh-curhint:not([hidden])', '.op-hud.active .op-gap'
 ];
 
 async function findProblems(page) {
@@ -262,20 +267,32 @@ const SECTIONS = {
     await shot('66-hh-round-won', 900);
     await page.keyboard.press('Enter');
     await shot('67-hh-results', 700);
+  },
+  // the Start game button that waits after setup, in every game
+  'start-gate': async ({ page, shot }) => {
+    for (const [id, n] of [['over-the-edge', '70-ote'], ['outpace', '71-op'], ['category-clash', '72-cc'], ['hex-hunt', '73-hh']]) {
+      await page.click(`[data-play="${id}"]`, { timeout: 60000 });
+      await page.click(`#game-${id} .setup-go .btn`);
+      await shot(`${n}-start-game`, 1200);
+      await page.click(`#game-${id} .start-gate-btn`);
+      await page.waitForTimeout(400);
+      await page.keyboard.press('Escape'); const leave = page.locator('#leaveConfirm'); if (await leave.isVisible()) await leave.click();
+    }
   }
 };
 
 for (const size of SIZES) {
   for (const [section, run] of Object.entries(SECTIONS)) {
-    test(`screens at ${size.name}: ${section}`, async ({ browser }) => {
+    test(`screens at ${size.name}${SUFFIX}: ${section}`, async ({ browser }) => {
       test.setTimeout(section === 'launcher' ? 90000 : 420000);
       const ctx = await browser.newContext({ viewport: { width: size.width, height: size.height } });
       const page = await ctx.newPage();
-      const log = await openBundle(page, '', { quality: 'high' });   // screenshots at full quality
+      if (VARIANT === 'reduced') await page.addInitScript(() => { try { localStorage.setItem('cgb.settings', JSON.stringify({ reducedMotion: true })); } catch (e) { /* no storage */ } });
+      const log = await openBundle(page, '', { quality: VARIANT === 'low' ? 'low' : 'high', gate: section === 'start-gate' });
       const problems = [];
       async function shot(name, settle) {
         await page.waitForTimeout(settle == null ? 600 : settle);
-        await page.screenshot({ path: path.join(OUT, size.name, name + '.png'), timeout: 60000 });
+        await page.screenshot({ path: path.join(OUT, size.name + SUFFIX, name + '.png'), timeout: 60000 });
         (await findProblems(page)).forEach(p => problems.push(`${name}: ${p}`));
         // Over the Edge: the host must never cover the machine (shelf front edge, lanes, peg board)
         const ote = await page.evaluate(() => {

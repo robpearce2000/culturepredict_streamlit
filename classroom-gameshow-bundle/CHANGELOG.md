@@ -34,6 +34,16 @@
 - The four game buttons just say Play and are all the same size.
 - Over the Edge's camera stays still behind its setup card.
 
+### 3D upgrade
+- **Outpace** has a proper studio set: a chunky step track, a finish arch, lighting rigs, a Final Sprint track with its own arch and a countdown clock in the set that turns the lights red for the last ten seconds. The camera follows the class during questions, the class surges and the Hunter lunges, and a gap meter shows the distance. Catches play in slow motion; escapes burst through the arch with confetti and a light show.
+- **Category Clash** is a lit wall of 3D tiles: picked tiles flip into the question, answered tiles flip back in the winner's colour, and the star tile gets its own moment.
+- **Hex Hunt** has raised hexagons that pop when claimed, edges that glow as a chain grows, and a winning chain that lights up edge to edge.
+- The host has new reactions, including a gasp.
+- Any moment longer than about a second can be skipped with Space or Enter. Reduced motion turns them into simple changes; Low graphics turns off the heavier effects.
+
+### Fixed
+- Decorative counters dropping behind Over the Edge's setup card could land in the real game.
+
 
 ## 1.4.1 – Ten-minute games (October 2026)
 

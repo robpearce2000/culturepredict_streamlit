@@ -178,7 +178,7 @@ function renderBoard() {
       if (t.empty) return `<button type="button" class="cc-tile used empty${cur}" disabled aria-label="${esc(c.topic)} ${t.value}: no question">—</button>`;
       if (t.used) {
         const lead = t.wonBy >= 0 ? `<span class="mk">${TEAM[t.wonBy].mark}</span>` : `<span class="mk">${t.right ? '✓' : '✗'}</span>`;
-        return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${t.wonBy >= 0 ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${t.right} of ${S.teams.length} teams correct">${lead}${t.right} of ${S.teams.length} correct</button>`;
+        return `<button type="button" class="cc-tile used${t.wonBy >= 0 ? ' won' : ''}${cur}" disabled style="--tc:${t.wonBy >= 0 ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${t.right} of ${S.teams.length} teams correct">${lead}${t.right} of ${S.teams.length} correct</button>`;
       }
       return `<button type="button" class="cc-tile${cur}" data-c="${ci}" data-r="${r}" aria-label="${esc(c.topic)} for ${t.value} points">${t.value}</button>`;
     }).join('');
@@ -219,10 +219,54 @@ function openTile(c, r) {
   $('qAnswer').textContent = t.q.a;
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = '';
+  paintQBoard();
+  const tileEl = $('board').querySelector(`.cc-tile[data-c="${c}"][data-r="${r}"]`);
+  if (t.star) { SFX.star(); hostC.say('A star tile! This one is worth double.', 'cheer', 1600); starReveal(tileEl); return; }
+  SFX.open();
+  showQuestionCard(tileEl);
+}
+/* ---------- 3D moments (presentation only) ----------
+   A picked tile flips over and the question card grows out of it while the board pushes in a
+   little; the ★ tile gets a moment of its own first. With reduced motion everything fades. */
+const playEl = $('play');
+function showQuestionCard(tileEl) {
+  S.step = 'ask';
   $('q').hidden = false;
-  if (t.star) { SFX.star(); hostC.say('A star tile! This one is worth double.', 'cheer', 1600); } else SFX.open();
-  paintQBoard(); round.think();
-  $('qcard').focus({ preventScroll: true });   // keys now go to the question, not the board behind it
+  playEl.classList.add('pushed');
+  const card = $('qcard');
+  if (tileEl && !CGB.settings.reduced()) {
+    tileEl.classList.add('flipping');
+    // the card starts where the tile is and grows to its place (it is measured, then animated)
+    const a = tileEl.getBoundingClientRect(), b = card.getBoundingClientRect();
+    if (a.width && b.width) {
+      const sx = a.width / b.width, sy = a.height / b.height;
+      card.style.transition = 'none';
+      card.style.transform = `translate(${a.left + a.width / 2 - (b.left + b.width / 2)}px, ${a.top + a.height / 2 - (b.top + b.height / 2)}px) scale(${sx.toFixed(3)}, ${sy.toFixed(3)}) rotateY(90deg)`;
+      card.getBoundingClientRect();
+      card.style.transition = 'transform 0.42s cubic-bezier(.2,.8,.25,1)';
+      card.style.transform = '';
+    }
+  }
+  round.think();
+  card.focus({ preventScroll: true });   // keys now go to the question, not the board behind it
+}
+let revealT = 0, revealTile = null;
+function starReveal(tileEl) {
+  S.step = 'reveal';
+  if (CGB.settings.reduced() || !tileEl) { showQuestionCard(tileEl); return; }
+  revealTile = tileEl;
+  playEl.classList.add('dim', 'pushed');
+  tileEl.classList.add('star-spin');
+  revealT = setTimeout(endStarReveal, 1500);
+}
+// Space or Enter skips the ★ moment
+function endStarReveal() {
+  if (S.step !== 'reveal') return;
+  clearTimeout(revealT);
+  playEl.classList.remove('dim');
+  if (revealTile) revealTile.classList.remove('star-spin');
+  showQuestionCard(revealTile);
+  revealTile = null;
 }
 /* The host in the corner: short captions at the big moments */
 const hostC = CGB.createHostCorner($('host'));
@@ -297,7 +341,9 @@ function boardDone() { return S.cats.every(c => c.tiles.every(t => t.used || (S.
 function closeQuestion() {
   if (S.step !== 'done') return;
   tileOpen().used = true;
+  const justC = S.open.c, justR = S.open.r, winners = S.teams.map((x, i) => (undoSnap && x.score > undoSnap.scores[i]) ? i : -1).filter(i => i >= 0);
   $('q').hidden = true;
+  playEl.classList.remove('pushed');
   S.phase = 'board'; S.open = null;
   round.stop(); nextClassTurn();
   if (S.cats.every(c => c.tiles.every(t => t.used))) { showSummary(); return; }
@@ -305,6 +351,11 @@ function closeQuestion() {
   const free = []; S.cats.forEach((c, ci) => c.tiles.forEach((t, r) => { if (!t.used) free.push({ c: ci, r }); }));
   if (!free.some(f => f.c === S.cursor.c && f.r === S.cursor.r)) S.cursor = free[0];
   renderBoard();
+  // the answered tile flips back showing the winning team's colour; winners' panels catch the light
+  const done = $('board').querySelectorAll('.cc-tile')[justR * S.cats.length + justC];
+  if (done) done.classList.add('flip-in');
+  const panels = $('teams').querySelectorAll('.cc-team');
+  winners.forEach(i => { if (panels[i]) panels[i].classList.add('sweep'); });
   const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
 }
 
@@ -362,6 +413,7 @@ function showSummary() {
 }
 function goHome() {
   gate.hide();
+  clearTimeout(revealT); playEl.classList.remove('dim', 'pushed');
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home'; S.open = null;
@@ -395,6 +447,7 @@ document.addEventListener('keydown', e => {
     return;
   }
   if (S.phase === 'question') {
+    if (S.step === 'reveal') { if (k === 'enter' || k === ' ') { e.preventDefault(); endStarReveal(); } return; }
     if (round.handleKey(k)) { e.preventDefault(); return; }
     if ((k === 'enter' || k === ' ') && S.step === 'done' && !isButton) { e.preventDefault(); closeQuestion(); }
   }

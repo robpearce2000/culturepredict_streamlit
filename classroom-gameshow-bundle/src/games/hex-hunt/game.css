@@ -26,19 +26,41 @@
 .hh-boardwrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
 .hh-board { width: 100%; height: 100%; display: block; }
 .hh-hex { cursor: pointer; }
-.hh-hex path { fill: var(--hh-hex); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; transition: fill .25s; }
-.hh-hex:hover path { fill: #34408A; }
+.hh-hex .face { fill: var(--hh-hex); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; transition: fill .25s; }
+.hh-hex .side { fill: #0C1230; stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+.hh-hex .bev { fill: none; stroke: rgba(255,255,255,0.22); stroke-width: 3; pointer-events: none; }
+.hh-hex:hover .face { fill: #34408A; }
 .hh-hex text { font-family: var(--display); fill: #fff; text-anchor: middle; pointer-events: none; }
 .hh-hex .mk { font-family: var(--body); font-weight: 900; fill: var(--ink); }
-.hh-hex.own-0 path { fill: var(--ha); }
-.hh-hex.own-1 path { fill: var(--hb); }
+.hh-hex.own-0 .face { fill: var(--ha); }
+.hh-hex.own-1 .face { fill: var(--hb); }
+.hh-hex.own-0 .side { fill: color-mix(in srgb, var(--ha) 45%, #000); }
+.hh-hex.own-1 .side { fill: color-mix(in srgb, var(--hb) 45%, #000); }
 .hh-hex.own-0 text.lt, .hh-hex.own-1 text.lt { fill: #fff; opacity: 0.6; }
 .hh-hex.own-0 .mk, .hh-hex.own-1 .mk { fill: #fff; }
-.hh-hex.cursor path { stroke: var(--sun); stroke-width: 9; }
-.hh-hex.path path { stroke: #fff; stroke-width: 8; animation: hhGlow 1s ease-in-out infinite alternate; }
+.hh-hex.cursor .face { stroke: var(--sun); stroke-width: 9; }
+.hh-hex.path .face { stroke: #fff; stroke-width: 8; animation: hhGlow 1s ease-in-out infinite alternate; }
 @keyframes hhGlow { from { filter: brightness(1); } to { filter: brightness(1.35); } }
-.hh-edge-0 { fill: var(--ha); }
-.hh-edge-1 { fill: var(--hb); }
+.hh-edge-0 { fill: var(--ha); filter: drop-shadow(0 0 calc(var(--g0, 0) * 16px) var(--ha)); opacity: calc(0.7 + var(--g0, 0) * 0.3); }
+.hh-edge-1 { fill: var(--hb); filter: drop-shadow(0 0 calc(var(--g1, 0) * 16px) var(--hb)); opacity: calc(0.7 + var(--g1, 0) * 0.3); }
+
+/* claiming a hexagon: it pops up and flashes with a ring of light */
+.hh-hex { transform-box: fill-box; transform-origin: 50% 50%; }
+.hh-hex.claim { animation: hhClaim 0.6s cubic-bezier(.3,1.6,.5,1); }
+@keyframes hhClaim { 0% { transform: scale(0.85); } 45% { transform: scale(1.14) translateY(-4px); } 100% { transform: none; } }
+.hh-hex .burst { fill: none; stroke: #fff; stroke-width: 6; transform-box: fill-box; transform-origin: 50% 50%; animation: hhBurst 0.7s ease-out forwards; pointer-events: none; }
+@keyframes hhBurst { from { opacity: 0.9; transform: scale(0.6); } to { opacity: 0; transform: scale(1.6); } }
+/* the winning chain lights up hex by hex */
+.hh-hex.chain .face { animation: hhChain 0.5s ease-out both; animation-delay: calc(var(--i) * 0.14s); stroke: #fff; stroke-width: 8; }
+@keyframes hhChain { from { filter: brightness(0.6); } 50% { filter: brightness(2.1); } to { filter: brightness(1.35); } }
+.hh-board { transition: transform 0.5s ease; }
+.hh-boardwrap { overflow: hidden; }
+.hh-confetti { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.hh-confetti i { position: absolute; top: -20px; left: var(--x); width: 10px; height: 16px; background: var(--c); border-radius: 2px; transform: rotate(var(--r)); animation: hhFall 2.2s ease-in var(--d) forwards; }
+@keyframes hhFall { to { transform: translateY(110vh) rotate(calc(var(--r) + 540deg)); } }
+html[data-motion="reduced"] .hh-hex, html[data-motion="reduced"] .hh-hex .face, html[data-motion="reduced"] .hh-board { animation: none !important; transition: none !important; }
+html[data-motion="reduced"] .hh-hex .burst, html[data-motion="reduced"] .hh-confetti { display: none; }
+html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filter: none; }
 .hh-teams { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .hh-team { background: #fff; color: var(--ink); border: 3px solid var(--ink); border-bottom: 8px solid var(--tc); border-radius: 14px; padding: 6px 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; min-width: 0; }
 .hh-team .nm { font-weight: 900; font-size: 1.05rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }

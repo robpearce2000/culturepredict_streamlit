@@ -113,3 +113,44 @@
 .cc-tgroup { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; margin-bottom: 6px; }
 .cc-tsub { font-size: 0.78rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--teal-deep, #0A6663); width: 100%; }
 .cc-topicchips.grouped .chip { font-size: 0.82rem; min-height: 30px; padding: 3px 9px; }
+
+/* ---------- The studio: a lit wall of 3D tiles (presentation only) ---------- */
+.cc-play { background:
+    radial-gradient(ellipse 22% 60% at 18% -8%, rgba(255,214,150,0.22), transparent 70%),
+    radial-gradient(ellipse 22% 60% at 50% -10%, rgba(255,214,150,0.26), transparent 70%),
+    radial-gradient(ellipse 22% 60% at 82% -8%, rgba(255,214,150,0.22), transparent 70%),
+    linear-gradient(180deg, transparent 72%, rgba(0,0,0,0.35) 100%); }
+.cc-cat, .cc-tile, .cc-team, .cc-head { transition: filter 0.35s, transform 0.15s; }
+/* the lights dim on everything except the ★ tile */
+.cc-play.dim .cc-cat, .cc-play.dim .cc-tile:not(.star-spin), .cc-play.dim .cc-team, .cc-play.dim .cc-head { filter: brightness(0.3) saturate(0.6); }
+.cc-board { perspective: 1400px; transform-origin: 50% 45%; transition: transform 0.45s cubic-bezier(.2,.8,.25,1); }
+.cc-play.pushed .cc-board { transform: scale(1.02); }
+.cc-cat { box-shadow: inset 0 2px 0 rgba(255,255,255,0.12), 0 6px 14px rgba(0,0,0,0.45); background: linear-gradient(180deg, #2A2F55, var(--ink)); }
+/* bevelled tiles: a lit top edge, a shaded bottom edge and a deep drop to the wall */
+.cc-tile { transform-style: preserve-3d; box-shadow: inset 0 4px 0 rgba(255,255,255,0.32), inset 0 -6px 0 rgba(0,0,0,0.18), inset 4px 0 0 rgba(255,255,255,0.12), inset -4px 0 0 rgba(0,0,0,0.1), 0 6px 0 #7A2604, 0 14px 20px rgba(0,0,0,0.45); transition: transform 0.15s, filter 0.15s; }
+.cc-tile:not([disabled]):hover { transform: translateY(-2px); }
+.cc-tile.used { box-shadow: inset 0 3px 0 rgba(255,255,255,0.06), 0 4px 10px rgba(0,0,0,0.4); }
+.cc-tile.used.won { background: linear-gradient(180deg, color-mix(in srgb, var(--tc) 92%, #fff), var(--tc)); color: var(--ink); border-color: var(--ink); box-shadow: inset 0 4px 0 rgba(255,255,255,0.4), inset 0 -5px 0 rgba(0,0,0,0.12), 0 4px 0 rgba(0,0,0,0.35); }
+.cc-tile.used.won .mk { color: var(--ink); }
+.cc-tile.empty { box-shadow: none; }
+.cc-tile.flipping { animation: cc-flip-out 0.4s ease-in forwards; }
+@keyframes cc-flip-out { to { transform: rotateY(90deg) scale(1.1); opacity: 0.4; } }
+.cc-tile.flip-in { animation: cc-flip-in 0.5s cubic-bezier(.2,.8,.25,1); }
+@keyframes cc-flip-in { from { transform: rotateX(-90deg); } to { transform: none; } }
+.cc-qcard { transform-origin: 50% 50%; backface-visibility: hidden; }
+.cc-q { perspective: 1600px; }
+/* the ★ tile: the lights dim, it spins and bursts with gold light */
+.cc-tile.star-spin { z-index: 30; animation: cc-star 1.5s cubic-bezier(.3,.6,.3,1) forwards; }
+.cc-tile.star-spin::after { content: '★'; position: absolute; inset: -40%; display: grid; place-items: center; font-size: 3em; -webkit-text-stroke: 0; color: #FFE08A; background: radial-gradient(circle, rgba(255,214,90,0.95) 0%, rgba(255,190,40,0.55) 30%, transparent 62%); border-radius: 50%; opacity: 0; animation: cc-burst 1.5s ease-out forwards; pointer-events: none; }
+@keyframes cc-star { 0% { transform: none; } 50% { transform: translateZ(80px) rotateY(360deg) scale(1.25); } 100% { transform: translateZ(120px) rotateY(720deg) scale(1.35); } }
+@keyframes cc-burst { 0%, 45% { opacity: 0; transform: scale(0.3); } 70% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0; transform: scale(1.8); } }
+/* a light sweep across a team's panel when it wins points */
+.cc-team { position: relative; overflow: hidden; }
+.cc-team.sweep::after { content: ''; position: absolute; top: 0; bottom: 0; left: -60%; width: 50%; background: linear-gradient(100deg, transparent, rgba(255,236,170,0.85), transparent); animation: cc-sweep 0.9s ease-out forwards; pointer-events: none; }
+@keyframes cc-sweep { to { left: 120%; } }
+/* reduced motion: no flips, spins or sweeps, just the plain change */
+html[data-motion="reduced"] .cc-tile, html[data-motion="reduced"] .cc-board { animation: none !important; transition: none !important; transform: none !important; }
+html[data-motion="reduced"] .cc-tile::after, html[data-motion="reduced"] .cc-team::after { display: none; }
+/* low graphics: flat shading, no deep shadows */
+html[data-quality="low"] .cc-tile { box-shadow: inset 0 3px 0 rgba(255,255,255,0.3), 0 5px 0 #7A2604; }
+html[data-quality="low"] .cc-play { background: none; }

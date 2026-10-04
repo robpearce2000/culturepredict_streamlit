@@ -876,6 +876,10 @@ function clearTray() {
   tray.onTransfer = b => { b.h = UH; b.hv = 0; };
 }
 function newTray(withWildcards) {
+  // decorative counters still dropping or landing from the setup screen go too: they must not
+  // land in (and change) a real game
+  drops.concat(transits).forEach(c => scene.remove(c.mesh));
+  drops.length = 0; transits.length = 0;
   clearTray();
   fillTray(tray);
   if (withWildcards) {
