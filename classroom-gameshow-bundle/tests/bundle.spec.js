@@ -106,12 +106,12 @@ test('every game counts down 20 seconds before "show me", and Space skips it', a
     ['over-the-edge', '#ote-count', null, null],
     ['outpace', '#op-dealCount', 'deal', '2'],
     ['category-clash', '#cc-count', 'board', 'Enter'],
-    ['hex-hunt', '#hh-count', 'board', 'Enter']
+    ['hex-hunt', '#hh-count', 'board', 'ArrowRight Enter']   // the first key shows the keyboard outline
   ];
   for (const [id, count, ready, key] of games) {
     await page.click(`[data-play="${id}"]`, { timeout: 60000 });
     await page.click(`#game-${id} .setup-go .btn`);
-    if (ready) { await expect.poll(async () => (await state(page, id)).phase).toBe(ready); await page.keyboard.press(key); }
+    if (ready) { await expect.poll(async () => (await state(page, id)).phase).toBe(ready); for (const k of key.split(' ')) await page.keyboard.press(k); }
     await expect.poll(async () => (await state(page, id)).round).toBe('think');
     await expect(page.locator(count)).toBeVisible();
     await expect(page.locator(count)).toContainText(/^(20|19)/);

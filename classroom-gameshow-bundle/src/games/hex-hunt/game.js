@@ -31,16 +31,25 @@ const S = {
 };
 
 /* ---------- Letter clues ---------- */
-/* The clue is the first letter of the answer, ignoring a leading "a", "an" or "the".
-   Answers that start with a number or symbol, list several options ("Any two: ...")
-   or are just yes/no/true/false do not make good clues, so they are left out. */
+/* The clue is the first letter of the answer's first significant word: a leading "a", "an" or
+   "the" is skipped, and so is a leading "in", "on", "at" or "from" in a place answer ("In the
+   right atrium" is R). Only short answers are used, so the letter really is where the answer
+   starts: answers that open with a pronoun or a link word ("It decreases", "To stop..."),
+   start with a number, symbol or formula, list options ("Any two: ..."), are yes/no/true/false,
+   are explanations (over ten words) or whose main part is over five words are left out. CGB.hexLetter is shared with the tests. */
+const SKIP_LEAD = /^((in|into|on|at|from)\s+)?((the|a|an)\s+)?/i;
+const NOT_A_CLUE = /^(any|yes|no|true|false|it|its|it's|they|them|their|this|these|those|there|to|so|when|because|by|one|if|both|either|all|each|only|more|less|same|that|which|with|without|after|before|as|for|of|about|roughly|around|over|under|nearly)\b/i;
 function firstLetter(answer) {
   const a = String(answer).trim();
-  if (/^(any\b|yes\b|no\b|true\b|false\b)/i.test(a)) return null;
-  const s = a.replace(/^(the|a|an)\s+/i, '');
+  if (NOT_A_CLUE.test(a) || a.split(/\s+/).length > 10 || /[→⇌₀-₉ₙ]/.test(a.split(/[,(]/)[0])) return null;
+  const core = a.split(/[.,;:(]|\s[-–]\s/)[0].trim();
+  if (core.split(/\s+/).length > 5) return null;
+  const s = core.replace(SKIP_LEAD, '');
+  if (NOT_A_CLUE.test(s)) return null;
   const m = /^[A-Za-z]/.exec(s);
   return m ? m[0].toUpperCase() : null;
 }
+CGB.hexLetter = firstLetter;
 let deck = [];
 function buildDeck() {
   const set = bank.active();
@@ -106,7 +115,8 @@ function renderBoard() {
     const { x, y } = centre(cell.c, cell.r);
     const cls = ['hh-hex'];
     if (cell.owner >= 0) cls.push('own-' + cell.owner);
-    if (S.cursor.c === cell.c && S.cursor.r === cell.r && S.phase === 'board') cls.push('cursor');
+    // the gold outline is the keyboard cursor, so it only shows once the arrow keys are used
+    if (S.keyboard && S.cursor.c === cell.c && S.cursor.r === cell.r && S.phase === 'board') cls.push('cursor');
     if (pathSet.has(cell.c + ',' + cell.r)) cls.push('path');
     const label = cell.owner >= 0 ? `${cell.letter}, won by ${S.teams[cell.owner].name}` : `Letter ${cell.letter}`;
     out += `<g class="${cls.join(' ')}" data-c="${cell.c}" data-r="${cell.r}" role="gridcell" aria-label="${esc(label)}"><path d="${CGB.brand.hexPath(x, y, R - 3)}"/>`;
@@ -115,6 +125,7 @@ function renderBoard() {
     out += '</g>';
   });
   svg.innerHTML = out;
+  $('curHint').hidden = !(S.keyboard && S.phase === 'board');
   renderTeams();
 }
 function renderTeams() {
@@ -126,10 +137,12 @@ function renderTeams() {
 $('board').addEventListener('click', e => {
   const g = e.target.closest('.hh-hex'); if (!g) return;
   S.cursor = { c: +g.dataset.c, r: +g.dataset.r };
+  S.keyboard = false;
   openHex(S.cursor.c, S.cursor.r);
 });
 function moveCursor(dc, dr) {
   const n = S.size;
+  if (!S.keyboard) { S.keyboard = true; renderBoard(); return; }     // the first press just shows where it is
   S.cursor.c = Math.max(0, Math.min(n - 1, S.cursor.c + dc));
   S.cursor.r = Math.max(0, Math.min(n - 1, S.cursor.r + dr));
   renderBoard();
@@ -178,62 +191,65 @@ $('qBtns').addEventListener('click', e => {
   else if (a === 'leave') backToBoard();
   else if (a === 'win' && S.step === 'winning') roundWon(S.picker);
 });
-/* ---------- Whole class: what share of each half got it right ---------- */
+/* ---------- Whole class: which half had more right answers ----------
+   The teacher compares the whiteboards and presses the half that had more correct answers (on a
+   level count, the half that chose the hexagon), or Neither when nobody got it. One press marks it;
+   Undo puts it back. */
 const misc = CGB.createMisconceptions();
-let shares = [0, 0], focusHalf = 0, undoSnap = null;
-function paintShares() {
+let choice = null, undoSnap = null;
+function paintChoice() {
   $('share').hidden = false;
-  $('share').innerHTML = S.teams.map((t, h) => `<div class="hh-srow${h === focusHalf ? ' focus' : ''}" style="--tc:${TEAM[h].css}">
-    <span class="hh-sname"><span class="kbd">${h + 1}</span> ${TEAM[h].mark} ${esc(t.name)}</span>
-    <span class="hh-sbtns" role="radiogroup" aria-label="Share of ${esc(t.name)} correct">${[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(v => `<button type="button" role="radio" data-h="${h}" data-v="${v}" aria-checked="${shares[h] === v}">${v}</button>`).join('')}</span>
-    <b class="hh-spct">${shares[h]}%</b></div>`).join('');
+  $('share').innerHTML = S.teams.map((t, h) => `<button type="button" class="hh-side" data-side="${h}" style="--tc:${TEAM[h].css}" aria-pressed="${choice === h}">
+    <span class="kbd">${h + 1}</span><b>${TEAM[h].mark} ${esc(t.name)}</b><small>had more right</small></button>`).join('')
+    + `<button type="button" class="hh-side neither" data-side="none" aria-pressed="${choice === 'none'}"><span class="kbd">N</span><b>Neither</b><small>nobody got it</small></button>`;
+}
+function choose(c) {
+  if (round.phase !== 'mark') return;
+  choice = c; paintChoice(); round.confirm();
 }
 $('share').addEventListener('click', e => {
-  const b = e.target.closest('button[data-h]'); if (!b || round.phase !== 'mark') return;
-  focusHalf = +b.dataset.h; shares[focusHalf] = +b.dataset.v; paintShares();
+  const b = e.target.closest('button[data-side]'); if (!b) return;
+  choose(b.dataset.side === 'none' ? 'none' : +b.dataset.side);
 });
 const round = CGB.createClassRound({
   root: document.getElementById('game-hex-hunt'), board: null, countEl: $('count'), btnEl: $('qBtns'),
   seconds: () => CGB.COUNTDOWN, teams: () => 2,
   marker: {
-    hint: 'Roughly what share of each half got it right? Tap a value, or press 1 or 2 for a half and ← → to change it.',
-    start(keep) { if (!keep) shares = [0, 0]; focusHalf = 0; paintShares(); },
+    instant: true,
+    hint: 'Compare the whiteboards. Which half had more right answers? If it\'s level, press the half that chose this hexagon.',
+    start() { choice = null; paintChoice(); },
     key(k) {
-      if (k === '1' || k === '2') { focusHalf = +k - 1; paintShares(); return true; }
-      if (k === 'arrowup' || k === 'arrowdown') { focusHalf = 1 - focusHalf; paintShares(); return true; }
-      const d = { arrowleft: -10, arrowright: 10 }[k];
-      if (d) { shares[focusHalf] = Math.max(0, Math.min(100, shares[focusHalf] + d)); paintShares(); return true; }
+      if (k === '1' || k === '2') { choose(+k - 1); return true; }
+      if (k === 'n' || k === '0') { choose('none'); return true; }
       return false;
     },
-    values: () => shares.slice()
+    values: () => choice
   },
   doneHtml: () => S.step === 'winning' ? `<button class="btn go" type="button" data-q="win">They've joined their edges! <span class="kbd">Enter</span></button>`
     : S.step === 'nobody' ? `<button class="btn go" type="button" data-q="again">New question for this hexagon <span class="kbd">Enter</span></button><button class="btn plain" type="button" data-q="leave">Leave it and pick again</button>`
     : `<button class="btn go" type="button" data-q="next">Back to the board <span class="kbd">Enter</span></button>`,
   onConfirm: classResult, onUndo: undoClassResult
 });
-function classResult(v) {
-  const cell = S.open, chooser = S.picker;
+function classResult(c) {
+  const cell = S.open;
   undoSnap = { picker: S.picker, won: S.teams.map(t => t.won), wrong: S.teams.map(t => t.wrong.length), path: S.path };
-  // the higher share wins; a tie goes to the half that chose the hexagon, unless nobody got it
-  const w = v[0] === v[1] ? (v[0] > 0 ? chooser : -1) : (v[0] > v[1] ? 0 : 1);
-  v.forEach((x, h) => { if (x < 50) { S.teams[h].wrong.push(cell.q); bank.logWrong(S.teams[h].name, cell.q, GAME_NAME); } });
-  const wrongPct = Math.round(100 - (v[0] + v[1]) / 2);
-  misc.add(cell.q, wrongPct / 100, `about ${wrongPct}% of the class wrong`);
+  const w = c === 'none' ? -1 : c;
+  // the half with fewer right answers (both, if nobody got it) has the topic noted to come round again
+  S.teams.forEach((t, h) => { if (h !== w) { t.wrong.push(cell.q); bank.logWrong(t.name, cell.q, GAME_NAME); } });
   $('qAnswer').classList.add('shown');
   $('share').hidden = true;
   if (w < 0) {
+    misc.add(cell.q, 1, 'nobody got it');
     SFX.wrong();
     S.step = 'nobody';
-    $('qMsg').textContent = `${S.teams[0].name} ${v[0]}%, ${S.teams[1].name} ${v[1]}%. Nobody wins this hexagon.`;
+    $('qMsg').textContent = 'Nobody got it, so nobody wins this hexagon.';
     hostC.say("Nobody got that one. Here's the answer.", 'shrug', 1500);
     return;
   }
   SFX.claim();
   cell.owner = w; S.teams[w].won++; S.picker = w;
-  const tie = v[0] === v[1];
-  $('qMsg').textContent = `${S.teams[0].name} ${v[0]}%, ${S.teams[1].name} ${v[1]}%. ` + (tie ? `A tie, so the hexagon goes to ${S.teams[w].name}, who chose it.` : `The hexagon goes to ${S.teams[w].name}.`);
-  hostC.say(tie ? `A tie! ${S.teams[w].name} chose it, so it's theirs.` : `${S.teams[w].name} take it, ${v[w]}% to ${v[1 - w]}%!`, 'clap', 1500);
+  $('qMsg').textContent = `The hexagon goes to ${S.teams[w].name}.`;
+  hostC.say(`${S.teams[w].name} take it!`, 'clap', 1500);
   const path = winningPath(w);
   if (path) { S.path = path; S.step = 'winning'; $('qMsg').textContent += ` ${S.teams[w].name} join their edges!`; }
   else S.step = 'claimed';
@@ -245,7 +261,7 @@ function undoClassResult() {
   S.teams.forEach((t, i) => { t.won = u.won[i]; while (t.wrong.length > u.wrong[i]) { t.wrong.pop(); bank.unlogWrong(t.name, cell.q); } });
   misc.remove(cell.q);
   $('qAnswer').classList.remove('shown');
-  $('qMsg').textContent = 'Marking undone. Enter the shares again.';
+  $('qMsg').textContent = 'Marking undone. Press the half that had more right answers.';
   S.step = 'ask'; undoSnap = null;
   renderBoard();
 }
@@ -377,7 +393,8 @@ document.addEventListener('keydown', e => {
   if (S.phase === 'board') {
     const mv = { arrowleft: [-1, 0], arrowright: [1, 0], arrowup: [0, -1], arrowdown: [0, 1] }[k];
     if (mv) { e.preventDefault(); moveCursor(mv[0], mv[1]); return; }
-    if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); openHex(S.cursor.c, S.cursor.r); }
+    if ((k === 'enter' || k === ' ') && !isButton && S.keyboard) { e.preventDefault(); openHex(S.cursor.c, S.cursor.r); }
+    else if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); S.keyboard = true; renderBoard(); }   // shows the outline first
     return;
   }
   if (S.phase === 'question') {
@@ -396,7 +413,7 @@ return {
   enter() { active = true; if (S.phase === 'home') { fillNames(); renderPack(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => ['board', 'question', 'won'].includes(S.phase),
-  _state: () => ({ round: round.phase, undoable: round.undoable, times: round.times(), shares: shares.slice(), misconceptions: misc.top(5).map(x => x.q.q), phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, winner: S.winner, owners: S.cells.map(c => c.owner) })
+  _state: () => ({ keyboard: !!S.keyboard, round: round.phase, undoable: round.undoable, times: round.times(), choice, misconceptions: misc.top(5).map(x => x.q.q), phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, winner: S.winner, owners: S.cells.map(c => c.owner), letters: S.cells.map(c => [c.letter, c.q ? c.q.a : null]) })
 };
 }
 

@@ -24,7 +24,7 @@ const WATCH = [
   '.cc-head .cc-turn', '.cc-head .cc-end', '.cc-q:not([hidden]) .cc-qcard', '.cc-screen.active .cgb-panel',
   '.hh-head > *', '.hh-q:not([hidden]) .hh-qcard', '.hh-win:not([hidden]) > *', '.hh-screen.active .cgb-panel', '.ote-host .host-head', '.ote-host .host-body',
   '.host-foot .hc-bust', '.host-foot .hc-bubble.show', '.op-hostrow .hc-bust', '.op-hostrow .hc-bubble.show',
-  '.cm-team', '.hh-srow'
+  '.cm-team', '.hh-side'
 ];
 
 async function findProblems(page) {
@@ -204,7 +204,7 @@ const SECTIONS = {
     await shot('50-cc-setup', 800);
     await fits('category-clash', '50-cc-setup');
     await page.click('#cc-segTeams button[data-v="6"]');
-    await page.click('#game-category-clash details.tnames summary');
+    await page.click('#game-category-clash details.tnames:not(.cc-topicpick) summary');
     await shot('51-cc-setup-names', 300);
     await fits('category-clash', '51-cc-setup-names');
     await page.click('#cc-startBtn');
@@ -240,14 +240,14 @@ const SECTIONS = {
     await shot('60b-hh-setup-names', 300); await fits('hex-hunt', '60b-hh-setup-names');
     await page.click('#hh-startBtn');
     await shot('61-hh-board', 500);
+    await page.keyboard.press('ArrowRight');
+    await shot('61b-hh-board-cursor', 200);
     await page.keyboard.press('Enter');
     await shot('62-hh-question-countdown', 600);
     await page.keyboard.press('Space'); await page.keyboard.press('Space');
     await until(async () => (await state(page, 'hex-hunt')).round === 'mark', 10000);
-    await page.keyboard.press('1'); for (let i = 0; i < 4; i++) await page.keyboard.press('ArrowRight');
-    await page.keyboard.press('2'); for (let i = 0; i < 7; i++) await page.keyboard.press('ArrowRight');
-    await shot('63-hh-shares', 300);
-    await page.keyboard.press('Enter');
+    await shot('63-hh-sides', 300);
+    await page.keyboard.press('2');
     await shot('64-hh-claimed', 600);
     await page.keyboard.press('Enter');
     let k = 0;
@@ -256,7 +256,7 @@ const SECTIONS = {
       if (s.phase === 'won') return true;
       if (s.phase === 'board' || s.round === 'done') { if (k === 4 && s.phase === 'board') await shot('65-hh-board-midgame', 200); await page.keyboard.press('Enter'); }
       else if (s.round === 'think' || s.round === 'show') await page.keyboard.press('Space');
-      else if (s.round === 'mark') { k++; await page.keyboard.press(String(1 + (k % 2))); await page.keyboard.press('ArrowRight'); await page.keyboard.press('Enter'); }
+      else if (s.round === 'mark') { k++; await page.keyboard.press(String(1 + (k % 2))); }
       return false;
     }, 180000);
     await shot('66-hh-round-won', 900);

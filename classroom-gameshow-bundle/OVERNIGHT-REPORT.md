@@ -11,3 +11,23 @@
 - **Subject looks:** Science, Maths, English, History, Geography and General, following the main-screen subject; runner gold, Hunter magenta in every look.
 - **Smaller Deal Round tags.**
 - Tests: `tests/outpace.spec.js` (instant win with undo, every subject's look, frame rate at Low and High, recorded). Outpace screenshot sweep at all three sizes and the full-graphics Outpace playthrough pass.
+
+## Part 2: Over the Edge, Category Clash and Hex Hunt — done
+
+**Over the Edge**
+- **Random drop order** for every question, shown as a numbered list and as "Drops 1st…" on each team's card.
+- **Fair winnings:** a counter pushed off goes to the team whose new counter landed nearest to it, shared fewest-first, with early falls held until every counter has landed; the machine also starts slightly less full at the front. The six-team test (54 questions, all correct, random lanes) passes: every team within −6% to +14% of the average, every place in the order 0.74–0.79 counters, and the first dropper on question 1 no better than average (the old rule ranged +50% to −27% and paid the first dropper double).
+- **Jackpot retuned** for the fairer rule (4 teams were down to 25%): now 2 teams 54%, 3 teams 58%, 4 teams 57%, 5 teams 45%, 6 teams 60%.
+- **Flicker fixed:** the side columns ran into the sign's box on exactly the same plane; they, the neon strips, the glass, rails, pillar lights and floor plates were separated. A test now checks no two set pieces share a face plane.
+- **Counters less shiny** (less metallic, rougher, dimmer reflections).
+
+**Category Clash**
+- **Three tiers:** 1 Recall, 2 Describe and apply, 3 Explain and extend, based on command words, assessment objectives and Higher-only content. All 257 built-in questions re-tagged by hand (76 / 126 / 55); five questions added to topics that had no tier-3 question. Rows 100/200/300 use tiers 1/2/3. `Tier:` lines in teachers' sets, older `Difficulty:` lines still work, and untagged questions get a tier from their wording. Explained in the Question bank help, the guide and DECISIONS.md.
+- **Topic columns** from the main-screen subject; **Topics** on the setup card to choose up to four (remembered per set), otherwise picked each game. Every built-in topic has a question at every tier.
+
+**Hex Hunt**
+- **Letters audited:** the first significant word ("the/a/an", and "in/on/at/from" before a place, are skipped); answers starting with a pronoun or link word, numbers, formulas, lists, yes/no, or long explanations never go on the board. A test checks every question that can appear.
+- **Gold outline = keyboard cursor:** only shown after the arrow keys (or Enter), with a small hint.
+- **One-press marking:** two big half buttons and Neither; Undo kept.
+
+Tests: fairness simulation, drop order and flicker check, Category Clash tiers/topics (5 tests), Hex Hunt letters and one-press marking; quick suite, @hq Over the Edge, and the screenshot sweep for the three games at all three sizes pass. Banned-term and contrast checks pass.

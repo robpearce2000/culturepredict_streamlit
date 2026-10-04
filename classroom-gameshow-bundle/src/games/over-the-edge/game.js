@@ -126,10 +126,14 @@ function upperLanding(tray, x) {
   }
   return { x, y: PHY.WALL + r + 2 };
 }
+/* How close to the front edge the bottom shelf starts filled, in counter radii. Filled right to
+   the edge (0.3, the old value), the first question paid out twice the usual and gave the first
+   team to drop a head start; one row back, the first question is like any other. */
+let FILL_FRONT = 3;
 function fillTray(tray) {
   const r = PHY.R, dx = r * 2.02, dy = r * 1.76;
   let row = 0;
-  for (let y = PHY.PF_MAX + r + 1; y < PHY.D - r * 0.3; y += dy, row++)
+  for (let y = PHY.PF_MAX + r + 1; y < PHY.D - r * FILL_FRONT; y += dy, row++)
     for (let x = r + (row % 2 ? dx / 2 : 1); x < PHY.W - r; x += dx) if (CGB.random() < 0.93) addLower(tray, x + (CGB.random() - 0.5) * 3, y + (CGB.random() - 0.5) * 3);
   row = 0;
   for (let y = PHY.WALL + r + 1; y < PHY.PF_MAX - r * 0.2; y += dy, row++)
@@ -219,7 +223,7 @@ const WILDCARDS = [
 const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
 const G = {
   nTeams: +CGB.store.get('ote.nTeams') || 4,
-  laneQueue: [], laneOwner: [-1, -1, -1, -1], nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
+  laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, fallPool: [], nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
   phase: 'home', step: null, attract: true,
   players: [], team: 0, finalWinnings: 0,
   qIndex: 0, qTotal: 0, q: null, answerShown: false,
@@ -330,7 +334,7 @@ const towerMat = new THREE.MeshStandardMaterial({ color: SET.navy, metalness: 0.
 const aquaGlow = glow(0x9ffcf0, 1.2), coralGlow = glow(0xff9a7a, 1.15);
 [[-17, -12, 0.3], [-13.5, -9, -0.2], [17.5, -12, -0.3], [21.5, -9, 0.2], [14.5, -15, 0.1], [-21, -15, -0.1]].forEach(([x, z, ry], i) => {
   const p = box(1.3, 30, 1.3, towerMat, x, 8, z); p.rotation.y = ry;
-  const s = box(0.22, 30, 0.22, i % 2 ? coralGlow : aquaGlow, x, 8, z + 0.72); s.rotation.y = ry;
+  const s = box(0.22, 29.9, 0.22, i % 2 ? coralGlow : aquaGlow, x, 8, z + 0.72); s.rotation.y = ry;
 });
 
 /* Glossy studio floor with an aqua light ring */
@@ -362,12 +366,12 @@ box(winW, 0.06, 0.12, chrome, 0, 0.0, TZ(PHY.D) + 0.03);
 [-1, 1].forEach(s => {
   const cx = s * (winW / 2 + lostW / 2);
   const plate = new THREE.Mesh(new THREE.PlaneGeometry(lostW, 1.5), new THREE.MeshStandardMaterial({ color: 0x3a4148, metalness: 0.6, roughness: 0.35 }));
-  plate.rotation.x = -Math.PI / 2; plate.position.set(cx, 0.003, TZ(PHY.D) - 0.75); plate.receiveShadow = true; scene.add(plate);
+  plate.rotation.x = -Math.PI / 2; plate.position.set(cx, 0.008, TZ(PHY.D) - 0.75); plate.receiveShadow = true; scene.add(plate);
   box(lostW, 0.06, 0.12, chromeDark, cx, 0.0, TZ(PHY.D) + 0.03);
   // side walls: clear acrylic with chrome caps
   box(0.12, 1.5, 11.4, acrylic, s * 6.24, 0.75, -0.2);
-  box(0.2, 0.12, 11.4, chrome, s * 6.24, 1.52, -0.2);
-  box(0.18, 0.08, 11.4, aquaNeon, s * 6.36, 0.05, -0.2);
+  box(0.2, 0.12, 11.44, chrome, s * 6.24, 1.52, -0.2);
+  box(0.18, 0.08, 11.36, aquaNeon, s * 6.36, 0.05, -0.2);
 });
 
 /* Moving top shelf (it is also the pusher for the bottom shelf) */
@@ -389,10 +393,13 @@ const boardBack = box(12.6, 9.3, 0.25, new THREE.MeshStandardMaterial({ color: 0
   for (let i = 1; i < 4; i++) { const x = i * w / 4; g.beginPath(); g.moveTo(x, 0); g.lineTo(x, h); g.stroke(); }
 }) }), 0, BOARD_BOTTOM + 4.6, BOARD_Z - 0.38);
 boardBack.receiveShadow = true;
+/* Side columns and their neon strips stop just under the header sign's box: where they ran into
+   it, their front faces shared a plane with the sign's and flickered (z-fighting) */
+const COLUMN_TOP = BY(0) + 0.78, COLUMN_FOOT = BOARD_BOTTOM - 0.3;
 [-1, 1].forEach(s => {
-  box(0.55, 10.6, 1.2, tealPanel, s * 6.6, BOARD_BOTTOM + 5.0, BOARD_Z - 0.1);
-  box(0.08, 10.6, 0.08, aquaNeon, s * 6.32, BOARD_BOTTOM + 5.0, BOARD_Z + 0.52);
-  box(0.08, 10.6, 0.08, glow(0xff9a7a, 1.15), s * 6.88, BOARD_BOTTOM + 5.0, BOARD_Z + 0.52);
+  box(0.55, COLUMN_TOP - COLUMN_FOOT, 1.2, tealPanel, s * 6.6, (COLUMN_TOP + COLUMN_FOOT) / 2, BOARD_Z - 0.1);
+  box(0.08, COLUMN_TOP - COLUMN_FOOT - 0.04, 0.08, aquaNeon, s * 6.32, (COLUMN_TOP + COLUMN_FOOT) / 2, BOARD_Z + 0.52);
+  box(0.08, COLUMN_TOP - COLUMN_FOOT - 0.04, 0.08, glow(0xff9a7a, 1.15), s * 6.88, (COLUMN_TOP + COLUMN_FOOT) / 2, BOARD_Z + 0.52);
 });
 
 /* Header sign */
@@ -408,10 +415,12 @@ function drawSign(g, w, h) {
 const signTex = canvasTex(1024, 128, drawSign);
 const sign = new THREE.Mesh(new THREE.PlaneGeometry(12.4, 1.5), new THREE.MeshBasicMaterial({ map: signTex }));
 sign.position.set(0, BY(0) + 1.75, BOARD_Z + 0.52); scene.add(sign);
-box(14.2, 0.08, 0.08, aquaNeon, 0, BY(0) + 0.82, BOARD_Z + 0.52);
-box(14.2, 0.08, 0.08, aquaNeon, 0, BY(0) + 2.68, BOARD_Z + 0.52);
-const glass = new THREE.Mesh(new THREE.PlaneGeometry(12.6, 9.3), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0.06, metalness: 1, roughness: 0.05, depthWrite: false }));
-glass.position.set(0, BOARD_BOTTOM + 4.6, BOARD_Z + 0.42); scene.add(glass);
+box(14.2, 0.08, 0.1, aquaNeon, 0, BY(0) + 0.83, BOARD_Z + 0.55);
+box(14.2, 0.08, 0.1, aquaNeon, 0, BY(0) + 2.67, BOARD_Z + 0.55);
+// the glass covers the peg board only, stopping below the lane blocks (it overlapped their
+// fronts, 0.005 apart, and flickered)
+const glass = new THREE.Mesh(new THREE.PlaneGeometry(12.6, BY(0) - 0.12 - BOARD_BOTTOM + 0.05), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0.06, metalness: 1, roughness: 0.05, depthWrite: false }));
+glass.position.set(0, (BY(0) - 0.12 + BOARD_BOTTOM - 0.05) / 2, BOARD_Z + 0.42); scene.add(glass);
 
 const brass = new THREE.MeshStandardMaterial({ color: 0xd9a441, metalness: 1, roughness: 0.25 });
 const pegGeo = new THREE.CylinderGeometry(PEG.PR * S, PEG.PR * S, 0.75, 12); pegGeo.rotateX(Math.PI / 2);
@@ -476,7 +485,7 @@ function drawStar(g, cx, cy, r) {
 function faceTexture(kind, owner) {
   return canvasTex(256, 256, (g, w) => {
     const c = w / 2;
-    let base = ['#ffffff', '#c3cad3', '#7d8792'];
+    let base = ['#eef1f5', '#b9c1cb', '#76808b'];
     if (kind === 'wildcard') base = ['#d9fffa', '#2fc9bf', '#0a6663'];
     if (kind === 'jackpot') base = ['#fff6cf', '#f4c24a', '#9a6a10'];
     const gr = g.createRadialGradient(c * 0.7, c * 0.6, 10, c, c, c);
@@ -500,8 +509,9 @@ function coinMats(kind, owner) {
   const k = kind + ':' + owner;
   if (MAT[k]) return MAT[k];
   const sideColor = kind === 'jackpot' ? 0xf2c14e : kind === 'wildcard' ? 0x12a4a0 : owner >= 0 ? COLORS.hex[owner] : 0xd5dbe2;
-  const side = new THREE.MeshStandardMaterial({ color: sideColor, metalness: 0.95, roughness: 0.22 });
-  const face = new THREE.MeshStandardMaterial({ map: faceTexture(kind, owner), metalness: 0.55, roughness: 0.35 });
+  // a little less mirror-like than polished metal, so the studio lights don't glare off the pile
+  const side = new THREE.MeshStandardMaterial({ color: sideColor, metalness: 0.85, roughness: 0.3, envMapIntensity: 0.6 });
+  const face = new THREE.MeshStandardMaterial({ map: faceTexture(kind, owner), metalness: 0.45, roughness: 0.38, envMapIntensity: 0.55 });
   if (kind === 'wildcard') { side.emissive = new THREE.Color(0x064442); face.emissive = new THREE.Color(0x05302e); }
   if (kind === 'jackpot') { side.emissive = new THREE.Color(0x4a3200); face.emissive = new THREE.Color(0x2a1c00); }
   MAT[k] = [side, face, face];
@@ -889,17 +899,41 @@ function onTrayFall(b, inWin) {
   if (!inWin) { SFX.lost(); popLost(pos); G.dropLost++; renderScores(); return; }
   SFX.win();
   G.dropWon++;
-  // the counter goes to the team whose counter last landed in that quarter of the shelf
-  const zoneOwner = G.laneOwner[shelfZone(b.x)];
-  const who = zoneOwner >= 0 ? zoneOwner : G.lastDropper;
+  const fell = { x: b.x, y: b.y, wildcard: b.wildcard, pos };
+  // while this question's counters are still on their way, a fallen counter waits: crediting it
+  // now would favour the teams whose counters landed first
+  if (G.step === 'lanes' || (G.step === 'dropping' && G.landed < G.pending)) { G.fallPool.push(fell); popLabel('+' + fmt(VALUE), pos, '', 1.6); return; }
+  creditFall(fell, true);
+}
+/* The counter goes to the team whose counter, dropped this question, is nearest to it */
+function creditFall(f, label) {
+  const who = nearestDropper(f);
   if (who >= 0) G.dropByTeam[who] = (G.dropByTeam[who] || 0) + 1;
-  if (G.phase === 'final') { G.team += VALUE; G.finalWinnings += VALUE; popWin(VALUE, pos, who); }
-  else if (who >= 0) { G.players[who].money += VALUE; G.players[who].won++; popWin(VALUE, pos, who); }
+  if (G.phase === 'final') { G.team += VALUE; G.finalWinnings += VALUE; if (label) popWin(VALUE, f.pos, who); }
+  else if (who >= 0) { G.players[who].money += VALUE; G.players[who].won++; popWin(VALUE, f.pos, who); }
   if (G.dropWon >= 3 && !G.cascadeSaid && G.step === 'dropping') { G.cascadeSaid = true; hostSay(line('cascade'), 'cheer', 2200); }
-  if (b.wildcard) triggerWildcard(b.wildcard, who, pos);
+  if (f.wildcard) triggerWildcard(f.wildcard, who, f.pos);
   renderScores();
 }
-const shelfZone = x => Math.max(0, Math.min(3, Math.floor(x / (PHY.W / 4))));
+/* Every counter has landed: credit the ones that fell while they were on their way */
+function creditPool() { const pool = G.fallPool; G.fallPool = []; pool.forEach(f => creditFall(f, true)); }
+/* Who gets a counter that falls: the counters pushed off in one question are shared out
+   among the teams that dropped in it. Each goes to the team whose counter (from this question)
+   is nearest to it, among the teams that have had the fewest so far this question, so every
+   team gets one before any team gets a second. Where the counters land still decides who is
+   lucky when there are not enough to go round. It does not depend on the drop order. */
+function nearestDropper(fell) {
+  const got = t => G.dropByTeam[t] || 0;
+  let fewest = Infinity;
+  for (const t of G.dropOrder || []) fewest = Math.min(fewest, got(t));
+  let best = -1, bd = Infinity;
+  for (const T of [tray.lower, tray.upper]) for (const b of T) {
+    if (b.owner < 0 || b.dropSerial !== G.dropSerial || got(b.owner) > fewest) continue;
+    const d = Math.abs(b.x - fell.x) + 0.25 * Math.abs(b.y - fell.y);   // across the shelf counts most: counters are pushed straight forward
+    if (d < bd) { bd = d; best = b.owner; }
+  }
+  return best >= 0 ? best : G.lastDropper;
+}
 function triggerWildcard(id, who, pos) {
   SFX.wildcard();
   const def = WILDCARDS.find(m => m.id === id);
@@ -1049,7 +1083,8 @@ function renderScores() {
     ? [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => ({ name: ($('cname' + i) || {}).value || CGB.teamFallback(i), score: fmt(0) }))
     : G.players.map(p => ({ name: p.name, score: fmt(p.money) }));
   board.set({ teams, turn: G.step === 'lanes' ? G.laneQueue[0] : -1,
-    badge: G.players.map((p, i) => i === G.catchUp ? 'Catch-up counter' : '') });
+    badge: G.players.map((p, i) => i === G.catchUp ? 'Catch-up counter'
+      : G.step === 'lanes' && G.laneQueue.includes(i) ? 'Drops ' + ORDINAL[G.dropOrder.indexOf(i)] : '') });
   $('teamCard').style.display = G.phase === 'final' ? 'block' : 'none';
   if (G.phase === 'final') {
     $('teamVal').textContent = fmt(G.team);
@@ -1091,7 +1126,9 @@ function drawActions() {
   if (G.step === 'lanes') {
     const t = G.laneQueue[0], p = G.players[t], n = G.dropCount;
     const lead = t === G.catchUp ? `Catch-up counter for ${p.name}.` : G.bonusDrop ? `Bonus counter for ${p.name}.` : `${p.name} won ${n === 1 ? 'a counter' : n + ' counters'}.`;
-    add(`<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(lead)} Captain: pick a lane!<small>Keys 1 to 4 or tap the machine${G.laneQueue.length > 1 ? `. ${G.laneQueue.length - 1} more team${G.laneQueue.length > 2 ? 's' : ''} after this` : ''}. Captains: swap to the next person each time.</small></div>
+    const done = G.dropOrder.length - G.laneQueue.length;
+    const order = G.dropOrder.length > 1 ? `<ol class="ote-order" aria-label="Drop order">${G.dropOrder.map((i, k) => `<li class="${k < done ? 'done' : k === done ? 'now' : ''}" style="--pc:${COLORS.css[i]}"><span class="k">${k + 1}</span>${COLORS.mark[i]} ${escapeHtml(G.players[i].name)}</li>`).join('')}</ol>` : '';
+    add(`${order}<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(lead)} Captain: pick a lane!<small>Keys 1 to 4 or tap the machine${G.laneQueue.length > 1 ? `. ${G.laneQueue.length - 1} more team${G.laneQueue.length > 2 ? 's' : ''} after this` : ''}. Captains: swap to the next person each time.</small></div>
       <div class="ote-chutes" style="--pc:${COLORS.css[t]}">${[0, 1, 2, 3].map(i => `<button class="ote-chute-btn" type="button" data-act="lane" data-i="${i}" aria-label="Lane ${i + 1}">${i + 1}<small>lane</small></button>`).join('')}</div>
       ${G.laneQueue.length > 1 ? '<button class="btn plain" type="button" data-act="random">Random lanes for the rest <kbd>R</kbd></button>' : ''}`);
     return;
@@ -1155,8 +1192,13 @@ function undoClassResult() {
 }
 /* Lanes: each team that won counters picks a lane in turn; its counters drop at once,
    0.35 s apart, so six teams' counters are all on their way within a couple of seconds. */
+/* The teams that won counters drop in a random order, new each question, shown on screen as a
+   numbered list and on each team's panel ("Drops 1st", "Drops 2nd"...) */
+const ORDINAL = ['1st', '2nd', '3rd', '4th', '5th', '6th'];
 function startLanes(teams, per, bonus) {
-  G.laneQueue = teams.slice(); G.dropCount = per; G.bonusDrop = bonus;
+  const order = teams.slice();
+  for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(CGB.random() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+  G.laneQueue = order; G.dropOrder = order.slice(); G.dropSerial++; G.fallPool = []; G.dropCount = per; G.bonusDrop = bonus;
   G.dropWon = 0; G.dropLost = 0; G.dropNotes = []; G.dropByTeam = []; G.cascadeSaid = false;
   G.pending = 0; G.landed = 0; G.settleAt = Infinity; G.released = 0; G.nextRelease = simT;
   G.step = 'lanes';
@@ -1173,8 +1215,9 @@ function chooseLane(i) {
     G.pending++; G.released++;
     dropTimers.push({ at, go: () => launchDrop(i, team, b => {
       G.lastDropper = team;
-      G.laneOwner[shelfZone(b.x)] = team;
+      b.dropSerial = G.dropSerial;
       G.landed++;
+      if (G.landed >= G.pending && G.step === 'dropping') creditPool();
       if (G.landed >= G.pending && G.step === 'dropping') G.settleAt = simT + PHY.PERIOD;
     }) });
   }
@@ -1183,6 +1226,8 @@ function chooseLane(i) {
 }
 function randomLanes() { while (G.step === 'lanes' && G.laneQueue.length) chooseLane(Math.floor(CGB.random() * 4)); }
 function classFinishDrop() {
+  creditPool();
+  G.dropLog.push({ phase: G.phase, order: (G.dropOrder || []).slice(), won: G.players.map((p, i) => G.dropByTeam[i] || 0) });
   const won = G.dropByTeam.map((n, i) => n ? `${COLORS.mark[i]} ${G.players[i].name} +${fmt(n * VALUE)}` : '').filter(Boolean);
   const title = G.dropWon ? `${G.dropWon} over the edge` + (G.phase === 'final' ? `: +${fmt(G.dropWon * VALUE)} for the class` : '') : 'Nothing fell this time';
   const detail = [G.phase === 'final' ? '' : won.join(', '), G.dropLost ? `${G.dropLost} lost down the sides.` : '', ...G.dropNotes].filter(Boolean).join(' · ') || 'The shelves have settled.';
@@ -1206,7 +1251,7 @@ function startGame() {
   const n = Math.min(6, Math.max(2, G.nTeams));
   const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, n).map(i => $('cname' + i).value)).map(x => x.slice(0, 16));
   G.players = names.map(x => ({ name: x, money: 0, correct: 0, asked: 0, won: 0, wrong: [] }));
-  misc.reset(); round.stop(); G.laneQueue = []; G.laneOwner = [-1, -1, -1, -1]; G.catchUp = -1;
+  misc.reset(); round.stop(); G.laneQueue = []; G.dropOrder = []; G.dropLog = []; G.catchUp = -1;
   G.team = 0; G.finalWinnings = 0; G.jackpot = null; G.jackpotWon = false; G.jackpotFell = false;
   G.pendingExtra = []; G.lastDropper = -1; G.q = null; G.lastMsg = null; closeSaid = false;
   picker.reset();
@@ -1268,7 +1313,7 @@ function endRound() {
    about half the time, whatever the number of teams (see DECISIONS.md). [units back from
    the edge, weight compared with a counter of its size]; with two teams it starts already
    hanging a little over the edge. */
-const JACKPOT = { 2: [-22, 0.4], 3: [-13, 0.4], 4: [4, 0.4], 5: [11, 0.5], 6: [15, 0.6] };
+const JACKPOT = { 2: [-22, 0.4], 3: [-12, 0.4], 4: [-8, 0.4], 5: [11, 0.5], 6: [15, 0.6] };
 let jackpotOverride = null;
 function setupFinal() {
   const [JACKPOT_GAP, JACKPOT_HEAVY] = jackpotOverride || JACKPOT[G.players.length] || JACKPOT[4];
@@ -1303,6 +1348,31 @@ CGB.test.ote = {
   },
   simTime: () => simT,
   jackpot(gap, heavy) { jackpotOverride = [gap, heavy]; },   // for tuning
+  fillFront(k) { FILL_FRONT = k; },                            // for tuning
+  // pairs of fixed set pieces with faces on the same plane that overlap (they would flicker)
+  coplanar() {
+    const items = [];
+    scene.traverse(o => {
+      if (!o.isMesh || o.isInstancedMesh || !o.geometry || !o.visible) return;
+      const t = o.geometry.type; if (t !== 'BoxGeometry' && t !== 'PlaneGeometry') return;
+      if (pusher.children.includes(o) || o === boardBack) return;   // the moving shelf; the board is behind everything
+      o.updateWorldMatrix(true, false);
+      const bb = new THREE.Box3().setFromObject(o); items.push({ o, bb });
+    });
+    const out = [], ax = ['x', 'y', 'z'], E = 0.003;
+    const desc = o => `${o.geometry.type}(${Object.values(o.geometry.parameters).slice(0, 3).map(v => +v.toFixed(2))})@${o.position.toArray().map(v => +v.toFixed(2))}`;
+    for (let i = 0; i < items.length; i++) for (let j = i + 1; j < items.length; j++) {
+      const a = items[i].bb, b = items[j].bb;
+      for (const k of ax) for (const fa of ['min', 'max']) for (const fb of ['min', 'max']) {
+        if (Math.abs(a[fa][k] - b[fb][k]) > E) continue;
+        const others = ax.filter(q => q !== k);
+        const ov = others.every(q => Math.min(a.max[q], b.max[q]) - Math.max(a.min[q], b.min[q]) > E);
+        // both faces must face the same way to fight (a box's front against another's front)
+        if (ov && fa === fb) out.push(`${k}=${a[fa][k].toFixed(3)} ${desc(items[i].o)} / ${desc(items[j].o)}`);
+      }
+    }
+    return out;
+  },
   setMoney(list) { list.forEach((m, i) => { if (G.players[i]) G.players[i].money = m; }); render(); },
   info: () => ({ jackpotWon: !!G.jackpotWon, jackpotFell: !!G.jackpotFell, progress: jackpotProgress(), team: G.team,
     tray: tray.lower.map(b => `${b.kind}:${b.x.toFixed(2)},${b.y.toFixed(2)}`).join(';') })
@@ -1474,7 +1544,7 @@ return {
     const sr = wrap.getBoundingClientRect(), hr = hostRect();
     return { stage: { w: sr.width, h: sr.height }, machine: machineRect(), machineRight: hostFit.machineRight, hidden: hostFit.hidden, host: { left: hr.left - sr.left, right: hr.right - sr.left, top: hr.top - sr.top, bottom: hr.bottom - sr.top }, away: $('host').classList.contains('away') };
   },
-  _state: () => ({ round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
+  _state: () => ({ dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
 };
 }
 

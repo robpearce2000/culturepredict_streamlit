@@ -10,7 +10,7 @@
     <div class="cgb-panel hh-card setup" id="hh-setupCard">
       <div class="setup-intro">
       <div class="hh-logo" id="hh-logo"></div>
-      <details class="howto" open><summary>How to play</summary><div class="hh-rules">Split the class into two halves (each can be several table groups). <b>Team 1</b> links the left edge to the right edge; <b>Team 2</b> links the top to the bottom. The choosing half picks a hexagon: its letter is the first letter of the answer. Everyone answers on whiteboards. Enter roughly what share of each half got it right; the higher share wins the hexagon and picks the next one, and on a tie the half that chose it wins. The first half to join its two edges wins.</div></details>
+      <details class="howto" open><summary>How to play</summary><div class="hh-rules">Split the class into two halves (each can be several table groups). <b>Team 1</b> links the left edge to the right edge; <b>Team 2</b> links the top to the bottom. The choosing half picks a hexagon: its letter is the first letter of the answer. Everyone answers on whiteboards. Compare the whiteboards and press the half that had more right answers: it wins the hexagon and picks the next one. If it's level, the half that chose it wins; if nobody got it, press Neither. The first half to join its two edges wins.</div></details>
       <p class="cm-rule"><b>Team rule:</b> a group counts as correct only if its whiteboards agree on a correct answer, or if you judge it correct.</p>
       </div>
       <div class="setup-form">
@@ -29,7 +29,7 @@
   <!-- BOARD -->
   <div class="hh-play" id="hh-play" hidden>
     <div class="hh-head"><div class="hh-turn" id="hh-turn" role="status"></div><div class="hh-round" id="hh-round"></div></div>
-    <div class="hh-boardwrap"><svg class="hh-board" id="hh-board" role="grid" aria-label="Hexagon board"></svg></div>
+    <div class="hh-boardwrap"><svg class="hh-board" id="hh-board" role="grid" aria-label="Hexagon board"></svg><div class="hh-curhint" id="hh-curHint" hidden>Gold outline: your keyboard choice · <span class="kbd">Enter</span> pick</div></div>
     <div class="hh-teams" id="hh-teams"></div>
     <div class="host-foot"><div class="host-slot" id="hh-host"></div><div class="hh-keys keys"><span class="kbd">←</span><span class="kbd">→</span><span class="kbd">↑</span><span class="kbd">↓</span> move · <span class="kbd">Enter</span> pick · <span class="kbd">Esc</span> menu</div></div>
   </div>

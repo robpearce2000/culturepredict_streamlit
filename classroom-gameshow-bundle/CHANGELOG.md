@@ -9,6 +9,21 @@
 - **The racers follow the subject:** atoms for science, and new looks for Maths, English, History and Geography, plus a general one. The class is always gold and the Hunter always magenta.
 - Smaller name tags in the Deal Round, when the whole track is in view.
 
+### Over the Edge
+- **Teams drop in a random order for every question**, shown on screen.
+- **Fairer winnings:** a counter pushed over the edge goes to the team whose new counter landed nearest to it, shared out so no team is paid twice before every team has been paid once. Dropping first is no longer an advantage.
+- The jackpot is retuned for the fairer rule.
+- **No more flickering** set pieces under the OVER THE EDGE sign, and the counters are a little less shiny.
+
+### Category Clash
+- **The columns are topics from your subject.** Choose up to four on the setup screen, or let the game pick a different mix each game.
+- **A real difficulty scale:** every question is tagged Tier 1 (recall), 2 (describe and apply) or 3 (explain and extend), and the 100, 200 and 300 rows use the matching tier. Add a `Tier:` line to your own sets; older `Difficulty:` lines still work.
+
+### Hex Hunt
+- **One press to mark:** press the half that had more right answers, or Neither. Undo is still there.
+- **Every letter really is where the answer starts** ("the", "a" and "an" are skipped, and answers that are explanations, lists or numbers stay off the board).
+- The gold outline is the keyboard cursor, so it only appears when you use the arrow keys, with a small hint.
+
 
 ## 1.4.1 – Ten-minute games (October 2026)
 

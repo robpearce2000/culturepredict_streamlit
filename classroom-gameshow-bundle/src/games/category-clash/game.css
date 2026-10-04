@@ -94,3 +94,22 @@
 .cc-qboard[hidden] { display: none; }
 .cc-qbtns .cm-hint { width: 100%; text-align: center; }
 .cc-tile.used .mk + * { display: inline; }
+
+/* Choosing the topics (columns) */
+.cc-topicpick > summary b { font-weight: 900; }
+.cc-topicpick > summary small { font-weight: 800; margin-left: 4px; opacity: 0.85; }
+.cc-topicbody .hint { margin: 0 0 6px; font-size: 0.9rem; }
+.cc-topicchips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cc-topicchips .chip { font: inherit; font-weight: 800; font-size: 0.88rem; min-height: 34px; padding: 4px 11px; border-radius: 999px; border: 2px solid #b9c3cc; background: #fff; color: var(--ink, #1B1F3B); cursor: pointer; }
+.cc-topicchips .chip small { font-weight: 700; opacity: 0.7; margin-left: 2px; }
+.cc-topicchips .chip:hover:not(:disabled) { border-color: var(--teal-deep, #0A6663); }
+.cc-topicchips .chip[aria-pressed="true"] { background: var(--teal-deep, #0A6663); border-color: var(--teal-deep, #0A6663); color: #fff; }
+.cc-topicchips .chip[aria-pressed="true"]::before { content: '✓ '; }
+.cc-topicchips .chip:disabled { opacity: 0.45; cursor: not-allowed; }
+.cc-topicchips .chip:focus-visible { outline: 3px solid var(--sun, #FFC93C); outline-offset: 2px; }
+.cc-topicchips { max-height: min(26vh, 200px); overflow-y: auto; padding: 2px 2px 4px; margin-bottom: 8px; border-bottom: 2px solid #e4d9c4; }
+.cc-topicchips.grouped { display: block; }
+.cc-topicchips.grouped > .chip.any { margin-bottom: 6px; }
+.cc-tgroup { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; margin-bottom: 6px; }
+.cc-tsub { font-size: 0.78rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--teal-deep, #0A6663); width: 100%; }
+.cc-topicchips.grouped .chip { font-size: 0.82rem; min-height: 30px; padding: 3px 9px; }

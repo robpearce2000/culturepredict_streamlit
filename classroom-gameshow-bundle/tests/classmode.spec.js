@@ -69,39 +69,58 @@ test('Category Clash: a team far behind gets a catch-up pick at the start of the
   await expect(page.locator('.cc-catch')).toBeVisible();
 });
 
-test('Hex Hunt, whole class: shares per half, tie to the chooser, undo, full round and misconceptions', async ({ page }) => {
+test('Hex Hunt, whole class: one press for the half with more right, Neither, undo, full round and misconceptions', async ({ page }) => {
   const log = await openBundle(page, '#hex-hunt');
   await page.click('#hh-startBtn');
   const id = 'hex-hunt';
-  // hexagon 1: half 2 has the higher share
+  // the gold outline (keyboard cursor) only shows once the keys are used
+  expect((await state(page, id)).keyboard).toBe(false);
+  await expect(page.locator('#hh-board .hh-hex.cursor')).toHaveCount(0);
+  await expect(page.locator('#hh-curHint')).toBeHidden();
+  await page.keyboard.press('ArrowRight');
+  await expect(page.locator('#hh-board .hh-hex.cursor')).toHaveCount(1);
+  await expect(page.locator('#hh-curHint')).toBeVisible();
+  // hexagon 1: half 2 had more right answers
   await page.keyboard.press('Enter');
   await page.keyboard.press('Space'); await page.keyboard.press('Space');
   await expect.poll(async () => (await state(page, id)).round).toBe('mark');
-  await page.keyboard.press('1'); for (let i = 0; i < 3; i++) await page.keyboard.press('ArrowRight');
-  await page.keyboard.press('2'); for (let i = 0; i < 6; i++) await page.keyboard.press('ArrowRight');
-  expect((await state(page, id)).shares).toEqual([30, 60]);
-  await page.keyboard.press('Enter');
+  // two big side buttons and Neither; no percentages and no Confirm step
+  await expect(page.locator('#hh-share .hh-side')).toHaveCount(3);
+  await expect(page.locator('#hh-share')).not.toContainText('%');
+  await expect(page.locator('#hh-qBtns [data-cm="confirm"]')).toHaveCount(0);
+  await page.locator('#hh-share .hh-side[data-side="1"]').click();
   let s = await state(page, id);
+  expect(s.round).toBe('done');
   expect(s.owners.filter(o => o === 1)).toHaveLength(1);
   expect(s.picker).toBe(1);
   await page.keyboard.press('u');
   s = await state(page, id);
+  expect(s.round).toBe('mark');
   expect(s.owners.filter(o => o >= 0)).toHaveLength(0);
   expect(s.picker).toBe(0);
-  // a tie goes to the half that chose (half 1)
-  await page.keyboard.press('1'); for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowRight');
-  await page.keyboard.press('2'); for (let i = 0; i < 2; i++) await page.keyboard.press('ArrowRight');
-  await page.keyboard.press('Enter');
+  // Neither: nobody wins it, and it goes on the reteach list
+  await page.keyboard.press('n');
+  s = await state(page, id);
+  expect(s.owners.filter(o => o >= 0)).toHaveLength(0);
+  expect(s.step).toBe('nobody');
+  expect(s.misconceptions).toHaveLength(1);
+  await page.keyboard.press('u');
+  expect((await state(page, id)).misconceptions).toHaveLength(0);
+  // keyboard 1: half 1
+  await page.keyboard.press('1');
   s = await state(page, id);
   expect(s.owners.filter(o => o === 0)).toHaveLength(1);
   note('marking ms', s.times.confirm - s.times.mark);
   await page.keyboard.press('Enter');
+  // clicking a hexagon hides the outline again
+  await page.locator('#hh-board .hh-hex:not(.own-0):not(.own-1)').first().click();
+  expect((await state(page, id)).keyboard).toBe(false);
   for (let guard = 0, k = 0; guard < 400; guard++) {
     s = await state(page, id);
     if (s.phase === 'summary') break;
     if (s.phase === 'board' || s.phase === 'won' || s.round === 'done') { await page.keyboard.press('Enter'); continue; }
     if (s.round === 'think' || s.round === 'show') { await page.keyboard.press('Space'); continue; }
-    if (s.round === 'mark') { await page.keyboard.press(String(1 + (k++ % 2))); await page.keyboard.press('ArrowRight'); await page.keyboard.press('Enter'); continue; }
+    if (s.round === 'mark') { await page.keyboard.press(['1', '2', 'n'][k++ % 3]); continue; }
     await page.waitForTimeout(50);
   }
   expect((await state(page, id)).phase).toBe('summary');

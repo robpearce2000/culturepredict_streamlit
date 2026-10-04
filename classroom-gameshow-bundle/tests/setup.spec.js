@@ -37,7 +37,7 @@ test('each setup card offers only the number of teams, with names tucked away an
     else await expect(c).toContainText('Two halves of the class');
     await expect(c).not.toContainText(/Whole class|Small group|Session length|Countdown|Jackpot difficulty|Customise the host|got wrong before/);
     // team names are behind "Edit team names"
-    const names = c.locator('details.tnames');
+    const names = c.locator('details.tnames').first();
     await expect(names.locator('input').first()).toBeHidden();
     await names.locator('summary').click();
     await expect(names.locator('input').first()).toBeVisible();

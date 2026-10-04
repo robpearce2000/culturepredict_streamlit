@@ -54,19 +54,74 @@ $('segTeams').addEventListener('click', e => {
 paintTeams();
 renderNames();
 function renderPack() { $('startBtn').disabled = !CGB.renderPackLine($('pack')); }
-bank.onChange(() => { if (S.phase === 'home') renderPack(); });
+bank.onChange(() => { if (S.phase === 'home') { renderPack(); renderTopics(); } });
 renderPack();
 
-/* Topics in the active set, each a candidate category */
+/* Topics in the active set, each a candidate category (columns are topics within the subject
+   chosen on the main screen). A topic is "full" when it has a question at every tier. */
 function topicsOf(set) {
   const m = new Map();
   set.questions.forEach(q => { const k = q.topic; if (!m.has(k)) m.set(k, { topic: k, subject: q.subject, qs: [] }); m.get(k).qs.push(q); });
-  return Array.from(m.values());
+  return Array.from(m.values()).map(t => {
+    t.tiers = [1, 2, 3].map(n => t.qs.filter(q => bank.tierOf(q) === n).length);
+    t.full = t.tiers.every(n => n > 0);
+    return t;
+  });
 }
-/* Five categories, shuffled each game: full topics first, taking topics from each subject
-   in turn so a mixed set gives a mixed board */
+
+/* ---------- Choosing the topics: up to four, remembered for each question set. Any not chosen
+   (all four by default) are picked for the teacher each game, from topics with a question at every tier ---------- */
+const chosenStore = () => CGB.store.getJSON('cc.topics', {});
+function chosenTopics(set, all) {
+  const names = new Set(all.map(t => t.topic));
+  return (chosenStore()[set.id] || []).filter(n => names.has(n)).slice(0, CATS);
+}
+function saveChosen(set, list) { const m = chosenStore(); if (list.length) m[set.id] = list; else delete m[set.id]; CGB.store.setJSON('cc.topics', m); }
+function renderTopics() {
+  const set = bank.active();
+  if (!set) { $('topicPick').hidden = true; return; }
+  const all = topicsOf(set), chosen = chosenTopics(set, all);
+  $('topicPick').hidden = false;
+  const left = CATS - chosen.length;
+  $('topicSum').innerHTML = chosen.length
+    ? `Topics: <b>${chosen.map(esc).join(', ')}</b>${left ? ` <small>+ ${left} picked for you</small>` : ''}`
+    : `Topics: <b>picked for you each game</b> <small>Choose topics</small>`;
+  const multi = new Set(all.map(t => t.subject)).size > 1;
+  $('topicHint').textContent = all.length <= CATS
+    ? `This set has ${all.length} topic${all.length === 1 ? '' : 's'}, so ${all.length === 1 ? 'it is' : 'they are all'} on the board.`
+    : `Choose up to ${CATS} topics for the columns. Any you leave are picked for you, a different mix each game.`;
+  const chip = t => {
+    const on = chosen.includes(t.topic);
+    const note = t.full ? '' : ' <small>(few questions)</small>';
+    return `<button type="button" class="chip" data-topic="${esc(t.topic)}" aria-pressed="${on}"${!on && chosen.length >= CATS ? ' disabled' : ''} title="${t.tiers.join(' / ')} questions at tiers 1 / 2 / 3">${esc(t.topic)}${note}</button>`;
+  };
+  const subjects = Array.from(new Set(all.map(t => t.subject)));
+  $('topicChips').classList.toggle('grouped', multi);
+  $('topicChips').innerHTML = `<button type="button" class="chip any" data-any aria-pressed="${!chosen.length}">Pick for me</button>` + (multi
+    ? subjects.map(sj => `<div class="cc-tgroup"><span class="cc-tsub">${esc(sj)}</span>${all.filter(t => t.subject === sj).map(chip).join('')}</div>`).join('')
+    : all.map(chip).join(''));
+}
+$('topicChips').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b || b.disabled) return;
+  const set = bank.active(); if (!set) return;
+  let list = chosenTopics(set, topicsOf(set));
+  if (b.hasAttribute('data-any')) list = [];
+  else { const n = b.dataset.topic; list = list.includes(n) ? list.filter(x => x !== n) : list.concat(n).slice(0, CATS); }
+  saveChosen(set, list);
+  const key = b.hasAttribute('data-any') ? '[data-any]' : `[data-topic="${CSS.escape(b.dataset.topic)}"]`;
+  renderTopics();
+  const again = $('topicChips').querySelector(key); if (again) again.focus();
+});
+$('topicPick').addEventListener('toggle', () => CGB.fitSetups());
+renderTopics();
+
+/* Four categories: the teacher's chosen topics, then the rest shuffled each game, full topics
+   first, taking topics from each subject in turn so a mixed set gives a mixed board */
 function pickTopics(all) {
-  const full = all.filter(t => t.qs.length >= ROWS), rest = all.filter(t => t.qs.length < ROWS);
+  const set = bank.active(), chosen = set ? chosenTopics(set, all) : [];
+  const fixed = chosen.map(n => all.find(t => t.topic === n));
+  const others = all.filter(t => !chosen.includes(t.topic));
+  const full = others.filter(t => t.full), rest = others.filter(t => !t.full);
   const mix = a => a.map(v => [CGB.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
   const spread = list => {
     const bySub = new Map(); list.forEach(t => { if (!bySub.has(t.subject)) bySub.set(t.subject, []); bySub.get(t.subject).push(t); });
@@ -74,21 +129,20 @@ function pickTopics(all) {
     for (let i = 0; out.length < list.length; i++) lanes.forEach(l => { if (l[i]) out.push(l[i]); });
     return out;
   };
-  return spread(mix(full)).concat(mix(rest)).slice(0, CATS);
+  return fixed.concat(spread(mix(full)), mix(rest)).slice(0, CATS);
 }
 
 /* ---------- Building the board ---------- */
 function buildBoard() {
   const weak = new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.q)));
   S.cats = pickTopics(topicsOf(bank.active())).map(t => {
-    // Row k (100, 200, 300 points) takes a question tagged Difficulty 1, 3 or 5. Untagged questions get a
-    // level from their place in the topic's estimated order. If a row has no question at its
-    // level, the nearest level is used, then any question left. Among the questions that fit a
+    // Row k (100, 200, 300 points) takes a question at tier 1, 2 or 3 (see TIERS in bank.js;
+    // questions without a Tier line get one from their wording). If a row has no question at its
+    // tier, the nearest tier is used, then any question left. Among the questions that fit a
     // row, one a playing team got wrong before is preferred, so weak spots come round again.
-    const untagged = t.qs.filter(q => !q.level).sort((a, b) => bank.estimateLevel(a) - bank.estimateLevel(b));
-    const levelOf = q => q.level || 1 + Math.floor(untagged.indexOf(q) * 5 / untagged.length);
+    const levelOf = q => bank.tierOf(q);
     const values = VALUES.slice(0, ROWS);
-    const want = k => 1 + Math.round(k * 4 / (ROWS - 1));   // three rows: levels 1, 3 and 5
+    const want = k => k + 1;
     const left = t.qs.slice();
     const rnd = a => a[Math.floor(CGB.random() * a.length)];
     const take = (k, exact) => {

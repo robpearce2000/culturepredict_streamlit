@@ -11,20 +11,23 @@ CGB.bank = (() => {
   const store = CGB.store;
 
   /* The plain-text format: Subject / Topic lines apply until changed; Q: then A:.
-     An optional "Difficulty: 1-5" line (or "Level:") applies to the questions after it,
-     until the next Difficulty or Topic line. Older games simply ignore it. */
+     An optional "Tier: 1", "Tier: 2" or "Tier: 3" line applies to the questions after it, until
+     the next Tier or Topic line (see TIERS below). Sets written for earlier versions used
+     "Difficulty: 1-5" (or "Level:"): 1-2 read as tier 1, 3 as tier 2 and 4-5 as tier 3. */
+  const fromLevel = n => n <= 2 ? 1 : n === 3 ? 2 : 3;
   function parse(text) {
     const out = [];
-    let subject = '', topic = '', level = 0, pendingQ = null;
+    let subject = '', topic = '', tier = 0, pendingQ = null;
     String(text || '').split('\n').forEach(line => {
       const t = line.trim();
-      if (/^subject:/i.test(t)) { subject = t.replace(/^subject:/i, '').trim(); level = 0; }
-      else if (/^topic:/i.test(t)) { topic = t.replace(/^topic:/i, '').trim(); level = 0; }
-      else if (/^(difficulty|level):/i.test(t)) { const n = parseInt(t.replace(/^(difficulty|level):/i, ''), 10); level = n >= 1 && n <= 5 ? n : 0; }
+      if (/^subject:/i.test(t)) { subject = t.replace(/^subject:/i, '').trim(); tier = 0; }
+      else if (/^topic:/i.test(t)) { topic = t.replace(/^topic:/i, '').trim(); tier = 0; }
+      else if (/^tier:/i.test(t)) { const n = parseInt(t.replace(/^tier:/i, ''), 10); tier = n >= 1 && n <= 3 ? n : 0; }
+      else if (/^(difficulty|level):/i.test(t)) { const n = parseInt(t.replace(/^(difficulty|level):/i, ''), 10); tier = n >= 1 && n <= 5 ? fromLevel(n) : 0; }
       else if (/^q:/i.test(t)) pendingQ = t.replace(/^q:/i, '').trim();
       else if (/^a:/i.test(t) && pendingQ) {
         const q = { subject: subject || 'Custom', topic: topic || 'General', q: pendingQ, a: t.replace(/^a:/i, '').trim() };
-        if (level) q.level = level;
+        if (tier) q.tier = tier;
         out.push(q);
         pendingQ = null;
       }
@@ -41,25 +44,31 @@ CGB.bank = (() => {
         lines.push('Subject: ' + q.subject, 'Topic: ' + q.topic);
         s = q.subject; t = q.topic; l = 0;
       }
-      if ((q.level || 0) !== l && q.level) { lines.push('Difficulty: ' + q.level); }
-      l = q.level || l;
+      if ((q.tier || 0) !== l && q.tier) { lines.push('Tier: ' + q.tier); }
+      l = q.tier || l;
       lines.push('Q: ' + q.q, 'A: ' + q.a);
     });
     return lines.join('\n');
   }
-  /* A rough difficulty score for questions without a Difficulty line:
-     longer, explanatory or calculation answers count as harder. */
-  function estimateLevel(q) {
-    if (q.level) return q.level * 10;
-    const words = q.a.split(/\s+/).length;
-    let score = Math.min(words, 24) / 3;
-    if (/\d/.test(q.q) && /\d/.test(q.a)) score += 3;                         // a calculation
-    if (/^(why|explain|how does|how is|how do|describe|what is the difference)/i.test(q.q)) score += 2.5;
-    if (/equation|formula/i.test(q.q)) score += 1.5;
-    if (/true or false|: nervous or hormonal|which is faster|which has longer/i.test(q.q)) score -= 2;
-    if (words <= 2) score -= 1;
-    return score;
+  /* QUESTION TIERS (explained in DECISIONS.md and the Question bank help). A question's tier is
+     set by the most demanding thing it asks, judged the way exam boards build mark schemes:
+     the command word, the assessment objective, and whether it is Higher-tier-only content.
+       1  Recall: one fact, name, term or number. Name, State, Which, What is (a one-word answer).
+       2  Describe and apply: a definition, a process or test and its result, an equation to
+          recall, several facts, or a one-step use of a rule. Describe, Give, What does ... do.
+       3  Explain and extend: a reason (why or how), a comparison, a calculation where the
+          equation isn't given, a new context, or Higher-tier-only content. Explain, Why,
+          Compare, Suggest, Calculate.
+     Questions without a Tier line get one from the same rules, read from the wording. */
+  const TIERS = [{ tier: 1, label: 'Recall' }, { tier: 2, label: 'Describe and apply' }, { tier: 3, label: 'Explain and extend' }];
+  function estimateTier(q) {
+    const Q = q.q, words = q.a.split(/\s+/).length;
+    if (/^(why|explain|suggest|compare|evaluate|justify|predict)\b|how (does|do|is|are|can|did) .* (affect|change|work|help|cause|keep|make|stop|speed)|what is the difference|differences? between|\bcalculate\b/i.test(Q)) return 3;
+    if (/\d/.test(Q) && /\d/.test(q.a) && !/equation|formula/i.test(Q)) return (Q.match(/\d+(\.\d+)?\s*[a-zA-Zµ°%Ω]/g) || []).length >= 2 ? 3 : 2;   // a calculation: from two quantities, or a simpler one
+    if (/^(describe|outline|give|name|state|list) (two|three|four|the (equation|formula|word equation)|an? (equation|formula))\b|equation|formula|^(describe|outline|what does .* do)/i.test(Q) || words > 5) return 2;
+    return 1;
   }
+  const tierOf = q => q.tier || estimateTier(q);
 
   /* Subjects and exam boards. Every subject can hold the teacher's own sets; built-in packs
      exist for the sciences only so far. A pack with a board is shown for that board when the
@@ -93,7 +102,8 @@ CGB.bank = (() => {
   function validQuestion(q) { return q && typeof q.q === 'string' && typeof q.a === 'string' && q.q.trim() && q.a.trim(); }
   function cleanQuestion(q) {
     const c = { subject: String(q.subject || 'Custom').slice(0, 80), topic: String(q.topic || 'General').slice(0, 120), q: String(q.q).slice(0, 600), a: String(q.a).slice(0, 600) };
-    const l = parseInt(q.level, 10); if (l >= 1 && l <= 5) c.level = l;
+    const t = parseInt(q.tier, 10), l = parseInt(q.level, 10);    // level: sets saved by earlier versions
+    if (t >= 1 && t <= 3) c.tier = t; else if (l >= 1 && l <= 5) c.tier = fromLevel(l);
     return c;
   }
   function cleanSet(s) {
@@ -333,7 +343,7 @@ CGB.bank = (() => {
   load();
   migrateLegacy();
   return {
-    parse, toText, estimateLevel, all, get, active, setActive, available, summary, addSet, updateSet, deleteSet, setSubjectOf,
+    parse, toText, TIERS, tierOf, estimateTier, all, get, active, setActive, available, summary, addSet, updateSet, deleteSet, setSubjectOf,
     SUBJECTS, BOARDS, subject: () => subject, board: () => board, setSubject, setBoard, subjectNote,
     subjectLabel: k => label(SUBJECTS, k || subject), boardLabel: k => label(BOARDS, k || board),
     logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker, fillSelect,

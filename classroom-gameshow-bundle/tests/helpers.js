@@ -114,10 +114,11 @@ async function playCategoryClash(page, opts) {
   throw new Error('Category Clash did not finish');
 }
 
-/* Play Hex Hunt to the results: shares[q % shares.length] gives the two halves' shares */
+/* Play Hex Hunt to the results: picks[q % picks.length] is the key pressed when marking:
+   '1' or '2' for the half with more right answers, 'n' for Neither */
 async function playHexHunt(page, opts) {
   opts = opts || {};
-  const shares = opts.shares || [[60, 30], [20, 70], [50, 50], [0, 0], [80, 40]];
+  const picks = opts.picks || ['1', '2', '1', 'n', '2'];
   const end = Date.now() + (opts.timeout || 200000);
   let q = 0;
   while (Date.now() < end) {
@@ -125,13 +126,7 @@ async function playHexHunt(page, opts) {
     if (s.phase === 'summary') return s;
     if (s.phase === 'board' || s.phase === 'won' || s.round === 'done') await page.keyboard.press('Enter');
     else if (s.round === 'think' || s.round === 'show') await page.keyboard.press('Space');
-    else if (s.round === 'mark') {
-      const [a, b] = shares[q++ % shares.length];
-      await page.keyboard.press('1'); for (let i = 0; i < a / 10; i++) await page.keyboard.press('ArrowRight');
-      await page.keyboard.press('2'); for (let i = 0; i < b / 10; i++) await page.keyboard.press('ArrowRight');
-      await page.keyboard.press('Enter');
-      continue;
-    }
+    else if (s.round === 'mark') { await page.keyboard.press(picks[q++ % picks.length]); continue; }
     await page.waitForTimeout(60);
   }
   throw new Error('Hex Hunt did not finish');
@@ -141,7 +136,7 @@ async function playHexHunt(page, opts) {
 const NAME_INPUT = { 'over-the-edge': 'ote-cname', outpace: 'op-gname', 'category-clash': 'cc-name', 'hex-hunt': 'hh-name' };
 async function setNames(page, game, names) {
   const card = page.locator(`#game-${game} .setup`);
-  const box = card.locator('details.tnames');
+  const box = card.locator('details.tnames').first();   // the first is the team names
   if (!(await box.evaluate(d => d.open))) await box.locator('summary').click();
   for (let i = 0; i < names.length; i++) await page.fill(`#${NAME_INPUT[game]}${i}`, names[i]);
 }

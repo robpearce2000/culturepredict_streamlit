@@ -84,15 +84,22 @@
 .hh-qcard:focus { outline: none; }
 .hh-win { padding-bottom: 92px; }
 
-/* whole class: share of each half correct */
+/* whole class: press the half that had more right answers, or Neither */
 .hh-turn small { display: block; font-family: var(--body); font-weight: 800; font-size: 0.85rem; color: var(--hh-muted); }
-.hh-share { display: grid; gap: 8px; }
+.hh-share { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; }
 .hh-share[hidden] { display: none; }
-.hh-srow { display: grid; grid-template-columns: minmax(120px, 0.9fr) minmax(0, 3fr) 4.2ch; align-items: center; gap: 10px; background: #fff; border: 3px solid var(--line); border-left: 10px solid var(--tc); border-radius: 12px; padding: 6px 10px; }
-.hh-srow.focus { border-color: var(--ink); border-left-color: var(--tc); box-shadow: 0 0 0 3px var(--sun); }
-.hh-sname { font-weight: 900; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.hh-sbtns { display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 3px; }
-.hh-sbtns button { min-height: 36px; border: 2px solid var(--line); background: var(--paper); border-radius: 8px; font-weight: 900; font-size: 0.85rem; color: var(--ink); cursor: pointer; padding: 0; }
-.hh-sbtns button[aria-checked="true"] { background: var(--tc); border-color: var(--ink); color: #fff; }
-.hh-spct { font-family: var(--display); font-weight: 400; font-size: 1.6rem; text-align: right; }
-@media (max-width: 700px) { .hh-srow { grid-template-columns: 1fr auto; } .hh-sbtns { grid-column: 1 / -1; grid-row: 2; } }
+.hh-side { display: grid; justify-items: center; align-content: center; gap: 2px; min-height: 92px; padding: 10px 12px; border: 3px solid var(--ink); border-bottom-width: 7px; border-radius: 16px; background: var(--tc); color: #fff; font: inherit; cursor: pointer; text-align: center; }
+.hh-side b { font-family: var(--display); font-weight: 400; font-size: 1.5rem; line-height: 1.1; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hh-side small { font-weight: 800; font-size: 0.9rem; opacity: 0.95; }
+.hh-side .kbd { background: rgba(255,255,255,0.92); color: var(--ink); }
+.hh-side:hover { filter: brightness(1.06); }
+.hh-side:active { transform: translateY(2px); border-bottom-width: 5px; }
+.hh-side:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
+.hh-side.neither { --tc: #fff; background: #fff; color: var(--ink); min-width: 140px; }
+.hh-side.neither .kbd { background: var(--paper); }
+.hh-side[aria-pressed="true"] { box-shadow: 0 0 0 4px var(--sun); }
+@media (max-width: 700px) { .hh-share { grid-template-columns: 1fr 1fr; } .hh-side.neither { grid-column: 1 / -1; min-height: 56px; } }
+/* the keyboard cursor's hint */
+.hh-boardwrap { position: relative; }
+.hh-curhint { position: absolute; top: 4px; right: 4px; background: rgba(255,255,255,0.92); border: 2px solid var(--sun); border-radius: 999px; padding: 2px 10px; font-weight: 800; font-size: 0.78rem; color: var(--ink); pointer-events: none; }
+.hh-curhint[hidden] { display: none; }

@@ -87,8 +87,9 @@
      o.onUndo()  put the game back as it was before onConfirm
      o.doneHtml() the game's own buttons after marking (optional)
      o.fast      a shorter "show me" (Outpace's Final Sprint)
-     o.marker    optional custom marking (Hex Hunt's percentages): { start(), key(k), values(), hint }
-                 used instead of the team board's ✓ and ✗ */
+     o.marker    optional custom marking (Hex Hunt's two side buttons): { start(), key(k), values(), hint,
+                 instant } used instead of the team board's ✓ and ✗. With instant, the marker's own
+                 buttons confirm straight away (it calls confirm()), so there is no Confirm button */
   CGB.createClassRound = function (o) {
     let phase = 'idle', marks = [], timer = null, left = 0, steps = [], times = {}, undoable = false;
     const prompt = document.createElement('div');
@@ -114,7 +115,7 @@
       const k = (key, label, cls, act) => `<button class="btn ${cls}" type="button" data-cm="${act}">${label} <span class="kbd">${key}</span></button>`;
       if (phase === 'think') o.btnEl.innerHTML = `<div class="cm-hint">Everyone writes an answer on their whiteboard.</div>${k('Space', '3, 2, 1, show me!', 'go', 'show')}`;
       else if (phase === 'show') o.btnEl.innerHTML = '<div class="cm-hint">Boards up!</div>';
-      else if (phase === 'mark' && o.marker) o.btnEl.innerHTML = `<div class="cm-hint">${o.marker.hint}</div><div class="cm-btns">${k('Enter', 'Confirm', 'go', 'confirm')}</div>`;
+      else if (phase === 'mark' && o.marker) o.btnEl.innerHTML = `<div class="cm-hint">${o.marker.hint}</div>${o.marker.instant ? '' : `<div class="cm-btns">${k('Enter', 'Confirm', 'go', 'confirm')}</div>`}`;
       else if (phase === 'mark') o.btnEl.innerHTML = `<div class="cm-hint">Mark each team: tap its panel or press its number, 1 to ${marks.length}.</div>
         <div class="cm-btns">${k('C', '✓ All correct', 'plain', 'all')}${k('W', '✗ All wrong', 'plain', 'none')}${k('Enter', 'Confirm', 'go', 'confirm')}</div>`;
       else if (phase === 'done') o.btnEl.innerHTML = `<div class="cm-btns">${o.doneHtml ? o.doneHtml() : ''}${undoable ? k('U', 'Undo marking', 'plain', 'undo') : ''}</div>`;
@@ -192,8 +193,8 @@
       if (phase === 'think' && (k === ' ' || k === 'enter')) { showMe(); return true; }
       if (phase === 'show' && (k === ' ' || k === 'enter')) { startMarking(); return true; }
       if (phase === 'mark' && o.marker) {
-        if (k === 'enter') { confirm(); return true; }
-        return o.marker.key(k) || k === ' ';
+        if (k === 'enter' && !o.marker.instant) { confirm(); return true; }
+        return o.marker.key(k) || k === ' ' || k === 'enter';
       }
       if (phase === 'mark') {
         if (/^[1-6]$/.test(k)) { toggle(+k - 1); return true; }

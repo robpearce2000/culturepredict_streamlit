@@ -26,21 +26,21 @@ Split the class into 2 to 6 teams with mini whiteboards. No pupil devices are ne
 Two teams play exactly the same way, so it works for a pair or a tutoring session too.
 
 **Over the Edge** (2 to 6 teams)
-Every team that answers correctly wins a counter. Its captain chooses one of four lanes and the counters bounce down the peg board onto a moving 3D shelf, all within a few seconds. Every counter pushed over the edge wins prize money for the team whose counter last landed on that part of the shelf, and star wildcard counters bring bonuses and steals. In the final, the whole class teams up to push the gold jackpot counter over the edge.
+Every team that answers correctly wins a counter. In a random order shown on screen, each captain chooses one of four lanes and the counters bounce down the peg board onto a moving 3D shelf, all within a few seconds. Every counter pushed over the edge wins prize money for the team whose counter landed nearest to it, shared fairly between the teams, and star wildcard counters bring bonuses and steals. In the final, the whole class teams up to push the gold jackpot counter over the edge.
 
 **Outpace** (the whole class as one runner, 2 to 6 teams)
 The class votes on a deal with one, two or three fingers, then answers its way home before the Hunter catches it. If at least half the teams are right, the class moves a step; if not, the Hunter gains. Bigger deals give the Hunter a shorter gap. After one Deal Round, everyone faces a 60-second Final Sprint, with every correct team adding a step.
 
 **Category Clash** (2 to 6 teams)
-A board of four categories and points values from 100 to 300, for revision across several topics at once. Teams take turns to pick a tile and every team answers: the choosing team wins full points, every other correct team wins half, and wrong answers lose nothing. Harder questions are worth more and one hidden star tile is worth double.
+A board of four topics from your subject and points values from 100 to 300, for revision across several topics at once. Choose the topics or let the game mix them. Every built-in question is tagged by tier (recall, describe and apply, explain and extend), so the 100, 200 and 300 rows really do get harder. Teams take turns to pick a tile and every team answers: the choosing team wins full points, every other correct team wins half, and wrong answers lose nothing. Harder questions are worth more and one hidden star tile is worth double.
 
 **Hex Hunt** (two halves of the class)
-A tactical race across a board of lettered hexagons. Each letter is the first letter of the answer. Both halves of the class answer every question; the half with the bigger share of correct answers claims the hexagon and picks the next one. The first half to link its two edges wins the round.
+A tactical race across a board of lettered hexagons. Each letter is the first letter of the answer. Both halves of the class answer every question; you press the half with more right answers (or Neither) and it claims the hexagon and picks the next one. The first half to link its two edges wins the round.
 
 **One question bank for every game**
 - Choose your subject (Biology, Chemistry, Physics, Combined Science, Maths, English, History or Geography) and exam board (AQA or Edexcel) on the menu; every game uses that subject's sets
-- 191 AQA-style GCSE Combined Science questions across Biology, Chemistry and Physics, plus a 61-question Homeostasis lesson set
-- Built-in packs are science only for now; add your own sets for any subject in seconds by pasting simple text (Subject, Topic, Q, A). Add an optional Difficulty line to set the points in Category Clash
+- 194 AQA-style GCSE Combined Science questions across Biology, Chemistry and Physics, plus a 63-question Homeostasis lesson set
+- Built-in packs are science only for now; add your own sets for any subject in seconds by pasting simple text (Subject, Topic, Q, A). Add an optional Tier line to set the points in Category Clash
 - Wrong answers are saved for each team, and questions from their weak topics come round again more often in every game
 - Save a backup file to move your sets and history to another computer
 

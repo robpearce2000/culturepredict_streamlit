@@ -121,20 +121,16 @@ async function until(page, fn, ms, arg) {
   await page.click('[data-play="hex-hunt"]');
   await page.waitForTimeout(600);
   await page.click('#hh-startBtn');
-  const hexMoves = [[[0, 1], [7, 3]], [[1, 0], [2, 8]], [[1, 2], [9, 4]], [[2, 1], [3, 7]]];
-  for (const [[c, r], [a, b]] of hexMoves) {
+  const hexMoves = [[[0, 1], '1'], [[1, 0], '2'], [[1, 2], '1'], [[2, 1], '2']];
+  for (const [[c, r], side] of hexMoves) {
     await page.locator(`#hh-board .hh-hex[data-c="${c}"][data-r="${r}"]`).click();
     await page.keyboard.press('Space');
     await until(page, () => CGB.games['hex-hunt'].state().round === 'mark', 15000);
-    await page.keyboard.press('1'); for (let i = 0; i < a; i++) await page.keyboard.press('ArrowRight');
-    await page.keyboard.press('2'); for (let i = 0; i < b; i++) await page.keyboard.press('ArrowRight');
-    await page.keyboard.press('Enter'); await page.keyboard.press('Enter');
+    await page.keyboard.press(side); await page.keyboard.press('Enter');
   }
   await page.locator('#hh-board .hh-hex[data-c="3"][data-r="0"]').click();
   await page.keyboard.press('Space');
   await until(page, () => CGB.games['hex-hunt'].state().round === 'mark', 15000);
-  await page.keyboard.press('1'); for (let i = 0; i < 8; i++) await page.keyboard.press('ArrowRight');
-  await page.keyboard.press('2'); for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(400);
   await page.screenshot({ path: path.join(OUT, 'hex-hunt.png') });
   const hhShot = await page.screenshot({ type: 'jpeg', quality: 88 });
