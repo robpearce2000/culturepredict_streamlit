@@ -3,7 +3,7 @@
  * Makes the Tes listing images from the built bundle (run `node build.js` first):
  *   dist/listing/cover.png                1600×1000  wordmark, mascot and all four games
  *   dist/listing/over-the-edge.png        1920×1080  whole-class game, six teams
- *   dist/listing/outpace.png              1920×1080  whole-class game, six groups
+ *   dist/listing/outpace.png              1920×1080  whole-class game, six teams
  *   dist/listing/category-clash.png       1920×1080  whole-class game, six teams
  *   dist/listing/hex-hunt.png             1920×1080  whole-class game, two halves
  *   dist/listing/question-bank.png        1920×1080  the shared question bank
@@ -30,9 +30,6 @@ async function until(page, fn, ms, arg) {
   const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
   const page = await ctx.newPage();
   await page.goto(URL);
-  await page.waitForFunction(() => window.CGB && CGB.app);
-  await page.evaluate(() => { CGB.store.setJSON('names', ['Amira', 'Josh']); });
-  await page.reload();
   await page.waitForFunction(() => window.CGB && CGB.app);
   await page.waitForTimeout(1500);
 
@@ -64,7 +61,7 @@ async function until(page, fn, ms, arg) {
   await page.screenshot({ path: path.join(OUT, 'question-bank.png') });
   await page.keyboard.press('Escape');
 
-  // Every game in whole-class mode with six teams: what schools buy it for
+  // Every game with six teams (two halves in Hex Hunt): what schools buy it for
   await page.evaluate(() => CGB.store.setJSON('teams', ['Owls', 'Foxes', 'Hawks', 'Otters', 'Badgers', 'Wolves']));
   const markRound = async (id, keys) => {
     await page.keyboard.press('Space');
@@ -76,9 +73,7 @@ async function until(page, fn, ms, arg) {
   // Over the Edge: five teams right, their captains' counters dropping in team colours
   await page.click('[data-play="over-the-edge"]');
   await page.waitForTimeout(1500);
-  await page.click('#ote-segMode button[data-v="class"]');
   await page.click('#ote-segTeams button[data-v="6"]');
-  await page.click('#ote-segTimer button[data-v="0"]');
   await page.click('#ote-startBtn');
   await page.waitForTimeout(3500);
   await markRound('over-the-edge', ['c', '4']);
@@ -92,9 +87,7 @@ async function until(page, fn, ms, arg) {
   // Outpace: the whole class as one runner, four of six groups right
   await page.click('[data-play="outpace"]');
   await page.waitForTimeout(1000);
-  await page.click('#op-segMode button[data-v="class"]');
   await page.click('#op-segGroups button[data-v="6"]');
-  await page.click('#op-segTimer button[data-v="0"]');
   await page.click('#op-startBtn');
   await page.keyboard.press('2');
   await page.waitForTimeout(1200);
@@ -107,10 +100,7 @@ async function until(page, fn, ms, arg) {
   // Category Clash: six teams part-way through a board, a question just marked
   await page.click('[data-play="category-clash"]');
   await page.waitForTimeout(600);
-  await page.click('#cc-segMode button[data-v="class"]');
   await page.click('#cc-segTeams button[data-v="6"]');
-  await page.click('#cc-segSession button[data-v="plenary"]');
-  await page.click('#cc-segTimer button[data-v="0"]');
   await page.click('#cc-startBtn');
   const ccMarks = [[0, 0, ['1', '2', '3']], [1, 0, ['c']], [2, 1, ['2', '5']], [3, 0, ['c', '6']], [0, 1, ['1', '3', '4', '5']], [4, 2, ['w', '2']]];
   for (const [c, r, keys] of ccMarks) {
@@ -130,9 +120,6 @@ async function until(page, fn, ms, arg) {
   await page.evaluate(() => CGB.store.setJSON('teams', ['Left half', 'Right half']));
   await page.click('[data-play="hex-hunt"]');
   await page.waitForTimeout(600);
-  await page.click('#hh-segMode button[data-v="class"]');
-  await page.click('#hh-segSession button[data-v="starter"]');
-  await page.click('#hh-segTimer button[data-v="0"]');
   await page.click('#hh-startBtn');
   const hexMoves = [[[0, 2], [7, 3]], [[2, 0], [2, 8]], [[1, 2], [9, 4]], [[2, 1], [3, 7]], [[3, 2], [8, 6]], [[1, 4], [4, 9]]];
   for (const [[c, r], [a, b]] of hexMoves) {

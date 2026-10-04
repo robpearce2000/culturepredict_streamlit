@@ -15,7 +15,6 @@
 .hh-names label { display: block; background: #fff; border-radius: 12px; padding: 7px 12px; border: 2px solid var(--line); border-bottom: 6px solid var(--tc); }
 .hh-names span { font-size: 0.8rem; font-weight: 900; color: var(--ink-soft); }
 .hh-names input { width: 100%; background: transparent; border: none; color: var(--ink); font-weight: 900; font-size: 1.2rem; padding: 2px 0; font-family: var(--body); }
-.hh-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
 /* Board */
 .hh-play { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px 16px; }
@@ -74,21 +73,13 @@
 /* Results */
 .hh-sum { max-width: 900px; }
 .hh-sum h2 { font-family: var(--display); font-weight: 400; font-size: 2.6rem; margin: 0 0 10px; text-align: center; }
-.hh-sum-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
-.hh-sum-p { background: #fff; border: 2px solid var(--line); border-top: 8px solid var(--tc); border-radius: 14px; padding: 10px 14px; min-width: 0; }
-.hh-sum-p h3 { font-family: var(--display); font-weight: 400; font-size: 1.5rem; margin: 0; overflow-wrap: anywhere; }
-.hh-sub { font-size: 0.8rem; font-weight: 900; color: var(--teal-deep); margin: 10px 0 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-.hh-missed { font-size: 0.9rem; padding: 6px 0; border-bottom: 1px dashed var(--line); line-height: 1.4; }
-.hh-missed .a { display: block; color: #064442; font-weight: 900; }
-.hh-trow { display: flex; justify-content: space-between; gap: 8px; font-size: 0.9rem; font-weight: 800; padding: 3px 0; }
-.hh-trow span:last-child { color: var(--no); white-space: nowrap; }
-.hh-none { color: var(--ink-soft); font-style: italic; font-size: 0.9rem; }
+
 .hh-sum-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
 
 @media (max-width: 900px) {
   .hh-head { padding-left: 0; padding-top: 52px; }
 }
-@media (max-width: 560px) { .hh-names, .hh-two { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .hh-names { grid-template-columns: 1fr; } }
 
 .hh-qcard:focus { outline: none; }
 .hh-win { padding-bottom: 92px; }

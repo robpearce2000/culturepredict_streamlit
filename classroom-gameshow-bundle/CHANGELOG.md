@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.4.0 – Simpler setup, subject choice and host menu (October 2026)
+
+### New
+- **Choose your subject first.** The menu now has a subject choice (Biology, Chemistry, Physics, Combined Science, Maths, English, History, Geography), an exam board choice (AQA or Edexcel) and the question set to use. Every game and the Question bank show only that subject's sets. All three are remembered.
+- Subjects without a built-in pack yet say so and take your own sets. Your own sets now belong to a subject (sets made before this version show under every subject until you give them one).
+- **Customise the host** from the menu, right under Marty, with a live preview. Changes apply in every game.
+
+### Changed
+- **Every setup card asks only for the number of teams.** Team names are behind "Edit team names", and the card shows the questions in use with a link back to the menu.
+- **One set of rules in every game:** every team answers every question, for 2 to 6 teams. The Whole class / Small group switch is gone; two teams play the same way, which suits a pair or a tutoring session.
+- Fixed settings, chosen for about 20 minutes each: a 20-second countdown before "show me"; Over the Edge 14 questions plus an 8-question final with the jackpot at Normal; Outpace two Deal Rounds and the Final Sprint; Category Clash a 5 × 5 board with one star tile; Hex Hunt one round on a 6 × 6 board.
+- Questions from topics the playing teams got wrong before now come up a little more often automatically (the checkbox has gone).
+- Outpace says "teams" rather than "groups", and the Final Sprint shows the steps so far against the target.
+- The menu's game descriptions and the teacher guide describe the class rules.
+
+### Removed
+- The two-team turn-taking versions of each game: steals and penalties in Category Clash, buzzing in and best of three in Hex Hunt, each team's own deal and passes in Outpace, and Over the Edge's single-team turns, score cards and event feed.
+
+### Testing
+- New tests for the simple setup cards, the subject and exam board choice and the host menu on the main screen. All gameplay tests now play the class rules. The screenshot sweep shows every game with six teams (two halves in Hex Hunt), the host menu, and a subject with no built-in pack.
+
+
 ## 1.3.0 – Class mode (October 2026)
 
 ### New
