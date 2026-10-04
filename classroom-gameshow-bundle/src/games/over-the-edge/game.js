@@ -1126,7 +1126,16 @@ function renderQuestion() {
   $('qAnswer').textContent = q.a;
   $('qAnswer').classList.toggle('show', G.answerShown);
 }
+// on a short panel (portrait tablets) bring the new step's controls into view once, when the step changes
+let shownStep = '';
 function renderActions() {
+  drawActions();
+  const key = G.step + ':' + G.laneQueue.length, panel = $('actions').parentElement;
+  if (key === shownStep) return;
+  shownStep = key;
+  if (G.step !== 'ask' && panel.scrollHeight > panel.clientHeight + 4) $('actions').scrollIntoView({ block: 'nearest' });
+}
+function drawActions() {
   const a = $('actions');
   a.innerHTML = '';
   const add = html => { const d = document.createElement('div'); d.innerHTML = html; while (d.firstChild) a.appendChild(d.firstChild); };
