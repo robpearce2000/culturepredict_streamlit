@@ -102,7 +102,7 @@ async function until(page, fn, ms, arg) {
   await page.waitForTimeout(600);
   await page.click('#cc-segTeams button[data-v="6"]');
   await page.click('#cc-startBtn');
-  const ccMarks = [[0, 0, ['1', '2', '3']], [1, 0, ['c']], [2, 1, ['2', '5']], [3, 0, ['c', '6']], [0, 1, ['1', '3', '4', '5']], [4, 2, ['w', '2']]];
+  const ccMarks = [[0, 0, ['1', '2', '3']], [1, 0, ['c']], [2, 1, ['2', '5']], [3, 0, ['c', '6']], [0, 1, ['1', '3', '4', '5']], [3, 2, ['w', '2']]];
   for (const [c, r, keys] of ccMarks) {
     await page.locator(`#cc-board .cc-tile[data-c="${c}"][data-r="${r}"]`).click();
     await markRound('category-clash', keys);
@@ -121,7 +121,7 @@ async function until(page, fn, ms, arg) {
   await page.click('[data-play="hex-hunt"]');
   await page.waitForTimeout(600);
   await page.click('#hh-startBtn');
-  const hexMoves = [[[0, 2], [7, 3]], [[2, 0], [2, 8]], [[1, 2], [9, 4]], [[2, 1], [3, 7]], [[3, 2], [8, 6]], [[1, 4], [4, 9]]];
+  const hexMoves = [[[0, 1], [7, 3]], [[1, 0], [2, 8]], [[1, 2], [9, 4]], [[2, 1], [3, 7]]];
   for (const [[c, r], [a, b]] of hexMoves) {
     await page.locator(`#hh-board .hh-hex[data-c="${c}"][data-r="${r}"]`).click();
     await page.keyboard.press('Space');
@@ -130,7 +130,7 @@ async function until(page, fn, ms, arg) {
     await page.keyboard.press('2'); for (let i = 0; i < b; i++) await page.keyboard.press('ArrowRight');
     await page.keyboard.press('Enter'); await page.keyboard.press('Enter');
   }
-  await page.locator('#hh-board .hh-hex[data-c="4"][data-r="1"]').click();
+  await page.locator('#hh-board .hh-hex[data-c="3"][data-r="0"]').click();
   await page.keyboard.press('Space');
   await until(page, () => CGB.games['hex-hunt'].state().round === 'mark', 15000);
   await page.keyboard.press('1'); for (let i = 0; i < 8; i++) await page.keyboard.press('ArrowRight');

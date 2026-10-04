@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.1 – Ten-minute games (October 2026)
+
+### Changed
+- **Every game takes 10 minutes at most with a class**, with time for teams to think, talk and write: Over the Edge 6 questions and a 4-question final; Outpace one Deal Round and the Final Sprint; Category Clash 4 categories of 3 questions (100, 200 and 300 points); Hex Hunt one round on a 4 × 4 board.
+- **Over the Edge's jackpot is set for the number of teams**, so the class wins it about half the time whether there are 2 teams or 6.
+- **Outpace's Final Sprint target** is retuned for the shorter game: about half of classes make it, and a bolder deal makes it harder.
+
+
 ## 1.4.0 – Simpler setup, subject choice and host menu (October 2026)
 
 ### New

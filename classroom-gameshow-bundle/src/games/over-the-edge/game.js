@@ -1268,7 +1268,7 @@ function endRound() {
    about half the time, whatever the number of teams (see DECISIONS.md). [units back from
    the edge, weight compared with a counter of its size]; with two teams it starts already
    hanging a little over the edge. */
-const JACKPOT = { 2: [-25, 0.4], 3: [-8, 0.4], 4: [4, 0.4], 5: [8, 0.5], 6: [15, 0.6] };
+const JACKPOT = { 2: [-22, 0.4], 3: [-13, 0.4], 4: [4, 0.4], 5: [11, 0.5], 6: [15, 0.6] };
 let jackpotOverride = null;
 function setupFinal() {
   const [JACKPOT_GAP, JACKPOT_HEAVY] = jackpotOverride || JACKPOT[G.players.length] || JACKPOT[4];
