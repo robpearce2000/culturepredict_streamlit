@@ -15,7 +15,9 @@
 
 .ote-host { position: absolute; right: 1.5%; bottom: 0; height: min(66%, 560px); aspect-ratio: 300 / 440; z-index: 4; pointer-events: none; }
 .ote-host { transition: opacity .25s; }
+.ote-host.growing { transition: opacity .25s, height .45s ease, right .45s ease; }
 .ote-host.away { opacity: 0; }
+.ote-host.nofit { display: none; }   /* no room beside the machine: never cover it */
 .ote-bubble { position: absolute; z-index: 6; min-width: 190px; max-width: min(300px, 40%); background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 18px; padding: 10px 14px 12px; font-weight: 800; font-size: 1.05rem; line-height: 1.3; box-shadow: 0 6px 0 rgba(0,0,0,0.3); transform: translate(-50%, -100%); opacity: 0; transition: opacity .2s; pointer-events: none; }
 .ote-bubble.show { opacity: 1; }
 .ote-bubble.show.muted { opacity: 0; }

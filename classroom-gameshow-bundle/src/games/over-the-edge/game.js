@@ -514,6 +514,78 @@ function makeCoinMesh(kind, owner) {
    THE HOST (shared Showtime mascot) with speech captions
    ========================================================= */
 const host = CGB.createHost2D($('host'), { className: 'host-ote' });
+/* The machine's outline on screen: bottom shelf (with its front edge), lanes, peg board and
+   header sign. The host is placed and sized so he never covers any of it. */
+const machineParts = [lowerShelf, pusher, glass, sign];
+const machineBox = new THREE.Box3(), corner = new THREE.Vector3();
+/* The drawn figure (head, body and arms), in page coordinates */
+function hostRect() {
+  const r = { left: Infinity, right: -Infinity, top: Infinity, bottom: -Infinity };
+  $('host').querySelectorAll('.host-head, .host-body, .host-arm-a, .host-arm-b').forEach(el => {
+    const b = el.getBoundingClientRect(); if (!b.width) return;
+    r.left = Math.min(r.left, b.left); r.right = Math.max(r.right, b.right); r.top = Math.min(r.top, b.top); r.bottom = Math.max(r.bottom, b.bottom);
+  });
+  return r;
+}
+/* Camera shots (the camera eases between them) */
+const CAM = {
+  play: { x: 2.2, y: 8.0, z: 21.5, lx: 2.2, ly: 3.0 },
+  board: { x: 1.2, y: 8.8, z: 20.4, lx: 1.2, ly: 4.0 },
+  jackpot: { x: 1.2, y: 7.0, z: 17.8, lx: 1.2, ly: 1.6 },
+  home: { x: 3.0, y: 7.6, z: 21.5, lx: 3.6, ly: 3.2 }
+};
+const SWAY = 0.35;
+/* Size and place the host in the space to the right of the machine. The machine's
+   right edge is taken as the furthest it reaches in any camera shot (with the sway),
+   and the host's widest pose spans -0.02 to 0.70 of his height from the art's left edge. */
+const FIG_L = 0.02, FIG_R = 0.70, ART_W = 300 / 440;
+let hostFit = { h: 0, hidden: false, machineRight: 0, shot: 'home' }, growTimer = 0;
+function rightEdgeFor(c) {
+  const keep = camera.position.clone(), keepQ = camera.quaternion.clone();
+  let right = 0;
+  [-SWAY, SWAY].forEach(sw => {
+    camera.position.set(c.x + sw, c.y, c.z); camera.lookAt(c.lx, c.ly, 0); camera.updateMatrixWorld();
+    right = Math.max(right, machineRect().right);
+  });
+  camera.position.copy(keep); camera.quaternion.copy(keepQ); camera.updateMatrixWorld();
+  return right;
+}
+/* Fit the host to a camera shot. Shrinking happens at once; growing waits until the
+   camera has eased into the new shot, so he never covers the machine on the way. */
+function fitHost(shot) {
+  const w = wrap.clientWidth, h = wrap.clientHeight;
+  if (!w || !h) return;
+  if (shot) hostFit.shot = shot;
+  const right = rightEdgeFor(CAM[hostFit.shot]);
+  const gapPx = 12, edge = 6;
+  const H = Math.floor(Math.min(h * 0.66, 560, (w - edge - gapPx - right) / (FIG_L + FIG_R)));
+  const apply = () => {
+    hostFit.h = H; hostFit.hidden = H < 140; hostFit.machineRight = right;
+    const el = $('host');
+    el.classList.toggle('nofit', hostFit.hidden);
+    if (hostFit.hidden) return;
+    el.classList.toggle('growing', H > hostFit.prevH);   // shrink instantly, grow smoothly
+    hostFit.prevH = H;
+    el.style.height = H + 'px';
+    el.style.right = Math.ceil(edge + (FIG_R - ART_W) * H) + 'px';
+  };
+  clearTimeout(growTimer);
+  if (!shot || !hostFit.h || H <= hostFit.h) apply(); else growTimer = setTimeout(apply, CGB.settings.reduced() ? 0 : 2200);
+}
+function machineRect() {
+  // each part is projected on its own: one box round them all would pull the top of the
+  // board forward to the shelf's front edge and claim far more of the screen than it uses
+  const w = wrap.clientWidth, h = wrap.clientHeight, r = { left: Infinity, right: -Infinity, top: Infinity, bottom: -Infinity };
+  machineParts.forEach(o => {
+    machineBox.setFromObject(o);
+    for (let i = 0; i < 8; i++) {
+      corner.set(i & 1 ? machineBox.max.x : machineBox.min.x, i & 2 ? machineBox.max.y : machineBox.min.y, i & 4 ? machineBox.max.z : machineBox.min.z).project(camera);
+      const x = (corner.x + 1) / 2 * w, y = (1 - corner.y) / 2 * h;
+      r.left = Math.min(r.left, x); r.right = Math.max(r.right, x); r.top = Math.min(r.top, y); r.bottom = Math.max(r.bottom, y);
+    }
+  });
+  return r;
+}
 function hostGesture(name, ms) { host.gesture(name, ms); }
 let hostCheck = 0;
 function updateHost(force) {
@@ -873,6 +945,7 @@ function resize() {
   // on narrow stages (portrait tablets) drop the picture a little so the header sign clears the menu buttons
   if (w < 900) camera.setViewOffset(w, h, 0, -Math.round(Math.min(64, h * 0.11)), w, h); else camera.clearViewOffset();
   camera.updateProjectionMatrix();
+  fitHost();
 }
 window.addEventListener('resize', resize);
 if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
@@ -893,13 +966,15 @@ CGB.settings.onChange(k => {
 
 function updateCamera(dt, now) {
   const inBoard = drops.length > 0;
-  let t = { x: 2.2, y: 8.0, z: 21.5, lx: 2.2, ly: 3.0 };
-  if (inBoard) t = { x: 1.2, y: 8.8, z: 20.4, lx: 1.2, ly: 4.0 };
-  else if (G.phase === 'final' && G.jackpot && !G.jackpotFell && jackpotProgress() > 0.7) t = { x: 1.2, y: 7.0, z: 17.8, lx: 1.2, ly: 1.6 };
-  else if (G.phase === 'home') t = { x: 3.0, y: 7.6, z: 21.5, lx: 3.6, ly: 3.2 };
+  let t = CAM.play;
+  if (inBoard) t = CAM.board;
+  else if (G.phase === 'final' && G.jackpot && !G.jackpotFell && jackpotProgress() > 0.7) t = CAM.jackpot;
+  else if (G.phase === 'home') t = CAM.home;
+  const shot = Object.keys(CAM).find(k => CAM[k] === t);
+  if (shot !== hostFit.shot) fitHost(shot);
   const k = 1 - Math.exp(-dt * 1.5);
   Object.keys(cam).forEach(key => { cam[key] += (t[key] - cam[key]) * k; });
-  const sway = CGB.settings.reduced() ? 0 : Math.sin(now * 0.00022) * 0.35;
+  const sway = CGB.settings.reduced() ? 0 : Math.sin(now * 0.00022) * SWAY;
   camera.position.set(cam.x + sway, cam.y, cam.z);
   camera.lookAt(cam.lx, cam.ly, 0);
 }
@@ -1388,6 +1463,10 @@ return {
   },
   inProgress: () => G.phase === 'r1' || G.phase === 'final',
   /* used by the automated tests */
+  _layout: () => {
+    const sr = wrap.getBoundingClientRect(), hr = hostRect();
+    return { stage: { w: sr.width, h: sr.height }, machine: machineRect(), machineRight: hostFit.machineRight, hidden: hostFit.hidden, host: { left: hr.left - sr.left, right: hr.right - sr.left, top: hr.top - sr.top, bottom: hr.bottom - sr.top }, away: $('host').classList.contains('away') };
+  },
   _state: () => ({ phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
 };
 }
@@ -1398,6 +1477,7 @@ CGB.registerGame('over-the-edge', {
   enter() { if (game) game.enter(); },
   exit() { if (game) game.exit(); },
   inProgress() { return !!(game && game.inProgress()); },
-  state() { return game && game._state(); }
+  state() { return game && game._state(); },
+  layout() { return game && game._layout(); }
 });
 })();
