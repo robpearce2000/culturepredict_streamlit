@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.2.0 – Pre-launch polish (October 2026)
+
+### Changed
+- **One look for all four games.** Team 1 is always blue ●, Team 2 orange ■, Team 3 purple ▲ and Team 4 teal ◆, in every game, including Hex Hunt's edges. Every screen says "Team". Team names typed in one game fill in the others.
+- **The host is now called Marty Marquee** (a saved default name is updated automatically).
+- **Setup cards fit on screen without scrolling** at 1920×1080, 1366×768 and 768×1024: two columns on wide screens, a "How to play" toggle when space is short, and a Start button that is always in view. Over the Edge's title no longer hides under the Menu bar.
+- **Over the Edge:** the host is sized and placed so he never covers the shelf's front edge, the lanes or the peg board.
+- **Outpace:** Correct and Wrong work at any time and show the answer as you mark, as in the other games; Show answer is still there. The track has a HOME finish post, step numbers and arrows on every tile, the whole track in view, and larger name tags.
+- **Category Clash** fills each row from questions of the matching difficulty, borrowing the nearest level when a topic runs short.
+- Question-set names in the setup cards are short enough to read in full; the question count is in the label.
+- The launcher's "More shows coming soon" strip is fully visible on 1366×768 screens.
+- The file is now `showtime-classroom-gameshows.html`.
+
+### New
+- **Marty in every game:** a small corner host with speech-bubble captions in Outpace, Category Clash and Hex Hunt, at the start, for right and wrong answers, steals, star tiles, round wins and the result. He never covers the board, track, questions or controls.
+- **Every built-in question has a difficulty from 1 to 5** (252 questions, hand-tagged; every topic covers all five levels).
+- A short, friendly line at the foot of each results screen asking teachers to review Showtime on Tes.
+
+### Testing
+- Faster, repeatable tests: seeded randomness, fixed-step physics, test-only shortcuts kept out of the shipped file, low graphics and a smaller window for gameplay tests, full-quality playthroughs before every push, and no rebuild when nothing has changed.
+- New checks: setup cards fit, the host never overlaps the Over the Edge machine, captions never overlap anything, difficulty tags on every built-in question, Category Clash row filling, Outpace marking, the jackpot win, and identical physics on repeat runs.
+
+
 ## 1.1.0 – two new shows and a new-look host (October 2026)
 
 ### New
