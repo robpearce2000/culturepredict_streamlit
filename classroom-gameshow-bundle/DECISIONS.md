@@ -75,9 +75,27 @@ Choices made while building the first edition without the owner available. Each 
 | Small test hooks remain in the shipped file (`CGB.games.<id>.state()` and Outpace `setTime()`). | They let the tests play the games by keyboard and shorten the 60-second sprint; they do nothing unless called. |
 | `dist/` is committed. | It holds the deliverables. |
 
+## Version 1.1: Category Clash, Hex Hunt and the new Pip
+
+| Decision | Reason |
+|---|---|
+| **Names kept as chosen: Category Clash and Hex Hunt.** | Owner's choice. A web search found a small Etsy seller offering a kids' "Category Clash" classroom word game, and a popular daily geography web game called "HexHunt". Neither is a registered mark that I could confirm, but both are in nearby markets, so check before selling. Renaming is cheap: change the `title` in each game's `game.js`, the card in `src/index.html` and the logo in `src/shared/brand.js`. |
+| Neither game copies a TV set: no blue board with gold values, no gold hexagons, no show names, catchphrases or "double" round names. The banned-term check now also covers the two formats' show and presenter names. | Same rule as the first two games: mechanics may stay, branding may not. |
+| Category Clash categories are **topics** from the active question set (4 to 6, chosen automatically across subjects or by the teacher). | Topics already tag every question and drive the weak-topic history, so no new data is needed. |
+| Values are 100 to 500 in five difficulty bands per category. Order comes from an optional `Difficulty:` line, otherwise from an estimate (longer, explanatory and calculation answers count as harder). | The question format has no difficulty field, and tagging 252 built-in questions by hand overnight would be guesswork; the estimate plus an override is honest and quick to correct. |
+| Category Clash turns rotate between teams, rather than the winner picking next. | Fairer for whole-class play with mixed-ability teams. |
+| Steals on by default; wrong-answer penalty off by default. | Keeps every team engaged without negative scores discouraging weaker teams. |
+| Hex Hunt teams link opposite edges of a square hexagon board (5 × 5 or 6 × 6); the hexagon's winner picks next. | Equal-sized classroom teams need an even contest. On a hexagon board one team always connects, so a round can never end without a winner. |
+| Hex Hunt letters come from the answer's first letter, ignoring "a", "an" and "the". Answers starting with a number or symbol, "Any two: ...", or yes/no/true/false are left off the board. | These would make meaningless clues. 148 of the 191 starter-pack questions qualify (53 of 61 in Homeostasis L1), plenty for a 36-hexagon board. |
+| If nobody can answer a hexagon, it gets a fresh question (and possibly a new letter). | Stops a board stalling on a question nobody knows. |
+| Wrong answers in both new games are logged against team names, in the same shared history. | The brief's cross-game tracking works for teams as well as individuals. |
+| **Pip redrawn in 2D (SVG)** instead of improving the 3D model. | A smoothed, cel-shaded 3D version was tried first: it was better than the blocks but still looked like a stiff mannequin, and its outlines disappeared against the dark sets. A flat ink-outlined cartoon matches the Showtime logos, reads clearly from the back of a room and costs no WebGL on the launcher. All customisation options and gestures were kept. |
+| In Over the Edge Pip now stands in front of the 3D set in the bottom-right corner, and fades out when a setup or results card would cover him. | He no longer depends on the camera angle, and never peeks out from behind a card. |
+
 ## Things not done
 
 | Item | Reason |
 |---|---|
 | Manual playtesting on a real interactive whiteboard and in Safari. | Not possible from the build environment; recommended before release. |
+| Hand-checked difficulty levels for the built-in packs. | The automatic estimate orders them sensibly; adding `Difficulty:` lines to `src/shared/packs.js` would make Category Clash values exact. |
 | Trade-mark searches beyond a quick web search. | A formal UK IPO search for "Over the Edge" and "Outpace" in classes 9, 28 and 41 is worth doing before selling. |

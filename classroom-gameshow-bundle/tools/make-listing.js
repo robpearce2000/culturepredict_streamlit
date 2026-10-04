@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /*
  * Makes the Tes listing images from the built bundle (run `node build.js` first):
- *   dist/listing/cover.png                1600×1000  wordmark, mascot and both games
+ *   dist/listing/cover.png                1600×1000  wordmark, mascot and all four games
  *   dist/listing/over-the-edge.png        1920×1080  gameplay screenshot
  *   dist/listing/outpace.png              1920×1080  gameplay screenshot
+ *   dist/listing/category-clash.png       1920×1080  gameplay screenshot
+ *   dist/listing/hex-hunt.png             1920×1080  gameplay screenshot
  *   dist/listing/question-bank.png        1920×1080  the shared question bank
  */
 'use strict';
@@ -89,10 +91,45 @@ async function until(page, fn, ms) {
   const opShot = await page.screenshot({ type: 'jpeg', quality: 88 });
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
 
+  // Category Clash: a board part-way through a three-team game
+  await page.evaluate(() => CGB.store.setJSON('cc.names', ['Owls', 'Foxes', 'Hawks']));
+  await page.click('[data-play="category-clash"]');
+  await page.waitForTimeout(600);
+  await page.click('#cc-segTeams button[data-v="3"]');
+  await page.click('#cc-segCats button[data-v="5"]');
+  await page.click('#cc-startBtn');
+  const ccMoves = ['c', 'c', 'w', 'c', 'c', 'c', 'w'];
+  for (const k of ccMoves) {
+    await page.keyboard.press('Enter');
+    await page.keyboard.press(k);
+    if (k === 'w') await page.keyboard.press('2');
+    await page.keyboard.press('Enter');
+    await page.keyboard.press('ArrowRight');
+  }
+  await page.waitForTimeout(400);
+  await page.screenshot({ path: path.join(OUT, 'category-clash.png') });
+  const ccShot = await page.screenshot({ type: 'jpeg', quality: 88 });
+  await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+
+  // Hex Hunt: both teams part-way across the board
+  await page.evaluate(() => CGB.store.setJSON('hh.names', ['Reds', 'Blues']));
+  await page.click('[data-play="hex-hunt"]');
+  await page.waitForTimeout(600);
+  await page.click('#hh-startBtn');
+  const hexMoves = [['1', [0, 2]], ['2', [2, 0]], ['1', [1, 2]], ['2', [2, 1]], ['1', [3, 2]], ['2', [1, 4]], ['1', [4, 1]]];
+  for (const [team, [c, r]] of hexMoves) {
+    await page.locator(`#hh-board .hh-hex[data-c="${c}"][data-r="${r}"]`).click();
+    await page.keyboard.press(team); await page.keyboard.press('c'); await page.keyboard.press('Enter');
+  }
+  await page.waitForTimeout(400);
+  await page.screenshot({ path: path.join(OUT, 'hex-hunt.png') });
+  const hhShot = await page.screenshot({ type: 'jpeg', quality: 88 });
+  await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+
   // Cover: built in the same page so it uses the bundle's own fonts and artwork
   await page.setViewportSize({ width: 1600, height: 1000 });
   const b64 = buf => 'data:image/' + (buf[0] === 0x89 ? 'png' : 'jpeg') + ';base64,' + buf.toString('base64');
-  await page.evaluate(({ ote, op, mascot }) => {
+  await page.evaluate(({ ote, op, cc, hh, mascot }) => {
     document.body.innerHTML = `
       <div id="cover">
         <svg class="rays" viewBox="0 0 100 100" preserveAspectRatio="none"><g fill="rgba(255,255,255,0.05)"><path d="M50 -10 L30 110 L40 110 Z"/><path d="M50 -10 L55 110 L68 110 Z"/><path d="M50 -10 L80 110 L95 110 Z"/><path d="M50 -10 L5 110 L15 110 Z"/></g></svg>
@@ -101,8 +138,10 @@ async function until(page, fn, ms) {
         <div class="shots">
           <figure class="s1"><img src="${ote}" alt=""><figcaption>${CGB.brand.oteLogo()}</figcaption></figure>
           <figure class="s2"><img src="${op}" alt=""><figcaption>${CGB.brand.opLogo()}</figcaption></figure>
+          <figure class="s3"><img src="${cc}" alt=""><figcaption>${CGB.brand.ccLogo()}</figcaption></figure>
+          <figure class="s4"><img src="${hh}" alt=""><figcaption>${CGB.brand.hhLogo()}</figcaption></figure>
         </div>
-        <div class="chips"><span>2 classroom games</span><span>1 shared question bank</span><span>190+ AQA-style GCSE Combined Science questions</span><span>Works offline</span></div>
+        <div class="chips"><span>4 classroom games</span><span>1 shared question bank</span><span>190+ AQA-style GCSE Combined Science questions</span><span>Works offline</span></div>
       </div>`;
     const st = document.createElement('style');
     st.textContent = `
@@ -112,16 +151,16 @@ async function until(page, fn, ms) {
       #cover .wm { position: absolute; left: 50%; top: 18px; transform: translateX(-50%); width: 820px; }
       #cover .wm svg { width: 100%; height: auto; display: block; }
       #cover .mascot { position: absolute; right: 30px; top: 40px; height: 330px; }
-      #cover .shots { position: absolute; left: 0; right: 0; top: 400px; display: flex; justify-content: center; gap: 46px; }
-      #cover figure { margin: 0; width: 700px; position: relative; }
+      #cover .shots { position: absolute; left: 0; right: 0; top: 452px; display: grid; grid-template-columns: repeat(4, 368px); justify-content: center; gap: 20px; }
+      #cover figure { margin: 0; width: 368px; position: relative; }
       #cover figure img { width: 100%; display: block; border: 6px solid #1B1F3B; border-radius: 20px; box-shadow: 0 12px 0 rgba(0,0,0,0.35); }
-      #cover .s1 { transform: rotate(-2.5deg); } #cover .s2 { transform: rotate(2.5deg); }
-      #cover figcaption { position: absolute; left: 50%; bottom: -70px; transform: translateX(-50%); width: 330px; }
+      #cover .s1, #cover .s3 { transform: rotate(-2.5deg); } #cover .s2, #cover .s4 { transform: rotate(2.5deg); }
+      #cover figcaption { position: absolute; left: 50%; bottom: -96px; transform: translateX(-50%); width: 250px; }
       #cover figcaption svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 6px 0 rgba(0,0,0,0.35)); }
       #cover .chips { position: absolute; left: 0; right: 0; bottom: 26px; display: flex; justify-content: center; gap: 14px; }
       #cover .chips span { background: #FFF9F0; color: #1B1F3B; border: 4px solid #1B1F3B; border-radius: 999px; padding: 8px 18px; font-weight: 900; font-size: 22px; }`;
     document.head.appendChild(st);
-  }, { ote: b64(oteShot), op: b64(opShot), mascot: b64(mascot) });
+  }, { ote: b64(oteShot), op: b64(opShot), cc: b64(ccShot), hh: b64(hhShot), mascot: b64(mascot) });
   await page.waitForTimeout(800);
   await page.screenshot({ path: path.join(OUT, 'cover.png') });
   await browser.close();

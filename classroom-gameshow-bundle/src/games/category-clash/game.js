@@ -191,6 +191,7 @@ function openTile(c, r) {
   if (t.star) SFX.star(); else SFX.open();
   startTimer();
   renderQButtons();
+  $('qcard').focus({ preventScroll: true });   // keys now go to the question, not the board behind it
 }
 function tileOpen() { return S.cats[S.open.c].tiles[S.open.r]; }
 function points() { const t = tileOpen(); return t.star ? t.value * 2 : t.value; }

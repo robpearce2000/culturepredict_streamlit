@@ -514,9 +514,22 @@ function makeCoinMesh(kind, owner) {
    ========================================================= */
 const host = CGB.createHost2D($('host'), { className: 'pip-ote' });
 function hostGesture(name, ms) { host.gesture(name, ms); }
-function updateHost() {
+let hostCheck = 0;
+function updateHost(force) {
   host.setRest((G.step === 'chute' || G.step === 'dropping') ? 'present' : 'idle');
   host.setLook(drops.length || transits.length || G.step === 'dropping' ? 'left' : '');
+  // step aside when the setup or results card would cover him
+  const now = performance.now();
+  if (!force && now - hostCheck < 150) return;
+  hostCheck = now;
+  const hr = $('host').getBoundingClientRect();
+  let covered = false;
+  ['home', 'summary'].forEach(id => {
+    const ov = $(id); if (ov.classList.contains('hidden')) return;
+    const c = ov.querySelector('.ote-card').getBoundingClientRect();
+    if (c.right > hr.left + 8 && c.left < hr.right - 8 && c.bottom > hr.top && c.top < hr.bottom) covered = true;
+  });
+  $('host').classList.toggle('away', covered);
 }
 
 /* Speech bubble */
@@ -555,17 +568,20 @@ function placeBubble() {
   const rel = el => { const r = el.getBoundingClientRect(); return { l: r.left - base.left, t: r.top - base.top, r: r.right - base.left, b: r.bottom - base.top }; };
   const hits = (o, yy) => !(x + bw / 2 < o.l || x - bw / 2 > o.r || yy < o.t || yy - bh > o.b);
   let hidden = false;
+  // things the bubble must not cover: the round banner and Pip's own head
+  const avoid = [];
   const banner = $('banner');
   if (banner.classList.contains('show')) {
     const parts = [banner.querySelector('.verdict'), banner.querySelector('.detail')].filter(el => el.offsetParent).map(rel);
-    if (parts.length) {
-      const o = { l: Math.min(...parts.map(p => p.l)) - 8, t: Math.min(...parts.map(p => p.t)) - 8, r: Math.max(...parts.map(p => p.r)) + 8, b: Math.max(...parts.map(p => p.b)) + 8 };
-      if (hits(o, y)) {
-        if (o.b + bh <= h - 10) y = o.b + bh;          // move below the banner
-        else if (o.t - bh >= 60) y = o.t;               // or above it
-        else hidden = true;
-      }
-    }
+    if (parts.length) avoid.push({ l: Math.min(...parts.map(p => p.l)) - 8, t: Math.min(...parts.map(p => p.t)) - 8, r: Math.max(...parts.map(p => p.r)) + 8, b: Math.max(...parts.map(p => p.b)) + 8 });
+  }
+  const pipEl = $('host').querySelector('.pip-body');   // his whole figure, head included
+  if (pipEl && !$('host').classList.contains('away')) { const r = rel(pipEl); avoid.push({ l: r.l, t: r.t + 4, r: r.r, b: r.b }); }
+  const clear = yy => yy - bh >= 56 && yy <= h - 10 && !avoid.some(o => hits(o, yy));
+  if (!clear(y)) {
+    // try just above or below each obstacle, nearest first
+    const options = avoid.flatMap(o => [o.t - 2, o.b + bh + 2]).filter(clear).sort((p, q) => Math.abs(p - y) - Math.abs(q - y));
+    if (options.length) y = options[0]; else hidden = true;
   }
   ['home', 'summary'].forEach(id => {
     const ov = $(id);
@@ -641,13 +657,24 @@ function clearLabels() { labels.forEach(L => L.el.remove()); labels.length = 0; 
 const tmpV = new THREE.Vector3();
 function updateLabels(dt) {
   const w = wrap.clientWidth, h = wrap.clientHeight;
+  // keep labels clear of Pip: anything that would land on him moves to his left
+  const body = labels.length && !$('host').classList.contains('away') ? $('host').querySelector('.pip-body') : null;
+  const base = body ? wrap.getBoundingClientRect() : null;
+  const hb = body ? body.getBoundingClientRect() : null;
   for (let i = labels.length - 1; i >= 0; i--) {
     const L = labels[i]; L.t += dt;
     const k = L.t / L.life;
     if (k >= 1) { L.el.remove(); labels.splice(i, 1); continue; }
     tmpV.copy(L.pos); tmpV.y += k * 1.4; tmpV.project(camera);
-    L.el.style.left = ((tmpV.x + 1) / 2 * w) + 'px';
-    L.el.style.top = ((1 - tmpV.y) / 2 * h) + 'px';
+    let lx = (tmpV.x + 1) / 2 * w;
+    const ly = (1 - tmpV.y) / 2 * h;
+    if (hb) {
+      const half = L.el.offsetWidth / 2 + 6, hh = L.el.offsetHeight / 2;
+      const left = hb.left - base.left, top = hb.top - base.top, bottom = hb.bottom - base.top;
+      if (lx + half > left && ly + hh > top && ly - hh < bottom) lx = left - half;
+    }
+    L.el.style.left = lx + 'px';
+    L.el.style.top = ly + 'px';
     L.el.style.opacity = k < 0.15 ? k / 0.15 : k > 0.7 ? (1 - k) / 0.3 : 1;
   }
 }
@@ -1181,6 +1208,7 @@ function showSummary() {
     <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change settings</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>`;
   $('summary').classList.remove('hidden');
   clearLabels();
+  updateHost(true);
   $('againBtn').onclick = () => startGame();
   $('homeBtn').onclick = () => goHome();
   $('menuBtn2').onclick = () => CGB.app.requestLauncher();
@@ -1195,6 +1223,7 @@ function goHome() {
   dropTimers.forEach(clearTimeout); dropTimers = [];
   $('summary').classList.add('hidden');
   $('home').classList.remove('hidden');
+  updateHost(true);
   G.phase = 'home'; G.step = null; G.q = null; G.attract = true;
   $('roundName').textContent = 'Ready'; $('qCount').textContent = '';
   hideBanner(); clearLabels();
@@ -1345,6 +1374,7 @@ return {
     applyQuality();
     lastT = performance.now();
     rafId = requestAnimationFrame(loop);
+    updateHost(true);
     if (G.phase === 'home') {
       setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! I'm ${CGB.hostCfg.name || 'your host'}. Set up the game and let's play.`, 'present', 1800); }, 700);
       $('startBtn').focus();

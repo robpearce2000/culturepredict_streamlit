@@ -6,7 +6,7 @@
    blocked, full or unavailable.
    ========================================================= */
 window.CGB = window.CGB || {};
-CGB.VERSION = '1.0.0';
+CGB.VERSION = '1.1.0';
 CGB.store = (() => {
   const PREFIX = 'cgb.';
   let ok = true;

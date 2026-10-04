@@ -1,6 +1,6 @@
 # Showtime: Classroom Gameshows
 
-Two 3D revision quiz games for the front of the classroom, **Over the Edge** and **Outpace**, packaged as one offline HTML file with a shared launcher, a shared question bank and a host mascot.
+Four revision quiz games for the front of the classroom, **Over the Edge**, **Outpace**, **Category Clash** and **Hex Hunt**, packaged as one offline HTML file with a shared launcher, a shared question bank and a host mascot.
 
 - Product: [`dist/classroom-gameshow-bundle.html`](dist/classroom-gameshow-bundle.html). Double-click it: no server, no internet connection.
 - Teacher guide: [`dist/teacher-guide.pdf`](dist/teacher-guide.pdf)
@@ -13,20 +13,22 @@ Two 3D revision quiz games for the front of the classroom, **Over the Edge** and
 src/
   index.html                 launcher shell, modals; build markers pull everything else in
   fonts/                     Lilita One and Nunito (woff2, SIL OFL) + fonts.css + licences
-  vendor/                    three.js r128 and the post-processing scripts both games use
+  vendor/                    three.js r128 and the post-processing scripts used by the 3D games
   shared/
     storage.js               localStorage wrapper (every call in try/catch; memory fallback)
     settings.js              sound, text size, reduced motion, graphics quality
     packs.js                 built-in question packs in the plain-text format
     bank.js                  question bank: sets, active set, picker, wrong-answer history, backup
     sfx.js                   Web Audio synthesised sound effects (no audio files)
-    host.js                  the customisable host/mascot (Three.js)
+    host.js                  Professor Pip, the customisable 2D (SVG) host and mascot
     brand.js                 wordmark, game logos and launcher art, drawn as SVG
     ui.css                   shared UI kit: tokens, buttons, panels, score cards, banners, modals, launcher
     app.js                   launcher, routing (#over-the-edge, #outpace), bank manager, settings, about
   games/
     over-the-edge/           game.html, game.css, game.js
     outpace/                 game.html, game.css, game.js
+    category-clash/          game.html, game.css, game.js (2D, DOM)
+    hex-hunt/                game.html, game.css, game.js (2D, SVG)
 build.js                     makes the single file
 docs/teacher-guide.html      source of the PDF guide
 tools/                       listing images, guide PDF, banned-term and contrast checks
@@ -52,7 +54,7 @@ For development, edit files in `src/`, run `node build.js` and refresh the dist 
 ```bash
 npm install                       # Playwright test runner only
 npm test                          # build + all browser tests (about 10 minutes with software rendering)
-npx playwright test tests/bundle.spec.js tests/bank.spec.js    # the functional tests only
+npx playwright test tests/bundle.spec.js tests/bank.spec.js tests/boardgames.spec.js    # the functional tests only
 node tools/make-listing.js        # dist/listing/*.png (and docs/mascot.png for the guide)
 node tools/make-guide.js          # dist/teacher-guide.pdf
 node tools/check-banned.js        # searches dist, guide and listing text for terms we must not use
@@ -70,7 +72,7 @@ Q: What type of bonding is in sodium chloride?
 A: Ionic
 ```
 
-Subject and Topic apply until changed. This is the same format both original games used, so existing sets paste straight in.
+Subject and Topic apply until changed. An optional `Difficulty: 1`–`5` line sets Category Clash points for the questions below it. This is the same format the original games used, so existing sets paste straight in.
 
 ## Data and privacy
 

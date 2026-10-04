@@ -179,7 +179,7 @@ CGB.createHost2D = function (container, opts) {
     talk(ms) { wrap.classList.add('talking'); clearTimeout(talkTimer); talkTimer = setTimeout(() => wrap.classList.remove('talking'), ms); },
     /* top-centre of the head, in page coordinates, for placing a speech bubble */
     headPoint() {
-      const f = wrap.querySelector('.pip-face'); if (!f) return null;
+      const f = wrap.querySelector('.pip-head'); if (!f) return null;   // includes the hair
       const r = f.getBoundingClientRect();
       if (!r.width) return null;
       return { x: r.left + r.width / 2, y: r.top, w: r.width };

@@ -25,7 +25,7 @@
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .card { background: var(--paper); border: 2px solid var(--line); border-radius: 12px; padding: 8px 11px; }
   .card h3 { margin-top: 0; }
-  img.shot { width: 100%; height: 150px; object-fit: cover; object-position: top left; border: 2px solid var(--ink); border-radius: 8px; display: block; margin: 3px 0 5px; }
+  img.shot { width: 100%; height: 108px; object-fit: cover; object-position: top left; border: 2px solid var(--ink); border-radius: 8px; display: block; margin: 3px 0 5px; }
   table { width: 100%; border-collapse: collapse; font-size: 8.6pt; break-inside: avoid; margin-bottom: 6px; }
   th, td { text-align: left; padding: 2px 5px; border-bottom: 1px solid var(--line); vertical-align: top; }
   th { background: var(--raised); font-weight: 900; }
@@ -44,27 +44,23 @@
   <div class="hero">
     <div>
       <div id="wm"></div>
-      <div class="sub">Teacher guide · first edition</div>
-      <p>Two 3D revision games for the front of the classroom, inspired by classic TV quiz formats. They share one question bank and run from a single file, with no internet connection, logins or installs.</p>
+      <div class="sub">Teacher guide · version 1.1</div>
+      <p>Four revision games for the front of the classroom, inspired by classic TV quiz formats. They share one question bank and run from a single file, with no internet connection, logins or installs.</p>
     </div>
     <img id="mascot" src="mascot.png" alt="" style="width:100%">
   </div>
 
   <h2>What's in Showtime</h2>
   <div class="two">
-    <div class="card">
-      <h3>Over the Edge</h3>
-      <p>Two players take turns to answer. A correct answer wins a counter: choose a lane from 1 to 4 and watch it bounce down the pegs onto the moving shelf. Every counter pushed over the front edge wins £100. In the final, the players team up to push the gold jackpot counter over the edge for £5,000.</p>
-    </div>
-    <div class="card">
-      <h3>Outpace</h3>
-      <p>In the Deal Round each player picks a deal (a bigger prize gives the Hunter a shorter gap) and answers their way home before being caught. Then the pair face a 60-second Final Sprint: +1 for each right answer, −1 for each wrong one, against a target set by their pot.</p>
-    </div>
+    <div class="card"><h3>Over the Edge · 2 players or teams</h3><p>A correct answer wins a counter to drop down a lane onto a moving shelf. Counters pushed over the front edge win £100. In the final, both team up to push the gold jackpot counter over the edge for £5,000.</p></div>
+    <div class="card"><h3>Outpace · 2 players or teams</h3><p>Each player picks a deal and answers their way home before the Hunter catches them. Then the pair face a 60-second Final Sprint against a target set by their pot.</p></div>
+    <div class="card"><h3>Category Clash · 2 to 4 teams</h3><p>A board of categories and points values. Teams take turns to pick; harder questions are worth more, wrong answers can be stolen, and one hidden ★ tile is worth double. Ideal for whole-class revision across several topics.</p></div>
+    <div class="card"><h3>Hex Hunt · 2 teams</h3><p>A board of lettered hexagons. Each letter is the first letter of the answer. Win a hexagon to claim it and pick the next; the first team to link its two edges wins the round.</p></div>
   </div>
   <ul>
-    <li><strong>One shared question bank.</strong> Pick a set once and both games use it. Add your own sets by pasting plain text.</li>
+    <li><strong>One shared question bank.</strong> Pick a set once and every game uses it. Add your own sets by pasting plain text.</li>
     <li><strong>Starter packs.</strong> 191 AQA-style questions for GCSE Combined Science (Biology, Chemistry and Physics packs plus an all-in-one mix), and a 61-question Homeostasis lesson set. These are written to match the AQA specification topics; they are not produced or endorsed by AQA.</li>
-    <li><strong>Wrong-answer tracking.</strong> Every wrong answer is saved against the player's name in both games, so each player's weakest topics follow them from game to game.</li>
+    <li><strong>Wrong-answer tracking.</strong> Every wrong answer is saved against the player's or team's name in every game, so weak topics follow them from game to game.</li>
     <li><strong>A friendly host.</strong> Professor Pip presents Over the Edge and greets you on the menu. You can rename and restyle him.</li>
   </ul>
 
@@ -78,9 +74,11 @@
   <div class="note"><strong>Tip:</strong> if a game feels slow on an older classroom PC, set <strong>Graphics</strong> to <strong>Low</strong> on the menu. It turns off shadows and glow effects without changing the game.</div>
 
   <h2>Setting up a game</h2>
-  <p>Each game opens on a setup card. Type the two players' names (or team names), check the question set and press <strong>Start</strong> (or <kbd>Enter</kbd>).</p>
+  <p>Each game opens on a setup card. Type the player or team names, check the question set and press <strong>Start</strong> (or <kbd>Enter</kbd>).</p>
   <ul>
     <li><strong>Over the Edge</strong> also lets you choose the number of Round 1 questions per player (4, 6 or 8), the number of final questions (8, 12 or 16) and how hard the jackpot is to win.</li>
+    <li><strong>Category Clash</strong>: choose 2 to 4 teams and 4 to 6 categories (topics from the question set; <strong>Shuffle</strong> picks a new mix), an optional answer timer, steals, a points penalty for wrong answers and the ★ tile.</li>
+    <li><strong>Hex Hunt</strong>: choose a 5 × 5 or 6 × 6 board and one round or best of three.</li>
     <li>Tick <strong>Pick more questions from topics each player got wrong before</strong> to steer questions towards each player's weak topics.</li>
     <li>Use <strong>◀ Menu</strong> (or <kbd>Esc</kbd>) in the top corner to go back to the menu at any time. You will be asked first if a game is in progress.</li>
   </ul>
@@ -94,49 +92,74 @@
       <h3>Over the Edge</h3>
       <img class="shot" src="../dist/listing/over-the-edge.png" alt="Over the Edge in play">
       <ol>
-        <li>Read the question aloud. Press <strong>Show answer</strong> if you want the class to see it.</li>
-        <li>Mark it <strong>Correct</strong> or <strong>Wrong</strong>. If wrong, the other player can steal it.</li>
-        <li>The winner picks a lane (1 to 4) with the buttons, the keys, or by tapping the machine.</li>
-        <li>Watch for <strong>★ wildcard counters</strong>: a bonus drop, £250, or a steal of up to £150.</li>
-        <li>In the final, the pair work as a team. Each correct answer wins two counters.</li>
+        <li>Read the question. Mark it <strong>Correct</strong> or <strong>Wrong</strong>; if wrong, the other side can steal it.</li>
+        <li>The winner picks a lane (1 to 4): buttons, keys, or tap the machine. Watch for <strong>★ wildcard counters</strong>.</li>
+        <li>In the final the pair work as a team; each correct answer wins two counters.</li>
       </ol>
     </div>
     <div>
       <h3>Outpace</h3>
       <img class="shot" src="../dist/listing/outpace.png" alt="Outpace in play">
       <ol>
-        <li>Player 1 picks a deal: <strong>Cautious</strong> (300 points, Hunter 5 steps back), <strong>Standard</strong> (600, 3 back) or <strong>Bold</strong> (1,000, 1 back).</li>
-        <li>Show the answer, then mark it. Right moves the player a step home; wrong moves the Hunter a step closer.</li>
-        <li>Reach home to bank the deal. If caught, the player banks half.</li>
-        <li>After both players, the <strong>Final Sprint</strong> starts: 60 seconds, taking turns. Each player can <strong>pass</strong> once.</li>
-        <li>Reach the target to escape with the pot. If not, the Hunter catches the team.</li>
+        <li>Pick a deal: <strong>Cautious</strong> (300, Hunter 5 steps back), <strong>Standard</strong> (600, 3 back) or <strong>Bold</strong> (1,000, 1 back).</li>
+        <li>Show the answer, then mark it. Reach home to bank the deal; if caught, bank half.</li>
+        <li><strong>Final Sprint</strong>: 60 seconds, taking turns; each player can <strong>pass</strong> once.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>Category Clash</h3>
+      <img class="shot" src="../dist/listing/category-clash.png" alt="Category Clash board">
+      <ol>
+        <li>The team named at the top picks a tile. Values run from 100 (easiest) to 500 (hardest).</li>
+        <li>Mark it <strong>Correct</strong> or <strong>Wrong</strong>. If wrong, press the number of the team that steals it, or <strong>Nobody</strong>.</li>
+        <li>Turns rotate. The game ends when the board is clear, or press <strong>End game</strong>.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>Hex Hunt</h3>
+      <img class="shot" src="../dist/listing/hex-hunt.png" alt="Hex Hunt board">
+      <ol>
+        <li>The picking team chooses a hexagon. Read the question; the letter is the answer's first letter.</li>
+        <li>Press <strong>1</strong> or <strong>2</strong> for the team that answers first, then mark it. If wrong, the other team can answer.</li>
+        <li>The winner of a hexagon picks next. Link your two edges to win the round.</li>
       </ol>
     </div>
   </div>
 
   <h2>Keyboard shortcuts</h2>
-  <p>Everything also works by mouse or by touch on an interactive whiteboard. Keys are shown on the buttons.</p>
+  <p>Everything also works by mouse or touch. Keys are shown on the buttons. In every game <kbd>Enter</kbd> starts or replays from the setup and results screens, and <kbd>Esc</kbd> returns to the menu.</p>
   <div class="two">
     <table>
       <tr><th colspan="2">Over the Edge</th></tr>
-      <tr><td><kbd>C</kbd></td><td>Correct (or a steal is correct)</td></tr>
-      <tr><td><kbd>W</kbd></td><td>Wrong</td></tr>
+      <tr><td><kbd>C</kbd> / <kbd>W</kbd></td><td>Correct / wrong (also for a steal)</td></tr>
       <tr><td><kbd>N</kbd></td><td>No attempt at the steal</td></tr>
       <tr><td><kbd>A</kbd></td><td>Show or hide the answer</td></tr>
-      <tr><td><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd></td><td>Drop the counter down that lane</td></tr>
-      <tr><td><kbd>Space</kbd> or <kbd>Enter</kbd></td><td>Next question</td></tr>
-      <tr><td><kbd>Enter</kbd></td><td>Start, or play again from the results</td></tr>
-      <tr><td><kbd>Esc</kbd></td><td>Back to the menu</td></tr>
+      <tr><td><kbd>1</kbd>–<kbd>4</kbd></td><td>Drop the counter down that lane</td></tr>
+      <tr><td><kbd>Space</kbd> / <kbd>Enter</kbd></td><td>Next question</td></tr>
     </table>
     <table>
       <tr><th colspan="2">Outpace</th></tr>
-      <tr><td><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></td><td>Choose the Cautious, Standard or Bold deal</td></tr>
-      <tr><td><kbd>A</kbd> or <kbd>Space</kbd></td><td>Show the answer</td></tr>
-      <tr><td><kbd>C</kbd></td><td>Correct (after the answer is shown)</td></tr>
-      <tr><td><kbd>W</kbd></td><td>Wrong (after the answer is shown)</td></tr>
-      <tr><td><kbd>H</kbd></td><td>Pass this question to your partner (Final Sprint, once each)</td></tr>
-      <tr><td><kbd>Enter</kbd></td><td>Continue after Escaped or Caught; start; play again</td></tr>
-      <tr><td><kbd>Esc</kbd></td><td>Back to the menu</td></tr>
+      <tr><td><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></td><td>Cautious, Standard or Bold deal</td></tr>
+      <tr><td><kbd>A</kbd> / <kbd>Space</kbd></td><td>Show the answer</td></tr>
+      <tr><td><kbd>C</kbd> / <kbd>W</kbd></td><td>Correct / wrong (after the answer is shown)</td></tr>
+      <tr><td><kbd>H</kbd></td><td>Pass to your partner (Final Sprint, once each)</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Continue after Escaped or Caught</td></tr>
+    </table>
+    <table>
+      <tr><th colspan="2">Category Clash</th></tr>
+      <tr><td><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> <kbd>Enter</kbd></td><td>Move around the board and open a tile</td></tr>
+      <tr><td><kbd>C</kbd> / <kbd>W</kbd></td><td>Correct / wrong</td></tr>
+      <tr><td><kbd>1</kbd>–<kbd>4</kbd> / <kbd>N</kbd></td><td>That team steals it / nobody</td></tr>
+      <tr><td><kbd>A</kbd></td><td>Show or hide the answer</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Back to the board</td></tr>
+    </table>
+    <table>
+      <tr><th colspan="2">Hex Hunt</th></tr>
+      <tr><td><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> <kbd>Enter</kbd></td><td>Move around the board and pick a hexagon</td></tr>
+      <tr><td><kbd>1</kbd> / <kbd>2</kbd></td><td>That team answers first</td></tr>
+      <tr><td><kbd>C</kbd> / <kbd>W</kbd></td><td>Correct / wrong</td></tr>
+      <tr><td><kbd>N</kbd> / <kbd>A</kbd></td><td>Nobody knows / show the answer</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Back to the board, new question, next round</td></tr>
     </table>
   </div>
 
@@ -145,7 +168,8 @@
     <li><strong>Teams, not just two pupils.</strong> Split the room into two halves and type team names. Let each team confer for ten seconds, then take one answer from a nominated pupil.</li>
     <li><strong>Everyone answers.</strong> Ask the whole class to write each answer on mini whiteboards before you reveal it, so the game drives retrieval practice for everyone.</li>
     <li><strong>Use "Any two" answers generously.</strong> Many answers list several acceptable points. You are the judge, so accept good alternatives.</li>
-    <li><strong>Short on time?</strong> In Over the Edge choose 4 Round 1 questions and 8 final questions: a game then takes about 15 minutes. Outpace usually takes 10 to 15 minutes.</li>
+    <li><strong>Short on time?</strong> In Over the Edge choose 4 Round 1 questions and 8 final questions (about 15 minutes). Outpace takes 10 to 15 minutes. A 4-category Category Clash board or a single round of Hex Hunt fits a 20-minute slot.</li>
+    <li><strong>Whole class.</strong> Category Clash suits 3 or 4 table teams; Hex Hunt works well as two halves of the room with hands up instead of buzzers.</li>
     <li><strong>Revisit weak topics.</strong> The results screen lists each player's missed questions and their weakest topics across all games. Use it to plan a starter for next lesson.</li>
   </ul>
 </section>
@@ -167,7 +191,8 @@ A: Any two: increase temperature, increase concentration, increase surface area,
   <ul>
     <li>The <strong>Subject</strong> and <strong>Topic</strong> lines apply to every question below them until the next one. Topics drive the weak-topic tracking, so keep topic names consistent between sets.</li>
     <li>Every <strong>Q:</strong> line needs an <strong>A:</strong> line straight after it. Blank lines are ignored. Question sets from earlier versions of these games use the same format and paste straight in.</li>
-    <li>A new set becomes the set in use for both games straight away. Use the round buttons to switch sets.</li>
+    <li>Optional: a line such as <strong>Difficulty: 4</strong> (1 easy to 5 hard) sets the points for the questions below it in Category Clash. Without it, Showtime estimates difficulty from the question and answer.</li>
+    <li>A new set becomes the set in use for every game straight away. Use the round buttons to switch sets.</li>
     <li><strong>Rename</strong>, <strong>Edit questions</strong> or <strong>Delete</strong> your own sets from the list. Deleting asks you to tap twice.</li>
     <li>The built-in packs cannot be changed, but <strong>Copy to edit</strong> makes your own copy that you can trim or add to.</li>
   </ul>
@@ -214,7 +239,7 @@ A: Any two: increase temperature, increase concentration, increase surface area,
   </table>
 
   <h2>About</h2>
-  <p>Showtime: Classroom Gameshows, first edition (version 1.0.0). Game design and question packs by Rob Pearce. The games are original works inspired by classic TV quiz formats and are not connected with any television programme or broadcaster. AQA is a registered trade mark of AQA Education; the starter packs are AQA-style practice questions and are not endorsed by AQA.</p>
+  <p>Showtime: Classroom Gameshows, version 1.1.0. Game design and question packs by Rob Pearce. The games are original works inspired by classic TV quiz formats and are not connected with any television programme or broadcaster. AQA is a registered trade mark of AQA Education; the starter packs are AQA-style practice questions and are not endorsed by AQA.</p>
   <p class="small">Built with three.js (MIT licence). Fonts: Lilita One and Nunito (SIL Open Font License 1.1). Full licence texts are in the About panel on the menu.</p>
 </section>
 

@@ -19,7 +19,10 @@ const TERMS = [
   ['bradley ', 'walsh'], ['ben ', 'shephard'], ['anne ', 'hegerty'], ['mark ', 'labbett'], ['shaun ', 'wallace'],
   ['paul ', 'sinha'], ['jenny ', 'ryan'], ['darragh ', 'ennis'], ['govern', 'ess'], ['dark ', 'destroyer'],
   ['sinner', 'man'], ['the ', 'vixen'], ['the ', 'menace'], ['the ', 'beast'], ['the ', 'bolt'],
-  ['mr ', 'pearce']
+  ['mr ', 'pearce'],
+  ['jeop', 'ardy'], ['block', 'busters'], ['daily ', 'double'], ['gold ', 'run'], ['bob ', 'holness'],
+  ['alex ', 'trebek'], ['ken ', 'jennings'], ['mayim ', 'bialik'], ['simon ', 'mayo'], ['dara ', 'o briain'],
+  ['michael ', 'aspel'], ['can i have a ', 'p please']
 ].map(p => p.join(''));
 // "chase" on its own is a normal word, but the bundle avoids it entirely to be safe
 const PATTERNS = TERMS.map(t => new RegExp('\\b' + t.replace(/[-]/g, '\\-').replace(/ /g, '\\s+') + '\\b', 'i'))

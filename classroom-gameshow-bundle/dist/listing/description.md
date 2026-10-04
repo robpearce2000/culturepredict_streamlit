@@ -2,28 +2,34 @@
 
 ## Short title
 
-Showtime: Classroom Gameshows (2 offline 3D revision quiz games)
+Showtime: Classroom Gameshows (4 offline revision quiz games)
 
 (Alternative, 49 characters: **Showtime: Classroom Gameshows for revision**)
 
 ## Summary line
 
-Two whole-class revision games for your interactive whiteboard, with a shared question bank and 190+ AQA-style GCSE Combined Science questions. One file, works offline.
+Four whole-class revision games for your interactive whiteboard, with a shared question bank and 190+ AQA-style GCSE Combined Science questions. One file, works offline.
 
 ## Description
 
-Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains two original 3D quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
+Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains four original quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
 
-**Over the Edge**
-Answer correctly to win a counter, choose one of four lanes and watch it bounce down the peg board onto a moving shelf. Every counter pushed over the edge wins prize money, and star wildcard counters bring bonuses and steals. In the final, two players (or two teams) work together to push the gold jackpot counter over the edge. Hosted by Professor Pip, a cartoon host you can rename and restyle.
+**Over the Edge** (2 players or teams)
+Answer correctly to win a counter, choose one of four lanes and watch it bounce down the peg board onto a moving 3D shelf. Every counter pushed over the edge wins prize money, and star wildcard counters bring bonuses and steals. In the final, both sides team up to push the gold jackpot counter over the edge. Hosted by Professor Pip, a cartoon host you can rename and restyle.
 
-**Outpace**
+**Outpace** (2 players or teams)
 Pick a deal, then answer your way home before the Hunter catches you. Bigger deals give the Hunter a shorter gap. Then both players face a 60-second Final Sprint against a target set by their combined pot.
 
-**One question bank for both games**
+**Category Clash** (2 to 4 teams)
+A board of categories and points values for whole-class revision across several topics at once. Teams take turns to pick a tile; harder questions are worth more, wrong answers can be stolen by another team, and one hidden star tile is worth double. Optional answer timer.
+
+**Hex Hunt** (2 teams)
+A tactical race across a board of lettered hexagons. Each letter is the first letter of the answer. Win a hexagon to claim it and pick the next one; the first team to link its two edges wins the round. Play a single round or best of three.
+
+**One question bank for every game**
 - 191 AQA-style GCSE Combined Science questions across Biology, Chemistry and Physics, plus a 61-question Homeostasis lesson set
-- Add your own sets in seconds by pasting simple text (Subject, Topic, Q, A), for any subject
-- Wrong answers are saved for each player and follow them between games, so you can see each pupil's weakest topics and steer questions towards them
+- Add your own sets in seconds by pasting simple text (Subject, Topic, Q, A), for any subject. Add an optional Difficulty line to set the points in Category Clash
+- Wrong answers are saved for each player or team and follow them between games, so you can see the weakest topics and steer questions towards them
 - Save a backup file to move your sets and history to another computer
 
 **Made for real classrooms**
@@ -44,11 +50,13 @@ The question packs are AQA-style practice questions written to match the AQA GCS
 
 ## Suggested tags
 
-revision game, quiz, gameshow, interactive whiteboard, GCSE science, combined science, retrieval practice, starter, plenary, KS4, KS3, offline
+revision game, quiz, gameshow, interactive whiteboard, GCSE science, combined science, retrieval practice, team game, starter, plenary, KS4, KS3, offline
 
 ## Images
 
-- `cover.png`: Showtime wordmark, Professor Pip and both games
+- `cover.png`: Showtime wordmark, Professor Pip and all four games
 - `over-the-edge.png`: Over the Edge in play
 - `outpace.png`: Outpace Deal Round
+- `category-clash.png`: a Category Clash board part-way through a game
+- `hex-hunt.png`: a Hex Hunt board with both teams part-way across
 - `question-bank.png`: the shared question bank

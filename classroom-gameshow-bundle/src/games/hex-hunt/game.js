@@ -168,6 +168,7 @@ function showQuestion() {
   $('qMsg').textContent = S.step === 'buzz' ? 'Hands up or buzz in! Which team answers first?' : '';
   $('q').hidden = false;
   renderQButtons();
+  $('qcard').focus({ preventScroll: true });
 }
 function renderQButtons() {
   const B = $('qBtns');

@@ -19,7 +19,9 @@ const WATCH = [
   '.op-tag.show', '.op-hud.active .op-top', '.op-hud.active .op-dock',
   '.op-roundend.show .op-verdict', '.op-roundend.show .op-detail', '.op-roundend.show .btn',
   '.op-screen.active .op-panel',
-  '#launcher .l-hero > *', '#launcher .gcard', '#launcher .l-bar', '#launcher .l-mascot .hello'
+  '#launcher .l-hero > *', '#launcher .gcard', '#launcher .l-bar', '#launcher .l-mascot .hello',
+  '.cc-head .cc-turn', '.cc-head .cc-end', '.cc-q:not([hidden]) .cc-qcard', '.cc-screen.active .cgb-panel',
+  '.hh-head > *', '.hh-q:not([hidden]) .hh-qcard', '.hh-win:not([hidden]) > *', '.hh-screen.active .cgb-panel', '.ote-host .pip-head', '.ote-host .pip-body'
 ];
 
 async function findProblems(page) {
@@ -117,6 +119,57 @@ const SECTIONS = {
     expect((await state(page, 'over-the-edge')).phase, 'reached the results').toBe('summary');
     await shot('21-ote-summary', 800);
 
+  },
+  'category-clash': async ({ page, shot, until }) => {
+    await page.click('[data-play="category-clash"]');
+    await shot('50-cc-setup', 800);
+    await page.click('#cc-segTeams button[data-v="4"]');
+    await page.click('#cc-segCats button[data-v="6"]');
+    await shot('51-cc-setup-4-teams', 300);
+    await page.click('#cc-startBtn');
+    await shot('52-cc-board', 500);
+    await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowDown'); await page.keyboard.press('Enter');
+    await shot('53-cc-question', 400);
+    await page.keyboard.press('w'); await shot('54-cc-steal', 300);
+    await page.keyboard.press('2'); await shot('55-cc-stolen', 300);
+    await page.keyboard.press('Enter');
+    let n = 0;
+    await until(async () => {
+      const s = await state(page, 'category-clash');
+      if (s.phase === 'summary') return true;
+      if (s.phase === 'board') await page.keyboard.press('Enter');
+      else if (s.step === 'ask') await page.keyboard.press(n++ % 3 ? 'c' : 'w');
+      else if (s.step === 'steal') await page.keyboard.press('n');
+      else if (s.step === 'done') { if (n === 8) await shot('56-cc-board-midgame', 200); await page.keyboard.press('Enter'); }
+      return false;
+    }, 120000);
+    await shot('57-cc-results', 600);
+  },
+  'hex-hunt': async ({ page, shot, until }) => {
+    await page.click('[data-play="hex-hunt"]');
+    await shot('60-hh-setup', 800);
+    await page.click('#hh-startBtn');
+    await shot('61-hh-board', 500);
+    await page.keyboard.press('Enter');
+    await shot('62-hh-question', 400);
+    await page.keyboard.press('1'); await page.keyboard.press('w');
+    await shot('63-hh-other-team', 300);
+    await page.keyboard.press('2'); await page.keyboard.press('c');
+    await shot('64-hh-claimed', 300);
+    await page.keyboard.press('Enter');
+    let n = 0;
+    await until(async () => {
+      const s = await state(page, 'hex-hunt');
+      if (s.phase === 'won') return true;
+      if (s.phase === 'board') { if (n === 10) await shot('65-hh-board-midgame', 200); await page.keyboard.press('Enter'); }
+      else if (s.step === 'buzz') await page.keyboard.press(n++ % 2 ? '1' : '2');
+      else if (s.step === 'answer') await page.keyboard.press('c');
+      else if (s.step === 'claimed' || s.step === 'nobody') await page.keyboard.press('Enter');
+      return false;
+    }, 90000);
+    await shot('66-hh-round-won', 900);
+    await page.keyboard.press('Enter');
+    await shot('67-hh-results', 600);
   },
   outpace: async ({ page, shot, until }) => {
     // ---------- Outpace ----------

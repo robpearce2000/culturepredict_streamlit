@@ -88,3 +88,5 @@
   .hh-head { padding-left: 0; padding-top: 52px; }
 }
 @media (max-width: 560px) { .hh-names, .hh-two { grid-template-columns: 1fr; } }
+
+.hh-qcard:focus { outline: none; }
