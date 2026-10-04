@@ -28,6 +28,9 @@ const SFX = {
 
 /* ============ GAME STATE ============ */
 const state = {
+  mode: CGB.mode.get('outpace'), session: CGB.store.get('op.session') || 'starter',
+  groups: CGB.store.getJSON('op.groups', 4), timer: CGB.store.getJSON('op.timer', 30),
+  className: 'Our class', dealRound: 0, dealRounds: 1, classSteps: 0,
   players: [{ name: 'Team 1' }, { name: 'Team 2' }],
   phase: 'home',               // home | deal | dealEnd | sprint | finish | summary
   pot: 0,
@@ -874,6 +877,42 @@ bank.onChange(renderSetSelect);
 $('openBank').addEventListener('click', () => CGB.bankUI.open());
 const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n.slice(0, 16); });
 fillNames();
+/* ---------- Whole class setup ---------- */
+if (![2, 3, 4, 5, 6].includes(state.groups)) state.groups = 4;
+if (!CGB.COUNTDOWNS.includes(state.timer)) state.timer = 30;
+if (!CGB.SESSIONS.some(x => x.id === state.session)) state.session = 'starter';
+const DEAL_ROUNDS = { starter: 1, plenary: 2, full: 4 };
+const classMode = () => state.mode === 'class';
+$('className').value = CGB.store.get('op.className') || 'Our class';
+function renderGroupNames() {
+  const prev = [0, 1, 2, 3, 4, 5].map(i => { const el = $('gname' + i); return el ? el.value : null; });
+  $('gnames').innerHTML = [0, 1, 2, 3, 4, 5].slice(0, state.groups).map(i => `<label style="--tc:${CGB.TEAMS[i].css}"><span>${CGB.TEAMS[i].mark} Group ${i + 1}</span><input id="op-gname${i}" type="text" maxlength="16" autocomplete="off" value="${escapeHtml(prev[i] || CGB.teamNames(6)[i])}"></label>`).join('');
+}
+function applyMode() {
+  $('setupCard').dataset.mode = state.mode;
+  const r = DEAL_ROUNDS[state.session];
+  $('sessionHint').textContent = `${CGB.SESSIONS.find(o => o.id === state.session).note}: ${r} Deal Round${r > 1 ? 's' : ''}, then the 60-second Final Sprint.`;
+}
+function wireSeg(id, key, store, text) {
+  const seg = $(id);
+  const val = v => text ? v : +v;
+  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(val(b.dataset.v) === state[key])));
+  seg.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    state[key] = val(b.dataset.v);
+    if (text) CGB.store.set(store, state[key]); else CGB.store.setJSON(store, state[key]);
+    if (key === 'mode') CGB.mode.set('outpace', state.mode);
+    if (key === 'groups') renderGroupNames();
+    paint(); applyMode(); CGB.fitSetups();
+  });
+  paint();
+}
+wireSeg('segMode', 'mode', 'outpace.mode', true);
+wireSeg('segSession', 'session', 'op.session', true);
+wireSeg('segGroups', 'groups', 'op.groups');
+wireSeg('segTimer', 'timer', 'op.timer');
+renderGroupNames();
+applyMode();
 $('focusWeak').checked = CGB.store.get('op.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('op.focusWeak', e.target.checked ? '1' : '0'));
 $('startBtn').addEventListener('click', startGame);
@@ -882,20 +921,126 @@ $('startBtn').addEventListener('click', startGame);
 const hostC = CGB.createHostCorner(document.createElement('div'));
 const pickLine = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
 function hostSay(slot, text, gesture, ms) { const el = $(slot); if (hostC.el.parentElement !== el) el.appendChild(hostC.el); hostC.say(text, gesture, ms); }
+/* ---------- Whole class: every group answers, the class moves as one runner ---------- */
+const misc = CGB.createMisconceptions();
+const dealBoard = CGB.createTeamBoard($('dealBoard'));
+const sprintBoard = CGB.createTeamBoard($('sprintBoard'));
+function paintBoards(earned) {
+  const teams = state.players.map(p => ({ name: p.name, score: '' }));
+  dealBoard.set({ teams, earned: earned || [] }); sprintBoard.set({ teams, earned: earned || [] });
+}
+let dealSnap = null, sprintSnap = null, sprintNextT = 0;
+function logClassWrongs(res) {
+  const q = state.currentQuestion;
+  res.forEach((ok, i) => { if (!ok) { state.wrongAnswers[i].push({ subject: q.subject, topic: q.topic, q: q.q, a: q.a }); bank.logWrong(state.players[i].name, q, GAME_NAME); } });
+  const c = res.filter(Boolean).length, n = res.length;
+  misc.add(q, (n - c) / n, `${n - c} of ${n} groups wrong`);
+}
+function unlogClassWrongs(res) {
+  const q = state.currentQuestion;
+  res.forEach((ok, i) => { if (!ok) { state.wrongAnswers[i].pop(); bank.unlogWrong(state.players[i].name, q); } });
+  misc.remove(q);
+}
+/* Deal Round: at least half the groups right moves the runner; otherwise the Hunter gains.
+   The step shows at once; a step that ends the round waits for Enter, so it can still be undone. */
+const roundDeal = CGB.createClassRound({
+  root: root, board: dealBoard, countEl: $('dealCount'), btnEl: $('dealBtnRow'),
+  seconds: () => state.timer, teams: () => state.players.length,
+  doneHtml: () => `<button class="btn go" type="button" data-op="next">${runnerCellIndex <= 0 ? 'Home!' : hunterCellIndex <= runnerCellIndex ? 'Caught!' : 'Next question'} <span class="kbd">Enter</span></button>`,
+  onConfirm(res) {
+    const c = res.filter(Boolean).length, n = res.length, ok = c * 2 >= n;
+    dealSnap = { res, runner: runnerCellIndex, hunter: hunterCellIndex };
+    logClassWrongs(res);
+    $('dealQAnswer').classList.add('shown');
+    $('dealVerdict').innerHTML = `<b>${c} of ${n} groups correct.</b> ${ok ? 'One step closer to home!' : 'Fewer than half, so the Hunter gains a step.'}`;
+    $('dealVerdict').className = 'op-cmline ' + (ok ? 'ok' : 'no');
+    if (ok) { SFX.correct(); runnerCellIndex--; runnerGroup.userData.targetX = cellX(runnerCellIndex); pulseCorrect(); }
+    else { SFX.wrong(); hunterCellIndex--; hunterGroup.userData.targetX = cellX(hunterCellIndex); pulseWrong(); }
+    dealStatus();
+    hostSay('hostDeal', CGB.classLine(c, n), CGB.classGesture(c, n), 1500);
+  },
+  onUndo() {
+    const u = dealSnap; if (!u) return;
+    unlogClassWrongs(u.res);
+    runnerCellIndex = u.runner; hunterCellIndex = u.hunter;
+    runnerGroup.userData.targetX = cellX(runnerCellIndex); hunterGroup.userData.targetX = cellX(hunterCellIndex);
+    $('dealQAnswer').classList.remove('shown'); $('dealVerdict').textContent = 'Marking undone. Mark each group again.'; $('dealVerdict').className = 'op-cmline';
+    dealStatus(); dealSnap = null;
+  }
+});
+$('dealBtnRow').addEventListener('click', e => { if (e.target.closest('button[data-op="next"]')) classDealNext(); });
+function classDealNext() {
+  if (!classMode() || roundDeal.phase !== 'done' || state.phase !== 'deal') return;
+  roundDeal.stop();
+  if (runnerCellIndex <= 0) { state.phase = 'dealEnd'; $('qcard').hidden = true; later(() => triggerEscapeSequence(() => finishDealRound(true)), 300); }
+  else if (hunterCellIndex <= runnerCellIndex) { state.phase = 'dealEnd'; $('qcard').hidden = true; later(() => triggerCaughtSequence(() => finishDealRound(false)), 300); }
+  else askDealQuestion();
+}
+/* Final Sprint: every correct group is one step. The target is tuned so that a class getting
+   about half its boards right in four questions only just makes it: per group 1.5, 2 or 2.5
+   steps, by the average pot per Deal Round (up to 500, up to 900, more). */
+function classTarget() {
+  const avg = state.pot / Math.max(1, state.dealRounds);
+  const per = avg <= 500 ? 1.5 : avg <= 900 ? 2 : 2.5;
+  return Math.max(3, Math.ceil(state.players.length * per));
+}
+const roundSprint = CGB.createClassRound({
+  root: root, board: sprintBoard, btnEl: $('sprintBtnRow'), fast: true,
+  seconds: () => 0, teams: () => state.players.length,
+  onConfirm(res) {
+    const c = res.filter(Boolean).length, n = res.length;
+    sprintSnap = { res, net: state.sprintNetScore };
+    logClassWrongs(res);
+    state.sprintNetScore += c;
+    runnerGroup.userData.targetX = runnerTargetX(Math.min(state.sprintNetScore, state.sprintTarget), state.sprintTarget);
+    $('sprintScore').textContent = state.sprintNetScore;
+    $('sprintQAnswer').classList.add('shown');
+    $('sprintVerdict').innerHTML = `<b>${c} of ${n} groups correct: +${c}</b>`;
+    $('sprintVerdict').className = 'op-cmline ' + (c ? 'ok' : 'no');
+    paintBoards(res.map(ok => ok ? '+1' : ''));
+    sprintBoard.set({ marks: res });
+    if (c) { SFX.correct(); pulseCorrect(); } else { SFX.wrong(); pulseWrong(); }
+    hostSay('hostSprint', CGB.classLine(c, n), CGB.classGesture(c, n), 1200);
+    clearTimeout(sprintNextT);
+    sprintNextT = later(() => { roundSprint.stop(); if (state.phase === 'sprint' && state.sprintTimeLeft > 0) askSprintQuestion(); }, 1400);
+  },
+  onUndo() {
+    const u = sprintSnap; if (!u) return;
+    clearTimeout(sprintNextT);
+    unlogClassWrongs(u.res);
+    state.sprintNetScore = u.net;
+    runnerGroup.userData.targetX = runnerTargetX(Math.min(state.sprintNetScore, state.sprintTarget), state.sprintTarget);
+    $('sprintScore').textContent = state.sprintNetScore;
+    $('sprintQAnswer').classList.remove('shown'); $('sprintVerdict').textContent = '';
+    sprintSnap = null;
+  }
+});
 function startGame() {
-  clearTimers();
-  const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
-  state.players = names.map(name => ({ name }));
+  clearTimers(); roundDeal.stop(); roundSprint.stop();
+  if (classMode()) {
+    const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, state.groups).map(i => $('gname' + i).value)).map(n => n.slice(0, 16));
+    state.players = names.map(name => ({ name }));
+    state.className = ($('className').value.trim() || 'Our class').slice(0, 16);
+    CGB.store.set('op.className', state.className);
+    state.dealRound = 0; state.dealRounds = DEAL_ROUNDS[state.session];
+    misc.reset();
+  } else {
+    const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
+    state.players = names.map(name => ({ name }));
+  }
   state.focusWeak = $('focusWeak').checked;
   state.pot = 0;
   state.dealOutcomes = [];
-  state.wrongAnswers = [[], []];
+  state.wrongAnswers = state.players.map(() => []);
   picker.reset();
+  $('sprintRow').hidden = classMode();
+  root.querySelectorAll('.op-dock').forEach(d => d.classList.toggle('classq', classMode()));
+  $('dealBoard').hidden = $('sprintBoard').hidden = !classMode();
   state.activePlayerIdx = 0;
   $('roundEnd').classList.remove('show');
   startDealRound(0);
 }
-function pickQuestion(playerIdx) { return picker.pick(state.players[playerIdx].name, state.focusWeak); }
+function pickQuestion(playerIdx) { return picker.pick(classMode() ? state.className : state.players[playerIdx].name, state.focusWeak); }
 function logWrong(playerIdx) {
   const q = state.currentQuestion;
   state.wrongAnswers[playerIdx].push({ subject: q.subject, topic: q.topic, q: q.q, a: q.a });
@@ -923,17 +1068,20 @@ function startDealRound(playerIdx) {
   hunterGroup.position.x = cellX(hunterCellIndex);
   runnerGroup.userData.targetX = cellX(runnerCellIndex);
   hunterGroup.userData.targetX = cellX(hunterCellIndex);
-  $('tagYou').textContent = '▲ ' + state.players[playerIdx].name;
+  $('tagYou').textContent = '▲ ' + (classMode() ? state.className : state.players[playerIdx].name);
   const f = dealFraming();                 // start already framed on the whole track
   camera.position.set(f.x, f.y, f.z);
   camera.lookAt(f.x, 0.35, 0);
 
   showHud('deal');
-  $('dealLabel').textContent = state.players[playerIdx].name + ': choose your deal';
+  $('dealLabel').textContent = classMode()
+    ? `${state.className}: vote for a deal${state.dealRounds > 1 ? ` (Deal Round ${state.dealRound + 1} of ${state.dealRounds})` : ''}. Hold up 1, 2 or 3 fingers!`
+    : state.players[playerIdx].name + ': choose your deal';
   $('dealRow').hidden = false;
   $('qcard').hidden = true;
   $('dealStatus').textContent = `${TRACK_STEPS} steps to home. Team pot so far: ${state.pot} points.`;
-  hostSay('hostDeal', playerIdx === 0 ? `Welcome to Outpace! ${state.players[0].name}, choose your deal.` : `Your turn, ${state.players[1].name}. Choose your deal.`, 'wave', 2000);
+  if (classMode()) hostSay('hostDeal', state.dealRound === 0 ? 'Welcome to Outpace! Vote for your deal: 1, 2 or 3 fingers. Majority wins.' : 'Another Deal Round! Vote again: 1, 2 or 3 fingers.', 'wave', 2200);
+  else hostSay('hostDeal', playerIdx === 0 ? `Welcome to Outpace! ${state.players[0].name}, choose your deal.` : `Your turn, ${state.players[1].name}. Choose your deal.`, 'wave', 2000);
   const first = $('dealRow').querySelector('button'); if (first) first.focus({ preventScroll: true });
 }
 function chooseDeal(tier) {
@@ -948,7 +1096,7 @@ function chooseDeal(tier) {
   hunterGroup.userData.targetX = cellX(hunterCellIndex);
 
   $('dealRow').hidden = true;
-  $('dealLabel').textContent = `${state.players[state.activePlayerIdx].name}: playing for ${cfg.reward} points`;
+  $('dealLabel').textContent = `${classMode() ? state.className : state.players[state.activePlayerIdx].name}: playing for ${cfg.reward} points`;
   $('qcard').hidden = false;
   hostSay('hostDeal', tier === 'high' ? 'A bold deal! The Hunter is right behind you.' : tier === 'low' ? 'A cautious start. Off you go!' : 'Standard deal. Let us race!', 'present', 1600);
   askDealQuestion();
@@ -1003,6 +1151,11 @@ function askDealQuestion() {
   $('dealQTag').textContent = q.subject + ' · ' + q.topic;
   $('dealQText').textContent = q.q;
   $('dealQAnswer').textContent = q.a;
+  if (classMode()) {
+    $('dealQAnswer').classList.remove('shown'); $('dealVerdict').textContent = ''; $('dealBtnRow').onclick = null;
+    paintBoards(); dealStatus(); roundDeal.think();
+    return;
+  }
   renderAnswerButtons('dealBtnRow', 'dealQAnswer', answerDeal, ['Correct', 'Wrong']);
   dealStatus();
 }
@@ -1050,6 +1203,14 @@ function finishDealRound(escaped) {
   state.dealOutcomes.push({ player: state.players[state.activePlayerIdx].name, escaped, reward });
   $('dealStatus').textContent = '';
   hostSay('hostDeal', escaped ? `Home safe! ${reward} points banked.` : `Caught! Still, ${reward} points go in the pot.`, escaped ? 'cheer' : 'shrug', 2000);
+  if (classMode()) {
+    state.dealOutcomes[state.dealOutcomes.length - 1].player = `Deal Round ${state.dealRound + 1}`;
+    showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.className} bank ${reward} points. Class pot: ${state.pot}`, () => {
+      state.dealRound++;
+      if (state.dealRound < state.dealRounds) startDealRound(0); else startSprint();
+    });
+    return;
+  }
   showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.players[state.activePlayerIdx].name} banks ${reward} points. Team pot: ${state.pot}`, () => {
     if (state.activePlayerIdx === 0) startDealRound(1);
     else startSprint();
@@ -1084,15 +1245,15 @@ function startSprint() {
   resetAtomsForRound('sprint');
   runnerGroup.userData.targetX = HOME_BASE_X;
   hunterGroup.userData.targetX = HUNTER_X;
-  $('tagYou').textContent = '▲ ' + state.players[0].name + ' & ' + state.players[1].name;
+  $('tagYou').textContent = '▲ ' + (classMode() ? state.className : state.players[0].name + ' & ' + state.players[1].name);
   state.sprintNetScore = 0;
-  state.sprintTarget = computeFinalTarget(state.pot);
+  state.sprintTarget = classMode() ? classTarget() : computeFinalTarget(state.pot);
   state.sprintTurn = 0;
   state.sprintTimeLeft = 60;
-  hostSay('hostSprint', 'Final Sprint! Sixty seconds. Work together!', 'point', 1800);
+  hostSay('hostSprint', classMode() ? `Final Sprint! Sixty seconds. Every correct group is a step. You need ${state.sprintTarget}!` : 'Final Sprint! Sixty seconds. Work together!', 'point', 1800);
   state.sprintPassUsed = [false, false];
 
-  $('sprintTarget').textContent = `Target: ${state.sprintTarget} correct (pot ${state.pot} points)`;
+  $('sprintTarget').textContent = classMode() ? `Target: ${state.sprintTarget} steps, one for each correct group (pot ${state.pot} points)` : `Target: ${state.sprintTarget} correct (pot ${state.pot} points)`;
   $('sprintScore').textContent = '0';
   [0, 1].forEach(i => { $('chipName' + i).textContent = state.players[i].name; });
   paintPass();
@@ -1142,9 +1303,14 @@ function askSprintQuestion() {
   state.currentQuestion = q;
   state.answerShown = false;
   state.awaitingNext = false;
-  $('sprintQTag').textContent = q.subject + ' · ' + state.players[state.sprintTurn].name + "'s turn";
+  $('sprintQTag').textContent = q.subject + ' · ' + (classMode() ? 'every group answers' : state.players[state.sprintTurn].name + "'s turn");
   $('sprintQText').textContent = q.q;
   $('sprintQAnswer').textContent = q.a;
+  if (classMode()) {
+    $('sprintQAnswer').classList.remove('shown'); $('sprintVerdict').textContent = ''; $('sprintBtnRow').onclick = null;
+    paintBoards(); roundSprint.think();
+    return;
+  }
   renderAnswerButtons('sprintBtnRow', 'sprintQAnswer', answerSprint, ['Correct +1', 'Wrong −1']);
   paintPass();
 }
@@ -1182,6 +1348,7 @@ function usePass(idx) {
 
 function resolveSprint() {
   state.phase = 'finish';
+  roundSprint.stop(); clearTimeout(sprintNextT);
   SFX.timeUp();
   $('sprintCard').hidden = true;
   const won = state.sprintNetScore >= state.sprintTarget;
@@ -1193,12 +1360,19 @@ function resolveSprint() {
 function showSummary(escaped) {
   state.phase = 'summary';
   $('finalVerdict').textContent = escaped
-    ? `Escaped! The team keeps all ${state.pot} points.`
+    ? `Escaped! ${classMode() ? 'The class keeps' : 'The team keeps'} all ${state.pot} points.`
     : 'Caught! The pot is wiped.';
   $('finalVerdict').className = 'op-verdict ' + (escaped ? 'escaped' : 'caught');
   hostSay('hostSum', escaped ? 'You outpaced the Hunter! Brilliant teamwork.' : 'The Hunter got you this time. Great effort, both teams!', escaped ? 'cheer' : 'shrug', 2200);
 
   const deals = state.dealOutcomes;
+  if (classMode()) {
+    hostSay('hostSum', escaped ? `${state.className} outpaced the Hunter! Brilliant teamwork.` : 'The Hunter got you this time. Great effort, everyone!', escaped ? 'cheer' : 'shrug', 2200);
+    $('summaryPlayers').innerHTML = `<div class="op-sum-p op-sum-class"><h3>${escapeHtml(state.className)}</h3>${deals.map(d => `<div class="hint">${escapeHtml(d.player)}: ${d.escaped ? 'escaped' : 'caught'}, banked ${d.reward} points.</div>`).join('')}<div class="hint">Final Sprint: ${state.sprintNetScore} of ${state.sprintTarget} steps.</div></div>${misc.html(5)}`;
+    showScreen('summary');
+    $('playAgainBtn').focus({ preventScroll: true });
+    return;
+  }
   $('summaryPlayers').innerHTML = state.players.map((p, idx) => {
     const wrongs = state.wrongAnswers[idx];
     const d = deals[idx];
@@ -1222,7 +1396,7 @@ $('menuBtn2').addEventListener('click', () => CGB.app.requestLauncher());
 
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  clearTimers();
+  clearTimers(); roundDeal.stop(); roundSprint.stop(); clearTimeout(sprintNextT);
   state.phase = 'home';
   roundEndNext = null;
   $('roundEnd').classList.remove('show');
@@ -1266,6 +1440,12 @@ document.addEventListener('keydown', e => {
     if (['1', '2', '3'].includes(k)) chooseDeal(TIERS[+k - 1]);
     return;
   }
+  if (classMode() && (state.phase === 'deal' || state.phase === 'sprint')) {
+    const r = state.phase === 'deal' ? roundDeal : roundSprint;
+    if (r.handleKey(k)) { e.preventDefault(); return; }
+    if ((k === 'enter' || k === ' ') && !isButton && state.phase === 'deal' && roundDeal.phase === 'done') { e.preventDefault(); classDealNext(); }
+    return;
+  }
   if (state.phase === 'deal' || state.phase === 'sprint') {
     if (k === 'a' || (k === ' ' && !isButton)) { e.preventDefault(); revealAnswer(); }
     else if (k === 'c') (state.phase === 'deal' ? answerDeal : answerSprint)(true);
@@ -1299,7 +1479,7 @@ return {
     if (state.phase !== 'home') goHome();
   },
   inProgress: () => ['deal', 'dealEnd', 'sprint', 'finish'].includes(state.phase),
-  _state: () => ({ phase: state.phase, pot: state.pot, answerShown: state.answerShown, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, q: state.currentQuestion, dealReward: state.dealReward, awaitingNext: state.awaitingNext })
+  _state: () => ({ mode: state.mode, round: state.phase === 'sprint' ? roundSprint.phase : roundDeal.phase, undoable: (state.phase === 'sprint' ? roundSprint : roundDeal).undoable, times: (state.phase === 'sprint' ? roundSprint : roundDeal).times(), runner: runnerCellIndex, hunter: hunterCellIndex, net: state.sprintNetScore, target: state.sprintTarget, dealRound: state.dealRound, misconceptions: misc.top(5).map(x => x.q.q), phase: state.phase, pot: state.pot, answerShown: state.answerShown, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, q: state.currentQuestion, dealReward: state.dealReward, awaitingNext: state.awaitingNext })
 };
 }
 

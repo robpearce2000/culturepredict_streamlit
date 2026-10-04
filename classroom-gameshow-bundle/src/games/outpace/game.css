@@ -115,3 +115,32 @@
 /* Marty sits in the top panel's own row, so he never covers the track, questions or controls */
 .op-hostrow { display: flex; justify-content: center; min-height: 62px; }
 .op-hostrow .hc-bubble { max-width: min(420px, 60vw); }
+/* whole class */
+.op-classname { display: block; background: #0F1430; border-radius: 12px; padding: 8px 12px; border: 2px solid var(--op-line); border-bottom: 6px solid var(--op-gold); margin-bottom: 10px; }
+.op-classname span { font-size: 0.8rem; font-weight: 900; color: var(--op-muted); }
+.op-classname input { width: 100%; background: transparent; border: none; color: var(--op-text); font-weight: 900; font-size: 1.2rem; padding: 2px 0; font-family: var(--body); }
+.op-gnames { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 10px; }
+.op-gnames label { display: block; background: #0F1430; border-radius: 10px; padding: 5px 9px; border: 2px solid var(--op-line); border-bottom: 5px solid var(--tc); min-width: 0; }
+.op-gnames span { font-size: 0.72rem; font-weight: 900; color: var(--op-muted); }
+.op-gnames input { width: 100%; background: transparent; border: none; color: var(--op-text); font-weight: 900; font-size: 1rem; padding: 1px 0; font-family: var(--body); }
+.op .cm-rule { background: #0F1430; color: var(--op-muted); border: 2px solid var(--op-line); }
+.op .cm-rule b { color: var(--op-text); }
+.op-cmboard { margin: 8px 0 10px; }
+.op-cmboard[hidden] { display: none; }
+.op-cmboard .cm-sc:empty { display: none; }
+.op-cmboard .cm-team { grid-template-areas: "nm mark"; padding: 7px 12px; }
+.op-cmline { text-align: center; font-weight: 800; color: var(--op-text); margin-bottom: 6px; }
+.op-cmline:empty { display: none; }
+.op-cmline.ok b { color: #86EFAC; }
+.op-cmline.no b { color: var(--op-hunter); }
+.op .cm-hint { color: var(--op-muted); width: 100%; text-align: center; }
+.op .cm-count b { color: var(--op-text); }
+.op-sum-class { grid-column: 1 / -1; }
+.op .cm-miscon { grid-column: 1 / -1; }
+.op-cmboard .cm-nm { font-size: 0.95rem; }
+.op-cmboard .cm-mark { font-size: 1.9rem; }
+.op-cmboard .cm-team { padding: 5px 10px 4px; border-bottom-width: 6px; }
+@media (min-width: 1100px) {
+  .op-dock.classq { max-width: min(1100px, 94vw); }
+  .op-cmboard.cm-board[data-n="5"], .op-cmboard.cm-board[data-n="6"] { grid-template-columns: repeat(var(--n), minmax(0, 1fr)); }
+}
