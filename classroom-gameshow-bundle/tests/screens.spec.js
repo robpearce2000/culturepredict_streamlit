@@ -256,7 +256,7 @@ for (const size of SIZES) {
         });
         if (stage && stage.width > 50) {
           // measure the canvas alone: hide the page's own panels, tags and bubbles for this one capture
-          await page.addStyleTag({ content: '.game > :not(.ote-stage):not(.op-stage), .ote-stage > :not(canvas), .op-stage > :not(canvas) { visibility: hidden !important; }' }).then(h => h.evaluate(el => { el.id = 'scene-check'; }));
+          await page.addStyleTag({ content: '.game > :not(.ote-app):not(.op-stage), .ote-app > :not(.ote-stage), .ote-stage > :not(canvas), .op-stage > :not(canvas) { visibility: hidden !important; }' }).then(h => h.evaluate(el => { el.id = 'scene-check'; }));
           const share = brightShare(await page.screenshot({ clip: stage, timeout: 60000 }), 70);
           await page.evaluate(() => document.getElementById('scene-check').remove());
           if (share < 0.006) problems.push(`${name}: the 3D scene looks blank (${(share * 100).toFixed(2)}% lit pixels)`);
