@@ -9,7 +9,7 @@
     "guide": "node tools/make-guide.js",
     "listing": "node tools/make-listing.js",
     "check": "node tools/check-banned.js && node tools/check-contrast.js",
-    "test:quick": "playwright test tests/bundle.spec.js tests/bank.spec.js tests/boardgames.spec.js tests/classmode.spec.js --grep-invert @hq",
+    "test:quick": "playwright test tests/bundle.spec.js tests/bank.spec.js tests/boardgames.spec.js tests/classmode.spec.js tests/setup.spec.js --grep-invert @hq",
     "test:screens": "playwright test tests/screens.spec.js --workers=3"
   },
   "devDependencies": {

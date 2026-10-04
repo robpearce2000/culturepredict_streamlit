@@ -2,7 +2,8 @@
 /* =========================================================
    SHARED QUESTION BANK
    - Built-in packs plus the teacher's own sets
-   - One active set, used by every game
+   - One subject and exam board, chosen on the main screen and read by every game
+   - One active set for each subject, used by every game
    - Wrong-answer history per player name, shared by every game
    - JSON backup (export / import) of sets and history
    ========================================================= */
@@ -60,18 +61,31 @@ CGB.bank = (() => {
     return score;
   }
 
+  /* Subjects and exam boards. Every subject can hold the teacher's own sets; built-in packs
+     exist for the sciences only so far. A pack with a board is shown for that board when the
+     subject has any pack for it; until then every pack for the subject is shown. */
+  const SUBJECTS = [
+    { id: 'biology', label: 'Biology' }, { id: 'chemistry', label: 'Chemistry' }, { id: 'physics', label: 'Physics' },
+    { id: 'combined', label: 'Combined Science' }, { id: 'maths', label: 'Maths' }, { id: 'english', label: 'English' },
+    { id: 'history', label: 'History' }, { id: 'geography', label: 'Geography' }
+  ];
+  const BOARDS = [{ id: 'aqa', label: 'AQA' }, { id: 'edexcel', label: 'Edexcel' }];
+  const isSubject = k => SUBJECTS.some(x => x.id === k);
+  const isBoard = k => BOARDS.some(x => x.id === k);
+
   const P = CGB.PACKS;
   const bio = parse(P.biology), chem = parse(P.chemistry), phys = parse(P.physics);
   const BUILTIN = [
-    { id: 'gcse-combined-mix', name: 'GCSE Combined Science starter pack: all three sciences (AQA-style)', short: 'Combined Science: mixed', questions: bio.concat(chem, phys) },
-    { id: 'gcse-combined-biology', name: 'GCSE Combined Science starter pack: Biology (AQA-style)', short: 'Combined Science: Biology', questions: bio },
-    { id: 'gcse-combined-chemistry', name: 'GCSE Combined Science starter pack: Chemistry (AQA-style)', short: 'Combined Science: Chemistry', questions: chem },
-    { id: 'gcse-combined-physics', name: 'GCSE Combined Science starter pack: Physics (AQA-style)', short: 'Combined Science: Physics', questions: phys },
-    { id: 'homeostasis-l1', name: 'Homeostasis L1 (Biology)', short: 'Homeostasis L1', questions: parse(P.homeostasis) }
-  ].map(s => Object.assign(s, { builtin: true }));
+    { id: 'gcse-combined-mix', name: 'GCSE Combined Science starter pack: all three sciences (AQA-style)', short: 'Combined Science: mixed', subjects: ['combined'], questions: bio.concat(chem, phys) },
+    { id: 'gcse-combined-biology', name: 'GCSE Combined Science starter pack: Biology (AQA-style)', short: 'Combined Science: Biology', subjects: ['combined', 'biology'], questions: bio },
+    { id: 'gcse-combined-chemistry', name: 'GCSE Combined Science starter pack: Chemistry (AQA-style)', short: 'Combined Science: Chemistry', subjects: ['combined', 'chemistry'], questions: chem },
+    { id: 'gcse-combined-physics', name: 'GCSE Combined Science starter pack: Physics (AQA-style)', short: 'Combined Science: Physics', subjects: ['combined', 'physics'], questions: phys },
+    { id: 'homeostasis-l1', name: 'Homeostasis L1 (Biology)', short: 'Homeostasis L1', subjects: ['biology', 'combined'], questions: parse(P.homeostasis) }
+  ].map(s => Object.assign(s, { builtin: true, board: 'aqa' }));
 
   let custom = [];
-  let activeId = BUILTIN[0].id;
+  let subject = 'combined', board = 'aqa';
+  let activeIds = {};    // subject -> id of the set in use for it
   let history = {};      // key (lower-case name) -> { name, entries: [ {subject, topic, q, a, date, game} ] }
   const listeners = [];
   const emit = () => listeners.forEach(fn => { try { fn(); } catch (e) { /* ignore */ } });
@@ -86,7 +100,9 @@ CGB.bank = (() => {
     if (!s || !Array.isArray(s.questions)) return null;
     const qs = s.questions.filter(validQuestion).map(cleanQuestion);
     if (!qs.length) return null;
-    return { id: String(s.id || newId()), name: String(s.name || 'My questions').slice(0, 60), questions: qs, created: s.created || new Date().toISOString().slice(0, 10) };
+    const c = { id: String(s.id || newId()), name: String(s.name || 'My questions').slice(0, 60), questions: qs, created: s.created || new Date().toISOString().slice(0, 10) };
+    if (isSubject(s.subject)) c.subject = s.subject;   // sets from before subjects existed have none and show under every subject
+    return c;
   }
   function newId() { return 'set-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7); }
 
@@ -95,8 +111,12 @@ CGB.bank = (() => {
     custom = Array.isArray(c) ? c.map(cleanSet).filter(Boolean) : [];
     const h = store.getJSON('history', {});
     history = h && typeof h === 'object' && !Array.isArray(h) ? h : {};
-    const a = store.get('activeSet');
-    if (a && all().some(s => s.id === a)) activeId = a;
+    const sj = store.get('subject'); if (isSubject(sj)) subject = sj;
+    const bd = store.get('board'); if (isBoard(bd)) board = bd;
+    const ids = store.getJSON('activeSets', {});
+    activeIds = ids && typeof ids === 'object' && !Array.isArray(ids) ? ids : {};
+    const a = store.get('activeSet');    // the single set in use before subjects existed
+    if (a && !activeIds[subject] && available().some(s => s.id === a)) activeIds[subject] = a;
   }
   function saveSets() { return store.setJSON('sets', custom); }
   function saveHistory() { return store.setJSON('history', history); }
@@ -126,20 +146,53 @@ CGB.bank = (() => {
 
   function all() { return BUILTIN.concat(custom); }
   function get(id) { return all().find(s => s.id === id) || null; }
-  function active() { return get(activeId) || BUILTIN[0]; }
-  function setActive(id) { if (!get(id)) return false; activeId = id; store.set('activeSet', id); emit(); return true; }
+  const setSubjects = s => s.builtin ? s.subjects : s.subject ? [s.subject] : null;   // null: any subject
+  /* The sets for the chosen subject (and board, once that subject has a pack for it) */
+  function available(sj) {
+    sj = sj || subject;
+    const inSubject = all().filter(s => { const k = setSubjects(s); return !k || k.includes(sj); });
+    const forBoard = inSubject.filter(s => s.board === board);
+    return forBoard.length ? inSubject.filter(s => !s.board || s.board === board) : inSubject;
+  }
+  /* The set in use for the chosen subject, or null when the subject has no questions yet */
+  function active() {
+    const list = available();
+    return list.find(s => s.id === activeIds[subject]) || list[0] || null;
+  }
+  function setActive(id) {
+    if (!available().some(s => s.id === id)) return false;
+    activeIds[subject] = id; store.setJSON('activeSets', activeIds); emit(); return true;
+  }
+  function setSubject(k) { if (!isSubject(k) || k === subject) return false; subject = k; store.set('subject', k); emit(); return true; }
+  function setBoard(k) { if (!isBoard(k) || k === board) return false; board = k; store.set('board', k); emit(); return true; }
+  const label = (list, k) => (list.find(x => x.id === k) || {}).label || '';
+  /* What the main screen and the setup cards say about the chosen subject */
+  function subjectNote() {
+    const sj = label(SUBJECTS, subject), bd = label(BOARDS, board);
+    const builtin = available().filter(s => s.builtin);
+    if (!builtin.length) return `Built-in ${sj} packs are coming soon. For now, add your own ${sj} questions in the Question bank.`;
+    if (!builtin.some(s => s.board === board)) return `The built-in ${sj} packs are AQA-style. ${bd} packs are coming soon.`;
+    return '';
+  }
+  /* Custom sets can be moved to another subject from the Question bank */
+  function setSubjectOf(id, k) {
+    const s = custom.find(x => x.id === id); if (!s) return false;
+    if (isSubject(k)) s.subject = k; else delete s.subject;
+    saveSets(); emit(); return true;
+  }
   function summary(set) {
     const subjects = {}, topics = {};
     set.questions.forEach(q => { subjects[q.subject] = 1; topics[q.topic] = 1; });
     return { subjects: Object.keys(subjects), topics: Object.keys(topics), count: set.questions.length };
   }
-  function addSet(name, text) {
+  function addSet(name, text, sj) {
     const qs = parse(text);
     if (!qs.length) return { ok: false, error: 'No Q: and A: pairs found. Check the format.' };
-    const set = cleanSet({ id: newId(), name: (name || '').trim() || 'My questions', questions: qs });
+    const set = cleanSet({ id: newId(), name: (name || '').trim() || 'My questions', questions: qs, subject: sj || subject });
     custom.push(set);
     if (!saveSets()) { /* still usable for this session */ }
-    activeId = set.id; store.set('activeSet', set.id);
+    if (set.subject && set.subject !== subject) { subject = set.subject; store.set('subject', subject); }
+    activeIds[subject] = set.id; store.setJSON('activeSets', activeIds);
     emit();
     return { ok: true, set, saved: store.available };
   }
@@ -159,7 +212,8 @@ CGB.bank = (() => {
     const before = custom.length;
     custom = custom.filter(s => s.id !== id);
     if (custom.length === before) return false;
-    if (activeId === id) { activeId = BUILTIN[0].id; store.set('activeSet', activeId); }
+    Object.keys(activeIds).forEach(k => { if (activeIds[k] === id) delete activeIds[k]; });
+    store.setJSON('activeSets', activeIds);
     saveSets(); emit();
     return true;
   }
@@ -191,35 +245,40 @@ CGB.bank = (() => {
     return Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, n || 5);
   }
   function clearHistory(name) { delete history[key(name)]; saveHistory(); emit(); }
-  /* Fill a game's question-set dropdown. Options use the short name so they are
-     never cut off; the question count goes in the field's label instead. */
+  /* Fill a question-set dropdown with the chosen subject's sets. Options use the short name so
+     they are never cut off; the full name is in the tooltip. */
   function fillSelect(sel) {
     const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    sel.innerHTML = all().map(s => `<option value="${esc(s.id)}" title="${esc(s.name)}">${esc(s.short || s.name)}</option>`).join('');
     const a = active();
-    sel.value = a.id;
-    sel.title = a.name;
-    const lab = sel.id && document.querySelector(`label[for="${sel.id}"]`);
-    if (lab) lab.textContent = `Question set: ${a.questions.length} questions, shared with every game`;
+    sel.innerHTML = a ? available().map(s => `<option value="${esc(s.id)}" title="${esc(s.name)}">${esc(s.short || s.name)} (${s.questions.length})</option>`).join('')
+      : '<option value="">No questions yet</option>';
+    sel.disabled = !a;
+    sel.value = a ? a.id : '';
+    sel.title = a ? a.name : '';
   }
   function players() { return Object.values(history).map(h => ({ name: h.name, count: h.entries.length })).sort((a, b) => a.name.localeCompare(b.name)); }
 
   /* ---------- Question picking (each game session gets its own picker) ---------- */
+  const WEAK_SHARE = 0.35;
   function createPicker() {
     const used = new Set();
     let setId = null;
     return {
       reset() { used.clear(); },
-      pick(playerName, focusWeak) {
+      /* names: the playing teams. Now and then a question comes from a topic one of them got
+         wrong before, so weak topics come round again without the teacher having to ask. */
+      pick(names) {
         const set = active();
+        if (!set) return null;
         if (set.id !== setId) { used.clear(); setId = set.id; }
         const bank = set.questions;
         let pool = bank.map((q, i) => i).filter(i => !used.has(i));
         if (!pool.length) { used.clear(); pool = bank.map((q, i) => i); }
-        if (focusWeak && playerName) {
-          const weak = new Set(wrongLog(playerName).map(e => e.topic));
+        const weak = new Set();
+        [].concat(names || []).forEach(n => wrongLog(n).forEach(e => weak.add(e.topic)));
+        if (weak.size) {
           const weakPool = pool.filter(i => weak.has(bank[i].topic));
-          if (weakPool.length && CGB.random() < 0.6) pool = weakPool;
+          if (weakPool.length && weakPool.length < pool.length && CGB.random() < WEAK_SHARE) pool = weakPool;
         }
         const i = pool[Math.floor(CGB.random() * pool.length)];
         used.add(i);
@@ -233,7 +292,7 @@ CGB.bank = (() => {
     return {
       format: 'classroom-gameshow-bundle-backup', formatVersion: 1, appVersion: CGB.VERSION,
       exported: new Date().toISOString(),
-      activeSet: activeId,
+      subject, board, activeSets: Object.assign({}, activeIds),
       sets: JSON.parse(JSON.stringify(custom)),
       history: JSON.parse(JSON.stringify(history))
     };
@@ -264,7 +323,9 @@ CGB.bank = (() => {
         addHistoryEntry(name, c); entries++;
       });
     });
-    if (data.activeSet && get(data.activeSet)) { activeId = data.activeSet; store.set('activeSet', activeId); }
+    if (data.activeSets && typeof data.activeSets === 'object') Object.keys(data.activeSets).forEach(k => { if (isSubject(k) && get(data.activeSets[k])) activeIds[k] = data.activeSets[k]; });
+    else if (data.activeSet && get(data.activeSet) && available().some(s => s.id === data.activeSet)) activeIds[subject] = data.activeSet;
+    store.setJSON('activeSets', activeIds);
     saveSets(); saveHistory(); emit();
     return { ok: true, added, updated, entries };
   }
@@ -272,7 +333,9 @@ CGB.bank = (() => {
   load();
   migrateLegacy();
   return {
-    parse, toText, estimateLevel, all, get, active, setActive, summary, addSet, updateSet, deleteSet,
+    parse, toText, estimateLevel, all, get, active, setActive, available, summary, addSet, updateSet, deleteSet, setSubjectOf,
+    SUBJECTS, BOARDS, subject: () => subject, board: () => board, setSubject, setBoard, subjectNote,
+    subjectLabel: k => label(SUBJECTS, k || subject), boardLabel: k => label(BOARDS, k || board),
     logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker, fillSelect,
     exportData, importData, onChange(fn) { listeners.push(fn); },
     builtinIds: BUILTIN.map(s => s.id)

@@ -16,7 +16,7 @@ const bank = CGB.bank;
 const picker = bank.createPicker();
 const GAME_NAME = 'Over the Edge';
 
-function pickQuestion(playerName) { return picker.pick(playerName, G.focusWeak); }
+const pickQuestion = () => picker.pick(G.players.map(p => p.name));
 function loadWrongLog(n) { return bank.wrongLog(n); }
 
 /* =========================================================
@@ -206,7 +206,7 @@ const SFX = (() => {
 /* =========================================================
    GAME STATE
    ========================================================= */
-const T2 = CGB.TEAMS;   // two teams in a small group, up to six in class mode
+const T2 = CGB.TEAMS;   // up to six teams
 const COLORS = { hex: T2.map(t => t.hex), css: T2.map(t => t.css), text: T2.map(t => t.text), mark: T2.map(t => t.mark) };
 const VALUE = 100, JACKPOT_VALUE = 5000;
 const WILDCARDS = [
@@ -214,15 +214,16 @@ const WILDCARDS = [
   { id: 'cash', title: 'Cash bonus', text: n => `+£250 for ${n}` },
   { id: 'steal', title: 'Steal', text: (n, o) => `${n} takes up to £150 from ${o}` }
 ];
+/* Fixed settings: 14 questions in Round 1 and 8 in the final (about 20 minutes with a class),
+   a 20-second countdown before "show me", and the jackpot counter set at Normal difficulty */
+const R1_QUESTIONS = 14, FINAL_QUESTIONS = 8;
 const G = {
-  mode: CGB.mode.get('over-the-edge'), session: CGB.store.get('ote.session') || 'plenary',
-  nTeams: +CGB.store.get('ote.nTeams') || 4, timer: CGB.store.getJSON('ote.timer', 30),
+  nTeams: +CGB.store.get('ote.nTeams') || 4,
   laneQueue: [], laneOwner: [-1, -1, -1, -1], nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
   phase: 'home', step: null, attract: true,
   players: [], team: 0, finalWinnings: 0,
-  r1Each: 6, finalN: 12, finalDiff: 'normal', focusWeak: false,
-  qIndex: 0, qTotal: 0, q: null, turn: 0, answerShown: false,
-  dropper: -1, dropCount: 1, lastDropper: -1, pending: 0, landed: 0, settleAt: 0,
+  qIndex: 0, qTotal: 0, q: null, answerShown: false,
+  dropCount: 1, lastDropper: -1, pending: 0, landed: 0, settleAt: 0,
   dropWon: 0, dropLost: 0, dropNotes: [], pendingExtra: [], bonusDrop: false, cascadeSaid: false,
   jackpot: null, jackpotY0: 0, jackpotWon: false, jackpotFell: false, lastMsg: null
 };
@@ -590,7 +591,7 @@ function machineRect() {
 function hostGesture(name, ms) { host.gesture(name, ms); }
 let hostCheck = 0;
 function updateHost(force) {
-  host.setRest((G.step === 'chute' || G.step === 'lanes' || G.step === 'dropping') ? 'present' : 'idle');
+  host.setRest((G.step === 'lanes' || G.step === 'dropping') ? 'present' : 'idle');
   host.setLook(drops.length || transits.length || G.step === 'dropping' ? 'left' : '');
   // step aside when the setup or results card would cover him
   const now = performance.now();
@@ -672,25 +673,17 @@ function placeBubble() {
 }
 const pick = a => a[Math.floor(CGB.random() * a.length)];
 const LINES = {
-  intro: ["Welcome to Over the Edge! Let's see who's been revising.", "Hello and welcome! Two teams, one machine, and a lot of revision."],
-  ask: ["{n}, here's your question.", "This one's for you, {n}.", "Over to you, {n}.", "{n}, have a think about this one."],
-  correct: ["That's right! Have a counter.", "Spot on, {n}!", "Correct! Nicely done.", "Yes! Textbook answer."],
-  wrong: ["Ooh, not quite.", "Sorry {n}, that's not the one.", "Close, but no counter."],
-  steal: ["{o}, can you steal it?", "Over to you, {o}. Steal it for a counter!"],
-  chute: ["Which lane, {n}?", "Pick your lane, {n}.", "Lane 1, 2, 3 or 4, {n}?"],
   dropping: ["Here it comes...", "Come on, come on...", "Let's see where it lands..."],
   cascade: ["Look at that! They're pouring off!", "The machine's paying out!"],
   one: ["One over the edge! That's £100.", "There's one!"],
   some: ["{k} counters over the edge! Lovely.", "{k} of them! Brilliant drop."],
   none: ["Nothing that time.", "The machine's being stubborn.", "Not this time. It'll come."],
   edge: ["Ooh, it's right on the edge!", "So close! It's hanging there!", "That one's teetering..."],
-  lost: ["Straight down the side, unlucky."],
   wildcard: ["A wildcard counter!", "Ooh, a wildcard!"],
-  final: ["It's the final! Work together and push that jackpot over the edge.", "Team up, you two. There's £5,000 on that gold counter."],
   close: ["The jackpot's teetering!", "It's so close to the edge!"],
   jackpot: ["JACKPOT! Incredible! £5,000!"],
   noJackpot: ["So close! The jackpot lives to see another day.", "Not quite, but what a game."],
-  outro: ["Great game, both of you. Well played!"]
+  outro: ["Great game, everyone. Well played!"]
 };
 function line(key, vars) {
   let t = pick(LINES[key] || ['']);
@@ -703,8 +696,8 @@ const labelsEl = $('labels');
 const labels = [];
 let combo = null;
 function popWin(amount, pos, who) {
-  if (G.mode === 'class' && who >= 0) {
-    // class mode: each label is in the team's colour with its mark, so the class sees who won it
+  if (who >= 0) {
+    // each label is in the team's colour with its mark, so the class sees who won it
     popLabel(`${COLORS.mark[who]} +${fmt(amount)}`, pos, 'team', 1.9);
     labels[labels.length - 1].el.style.color = T2[who].light;
     return;
@@ -778,7 +771,7 @@ function launchDrop(chute, owner, onLand, rnd) {
   c.mesh = makeCoinMesh('std', owner);
   drops.push(c);
   chuteMats[chute].emissive.setHex(owner >= 0 ? COLORS.hex[owner] : SET.aqua); chuteMats[chute].emissiveIntensity = 1.2;
-  setTimeout(() => { if (G.step !== 'chute') resetChuteGlow(); }, 400);
+  setTimeout(() => { if (G.step !== 'lanes') resetChuteGlow(); }, 400);
 }
 function updateDrops(dt) {
   for (let i = drops.length - 1; i >= 0; i--) {
@@ -896,10 +889,10 @@ function onTrayFall(b, inWin) {
   if (!inWin) { SFX.lost(); popLost(pos); G.dropLost++; renderScores(); return; }
   SFX.win();
   G.dropWon++;
-  // class mode: the counter goes to the team whose counter last landed in that quarter of the shelf
-  const zoneOwner = G.mode === 'class' ? G.laneOwner[shelfZone(b.x)] : -1;
+  // the counter goes to the team whose counter last landed in that quarter of the shelf
+  const zoneOwner = G.laneOwner[shelfZone(b.x)];
   const who = zoneOwner >= 0 ? zoneOwner : G.lastDropper;
-  if (G.mode === 'class' && who >= 0) G.dropByTeam[who] = (G.dropByTeam[who] || 0) + 1;
+  if (who >= 0) G.dropByTeam[who] = (G.dropByTeam[who] || 0) + 1;
   if (G.phase === 'final') { G.team += VALUE; G.finalWinnings += VALUE; popWin(VALUE, pos, who); }
   else if (who >= 0) { G.players[who].money += VALUE; G.players[who].won++; popWin(VALUE, pos, who); }
   if (G.dropWon >= 3 && !G.cascadeSaid && G.step === 'dropping') { G.cascadeSaid = true; hostSay(line('cascade'), 'cheer', 2200); }
@@ -917,7 +910,7 @@ function triggerWildcard(id, who, pos) {
     return;
   }
   const P = G.players[who];
-  // with more than two teams a steal takes from the leading team (other than the thief)
+  // a steal takes from the leading team other than the thief
   const others = G.players.map((x, i) => i).filter(i => i !== who);
   const oi = others.reduce((a, i) => G.players[i].money > G.players[a].money ? i : a, others[0]);
   const O = G.players[oi];
@@ -1009,8 +1002,8 @@ function updateCamera(dt, now) {
 
 const raycaster = new THREE.Raycaster(), ndc = new THREE.Vector2();
 renderer.domElement.addEventListener('pointerdown', e => {
-  if (G.step !== 'chute' && G.step !== 'lanes') return;
-  const pickLane = i => G.step === 'lanes' ? chooseLane(i) : chooseChute(i);
+  if (G.step !== 'lanes') return;
+  const pickLane = chooseLane;
   const r = renderer.domElement.getBoundingClientRect();
   ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
   raycaster.setFromCamera(ndc, camera);
@@ -1022,9 +1015,9 @@ renderer.domElement.addEventListener('pointerdown', e => {
   pickLane(best);
 });
 function updateChuteGlow(now) {
-  if (G.step !== 'chute' && G.step !== 'lanes') return;
+  if (G.step !== 'lanes') return;
   const pulse = CGB.settings.reduced() ? 0.9 : 0.7 + Math.sin(now * 0.008) * 0.5;
-  const who = G.step === 'lanes' ? G.laneQueue[0] : G.dropper;
+  const who = G.laneQueue[0];
   chuteMats.forEach(m => { m.emissive.setHex(who >= 0 ? COLORS.hex[who] : SET.aqua); m.emissiveIntensity = pulse; });
 }
 function resetChuteGlow() { chuteMats.forEach(m => { m.emissive.setHex(CHUTE_BASE); m.emissiveIntensity = 0.3; }); }
@@ -1043,51 +1036,20 @@ function showBanner(title, detail, ms) {
   bannerTimer = setTimeout(() => b.classList.remove('show'), ms || 2200);
 }
 function hideBanner() { clearTimeout(bannerTimer); $('banner').classList.remove('show'); }
-function feed(text) {
-  const f = $('feed');
-  const d = document.createElement('div'); d.textContent = text;
-  f.insertBefore(d, f.firstChild);
-  while (f.children.length > 5) f.removeChild(f.lastChild);
-}
 function jackpotProgress() {
   if (!G.jackpot) return 0;
   if (G.jackpotFell) return 1;
   const end = PHY.D + PHY.JR * 0.1;
   return Math.max(0, Math.min(1, (G.jackpot.y - G.jackpotY0) / (end - G.jackpotY0)));
 }
-const KEYS_SMALL = $('keys').innerHTML;
-const KEYS_CLASS = '<span class="kbd">Space</span> show me · <span class="kbd">1</span>–<span class="kbd">6</span> mark · <span class="kbd">Enter</span> confirm · <span class="kbd">U</span> undo · <span class="kbd">1</span>–<span class="kbd">4</span> lane · <span class="kbd">R</span> random lanes · <span class="kbd">Esc</span> menu';
 function renderScores() {
-  const cls = G.mode === 'class';
-  $('keys').innerHTML = cls ? KEYS_CLASS : KEYS_SMALL;
-  $('feed').hidden = cls;
-  // the class team panels appear when the game starts (the setup card covers this area on tablets)
-  $('pc0').hidden = $('pc1').hidden = cls;
-  $('board').hidden = !cls || G.phase === 'home';
-  if (cls) {
-    const teams = G.phase === 'home'
-      ? [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => ({ name: ($('cname' + i) || {}).value || CGB.teamFallback(i), score: fmt(0) }))
-      : G.players.map(p => ({ name: p.name, score: fmt(p.money) }));
-    board.set({ teams, turn: G.step === 'lanes' ? G.laneQueue[0] : -1,
-      badge: G.players.map((p, i) => i === G.catchUp ? 'Catch-up counter' : '') });
-  }
-  if (cls) { /* the class board replaces the two score cards */ }
-  else if (G.phase === 'home') {
-    [0, 1].forEach(i => {
-      const c = $('pc' + i);
-      c.querySelector('.name').textContent = $('name' + i).value.trim() || CGB.teamFallback(i);
-      c.querySelector('.num').textContent = fmt(0);
-      c.querySelector('.meta').textContent = 'Ready to play';
-      c.classList.remove('active');
-    });
-  } else G.players.slice(0, 2).forEach((p, i) => {
-    const c = $('pc' + i);
-    c.querySelector('.name').textContent = p.name;
-    c.querySelector('.num').textContent = fmt(p.money);
-    c.querySelector('.meta').textContent = `${p.correct} correct` + (p.steals ? `, ${p.steals} stolen` : '');
-    const active = (G.step === 'chute' || G.step === 'dropping') ? G.dropper === i : (G.step === 'steal' ? i === 1 - G.turn : G.turn === i && G.step === 'ask');
-    c.classList.toggle('active', active && G.phase !== 'home');
-  });
+  // the team panels appear when the game starts (the setup card covers this area on tablets)
+  $('board').hidden = G.phase === 'home';
+  const teams = G.phase === 'home'
+    ? [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => ({ name: ($('cname' + i) || {}).value || CGB.teamFallback(i), score: fmt(0) }))
+    : G.players.map(p => ({ name: p.name, score: fmt(p.money) }));
+  board.set({ teams, turn: G.step === 'lanes' ? G.laneQueue[0] : -1,
+    badge: G.players.map((p, i) => i === G.catchUp ? 'Catch-up counter' : '') });
   $('teamCard').style.display = G.phase === 'final' ? 'block' : 'none';
   if (G.phase === 'final') {
     $('teamVal').textContent = fmt(G.team);
@@ -1106,24 +1068,9 @@ function updateJackpotMeter(now) {
 }
 function renderQuestion() {
   const q = G.q;
-  const who = G.step === 'steal' ? 1 - G.turn : G.turn;
   if (!q) { $('qWho').textContent = ''; $('qTag').textContent = ''; $('qText').textContent = ''; $('qAnswer').classList.remove('show'); return; }
-  if (G.mode === 'class') {
-    $('qcard').style.setProperty('--pc', 'var(--teal)'); $('qcard').style.setProperty('--pct', 'var(--teal-deep)');
-    $('qWho').textContent = G.phase === 'final' ? 'Every team answers: the whole class plays for the jackpot' : 'Every team answers on their whiteboards';
-    $('qTag').textContent = `${q.subject}: ${q.topic}`; $('qText').textContent = q.q; $('qAnswer').textContent = q.a;
-    $('qAnswer').classList.toggle('show', G.answerShown);
-    return;
-  }
-  $('qcard').style.setProperty('--pc', COLORS.css[who]);
-  $('qcard').style.setProperty('--pct', COLORS.text[who]);
-  const label = G.phase === 'final'
-    ? (G.step === 'steal' ? `${G.players[who].name} to the rescue` : `${G.players[who].name} answers for the team`)
-    : (G.step === 'steal' ? `${G.players[who].name} can steal` : `${G.players[who].name}'s question`);
-  $('qWho').textContent = COLORS.mark[who] + ' ' + label;
-  $('qTag').textContent = `${q.subject}: ${q.topic}`;
-  $('qText').textContent = q.q;
-  $('qAnswer').textContent = q.a;
+  $('qWho').textContent = G.phase === 'final' ? 'Every team answers: the whole class plays for the jackpot' : 'Every team answers on their whiteboards';
+  $('qTag').textContent = `${q.subject}: ${q.topic}`; $('qText').textContent = q.q; $('qAnswer').textContent = q.a;
   $('qAnswer').classList.toggle('show', G.answerShown);
 }
 // on a short panel (portrait tablets) bring the new step's controls into view once, when the step changes
@@ -1139,11 +1086,9 @@ function drawActions() {
   const a = $('actions');
   a.innerHTML = '';
   const add = html => { const d = document.createElement('div'); d.innerHTML = html; while (d.firstChild) a.appendChild(d.firstChild); };
-  const ansBtn = `<button class="linkish" type="button" data-act="answer">${G.answerShown ? 'Hide answer' : 'Show answer'} <span class="kbd">A</span></button>`;
-  const cls = G.mode === 'class';
-  $('cmActions').hidden = !(cls && (G.step === 'ask' || round.undoable));
-  if (cls && G.step === 'ask') return;
-  if (cls && G.step === 'lanes') {
+  $('cmActions').hidden = !(G.step === 'ask' || round.undoable);
+  if (G.step === 'ask') return;
+  if (G.step === 'lanes') {
     const t = G.laneQueue[0], p = G.players[t], n = G.dropCount;
     const lead = t === G.catchUp ? `Catch-up counter for ${p.name}.` : G.bonusDrop ? `Bonus counter for ${p.name}.` : `${p.name} won ${n === 1 ? 'a counter' : n + ' counters'}.`;
     add(`<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(lead)} Captain: pick a lane!<small>Keys 1 to 4 or tap the machine${G.laneQueue.length > 1 ? `. ${G.laneQueue.length - 1} more team${G.laneQueue.length > 2 ? 's' : ''} after this` : ''}. Captains: swap to the next person each time.</small></div>
@@ -1151,20 +1096,7 @@ function drawActions() {
       ${G.laneQueue.length > 1 ? '<button class="btn plain" type="button" data-act="random">Random lanes for the rest <kbd>R</kbd></button>' : ''}`);
     return;
   }
-  if (G.step === 'ask') {
-    add(`<div class="act-row"><button class="btn ok" type="button" data-act="correct">✓ Correct <kbd>C</kbd></button><button class="btn no" type="button" data-act="wrong">✗ Wrong <kbd>W</kbd></button></div>${ansBtn}`);
-  } else if (G.step === 'steal') {
-    const o = G.players[1 - G.turn].name;
-    const verb = G.phase === 'final' ? 'rescue' : 'steal';
-    add(`<div class="hint">${escapeHtml(G.players[G.turn].name)} got it wrong. ${escapeHtml(o)} can ${verb} it for one counter.</div>
-      <div class="act-row"><button class="btn ok" type="button" data-act="scorrect">✓ ${escapeHtml(o)} correct <kbd>C</kbd></button><button class="btn no" type="button" data-act="swrong">✗ Wrong <kbd>W</kbd></button></div>
-      <button class="btn plain" type="button" data-act="snone">No attempt <kbd>N</kbd></button>${ansBtn}`);
-  } else if (G.step === 'chute') {
-    const p = G.players[G.dropper], n = G.dropCount;
-    const lead = G.bonusDrop ? `Bonus counter for ${p.name}.` : `${p.name} wins ${n === 1 ? 'a counter' : n + ' counters'}.`;
-    add(`<div class="ote-dropmsg" style="--pct:${COLORS.text[G.dropper]}">${COLORS.mark[G.dropper]} ${escapeHtml(lead)}<small>Pick a lane with the buttons or keys 1 to 4, or tap one on the machine</small></div>
-      <div class="ote-chutes" style="--pc:${COLORS.css[G.dropper]}">${[0, 1, 2, 3].map(i => `<button class="ote-chute-btn" type="button" data-act="chute" data-i="${i}" aria-label="Lane ${i + 1}">${i + 1}<small>lane</small></button>`).join('')}</div>`);
-  } else if (G.step === 'dropping') {
+  if (G.step === 'dropping') {
     add(`<div class="ote-dropmsg">Counters dropping<small>Waiting for the shelves to settle</small></div>`);
   } else if (G.step === 'next') {
     if (G.lastMsg) add(`<div class="ote-dropmsg">${escapeHtml(G.lastMsg.title)}<small>${escapeHtml(G.lastMsg.detail)}</small></div>`);
@@ -1177,14 +1109,7 @@ $('actions').addEventListener('click', e => {
   const btn = e.target.closest('button[data-act]');
   if (!btn) return;
   const act = btn.dataset.act;
-  if (act === 'correct') markCorrect();
-  else if (act === 'wrong') markWrong();
-  else if (act === 'answer') toggleAnswer();
-  else if (act === 'scorrect') stealResult('correct');
-  else if (act === 'swrong') stealResult('wrong');
-  else if (act === 'snone') stealResult('none');
-  else if (act === 'chute') chooseChute(+btn.dataset.i);
-  else if (act === 'lane') chooseLane(+btn.dataset.i);
+  if (act === 'lane') chooseLane(+btn.dataset.i);
   else if (act === 'random') randomLanes();
   else if (act === 'next') nextQuestion();
 });
@@ -1193,14 +1118,13 @@ function render() { renderScores(); renderQuestion(); renderActions(); }
 /* =========================================================
    GAME FLOW
    ========================================================= */
-/* ---------- Whole class: every team answers, every correct team wins a counter ---------- */
-const SESSION = { starter: { r1: 8, final: 4 }, plenary: { r1: 14, final: 8 }, full: { r1: 28, final: 14 } };
+/* ---------- Every team answers, every correct team wins a counter ---------- */
 const misc = CGB.createMisconceptions();
 const board = CGB.createTeamBoard($('board'), { className: 'cols-2' });
 let undoSnap = null;
 const round = CGB.createClassRound({
   root: document.getElementById('game-over-the-edge'), board, countEl: $('count'), btnEl: $('cmActions'),
-  seconds: () => G.timer, teams: () => G.players.length,
+  seconds: () => CGB.COUNTDOWN, teams: () => G.players.length,
   onConfirm: classResult, onUndo: undoClassResult
 });
 function classResult(res) {
@@ -1263,9 +1187,12 @@ function classFinishDrop() {
   const title = G.dropWon ? `${G.dropWon} over the edge` + (G.phase === 'final' ? `: +${fmt(G.dropWon * VALUE)} for the class` : '') : 'Nothing fell this time';
   const detail = [G.phase === 'final' ? '' : won.join(', '), G.dropLost ? `${G.dropLost} lost down the sides.` : '', ...G.dropNotes].filter(Boolean).join(' · ') || 'The shelves have settled.';
   G.lastMsg = { title, detail };
-  feed(title + (won.length && G.phase !== 'final' ? ': ' + won.join(', ') : ''));
   G.dropDoneAt = simT; G.dropDoneReal = performance.now();
-  if (!G.jackpotWon && !G.cascadeSaid) hostSay(G.dropWon ? line(G.dropWon === 1 ? 'one' : 'some', { k: G.dropWon }) : line('none'), G.dropWon ? 'cheer' : 'shrug', 1600);
+  if (!G.jackpotWon && !G.cascadeSaid) {
+    if (G.dropWon) hostSay(line(G.dropWon === 1 ? 'one' : 'some', { k: G.dropWon }), 'cheer', 1600);
+    else if (edgeTeeter()) hostSay(line('edge'), 'groan', 2000);
+    else hostSay(line('none'), 'shrug', 1600);
+  }
   if (!G.jackpotWon && G.pendingExtra.length && G.phase === 'r1') {
     const extra = G.pendingExtra.slice(); G.pendingExtra = [];
     startLanes(extra, 1, true); return;
@@ -1274,163 +1201,59 @@ function classFinishDrop() {
   render();
 }
 function startGame() {
-  if (G.mode === 'class') {
-    const n = Math.min(6, Math.max(2, G.nTeams));
-    const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, n).map(i => $('cname' + i).value)).map(x => x.slice(0, 16));
-    G.players = names.map(x => ({ name: x, money: 0, correct: 0, asked: 0, won: 0, steals: 0, wrong: [] }));
-    G.r1Total = SESSION[G.session].r1; G.finalTotal = SESSION[G.session].final;
-  } else {
-    const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
-    G.players = names.map(n => ({ name: n, money: 0, correct: 0, asked: 0, won: 0, steals: 0, wrong: [] }));
-  }
+  if (!bank.active()) { renderPack(); return; }
+  const n = Math.min(6, Math.max(2, G.nTeams));
+  const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, n).map(i => $('cname' + i).value)).map(x => x.slice(0, 16));
+  G.players = names.map(x => ({ name: x, money: 0, correct: 0, asked: 0, won: 0, wrong: [] }));
   misc.reset(); round.stop(); G.laneQueue = []; G.laneOwner = [-1, -1, -1, -1]; G.catchUp = -1;
-  G.focusWeak = $('focusWeak').checked;
   G.team = 0; G.finalWinnings = 0; G.jackpot = null; G.jackpotWon = false; G.jackpotFell = false;
   G.pendingExtra = []; G.lastDropper = -1; G.q = null; G.lastMsg = null; closeSaid = false;
   picker.reset();
-  $('feed').innerHTML = '';
   clearLabels();
   G.attract = false;
   newTray(true);
-  G.phase = 'r1'; G.qIndex = 0; G.qTotal = G.mode === 'class' ? G.r1Total : G.r1Each * 2;
+  G.phase = 'r1'; G.qIndex = 0; G.qTotal = R1_QUESTIONS;
   $('home').classList.add('hidden'); $('summary').classList.add('hidden');
   $('roundName').textContent = 'Round 1: Counter Drop';
   showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
-  hostSay(G.mode === 'class' ? `Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!` : line('intro'), 'cheer', 2200);
+  hostSay(`Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!`, 'cheer', 2200);
   nextQuestion(true);
 }
 function nextQuestion(quiet) {
   resetChuteGlow();
   round.stop(); undoSnap = null;
   if (G.jackpotWon || G.qIndex >= G.qTotal) { endRound(); return; }
-  if (G.mode === 'class') {
-    G.q = pickQuestion(G.players[G.qIndex % G.players.length].name);
-    G.players.forEach(p => p.asked++);
-    G.qIndex++;
-    G.answerShown = false; G.bonusDrop = false; G.lastMsg = null; G.released = 0;
-    G.step = 'ask';
-    $('qCount').textContent = `Question ${G.qIndex} of ${G.qTotal}`;
-    if (!quiet) hostSay("Here's one for every team. Boards ready!", 'present', 1400);
-    render();
-    round.think();
-    return;
-  }
-  G.turn = G.qIndex % 2;
-  G.q = pickQuestion(G.players[G.turn].name);
-  G.players[G.turn].asked++;
+  G.q = pickQuestion();
+  G.players.forEach(p => p.asked++);
   G.qIndex++;
-  G.answerShown = false; G.bonusDrop = false; G.lastMsg = null;
+  G.answerShown = false; G.bonusDrop = false; G.lastMsg = null; G.released = 0;
   G.step = 'ask';
   $('qCount').textContent = `Question ${G.qIndex} of ${G.qTotal}`;
-  if (!quiet) hostSay(line('ask', { n: G.players[G.turn].name }), 'present', 1400);
+  if (!quiet) hostSay("Here's one for every team. Boards ready!", 'present', 1400);
   render();
+  round.think();
 }
-function toggleAnswer() { G.answerShown = !G.answerShown; renderQuestion(); renderActions(); }
 function logWrong(i) { const p = G.players[i]; p.wrong.push(G.q); bank.logWrong(p.name, G.q, GAME_NAME); }
-function markCorrect() {
-  if (G.step !== 'ask') return;
-  SFX.correct();
-  G.players[G.turn].correct++;
-  G.answerShown = true;
-  G.dropper = G.turn;
-  G.dropCount = G.phase === 'final' ? 2 : 1;
-  G.step = 'chute';
-  hostSay(line('correct', { n: G.players[G.turn].name }) + ' ' + line('chute', { n: G.players[G.turn].name }), 'clap', 1300);
-  render();
-}
-function markWrong() {
-  if (G.step !== 'ask') return;
-  SFX.wrong();
-  logWrong(G.turn);
-  G.step = 'steal';
-  hostSay(line('wrong', { n: G.players[G.turn].name }) + ' ' + line('steal', { o: G.players[1 - G.turn].name }), 'shrug', 1600);
-  render();
-}
-function stealResult(res) {
-  if (G.step !== 'steal') return;
-  const o = 1 - G.turn;
-  G.answerShown = true;
-  if (res === 'correct') {
-    SFX.correct();
-    G.players[o].steals++;
-    G.dropper = o; G.dropCount = 1; G.step = 'chute';
-    hostSay(line('correct', { n: G.players[o].name }) + ' ' + line('chute', { n: G.players[o].name }), 'clap', 1300);
-  } else {
-    if (res === 'wrong') { SFX.wrong(); logWrong(o); }
-    G.lastMsg = { title: 'No counter this time', detail: res === 'wrong' ? 'Both answers were wrong.' : 'Nobody took the counter.' };
-    hostSay(res === 'wrong' ? "Nobody got that one. Here's the answer." : "No steal. Here's the answer.", 'shrug', 1500);
-    G.step = 'next';
-  }
-  render();
-}
 let dropTimers = [];
-function chooseChute(i) {
-  if (G.step !== 'chute' || i < 0 || i > 3) return;
-  G.step = 'dropping';
-  G.dropWon = 0; G.dropLost = 0; G.dropNotes = []; G.cascadeSaid = false;
-  G.pending = G.dropCount; G.landed = 0; G.settleAt = Infinity;
-  const owner = G.dropper;
-  hostSay(line('dropping'), 'point', 2200);
-  // counters are released 0.65 s apart in simulation time, so a run plays out the same at any frame rate
-  for (let k = 0; k < G.dropCount; k++) {
-    dropTimers.push({ at: simT + k * 0.65, go: () => launchDrop(i, owner, () => {
-      G.lastDropper = owner;
-      G.landed++;
-      if (G.landed >= G.pending) G.settleAt = simT + PHY.PERIOD * 1.4;
-    }) });
-  }
-  render();
-}
 function edgeTeeter() { return tray.lower.some(b => !b.base && b.y > PHY.D - b.r * 0.35); }
-function finishDrop() {
-  if (G.mode === 'class') { classFinishDrop(); return; }
-  const p = G.players[G.dropper];
-  const won = G.dropWon * VALUE;
-  let title;
-  if (G.phase === 'final') title = G.dropWon ? `${G.dropWon} over the edge: +${fmt(won)} for the team` : 'Nothing fell this time';
-  else title = G.dropWon ? `${p.name} pushed ${G.dropWon} over the edge: +${fmt(won)}` : `Nothing fell for ${p.name}`;
-  const detail = [G.dropLost ? `${G.dropLost} lost down the sides.` : '', ...G.dropNotes].filter(Boolean).join(' ') || 'The shelves have settled.';
-  G.lastMsg = { title, detail };
-  feed(title);
-  if (!G.jackpotWon && !G.cascadeSaid) {
-    if (G.dropWon === 1) hostSay(line('one'), 'clap', 1400);
-    else if (G.dropWon > 1) hostSay(line('some', { k: G.dropWon }), 'cheer', 1800);
-    else if (edgeTeeter()) hostSay(line('edge'), 'groan', 2000);
-    else hostSay(line('none'), 'shrug', 1500);
-  }
-  if (G.jackpotWon) { G.step = 'next'; render(); return; }
-  if (G.pendingExtra.length && G.phase === 'r1') {
-    G.dropper = G.pendingExtra.shift(); G.dropCount = 1; G.bonusDrop = true; G.step = 'chute';
-    render(); return;
-  }
-  G.step = 'next';
-  render();
-}
 function endRound() {
   if (G.phase === 'r1') {
     G.phase = 'final';
     G.team = G.players.reduce((a, p) => a + p.money, 0);
     setupFinal();
-    G.qIndex = 0; G.qTotal = G.mode === 'class' ? G.finalTotal : G.finalN;
+    G.qIndex = 0; G.qTotal = FINAL_QUESTIONS;
     $('roundName').textContent = 'The Final: Jackpot';
-    if (G.mode === 'class') {
-      board.set({ earned: [], marks: [] });
-      showBanner('The Final', 'The whole class plays together for the jackpot. Every correct team wins two counters.', 3400);
-      hostSay("It's the final! The whole class together now. Push that jackpot over the edge!", 'cheer', 2200);
-      // catch-up: a team with no more than half the leader's money drops one extra counter first
-      const money = G.players.map(p => p.money), lead = Math.max(...money), last = money.indexOf(Math.min(...money));
-      if (G.players.length > 1 && lead >= 200 && money[last] * 2 <= lead) {
-        G.catchUp = last; G.q = null;
-        feed(`Catch-up counter for ${G.players[last].name}`);
-        hostSay(`${G.players[last].name}, you get a catch-up counter to start the final!`, 'point', 2200);
-        startLanes([last], 1, false);
-        return;
-      }
-      nextQuestion(true);
+    board.set({ earned: [], marks: [] });
+    showBanner('The Final', 'The whole class plays together for the jackpot. Every correct team wins two counters.', 3400);
+    hostSay("It's the final! The whole class together now. Push that jackpot over the edge!", 'cheer', 2200);
+    // catch-up: a team with no more than half the leader's money drops one extra counter first
+    const money = G.players.map(p => p.money), lead = Math.max(...money), last = money.indexOf(Math.min(...money));
+    if (G.players.length > 1 && lead >= 200 && money[last] * 2 <= lead) {
+      G.catchUp = last; G.q = null;
+      hostSay(`${G.players[last].name}, you get a catch-up counter to start the final!`, 'point', 2200);
+      startLanes([last], 1, false);
       return;
     }
-    showBanner('The Final', 'Team up to push the jackpot counter over the edge. Each correct answer wins two counters.', 3400);
-    hostSay(line('final'), 'cheer', 2200);
     nextQuestion(true);
   } else {
     G.phase = 'summary'; G.step = null;
@@ -1438,11 +1261,13 @@ function endRound() {
     showSummary();
   }
 }
+/* The jackpot counter starts 12 units back from the edge and is 0.6 times as heavy to push
+   (the old Normal setting; Easy was 4 and 0.5, Hard 24 and 0.8) */
+const JACKPOT_GAP = 12, JACKPOT_HEAVY = 0.6;
 function setupFinal() {
-  const diff = { easy: [4, 0.5], normal: [12, 0.6], hard: [24, 0.8] }[G.finalDiff] || [12, 0.6];
-  const jx = PHY.W / 2, jy = PHY.D - PHY.JR - diff[0];
+  const jx = PHY.W / 2, jy = PHY.D - PHY.JR - JACKPOT_GAP;
   clearSpace(jx, jy);
-  const J = addLower(tray, jx, jy, { r: PHY.JR, kind: 'jackpot', heavy: diff[1] });
+  const J = addLower(tray, jx, jy, { r: PHY.JR, kind: 'jackpot', heavy: JACKPOT_HEAVY });
   J.mesh = makeCoinMesh('jackpot', -1);
   J.anim = 1;
   G.jackpot = J; G.jackpotY0 = jy;
@@ -1483,33 +1308,18 @@ function showSummary() {
   const total = G.team;
   const head = G.jackpotWon
     ? `<div class="big">Jackpot won: ${fmt(total)}</div><div class="small">Round 1 ${fmt(G.players.reduce((a, p) => a + p.money, 0))}, final ${fmt(G.finalWinnings)} including the £5,000 jackpot</div>`
-    : `<div class="big">${G.mode === 'class' ? 'Class' : 'Team'} total: ${fmt(total)}</div><div class="small">The jackpot counter finished ${Math.round(jackpotProgress() * 100)}% of the way to the edge. Final winnings ${fmt(G.finalWinnings)}.</div>`;
-  const cols = G.players.map((p, i) => {
-    const missed = p.wrong.length ? p.wrong.map(q => `<div class="missed"><div>${escapeHtml(q.q)}</div><div class="a">${escapeHtml(q.a)}</div><div class="t">${escapeHtml(q.subject)}: ${escapeHtml(q.topic)}</div></div>`).join('') : '<div class="none">No wrong answers this game.</div>';
-    const hist = bank.weakTopics(p.name, 5);
-    const histHtml = hist.length ? hist.map(([t, n]) => `<div class="trow"><span>${escapeHtml(t)}</span><span>${n} wrong</span></div>`).join('') : '<div class="none">No history yet.</div>';
-    return `<div class="sum-p" style="--pc:${COLORS.css[i]}">
-      <h3>${COLORS.mark[i]} ${escapeHtml(p.name)}</h3>
-      <div class="sum-stats">Round 1: ${fmt(p.money)}. ${p.correct} correct from ${p.asked} questions${p.steals ? `, plus ${p.steals} steal${p.steals > 1 ? 's' : ''}` : ''}.</div>
-      <div class="sum-sub">Missed this game</div>${missed}
-      <div class="sum-sub">Weakest topics across all games</div>${histHtml}
-      <button class="linkish" type="button" data-clear="${i}">Clear ${escapeHtml(p.name)}'s history</button>
-    </div>`;
-  }).join('');
+    : `<div class="big">Class total: ${fmt(total)}</div><div class="small">The jackpot counter finished ${Math.round(jackpotProgress() * 100)}% of the way to the edge. Final winnings ${fmt(G.finalWinnings)}.</div>`;
   const ranks = G.players.map((p, i) => ({ p, i })).sort((a, b) => b.p.money - a.p.money)
     .map(({ p, i }, k) => `<div class="sum-rank" style="--pc:${COLORS.css[i]}"><span class="pos">${k + 1}</span><span class="nm">${COLORS.mark[i]} ${escapeHtml(p.name)}<small>${p.correct} correct · ${p.won} counters over the edge</small></span><span class="sc">${fmt(p.money)}</span></div>`).join('');
-  const body = G.mode === 'class' ? `<div class="sum-ranks"><h3>Round 1</h3>${ranks}</div>${misc.html(5)}` : `<div class="sum-grid">${cols}</div>`;
+  const body = `<div class="sum-ranks"><h3>Round 1</h3>${ranks}</div>${misc.html(5)}`;
   $('sumCard').innerHTML = `<div class="sum-head">${head}</div>${body}
-    <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change settings</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
+    <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change teams</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.remove('hidden');
   clearLabels();
   updateHost(true);
   $('againBtn').onclick = () => startGame();
   $('homeBtn').onclick = () => goHome();
   $('menuBtn2').onclick = () => CGB.app.requestLauncher();
-  $('sumCard').querySelectorAll('[data-clear]').forEach(btn => {
-    btn.onclick = () => CGB.armButton(btn, 'Tap again to clear', () => { bank.clearHistory(G.players[+btn.dataset.clear].name); showSummary(); });
-  });
   render();
   $('summary').scrollTop = 0; $('sumCard').scrollTop = 0;
   $('againBtn').focus({ preventScroll: true });
@@ -1525,6 +1335,7 @@ function goHome() {
   hideBanner(); clearLabels();
   newTray(false);
   render();
+  renderPack();
   $('qText').textContent = 'Set up the game to begin.';
 }
 
@@ -1532,109 +1343,30 @@ function goHome() {
    SETUP SCREEN
    ========================================================= */
 $('logo').innerHTML = CGB.brand.oteLogo();
-function renderSetSelect() {
-  bank.fillSelect($('setSelect'));
-}
-$('setSelect').addEventListener('change', e => { bank.setActive(e.target.value); picker.reset(); });
-bank.onChange(renderSetSelect);
-$('openBank').addEventListener('click', () => CGB.bankUI.open());
-function wireToggle(btnId, panelId, openText, closedText) {
-  $(btnId).addEventListener('click', () => {
-    const p = $(panelId); p.classList.toggle('show');
-    const open = p.classList.contains('show');
-    $(btnId).textContent = open ? openText : closedText;
-    $(btnId).setAttribute('aria-expanded', String(open));
-  });
-}
-wireToggle('toggleHost', 'hostEditor', 'Hide host options', 'Customise the host');
-function wireSeg(id, key) {
-  const seg = $(id);
-  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === G[key])));
-  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; G[key] = +b.dataset.v; CGB.store.set('ote.' + key, String(G[key])); paint(); });
-  const saved = +CGB.store.get('ote.' + key); if ([4, 6, 8, 12, 16].includes(saved)) G[key] = saved;
-  paint();
-}
-wireSeg('segR1', 'r1Each');
-wireSeg('segF', 'finalN');
-(function wireDiff() {
-  const seg = $('segDiff');
-  const saved = CGB.store.get('ote.finalDiff'); if (['easy', 'normal', 'hard'].includes(saved)) G.finalDiff = saved;
-  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === G.finalDiff)));
-  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; G.finalDiff = b.dataset.v; CGB.store.set('ote.finalDiff', G.finalDiff); paint(); });
-  paint();
-})();
-
-/* Host editor (changes the Showtime mascot everywhere) */
-function saveHost() { CGB.saveHost(); hostSay('How do I look?', 'present', 1200); }
-function swatchRow(id, list, key, label) {
-  const el = $(id);
-  el.innerHTML = list.map((c, i) => `<button type="button" class="sw" data-i="${i}" style="background:${c}" aria-label="${label} option ${i + 1}"></button>`).join('');
-  const paint = () => el.querySelectorAll('.sw').forEach(b => { const on = +b.dataset.i === CGB.hostCfg[key]; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
-  el.addEventListener('click', e => { const b = e.target.closest('.sw'); if (!b) return; CGB.hostCfg[key] = +b.dataset.i; paint(); saveHost(); });
-  paint();
-}
-function segRow(id, list, key) {
-  const el = $(id);
-  el.innerHTML = list.map(([v, label]) => `<button type="button" data-v="${v}">${label}</button>`).join('');
-  const paint = () => el.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === CGB.hostCfg[key])));
-  el.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; CGB.hostCfg[key] = b.dataset.v; paint(); saveHost(); });
-  paint();
-}
-swatchRow('swSkin', CGB.hostOpts.skin, 'skin', 'Skin');
-swatchRow('swHair', CGB.hostOpts.hair, 'hair', 'Hair colour');
-swatchRow('swSuit', CGB.hostOpts.suit, 'suit', 'Suit colour');
-segRow('segStyle', CGB.hostOpts.style, 'style');
-segRow('segBeard', CGB.hostOpts.beard, 'beard');
-segRow('segGlasses', CGB.hostOpts.glasses, 'glasses');
-$('hostName').value = CGB.hostCfg.name;
-$('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim() || 'Host'; CGB.store.setJSON('host', CGB.hostCfg); });
-$('hostName').addEventListener('change', () => CGB.saveHost());
-
-const fillNames = () => { CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n.slice(0, 16); }); renderClassNames(true); };
-/* whole-class setup */
+function renderPack() { $('startBtn').disabled = !CGB.renderPackLine($('pack')); }
+bank.onChange(() => { picker.reset(); if (G.phase === 'home') renderPack(); });
+/* The number of teams, and their names behind "Edit team names" */
 if (![2, 3, 4, 5, 6].includes(G.nTeams)) G.nTeams = 4;
-if (!CGB.COUNTDOWNS.includes(G.timer)) G.timer = 30;
-if (!CGB.SESSIONS.some(x => x.id === G.session)) G.session = 'plenary';
 function renderClassNames(fresh) {
   const prev = [0, 1, 2, 3, 4, 5].map(i => { const el = $('cname' + i); return el && !fresh ? el.value : null; });
   $('cnames').innerHTML = [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => `<label style="--pc:${COLORS.css[i]};--pct:${COLORS.text[i]}"><span>${COLORS.mark[i]} Team ${i + 1}</span><input id="ote-cname${i}" type="text" maxlength="16" autocomplete="off" value="${escapeHtml(prev[i] || CGB.teamNames(6)[i].slice(0, 16))}"></label>`).join('');
 }
-function applyMode() {
-  $('setupCard').dataset.mode = G.mode;
-  const x = SESSION[G.session];
-  $('sessionHint').textContent = `${CGB.SESSIONS.find(o => o.id === G.session).note}: ${x.r1} questions in Round 1 and ${x.final} in the final, every team answering each one.`;
-}
-function wireClassSeg(id, key, store, text) {
-  const seg = $(id);
-  const val = v => text ? v : +v;
-  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(val(b.dataset.v) === G[key])));
-  seg.addEventListener('click', e => {
-    const b = e.target.closest('button'); if (!b) return;
-    G[key] = val(b.dataset.v);
-    if (text) CGB.store.set(store, G[key]); else CGB.store.setJSON(store, G[key]);
-    if (key === 'mode') CGB.mode.set('over-the-edge', G.mode);
-    if (key === 'nTeams') renderClassNames();
-    paint(); applyMode(); renderScores(); CGB.fitSetups(); updateHost(true);
-  });
-  paint();
-}
+function paintTeams() { $('segTeams').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === G.nTeams))); }
+$('segTeams').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  G.nTeams = +b.dataset.v; CGB.store.set('ote.nTeams', String(G.nTeams));
+  paintTeams(); renderClassNames(); renderScores(); CGB.fitSetups(); updateHost(true);
+});
 $('cnames').addEventListener('input', renderScores);
-wireClassSeg('segMode', 'mode', 'over-the-edge.mode', true);
-wireClassSeg('segSession', 'session', 'ote.session', true);
-wireClassSeg('segTeams', 'nTeams', 'ote.nTeams');
-wireClassSeg('segTimer', 'timer', 'ote.timer');
-applyMode();
-fillNames();
-[0, 1].forEach(i => $('name' + i).addEventListener('input', renderScores));
-$('focusWeak').checked = CGB.store.get('ote.focusWeak') === '1';
-$('focusWeak').addEventListener('change', e => CGB.store.set('ote.focusWeak', e.target.checked ? '1' : '0'));
+paintTeams();
+renderClassNames(true);
 $('startBtn').addEventListener('click', startGame);
 function paintMute() { $('muteBtn').textContent = CGB.settings.get('sound') ? 'Sound on' : 'Sound off'; $('muteBtn').setAttribute('aria-pressed', String(!CGB.settings.get('sound'))); }
 $('muteBtn').addEventListener('click', () => { CGB.settings.set('sound', !CGB.settings.get('sound')); CGB.sfx.unlock(); });
 $('menuBtn').addEventListener('click', () => CGB.app.requestLauncher());
 $('settingsBtn').addEventListener('click', () => CGB.modal.open('settingsModal'));
 paintMute();
-renderSetSelect();
+renderPack();
 
 let active = false;
 document.addEventListener('keydown', e => {
@@ -1642,7 +1374,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { e.preventDefault(); CGB.app.requestLauncher(); return; }
   const inField = e.target.matches && e.target.matches('input, textarea, select');
   if (G.phase === 'home') {
-    if (e.key === 'Enter' && !(e.target.matches && e.target.matches('button, select, textarea'))) { e.preventDefault(); startGame(); }
+    if (e.key === 'Enter' && !(e.target.matches && e.target.matches('button, select, textarea, summary'))) { e.preventDefault(); startGame(); }
     return;
   }
   if (G.phase === 'summary') {
@@ -1651,16 +1383,9 @@ document.addEventListener('keydown', e => {
   }
   if (inField) return;
   const k = e.key.toLowerCase();
-  if (G.mode === 'class') {
-    if (G.step === 'ask') { if (round.handleKey(k)) e.preventDefault(); return; }
-    if (k === 'u' && round.handleKey('u')) { e.preventDefault(); return; }
-    if (G.step === 'lanes') { if (['1', '2', '3', '4'].includes(k)) chooseLane(+k - 1); else if (k === 'r') randomLanes(); }
-    else if (G.step === 'next') { if (k === ' ' || k === 'enter') { e.preventDefault(); nextQuestion(); } }
-    return;
-  }
-  if (G.step === 'ask') { if (k === 'c') markCorrect(); else if (k === 'w') markWrong(); else if (k === 'a') toggleAnswer(); }
-  else if (G.step === 'steal') { if (k === 'c') stealResult('correct'); else if (k === 'w') stealResult('wrong'); else if (k === 'n') stealResult('none'); else if (k === 'a') toggleAnswer(); }
-  else if (G.step === 'chute') { if (['1', '2', '3', '4'].includes(k)) chooseChute(+k - 1); }
+  if (G.step === 'ask') { if (round.handleKey(k)) e.preventDefault(); return; }
+  if (k === 'u' && round.handleKey('u')) { e.preventDefault(); return; }
+  if (G.step === 'lanes') { if (['1', '2', '3', '4'].includes(k)) chooseLane(+k - 1); else if (k === 'r') randomLanes(); }
   else if (G.step === 'next') { if (k === ' ' || k === 'enter') { e.preventDefault(); nextQuestion(); } }
 });
 
@@ -1690,7 +1415,7 @@ function simulate(h) {
   tray.lower.forEach(b => { if (b.anim > 0) b.anim = Math.max(0, b.anim - h * 1.1); });
   updateDrops(h);
   updateTransits(h);
-  if (G.step === 'dropping' && G.landed >= G.pending && simT >= G.settleAt) finishDrop();
+  if (G.step === 'dropping' && G.landed >= G.pending && simT >= G.settleAt) classFinishDrop();
 }
 function loop(now) {
   if (!active) return;
@@ -1724,7 +1449,7 @@ return {
     rafId = requestAnimationFrame(loop);
     updateHost(true);
     if (G.phase === 'home') {
-      fillNames(); renderScores();
+      renderClassNames(true); renderPack(); renderScores();
       setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! I'm ${CGB.hostCfg.name || 'your host'}. Set up the game and let's play.`, 'present', 1800); }, 700);
       $('startBtn').focus();
     }
@@ -1741,7 +1466,7 @@ return {
     const sr = wrap.getBoundingClientRect(), hr = hostRect();
     return { stage: { w: sr.width, h: sr.height }, machine: machineRect(), machineRight: hostFit.machineRight, hidden: hostFit.hidden, host: { left: hr.left - sr.left, right: hr.right - sr.left, top: hr.top - sr.top, bottom: hr.bottom - sr.top }, away: $('host').classList.contains('away') };
   },
-  _state: () => ({ mode: G.mode, round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
+  _state: () => ({ round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
 };
 }
 

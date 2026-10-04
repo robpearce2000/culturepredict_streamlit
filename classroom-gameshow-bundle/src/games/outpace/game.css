@@ -144,3 +144,7 @@
   .op-dock.classq { max-width: min(1100px, 94vw); }
   .op-cmboard.cm-board[data-n="5"], .op-cmboard.cm-board[data-n="6"] { grid-template-columns: repeat(var(--n), minmax(0, 1fr)); }
 }
+/* the questions line is a light panel on the dark card; "Edit team names" uses the card's link colour */
+.op .packline .lab { color: var(--ink-soft); }
+.op .packline .linkish { color: var(--teal-deep); }
+.op details.tnames > summary { color: #9FFCF0; }

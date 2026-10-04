@@ -23,7 +23,24 @@
   <div class="wrap">
     <header class="l-hero">
       <h1 class="l-wordmark" id="wordmark" style="margin:0"></h1>
-      <div class="l-mascot" id="mascot"><div class="hello" id="mascotHello"></div></div>
+      <section class="l-subject" id="subjectPanel" aria-labelledby="subjectTitle">
+        <h2 id="subjectTitle">Choose your subject</h2>
+        <div class="l-chips" id="subjectChips" role="radiogroup" aria-labelledby="subjectTitle"></div>
+        <div class="l-row">
+          <span class="lab" id="labBoard">Exam board</span>
+          <div class="seg" id="boardSeg" role="group" aria-labelledby="labBoard"></div>
+        </div>
+        <div class="l-row l-qrow">
+          <label class="lab" for="launcherSet">Questions</label>
+          <select class="cgb-select" id="launcherSet"></select>
+          <button class="btn go sm" type="button" id="openBank">Question bank</button>
+        </div>
+        <p class="l-note" id="subjectNote" role="status"></p>
+      </section>
+      <div class="l-host">
+        <div class="l-mascot" id="mascot"><div class="hello" id="mascotHello"></div></div>
+        <button class="btn plain sm" type="button" id="openHost">Customise the host</button>
+      </div>
     </header>
 
     <section class="l-cards" aria-label="Games">
@@ -31,7 +48,7 @@
         <div class="art" id="artOTE"></div>
         <div class="body">
           <h3>Over the Edge</h3>
-          <p>Answer right to win a counter, drop it down a lane and push the pile over the edge. Team up in the final to win the jackpot.</p>
+          <p>Every team that answers right wins a counter to drop down a lane. Push the pile over the edge, then play for the jackpot together.</p>
           <button class="btn brand" type="button" data-play="over-the-edge">Play Over the Edge</button>
         </div>
       </article>
@@ -39,7 +56,7 @@
         <div class="art" id="artOP"></div>
         <div class="body">
           <h3>Outpace</h3>
-          <p>Pick a deal, then answer your way home before the Hunter catches you. Finish with a 60-second Final Sprint.</p>
+          <p>The whole class is one runner. Pick a deal, then answer your way home before the Hunter catches you.</p>
           <button class="btn brand" type="button" data-play="outpace">Play Outpace</button>
         </div>
       </article>
@@ -47,7 +64,7 @@
         <div class="art" id="artCC"></div>
         <div class="body">
           <h3>Category Clash</h3>
-          <p>Teams pick a category and a points value. Harder questions are worth more, and wrong answers can be stolen.</p>
+          <p>Teams take turns to pick a category and a points value, and every team answers. Harder questions are worth more.</p>
           <button class="btn brand" type="button" data-play="category-clash">Play Category Clash</button>
         </div>
       </article>
@@ -55,7 +72,7 @@
         <div class="art" id="artHH"></div>
         <div class="body">
           <h3>Hex Hunt</h3>
-          <p>Two teams race to build a path across the hexagon board. Each hexagon is a question, with the answer's first letter as a clue.</p>
+          <p>Two halves of the class race to build a path across the hexagon board. Each letter is the first letter of the answer.</p>
           <button class="btn brand" type="button" data-play="hex-hunt">Play Hex Hunt</button>
         </div>
       </article>
@@ -65,15 +82,9 @@
       </article>
     </section>
 
-    <section class="l-bar" aria-label="Question bank">
-      <div class="l-active">Questions in use: <strong id="activeSetName"></strong> (<span id="activeSetCount"></span>)</div>
-      <div class="group">
-        <button class="btn go" type="button" id="openBank" style="font-size:1.15rem">Question bank</button>
-        <button class="btn plain" type="button" id="openAbout">About</button>
-      </div>
-    </section>
     <section class="l-bar" aria-label="Settings">
       <div class="group settings-row" id="launcherSettings"></div>
+      <button class="btn plain" type="button" id="openAbout">About</button>
     </section>
     <p class="l-foot">Everything is saved on this computer only. Nothing is sent anywhere. <span id="storageNote" hidden>This browser is blocking storage, so changes will be lost when you close the page.</span></p>
   </div>
@@ -90,11 +101,12 @@
   <div class="cgb-panel">
     <div class="modal-head"><h2 id="bankTitle">Question bank</h2><button class="btn plain sm" type="button" data-close="bankModal">Close <span class="kbd">Esc</span></button></div>
     <div class="modal-body">
-      <p class="hint" style="margin-top:0">Choose the set to use. Every game uses the same set and shares each team's wrong-answer history.</p>
+      <p class="hint" style="margin-top:0" id="bankIntro"></p>
       <div class="bank-list" id="bankList"></div>
       <div class="bank-section" id="bankForm">
         <h3 id="bankFormTitle">Add a question set</h3>
-        <div class="field"><label class="lab" for="bankName">Set name</label><input class="cgb-input" id="bankName" type="text" maxlength="60" placeholder="For example: Bonding lesson 2"></div>
+        <div class="bank-two"><div class="field"><label class="lab" for="bankName">Set name</label><input class="cgb-input" id="bankName" type="text" maxlength="60" placeholder="For example: Bonding lesson 2"></div>
+        <div class="field"><label class="lab" for="bankSubject">Subject</label><select class="cgb-select" id="bankSubject"></select></div></div>
         <div class="field">
           <label class="lab" for="bankText">Questions</label>
           <div class="fmt" aria-hidden="true">Subject: Chemistry
@@ -126,6 +138,25 @@ A: Ionic</div>
   <div class="cgb-panel">
     <div class="modal-head"><h2 id="settingsTitle">Settings</h2><button class="btn plain sm" type="button" data-close="settingsModal">Close <span class="kbd">Esc</span></button></div>
     <div class="modal-body"><div class="set-grid" id="modalSettings"></div></div>
+  </div>
+</div>
+
+<div class="modal" id="hostModal" role="dialog" aria-modal="true" aria-labelledby="hostTitle" hidden>
+  <div class="cgb-panel">
+    <div class="modal-head"><h2 id="hostTitle">Customise the host</h2><button class="btn plain sm" type="button" data-close="hostModal">Close <span class="kbd">Esc</span></button></div>
+    <div class="modal-body host-editor">
+      <div class="host-preview" id="hostPreview" aria-hidden="true"></div>
+      <div class="host-grid">
+        <div class="full"><label class="lab" for="hostName">Host name</label><input class="cgb-input" type="text" id="hostName" maxlength="20"></div>
+        <div><span class="lab">Skin</span><div class="swatches" id="swSkin"></div></div>
+        <div><span class="lab">Hair colour</span><div class="swatches" id="swHair"></div></div>
+        <div><span class="lab">Hair style</span><div class="seg" id="segStyle"></div></div>
+        <div><span class="lab">Facial hair</span><div class="seg" id="segBeard"></div></div>
+        <div><span class="lab">Suit</span><div class="swatches" id="swSuit"></div></div>
+        <div><span class="lab">Glasses</span><div class="seg" id="segGlasses"></div></div>
+        <p class="hint full">Changes apply in every game.</p>
+      </div>
+    </div>
   </div>
 </div>
 

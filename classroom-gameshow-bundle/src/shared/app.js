@@ -113,13 +113,17 @@ CGB.bankUI = (() => {
   let editing = null;   // id of the set being edited, or null when adding
   const $ = id => document.getElementById(id);
   function subjectTag(s) { const k = s.toLowerCase(); return k.startsWith('bio') ? 'b' : k.startsWith('chem') ? 'c' : k.startsWith('phys') ? 'p' : ''; }
+  const subjectOptions = (sel) => '<option value="">Any subject</option>' + B.SUBJECTS.map(x => `<option value="${x.id}"${x.id === sel ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
   function renderList() {
-    const act = B.active().id;
-    $('bankList').innerHTML = B.all().map(s => {
+    const a = B.active(), act = a ? a.id : '';
+    $('bankIntro').textContent = `${B.subjectLabel()} sets (${B.boardLabel()}). Choose the set to use: every game uses it, and each team's wrong answers are shared between games. Change the subject on the main screen.`;
+    const list = B.available();
+    $('bankList').innerHTML = (list.length ? '' : `<p class="hint">${esc(B.subjectNote())}</p>`) + list.map(s => {
       const sum = B.summary(s);
       const tags = sum.subjects.map(x => `<span class="tag ${subjectTag(x)}">${esc(x)}</span>`).join('') +
         `<span class="tag">${sum.count} questions</span><span class="tag">${sum.topics.length} topics</span>` +
-        (s.builtin ? '<span class="tag">Built-in</span>' : '<span class="tag own">Your set</span>');
+        (s.builtin ? '<span class="tag">Built-in</span>' : '<span class="tag own">Your set</span>') +
+        (s.builtin ? '' : `<label class="tag sj">Subject <select data-subj="${esc(s.id)}" aria-label="Subject for ${esc(s.name)}">${subjectOptions(s.subject)}</select></label>`);
       const acts = s.builtin
         ? `<button class="btn plain sm" type="button" data-act="copy" data-id="${esc(s.id)}">Copy to edit</button>`
         : `<button class="btn plain sm" type="button" data-act="rename" data-id="${esc(s.id)}">Rename</button>
@@ -142,20 +146,26 @@ CGB.bankUI = (() => {
     $('bankFormTitle').textContent = set ? 'Edit questions' : 'Add a question set';
     $('bankName').value = set ? set.name : '';
     $('bankText').value = set ? B.toText(set.questions) : '';
+    $('bankSubject').innerHTML = B.SUBJECTS.map(x => `<option value="${x.id}">${esc(x.label)}</option>`).join('');
+    $('bankSubject').value = set && set.subject ? set.subject : B.subject();
+    $('bankSubject').disabled = !!set;
     $('bankSave').textContent = set ? 'Save changes' : 'Save as new set';
     $('bankCancel').hidden = !set;
     setStatus('bankFormStatus', '');
     if (set) { $('bankForm').scrollIntoView({ block: 'start', behavior: CGB.settings.reduced() ? 'auto' : 'smooth' }); $('bankName').focus(); }
   }
   function init() {
-    $('bankList').addEventListener('change', e => { if (e.target.name === 'activeSet') { B.setActive(e.target.value); } });
+    $('bankList').addEventListener('change', e => {
+      if (e.target.name === 'activeSet') B.setActive(e.target.value);
+      else if (e.target.dataset.subj) B.setSubjectOf(e.target.dataset.subj, e.target.value);
+    });
     $('bankList').addEventListener('click', e => {
       const b = e.target.closest('button[data-act]'); if (!b) return;
       const set = B.get(b.dataset.id); if (!set) return;
       if (b.dataset.act === 'delete') CGB.armButton(b, 'Tap again to delete', () => { B.deleteSet(set.id); if (editing === set.id) startEdit(null); });
       else if (b.dataset.act === 'edit') startEdit(set);
       else if (b.dataset.act === 'copy') {
-        const r = B.addSet(set.short + ' (my copy)', B.toText(set.questions));
+        const r = B.addSet(set.short + ' (my copy)', B.toText(set.questions), B.subject());
         if (r.ok) startEdit(r.set);
       } else if (b.dataset.act === 'rename') {
         const nm = b.closest('.bank-item').querySelector('.nm');
@@ -172,9 +182,9 @@ CGB.bankUI = (() => {
     });
     $('bankSave').addEventListener('click', () => {
       const name = $('bankName').value, text = $('bankText').value;
-      const r = editing ? B.updateSet(editing, name, text) : B.addSet(name, text);
+      const r = editing ? B.updateSet(editing, name, text) : B.addSet(name, text, $('bankSubject').value);
       if (!r.ok) { setStatus('bankFormStatus', r.error, true); return; }
-      setStatus('bankFormStatus', `${editing ? 'Saved' : 'Added'} "${r.set.name}" with ${r.set.questions.length} questions. It is now in use in every game.${CGB.store.available ? '' : ' Storage is blocked, so it will be lost when the page closes.'}`);
+      setStatus('bankFormStatus', `${editing ? 'Saved' : 'Added'} "${r.set.name}" with ${r.set.questions.length} questions. It is now in use in every game for ${B.subjectLabel(r.set.subject || B.subject())}.${CGB.store.available ? '' : ' Storage is blocked, so it will be lost when the page closes.'}`);
       if (!editing) { $('bankName').value = ''; $('bankText').value = ''; }
       else B.setActive(editing);
     });
@@ -208,6 +218,59 @@ CGB.bankUI = (() => {
   return { init, open() { renderList(); startEdit(null); CGB.modal.open('bankModal'); }, renderList };
 })();
 
+/* ---------- Host editor (on the main screen; changes the host in every game) ---------- */
+CGB.hostEditor = (() => {
+  const $ = id => document.getElementById(id);
+  let preview = null;
+  const save = () => { CGB.saveHost(); if (preview) { preview.gesture('present', 1200); preview.talk(700); } };
+  function swatchRow(id, list, key, label) {
+    const el = $(id);
+    el.innerHTML = list.map((c, i) => `<button type="button" class="sw" data-i="${i}" style="background:${c}" aria-label="${label} option ${i + 1}"></button>`).join('');
+    const paint = () => el.querySelectorAll('.sw').forEach(b => { const on = +b.dataset.i === CGB.hostCfg[key]; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
+    el.addEventListener('click', e => { const b = e.target.closest('.sw'); if (!b) return; CGB.hostCfg[key] = +b.dataset.i; paint(); save(); });
+    paint();
+  }
+  function segRow(id, list, key) {
+    const el = $(id);
+    el.innerHTML = list.map(([v, label]) => `<button type="button" data-v="${v}">${label}</button>`).join('');
+    const paint = () => el.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === CGB.hostCfg[key])));
+    el.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; CGB.hostCfg[key] = b.dataset.v; paint(); save(); });
+    paint();
+  }
+  function init() {
+    swatchRow('swSkin', CGB.hostOpts.skin, 'skin', 'Skin');
+    swatchRow('swHair', CGB.hostOpts.hair, 'hair', 'Hair colour');
+    swatchRow('swSuit', CGB.hostOpts.suit, 'suit', 'Suit colour');
+    segRow('segStyle', CGB.hostOpts.style, 'style');
+    segRow('segBeard', CGB.hostOpts.beard, 'beard');
+    segRow('segGlasses', CGB.hostOpts.glasses, 'glasses');
+    $('hostName').value = CGB.hostCfg.name;
+    $('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim() || 'Host'; CGB.store.setJSON('host', CGB.hostCfg); });
+    $('hostName').addEventListener('change', () => CGB.saveHost());
+  }
+  function open() {
+    if (!preview) preview = CGB.createHost2D($('hostPreview'), { className: 'host-preview-fig' });
+    CGB.modal.open('hostModal');
+    preview.gesture('wave', 1800); preview.talk(800);
+  }
+  return { init, open };
+})();
+
+/* ---------- The questions line on every setup card ----------
+   Shows the subject and set in use, with a link back to the main screen to change them.
+   Returns false when the subject has no questions yet, so the game can hold its Start button. */
+CGB.renderPackLine = function (el) {
+  const B = CGB.bank, esc = CGB.escapeHtml, a = B.active();
+  const where = `${esc(B.subjectLabel())} · ${esc(B.boardLabel())}`;
+  el.classList.add('packline');
+  el.innerHTML = a
+    ? `<span class="lab">Questions</span><span class="pk"><b title="${esc(a.name)}">${esc(a.short || a.name)}</b> <span class="n">${where} · ${a.questions.length} questions</span></span><button class="linkish" type="button" data-pack="change">Change</button>`
+    : `<span class="lab">Questions</span><span class="pk"><b>No ${esc(B.subjectLabel())} questions yet</b> <span class="n">Add your own in the Question bank, or choose another subject.</span></span><button class="linkish" type="button" data-pack="change">Change</button>`;
+  el.classList.toggle('empty', !a);
+  if (!el.dataset.wired) { el.dataset.wired = '1'; el.addEventListener('click', e => { if (e.target.closest('[data-pack]')) CGB.app.chooseSubject(); }); }
+  return !!a;
+};
+
 /* ---------- Launcher ---------- */
 CGB.app = (() => {
   const $ = id => document.getElementById(id);
@@ -224,7 +287,7 @@ CGB.app = (() => {
       $('launcher').hidden = false;
       document.title = 'Showtime: Classroom Gameshows';
       if (mascot) mascot.resume();
-      renderActive();
+      renderSubject();
       const card = prev !== 'launcher' && document.querySelector(`[data-play="${prev}"]`);
       if (card) card.focus();
     } else {
@@ -249,12 +312,19 @@ CGB.app = (() => {
     if (g && g.inProgress && g.inProgress()) { CGB.modal.open('leaveModal'); return; }
     show('launcher');
   }
-  function renderActive() {
-    const s = CGB.bank.active();
-    $('activeSetName').textContent = s.name;
-    $('activeSetCount').textContent = s.questions.length + ' questions';
+  /* The subject panel: subject, exam board and the question set in use */
+  function renderSubject() {
+    const B = CGB.bank, esc = CGB.escapeHtml, sj = B.subject(), bd = B.board();
+    $('subjectChips').innerHTML = B.SUBJECTS.map(x => {
+      const n = B.available(x.id).length;
+      return `<button type="button" class="chip${x.id === sj ? ' on' : ''}" role="radio" aria-checked="${x.id === sj}" data-subject="${x.id}"${n ? '' : ' data-empty="1"'}>${esc(x.label)}</button>`;
+    }).join('');
+    $('boardSeg').innerHTML = B.BOARDS.map(x => `<button type="button" data-board="${x.id}" aria-pressed="${x.id === bd}">${esc(x.label)}</button>`).join('');
+    B.fillSelect($('launcherSet'));
+    const note = B.subjectNote();
+    $('subjectNote').textContent = note;
+    $('subjectNote').hidden = !note;
   }
-
   /* The mascot on the launcher: Marty waves hello now and then */
   function createMascot() {
     const box = $('mascot');
@@ -277,21 +347,38 @@ CGB.app = (() => {
     CGB.renderSettings($('launcherSettings'), true);
     CGB.renderSettings($('modalSettings'), false);
     CGB.bankUI.init();
-    $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Pick a game.`;
-    CGB.hostListeners.push(() => { $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Pick a game.`; });
+    $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Choose your subject, then pick a game.`;
+    CGB.hostListeners.push(() => { $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Choose your subject, then pick a game.`; });
     document.querySelectorAll('[data-play]').forEach(b => b.addEventListener('click', () => show(b.dataset.play)));
     $('openBank').addEventListener('click', () => CGB.bankUI.open());
+    $('subjectChips').addEventListener('click', e => { const b = e.target.closest('[data-subject]'); if (b) CGB.bank.setSubject(b.dataset.subject); });
+    $('subjectChips').addEventListener('keydown', e => {      // arrow keys move between subjects, as in a radio group
+      const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key]; if (!d) return;
+      e.preventDefault();
+      const ids = CGB.bank.SUBJECTS.map(x => x.id), i = (ids.indexOf(CGB.bank.subject()) + d + ids.length) % ids.length;
+      CGB.bank.setSubject(ids[i]);
+      const b = $('subjectChips').querySelector(`[data-subject="${ids[i]}"]`); if (b) b.focus();
+    });
+    $('boardSeg').addEventListener('click', e => { const b = e.target.closest('[data-board]'); if (b) CGB.bank.setBoard(b.dataset.board); });
+    $('launcherSet').addEventListener('change', e => CGB.bank.setActive(e.target.value));
+    $('openHost').addEventListener('click', () => CGB.hostEditor.open());
     $('openAbout').addEventListener('click', () => CGB.modal.open('aboutModal'));
     $('leaveConfirm').addEventListener('click', () => { CGB.modal.close('leaveModal'); show('launcher'); });
     $('aboutVersion').textContent = CGB.VERSION;
     $('storageNote').hidden = CGB.store.available;
-    CGB.bank.onChange(renderActive);
-    renderActive();
+    CGB.bank.onChange(renderSubject);
+    renderSubject();
+    CGB.hostEditor.init();
     mascot = createMascot();
     window.addEventListener('hashchange', () => { const r = routes[location.hash.slice(1)]; show(r || 'launcher'); });
     const start = routes[location.hash.slice(1)];
     if (start) show(start);
     else if (mascot) mascot.resume();
   }
-  return { init, show, requestLauncher, get current() { return current; } };
+  /* "Change" on a setup card: back to the main screen with the subject panel in focus */
+  function chooseSubject() {
+    show('launcher');
+    const b = document.querySelector('#subjectChips .chip.on'); if (b) b.focus();
+  }
+  return { init, show, requestLauncher, chooseSubject, get current() { return current; } };
 })();

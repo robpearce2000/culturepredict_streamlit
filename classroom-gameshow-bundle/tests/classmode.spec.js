@@ -1,33 +1,17 @@
-// Whole-class mode in all four games: full games with 2, 4 and 6 teams, marking, undo,
+// Whole-class play in all four games: full games with 2, 4 and 6 teams, marking, undo,
 // the class misconceptions summary, and the time marking and Over the Edge's drop take.
 const { test } = require('@playwright/test');
-const { openBundle, state, expect } = require('./helpers');
+const { openBundle, state, mark, PICK, expect } = require('./helpers');
 
-const PICK = (seg, v) => `${seg} button[data-v="${v}"]`;
 const note = (name, value) => test.info().annotations.push({ type: name, description: String(value) });
-
-/* Mark a question: teams whose index passes `ok` are correct. Returns the marking time in ms. */
-async function mark(page, id, ok) {
-  await expect.poll(async () => (await state(page, id)).round, { timeout: 15000 }).toMatch(/think|show|mark/);
-  if ((await state(page, id)).round === 'think') await page.keyboard.press('Space');
-  if ((await state(page, id)).round === 'show') await page.keyboard.press('Space');   // skip the 3, 2, 1
-  await expect.poll(async () => (await state(page, id)).round).toBe('mark');
-  const n = (await state(page, id)).teams ? (await state(page, id)).teams.length : 6;
-  for (let i = 0; i < n; i++) if (ok(i)) await page.keyboard.press(String(i + 1));
-  await page.keyboard.press('Enter');
-  const t = (await state(page, id)).times;
-  return t.confirm - t.mark;
-}
 
 for (const n of [2, 4, 6]) {
   test(`Category Clash, whole class with ${n} teams: marking, undo, full board and misconceptions`, async ({ page }) => {
-    const log = await openBundle(page, '#category-clash', { mode: 'class' });
+    const log = await openBundle(page, '#category-clash');
     await page.click(PICK('#cc-segTeams', n));
-    await page.click(PICK('#cc-segSession', 'starter'));
-    await page.click(PICK('#cc-segTimer', 0));
     await page.click('#cc-startBtn');
     let s = await state(page, 'category-clash');
-    expect(s.mode).toBe('class'); expect(s.rows).toBe(3); expect(s.teams).toHaveLength(n);
+    expect(s.rows).toBe(5); expect(s.teams).toHaveLength(n);
     // first tile: the choosing team and team 2 correct
     await page.keyboard.press('Enter');
     const chooser = (await state(page, 'category-clash')).turn;
@@ -66,10 +50,8 @@ for (const n of [2, 4, 6]) {
 }
 
 test('Category Clash: a team far behind gets a catch-up pick at the start of the next round', async ({ page }) => {
-  await openBundle(page, '#category-clash', { mode: 'class' });
+  await openBundle(page, '#category-clash');
   await page.click(PICK('#cc-segTeams', 2));
-  await page.click(PICK('#cc-segSession', 'full'));
-  await page.click(PICK('#cc-segTimer', 0));
   await page.click('#cc-startBtn');
   // team 1 wins a 500 and half of another (at least the top tile ahead); team 2 gets nothing
   for (let k = 0; k < 2; k++) {
@@ -88,9 +70,7 @@ test('Category Clash: a team far behind gets a catch-up pick at the start of the
 });
 
 test('Hex Hunt, whole class: shares per half, tie to the chooser, undo, full round and misconceptions', async ({ page }) => {
-  const log = await openBundle(page, '#hex-hunt', { mode: 'class' });
-  await page.click(PICK('#hh-segSession', 'starter'));
-  await page.click(PICK('#hh-segTimer', 0));
+  const log = await openBundle(page, '#hex-hunt');
   await page.click('#hh-startBtn');
   const id = 'hex-hunt';
   // hexagon 1: half 2 has the higher share
@@ -132,10 +112,8 @@ test('Hex Hunt, whole class: shares per half, tie to the chooser, undo, full rou
 for (const n of [2, 4, 6]) {
   test(`Over the Edge, whole class with ${n} teams: marking, undo, fast drop, final and misconceptions`, async ({ page }) => {
     await page.addInitScript(() => { window.__SHOWTIME_MANUAL__ = true; });   // physics moves only when the test says
-    const log = await openBundle(page, '#over-the-edge', { mode: 'class' });
+    const log = await openBundle(page, '#over-the-edge');
     await page.click(PICK('#ote-segTeams', n));
-    await page.click(PICK('#ote-segSession', 'starter'));
-    await page.click(PICK('#ote-segTimer', 0));
     await page.click('#ote-startBtn');
     const id = 'over-the-edge';
     // question 1: every team correct; undo once, then confirm again
@@ -175,9 +153,8 @@ for (const n of [2, 4, 6]) {
 
 test('Over the Edge, whole class: six correct teams drop within 10 seconds, and a far-behind team gets a catch-up counter', async ({ page }) => {
   await page.addInitScript(() => { window.__SHOWTIME_MANUAL__ = true; });
-  await openBundle(page, '#over-the-edge', { mode: 'class' });
+  await openBundle(page, '#over-the-edge');
   await page.click(PICK('#ote-segTeams', 6));
-  await page.click(PICK('#ote-segTimer', 0));
   await page.click('#ote-startBtn');
   await page.evaluate(() => { CGB.test.ote.setMoney([600, 400, 300, 0, 200, 500]); CGB.test.ote.toFinal(); });
   const s = await state(page, 'over-the-edge');
@@ -189,11 +166,9 @@ test('Over the Edge, whole class: six correct teams drop within 10 seconds, and 
 });
 
 for (const n of [2, 4, 6]) {
-  test(`Outpace, whole class with ${n} groups: half-the-groups rule, undo, sprint and misconceptions`, async ({ page }) => {
-    const log = await openBundle(page, '#outpace', { mode: 'class' });
+  test(`Outpace, whole class with ${n} teams: half-the-teams rule, undo, sprint and misconceptions`, async ({ page }) => {
+    const log = await openBundle(page, '#outpace');
     await page.click(PICK('#op-segGroups', n));
-    await page.click(PICK('#op-segSession', 'starter'));
-    await page.click(PICK('#op-segTimer', 0));
     await page.click('#op-startBtn');
     const id = 'outpace';
     await page.keyboard.press('2');                       // the class voted Standard
@@ -213,11 +188,12 @@ for (const n of [2, 4, 6]) {
     s = await state(page, id);
     expect(s.hunter).toBe(h0 - 1); expect(s.runner).toBe(r0);
     await page.keyboard.press('Enter');
-    let sprintSeen = false;
+    let sprintSeen = false, dealsVoted = 1;
     for (let guard = 0, k = 0; guard < 600; guard++) {
       s = await state(page, id);
       if (s.phase === 'summary') break;
       if (s.roundEnd) { await page.keyboard.press('Enter'); continue; }
+      if (s.phase === 'deal' && !s.dealReward) { dealsVoted++; await page.keyboard.press('2'); continue; }   // the second Deal Round
       if (s.phase === 'sprint') {
         if (!sprintSeen) { sprintSeen = true; expect(s.target).toBeGreaterThanOrEqual(3); note('sprint target', s.target); }
         if (s.timeLeft > 5 && k > 3) await page.evaluate(() => CGB.test.outpace.setTime(2));
@@ -229,16 +205,8 @@ for (const n of [2, 4, 6]) {
     s = await state(page, id);
     expect(s.phase).toBe('summary');
     expect(sprintSeen).toBe(true);
+    expect(dealsVoted).toBe(2);
     await expect(page.locator('#op-summaryPlayers .cm-miscon')).toContainText('Reteach these');
     expect(log.errors).toEqual([]);
   });
 }
-
-test('small group mode is still the old game: the mode toggle switches back', async ({ page }) => {
-  await openBundle(page, '#category-clash', { mode: 'class' });
-  await expect(page.locator('#cc-setupCard')).toHaveAttribute('data-mode', 'class');
-  await page.click(PICK('#cc-segMode', 'small'));
-  await expect(page.locator('#cc-setupCard')).toHaveAttribute('data-mode', 'small');
-  await expect(page.locator('#cc-segTeams button[data-v="6"]')).toBeHidden();
-  await expect(page.locator('#cc-optSteal')).toBeVisible();
-});

@@ -15,8 +15,7 @@ const SEED = process.env.SEED ? Number(process.env.SEED) : 20261004;
 
 /* Open Showtime and record anything that should never happen: network requests and console errors.
    opts.product  open the shipped file instead of the test build (no shortcuts, no seeding)
-   opts.quality  'low' (default for gameplay tests: rules don't depend on shadows or glow) or 'high'
-   opts.mode     'small' (default: the small-group tests that came before class mode) or 'class' */
+   opts.quality  'low' (default for gameplay tests: rules don't depend on shadows or glow) or 'high' */
 async function openBundle(page, hash, opts) {
   opts = opts || {};
   const log = { requests: [], errors: [] };
@@ -24,34 +23,49 @@ async function openBundle(page, hash, opts) {
   page.on('console', m => { if (m.type() === 'error' || m.type() === 'warning') log.errors.push(m.type() + ': ' + m.text()); });
   page.on('pageerror', e => log.errors.push('pageerror: ' + e.message));
   try { test.info().annotations.push({ type: 'seed', description: String(SEED) }); } catch (e) { /* outside a test */ }
-  await page.addInitScript(([seed, quality, mode]) => {
+  await page.addInitScript(([seed, quality]) => {
     window.__SHOWTIME_SEED__ = seed;
     try {
-      ['over-the-edge', 'outpace', 'category-clash', 'hex-hunt'].forEach(g => { if (!localStorage.getItem('cgb.' + g + '.mode')) localStorage.setItem('cgb.' + g + '.mode', mode); });
       if (quality) {
         const k = 'cgb.settings', cur = JSON.parse(localStorage.getItem(k) || '{}');
         if (!cur.quality) { cur.quality = quality; localStorage.setItem(k, JSON.stringify(cur)); }
       }
     } catch (e) { /* storage blocked: the game falls back to its defaults */ }
-  }, [SEED, opts.quality || 'low', opts.mode || 'small']);
+  }, [SEED, opts.quality || 'low']);
   await page.goto('file://' + (opts.product ? DIST : TEST_BUILD) + (hash || ''));
   await page.waitForFunction(() => window.CGB && CGB.app);
   return log;
 }
 const state = (page, id) => page.evaluate(g => CGB.games[g].state(), id);
 
-/* Play Over the Edge to the summary using only keyboard shortcuts.
-   plan(step, qIndex) returns the key to press for a question. */
+/* One question in any game: skip the countdown and the "3, 2, 1" with Space, then mark the
+   teams whose index passes ok() and confirm with Enter. Returns the marking time in ms. */
+async function mark(page, id, ok) {
+  await expect.poll(async () => (await state(page, id)).round, { timeout: 15000 }).toMatch(/think|show|mark/);
+  if ((await state(page, id)).round === 'think') await page.keyboard.press('Space');
+  if ((await state(page, id)).round === 'show') await page.keyboard.press('Space');   // skip the 3, 2, 1
+  await expect.poll(async () => (await state(page, id)).round).toBe('mark');
+  const s = await state(page, id);
+  const n = s.teams ? s.teams.length : s.players ? s.players.length : 6;
+  for (let i = 0; i < n; i++) if (ok(i)) await page.keyboard.press(String(i + 1));
+  await page.keyboard.press('Enter');
+  const t = (await state(page, id)).times;
+  return t.confirm - t.mark;
+}
+
+/* Play Over the Edge to the summary with keyboard shortcuts. ok(i, q) says which teams are
+   right on question q; captains' lanes are picked with R. With opts.manual the physics
+   clock only moves when the test advances it. */
 async function playOverTheEdge(page, opts) {
   opts = opts || {};
+  const ok = opts.ok || ((i, q) => (i + q) % 3 === 0);
   const deadline = Date.now() + (opts.timeout || 200000);
-  let correctLeft = opts.correct == null ? 2 : opts.correct;
+  let q = 0;
   while (Date.now() < deadline) {
     const s = await state(page, 'over-the-edge');
     if (s.phase === 'summary') return s;
-    if (s.step === 'ask') { await page.keyboard.press(correctLeft > 0 ? 'c' : 'w'); if (correctLeft > 0) correctLeft--; }
-    else if (s.step === 'steal') await page.keyboard.press('n');
-    else if (s.step === 'chute') await page.keyboard.press(String(1 + Math.floor(Math.random() * 4)));
+    if (s.step === 'ask') { const k = q++; await mark(page, 'over-the-edge', i => ok(i, k)); continue; }
+    if (s.step === 'lanes') await page.keyboard.press('r');
     else if (s.step === 'next') await page.keyboard.press('Space');
     if (s.step === 'dropping' && opts.manual) await page.evaluate(() => CGB.test.ote.advance(0.5));
     else await page.waitForTimeout(s.step === 'dropping' ? 400 : 120);
@@ -59,8 +73,9 @@ async function playOverTheEdge(page, opts) {
   throw new Error('Over the Edge did not reach the summary in time');
 }
 
-/* Play Outpace to the summary with keyboard shortcuts. In each Deal Round
-   pick the bold deal and answer wrong, so the Hunter catches quickly. */
+/* Play Outpace to the summary with keyboard shortcuts: vote the Bold deal and mark most
+   teams wrong in the Deal Rounds, so the Hunter catches quickly; with opts.shortSprint the
+   sprint clock is cut to a few seconds. */
 async function playOutpace(page, opts) {
   opts = opts || {};
   const deadline = Date.now() + (opts.timeout || 200000);
@@ -70,20 +85,66 @@ async function playOutpace(page, opts) {
     if (s.phase === 'summary') return s;
     if (s.roundEnd) await page.keyboard.press('Enter');
     else if (s.phase === 'deal' && !s.dealReward) await page.keyboard.press('3');
-    else if ((s.phase === 'deal' || s.phase === 'sprint') && !s.awaitingNext) {
-      // mark straight away most of the time; now and then show the answer first (optional)
-      if (!s.answerShown && n % 5 === 4) { n++; await page.keyboard.press('a'); }
-      else { await page.keyboard.press(s.phase === 'sprint' && n % 3 ? 'c' : 'w'); n++; }
-      if (s.phase === 'sprint' && opts.shortSprint && s.timeLeft > 3) await page.evaluate(() => CGB.test.outpace.setTime(2.5));
+    else if (s.phase === 'deal' && s.round === 'done') await page.keyboard.press('Enter');
+    else if ((s.phase === 'deal' || s.phase === 'sprint') && /think|show|mark/.test(s.round)) {
+      if (s.phase === 'sprint' && opts.shortSprint && s.timeLeft > 3 && n > 2) await page.evaluate(() => CGB.test.outpace.setTime(2.5));
+      const k = n++;
+      await mark(page, 'outpace', i => s.phase === 'sprint' ? (i + k) % 2 === 0 : i === 0 && k % 4 === 3);
+      continue;
     }
-    await page.waitForTimeout(150);
+    await page.waitForTimeout(120);
   }
   throw new Error('Outpace did not reach the summary in time');
 }
 
-async function setNames(page, prefix, a, b) {
-  await page.fill(`#${prefix}-name0`, a);
-  await page.fill(`#${prefix}-name1`, b);
+/* Play Category Clash to the results: every tile, ok(i, q) says which teams are right */
+async function playCategoryClash(page, opts) {
+  opts = opts || {};
+  const ok = opts.ok || ((i, q) => (i + q) % 3 !== 0);
+  const end = Date.now() + (opts.timeout || 200000);
+  let q = 0;
+  while (Date.now() < end) {
+    const s = await state(page, 'category-clash');
+    if (s.phase === 'summary') return s;
+    if (s.phase === 'board') await page.keyboard.press('Enter');
+    else if (s.phase === 'question' && s.step === 'done') await page.keyboard.press('Enter');
+    else if (s.phase === 'question') { const k = q++; await mark(page, 'category-clash', i => ok(i, k)); continue; }
+    await page.waitForTimeout(60);
+  }
+  throw new Error('Category Clash did not finish');
 }
 
-module.exports = { URL, DIST, TEST_BUILD, SEED, openBundle, state, playOverTheEdge, playOutpace, setNames, expect };
+/* Play Hex Hunt to the results: shares[q % shares.length] gives the two halves' shares */
+async function playHexHunt(page, opts) {
+  opts = opts || {};
+  const shares = opts.shares || [[60, 30], [20, 70], [50, 50], [0, 0], [80, 40]];
+  const end = Date.now() + (opts.timeout || 200000);
+  let q = 0;
+  while (Date.now() < end) {
+    const s = await state(page, 'hex-hunt');
+    if (s.phase === 'summary') return s;
+    if (s.phase === 'board' || s.phase === 'won' || s.round === 'done') await page.keyboard.press('Enter');
+    else if (s.round === 'think' || s.round === 'show') await page.keyboard.press('Space');
+    else if (s.round === 'mark') {
+      const [a, b] = shares[q++ % shares.length];
+      await page.keyboard.press('1'); for (let i = 0; i < a / 10; i++) await page.keyboard.press('ArrowRight');
+      await page.keyboard.press('2'); for (let i = 0; i < b / 10; i++) await page.keyboard.press('ArrowRight');
+      await page.keyboard.press('Enter');
+      continue;
+    }
+    await page.waitForTimeout(60);
+  }
+  throw new Error('Hex Hunt did not finish');
+}
+
+/* Team names sit behind "Edit team names" on every setup card */
+const NAME_INPUT = { 'over-the-edge': 'ote-cname', outpace: 'op-gname', 'category-clash': 'cc-name', 'hex-hunt': 'hh-name' };
+async function setNames(page, game, names) {
+  const card = page.locator(`#game-${game} .setup`);
+  const box = card.locator('details.tnames');
+  if (!(await box.evaluate(d => d.open))) await box.locator('summary').click();
+  for (let i = 0; i < names.length; i++) await page.fill(`#${NAME_INPUT[game]}${i}`, names[i]);
+}
+const PICK = (seg, v) => `${seg} button[data-v="${v}"]`;
+
+module.exports = { URL, DIST, TEST_BUILD, SEED, openBundle, state, mark, playOverTheEdge, playOutpace, playCategoryClash, playHexHunt, setNames, PICK, expect };

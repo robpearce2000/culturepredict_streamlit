@@ -1,36 +1,25 @@
 'use strict';
 /* =========================================================
-   CLASS MODE (shared by all four games)
+   THE CLASS ROUND (shared by all four games)
    A whole class of about 30 plays in 2 to 6 teams with mini whiteboards.
    Every team answers every question:
-     1. the question shows, with an optional countdown;
+     1. the question shows, with a 20-second countdown;
      2. Space (or the end of the countdown) brings up "3, 2, 1, show me!";
      3. the teacher marks each team: keys 1 to 6 toggle a team, C marks
         every team correct, W every team wrong, Enter confirms;
      4. the game shows the answer and applies the result;
      5. U undoes the marking until the next question starts.
-   This file holds the pieces the games share: the per-game mode setting,
-   the team panels, the question round (countdown, show me, marking, undo),
-   the class misconceptions summary and the host's reactions.
+   This file holds the pieces the games share: the team panels, the
+   question round (countdown, show me, marking, undo), the class
+   misconceptions summary and the host's reactions.
    ========================================================= */
 (function () {
   const CGB = window.CGB;
   const esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const pick = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
 
-  CGB.COUNTDOWNS = [0, 20, 30, 45, 60];
-  CGB.SESSIONS = [
-    { id: 'starter', label: 'Starter', note: 'about 10 minutes' },
-    { id: 'plenary', label: 'Plenary', note: 'about 20 minutes' },
-    { id: 'full', label: 'Full lesson', note: 'about 40 minutes' }
-  ];
+  CGB.COUNTDOWN = 20;    // seconds to think before "3, 2, 1, show me!" (Space skips it)
   CGB.TEAM_RULE = 'A team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.';
-
-  /* Whole class or small group, remembered for each game (whole class by default) */
-  CGB.mode = {
-    get: game => CGB.store.get(game + '.mode') === 'small' ? 'small' : 'class',
-    set: (game, m) => CGB.store.set(game + '.mode', m === 'small' ? 'small' : 'class')
-  };
 
   /* Marty's reaction to a marked question: "Five out of six teams! Brilliant!" */
   const WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'];
