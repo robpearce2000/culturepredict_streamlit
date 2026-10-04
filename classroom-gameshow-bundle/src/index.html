@@ -90,7 +90,7 @@
   <div class="cgb-panel">
     <div class="modal-head"><h2 id="bankTitle">Question bank</h2><button class="btn plain sm" type="button" data-close="bankModal">Close <span class="kbd">Esc</span></button></div>
     <div class="modal-body">
-      <p class="hint" style="margin-top:0">Choose the set to use. Every game uses the same set and shares each player's or team's wrong-answer history.</p>
+      <p class="hint" style="margin-top:0">Choose the set to use. Every game uses the same set and shares each team's wrong-answer history.</p>
       <div class="bank-list" id="bankList"></div>
       <div class="bank-section" id="bankForm">
         <h3 id="bankFormTitle">Add a question set</h3>
@@ -108,13 +108,13 @@ A: Ionic</div>
         <div class="status" id="bankFormStatus" role="status" style="margin-top:8px"></div>
       </div>
       <div class="bank-section">
-        <h3>Players' wrong answers</h3>
-        <p class="hint" style="margin-top:0">Saved by player name. Use the same name in either game to keep a player's history together.</p>
+        <h3>Teams' wrong answers</h3>
+        <p class="hint" style="margin-top:0">Saved by team name. Use the same team name in any game to keep that team's history together.</p>
         <div class="players-list" id="bankPlayers"></div>
       </div>
       <div class="bank-section">
         <h3>Backup</h3>
-        <p class="hint" style="margin-top:0">Save all your sets and players' history to a file, then load it on another computer. Loading a backup adds to what is here; it never deletes anything.</p>
+        <p class="hint" style="margin-top:0">Save all your sets and teams' history to a file, then load it on another computer. Loading a backup adds to what is here; it never deletes anything.</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn teal" type="button" id="bankExport">Save backup file</button><button class="btn plain" type="button" id="bankImport">Load backup file</button><input type="file" id="bankImportFile" accept=".json,application/json" hidden></div>
         <div class="status" id="bankBackupStatus" role="status" style="margin-top:8px"></div>
       </div>
@@ -145,7 +145,7 @@ A: Ionic</div>
       <p>Four revision games for the classroom, inspired by classic TV quiz formats: Over the Edge, Outpace, Category Clash and Hex Hunt. Game design and question packs by Rob Pearce.</p>
       <p>The GCSE Combined Science starter packs are AQA-style practice questions written for Showtime. They are not produced or endorsed by AQA.</p>
       <h3>Privacy</h3>
-      <p>Showtime makes no network connections. Question sets, player names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a player's history there at any time.</p>
+      <p>Showtime makes no network connections. Question sets, team names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a team's history there at any time.</p>
       <h3>Third-party software and fonts</h3>
       <p>three.js r128 and its post-processing examples (MIT licence). Lilita One by Juan Montoreano and Nunito by The Nunito Project Authors (SIL Open Font License 1.1).</p>
       <pre><!-- @text vendor/three-LICENSE.txt --></pre>
@@ -166,6 +166,7 @@ A: Ionic</div>
 <script src="shared/settings.js"></script>
 <script src="shared/packs.js"></script>
 <script src="shared/bank.js"></script>
+<script src="shared/teams.js"></script>
 <script src="shared/sfx.js"></script>
 <script src="shared/host.js"></script>
 <script src="shared/brand.js"></script>

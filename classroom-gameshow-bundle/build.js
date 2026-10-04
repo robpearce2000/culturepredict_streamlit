@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /*
  * Build: turns src/index.html into one self-contained file.
- *   node build.js            -> dist/classroom-gameshow-bundle.html
+ *   node build.js            -> dist/showtime-classroom-gameshows.html
  *
  * It inlines, in order:
  *   <!-- @include path -->           HTML fragments
@@ -16,7 +16,7 @@ const path = require('path');
 
 const SRC = path.join(__dirname, 'src');
 const OUT_DIR = path.join(__dirname, 'dist');
-const OUT = path.join(OUT_DIR, 'classroom-gameshow-bundle.html');
+const OUT = path.join(OUT_DIR, 'showtime-classroom-gameshows.html');
 
 const read = p => fs.readFileSync(path.join(SRC, p), 'utf8');
 const escapeHtml = t => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

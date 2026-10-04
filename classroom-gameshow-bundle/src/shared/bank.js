@@ -63,7 +63,7 @@ CGB.bank = (() => {
   const P = CGB.PACKS;
   const bio = parse(P.biology), chem = parse(P.chemistry), phys = parse(P.physics);
   const BUILTIN = [
-    { id: 'gcse-combined-mix', name: 'GCSE Combined Science starter pack: all three sciences (AQA-style)', short: 'Combined Science: all three sciences', questions: bio.concat(chem, phys) },
+    { id: 'gcse-combined-mix', name: 'GCSE Combined Science starter pack: all three sciences (AQA-style)', short: 'Combined Science: mixed', questions: bio.concat(chem, phys) },
     { id: 'gcse-combined-biology', name: 'GCSE Combined Science starter pack: Biology (AQA-style)', short: 'Combined Science: Biology', questions: bio },
     { id: 'gcse-combined-chemistry', name: 'GCSE Combined Science starter pack: Chemistry (AQA-style)', short: 'Combined Science: Chemistry', questions: chem },
     { id: 'gcse-combined-physics', name: 'GCSE Combined Science starter pack: Physics (AQA-style)', short: 'Combined Science: Physics', questions: phys },
@@ -184,6 +184,17 @@ CGB.bank = (() => {
     return Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, n || 5);
   }
   function clearHistory(name) { delete history[key(name)]; saveHistory(); emit(); }
+  /* Fill a game's question-set dropdown. Options use the short name so they are
+     never cut off; the question count goes in the field's label instead. */
+  function fillSelect(sel) {
+    const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    sel.innerHTML = all().map(s => `<option value="${esc(s.id)}" title="${esc(s.name)}">${esc(s.short || s.name)}</option>`).join('');
+    const a = active();
+    sel.value = a.id;
+    sel.title = a.name;
+    const lab = sel.id && document.querySelector(`label[for="${sel.id}"]`);
+    if (lab) lab.textContent = `Question set: ${a.questions.length} questions, shared with every game`;
+  }
   function players() { return Object.values(history).map(h => ({ name: h.name, count: h.entries.length })).sort((a, b) => a.name.localeCompare(b.name)); }
 
   /* ---------- Question picking (each game session gets its own picker) ---------- */
@@ -255,7 +266,7 @@ CGB.bank = (() => {
   migrateLegacy();
   return {
     parse, toText, estimateLevel, all, get, active, setActive, summary, addSet, updateSet, deleteSet,
-    logWrong, wrongLog, weakTopics, clearHistory, players, createPicker,
+    logWrong, wrongLog, weakTopics, clearHistory, players, createPicker, fillSelect,
     exportData, importData, onChange(fn) { listeners.push(fn); },
     builtinIds: BUILTIN.map(s => s.id)
   };

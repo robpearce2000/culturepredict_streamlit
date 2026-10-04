@@ -9,7 +9,7 @@
 - Launcher shows four game cards, with "More shows coming soon" as a strip underneath.
 
 ### Changed
-- **Professor Pip redrawn** as a 2D cartoon in the Showtime ink-outline style, replacing the blocky 3D model. He poses, blinks, talks and pulls faces, keeps every customisation option, and stands in front of the Over the Edge set. His speech bubble now avoids his head, and he steps aside when a setup or results card would cover him.
+- **Marty Marquee redrawn** as a 2D cartoon in the Showtime ink-outline style, replacing the blocky 3D model. He poses, blinks, talks and pulls faces, keeps every customisation option, and stands in front of the Over the Edge set. His speech bubble now avoids his head, and he steps aside when a setup or results card would cover him.
 - Teacher guide, listing images and listing text cover all four games.
 
 
@@ -30,7 +30,7 @@ Two stand-alone tutoring games packaged as one product.
 ### Over the Edge (the counter-pusher game)
 - New name, logo, header sign and set: teal studio, coral and aqua lighting, sunflower shelves with a hazard-stripe edge, slate peg board, brass pegs.
 - Drop zones are now **lanes 1–4**; mystery counters are **★ wildcard counters**.
-- Host renamed Professor Pip with a new default look and a bow tie; still fully customisable, and shared with the launcher.
+- Host renamed Marty Marquee with a new default look and a bow tie; still fully customisable, and shared with the launcher.
 - Menu, sound and settings buttons on screen; Esc returns to the menu (with a confirm during a game). Enter starts and replays.
 - Darker button colours for WCAG AA contrast; players also marked ● and ■.
 - Speech bubble kept clear of the menu bar, tail follows the host.

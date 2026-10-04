@@ -14,7 +14,7 @@ const $ = id => document.getElementById('hh-' + id);
 const esc = CGB.escapeHtml;
 const bank = CGB.bank;
 const GAME_NAME = 'Hex Hunt';
-const TEAM = [{ css: 'var(--ha)', mark: '●', goal: 'left to right' }, { css: 'var(--hb)', mark: '■', goal: 'top to bottom' }];
+const TEAM = CGB.TEAMS.slice(0, 2).map((t, i) => Object.assign({ goal: ['left to right', 'top to bottom'][i] }, t));
 const SFX = {
   pick() { CGB.sfx.tone(620, 0.08, 'triangle', 0.06); },
   buzz() { CGB.sfx.tone(180, 0.18, 'square', 0.05); },
@@ -121,7 +121,7 @@ function renderTeams() {
   const owned = t => S.cells.filter(c => c.owner === t).length;
   $('teams').innerHTML = S.teams.map((t, i) => `<div class="hh-team${i === S.picker && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)} <small>${TEAM[i].goal} · ${owned(i)} hexagons</small></span><span class="sc">${S.best > 1 ? t.wins + (t.wins === 1 ? ' round' : ' rounds') : ''}</span></div>`).join('');
   const p = S.teams[S.picker];
-  $('turn').innerHTML = p ? `<b style="--tc:${TEAM[S.picker].css}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon` : '';
+  $('turn').innerHTML = p ? `<b style="--tc:${TEAM[S.picker].light}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon` : '';
   $('round').textContent = S.best > 1 ? `Round ${S.round} · first to ${Math.ceil(S.best / 2)} rounds` : '';
 }
 $('board').addEventListener('click', e => {
@@ -286,7 +286,7 @@ $('winBtn').addEventListener('click', continueAfterWin);
 
 function startGame() {
   const names = [0, 1].map(i => ($('name' + i).value.trim() || 'Team ' + (i + 1)).slice(0, 18));
-  CGB.store.setJSON('hh.names', names);
+  CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, wins: 0, won: 0, wrong: [] }));
   S.focusWeak = $('focusWeak').checked;
   S.round = 1; S.firstPicker = 0; S.picker = 0;
@@ -310,7 +310,7 @@ function showSummary() {
     return `<div class="hh-sum-p" style="--tc:${TEAM[i].css}"><h3>${TEAM[i].mark} ${esc(t.name)}</h3><div class="hint">${t.wins} round${t.wins === 1 ? '' : 's'} won · ${t.won} hexagons claimed</div><div class="hh-sub">Missed this game</div>${missed}<div class="hh-sub">Weakest topics, all games</div>${hist}<button class="linkish" type="button" data-clear="${i}">Clear ${esc(t.name)}'s history</button></div>`;
   }).join('');
   $('sumCard').innerHTML = `<h2>${esc(title)}</h2><div class="hh-sum-grid">${cols}</div>
-    <div class="hh-sum-btns"><button class="btn go" type="button" id="hh-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="hh-change">Change teams or settings</button><button class="btn plain" type="button" id="hh-menu2">Back to menu</button></div>`;
+    <div class="hh-sum-btns"><button class="btn go" type="button" id="hh-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="hh-change">Change teams or settings</button><button class="btn plain" type="button" id="hh-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.add('active');
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;
@@ -327,8 +327,8 @@ function goHome() {
 
 /* ---------- Setup screen ---------- */
 $('logo').innerHTML = CGB.brand.hhLogo();
-const savedNames = CGB.store.getJSON('hh.names', null);
-if (Array.isArray(savedNames)) savedNames.forEach((n, i) => { if (n && i < 2) $('name' + i).value = n; });
+const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n; });
+fillNames();
 function wireSeg(id, key, store) {
   const seg = $(id);
   const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === S[key])));
@@ -340,9 +340,7 @@ wireSeg('segBest', 'best', 'hh.best');
 $('focusWeak').checked = CGB.store.get('hh.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('hh.focusWeak', e.target.checked ? '1' : '0'));
 function renderSetSelect() {
-  const sel = $('setSelect');
-  sel.innerHTML = bank.all().map(s => `<option value="${esc(s.id)}">${esc(s.name)} (${s.questions.length} questions)</option>`).join('');
-  sel.value = bank.active().id;
+  bank.fillSelect($('setSelect'));
   const usable = bank.active().questions.filter(q => firstLetter(q.a)).length;
   $('setHint').textContent = `${usable} questions in this set have answers that start with a letter, so they can go on the board.`;
 }
@@ -389,7 +387,7 @@ document.addEventListener('keydown', e => {
 });
 
 return {
-  enter() { active = true; if (S.phase === 'home') { renderSetSelect(); $('startBtn').focus({ preventScroll: true }); } },
+  enter() { active = true; if (S.phase === 'home') { fillNames(); renderSetSelect(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => ['board', 'question', 'won'].includes(S.phase),
   _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, answering: S.answering, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, wins: S.teams.map(t => t.wins), owners: S.cells.map(c => c.owner) })

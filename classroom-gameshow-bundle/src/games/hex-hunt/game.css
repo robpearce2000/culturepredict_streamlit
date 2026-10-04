@@ -1,9 +1,9 @@
 /* =========================================================
    HEX HUNT: two teams race to link opposite edges of a hex board.
    Identity: deep sea-teal night, indigo hexagons with white letters,
-   tangerine team (left to right) and teal team (top to bottom).
+   Team 1 blue (left to right) and Team 2 orange (top to bottom).
    ========================================================= */
-.hh { --hh-bg: #0A1A2C; --hh-bg2: #14425A; --hh-hex: #262C66; --hh-text: #F4F8FF; --hh-muted: #C7D6E6; --ha: #FF7A1A; --hb: #12A4A0;
+.hh { --hh-bg: #0A1A2C; --hh-bg2: #14425A; --hh-hex: #262C66; --hh-text: #F4F8FF; --hh-muted: #C7D6E6; --ha: var(--team0); --hb: var(--team1);
   background: radial-gradient(ellipse at 50% 20%, var(--hh-bg2) 0%, var(--hh-bg) 75%); color: var(--hh-text); }
 .hh-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; }
 .hh-screen.active { display: flex; }
@@ -33,7 +33,8 @@
 .hh-hex .mk { font-family: var(--body); font-weight: 900; fill: var(--ink); }
 .hh-hex.own-0 path { fill: var(--ha); }
 .hh-hex.own-1 path { fill: var(--hb); }
-.hh-hex.own-0 text.lt, .hh-hex.own-1 text.lt { fill: var(--ink); opacity: 0.55; }
+.hh-hex.own-0 text.lt, .hh-hex.own-1 text.lt { fill: #fff; opacity: 0.6; }
+.hh-hex.own-0 .mk, .hh-hex.own-1 .mk { fill: #fff; }
 .hh-hex.cursor path { stroke: var(--sun); stroke-width: 9; }
 .hh-hex.path path { stroke: #fff; stroke-width: 8; animation: hhGlow 1s ease-in-out infinite alternate; }
 @keyframes hhGlow { from { filter: brightness(1); } to { filter: brightness(1.35); } }

@@ -14,7 +14,7 @@ const fs = require('fs');
 const { chromium } = require('@playwright/test');
 
 const ROOT = path.join(__dirname, '..');
-const URL = 'file://' + path.join(ROOT, 'dist', 'classroom-gameshow-bundle.html');
+const URL = 'file://' + path.join(ROOT, 'dist', 'showtime-classroom-gameshows.html');
 const OUT = path.join(ROOT, 'dist', 'listing');
 const ARGS = ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'];
 

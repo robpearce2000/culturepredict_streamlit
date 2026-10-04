@@ -14,10 +14,7 @@ const esc = CGB.escapeHtml;
 const bank = CGB.bank;
 const GAME_NAME = 'Category Clash';
 const VALUES = [100, 200, 300, 400, 500];
-const TEAM = [
-  { css: 'var(--t0)', mark: '●' }, { css: 'var(--t1)', mark: '■' },
-  { css: 'var(--t2)', mark: '▲' }, { css: 'var(--t3)', mark: '◆' }
-];
+const TEAM = CGB.TEAMS;
 const SFX = {
   open() { CGB.sfx.tone(392, 0.12, 'triangle', 0.07); CGB.sfx.tone(784, 0.14, 'triangle', 0.06, 0.08); },
   star() { [880, 1175, 1568, 2093].forEach((f, i) => CGB.sfx.tone(f, 0.16, 'sine', 0.07, i * 0.07)); },
@@ -38,11 +35,10 @@ if (![0, 20, 30, 60].includes(S.timer)) S.timer = 0;
 
 /* ---------- Setup ---------- */
 $('logo').innerHTML = CGB.brand.ccLogo();
-const savedNames = CGB.store.getJSON('cc.names', null);
-const defaultNames = ['Team 1', 'Team 2', 'Team 3', 'Team 4'];
+const defaultNames = [0, 1, 2, 3].map(CGB.teamFallback);
 function renderNames() {
   const prev = [0, 1, 2, 3].map(i => { const el = $('name' + i); return el ? el.value : null; });
-  $('names').innerHTML = [0, 1, 2, 3].slice(0, S.nTeams).map(i => `<label style="--tc:${TEAM[i].css}"><span>${TEAM[i].mark} Team ${i + 1}</span><input id="cc-name${i}" type="text" maxlength="18" autocomplete="off" value="${esc(prev[i] || (Array.isArray(savedNames) && savedNames[i]) || defaultNames[i])}"></label>`).join('');
+  $('names').innerHTML = [0, 1, 2, 3].slice(0, S.nTeams).map(i => `<label style="--tc:${TEAM[i].css}"><span>${TEAM[i].mark} Team ${i + 1}</span><input id="cc-name${i}" type="text" maxlength="18" autocomplete="off" value="${esc(prev[i] || CGB.teamNames(4)[i])}"></label>`).join('');
 }
 function wireSeg(id, key, store) {
   const seg = $(id);
@@ -97,9 +93,7 @@ $('topics').addEventListener('click', e => {
 });
 $('shuffle').addEventListener('click', () => autoPickTopics(true));
 function renderSetSelect() {
-  const sel = $('setSelect');
-  sel.innerHTML = bank.all().map(s => `<option value="${esc(s.id)}">${esc(s.name)} (${s.questions.length} questions)</option>`).join('');
-  sel.value = bank.active().id;
+  bank.fillSelect($('setSelect'));
 }
 $('setSelect').addEventListener('change', e => bank.setActive(e.target.value));
 let lastSet = bank.active().id;
@@ -146,7 +140,7 @@ function renderBoard() {
       if (t.empty) return `<button type="button" class="cc-tile used empty${cur}" disabled aria-label="${esc(c.topic)} ${t.value}: no question">—</button>`;
       if (t.used) {
         const who = t.wonBy >= 0 ? S.teams[t.wonBy] : null;
-        return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${who ? TEAM[t.wonBy].css : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${who ? 'won by ' + esc(who.name) : 'nobody'}"><span class="mk">${who ? TEAM[t.wonBy].mark : '✗'}</span>${who ? esc(who.name) : 'Nobody'}</button>`;
+        return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${who ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${who ? 'won by ' + esc(who.name) : 'nobody'}"><span class="mk">${who ? TEAM[t.wonBy].mark : '✗'}</span>${who ? esc(who.name) : 'Nobody'}</button>`;
       }
       return `<button type="button" class="cc-tile${cur}" data-c="${ci}" data-r="${r}" aria-label="${esc(c.topic)} for ${t.value} points">${t.value}</button>`;
     }).join('');
@@ -158,7 +152,7 @@ function renderTeams() {
   $('teams').style.setProperty('--n', S.teams.length);
   $('teams').innerHTML = S.teams.map((t, i) => `<div class="cc-team${i === S.turn && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)}</span><span class="sc">${t.score}</span></div>`).join('');
   const t = S.teams[S.turn];
-  $('turn').innerHTML = t ? `<b style="--turn:${TEAM[S.turn].css}">${TEAM[S.turn].mark} ${esc(t.name)}</b>, pick a category` : '';
+  $('turn').innerHTML = t ? `<b style="--turn:${TEAM[S.turn].light}">${TEAM[S.turn].mark} ${esc(t.name)}</b>, pick a category` : '';
 }
 $('board').addEventListener('click', e => {
   const b = e.target.closest('.cc-tile[data-c]'); if (!b) return;
@@ -296,7 +290,7 @@ function paintTimer() {
 /* ---------- Game flow ---------- */
 function startGame() {
   const names = [0, 1, 2, 3].slice(0, S.nTeams).map(i => (($('name' + i) || {}).value || '').trim().slice(0, 18) || defaultNames[i]);
-  CGB.store.setJSON('cc.names', names);
+  CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, score: 0, correct: 0, wrong: [] }));
   S.turn = 0;
   buildBoard();
@@ -330,7 +324,7 @@ function showSummary() {
   }).join('');
   $('sumCard').innerHTML = `<h2>${winners.length > 1 ? "It's a draw!" : esc(winners[0].t.name) + ' win!'}</h2>
     <div class="cc-podium">${podium}</div><div class="cc-sum-grid">${cols}</div>
-    <div class="cc-sum-btns"><button class="btn go" type="button" id="cc-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="cc-change">Change teams or categories</button><button class="btn plain" type="button" id="cc-menu2">Back to menu</button></div>`;
+    <div class="cc-sum-btns"><button class="btn go" type="button" id="cc-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="cc-change">Change teams or categories</button><button class="btn plain" type="button" id="cc-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.add('active');
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;
@@ -382,7 +376,7 @@ document.addEventListener('keydown', e => {
 });
 
 return {
-  enter() { active = true; if (S.phase === 'home') { renderTopics(); $('startBtn').focus({ preventScroll: true }); } },
+  enter() { active = true; if (S.phase === 'home') { $('names').innerHTML = ''; renderNames(); renderTopics(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => S.phase === 'board' || S.phase === 'question',
   _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) })

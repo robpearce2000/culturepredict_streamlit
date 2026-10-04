@@ -1,6 +1,6 @@
 'use strict';
 /* =========================================================
-   THE HOST: Professor Pip, the Showtime mascot.
+   THE HOST: Marty Marquee, the Showtime mascot.
    A 2D cartoon drawn as SVG in the same ink-outlined sticker
    style as the Showtime logos. Arms pose with CSS transforms,
    he blinks, talks and pulls faces. The look is customisable
@@ -16,10 +16,11 @@ CGB.hostOpts = {
   glasses: [['no', 'No'], ['yes', 'Yes']]
 };
 CGB.hostCfg = (() => {
-  const defaults = { name: 'Professor Pip', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
+  const defaults = { name: 'Marty Marquee', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
   const saved = CGB.store.getJSON('host', {});
   const cfg = Object.assign({}, defaults, saved && typeof saved === 'object' ? saved : {});
   // guard against out-of-range values from older saves
+  if (cfg.name === 'Professor Pip') cfg.name = defaults.name;   // the host's earlier default name
   ['skin', 'hair', 'suit'].forEach(k => { if (!(cfg[k] >= 0 && cfg[k] < CGB.hostOpts[k].length)) cfg[k] = defaults[k]; });
   ['style', 'beard', 'glasses'].forEach(k => { if (!CGB.hostOpts[k].some(o => o[0] === cfg[k])) cfg[k] = defaults[k]; });
   return cfg;
@@ -31,7 +32,7 @@ CGB.saveHost = function () {
 };
 
 /* Arm angles in degrees: [upper arm, forearm]. 0 = hanging straight down.
-   A = the arm on the viewer's left (Pip's right), B = the viewer's right. */
+   A = the arm on the viewer's left (Marty's right), B = the viewer's right. */
 CGB.HOST_POSES = {
   idle:    { A: [14, 10], B: [-14, -10], face: 'smile' },
   present: { A: [52, -28], B: [-14, -10], face: 'smile' },
@@ -51,10 +52,10 @@ CGB.hostSVG = function (cfg) {
   const st = `stroke="${INK}" stroke-width="${W}" stroke-linejoin="round" stroke-linecap="round"`;
   // one arm, drawn hanging down from its shoulder at (0,0); the forearm bends at the elbow (0,64)
   const arm = side => `
-    <g class="pip-arm pip-arm-${side}">
+    <g class="host-arm host-arm-${side}">
       <circle cx="0" cy="2" r="18" fill="${suit}" ${st}/>
       <path d="M-17 0 Q-19 34 -16 66 L16 66 Q19 34 17 0 Z" fill="${suit}" ${st}/>
-      <g transform="translate(0 64)"><g class="pip-fore">
+      <g transform="translate(0 64)"><g class="host-fore">
         <circle cx="0" cy="0" r="15.5" fill="${suit}" ${st}/>
         <path d="M-15 -2 L-14 56 L14 56 L15 -2 Z" fill="${suit}" ${st}/>
         <rect x="-15" y="50" width="30" height="11" rx="4" fill="#fff" ${st}/>
@@ -83,20 +84,20 @@ CGB.hostSVG = function (cfg) {
   if (cfg.beard === 'stubble') beard = `<path d="M100 118 Q104 170 150 172 Q196 170 200 118 Q186 150 150 152 Q114 150 100 118 Z" fill="${hair}" opacity="0.28"/>`;
   if (cfg.beard === 'beard') beard = `<path d="M96 112 Q96 182 150 186 Q204 182 204 112 Q194 140 176 146 Q150 136 124 146 Q106 140 96 112 Z" fill="${hair}" ${st}/>`;
   const glasses = cfg.glasses === 'yes' ? `
-    <g class="pip-glasses">
+    <g class="host-glasses">
       <circle cx="128" cy="104" r="19" fill="rgba(210,235,255,0.22)" ${st}/>
       <circle cx="172" cy="104" r="19" fill="rgba(210,235,255,0.22)" ${st}/>
       <path d="M147 102 Q150 98 153 102" fill="none" ${st}/>
       <path d="M109 101 L96 98 M191 101 L204 98" fill="none" ${st}/>
     </g>` : '';
   const eye = x => `
-    <g class="pip-eye" style="transform-origin:${x}px 104px">
+    <g class="host-eye" style="transform-origin:${x}px 104px">
       <ellipse cx="${x}" cy="104" rx="12" ry="14" fill="#fff" stroke="${INK}" stroke-width="3.5"/>
-      <g class="pip-iris"><circle cx="${x}" cy="106" r="7" fill="#3b6e8f"/><circle cx="${x}" cy="106" r="3.8" fill="${INK}"/><circle cx="${x + 2.5}" cy="103" r="2" fill="#fff"/></g>
+      <g class="host-iris"><circle cx="${x}" cy="106" r="7" fill="#3b6e8f"/><circle cx="${x}" cy="106" r="3.8" fill="${INK}"/><circle cx="${x + 2.5}" cy="103" r="2" fill="#fff"/></g>
     </g>`;
   const browCol = shade(hair, cfg.style === 'bald' ? 1 : 0.8);
-  return `<svg class="pip" viewBox="0 0 300 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${CGB.escapeHtml(cfg.name || 'The host')}, the Showtime host">
-  <g class="pip-body">
+  return `<svg class="host-art" viewBox="0 0 300 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${CGB.escapeHtml(cfg.name || 'The host')}, the Showtime host">
+  <g class="host-body">
     <ellipse cx="150" cy="430" rx="78" ry="9" fill="rgba(0,0,0,0.22)"/>
     <path d="M114 300 L110 404 L146 404 L150 320 L154 404 L190 404 L186 300 Z" fill="${suitDark}" ${st}/>
     <ellipse cx="124" cy="412" rx="26" ry="12" fill="#6b4632" ${st}/>
@@ -110,19 +111,19 @@ CGB.hostSVG = function (cfg) {
     <circle cx="150" cy="184" r="6" fill="#FF7A1A" ${st}/>
     <g transform="translate(88 188)">${arm('a')}</g>
     <g transform="translate(212 188)">${arm('b')}</g>
-    <g class="pip-head">
+    <g class="host-head">
       <rect x="136" y="148" width="28" height="28" rx="8" fill="${skinDark}" ${st}/>
       ${hairBack}
       <ellipse cx="94" cy="112" rx="11" ry="16" fill="${skin}" ${st}/>
       <ellipse cx="206" cy="112" rx="11" ry="16" fill="${skin}" ${st}/>
-      <path class="pip-face" d="M150 48 Q206 48 206 108 Q206 168 150 170 Q94 168 94 108 Q94 48 150 48 Z" fill="${skin}" ${st}/>
+      <path class="host-face" d="M150 48 Q206 48 206 108 Q206 168 150 170 Q94 168 94 108 Q94 48 150 48 Z" fill="${skin}" ${st}/>
       ${beard}
       <circle cx="114" cy="132" r="10" fill="#FF8A80" opacity="0.35"/><circle cx="186" cy="132" r="10" fill="#FF8A80" opacity="0.35"/>
       ${eye(128)}${eye(172)}
-      <path class="pip-brow pip-brow-a" d="M114 82 Q127 74 140 81" fill="none" stroke="${browCol}" stroke-width="6" stroke-linecap="round"/>
-      <path class="pip-brow pip-brow-b" d="M160 81 Q173 74 186 82" fill="none" stroke="${browCol}" stroke-width="6" stroke-linecap="round"/>
+      <path class="host-brow host-brow-a" d="M114 82 Q127 74 140 81" fill="none" stroke="${browCol}" stroke-width="6" stroke-linecap="round"/>
+      <path class="host-brow host-brow-b" d="M160 81 Q173 74 186 82" fill="none" stroke="${browCol}" stroke-width="6" stroke-linecap="round"/>
       <path d="M146 112 Q140 126 150 128 Q156 128 156 124" fill="none" stroke="${INK}" stroke-width="3.5" stroke-linecap="round"/>
-      <g class="pip-mouth">
+      <g class="host-mouth">
         <path class="m-smile" d="M130 140 Q150 156 170 140" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>
         <path class="m-grin" d="M126 138 Q150 170 174 138 Z" fill="#7a1f2b" ${st}/>
         <path class="m-unsure" d="M134 146 Q150 140 166 146" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>
@@ -136,18 +137,18 @@ CGB.hostSVG = function (cfg) {
 </svg>`;
 };
 
-/* Mount Pip in a container element. Returns a small controller. */
+/* Mount Marty in a container element. Returns a small controller. */
 CGB.createHost2D = function (container, opts) {
   opts = opts || {};
   const wrap = document.createElement('div');
-  wrap.className = 'pip-wrap' + (opts.className ? ' ' + opts.className : '');
+  wrap.className = 'host-wrap' + (opts.className ? ' ' + opts.className : '');
   container.appendChild(wrap);
   let rest = 'idle', target = 'idle', gestureTimer = null, talkTimer = null, blinkTimer = null, gesturing = false;
   function apply() {
     const P = CGB.HOST_POSES[target] || CGB.HOST_POSES.idle;
     const set = (sel, deg) => { const el = wrap.querySelector(sel); if (el) el.style.transform = `rotate(${deg}deg)`; };
-    set('.pip-arm-a', P.A[0]); set('.pip-arm-a .pip-fore', P.A[1]);
-    set('.pip-arm-b', P.B[0]); set('.pip-arm-b .pip-fore', P.B[1]);
+    set('.host-arm-a', P.A[0]); set('.host-arm-a .host-fore', P.A[1]);
+    set('.host-arm-b', P.B[0]); set('.host-arm-b .host-fore', P.B[1]);
     wrap.dataset.pose = target;
     wrap.dataset.face = P.face;
   }
@@ -179,7 +180,7 @@ CGB.createHost2D = function (container, opts) {
     talk(ms) { wrap.classList.add('talking'); clearTimeout(talkTimer); talkTimer = setTimeout(() => wrap.classList.remove('talking'), ms); },
     /* top-centre of the head, in page coordinates, for placing a speech bubble */
     headPoint() {
-      const f = wrap.querySelector('.pip-head'); if (!f) return null;   // includes the hair
+      const f = wrap.querySelector('.host-head'); if (!f) return null;   // includes the hair
       const r = f.getBoundingClientRect();
       if (!r.width) return null;
       return { x: r.left + r.width / 2, y: r.top, w: r.width };

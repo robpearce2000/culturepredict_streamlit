@@ -1,8 +1,8 @@
 'use strict';
 /* =========================================================
    OUTPACE
-   A 3D race quiz for two players.
-   Deal Round: each player picks a deal and races the Hunter home.
+   A 3D race quiz for two teams.
+   Deal Round: each team picks a deal and races the Hunter home.
    Final Sprint: 60 seconds, net score against a target set by the pot.
    ========================================================= */
 (function () {
@@ -28,7 +28,7 @@ const SFX = {
 
 /* ============ GAME STATE ============ */
 const state = {
-  players: [{ name: 'Player 1' }, { name: 'Player 2' }],
+  players: [{ name: 'Team 1' }, { name: 'Team 2' }],
   phase: 'home',               // home | deal | dealEnd | sprint | finish | summary
   pot: 0,
   dealOutcomes: [],
@@ -801,23 +801,20 @@ function showHud(name) { hideAll(); if (huds[name]) huds[name].classList.add('ac
 /* ============ SETUP SCREEN ============ */
 $('logo').innerHTML = CGB.brand.opLogo();
 function renderSetSelect() {
-  const sel = $('setSelect');
-  sel.innerHTML = bank.all().map(s => `<option value="${escapeHtml(s.id)}">${escapeHtml(s.name)} (${s.questions.length} questions)</option>`).join('');
-  sel.value = bank.active().id;
+  bank.fillSelect($('setSelect'));
 }
 $('setSelect').addEventListener('change', e => { bank.setActive(e.target.value); picker.reset(); });
 bank.onChange(renderSetSelect);
 $('openBank').addEventListener('click', () => CGB.bankUI.open());
-const savedNames = CGB.store.getJSON('names', null);
-if (Array.isArray(savedNames)) savedNames.forEach((n, i) => { if (n && i < 2) $('name' + i).value = n; });
+const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n.slice(0, 16); });
+fillNames();
 $('focusWeak').checked = CGB.store.get('op.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('op.focusWeak', e.target.checked ? '1' : '0'));
 $('startBtn').addEventListener('click', startGame);
 
 function startGame() {
   clearTimers();
-  const names = [0, 1].map(i => ($('name' + i).value.trim() || 'Player ' + (i + 1)).slice(0, 16));
-  CGB.store.setJSON('names', names);
+  const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
   state.players = names.map(name => ({ name }));
   state.focusWeak = $('focusWeak').checked;
   state.pot = 0;
@@ -1188,7 +1185,7 @@ return {
     applyQuality();
     clock.start();
     rafId = requestAnimationFrame(animate);
-    if (state.phase === 'home') $('startBtn').focus({ preventScroll: true });
+    if (state.phase === 'home') { fillNames(); $('startBtn').focus({ preventScroll: true }); }
   },
   exit() {
     active = false;

@@ -6,7 +6,9 @@
    blocked, full or unavailable.
    ========================================================= */
 window.CGB = window.CGB || {};
-CGB.VERSION = '1.1.0';
+CGB.VERSION = '1.2.0';
+/* A quiet thank-you line at the bottom of every end screen (text only, no link) */
+CGB.REVIEW_NOTE = '<p class="cgb-review">Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!</p>';
 CGB.store = (() => {
   const PREFIX = 'cgb.';
   let ok = true;

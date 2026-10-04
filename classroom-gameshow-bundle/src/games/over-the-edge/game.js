@@ -1,9 +1,9 @@
 'use strict';
 /* =========================================================
    OVER THE EDGE
-   A 3D counter-pusher quiz game for two players.
+   A 3D counter-pusher quiz game for two teams.
    Round 1: answer to win counters, drop them down lanes 1 to 4.
-   Final: players team up to push the jackpot counter over the edge.
+   Final: both teams join forces to push the jackpot counter over the edge.
    The physics and difficulty numbers are tuned; change with care.
    ========================================================= */
 (function () {
@@ -206,7 +206,8 @@ const SFX = (() => {
 /* =========================================================
    GAME STATE
    ========================================================= */
-const COLORS = { hex: [0x1F6FEB, 0xE8600C], css: ['#1F6FEB', '#E8600C'], text: ['#1557C0', '#B54708'], mark: ['●', '■'] };
+const T2 = CGB.TEAMS.slice(0, 2);
+const COLORS = { hex: T2.map(t => t.hex), css: T2.map(t => t.css), text: T2.map(t => t.text), mark: T2.map(t => t.mark) };
 const VALUE = 100, JACKPOT_VALUE = 5000;
 const WILDCARDS = [
   { id: 'bonus', title: 'Bonus counter', text: n => `${n} gets an extra drop` },
@@ -512,7 +513,7 @@ function makeCoinMesh(kind, owner) {
 /* =========================================================
    THE HOST (shared Showtime mascot) with speech captions
    ========================================================= */
-const host = CGB.createHost2D($('host'), { className: 'pip-ote' });
+const host = CGB.createHost2D($('host'), { className: 'host-ote' });
 function hostGesture(name, ms) { host.gesture(name, ms); }
 let hostCheck = 0;
 function updateHost(force) {
@@ -568,14 +569,14 @@ function placeBubble() {
   const rel = el => { const r = el.getBoundingClientRect(); return { l: r.left - base.left, t: r.top - base.top, r: r.right - base.left, b: r.bottom - base.top }; };
   const hits = (o, yy) => !(x + bw / 2 < o.l || x - bw / 2 > o.r || yy < o.t || yy - bh > o.b);
   let hidden = false;
-  // things the bubble must not cover: the round banner and Pip's own head
+  // things the bubble must not cover: the round banner and Marty's own head
   const avoid = [];
   const banner = $('banner');
   if (banner.classList.contains('show')) {
     const parts = [banner.querySelector('.verdict'), banner.querySelector('.detail')].filter(el => el.offsetParent).map(rel);
     if (parts.length) avoid.push({ l: Math.min(...parts.map(p => p.l)) - 8, t: Math.min(...parts.map(p => p.t)) - 8, r: Math.max(...parts.map(p => p.r)) + 8, b: Math.max(...parts.map(p => p.b)) + 8 });
   }
-  const pipEl = $('host').querySelector('.pip-body');   // his whole figure, head included
+  const pipEl = $('host').querySelector('.host-body');   // his whole figure, head included
   if (pipEl && !$('host').classList.contains('away')) { const r = rel(pipEl); avoid.push({ l: r.l, t: r.t + 4, r: r.r, b: r.b }); }
   const clear = yy => yy - bh >= 56 && yy <= h - 10 && !avoid.some(o => hits(o, yy));
   if (!clear(y)) {
@@ -597,7 +598,7 @@ function placeBubble() {
 }
 const pick = a => a[Math.floor(Math.random() * a.length)];
 const LINES = {
-  intro: ["Welcome to Over the Edge! Let's see who's been revising.", "Hello and welcome! Two players, one machine, and a lot of revision."],
+  intro: ["Welcome to Over the Edge! Let's see who's been revising.", "Hello and welcome! Two teams, one machine, and a lot of revision."],
   ask: ["{n}, here's your question.", "This one's for you, {n}.", "Over to you, {n}.", "{n}, have a think about this one."],
   correct: ["That's right! Have a counter.", "Spot on, {n}!", "Correct! Nicely done.", "Yes! Textbook answer."],
   wrong: ["Ooh, not quite.", "Sorry {n}, that's not the one.", "Close, but no counter."],
@@ -657,8 +658,8 @@ function clearLabels() { labels.forEach(L => L.el.remove()); labels.length = 0; 
 const tmpV = new THREE.Vector3();
 function updateLabels(dt) {
   const w = wrap.clientWidth, h = wrap.clientHeight;
-  // keep labels clear of Pip: anything that would land on him moves to his left
-  const body = labels.length && !$('host').classList.contains('away') ? $('host').querySelector('.pip-body') : null;
+  // keep labels clear of Marty: anything that would land on him moves to his left
+  const body = labels.length && !$('host').classList.contains('away') ? $('host').querySelector('.host-body') : null;
   const base = body ? wrap.getBoundingClientRect() : null;
   const hb = body ? body.getBoundingClientRect() : null;
   for (let i = labels.length - 1; i >= 0; i--) {
@@ -953,7 +954,7 @@ function renderScores() {
   if (G.phase === 'home') {
     [0, 1].forEach(i => {
       const c = $('pc' + i);
-      c.querySelector('.name').textContent = $('name' + i).value.trim() || 'Player ' + (i + 1);
+      c.querySelector('.name').textContent = $('name' + i).value.trim() || CGB.teamFallback(i);
       c.querySelector('.num').textContent = fmt(0);
       c.querySelector('.meta').textContent = 'Ready to play';
       c.classList.remove('active');
@@ -1043,8 +1044,7 @@ function render() { renderScores(); renderQuestion(); renderActions(); }
    GAME FLOW
    ========================================================= */
 function startGame() {
-  const names = [0, 1].map(i => ($('name' + i).value.trim() || 'Player ' + (i + 1)).slice(0, 16));
-  CGB.store.setJSON('names', names);
+  const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
   G.players = names.map(n => ({ name: n, money: 0, correct: 0, asked: 0, won: 0, steals: 0, wrong: [] }));
   G.focusWeak = $('focusWeak').checked;
   G.team = 0; G.finalWinnings = 0; G.jackpot = null; G.jackpotWon = false; G.jackpotFell = false;
@@ -1205,7 +1205,7 @@ function showSummary() {
     </div>`;
   }).join('');
   $('sumCard').innerHTML = `<div class="sum-head">${head}</div><div class="sum-grid">${cols}</div>
-    <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change settings</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>`;
+    <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change settings</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.remove('hidden');
   clearLabels();
   updateHost(true);
@@ -1237,9 +1237,7 @@ function goHome() {
    ========================================================= */
 $('logo').innerHTML = CGB.brand.oteLogo();
 function renderSetSelect() {
-  const sel = $('setSelect');
-  sel.innerHTML = bank.all().map(s => `<option value="${escapeHtml(s.id)}">${escapeHtml(s.name)} (${s.questions.length} questions)</option>`).join('');
-  sel.value = bank.active().id;
+  bank.fillSelect($('setSelect'));
 }
 $('setSelect').addEventListener('change', e => { bank.setActive(e.target.value); picker.reset(); });
 bank.onChange(renderSetSelect);
@@ -1296,8 +1294,8 @@ $('hostName').value = CGB.hostCfg.name;
 $('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim() || 'Host'; CGB.store.setJSON('host', CGB.hostCfg); });
 $('hostName').addEventListener('change', () => CGB.saveHost());
 
-const savedNames = CGB.store.getJSON('names', null);
-if (Array.isArray(savedNames)) savedNames.forEach((n, i) => { if (n && i < 2) $('name' + i).value = n; });
+const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n.slice(0, 16); });
+fillNames();
 [0, 1].forEach(i => $('name' + i).addEventListener('input', renderScores));
 $('focusWeak').checked = CGB.store.get('ote.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('ote.focusWeak', e.target.checked ? '1' : '0'));
@@ -1376,6 +1374,7 @@ return {
     rafId = requestAnimationFrame(loop);
     updateHost(true);
     if (G.phase === 'home') {
+      fillNames(); renderScores();
       setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! I'm ${CGB.hostCfg.name || 'your host'}. Set up the game and let's play.`, 'present', 1800); }, 700);
       $('startBtn').focus();
     }

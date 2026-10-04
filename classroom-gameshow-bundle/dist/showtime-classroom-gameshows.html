@@ -28,7 +28,11 @@
   --tangerine: #FF7A1A; --tangerine-deep: #B83A06; --sun: #FFC93C; --sun-deep: #A86A00;
   --teal: #12A4A0; --teal-deep: #0A6663; --night: #141834; --night-2: #1F2550;
   --ok: #157A43; --ok-shadow: #0D5530; --no: #C62828; --no-shadow: #8E1B1B;
-  --p0: #1F6FEB; --p1: #E8600C; --p0-text: #1557C0; --p1-text: #B54708;
+  /* team palette: the same in every game (see shared/teams.js) */
+  --team0: #2563EB; --team1: #EA580C; --team2: #9333EA; --team3: #0D9488;
+  --team0-text: #1D4ED8; --team1-text: #C2410C; --team2-text: #7E22CE; --team3-text: #0F766E;
+  --team0-light: #93C5FD; --team1-light: #FDBA74; --team2-light: #D8B4FE; --team3-light: #5EEAD4;
+  --p0: var(--team0); --p1: var(--team1); --p0-text: var(--team0-text); --p1-text: var(--team1-text);
   --display: 'Lilita One', 'Arial Rounded MT Bold', 'Trebuchet MS', 'Segoe UI', sans-serif;
   --body: 'Nunito', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --radius: 14px;
@@ -107,7 +111,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .l-hero { display: grid; grid-template-columns: minmax(0, 1fr) 260px; align-items: center; gap: 12px; }
 .l-wordmark svg { width: 100%; height: auto; max-height: 34vh; display: block; }
 .l-mascot { position: relative; height: 350px; }
-.l-mascot .pip-wrap { position: absolute; left: 0; right: 0; bottom: 0; top: 76px; width: auto; height: auto; }
+.l-mascot .host-wrap { position: absolute; left: 0; right: 0; bottom: 0; top: 76px; width: auto; height: auto; }
 .l-mascot .hello { position: absolute; left: -10px; top: 6px; background: var(--white); color: var(--ink); border: 3px solid var(--ink); border-radius: 16px; padding: 7px 12px; font-weight: 900; font-size: 0.95rem; max-width: 190px; z-index: 2; }
 .l-mascot .hello::after { content: ''; position: absolute; right: 22px; bottom: -13px; border: 10px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
 .l-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
@@ -175,35 +179,39 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 }
 .cgb-nogl { position: absolute; inset: 0; z-index: 50; background: var(--night); padding: 16px; }
 
-/* ---------- Professor Pip (2D host) ---------- */
-.pip-wrap { position: relative; width: 100%; height: 100%; pointer-events: none; }
-.pip-wrap svg.pip { width: 100%; height: 100%; display: block; overflow: visible; }
-.pip-arm, .pip-fore { transition: transform .38s cubic-bezier(.3, 1.35, .5, 1); }
-.pip-body { animation: pipBob 3.2s ease-in-out infinite; transform-origin: 150px 420px; }
+/* ---------- Marty Marquee (2D host) ---------- */
+.host-wrap { position: relative; width: 100%; height: 100%; pointer-events: none; }
+.host-wrap svg.host-art { width: 100%; height: 100%; display: block; overflow: visible; }
+.host-arm, .host-fore { transition: transform .38s cubic-bezier(.3, 1.35, .5, 1); }
+.host-body { animation: pipBob 3.2s ease-in-out infinite; transform-origin: 150px 420px; }
 @keyframes pipBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
-.pip-wrap[data-pose="cheer"] .pip-body { animation: pipHop .42s ease-in-out infinite alternate; }
+.host-wrap[data-pose="cheer"] .host-body { animation: pipHop .42s ease-in-out infinite alternate; }
 @keyframes pipHop { from { transform: translateY(0); } to { transform: translateY(-10px); } }
-.pip-wrap[data-pose="wave"] .pip-arm-b .pip-fore { animation: pipWave .45s ease-in-out infinite alternate; }
+.host-wrap[data-pose="wave"] .host-arm-b .host-fore { animation: pipWave .45s ease-in-out infinite alternate; }
 @keyframes pipWave { from { transform: rotate(-12deg); } to { transform: rotate(-58deg); } }
-.pip-wrap[data-pose="clap"] .pip-arm-a .pip-fore { animation: pipClapA .22s ease-in-out infinite alternate; }
-.pip-wrap[data-pose="clap"] .pip-arm-b .pip-fore { animation: pipClapB .22s ease-in-out infinite alternate; }
+.host-wrap[data-pose="clap"] .host-arm-a .host-fore { animation: pipClapA .22s ease-in-out infinite alternate; }
+.host-wrap[data-pose="clap"] .host-arm-b .host-fore { animation: pipClapB .22s ease-in-out infinite alternate; }
 @keyframes pipClapA { from { transform: rotate(-96deg); } to { transform: rotate(-70deg); } }
 @keyframes pipClapB { from { transform: rotate(96deg); } to { transform: rotate(70deg); } }
-.pip-eye { transition: transform .06s; }
-.pip-wrap.blink .pip-eye { transform: scaleY(0.12); }
-.pip-head, .pip-iris { transition: transform .4s ease; }
-.pip-head { transform-origin: 150px 170px; }
-.pip-wrap[data-look="left"] .pip-head { transform: rotate(-5deg); }
-.pip-wrap[data-look="left"] .pip-iris { transform: translateX(-4px); }
-.pip-wrap[data-face="grin"] .pip-brow { transform: translateY(-5px); }
-.pip-wrap[data-face="groan"] .pip-brow-a { transform: rotate(10deg); transform-origin: 127px 78px; }
-.pip-wrap[data-face="groan"] .pip-brow-b { transform: rotate(-10deg); transform-origin: 173px 78px; }
-.pip-brow { transition: transform .25s; }
-.pip-mouth > * { display: none; }
-.pip-wrap[data-face="smile"] .m-smile, .pip-wrap[data-face="grin"] .m-grin, .pip-wrap[data-face="unsure"] .m-unsure, .pip-wrap[data-face="groan"] .m-groan { display: inline; }
-.pip-wrap.talking .pip-mouth > * { display: none; }
-.pip-wrap.talking .pip-mouth > .m-talk { display: inline; animation: pipTalk .16s ease-in-out infinite alternate; transform-origin: 150px 146px; }
+.host-eye { transition: transform .06s; }
+.host-wrap.blink .host-eye { transform: scaleY(0.12); }
+.host-head, .host-iris { transition: transform .4s ease; }
+.host-head { transform-origin: 150px 170px; }
+.host-wrap[data-look="left"] .host-head { transform: rotate(-5deg); }
+.host-wrap[data-look="left"] .host-iris { transform: translateX(-4px); }
+.host-wrap[data-face="grin"] .host-brow { transform: translateY(-5px); }
+.host-wrap[data-face="groan"] .host-brow-a { transform: rotate(10deg); transform-origin: 127px 78px; }
+.host-wrap[data-face="groan"] .host-brow-b { transform: rotate(-10deg); transform-origin: 173px 78px; }
+.host-brow { transition: transform .25s; }
+.host-mouth > * { display: none; }
+.host-wrap[data-face="smile"] .m-smile, .host-wrap[data-face="grin"] .m-grin, .host-wrap[data-face="unsure"] .m-unsure, .host-wrap[data-face="groan"] .m-groan { display: inline; }
+.host-wrap.talking .host-mouth > * { display: none; }
+.host-wrap.talking .host-mouth > .m-talk { display: inline; animation: pipTalk .16s ease-in-out infinite alternate; transform-origin: 150px 146px; }
 @keyframes pipTalk { from { transform: scaleY(0.25); } to { transform: scaleY(1.1); } }
+
+/* Thank-you line on end screens */
+.cgb-review { margin: 12px 0 0; text-align: center; font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); }
+.op .cgb-review { color: var(--op-muted); }
 
 </style>
 <style>
@@ -444,7 +452,6 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
    ink category headers with sunflower lettering.
    ========================================================= */
 .cc { --cc-bg: #1A0F2E; --cc-bg2: #3A1650; --cc-tile: #F06A12; --cc-tile2: #FF8C3A; --cc-used: #2B2045; --cc-text: #FFF6EC; --cc-muted: #D9CBEA;
-  --t0: #12A4A0; --t1: #FFC93C; --t2: #E879F9; --t3: #60A5FA;
   background: radial-gradient(ellipse at 50% -20%, var(--cc-bg2) 0%, var(--cc-bg) 70%); color: var(--cc-text); }
 .cc-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; }
 .cc-screen.active { display: flex; }
@@ -468,7 +475,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .cc-play[hidden] { display: none; }
 .cc-head { display: flex; justify-content: flex-end; align-items: center; gap: 12px; min-height: 44px; padding-left: 25rem; }
 .cc-turn { margin-right: auto; font-family: var(--display); font-size: 1.5rem; color: var(--cc-text); }
-.cc-turn b { font-weight: 400; color: var(--turn, var(--t1)); }
+.cc-turn b { font-weight: 400; color: var(--turn, var(--sun)); }
 .cc-board { flex: 1; min-height: 0; display: grid; gap: 8px; grid-template-rows: minmax(56px, auto) repeat(5, minmax(0, 1fr)); }
 .cc-cat { background: var(--ink); border: 3px solid #000; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6px 8px; min-width: 0; }
 .cc-cat b { font-family: var(--display); font-weight: 400; font-size: clamp(0.95rem, 1.45vw, 1.45rem); line-height: 1.1; color: var(--sun); overflow-wrap: anywhere; }
@@ -546,9 +553,9 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 /* =========================================================
    HEX HUNT: two teams race to link opposite edges of a hex board.
    Identity: deep sea-teal night, indigo hexagons with white letters,
-   tangerine team (left to right) and teal team (top to bottom).
+   Team 1 blue (left to right) and Team 2 orange (top to bottom).
    ========================================================= */
-.hh { --hh-bg: #0A1A2C; --hh-bg2: #14425A; --hh-hex: #262C66; --hh-text: #F4F8FF; --hh-muted: #C7D6E6; --ha: #FF7A1A; --hb: #12A4A0;
+.hh { --hh-bg: #0A1A2C; --hh-bg2: #14425A; --hh-hex: #262C66; --hh-text: #F4F8FF; --hh-muted: #C7D6E6; --ha: var(--team0); --hb: var(--team1);
   background: radial-gradient(ellipse at 50% 20%, var(--hh-bg2) 0%, var(--hh-bg) 75%); color: var(--hh-text); }
 .hh-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; }
 .hh-screen.active { display: flex; }
@@ -578,7 +585,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .hh-hex .mk { font-family: var(--body); font-weight: 900; fill: var(--ink); }
 .hh-hex.own-0 path { fill: var(--ha); }
 .hh-hex.own-1 path { fill: var(--hb); }
-.hh-hex.own-0 text.lt, .hh-hex.own-1 text.lt { fill: var(--ink); opacity: 0.55; }
+.hh-hex.own-0 text.lt, .hh-hex.own-1 text.lt { fill: #fff; opacity: 0.6; }
+.hh-hex.own-0 .mk, .hh-hex.own-1 .mk { fill: #fff; }
 .hh-hex.cursor path { stroke: var(--sun); stroke-width: 9; }
 .hh-hex.path path { stroke: #fff; stroke-width: 8; animation: hhGlow 1s ease-in-out infinite alternate; }
 @keyframes hhGlow { from { filter: brightness(1); } to { filter: brightness(1.35); } }
@@ -744,10 +752,10 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 <div id="ote-home" class="ote-overlay">
   <div class="cgb-panel ote-card">
     <div class="ote-logo" id="ote-logo"></div>
-    <div class="ote-rules">Get a question right to win a counter. Pick a lane from 1 to 4, watch it bounce through the pegs onto the moving top shelf, and every counter pushed over the front edge wins £100. Counters that fall off the sides are lost. Look out for the star wildcard counters. In the final, both players team up: every correct answer wins two counters, and pushing the gold jackpot counter over the edge adds £5,000.</div>
+    <div class="ote-rules">Get a question right to win a counter. Pick a lane from 1 to 4, watch it bounce through the pegs onto the moving top shelf, and every counter pushed over the front edge wins £100. Counters that fall off the sides are lost. Look out for the star wildcard counters. In the final, both teams join forces: every correct answer wins two counters, and pushing the gold jackpot counter over the edge adds £5,000.</div>
     <div class="ote-names">
-      <label style="--pc: var(--p0); --pct: var(--p0-text)"><span>● Player 1</span><input id="ote-name0" type="text" maxlength="16" value="Player 1" autocomplete="off"></label>
-      <label style="--pc: var(--p1); --pct: var(--p1-text)"><span>■ Player 2</span><input id="ote-name1" type="text" maxlength="16" value="Player 2" autocomplete="off"></label>
+      <label style="--pc: var(--p0); --pct: var(--p0-text)"><span>● Team 1</span><input id="ote-name0" type="text" maxlength="16" value="Team 1" autocomplete="off"></label>
+      <label style="--pc: var(--p1); --pct: var(--p1-text)"><span>■ Team 2</span><input id="ote-name1" type="text" maxlength="16" value="Team 2" autocomplete="off"></label>
     </div>
     <div class="field">
       <label class="lab" for="ote-setSelect">Question set (shared with every game)</label>
@@ -759,7 +767,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
       <div class="field"><span class="lab" id="ote-labF">Final questions</span><div class="seg" id="ote-segF" role="group" aria-labelledby="ote-labF"><button type="button" data-v="8">8</button><button type="button" data-v="12">12</button><button type="button" data-v="16">16</button></div></div>
     </div>
     <div class="field"><span class="lab" id="ote-labD">Jackpot difficulty</span><div class="seg" id="ote-segDiff" role="group" aria-labelledby="ote-labD"><button type="button" data-v="easy">Easy</button><button type="button" data-v="normal">Normal</button><button type="button" data-v="hard">Hard</button></div></div>
-    <label class="check" style="margin:4px 0 12px"><input type="checkbox" id="ote-focusWeak"> Pick more questions from topics each player got wrong before</label>
+    <label class="check" style="margin:4px 0 12px"><input type="checkbox" id="ote-focusWeak"> Pick more questions from topics each team got wrong before</label>
     <button class="linkish" id="ote-toggleHost" type="button" aria-expanded="false" aria-controls="ote-hostEditor">Customise the host</button>
     <div class="ote-collapse" id="ote-hostEditor">
       <div class="ote-hostgrid">
@@ -804,19 +812,19 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
       <div class="op-logo" id="op-logo"></div>
       <p class="op-sub">Answer right to edge home. Answer wrong and the Hunter closes in.</p>
       <div class="op-rules">
-        <strong>Deal Round:</strong> each player picks a deal. A bigger deal gives the Hunter a shorter gap to catch you. Reach home to bank the points; if you are caught you bank half.
-        <strong>Final Sprint:</strong> together you have 60 seconds. Take turns: each correct answer is +1 and each wrong answer is −1. Reach the target to escape with the pot. Each player can pass once: that question is skipped and their partner answers a new one.
+        <strong>Deal Round:</strong> each team picks a deal. A bigger deal gives the Hunter a shorter gap to catch you. Reach home to bank the points; if you are caught you bank half.
+        <strong>Final Sprint:</strong> together you have 60 seconds. Take turns: each correct answer is +1 and each wrong answer is −1. Reach the target to escape with the pot. Each team can pass once: that question is skipped and the other team answers a new one.
       </div>
       <div class="op-names">
-        <label><span>Player 1</span><input id="op-name0" type="text" maxlength="16" value="Player 1" autocomplete="off"></label>
-        <label><span>Player 2</span><input id="op-name1" type="text" maxlength="16" value="Player 2" autocomplete="off"></label>
+        <label><span>Team 1</span><input id="op-name0" type="text" maxlength="16" value="Team 1" autocomplete="off"></label>
+        <label><span>Team 2</span><input id="op-name1" type="text" maxlength="16" value="Team 2" autocomplete="off"></label>
       </div>
       <div class="field">
         <label class="lab" for="op-setSelect">Question set (shared with every game)</label>
         <select class="cgb-select" id="op-setSelect"></select>
         <button class="linkish" id="op-openBank" type="button">Manage the question bank</button>
       </div>
-      <label class="check"><input type="checkbox" id="op-focusWeak"> Pick more questions from topics each player got wrong before</label>
+      <label class="check"><input type="checkbox" id="op-focusWeak"> Pick more questions from topics each team got wrong before</label>
       <button class="btn go" id="op-startBtn" type="button" style="width:100%;margin-top:14px">Start Outpace <span class="kbd">Enter</span></button>
     </div>
   </div>
@@ -829,9 +837,10 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
       <div class="op-sum-grid" id="op-summaryPlayers"></div>
       <div class="op-sum-btns">
         <button class="btn go" id="op-playAgainBtn" type="button">Play again <span class="kbd">Enter</span></button>
-        <button class="btn plain" id="op-setupBtn" type="button">Change players or questions</button>
+        <button class="btn plain" id="op-setupBtn" type="button">Change teams or questions</button>
         <button class="btn plain" id="op-menuBtn2" type="button">Back to menu</button>
       </div>
+      <p class="cgb-review">Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!</p>
     </div>
   </div>
 
@@ -866,9 +875,9 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
     </div>
     <div class="op-dock">
       <div class="op-sprint-row">
-        <div class="op-chip" id="op-chip0"><span class="nm" id="op-chipName0">Player 1</span><button class="op-pass" type="button" id="op-pass0">Pass <span class="kbd">H</span></button></div>
+        <div class="op-chip" id="op-chip0"><span class="nm" id="op-chipName0">Team 1</span><button class="op-pass" type="button" id="op-pass0">Pass <span class="kbd">H</span></button></div>
         <div class="op-score"><span class="lbl">Team score</span><span class="num" id="op-sprintScore">0</span></div>
-        <div class="op-chip" id="op-chip1"><span class="nm" id="op-chipName1">Player 2</span><button class="op-pass" type="button" id="op-pass1">Pass <span class="kbd">H</span></button></div>
+        <div class="op-chip" id="op-chip1"><span class="nm" id="op-chipName1">Team 2</span><button class="op-pass" type="button" id="op-pass1">Pass <span class="kbd">H</span></button></div>
       </div>
       <div class="op-panel op-qcard" id="op-sprintCard">
         <div class="qtag" id="op-sprintQTag"></div>
@@ -1019,7 +1028,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
   <div class="cgb-panel">
     <div class="modal-head"><h2 id="bankTitle">Question bank</h2><button class="btn plain sm" type="button" data-close="bankModal">Close <span class="kbd">Esc</span></button></div>
     <div class="modal-body">
-      <p class="hint" style="margin-top:0">Choose the set to use. Every game uses the same set and shares each player's or team's wrong-answer history.</p>
+      <p class="hint" style="margin-top:0">Choose the set to use. Every game uses the same set and shares each team's wrong-answer history.</p>
       <div class="bank-list" id="bankList"></div>
       <div class="bank-section" id="bankForm">
         <h3 id="bankFormTitle">Add a question set</h3>
@@ -1037,13 +1046,13 @@ A: Ionic</div>
         <div class="status" id="bankFormStatus" role="status" style="margin-top:8px"></div>
       </div>
       <div class="bank-section">
-        <h3>Players' wrong answers</h3>
-        <p class="hint" style="margin-top:0">Saved by player name. Use the same name in either game to keep a player's history together.</p>
+        <h3>Teams' wrong answers</h3>
+        <p class="hint" style="margin-top:0">Saved by team name. Use the same team name in any game to keep that team's history together.</p>
         <div class="players-list" id="bankPlayers"></div>
       </div>
       <div class="bank-section">
         <h3>Backup</h3>
-        <p class="hint" style="margin-top:0">Save all your sets and players' history to a file, then load it on another computer. Loading a backup adds to what is here; it never deletes anything.</p>
+        <p class="hint" style="margin-top:0">Save all your sets and teams' history to a file, then load it on another computer. Loading a backup adds to what is here; it never deletes anything.</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn teal" type="button" id="bankExport">Save backup file</button><button class="btn plain" type="button" id="bankImport">Load backup file</button><input type="file" id="bankImportFile" accept=".json,application/json" hidden></div>
         <div class="status" id="bankBackupStatus" role="status" style="margin-top:8px"></div>
       </div>
@@ -1074,7 +1083,7 @@ A: Ionic</div>
       <p>Four revision games for the classroom, inspired by classic TV quiz formats: Over the Edge, Outpace, Category Clash and Hex Hunt. Game design and question packs by Rob Pearce.</p>
       <p>The GCSE Combined Science starter packs are AQA-style practice questions written for Showtime. They are not produced or endorsed by AQA.</p>
       <h3>Privacy</h3>
-      <p>Showtime makes no network connections. Question sets, player names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a player's history there at any time.</p>
+      <p>Showtime makes no network connections. Question sets, team names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a team's history there at any time.</p>
       <h3>Third-party software and fonts</h3>
       <p>three.js r128 and its post-processing examples (MIT licence). Lilita One by Juan Montoreano and Nunito by The Nunito Project Authors (SIL Open Font License 1.1).</p>
       <pre>The MIT License
@@ -2232,7 +2241,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
    blocked, full or unavailable.
    ========================================================= */
 window.CGB = window.CGB || {};
-CGB.VERSION = '1.1.0';
+CGB.VERSION = '1.2.0';
+/* A quiet thank-you line at the bottom of every end screen (text only, no link) */
+CGB.REVIEW_NOTE = '<p class="cgb-review">Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!</p>';
 CGB.store = (() => {
   const PREFIX = 'cgb.';
   let ok = true;
@@ -2977,7 +2988,7 @@ CGB.bank = (() => {
   const P = CGB.PACKS;
   const bio = parse(P.biology), chem = parse(P.chemistry), phys = parse(P.physics);
   const BUILTIN = [
-    { id: 'gcse-combined-mix', name: 'GCSE Combined Science starter pack: all three sciences (AQA-style)', short: 'Combined Science: all three sciences', questions: bio.concat(chem, phys) },
+    { id: 'gcse-combined-mix', name: 'GCSE Combined Science starter pack: all three sciences (AQA-style)', short: 'Combined Science: mixed', questions: bio.concat(chem, phys) },
     { id: 'gcse-combined-biology', name: 'GCSE Combined Science starter pack: Biology (AQA-style)', short: 'Combined Science: Biology', questions: bio },
     { id: 'gcse-combined-chemistry', name: 'GCSE Combined Science starter pack: Chemistry (AQA-style)', short: 'Combined Science: Chemistry', questions: chem },
     { id: 'gcse-combined-physics', name: 'GCSE Combined Science starter pack: Physics (AQA-style)', short: 'Combined Science: Physics', questions: phys },
@@ -3098,6 +3109,17 @@ CGB.bank = (() => {
     return Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, n || 5);
   }
   function clearHistory(name) { delete history[key(name)]; saveHistory(); emit(); }
+  /* Fill a game's question-set dropdown. Options use the short name so they are
+     never cut off; the question count goes in the field's label instead. */
+  function fillSelect(sel) {
+    const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    sel.innerHTML = all().map(s => `<option value="${esc(s.id)}" title="${esc(s.name)}">${esc(s.short || s.name)}</option>`).join('');
+    const a = active();
+    sel.value = a.id;
+    sel.title = a.name;
+    const lab = sel.id && document.querySelector(`label[for="${sel.id}"]`);
+    if (lab) lab.textContent = `Question set: ${a.questions.length} questions, shared with every game`;
+  }
   function players() { return Object.values(history).map(h => ({ name: h.name, count: h.entries.length })).sort((a, b) => a.name.localeCompare(b.name)); }
 
   /* ---------- Question picking (each game session gets its own picker) ---------- */
@@ -3169,9 +3191,51 @@ CGB.bank = (() => {
   migrateLegacy();
   return {
     parse, toText, estimateLevel, all, get, active, setActive, summary, addSet, updateSet, deleteSet,
-    logWrong, wrongLog, weakTopics, clearHistory, players, createPicker,
+    logWrong, wrongLog, weakTopics, clearHistory, players, createPicker, fillSelect,
     exportData, importData, onChange(fn) { listeners.push(fn); },
     builtinIds: BUILTIN.map(s => s.id)
+  };
+})();
+
+</script>
+<script>
+/* Teams: one palette and one set of team names shared by every game.
+   Team 1 is always blue, Team 2 orange, Team 3 purple, Team 4 teal, and each
+   colour comes with a shape so nothing depends on colour alone.
+     css   fills, borders and stripes
+     text  the colour as text on white or paper
+     light the colour as text or marks on the dark game backgrounds */
+(function () {
+  const CGB = window.CGB;
+  CGB.TEAMS = [
+    { hex: 0x2563EB, css: '#2563EB', text: '#1D4ED8', light: '#93C5FD', mark: '●', shape: 'circle' },
+    { hex: 0xEA580C, css: '#EA580C', text: '#C2410C', light: '#FDBA74', mark: '■', shape: 'square' },
+    { hex: 0x9333EA, css: '#9333EA', text: '#7E22CE', light: '#D8B4FE', mark: '▲', shape: 'triangle' },
+    { hex: 0x0D9488, css: '#0D9488', text: '#0F766E', light: '#5EEAD4', mark: '◆', shape: 'diamond' }
+  ];
+  const fallback = i => 'Team ' + (i + 1);
+  const tidy = (n, i) => {
+    n = String(n == null ? '' : n).trim();
+    if (!n || /^player\s*\d$/i.test(n)) return fallback(i);   // older versions defaulted to "Player 1"
+    return n.slice(0, 18);
+  };
+  function load() {
+    let names = CGB.store.getJSON('teams', null);
+    if (!Array.isArray(names)) {
+      // first run after the update: take whichever game last saved names
+      names = ['cc.names', 'hh.names', 'names'].map(k => CGB.store.getJSON(k, null)).find(Array.isArray) || [];
+    }
+    return [0, 1, 2, 3].map(i => tidy(names[i], i));
+  }
+  /* The saved names for teams 1 to n */
+  CGB.teamNames = n => load().slice(0, n || 4);
+  CGB.teamFallback = fallback;
+  /* Save names typed in any game: only the teams that game uses are replaced */
+  CGB.saveTeamNames = list => {
+    const all = load();
+    list.forEach((n, i) => { all[i] = tidy(n, i); });
+    CGB.store.setJSON('teams', all);
+    return all.slice(0, list.length);
   };
 })();
 
@@ -3220,7 +3284,7 @@ CGB.sfx = (() => {
 <script>
 'use strict';
 /* =========================================================
-   THE HOST: Professor Pip, the Showtime mascot.
+   THE HOST: Marty Marquee, the Showtime mascot.
    A 2D cartoon drawn as SVG in the same ink-outlined sticker
    style as the Showtime logos. Arms pose with CSS transforms,
    he blinks, talks and pulls faces. The look is customisable
@@ -3236,10 +3300,11 @@ CGB.hostOpts = {
   glasses: [['no', 'No'], ['yes', 'Yes']]
 };
 CGB.hostCfg = (() => {
-  const defaults = { name: 'Professor Pip', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
+  const defaults = { name: 'Marty Marquee', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
   const saved = CGB.store.getJSON('host', {});
   const cfg = Object.assign({}, defaults, saved && typeof saved === 'object' ? saved : {});
   // guard against out-of-range values from older saves
+  if (cfg.name === 'Professor Pip') cfg.name = defaults.name;   // the host's earlier default name
   ['skin', 'hair', 'suit'].forEach(k => { if (!(cfg[k] >= 0 && cfg[k] < CGB.hostOpts[k].length)) cfg[k] = defaults[k]; });
   ['style', 'beard', 'glasses'].forEach(k => { if (!CGB.hostOpts[k].some(o => o[0] === cfg[k])) cfg[k] = defaults[k]; });
   return cfg;
@@ -3251,7 +3316,7 @@ CGB.saveHost = function () {
 };
 
 /* Arm angles in degrees: [upper arm, forearm]. 0 = hanging straight down.
-   A = the arm on the viewer's left (Pip's right), B = the viewer's right. */
+   A = the arm on the viewer's left (Marty's right), B = the viewer's right. */
 CGB.HOST_POSES = {
   idle:    { A: [14, 10], B: [-14, -10], face: 'smile' },
   present: { A: [52, -28], B: [-14, -10], face: 'smile' },
@@ -3271,10 +3336,10 @@ CGB.hostSVG = function (cfg) {
   const st = `stroke="${INK}" stroke-width="${W}" stroke-linejoin="round" stroke-linecap="round"`;
   // one arm, drawn hanging down from its shoulder at (0,0); the forearm bends at the elbow (0,64)
   const arm = side => `
-    <g class="pip-arm pip-arm-${side}">
+    <g class="host-arm host-arm-${side}">
       <circle cx="0" cy="2" r="18" fill="${suit}" ${st}/>
       <path d="M-17 0 Q-19 34 -16 66 L16 66 Q19 34 17 0 Z" fill="${suit}" ${st}/>
-      <g transform="translate(0 64)"><g class="pip-fore">
+      <g transform="translate(0 64)"><g class="host-fore">
         <circle cx="0" cy="0" r="15.5" fill="${suit}" ${st}/>
         <path d="M-15 -2 L-14 56 L14 56 L15 -2 Z" fill="${suit}" ${st}/>
         <rect x="-15" y="50" width="30" height="11" rx="4" fill="#fff" ${st}/>
@@ -3303,20 +3368,20 @@ CGB.hostSVG = function (cfg) {
   if (cfg.beard === 'stubble') beard = `<path d="M100 118 Q104 170 150 172 Q196 170 200 118 Q186 150 150 152 Q114 150 100 118 Z" fill="${hair}" opacity="0.28"/>`;
   if (cfg.beard === 'beard') beard = `<path d="M96 112 Q96 182 150 186 Q204 182 204 112 Q194 140 176 146 Q150 136 124 146 Q106 140 96 112 Z" fill="${hair}" ${st}/>`;
   const glasses = cfg.glasses === 'yes' ? `
-    <g class="pip-glasses">
+    <g class="host-glasses">
       <circle cx="128" cy="104" r="19" fill="rgba(210,235,255,0.22)" ${st}/>
       <circle cx="172" cy="104" r="19" fill="rgba(210,235,255,0.22)" ${st}/>
       <path d="M147 102 Q150 98 153 102" fill="none" ${st}/>
       <path d="M109 101 L96 98 M191 101 L204 98" fill="none" ${st}/>
     </g>` : '';
   const eye = x => `
-    <g class="pip-eye" style="transform-origin:${x}px 104px">
+    <g class="host-eye" style="transform-origin:${x}px 104px">
       <ellipse cx="${x}" cy="104" rx="12" ry="14" fill="#fff" stroke="${INK}" stroke-width="3.5"/>
-      <g class="pip-iris"><circle cx="${x}" cy="106" r="7" fill="#3b6e8f"/><circle cx="${x}" cy="106" r="3.8" fill="${INK}"/><circle cx="${x + 2.5}" cy="103" r="2" fill="#fff"/></g>
+      <g class="host-iris"><circle cx="${x}" cy="106" r="7" fill="#3b6e8f"/><circle cx="${x}" cy="106" r="3.8" fill="${INK}"/><circle cx="${x + 2.5}" cy="103" r="2" fill="#fff"/></g>
     </g>`;
   const browCol = shade(hair, cfg.style === 'bald' ? 1 : 0.8);
-  return `<svg class="pip" viewBox="0 0 300 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${CGB.escapeHtml(cfg.name || 'The host')}, the Showtime host">
-  <g class="pip-body">
+  return `<svg class="host-art" viewBox="0 0 300 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${CGB.escapeHtml(cfg.name || 'The host')}, the Showtime host">
+  <g class="host-body">
     <ellipse cx="150" cy="430" rx="78" ry="9" fill="rgba(0,0,0,0.22)"/>
     <path d="M114 300 L110 404 L146 404 L150 320 L154 404 L190 404 L186 300 Z" fill="${suitDark}" ${st}/>
     <ellipse cx="124" cy="412" rx="26" ry="12" fill="#6b4632" ${st}/>
@@ -3330,19 +3395,19 @@ CGB.hostSVG = function (cfg) {
     <circle cx="150" cy="184" r="6" fill="#FF7A1A" ${st}/>
     <g transform="translate(88 188)">${arm('a')}</g>
     <g transform="translate(212 188)">${arm('b')}</g>
-    <g class="pip-head">
+    <g class="host-head">
       <rect x="136" y="148" width="28" height="28" rx="8" fill="${skinDark}" ${st}/>
       ${hairBack}
       <ellipse cx="94" cy="112" rx="11" ry="16" fill="${skin}" ${st}/>
       <ellipse cx="206" cy="112" rx="11" ry="16" fill="${skin}" ${st}/>
-      <path class="pip-face" d="M150 48 Q206 48 206 108 Q206 168 150 170 Q94 168 94 108 Q94 48 150 48 Z" fill="${skin}" ${st}/>
+      <path class="host-face" d="M150 48 Q206 48 206 108 Q206 168 150 170 Q94 168 94 108 Q94 48 150 48 Z" fill="${skin}" ${st}/>
       ${beard}
       <circle cx="114" cy="132" r="10" fill="#FF8A80" opacity="0.35"/><circle cx="186" cy="132" r="10" fill="#FF8A80" opacity="0.35"/>
       ${eye(128)}${eye(172)}
-      <path class="pip-brow pip-brow-a" d="M114 82 Q127 74 140 81" fill="none" stroke="${browCol}" stroke-width="6" stroke-linecap="round"/>
-      <path class="pip-brow pip-brow-b" d="M160 81 Q173 74 186 82" fill="none" stroke="${browCol}" stroke-width="6" stroke-linecap="round"/>
+      <path class="host-brow host-brow-a" d="M114 82 Q127 74 140 81" fill="none" stroke="${browCol}" stroke-width="6" stroke-linecap="round"/>
+      <path class="host-brow host-brow-b" d="M160 81 Q173 74 186 82" fill="none" stroke="${browCol}" stroke-width="6" stroke-linecap="round"/>
       <path d="M146 112 Q140 126 150 128 Q156 128 156 124" fill="none" stroke="${INK}" stroke-width="3.5" stroke-linecap="round"/>
-      <g class="pip-mouth">
+      <g class="host-mouth">
         <path class="m-smile" d="M130 140 Q150 156 170 140" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>
         <path class="m-grin" d="M126 138 Q150 170 174 138 Z" fill="#7a1f2b" ${st}/>
         <path class="m-unsure" d="M134 146 Q150 140 166 146" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>
@@ -3356,18 +3421,18 @@ CGB.hostSVG = function (cfg) {
 </svg>`;
 };
 
-/* Mount Pip in a container element. Returns a small controller. */
+/* Mount Marty in a container element. Returns a small controller. */
 CGB.createHost2D = function (container, opts) {
   opts = opts || {};
   const wrap = document.createElement('div');
-  wrap.className = 'pip-wrap' + (opts.className ? ' ' + opts.className : '');
+  wrap.className = 'host-wrap' + (opts.className ? ' ' + opts.className : '');
   container.appendChild(wrap);
   let rest = 'idle', target = 'idle', gestureTimer = null, talkTimer = null, blinkTimer = null, gesturing = false;
   function apply() {
     const P = CGB.HOST_POSES[target] || CGB.HOST_POSES.idle;
     const set = (sel, deg) => { const el = wrap.querySelector(sel); if (el) el.style.transform = `rotate(${deg}deg)`; };
-    set('.pip-arm-a', P.A[0]); set('.pip-arm-a .pip-fore', P.A[1]);
-    set('.pip-arm-b', P.B[0]); set('.pip-arm-b .pip-fore', P.B[1]);
+    set('.host-arm-a', P.A[0]); set('.host-arm-a .host-fore', P.A[1]);
+    set('.host-arm-b', P.B[0]); set('.host-arm-b .host-fore', P.B[1]);
     wrap.dataset.pose = target;
     wrap.dataset.face = P.face;
   }
@@ -3399,7 +3464,7 @@ CGB.createHost2D = function (container, opts) {
     talk(ms) { wrap.classList.add('talking'); clearTimeout(talkTimer); talkTimer = setTimeout(() => wrap.classList.remove('talking'), ms); },
     /* top-centre of the head, in page coordinates, for placing a speech bubble */
     headPoint() {
-      const f = wrap.querySelector('.pip-head'); if (!f) return null;   // includes the hair
+      const f = wrap.querySelector('.host-head'); if (!f) return null;   // includes the hair
       const r = f.getBoundingClientRect();
       if (!r.width) return null;
       return { x: r.left + r.width / 2, y: r.top, w: r.width };
@@ -3849,10 +3914,10 @@ CGB.app = (() => {
     $('activeSetCount').textContent = s.questions.length + ' questions';
   }
 
-  /* The mascot on the launcher: Pip waves hello now and then */
+  /* The mascot on the launcher: Marty waves hello now and then */
   function createMascot() {
     const box = $('mascot');
-    const host = CGB.createHost2D(box, { className: 'pip-launcher' });
+    const host = CGB.createHost2D(box, { className: 'host-launcher' });
     let timer = 0;
     const loop = () => { host.gesture(Math.random() < 0.65 ? 'wave' : 'present', 2200); host.talk(900); timer = setTimeout(loop, 7000 + Math.random() * 4000); };
     return {
@@ -3895,9 +3960,9 @@ CGB.app = (() => {
 'use strict';
 /* =========================================================
    OVER THE EDGE
-   A 3D counter-pusher quiz game for two players.
+   A 3D counter-pusher quiz game for two teams.
    Round 1: answer to win counters, drop them down lanes 1 to 4.
-   Final: players team up to push the jackpot counter over the edge.
+   Final: both teams join forces to push the jackpot counter over the edge.
    The physics and difficulty numbers are tuned; change with care.
    ========================================================= */
 (function () {
@@ -4100,7 +4165,8 @@ const SFX = (() => {
 /* =========================================================
    GAME STATE
    ========================================================= */
-const COLORS = { hex: [0x1F6FEB, 0xE8600C], css: ['#1F6FEB', '#E8600C'], text: ['#1557C0', '#B54708'], mark: ['●', '■'] };
+const T2 = CGB.TEAMS.slice(0, 2);
+const COLORS = { hex: T2.map(t => t.hex), css: T2.map(t => t.css), text: T2.map(t => t.text), mark: T2.map(t => t.mark) };
 const VALUE = 100, JACKPOT_VALUE = 5000;
 const WILDCARDS = [
   { id: 'bonus', title: 'Bonus counter', text: n => `${n} gets an extra drop` },
@@ -4406,7 +4472,7 @@ function makeCoinMesh(kind, owner) {
 /* =========================================================
    THE HOST (shared Showtime mascot) with speech captions
    ========================================================= */
-const host = CGB.createHost2D($('host'), { className: 'pip-ote' });
+const host = CGB.createHost2D($('host'), { className: 'host-ote' });
 function hostGesture(name, ms) { host.gesture(name, ms); }
 let hostCheck = 0;
 function updateHost(force) {
@@ -4462,14 +4528,14 @@ function placeBubble() {
   const rel = el => { const r = el.getBoundingClientRect(); return { l: r.left - base.left, t: r.top - base.top, r: r.right - base.left, b: r.bottom - base.top }; };
   const hits = (o, yy) => !(x + bw / 2 < o.l || x - bw / 2 > o.r || yy < o.t || yy - bh > o.b);
   let hidden = false;
-  // things the bubble must not cover: the round banner and Pip's own head
+  // things the bubble must not cover: the round banner and Marty's own head
   const avoid = [];
   const banner = $('banner');
   if (banner.classList.contains('show')) {
     const parts = [banner.querySelector('.verdict'), banner.querySelector('.detail')].filter(el => el.offsetParent).map(rel);
     if (parts.length) avoid.push({ l: Math.min(...parts.map(p => p.l)) - 8, t: Math.min(...parts.map(p => p.t)) - 8, r: Math.max(...parts.map(p => p.r)) + 8, b: Math.max(...parts.map(p => p.b)) + 8 });
   }
-  const pipEl = $('host').querySelector('.pip-body');   // his whole figure, head included
+  const pipEl = $('host').querySelector('.host-body');   // his whole figure, head included
   if (pipEl && !$('host').classList.contains('away')) { const r = rel(pipEl); avoid.push({ l: r.l, t: r.t + 4, r: r.r, b: r.b }); }
   const clear = yy => yy - bh >= 56 && yy <= h - 10 && !avoid.some(o => hits(o, yy));
   if (!clear(y)) {
@@ -4491,7 +4557,7 @@ function placeBubble() {
 }
 const pick = a => a[Math.floor(Math.random() * a.length)];
 const LINES = {
-  intro: ["Welcome to Over the Edge! Let's see who's been revising.", "Hello and welcome! Two players, one machine, and a lot of revision."],
+  intro: ["Welcome to Over the Edge! Let's see who's been revising.", "Hello and welcome! Two teams, one machine, and a lot of revision."],
   ask: ["{n}, here's your question.", "This one's for you, {n}.", "Over to you, {n}.", "{n}, have a think about this one."],
   correct: ["That's right! Have a counter.", "Spot on, {n}!", "Correct! Nicely done.", "Yes! Textbook answer."],
   wrong: ["Ooh, not quite.", "Sorry {n}, that's not the one.", "Close, but no counter."],
@@ -4551,8 +4617,8 @@ function clearLabels() { labels.forEach(L => L.el.remove()); labels.length = 0; 
 const tmpV = new THREE.Vector3();
 function updateLabels(dt) {
   const w = wrap.clientWidth, h = wrap.clientHeight;
-  // keep labels clear of Pip: anything that would land on him moves to his left
-  const body = labels.length && !$('host').classList.contains('away') ? $('host').querySelector('.pip-body') : null;
+  // keep labels clear of Marty: anything that would land on him moves to his left
+  const body = labels.length && !$('host').classList.contains('away') ? $('host').querySelector('.host-body') : null;
   const base = body ? wrap.getBoundingClientRect() : null;
   const hb = body ? body.getBoundingClientRect() : null;
   for (let i = labels.length - 1; i >= 0; i--) {
@@ -4847,7 +4913,7 @@ function renderScores() {
   if (G.phase === 'home') {
     [0, 1].forEach(i => {
       const c = $('pc' + i);
-      c.querySelector('.name').textContent = $('name' + i).value.trim() || 'Player ' + (i + 1);
+      c.querySelector('.name').textContent = $('name' + i).value.trim() || CGB.teamFallback(i);
       c.querySelector('.num').textContent = fmt(0);
       c.querySelector('.meta').textContent = 'Ready to play';
       c.classList.remove('active');
@@ -4937,8 +5003,7 @@ function render() { renderScores(); renderQuestion(); renderActions(); }
    GAME FLOW
    ========================================================= */
 function startGame() {
-  const names = [0, 1].map(i => ($('name' + i).value.trim() || 'Player ' + (i + 1)).slice(0, 16));
-  CGB.store.setJSON('names', names);
+  const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
   G.players = names.map(n => ({ name: n, money: 0, correct: 0, asked: 0, won: 0, steals: 0, wrong: [] }));
   G.focusWeak = $('focusWeak').checked;
   G.team = 0; G.finalWinnings = 0; G.jackpot = null; G.jackpotWon = false; G.jackpotFell = false;
@@ -5099,7 +5164,7 @@ function showSummary() {
     </div>`;
   }).join('');
   $('sumCard').innerHTML = `<div class="sum-head">${head}</div><div class="sum-grid">${cols}</div>
-    <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change settings</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>`;
+    <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change settings</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.remove('hidden');
   clearLabels();
   updateHost(true);
@@ -5131,9 +5196,7 @@ function goHome() {
    ========================================================= */
 $('logo').innerHTML = CGB.brand.oteLogo();
 function renderSetSelect() {
-  const sel = $('setSelect');
-  sel.innerHTML = bank.all().map(s => `<option value="${escapeHtml(s.id)}">${escapeHtml(s.name)} (${s.questions.length} questions)</option>`).join('');
-  sel.value = bank.active().id;
+  bank.fillSelect($('setSelect'));
 }
 $('setSelect').addEventListener('change', e => { bank.setActive(e.target.value); picker.reset(); });
 bank.onChange(renderSetSelect);
@@ -5190,8 +5253,8 @@ $('hostName').value = CGB.hostCfg.name;
 $('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim() || 'Host'; CGB.store.setJSON('host', CGB.hostCfg); });
 $('hostName').addEventListener('change', () => CGB.saveHost());
 
-const savedNames = CGB.store.getJSON('names', null);
-if (Array.isArray(savedNames)) savedNames.forEach((n, i) => { if (n && i < 2) $('name' + i).value = n; });
+const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n.slice(0, 16); });
+fillNames();
 [0, 1].forEach(i => $('name' + i).addEventListener('input', renderScores));
 $('focusWeak').checked = CGB.store.get('ote.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('ote.focusWeak', e.target.checked ? '1' : '0'));
@@ -5270,6 +5333,7 @@ return {
     rafId = requestAnimationFrame(loop);
     updateHost(true);
     if (G.phase === 'home') {
+      fillNames(); renderScores();
       setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! I'm ${CGB.hostCfg.name || 'your host'}. Set up the game and let's play.`, 'present', 1800); }, 700);
       $('startBtn').focus();
     }
@@ -5301,8 +5365,8 @@ CGB.registerGame('over-the-edge', {
 'use strict';
 /* =========================================================
    OUTPACE
-   A 3D race quiz for two players.
-   Deal Round: each player picks a deal and races the Hunter home.
+   A 3D race quiz for two teams.
+   Deal Round: each team picks a deal and races the Hunter home.
    Final Sprint: 60 seconds, net score against a target set by the pot.
    ========================================================= */
 (function () {
@@ -5328,7 +5392,7 @@ const SFX = {
 
 /* ============ GAME STATE ============ */
 const state = {
-  players: [{ name: 'Player 1' }, { name: 'Player 2' }],
+  players: [{ name: 'Team 1' }, { name: 'Team 2' }],
   phase: 'home',               // home | deal | dealEnd | sprint | finish | summary
   pot: 0,
   dealOutcomes: [],
@@ -6101,23 +6165,20 @@ function showHud(name) { hideAll(); if (huds[name]) huds[name].classList.add('ac
 /* ============ SETUP SCREEN ============ */
 $('logo').innerHTML = CGB.brand.opLogo();
 function renderSetSelect() {
-  const sel = $('setSelect');
-  sel.innerHTML = bank.all().map(s => `<option value="${escapeHtml(s.id)}">${escapeHtml(s.name)} (${s.questions.length} questions)</option>`).join('');
-  sel.value = bank.active().id;
+  bank.fillSelect($('setSelect'));
 }
 $('setSelect').addEventListener('change', e => { bank.setActive(e.target.value); picker.reset(); });
 bank.onChange(renderSetSelect);
 $('openBank').addEventListener('click', () => CGB.bankUI.open());
-const savedNames = CGB.store.getJSON('names', null);
-if (Array.isArray(savedNames)) savedNames.forEach((n, i) => { if (n && i < 2) $('name' + i).value = n; });
+const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n.slice(0, 16); });
+fillNames();
 $('focusWeak').checked = CGB.store.get('op.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('op.focusWeak', e.target.checked ? '1' : '0'));
 $('startBtn').addEventListener('click', startGame);
 
 function startGame() {
   clearTimers();
-  const names = [0, 1].map(i => ($('name' + i).value.trim() || 'Player ' + (i + 1)).slice(0, 16));
-  CGB.store.setJSON('names', names);
+  const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
   state.players = names.map(name => ({ name }));
   state.focusWeak = $('focusWeak').checked;
   state.pot = 0;
@@ -6488,7 +6549,7 @@ return {
     applyQuality();
     clock.start();
     rafId = requestAnimationFrame(animate);
-    if (state.phase === 'home') $('startBtn').focus({ preventScroll: true });
+    if (state.phase === 'home') { fillNames(); $('startBtn').focus({ preventScroll: true }); }
   },
   exit() {
     active = false;
@@ -6530,10 +6591,7 @@ const esc = CGB.escapeHtml;
 const bank = CGB.bank;
 const GAME_NAME = 'Category Clash';
 const VALUES = [100, 200, 300, 400, 500];
-const TEAM = [
-  { css: 'var(--t0)', mark: '●' }, { css: 'var(--t1)', mark: '■' },
-  { css: 'var(--t2)', mark: '▲' }, { css: 'var(--t3)', mark: '◆' }
-];
+const TEAM = CGB.TEAMS;
 const SFX = {
   open() { CGB.sfx.tone(392, 0.12, 'triangle', 0.07); CGB.sfx.tone(784, 0.14, 'triangle', 0.06, 0.08); },
   star() { [880, 1175, 1568, 2093].forEach((f, i) => CGB.sfx.tone(f, 0.16, 'sine', 0.07, i * 0.07)); },
@@ -6554,11 +6612,10 @@ if (![0, 20, 30, 60].includes(S.timer)) S.timer = 0;
 
 /* ---------- Setup ---------- */
 $('logo').innerHTML = CGB.brand.ccLogo();
-const savedNames = CGB.store.getJSON('cc.names', null);
-const defaultNames = ['Team 1', 'Team 2', 'Team 3', 'Team 4'];
+const defaultNames = [0, 1, 2, 3].map(CGB.teamFallback);
 function renderNames() {
   const prev = [0, 1, 2, 3].map(i => { const el = $('name' + i); return el ? el.value : null; });
-  $('names').innerHTML = [0, 1, 2, 3].slice(0, S.nTeams).map(i => `<label style="--tc:${TEAM[i].css}"><span>${TEAM[i].mark} Team ${i + 1}</span><input id="cc-name${i}" type="text" maxlength="18" autocomplete="off" value="${esc(prev[i] || (Array.isArray(savedNames) && savedNames[i]) || defaultNames[i])}"></label>`).join('');
+  $('names').innerHTML = [0, 1, 2, 3].slice(0, S.nTeams).map(i => `<label style="--tc:${TEAM[i].css}"><span>${TEAM[i].mark} Team ${i + 1}</span><input id="cc-name${i}" type="text" maxlength="18" autocomplete="off" value="${esc(prev[i] || CGB.teamNames(4)[i])}"></label>`).join('');
 }
 function wireSeg(id, key, store) {
   const seg = $(id);
@@ -6613,9 +6670,7 @@ $('topics').addEventListener('click', e => {
 });
 $('shuffle').addEventListener('click', () => autoPickTopics(true));
 function renderSetSelect() {
-  const sel = $('setSelect');
-  sel.innerHTML = bank.all().map(s => `<option value="${esc(s.id)}">${esc(s.name)} (${s.questions.length} questions)</option>`).join('');
-  sel.value = bank.active().id;
+  bank.fillSelect($('setSelect'));
 }
 $('setSelect').addEventListener('change', e => bank.setActive(e.target.value));
 let lastSet = bank.active().id;
@@ -6662,7 +6717,7 @@ function renderBoard() {
       if (t.empty) return `<button type="button" class="cc-tile used empty${cur}" disabled aria-label="${esc(c.topic)} ${t.value}: no question">—</button>`;
       if (t.used) {
         const who = t.wonBy >= 0 ? S.teams[t.wonBy] : null;
-        return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${who ? TEAM[t.wonBy].css : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${who ? 'won by ' + esc(who.name) : 'nobody'}"><span class="mk">${who ? TEAM[t.wonBy].mark : '✗'}</span>${who ? esc(who.name) : 'Nobody'}</button>`;
+        return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${who ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${who ? 'won by ' + esc(who.name) : 'nobody'}"><span class="mk">${who ? TEAM[t.wonBy].mark : '✗'}</span>${who ? esc(who.name) : 'Nobody'}</button>`;
       }
       return `<button type="button" class="cc-tile${cur}" data-c="${ci}" data-r="${r}" aria-label="${esc(c.topic)} for ${t.value} points">${t.value}</button>`;
     }).join('');
@@ -6674,7 +6729,7 @@ function renderTeams() {
   $('teams').style.setProperty('--n', S.teams.length);
   $('teams').innerHTML = S.teams.map((t, i) => `<div class="cc-team${i === S.turn && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)}</span><span class="sc">${t.score}</span></div>`).join('');
   const t = S.teams[S.turn];
-  $('turn').innerHTML = t ? `<b style="--turn:${TEAM[S.turn].css}">${TEAM[S.turn].mark} ${esc(t.name)}</b>, pick a category` : '';
+  $('turn').innerHTML = t ? `<b style="--turn:${TEAM[S.turn].light}">${TEAM[S.turn].mark} ${esc(t.name)}</b>, pick a category` : '';
 }
 $('board').addEventListener('click', e => {
   const b = e.target.closest('.cc-tile[data-c]'); if (!b) return;
@@ -6812,7 +6867,7 @@ function paintTimer() {
 /* ---------- Game flow ---------- */
 function startGame() {
   const names = [0, 1, 2, 3].slice(0, S.nTeams).map(i => (($('name' + i) || {}).value || '').trim().slice(0, 18) || defaultNames[i]);
-  CGB.store.setJSON('cc.names', names);
+  CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, score: 0, correct: 0, wrong: [] }));
   S.turn = 0;
   buildBoard();
@@ -6846,7 +6901,7 @@ function showSummary() {
   }).join('');
   $('sumCard').innerHTML = `<h2>${winners.length > 1 ? "It's a draw!" : esc(winners[0].t.name) + ' win!'}</h2>
     <div class="cc-podium">${podium}</div><div class="cc-sum-grid">${cols}</div>
-    <div class="cc-sum-btns"><button class="btn go" type="button" id="cc-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="cc-change">Change teams or categories</button><button class="btn plain" type="button" id="cc-menu2">Back to menu</button></div>`;
+    <div class="cc-sum-btns"><button class="btn go" type="button" id="cc-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="cc-change">Change teams or categories</button><button class="btn plain" type="button" id="cc-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.add('active');
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;
@@ -6898,7 +6953,7 @@ document.addEventListener('keydown', e => {
 });
 
 return {
-  enter() { active = true; if (S.phase === 'home') { renderTopics(); $('startBtn').focus({ preventScroll: true }); } },
+  enter() { active = true; if (S.phase === 'home') { $('names').innerHTML = ''; renderNames(); renderTopics(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => S.phase === 'board' || S.phase === 'question',
   _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) })
@@ -6933,7 +6988,7 @@ const $ = id => document.getElementById('hh-' + id);
 const esc = CGB.escapeHtml;
 const bank = CGB.bank;
 const GAME_NAME = 'Hex Hunt';
-const TEAM = [{ css: 'var(--ha)', mark: '●', goal: 'left to right' }, { css: 'var(--hb)', mark: '■', goal: 'top to bottom' }];
+const TEAM = CGB.TEAMS.slice(0, 2).map((t, i) => Object.assign({ goal: ['left to right', 'top to bottom'][i] }, t));
 const SFX = {
   pick() { CGB.sfx.tone(620, 0.08, 'triangle', 0.06); },
   buzz() { CGB.sfx.tone(180, 0.18, 'square', 0.05); },
@@ -7040,7 +7095,7 @@ function renderTeams() {
   const owned = t => S.cells.filter(c => c.owner === t).length;
   $('teams').innerHTML = S.teams.map((t, i) => `<div class="hh-team${i === S.picker && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)} <small>${TEAM[i].goal} · ${owned(i)} hexagons</small></span><span class="sc">${S.best > 1 ? t.wins + (t.wins === 1 ? ' round' : ' rounds') : ''}</span></div>`).join('');
   const p = S.teams[S.picker];
-  $('turn').innerHTML = p ? `<b style="--tc:${TEAM[S.picker].css}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon` : '';
+  $('turn').innerHTML = p ? `<b style="--tc:${TEAM[S.picker].light}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon` : '';
   $('round').textContent = S.best > 1 ? `Round ${S.round} · first to ${Math.ceil(S.best / 2)} rounds` : '';
 }
 $('board').addEventListener('click', e => {
@@ -7205,7 +7260,7 @@ $('winBtn').addEventListener('click', continueAfterWin);
 
 function startGame() {
   const names = [0, 1].map(i => ($('name' + i).value.trim() || 'Team ' + (i + 1)).slice(0, 18));
-  CGB.store.setJSON('hh.names', names);
+  CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, wins: 0, won: 0, wrong: [] }));
   S.focusWeak = $('focusWeak').checked;
   S.round = 1; S.firstPicker = 0; S.picker = 0;
@@ -7229,7 +7284,7 @@ function showSummary() {
     return `<div class="hh-sum-p" style="--tc:${TEAM[i].css}"><h3>${TEAM[i].mark} ${esc(t.name)}</h3><div class="hint">${t.wins} round${t.wins === 1 ? '' : 's'} won · ${t.won} hexagons claimed</div><div class="hh-sub">Missed this game</div>${missed}<div class="hh-sub">Weakest topics, all games</div>${hist}<button class="linkish" type="button" data-clear="${i}">Clear ${esc(t.name)}'s history</button></div>`;
   }).join('');
   $('sumCard').innerHTML = `<h2>${esc(title)}</h2><div class="hh-sum-grid">${cols}</div>
-    <div class="hh-sum-btns"><button class="btn go" type="button" id="hh-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="hh-change">Change teams or settings</button><button class="btn plain" type="button" id="hh-menu2">Back to menu</button></div>`;
+    <div class="hh-sum-btns"><button class="btn go" type="button" id="hh-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="hh-change">Change teams or settings</button><button class="btn plain" type="button" id="hh-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.add('active');
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;
@@ -7246,8 +7301,8 @@ function goHome() {
 
 /* ---------- Setup screen ---------- */
 $('logo').innerHTML = CGB.brand.hhLogo();
-const savedNames = CGB.store.getJSON('hh.names', null);
-if (Array.isArray(savedNames)) savedNames.forEach((n, i) => { if (n && i < 2) $('name' + i).value = n; });
+const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n; });
+fillNames();
 function wireSeg(id, key, store) {
   const seg = $(id);
   const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === S[key])));
@@ -7259,9 +7314,7 @@ wireSeg('segBest', 'best', 'hh.best');
 $('focusWeak').checked = CGB.store.get('hh.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('hh.focusWeak', e.target.checked ? '1' : '0'));
 function renderSetSelect() {
-  const sel = $('setSelect');
-  sel.innerHTML = bank.all().map(s => `<option value="${esc(s.id)}">${esc(s.name)} (${s.questions.length} questions)</option>`).join('');
-  sel.value = bank.active().id;
+  bank.fillSelect($('setSelect'));
   const usable = bank.active().questions.filter(q => firstLetter(q.a)).length;
   $('setHint').textContent = `${usable} questions in this set have answers that start with a letter, so they can go on the board.`;
 }
@@ -7308,7 +7361,7 @@ document.addEventListener('keydown', e => {
 });
 
 return {
-  enter() { active = true; if (S.phase === 'home') { renderSetSelect(); $('startBtn').focus({ preventScroll: true }); } },
+  enter() { active = true; if (S.phase === 'home') { fillNames(); renderSetSelect(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => ['board', 'question', 'won'].includes(S.phase),
   _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, answering: S.answering, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, wins: S.teams.map(t => t.wins), owners: S.cells.map(c => c.owner) })

@@ -33,7 +33,7 @@ function pdfText(file) {
   catch (e) { return null; }
 }
 const targets = [
-  ['dist/classroom-gameshow-bundle.html', 'text'],
+  ['dist/showtime-classroom-gameshows.html', 'text'],
   ['dist/teacher-guide.pdf', 'pdf'],
   ['dist/listing/description.md', 'text'],
   ['docs/teacher-guide.html', 'text'],

@@ -235,10 +235,10 @@ CGB.app = (() => {
     $('activeSetCount').textContent = s.questions.length + ' questions';
   }
 
-  /* The mascot on the launcher: Pip waves hello now and then */
+  /* The mascot on the launcher: Marty waves hello now and then */
   function createMascot() {
     const box = $('mascot');
-    const host = CGB.createHost2D(box, { className: 'pip-launcher' });
+    const host = CGB.createHost2D(box, { className: 'host-launcher' });
     let timer = 0;
     const loop = () => { host.gesture(Math.random() < 0.65 ? 'wave' : 'present', 2200); host.talk(900); timer = setTimeout(loop, 7000 + Math.random() * 4000); };
     return {

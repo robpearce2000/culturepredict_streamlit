@@ -2,7 +2,7 @@
 const path = require('path');
 const { expect } = require('@playwright/test');
 
-const DIST = path.join(__dirname, '..', 'dist', 'classroom-gameshow-bundle.html');
+const DIST = path.join(__dirname, '..', 'dist', 'showtime-classroom-gameshows.html');
 const URL = 'file://' + DIST;
 
 /* Open the bundle and record anything that should never happen: network requests and console errors */

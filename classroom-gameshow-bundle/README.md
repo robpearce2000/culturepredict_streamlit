@@ -2,7 +2,7 @@
 
 Four revision quiz games for the front of the classroom, **Over the Edge**, **Outpace**, **Category Clash** and **Hex Hunt**, packaged as one offline HTML file with a shared launcher, a shared question bank and a host mascot.
 
-- Product: [`dist/classroom-gameshow-bundle.html`](dist/classroom-gameshow-bundle.html). Double-click it: no server, no internet connection.
+- Product: [`dist/showtime-classroom-gameshows.html`](dist/showtime-classroom-gameshows.html). Double-click it: no server, no internet connection.
 - Teacher guide: [`dist/teacher-guide.pdf`](dist/teacher-guide.pdf)
 - Tes listing images and text: [`dist/listing/`](dist/listing/)
 - Why things are the way they are: [`DECISIONS.md`](DECISIONS.md). What changed: [`CHANGELOG.md`](CHANGELOG.md). Third-party licences: [`LICENSES.md`](LICENSES.md).
@@ -20,7 +20,7 @@ src/
     packs.js                 built-in question packs in the plain-text format
     bank.js                  question bank: sets, active set, picker, wrong-answer history, backup
     sfx.js                   Web Audio synthesised sound effects (no audio files)
-    host.js                  Professor Pip, the customisable 2D (SVG) host and mascot
+    host.js                  Marty Marquee, the customisable 2D (SVG) host and mascot
     brand.js                 wordmark, game logos and launcher art, drawn as SVG
     ui.css                   shared UI kit: tokens, buttons, panels, score cards, banners, modals, launcher
     app.js                   launcher, routing (#over-the-edge, #outpace), bank manager, settings, about
@@ -42,7 +42,7 @@ Each game registers itself with `CGB.registerGame(id, { init, enter, exit, inPro
 Needs Node 18 or later. The build itself has no dependencies.
 
 ```bash
-node build.js            # writes dist/classroom-gameshow-bundle.html
+node build.js            # writes dist/showtime-classroom-gameshows.html
 ```
 
 The build inlines every `<script src>`, every stylesheet (turning the font files into base64 data URIs), the game HTML fragments (`<!-- @include ... -->`) and the licence texts (`<!-- @text ... -->`). It stops with an error if the result refers to anything external. The page also carries a Content-Security-Policy that blocks all network connections.

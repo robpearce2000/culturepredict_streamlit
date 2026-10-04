@@ -4,7 +4,6 @@
    ink category headers with sunflower lettering.
    ========================================================= */
 .cc { --cc-bg: #1A0F2E; --cc-bg2: #3A1650; --cc-tile: #F06A12; --cc-tile2: #FF8C3A; --cc-used: #2B2045; --cc-text: #FFF6EC; --cc-muted: #D9CBEA;
-  --t0: #12A4A0; --t1: #FFC93C; --t2: #E879F9; --t3: #60A5FA;
   background: radial-gradient(ellipse at 50% -20%, var(--cc-bg2) 0%, var(--cc-bg) 70%); color: var(--cc-text); }
 .cc-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; }
 .cc-screen.active { display: flex; }
@@ -28,7 +27,7 @@
 .cc-play[hidden] { display: none; }
 .cc-head { display: flex; justify-content: flex-end; align-items: center; gap: 12px; min-height: 44px; padding-left: 25rem; }
 .cc-turn { margin-right: auto; font-family: var(--display); font-size: 1.5rem; color: var(--cc-text); }
-.cc-turn b { font-weight: 400; color: var(--turn, var(--t1)); }
+.cc-turn b { font-weight: 400; color: var(--turn, var(--sun)); }
 .cc-board { flex: 1; min-height: 0; display: grid; gap: 8px; grid-template-rows: minmax(56px, auto) repeat(5, minmax(0, 1fr)); }
 .cc-cat { background: var(--ink); border: 3px solid #000; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6px 8px; min-width: 0; }
 .cc-cat b { font-family: var(--display); font-weight: 400; font-size: clamp(0.95rem, 1.45vw, 1.45rem); line-height: 1.1; color: var(--sun); overflow-wrap: anywhere; }
