@@ -214,9 +214,9 @@ const WILDCARDS = [
   { id: 'cash', title: 'Cash bonus', text: n => `+£250 for ${n}` },
   { id: 'steal', title: 'Steal', text: (n, o) => `${n} takes up to £150 from ${o}` }
 ];
-/* Fixed settings: 14 questions in Round 1 and 8 in the final (about 20 minutes with a class),
+/* Fixed settings: 6 questions in Round 1 and 4 in the final (under 10 minutes with a class),
    a 20-second countdown before "show me", and the jackpot counter set at Normal difficulty */
-const R1_QUESTIONS = 14, FINAL_QUESTIONS = 8;
+const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
 const G = {
   nTeams: +CGB.store.get('ote.nTeams') || 4,
   laneQueue: [], laneOwner: [-1, -1, -1, -1], nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
@@ -1262,10 +1262,16 @@ function endRound() {
     showSummary();
   }
 }
-/* The jackpot counter starts 12 units back from the edge and is 0.6 times as heavy to push
-   (the old Normal setting; Easy was 4 and 0.5, Hard 24 and 0.8) */
-const JACKPOT_GAP = 12, JACKPOT_HEAVY = 0.6;
+/* Where the jackpot counter starts and how heavy it is to push, for each number of teams.
+   Every correct team drops two counters in the 4-question final, so more teams push harder.
+   Tuned by playing whole seeded games with the real physics so the class wins the jackpot
+   about half the time, whatever the number of teams (see DECISIONS.md). [units back from
+   the edge, weight compared with a counter of its size]; with two teams it starts already
+   hanging a little over the edge. */
+const JACKPOT = { 2: [-25, 0.4], 3: [-8, 0.4], 4: [4, 0.4], 5: [8, 0.5], 6: [15, 0.6] };
+let jackpotOverride = null;
 function setupFinal() {
+  const [JACKPOT_GAP, JACKPOT_HEAVY] = jackpotOverride || JACKPOT[G.players.length] || JACKPOT[4];
   const jx = PHY.W / 2, jy = PHY.D - PHY.JR - JACKPOT_GAP;
   clearSpace(jx, jy);
   const J = addLower(tray, jx, jy, { r: PHY.JR, kind: 'jackpot', heavy: JACKPOT_HEAVY });
@@ -1296,6 +1302,7 @@ CGB.test.ote = {
     tray.lower = tray.lower.filter(b => b !== J); clearSpace(J.x, y); tray.lower.push(J); J.y = y; J.vx = J.vy = 0;
   },
   simTime: () => simT,
+  jackpot(gap, heavy) { jackpotOverride = [gap, heavy]; },   // for tuning
   setMoney(list) { list.forEach((m, i) => { if (G.players[i]) G.players[i].money = m; }); render(); },
   info: () => ({ jackpotWon: !!G.jackpotWon, jackpotFell: !!G.jackpotFell, progress: jackpotProgress(), team: G.team,
     tray: tray.lower.map(b => `${b.kind}:${b.x.toFixed(2)},${b.y.toFixed(2)}`).join(';') })

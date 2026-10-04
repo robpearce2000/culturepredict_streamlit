@@ -224,7 +224,7 @@ const SECTIONS = {
     await until(async () => {
       const s = await state(page, 'category-clash');
       if (s.phase === 'summary') return true;
-      if (s.phase === 'board') { if (n === 9) await shot('58-cc-board-midgame', 200); await page.keyboard.press('Enter'); }
+      if (s.phase === 'board') { if (n === 5) await shot('58-cc-board-midgame', 200); await page.keyboard.press('Enter'); }
       else if (s.round === 'done') await page.keyboard.press('Enter');
       else if (s.round === 'think' || s.round === 'show') await page.keyboard.press('Space');
       else if (s.round === 'mark') { n++; await page.keyboard.press(String(1 + n % 6)); await page.keyboard.press('5'); await page.keyboard.press('Enter'); }
@@ -254,7 +254,7 @@ const SECTIONS = {
     await until(async () => {
       const s = await state(page, 'hex-hunt');
       if (s.phase === 'won') return true;
-      if (s.phase === 'board' || s.round === 'done') { if (k === 10 && s.phase === 'board') await shot('65-hh-board-midgame', 200); await page.keyboard.press('Enter'); }
+      if (s.phase === 'board' || s.round === 'done') { if (k === 4 && s.phase === 'board') await shot('65-hh-board-midgame', 200); await page.keyboard.press('Enter'); }
       else if (s.round === 'think' || s.round === 'show') await page.keyboard.press('Space');
       else if (s.round === 'mark') { k++; await page.keyboard.press(String(1 + (k % 2))); await page.keyboard.press('ArrowRight'); await page.keyboard.press('Enter'); }
       return false;

@@ -20,7 +20,7 @@ Split the class into 2 to 6 teams with mini whiteboards. No pupil devices are ne
 - Show the question with a 20-second countdown, then press Space for a big "3, 2, 1, show me!" and every team holds up its board
 - Tap 1 to 6 to mark each team right or wrong (under 10 seconds for six teams), then Enter to reveal the answer and play on. Made a mistake? Undo it.
 - Team captains change every question, so everyone takes a turn
-- Each game takes about 20 minutes: ideal as a plenary or a revision lesson
+- Each game takes 10 minutes at most, with time for teams to think, talk and write: ideal as a starter or a plenary, or play two in a lesson
 - Teams that fall well behind get a small catch-up boost, and the results screen lists the questions the class found hardest to reteach (no individual pupil data)
 
 Two teams play exactly the same way, so it works for a pair or a tutoring session too.
@@ -29,10 +29,10 @@ Two teams play exactly the same way, so it works for a pair or a tutoring sessio
 Every team that answers correctly wins a counter. Its captain chooses one of four lanes and the counters bounce down the peg board onto a moving 3D shelf, all within a few seconds. Every counter pushed over the edge wins prize money for the team whose counter last landed on that part of the shelf, and star wildcard counters bring bonuses and steals. In the final, the whole class teams up to push the gold jackpot counter over the edge.
 
 **Outpace** (the whole class as one runner, 2 to 6 teams)
-The class votes on a deal with one, two or three fingers, then answers its way home before the Hunter catches it. If at least half the teams are right, the class moves a step; if not, the Hunter gains. Bigger deals give the Hunter a shorter gap. After two Deal Rounds, everyone faces a 60-second Final Sprint, with every correct team adding a step.
+The class votes on a deal with one, two or three fingers, then answers its way home before the Hunter catches it. If at least half the teams are right, the class moves a step; if not, the Hunter gains. Bigger deals give the Hunter a shorter gap. After one Deal Round, everyone faces a 60-second Final Sprint, with every correct team adding a step.
 
 **Category Clash** (2 to 6 teams)
-A board of five categories and points values from 100 to 500, for revision across several topics at once. Teams take turns to pick a tile and every team answers: the choosing team wins full points, every other correct team wins half, and wrong answers lose nothing. Harder questions are worth more and one hidden star tile is worth double.
+A board of four categories and points values from 100 to 300, for revision across several topics at once. Teams take turns to pick a tile and every team answers: the choosing team wins full points, every other correct team wins half, and wrong answers lose nothing. Harder questions are worth more and one hidden star tile is worth double.
 
 **Hex Hunt** (two halves of the class)
 A tactical race across a board of lettered hexagons. Each letter is the first letter of the answer. Both halves of the class answer every question; the half with the bigger share of correct answers claims the hexagon and picks the next one. The first half to link its two edges wins the round.

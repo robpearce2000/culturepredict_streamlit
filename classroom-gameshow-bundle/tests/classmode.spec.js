@@ -11,7 +11,7 @@ for (const n of [2, 4, 6]) {
     await page.click(PICK('#cc-segTeams', n));
     await page.click('#cc-startBtn');
     let s = await state(page, 'category-clash');
-    expect(s.rows).toBe(5); expect(s.teams).toHaveLength(n);
+    expect(s.rows).toBe(3); expect(s.teams).toHaveLength(n);
     // first tile: the choosing team and team 2 correct
     await page.keyboard.press('Enter');
     const chooser = (await state(page, 'category-clash')).turn;
@@ -53,7 +53,7 @@ test('Category Clash: a team far behind gets a catch-up pick at the start of the
   await openBundle(page, '#category-clash');
   await page.click(PICK('#cc-segTeams', 2));
   await page.click('#cc-startBtn');
-  // team 1 wins a 500 and half of another (at least the top tile ahead); team 2 gets nothing
+  // team 1 wins a 300 and half of another (at least the top tile ahead); team 2 gets nothing
   for (let k = 0; k < 2; k++) {
     await page.evaluate(k => { const s = CGB.games['category-clash'].state(); }, k);
     await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowDown');
@@ -63,7 +63,7 @@ test('Category Clash: a team far behind gets a catch-up pick at the start of the
     await page.keyboard.press('Enter');
   }
   const s = await state(page, 'category-clash');
-  expect(s.teams[0].score - s.teams[1].score).toBeGreaterThanOrEqual(500);
+  expect(s.teams[0].score - s.teams[1].score).toBeGreaterThanOrEqual(300);
   expect(s.turn).toBe(1);
   expect(s.catchUp).toBe(true);
   await expect(page.locator('.cc-catch')).toBeVisible();
@@ -205,7 +205,7 @@ for (const n of [2, 4, 6]) {
     s = await state(page, id);
     expect(s.phase).toBe('summary');
     expect(sprintSeen).toBe(true);
-    expect(dealsVoted).toBe(2);
+    expect(dealsVoted).toBe(1);
     await expect(page.locator('#op-summaryPlayers .cm-miscon')).toContainText('Reteach these');
     expect(log.errors).toEqual([]);
   });

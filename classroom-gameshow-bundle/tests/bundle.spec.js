@@ -76,7 +76,7 @@ test('a full game of Over the Edge with keyboard shortcuts reaches the summary',
   await page.evaluate(() => CGB.test.ote.manual(true));      // physics only moves when the test says so
   const s = await playOverTheEdge(page, { manual: true });
   expect(s.phase).toBe('summary');
-  expect(s.qTotal).toBe(8);                                   // 14 questions in Round 1, then 8 in the final
+  expect(s.qTotal).toBe(4);                                   // 6 questions in Round 1, then 4 in the final
   await expect(page.locator('#ote-summary')).toBeVisible();
   await expect(page.locator('#ote-sumCard')).toContainText('Ada');
   await expect(page.locator('#ote-sumCard .cm-miscon')).toContainText('Reteach these');
@@ -93,7 +93,7 @@ test('a full game of Outpace with keyboard shortcuts reaches the summary', async
   await expect(page.locator('#op-hud-deal')).toBeVisible();
   const s = await playOutpace(page, { shortSprint: true });
   expect(s.phase).toBe('summary');
-  expect(s.dealRound).toBe(2);                               // two Deal Rounds before the sprint
+  expect(s.dealRound).toBe(1);                               // one Deal Round before the sprint
   await expect(page.locator('#op-summary')).toBeVisible();
   await expect(page.locator('#op-summaryPlayers')).toContainText('10B');
   expect(log.errors).toEqual([]);

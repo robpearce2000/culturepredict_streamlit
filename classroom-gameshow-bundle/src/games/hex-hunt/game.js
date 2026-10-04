@@ -1,7 +1,7 @@
 'use strict';
 /* =========================================================
    HEX HUNT
-   A 6 × 6 hexagon board for two teams, the two halves of the class.
+   A 4 × 4 hexagon board for two teams, the two halves of the class.
    Team 1 links left to right, Team 2 links top to bottom. Each hexagon
    is a question whose answer starts with the letter shown. Everyone
    answers on whiteboards; the teacher enters the share of each half that
@@ -24,9 +24,9 @@ const SFX = {
   win() { [392, 523, 659, 784, 1047, 1319].forEach((f, i) => CGB.sfx.tone(f, 0.22, 'triangle', 0.09, i * 0.09)); }
 };
 
-/* Fixed settings: one round on a 6 × 6 board (about 20 minutes with a class) */
+/* Fixed settings: one round on a 4 × 4 board (under 10 minutes with a class) */
 const S = {
-  phase: 'home', size: 6,
+  phase: 'home', size: 4,
   teams: [], cells: [], picker: 0, cursor: { c: 0, r: 0 }, open: null, step: null, path: null
 };
 

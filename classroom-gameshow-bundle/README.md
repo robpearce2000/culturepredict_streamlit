@@ -91,7 +91,7 @@ Q: What type of bonding is in sodium chloride?
 A: Ionic
 ```
 
-Subject and Topic apply until changed. An optional `Difficulty: 1`–`5` line applies to the questions below it; Category Clash puts level 1 on the 100 row up to level 5 on the 500 row. Every built-in question is tagged. This is the same format the original games used, so existing sets paste straight in.
+Subject and Topic apply until changed. An optional `Difficulty: 1`–`5` line applies to the questions below it; Category Clash puts levels 1, 3 and 5 on its 100, 200 and 300 rows. Every built-in question is tagged. This is the same format the original games used, so existing sets paste straight in.
 
 ## Data and privacy
 

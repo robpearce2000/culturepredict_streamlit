@@ -3,7 +3,7 @@
    OUTPACE
    A 3D race quiz. The whole class is one runner; 2 to 6 teams answer
    every question on whiteboards.
-   Deal Round (two of them): the class votes for a deal and races the Hunter
+   Deal Round: the class votes for a deal and races the Hunter
    home; at least half the teams right moves the runner, otherwise the
    Hunter gains.
    Final Sprint: 60 seconds; every correct team is a step towards a target
@@ -31,7 +31,7 @@ const SFX = {
 };
 
 /* ============ GAME STATE ============ */
-const DEAL_ROUNDS = 2;   // two Deal Rounds then the Final Sprint: about 20 minutes with a class
+const DEAL_ROUNDS = 1;   // one Deal Round then the Final Sprint: under 10 minutes with a class
 const state = {
   groups: CGB.store.getJSON('op.groups', 4),
   className: 'Our class', dealRound: 0, dealRounds: DEAL_ROUNDS,
@@ -943,12 +943,14 @@ function classDealNext() {
   else if (hunterCellIndex <= runnerCellIndex) { state.phase = 'dealEnd'; $('qcard').hidden = true; later(() => triggerCaughtSequence(() => finishDealRound(false)), 300); }
   else askDealQuestion();
 }
-/* Final Sprint: every correct team is one step. The target is tuned so that a class getting
-   about half its boards right in four questions only just makes it: per team 1.5, 2 or 2.5
-   steps, by the average pot per Deal Round (up to 500, up to 900, more). */
+/* Final Sprint: every correct team is one step. In 60 seconds a class that thinks, talks and
+   writes gets through 3 or 4 questions; with about 60% of boards right that is about 2 steps
+   per team. The target per team is 2, 2.25 or 2.5 for a pot of up to 300, up to 600 or more
+   (a bolder deal makes the sprint harder), which a class makes about 60%, 45% and 35% of the
+   time in simulation: about half the time overall. */
 function classTarget() {
-  const avg = state.pot / Math.max(1, state.dealRounds);
-  const per = avg <= 500 ? 1.5 : avg <= 900 ? 2 : 2.5;
+  const pot = state.pot / Math.max(1, state.dealRounds);
+  const per = pot <= 300 ? 2 : pot <= 600 ? 2.25 : 2.5;
   return Math.max(3, Math.ceil(state.players.length * per));
 }
 const roundSprint = CGB.createClassRound({
@@ -1027,7 +1029,7 @@ function startDealRound() {
   camera.lookAt(f.x, 0.35, 0);
 
   showHud('deal');
-  $('dealLabel').textContent = `${state.className}: vote for a deal (Deal Round ${state.dealRound + 1} of ${state.dealRounds}). Hold up 1, 2 or 3 fingers!`;
+  $('dealLabel').textContent = `${state.className}: vote for a deal${state.dealRounds > 1 ? ` (Deal Round ${state.dealRound + 1} of ${state.dealRounds})` : ''}. Hold up 1, 2 or 3 fingers!`;
   $('dealRow').hidden = false;
   $('qcard').hidden = true;
   $('dealStatus').textContent = `${TRACK_STEPS} steps to home. Class pot so far: ${state.pot} points.`;
@@ -1238,7 +1240,7 @@ resize();
 /* @test-only: shortcuts for tests, removed from the shipped file by build.js */
 CGB.test.outpace = {
   setTime(sec) { state.sprintTimeLeft = sec; },
-  // skip the Deal Rounds: start the Final Sprint with this pot
+  // skip the Deal Round: start the Final Sprint with this pot
   toSprint(pot) { clearTimers(); roundEndNext = null; $('roundEnd').classList.remove('show'); state.pot = pot == null ? 600 : pot; startSprint(); }
 };
 /* @end-test-only */

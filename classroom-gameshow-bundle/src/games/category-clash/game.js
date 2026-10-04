@@ -1,7 +1,7 @@
 'use strict';
 /* =========================================================
    CATEGORY CLASH
-   A board of five categories (topics) and points values from 100 to 500.
+   A board of four categories (topics) and points values from 100 to 300.
    2 to 6 teams take turns to choose a tile; every team answers it on
    whiteboards. The choosing team wins full points if correct and every
    other correct team half. Harder questions sit lower on the board and
@@ -25,9 +25,10 @@ const SFX = {
   win() { [523, 659, 784, 1047, 1319].forEach((f, i) => CGB.sfx.tone(f, 0.24, 'triangle', 0.09, i * 0.1)); }
 };
 
-/* Fixed settings: five categories of five questions (about 20 minutes with a class),
+/* Fixed settings: four categories of three questions, 100 to 300 points (under 10 minutes
+   with a class),
    a 20-second countdown before "show me", and one hidden star tile */
-const CATS = 5, ROWS = 5;
+const CATS = 4, ROWS = 3;
 const S = {
   order: [], pos: 0, catchUp: -1,
   phase: 'home', nTeams: CGB.store.getJSON('cc.nTeams', 4),
@@ -80,14 +81,14 @@ function pickTopics(all) {
 function buildBoard() {
   const weak = new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.q)));
   S.cats = pickTopics(topicsOf(bank.active())).map(t => {
-    // Row k (100 to 500 points) takes a question tagged Difficulty k+1. Untagged questions get a
+    // Row k (100, 200, 300 points) takes a question tagged Difficulty 1, 3 or 5. Untagged questions get a
     // level from their place in the topic's estimated order. If a row has no question at its
     // level, the nearest level is used, then any question left. Among the questions that fit a
     // row, one a playing team got wrong before is preferred, so weak spots come round again.
     const untagged = t.qs.filter(q => !q.level).sort((a, b) => bank.estimateLevel(a) - bank.estimateLevel(b));
     const levelOf = q => q.level || 1 + Math.floor(untagged.indexOf(q) * 5 / untagged.length);
     const values = VALUES.slice(0, ROWS);
-    const want = k => k + 1;
+    const want = k => 1 + Math.round(k * 4 / (ROWS - 1));   // three rows: levels 1, 3 and 5
     const left = t.qs.slice();
     const rnd = a => a[Math.floor(CGB.random() * a.length)];
     const take = (k, exact) => {

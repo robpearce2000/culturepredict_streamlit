@@ -24,8 +24,8 @@ test('a full game of Category Clash with keyboard shortcuts reaches the results'
   await page.click(PICK('#cc-segTeams', 3));
   await setNames(page, 'category-clash', ['Owls', 'Foxes', 'Hawks']);
   await page.locator('#cc-name2').press('Enter');
-  await expect(page.locator('#cc-board .cc-tile')).toHaveCount(25);    // five categories of five
-  await expect(page.locator('#cc-board .cc-tile:not(.empty)')).toHaveCount(25);
+  await expect(page.locator('#cc-board .cc-tile')).toHaveCount(12);    // four categories of three
+  await expect(page.locator('#cc-board .cc-tile:not(.empty)')).toHaveCount(12);
   const s = await playCategoryClash(page);
   expect(s.left).toBe(0);
   await expect(page.locator('#cc-summary')).toBeVisible();
@@ -42,7 +42,7 @@ test('a full round of Hex Hunt with keyboard shortcuts reaches the results', asy
   const log = await openBundle(page, '#hex-hunt');
   await setNames(page, 'hex-hunt', ['Reds', 'Blues']);
   await page.locator('#hh-name1').press('Enter');
-  await expect(page.locator('#hh-board .hh-hex')).toHaveCount(36);      // one round on a 6 × 6 board
+  await expect(page.locator('#hh-board .hh-hex')).toHaveCount(16);      // one round on a 4 × 4 board
   const s = await playHexHunt(page);
   expect(s.winner).toBeGreaterThanOrEqual(0);
   await expect(page.locator('#hh-summary')).toBeVisible();
@@ -77,10 +77,10 @@ test('Difficulty lines order Category Clash values', async ({ page }) => {
   });
   await page.click('[data-play="category-clash"]');
   await page.click('#cc-startBtn');
-  for (let r = 0; r < 5; r++) {
+  for (const level of [1, 3, 5]) {                 // three rows: 100, 200 and 300 points
     await page.keyboard.press('Enter');
     const s = await state(page, 'category-clash');
-    expect(s.q.q).toBe(`Level ${r + 1} question?`);
+    expect(s.q.q).toBe(`Level ${level} question?`);
     await mark(page, 'category-clash', () => true); await page.keyboard.press('Enter');
   }
 });
@@ -96,8 +96,8 @@ test('Category Clash fills a row from the nearest difficulty when a level is mis
   await page.click('[data-play="category-clash"]');
   await page.click('#cc-startBtn');
   const tiles = await page.evaluate(() => CGB.games['category-clash'].board().map(c => c.tiles.map(t => t.q && t.q.q)));
-  expect(tiles[0].filter(Boolean).length).toBe(5);
-  expect(tiles[0][4]).toBe('Hard one?');
+  expect(tiles[0].filter(Boolean).length).toBe(3);
+  expect(tiles[0][2]).toBe('Hard one?');
   expect(tiles[0][0]).toMatch(/^Easy/);
 });
 
