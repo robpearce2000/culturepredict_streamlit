@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased (overnight work towards 1.0.0)
+
+### Outpace
+- **Much smoother:** a capped render resolution, no shadows, name tags that no longer make the browser lay out the page every frame, and an automatic step-down in quality if a computer can't keep up.
+- **The Final Sprint question sits in a column at the side** on wide screens, so the race stays in view.
+- **The class escapes as soon as it reaches the sprint target**, without waiting for the clock (a short pause allows an undo first).
+- **The racers follow the subject:** atoms for science, and new looks for Maths, English, History and Geography, plus a general one. The class is always gold and the Hunter always magenta.
+- Smaller name tags in the Deal Round, when the whole track is in view.
+
+
 ## 1.4.1 – Ten-minute games (October 2026)
 
 ### Changed

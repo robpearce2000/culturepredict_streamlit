@@ -51,6 +51,7 @@ const state = {
   sprintNetScore: 0,
   sprintTarget: 0,
   sprintTimeLeft: 60,
+  sprintFrozen: false,
   sprintTimerHandle: null
 };
 const timers = [];
@@ -70,21 +71,25 @@ camera.lookAt(0, 0.6, 0);
 
 const renderer = CGB.createRenderer();
 if (!renderer) { $('nogl').hidden = false; $('nogl').innerHTML = CGB.noWebGLMessage; return null; }
-renderer.setPixelRatio(CGB.settings.pixelRatio());
-renderer.shadowMap.enabled = CGB.settings.get('quality') !== 'low';
+/* Performance: Outpace caps its resolution, draws no shadows (the racers float above the
+   track, so shadows add little) and steps its quality down by itself if a laptop cannot keep
+   up (see watchPerformance) */
+const perf = { level: 0, ema: 16, slowFor: 0, last: 0 };
+const opPixelRatio = () => perf.level >= 2 ? 1 : Math.min(CGB.settings.pixelRatio(), 1.25);
+renderer.setPixelRatio(opPixelRatio());
+renderer.shadowMap.enabled = false;
 wrap.insertBefore(renderer.domElement, wrap.firstChild);
 
 const composer = new THREE.EffectComposer(renderer);
 composer.addPass(new THREE.RenderPass(scene, camera));
 const bloomPass = new THREE.UnrealBloomPass(new THREE.Vector2(512, 512), 0.32, 0.4, 0.4);
 composer.addPass(bloomPass);
-let useBloom = CGB.settings.get('quality') !== 'low';
+const bloomAllowed = () => CGB.settings.get('quality') !== 'low' && perf.level < 1;
+let useBloom = bloomAllowed();
 
 scene.add(new THREE.AmbientLight(0x3A3F7E, 1.1));
 const keyLight = new THREE.DirectionalLight(0xffffff, 0.9);
 keyLight.position.set(4, 8, 5);
-keyLight.castShadow = true;
-keyLight.shadow.mapSize.set(1024, 1024);
 scene.add(keyLight);
 const runnerGlow = new THREE.PointLight(COL.runner, 5, 8);
 runnerGlow.position.set(-2.5, 1.2, 0);
@@ -131,7 +136,6 @@ const floor = new THREE.Mesh(
 );
 floor.rotation.x = -Math.PI / 2;
 floor.position.y = -0.3;
-floor.receiveShadow = true;
 scene.add(floor);
 
 const AMBIENT_PARTICLE_COUNT = 140;
@@ -156,7 +160,6 @@ function makeNucleus(protonColor, neutronColor, count, spread) {
     const mesh = new THREE.Mesh(partGeo, i % 2 === 0 ? protonMat : neutronMat);
     const dir = new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
     mesh.position.copy(dir.multiplyScalar(Math.random() * spread));
-    mesh.castShadow = true;
     group.add(mesh);
     particlesArr.push({ mesh, base: mesh.position.clone(), phase: Math.random() * Math.PI * 2 });
   }
@@ -197,24 +200,264 @@ function makeElectronOrbits(config) {
 }
 
 const runnerGroup = new THREE.Group();
-const runnerNucleus = makeNucleus(COL.runner, COL.runnerNeutron, 5, 0.13);
-runnerGroup.add(runnerNucleus.group);
-const runnerElectrons = makeElectronOrbits({
-  color: COL.runner, electronColor: COL.runnerLight,
-  orbits: [{ radius: 0.5, tiltX: Math.PI / 2.4, tiltZ: 0, electrons: 1, speed: 1.4 }, { radius: 0.62, tiltX: Math.PI / 6, tiltZ: 0.9, electrons: 2, speed: -1.0 }]
-});
-runnerGroup.add(runnerElectrons.group);
 scene.add(runnerGroup);
-
 const hunterGroup = new THREE.Group();
-const hunterNucleus = makeNucleus(COL.hunter, COL.hunterNeutron, 7, 0.16);
-hunterGroup.add(hunterNucleus.group);
-const hunterElectrons = makeElectronOrbits({
-  color: COL.hunter, electronColor: COL.hunterLight,
-  orbits: [{ radius: 0.55, tiltX: Math.PI / 3, tiltZ: 0.3, electrons: 2, speed: 2.4 }, { radius: 0.7, tiltX: Math.PI / 1.8, tiltZ: -0.5, electrons: 1, speed: -2.0 }]
-});
-hunterGroup.add(hunterElectrons.group);
 scene.add(hunterGroup);
+
+/* ============ SUBJECT LOOKS ============
+   The look follows the subject chosen on the main screen. The runner is always gold and the
+   Hunter always magenta, so the race reads the same in every subject; the characters, the
+   symbols orbiting them, the track tiles and the floor change with the subject. Biology,
+   Chemistry, Physics and Combined Science share the science look (atoms). */
+function glyphTexture(text, color) {
+  const c = document.createElement('canvas'); c.width = c.height = 128;
+  const g = c.getContext('2d');
+  g.font = (text.length > 2 ? '64px' : '84px') + ' "Lilita One", "Arial Black", sans-serif';
+  g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.lineWidth = 10; g.strokeStyle = 'rgba(10,12,40,0.9)'; g.strokeText(text, 64, 68);
+  g.fillStyle = color; g.fillText(text, 64, 68);
+  return new THREE.CanvasTexture(c);
+}
+function makeGlyphOrbit(glyphs, color, radius, speed, tiltX, tiltZ, size) {
+  const group = new THREE.Group(); group.rotation.x = tiltX; group.rotation.z = tiltZ;
+  group.add(new THREE.Mesh(new THREE.RingGeometry(radius - 0.012, radius, 48), new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.25, side: THREE.DoubleSide })));
+  glyphs.forEach((gl, i) => {
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: glyphTexture(gl, color), transparent: true, depthWrite: false }));
+    const a = Math.PI * 2 * i / glyphs.length;
+    sp.position.set(Math.cos(a) * radius, 0, Math.sin(a) * radius);
+    sp.scale.setScalar(size || 0.26);
+    group.add(sp);
+  });
+  return { group, speed };
+}
+const glowMat = (hex, k) => new THREE.MeshStandardMaterial({ color: hex, emissive: hex, emissiveIntensity: k == null ? 0.55 : k, roughness: 0.35, metalness: 0.25 });
+const runnerHex = '#' + new THREE.Color(COL.runnerLight).getHexString(), hunterHex = '#' + new THREE.Color(COL.hunterLight).getHexString();
+
+/* Each builder returns { group, update(t), boost(k) } */
+const CHARACTERS = {
+  science(isHunter) {
+    const nuc = isHunter ? makeNucleus(COL.hunter, COL.hunterNeutron, 7, 0.16) : makeNucleus(COL.runner, COL.runnerNeutron, 5, 0.13);
+    const el = isHunter
+      ? makeElectronOrbits({ color: COL.hunter, electronColor: COL.hunterLight, orbits: [{ radius: 0.55, tiltX: Math.PI / 3, tiltZ: 0.3, electrons: 2, speed: 2.4 }, { radius: 0.7, tiltX: Math.PI / 1.8, tiltZ: -0.5, electrons: 1, speed: -2.0 }] })
+      : makeElectronOrbits({ color: COL.runner, electronColor: COL.runnerLight, orbits: [{ radius: 0.5, tiltX: Math.PI / 2.4, tiltZ: 0, electrons: 1, speed: 1.4 }, { radius: 0.62, tiltX: Math.PI / 6, tiltZ: 0.9, electrons: 2, speed: -1.0 }] });
+    const group = new THREE.Group(); group.add(nuc.group, el.group);
+    const f = isHunter ? [6, 6.5, 5.5, 0.03, 0.9] : [2, 2.3, 1.8, 0.012, 0.4];
+    return {
+      group,
+      update(t) {
+        nuc.group.rotation.y = t * f[4];
+        nuc.particles.forEach(p => p.mesh.position.set(p.base.x + Math.sin(t * f[0] + p.phase) * f[3], p.base.y + Math.cos(t * f[1] + p.phase) * f[3], p.base.z + Math.sin(t * f[2] + p.phase) * f[3]));
+        el.orbits.forEach(o => o.group.rotation.y = t * o.speed);
+      },
+      boost(k) { el.orbits.forEach(o => { o.group.rotation.y += (o.speed >= 0 ? 1 : -1) * 0.05 * k; }); }
+    };
+  },
+  maths(isHunter) {
+    const group = new THREE.Group();
+    const col = isHunter ? COL.hunter : COL.runner;
+    const core = new THREE.Group();
+    if (isHunter) {
+      // a spiky "infinity engine": two crossed octahedra
+      const a = new THREE.Mesh(new THREE.OctahedronGeometry(0.3), glowMat(col, 0.6));
+      const b = new THREE.Mesh(new THREE.OctahedronGeometry(0.3), glowMat(COL.hunterNeutron, 0.4)); b.rotation.set(Math.PI / 4, Math.PI / 4, 0);
+      core.add(a, b);
+    } else {
+      const d = new THREE.Mesh(new THREE.DodecahedronGeometry(0.27), glowMat(col, 0.5));
+      const e = new THREE.LineSegments(new THREE.EdgesGeometry(d.geometry), new THREE.LineBasicMaterial({ color: COL.runnerLight }));
+      core.add(d, e);
+    }
+    const orbit = isHunter ? makeGlyphOrbit(['∞', '×', '÷'], hunterHex, 0.62, 2.2, Math.PI / 3, 0.3)
+                           : makeGlyphOrbit(['π', '√', '∑', 'x²', '%'], runnerHex, 0.6, 1.2, Math.PI / 2.5, 0);
+    group.add(core, orbit.group);
+    return {
+      group,
+      update(t) { core.rotation.set(t * (isHunter ? 1.6 : 0.5), t * (isHunter ? 1.1 : 0.7), 0); orbit.group.rotation.y = t * orbit.speed; },
+      boost(k) { orbit.group.rotation.y += 0.08 * k; }
+    };
+  },
+  english(isHunter) {
+    const group = new THREE.Group();
+    const core = new THREE.Group();
+    if (isHunter) {
+      // an ink blot that wobbles
+      const m = glowMat(COL.hunter, 0.45);
+      [[0, 0, 0, 0.24], [0.17, 0.08, 0.05, 0.13], [-0.16, -0.06, 0.04, 0.14], [0.05, -0.18, -0.06, 0.11], [-0.04, 0.17, -0.08, 0.1], [0.2, -0.12, 0.1, 0.07]]
+        .forEach(([x, y, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), m); b.position.set(x, y, z); b.userData.base = b.position.clone(); core.add(b); });
+    } else {
+      // an open book: gold covers with white pages
+      const cover = glowMat(COL.runner, 0.35), page = new THREE.MeshStandardMaterial({ color: 0xFFFDF4, emissive: 0x6B5A2A, emissiveIntensity: 0.25, roughness: 0.8 });
+      [-1, 1].forEach(sd => {
+        const half = new THREE.Group(); half.rotation.z = sd * 0.42;
+        const c = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.03, 0.4), cover); c.position.x = sd * 0.15;
+        const p = new THREE.Mesh(new THREE.BoxGeometry(0.27, 0.035, 0.36), page); p.position.set(sd * 0.145, 0.03, 0);
+        half.add(c, p); core.add(half);
+      });
+      core.rotation.x = 0.5;
+    }
+    const orbit = isHunter ? makeGlyphOrbit(['?', '!', '…'], hunterHex, 0.6, 2.3, Math.PI / 3, 0.3)
+                           : makeGlyphOrbit(['A', 'b', 'c', '“', '&'], runnerHex, 0.6, 1.2, Math.PI / 2.5, 0);
+    group.add(core, orbit.group);
+    return {
+      group,
+      update(t) {
+        if (isHunter) core.children.forEach((b, i) => { b.position.copy(b.userData.base).multiplyScalar(1 + Math.sin(t * 5 + i) * 0.12); });
+        else { core.rotation.y = Math.sin(t * 0.8) * 0.6; core.position.y = Math.sin(t * 2) * 0.03; }
+        orbit.group.rotation.y = t * orbit.speed;
+      },
+      boost(k) { orbit.group.rotation.y += 0.08 * k; }
+    };
+  },
+  history(isHunter) {
+    const group = new THREE.Group();
+    const core = new THREE.Group();
+    let hands = null;
+    if (isHunter) {
+      // a ticking clock: time is running out
+      const face = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.06, 32), new THREE.MeshStandardMaterial({ color: 0x2A1036, emissive: 0x3B0F4A, emissiveIntensity: 0.5, roughness: 0.6 }));
+      face.rotation.x = Math.PI / 2;
+      const rim = new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.04, 10, 32), glowMat(COL.hunter, 0.7));
+      hands = new THREE.Group(); hands.position.z = 0.04;
+      const hm = new THREE.MeshBasicMaterial({ color: COL.hunterLight });
+      const h1 = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.22, 0.02), hm); h1.position.y = 0.1;
+      const h2 = new THREE.Group(); const h2m = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.15, 0.02), hm); h2m.position.y = 0.07; h2.add(h2m);
+      hands.add(h1, h2); hands.userData.h2 = h2;
+      core.add(face, rim, hands);
+    } else {
+      // an hourglass in a gold frame
+      const frame = glowMat(COL.runner, 0.4), sand = new THREE.MeshStandardMaterial({ color: 0xFFF1C2, emissive: 0xC9A040, emissiveIntensity: 0.4, roughness: 0.7, transparent: true, opacity: 0.9 });
+      const top = new THREE.Mesh(new THREE.ConeGeometry(0.19, 0.26, 20), sand); top.rotation.x = Math.PI; top.position.y = 0.14;
+      const bot = new THREE.Mesh(new THREE.ConeGeometry(0.19, 0.26, 20), sand); bot.position.y = -0.14;
+      [0.29, -0.29].forEach(y => { const p = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 0.05, 24), frame); p.position.y = y; core.add(p); });
+      [0, 1, 2].forEach(i => { const a = i * Math.PI * 2 / 3; const r = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.58, 8), frame); r.position.set(Math.cos(a) * 0.21, 0, Math.sin(a) * 0.21); core.add(r); });
+      core.add(top, bot);
+    }
+    const orbit = isHunter ? makeGlyphOrbit(['XII', 'IX', 'III'], hunterHex, 0.62, 2.0, Math.PI / 3, 0.3, 0.3)
+                           : makeGlyphOrbit(['I', 'V', 'X', 'L', 'C'], runnerHex, 0.6, 1.1, Math.PI / 2.5, 0);
+    group.add(core, orbit.group);
+    return {
+      group,
+      update(t) {
+        if (hands) { hands.rotation.z = -t * 6; hands.userData.h2.rotation.z = t * 5.5; core.rotation.y = Math.sin(t * 1.5) * 0.4; }
+        else { core.rotation.z = Math.sin(t * 0.9) * 0.25; core.rotation.y = t * 0.5; }
+        orbit.group.rotation.y = t * orbit.speed;
+      },
+      boost(k) { orbit.group.rotation.y += 0.08 * k; }
+    };
+  },
+  geography(isHunter) {
+    const group = new THREE.Group();
+    const core = new THREE.Group();
+    if (isHunter) {
+      // a storm cloud with lightning
+      const cm = new THREE.MeshStandardMaterial({ color: 0x7A3F8C, emissive: COL.hunter, emissiveIntensity: 0.3, roughness: 0.9 });
+      [[0, 0.04, 0, 0.2], [0.2, 0, 0, 0.15], [-0.2, -0.01, 0, 0.16], [0.08, 0.15, 0.02, 0.14], [-0.1, 0.12, -0.03, 0.13]].forEach(([x, y, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), cm); b.position.set(x, y, z); core.add(b); });
+      const bolt = new THREE.Sprite(new THREE.SpriteMaterial({ map: glyphTexture('⚡', '#FFF1C2'), transparent: true, depthWrite: false }));
+      bolt.position.set(0, -0.26, 0.05); bolt.scale.setScalar(0.3); core.add(bolt); core.userData.bolt = bolt;
+    } else {
+      // a little globe with a gold equator ring
+      const c = document.createElement('canvas'); c.width = 256; c.height = 128;
+      const g = c.getContext('2d'); g.fillStyle = '#1E88C8'; g.fillRect(0, 0, 256, 128);
+      g.fillStyle = '#5CC96B';
+      [[40, 40, 30, 22], [70, 80, 18, 26], [130, 45, 34, 20], [150, 85, 20, 18], [205, 60, 26, 30], [230, 100, 14, 10]].forEach(([x, y, rx, ry]) => { g.beginPath(); g.ellipse(x, y, rx, ry, 0.4, 0, Math.PI * 2); g.fill(); });
+      g.fillStyle = '#EEF6FF'; g.fillRect(0, 0, 256, 8); g.fillRect(0, 120, 256, 8);
+      const globe = new THREE.Mesh(new THREE.SphereGeometry(0.26, 32, 20), new THREE.MeshStandardMaterial({ map: new THREE.CanvasTexture(c), emissive: 0x153a52, emissiveIntensity: 0.6, roughness: 0.6 }));
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(0.33, 0.018, 8, 40), glowMat(COL.runner, 0.7)); ring.rotation.x = Math.PI / 2;
+      core.add(globe, ring); core.userData.globe = globe;
+    }
+    const orbit = isHunter ? makeGlyphOrbit(['☂', '❄', '~'], hunterHex, 0.62, 2.2, Math.PI / 3, 0.3)
+                           : makeGlyphOrbit(['N', 'E', 'S', 'W'], runnerHex, 0.6, 1.1, Math.PI / 2.5, 0);
+    group.add(core, orbit.group);
+    return {
+      group,
+      update(t) {
+        if (core.userData.globe) core.userData.globe.rotation.y = t * 0.9;
+        if (core.userData.bolt) core.userData.bolt.material.opacity = (Math.sin(t * 9) > 0.6) ? 1 : 0.25;
+        if (isHunter) core.rotation.z = Math.sin(t * 3) * 0.08;
+        orbit.group.rotation.y = t * orbit.speed;
+      },
+      boost(k) { orbit.group.rotation.y += 0.08 * k; }
+    };
+  },
+  general(isHunter) {
+    const group = new THREE.Group();
+    const core = new THREE.Group();
+    if (isHunter) {
+      // a spiky comet ball
+      const m = glowMat(COL.hunter, 0.55);
+      core.add(new THREE.Mesh(new THREE.IcosahedronGeometry(0.2, 0), m));
+      const spikeGeo = new THREE.ConeGeometry(0.05, 0.2, 8);
+      const dirs = [[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1],[0.7,0.7,0],[-0.7,0.7,0],[0.7,-0.7,0],[-0.7,-0.7,0],[0,0.7,0.7],[0,-0.7,-0.7]];
+      dirs.forEach(d => { const v = new THREE.Vector3(...d).normalize(); const sp = new THREE.Mesh(spikeGeo, m); sp.position.copy(v.clone().multiplyScalar(0.25)); sp.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v); core.add(sp); });
+    } else {
+      // a gold star
+      const sh = new THREE.Shape();
+      for (let i = 0; i < 10; i++) { const r = i % 2 ? 0.13 : 0.3, a = Math.PI / 2 + i * Math.PI / 5; const x = Math.cos(a) * r, y = Math.sin(a) * r; i ? sh.lineTo(x, y) : sh.moveTo(x, y); }
+      sh.closePath();
+      const star = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: 0.08, bevelEnabled: true, bevelSize: 0.02, bevelThickness: 0.02, bevelSegments: 2 }), glowMat(COL.runner, 0.5));
+      star.geometry.center();
+      core.add(star);
+    }
+    const orbit = isHunter ? makeGlyphOrbit(['?', '?', '?'], hunterHex, 0.62, 2.3, Math.PI / 3, 0.3)
+                           : makeGlyphOrbit(['?', '!', '★', '?'], runnerHex, 0.6, 1.2, Math.PI / 2.5, 0);
+    group.add(core, orbit.group);
+    return {
+      group,
+      update(t) { core.rotation.y = t * (isHunter ? 1.8 : 0.9); if (isHunter) core.rotation.x = t * 1.2; orbit.group.rotation.y = t * orbit.speed; },
+      boost(k) { orbit.group.rotation.y += 0.08 * k; }
+    };
+  }
+};
+const THEMES = {
+  science:   { label: 'Science', cell: 0x252C6B,   bg: 0x0B1026, floor: 'hex',     floorBg: '#0D1230', line: 'rgba(150,160,255,0.16)' },
+  maths:     { label: 'Maths', cell: 0x1B3E70,     bg: 0x071A2E, floor: 'graph',   floorBg: '#0A1F38', line: 'rgba(120,200,255,0.22)' },
+  english:   { label: 'English', cell: 0x3E2468,   bg: 0x1A0F2E, floor: 'lines',   floorBg: '#1D1336', line: 'rgba(255,190,230,0.2)' },
+  history:   { label: 'History', cell: 0x5B3A1E,   bg: 0x1A1108, floor: 'stone',   floorBg: '#2A1D10', line: 'rgba(255,214,150,0.16)' },
+  geography: { label: 'Geography', cell: 0x125452, bg: 0x061D1E, floor: 'contour', floorBg: '#0A2628', line: 'rgba(140,255,220,0.2)' },
+  general:   { label: 'General', cell: 0x30246E,   bg: 0x120A26, floor: 'stars',   floorBg: '#170E30', line: 'rgba(220,200,255,0.18)' }
+};
+function themeFloorTexture(th) {
+  if (th.floor === 'hex') return makeHexGridTexture();
+  const size = 512, c = document.createElement('canvas'); c.width = c.height = size;
+  const g = c.getContext('2d'); g.fillStyle = th.floorBg; g.fillRect(0, 0, size, size);
+  g.strokeStyle = th.line; g.lineWidth = 1.4;
+  if (th.floor === 'graph') {
+    for (let i = 0; i <= size; i += 16) { g.lineWidth = i % 64 ? 1 : 2.2; g.beginPath(); g.moveTo(i, 0); g.lineTo(i, size); g.stroke(); g.beginPath(); g.moveTo(0, i); g.lineTo(size, i); g.stroke(); }
+  } else if (th.floor === 'lines') {
+    for (let y = 24; y < size; y += 32) { g.beginPath(); g.moveTo(0, y); g.lineTo(size, y); g.stroke(); }
+    g.strokeStyle = 'rgba(255,120,150,0.3)'; g.lineWidth = 2.5; g.beginPath(); g.moveTo(70, 0); g.lineTo(70, size); g.stroke();
+  } else if (th.floor === 'stone') {
+    for (let row = 0; row < size / 64; row++) for (let col = -1; col < size / 128 + 1; col++) g.strokeRect(col * 128 + (row % 2) * 64, row * 64, 128, 64);
+  } else if (th.floor === 'contour') {
+    [[150, 160], [380, 330], [120, 420]].forEach(([cx, cy]) => { for (let r = 20; r < 220; r += 26) { g.beginPath(); g.ellipse(cx, cy, r * 1.3, r, 0.5, 0, Math.PI * 2); g.stroke(); } });
+  } else {
+    g.fillStyle = th.line;
+    for (let i = 0; i < 120; i++) { const x = (i * 97.3) % size, y = (i * 61.7 + (i % 7) * 37) % size, r = (i % 5) * 0.4 + 0.6; g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill(); }   // fixed pattern: the same floor every time
+  }
+  const tex = new THREE.CanvasTexture(c);
+  tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(4, 4);
+  return tex;
+}
+const LOOK_FOR_SUBJECT = { biology: 'science', chemistry: 'science', physics: 'science', combined: 'science', maths: 'maths', english: 'english', history: 'history', geography: 'geography' };
+const lookForSubject = sj => LOOK_FOR_SUBJECT[sj] || 'general';
+let runnerChar = null, hunterChar = null, currentTheme = '';
+function disposeTree(obj) {
+  obj.traverse(o => {
+    if (o.geometry) o.geometry.dispose();
+    [].concat(o.material || []).forEach(m => { if (m.map) m.map.dispose(); m.dispose(); });
+  });
+}
+function applyTheme(force) {
+  const id = lookForSubject(bank.subject());
+  if (id === currentTheme && !force) return;
+  currentTheme = id;
+  const th = THEMES[id];
+  [runnerGroup, hunterGroup].forEach(g => { g.children.slice().forEach(c => { g.remove(c); disposeTree(c); }); });
+  runnerChar = CHARACTERS[id](false); hunterChar = CHARACTERS[id](true);
+  runnerGroup.add(runnerChar.group); hunterGroup.add(hunterChar.group);
+  scene.background.setHex(th.bg); scene.fog.color.setHex(th.bg);
+  cellMat.color.setHex(th.cell);
+  const old = floor.material.map; floor.material.map = themeFloorTexture(th); floor.material.color.set(th.floorBg); floor.material.needsUpdate = true; if (old) old.dispose();
+}
 
 const auraMat = new THREE.MeshBasicMaterial({ color: COL.hunter, transparent: true, opacity: 0.3 });
 const auraMesh = new THREE.Mesh(new THREE.SphereGeometry(0.62, 20, 20), auraMat);
@@ -336,8 +579,6 @@ function buildTrack(totalCells) {
   for (let i = 0; i < totalCells; i++) {
     const mesh = new THREE.Mesh(cellGeo, i === 0 ? homeMat : cellMat);
     mesh.position.set(cellX(i), 0.08, 0);
-    mesh.castShadow = true;
-    mesh.receiveShadow = true;
     trackGroup.add(mesh);
     const trim = new THREE.Mesh(trimGeo, i === 0 ? homeTrimMat : trimMat);
     trim.position.set(cellX(i), 0.17, (CELL_SPACING - 0.14) / 2 - 0.05);
@@ -374,6 +615,8 @@ function runnerTargetX(netScore, target) {
 const flashEl = $('flash');
 function resetAtomsForRound(roundType) {
   currentRoundType = roundType;
+  root.classList.toggle('deal-view', roundType === 'deal');   // smaller tags while the whole track is in view
+  measureTags();
   sceneMode = 'idle';
   onSequenceComplete = null;
   runnerVelX = 0;
@@ -501,7 +744,7 @@ function finishSequence() {
 /* Frame the two atoms: keep both on screen at any aspect ratio (portrait tablets too) */
 function framingZ(spread) {
   const vHalf = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-  const fitZ = (spread / 2 + 1.3) / (vHalf * camera.aspect);
+  const fitZ = (spread / 2 + 1.3) / (vHalf * camera.aspect * viewFracX);   // only the part of the picture the race has
   return Math.max(5.0 + spread * 0.85, fitZ);
 }
 
@@ -520,13 +763,9 @@ function animate() {
   rafId = requestAnimationFrame(animate);
   const t = clock.getElapsedTime();
 
-  runnerNucleus.group.rotation.y = t * 0.4;
-  runnerNucleus.particles.forEach(p => p.mesh.position.set(p.base.x + Math.sin(t * 2 + p.phase) * 0.012, p.base.y + Math.cos(t * 2.3 + p.phase) * 0.012, p.base.z + Math.sin(t * 1.8 + p.phase) * 0.012));
-  runnerElectrons.orbits.forEach(o => o.group.rotation.y = t * o.speed);
-
-  hunterNucleus.group.rotation.y = t * 0.9;
-  hunterNucleus.particles.forEach(p => p.mesh.position.set(p.base.x + Math.sin(t * 6 + p.phase) * 0.03, p.base.y + Math.cos(t * 6.5 + p.phase) * 0.03, p.base.z + Math.sin(t * 5.5 + p.phase) * 0.03));
-  hunterElectrons.orbits.forEach(o => o.group.rotation.y = t * o.speed);
+  watchPerformance(performance.now());
+  if (runnerChar) runnerChar.update(t);
+  if (hunterChar) hunterChar.update(t);
 
   if (sceneMode !== 'explode') {
     runnerGroup.position.y = 0.62 + Math.sin(t * 1.6) * 0.05;
@@ -694,7 +933,7 @@ function animate() {
     camera.position.y += (0.9 - camera.position.y) * 0.05;
     camera.lookAt(px, 0.62, 0);
 
-    runnerElectrons.orbits.forEach(o => { o.group.rotation.y += (o.speed >= 0 ? 1 : -1) * 0.05 * zoomProgress; });
+    if (runnerChar) runnerChar.boost(zoomProgress);
 
     if (elapsed >= BURST_AT && !snapFlashDone) {
       snapFlashDone = true;
@@ -790,19 +1029,33 @@ hunterGroup.userData.targetX = HUNTER_X;
 
 /* Name tags over the atoms: the runner's above, the Hunter's below, so they never collide */
 const tagV = new THREE.Vector3();
+/* Tag and stage sizes are measured only when they change (text, round, resize), never every
+   frame: reading offsetWidth each frame forced the browser to lay out the page 60 times a second */
+const stageSize = { w: 0, h: 0 };
+function measureTags() {
+  stageSize.w = wrap.clientWidth; stageSize.h = wrap.clientHeight;
+  ['tagYou', 'tagHunter', 'tagHome'].forEach(id => { const el = $(id); el._w = el.offsetWidth; el._h = el.offsetHeight; });
+}
+function setTagText(id, text) { $(id).textContent = text; measureTags(); }
 function placeTag(el, obj, dy, show) {
-  if (!show) { el.classList.remove('show'); return; }
+  if (!show) { if (el._shown) { el.classList.remove('show'); el._shown = false; } return; }
+  if (!el._w) measureTags();
   tagV.set(obj.x, obj.y + dy, obj.z).project(camera);
-  const w = wrap.clientWidth, h = wrap.clientHeight;
-  const half = el.offsetWidth / 2 + 8;
-  el.style.left = Math.min(w - half, Math.max(half, (tagV.x + 1) / 2 * w)) + 'px';
+  const w = stageSize.w, h = stageSize.h;
+  const half = el._w / 2 + 8;
+  const left = band.left || 0, right = Math.min(w, band.right || w);
+  const sx = (tagV.x + 1) / 2 * w - viewShiftX;
+  const x = Math.round(Math.min(right - half, Math.max(left + half, sx)));
   // keep tags inside the clear band so they never sit on the HUD panels
   const below = el !== $('tagYou');
   let y = (1 - tagV.y) / 2 * h;
-  if (below) y = Math.max(band.top + 4, Math.min(band.bottom - el.offsetHeight - 4, y));
-  else y = Math.max(band.top + el.offsetHeight + 4, Math.min(band.bottom - 4, y));
-  el.style.top = y + 'px';
-  el.classList.toggle('show', tagV.z < 1 && Math.abs(tagV.x) < 1.1);
+  if (below) y = Math.max(band.top + 4, Math.min(band.bottom - el._h - 4, y));
+  else y = Math.max(band.top + el._h + 4, Math.min(band.bottom - 4, y));
+  y = Math.round(y);
+  // moved with a transform (no page layout), and only when the position changes
+  if (x !== el._x || y !== el._y) { el._x = x; el._y = y; el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, ${below ? '0' : '-100%'})`; }
+  const vis = tagV.z < 1 && Math.abs(tagV.x) < 1.1;
+  if (vis !== el._shown) { el.classList.toggle('show', vis); el._shown = vis; }
 }
 const homePos = new THREE.Vector3(HOME_BASE_X, 0.2, 0);
 function placeTags() {
@@ -813,47 +1066,69 @@ function placeTags() {
   placeTag($('tagHome'), homePos, -0.35, visible && currentRoundType === 'deal');
 }
 
-/* Shift the picture so the race sits in the clear band between the top HUD and the bottom dock */
-let viewShift = 0, shiftFrame = 0;
-const band = { top: 0, bottom: 10000 };   // clear area between the top HUD and the bottom dock
+/* Shift the picture so the race sits in the clear space the HUD panels leave: between the
+   top HUD and the bottom dock, or (Final Sprint on a wide screen) to the left of the question column */
+let viewShift = 0, viewShiftX = 0, shiftFrame = 0, viewFracX = 1;
+const band = { top: 0, bottom: 10000, left: 0, right: 0 };
 function updateViewShift() {
   const h = wrap.clientHeight, w = wrap.clientWidth;
   if (!w || !h) return;
-  let want = 0;
+  let want = 0, wantX = 0;
+  band.left = 0; band.right = w; viewFracX = 1;
   const hud = Object.values(huds).find(el => el.classList.contains('active'));
   if (hud) {
-    const top = hud.querySelector('.op-top').getBoundingClientRect().bottom;
-    const dock = hud.querySelector('.op-dock').getBoundingClientRect().top;
-    if (dock > top) want = Math.round(h / 2 - (top + dock) / 2);
-    const base = wrap.getBoundingClientRect().top;
-    band.top = top - base; band.bottom = dock - base;
+    const wr = wrap.getBoundingClientRect();
+    const top = hud.querySelector('.op-top').getBoundingClientRect().bottom - wr.top;
+    const dr = hud.querySelector('.op-dock').getBoundingClientRect();
+    const sideDock = dr.left - wr.left > w * 0.45 && dr.height > h * 0.35;
+    if (sideDock) {
+      const avail = dr.left - wr.left - 12;
+      band.top = top; band.bottom = h; band.right = avail;
+      want = Math.round(h / 2 - (top + h) / 2);
+      wantX = Math.round(w / 2 - avail / 2);
+      viewFracX = avail / w;
+    } else {
+      const dock = dr.top - wr.top;
+      if (dock > top) want = Math.round(h / 2 - (top + dock) / 2);
+      band.top = top; band.bottom = dock;
+    }
   } else { band.top = 0; band.bottom = h; }
-  if (Math.abs(want - viewShift) < 2) return;
-  viewShift += (want - viewShift) * (reduced() ? 1 : 0.25);
-  if (Math.abs(viewShift) < 1) { camera.clearViewOffset(); viewShift = 0; }
-  else camera.setViewOffset(w, h, 0, viewShift, w, h);
+  if (Math.abs(want - viewShift) < 2 && Math.abs(wantX - viewShiftX) < 2) return;
+  const k = reduced() ? 1 : 0.25;
+  viewShift += (want - viewShift) * k; viewShiftX += (wantX - viewShiftX) * k;
+  if (Math.abs(viewShift) < 1 && Math.abs(viewShiftX) < 1) { camera.clearViewOffset(); viewShift = viewShiftX = 0; }
+  else camera.setViewOffset(w, h, viewShiftX, viewShift, w, h);
 }
 function resize() {
   const w = wrap.clientWidth, h = wrap.clientHeight;
   if (!w || !h) return;
   camera.aspect = w / h;
-  if (viewShift) camera.setViewOffset(w, h, 0, viewShift, w, h);
+  if (viewShift || viewShiftX) camera.setViewOffset(w, h, viewShiftX, viewShift, w, h);
   camera.updateProjectionMatrix();
   renderer.setSize(w, h, false);
   composer.setSize(w, h);
+  measureTags();
 }
 function applyQuality() {
-  const low = CGB.settings.get('quality') === 'low';
-  useBloom = !low;
-  renderer.setPixelRatio(CGB.settings.pixelRatio());
-  if (renderer.shadowMap.enabled === low) {
-    renderer.shadowMap.enabled = !low;
-    scene.traverse(o => { if (o.material) [].concat(o.material).forEach(m => { m.needsUpdate = true; }); });
-  }
+  useBloom = bloomAllowed();
+  renderer.setPixelRatio(opPixelRatio());
+  composer.setPixelRatio(opPixelRatio());
   resize();
+}
+/* Step quality down, one level at a time, if frames stay slow (over 26 ms on average) for two
+   seconds: first the glow goes, then the resolution drops to 1:1. The Graphics setting is untouched. */
+function watchPerformance(now) {
+  if (!perf.last) { perf.last = now; return; }
+  const dt = Math.min(200, now - perf.last); perf.last = now;
+  perf.ema += (dt - perf.ema) * 0.05;
+  if (perf.level >= 2 || clock.getElapsedTime() < 3) return;
+  perf.slowFor = perf.ema > 26 ? perf.slowFor + dt : 0;
+  if (perf.slowFor > 2000) { perf.level++; perf.slowFor = 0; perf.ema = 16; applyQuality(); }
 }
 window.addEventListener('resize', resize);
 if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
+// the question panels grow when the answer and marks appear: move the tags out of their way at once
+if (window.ResizeObserver) { const ro = new ResizeObserver(() => updateViewShift()); root.querySelectorAll('.op-dock, .op-top').forEach(el => ro.observe(el)); }
 
 /* ============ SCREEN CONTROL ============ */
 const screens = { home: $('home'), summary: $('summary') };
@@ -868,7 +1143,10 @@ function showHud(name) { hideAll(); if (huds[name]) huds[name].classList.add('ac
 /* ============ SETUP SCREEN ============ */
 $('logo').innerHTML = CGB.brand.opLogo();
 function renderPack() { $('startBtn').disabled = !CGB.renderPackLine($('pack')); }
-bank.onChange(() => { picker.reset(); if (state.phase === 'home') renderPack(); });
+bank.onChange(() => { picker.reset(); applyTheme(); if (state.phase === 'home') renderPack(); });
+applyTheme();
+// the orbiting symbols are drawn with the display font: draw them again once it has loaded
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => applyTheme(true));
 if (![2, 3, 4, 5, 6].includes(state.groups)) state.groups = 4;
 $('className').value = CGB.store.get('op.className') || 'Our class';
 function renderGroupNames(fresh) {
@@ -953,6 +1231,7 @@ function classTarget() {
   const per = pot <= 300 ? 2 : pot <= 600 ? 2.25 : 2.5;
   return Math.max(3, Math.ceil(state.players.length * per));
 }
+const WIN_UNDO_MS = 1600;   // after the target is reached: time to undo a marking slip before the escape plays
 const roundSprint = CGB.createClassRound({
   root: root, board: sprintBoard, btnEl: $('sprintBtnRow'), fast: true,
   seconds: () => 0, teams: () => state.players.length,
@@ -969,13 +1248,22 @@ const roundSprint = CGB.createClassRound({
     paintBoards(res.map(ok => ok ? '+1' : ''));
     sprintBoard.set({ marks: res });
     if (c) { SFX.correct(); pulseCorrect(); } else { SFX.wrong(); pulseWrong(); }
-    hostSay('hostSprint', CGB.classLine(c, n), CGB.classGesture(c, n), 1200);
     clearTimeout(sprintNextT);
+    if (state.sprintNetScore >= state.sprintTarget) {
+      // target reached: the clock stops now and the escape plays after a short pause, in which
+      // the marking can still be undone
+      state.sprintFrozen = true;
+      hostSay('hostSprint', 'Target reached! You did it!', 'cheer', 1400);
+      sprintNextT = later(() => { roundSprint.stop(); if (state.phase === 'sprint') resolveSprint(true); }, WIN_UNDO_MS);
+      return;
+    }
+    hostSay('hostSprint', CGB.classLine(c, n), CGB.classGesture(c, n), 1200);
     sprintNextT = later(() => { roundSprint.stop(); if (state.phase === 'sprint' && state.sprintTimeLeft > 0) askSprintQuestion(); }, 1400);
   },
   onUndo() {
     const u = sprintSnap; if (!u) return;
     clearTimeout(sprintNextT);
+    state.sprintFrozen = false;          // undoing the winning answer starts the clock again
     unlogClassWrongs(u.res);
     state.sprintNetScore = u.net;
     runnerGroup.userData.targetX = runnerTargetX(Math.min(state.sprintNetScore, state.sprintTarget), state.sprintTarget);
@@ -1023,7 +1311,7 @@ function startDealRound() {
   hunterGroup.position.x = cellX(hunterCellIndex);
   runnerGroup.userData.targetX = cellX(runnerCellIndex);
   hunterGroup.userData.targetX = cellX(hunterCellIndex);
-  $('tagYou').textContent = '▲ ' + state.className;
+  setTagText('tagYou', '▲ ' + state.className);
   const f = dealFraming();                 // start already framed on the whole track
   camera.position.set(f.x, f.y, f.z);
   camera.lookAt(f.x, 0.35, 0);
@@ -1106,7 +1394,7 @@ function startSprint() {
   resetAtomsForRound('sprint');
   runnerGroup.userData.targetX = HOME_BASE_X;
   hunterGroup.userData.targetX = HUNTER_X;
-  $('tagYou').textContent = '▲ ' + state.className;
+  setTagText('tagYou', '▲ ' + state.className);
   state.sprintNetScore = 0;
   state.sprintTarget = classTarget();
   state.sprintTimeLeft = 60;
@@ -1119,7 +1407,9 @@ function startSprint() {
   updateSprintTimer();
 
   clearInterval(state.sprintTimerHandle);
+  state.sprintFrozen = false;
   state.sprintTimerHandle = setInterval(() => {
+    if (state.sprintFrozen) return;      // target reached: the clock stops
     state.sprintTimeLeft -= 0.1;
     if (state.sprintTimeLeft <= 0) {
       state.sprintTimeLeft = 0;
@@ -1156,10 +1446,13 @@ function askSprintQuestion() {
   paintBoards(); roundSprint.think();
 }
 
-function resolveSprint() {
+/* early: the class reached the target before the clock ran out */
+function resolveSprint(early) {
+  if (state.phase !== 'sprint') return;
   state.phase = 'finish';
+  clearInterval(state.sprintTimerHandle);
   roundSprint.stop(); clearTimeout(sprintNextT);
-  SFX.timeUp();
+  if (!early) SFX.timeUp();
   $('sprintCard').hidden = true;
   const won = state.sprintNetScore >= state.sprintTarget;
   if (won) triggerEscapeSequence(() => showSummary(true));
@@ -1259,7 +1552,7 @@ return {
     if (state.phase !== 'home') goHome();
   },
   inProgress: () => ['deal', 'dealEnd', 'sprint', 'finish'].includes(state.phase),
-  _state: () => ({ round: state.phase === 'sprint' ? roundSprint.phase : roundDeal.phase, undoable: (state.phase === 'sprint' ? roundSprint : roundDeal).undoable, times: (state.phase === 'sprint' ? roundSprint : roundDeal).times(), runner: runnerCellIndex, hunter: hunterCellIndex, net: state.sprintNetScore, target: state.sprintTarget, dealRound: state.dealRound, misconceptions: misc.top(5).map(x => x.q.q), phase: state.phase, teams: state.players.map(p => ({ name: p.name })), pot: state.pot, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, q: state.currentQuestion, dealReward: state.dealReward })
+  _state: () => ({ round: state.phase === 'sprint' ? roundSprint.phase : roundDeal.phase, undoable: (state.phase === 'sprint' ? roundSprint : roundDeal).undoable, times: (state.phase === 'sprint' ? roundSprint : roundDeal).times(), runner: runnerCellIndex, hunter: hunterCellIndex, net: state.sprintNetScore, target: state.sprintTarget, dealRound: state.dealRound, misconceptions: misc.top(5).map(x => x.q.q), look: currentTheme, perfLevel: perf.level, phase: state.phase, teams: state.players.map(p => ({ name: p.name })), pot: state.pot, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, frozen: state.sprintFrozen, q: state.currentQuestion, dealReward: state.dealReward })
 };
 }
 

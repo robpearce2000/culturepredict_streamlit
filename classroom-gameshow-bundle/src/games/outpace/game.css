@@ -124,3 +124,14 @@
 .op .packline .lab { color: var(--ink-soft); }
 .op .packline .linkish { color: var(--teal-deep); }
 .op details.tnames > summary { color: #9FFCF0; }
+
+/* Deal Round: the whole track is in view, so the name tags are smaller */
+.op.deal-view .op-tag { font-size: clamp(0.95rem, 1.25vw, 1.2rem); padding: 2px 11px 1px; border-width: 2px; }
+/* Final Sprint on wide screens: the question sits in a column at the side, so the race stays
+   in view in the space to its left (the camera and the tags are centred in that space) */
+@media (min-width: 900px) {
+  #op-hud-sprint { align-items: flex-start; }
+  #op-hud-sprint .op-top { width: calc(100% - min(440px, 36vw) - 32px); }
+  #op-hud-sprint .op-dock, #op-hud-sprint .op-dock.classq { position: absolute; right: 16px; top: 64px; bottom: 16px; width: min(440px, 36vw); max-width: none; justify-content: center; overflow-y: auto; }
+  #op-hud-sprint .op-cmboard.cm-board { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}

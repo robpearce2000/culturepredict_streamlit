@@ -16,9 +16,10 @@ CGB.createRenderer = function (opts) {
 };
 CGB.noWebGLMessage = '<div class="cgb-panel" style="max-width:560px;margin:15vh auto 0;padding:24px 26px;"><h2 style="font-family:var(--display);font-weight:400;margin:0 0 8px;">3D graphics are switched off</h2><p class="hint" style="font-size:1rem">This browser could not start 3D graphics (WebGL). Try another browser (Chrome, Edge, Firefox or Safari), or ask IT to turn on hardware acceleration.</p></div>';
 
-/* Starting a game from a name box: take the keyboard out of it, so the game's keys
-   (Space for "show me" and so on) are not typed into a box that is about to disappear */
-CGB.leaveField = () => { const a = document.activeElement; if (a && a.matches && a.matches('input, textarea, select') && a.blur) a.blur(); };
+/* Starting a game: take the keyboard off the setup card (a name box or the Start button), so
+   the game's keys work at once (Space for "show me", Enter to pick) instead of going to
+   controls that are about to disappear */
+CGB.leaveField = () => { const a = document.activeElement; if (a && a !== document.body && a.closest && a.closest('.setup') && a.blur) a.blur(); };
 
 /* Two-tap confirm for destructive buttons */
 CGB.armButton = function (btn, armedText, onConfirm) {
