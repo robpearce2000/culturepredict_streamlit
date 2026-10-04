@@ -43,7 +43,7 @@ function renderNames() {
 function wireSeg(id, key, store) {
   const seg = $(id);
   const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === S[key])));
-  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S[key] = +b.dataset.v; CGB.store.setJSON(store, S[key]); paint(); if (key === 'nTeams') renderNames(); if (key === 'nCats') autoPickTopics(); });
+  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S[key] = +b.dataset.v; CGB.store.setJSON(store, S[key]); paint(); if (key === 'nTeams') renderNames(); if (key === 'nCats') autoPickTopics(); CGB.fitSetups(); });
   paint();
 }
 wireSeg('segTeams', 'nTeams', 'cc.nTeams');
@@ -344,6 +344,7 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
+  if (CGB.fitSetups) CGB.fitSetups();
   stopTimer();
   S.phase = 'home'; S.open = null;
   $('q').hidden = true; $('play').hidden = true; $('summary').classList.remove('active');

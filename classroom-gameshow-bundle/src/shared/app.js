@@ -81,7 +81,24 @@ CGB.renderSettings = function (el, compact) {
     S.set(key, JSON.parse(b.dataset.v));
   };
 };
+/* Setup cards must fit on screen without scrolling. Each one shows "How to play"
+   open when there is room; if the card would overflow it first tightens its
+   spacing, then closes "How to play" (one click opens it again). */
+CGB.fitSetups = () => requestAnimationFrame(() => {
+  document.querySelectorAll('.setup').forEach(card => {
+    if (!card.offsetParent) return;
+    const how = card.querySelector('details.howto');
+    const over = () => card.scrollHeight > card.clientHeight + 1;
+    card.classList.remove('tight', 'tighter');
+    if (how) how.open = true;
+    if (over()) card.classList.add('tight');
+    if (over() && how) how.open = false;
+    if (over()) card.classList.add('tighter');
+  });
+});
+window.addEventListener('resize', () => { clearTimeout(CGB.fitSetups.t); CGB.fitSetups.t = setTimeout(CGB.fitSetups, 120); });
 CGB.settings.onChange(() => {
+  CGB.fitSetups();
   document.querySelectorAll('.seg[data-key]').forEach(seg => {
     const v = CGB.settings.get(seg.dataset.key);
     seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(JSON.parse(b.dataset.v) === v)));
@@ -216,6 +233,7 @@ CGB.app = (() => {
       if (!g.ready) { g.init($('game-' + id)); g.ready = true; }
       document.title = g.title + ' | Showtime: Classroom Gameshows';
       g.enter();
+      CGB.fitSetups();
     }
     const want = id === 'launcher' ? '' : '#' + id;
     if (location.hash !== want) {

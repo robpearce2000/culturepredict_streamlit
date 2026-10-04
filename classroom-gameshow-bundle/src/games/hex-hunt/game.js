@@ -320,6 +320,7 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
+  if (CGB.fitSetups) CGB.fitSetups();
   S.phase = 'home';
   $('play').hidden = true; $('q').hidden = true; $('win').hidden = true; $('summary').classList.remove('active');
   $('home').classList.add('active');

@@ -1220,6 +1220,7 @@ function showSummary() {
   $('againBtn').focus({ preventScroll: true });
 }
 function goHome() {
+  if (CGB.fitSetups) CGB.fitSetups();
   dropTimers.forEach(clearTimeout); dropTimers = [];
   $('summary').classList.add('hidden');
   $('home').classList.remove('hidden');

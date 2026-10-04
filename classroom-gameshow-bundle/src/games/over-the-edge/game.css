@@ -113,3 +113,11 @@
   .ote-host { height: 50%; right: 0; }
   .ote-bubble { max-width: min(280px, 55%); font-size: 0.95rem; }
 }
+/* the setup card stays clear of the score panel on the right */
+@media (min-width: 1000px) {
+  .ote-overlay .setup { max-width: min(1080px, calc(100vw - 25rem - 4vw - 28px)) !important; }
+}
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .ote-overlay .setup { grid-template-columns: minmax(0, 1fr); }
+  .ote-overlay .setup .setup-intro, .ote-overlay .setup .setup-form, .ote-overlay .setup .setup-go { grid-column: 1; }
+}

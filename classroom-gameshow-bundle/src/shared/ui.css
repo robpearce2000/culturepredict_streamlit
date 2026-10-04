@@ -193,3 +193,31 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 /* Thank-you line on end screens */
 .cgb-review { margin: 12px 0 0; text-align: center; font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); }
 .op .cgb-review { color: var(--op-muted); }
+
+/* ---------- Setup cards (all four games) ----------
+   One column on narrow screens, two on wide ones; the Start button stays in
+   view at the bottom of the card. app.js (fitSetups) closes "How to play" if
+   the card would otherwise need scrolling. */
+.setup { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 28px; align-content: start; max-height: 100%; overflow-y: auto; }
+.setup .setup-intro, .setup .setup-form { min-width: 0; }
+.setup [class$="-logo"] svg { max-width: 330px; }
+.setup .field { margin-bottom: 10px; }
+.setup-go { position: sticky; bottom: -22px; z-index: 2; margin: 4px -24px -22px; padding: 10px 24px 18px; background: inherit; border-radius: 0 0 18px 18px; }
+.setup-go .btn { width: 100%; }
+details.howto { margin-bottom: 12px; }
+details.howto > summary { cursor: pointer; font-weight: 900; font-size: 0.9rem; color: inherit; padding: 4px 2px; list-style-position: inside; }
+details.howto > summary:focus-visible { outline: 3px solid var(--sun); border-radius: 6px; }
+details.howto > div { margin: 4px 0 0 !important; }
+details.howto:not([open]) { margin-bottom: 8px; }
+.setup.tight [class$="-logo"] svg { max-width: 250px; }
+.setup.tight [class$="-rules"] { font-size: 0.86rem; line-height: 1.42; padding: 8px 12px; }
+.setup.tight .field { margin-bottom: 8px; }
+.setup.tight .check { margin: 2px 0; }
+.setup.tighter [class$="-logo"] svg { max-width: 190px; }
+.setup.tighter .setup-go { padding-top: 6px; padding-bottom: 14px; }
+@media (min-width: 1000px) {
+  .setup { max-width: 1080px !important; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); }
+  .setup-intro { grid-column: 1; }
+  .setup-form { grid-column: 2; padding-top: 6px; }
+  .setup-go { grid-column: 1 / -1; }
+}

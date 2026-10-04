@@ -75,13 +75,15 @@ const SECTIONS = {
     await shot('05-launcher-large-text');
 
   },
-  'over-the-edge': async ({ page, shot, until }) => {
+  'over-the-edge': async ({ page, shot, until, fits }) => {
     // ---------- Over the Edge (large text stays on for the first screens) ----------
     await page.evaluate(() => CGB.settings.set('textSize', 'large'));
     await page.click('[data-play="over-the-edge"]');
     await shot('10-ote-setup-large-text', 1500);
+    await fits('over-the-edge', '10-ote-setup-large-text');
     await page.click('#game-over-the-edge #ote-settingsBtn'); await shot('11-settings-modal'); await page.keyboard.press('Escape');
     await page.evaluate(() => CGB.settings.set('textSize', 'normal'));
+    await fits('over-the-edge', '10b-ote-setup');
     await page.click('#ote-toggleHost'); await shot('12-ote-setup-host'); await page.click('#ote-toggleHost');
     await page.click('#ote-segR1 button[data-v="4"]');
     await page.click('#ote-segF button[data-v="8"]');
@@ -120,12 +122,14 @@ const SECTIONS = {
     await shot('21-ote-summary', 800);
 
   },
-  'category-clash': async ({ page, shot, until }) => {
+  'category-clash': async ({ page, shot, until, fits }) => {
     await page.click('[data-play="category-clash"]');
     await shot('50-cc-setup', 800);
+    await fits('category-clash', '50-cc-setup');
     await page.click('#cc-segTeams button[data-v="4"]');
     await page.click('#cc-segCats button[data-v="6"]');
     await shot('51-cc-setup-4-teams', 300);
+    await fits('category-clash', '51-cc-setup-4-teams');
     await page.click('#cc-startBtn');
     await shot('52-cc-board', 500);
     await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowDown'); await page.keyboard.press('Enter');
@@ -145,9 +149,10 @@ const SECTIONS = {
     }, 120000);
     await shot('57-cc-results', 600);
   },
-  'hex-hunt': async ({ page, shot, until }) => {
+  'hex-hunt': async ({ page, shot, until, fits }) => {
     await page.click('[data-play="hex-hunt"]');
     await shot('60-hh-setup', 800);
+    await fits('hex-hunt', '60-hh-setup');
     await page.click('#hh-startBtn');
     await shot('61-hh-board', 500);
     await page.keyboard.press('Enter');
@@ -171,16 +176,18 @@ const SECTIONS = {
     await page.keyboard.press('Enter');
     await shot('67-hh-results', 600);
   },
-  outpace: async ({ page, shot, until }) => {
+  outpace: async ({ page, shot, until, fits }) => {
     // ---------- Outpace ----------
     await page.click('[data-play="outpace"]');
     await shot('30-op-setup', 1200);
+    await fits('outpace', '30-op-setup');
     await page.click('#op-startBtn');
     await shot('31-op-deal-choose', 1200);
     await page.keyboard.press('2');
     await shot('32-op-deal-question', 1200);
     await page.keyboard.press('a'); await shot('33-op-deal-answer', 300);
-    await page.keyboard.press('c'); await shot('34-op-deal-step', 1300);
+    await page.keyboard.press('c'); await shot('33b-op-deal-marked', 300);
+    await shot('34-op-deal-step', 1500);
     // get caught quickly
     await until(async () => {
       const s = await state(page, 'outpace');
@@ -222,8 +229,26 @@ for (const size of SIZES) {
         await page.screenshot({ path: path.join(OUT, size.name, name + '.png'), timeout: 60000 });
         (await findProblems(page)).forEach(p => problems.push(`${name}: ${p}`));
       }
+      // the setup card, title to Start button, must be on screen below the top bar with no scrolling
+      async function fits(game, name) {
+        await page.waitForTimeout(300);
+        const r = await page.evaluate(g => {
+          const c = document.querySelector(`#game-${g} .setup`), cr = c.getBoundingClientRect();
+          const bar = document.querySelector(`#game-${g} .topbar`).getBoundingClientRect();
+          const logo = c.querySelector('[class$="-logo"]').getBoundingClientRect();
+          const go = c.querySelector('.setup-go .btn').getBoundingClientRect();
+          return { top: cr.top, bottom: cr.bottom, left: cr.left, right: cr.right, bar: bar.bottom, logo: logo.top, go: go.bottom, scroll: c.scrollHeight - c.clientHeight, scrollTop: c.scrollTop };
+        }, game);
+        const bad = [];
+        if (r.top < r.bar) bad.push(`card top ${Math.round(r.top)} is under the top bar (${Math.round(r.bar)})`);
+        if (r.logo < r.bar) bad.push('title hidden under the top bar');
+        if (r.bottom > size.height || r.go > size.height) bad.push(`card bottom ${Math.round(r.bottom)} / Start ${Math.round(r.go)} below the fold`);
+        if (r.left < 0 || r.right > size.width) bad.push('card wider than the screen');
+        if (r.scroll > 1 || r.scrollTop > 0) bad.push(`card needs scrolling (${r.scroll}px)`);
+        bad.forEach(b => problems.push(`${name} setup card: ${b}`));
+      }
       const until = async (fn, ms) => { const end = Date.now() + (ms || 30000); while (Date.now() < end) { if (await fn()) return true; await page.waitForTimeout(150); } return false; };
-      await run({ page, shot, until });
+      await run({ page, shot, until, fits });
       await ctx.close();
       expect(log.errors, 'console errors').toEqual([]);
       expect(log.requests, 'network requests').toEqual([]);

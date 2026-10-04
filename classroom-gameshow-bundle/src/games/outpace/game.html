@@ -16,24 +16,25 @@
 
   <!-- SETUP -->
   <div class="op-screen active" id="op-home">
-    <div class="op-panel op-home-card">
+    <div class="op-panel op-home-card setup">
+      <div class="setup-intro">
       <div class="op-logo" id="op-logo"></div>
       <p class="op-sub">Answer right to edge home. Answer wrong and the Hunter closes in.</p>
-      <div class="op-rules">
-        <strong>Deal Round:</strong> each team picks a deal. A bigger deal gives the Hunter a shorter gap to catch you. Reach home to bank the points; if you are caught you bank half.
-        <strong>Final Sprint:</strong> together you have 60 seconds. Take turns: each correct answer is +1 and each wrong answer is −1. Reach the target to escape with the pot. Each team can pass once: that question is skipped and the other team answers a new one.
-      </div>
+      <details class="howto" open><summary>How to play</summary><div class="op-rules"><strong>Deal Round:</strong> each team picks a deal. A bigger deal gives the Hunter a shorter gap to catch you. Reach home to bank the points; if you are caught you bank half.<br><strong>Final Sprint:</strong> together you have 60 seconds. Take turns: each correct answer is +1 and each wrong answer is −1. Reach the target to escape with the pot. Each team can pass once: that question is skipped and the other team answers a new one.</div></details>
       <div class="op-names">
-        <label><span>Team 1</span><input id="op-name0" type="text" maxlength="16" value="Team 1" autocomplete="off"></label>
-        <label><span>Team 2</span><input id="op-name1" type="text" maxlength="16" value="Team 2" autocomplete="off"></label>
+        <label style="--tc:var(--team0)"><span>● Team 1</span><input id="op-name0" type="text" maxlength="16" value="Team 1" autocomplete="off"></label>
+        <label style="--tc:var(--team1)"><span>■ Team 2</span><input id="op-name1" type="text" maxlength="16" value="Team 2" autocomplete="off"></label>
       </div>
+      </div>
+      <div class="setup-form">
       <div class="field">
         <label class="lab" for="op-setSelect">Question set (shared with every game)</label>
         <select class="cgb-select" id="op-setSelect"></select>
         <button class="linkish" id="op-openBank" type="button">Manage the question bank</button>
       </div>
       <label class="check"><input type="checkbox" id="op-focusWeak"> Pick more questions from topics each team got wrong before</label>
-      <button class="btn go" id="op-startBtn" type="button" style="width:100%;margin-top:14px">Start Outpace <span class="kbd">Enter</span></button>
+      </div>
+      <div class="setup-go"><button class="btn go" id="op-startBtn" type="button">Start Outpace <span class="kbd">Enter</span></button></div>
     </div>
   </div>
 

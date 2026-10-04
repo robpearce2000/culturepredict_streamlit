@@ -1207,6 +1207,7 @@ $('setupBtn').addEventListener('click', goHome);
 $('menuBtn2').addEventListener('click', () => CGB.app.requestLauncher());
 
 function goHome() {
+  if (CGB.fitSetups) CGB.fitSetups();
   clearTimers();
   state.phase = 'home';
   roundEndNext = null;

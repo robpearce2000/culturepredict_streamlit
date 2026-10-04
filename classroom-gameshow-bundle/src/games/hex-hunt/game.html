@@ -7,13 +7,16 @@
 
   <!-- SETUP -->
   <div class="hh-screen active" id="hh-home">
-    <div class="cgb-panel hh-card">
+    <div class="cgb-panel hh-card setup">
+      <div class="setup-intro">
       <div class="hh-logo" id="hh-logo"></div>
-      <div class="hh-rules">Two teams race across the board. <b>Team 1</b> links the left edge to the right edge; <b>Team 2</b> links the top to the bottom. Pick a hexagon: its letter is the first letter of the answer. Either team can buzz in. Get it right and the hexagon is yours, and you pick the next one. Get it wrong and the other team can answer. The first team to join its two edges wins the round.</div>
+      <details class="howto" open><summary>How to play</summary><div class="hh-rules">Two teams race across the board. <b>Team 1</b> links the left edge to the right edge; <b>Team 2</b> links the top to the bottom. Pick a hexagon: its letter is the first letter of the answer. Either team can buzz in. Get it right and the hexagon is yours, and you pick the next one. Get it wrong and the other team can answer. The first team to join its two edges wins the round.</div></details>
       <div class="hh-names">
         <label style="--tc:var(--ha)"><span>● Team 1 · left to right</span><input id="hh-name0" type="text" maxlength="18" value="Team 1" autocomplete="off"></label>
         <label style="--tc:var(--hb)"><span>■ Team 2 · top to bottom</span><input id="hh-name1" type="text" maxlength="18" value="Team 2" autocomplete="off"></label>
       </div>
+      </div>
+      <div class="setup-form">
       <div class="field">
         <label class="lab" for="hh-setSelect">Question set (shared with every game)</label>
         <select class="cgb-select" id="hh-setSelect"></select>
@@ -25,7 +28,8 @@
         <div class="field"><span class="lab" id="hh-labBest">Match length</span><div class="seg" id="hh-segBest" role="group" aria-labelledby="hh-labBest"><button type="button" data-v="1">1 round</button><button type="button" data-v="3">Best of 3</button></div></div>
       </div>
       <label class="check"><input type="checkbox" id="hh-focusWeak"> Pick more questions from topics each team got wrong before</label>
-      <button class="btn go" id="hh-startBtn" type="button" style="width:100%;margin-top:14px">Start Hex Hunt <span class="kbd">Enter</span></button>
+      </div>
+      <div class="setup-go"><button class="btn go" id="hh-startBtn" type="button">Start Hex Hunt <span class="kbd">Enter</span></button></div>
     </div>
   </div>
 
