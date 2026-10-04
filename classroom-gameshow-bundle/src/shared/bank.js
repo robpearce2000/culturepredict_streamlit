@@ -9,17 +9,22 @@
 CGB.bank = (() => {
   const store = CGB.store;
 
-  /* The plain-text format: Subject / Topic lines apply until changed; Q: then A: */
+  /* The plain-text format: Subject / Topic lines apply until changed; Q: then A:.
+     An optional "Difficulty: 1-5" line (or "Level:") applies to the questions after it,
+     until the next Difficulty or Topic line. Older games simply ignore it. */
   function parse(text) {
     const out = [];
-    let subject = '', topic = '', pendingQ = null;
+    let subject = '', topic = '', level = 0, pendingQ = null;
     String(text || '').split('\n').forEach(line => {
       const t = line.trim();
-      if (/^subject:/i.test(t)) subject = t.replace(/^subject:/i, '').trim();
-      else if (/^topic:/i.test(t)) topic = t.replace(/^topic:/i, '').trim();
+      if (/^subject:/i.test(t)) { subject = t.replace(/^subject:/i, '').trim(); level = 0; }
+      else if (/^topic:/i.test(t)) { topic = t.replace(/^topic:/i, '').trim(); level = 0; }
+      else if (/^(difficulty|level):/i.test(t)) { const n = parseInt(t.replace(/^(difficulty|level):/i, ''), 10); level = n >= 1 && n <= 5 ? n : 0; }
       else if (/^q:/i.test(t)) pendingQ = t.replace(/^q:/i, '').trim();
       else if (/^a:/i.test(t) && pendingQ) {
-        out.push({ subject: subject || 'Custom', topic: topic || 'General', q: pendingQ, a: t.replace(/^a:/i, '').trim() });
+        const q = { subject: subject || 'Custom', topic: topic || 'General', q: pendingQ, a: t.replace(/^a:/i, '').trim() };
+        if (level) q.level = level;
+        out.push(q);
         pendingQ = null;
       }
     });
@@ -28,16 +33,31 @@ CGB.bank = (() => {
   /* Turn questions back into the plain-text format (used for editing and copying) */
   function toText(questions) {
     const lines = [];
-    let s = null, t = null;
+    let s = null, t = null, l = 0;
     questions.forEach(q => {
       if (q.subject !== s || q.topic !== t) {
         if (lines.length) lines.push('');
         lines.push('Subject: ' + q.subject, 'Topic: ' + q.topic);
-        s = q.subject; t = q.topic;
+        s = q.subject; t = q.topic; l = 0;
       }
+      if ((q.level || 0) !== l && q.level) { lines.push('Difficulty: ' + q.level); }
+      l = q.level || l;
       lines.push('Q: ' + q.q, 'A: ' + q.a);
     });
     return lines.join('\n');
+  }
+  /* A rough difficulty score for questions without a Difficulty line:
+     longer, explanatory or calculation answers count as harder. */
+  function estimateLevel(q) {
+    if (q.level) return q.level * 10;
+    const words = q.a.split(/\s+/).length;
+    let score = Math.min(words, 24) / 3;
+    if (/\d/.test(q.q) && /\d/.test(q.a)) score += 3;                         // a calculation
+    if (/^(why|explain|how does|how is|how do|describe|what is the difference)/i.test(q.q)) score += 2.5;
+    if (/equation|formula/i.test(q.q)) score += 1.5;
+    if (/true or false|: nervous or hormonal|which is faster|which has longer/i.test(q.q)) score -= 2;
+    if (words <= 2) score -= 1;
+    return score;
   }
 
   const P = CGB.PACKS;
@@ -57,7 +77,11 @@ CGB.bank = (() => {
   const emit = () => listeners.forEach(fn => { try { fn(); } catch (e) { /* ignore */ } });
 
   function validQuestion(q) { return q && typeof q.q === 'string' && typeof q.a === 'string' && q.q.trim() && q.a.trim(); }
-  function cleanQuestion(q) { return { subject: String(q.subject || 'Custom').slice(0, 80), topic: String(q.topic || 'General').slice(0, 120), q: String(q.q).slice(0, 600), a: String(q.a).slice(0, 600) }; }
+  function cleanQuestion(q) {
+    const c = { subject: String(q.subject || 'Custom').slice(0, 80), topic: String(q.topic || 'General').slice(0, 120), q: String(q.q).slice(0, 600), a: String(q.a).slice(0, 600) };
+    const l = parseInt(q.level, 10); if (l >= 1 && l <= 5) c.level = l;
+    return c;
+  }
   function cleanSet(s) {
     if (!s || !Array.isArray(s.questions)) return null;
     const qs = s.questions.filter(validQuestion).map(cleanQuestion);
@@ -230,7 +254,7 @@ CGB.bank = (() => {
   load();
   migrateLegacy();
   return {
-    parse, toText, all, get, active, setActive, summary, addSet, updateSet, deleteSet,
+    parse, toText, estimateLevel, all, get, active, setActive, summary, addSet, updateSet, deleteSet,
     logWrong, wrongLog, weakTopics, clearHistory, players, createPicker,
     exportData, importData, onChange(fn) { listeners.push(fn); },
     builtinIds: BUILTIN.map(s => s.id)

@@ -91,17 +91,17 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .l-mascot .pip-wrap { position: absolute; left: 0; right: 0; bottom: 0; top: 76px; width: auto; height: auto; }
 .l-mascot .hello { position: absolute; left: -10px; top: 6px; background: var(--white); color: var(--ink); border: 3px solid var(--ink); border-radius: 16px; padding: 7px 12px; font-weight: 900; font-size: 0.95rem; max-width: 190px; z-index: 2; }
 .l-mascot .hello::after { content: ''; position: absolute; right: 22px; bottom: -13px; border: 10px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
-.l-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.l-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .gcard { background: var(--paper); color: var(--ink); border-radius: 22px; border: 4px solid var(--ink); box-shadow: 0 8px 0 rgba(0,0,0,0.35); overflow: hidden; display: flex; flex-direction: column; }
 .gcard .art { aspect-ratio: 16 / 8.2; background: var(--night-2); position: relative; }
 .gcard .art svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .gcard .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.gcard h3 { font-family: var(--display); font-weight: 400; font-size: 2rem; margin: 0; line-height: 1; letter-spacing: 0.5px; }
-.gcard p { margin: 0; font-size: 1rem; color: var(--ink-soft); line-height: 1.4; flex: 1; }
+.gcard h3 { font-family: var(--display); font-weight: 400; font-size: 1.8rem; margin: 0; line-height: 1; letter-spacing: 0.5px; }
+.gcard p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.4; flex: 1; }
 .gcard .btn { align-self: stretch; }
-.gcard.soon { background: transparent; border: 4px dashed rgba(255,255,255,0.45); box-shadow: none; color: #fff; align-items: center; justify-content: center; text-align: center; padding: 24px; min-height: 200px; }
+.gcard.soon { grid-column: 1 / -1; background: transparent; border: 4px dashed rgba(255,255,255,0.45); box-shadow: none; color: #fff; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 16px; text-align: center; padding: 12px 20px; }
 .gcard.soon h3 { font-size: 1.7rem; color: var(--sun); }
-.gcard.soon p { color: #E3E6FF; flex: 0; margin-top: 8px; }
+.gcard.soon p { color: #E3E6FF; flex: 0 1 auto; margin: 0; }
 .l-bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.18); border-radius: 18px; padding: 12px 14px; }
 .l-bar .group { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .l-bar .btn.plain { border-color: var(--ink); }

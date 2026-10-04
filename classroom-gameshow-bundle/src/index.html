@@ -4,12 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src data:; img-src data: blob:; media-src 'none'; connect-src 'none'; form-action 'none'">
-<meta name="description" content="Two 3D revision quiz games for the classroom: Over the Edge and Outpace. Works offline.">
+<meta name="description" content="Four revision quiz games for the classroom: Over the Edge, Outpace, Category Clash and Hex Hunt. Works offline.">
 <title>Showtime: Classroom Gameshows</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="shared/ui.css">
 <link rel="stylesheet" href="games/over-the-edge/game.css">
 <link rel="stylesheet" href="games/outpace/game.css">
+<link rel="stylesheet" href="games/category-clash/game.css">
+<link rel="stylesheet" href="games/hex-hunt/game.css">
 </head>
 <body>
 
@@ -41,6 +43,22 @@
           <button class="btn brand" type="button" data-play="outpace">Play Outpace</button>
         </div>
       </article>
+      <article class="gcard">
+        <div class="art" id="artCC"></div>
+        <div class="body">
+          <h3>Category Clash</h3>
+          <p>Teams pick a category and a points value. Harder questions are worth more, and wrong answers can be stolen.</p>
+          <button class="btn brand" type="button" data-play="category-clash">Play Category Clash</button>
+        </div>
+      </article>
+      <article class="gcard">
+        <div class="art" id="artHH"></div>
+        <div class="body">
+          <h3>Hex Hunt</h3>
+          <p>Two teams race to build a path across the hexagon board. Each hexagon is a question, with the answer's first letter as a clue.</p>
+          <button class="btn brand" type="button" data-play="hex-hunt">Play Hex Hunt</button>
+        </div>
+      </article>
       <article class="gcard soon" aria-label="More shows coming soon">
         <h3>More shows coming soon</h3>
         <p>New games will appear here and use the same question bank.</p>
@@ -64,6 +82,8 @@
 <!-- ================= GAMES ================= -->
 <!-- @include games/over-the-edge/game.html -->
 <!-- @include games/outpace/game.html -->
+<!-- @include games/category-clash/game.html -->
+<!-- @include games/hex-hunt/game.html -->
 
 <!-- ================= MODALS ================= -->
 <div class="modal" id="bankModal" role="dialog" aria-modal="true" aria-labelledby="bankTitle" hidden>
@@ -152,6 +172,8 @@ A: Ionic</div>
 <script src="shared/app.js"></script>
 <script src="games/over-the-edge/game.js"></script>
 <script src="games/outpace/game.js"></script>
+<script src="games/category-clash/game.js"></script>
+<script src="games/hex-hunt/game.js"></script>
 <script>CGB.app.init();</script>
 </body>
 </html>

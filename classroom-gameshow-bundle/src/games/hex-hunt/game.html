@@ -1,0 +1,60 @@
+<section id="game-hex-hunt" class="game hh" aria-label="Hex Hunt" hidden>
+  <nav class="topbar" aria-label="Game menu">
+    <button class="btn" type="button" id="hh-menuBtn">◀ Menu <span class="kbd">Esc</span></button>
+    <button class="btn" type="button" id="hh-muteBtn">Sound on</button>
+    <button class="btn" type="button" id="hh-settingsBtn">Settings</button>
+  </nav>
+
+  <!-- SETUP -->
+  <div class="hh-screen active" id="hh-home">
+    <div class="cgb-panel hh-card">
+      <div class="hh-logo" id="hh-logo"></div>
+      <div class="hh-rules">Two teams race across the board. <b>Team 1</b> links the left edge to the right edge; <b>Team 2</b> links the top to the bottom. Pick a hexagon: its letter is the first letter of the answer. Either team can buzz in. Get it right and the hexagon is yours, and you pick the next one. Get it wrong and the other team can answer. The first team to join its two edges wins the round.</div>
+      <div class="hh-names">
+        <label style="--tc:var(--ha)"><span>● Team 1 · left to right</span><input id="hh-name0" type="text" maxlength="18" value="Team 1" autocomplete="off"></label>
+        <label style="--tc:var(--hb)"><span>■ Team 2 · top to bottom</span><input id="hh-name1" type="text" maxlength="18" value="Team 2" autocomplete="off"></label>
+      </div>
+      <div class="field">
+        <label class="lab" for="hh-setSelect">Question set (shared with every game)</label>
+        <select class="cgb-select" id="hh-setSelect"></select>
+        <button class="linkish" id="hh-openBank" type="button">Manage the question bank</button>
+        <div class="hint" id="hh-setHint"></div>
+      </div>
+      <div class="hh-two">
+        <div class="field"><span class="lab" id="hh-labSize">Board size</span><div class="seg" id="hh-segSize" role="group" aria-labelledby="hh-labSize"><button type="button" data-v="5">5 × 5</button><button type="button" data-v="6">6 × 6</button></div></div>
+        <div class="field"><span class="lab" id="hh-labBest">Match length</span><div class="seg" id="hh-segBest" role="group" aria-labelledby="hh-labBest"><button type="button" data-v="1">1 round</button><button type="button" data-v="3">Best of 3</button></div></div>
+      </div>
+      <label class="check"><input type="checkbox" id="hh-focusWeak"> Pick more questions from topics each team got wrong before</label>
+      <button class="btn go" id="hh-startBtn" type="button" style="width:100%;margin-top:14px">Start Hex Hunt <span class="kbd">Enter</span></button>
+    </div>
+  </div>
+
+  <!-- BOARD -->
+  <div class="hh-play" id="hh-play" hidden>
+    <div class="hh-head"><div class="hh-turn" id="hh-turn" role="status"></div><div class="hh-round" id="hh-round"></div></div>
+    <div class="hh-boardwrap"><svg class="hh-board" id="hh-board" role="grid" aria-label="Hexagon board"></svg></div>
+    <div class="hh-teams" id="hh-teams"></div>
+    <div class="hh-keys keys"><span class="kbd">←</span><span class="kbd">→</span><span class="kbd">↑</span><span class="kbd">↓</span> move · <span class="kbd">Enter</span> pick · <span class="kbd">Esc</span> menu</div>
+  </div>
+
+  <!-- QUESTION -->
+  <div class="hh-q" id="hh-q" hidden role="dialog" aria-modal="false" aria-labelledby="hh-qText">
+    <div class="hh-qcard">
+      <div class="hh-qtop"><span class="hh-letter" id="hh-qLetter"></span><div><div class="hh-qclue" id="hh-qClue"></div><div class="hh-qtag" id="hh-qTag"></div></div></div>
+      <div class="hh-qtext" id="hh-qText"></div>
+      <div class="hh-qanswer" id="hh-qAnswer"></div>
+      <div class="hh-qmsg" id="hh-qMsg" role="status"></div>
+      <div class="hh-qbtns" id="hh-qBtns"></div>
+    </div>
+  </div>
+
+  <!-- ROUND WON -->
+  <div class="hh-win" id="hh-win" hidden role="dialog" aria-modal="false" aria-labelledby="hh-winTitle">
+    <div class="hh-wintitle" id="hh-winTitle"></div>
+    <div class="hh-windetail" id="hh-winDetail"></div>
+    <button class="btn go" type="button" id="hh-winBtn">Continue <span class="kbd">Enter</span></button>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="hh-screen" id="hh-summary"><div class="cgb-panel hh-card hh-sum" id="hh-sumCard"></div></div>
+</section>

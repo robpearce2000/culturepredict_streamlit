@@ -193,7 +193,7 @@ CGB.bankUI = (() => {
 CGB.app = (() => {
   const $ = id => document.getElementById(id);
   let current = 'launcher';
-  const routes = { 'over-the-edge': 'over-the-edge', 'outpace': 'outpace' };
+  const routes = { 'over-the-edge': 'over-the-edge', 'outpace': 'outpace', 'category-clash': 'category-clash', 'hex-hunt': 'hex-hunt' };
   let mascot = null;
 
   function show(id) {
@@ -252,6 +252,8 @@ CGB.app = (() => {
     $('wordmark').innerHTML = CGB.brand.wordmark();
     $('artOTE').innerHTML = CGB.brand.oteArt();
     $('artOP').innerHTML = CGB.brand.opArt();
+    $('artCC').innerHTML = CGB.brand.ccArt();
+    $('artHH').innerHTML = CGB.brand.hhArt();
     CGB.renderSettings($('launcherSettings'), true);
     CGB.renderSettings($('modalSettings'), false);
     CGB.bankUI.init();

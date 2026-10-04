@@ -1,0 +1,64 @@
+<section id="game-category-clash" class="game cc" aria-label="Category Clash" hidden>
+  <nav class="topbar" aria-label="Game menu">
+    <button class="btn" type="button" id="cc-menuBtn">◀ Menu <span class="kbd">Esc</span></button>
+    <button class="btn" type="button" id="cc-muteBtn">Sound on</button>
+    <button class="btn" type="button" id="cc-settingsBtn">Settings</button>
+  </nav>
+
+  <!-- SETUP -->
+  <div class="cc-screen active" id="cc-home">
+    <div class="cgb-panel cc-card">
+      <div class="cc-logo" id="cc-logo"></div>
+      <div class="cc-rules">Teams take turns to pick a category and a points value. Harder questions are worth more. Answer right to win the points; get it wrong and another team can steal them. One hidden ★ tile is worth double. The team with the most points when the board is clear wins.</div>
+      <div class="field"><span class="lab" id="cc-labTeams">Number of teams</span><div class="seg" id="cc-segTeams" role="group" aria-labelledby="cc-labTeams"><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4</button></div></div>
+      <div class="cc-names" id="cc-names"></div>
+      <div class="field">
+        <label class="lab" for="cc-setSelect">Question set (shared with every game)</label>
+        <select class="cgb-select" id="cc-setSelect"></select>
+        <button class="linkish" id="cc-openBank" type="button">Manage the question bank</button>
+      </div>
+      <div class="field">
+        <span class="lab" id="cc-labCats">Categories (topics from the question set)</span>
+        <div class="cc-catrow"><div class="seg" id="cc-segCats" role="group" aria-labelledby="cc-labCats"><button type="button" data-v="4">4</button><button type="button" data-v="5">5</button><button type="button" data-v="6">6</button></div><button class="btn plain sm" type="button" id="cc-shuffle">Shuffle</button></div>
+        <div class="cc-topics" id="cc-topics" role="group" aria-label="Choose categories"></div>
+        <div class="hint" id="cc-topicHint"></div>
+      </div>
+      <div class="field"><span class="lab" id="cc-labTimer">Answer timer</span><div class="seg" id="cc-segTimer" role="group" aria-labelledby="cc-labTimer"><button type="button" data-v="0">Off</button><button type="button" data-v="20">20 s</button><button type="button" data-v="30">30 s</button><button type="button" data-v="60">60 s</button></div></div>
+      <label class="check"><input type="checkbox" id="cc-optSteal" checked> Other teams can steal a wrong answer</label>
+      <label class="check"><input type="checkbox" id="cc-optPenalty"> Wrong answers lose the points</label>
+      <label class="check"><input type="checkbox" id="cc-optStar" checked> Hide one ★ double-points tile</label>
+      <label class="check"><input type="checkbox" id="cc-focusWeak"> Fill categories with more questions each team got wrong before</label>
+      <button class="btn go" id="cc-startBtn" type="button" style="width:100%;margin-top:14px">Start Category Clash <span class="kbd">Enter</span></button>
+    </div>
+  </div>
+
+  <!-- BOARD -->
+  <div class="cc-play" id="cc-play" hidden>
+    <div class="cc-head">
+      <div class="cc-turn" id="cc-turn" role="status"></div>
+      <button class="btn plain sm cc-end" type="button" id="cc-endBtn">End game</button>
+    </div>
+    <div class="cc-board" id="cc-board" role="grid" aria-label="Question board"></div>
+    <div class="cc-teams" id="cc-teams"></div>
+    <div class="cc-keys keys"><span class="kbd">←</span><span class="kbd">→</span><span class="kbd">↑</span><span class="kbd">↓</span> move · <span class="kbd">Enter</span> open · <span class="kbd">Esc</span> menu</div>
+  </div>
+
+  <!-- QUESTION -->
+  <div class="cc-q" id="cc-q" hidden role="dialog" aria-modal="false" aria-labelledby="cc-qText">
+    <div class="cc-qcard">
+      <div class="cc-qtop"><span class="cc-qcat" id="cc-qCat"></span><span class="cc-qval" id="cc-qVal"></span></div>
+      <div class="cc-star" id="cc-qStar" hidden>★ Double points!</div>
+      <div class="cc-qfor" id="cc-qFor"></div>
+      <div class="cc-qtext" id="cc-qText"></div>
+      <div class="cc-timer" id="cc-timer" hidden><div class="cc-timer-fill" id="cc-timerFill"></div><span id="cc-timerText"></span></div>
+      <div class="cc-qanswer" id="cc-qAnswer"></div>
+      <div class="cc-qmsg" id="cc-qMsg" role="status"></div>
+      <div class="cc-qbtns" id="cc-qBtns"></div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="cc-screen" id="cc-summary">
+    <div class="cgb-panel cc-card cc-sum" id="cc-sumCard"></div>
+  </div>
+</section>
