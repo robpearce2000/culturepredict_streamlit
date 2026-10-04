@@ -1,9 +1,13 @@
 'use strict';
 /* =========================================================
    CATEGORY CLASH
-   A board of categories (topics) and points values for 2 to 4 teams.
-   Teams take turns to pick a tile; harder questions sit lower on the
-   board and are worth more. Wrong answers can be stolen.
+   A board of categories (topics) and points values.
+   Small group: 2 to 4 teams take turns to pick a tile and answer it;
+   wrong answers can be stolen.
+   Whole class: 2 to 6 teams. The choosing team picks a tile, every team
+   answers it on whiteboards, the choosing team wins full points if
+   correct and every other correct team half. Harder questions sit lower
+   on the board and are worth more.
    ========================================================= */
 (function () {
 let game = null;
@@ -25,30 +29,61 @@ const SFX = {
 };
 
 const S = {
-  phase: 'home', nTeams: CGB.store.getJSON('cc.nTeams', 2), nCats: CGB.store.getJSON('cc.nCats', 5), timer: CGB.store.getJSON('cc.timer', 0),
+  mode: CGB.mode.get('category-clash'), session: CGB.store.get('cc.session') || 'plenary', rows: 5,
+  order: [], pos: 0, catchUp: -1,
+  phase: 'home', nTeams: CGB.store.getJSON('cc.nTeams', CGB.mode.get('category-clash') === 'class' ? 4 : 2), nCats: CGB.store.getJSON('cc.nCats', 5), timer: CGB.store.getJSON('cc.timer', 0),
   teams: [], cats: [], turn: 0, cursor: { c: 0, r: 0 },
   open: null, step: null, answerShown: false, timeLeft: 0, timerHandle: null, picked: null
 };
-if (![2, 3, 4].includes(S.nTeams)) S.nTeams = 2;
+if (![2, 3, 4, 5, 6].includes(S.nTeams)) S.nTeams = 2;
 if (![4, 5, 6].includes(S.nCats)) S.nCats = 5;
-if (![0, 20, 30, 60].includes(S.timer)) S.timer = 0;
+if (!CGB.COUNTDOWNS.includes(S.timer)) S.timer = 0;
+if (!CGB.SESSIONS.some(x => x.id === S.session)) S.session = 'plenary';
+/* Whole-class session lengths: categories × rows (one question per tile, every team answers) */
+const SESSION = { starter: { cats: 4, rows: 3 }, plenary: { cats: 5, rows: 4 }, full: { cats: 6, rows: 5 } };
+const classMode = () => S.mode === 'class';
+const catsWanted = () => classMode() ? SESSION[S.session].cats : S.nCats;
+const maxTeams = () => classMode() ? 6 : 4;
 
 /* ---------- Setup ---------- */
 $('logo').innerHTML = CGB.brand.ccLogo();
-const defaultNames = [0, 1, 2, 3].map(CGB.teamFallback);
+const defaultNames = [0, 1, 2, 3, 4, 5].map(CGB.teamFallback);
+const teamCount = () => Math.min(S.nTeams, maxTeams());
 function renderNames() {
-  const prev = [0, 1, 2, 3].map(i => { const el = $('name' + i); return el ? el.value : null; });
-  $('names').innerHTML = [0, 1, 2, 3].slice(0, S.nTeams).map(i => `<label style="--tc:${TEAM[i].css}"><span>${TEAM[i].mark} Team ${i + 1}</span><input id="cc-name${i}" type="text" maxlength="18" autocomplete="off" value="${esc(prev[i] || CGB.teamNames(4)[i])}"></label>`).join('');
+  const prev = [0, 1, 2, 3, 4, 5].map(i => { const el = $('name' + i); return el ? el.value : null; });
+  $('names').innerHTML = [0, 1, 2, 3, 4, 5].slice(0, teamCount()).map(i => `<label style="--tc:${TEAM[i].css}"><span>${TEAM[i].mark} Team ${i + 1}</span><input id="cc-name${i}" type="text" maxlength="18" autocomplete="off" value="${esc(prev[i] || CGB.teamNames(6)[i])}"></label>`).join('');
+  $('names').classList.toggle('many', teamCount() > 4);
 }
-function wireSeg(id, key, store) {
+const segPainters = [];
+function wireSeg(id, key, store, text) {
   const seg = $(id);
-  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === S[key])));
-  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S[key] = +b.dataset.v; CGB.store.setJSON(store, S[key]); paint(); if (key === 'nTeams') renderNames(); if (key === 'nCats') autoPickTopics(); CGB.fitSetups(); });
+  const val = v => text ? v : +v;
+  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(val(b.dataset.v) === (key === 'nTeams' ? teamCount() : S[key]))));
+  seg.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    S[key] = val(b.dataset.v);
+    if (text) CGB.store.set(store, S[key]); else CGB.store.setJSON(store, S[key]);
+    if (key === 'mode') CGB.mode.set('category-clash', S.mode);
+    applyMode();
+    segPainters.forEach(f => f());
+    if (key === 'nTeams' || key === 'mode') renderNames();
+    if (key === 'nCats' || key === 'session' || key === 'mode') autoPickTopics();
+    CGB.fitSetups();
+  });
+  segPainters.push(paint);
   paint();
 }
+function applyMode() {
+  $('setupCard').dataset.mode = S.mode;
+  const sess = SESSION[S.session];
+  $('sessionHint').textContent = `${CGB.SESSIONS.find(x => x.id === S.session).note}: ${sess.cats} categories × ${sess.rows} questions, every team answers each one.`;
+}
+wireSeg('segMode', 'mode', 'category-clash.mode', true);
+wireSeg('segSession', 'session', 'cc.session', true);
 wireSeg('segTeams', 'nTeams', 'cc.nTeams');
 wireSeg('segCats', 'nCats', 'cc.nCats');
 wireSeg('segTimer', 'timer', 'cc.timer');
+applyMode();
 renderNames();
 ['optSteal', 'optPenalty', 'optStar', 'focusWeak'].forEach(id => {
   const saved = CGB.store.get('cc.' + id);
@@ -75,14 +110,15 @@ function autoPickTopics(shuffle) {
     return out;
   };
   const pool = spread(shuffle ? mix(full) : full).concat(shuffle ? mix(rest) : rest);
-  chosen = pool.slice(0, S.nCats).map(t => t.topic);
+  chosen = pool.slice(0, catsWanted()).map(t => t.topic);
   renderTopics();
 }
 function renderTopics() {
   const all = topicsOf(bank.active());
   $('topics').innerHTML = all.map(t => `<button type="button" class="cc-topic" data-topic="${esc(t.topic)}" aria-pressed="${chosen.includes(t.topic)}">${esc(t.topic)} <small>${t.qs.length}</small></button>`).join('');
   const few = chosen.filter(c => (all.find(t => t.topic === c) || { qs: [] }).qs.length < 5).length;
-  $('topicHint').textContent = `${chosen.length} chosen (up to 6). ` + (all.length < 2 ? 'This set has only one topic. Add Topic lines to make more categories. ' : '') + (few ? 'Topics with fewer than 5 questions leave gaps on the board.' : 'Each category gets 5 questions from easiest (100) to hardest (500).');
+  const rows = classMode() ? SESSION[S.session].rows : 5;
+  $('topicHint').textContent = `${chosen.length} chosen (up to 6). ` + (all.length < 2 ? 'This set has only one topic. Add Topic lines to make more categories. ' : '') + (few ? `Topics with fewer than ${rows} questions leave gaps on the board.` : `Each category gets ${rows} questions from easiest (100) to hardest (${rows * 100}).`);
 }
 $('topics').addEventListener('click', e => {
   const b = e.target.closest('[data-topic]'); if (!b) return;
@@ -105,7 +141,7 @@ autoPickTopics();
 /* ---------- Building the board ---------- */
 function buildBoard() {
   const all = topicsOf(bank.active());
-  const cats = (chosen.length ? chosen : all.slice(0, S.nCats).map(t => t.topic)).map(name => all.find(t => t.topic === name)).filter(Boolean);
+  const cats = (chosen.length ? chosen : all.slice(0, catsWanted()).map(t => t.topic)).map(name => all.find(t => t.topic === name)).filter(Boolean);
   const weak = $('focusWeak').checked ? new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.q))) : null;
   S.cats = cats.map(t => {
     // Row k (100 to 500 points) takes a question tagged Difficulty k+1. Untagged questions get a
@@ -114,12 +150,15 @@ function buildBoard() {
     // before are preferred when that option is on.
     const untagged = t.qs.filter(q => !q.level).sort((a, b) => bank.estimateLevel(a) - bank.estimateLevel(b));
     const levelOf = q => q.level || 1 + Math.floor(untagged.indexOf(q) * 5 / untagged.length);
+    // with fewer rows (shorter class sessions) the rows still run from easiest to hardest
+    const values = VALUES.slice(0, S.rows);
+    const want = k => S.rows === 5 ? k + 1 : 1 + Math.round(k * 4 / (S.rows - 1));
     const left = t.qs.slice();
     const rnd = a => a[Math.floor(CGB.random() * a.length)];
     const take = (k, exact) => {
       if (!left.length) return null;
-      const gap = exact ? 0 : Math.min(...left.map(q => Math.abs(levelOf(q) - (k + 1))));
-      const pool = left.filter(q => Math.abs(levelOf(q) - (k + 1)) === gap);
+      const gap = exact ? 0 : Math.min(...left.map(q => Math.abs(levelOf(q) - want(k))));
+      const pool = left.filter(q => Math.abs(levelOf(q) - want(k)) === gap);
       if (!pool.length) return null;
       const missed = weak ? pool.filter(q => weak.has(q.q)) : [];
       const q = rnd(missed.length ? missed : pool);
@@ -127,9 +166,9 @@ function buildBoard() {
       return q;
     };
     // exact levels first, so a short row never uses up another row's question
-    const picks = VALUES.map((v, k) => take(k, true));
-    VALUES.forEach((v, k) => { if (!picks[k]) picks[k] = take(k, false); });
-    return { topic: t.topic, subject: t.subject, tiles: picks.map((q, k) => ({ value: VALUES[k], q, used: !q, wonBy: -1, star: false, empty: !q })) };
+    const picks = values.map((v, k) => take(k, true));
+    values.forEach((v, k) => { if (!picks[k]) picks[k] = take(k, false); });
+    return { topic: t.topic, subject: t.subject, tiles: picks.map((q, k) => ({ value: values[k], q, used: !q, wonBy: -1, star: false, empty: !q, right: 0 })) };
   });
   if ($('optStar').checked) {
     const live = S.cats.flatMap(c => c.tiles.filter(t => !t.empty && t.value >= 200));
@@ -143,11 +182,16 @@ function renderBoard() {
   const b = $('board');
   b.style.gridTemplateColumns = `repeat(${S.cats.length}, minmax(0, 1fr))`;
   let html = S.cats.map(c => `<div class="cc-cat" role="columnheader"><b>${esc(c.topic)}</b><small>${esc(c.subject)}</small></div>`).join('');
-  for (let r = 0; r < 5; r++) {
+  b.style.gridTemplateRows = `minmax(56px, auto) repeat(${S.rows}, minmax(0, 1fr))`;
+  for (let r = 0; r < S.rows; r++) {
     html += S.cats.map((c, ci) => {
       const t = c.tiles[r];
       const cur = S.cursor.c === ci && S.cursor.r === r ? ' cursor' : '';
       if (t.empty) return `<button type="button" class="cc-tile used empty${cur}" disabled aria-label="${esc(c.topic)} ${t.value}: no question">—</button>`;
+      if (t.used && classMode()) {
+        const lead = t.wonBy >= 0 ? `<span class="mk">${TEAM[t.wonBy].mark}</span>` : `<span class="mk">${t.right ? '✓' : '✗'}</span>`;
+        return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${t.wonBy >= 0 ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${t.right} of ${S.teams.length} teams correct">${lead}${t.right} of ${S.teams.length} correct</button>`;
+      }
       if (t.used) {
         const who = t.wonBy >= 0 ? S.teams[t.wonBy] : null;
         return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${who ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${who ? 'won by ' + esc(who.name) : 'nobody'}"><span class="mk">${who ? TEAM[t.wonBy].mark : '✗'}</span>${who ? esc(who.name) : 'Nobody'}</button>`;
@@ -160,9 +204,9 @@ function renderBoard() {
 }
 function renderTeams() {
   $('teams').style.setProperty('--n', S.teams.length);
-  $('teams').innerHTML = S.teams.map((t, i) => `<div class="cc-team${i === S.turn && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)}</span><span class="sc">${t.score}</span></div>`).join('');
+  $('teams').innerHTML = S.teams.map((t, i) => `<div class="cc-team${i === S.turn && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}">${i === S.turn && catchUpTurn() ? '<span class="cc-catch">Catch-up pick</span>' : ''}<span class="nm">${TEAM[i].mark} ${esc(t.name)}</span><span class="sc">${t.score}</span></div>`).join('');
   const t = S.teams[S.turn];
-  $('turn').innerHTML = t ? `<b style="--turn:${TEAM[S.turn].light}">${TEAM[S.turn].mark} ${esc(t.name)}</b>, pick a category` : '';
+  $('turn').innerHTML = t ? `<b style="--turn:${TEAM[S.turn].light}">${TEAM[S.turn].mark} ${esc(t.name)}</b>, pick a category` + (classMode() ? `<small>${catchUpTurn() ? 'Catch-up pick! ' : ''}Captain: swap to the next person</small>` : '') : '';
 }
 $('board').addEventListener('click', e => {
   const b = e.target.closest('.cc-tile[data-c]'); if (!b) return;
@@ -172,7 +216,7 @@ $('board').addEventListener('click', e => {
 function moveCursor(dc, dr) {
   const nc = S.cats.length;
   S.cursor.c = (S.cursor.c + dc + nc) % nc;
-  S.cursor.r = Math.max(0, Math.min(4, S.cursor.r + dr));
+  S.cursor.r = Math.max(0, Math.min(S.rows - 1, S.cursor.r + dr));
   renderBoard();
   const el = $('board').querySelector('.cursor'); if (el && !el.disabled) el.focus({ preventScroll: true });
 }
@@ -186,13 +230,17 @@ function openTile(c, r) {
   $('qCat').textContent = cat.subject + ' · ' + cat.topic;
   $('qVal').textContent = (t.star ? t.value * 2 : t.value) + ' points';
   $('qStar').hidden = !t.star;
-  $('qFor').innerHTML = `For <b style="color:${'inherit'}">${TEAM[S.turn].mark} ${esc(S.teams[S.turn].name)}</b>`;
+  $('qFor').innerHTML = classMode()
+    ? `Chosen by <b>${TEAM[S.turn].mark} ${esc(S.teams[S.turn].name)}</b> · every team answers: full points for ${esc(S.teams[S.turn].name)}, half for the others`
+    : `For <b style="color:${'inherit'}">${TEAM[S.turn].mark} ${esc(S.teams[S.turn].name)}</b>`;
   $('qText').textContent = t.q.q;
   $('qAnswer').textContent = t.q.a;
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = '';
   $('q').hidden = false;
   if (t.star) { SFX.star(); hostC.say('A star tile! This one is worth double.', 'cheer', 1600); } else SFX.open();
+  $('qboard').hidden = !classMode();
+  if (classMode()) { paintQBoard(); round.think(); $('qcard').focus({ preventScroll: true }); return; }
   startTimer();
   renderQButtons();
   $('qcard').focus({ preventScroll: true });   // keys now go to the question, not the board behind it
@@ -201,6 +249,71 @@ function openTile(c, r) {
 const hostC = CGB.createHostCorner($('host'));
 const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
 const pickLine = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
+
+/* ---------- Whole class: every team answers, the teacher marks each team ---------- */
+const misc = CGB.createMisconceptions();
+const qBoard = CGB.createTeamBoard($('qboard'));
+let undoSnap = null;
+const round = CGB.createClassRound({
+  root: document.getElementById('game-category-clash'),
+  board: qBoard, countEl: $('count'), btnEl: $('qBtns'),
+  seconds: () => S.timer, teams: () => S.teams.length,
+  doneHtml: () => `<button class="btn go" type="button" data-q="next">${boardDone() ? 'See the results' : 'Back to the board'} <span class="kbd">Enter</span></button>`,
+  onConfirm: classResult, onUndo: undoClassResult
+});
+function paintQBoard(earned) { qBoard.set({ teams: S.teams.map(t => ({ name: t.name, score: t.score })), turn: S.picked, earned: earned || [] }); }
+function classResult(res) {
+  const t = tileOpen(), base = t.star ? t.value * 2 : t.value;
+  undoSnap = { scores: S.teams.map(x => x.score), correct: S.teams.map(x => x.correct), wrong: S.teams.map(x => x.wrong.length), wonBy: t.wonBy, right: t.right };
+  const earned = res.map((ok, i) => ok ? (i === S.picked ? base : Math.round(base / 2)) : 0);
+  res.forEach((ok, i) => {
+    const team = S.teams[i];
+    if (ok) { team.score += earned[i]; team.correct++; }
+    else { team.wrong.push(t.q); bank.logWrong(team.name, t.q, GAME_NAME); }
+  });
+  const c = res.filter(Boolean).length, n = res.length;
+  t.right = c; t.wonBy = res[S.picked] ? S.picked : -1;
+  misc.add(t.q, (n - c) / n, `${n - c} of ${n} teams wrong`);
+  showAnswer();
+  if (c) SFX.correct(); else SFX.wrong();
+  $('qMsg').textContent = `${c} of ${n} teams correct.` + (res[S.picked] ? ` ${S.teams[S.picked].name} win ${base} points; other correct teams win ${Math.round(base / 2)}.` : c ? ` Each correct team wins ${Math.round(base / 2)} points.` : '');
+  S.step = 'done';
+  paintQBoard(earned.map(e => e ? '+' + e : ''));
+  qBoard.set({ marks: res });
+  hostC.say(CGB.classLine(c, n), CGB.classGesture(c, n), 1600);
+  renderTeams();
+}
+function undoClassResult() {
+  const t = tileOpen(), u = undoSnap; if (!u) return;
+  S.teams.forEach((team, i) => {
+    team.score = u.scores[i]; team.correct = u.correct[i];
+    while (team.wrong.length > u.wrong[i]) { team.wrong.pop(); bank.unlogWrong(team.name, t.q); }
+  });
+  t.wonBy = u.wonBy; t.right = u.right;
+  misc.remove(t.q);
+  S.answerShown = false; $('qAnswer').classList.remove('shown');
+  $('qMsg').textContent = 'Marking undone. Mark each team again.';
+  S.step = 'ask'; undoSnap = null;
+  paintQBoard();
+  renderTeams();
+}
+/* Each team chooses once per round. A team far behind (by at least twice the top tile)
+   chooses first in the next round: its catch-up pick. */
+function startClassRound() {
+  const n = S.teams.length, top = S.rows * 100;
+  const scores = S.teams.map(t => t.score), lead = Math.max(...scores), last = scores.indexOf(Math.min(...scores));
+  S.catchUp = S.order.length && lead - scores[last] >= top * 2 ? last : -1;
+  const base = Array.from({ length: n }, (x, i) => i);
+  S.order = S.catchUp >= 0 ? [S.catchUp].concat(base.filter(i => i !== S.catchUp)) : base;
+  S.pos = 0;
+}
+function nextClassTurn() {
+  S.pos++;
+  if (S.pos >= S.order.length) startClassRound();
+  S.turn = S.order[S.pos];
+  if (catchUpTurn()) hostC.say(`${S.teams[S.turn].name}, you get a catch-up pick! Captain: swap to the next person.`, 'point', 2000);
+}
+const catchUpTurn = () => classMode() && S.pos === 0 && S.catchUp >= 0 && S.turn === S.catchUp;
 function tileOpen() { return S.cats[S.open.c].tiles[S.open.r]; }
 function points() { const t = tileOpen(); return t.star ? t.value * 2 : t.value; }
 function renderQButtons() {
@@ -276,7 +389,8 @@ function closeQuestion() {
   tileOpen().used = true;
   $('q').hidden = true;
   S.phase = 'board'; S.open = null;
-  S.turn = (S.turn + 1) % S.teams.length;
+  if (classMode()) { round.stop(); nextClassTurn(); }
+  else S.turn = (S.turn + 1) % S.teams.length;
   if (S.cats.every(c => c.tiles.every(t => t.used))) { showSummary(); return; }
   // move the cursor to the next free tile
   const free = []; S.cats.forEach((c, ci) => c.tiles.forEach((t, r) => { if (!t.used) free.push({ c: ci, r }); }));
@@ -307,10 +421,13 @@ function paintTimer() {
 
 /* ---------- Game flow ---------- */
 function startGame() {
-  const names = [0, 1, 2, 3].slice(0, S.nTeams).map(i => (($('name' + i) || {}).value || '').trim().slice(0, 18) || defaultNames[i]);
+  const names = [0, 1, 2, 3, 4, 5].slice(0, teamCount()).map(i => (($('name' + i) || {}).value || '').trim().slice(0, 18) || defaultNames[i]);
   CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, score: 0, correct: 0, wrong: [] }));
   S.turn = 0;
+  S.rows = classMode() ? SESSION[S.session].rows : 5;
+  S.order = []; S.catchUp = -1; misc.reset(); round.stop();
+  if (classMode()) { startClassRound(); S.turn = S.order[0]; }
   buildBoard();
   if (!S.cats.length || S.cats.every(c => c.tiles.every(t => t.empty))) { $('topicHint').textContent = 'Choose at least one category with questions.'; return; }
   S.phase = 'board';
@@ -330,7 +447,7 @@ function showSummary() {
   const order = S.teams.map((t, i) => ({ t, i })).sort((a, b) => b.t.score - a.t.score);
   const top = order[0].t.score, winners = order.filter(o => o.t.score === top);
   SFX.win();
-  const pos = ['1st', '2nd', '3rd', '4th'];
+  const pos = ['1st', '2nd', '3rd', '4th', '5th', '6th'];
   let place = 0;
   const podium = order.map((o, k) => {
     if (k && o.t.score < order[k - 1].t.score) place = k;
@@ -342,7 +459,7 @@ function showSummary() {
     return `<div class="cc-sum-p" style="--tc:${TEAM[i].css}"><h3>${TEAM[i].mark} ${esc(t.name)}</h3><div class="cc-sub">Missed this game</div>${missed}<div class="cc-sub">Weakest topics, all games</div>${hist}<button class="linkish" type="button" data-clear="${i}">Clear ${esc(t.name)}'s history</button></div>`;
   }).join('');
   $('sumCard').innerHTML = `<h2>${winners.length > 1 ? "It's a draw!" : esc(winners[0].t.name) + ' win!'}</h2>
-    <div class="cc-podium">${podium}</div><div class="cc-sum-grid">${cols}</div>
+    <div class="cc-podium">${podium}</div>${classMode() ? misc.html(5) : `<div class="cc-sum-grid">${cols}</div>`}
     <div class="cc-sum-btns"><button class="btn go" type="button" id="cc-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="cc-change">Change teams or categories</button><button class="btn plain" type="button" id="cc-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('sumCard').prepend(sumHost.el);
   sumHost.say(winners.length > 1 ? "A draw! What a close game. Well done, everyone." : `${winners[0].t.name} win with ${top} points. Great game, everyone!`, 'cheer', 2200);
@@ -357,7 +474,7 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  stopTimer();
+  stopTimer(); round.stop();
   S.phase = 'home'; S.open = null;
   $('q').hidden = true; $('play').hidden = true; $('summary').classList.remove('active');
   $('home').classList.add('active');
@@ -388,6 +505,11 @@ document.addEventListener('keydown', e => {
     if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); openTile(S.cursor.c, S.cursor.r); }
     return;
   }
+  if (S.phase === 'question' && classMode()) {
+    if (round.handleKey(k)) { e.preventDefault(); return; }
+    if ((k === 'enter' || k === ' ') && S.step === 'done' && !isButton) { e.preventDefault(); closeQuestion(); }
+    return;
+  }
   if (S.phase === 'question') {
     if (k === 'a') toggleAnswer();
     else if (k === 'c' && S.step === 'ask') markCorrect();
@@ -402,7 +524,7 @@ return {
   enter() { active = true; if (S.phase === 'home') { $('names').innerHTML = ''; renderNames(); renderTopics(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => S.phase === 'board' || S.phase === 'question',
-  _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
+  _state: () => ({ mode: S.mode, round: round.phase, undoable: round.undoable, times: round.times(), turn: S.turn, catchUp: catchUpTurn(), misconceptions: misc.top(5).map(x => x.q.q), rows: S.rows, phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score, correct: t.correct })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
   _board: () => S.cats
 };
 }

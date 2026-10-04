@@ -5,6 +5,9 @@
    Team 2 links top to bottom. Each hexagon is a question whose
    answer starts with the letter shown. Winning a hexagon lets
    that team pick the next one.
+   Whole class: the two teams are halves of the class. Everyone answers
+   on whiteboards; the teacher enters the share of each half that got it
+   right, and the higher share wins the hexagon (the choosing half on a tie).
    ========================================================= */
 (function () {
 let game = null;
@@ -24,12 +27,18 @@ const SFX = {
 };
 
 const S = {
+  mode: CGB.mode.get('hex-hunt'), session: CGB.store.get('hh.session') || 'starter', timer: CGB.store.getJSON('hh.timer', 30),
   phase: 'home', size: CGB.store.getJSON('hh.size', 5), best: CGB.store.getJSON('hh.best', 1),
   teams: [], cells: [], picker: 0, firstPicker: 0, cursor: { c: 0, r: 0 }, open: null,
   step: null, answering: -1, tried: [false, false], answerShown: false, round: 1, focusWeak: false, path: null
 };
 if (![5, 6].includes(S.size)) S.size = 5;
 if (![1, 3].includes(S.best)) S.best = 1;
+if (!CGB.COUNTDOWNS.includes(S.timer)) S.timer = 30;
+if (!CGB.SESSIONS.some(x => x.id === S.session)) S.session = 'starter';
+/* Whole-class session lengths: board size and match length */
+const SESSION = { starter: { size: 5, best: 1 }, plenary: { size: 6, best: 1 }, full: { size: 5, best: 3 } };
+const classMode = () => S.mode === 'class';
 
 /* ---------- Letter clues ---------- */
 /* The clue is the first letter of the answer, ignoring a leading "a", "an" or "the".
@@ -121,7 +130,7 @@ function renderTeams() {
   const owned = t => S.cells.filter(c => c.owner === t).length;
   $('teams').innerHTML = S.teams.map((t, i) => `<div class="hh-team${i === S.picker && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)} <small>${TEAM[i].goal} · ${owned(i)} hexagons</small></span><span class="sc">${S.best > 1 ? t.wins + (t.wins === 1 ? ' round' : ' rounds') : ''}</span></div>`).join('');
   const p = S.teams[S.picker];
-  $('turn').innerHTML = p ? `<b style="--tc:${TEAM[S.picker].light}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon` : '';
+  $('turn').innerHTML = p ? `<b style="--tc:${TEAM[S.picker].light}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon` + (classMode() ? '<small>Captain: swap to the next person</small>' : '') : '';
   $('round').textContent = S.best > 1 ? `Round ${S.round} · first to ${Math.ceil(S.best / 2)} rounds` : '';
 }
 $('board').addEventListener('click', e => {
@@ -167,6 +176,8 @@ function showQuestion() {
   $('qAnswer').classList.toggle('shown', S.answerShown);
   $('qMsg').textContent = S.step === 'buzz' ? 'Hands up or buzz in! Which team answers first?' : '';
   $('q').hidden = false;
+  $('share').hidden = true;
+  if (classMode()) { $('qMsg').textContent = 'Everyone answers on their whiteboard.'; round.think(); $('qcard').focus({ preventScroll: true }); return; }
   renderQButtons();
   $('qcard').focus({ preventScroll: true });
 }
@@ -196,7 +207,79 @@ $('qBtns').addEventListener('click', e => {
   else if (a === 'next') backToBoard();
   else if (a === 'again') newQuestionHere();
   else if (a === 'leave') backToBoard();
+  else if (a === 'win' && S.step === 'winning') roundWon(S.picker);
 });
+/* ---------- Whole class: what share of each half got it right ---------- */
+const misc = CGB.createMisconceptions();
+let shares = [0, 0], focusHalf = 0, undoSnap = null;
+function paintShares() {
+  $('share').hidden = false;
+  $('share').innerHTML = S.teams.map((t, h) => `<div class="hh-srow${h === focusHalf ? ' focus' : ''}" style="--tc:${TEAM[h].css}">
+    <span class="hh-sname"><span class="kbd">${h + 1}</span> ${TEAM[h].mark} ${esc(t.name)}</span>
+    <span class="hh-sbtns" role="radiogroup" aria-label="Share of ${esc(t.name)} correct">${[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(v => `<button type="button" role="radio" data-h="${h}" data-v="${v}" aria-checked="${shares[h] === v}">${v}</button>`).join('')}</span>
+    <b class="hh-spct">${shares[h]}%</b></div>`).join('');
+}
+$('share').addEventListener('click', e => {
+  const b = e.target.closest('button[data-h]'); if (!b || round.phase !== 'mark') return;
+  focusHalf = +b.dataset.h; shares[focusHalf] = +b.dataset.v; paintShares();
+});
+const round = CGB.createClassRound({
+  root: document.getElementById('game-hex-hunt'), board: null, countEl: $('count'), btnEl: $('qBtns'),
+  seconds: () => S.timer, teams: () => 2,
+  marker: {
+    hint: 'Roughly what share of each half got it right? Tap a value, or press 1 or 2 for a half and ← → to change it.',
+    start(keep) { if (!keep) shares = [0, 0]; focusHalf = 0; paintShares(); },
+    key(k) {
+      if (k === '1' || k === '2') { focusHalf = +k - 1; paintShares(); return true; }
+      if (k === 'arrowup' || k === 'arrowdown') { focusHalf = 1 - focusHalf; paintShares(); return true; }
+      const d = { arrowleft: -10, arrowright: 10 }[k];
+      if (d) { shares[focusHalf] = Math.max(0, Math.min(100, shares[focusHalf] + d)); paintShares(); return true; }
+      return false;
+    },
+    values: () => shares.slice()
+  },
+  doneHtml: () => S.step === 'winning' ? `<button class="btn go" type="button" data-q="win">They've joined their edges! <span class="kbd">Enter</span></button>`
+    : S.step === 'nobody' ? `<button class="btn go" type="button" data-q="again">New question for this hexagon <span class="kbd">Enter</span></button><button class="btn plain" type="button" data-q="leave">Leave it and pick again</button>`
+    : `<button class="btn go" type="button" data-q="next">Back to the board <span class="kbd">Enter</span></button>`,
+  onConfirm: classResult, onUndo: undoClassResult
+});
+function classResult(v) {
+  const cell = S.open, chooser = S.picker;
+  undoSnap = { picker: S.picker, won: S.teams.map(t => t.won), wrong: S.teams.map(t => t.wrong.length), path: S.path };
+  // the higher share wins; a tie goes to the half that chose the hexagon, unless nobody got it
+  const w = v[0] === v[1] ? (v[0] > 0 ? chooser : -1) : (v[0] > v[1] ? 0 : 1);
+  v.forEach((x, h) => { if (x < 50) { S.teams[h].wrong.push(cell.q); bank.logWrong(S.teams[h].name, cell.q, GAME_NAME); } });
+  const wrongPct = Math.round(100 - (v[0] + v[1]) / 2);
+  misc.add(cell.q, wrongPct / 100, `about ${wrongPct}% of the class wrong`);
+  S.answerShown = true; $('qAnswer').classList.add('shown');
+  $('share').hidden = true;
+  if (w < 0) {
+    SFX.wrong();
+    S.step = 'nobody';
+    $('qMsg').textContent = `${S.teams[0].name} ${v[0]}%, ${S.teams[1].name} ${v[1]}%. Nobody wins this hexagon.`;
+    hostC.say("Nobody got that one. Here's the answer.", 'shrug', 1500);
+    return;
+  }
+  SFX.claim();
+  cell.owner = w; S.teams[w].won++; S.picker = w;
+  const tie = v[0] === v[1];
+  $('qMsg').textContent = `${S.teams[0].name} ${v[0]}%, ${S.teams[1].name} ${v[1]}%. ` + (tie ? `A tie, so the hexagon goes to ${S.teams[w].name}, who chose it.` : `The hexagon goes to ${S.teams[w].name}.`);
+  hostC.say(tie ? `A tie! ${S.teams[w].name} chose it, so it's theirs.` : `${S.teams[w].name} take it, ${v[w]}% to ${v[1 - w]}%!`, 'clap', 1500);
+  const path = winningPath(w);
+  if (path) { S.path = path; S.step = 'winning'; $('qMsg').textContent += ` ${S.teams[w].name} join their edges!`; }
+  else S.step = 'claimed';
+  renderBoard();
+}
+function undoClassResult() {
+  const u = undoSnap, cell = S.open; if (!u) return;
+  cell.owner = -1; S.picker = u.picker; S.path = u.path;
+  S.teams.forEach((t, i) => { t.won = u.won[i]; while (t.wrong.length > u.wrong[i]) { t.wrong.pop(); bank.unlogWrong(t.name, cell.q); } });
+  misc.remove(cell.q);
+  S.answerShown = false; $('qAnswer').classList.remove('shown');
+  $('qMsg').textContent = 'Marking undone. Enter the shares again.';
+  S.step = 'buzz'; undoSnap = null;
+  renderBoard();
+}
 function toggleAnswer() { S.answerShown = !S.answerShown; $('qAnswer').classList.toggle('shown', S.answerShown); renderQButtons(); }
 /* Marty in the corner: short captions at the big moments */
 const hostC = CGB.createHostCorner($('host'));
@@ -240,6 +323,7 @@ function nobody() {
 }
 function newQuestionHere() {
   if (S.step !== 'nobody') return;
+  round.stop();
   const cell = S.open;
   const q = drawQuestion(new Set(S.cells.map(c => c.q && c.q.q)));
   if (q) { cell.q = q; cell.letter = firstLetter(q.a); }
@@ -248,6 +332,7 @@ function newQuestionHere() {
 }
 function backToBoard() {
   if (S.step !== 'claimed' && S.step !== 'nobody') return;
+  round.stop();
   if (S.step === 'nobody') {
     // swap in a fresh question so the hexagon is not stuck on the one nobody knew
     const q = drawQuestion(new Set(S.cells.map(c => c.q && c.q.q)));
@@ -263,6 +348,7 @@ function backToBoard() {
 
 /* ---------- Rounds and results ---------- */
 function roundWon(i) {
+  round.stop();
   $('q').hidden = true;
   S.phase = 'won';
   S.teams[i].wins++;
@@ -296,6 +382,9 @@ function startGame() {
   S.teams = names.map(name => ({ name, wins: 0, won: 0, wrong: [] }));
   S.focusWeak = $('focusWeak').checked;
   S.round = 1; S.firstPicker = 0; S.picker = 0;
+  misc.reset(); round.stop();
+  if (classMode()) { S.size = SESSION[S.session].size; S.best = SESSION[S.session].best; }
+  else { S.size = CGB.store.getJSON('hh.size', 5); S.best = CGB.store.getJSON('hh.best', 1); }
   newBoard();
   if (!S.cells.some(c => c.q)) { $('setHint').textContent = 'This set has no answers that start with a letter. Choose another set.'; return; }
   S.phase = 'board';
@@ -316,7 +405,7 @@ function showSummary() {
     const hist = bank.weakTopics(t.name, 4).map(([tp, n]) => `<div class="hh-trow"><span>${esc(tp)}</span><span>${n} wrong</span></div>`).join('') || '<div class="hh-none">No history yet.</div>';
     return `<div class="hh-sum-p" style="--tc:${TEAM[i].css}"><h3>${TEAM[i].mark} ${esc(t.name)}</h3><div class="hint">${t.wins} round${t.wins === 1 ? '' : 's'} won · ${t.won} hexagons claimed</div><div class="hh-sub">Missed this game</div>${missed}<div class="hh-sub">Weakest topics, all games</div>${hist}<button class="linkish" type="button" data-clear="${i}">Clear ${esc(t.name)}'s history</button></div>`;
   }).join('');
-  $('sumCard').innerHTML = `<h2>${esc(title)}</h2><div class="hh-sum-grid">${cols}</div>
+  $('sumCard').innerHTML = `<h2>${esc(title)}</h2>${classMode() ? misc.html(5) : `<div class="hh-sum-grid">${cols}</div>`}
     <div class="hh-sum-btns"><button class="btn go" type="button" id="hh-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="hh-change">Change teams or settings</button><button class="btn plain" type="button" id="hh-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('sumCard').prepend(sumHost.el);
   sumHost.say(a.wins === b.wins ? 'A draw! Brilliant hunting from both teams.' : `${title} Fantastic hunting!`, 'cheer', 2200);
@@ -331,6 +420,8 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
+  round.stop();
+  S.size = CGB.store.getJSON('hh.size', 5); S.best = CGB.store.getJSON('hh.best', 1);
   S.phase = 'home';
   $('play').hidden = true; $('q').hidden = true; $('win').hidden = true; $('summary').classList.remove('active');
   $('home').classList.add('active');
@@ -340,14 +431,30 @@ function goHome() {
 $('logo').innerHTML = CGB.brand.hhLogo();
 const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n; });
 fillNames();
-function wireSeg(id, key, store) {
+function wireSeg(id, key, store, text) {
   const seg = $(id);
-  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === S[key])));
-  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S[key] = +b.dataset.v; CGB.store.setJSON(store, S[key]); paint(); });
+  const val = v => text ? v : +v;
+  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(val(b.dataset.v) === S[key])));
+  seg.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    S[key] = val(b.dataset.v);
+    if (text) CGB.store.set(store, S[key]); else CGB.store.setJSON(store, S[key]);
+    paint(); applyMode(); CGB.fitSetups();
+  });
   paint();
 }
+function applyMode() {
+  $('setupCard').dataset.mode = S.mode;
+  CGB.mode.set('hex-hunt', S.mode);
+  const x = SESSION[S.session];
+  $('sessionHint').textContent = `${CGB.SESSIONS.find(o => o.id === S.session).note}: a ${x.size} × ${x.size} board, ${x.best > 1 ? 'best of ' + x.best + ' rounds' : 'one round'}.`;
+}
+wireSeg('segMode', 'mode', 'hex-hunt.mode', true);
+wireSeg('segSession', 'session', 'hh.session', true);
+wireSeg('segTimer', 'timer', 'hh.timer');
 wireSeg('segSize', 'size', 'hh.size');
 wireSeg('segBest', 'best', 'hh.best');
+applyMode();
 $('focusWeak').checked = CGB.store.get('hh.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('hh.focusWeak', e.target.checked ? '1' : '0'));
 function renderSetSelect() {
@@ -384,6 +491,16 @@ document.addEventListener('keydown', e => {
     if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); openHex(S.cursor.c, S.cursor.r); }
     return;
   }
+  if (S.phase === 'question' && classMode()) {
+    if (round.handleKey(k)) { e.preventDefault(); return; }
+    if ((k === 'enter' || k === ' ') && !isButton) {
+      e.preventDefault();
+      if (S.step === 'claimed') backToBoard();
+      else if (S.step === 'nobody') newQuestionHere();
+      else if (S.step === 'winning') roundWon(S.picker);
+    }
+    return;
+  }
   if (S.phase === 'question') {
     if (k === 'a') toggleAnswer();
     else if ((k === '1' || k === '2') && S.step === 'buzz') buzz(+k - 1);
@@ -401,7 +518,7 @@ return {
   enter() { active = true; if (S.phase === 'home') { fillNames(); renderSetSelect(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => ['board', 'question', 'won'].includes(S.phase),
-  _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, answering: S.answering, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, wins: S.teams.map(t => t.wins), owners: S.cells.map(c => c.owner) })
+  _state: () => ({ mode: S.mode, round: round.phase, undoable: round.undoable, times: round.times(), shares: shares.slice(), best: S.best, misconceptions: misc.top(5).map(x => x.q.q), phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, answering: S.answering, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, wins: S.teams.map(t => t.wins), owners: S.cells.map(c => c.owner) })
 };
 }
 

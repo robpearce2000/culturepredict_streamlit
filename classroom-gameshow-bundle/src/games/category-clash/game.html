@@ -7,11 +7,13 @@
 
   <!-- SETUP -->
   <div class="cc-screen active" id="cc-home">
-    <div class="cgb-panel cc-card setup">
+    <div class="cgb-panel cc-card setup" id="cc-setupCard" data-mode="class">
       <div class="setup-intro">
       <div class="cc-logo" id="cc-logo"></div>
-      <details class="howto" open><summary>How to play</summary><div class="cc-rules">Teams take turns to pick a category and a points value. Harder questions are worth more. Answer right to win the points; get it wrong and another team can steal them. One hidden ★ tile is worth double. The team with the most points when the board is clear wins.</div></details>
-      <div class="field"><span class="lab" id="cc-labTeams">Number of teams</span><div class="seg" id="cc-segTeams" role="group" aria-labelledby="cc-labTeams"><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4</button></div></div>
+      <details class="howto" open><summary>How to play</summary><div class="cc-rules">Teams take turns to pick a category and a points value. Harder questions are worth more. Answer right to win the points; get it wrong and another team can steal them. One hidden ★ tile is worth double. The team with the most points when the board is clear wins.<span class="only-class"><br><b>Whole class:</b> every team answers every question on mini whiteboards. The choosing team wins full points if correct; every other correct team wins half. Wrong answers lose nothing. The captain who chooses changes each turn.</span></div></details>
+      <div class="field"><span class="lab" id="cc-labMode">Play as</span><div class="seg" id="cc-segMode" role="group" aria-labelledby="cc-labMode"><button type="button" data-v="class">Whole class</button><button type="button" data-v="small">Small group</button></div></div>
+      <p class="cm-rule only-class"><b>Team rule:</b> a team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.</p>
+      <div class="field"><span class="lab" id="cc-labTeams">Number of teams</span><div class="seg" id="cc-segTeams" role="group" aria-labelledby="cc-labTeams"><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4</button><button type="button" data-v="5" class="only-class">5</button><button type="button" data-v="6" class="only-class">6</button></div></div>
       <div class="cc-names" id="cc-names"></div>
       </div>
       <div class="setup-form">
@@ -20,16 +22,17 @@
         <select class="cgb-select" id="cc-setSelect"></select>
         <button class="linkish" id="cc-openBank" type="button">Manage the question bank</button>
       </div>
+ <div class="field only-class"><span class="lab" id="cc-labSession">Session length</span><div class="seg" id="cc-segSession" role="group" aria-labelledby="cc-labSession"><button type="button" data-v="starter">Starter</button><button type="button" data-v="plenary">Plenary</button><button type="button" data-v="full">Full lesson</button></div><div class="hint" id="cc-sessionHint"></div></div>
       <div class="field">
         <span class="lab" id="cc-labCats">Categories (topics from the question set)</span>
-        <div class="cc-catrow"><div class="seg" id="cc-segCats" role="group" aria-labelledby="cc-labCats"><button type="button" data-v="4">4</button><button type="button" data-v="5">5</button><button type="button" data-v="6">6</button></div><button class="btn plain sm" type="button" id="cc-shuffle">Shuffle</button></div>
+        <div class="cc-catrow"><div class="seg only-small" id="cc-segCats" role="group" aria-labelledby="cc-labCats"><button type="button" data-v="4">4</button><button type="button" data-v="5">5</button><button type="button" data-v="6">6</button></div><button class="btn plain sm" type="button" id="cc-shuffle">Shuffle</button></div>
         <div class="cc-topics" id="cc-topics" role="group" aria-label="Choose categories"></div>
         <div class="hint" id="cc-topicHint"></div>
       </div>
-      <div class="field"><span class="lab" id="cc-labTimer">Answer timer</span><div class="seg" id="cc-segTimer" role="group" aria-labelledby="cc-labTimer"><button type="button" data-v="0">Off</button><button type="button" data-v="20">20 s</button><button type="button" data-v="30">30 s</button><button type="button" data-v="60">60 s</button></div></div>
+      <div class="field"><span class="lab" id="cc-labTimer">Answer timer</span><div class="seg" id="cc-segTimer" role="group" aria-labelledby="cc-labTimer"><button type="button" data-v="0">Off</button><button type="button" data-v="20">20 s</button><button type="button" data-v="30">30 s</button><button type="button" data-v="45">45 s</button><button type="button" data-v="60">60 s</button></div></div>
       <div class="cc-opts">
-      <label class="check"><input type="checkbox" id="cc-optSteal" checked> Other teams can steal a wrong answer</label>
-      <label class="check"><input type="checkbox" id="cc-optPenalty"> Wrong answers lose the points</label>
+      <label class="check only-small"><input type="checkbox" id="cc-optSteal" checked> Other teams can steal a wrong answer</label>
+      <label class="check only-small"><input type="checkbox" id="cc-optPenalty"> Wrong answers lose the points</label>
       <label class="check"><input type="checkbox" id="cc-optStar" checked> Hide one ★ double-points tile</label>
       <label class="check"><input type="checkbox" id="cc-focusWeak"> Fill categories with more questions each team got wrong before</label>
       </div>
@@ -56,9 +59,11 @@
       <div class="cc-star" id="cc-qStar" hidden>★ Double points!</div>
       <div class="cc-qfor" id="cc-qFor"></div>
       <div class="cc-qtext" id="cc-qText"></div>
+      <div class="cm-count" id="cc-count" hidden></div>
       <div class="cc-timer" id="cc-timer" hidden><div class="cc-timer-fill" id="cc-timerFill"></div><span id="cc-timerText"></span></div>
       <div class="cc-qanswer" id="cc-qAnswer"></div>
       <div class="cc-qmsg" id="cc-qMsg" role="status"></div>
+      <div class="cc-qboard" id="cc-qboard" hidden></div>
       <div class="cc-qbtns" id="cc-qBtns"></div>
     </div>
   </div>

@@ -92,3 +92,16 @@
 
 .hh-qcard:focus { outline: none; }
 .hh-win { padding-bottom: 92px; }
+
+/* whole class: share of each half correct */
+.hh-turn small { display: block; font-family: var(--body); font-weight: 800; font-size: 0.85rem; color: var(--hh-muted); }
+.hh-share { display: grid; gap: 8px; }
+.hh-share[hidden] { display: none; }
+.hh-srow { display: grid; grid-template-columns: minmax(120px, 0.9fr) minmax(0, 3fr) 4.2ch; align-items: center; gap: 10px; background: #fff; border: 3px solid var(--line); border-left: 10px solid var(--tc); border-radius: 12px; padding: 6px 10px; }
+.hh-srow.focus { border-color: var(--ink); border-left-color: var(--tc); box-shadow: 0 0 0 3px var(--sun); }
+.hh-sname { font-weight: 900; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hh-sbtns { display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 3px; }
+.hh-sbtns button { min-height: 36px; border: 2px solid var(--line); background: var(--paper); border-radius: 8px; font-weight: 900; font-size: 0.85rem; color: var(--ink); cursor: pointer; padding: 0; }
+.hh-sbtns button[aria-checked="true"] { background: var(--tc); border-color: var(--ink); color: #fff; }
+.hh-spct { font-family: var(--display); font-weight: 400; font-size: 1.6rem; text-align: right; }
+@media (max-width: 700px) { .hh-srow { grid-template-columns: 1fr auto; } .hh-sbtns { grid-column: 1 / -1; grid-row: 2; } }

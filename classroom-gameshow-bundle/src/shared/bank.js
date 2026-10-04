@@ -177,6 +177,13 @@ CGB.bank = (() => {
     addHistoryEntry(name, { subject: q.subject, topic: q.topic, q: q.q, a: q.a, date: new Date().toISOString().slice(0, 10), game: game || '' });
     saveHistory();
   }
+  /* Take back the most recent wrong answer logged for this question (class-mode undo) */
+  function unlogWrong(name, q) {
+    const h = q && history[key(name)]; if (!h) return;
+    for (let i = h.entries.length - 1; i >= 0; i--) if (h.entries[i].q === q.q) { h.entries.splice(i, 1); break; }
+    if (!h.entries.length) delete history[key(name)];
+    saveHistory();
+  }
   function wrongLog(name) { const h = history[key(name)]; return h ? h.entries.slice() : []; }
   function weakTopics(name, n) {
     const m = {};
@@ -266,7 +273,7 @@ CGB.bank = (() => {
   migrateLegacy();
   return {
     parse, toText, estimateLevel, all, get, active, setActive, summary, addSet, updateSet, deleteSet,
-    logWrong, wrongLog, weakTopics, clearHistory, players, createPicker, fillSelect,
+    logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker, fillSelect,
     exportData, importData, onChange(fn) { listeners.push(fn); },
     builtinIds: BUILTIN.map(s => s.id)
   };

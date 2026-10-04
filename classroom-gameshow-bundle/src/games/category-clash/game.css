@@ -103,3 +103,14 @@
 .setup.tighter .cc-topics { max-height: 84px; }
 .setup.tighter .cc-opts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 12px; }
 .setup.tighter .cc-opts .check { font-size: 0.88rem; align-items: flex-start; }
+
+/* whole class */
+.cc-names.many { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cc-names.many input { font-size: 1.05rem; }
+.cc-turn small { display: block; font-family: var(--body); font-weight: 800; font-size: 0.85rem; color: var(--cc-muted); }
+.cc-team { position: relative; }
+.cc-catch { position: absolute; left: 10px; top: -12px; background: var(--sun); color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: 0 8px; font-size: 0.72rem; font-weight: 900; }
+.cc-qboard { margin: 6px 0 2px; }
+.cc-qboard[hidden] { display: none; }
+.cc-qbtns .cm-hint { width: 100%; text-align: center; }
+.cc-tile.used .mk + * { display: inline; }

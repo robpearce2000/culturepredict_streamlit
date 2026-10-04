@@ -33,6 +33,8 @@ CGB.sfx = (() => {
     tone, unlock,
     click() { tone(660, 0.05, 'triangle', 0.05); },
     correct() { [523, 659, 784].forEach((f, i) => tone(f, 0.16, 'triangle', 0.09, i * 0.07)); },
-    wrong() { tone(220, 0.28, 'square', 0.05, 0, 0.7); }
+    wrong() { tone(220, 0.28, 'square', 0.05, 0, 0.7); },
+    // "3, 2, 1, show me!" countdown beeps; the last one is higher and longer
+    tick(go) { if (go) [880, 1175].forEach((f, i) => tone(f, 0.2, 'triangle', 0.08, i * 0.06)); else tone(660, 0.08, 'triangle', 0.06); }
   };
 })();

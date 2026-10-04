@@ -32,6 +32,7 @@
   --team0: #2563EB; --team1: #EA580C; --team2: #9333EA; --team3: #0D9488;
   --team0-text: #1D4ED8; --team1-text: #C2410C; --team2-text: #7E22CE; --team3-text: #0F766E;
   --team0-light: #93C5FD; --team1-light: #FDBA74; --team2-light: #D8B4FE; --team3-light: #5EEAD4;
+  --team4: #DB2777; --team5: #65A30D; --team4-text: #BE185D; --team5-text: #3F6212; --team4-light: #F9A8D4; --team5-light: #BEF264;
   --p0: var(--team0); --p1: var(--team1); --p0-text: var(--team0-text); --p1-text: var(--team1-text);
   --display: 'Lilita One', 'Arial Rounded MT Bold', 'Trebuchet MS', 'Segoe UI', sans-serif;
   --body: 'Nunito', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -263,6 +264,61 @@ details.howto:not([open]) { margin-bottom: 8px; }
   .l-wordmark svg { max-height: 30vh; }
   .gcard .art { aspect-ratio: 16 / 7.2; }
 }
+
+/* ---------- Class mode (shared) ---------- */
+/* setup cards show only the options for the chosen mode */
+[data-mode="class"] .only-small, [data-mode="small"] .only-class { display: none !important; }
+.cm-rule { font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); background: var(--raised); border-radius: 10px; padding: 7px 11px; margin: 0 0 10px; line-height: 1.4; }
+.cm-rule b { color: var(--ink); }
+
+/* team panels: big enough to read from the back of the room */
+.cm-board { display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 8px; }
+.cm-board[data-n="5"], .cm-board[data-n="6"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cm-board.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.cm-team { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "nm mark" "sc mark"; align-items: center; column-gap: 8px; min-width: 0; text-align: left;
+  background: #fff; color: var(--ink); border: 3px solid var(--ink); border-bottom: 8px solid var(--tc); border-radius: 14px; padding: 6px 12px 5px; font-family: var(--body); cursor: default; }
+.cm-board.marking .cm-team { cursor: pointer; border-style: dashed; border-bottom-style: solid; }
+.cm-board.marking .cm-team:hover { filter: brightness(0.97); }
+.cm-nm { grid-area: nm; font-weight: 900; font-size: 1.05rem; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.cm-sc { grid-area: sc; font-family: var(--display); font-size: 1.9rem; line-height: 1.05; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cm-mark { grid-area: mark; font-family: var(--display); font-size: 2.6rem; line-height: 1; min-width: 1.1em; text-align: center; color: var(--ink-soft); }
+.cm-key { position: absolute; top: -9px; left: -7px; display: none; width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 900; font-size: 0.85rem; line-height: 24px; text-align: center; }
+.cm-board.marking .cm-key { display: block; }
+.cm-team.ok { background: #E6F6EC; box-shadow: 0 0 0 4px var(--ok); }
+.cm-team.ok .cm-mark { color: var(--ok); }
+.cm-team.no { background: #FBE9E9; }
+.cm-team.no .cm-mark { color: var(--no); }
+.cm-team.turn { box-shadow: 0 0 0 4px var(--sun); }
+.cm-team.ok.turn { box-shadow: 0 0 0 4px var(--ok), 0 0 0 8px var(--sun); }
+.cm-earn { position: absolute; right: 8px; top: -14px; background: var(--ok); color: #fff; font-weight: 900; font-size: 0.95rem; padding: 2px 9px; border-radius: 999px; border: 2px solid var(--ink); white-space: nowrap; animation: cmPop .5s ease-out; }
+.cm-badge { position: absolute; left: 12px; top: -13px; background: var(--sun); color: var(--ink); font-weight: 900; font-size: 0.75rem; padding: 1px 8px; border-radius: 999px; border: 2px solid var(--ink); white-space: nowrap; }
+@keyframes cmPop { from { transform: scale(0.4); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* the round's prompts and buttons */
+.cm-count { display: flex; align-items: center; gap: 10px; font-weight: 900; }
+.cm-count[hidden] { display: none; }
+.cm-cbar { flex: 1; height: 12px; border-radius: 999px; background: var(--line); overflow: hidden; border: 2px solid var(--ink); }
+.cm-cbar i { display: block; height: 100%; background: var(--teal); transition: width .1s linear; }
+.cm-count.low .cm-cbar i { background: var(--no); }
+.cm-count b { font-family: var(--display); font-weight: 400; font-size: 1.4rem; min-width: 3ch; text-align: right; }
+.cm-hint { font-weight: 800; font-size: 0.95rem; color: var(--ink-soft); }
+.cm-btns { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.cm-btns .btn { white-space: nowrap; }
+.cm-showme { position: absolute; inset: 0; z-index: 70; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0;
+  font-family: var(--display); font-size: clamp(5rem, 18vw, 14rem); color: var(--sun); paint-order: stroke fill; -webkit-text-stroke: 14px var(--ink); text-shadow: 0 10px 0 var(--ink); }
+.cm-showme.on { opacity: 1; animation: cmBeat .6s ease-out; }
+.cm-showme.go { font-size: clamp(3.4rem, 11vw, 9rem); color: #fff; }
+@keyframes cmBeat { from { transform: scale(1.35); } to { transform: none; } }
+
+/* class misconceptions on the results screens */
+.cm-miscon { background: var(--raised); border-radius: 14px; padding: 12px 16px; margin: 12px 0; color: var(--ink); text-align: left; }
+.cm-miscon h3 { font-family: var(--display); font-weight: 400; font-size: 1.5rem; margin: 0; }
+.cm-sub { margin: 0 0 6px; font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); }
+.cm-mq { padding: 7px 0; border-top: 2px dashed var(--line); }
+.cm-mq .q { font-weight: 800; }
+.cm-mq .a { font-weight: 900; color: var(--teal-deep); }
+.cm-mq .t { font-size: 0.8rem; font-weight: 700; color: var(--ink-soft); }
+.cm-none { font-weight: 800; color: var(--ink-soft); }
 
 </style>
 <style>
@@ -623,6 +679,17 @@ details.howto:not([open]) { margin-bottom: 8px; }
 .setup.tighter .cc-opts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 12px; }
 .setup.tighter .cc-opts .check { font-size: 0.88rem; align-items: flex-start; }
 
+/* whole class */
+.cc-names.many { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cc-names.many input { font-size: 1.05rem; }
+.cc-turn small { display: block; font-family: var(--body); font-weight: 800; font-size: 0.85rem; color: var(--cc-muted); }
+.cc-team { position: relative; }
+.cc-catch { position: absolute; left: 10px; top: -12px; background: var(--sun); color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: 0 8px; font-size: 0.72rem; font-weight: 900; }
+.cc-qboard { margin: 6px 0 2px; }
+.cc-qboard[hidden] { display: none; }
+.cc-qbtns .cm-hint { width: 100%; text-align: center; }
+.cc-tile.used .mk + * { display: inline; }
+
 </style>
 <style>
 /* =========================================================
@@ -719,6 +786,19 @@ details.howto:not([open]) { margin-bottom: 8px; }
 
 .hh-qcard:focus { outline: none; }
 .hh-win { padding-bottom: 92px; }
+
+/* whole class: share of each half correct */
+.hh-turn small { display: block; font-family: var(--body); font-weight: 800; font-size: 0.85rem; color: var(--hh-muted); }
+.hh-share { display: grid; gap: 8px; }
+.hh-share[hidden] { display: none; }
+.hh-srow { display: grid; grid-template-columns: minmax(120px, 0.9fr) minmax(0, 3fr) 4.2ch; align-items: center; gap: 10px; background: #fff; border: 3px solid var(--line); border-left: 10px solid var(--tc); border-radius: 12px; padding: 6px 10px; }
+.hh-srow.focus { border-color: var(--ink); border-left-color: var(--tc); box-shadow: 0 0 0 3px var(--sun); }
+.hh-sname { font-weight: 900; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hh-sbtns { display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 3px; }
+.hh-sbtns button { min-height: 36px; border: 2px solid var(--line); background: var(--paper); border-radius: 8px; font-weight: 900; font-size: 0.85rem; color: var(--ink); cursor: pointer; padding: 0; }
+.hh-sbtns button[aria-checked="true"] { background: var(--tc); border-color: var(--ink); color: #fff; }
+.hh-spct { font-family: var(--display); font-weight: 400; font-size: 1.6rem; text-align: right; }
+@media (max-width: 700px) { .hh-srow { grid-template-columns: 1fr auto; } .hh-sbtns { grid-column: 1 / -1; grid-row: 2; } }
 
 </style>
 </head>
@@ -989,11 +1069,13 @@ details.howto:not([open]) { margin-bottom: 8px; }
 
   <!-- SETUP -->
   <div class="cc-screen active" id="cc-home">
-    <div class="cgb-panel cc-card setup">
+    <div class="cgb-panel cc-card setup" id="cc-setupCard" data-mode="class">
       <div class="setup-intro">
       <div class="cc-logo" id="cc-logo"></div>
-      <details class="howto" open><summary>How to play</summary><div class="cc-rules">Teams take turns to pick a category and a points value. Harder questions are worth more. Answer right to win the points; get it wrong and another team can steal them. One hidden ★ tile is worth double. The team with the most points when the board is clear wins.</div></details>
-      <div class="field"><span class="lab" id="cc-labTeams">Number of teams</span><div class="seg" id="cc-segTeams" role="group" aria-labelledby="cc-labTeams"><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4</button></div></div>
+      <details class="howto" open><summary>How to play</summary><div class="cc-rules">Teams take turns to pick a category and a points value. Harder questions are worth more. Answer right to win the points; get it wrong and another team can steal them. One hidden ★ tile is worth double. The team with the most points when the board is clear wins.<span class="only-class"><br><b>Whole class:</b> every team answers every question on mini whiteboards. The choosing team wins full points if correct; every other correct team wins half. Wrong answers lose nothing. The captain who chooses changes each turn.</span></div></details>
+      <div class="field"><span class="lab" id="cc-labMode">Play as</span><div class="seg" id="cc-segMode" role="group" aria-labelledby="cc-labMode"><button type="button" data-v="class">Whole class</button><button type="button" data-v="small">Small group</button></div></div>
+      <p class="cm-rule only-class"><b>Team rule:</b> a team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.</p>
+      <div class="field"><span class="lab" id="cc-labTeams">Number of teams</span><div class="seg" id="cc-segTeams" role="group" aria-labelledby="cc-labTeams"><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4</button><button type="button" data-v="5" class="only-class">5</button><button type="button" data-v="6" class="only-class">6</button></div></div>
       <div class="cc-names" id="cc-names"></div>
       </div>
       <div class="setup-form">
@@ -1002,16 +1084,17 @@ details.howto:not([open]) { margin-bottom: 8px; }
         <select class="cgb-select" id="cc-setSelect"></select>
         <button class="linkish" id="cc-openBank" type="button">Manage the question bank</button>
       </div>
+ <div class="field only-class"><span class="lab" id="cc-labSession">Session length</span><div class="seg" id="cc-segSession" role="group" aria-labelledby="cc-labSession"><button type="button" data-v="starter">Starter</button><button type="button" data-v="plenary">Plenary</button><button type="button" data-v="full">Full lesson</button></div><div class="hint" id="cc-sessionHint"></div></div>
       <div class="field">
         <span class="lab" id="cc-labCats">Categories (topics from the question set)</span>
-        <div class="cc-catrow"><div class="seg" id="cc-segCats" role="group" aria-labelledby="cc-labCats"><button type="button" data-v="4">4</button><button type="button" data-v="5">5</button><button type="button" data-v="6">6</button></div><button class="btn plain sm" type="button" id="cc-shuffle">Shuffle</button></div>
+        <div class="cc-catrow"><div class="seg only-small" id="cc-segCats" role="group" aria-labelledby="cc-labCats"><button type="button" data-v="4">4</button><button type="button" data-v="5">5</button><button type="button" data-v="6">6</button></div><button class="btn plain sm" type="button" id="cc-shuffle">Shuffle</button></div>
         <div class="cc-topics" id="cc-topics" role="group" aria-label="Choose categories"></div>
         <div class="hint" id="cc-topicHint"></div>
       </div>
-      <div class="field"><span class="lab" id="cc-labTimer">Answer timer</span><div class="seg" id="cc-segTimer" role="group" aria-labelledby="cc-labTimer"><button type="button" data-v="0">Off</button><button type="button" data-v="20">20 s</button><button type="button" data-v="30">30 s</button><button type="button" data-v="60">60 s</button></div></div>
+      <div class="field"><span class="lab" id="cc-labTimer">Answer timer</span><div class="seg" id="cc-segTimer" role="group" aria-labelledby="cc-labTimer"><button type="button" data-v="0">Off</button><button type="button" data-v="20">20 s</button><button type="button" data-v="30">30 s</button><button type="button" data-v="45">45 s</button><button type="button" data-v="60">60 s</button></div></div>
       <div class="cc-opts">
-      <label class="check"><input type="checkbox" id="cc-optSteal" checked> Other teams can steal a wrong answer</label>
-      <label class="check"><input type="checkbox" id="cc-optPenalty"> Wrong answers lose the points</label>
+      <label class="check only-small"><input type="checkbox" id="cc-optSteal" checked> Other teams can steal a wrong answer</label>
+      <label class="check only-small"><input type="checkbox" id="cc-optPenalty"> Wrong answers lose the points</label>
       <label class="check"><input type="checkbox" id="cc-optStar" checked> Hide one ★ double-points tile</label>
       <label class="check"><input type="checkbox" id="cc-focusWeak"> Fill categories with more questions each team got wrong before</label>
       </div>
@@ -1038,9 +1121,11 @@ details.howto:not([open]) { margin-bottom: 8px; }
       <div class="cc-star" id="cc-qStar" hidden>★ Double points!</div>
       <div class="cc-qfor" id="cc-qFor"></div>
       <div class="cc-qtext" id="cc-qText"></div>
+      <div class="cm-count" id="cc-count" hidden></div>
       <div class="cc-timer" id="cc-timer" hidden><div class="cc-timer-fill" id="cc-timerFill"></div><span id="cc-timerText"></span></div>
       <div class="cc-qanswer" id="cc-qAnswer"></div>
       <div class="cc-qmsg" id="cc-qMsg" role="status"></div>
+      <div class="cc-qboard" id="cc-qboard" hidden></div>
       <div class="cc-qbtns" id="cc-qBtns"></div>
     </div>
   </div>
@@ -1060,10 +1145,12 @@ details.howto:not([open]) { margin-bottom: 8px; }
 
   <!-- SETUP -->
   <div class="hh-screen active" id="hh-home">
-    <div class="cgb-panel hh-card setup">
+    <div class="cgb-panel hh-card setup" id="hh-setupCard" data-mode="class">
       <div class="setup-intro">
       <div class="hh-logo" id="hh-logo"></div>
-      <details class="howto" open><summary>How to play</summary><div class="hh-rules">Two teams race across the board. <b>Team 1</b> links the left edge to the right edge; <b>Team 2</b> links the top to the bottom. Pick a hexagon: its letter is the first letter of the answer. Either team can buzz in. Get it right and the hexagon is yours, and you pick the next one. Get it wrong and the other team can answer. The first team to join its two edges wins the round.</div></details>
+      <details class="howto" open><summary>How to play</summary><div class="hh-rules">Two teams race across the board. <b>Team 1</b> links the left edge to the right edge; <b>Team 2</b> links the top to the bottom. Pick a hexagon: its letter is the first letter of the answer. Either team can buzz in. Get it right and the hexagon is yours, and you pick the next one. Get it wrong and the other team can answer. The first team to join its two edges wins the round.<span class="only-class"><br><b>Whole class:</b> split the class into two halves (each can be several table groups). Everyone answers every hexagon on whiteboards. Enter roughly what share of each half got it right; the higher share wins the hexagon, and on a tie the half that chose it wins. The captain who chooses changes each turn.</span></div></details>
+      <div class="field"><span class="lab" id="hh-labMode">Play as</span><div class="seg" id="hh-segMode" role="group" aria-labelledby="hh-labMode"><button type="button" data-v="class">Whole class</button><button type="button" data-v="small">Small group</button></div></div>
+      <p class="cm-rule only-class"><b>Two halves:</b> each half is one team on the board. A group counts as correct only if its whiteboards agree on a correct answer, or if you judge it correct.</p>
       <div class="hh-names">
         <label style="--tc:var(--ha)"><span>● Team 1 · left to right</span><input id="hh-name0" type="text" maxlength="18" value="Team 1" autocomplete="off"></label>
         <label style="--tc:var(--hb)"><span>■ Team 2 · top to bottom</span><input id="hh-name1" type="text" maxlength="18" value="Team 2" autocomplete="off"></label>
@@ -1076,7 +1163,9 @@ details.howto:not([open]) { margin-bottom: 8px; }
         <button class="linkish" id="hh-openBank" type="button">Manage the question bank</button>
         <div class="hint" id="hh-setHint"></div>
       </div>
-      <div class="hh-two">
+      <div class="field only-class"><span class="lab" id="hh-labSession">Session length</span><div class="seg" id="hh-segSession" role="group" aria-labelledby="hh-labSession"><button type="button" data-v="starter">Starter</button><button type="button" data-v="plenary">Plenary</button><button type="button" data-v="full">Full lesson</button></div><div class="hint" id="hh-sessionHint"></div></div>
+      <div class="field only-class"><span class="lab" id="hh-labTimer">Countdown before "show me"</span><div class="seg" id="hh-segTimer" role="group" aria-labelledby="hh-labTimer"><button type="button" data-v="0">Off</button><button type="button" data-v="20">20 s</button><button type="button" data-v="30">30 s</button><button type="button" data-v="45">45 s</button><button type="button" data-v="60">60 s</button></div></div>
+      <div class="hh-two only-small">
         <div class="field"><span class="lab" id="hh-labSize">Board size</span><div class="seg" id="hh-segSize" role="group" aria-labelledby="hh-labSize"><button type="button" data-v="5">5 × 5</button><button type="button" data-v="6">6 × 6</button></div></div>
         <div class="field"><span class="lab" id="hh-labBest">Match length</span><div class="seg" id="hh-segBest" role="group" aria-labelledby="hh-labBest"><button type="button" data-v="1">1 round</button><button type="button" data-v="3">Best of 3</button></div></div>
       </div>
@@ -1100,7 +1189,9 @@ details.howto:not([open]) { margin-bottom: 8px; }
       <div class="hh-qtop"><span class="hh-letter" id="hh-qLetter"></span><div><div class="hh-qclue" id="hh-qClue"></div><div class="hh-qtag" id="hh-qTag"></div></div></div>
       <div class="hh-qtext" id="hh-qText"></div>
       <div class="hh-qanswer" id="hh-qAnswer"></div>
+      <div class="cm-count" id="hh-count" hidden></div>
       <div class="hh-qmsg" id="hh-qMsg" role="status"></div>
+      <div class="hh-share" id="hh-share" hidden></div>
       <div class="hh-qbtns" id="hh-qBtns"></div>
     </div>
   </div>
@@ -3350,6 +3441,13 @@ CGB.bank = (() => {
     addHistoryEntry(name, { subject: q.subject, topic: q.topic, q: q.q, a: q.a, date: new Date().toISOString().slice(0, 10), game: game || '' });
     saveHistory();
   }
+  /* Take back the most recent wrong answer logged for this question (class-mode undo) */
+  function unlogWrong(name, q) {
+    const h = q && history[key(name)]; if (!h) return;
+    for (let i = h.entries.length - 1; i >= 0; i--) if (h.entries[i].q === q.q) { h.entries.splice(i, 1); break; }
+    if (!h.entries.length) delete history[key(name)];
+    saveHistory();
+  }
   function wrongLog(name) { const h = history[key(name)]; return h ? h.entries.slice() : []; }
   function weakTopics(name, n) {
     const m = {};
@@ -3439,7 +3537,7 @@ CGB.bank = (() => {
   migrateLegacy();
   return {
     parse, toText, estimateLevel, all, get, active, setActive, summary, addSet, updateSet, deleteSet,
-    logWrong, wrongLog, weakTopics, clearHistory, players, createPicker, fillSelect,
+    logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker, fillSelect,
     exportData, importData, onChange(fn) { listeners.push(fn); },
     builtinIds: BUILTIN.map(s => s.id)
   };
@@ -3448,7 +3546,8 @@ CGB.bank = (() => {
 </script>
 <script>
 /* Teams: one palette and one set of team names shared by every game.
-   Team 1 is always blue, Team 2 orange, Team 3 purple, Team 4 teal, and each
+   Team 1 is always blue, Team 2 orange, Team 3 purple, Team 4 teal, Team 5 pink
+   and Team 6 green (class mode allows six), and each
    colour comes with a shape so nothing depends on colour alone.
      css   fills, borders and stripes
      text  the colour as text on white or paper
@@ -3459,7 +3558,9 @@ CGB.bank = (() => {
     { hex: 0x2563EB, css: '#2563EB', text: '#1D4ED8', light: '#93C5FD', mark: '●', shape: 'circle' },
     { hex: 0xEA580C, css: '#EA580C', text: '#C2410C', light: '#FDBA74', mark: '■', shape: 'square' },
     { hex: 0x9333EA, css: '#9333EA', text: '#7E22CE', light: '#D8B4FE', mark: '▲', shape: 'triangle' },
-    { hex: 0x0D9488, css: '#0D9488', text: '#0F766E', light: '#5EEAD4', mark: '◆', shape: 'diamond' }
+    { hex: 0x0D9488, css: '#0D9488', text: '#0F766E', light: '#5EEAD4', mark: '◆', shape: 'diamond' },
+    { hex: 0xDB2777, css: '#DB2777', text: '#BE185D', light: '#F9A8D4', mark: '⬢', shape: 'hexagon' },
+    { hex: 0x65A30D, css: '#65A30D', text: '#3F6212', light: '#BEF264', mark: '✚', shape: 'cross' }
   ];
   const fallback = i => 'Team ' + (i + 1);
   const tidy = (n, i) => {
@@ -3473,10 +3574,10 @@ CGB.bank = (() => {
       // first run after the update: take whichever game last saved names
       names = ['cc.names', 'hh.names', 'names'].map(k => CGB.store.getJSON(k, null)).find(Array.isArray) || [];
     }
-    return [0, 1, 2, 3].map(i => tidy(names[i], i));
+    return [0, 1, 2, 3, 4, 5].map(i => tidy(names[i], i));
   }
   /* The saved names for teams 1 to n */
-  CGB.teamNames = n => load().slice(0, n || 4);
+  CGB.teamNames = n => load().slice(0, n || 6);
   CGB.teamFallback = fallback;
   /* Save names typed in any game: only the teams that game uses are replaced */
   CGB.saveTeamNames = list => {
@@ -3484,6 +3585,258 @@ CGB.bank = (() => {
     list.forEach((n, i) => { all[i] = tidy(n, i); });
     CGB.store.setJSON('teams', all);
     return all.slice(0, list.length);
+  };
+})();
+
+</script>
+<script>
+'use strict';
+/* =========================================================
+   CLASS MODE (shared by all four games)
+   A whole class of about 30 plays in 2 to 6 teams with mini whiteboards.
+   Every team answers every question:
+     1. the question shows, with an optional countdown;
+     2. Space (or the end of the countdown) brings up "3, 2, 1, show me!";
+     3. the teacher marks each team: keys 1 to 6 toggle a team, C marks
+        every team correct, W every team wrong, Enter confirms;
+     4. the game shows the answer and applies the result;
+     5. U undoes the marking until the next question starts.
+   This file holds the pieces the games share: the per-game mode setting,
+   the team panels, the question round (countdown, show me, marking, undo),
+   the class misconceptions summary and the host's reactions.
+   ========================================================= */
+(function () {
+  const CGB = window.CGB;
+  const esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const pick = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
+
+  CGB.COUNTDOWNS = [0, 20, 30, 45, 60];
+  CGB.SESSIONS = [
+    { id: 'starter', label: 'Starter', note: 'about 10 minutes' },
+    { id: 'plenary', label: 'Plenary', note: 'about 20 minutes' },
+    { id: 'full', label: 'Full lesson', note: 'about 40 minutes' }
+  ];
+  CGB.TEAM_RULE = 'A team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.';
+
+  /* Whole class or small group, remembered for each game (whole class by default) */
+  CGB.mode = {
+    get: game => CGB.store.get(game + '.mode') === 'small' ? 'small' : 'class',
+    set: (game, m) => CGB.store.set(game + '.mode', m === 'small' ? 'small' : 'class')
+  };
+
+  /* Marty's reaction to a marked question: "Five out of six teams! Brilliant!" */
+  const WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'];
+  CGB.classLine = (c, n) => {
+    if (n > 1 && c === n) return pick([`All ${WORDS[n].toLowerCase()} teams! Brilliant!`, 'Every single team! Fantastic!']);
+    if (c === 0) return pick(["No team this time. Let's look at the answer together.", 'A tricky one! Here is the answer.']);
+    const s = `${WORDS[c]} out of ${WORDS[n].toLowerCase()} teams`;
+    return c * 2 >= n ? `${s}! ${pick(['Brilliant!', 'Great work!', 'Lovely!'])}` : `${s}. ${pick(['One to go over.', 'Tricky!', 'Let us look at that one.'])}`;
+  };
+  CGB.classGesture = (c, n) => c * 2 >= n ? (c === n ? 'cheer' : 'clap') : 'groan';
+
+  /* ---------- Team panels: score and this question's ✓ or ✗, big enough for the back of the room ---------- */
+  CGB.createTeamBoard = function (el, opts) {
+    opts = opts || {};
+    el.classList.add('cm-board');
+    if (opts.className) el.classList.add(opts.className);
+    let teams = [], marks = [], marking = false, earned = [], turn = -1, badge = [], toggle = null;
+    el.addEventListener('click', e => {
+      const b = e.target.closest('.cm-team');
+      if (b && marking && toggle) toggle(+b.dataset.i);
+    });
+    function render() {
+      el.style.setProperty('--n', teams.length);
+      el.dataset.n = teams.length;
+      el.classList.toggle('marking', marking);
+      el.innerHTML = teams.map((t, i) => {
+        const T = CGB.TEAMS[i], m = marks[i];
+        const state = m === true ? ' ok' : m === false ? ' no' : '';
+        const label = `${t.name}: ${t.score}${m === true ? ', correct' : m === false ? ', wrong' : ''}`;
+        return `<button type="button" class="cm-team${state}${i === turn ? ' turn' : ''}${earned[i] ? ' earned' : ''}" data-i="${i}" style="--tc:${T.css};--tl:${T.light}" ${marking ? '' : 'tabindex="-1" aria-disabled="true"'} aria-label="${esc(label)}">
+          <span class="cm-key" aria-hidden="true">${i + 1}</span>
+          <span class="cm-nm">${T.mark} ${esc(t.name)}</span>
+          <span class="cm-sc">${esc(t.score)}</span>
+          <span class="cm-mark" aria-hidden="true">${m === true ? '✓' : m === false ? '✗' : marking ? '?' : ''}</span>
+          ${earned[i] ? `<span class="cm-earn">${esc(earned[i])}</span>` : ''}
+          ${badge[i] ? `<span class="cm-badge">${esc(badge[i])}</span>` : ''}
+        </button>`;
+      }).join('');
+    }
+    return {
+      el,
+      set(o) {
+        if (o.teams) teams = o.teams;
+        if ('marks' in o) marks = (o.marks || []).slice();
+        if ('marking' in o) marking = !!o.marking;
+        if ('earned' in o) earned = o.earned || [];
+        if ('turn' in o) turn = o.turn;
+        if ('badge' in o) badge = o.badge || [];
+        render();
+      },
+      onToggle(fn) { toggle = fn; }
+    };
+  };
+
+  /* ---------- One question for the whole class ----------
+     o.root      element the "show me" prompt sits in
+     o.board     a team board (marking happens on it)
+     o.countEl   where the countdown bar goes
+     o.btnEl     where the round's buttons go (the game adds its own after marking)
+     o.seconds() countdown length (0 = off)
+     o.teams()   number of teams
+     o.onMark()  marking has started (optional)
+     o.onConfirm(results)  results[i] is true for each correct team
+     o.onUndo()  put the game back as it was before onConfirm
+     o.doneHtml() the game's own buttons after marking (optional)
+     o.fast      a shorter "show me" (Outpace's Final Sprint)
+     o.marker    optional custom marking (Hex Hunt's percentages): { start(), key(k), values(), hint }
+                 used instead of the team board's ✓ and ✗ */
+  CGB.createClassRound = function (o) {
+    let phase = 'idle', marks = [], timer = null, left = 0, steps = [], times = {}, undoable = false;
+    const prompt = document.createElement('div');
+    prompt.className = 'cm-showme';
+    prompt.setAttribute('aria-hidden', 'true');
+    o.root.appendChild(prompt);
+    const live = document.createElement('div');
+    live.className = 'sr-only';
+    live.setAttribute('aria-live', 'polite');
+    o.root.appendChild(live);
+    function clear() { clearInterval(timer); timer = null; steps.forEach(clearTimeout); steps = []; prompt.classList.remove('on', 'go'); }
+    function paintCount() {
+      if (!o.countEl) return;
+      const s = o.seconds();
+      const on = phase === 'think' && s > 0;
+      o.countEl.hidden = !on;
+      if (!on) return;
+      o.countEl.innerHTML = `<div class="cm-cbar"><i style="width:${(left / s * 100).toFixed(1)}%"></i></div><b>${Math.ceil(left)} s</b>`;
+      o.countEl.classList.toggle('low', left <= 5);
+    }
+    function buttons() {
+      if (!o.btnEl) return;
+      const k = (key, label, cls, act) => `<button class="btn ${cls}" type="button" data-cm="${act}">${label} <span class="kbd">${key}</span></button>`;
+      if (phase === 'think') o.btnEl.innerHTML = `<div class="cm-hint">Everyone writes an answer on their whiteboard.</div>${k('Space', '3, 2, 1, show me!', 'go', 'show')}`;
+      else if (phase === 'show') o.btnEl.innerHTML = '<div class="cm-hint">Boards up!</div>';
+      else if (phase === 'mark' && o.marker) o.btnEl.innerHTML = `<div class="cm-hint">${o.marker.hint}</div><div class="cm-btns">${k('Enter', 'Confirm', 'go', 'confirm')}</div>`;
+      else if (phase === 'mark') o.btnEl.innerHTML = `<div class="cm-hint">Mark each team: tap its panel or press its number, 1 to ${marks.length}.</div>
+        <div class="cm-btns">${k('C', '✓ All correct', 'plain', 'all')}${k('W', '✗ All wrong', 'plain', 'none')}${k('Enter', 'Confirm', 'go', 'confirm')}</div>`;
+      else if (phase === 'done') o.btnEl.innerHTML = `<div class="cm-btns">${o.doneHtml ? o.doneHtml() : ''}${undoable ? k('U', 'Undo marking', 'plain', 'undo') : ''}</div>`;
+      else o.btnEl.innerHTML = '';
+    }
+    if (o.btnEl) o.btnEl.addEventListener('click', e => {
+      const b = e.target.closest('button[data-cm]'); if (!b) return;
+      const a = b.dataset.cm;
+      if (a === 'show') showMe(); else if (a === 'all') setAll(true); else if (a === 'none') setAll(false);
+      else if (a === 'confirm') confirm(); else if (a === 'undo') undo();
+    });
+    function think() {
+      clear();
+      phase = 'think'; undoable = false;
+      marks = new Array(o.teams()).fill(null);
+      times = { think: performance.now() };
+      if (o.board) o.board.set({ marks: [], marking: false, earned: [] });
+      left = o.seconds();
+      paintCount(); buttons();
+      if (left > 0) timer = setInterval(() => {
+        left = Math.max(0, left - 0.1);
+        paintCount();
+        if (left <= 0) { clearInterval(timer); showMe(); }
+      }, 100);
+    }
+    function showMe() {
+      if (phase !== 'think') return;
+      clear();
+      phase = 'show'; times.show = performance.now();
+      paintCount(); buttons();
+      const words = CGB.settings.reduced() || o.fast ? ['Show me!'] : ['3', '2', '1', 'Show me!'];
+      const gap = 600;
+      words.forEach((t, k) => steps.push(setTimeout(() => {
+        prompt.textContent = t;
+        prompt.classList.add('on');
+        prompt.classList.toggle('go', k === words.length - 1);
+        if (k === words.length - 1) live.textContent = 'Show me! Boards up.';
+        if (CGB.sfx && CGB.sfx.tick) CGB.sfx.tick(k === words.length - 1);
+      }, k * gap)));
+      steps.push(setTimeout(startMarking, words.length * gap + 300));
+    }
+    function startMarking() {
+      clear();
+      phase = 'mark'; times.mark = performance.now();
+      if (o.marker) o.marker.start(); else o.board.set({ marks, marking: true });
+      buttons();
+      if (o.onMark) o.onMark();
+    }
+    function toggle(i) {
+      if (phase !== 'mark' || i < 0 || i >= marks.length) return;
+      marks[i] = marks[i] !== true;
+      o.board.set({ marks });
+    }
+    function setAll(v) { if (phase !== 'mark') return; marks = marks.map(() => v); o.board.set({ marks }); }
+    function confirm() {
+      if (phase !== 'mark') return;
+      phase = 'done'; times.confirm = performance.now(); undoable = true;
+      if (o.marker) { o.onConfirm(o.marker.values()); buttons(); return; }
+      marks = marks.map(m => m === true);
+      o.board.set({ marks, marking: false });
+      const c = marks.filter(Boolean).length;
+      live.textContent = `${c} of ${marks.length} teams correct.`;
+      o.onConfirm(marks.slice());
+      buttons();
+    }
+    function undo() {
+      if (phase !== 'done' || !undoable) return;
+      undoable = false;
+      o.onUndo();
+      phase = 'mark';
+      if (o.marker) o.marker.start(true); else o.board.set({ marks, marking: true, earned: [] });
+      buttons();
+    }
+    function handleKey(k) {
+      if (phase === 'think' && (k === ' ' || k === 'enter')) { showMe(); return true; }
+      if (phase === 'show' && (k === ' ' || k === 'enter')) { startMarking(); return true; }
+      if (phase === 'mark' && o.marker) {
+        if (k === 'enter') { confirm(); return true; }
+        return o.marker.key(k) || k === ' ';
+      }
+      if (phase === 'mark') {
+        if (/^[1-6]$/.test(k)) { toggle(+k - 1); return true; }
+        if (k === 'c') { setAll(true); return true; }
+        if (k === 'w') { setAll(false); return true; }
+        if (k === 'enter') { confirm(); return true; }
+        return k === ' ';
+      }
+      if (phase === 'done' && k === 'u' && undoable) { undo(); return true; }
+      return false;
+    }
+    if (o.board) o.board.onToggle(toggle);
+    return {
+      think, showMe, confirm, undo, toggle, setAll, handleKey,
+      lock() { undoable = false; if (phase === 'done') buttons(); },
+      refresh: buttons,
+      stop() { clear(); phase = 'idle'; undoable = false; paintCount(); buttons(); },
+      get phase() { return phase; },
+      get undoable() { return phase === 'done' && undoable; },
+      marks: () => marks.slice(),
+      times: () => Object.assign({}, times)
+    };
+  };
+
+  /* ---------- What the class found hardest: no individual student data ---------- */
+  CGB.createMisconceptions = function () {
+    let list = [];
+    return {
+      reset() { list = []; },
+      // share: the fraction of the class (or of the teams) that got it wrong
+      add(q, share, detail) { if (q) list.push({ q, share, detail, n: list.length }); },
+      remove(q) { const i = list.map(x => x.q).lastIndexOf(q); if (i >= 0) list.splice(i, 1); },
+      top(limit) { return list.filter(x => x.share > 0).sort((a, b) => b.share - a.share || a.n - b.n).slice(0, limit || 5); },
+      html(limit) {
+        const top = this.top(limit);
+        const body = top.length
+          ? top.map(x => `<div class="cm-mq"><div class="q">${esc(x.q.q)}</div><div class="a">${esc(x.q.a)}</div><div class="t">${esc(x.q.subject)}: ${esc(x.q.topic)} · ${esc(x.detail)}</div></div>`).join('')
+          : '<div class="cm-none">No question caught out the class. Impressive!</div>';
+        return `<section class="cm-miscon" aria-label="Class misconceptions"><h3>Reteach these</h3><p class="cm-sub">The questions most teams got wrong, with the answers and topics.</p>${body}</section>`;
+      }
+    };
   };
 })();
 
@@ -3524,7 +3877,9 @@ CGB.sfx = (() => {
     tone, unlock,
     click() { tone(660, 0.05, 'triangle', 0.05); },
     correct() { [523, 659, 784].forEach((f, i) => tone(f, 0.16, 'triangle', 0.09, i * 0.07)); },
-    wrong() { tone(220, 0.28, 'square', 0.05, 0, 0.7); }
+    wrong() { tone(220, 0.28, 'square', 0.05, 0, 0.7); },
+    // "3, 2, 1, show me!" countdown beeps; the last one is higher and longer
+    tick(go) { if (go) [880, 1175].forEach((f, i) => tone(f, 0.2, 'triangle', 0.08, i * 0.06)); else tone(660, 0.08, 'triangle', 0.06); }
   };
 })();
 
@@ -7078,9 +7433,13 @@ CGB.registerGame('outpace', {
 'use strict';
 /* =========================================================
    CATEGORY CLASH
-   A board of categories (topics) and points values for 2 to 4 teams.
-   Teams take turns to pick a tile; harder questions sit lower on the
-   board and are worth more. Wrong answers can be stolen.
+   A board of categories (topics) and points values.
+   Small group: 2 to 4 teams take turns to pick a tile and answer it;
+   wrong answers can be stolen.
+   Whole class: 2 to 6 teams. The choosing team picks a tile, every team
+   answers it on whiteboards, the choosing team wins full points if
+   correct and every other correct team half. Harder questions sit lower
+   on the board and are worth more.
    ========================================================= */
 (function () {
 let game = null;
@@ -7102,30 +7461,61 @@ const SFX = {
 };
 
 const S = {
-  phase: 'home', nTeams: CGB.store.getJSON('cc.nTeams', 2), nCats: CGB.store.getJSON('cc.nCats', 5), timer: CGB.store.getJSON('cc.timer', 0),
+  mode: CGB.mode.get('category-clash'), session: CGB.store.get('cc.session') || 'plenary', rows: 5,
+  order: [], pos: 0, catchUp: -1,
+  phase: 'home', nTeams: CGB.store.getJSON('cc.nTeams', CGB.mode.get('category-clash') === 'class' ? 4 : 2), nCats: CGB.store.getJSON('cc.nCats', 5), timer: CGB.store.getJSON('cc.timer', 0),
   teams: [], cats: [], turn: 0, cursor: { c: 0, r: 0 },
   open: null, step: null, answerShown: false, timeLeft: 0, timerHandle: null, picked: null
 };
-if (![2, 3, 4].includes(S.nTeams)) S.nTeams = 2;
+if (![2, 3, 4, 5, 6].includes(S.nTeams)) S.nTeams = 2;
 if (![4, 5, 6].includes(S.nCats)) S.nCats = 5;
-if (![0, 20, 30, 60].includes(S.timer)) S.timer = 0;
+if (!CGB.COUNTDOWNS.includes(S.timer)) S.timer = 0;
+if (!CGB.SESSIONS.some(x => x.id === S.session)) S.session = 'plenary';
+/* Whole-class session lengths: categories × rows (one question per tile, every team answers) */
+const SESSION = { starter: { cats: 4, rows: 3 }, plenary: { cats: 5, rows: 4 }, full: { cats: 6, rows: 5 } };
+const classMode = () => S.mode === 'class';
+const catsWanted = () => classMode() ? SESSION[S.session].cats : S.nCats;
+const maxTeams = () => classMode() ? 6 : 4;
 
 /* ---------- Setup ---------- */
 $('logo').innerHTML = CGB.brand.ccLogo();
-const defaultNames = [0, 1, 2, 3].map(CGB.teamFallback);
+const defaultNames = [0, 1, 2, 3, 4, 5].map(CGB.teamFallback);
+const teamCount = () => Math.min(S.nTeams, maxTeams());
 function renderNames() {
-  const prev = [0, 1, 2, 3].map(i => { const el = $('name' + i); return el ? el.value : null; });
-  $('names').innerHTML = [0, 1, 2, 3].slice(0, S.nTeams).map(i => `<label style="--tc:${TEAM[i].css}"><span>${TEAM[i].mark} Team ${i + 1}</span><input id="cc-name${i}" type="text" maxlength="18" autocomplete="off" value="${esc(prev[i] || CGB.teamNames(4)[i])}"></label>`).join('');
+  const prev = [0, 1, 2, 3, 4, 5].map(i => { const el = $('name' + i); return el ? el.value : null; });
+  $('names').innerHTML = [0, 1, 2, 3, 4, 5].slice(0, teamCount()).map(i => `<label style="--tc:${TEAM[i].css}"><span>${TEAM[i].mark} Team ${i + 1}</span><input id="cc-name${i}" type="text" maxlength="18" autocomplete="off" value="${esc(prev[i] || CGB.teamNames(6)[i])}"></label>`).join('');
+  $('names').classList.toggle('many', teamCount() > 4);
 }
-function wireSeg(id, key, store) {
+const segPainters = [];
+function wireSeg(id, key, store, text) {
   const seg = $(id);
-  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === S[key])));
-  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S[key] = +b.dataset.v; CGB.store.setJSON(store, S[key]); paint(); if (key === 'nTeams') renderNames(); if (key === 'nCats') autoPickTopics(); CGB.fitSetups(); });
+  const val = v => text ? v : +v;
+  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(val(b.dataset.v) === (key === 'nTeams' ? teamCount() : S[key]))));
+  seg.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    S[key] = val(b.dataset.v);
+    if (text) CGB.store.set(store, S[key]); else CGB.store.setJSON(store, S[key]);
+    if (key === 'mode') CGB.mode.set('category-clash', S.mode);
+    applyMode();
+    segPainters.forEach(f => f());
+    if (key === 'nTeams' || key === 'mode') renderNames();
+    if (key === 'nCats' || key === 'session' || key === 'mode') autoPickTopics();
+    CGB.fitSetups();
+  });
+  segPainters.push(paint);
   paint();
 }
+function applyMode() {
+  $('setupCard').dataset.mode = S.mode;
+  const sess = SESSION[S.session];
+  $('sessionHint').textContent = `${CGB.SESSIONS.find(x => x.id === S.session).note}: ${sess.cats} categories × ${sess.rows} questions, every team answers each one.`;
+}
+wireSeg('segMode', 'mode', 'category-clash.mode', true);
+wireSeg('segSession', 'session', 'cc.session', true);
 wireSeg('segTeams', 'nTeams', 'cc.nTeams');
 wireSeg('segCats', 'nCats', 'cc.nCats');
 wireSeg('segTimer', 'timer', 'cc.timer');
+applyMode();
 renderNames();
 ['optSteal', 'optPenalty', 'optStar', 'focusWeak'].forEach(id => {
   const saved = CGB.store.get('cc.' + id);
@@ -7152,14 +7542,15 @@ function autoPickTopics(shuffle) {
     return out;
   };
   const pool = spread(shuffle ? mix(full) : full).concat(shuffle ? mix(rest) : rest);
-  chosen = pool.slice(0, S.nCats).map(t => t.topic);
+  chosen = pool.slice(0, catsWanted()).map(t => t.topic);
   renderTopics();
 }
 function renderTopics() {
   const all = topicsOf(bank.active());
   $('topics').innerHTML = all.map(t => `<button type="button" class="cc-topic" data-topic="${esc(t.topic)}" aria-pressed="${chosen.includes(t.topic)}">${esc(t.topic)} <small>${t.qs.length}</small></button>`).join('');
   const few = chosen.filter(c => (all.find(t => t.topic === c) || { qs: [] }).qs.length < 5).length;
-  $('topicHint').textContent = `${chosen.length} chosen (up to 6). ` + (all.length < 2 ? 'This set has only one topic. Add Topic lines to make more categories. ' : '') + (few ? 'Topics with fewer than 5 questions leave gaps on the board.' : 'Each category gets 5 questions from easiest (100) to hardest (500).');
+  const rows = classMode() ? SESSION[S.session].rows : 5;
+  $('topicHint').textContent = `${chosen.length} chosen (up to 6). ` + (all.length < 2 ? 'This set has only one topic. Add Topic lines to make more categories. ' : '') + (few ? `Topics with fewer than ${rows} questions leave gaps on the board.` : `Each category gets ${rows} questions from easiest (100) to hardest (${rows * 100}).`);
 }
 $('topics').addEventListener('click', e => {
   const b = e.target.closest('[data-topic]'); if (!b) return;
@@ -7182,7 +7573,7 @@ autoPickTopics();
 /* ---------- Building the board ---------- */
 function buildBoard() {
   const all = topicsOf(bank.active());
-  const cats = (chosen.length ? chosen : all.slice(0, S.nCats).map(t => t.topic)).map(name => all.find(t => t.topic === name)).filter(Boolean);
+  const cats = (chosen.length ? chosen : all.slice(0, catsWanted()).map(t => t.topic)).map(name => all.find(t => t.topic === name)).filter(Boolean);
   const weak = $('focusWeak').checked ? new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.q))) : null;
   S.cats = cats.map(t => {
     // Row k (100 to 500 points) takes a question tagged Difficulty k+1. Untagged questions get a
@@ -7191,12 +7582,15 @@ function buildBoard() {
     // before are preferred when that option is on.
     const untagged = t.qs.filter(q => !q.level).sort((a, b) => bank.estimateLevel(a) - bank.estimateLevel(b));
     const levelOf = q => q.level || 1 + Math.floor(untagged.indexOf(q) * 5 / untagged.length);
+    // with fewer rows (shorter class sessions) the rows still run from easiest to hardest
+    const values = VALUES.slice(0, S.rows);
+    const want = k => S.rows === 5 ? k + 1 : 1 + Math.round(k * 4 / (S.rows - 1));
     const left = t.qs.slice();
     const rnd = a => a[Math.floor(CGB.random() * a.length)];
     const take = (k, exact) => {
       if (!left.length) return null;
-      const gap = exact ? 0 : Math.min(...left.map(q => Math.abs(levelOf(q) - (k + 1))));
-      const pool = left.filter(q => Math.abs(levelOf(q) - (k + 1)) === gap);
+      const gap = exact ? 0 : Math.min(...left.map(q => Math.abs(levelOf(q) - want(k))));
+      const pool = left.filter(q => Math.abs(levelOf(q) - want(k)) === gap);
       if (!pool.length) return null;
       const missed = weak ? pool.filter(q => weak.has(q.q)) : [];
       const q = rnd(missed.length ? missed : pool);
@@ -7204,9 +7598,9 @@ function buildBoard() {
       return q;
     };
     // exact levels first, so a short row never uses up another row's question
-    const picks = VALUES.map((v, k) => take(k, true));
-    VALUES.forEach((v, k) => { if (!picks[k]) picks[k] = take(k, false); });
-    return { topic: t.topic, subject: t.subject, tiles: picks.map((q, k) => ({ value: VALUES[k], q, used: !q, wonBy: -1, star: false, empty: !q })) };
+    const picks = values.map((v, k) => take(k, true));
+    values.forEach((v, k) => { if (!picks[k]) picks[k] = take(k, false); });
+    return { topic: t.topic, subject: t.subject, tiles: picks.map((q, k) => ({ value: values[k], q, used: !q, wonBy: -1, star: false, empty: !q, right: 0 })) };
   });
   if ($('optStar').checked) {
     const live = S.cats.flatMap(c => c.tiles.filter(t => !t.empty && t.value >= 200));
@@ -7220,11 +7614,16 @@ function renderBoard() {
   const b = $('board');
   b.style.gridTemplateColumns = `repeat(${S.cats.length}, minmax(0, 1fr))`;
   let html = S.cats.map(c => `<div class="cc-cat" role="columnheader"><b>${esc(c.topic)}</b><small>${esc(c.subject)}</small></div>`).join('');
-  for (let r = 0; r < 5; r++) {
+  b.style.gridTemplateRows = `minmax(56px, auto) repeat(${S.rows}, minmax(0, 1fr))`;
+  for (let r = 0; r < S.rows; r++) {
     html += S.cats.map((c, ci) => {
       const t = c.tiles[r];
       const cur = S.cursor.c === ci && S.cursor.r === r ? ' cursor' : '';
       if (t.empty) return `<button type="button" class="cc-tile used empty${cur}" disabled aria-label="${esc(c.topic)} ${t.value}: no question">—</button>`;
+      if (t.used && classMode()) {
+        const lead = t.wonBy >= 0 ? `<span class="mk">${TEAM[t.wonBy].mark}</span>` : `<span class="mk">${t.right ? '✓' : '✗'}</span>`;
+        return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${t.wonBy >= 0 ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${t.right} of ${S.teams.length} teams correct">${lead}${t.right} of ${S.teams.length} correct</button>`;
+      }
       if (t.used) {
         const who = t.wonBy >= 0 ? S.teams[t.wonBy] : null;
         return `<button type="button" class="cc-tile used${cur}" disabled style="--tc:${who ? TEAM[t.wonBy].light : 'inherit'}" aria-label="${esc(c.topic)} ${t.value}: ${who ? 'won by ' + esc(who.name) : 'nobody'}"><span class="mk">${who ? TEAM[t.wonBy].mark : '✗'}</span>${who ? esc(who.name) : 'Nobody'}</button>`;
@@ -7237,9 +7636,9 @@ function renderBoard() {
 }
 function renderTeams() {
   $('teams').style.setProperty('--n', S.teams.length);
-  $('teams').innerHTML = S.teams.map((t, i) => `<div class="cc-team${i === S.turn && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)}</span><span class="sc">${t.score}</span></div>`).join('');
+  $('teams').innerHTML = S.teams.map((t, i) => `<div class="cc-team${i === S.turn && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}">${i === S.turn && catchUpTurn() ? '<span class="cc-catch">Catch-up pick</span>' : ''}<span class="nm">${TEAM[i].mark} ${esc(t.name)}</span><span class="sc">${t.score}</span></div>`).join('');
   const t = S.teams[S.turn];
-  $('turn').innerHTML = t ? `<b style="--turn:${TEAM[S.turn].light}">${TEAM[S.turn].mark} ${esc(t.name)}</b>, pick a category` : '';
+  $('turn').innerHTML = t ? `<b style="--turn:${TEAM[S.turn].light}">${TEAM[S.turn].mark} ${esc(t.name)}</b>, pick a category` + (classMode() ? `<small>${catchUpTurn() ? 'Catch-up pick! ' : ''}Captain: swap to the next person</small>` : '') : '';
 }
 $('board').addEventListener('click', e => {
   const b = e.target.closest('.cc-tile[data-c]'); if (!b) return;
@@ -7249,7 +7648,7 @@ $('board').addEventListener('click', e => {
 function moveCursor(dc, dr) {
   const nc = S.cats.length;
   S.cursor.c = (S.cursor.c + dc + nc) % nc;
-  S.cursor.r = Math.max(0, Math.min(4, S.cursor.r + dr));
+  S.cursor.r = Math.max(0, Math.min(S.rows - 1, S.cursor.r + dr));
   renderBoard();
   const el = $('board').querySelector('.cursor'); if (el && !el.disabled) el.focus({ preventScroll: true });
 }
@@ -7263,13 +7662,17 @@ function openTile(c, r) {
   $('qCat').textContent = cat.subject + ' · ' + cat.topic;
   $('qVal').textContent = (t.star ? t.value * 2 : t.value) + ' points';
   $('qStar').hidden = !t.star;
-  $('qFor').innerHTML = `For <b style="color:${'inherit'}">${TEAM[S.turn].mark} ${esc(S.teams[S.turn].name)}</b>`;
+  $('qFor').innerHTML = classMode()
+    ? `Chosen by <b>${TEAM[S.turn].mark} ${esc(S.teams[S.turn].name)}</b> · every team answers: full points for ${esc(S.teams[S.turn].name)}, half for the others`
+    : `For <b style="color:${'inherit'}">${TEAM[S.turn].mark} ${esc(S.teams[S.turn].name)}</b>`;
   $('qText').textContent = t.q.q;
   $('qAnswer').textContent = t.q.a;
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = '';
   $('q').hidden = false;
   if (t.star) { SFX.star(); hostC.say('A star tile! This one is worth double.', 'cheer', 1600); } else SFX.open();
+  $('qboard').hidden = !classMode();
+  if (classMode()) { paintQBoard(); round.think(); $('qcard').focus({ preventScroll: true }); return; }
   startTimer();
   renderQButtons();
   $('qcard').focus({ preventScroll: true });   // keys now go to the question, not the board behind it
@@ -7278,6 +7681,71 @@ function openTile(c, r) {
 const hostC = CGB.createHostCorner($('host'));
 const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
 const pickLine = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
+
+/* ---------- Whole class: every team answers, the teacher marks each team ---------- */
+const misc = CGB.createMisconceptions();
+const qBoard = CGB.createTeamBoard($('qboard'));
+let undoSnap = null;
+const round = CGB.createClassRound({
+  root: document.getElementById('game-category-clash'),
+  board: qBoard, countEl: $('count'), btnEl: $('qBtns'),
+  seconds: () => S.timer, teams: () => S.teams.length,
+  doneHtml: () => `<button class="btn go" type="button" data-q="next">${boardDone() ? 'See the results' : 'Back to the board'} <span class="kbd">Enter</span></button>`,
+  onConfirm: classResult, onUndo: undoClassResult
+});
+function paintQBoard(earned) { qBoard.set({ teams: S.teams.map(t => ({ name: t.name, score: t.score })), turn: S.picked, earned: earned || [] }); }
+function classResult(res) {
+  const t = tileOpen(), base = t.star ? t.value * 2 : t.value;
+  undoSnap = { scores: S.teams.map(x => x.score), correct: S.teams.map(x => x.correct), wrong: S.teams.map(x => x.wrong.length), wonBy: t.wonBy, right: t.right };
+  const earned = res.map((ok, i) => ok ? (i === S.picked ? base : Math.round(base / 2)) : 0);
+  res.forEach((ok, i) => {
+    const team = S.teams[i];
+    if (ok) { team.score += earned[i]; team.correct++; }
+    else { team.wrong.push(t.q); bank.logWrong(team.name, t.q, GAME_NAME); }
+  });
+  const c = res.filter(Boolean).length, n = res.length;
+  t.right = c; t.wonBy = res[S.picked] ? S.picked : -1;
+  misc.add(t.q, (n - c) / n, `${n - c} of ${n} teams wrong`);
+  showAnswer();
+  if (c) SFX.correct(); else SFX.wrong();
+  $('qMsg').textContent = `${c} of ${n} teams correct.` + (res[S.picked] ? ` ${S.teams[S.picked].name} win ${base} points; other correct teams win ${Math.round(base / 2)}.` : c ? ` Each correct team wins ${Math.round(base / 2)} points.` : '');
+  S.step = 'done';
+  paintQBoard(earned.map(e => e ? '+' + e : ''));
+  qBoard.set({ marks: res });
+  hostC.say(CGB.classLine(c, n), CGB.classGesture(c, n), 1600);
+  renderTeams();
+}
+function undoClassResult() {
+  const t = tileOpen(), u = undoSnap; if (!u) return;
+  S.teams.forEach((team, i) => {
+    team.score = u.scores[i]; team.correct = u.correct[i];
+    while (team.wrong.length > u.wrong[i]) { team.wrong.pop(); bank.unlogWrong(team.name, t.q); }
+  });
+  t.wonBy = u.wonBy; t.right = u.right;
+  misc.remove(t.q);
+  S.answerShown = false; $('qAnswer').classList.remove('shown');
+  $('qMsg').textContent = 'Marking undone. Mark each team again.';
+  S.step = 'ask'; undoSnap = null;
+  paintQBoard();
+  renderTeams();
+}
+/* Each team chooses once per round. A team far behind (by at least twice the top tile)
+   chooses first in the next round: its catch-up pick. */
+function startClassRound() {
+  const n = S.teams.length, top = S.rows * 100;
+  const scores = S.teams.map(t => t.score), lead = Math.max(...scores), last = scores.indexOf(Math.min(...scores));
+  S.catchUp = S.order.length && lead - scores[last] >= top * 2 ? last : -1;
+  const base = Array.from({ length: n }, (x, i) => i);
+  S.order = S.catchUp >= 0 ? [S.catchUp].concat(base.filter(i => i !== S.catchUp)) : base;
+  S.pos = 0;
+}
+function nextClassTurn() {
+  S.pos++;
+  if (S.pos >= S.order.length) startClassRound();
+  S.turn = S.order[S.pos];
+  if (catchUpTurn()) hostC.say(`${S.teams[S.turn].name}, you get a catch-up pick! Captain: swap to the next person.`, 'point', 2000);
+}
+const catchUpTurn = () => classMode() && S.pos === 0 && S.catchUp >= 0 && S.turn === S.catchUp;
 function tileOpen() { return S.cats[S.open.c].tiles[S.open.r]; }
 function points() { const t = tileOpen(); return t.star ? t.value * 2 : t.value; }
 function renderQButtons() {
@@ -7353,7 +7821,8 @@ function closeQuestion() {
   tileOpen().used = true;
   $('q').hidden = true;
   S.phase = 'board'; S.open = null;
-  S.turn = (S.turn + 1) % S.teams.length;
+  if (classMode()) { round.stop(); nextClassTurn(); }
+  else S.turn = (S.turn + 1) % S.teams.length;
   if (S.cats.every(c => c.tiles.every(t => t.used))) { showSummary(); return; }
   // move the cursor to the next free tile
   const free = []; S.cats.forEach((c, ci) => c.tiles.forEach((t, r) => { if (!t.used) free.push({ c: ci, r }); }));
@@ -7384,10 +7853,13 @@ function paintTimer() {
 
 /* ---------- Game flow ---------- */
 function startGame() {
-  const names = [0, 1, 2, 3].slice(0, S.nTeams).map(i => (($('name' + i) || {}).value || '').trim().slice(0, 18) || defaultNames[i]);
+  const names = [0, 1, 2, 3, 4, 5].slice(0, teamCount()).map(i => (($('name' + i) || {}).value || '').trim().slice(0, 18) || defaultNames[i]);
   CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, score: 0, correct: 0, wrong: [] }));
   S.turn = 0;
+  S.rows = classMode() ? SESSION[S.session].rows : 5;
+  S.order = []; S.catchUp = -1; misc.reset(); round.stop();
+  if (classMode()) { startClassRound(); S.turn = S.order[0]; }
   buildBoard();
   if (!S.cats.length || S.cats.every(c => c.tiles.every(t => t.empty))) { $('topicHint').textContent = 'Choose at least one category with questions.'; return; }
   S.phase = 'board';
@@ -7407,7 +7879,7 @@ function showSummary() {
   const order = S.teams.map((t, i) => ({ t, i })).sort((a, b) => b.t.score - a.t.score);
   const top = order[0].t.score, winners = order.filter(o => o.t.score === top);
   SFX.win();
-  const pos = ['1st', '2nd', '3rd', '4th'];
+  const pos = ['1st', '2nd', '3rd', '4th', '5th', '6th'];
   let place = 0;
   const podium = order.map((o, k) => {
     if (k && o.t.score < order[k - 1].t.score) place = k;
@@ -7419,7 +7891,7 @@ function showSummary() {
     return `<div class="cc-sum-p" style="--tc:${TEAM[i].css}"><h3>${TEAM[i].mark} ${esc(t.name)}</h3><div class="cc-sub">Missed this game</div>${missed}<div class="cc-sub">Weakest topics, all games</div>${hist}<button class="linkish" type="button" data-clear="${i}">Clear ${esc(t.name)}'s history</button></div>`;
   }).join('');
   $('sumCard').innerHTML = `<h2>${winners.length > 1 ? "It's a draw!" : esc(winners[0].t.name) + ' win!'}</h2>
-    <div class="cc-podium">${podium}</div><div class="cc-sum-grid">${cols}</div>
+    <div class="cc-podium">${podium}</div>${classMode() ? misc.html(5) : `<div class="cc-sum-grid">${cols}</div>`}
     <div class="cc-sum-btns"><button class="btn go" type="button" id="cc-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="cc-change">Change teams or categories</button><button class="btn plain" type="button" id="cc-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('sumCard').prepend(sumHost.el);
   sumHost.say(winners.length > 1 ? "A draw! What a close game. Well done, everyone." : `${winners[0].t.name} win with ${top} points. Great game, everyone!`, 'cheer', 2200);
@@ -7434,7 +7906,7 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  stopTimer();
+  stopTimer(); round.stop();
   S.phase = 'home'; S.open = null;
   $('q').hidden = true; $('play').hidden = true; $('summary').classList.remove('active');
   $('home').classList.add('active');
@@ -7465,6 +7937,11 @@ document.addEventListener('keydown', e => {
     if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); openTile(S.cursor.c, S.cursor.r); }
     return;
   }
+  if (S.phase === 'question' && classMode()) {
+    if (round.handleKey(k)) { e.preventDefault(); return; }
+    if ((k === 'enter' || k === ' ') && S.step === 'done' && !isButton) { e.preventDefault(); closeQuestion(); }
+    return;
+  }
   if (S.phase === 'question') {
     if (k === 'a') toggleAnswer();
     else if (k === 'c' && S.step === 'ask') markCorrect();
@@ -7479,7 +7956,7 @@ return {
   enter() { active = true; if (S.phase === 'home') { $('names').innerHTML = ''; renderNames(); renderTopics(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => S.phase === 'board' || S.phase === 'question',
-  _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
+  _state: () => ({ mode: S.mode, round: round.phase, undoable: round.undoable, times: round.times(), turn: S.turn, catchUp: catchUpTurn(), misconceptions: misc.top(5).map(x => x.q.q), rows: S.rows, phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score, correct: t.correct })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
   _board: () => S.cats
 };
 }
@@ -7504,6 +7981,9 @@ CGB.registerGame('category-clash', {
    Team 2 links top to bottom. Each hexagon is a question whose
    answer starts with the letter shown. Winning a hexagon lets
    that team pick the next one.
+   Whole class: the two teams are halves of the class. Everyone answers
+   on whiteboards; the teacher enters the share of each half that got it
+   right, and the higher share wins the hexagon (the choosing half on a tie).
    ========================================================= */
 (function () {
 let game = null;
@@ -7523,12 +8003,18 @@ const SFX = {
 };
 
 const S = {
+  mode: CGB.mode.get('hex-hunt'), session: CGB.store.get('hh.session') || 'starter', timer: CGB.store.getJSON('hh.timer', 30),
   phase: 'home', size: CGB.store.getJSON('hh.size', 5), best: CGB.store.getJSON('hh.best', 1),
   teams: [], cells: [], picker: 0, firstPicker: 0, cursor: { c: 0, r: 0 }, open: null,
   step: null, answering: -1, tried: [false, false], answerShown: false, round: 1, focusWeak: false, path: null
 };
 if (![5, 6].includes(S.size)) S.size = 5;
 if (![1, 3].includes(S.best)) S.best = 1;
+if (!CGB.COUNTDOWNS.includes(S.timer)) S.timer = 30;
+if (!CGB.SESSIONS.some(x => x.id === S.session)) S.session = 'starter';
+/* Whole-class session lengths: board size and match length */
+const SESSION = { starter: { size: 5, best: 1 }, plenary: { size: 6, best: 1 }, full: { size: 5, best: 3 } };
+const classMode = () => S.mode === 'class';
 
 /* ---------- Letter clues ---------- */
 /* The clue is the first letter of the answer, ignoring a leading "a", "an" or "the".
@@ -7620,7 +8106,7 @@ function renderTeams() {
   const owned = t => S.cells.filter(c => c.owner === t).length;
   $('teams').innerHTML = S.teams.map((t, i) => `<div class="hh-team${i === S.picker && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)} <small>${TEAM[i].goal} · ${owned(i)} hexagons</small></span><span class="sc">${S.best > 1 ? t.wins + (t.wins === 1 ? ' round' : ' rounds') : ''}</span></div>`).join('');
   const p = S.teams[S.picker];
-  $('turn').innerHTML = p ? `<b style="--tc:${TEAM[S.picker].light}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon` : '';
+  $('turn').innerHTML = p ? `<b style="--tc:${TEAM[S.picker].light}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon` + (classMode() ? '<small>Captain: swap to the next person</small>' : '') : '';
   $('round').textContent = S.best > 1 ? `Round ${S.round} · first to ${Math.ceil(S.best / 2)} rounds` : '';
 }
 $('board').addEventListener('click', e => {
@@ -7666,6 +8152,8 @@ function showQuestion() {
   $('qAnswer').classList.toggle('shown', S.answerShown);
   $('qMsg').textContent = S.step === 'buzz' ? 'Hands up or buzz in! Which team answers first?' : '';
   $('q').hidden = false;
+  $('share').hidden = true;
+  if (classMode()) { $('qMsg').textContent = 'Everyone answers on their whiteboard.'; round.think(); $('qcard').focus({ preventScroll: true }); return; }
   renderQButtons();
   $('qcard').focus({ preventScroll: true });
 }
@@ -7695,7 +8183,79 @@ $('qBtns').addEventListener('click', e => {
   else if (a === 'next') backToBoard();
   else if (a === 'again') newQuestionHere();
   else if (a === 'leave') backToBoard();
+  else if (a === 'win' && S.step === 'winning') roundWon(S.picker);
 });
+/* ---------- Whole class: what share of each half got it right ---------- */
+const misc = CGB.createMisconceptions();
+let shares = [0, 0], focusHalf = 0, undoSnap = null;
+function paintShares() {
+  $('share').hidden = false;
+  $('share').innerHTML = S.teams.map((t, h) => `<div class="hh-srow${h === focusHalf ? ' focus' : ''}" style="--tc:${TEAM[h].css}">
+    <span class="hh-sname"><span class="kbd">${h + 1}</span> ${TEAM[h].mark} ${esc(t.name)}</span>
+    <span class="hh-sbtns" role="radiogroup" aria-label="Share of ${esc(t.name)} correct">${[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(v => `<button type="button" role="radio" data-h="${h}" data-v="${v}" aria-checked="${shares[h] === v}">${v}</button>`).join('')}</span>
+    <b class="hh-spct">${shares[h]}%</b></div>`).join('');
+}
+$('share').addEventListener('click', e => {
+  const b = e.target.closest('button[data-h]'); if (!b || round.phase !== 'mark') return;
+  focusHalf = +b.dataset.h; shares[focusHalf] = +b.dataset.v; paintShares();
+});
+const round = CGB.createClassRound({
+  root: document.getElementById('game-hex-hunt'), board: null, countEl: $('count'), btnEl: $('qBtns'),
+  seconds: () => S.timer, teams: () => 2,
+  marker: {
+    hint: 'Roughly what share of each half got it right? Tap a value, or press 1 or 2 for a half and ← → to change it.',
+    start(keep) { if (!keep) shares = [0, 0]; focusHalf = 0; paintShares(); },
+    key(k) {
+      if (k === '1' || k === '2') { focusHalf = +k - 1; paintShares(); return true; }
+      if (k === 'arrowup' || k === 'arrowdown') { focusHalf = 1 - focusHalf; paintShares(); return true; }
+      const d = { arrowleft: -10, arrowright: 10 }[k];
+      if (d) { shares[focusHalf] = Math.max(0, Math.min(100, shares[focusHalf] + d)); paintShares(); return true; }
+      return false;
+    },
+    values: () => shares.slice()
+  },
+  doneHtml: () => S.step === 'winning' ? `<button class="btn go" type="button" data-q="win">They've joined their edges! <span class="kbd">Enter</span></button>`
+    : S.step === 'nobody' ? `<button class="btn go" type="button" data-q="again">New question for this hexagon <span class="kbd">Enter</span></button><button class="btn plain" type="button" data-q="leave">Leave it and pick again</button>`
+    : `<button class="btn go" type="button" data-q="next">Back to the board <span class="kbd">Enter</span></button>`,
+  onConfirm: classResult, onUndo: undoClassResult
+});
+function classResult(v) {
+  const cell = S.open, chooser = S.picker;
+  undoSnap = { picker: S.picker, won: S.teams.map(t => t.won), wrong: S.teams.map(t => t.wrong.length), path: S.path };
+  // the higher share wins; a tie goes to the half that chose the hexagon, unless nobody got it
+  const w = v[0] === v[1] ? (v[0] > 0 ? chooser : -1) : (v[0] > v[1] ? 0 : 1);
+  v.forEach((x, h) => { if (x < 50) { S.teams[h].wrong.push(cell.q); bank.logWrong(S.teams[h].name, cell.q, GAME_NAME); } });
+  const wrongPct = Math.round(100 - (v[0] + v[1]) / 2);
+  misc.add(cell.q, wrongPct / 100, `about ${wrongPct}% of the class wrong`);
+  S.answerShown = true; $('qAnswer').classList.add('shown');
+  $('share').hidden = true;
+  if (w < 0) {
+    SFX.wrong();
+    S.step = 'nobody';
+    $('qMsg').textContent = `${S.teams[0].name} ${v[0]}%, ${S.teams[1].name} ${v[1]}%. Nobody wins this hexagon.`;
+    hostC.say("Nobody got that one. Here's the answer.", 'shrug', 1500);
+    return;
+  }
+  SFX.claim();
+  cell.owner = w; S.teams[w].won++; S.picker = w;
+  const tie = v[0] === v[1];
+  $('qMsg').textContent = `${S.teams[0].name} ${v[0]}%, ${S.teams[1].name} ${v[1]}%. ` + (tie ? `A tie, so the hexagon goes to ${S.teams[w].name}, who chose it.` : `The hexagon goes to ${S.teams[w].name}.`);
+  hostC.say(tie ? `A tie! ${S.teams[w].name} chose it, so it's theirs.` : `${S.teams[w].name} take it, ${v[w]}% to ${v[1 - w]}%!`, 'clap', 1500);
+  const path = winningPath(w);
+  if (path) { S.path = path; S.step = 'winning'; $('qMsg').textContent += ` ${S.teams[w].name} join their edges!`; }
+  else S.step = 'claimed';
+  renderBoard();
+}
+function undoClassResult() {
+  const u = undoSnap, cell = S.open; if (!u) return;
+  cell.owner = -1; S.picker = u.picker; S.path = u.path;
+  S.teams.forEach((t, i) => { t.won = u.won[i]; while (t.wrong.length > u.wrong[i]) { t.wrong.pop(); bank.unlogWrong(t.name, cell.q); } });
+  misc.remove(cell.q);
+  S.answerShown = false; $('qAnswer').classList.remove('shown');
+  $('qMsg').textContent = 'Marking undone. Enter the shares again.';
+  S.step = 'buzz'; undoSnap = null;
+  renderBoard();
+}
 function toggleAnswer() { S.answerShown = !S.answerShown; $('qAnswer').classList.toggle('shown', S.answerShown); renderQButtons(); }
 /* Marty in the corner: short captions at the big moments */
 const hostC = CGB.createHostCorner($('host'));
@@ -7739,6 +8299,7 @@ function nobody() {
 }
 function newQuestionHere() {
   if (S.step !== 'nobody') return;
+  round.stop();
   const cell = S.open;
   const q = drawQuestion(new Set(S.cells.map(c => c.q && c.q.q)));
   if (q) { cell.q = q; cell.letter = firstLetter(q.a); }
@@ -7747,6 +8308,7 @@ function newQuestionHere() {
 }
 function backToBoard() {
   if (S.step !== 'claimed' && S.step !== 'nobody') return;
+  round.stop();
   if (S.step === 'nobody') {
     // swap in a fresh question so the hexagon is not stuck on the one nobody knew
     const q = drawQuestion(new Set(S.cells.map(c => c.q && c.q.q)));
@@ -7762,6 +8324,7 @@ function backToBoard() {
 
 /* ---------- Rounds and results ---------- */
 function roundWon(i) {
+  round.stop();
   $('q').hidden = true;
   S.phase = 'won';
   S.teams[i].wins++;
@@ -7795,6 +8358,9 @@ function startGame() {
   S.teams = names.map(name => ({ name, wins: 0, won: 0, wrong: [] }));
   S.focusWeak = $('focusWeak').checked;
   S.round = 1; S.firstPicker = 0; S.picker = 0;
+  misc.reset(); round.stop();
+  if (classMode()) { S.size = SESSION[S.session].size; S.best = SESSION[S.session].best; }
+  else { S.size = CGB.store.getJSON('hh.size', 5); S.best = CGB.store.getJSON('hh.best', 1); }
   newBoard();
   if (!S.cells.some(c => c.q)) { $('setHint').textContent = 'This set has no answers that start with a letter. Choose another set.'; return; }
   S.phase = 'board';
@@ -7815,7 +8381,7 @@ function showSummary() {
     const hist = bank.weakTopics(t.name, 4).map(([tp, n]) => `<div class="hh-trow"><span>${esc(tp)}</span><span>${n} wrong</span></div>`).join('') || '<div class="hh-none">No history yet.</div>';
     return `<div class="hh-sum-p" style="--tc:${TEAM[i].css}"><h3>${TEAM[i].mark} ${esc(t.name)}</h3><div class="hint">${t.wins} round${t.wins === 1 ? '' : 's'} won · ${t.won} hexagons claimed</div><div class="hh-sub">Missed this game</div>${missed}<div class="hh-sub">Weakest topics, all games</div>${hist}<button class="linkish" type="button" data-clear="${i}">Clear ${esc(t.name)}'s history</button></div>`;
   }).join('');
-  $('sumCard').innerHTML = `<h2>${esc(title)}</h2><div class="hh-sum-grid">${cols}</div>
+  $('sumCard').innerHTML = `<h2>${esc(title)}</h2>${classMode() ? misc.html(5) : `<div class="hh-sum-grid">${cols}</div>`}
     <div class="hh-sum-btns"><button class="btn go" type="button" id="hh-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="hh-change">Change teams or settings</button><button class="btn plain" type="button" id="hh-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('sumCard').prepend(sumHost.el);
   sumHost.say(a.wins === b.wins ? 'A draw! Brilliant hunting from both teams.' : `${title} Fantastic hunting!`, 'cheer', 2200);
@@ -7830,6 +8396,8 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
+  round.stop();
+  S.size = CGB.store.getJSON('hh.size', 5); S.best = CGB.store.getJSON('hh.best', 1);
   S.phase = 'home';
   $('play').hidden = true; $('q').hidden = true; $('win').hidden = true; $('summary').classList.remove('active');
   $('home').classList.add('active');
@@ -7839,14 +8407,30 @@ function goHome() {
 $('logo').innerHTML = CGB.brand.hhLogo();
 const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n; });
 fillNames();
-function wireSeg(id, key, store) {
+function wireSeg(id, key, store, text) {
   const seg = $(id);
-  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === S[key])));
-  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S[key] = +b.dataset.v; CGB.store.setJSON(store, S[key]); paint(); });
+  const val = v => text ? v : +v;
+  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(val(b.dataset.v) === S[key])));
+  seg.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    S[key] = val(b.dataset.v);
+    if (text) CGB.store.set(store, S[key]); else CGB.store.setJSON(store, S[key]);
+    paint(); applyMode(); CGB.fitSetups();
+  });
   paint();
 }
+function applyMode() {
+  $('setupCard').dataset.mode = S.mode;
+  CGB.mode.set('hex-hunt', S.mode);
+  const x = SESSION[S.session];
+  $('sessionHint').textContent = `${CGB.SESSIONS.find(o => o.id === S.session).note}: a ${x.size} × ${x.size} board, ${x.best > 1 ? 'best of ' + x.best + ' rounds' : 'one round'}.`;
+}
+wireSeg('segMode', 'mode', 'hex-hunt.mode', true);
+wireSeg('segSession', 'session', 'hh.session', true);
+wireSeg('segTimer', 'timer', 'hh.timer');
 wireSeg('segSize', 'size', 'hh.size');
 wireSeg('segBest', 'best', 'hh.best');
+applyMode();
 $('focusWeak').checked = CGB.store.get('hh.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('hh.focusWeak', e.target.checked ? '1' : '0'));
 function renderSetSelect() {
@@ -7883,6 +8467,16 @@ document.addEventListener('keydown', e => {
     if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); openHex(S.cursor.c, S.cursor.r); }
     return;
   }
+  if (S.phase === 'question' && classMode()) {
+    if (round.handleKey(k)) { e.preventDefault(); return; }
+    if ((k === 'enter' || k === ' ') && !isButton) {
+      e.preventDefault();
+      if (S.step === 'claimed') backToBoard();
+      else if (S.step === 'nobody') newQuestionHere();
+      else if (S.step === 'winning') roundWon(S.picker);
+    }
+    return;
+  }
   if (S.phase === 'question') {
     if (k === 'a') toggleAnswer();
     else if ((k === '1' || k === '2') && S.step === 'buzz') buzz(+k - 1);
@@ -7900,7 +8494,7 @@ return {
   enter() { active = true; if (S.phase === 'home') { fillNames(); renderSetSelect(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => ['board', 'question', 'won'].includes(S.phase),
-  _state: () => ({ phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, answering: S.answering, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, wins: S.teams.map(t => t.wins), owners: S.cells.map(c => c.owner) })
+  _state: () => ({ mode: S.mode, round: round.phase, undoable: round.undoable, times: round.times(), shares: shares.slice(), best: S.best, misconceptions: misc.top(5).map(x => x.q.q), phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, answering: S.answering, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, wins: S.teams.map(t => t.wins), owners: S.cells.map(c => c.owner) })
 };
 }
 
