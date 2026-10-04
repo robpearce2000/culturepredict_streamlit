@@ -84,6 +84,15 @@ Tests for this part: the Start game button in every game with a countdown (no co
 
 ---
 
+### 4. The host is nameless unless customised (added by Rob)
+
+- The host has **no name by default**. Remove the default name ("Marty Marquee", called "Professor Pip" elsewhere in this brief) everywhere it shows: speech bubbles and captions in every game, the launcher greeting, the results screens and the customiser.
+- He only has a name if the teacher types one in **Customise the host**. Then that name appears as the label on his bubbles and in his lines; with no name, show no name label and no "I'm …" introductions.
+- Clearing the name in the customiser makes him nameless again. A name saved by an earlier version that is just the old default counts as no name.
+- Update the teacher guide, listing text, listing images and tests to match (no default host name anywhere in shipped material), and add tests for both cases: no name (no label anywhere) and a customised name (shown on his bubbles).
+
+---
+
 ## Part 4: 3D upgrade
 
 Check `CHANGELOG.md` first. If a 3D upgrade has already been done, skip to Part 5 and note that in the report.
