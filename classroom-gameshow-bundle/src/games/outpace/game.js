@@ -984,6 +984,7 @@ const roundSprint = CGB.createClassRound({
 });
 function startGame() {
   if (!bank.active()) { renderPack(); return; }
+  CGB.leaveField();
   clearTimers(); roundDeal.stop(); roundSprint.stop();
   const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, state.groups).map(i => $('gname' + i).value)).map(n => n.slice(0, 16));
   state.players = names.map(name => ({ name }));

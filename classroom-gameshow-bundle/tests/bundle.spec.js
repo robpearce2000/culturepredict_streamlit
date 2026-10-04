@@ -103,15 +103,15 @@ test('a full game of Outpace with keyboard shortcuts reaches the summary', async
 test('every game counts down 20 seconds before "show me", and Space skips it', async ({ page }) => {
   await openBundle(page);
   const games = [
-    ['over-the-edge', '#ote-count', async () => {}],
-    ['outpace', '#op-dealCount', async () => page.keyboard.press('2')],
-    ['category-clash', '#cc-count', async () => page.keyboard.press('Enter')],
-    ['hex-hunt', '#hh-count', async () => page.keyboard.press('Enter')]
+    ['over-the-edge', '#ote-count', null, null],
+    ['outpace', '#op-dealCount', 'deal', '2'],
+    ['category-clash', '#cc-count', 'board', 'Enter'],
+    ['hex-hunt', '#hh-count', 'board', 'Enter']
   ];
-  for (const [id, count, open] of games) {
-    await page.click(`[data-play="${id}"]`);
+  for (const [id, count, ready, key] of games) {
+    await page.click(`[data-play="${id}"]`, { timeout: 60000 });
     await page.click(`#game-${id} .setup-go .btn`);
-    await open();
+    if (ready) { await expect.poll(async () => (await state(page, id)).phase).toBe(ready); await page.keyboard.press(key); }
     await expect.poll(async () => (await state(page, id)).round).toBe('think');
     await expect(page.locator(count)).toBeVisible();
     await expect(page.locator(count)).toContainText(/^(20|19)/);

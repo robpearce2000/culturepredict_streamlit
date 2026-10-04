@@ -319,6 +319,10 @@ details.howto:not([open]) { margin-bottom: 8px; }
 .setup.tighter .lab { margin-bottom: 3px; }
 .setup.tighter .seg button { padding-top: 5px; padding-bottom: 5px; }
 .setup.tighter [class$="-names"] input, .setup.tighter [class$="names"] input { font-size: 0.98rem; }
+.setup.tighter .op-classname { padding: 4px 10px; margin-bottom: 6px; border-bottom-width: 4px; }
+.setup.tighter .op-classname input { font-size: 1rem; }
+.setup.tighter .op-gnames { gap: 6px; margin-bottom: 6px; }
+.setup.tighter details.tnames[open] > summary { margin-bottom: 4px; }
 .setup.twocol { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 18px; }
 .setup.twocol .setup-intro { grid-column: 1; }
 .setup.twocol .setup-form { grid-column: 2; }

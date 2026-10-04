@@ -301,6 +301,7 @@ $('winBtn').addEventListener('click', continueAfterWin);
 
 function startGame() {
   if (!bank.active()) { renderPack(); return; }
+  CGB.leaveField();
   const names = [0, 1].map(i => ($('name' + i).value.trim() || 'Team ' + (i + 1)).slice(0, 18));
   CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, won: 0, wrong: [] }));

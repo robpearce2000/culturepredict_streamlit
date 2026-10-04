@@ -256,6 +256,7 @@ function closeQuestion() {
 /* ---------- Game flow ---------- */
 function startGame() {
   if (!bank.active()) { renderPack(); return; }
+  CGB.leaveField();
   const names = [0, 1, 2, 3, 4, 5].slice(0, S.nTeams).map(i => (($('name' + i) || {}).value || '').trim().slice(0, 18) || defaultNames[i]);
   CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, score: 0, correct: 0, wrong: [] }));

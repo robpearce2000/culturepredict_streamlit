@@ -1044,7 +1044,7 @@ function jackpotProgress() {
 }
 function renderScores() {
   // the team panels appear when the game starts (the setup card covers this area on tablets)
-  $('board').hidden = G.phase === 'home';
+  $('board').hidden = G.phase === 'home' || G.phase === 'summary';   // the results card lists every team
   const teams = G.phase === 'home'
     ? [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => ({ name: ($('cname' + i) || {}).value || CGB.teamFallback(i), score: fmt(0) }))
     : G.players.map(p => ({ name: p.name, score: fmt(p.money) }));
@@ -1202,6 +1202,7 @@ function classFinishDrop() {
 }
 function startGame() {
   if (!bank.active()) { renderPack(); return; }
+  CGB.leaveField();
   const n = Math.min(6, Math.max(2, G.nTeams));
   const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, n).map(i => $('cname' + i).value)).map(x => x.slice(0, 16));
   G.players = names.map(x => ({ name: x, money: 0, correct: 0, asked: 0, won: 0, wrong: [] }));

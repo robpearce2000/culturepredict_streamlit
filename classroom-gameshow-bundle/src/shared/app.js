@@ -16,6 +16,10 @@ CGB.createRenderer = function (opts) {
 };
 CGB.noWebGLMessage = '<div class="cgb-panel" style="max-width:560px;margin:15vh auto 0;padding:24px 26px;"><h2 style="font-family:var(--display);font-weight:400;margin:0 0 8px;">3D graphics are switched off</h2><p class="hint" style="font-size:1rem">This browser could not start 3D graphics (WebGL). Try another browser (Chrome, Edge, Firefox or Safari), or ask IT to turn on hardware acceleration.</p></div>';
 
+/* Starting a game from a name box: take the keyboard out of it, so the game's keys
+   (Space for "show me" and so on) are not typed into a box that is about to disappear */
+CGB.leaveField = () => { const a = document.activeElement; if (a && a.matches && a.matches('input, textarea, select') && a.blur) a.blur(); };
+
 /* Two-tap confirm for destructive buttons */
 CGB.armButton = function (btn, armedText, onConfirm) {
   if (btn.dataset.armed === '1') { btn.dataset.armed = ''; onConfirm(); return; }
@@ -99,6 +103,8 @@ CGB.fitSetups = () => requestAnimationFrame(() => {
   });
 });
 window.addEventListener('resize', () => { clearTimeout(CGB.fitSetups.t); CGB.fitSetups.t = setTimeout(CGB.fitSetups, 120); });
+// opening "Edit team names" makes the card taller, so fit it again
+document.addEventListener('toggle', e => { if (e.target.matches && e.target.matches('.setup details.tnames')) CGB.fitSetups(); }, true);
 CGB.settings.onChange(() => {
   CGB.fitSetups();
   document.querySelectorAll('.seg[data-key]').forEach(seg => {

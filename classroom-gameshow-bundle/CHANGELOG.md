@@ -14,6 +14,8 @@
 - Questions from topics the playing teams got wrong before now come up a little more often automatically (the checkbox has gone).
 - Outpace says "teams" rather than "groups", and the Final Sprint shows the steps so far against the target.
 - The menu's game descriptions and the teacher guide describe the class rules.
+- Starting a game by pressing Enter in a team-name box no longer leaves the keyboard in that box (the first Space could be typed into it instead of skipping the countdown).
+- Over the Edge's results card no longer runs over the team panels on laptop screens.
 
 ### Removed
 - The two-team turn-taking versions of each game: steals and penalties in Category Clash, buzzing in and best of three in Hex Hunt, each team's own deal and passes in Outpace, and Over the Edge's single-team turns, score cards and event feed.

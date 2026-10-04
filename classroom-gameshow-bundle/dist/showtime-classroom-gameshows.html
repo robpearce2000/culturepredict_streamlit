@@ -338,6 +338,10 @@ details.howto:not([open]) { margin-bottom: 8px; }
 .setup.tighter .lab { margin-bottom: 3px; }
 .setup.tighter .seg button { padding-top: 5px; padding-bottom: 5px; }
 .setup.tighter [class$="-names"] input, .setup.tighter [class$="names"] input { font-size: 0.98rem; }
+.setup.tighter .op-classname { padding: 4px 10px; margin-bottom: 6px; border-bottom-width: 4px; }
+.setup.tighter .op-classname input { font-size: 1rem; }
+.setup.tighter .op-gnames { gap: 6px; margin-bottom: 6px; }
+.setup.tighter details.tnames[open] > summary { margin-bottom: 4px; }
 .setup.twocol { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 18px; }
 .setup.twocol .setup-intro { grid-column: 1; }
 .setup.twocol .setup-form { grid-column: 2; }
@@ -476,7 +480,7 @@ details.tnames[open] > summary { margin-bottom: 8px; }
 }
 /* the setup card stays clear of the score panel on the right */
 @media (min-width: 1000px) {
-  .ote-overlay .setup { max-width: min(1080px, calc(100vw - 25rem - 4vw - 28px)) !important; }
+  .ote-overlay .setup, .ote-summary .ote-card { max-width: min(1080px, calc(100vw - 25rem - 4vw - 28px)) !important; }
 }
 @media (min-width: 1000px) and (max-width: 1199px) {
   .ote-overlay .setup { grid-template-columns: minmax(0, 1fr); }
@@ -4392,6 +4396,10 @@ CGB.createRenderer = function (opts) {
 };
 CGB.noWebGLMessage = '<div class="cgb-panel" style="max-width:560px;margin:15vh auto 0;padding:24px 26px;"><h2 style="font-family:var(--display);font-weight:400;margin:0 0 8px;">3D graphics are switched off</h2><p class="hint" style="font-size:1rem">This browser could not start 3D graphics (WebGL). Try another browser (Chrome, Edge, Firefox or Safari), or ask IT to turn on hardware acceleration.</p></div>';
 
+/* Starting a game from a name box: take the keyboard out of it, so the game's keys
+   (Space for "show me" and so on) are not typed into a box that is about to disappear */
+CGB.leaveField = () => { const a = document.activeElement; if (a && a.matches && a.matches('input, textarea, select') && a.blur) a.blur(); };
+
 /* Two-tap confirm for destructive buttons */
 CGB.armButton = function (btn, armedText, onConfirm) {
   if (btn.dataset.armed === '1') { btn.dataset.armed = ''; onConfirm(); return; }
@@ -4475,6 +4483,8 @@ CGB.fitSetups = () => requestAnimationFrame(() => {
   });
 });
 window.addEventListener('resize', () => { clearTimeout(CGB.fitSetups.t); CGB.fitSetups.t = setTimeout(CGB.fitSetups, 120); });
+// opening "Edit team names" makes the card taller, so fit it again
+document.addEventListener('toggle', e => { if (e.target.matches && e.target.matches('.setup details.tnames')) CGB.fitSetups(); }, true);
 CGB.settings.onChange(() => {
   CGB.fitSetups();
   document.querySelectorAll('.seg[data-key]').forEach(seg => {
@@ -5807,7 +5817,7 @@ function jackpotProgress() {
 }
 function renderScores() {
   // the team panels appear when the game starts (the setup card covers this area on tablets)
-  $('board').hidden = G.phase === 'home';
+  $('board').hidden = G.phase === 'home' || G.phase === 'summary';   // the results card lists every team
   const teams = G.phase === 'home'
     ? [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => ({ name: ($('cname' + i) || {}).value || CGB.teamFallback(i), score: fmt(0) }))
     : G.players.map(p => ({ name: p.name, score: fmt(p.money) }));
@@ -5965,6 +5975,7 @@ function classFinishDrop() {
 }
 function startGame() {
   if (!bank.active()) { renderPack(); return; }
+  CGB.leaveField();
   const n = Math.min(6, Math.max(2, G.nTeams));
   const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, n).map(i => $('cname' + i).value)).map(x => x.slice(0, 16));
   G.players = names.map(x => ({ name: x, money: 0, correct: 0, asked: 0, won: 0, wrong: [] }));
@@ -7213,6 +7224,7 @@ const roundSprint = CGB.createClassRound({
 });
 function startGame() {
   if (!bank.active()) { renderPack(); return; }
+  CGB.leaveField();
   clearTimers(); roundDeal.stop(); roundSprint.stop();
   const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, state.groups).map(i => $('gname' + i).value)).map(n => n.slice(0, 16));
   state.players = names.map(name => ({ name }));
@@ -7752,6 +7764,7 @@ function closeQuestion() {
 /* ---------- Game flow ---------- */
 function startGame() {
   if (!bank.active()) { renderPack(); return; }
+  CGB.leaveField();
   const names = [0, 1, 2, 3, 4, 5].slice(0, S.nTeams).map(i => (($('name' + i) || {}).value || '').trim().slice(0, 18) || defaultNames[i]);
   CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, score: 0, correct: 0, wrong: [] }));
@@ -8158,6 +8171,7 @@ $('winBtn').addEventListener('click', continueAfterWin);
 
 function startGame() {
   if (!bank.active()) { renderPack(); return; }
+  CGB.leaveField();
   const names = [0, 1].map(i => ($('name' + i).value.trim() || 'Team ' + (i + 1)).slice(0, 18));
   CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, won: 0, wrong: [] }));

@@ -40,7 +40,17 @@ async function findProblems(page) {
         e = e.parentElement;
       }
       if (r.bottom <= 0 || r.right <= 0 || r.top >= innerHeight || r.left >= innerWidth) return null;
-      return r;
+      // content scrolled out of a scrolling panel is clipped away: only the part still showing counts
+      let c = { left: r.left, right: r.right, top: r.top, bottom: r.bottom };
+      for (let p = el.parentElement; p && p !== document.body; p = p.parentElement) {
+        const o = getComputedStyle(p).overflowY;
+        if (o === 'auto' || o === 'scroll') {
+          const pr = p.getBoundingClientRect();
+          c = { left: c.left, right: c.right, top: Math.max(c.top, pr.top), bottom: Math.min(c.bottom, pr.bottom) };
+          if (c.bottom - c.top < 2) return null;
+        }
+      }
+      return Object.assign(c, { width: c.right - c.left, height: c.bottom - c.top });
     };
     const items = [];
     sel.forEach(s => document.querySelectorAll(s).forEach(el => { const r = vis(el); if (r) items.push({ s, el, r }); }));
