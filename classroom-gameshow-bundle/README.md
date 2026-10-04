@@ -75,6 +75,8 @@ Playwright runs `build.js` first; it does nothing if `src/` hasn't changed since
 - a setup card needs scrolling or hides under the top bar;
 - the Over the Edge host overlaps the machine;
 - the coming-soon strip is cut off.
+- a card or panel block has text spilling out of it;
+- a 3D scene comes out blank.
 
 ## Question format
 
