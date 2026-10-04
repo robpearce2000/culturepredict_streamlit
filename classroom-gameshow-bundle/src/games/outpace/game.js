@@ -535,6 +535,10 @@ function animate() {
     auraMat.opacity = 0.26 + Math.sin(t * 4) * 0.08;
   }
 
+  // the fog starts a little beyond the action wherever the camera is, so wide framings
+  // (the whole Deal Round track on a portrait screen) are not lost in it
+  const camDist = Math.hypot(camera.position.y - 0.4, camera.position.z);
+  scene.fog.near = camDist + 3.5; scene.fog.far = camDist + 19.5;
   ambientParticles.rotation.y = t * 0.02;
   ambientParticles.position.y = Math.sin(t * 0.3) * 0.15;
 

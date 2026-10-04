@@ -537,9 +537,10 @@ const CAM = {
 const SWAY = 0.35;
 /* Size and place the host in the space to the right of the machine. The machine's
    right edge is taken as the furthest it reaches in any camera shot (with the sway),
-   and the host's widest pose spans -0.02 to 0.70 of his height from the art's left edge. */
-const FIG_L = 0.02, FIG_R = 0.70, ART_W = 300 / 440;
-let hostFit = { h: 0, hidden: false, machineRight: 0, shot: 'home' }, growTimer = 0;
+   and the host's widest gestures span from 0.16 of his height left of the art's left edge
+   (pointing) to 0.76 right of it (shrugging), measured with every pose applied. */
+const FIG_L = 0.16, FIG_R = 0.76, ART_W = 300 / 440;
+let hostFit = { h: 0, hidden: false, machineRight: 0, shot: 'home', shotRight: null };
 function rightEdgeFor(c) {
   const keep = camera.position.clone(), keepQ = camera.quaternion.clone();
   let right = 0;
@@ -550,27 +551,24 @@ function rightEdgeFor(c) {
   camera.position.copy(keep); camera.quaternion.copy(keepQ); camera.updateMatrixWorld();
   return right;
 }
-/* Fit the host to a camera shot. Shrinking happens at once; growing waits until the
-   camera has eased into the new shot, so he never covers the machine on the way. */
+/* Fit the host to the camera. He is sized for the further-reaching of the shot the camera is
+   heading for and where the machine is on screen right now, checked every 150 ms, so he
+   shrinks as soon as the machine comes his way and only grows once it has moved away. */
 function fitHost(shot) {
   const w = wrap.clientWidth, h = wrap.clientHeight;
   if (!w || !h) return;
-  if (shot) hostFit.shot = shot;
-  const right = rightEdgeFor(CAM[hostFit.shot]);
+  if (shot || hostFit.shotRight == null) { if (shot) hostFit.shot = shot; hostFit.shotRight = rightEdgeFor(CAM[hostFit.shot]); }
+  const right = Math.max(hostFit.shotRight, machineRect().right + 4);
   const gapPx = 12, edge = 6;
   const H = Math.floor(Math.min(h * 0.66, 560, (w - edge - gapPx - right) / (FIG_L + FIG_R)));
-  const apply = () => {
-    hostFit.h = H; hostFit.hidden = H < 140; hostFit.machineRight = right;
-    const el = $('host');
-    el.classList.toggle('nofit', hostFit.hidden);
-    if (hostFit.hidden) return;
-    el.classList.toggle('growing', H > hostFit.prevH);   // shrink instantly, grow smoothly
-    hostFit.prevH = H;
-    el.style.height = H + 'px';
-    el.style.right = Math.ceil(edge + (FIG_R - ART_W) * H) + 'px';
-  };
-  clearTimeout(growTimer);
-  if (!shot || !hostFit.h || H <= hostFit.h) apply(); else growTimer = setTimeout(apply, CGB.settings.reduced() ? 0 : 2200);
+  if (H === hostFit.h) return;
+  const el = $('host');
+  el.classList.toggle('growing', H > hostFit.h);   // shrink instantly, grow smoothly
+  hostFit.h = H; hostFit.hidden = H < 140; hostFit.machineRight = right;
+  el.classList.toggle('nofit', hostFit.hidden);
+  if (hostFit.hidden) return;
+  el.style.height = H + 'px';
+  el.style.right = Math.ceil(edge + (FIG_R - ART_W) * H) + 'px';
 }
 function machineRect() {
   // each part is projected on its own: one box round them all would pull the top of the
@@ -595,6 +593,7 @@ function updateHost(force) {
   const now = performance.now();
   if (!force && now - hostCheck < 150) return;
   hostCheck = now;
+  fitHost();
   const hr = $('host').getBoundingClientRect();
   let covered = false;
   ['home', 'summary'].forEach(id => {
@@ -734,6 +733,7 @@ function updateLabels(dt) {
   const body = labels.length && !$('host').classList.contains('away') ? $('host').querySelector('.host-body') : null;
   const base = body ? wrap.getBoundingClientRect() : null;
   const hb = body ? body.getBoundingClientRect() : null;
+  const placed = [];
   for (let i = labels.length - 1; i >= 0; i--) {
     const L = labels[i]; L.t += dt;
     const k = L.t / L.life;
@@ -746,8 +746,17 @@ function updateLabels(dt) {
       const left = hb.left - base.left, top = hb.top - base.top, bottom = hb.bottom - base.top;
       if (lx + half > left && ly + hh > top && ly - hh < bottom) lx = left - half;
     }
+    // stack labels that would land on one another
+    const lw = L.el.offsetWidth, lh = L.el.offsetHeight;
+    let top = ly;
+    for (let tries = 0; tries < 6; tries++) {
+      const hit = placed.find(r => lx - lw / 2 < r.r + 4 && lx + lw / 2 > r.l - 4 && top - lh / 2 < r.b + 2 && top + lh / 2 > r.t - 2);
+      if (!hit) break;
+      top = hit.t - lh / 2 - 4;
+    }
+    placed.push({ l: lx - lw / 2, r: lx + lw / 2, t: top - lh / 2, b: top + lh / 2 });
     L.el.style.left = lx + 'px';
-    L.el.style.top = ly + 'px';
+    L.el.style.top = top + 'px';
     L.el.style.opacity = k < 0.15 ? k / 0.15 : k > 0.7 ? (1 - k) / 0.3 : 1;
   }
 }
@@ -946,6 +955,7 @@ function resize() {
   // on narrow stages (portrait tablets) drop the picture a little so the header sign clears the menu buttons
   if (w < 900) camera.setViewOffset(w, h, 0, -Math.round(Math.min(64, h * 0.11)), w, h); else camera.clearViewOffset();
   camera.updateProjectionMatrix();
+  hostFit.shotRight = null;
   fitHost();
 }
 window.addEventListener('resize', resize);

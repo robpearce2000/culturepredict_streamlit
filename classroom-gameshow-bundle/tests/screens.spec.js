@@ -3,6 +3,7 @@
 const path = require('path');
 const { test } = require('@playwright/test');
 const { openBundle, state, expect } = require('./helpers');
+const { brightShare } = require('./png');
 
 const SIZES = [
   { name: '1920x1080', width: 1920, height: 1080 },
@@ -50,6 +51,12 @@ async function findProblems(page) {
       const oy = Math.min(a.r.bottom, b.r.bottom) - Math.max(a.r.top, b.r.top);
       if (ox > 2 && oy > 2) problems.push(`overlap: ${a.s} ↔ ${b.s} (${Math.round(ox)}×${Math.round(oy)}px)`);
     }
+    // cards and panel blocks whose text spills out of them
+    document.querySelectorAll('.ote-panel > *, .op-qcard, .cc-qcard, .hh-qcard, .cgb-panel').forEach(el => {
+      const r = vis(el); if (!r) return;
+      const cs = getComputedStyle(el);
+      if (cs.overflowY === 'visible' && el.scrollHeight > el.clientHeight + 2) problems.push(`text spills out of ${el.className || el.id}`);
+    });
     // text that spills off the side of the screen
     document.querySelectorAll('button, h1, h2, h3, p, .qtext, .qanswer, .op-tag, .flabel, .verdict, .detail, .name, .nm, label, .lab').forEach(el => {
       const r = vis(el); if (!r) return;
@@ -238,6 +245,21 @@ for (const size of SIZES) {
           const m = ote.machine, h = ote.host;
           const ox = Math.min(m.right, h.right) - Math.max(m.left, h.left), oy = Math.min(m.bottom, h.bottom) - Math.max(m.top, h.top);
           if (ox > 0 && oy > 0) problems.push(`${name}: host overlaps the machine (${Math.round(ox)}×${Math.round(oy)}px)`);
+        }
+        // the 3D scene really is drawn (not lost in fog or a blank canvas): enough lit pixels in the stage
+        const stage = await page.evaluate(() => {
+          const el = ['#game-over-the-edge .ote-stage', '#game-outpace'].map(s => document.querySelector(s)).find(e => e && e.offsetParent !== null && !e.closest('[hidden]'));
+          if (!el) return null;
+          const live = document.querySelector('#game-outpace .op-hud.active') || document.querySelector('#game-over-the-edge:not([hidden]) #ote-home.hidden');
+          if (!live) return null;   // setup and results cards cover the scene
+          const r = el.getBoundingClientRect(); return { x: r.left, y: r.top + r.height * 0.25, width: r.width, height: r.height * 0.45 };
+        });
+        if (stage && stage.width > 50) {
+          // measure the canvas alone: hide the page's own panels, tags and bubbles for this one capture
+          await page.addStyleTag({ content: '.game > :not(.ote-stage):not(.op-stage), .ote-stage > :not(canvas), .op-stage > :not(canvas) { visibility: hidden !important; }' }).then(h => h.evaluate(el => { el.id = 'scene-check'; }));
+          const share = brightShare(await page.screenshot({ clip: stage, timeout: 60000 }), 70);
+          await page.evaluate(() => document.getElementById('scene-check').remove());
+          if (share < 0.006) problems.push(`${name}: the 3D scene looks blank (${(share * 100).toFixed(2)}% lit pixels)`);
         }
         // the launcher's "More shows coming soon" card is either fully on screen or starts below the fold
         const soon = await page.evaluate(() => {

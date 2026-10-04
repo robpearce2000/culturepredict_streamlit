@@ -123,3 +123,6 @@
   .ote-overlay .setup { grid-template-columns: minmax(0, 1fr); }
   .ote-overlay .setup .setup-intro, .ote-overlay .setup .setup-form, .ote-overlay .setup .setup-go { grid-column: 1; }
 }
+/* panel items keep their natural height; on a short panel (portrait tablets) the panel scrolls
+   rather than squashing the question card so its text runs into the next block */
+.ote-panel > * { flex-shrink: 0; }
