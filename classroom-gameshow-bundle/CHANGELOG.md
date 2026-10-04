@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.3.0 – Class mode (October 2026)
+
+### New
+- **Whole class mode in every game, now the default.** 2 to 6 teams answer every question on mini whiteboards; no pupil devices needed. Small group mode keeps the two-team games exactly as before.
+- **One loop for every game:** an optional countdown (20, 30, 45 or 60 s), Space for a big "3, 2, 1, show me!", 1–6 to mark each team ✓ or ✗ on its panel, Enter to reveal the answer and play on, U to undo.
+- **Captains rotate** every question, and the team rule (boards must agree, or you judge it correct) is shown in every setup card.
+- **Session lengths:** Starter (~10 min), Plenary (~20) and Full lesson (~40).
+- **Over the Edge:** every correct team wins a counter; captains choose lanes and all the counters drop in one short sequence. Each quarter of the shelf belongs to the team that last landed there. The final is the whole class against the jackpot, two counters per correct team.
+- **Outpace:** the whole class is one runner. Vote on the deal with fingers; if at least half the groups are right the class moves, otherwise the Hunter gains. Every correct group adds to the Final Sprint.
+- **Category Clash:** up to six teams. The choosing team wins full points, other correct teams win half, and wrong answers lose nothing.
+- **Hex Hunt:** two halves of the class. Enter each half's share correct; the higher share wins the hexagon.
+- **Catch-up help:** a far-behind team picks first in Category Clash, or drops an extra counter at the start of the Over the Edge final.
+- **"Reteach these"** on every class results screen: the questions the class found hardest, with no individual data.
+- Two new team colours: Team 5 pink ⬢ and Team 6 green ✚.
+- Marty reacts to each question: "Five out of six teams! Brilliant!"
+- Teacher guide: a new "Running it with a class" page.
+
+### Changed
+- Tes listing text and images show whole-class play.
+
+### Testing
+- Full class games of every game with 2, 4 and 6 teams, checking marking, undo, catch-ups and the misconceptions list. Marking and Over the Edge's drop are timed (7.1 s with six correct teams).
+- Screenshot sweep of the class screens with six teams at all three sizes, failing on cut-off team names.
+
+
 ## 1.2.0 – Pre-launch polish (October 2026)
 
 ### Changed

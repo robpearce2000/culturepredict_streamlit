@@ -2,10 +2,10 @@
 /*
  * Makes the Tes listing images from the built bundle (run `node build.js` first):
  *   dist/listing/cover.png                1600×1000  wordmark, mascot and all four games
- *   dist/listing/over-the-edge.png        1920×1080  gameplay screenshot
- *   dist/listing/outpace.png              1920×1080  gameplay screenshot
- *   dist/listing/category-clash.png       1920×1080  gameplay screenshot
- *   dist/listing/hex-hunt.png             1920×1080  gameplay screenshot
+ *   dist/listing/over-the-edge.png        1920×1080  whole-class game, six teams
+ *   dist/listing/outpace.png              1920×1080  whole-class game, six groups
+ *   dist/listing/category-clash.png       1920×1080  whole-class game, six teams
+ *   dist/listing/hex-hunt.png             1920×1080  whole-class game, two halves
  *   dist/listing/question-bank.png        1920×1080  the shared question bank
  */
 'use strict';
@@ -18,9 +18,9 @@ const URL = 'file://' + path.join(ROOT, 'dist', 'showtime-classroom-gameshows.ht
 const OUT = path.join(ROOT, 'dist', 'listing');
 const ARGS = ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'];
 
-async function until(page, fn, ms) {
+async function until(page, fn, ms, arg) {
   const end = Date.now() + (ms || 60000);
-  while (Date.now() < end) { if (await page.evaluate(fn)) return; await page.waitForTimeout(150); }
+  while (Date.now() < end) { if (await page.evaluate(fn, arg)) return; await page.waitForTimeout(150); }
   throw new Error('timed out waiting');
 }
 
@@ -64,63 +64,90 @@ async function until(page, fn, ms) {
   await page.screenshot({ path: path.join(OUT, 'question-bank.png') });
   await page.keyboard.press('Escape');
 
-  // Over the Edge: a counter has just been won and the lanes are lit
+  // Every game in whole-class mode with six teams: what schools buy it for
+  await page.evaluate(() => CGB.store.setJSON('teams', ['Owls', 'Foxes', 'Hawks', 'Otters', 'Badgers', 'Wolves']));
+  const markRound = async (id, keys) => {
+    await page.keyboard.press('Space');
+    await until(page, id => CGB.games[id].state().round === 'mark', 15000, id);
+    for (const k of keys) await page.keyboard.press(k);
+    await page.keyboard.press('Enter');
+  };
+
+  // Over the Edge: five teams right, their captains' counters dropping in team colours
   await page.click('[data-play="over-the-edge"]');
   await page.waitForTimeout(1500);
+  await page.click('#ote-segMode button[data-v="class"]');
+  await page.click('#ote-segTeams button[data-v="6"]');
+  await page.click('#ote-segTimer button[data-v="0"]');
   await page.click('#ote-startBtn');
   await page.waitForTimeout(3500);
-  await page.keyboard.press('c');
-  await page.waitForTimeout(1800);
+  await markRound('over-the-edge', ['c', '4']);
+  await page.waitForTimeout(600);
+  for (const k of ['2', '3', '1', '4', '2']) { await page.keyboard.press(k); await page.waitForTimeout(150); }
+  await page.waitForTimeout(1600);
   await page.screenshot({ path: path.join(OUT, 'over-the-edge.png') });
   const oteShot = await page.screenshot({ type: 'jpeg', quality: 88 });
-  await page.keyboard.press('2');
-  await page.waitForTimeout(400);
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
 
-  // Outpace: Deal Round question with the answer showing
+  // Outpace: the whole class as one runner, four of six groups right
   await page.click('[data-play="outpace"]');
   await page.waitForTimeout(1000);
+  await page.click('#op-segMode button[data-v="class"]');
+  await page.click('#op-segGroups button[data-v="6"]');
+  await page.click('#op-segTimer button[data-v="0"]');
   await page.click('#op-startBtn');
   await page.keyboard.press('2');
   await page.waitForTimeout(1200);
-  await page.keyboard.press('a'); await page.keyboard.press('c');
-  await until(page, () => { const s = CGB.games.outpace.state(); return !s.awaitingNext && !s.answerShown; });
-  await page.keyboard.press('a');
-  await page.waitForTimeout(1500);
+  await markRound('outpace', ['1', '2', '4', '5']);
+  await page.waitForTimeout(1800);
   await page.screenshot({ path: path.join(OUT, 'outpace.png') });
   const opShot = await page.screenshot({ type: 'jpeg', quality: 88 });
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
 
-  // Category Clash: a board part-way through a three-team game
-  await page.evaluate(() => CGB.store.setJSON('cc.names', ['Owls', 'Foxes', 'Hawks']));
+  // Category Clash: six teams part-way through a board, a question just marked
   await page.click('[data-play="category-clash"]');
   await page.waitForTimeout(600);
-  await page.click('#cc-segTeams button[data-v="3"]');
-  await page.click('#cc-segCats button[data-v="5"]');
+  await page.click('#cc-segMode button[data-v="class"]');
+  await page.click('#cc-segTeams button[data-v="6"]');
+  await page.click('#cc-segSession button[data-v="plenary"]');
+  await page.click('#cc-segTimer button[data-v="0"]');
   await page.click('#cc-startBtn');
-  const ccMoves = ['c', 'c', 'w', 'c', 'c', 'c', 'w'];
-  for (const k of ccMoves) {
+  const ccMarks = [[0, 0, ['1', '2', '3']], [1, 0, ['c']], [2, 1, ['2', '5']], [3, 0, ['c', '6']], [0, 1, ['1', '3', '4', '5']], [4, 2, ['w', '2']]];
+  for (const [c, r, keys] of ccMarks) {
+    await page.locator(`#cc-board .cc-tile[data-c="${c}"][data-r="${r}"]`).click();
+    await markRound('category-clash', keys);
     await page.keyboard.press('Enter');
-    await page.keyboard.press(k);
-    if (k === 'w') await page.keyboard.press('2');
-    await page.keyboard.press('Enter');
-    await page.keyboard.press('ArrowRight');
+    await until(page, () => CGB.games['category-clash'].state().phase === 'board', 5000);
   }
-  await page.waitForTimeout(400);
+  await page.locator('#cc-board .cc-tile[data-c="1"][data-r="2"]').click();
+  await markRound('category-clash', ['1', '2', '4', '6']);
+  await page.waitForTimeout(700);
   await page.screenshot({ path: path.join(OUT, 'category-clash.png') });
   const ccShot = await page.screenshot({ type: 'jpeg', quality: 88 });
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
 
-  // Hex Hunt: both teams part-way across the board
-  await page.evaluate(() => CGB.store.setJSON('hh.names', ['Reds', 'Blues']));
+  // Hex Hunt: two halves of the class part-way across the board
+  await page.evaluate(() => CGB.store.setJSON('teams', ['Left half', 'Right half']));
   await page.click('[data-play="hex-hunt"]');
   await page.waitForTimeout(600);
+  await page.click('#hh-segMode button[data-v="class"]');
+  await page.click('#hh-segSession button[data-v="starter"]');
+  await page.click('#hh-segTimer button[data-v="0"]');
   await page.click('#hh-startBtn');
-  const hexMoves = [['1', [0, 2]], ['2', [2, 0]], ['1', [1, 2]], ['2', [2, 1]], ['1', [3, 2]], ['2', [1, 4]], ['1', [4, 1]]];
-  for (const [team, [c, r]] of hexMoves) {
+  const hexMoves = [[[0, 2], [7, 3]], [[2, 0], [2, 8]], [[1, 2], [9, 4]], [[2, 1], [3, 7]], [[3, 2], [8, 6]], [[1, 4], [4, 9]]];
+  for (const [[c, r], [a, b]] of hexMoves) {
     await page.locator(`#hh-board .hh-hex[data-c="${c}"][data-r="${r}"]`).click();
-    await page.keyboard.press(team); await page.keyboard.press('c'); await page.keyboard.press('Enter');
+    await page.keyboard.press('Space');
+    await until(page, () => CGB.games['hex-hunt'].state().round === 'mark', 15000);
+    await page.keyboard.press('1'); for (let i = 0; i < a; i++) await page.keyboard.press('ArrowRight');
+    await page.keyboard.press('2'); for (let i = 0; i < b; i++) await page.keyboard.press('ArrowRight');
+    await page.keyboard.press('Enter'); await page.keyboard.press('Enter');
   }
+  await page.locator('#hh-board .hh-hex[data-c="4"][data-r="1"]').click();
+  await page.keyboard.press('Space');
+  await until(page, () => CGB.games['hex-hunt'].state().round === 'mark', 15000);
+  await page.keyboard.press('1'); for (let i = 0; i < 8; i++) await page.keyboard.press('ArrowRight');
+  await page.keyboard.press('2'); for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(400);
   await page.screenshot({ path: path.join(OUT, 'hex-hunt.png') });
   const hhShot = await page.screenshot({ type: 'jpeg', quality: 88 });
@@ -141,7 +168,7 @@ async function until(page, fn, ms) {
           <figure class="s3"><img src="${cc}" alt=""><figcaption>${CGB.brand.ccLogo()}</figcaption></figure>
           <figure class="s4"><img src="${hh}" alt=""><figcaption>${CGB.brand.hhLogo()}</figcaption></figure>
         </div>
-        <div class="chips"><span>4 classroom games</span><span>1 shared question bank</span><span>190+ AQA-style GCSE Combined Science questions</span><span>Works offline</span></div>
+        <div class="chips"><span>Whole class: every team answers</span><span>4 games</span><span>190+ AQA-style GCSE science questions</span><span>Works offline</span></div>
       </div>`;
     const st = document.createElement('style');
     st.textContent = `
@@ -158,7 +185,7 @@ async function until(page, fn, ms) {
       #cover figcaption { position: absolute; left: 50%; bottom: -96px; transform: translateX(-50%); width: 250px; }
       #cover figcaption svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 6px 0 rgba(0,0,0,0.35)); }
       #cover .chips { position: absolute; left: 0; right: 0; bottom: 26px; display: flex; justify-content: center; gap: 14px; }
-      #cover .chips span { background: #FFF9F0; color: #1B1F3B; border: 4px solid #1B1F3B; border-radius: 999px; padding: 8px 18px; font-weight: 900; font-size: 22px; }`;
+      #cover .chips span { background: #FFF9F0; color: #1B1F3B; border: 4px solid #1B1F3B; border-radius: 999px; padding: 8px 18px; font-weight: 900; font-size: 22px; white-space: nowrap; }`;
     document.head.appendChild(st);
   }, { ote: b64(oteShot), op: b64(opShot), cc: b64(ccShot), hh: b64(hhShot), mascot: b64(mascot) });
   await page.waitForTimeout(800);

@@ -2,6 +2,8 @@
 
 Four revision quiz games for the front of the classroom, **Over the Edge**, **Outpace**, **Category Clash** and **Hex Hunt**, packaged as one offline HTML file with a shared launcher, a shared question bank and a host mascot.
 
+Every game has a **Whole class** mode (the default): 2 to 6 teams answer every question on mini whiteboards, the teacher marks each team with the number keys, and play moves on. A **Small group** mode keeps the original two-team turn-taking games.
+
 - Product: [`dist/showtime-classroom-gameshows.html`](dist/showtime-classroom-gameshows.html). Double-click it: no server, no internet connection.
 - Teacher guide: [`dist/teacher-guide.pdf`](dist/teacher-guide.pdf)
 - Tes listing images and text: [`dist/listing/`](dist/listing/)
@@ -24,7 +26,8 @@ src/
     brand.js                 wordmark, game logos and launcher art, drawn as SVG
     ui.css                   shared UI kit: tokens, buttons, panels, score cards, banners, modals, launcher
     app.js                   launcher, routing, bank manager, settings, about, setup-card fitting
-    teams.js                 the team palette and shared team names
+    teams.js                 the team palette (six teams) and shared team names
+    classmode.js             whole-class core: mode toggle, countdown, "show me", team marking board, undo, misconceptions
   games/
     over-the-edge/           game.html, game.css, game.js
     outpace/                 game.html, game.css, game.js
@@ -68,13 +71,14 @@ Playwright runs `build.js` first; it does nothing if `src/` hasn't changed since
 
 **Two builds.** `dist/showtime-classroom-gameshows.html` is the product. `test-build/showtime-test.html` (not committed) is the same file plus the code between `@test-only` and `@end-test-only` markers: a seedable random number generator and shortcuts such as "jump to the final round", "jackpot near the edge", a manual physics clock and setting the sprint timer. The build removes those blocks from the product and stops if any are left; a test checks the product is exactly the test build without them.
 
-**What the tests cover.** The shipped file loads from `file://` with zero network requests and console errors, and the launcher reaches every game and back. Full keyboard games of all four games, played with the same seed every run. Outpace marking. Category Clash difficulty rows. The jackpot win. Over the Edge physics giving identical results on two runs. A pasted set appearing in every game, JSON backup round trips, shared wrong-answer history, and blocked storage. Gameplay tests use low graphics and a 960×600 window. One full-length Over the Edge game and one full Outpace game run at High graphics on the shipped file (tagged `@hq`, in `npm test` only).
+**What the tests cover.** The shipped file loads from `file://` with zero network requests and console errors, and the launcher reaches every game and back. Full keyboard games of all four games, played with the same seed every run. Outpace marking. Category Clash difficulty rows. Whole-class games of every game with 2, 4 and 6 teams (Hex Hunt with two halves), checking marking, undo, catch-up rules, the misconceptions summary and that Over the Edge's counters finish dropping within 10 seconds of marking (`tests/classmode.spec.js`). The jackpot win. Over the Edge physics giving identical results on two runs. A pasted set appearing in every game, JSON backup round trips, shared wrong-answer history, and blocked storage. Gameplay tests use low graphics and a 960×600 window. One full-length Over the Edge game and one full Outpace game run at High graphics on the shipped file (tagged `@hq`, in `npm test` only).
 
-`tests/screens.spec.js` takes screenshots of every screen at 1920×1080, 1366×768 and 768×1024 (batches with their own time limits) into `screenshots/`. It fails if:
+`tests/screens.spec.js` takes screenshots of every screen at 1920×1080, 1366×768 and 768×1024 (batches with their own time limits) into `screenshots/`. Whole-class screens are taken with six teams. It fails if:
 - banners, bubbles, labels, captions or panels overlap;
 - a setup card needs scrolling or hides under the top bar;
 - the Over the Edge host overlaps the machine;
-- the coming-soon strip is cut off.
+- the coming-soon strip is cut off;
+- a team name is cut off on a team panel;
 - a card or panel block has text spilling out of it;
 - a 3D scene comes out blank.
 

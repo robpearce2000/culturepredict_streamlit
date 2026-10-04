@@ -15,7 +15,8 @@ const SEED = process.env.SEED ? Number(process.env.SEED) : 20261004;
 
 /* Open Showtime and record anything that should never happen: network requests and console errors.
    opts.product  open the shipped file instead of the test build (no shortcuts, no seeding)
-   opts.quality  'low' (default for gameplay tests: rules don't depend on shadows or glow) or 'high' */
+   opts.quality  'low' (default for gameplay tests: rules don't depend on shadows or glow) or 'high'
+   opts.mode     'small' (default: the small-group tests that came before class mode) or 'class' */
 async function openBundle(page, hash, opts) {
   opts = opts || {};
   const log = { requests: [], errors: [] };
@@ -23,15 +24,16 @@ async function openBundle(page, hash, opts) {
   page.on('console', m => { if (m.type() === 'error' || m.type() === 'warning') log.errors.push(m.type() + ': ' + m.text()); });
   page.on('pageerror', e => log.errors.push('pageerror: ' + e.message));
   try { test.info().annotations.push({ type: 'seed', description: String(SEED) }); } catch (e) { /* outside a test */ }
-  await page.addInitScript(([seed, quality]) => {
+  await page.addInitScript(([seed, quality, mode]) => {
     window.__SHOWTIME_SEED__ = seed;
     try {
+      ['over-the-edge', 'outpace', 'category-clash', 'hex-hunt'].forEach(g => { if (!localStorage.getItem('cgb.' + g + '.mode')) localStorage.setItem('cgb.' + g + '.mode', mode); });
       if (quality) {
         const k = 'cgb.settings', cur = JSON.parse(localStorage.getItem(k) || '{}');
         if (!cur.quality) { cur.quality = quality; localStorage.setItem(k, JSON.stringify(cur)); }
       }
     } catch (e) { /* storage blocked: the game falls back to its defaults */ }
-  }, [SEED, opts.quality || 'low']);
+  }, [SEED, opts.quality || 'low', opts.mode || 'small']);
   await page.goto('file://' + (opts.product ? DIST : TEST_BUILD) + (hash || ''));
   await page.waitForFunction(() => window.CGB && CGB.app);
   return log;

@@ -297,12 +297,12 @@ function undoClassResult() {
   paintQBoard();
   renderTeams();
 }
-/* Each team chooses once per round. A team far behind (by at least twice the top tile)
-   chooses first in the next round: its catch-up pick. */
+/* Each team chooses once per round. The last-placed team, if it trails the leader by at least
+   the value of the top tile, chooses first in the next round: its catch-up pick. */
 function startClassRound() {
   const n = S.teams.length, top = S.rows * 100;
   const scores = S.teams.map(t => t.score), lead = Math.max(...scores), last = scores.indexOf(Math.min(...scores));
-  S.catchUp = S.order.length && lead - scores[last] >= top * 2 ? last : -1;
+  S.catchUp = S.order.length && lead - scores[last] >= top ? last : -1;
   const base = Array.from({ length: n }, (x, i) => i);
   S.order = S.catchUp >= 0 ? [S.catchUp].concat(base.filter(i => i !== S.catchUp)) : base;
   S.pos = 0;

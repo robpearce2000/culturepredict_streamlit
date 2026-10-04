@@ -89,11 +89,13 @@ CGB.fitSetups = () => requestAnimationFrame(() => {
     if (!card.offsetParent) return;
     const how = card.querySelector('details.howto');
     const over = () => card.scrollHeight > card.clientHeight + 1;
-    card.classList.remove('tight', 'tighter');
+    card.classList.remove('tight', 'tighter', 'twocol');
     if (how) how.open = true;
     if (over()) card.classList.add('tight');
     if (over() && how) how.open = false;
     if (over()) card.classList.add('tighter');
+    // a portrait tablet with six class teams: two narrower columns instead of one long one
+    if (over() && window.innerWidth >= 640) card.classList.add('twocol');
   });
 });
 window.addEventListener('resize', () => { clearTimeout(CGB.fitSetups.t); CGB.fitSetups.t = setTimeout(CGB.fitSetups, 120); });

@@ -23,7 +23,8 @@ const WATCH = [
   '#launcher .l-hero > *', '#launcher .gcard', '#launcher .l-bar', '#launcher .l-mascot .hello',
   '.cc-head .cc-turn', '.cc-head .cc-end', '.cc-q:not([hidden]) .cc-qcard', '.cc-screen.active .cgb-panel',
   '.hh-head > *', '.hh-q:not([hidden]) .hh-qcard', '.hh-win:not([hidden]) > *', '.hh-screen.active .cgb-panel', '.ote-host .host-head', '.ote-host .host-body',
-  '.host-foot .hc-bust', '.host-foot .hc-bubble.show', '.op-hostrow .hc-bust', '.op-hostrow .hc-bubble.show'
+  '.host-foot .hc-bust', '.host-foot .hc-bubble.show', '.op-hostrow .hc-bust', '.op-hostrow .hc-bubble.show',
+  '.cm-team', '.hh-srow'
 ];
 
 async function findProblems(page) {
@@ -56,6 +57,10 @@ async function findProblems(page) {
       const r = vis(el); if (!r) return;
       const cs = getComputedStyle(el);
       if (cs.overflowY === 'visible' && el.scrollHeight > el.clientHeight + 2) problems.push(`text spills out of ${el.className || el.id}`);
+    });
+    // team names in the class-mode panels must be readable, not cut off
+    document.querySelectorAll('.cm-nm').forEach(el => {
+      if (vis(el) && el.scrollWidth > el.clientWidth + 1) problems.push(`team name cut off: "${el.textContent.trim()}"`);
     });
     // text that spills off the side of the screen
     document.querySelectorAll('button, h1, h2, h3, p, .qtext, .qanswer, .op-tag, .flabel, .verdict, .detail, .name, .nm, label, .lab').forEach(el => {
@@ -180,6 +185,116 @@ const SECTIONS = {
     await shot('66-hh-round-won', 900);
     await page.keyboard.press('Enter');
     await shot('67-hh-results', 600);
+  },
+  /* ---------- Whole class, six teams on screen ---------- */
+  'class-category-clash': async ({ page, shot, until, fits }) => {
+    await page.click('[data-play="category-clash"]');
+    await page.click('#cc-segMode button[data-v="class"]');
+    await page.click('#cc-segTeams button[data-v="6"]');
+    await page.click('#cc-segSession button[data-v="starter"]');
+    await page.click('#cc-segTimer button[data-v="30"]');
+    await shot('70-class-cc-setup', 600); await fits('category-clash', '70-class-cc-setup');
+    await page.click('#cc-startBtn');
+    await shot('71-class-cc-board', 500);
+    await page.keyboard.press('Enter');
+    await shot('72-class-cc-question-countdown', 800);
+    await page.keyboard.press('Space');
+    await shot('73-class-cc-show-me', 700);
+    await until(async () => (await state(page, 'category-clash')).round === 'mark', 10000);
+    await shot('74-class-cc-marking', 200);
+    for (const k of ['1', '3', '4', '6']) await page.keyboard.press(k);
+    await shot('75-class-cc-marked', 200);
+    await page.keyboard.press('Enter');
+    await shot('76-class-cc-result', 700);
+    await page.keyboard.press('Enter');
+    await until(async () => {
+      const s = await state(page, 'category-clash');
+      if (s.phase === 'summary') return true;
+      if (s.phase === 'board' || s.round === 'done') await page.keyboard.press('Enter');
+      else if (s.round === 'think' || s.round === 'show') await page.keyboard.press('Space');
+      else if (s.round === 'mark') { await page.keyboard.press('2'); await page.keyboard.press('5'); await page.keyboard.press('Enter'); }
+      return false;
+    }, 120000);
+    await shot('77-class-cc-results', 700);
+  },
+  'class-hex-hunt': async ({ page, shot, until, fits }) => {
+    await page.click('[data-play="hex-hunt"]');
+    await page.click('#hh-segMode button[data-v="class"]');
+    await page.click('#hh-segSession button[data-v="starter"]');
+    await shot('80-class-hh-setup', 600); await fits('hex-hunt', '80-class-hh-setup');
+    await page.click('#hh-startBtn');
+    await page.keyboard.press('Enter');
+    await page.keyboard.press('Space'); await page.keyboard.press('Space');
+    await until(async () => (await state(page, 'hex-hunt')).round === 'mark', 10000);
+    await page.keyboard.press('1'); for (let i = 0; i < 4; i++) await page.keyboard.press('ArrowRight');
+    await page.keyboard.press('2'); for (let i = 0; i < 7; i++) await page.keyboard.press('ArrowRight');
+    await shot('81-class-hh-shares', 300);
+    await page.keyboard.press('Enter');
+    await shot('82-class-hh-claimed', 600);
+    await page.keyboard.press('Enter');
+    let k = 0;
+    await until(async () => {
+      const s = await state(page, 'hex-hunt');
+      if (s.phase === 'summary') return true;
+      if (s.phase === 'board' || s.phase === 'won' || s.round === 'done') await page.keyboard.press('Enter');
+      else if (s.round === 'think' || s.round === 'show') await page.keyboard.press('Space');
+      else if (s.round === 'mark') { await page.keyboard.press(String(1 + (k++ % 2))); await page.keyboard.press('ArrowRight'); await page.keyboard.press('Enter'); }
+      return false;
+    }, 120000);
+    await shot('83-class-hh-results', 700);
+  },
+  'class-over-the-edge': async ({ page, shot, until, fits }) => {
+    await page.click('[data-play="over-the-edge"]');
+    await page.click('#ote-segMode button[data-v="class"]');
+    await page.click('#ote-segTeams button[data-v="6"]');
+    await page.click('#ote-segSession button[data-v="starter"]');
+    await page.click('#ote-segTimer button[data-v="30"]');
+    await shot('90-class-ote-setup', 1200); await fits('over-the-edge', '90-class-ote-setup');
+    await page.click('#ote-startBtn');
+    await shot('91-class-ote-question', 1200);
+    await page.keyboard.press('Space'); await page.keyboard.press('Space');
+    await until(async () => (await state(page, 'over-the-edge')).round === 'mark', 10000);
+    await page.keyboard.press('c'); await page.keyboard.press('2');
+    await shot('92-class-ote-marking', 300);
+    await page.keyboard.press('Enter');
+    await shot('93-class-ote-lanes', 600);
+    await page.keyboard.press('r');
+    await shot('94-class-ote-dropping', 1800);
+    await until(async () => (await state(page, 'over-the-edge')).step === 'next', 90000);
+    await shot('95-class-ote-after-drop', 300);
+    await page.evaluate(() => { CGB.test.ote.setMoney([600, 400, 300, 0, 200, 500]); CGB.test.ote.toFinal(); });
+    await shot('96-class-ote-catch-up', 1500);
+    await page.keyboard.press('2');
+    await until(async () => (await state(page, 'over-the-edge')).step === 'next', 90000);
+    await page.keyboard.press('Space');
+    await shot('97-class-ote-final', 1200);
+  },
+  'class-outpace': async ({ page, shot, until, fits }) => {
+    await page.click('[data-play="outpace"]');
+    await page.click('#op-segMode button[data-v="class"]');
+    await page.click('#op-segGroups button[data-v="6"]');
+    await page.click('#op-segSession button[data-v="starter"]');
+    await page.click('#op-segTimer button[data-v="30"]');
+    await shot('100-class-op-setup', 1200); await fits('outpace', '100-class-op-setup');
+    await page.click('#op-startBtn');
+    await shot('101-class-op-vote', 1200);
+    await page.keyboard.press('2');
+    await shot('102-class-op-question', 1500);
+    await page.keyboard.press('Space'); await page.keyboard.press('Space');
+    await until(async () => (await state(page, 'outpace')).round === 'mark', 10000);
+    for (const k of ['1', '2', '4', '5']) await page.keyboard.press(k);
+    await shot('103-class-op-marking', 300);
+    await page.keyboard.press('Enter');
+    await shot('104-class-op-result', 1500);
+    await page.evaluate(() => CGB.test.outpace.toSprint(600));
+    await shot('105-class-op-sprint', 1500);
+    await page.keyboard.press('Space');
+    await until(async () => (await state(page, 'outpace')).round === 'mark', 10000);
+    await page.keyboard.press('c'); await page.keyboard.press('3'); await page.keyboard.press('Enter');
+    await shot('106-class-op-sprint-marked', 500);
+    await page.evaluate(() => CGB.test.outpace.setTime(1));
+    await until(async () => (await state(page, 'outpace')).phase === 'summary', 60000);
+    await shot('107-class-op-results', 1000);
   },
   outpace: async ({ page, shot, until, fits }) => {
     // ---------- Outpace ----------

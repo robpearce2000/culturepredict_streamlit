@@ -1061,8 +1061,9 @@ function renderScores() {
   const cls = G.mode === 'class';
   $('keys').innerHTML = cls ? KEYS_CLASS : KEYS_SMALL;
   $('feed').hidden = cls;
+  // the class team panels appear when the game starts (the setup card covers this area on tablets)
   $('pc0').hidden = $('pc1').hidden = cls;
-  $('board').hidden = !cls;
+  $('board').hidden = !cls || G.phase === 'home';
   if (cls) {
     const teams = G.phase === 'home'
       ? [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => ({ name: ($('cname' + i) || {}).value || CGB.teamFallback(i), score: fmt(0) }))
@@ -1404,6 +1405,7 @@ function endRound() {
     G.qIndex = 0; G.qTotal = G.mode === 'class' ? G.finalTotal : G.finalN;
     $('roundName').textContent = 'The Final: Jackpot';
     if (G.mode === 'class') {
+      board.set({ earned: [], marks: [] });
       showBanner('The Final', 'The whole class plays together for the jackpot. Every correct team wins two counters.', 3400);
       hostSay("It's the final! The whole class together now. Push that jackpot over the edge!", 'cheer', 2200);
       // catch-up: a team with no more than half the leader's money drops one extra counter first
@@ -1459,6 +1461,7 @@ CGB.test.ote = {
     tray.lower = tray.lower.filter(b => b !== J); clearSpace(J.x, y); tray.lower.push(J); J.y = y; J.vx = J.vy = 0;
   },
   simTime: () => simT,
+  setMoney(list) { list.forEach((m, i) => { if (G.players[i]) G.players[i].money = m; }); render(); },
   info: () => ({ jackpotWon: !!G.jackpotWon, jackpotFell: !!G.jackpotFell, progress: jackpotProgress(), team: G.team,
     tray: tray.lower.map(b => `${b.kind}:${b.x.toFixed(2)},${b.y.toFixed(2)}`).join(';') })
 };

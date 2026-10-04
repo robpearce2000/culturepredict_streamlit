@@ -300,3 +300,17 @@ details.howto:not([open]) { margin-bottom: 8px; }
 .cm-mq .a { font-weight: 900; color: var(--teal-deep); }
 .cm-mq .t { font-size: 0.8rem; font-weight: 700; color: var(--ink-soft); }
 .cm-none { font-weight: 800; color: var(--ink-soft); }
+
+/* tightest setup cards (six class teams on a tablet): smaller hints and rows */
+.setup.tighter .cm-rule { font-size: 0.78rem; padding: 5px 9px; margin-bottom: 6px; }
+.setup.tighter [id$="sessionHint"], .setup.tighter .op-sub { display: none; }
+.setup.tighter .field { margin-bottom: 6px; }
+.setup.tighter .lab { margin-bottom: 3px; }
+.setup.tighter .seg button { padding-top: 5px; padding-bottom: 5px; }
+.setup.tighter [class$="-names"] input, .setup.tighter [class$="names"] input { font-size: 0.98rem; }
+.setup.twocol { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 18px; }
+.setup.twocol .setup-intro { grid-column: 1; }
+.setup.twocol .setup-form { grid-column: 2; }
+.setup.twocol .setup-go { grid-column: 1 / -1; }
+.setup.twocol [class$="-logo"] svg { max-width: 170px; }
+.setup.twocol .cc-names.many, .setup.twocol .ote-cnames, .setup.twocol .op-gnames { grid-template-columns: repeat(2, minmax(0, 1fr)); }
