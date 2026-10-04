@@ -198,6 +198,10 @@ $('qBtns').addEventListener('click', e => {
   else if (a === 'leave') backToBoard();
 });
 function toggleAnswer() { S.answerShown = !S.answerShown; $('qAnswer').classList.toggle('shown', S.answerShown); renderQButtons(); }
+/* Marty in the corner: short captions at the big moments */
+const hostC = CGB.createHostCorner($('host'));
+const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
+const pickLine = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
 function buzz(i) {
   if (S.step !== 'buzz' || S.tried[i] || !S.teams[i]) return;
   SFX.buzz();
@@ -213,6 +217,7 @@ function mark(correct) {
     cell.owner = i; team.won++;
     S.answerShown = true; $('qAnswer').classList.add('shown');
     $('qMsg').textContent = `Correct! The hexagon goes to ${team.name}.`;
+    hostC.say(pickLine([`Correct! That hexagon is ${team.name}'s.`, `Yes! ${team.name} claim it.`]), 'clap', 1500);
     S.picker = i;
     S.step = 'claimed';
     const path = winningPath(i);
@@ -222,8 +227,8 @@ function mark(correct) {
     team.wrong.push(cell.q); bank.logWrong(team.name, cell.q, GAME_NAME);
     S.tried[i] = true;
     const other = 1 - i;
-    if (!S.tried[other]) { S.step = 'buzz'; $('qMsg').textContent = `Not quite. ${S.teams[other].name}, can you answer?`; }
-    else { S.step = 'nobody'; S.answerShown = true; $('qAnswer').classList.add('shown'); $('qMsg').textContent = 'Nobody got it.'; }
+    if (!S.tried[other]) { S.step = 'buzz'; $('qMsg').textContent = `Not quite. ${S.teams[other].name}, can you answer?`; hostC.say(`Not quite! Over to ${S.teams[other].name}.`, 'groan', 1400); }
+    else { S.step = 'nobody'; S.answerShown = true; $('qAnswer').classList.add('shown'); $('qMsg').textContent = 'Nobody got it.'; hostC.say('Nobody got that one.', 'shrug', 1400); }
   }
   renderQButtons();
 }
@@ -269,6 +274,7 @@ function roundWon(i) {
   $('winDetail').textContent = `${TEAM[i].mark} Joined ${TEAM[i].goal} in ${S.path.length} hexagons` + (S.best > 1 ? ` · ${S.teams[0].name} ${S.teams[0].wins}, ${S.teams[1].name} ${S.teams[1].wins}` : '');
   $('winBtn').innerHTML = (matchOver ? 'See the results' : 'Next round') + ' <span class="kbd">Enter</span>';
   $('win').hidden = false;
+  hostC.say(matchOver ? `${S.teams[i].name} link their edges and win!` : `${S.teams[i].name} take the round! Next board coming up.`, 'cheer', 2200);
   $('winBtn').focus({ preventScroll: true });
 }
 function continueAfterWin() {
@@ -296,6 +302,7 @@ function startGame() {
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('win').hidden = true; $('q').hidden = true; $('play').hidden = false;
   renderBoard();
+  hostC.say(`Welcome to Hex Hunt! ${S.teams[0].name} go left to right, ${S.teams[1].name} top to bottom.`, 'wave', 2200);
 }
 $('startBtn').addEventListener('click', startGame);
 
@@ -311,6 +318,9 @@ function showSummary() {
   }).join('');
   $('sumCard').innerHTML = `<h2>${esc(title)}</h2><div class="hh-sum-grid">${cols}</div>
     <div class="hh-sum-btns"><button class="btn go" type="button" id="hh-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="hh-change">Change teams or settings</button><button class="btn plain" type="button" id="hh-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
+  $('sumCard').prepend(sumHost.el);
+  sumHost.say(a.wins === b.wins ? 'A draw! Brilliant hunting from both teams.' : `${title} Fantastic hunting!`, 'cheer', 2200);
+  hostC.quiet();
   $('summary').classList.add('active');
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;

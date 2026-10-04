@@ -49,7 +49,7 @@
 .cc-keys .kbd { margin: 0 1px; }
 
 /* Question */
-.cc-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 16px; background: rgba(16, 8, 30, 0.82); }
+.cc-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 92px; background: rgba(16, 8, 30, 0.82); }
 .cc-q[hidden] { display: none; }
 .cc-qcard { width: 100%; max-width: 980px; max-height: 100%; overflow-y: auto; background: var(--paper); color: var(--ink); border: 5px solid var(--ink); border-radius: 22px; box-shadow: 0 10px 0 rgba(0,0,0,0.35); padding: 18px 26px 22px; display: flex; flex-direction: column; gap: 10px; }
 .cc-qtop { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }

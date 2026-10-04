@@ -192,11 +192,15 @@ function openTile(c, r) {
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = '';
   $('q').hidden = false;
-  if (t.star) SFX.star(); else SFX.open();
+  if (t.star) { SFX.star(); hostC.say('A star tile! This one is worth double.', 'cheer', 1600); } else SFX.open();
   startTimer();
   renderQButtons();
   $('qcard').focus({ preventScroll: true });   // keys now go to the question, not the board behind it
 }
+/* Marty in the corner: short captions at the big moments */
+const hostC = CGB.createHostCorner($('host'));
+const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
+const pickLine = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
 function tileOpen() { return S.cats[S.open.c].tiles[S.open.r]; }
 function points() { const t = tileOpen(); return t.star ? t.value * 2 : t.value; }
 function renderQButtons() {
@@ -233,6 +237,7 @@ function markCorrect() {
   if (S.step !== 'ask') return;
   SFX.correct(); stopTimer(); showAnswer();
   award(S.picked, 'Correct!');
+  hostC.say(pickLine([`Correct! ${points()} points to ${S.teams[S.picked].name}.`, `Spot on, ${S.teams[S.picked].name}!`, 'That is right!']), 'clap', 1500);
   finishTile();
 }
 function markWrong() {
@@ -245,18 +250,21 @@ function markWrong() {
   if ($('optSteal').checked && S.teams.length > 1) { S.step = 'steal'; msg += ' Another team can steal it.'; }
   else { stopTimer(); showAnswer(); S.step = 'done'; }
   $('qMsg').textContent = msg;
+  hostC.say(S.step === 'steal' ? 'Not quite. Can another team steal it?' : pickLine(['Not this time.', 'Ooh, not quite.']), 'groan', 1400);
   renderTeams(); renderQButtons();
 }
 function steal(i) {
   if (S.step !== 'steal' || i === S.picked || !S.teams[i]) return;
   SFX.correct(); stopTimer(); showAnswer();
   award(i, `Stolen by ${S.teams[i].name}!`);
+  hostC.say(`Stolen! Well played, ${S.teams[i].name}.`, 'point', 1500);
   finishTile();
 }
 function nobody() {
   if (S.step !== 'steal' && S.step !== 'ask') return;
   stopTimer(); showAnswer();
   $('qMsg').textContent = 'Nobody wins this one.';
+  hostC.say('Nobody wins that one. On we go!', 'shrug', 1400);
   S.step = 'done';
   renderQButtons();
 }
@@ -309,6 +317,7 @@ function startGame() {
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('play').hidden = false; $('q').hidden = true;
   renderBoard();
+  hostC.say(`Welcome to Category Clash! ${S.teams[0].name}, you pick first.`, 'wave', 2000);
   const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
 }
 $('startBtn').addEventListener('click', startGame);
@@ -335,6 +344,9 @@ function showSummary() {
   $('sumCard').innerHTML = `<h2>${winners.length > 1 ? "It's a draw!" : esc(winners[0].t.name) + ' win!'}</h2>
     <div class="cc-podium">${podium}</div><div class="cc-sum-grid">${cols}</div>
     <div class="cc-sum-btns"><button class="btn go" type="button" id="cc-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="cc-change">Change teams or categories</button><button class="btn plain" type="button" id="cc-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
+  $('sumCard').prepend(sumHost.el);
+  sumHost.say(winners.length > 1 ? "A draw! What a close game. Well done, everyone." : `${winners[0].t.name} win with ${top} points. Great game, everyone!`, 'cheer', 2200);
+  hostC.quiet();
   $('summary').classList.add('active');
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;

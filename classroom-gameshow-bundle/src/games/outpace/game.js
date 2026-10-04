@@ -874,6 +874,10 @@ $('focusWeak').checked = CGB.store.get('op.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('op.focusWeak', e.target.checked ? '1' : '0'));
 $('startBtn').addEventListener('click', startGame);
 
+/* Marty: one corner host that moves to whichever panel is showing; captions only */
+const hostC = CGB.createHostCorner(document.createElement('div'));
+const pickLine = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
+function hostSay(slot, text, gesture, ms) { const el = $(slot); if (hostC.el.parentElement !== el) el.appendChild(hostC.el); hostC.say(text, gesture, ms); }
 function startGame() {
   clearTimers();
   const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
@@ -925,6 +929,7 @@ function startDealRound(playerIdx) {
   $('dealRow').hidden = false;
   $('qcard').hidden = true;
   $('dealStatus').textContent = `${TRACK_STEPS} steps to home. Team pot so far: ${state.pot} points.`;
+  hostSay('hostDeal', playerIdx === 0 ? `Welcome to Outpace! ${state.players[0].name}, choose your deal.` : `Your turn, ${state.players[1].name}. Choose your deal.`, 'wave', 2000);
   const first = $('dealRow').querySelector('button'); if (first) first.focus({ preventScroll: true });
 }
 function chooseDeal(tier) {
@@ -941,6 +946,7 @@ function chooseDeal(tier) {
   $('dealRow').hidden = true;
   $('dealLabel').textContent = `${state.players[state.activePlayerIdx].name}: playing for ${cfg.reward} points`;
   $('qcard').hidden = false;
+  hostSay('hostDeal', tier === 'high' ? 'A bold deal! The Hunter is right behind you.' : tier === 'low' ? 'A cautious start. Off you go!' : 'Standard deal. Let us race!', 'present', 1600);
   askDealQuestion();
 }
 $('dealRow').addEventListener('click', e => {
@@ -1001,6 +1007,7 @@ function answerDeal(correct) {
   if (state.phase !== 'deal' || !state.dealReward || state.awaitingNext || !state.currentQuestion) return;
   state.awaitingNext = true;
   showMarked(correct, correct ? 'Correct: one step closer to home' : 'Wrong: the Hunter moves closer');
+  hostSay('hostDeal', correct ? pickLine(['Correct! One step closer.', 'Yes! Keep going!']) : pickLine(['Oh no, the Hunter gains a step!', 'Not quite. The Hunter is closing in!']), correct ? 'clap' : 'groan', 1400);
   later(() => moveDeal(correct), MARK_PAUSE);
 }
 const MARK_PAUSE = 1300;
@@ -1038,6 +1045,7 @@ function finishDealRound(escaped) {
   state.pot += reward;
   state.dealOutcomes.push({ player: state.players[state.activePlayerIdx].name, escaped, reward });
   $('dealStatus').textContent = '';
+  hostSay('hostDeal', escaped ? `Home safe! ${reward} points banked.` : `Caught! Still, ${reward} points go in the pot.`, escaped ? 'cheer' : 'shrug', 2000);
   showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.players[state.activePlayerIdx].name} banks ${reward} points. Team pot: ${state.pot}`, () => {
     if (state.activePlayerIdx === 0) startDealRound(1);
     else startSprint();
@@ -1077,6 +1085,7 @@ function startSprint() {
   state.sprintTarget = computeFinalTarget(state.pot);
   state.sprintTurn = 0;
   state.sprintTimeLeft = 60;
+  hostSay('hostSprint', 'Final Sprint! Sixty seconds. Work together!', 'point', 1800);
   state.sprintPassUsed = [false, false];
 
   $('sprintTarget').textContent = `Target: ${state.sprintTarget} correct (pot ${state.pot} points)`;
@@ -1183,6 +1192,7 @@ function showSummary(escaped) {
     ? `Escaped! The team keeps all ${state.pot} points.`
     : 'Caught! The pot is wiped.';
   $('finalVerdict').className = 'op-verdict ' + (escaped ? 'escaped' : 'caught');
+  hostSay('hostSum', escaped ? 'You outpaced the Hunter! Brilliant teamwork.' : 'The Hunter got you this time. Great effort, both teams!', escaped ? 'cheer' : 'shrug', 2200);
 
   const deals = state.dealOutcomes;
   $('summaryPlayers').innerHTML = state.players.map((p, idx) => {

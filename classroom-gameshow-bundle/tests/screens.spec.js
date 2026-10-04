@@ -21,7 +21,8 @@ const WATCH = [
   '.op-screen.active .op-panel',
   '#launcher .l-hero > *', '#launcher .gcard', '#launcher .l-bar', '#launcher .l-mascot .hello',
   '.cc-head .cc-turn', '.cc-head .cc-end', '.cc-q:not([hidden]) .cc-qcard', '.cc-screen.active .cgb-panel',
-  '.hh-head > *', '.hh-q:not([hidden]) .hh-qcard', '.hh-win:not([hidden]) > *', '.hh-screen.active .cgb-panel', '.ote-host .host-head', '.ote-host .host-body'
+  '.hh-head > *', '.hh-q:not([hidden]) .hh-qcard', '.hh-win:not([hidden]) > *', '.hh-screen.active .cgb-panel', '.ote-host .host-head', '.ote-host .host-body',
+  '.host-foot .hc-bust', '.host-foot .hc-bubble.show', '.op-hostrow .hc-bust', '.op-hostrow .hc-bubble.show'
 ];
 
 async function findProblems(page) {
@@ -225,6 +226,27 @@ for (const size of SIZES) {
         await page.waitForTimeout(settle == null ? 600 : settle);
         await page.screenshot({ path: path.join(OUT, size.name, name + '.png'), timeout: 60000 });
         (await findProblems(page)).forEach(p => problems.push(`${name}: ${p}`));
+        // Over the Edge: the host must never cover the machine (shelf front edge, lanes, peg board)
+        const ote = await page.evaluate(() => {
+          const sec = document.getElementById('game-over-the-edge');
+          if (!sec || sec.hidden || !CGB.games['over-the-edge'].layout) return null;
+          const host = document.getElementById('ote-host');
+          if (host.classList.contains('away') || host.classList.contains('nofit') || getComputedStyle(host).opacity < 0.15) return null;
+          return CGB.games['over-the-edge'].layout();
+        });
+        if (ote) {
+          const m = ote.machine, h = ote.host;
+          const ox = Math.min(m.right, h.right) - Math.max(m.left, h.left), oy = Math.min(m.bottom, h.bottom) - Math.max(m.top, h.top);
+          if (ox > 0 && oy > 0) problems.push(`${name}: host overlaps the machine (${Math.round(ox)}×${Math.round(oy)}px)`);
+        }
+        // the launcher's "More shows coming soon" card is either fully on screen or starts below the fold
+        const soon = await page.evaluate(() => {
+          const el = document.querySelector('#launcher:not([hidden]) .gcard.soon'); if (!el) return null;
+          const r = el.getBoundingClientRect(); return { top: r.top, bottom: r.bottom, left: r.left, right: r.right };
+        });
+        if (soon && soon.top < size.height && (soon.bottom > size.height + 1 || soon.left < 0 || soon.right > size.width)) {
+          problems.push(`${name}: the coming-soon card is cut off (${Math.round(soon.top)}–${Math.round(soon.bottom)} of ${size.height})`);
+        }
       }
       // the setup card, title to Start button, must be on screen below the top bar with no scrolling
       async function fits(game, name) {

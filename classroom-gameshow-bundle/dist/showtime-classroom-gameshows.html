@@ -241,6 +241,29 @@ details.howto:not([open]) { margin-bottom: 8px; }
   .setup-go { grid-column: 1 / -1; }
 }
 
+/* ---------- Corner host (Outpace, Category Clash, Hex Hunt) ---------- */
+.host-corner { display: flex; align-items: center; gap: 8px; min-width: 0; pointer-events: none; }
+.hc-bust { position: relative; flex: none; width: 58px; height: 62px; overflow: hidden; border-radius: 50% 50% 14px 14px; background: rgba(255,255,255,0.12); border: 3px solid var(--ink); }
+.hc-bust .host-wrap { position: absolute; width: auto; height: 132px; aspect-ratio: 300 / 440; left: -16px; top: -6px; }
+.hc-bubble { position: relative; min-width: 0; max-width: 340px; background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 14px; padding: 4px 12px 5px; font-weight: 800; font-size: 0.95rem; line-height: 1.3; opacity: 0; transform: translateY(4px); transition: opacity .2s, transform .2s; }
+.hc-bubble.show { opacity: 1; transform: none; }
+.hc-bubble::before { content: ''; position: absolute; left: -9px; top: 50%; margin-top: -7px; border: 7px solid transparent; border-right-color: var(--ink); border-left: 0; }
+.hc-name { display: block; font-size: 0.7rem; letter-spacing: 0.6px; text-transform: uppercase; color: var(--teal-deep); }
+.hc-text { display: block; overflow-wrap: anywhere; }
+/* Host bar along the bottom of the board games: above the question and win overlays,
+   which keep their content clear of it with matching bottom padding */
+.host-foot { position: relative; z-index: 35; display: flex; align-items: center; gap: 16px; min-height: 68px; }
+.host-foot .host-slot { flex: 1 1 auto; min-width: 0; }
+.host-foot .keys { flex: none; margin-left: auto; }
+.host-sum { margin: -4px 0 8px; }
+@media (max-width: 700px) { .host-foot .keys { display: none; } }
+/* Laptop screens (about 768px tall): a slightly shorter hero so the coming-soon strip is fully in view */
+@media (min-width: 1000px) and (max-height: 860px) {
+  .l-mascot { height: 282px; }
+  .l-wordmark svg { max-height: 30vh; }
+  .gcard .art { aspect-ratio: 16 / 7.2; }
+}
+
 </style>
 <style>
 /* =========================================================
@@ -485,6 +508,9 @@ details.howto:not([open]) { margin-bottom: 8px; }
   .op-deal .gap { display: inline; margin-left: 6px; }
   .op-deal .pts { display: inline; }
 }
+/* Marty sits in the top panel's own row, so he never covers the track, questions or controls */
+.op-hostrow { display: flex; justify-content: center; min-height: 62px; }
+.op-hostrow .hc-bubble { max-width: min(420px, 60vw); }
 
 </style>
 <style>
@@ -539,7 +565,7 @@ details.howto:not([open]) { margin-bottom: 8px; }
 .cc-keys .kbd { margin: 0 1px; }
 
 /* Question */
-.cc-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 16px; background: rgba(16, 8, 30, 0.82); }
+.cc-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 92px; background: rgba(16, 8, 30, 0.82); }
 .cc-q[hidden] { display: none; }
 .cc-qcard { width: 100%; max-width: 980px; max-height: 100%; overflow-y: auto; background: var(--paper); color: var(--ink); border: 5px solid var(--ink); border-radius: 22px; box-shadow: 0 10px 0 rgba(0,0,0,0.35); padding: 18px 26px 22px; display: flex; flex-direction: column; gap: 10px; }
 .cc-qtop { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
@@ -647,7 +673,7 @@ details.howto:not([open]) { margin-bottom: 8px; }
 .hh-keys { color: var(--hh-muted); text-align: center; }
 
 /* Question */
-.hh-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 16px; background: rgba(6, 14, 26, 0.8); }
+.hh-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 92px; background: rgba(6, 14, 26, 0.8); }
 .hh-q[hidden] { display: none; }
 .hh-qcard { width: 100%; max-width: 980px; max-height: 100%; overflow-y: auto; background: var(--paper); color: var(--ink); border: 5px solid var(--ink); border-radius: 22px; box-shadow: 0 10px 0 rgba(0,0,0,0.35); padding: 18px 26px 22px; display: flex; flex-direction: column; gap: 10px; }
 .hh-qtop { display: flex; align-items: center; gap: 16px; }
@@ -689,6 +715,7 @@ details.howto:not([open]) { margin-bottom: 8px; }
 @media (max-width: 560px) { .hh-names, .hh-two { grid-template-columns: 1fr; } }
 
 .hh-qcard:focus { outline: none; }
+.hh-win { padding-bottom: 92px; }
 
 </style>
 </head>
@@ -884,6 +911,7 @@ details.howto:not([open]) { margin-bottom: 8px; }
   <div class="op-screen" id="op-summary">
     <div class="op-panel op-sum-card">
       <div class="op-kicker">Game summary</div>
+      <div class="op-hostrow" id="op-hostSum"></div>
       <div class="op-verdict" id="op-finalVerdict"></div>
       <div class="op-sum-grid" id="op-summaryPlayers"></div>
       <div class="op-sum-btns">
@@ -898,6 +926,7 @@ details.howto:not([open]) { margin-bottom: 8px; }
   <!-- DEAL ROUND HUD -->
   <div class="op-hud" id="op-hud-deal">
     <div class="op-top">
+      <div class="op-hostrow" id="op-hostDeal"></div>
       <div class="op-kicker" id="op-dealLabel">PLAYER 1: CHOOSE YOUR DEAL</div>
       <div class="op-deals" id="op-dealRow">
         <button class="op-deal" type="button" data-tier="low"><span class="k">1</span><b>Cautious</b><span class="pts">300 points</span><span class="gap">Hunter starts 5 steps back</span></button>
@@ -919,6 +948,7 @@ details.howto:not([open]) { margin-bottom: 8px; }
   <!-- FINAL SPRINT HUD -->
   <div class="op-hud" id="op-hud-sprint">
     <div class="op-top">
+      <div class="op-hostrow" id="op-hostSprint"></div>
       <div class="op-kicker">Final Sprint</div>
       <div class="op-timer" id="op-sprintTimer" role="timer" aria-live="off">1:00</div>
       <div class="op-track"><div class="op-fill" id="op-sprintFill"></div></div>
@@ -995,7 +1025,7 @@ details.howto:not([open]) { margin-bottom: 8px; }
     </div>
     <div class="cc-board" id="cc-board" role="grid" aria-label="Question board"></div>
     <div class="cc-teams" id="cc-teams"></div>
-    <div class="cc-keys keys"><span class="kbd">←</span><span class="kbd">→</span><span class="kbd">↑</span><span class="kbd">↓</span> move · <span class="kbd">Enter</span> open · <span class="kbd">Esc</span> menu</div>
+    <div class="host-foot"><div class="host-slot" id="cc-host"></div><div class="cc-keys keys"><span class="kbd">←</span><span class="kbd">→</span><span class="kbd">↑</span><span class="kbd">↓</span> move · <span class="kbd">Enter</span> open · <span class="kbd">Esc</span> menu</div></div>
   </div>
 
   <!-- QUESTION -->
@@ -1058,7 +1088,7 @@ details.howto:not([open]) { margin-bottom: 8px; }
     <div class="hh-head"><div class="hh-turn" id="hh-turn" role="status"></div><div class="hh-round" id="hh-round"></div></div>
     <div class="hh-boardwrap"><svg class="hh-board" id="hh-board" role="grid" aria-label="Hexagon board"></svg></div>
     <div class="hh-teams" id="hh-teams"></div>
-    <div class="hh-keys keys"><span class="kbd">←</span><span class="kbd">→</span><span class="kbd">↑</span><span class="kbd">↓</span> move · <span class="kbd">Enter</span> pick · <span class="kbd">Esc</span> menu</div>
+    <div class="host-foot"><div class="host-slot" id="hh-host"></div><div class="hh-keys keys"><span class="kbd">←</span><span class="kbd">→</span><span class="kbd">↑</span><span class="kbd">↓</span> move · <span class="kbd">Enter</span> pick · <span class="kbd">Esc</span> menu</div></div>
   </div>
 
   <!-- QUESTION -->
@@ -3685,6 +3715,32 @@ CGB.createHost2D = function (container, opts) {
       return { x: r.left + r.width / 2, y: r.top, w: r.width };
     }
   };
+};
+
+/* A small corner presence for the games without a stage: Marty's head and shoulders
+   with a caption bubble beside him. It sits in the page layout (never on top of the
+   board, track, questions or controls). Captions only; no voice. */
+CGB.createHostCorner = function (container, opts) {
+  opts = opts || {};
+  const box = document.createElement('div');
+  box.className = 'host-corner' + (opts.className ? ' ' + opts.className : '');
+  box.innerHTML = '<div class="hc-bust" aria-hidden="true"></div><div class="hc-bubble" role="status" aria-live="polite"><b class="hc-name"></b><span class="hc-text"></span></div>';
+  container.appendChild(box);
+  const host = CGB.createHost2D(box.querySelector('.hc-bust'), { className: 'host-mini' });
+  const bubble = box.querySelector('.hc-bubble');
+  let hideTimer = null;
+  function say(text, gesture, ms) {
+    if (!text) return;
+    box.querySelector('.hc-name').textContent = CGB.hostCfg.name || 'Host';
+    box.querySelector('.hc-text').textContent = text;
+    bubble.classList.add('show');
+    if (gesture) host.gesture(gesture, ms || 1800);
+    host.talk(Math.min(2400, text.length * 45 + 150));
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => bubble.classList.remove('show'), Math.max(3800, text.length * 80));
+  }
+  function quiet() { clearTimeout(hideTimer); bubble.classList.remove('show'); }
+  return { el: box, host, say, quiet };
 };
 
 </script>
@@ -6572,6 +6628,10 @@ $('focusWeak').checked = CGB.store.get('op.focusWeak') === '1';
 $('focusWeak').addEventListener('change', e => CGB.store.set('op.focusWeak', e.target.checked ? '1' : '0'));
 $('startBtn').addEventListener('click', startGame);
 
+/* Marty: one corner host that moves to whichever panel is showing; captions only */
+const hostC = CGB.createHostCorner(document.createElement('div'));
+const pickLine = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
+function hostSay(slot, text, gesture, ms) { const el = $(slot); if (hostC.el.parentElement !== el) el.appendChild(hostC.el); hostC.say(text, gesture, ms); }
 function startGame() {
   clearTimers();
   const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
@@ -6623,6 +6683,7 @@ function startDealRound(playerIdx) {
   $('dealRow').hidden = false;
   $('qcard').hidden = true;
   $('dealStatus').textContent = `${TRACK_STEPS} steps to home. Team pot so far: ${state.pot} points.`;
+  hostSay('hostDeal', playerIdx === 0 ? `Welcome to Outpace! ${state.players[0].name}, choose your deal.` : `Your turn, ${state.players[1].name}. Choose your deal.`, 'wave', 2000);
   const first = $('dealRow').querySelector('button'); if (first) first.focus({ preventScroll: true });
 }
 function chooseDeal(tier) {
@@ -6639,6 +6700,7 @@ function chooseDeal(tier) {
   $('dealRow').hidden = true;
   $('dealLabel').textContent = `${state.players[state.activePlayerIdx].name}: playing for ${cfg.reward} points`;
   $('qcard').hidden = false;
+  hostSay('hostDeal', tier === 'high' ? 'A bold deal! The Hunter is right behind you.' : tier === 'low' ? 'A cautious start. Off you go!' : 'Standard deal. Let us race!', 'present', 1600);
   askDealQuestion();
 }
 $('dealRow').addEventListener('click', e => {
@@ -6699,6 +6761,7 @@ function answerDeal(correct) {
   if (state.phase !== 'deal' || !state.dealReward || state.awaitingNext || !state.currentQuestion) return;
   state.awaitingNext = true;
   showMarked(correct, correct ? 'Correct: one step closer to home' : 'Wrong: the Hunter moves closer');
+  hostSay('hostDeal', correct ? pickLine(['Correct! One step closer.', 'Yes! Keep going!']) : pickLine(['Oh no, the Hunter gains a step!', 'Not quite. The Hunter is closing in!']), correct ? 'clap' : 'groan', 1400);
   later(() => moveDeal(correct), MARK_PAUSE);
 }
 const MARK_PAUSE = 1300;
@@ -6736,6 +6799,7 @@ function finishDealRound(escaped) {
   state.pot += reward;
   state.dealOutcomes.push({ player: state.players[state.activePlayerIdx].name, escaped, reward });
   $('dealStatus').textContent = '';
+  hostSay('hostDeal', escaped ? `Home safe! ${reward} points banked.` : `Caught! Still, ${reward} points go in the pot.`, escaped ? 'cheer' : 'shrug', 2000);
   showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.players[state.activePlayerIdx].name} banks ${reward} points. Team pot: ${state.pot}`, () => {
     if (state.activePlayerIdx === 0) startDealRound(1);
     else startSprint();
@@ -6775,6 +6839,7 @@ function startSprint() {
   state.sprintTarget = computeFinalTarget(state.pot);
   state.sprintTurn = 0;
   state.sprintTimeLeft = 60;
+  hostSay('hostSprint', 'Final Sprint! Sixty seconds. Work together!', 'point', 1800);
   state.sprintPassUsed = [false, false];
 
   $('sprintTarget').textContent = `Target: ${state.sprintTarget} correct (pot ${state.pot} points)`;
@@ -6881,6 +6946,7 @@ function showSummary(escaped) {
     ? `Escaped! The team keeps all ${state.pot} points.`
     : 'Caught! The pot is wiped.';
   $('finalVerdict').className = 'op-verdict ' + (escaped ? 'escaped' : 'caught');
+  hostSay('hostSum', escaped ? 'You outpaced the Hunter! Brilliant teamwork.' : 'The Hunter got you this time. Great effort, both teams!', escaped ? 'cheer' : 'shrug', 2200);
 
   const deals = state.dealOutcomes;
   $('summaryPlayers').innerHTML = state.players.map((p, idx) => {
@@ -7186,11 +7252,15 @@ function openTile(c, r) {
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = '';
   $('q').hidden = false;
-  if (t.star) SFX.star(); else SFX.open();
+  if (t.star) { SFX.star(); hostC.say('A star tile! This one is worth double.', 'cheer', 1600); } else SFX.open();
   startTimer();
   renderQButtons();
   $('qcard').focus({ preventScroll: true });   // keys now go to the question, not the board behind it
 }
+/* Marty in the corner: short captions at the big moments */
+const hostC = CGB.createHostCorner($('host'));
+const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
+const pickLine = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
 function tileOpen() { return S.cats[S.open.c].tiles[S.open.r]; }
 function points() { const t = tileOpen(); return t.star ? t.value * 2 : t.value; }
 function renderQButtons() {
@@ -7227,6 +7297,7 @@ function markCorrect() {
   if (S.step !== 'ask') return;
   SFX.correct(); stopTimer(); showAnswer();
   award(S.picked, 'Correct!');
+  hostC.say(pickLine([`Correct! ${points()} points to ${S.teams[S.picked].name}.`, `Spot on, ${S.teams[S.picked].name}!`, 'That is right!']), 'clap', 1500);
   finishTile();
 }
 function markWrong() {
@@ -7239,18 +7310,21 @@ function markWrong() {
   if ($('optSteal').checked && S.teams.length > 1) { S.step = 'steal'; msg += ' Another team can steal it.'; }
   else { stopTimer(); showAnswer(); S.step = 'done'; }
   $('qMsg').textContent = msg;
+  hostC.say(S.step === 'steal' ? 'Not quite. Can another team steal it?' : pickLine(['Not this time.', 'Ooh, not quite.']), 'groan', 1400);
   renderTeams(); renderQButtons();
 }
 function steal(i) {
   if (S.step !== 'steal' || i === S.picked || !S.teams[i]) return;
   SFX.correct(); stopTimer(); showAnswer();
   award(i, `Stolen by ${S.teams[i].name}!`);
+  hostC.say(`Stolen! Well played, ${S.teams[i].name}.`, 'point', 1500);
   finishTile();
 }
 function nobody() {
   if (S.step !== 'steal' && S.step !== 'ask') return;
   stopTimer(); showAnswer();
   $('qMsg').textContent = 'Nobody wins this one.';
+  hostC.say('Nobody wins that one. On we go!', 'shrug', 1400);
   S.step = 'done';
   renderQButtons();
 }
@@ -7303,6 +7377,7 @@ function startGame() {
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('play').hidden = false; $('q').hidden = true;
   renderBoard();
+  hostC.say(`Welcome to Category Clash! ${S.teams[0].name}, you pick first.`, 'wave', 2000);
   const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
 }
 $('startBtn').addEventListener('click', startGame);
@@ -7329,6 +7404,9 @@ function showSummary() {
   $('sumCard').innerHTML = `<h2>${winners.length > 1 ? "It's a draw!" : esc(winners[0].t.name) + ' win!'}</h2>
     <div class="cc-podium">${podium}</div><div class="cc-sum-grid">${cols}</div>
     <div class="cc-sum-btns"><button class="btn go" type="button" id="cc-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="cc-change">Change teams or categories</button><button class="btn plain" type="button" id="cc-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
+  $('sumCard').prepend(sumHost.el);
+  sumHost.say(winners.length > 1 ? "A draw! What a close game. Well done, everyone." : `${winners[0].t.name} win with ${top} points. Great game, everyone!`, 'cheer', 2200);
+  hostC.quiet();
   $('summary').classList.add('active');
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;
@@ -7602,6 +7680,10 @@ $('qBtns').addEventListener('click', e => {
   else if (a === 'leave') backToBoard();
 });
 function toggleAnswer() { S.answerShown = !S.answerShown; $('qAnswer').classList.toggle('shown', S.answerShown); renderQButtons(); }
+/* Marty in the corner: short captions at the big moments */
+const hostC = CGB.createHostCorner($('host'));
+const sumHost = CGB.createHostCorner(document.createElement('div'), { className: 'host-sum' });
+const pickLine = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
 function buzz(i) {
   if (S.step !== 'buzz' || S.tried[i] || !S.teams[i]) return;
   SFX.buzz();
@@ -7617,6 +7699,7 @@ function mark(correct) {
     cell.owner = i; team.won++;
     S.answerShown = true; $('qAnswer').classList.add('shown');
     $('qMsg').textContent = `Correct! The hexagon goes to ${team.name}.`;
+    hostC.say(pickLine([`Correct! That hexagon is ${team.name}'s.`, `Yes! ${team.name} claim it.`]), 'clap', 1500);
     S.picker = i;
     S.step = 'claimed';
     const path = winningPath(i);
@@ -7626,8 +7709,8 @@ function mark(correct) {
     team.wrong.push(cell.q); bank.logWrong(team.name, cell.q, GAME_NAME);
     S.tried[i] = true;
     const other = 1 - i;
-    if (!S.tried[other]) { S.step = 'buzz'; $('qMsg').textContent = `Not quite. ${S.teams[other].name}, can you answer?`; }
-    else { S.step = 'nobody'; S.answerShown = true; $('qAnswer').classList.add('shown'); $('qMsg').textContent = 'Nobody got it.'; }
+    if (!S.tried[other]) { S.step = 'buzz'; $('qMsg').textContent = `Not quite. ${S.teams[other].name}, can you answer?`; hostC.say(`Not quite! Over to ${S.teams[other].name}.`, 'groan', 1400); }
+    else { S.step = 'nobody'; S.answerShown = true; $('qAnswer').classList.add('shown'); $('qMsg').textContent = 'Nobody got it.'; hostC.say('Nobody got that one.', 'shrug', 1400); }
   }
   renderQButtons();
 }
@@ -7673,6 +7756,7 @@ function roundWon(i) {
   $('winDetail').textContent = `${TEAM[i].mark} Joined ${TEAM[i].goal} in ${S.path.length} hexagons` + (S.best > 1 ? ` · ${S.teams[0].name} ${S.teams[0].wins}, ${S.teams[1].name} ${S.teams[1].wins}` : '');
   $('winBtn').innerHTML = (matchOver ? 'See the results' : 'Next round') + ' <span class="kbd">Enter</span>';
   $('win').hidden = false;
+  hostC.say(matchOver ? `${S.teams[i].name} link their edges and win!` : `${S.teams[i].name} take the round! Next board coming up.`, 'cheer', 2200);
   $('winBtn').focus({ preventScroll: true });
 }
 function continueAfterWin() {
@@ -7700,6 +7784,7 @@ function startGame() {
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('win').hidden = true; $('q').hidden = true; $('play').hidden = false;
   renderBoard();
+  hostC.say(`Welcome to Hex Hunt! ${S.teams[0].name} go left to right, ${S.teams[1].name} top to bottom.`, 'wave', 2200);
 }
 $('startBtn').addEventListener('click', startGame);
 
@@ -7715,6 +7800,9 @@ function showSummary() {
   }).join('');
   $('sumCard').innerHTML = `<h2>${esc(title)}</h2><div class="hh-sum-grid">${cols}</div>
     <div class="hh-sum-btns"><button class="btn go" type="button" id="hh-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="hh-change">Change teams or settings</button><button class="btn plain" type="button" id="hh-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
+  $('sumCard').prepend(sumHost.el);
+  sumHost.say(a.wins === b.wins ? 'A draw! Brilliant hunting from both teams.' : `${title} Fantastic hunting!`, 'cheer', 2200);
+  hostC.quiet();
   $('summary').classList.add('active');
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;

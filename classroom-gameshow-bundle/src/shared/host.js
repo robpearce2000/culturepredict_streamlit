@@ -187,3 +187,29 @@ CGB.createHost2D = function (container, opts) {
     }
   };
 };
+
+/* A small corner presence for the games without a stage: Marty's head and shoulders
+   with a caption bubble beside him. It sits in the page layout (never on top of the
+   board, track, questions or controls). Captions only; no voice. */
+CGB.createHostCorner = function (container, opts) {
+  opts = opts || {};
+  const box = document.createElement('div');
+  box.className = 'host-corner' + (opts.className ? ' ' + opts.className : '');
+  box.innerHTML = '<div class="hc-bust" aria-hidden="true"></div><div class="hc-bubble" role="status" aria-live="polite"><b class="hc-name"></b><span class="hc-text"></span></div>';
+  container.appendChild(box);
+  const host = CGB.createHost2D(box.querySelector('.hc-bust'), { className: 'host-mini' });
+  const bubble = box.querySelector('.hc-bubble');
+  let hideTimer = null;
+  function say(text, gesture, ms) {
+    if (!text) return;
+    box.querySelector('.hc-name').textContent = CGB.hostCfg.name || 'Host';
+    box.querySelector('.hc-text').textContent = text;
+    bubble.classList.add('show');
+    if (gesture) host.gesture(gesture, ms || 1800);
+    host.talk(Math.min(2400, text.length * 45 + 150));
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => bubble.classList.remove('show'), Math.max(3800, text.length * 80));
+  }
+  function quiet() { clearTimeout(hideTimer); bubble.classList.remove('show'); }
+  return { el: box, host, say, quiet };
+};
