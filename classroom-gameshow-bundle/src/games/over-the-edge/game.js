@@ -206,7 +206,7 @@ const SFX = (() => {
 /* =========================================================
    GAME STATE
    ========================================================= */
-const T2 = CGB.TEAMS.slice(0, 2);
+const T2 = CGB.TEAMS;   // two teams in a small group, up to six in class mode
 const COLORS = { hex: T2.map(t => t.hex), css: T2.map(t => t.css), text: T2.map(t => t.text), mark: T2.map(t => t.mark) };
 const VALUE = 100, JACKPOT_VALUE = 5000;
 const WILDCARDS = [
@@ -215,6 +215,9 @@ const WILDCARDS = [
   { id: 'steal', title: 'Steal', text: (n, o) => `${n} takes up to £150 from ${o}` }
 ];
 const G = {
+  mode: CGB.mode.get('over-the-edge'), session: CGB.store.get('ote.session') || 'plenary',
+  nTeams: +CGB.store.get('ote.nTeams') || 4, timer: CGB.store.getJSON('ote.timer', 30),
+  laneQueue: [], laneOwner: [-1, -1, -1, -1], nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
   phase: 'home', step: null, attract: true,
   players: [], team: 0, finalWinnings: 0,
   r1Each: 6, finalN: 12, finalDiff: 'normal', focusWeak: false,
@@ -587,7 +590,7 @@ function machineRect() {
 function hostGesture(name, ms) { host.gesture(name, ms); }
 let hostCheck = 0;
 function updateHost(force) {
-  host.setRest((G.step === 'chute' || G.step === 'dropping') ? 'present' : 'idle');
+  host.setRest((G.step === 'chute' || G.step === 'lanes' || G.step === 'dropping') ? 'present' : 'idle');
   host.setLook(drops.length || transits.length || G.step === 'dropping' ? 'left' : '');
   // step aside when the setup or results card would cover him
   const now = performance.now();
@@ -699,7 +702,13 @@ function line(key, vars) {
 const labelsEl = $('labels');
 const labels = [];
 let combo = null;
-function popWin(amount, pos) {
+function popWin(amount, pos, who) {
+  if (G.mode === 'class' && who >= 0) {
+    // class mode: each label is in the team's colour with its mark, so the class sees who won it
+    popLabel(`${COLORS.mark[who]} +${fmt(amount)}`, pos, 'team', 1.9);
+    labels[labels.length - 1].el.style.color = T2[who].light;
+    return;
+  }
   if (combo && combo.L.t < combo.L.life * 0.6 && labels.includes(combo.L)) {
     combo.total += amount; combo.count++;
     combo.L.el.textContent = '+' + fmt(combo.total) + (combo.count > 1 ? '  ×' + combo.count : '');
@@ -887,13 +896,17 @@ function onTrayFall(b, inWin) {
   if (!inWin) { SFX.lost(); popLost(pos); G.dropLost++; renderScores(); return; }
   SFX.win();
   G.dropWon++;
-  const who = G.lastDropper;
-  if (G.phase === 'final') { G.team += VALUE; G.finalWinnings += VALUE; popWin(VALUE, pos); }
-  else if (who >= 0) { G.players[who].money += VALUE; G.players[who].won++; popWin(VALUE, pos); }
+  // class mode: the counter goes to the team whose counter last landed in that quarter of the shelf
+  const zoneOwner = G.mode === 'class' ? G.laneOwner[shelfZone(b.x)] : -1;
+  const who = zoneOwner >= 0 ? zoneOwner : G.lastDropper;
+  if (G.mode === 'class' && who >= 0) G.dropByTeam[who] = (G.dropByTeam[who] || 0) + 1;
+  if (G.phase === 'final') { G.team += VALUE; G.finalWinnings += VALUE; popWin(VALUE, pos, who); }
+  else if (who >= 0) { G.players[who].money += VALUE; G.players[who].won++; popWin(VALUE, pos, who); }
   if (G.dropWon >= 3 && !G.cascadeSaid && G.step === 'dropping') { G.cascadeSaid = true; hostSay(line('cascade'), 'cheer', 2200); }
   if (b.wildcard) triggerWildcard(b.wildcard, who, pos);
   renderScores();
 }
+const shelfZone = x => Math.max(0, Math.min(3, Math.floor(x / (PHY.W / 4))));
 function triggerWildcard(id, who, pos) {
   SFX.wildcard();
   const def = WILDCARDS.find(m => m.id === id);
@@ -903,11 +916,15 @@ function triggerWildcard(id, who, pos) {
     popLabel('★ +£250', pos.clone().add(new THREE.Vector3(0, 1.3, 0)), 'wild', 2.2);
     return;
   }
-  const P = G.players[who], O = G.players[1 - who];
+  const P = G.players[who];
+  // with more than two teams a steal takes from the leading team (other than the thief)
+  const others = G.players.map((x, i) => i).filter(i => i !== who);
+  const oi = others.reduce((a, i) => G.players[i].money > G.players[a].money ? i : a, others[0]);
+  const O = G.players[oi];
   if (id === 'bonus') G.pendingExtra.push(who);
   else if (id === 'cash') P.money += 250;
   else if (id === 'steal') { const amt = Math.min(150, O.money); O.money -= amt; P.money += amt; }
-  const ln = def.title + ': ' + def.text(P.name, O.name);
+  const ln = def.title + ': ' + (id === 'steal' && G.players.length > 2 ? `${P.name} takes up to £150 from the leading team, ${O.name}` : def.text(P.name, O.name));
   G.dropNotes.push(ln);
   popLabel('★ ' + def.title + '!', pos.clone().add(new THREE.Vector3(0, 1.3, 0)), 'wild', 2.4);
   showBanner('★ Wildcard', ln, 2600);
@@ -992,21 +1009,23 @@ function updateCamera(dt, now) {
 
 const raycaster = new THREE.Raycaster(), ndc = new THREE.Vector2();
 renderer.domElement.addEventListener('pointerdown', e => {
-  if (G.step !== 'chute') return;
+  if (G.step !== 'chute' && G.step !== 'lanes') return;
+  const pickLane = i => G.step === 'lanes' ? chooseLane(i) : chooseChute(i);
   const r = renderer.domElement.getBoundingClientRect();
   ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
   raycaster.setFromCamera(ndc, camera);
   const hit = raycaster.intersectObjects(chuteMeshes.concat([boardBack, glass]))[0];
   if (!hit) return;
-  if (hit.object.userData.chute != null) { chooseChute(hit.object.userData.chute); return; }
+  if (hit.object.userData.chute != null) { pickLane(hit.object.userData.chute); return; }
   const px = hit.point.x / S + PEG.W / 2;
   let best = 0; PEG.CHUTES.forEach((cx, i) => { if (Math.abs(cx - px) < Math.abs(PEG.CHUTES[best] - px)) best = i; });
-  chooseChute(best);
+  pickLane(best);
 });
 function updateChuteGlow(now) {
-  if (G.step !== 'chute') return;
+  if (G.step !== 'chute' && G.step !== 'lanes') return;
   const pulse = CGB.settings.reduced() ? 0.9 : 0.7 + Math.sin(now * 0.008) * 0.5;
-  chuteMats.forEach(m => { m.emissive.setHex(G.dropper >= 0 ? COLORS.hex[G.dropper] : SET.aqua); m.emissiveIntensity = pulse; });
+  const who = G.step === 'lanes' ? G.laneQueue[0] : G.dropper;
+  chuteMats.forEach(m => { m.emissive.setHex(who >= 0 ? COLORS.hex[who] : SET.aqua); m.emissiveIntensity = pulse; });
 }
 function resetChuteGlow() { chuteMats.forEach(m => { m.emissive.setHex(CHUTE_BASE); m.emissiveIntensity = 0.3; }); }
 
@@ -1036,8 +1055,23 @@ function jackpotProgress() {
   const end = PHY.D + PHY.JR * 0.1;
   return Math.max(0, Math.min(1, (G.jackpot.y - G.jackpotY0) / (end - G.jackpotY0)));
 }
+const KEYS_SMALL = $('keys').innerHTML;
+const KEYS_CLASS = '<span class="kbd">Space</span> show me · <span class="kbd">1</span>–<span class="kbd">6</span> mark · <span class="kbd">Enter</span> confirm · <span class="kbd">U</span> undo · <span class="kbd">1</span>–<span class="kbd">4</span> lane · <span class="kbd">R</span> random lanes · <span class="kbd">Esc</span> menu';
 function renderScores() {
-  if (G.phase === 'home') {
+  const cls = G.mode === 'class';
+  $('keys').innerHTML = cls ? KEYS_CLASS : KEYS_SMALL;
+  $('feed').hidden = cls;
+  $('pc0').hidden = $('pc1').hidden = cls;
+  $('board').hidden = !cls;
+  if (cls) {
+    const teams = G.phase === 'home'
+      ? [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => ({ name: ($('cname' + i) || {}).value || CGB.teamFallback(i), score: fmt(0) }))
+      : G.players.map(p => ({ name: p.name, score: fmt(p.money) }));
+    board.set({ teams, turn: G.step === 'lanes' ? G.laneQueue[0] : -1,
+      badge: G.players.map((p, i) => i === G.catchUp ? 'Catch-up counter' : '') });
+  }
+  if (cls) { /* the class board replaces the two score cards */ }
+  else if (G.phase === 'home') {
     [0, 1].forEach(i => {
       const c = $('pc' + i);
       c.querySelector('.name').textContent = $('name' + i).value.trim() || CGB.teamFallback(i);
@@ -1045,7 +1079,7 @@ function renderScores() {
       c.querySelector('.meta').textContent = 'Ready to play';
       c.classList.remove('active');
     });
-  } else G.players.forEach((p, i) => {
+  } else G.players.slice(0, 2).forEach((p, i) => {
     const c = $('pc' + i);
     c.querySelector('.name').textContent = p.name;
     c.querySelector('.num').textContent = fmt(p.money);
@@ -1073,6 +1107,13 @@ function renderQuestion() {
   const q = G.q;
   const who = G.step === 'steal' ? 1 - G.turn : G.turn;
   if (!q) { $('qWho').textContent = ''; $('qTag').textContent = ''; $('qText').textContent = ''; $('qAnswer').classList.remove('show'); return; }
+  if (G.mode === 'class') {
+    $('qcard').style.setProperty('--pc', 'var(--teal)'); $('qcard').style.setProperty('--pct', 'var(--teal-deep)');
+    $('qWho').textContent = G.phase === 'final' ? 'Every team answers: the whole class plays for the jackpot' : 'Every team answers on their whiteboards';
+    $('qTag').textContent = `${q.subject}: ${q.topic}`; $('qText').textContent = q.q; $('qAnswer').textContent = q.a;
+    $('qAnswer').classList.toggle('show', G.answerShown);
+    return;
+  }
   $('qcard').style.setProperty('--pc', COLORS.css[who]);
   $('qcard').style.setProperty('--pct', COLORS.text[who]);
   const label = G.phase === 'final'
@@ -1089,6 +1130,17 @@ function renderActions() {
   a.innerHTML = '';
   const add = html => { const d = document.createElement('div'); d.innerHTML = html; while (d.firstChild) a.appendChild(d.firstChild); };
   const ansBtn = `<button class="linkish" type="button" data-act="answer">${G.answerShown ? 'Hide answer' : 'Show answer'} <span class="kbd">A</span></button>`;
+  const cls = G.mode === 'class';
+  $('cmActions').hidden = !(cls && (G.step === 'ask' || round.undoable));
+  if (cls && G.step === 'ask') return;
+  if (cls && G.step === 'lanes') {
+    const t = G.laneQueue[0], p = G.players[t], n = G.dropCount;
+    const lead = t === G.catchUp ? `Catch-up counter for ${p.name}.` : G.bonusDrop ? `Bonus counter for ${p.name}.` : `${p.name} won ${n === 1 ? 'a counter' : n + ' counters'}.`;
+    add(`<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(lead)} Captain: pick a lane!<small>Keys 1 to 4 or tap the machine${G.laneQueue.length > 1 ? `. ${G.laneQueue.length - 1} more team${G.laneQueue.length > 2 ? 's' : ''} after this` : ''}. Captains: swap to the next person each time.</small></div>
+      <div class="ote-chutes" style="--pc:${COLORS.css[t]}">${[0, 1, 2, 3].map(i => `<button class="ote-chute-btn" type="button" data-act="lane" data-i="${i}" aria-label="Lane ${i + 1}">${i + 1}<small>lane</small></button>`).join('')}</div>
+      ${G.laneQueue.length > 1 ? '<button class="btn plain" type="button" data-act="random">Random lanes for the rest <kbd>R</kbd></button>' : ''}`);
+    return;
+  }
   if (G.step === 'ask') {
     add(`<div class="act-row"><button class="btn ok" type="button" data-act="correct">✓ Correct <kbd>C</kbd></button><button class="btn no" type="button" data-act="wrong">✗ Wrong <kbd>W</kbd></button></div>${ansBtn}`);
   } else if (G.step === 'steal') {
@@ -1122,6 +1174,8 @@ $('actions').addEventListener('click', e => {
   else if (act === 'swrong') stealResult('wrong');
   else if (act === 'snone') stealResult('none');
   else if (act === 'chute') chooseChute(+btn.dataset.i);
+  else if (act === 'lane') chooseLane(+btn.dataset.i);
+  else if (act === 'random') randomLanes();
   else if (act === 'next') nextQuestion();
 });
 function render() { renderScores(); renderQuestion(); renderActions(); }
@@ -1129,9 +1183,97 @@ function render() { renderScores(); renderQuestion(); renderActions(); }
 /* =========================================================
    GAME FLOW
    ========================================================= */
+/* ---------- Whole class: every team answers, every correct team wins a counter ---------- */
+const SESSION = { starter: { r1: 8, final: 4 }, plenary: { r1: 14, final: 8 }, full: { r1: 28, final: 14 } };
+const misc = CGB.createMisconceptions();
+const board = CGB.createTeamBoard($('board'), { className: 'cols-2' });
+let undoSnap = null;
+const round = CGB.createClassRound({
+  root: document.getElementById('game-over-the-edge'), board, countEl: $('count'), btnEl: $('cmActions'),
+  seconds: () => G.timer, teams: () => G.players.length,
+  onConfirm: classResult, onUndo: undoClassResult
+});
+function classResult(res) {
+  const c = res.filter(Boolean).length, n = res.length;
+  undoSnap = { res, correct: G.players.map(p => p.correct) };
+  G.markAt = simT; G.markReal = performance.now();
+  res.forEach((ok, i) => { if (ok) G.players[i].correct++; else logWrong(i); });
+  misc.add(G.q, (n - c) / n, `${n - c} of ${n} teams wrong`);
+  G.answerShown = true;
+  const per = G.phase === 'final' ? 2 : 1;
+  board.set({ earned: res.map(ok => ok ? `+${per} counter${per > 1 ? 's' : ''}` : '') });
+  hostSay(CGB.classLine(c, n) + (c ? ' Captains, pick your lanes!' : ''), CGB.classGesture(c, n), 1600);
+  if (c) { SFX.correct(); startLanes(res.map((ok, i) => ok ? i : -1).filter(i => i >= 0), per, false); }
+  else {
+    SFX.wrong();
+    G.lastMsg = { title: 'No counters this time', detail: 'No team got that one. The answer is on the screen.' };
+    G.step = 'next'; G.dropDoneAt = simT;
+    render();
+  }
+}
+function undoClassResult() {
+  const u = undoSnap; if (!u || G.released) return;
+  G.players.forEach((p, i) => { p.correct = u.correct[i]; if (!u.res[i]) { p.wrong.pop(); bank.unlogWrong(p.name, G.q); } });
+  misc.remove(G.q);
+  G.answerShown = false; G.laneQueue = []; G.lastMsg = null; G.step = 'ask';
+  undoSnap = null;
+  render();
+}
+/* Lanes: each team that won counters picks a lane in turn; its counters drop at once,
+   0.35 s apart, so six teams' counters are all on their way within a couple of seconds. */
+function startLanes(teams, per, bonus) {
+  G.laneQueue = teams.slice(); G.dropCount = per; G.bonusDrop = bonus;
+  G.dropWon = 0; G.dropLost = 0; G.dropNotes = []; G.dropByTeam = []; G.cascadeSaid = false;
+  G.pending = 0; G.landed = 0; G.settleAt = Infinity; G.released = 0; G.nextRelease = simT;
+  G.step = 'lanes';
+  render();
+}
+function chooseLane(i) {
+  if (G.step !== 'lanes' || i < 0 || i > 3 || !G.laneQueue.length) return;
+  const team = G.laneQueue.shift();
+  round.lock();                                   // once counters drop, the marking stands
+  if (G.catchUp === team) G.catchUp = -1;
+  for (let k = 0; k < G.dropCount; k++) {
+    const at = Math.max(simT, G.nextRelease);
+    G.nextRelease = at + 0.35;
+    G.pending++; G.released++;
+    dropTimers.push({ at, go: () => launchDrop(i, team, b => {
+      G.lastDropper = team;
+      G.laneOwner[shelfZone(b.x)] = team;
+      G.landed++;
+      if (G.landed >= G.pending && G.step === 'dropping') G.settleAt = simT + PHY.PERIOD;
+    }) });
+  }
+  if (!G.laneQueue.length) { G.step = 'dropping'; hostSay(line('dropping'), 'point', 1800); }
+  render();
+}
+function randomLanes() { while (G.step === 'lanes' && G.laneQueue.length) chooseLane(Math.floor(CGB.random() * 4)); }
+function classFinishDrop() {
+  const won = G.dropByTeam.map((n, i) => n ? `${COLORS.mark[i]} ${G.players[i].name} +${fmt(n * VALUE)}` : '').filter(Boolean);
+  const title = G.dropWon ? `${G.dropWon} over the edge` + (G.phase === 'final' ? `: +${fmt(G.dropWon * VALUE)} for the class` : '') : 'Nothing fell this time';
+  const detail = [G.phase === 'final' ? '' : won.join(', '), G.dropLost ? `${G.dropLost} lost down the sides.` : '', ...G.dropNotes].filter(Boolean).join(' · ') || 'The shelves have settled.';
+  G.lastMsg = { title, detail };
+  feed(title + (won.length && G.phase !== 'final' ? ': ' + won.join(', ') : ''));
+  G.dropDoneAt = simT; G.dropDoneReal = performance.now();
+  if (!G.jackpotWon && !G.cascadeSaid) hostSay(G.dropWon ? line(G.dropWon === 1 ? 'one' : 'some', { k: G.dropWon }) : line('none'), G.dropWon ? 'cheer' : 'shrug', 1600);
+  if (!G.jackpotWon && G.pendingExtra.length && G.phase === 'r1') {
+    const extra = G.pendingExtra.slice(); G.pendingExtra = [];
+    startLanes(extra, 1, true); return;
+  }
+  G.step = 'next';
+  render();
+}
 function startGame() {
-  const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
-  G.players = names.map(n => ({ name: n, money: 0, correct: 0, asked: 0, won: 0, steals: 0, wrong: [] }));
+  if (G.mode === 'class') {
+    const n = Math.min(6, Math.max(2, G.nTeams));
+    const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, n).map(i => $('cname' + i).value)).map(x => x.slice(0, 16));
+    G.players = names.map(x => ({ name: x, money: 0, correct: 0, asked: 0, won: 0, steals: 0, wrong: [] }));
+    G.r1Total = SESSION[G.session].r1; G.finalTotal = SESSION[G.session].final;
+  } else {
+    const names = CGB.saveTeamNames([0, 1].map(i => $('name' + i).value)).map(n => n.slice(0, 16));
+    G.players = names.map(n => ({ name: n, money: 0, correct: 0, asked: 0, won: 0, steals: 0, wrong: [] }));
+  }
+  misc.reset(); round.stop(); G.laneQueue = []; G.laneOwner = [-1, -1, -1, -1]; G.catchUp = -1;
   G.focusWeak = $('focusWeak').checked;
   G.team = 0; G.finalWinnings = 0; G.jackpot = null; G.jackpotWon = false; G.jackpotFell = false;
   G.pendingExtra = []; G.lastDropper = -1; G.q = null; G.lastMsg = null; closeSaid = false;
@@ -1140,16 +1282,29 @@ function startGame() {
   clearLabels();
   G.attract = false;
   newTray(true);
-  G.phase = 'r1'; G.qIndex = 0; G.qTotal = G.r1Each * 2;
+  G.phase = 'r1'; G.qIndex = 0; G.qTotal = G.mode === 'class' ? G.r1Total : G.r1Each * 2;
   $('home').classList.add('hidden'); $('summary').classList.add('hidden');
   $('roundName').textContent = 'Round 1: Counter Drop';
   showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
-  hostSay(line('intro'), 'cheer', 2200);
+  hostSay(G.mode === 'class' ? `Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!` : line('intro'), 'cheer', 2200);
   nextQuestion(true);
 }
 function nextQuestion(quiet) {
   resetChuteGlow();
+  round.stop(); undoSnap = null;
   if (G.jackpotWon || G.qIndex >= G.qTotal) { endRound(); return; }
+  if (G.mode === 'class') {
+    G.q = pickQuestion(G.players[G.qIndex % G.players.length].name);
+    G.players.forEach(p => p.asked++);
+    G.qIndex++;
+    G.answerShown = false; G.bonusDrop = false; G.lastMsg = null; G.released = 0;
+    G.step = 'ask';
+    $('qCount').textContent = `Question ${G.qIndex} of ${G.qTotal}`;
+    if (!quiet) hostSay("Here's one for every team. Boards ready!", 'present', 1400);
+    render();
+    round.think();
+    return;
+  }
   G.turn = G.qIndex % 2;
   G.q = pickQuestion(G.players[G.turn].name);
   G.players[G.turn].asked++;
@@ -1218,6 +1373,7 @@ function chooseChute(i) {
 }
 function edgeTeeter() { return tray.lower.some(b => !b.base && b.y > PHY.D - b.r * 0.35); }
 function finishDrop() {
+  if (G.mode === 'class') { classFinishDrop(); return; }
   const p = G.players[G.dropper];
   const won = G.dropWon * VALUE;
   let title;
@@ -1243,10 +1399,25 @@ function finishDrop() {
 function endRound() {
   if (G.phase === 'r1') {
     G.phase = 'final';
-    G.team = G.players[0].money + G.players[1].money;
+    G.team = G.players.reduce((a, p) => a + p.money, 0);
     setupFinal();
-    G.qIndex = 0; G.qTotal = G.finalN;
+    G.qIndex = 0; G.qTotal = G.mode === 'class' ? G.finalTotal : G.finalN;
     $('roundName').textContent = 'The Final: Jackpot';
+    if (G.mode === 'class') {
+      showBanner('The Final', 'The whole class plays together for the jackpot. Every correct team wins two counters.', 3400);
+      hostSay("It's the final! The whole class together now. Push that jackpot over the edge!", 'cheer', 2200);
+      // catch-up: a team with no more than half the leader's money drops one extra counter first
+      const money = G.players.map(p => p.money), lead = Math.max(...money), last = money.indexOf(Math.min(...money));
+      if (G.players.length > 1 && lead >= 200 && money[last] * 2 <= lead) {
+        G.catchUp = last; G.q = null;
+        feed(`Catch-up counter for ${G.players[last].name}`);
+        hostSay(`${G.players[last].name}, you get a catch-up counter to start the final!`, 'point', 2200);
+        startLanes([last], 1, false);
+        return;
+      }
+      nextQuestion(true);
+      return;
+    }
     showBanner('The Final', 'Team up to push the jackpot counter over the edge. Each correct answer wins two counters.', 3400);
     hostSay(line('final'), 'cheer', 2200);
     nextQuestion(true);
@@ -1299,8 +1470,8 @@ CGB.test.ote = {
 function showSummary() {
   const total = G.team;
   const head = G.jackpotWon
-    ? `<div class="big">Jackpot won: ${fmt(total)}</div><div class="small">Round 1 ${fmt(G.players[0].money + G.players[1].money)}, final ${fmt(G.finalWinnings)} including the £5,000 jackpot</div>`
-    : `<div class="big">Team total: ${fmt(total)}</div><div class="small">The jackpot counter finished ${Math.round(jackpotProgress() * 100)}% of the way to the edge. Final winnings ${fmt(G.finalWinnings)}.</div>`;
+    ? `<div class="big">Jackpot won: ${fmt(total)}</div><div class="small">Round 1 ${fmt(G.players.reduce((a, p) => a + p.money, 0))}, final ${fmt(G.finalWinnings)} including the £5,000 jackpot</div>`
+    : `<div class="big">${G.mode === 'class' ? 'Class' : 'Team'} total: ${fmt(total)}</div><div class="small">The jackpot counter finished ${Math.round(jackpotProgress() * 100)}% of the way to the edge. Final winnings ${fmt(G.finalWinnings)}.</div>`;
   const cols = G.players.map((p, i) => {
     const missed = p.wrong.length ? p.wrong.map(q => `<div class="missed"><div>${escapeHtml(q.q)}</div><div class="a">${escapeHtml(q.a)}</div><div class="t">${escapeHtml(q.subject)}: ${escapeHtml(q.topic)}</div></div>`).join('') : '<div class="none">No wrong answers this game.</div>';
     const hist = bank.weakTopics(p.name, 5);
@@ -1313,7 +1484,10 @@ function showSummary() {
       <button class="linkish" type="button" data-clear="${i}">Clear ${escapeHtml(p.name)}'s history</button>
     </div>`;
   }).join('');
-  $('sumCard').innerHTML = `<div class="sum-head">${head}</div><div class="sum-grid">${cols}</div>
+  const ranks = G.players.map((p, i) => ({ p, i })).sort((a, b) => b.p.money - a.p.money)
+    .map(({ p, i }, k) => `<div class="sum-rank" style="--pc:${COLORS.css[i]}"><span class="pos">${k + 1}</span><span class="nm">${COLORS.mark[i]} ${escapeHtml(p.name)}<small>${p.correct} correct · ${p.won} counters over the edge</small></span><span class="sc">${fmt(p.money)}</span></div>`).join('');
+  const body = G.mode === 'class' ? `<div class="sum-ranks"><h3>Round 1</h3>${ranks}</div>${misc.html(5)}` : `<div class="sum-grid">${cols}</div>`;
+  $('sumCard').innerHTML = `<div class="sum-head">${head}</div>${body}
     <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change settings</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.remove('hidden');
   clearLabels();
@@ -1330,7 +1504,7 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  dropTimers = [];
+  dropTimers = []; round.stop(); G.laneQueue = [];
   $('summary').classList.add('hidden');
   $('home').classList.remove('hidden');
   updateHost(true);
@@ -1404,7 +1578,40 @@ $('hostName').value = CGB.hostCfg.name;
 $('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim() || 'Host'; CGB.store.setJSON('host', CGB.hostCfg); });
 $('hostName').addEventListener('change', () => CGB.saveHost());
 
-const fillNames = () => CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n.slice(0, 16); });
+const fillNames = () => { CGB.teamNames(2).forEach((n, i) => { $('name' + i).value = n.slice(0, 16); }); renderClassNames(true); };
+/* whole-class setup */
+if (![2, 3, 4, 5, 6].includes(G.nTeams)) G.nTeams = 4;
+if (!CGB.COUNTDOWNS.includes(G.timer)) G.timer = 30;
+if (!CGB.SESSIONS.some(x => x.id === G.session)) G.session = 'plenary';
+function renderClassNames(fresh) {
+  const prev = [0, 1, 2, 3, 4, 5].map(i => { const el = $('cname' + i); return el && !fresh ? el.value : null; });
+  $('cnames').innerHTML = [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => `<label style="--pc:${COLORS.css[i]};--pct:${COLORS.text[i]}"><span>${COLORS.mark[i]} Team ${i + 1}</span><input id="ote-cname${i}" type="text" maxlength="16" autocomplete="off" value="${escapeHtml(prev[i] || CGB.teamNames(6)[i].slice(0, 16))}"></label>`).join('');
+}
+function applyMode() {
+  $('setupCard').dataset.mode = G.mode;
+  const x = SESSION[G.session];
+  $('sessionHint').textContent = `${CGB.SESSIONS.find(o => o.id === G.session).note}: ${x.r1} questions in Round 1 and ${x.final} in the final, every team answering each one.`;
+}
+function wireClassSeg(id, key, store, text) {
+  const seg = $(id);
+  const val = v => text ? v : +v;
+  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(val(b.dataset.v) === G[key])));
+  seg.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    G[key] = val(b.dataset.v);
+    if (text) CGB.store.set(store, G[key]); else CGB.store.setJSON(store, G[key]);
+    if (key === 'mode') CGB.mode.set('over-the-edge', G.mode);
+    if (key === 'nTeams') renderClassNames();
+    paint(); applyMode(); renderScores(); CGB.fitSetups(); updateHost(true);
+  });
+  paint();
+}
+$('cnames').addEventListener('input', renderScores);
+wireClassSeg('segMode', 'mode', 'over-the-edge.mode', true);
+wireClassSeg('segSession', 'session', 'ote.session', true);
+wireClassSeg('segTeams', 'nTeams', 'ote.nTeams');
+wireClassSeg('segTimer', 'timer', 'ote.timer');
+applyMode();
 fillNames();
 [0, 1].forEach(i => $('name' + i).addEventListener('input', renderScores));
 $('focusWeak').checked = CGB.store.get('ote.focusWeak') === '1';
@@ -1432,6 +1639,13 @@ document.addEventListener('keydown', e => {
   }
   if (inField) return;
   const k = e.key.toLowerCase();
+  if (G.mode === 'class') {
+    if (G.step === 'ask') { if (round.handleKey(k)) e.preventDefault(); return; }
+    if (k === 'u' && round.handleKey('u')) { e.preventDefault(); return; }
+    if (G.step === 'lanes') { if (['1', '2', '3', '4'].includes(k)) chooseLane(+k - 1); else if (k === 'r') randomLanes(); }
+    else if (G.step === 'next') { if (k === ' ' || k === 'enter') { e.preventDefault(); nextQuestion(); } }
+    return;
+  }
   if (G.step === 'ask') { if (k === 'c') markCorrect(); else if (k === 'w') markWrong(); else if (k === 'a') toggleAnswer(); }
   else if (G.step === 'steal') { if (k === 'c') stealResult('correct'); else if (k === 'w') stealResult('wrong'); else if (k === 'n') stealResult('none'); else if (k === 'a') toggleAnswer(); }
   else if (G.step === 'chute') { if (['1', '2', '3', '4'].includes(k)) chooseChute(+k - 1); }
@@ -1515,7 +1729,7 @@ return {
     const sr = wrap.getBoundingClientRect(), hr = hostRect();
     return { stage: { w: sr.width, h: sr.height }, machine: machineRect(), machineRight: hostFit.machineRight, hidden: hostFit.hidden, host: { left: hr.left - sr.left, right: hr.right - sr.left, top: hr.top - sr.top, bottom: hr.bottom - sr.top }, away: $('host').classList.contains('away') };
   },
-  _state: () => ({ phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
+  _state: () => ({ mode: G.mode, round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
 };
 }
 

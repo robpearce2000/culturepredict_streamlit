@@ -15,6 +15,7 @@
     <div class="ote-scores">
       <div class="score-card" id="ote-pc0" style="--pc: var(--p0); --pct: var(--p0-text)"><div class="name" data-mark="●"></div><div class="num">£0</div><div class="meta"></div></div>
       <div class="score-card" id="ote-pc1" style="--pc: var(--p1); --pct: var(--p1-text)"><div class="name" data-mark="■"></div><div class="num">£0</div><div class="meta"></div></div>
+      <div class="ote-cmboard" id="ote-board" hidden></div>
       <div class="ote-team" id="ote-teamCard">
         <div class="row"><span class="lbl">Team pot</span><span class="val" id="ote-teamVal">£0</span></div>
         <div class="meter" role="progressbar" aria-label="Jackpot counter progress" aria-valuemin="0" aria-valuemax="100" id="ote-jackBar"><i id="ote-jackMeter"></i></div>
@@ -27,7 +28,9 @@
       <div class="qtag" id="ote-qTag"></div>
       <div class="qtext" id="ote-qText">Set up the game to begin.</div>
       <div class="qanswer" id="ote-qAnswer"></div>
+      <div class="cm-count" id="ote-count" hidden></div>
     </div>
+    <div class="ote-actions" id="ote-cmActions" hidden></div>
     <div class="ote-actions" id="ote-actions"></div>
     <div class="ote-feed" id="ote-feed"></div>
     <div class="keys" id="ote-keys"><span class="kbd">C</span> correct · <span class="kbd">W</span> wrong · <span class="kbd">N</span> no attempt · <span class="kbd">A</span> answer · <span class="kbd">1</span>–<span class="kbd">4</span> lane · <span class="kbd">Space</span> next · <span class="kbd">Esc</span> menu</div>
@@ -35,11 +38,17 @@
 </div>
 
 <div id="ote-home" class="ote-overlay">
-  <div class="cgb-panel ote-card setup">
+  <div class="cgb-panel ote-card setup" id="ote-setupCard" data-mode="class">
     <div class="setup-intro">
     <div class="ote-logo" id="ote-logo"></div>
-    <details class="howto" open><summary>How to play</summary><div class="ote-rules">Get a question right to win a counter. Pick a lane from 1 to 4, watch it bounce through the pegs onto the moving top shelf, and every counter pushed over the front edge wins £100. Counters that fall off the sides are lost. Look out for the star wildcard counters. In the final, both teams join forces: every correct answer wins two counters, and pushing the gold jackpot counter over the edge adds £5,000.</div></details>
-    <div class="ote-names">
+    <details class="howto" open><summary>How to play</summary><div class="ote-rules">Get a question right to win a counter. Pick a lane from 1 to 4, watch it bounce through the pegs onto the moving top shelf, and every counter pushed over the front edge wins £100. Counters that fall off the sides are lost. Look out for the star wildcard counters. In the final, both teams join forces: every correct answer wins two counters, and pushing the gold jackpot counter over the edge adds £5,000.<span class="only-class"><br><b>Whole class:</b> every team answers every question on whiteboards, and every correct team wins a counter. Each team's captain picks a lane, and the counters drop together. A counter pushed over the edge goes to the team whose counter last landed in that quarter of the shelf. In the final the whole class plays together for the jackpot.</span></div></details>
+    <div class="field"><span class="lab" id="ote-labMode">Play as</span><div class="seg" id="ote-segMode" role="group" aria-labelledby="ote-labMode"><button type="button" data-v="class">Whole class</button><button type="button" data-v="small">Small group</button></div></div>
+    <div class="only-class">
+      <p class="cm-rule"><b>Team rule:</b> a team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.</p>
+      <div class="field"><span class="lab" id="ote-labTeams">Number of teams</span><div class="seg" id="ote-segTeams" role="group" aria-labelledby="ote-labTeams"><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4</button><button type="button" data-v="5">5</button><button type="button" data-v="6">6</button></div></div>
+      <div class="ote-cnames" id="ote-cnames"></div>
+    </div>
+    <div class="ote-names only-small">
       <label style="--pc: var(--p0); --pct: var(--p0-text)"><span>● Team 1</span><input id="ote-name0" type="text" maxlength="16" value="Team 1" autocomplete="off"></label>
       <label style="--pc: var(--p1); --pct: var(--p1-text)"><span>■ Team 2</span><input id="ote-name1" type="text" maxlength="16" value="Team 2" autocomplete="off"></label>
     </div>
@@ -50,7 +59,9 @@
       <select class="cgb-select" id="ote-setSelect"></select>
       <button class="linkish" id="ote-openBank" type="button">Manage the question bank</button>
     </div>
-    <div class="ote-two">
+    <div class="field only-class"><span class="lab" id="ote-labSession">Session length</span><div class="seg" id="ote-segSession" role="group" aria-labelledby="ote-labSession"><button type="button" data-v="starter">Starter</button><button type="button" data-v="plenary">Plenary</button><button type="button" data-v="full">Full lesson</button></div><div class="hint" id="ote-sessionHint"></div></div>
+    <div class="field only-class"><span class="lab" id="ote-labTimer">Countdown before "show me"</span><div class="seg" id="ote-segTimer" role="group" aria-labelledby="ote-labTimer"><button type="button" data-v="0">Off</button><button type="button" data-v="20">20 s</button><button type="button" data-v="30">30 s</button><button type="button" data-v="45">45 s</button><button type="button" data-v="60">60 s</button></div></div>
+    <div class="ote-two only-small">
       <div class="field"><span class="lab" id="ote-labR1">Round 1 questions each</span><div class="seg" id="ote-segR1" role="group" aria-labelledby="ote-labR1"><button type="button" data-v="4">4</button><button type="button" data-v="6">6</button><button type="button" data-v="8">8</button></div></div>
       <div class="field"><span class="lab" id="ote-labF">Final questions</span><div class="seg" id="ote-segF" role="group" aria-labelledby="ote-labF"><button type="button" data-v="8">8</button><button type="button" data-v="12">12</button><button type="button" data-v="16">16</button></div></div>
     </div>

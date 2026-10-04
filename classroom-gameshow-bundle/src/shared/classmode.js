@@ -47,7 +47,7 @@
     opts = opts || {};
     el.classList.add('cm-board');
     if (opts.className) el.classList.add(opts.className);
-    let teams = [], marks = [], marking = false, earned = [], turn = -1, badge = [], toggle = null;
+    let teams = [], marks = [], marking = false, earned = [], turn = -1, badge = [], toggle = null, last = '';
     el.addEventListener('click', e => {
       const b = e.target.closest('.cm-team');
       if (b && marking && toggle) toggle(+b.dataset.i);
@@ -56,7 +56,7 @@
       el.style.setProperty('--n', teams.length);
       el.dataset.n = teams.length;
       el.classList.toggle('marking', marking);
-      el.innerHTML = teams.map((t, i) => {
+      const html = teams.map((t, i) => {
         const T = CGB.TEAMS[i], m = marks[i];
         const state = m === true ? ' ok' : m === false ? ' no' : '';
         const label = `${t.name}: ${t.score}${m === true ? ', correct' : m === false ? ', wrong' : ''}`;
@@ -69,6 +69,7 @@
           ${badge[i] ? `<span class="cm-badge">${esc(badge[i])}</span>` : ''}
         </button>`;
       }).join('');
+      if (html !== last) { el.innerHTML = html; last = html; }   // unchanged panels are left alone, so their animations run once
     }
     return {
       el,

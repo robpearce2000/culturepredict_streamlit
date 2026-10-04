@@ -126,3 +126,29 @@
 /* panel items keep their natural height; on a short panel (portrait tablets) the panel scrolls
    rather than squashing the question card so its text runs into the next block */
 .ote-panel > * { flex-shrink: 0; }
+
+/* whole class */
+.ote-cnames { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 10px; }
+.ote-cnames label { display: block; background: #fff; border-radius: 10px; padding: 5px 9px; border: 2px solid var(--line); border-bottom: 5px solid var(--pc); min-width: 0; }
+.ote-cnames span { font-size: 0.72rem; font-weight: 900; color: var(--pct); }
+.ote-cnames input { width: 100%; background: transparent; border: none; color: var(--ink); font-weight: 900; font-size: 1.05rem; padding: 1px 0; font-family: var(--body); }
+.ote-cmboard { grid-column: 1 / -1; margin-top: 8px; }
+.ote-cmboard[hidden], .ote .score-card[hidden] { display: none; }
+.ote-cmboard .cm-sc { font-size: 1.6rem; }
+.ote-cmboard .cm-mark { font-size: 2.1rem; }
+.ote .flabel.team { font-size: 2rem; }
+.ote-actions[hidden] { display: none; }
+.sum-ranks { margin: 10px 0; }
+.sum-ranks h3 { font-family: var(--display); font-weight: 400; margin: 0 0 6px; }
+.sum-rank { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: 10px; background: #fff; border: 2px solid var(--line); border-left: 8px solid var(--pc); border-radius: 12px; padding: 6px 12px; margin-bottom: 6px; }
+.sum-rank .pos { font-family: var(--display); font-size: 1.5rem; }
+.sum-rank .nm { font-weight: 900; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sum-rank .nm small { display: block; font-weight: 700; color: var(--ink-soft); font-size: 0.78rem; }
+.sum-rank .sc { font-family: var(--display); font-size: 1.5rem; }
+.ote-cmboard.cm-board { row-gap: 14px; }
+.ote-cmboard .cm-team { padding: 4px 10px 3px; border-bottom-width: 6px; }
+.ote-cmboard .cm-nm { font-size: 0.95rem; }
+.ote-cmboard .cm-sc { font-size: 1.45rem; }
+.ote-cmboard .cm-mark { font-size: 1.8rem; }
+.ote-cmboard .cm-earn { font-size: 0.78rem; top: -12px; padding: 1px 7px; }
+.ote-feed[hidden] { display: none; }
