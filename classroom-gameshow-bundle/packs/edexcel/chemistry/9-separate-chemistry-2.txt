@@ -110,10 +110,11 @@ Accept: Ammonia dissolves in the water to make an alkaline solution
 Ref: 9.4C
 D: 3
 
-Q: What colour does damp red litmus paper turn in ammonia gas?
-A: Blue
+Q: What does ammonia's effect on damp red litmus paper show about the gas?
+A: Alkaline
+Accept: Alkaline gas; alkali; basic
 Ref: 9.4C
-D: 1
+D: 2
 
 Q: What do you see when dilute acid is added to a carbonate?
 A: Fizzing
@@ -164,9 +165,9 @@ Ref: 9.6C
 RP: 9.6C
 D: 3
 
-Q: In the unknown salts practical, which test identifies the anion when adding acid gives fizzing?
+Q: In the unknown salts practical, a salt fizzes with dilute acid and the gas turns limewater milky. Which anion is present?
 A: Carbonate
-Accept: Carbonate ion test; CO₃²⁻
+Accept: Carbonate ion; CO₃²⁻
 Ref: 9.6C
 RP: 9.6C
 D: 2
@@ -174,7 +175,7 @@ Note: Fizzing with dilute acid, gas turning limewater milky, shows carbonate ion
 
 Q: In the unknown salts practical, what hazard does concentrated hydrochloric acid on the flame test wire present?
 A: Corrosive
-Accept: Corrosive acid; irritant
+Accept: Corrosive acid; burns skin
 Ref: 9.6C
 RP: 9.6C
 D: 2
@@ -218,13 +219,13 @@ Ref: 9.8C
 D: 1
 
 Q: What does it mean to say an instrumental method is more sensitive than a chemical test?
-A: It detects very small amounts
-Accept: It detects tiny quantities or very low concentrations
+A: Detects very small amounts
+Accept: Detects tiny quantities; detects very low concentrations
 Ref: 9.8C
 D: 2
 
 Q: Why are instrumental methods useful when many samples must be tested, for example in hospitals?
-A: They are much faster
+A: Much faster
 Accept: Quicker; rapid; can be automated
 Ref: 9.8C
 D: 2
@@ -241,7 +242,7 @@ Accept: Match the data to reference data
 Ref: 9.9C
 D: 2
 
-Q: On a straight-line calibration graph, a reading of 20 units means 1 mg/dm³. What concentration gives a reading of 60 units?
+Q: On a straight-line calibration graph through the origin, a reading of 20 units means 1 mg/dm³. What concentration gives a reading of 60 units?
 A: 3 mg/dm³
 Accept: 3
 Ref: 9.9C
@@ -509,12 +510,12 @@ Accept: Not broken down by microorganisms; not biodegradable
 Ref: 9.23C
 D: 2
 
-Q: Name one harmful gas that can be produced when polymers are burned.
+Q: Name one gas from burning polymers that harms people or the environment.
 A: Carbon monoxide
-Accept: Hydrogen chloride; carbon dioxide; toxic fumes
+Accept: Hydrogen chloride; carbon dioxide; hydrogen cyanide
 Ref: 9.23C
 D: 2
-Note: Burning PVC can release hydrogen chloride.
+Note: Burning PVC can release hydrogen chloride; carbon dioxide counts as a greenhouse gas. Do not accept just "toxic fumes".
 
 Q: Why must waste polymers be sorted before they are melted and recycled?
 A: Different polymers have different properties and melting points
@@ -535,8 +536,8 @@ Ref: 9.24C
 D: 2
 
 Q: Why can a recycled polymer often not be used for the same product again?
-A: Its quality is lower
-Accept: Properties get worse; chains are damaged
+A: Lower quality
+Accept: Quality is lower; properties get worse; chains are damaged
 Ref: 9.24C
 D: 3
 
@@ -558,7 +559,7 @@ Accept: Amino acid
 Ref: 9.25C
 D: 1
 
-Q: What is the molecular formula of methanol?
+Q: What is the formula of methanol?
 A: CH₃OH
 Accept: CH3OH; CH₄O
 Ref: 9.26C
@@ -569,13 +570,13 @@ A: Ethanol
 Ref: 9.26C
 D: 1
 
-Q: What is the molecular formula of propan-1-ol?
+Q: What is the formula of propan-1-ol?
 A: C₃H₇OH
 Accept: C3H7OH; CH₃CH₂CH₂OH; C₃H₈O
 Ref: 9.26C
 D: 2
 
-Q: What is the molecular formula of butan-1-ol?
+Q: What is the formula of butan-1-ol?
 A: C₄H₉OH
 Accept: C4H9OH; CH₃CH₂CH₂CH₂OH; C₄H₁₀O
 Ref: 9.26C
@@ -715,7 +716,7 @@ Accept: They have the same functional group
 Ref: 9.32C
 D: 2
 
-Q: Name the product when pentene reacts with bromine.
+Q: Name the product when pent-1-ene reacts with bromine.
 A: 1,2-dibromopentane
 Accept: Dibromopentane
 Ref: 9.32C
