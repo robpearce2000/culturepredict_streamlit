@@ -287,7 +287,8 @@ const SECTIONS = {
 for (const size of SIZES) {
   for (const [section, run] of Object.entries(SECTIONS)) {
     test(`screens at ${size.name}${SUFFIX}: ${section}`, async ({ browser }) => {
-      test.setTimeout(section === 'launcher' ? 90000 : 420000);
+      // Over the Edge plays turn-by-turn drops, so it needs longer on a busy test machine
+      test.setTimeout(section === 'launcher' ? 90000 : section.startsWith('over-the-edge') ? 900000 : 420000);
       const ctx = await browser.newContext({ viewport: { width: size.width, height: size.height } });
       const page = await ctx.newPage();
       if (VARIANT === 'reduced') await page.addInitScript(() => { try { localStorage.setItem('cgb.settings', JSON.stringify({ reducedMotion: true })); } catch (e) { /* no storage */ } });
