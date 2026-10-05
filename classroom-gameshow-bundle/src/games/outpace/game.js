@@ -75,28 +75,48 @@ if (!renderer) { $('nogl').hidden = false; $('nogl').innerHTML = CGB.noWebGLMess
    track, so shadows add little) and steps its quality down by itself if a laptop cannot keep
    up (see watchPerformance) */
 const perf = { level: 0, ema: 16, slowFor: 0, last: 0 };
-const opPixelRatio = () => perf.level >= 2 ? 1 : Math.min(CGB.settings.pixelRatio(), 1.25);
+/* A browser drawing 3D without the graphics chip (hardware acceleration off, common on managed
+   school laptops) starts lean rather than waiting to stutter first */
+try {
+  const gl = renderer.getContext(), ext = gl.getExtension('WEBGL_debug_renderer_info');
+  const name = String(ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+  if (/swiftshader|llvmpipe|softpipe|software|basic render/i.test(name)) perf.level = 1;
+} catch (e) { /* unknown: start at full quality */ }
+const opPixelRatio = () => 1;   // drawn at 1:1 (with antialiasing): the biggest saving on high-resolution laptop screens
 renderer.setPixelRatio(opPixelRatio());
 renderer.shadowMap.enabled = false;
 wrap.insertBefore(renderer.domElement, wrap.firstChild);
 
-const composer = new THREE.EffectComposer(renderer);
-composer.addPass(new THREE.RenderPass(scene, camera));
-const bloomPass = new THREE.UnrealBloomPass(new THREE.Vector2(512, 512), 0.32, 0.4, 0.4);
-composer.addPass(bloomPass);
-const bloomAllowed = () => CGB.settings.get('quality') !== 'low' && perf.level < 1;
-let useBloom = bloomAllowed();
+/* No full-screen glow (bloom) pass: it was the costliest thing drawn each frame on school laptops.
+   The glow comes from cheap see-through sprites instead (see glowSprite). */
+const useBloom = false;
 
-scene.add(new THREE.AmbientLight(0x3A3F7E, 1.1));
-const keyLight = new THREE.DirectionalLight(0xffffff, 0.9);
+scene.add(new THREE.AmbientLight(0x3A3F7E, 1.35));   // a little brighter: there are no point lights now
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.1);
 keyLight.position.set(4, 8, 5);
 scene.add(keyLight);
-const runnerGlow = new THREE.PointLight(COL.runner, 5, 8);
-runnerGlow.position.set(-2.5, 1.2, 0);
-scene.add(runnerGlow);
-const hunterGlow = new THREE.PointLight(COL.hunter, 6, 8);
-hunterGlow.position.set(2.5, 1.2, 0);
-scene.add(hunterGlow);
+/* Only two lights (ambient and one directional), and simple Lambert shading: each extra light and
+   physically based shading cost every pixel of every surface. Glows are additive sprites. */
+function litMat(o) { const c = Object.assign({}, o || {}); delete c.roughness; delete c.metalness; delete c.envMapIntensity; return new THREE.MeshLambertMaterial(c); }
+const glowTex = (() => {
+  const c = document.createElement('canvas'); c.width = c.height = 128;
+  const g = c.getContext('2d'), gr = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.25, 'rgba(255,255,255,0.55)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+  return new THREE.CanvasTexture(c);
+})();
+function glowSprite(color, size) {
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.5 }));
+  sp.scale.setScalar(size); scene.add(sp); return sp;
+}
+// a stand-in for a light: something that glows, with an "intensity" the effects can set
+function glowLight(color, size, per) {
+  const sp = glowSprite(color, size); let v = 0;
+  Object.defineProperty(sp, 'intensity', { get: () => v, set: x => { v = x; sp.visible = x > 0.05; sp.material.opacity = Math.min(1, x / per); sp.scale.setScalar(size * (0.6 + Math.min(1, x / per) * 0.8)); } });
+  sp.color = sp.material.color;
+  return sp;
+}
+const runnerGlow = glowSprite(COL.runner, 2.2), hunterGlow = glowSprite(COL.hunter, 2.4);
 
 function makeHexGridTexture() {
   const size = 512;
@@ -132,7 +152,7 @@ function makeHexGridTexture() {
 
 const floor = new THREE.Mesh(
   new THREE.PlaneGeometry(30, 30),
-  new THREE.MeshStandardMaterial({ color: 0x0D1230, roughness: 0.95, map: makeHexGridTexture() })
+  litMat({ color: 0x0D1230, roughness: 0.95, map: makeHexGridTexture() })
 );
 floor.rotation.x = -Math.PI / 2;
 floor.position.y = -0.3;
@@ -153,8 +173,8 @@ scene.add(ambientParticles);
 function makeNucleus(protonColor, neutronColor, count, spread) {
   const group = new THREE.Group();
   const particlesArr = [];
-  const protonMat = new THREE.MeshStandardMaterial({ color: protonColor, emissive: protonColor, emissiveIntensity: 0.6, roughness: 0.3, metalness: 0.2 });
-  const neutronMat = new THREE.MeshStandardMaterial({ color: neutronColor, emissive: neutronColor, emissiveIntensity: 0.3, roughness: 0.5, metalness: 0.1 });
+  const protonMat = litMat({ color: protonColor, emissive: protonColor, emissiveIntensity: 0.6, roughness: 0.3, metalness: 0.2 });
+  const neutronMat = litMat({ color: neutronColor, emissive: neutronColor, emissiveIntensity: 0.3, roughness: 0.5, metalness: 0.1 });
   const partGeo = new THREE.SphereGeometry(0.1, 14, 14);
   for (let i = 0; i < count; i++) {
     const mesh = new THREE.Mesh(partGeo, i % 2 === 0 ? protonMat : neutronMat);
@@ -163,7 +183,7 @@ function makeNucleus(protonColor, neutronColor, count, spread) {
     group.add(mesh);
     particlesArr.push({ mesh, base: mesh.position.clone(), phase: Math.random() * Math.PI * 2 });
   }
-  const shell = new THREE.Mesh(new THREE.SphereGeometry(spread + 0.14, 20, 20), new THREE.MeshStandardMaterial({ color: protonColor, transparent: true, opacity: 0.12, roughness: 1 }));
+  const shell = new THREE.Mesh(new THREE.SphereGeometry(spread + 0.14, 20, 20), litMat({ color: protonColor, transparent: true, opacity: 0.12, roughness: 1 }));
   group.add(shell);
   return { group, particles: particlesArr };
 }
@@ -176,7 +196,7 @@ function makeElectronOrbits(config) {
     orbitGroup.rotation.x = o.tiltX;
     orbitGroup.rotation.z = o.tiltZ;
     orbitGroup.add(new THREE.Mesh(new THREE.RingGeometry(o.radius - 0.015, o.radius, 48), new THREE.MeshBasicMaterial({ color: config.color, transparent: true, opacity: 0.3, side: THREE.DoubleSide })));
-    const electronMat = new THREE.MeshStandardMaterial({ color: config.electronColor, emissive: config.color, emissiveIntensity: 1 });
+    const electronMat = litMat({ color: config.electronColor, emissive: config.color, emissiveIntensity: 1 });
     const trailMat = new THREE.MeshBasicMaterial({ color: config.electronColor, transparent: true, opacity: 0.18 });
     const trailSteps = 5, trailSpacing = 0.12;
     for (let e = 0; e < o.electrons; e++) {
@@ -230,7 +250,7 @@ function makeGlyphOrbit(glyphs, color, radius, speed, tiltX, tiltZ, size) {
   });
   return { group, speed };
 }
-const glowMat = (hex, k) => new THREE.MeshStandardMaterial({ color: hex, emissive: hex, emissiveIntensity: k == null ? 0.55 : k, roughness: 0.35, metalness: 0.25 });
+const glowMat = (hex, k) => litMat({ color: hex, emissive: hex, emissiveIntensity: k == null ? 0.55 : k, roughness: 0.35, metalness: 0.25 });
 const runnerHex = '#' + new THREE.Color(COL.runnerLight).getHexString(), hunterHex = '#' + new THREE.Color(COL.hunterLight).getHexString();
 
 /* Each builder returns { group, update(t), boost(k) } */
@@ -285,7 +305,7 @@ const CHARACTERS = {
         .forEach(([x, y, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), m); b.position.set(x, y, z); b.userData.base = b.position.clone(); core.add(b); });
     } else {
       // an open book: gold covers with white pages
-      const cover = glowMat(COL.runner, 0.35), page = new THREE.MeshStandardMaterial({ color: 0xFFFDF4, emissive: 0x6B5A2A, emissiveIntensity: 0.25, roughness: 0.8 });
+      const cover = glowMat(COL.runner, 0.35), page = litMat({ color: 0xFFFDF4, emissive: 0x6B5A2A, emissiveIntensity: 0.25, roughness: 0.8 });
       [-1, 1].forEach(sd => {
         const half = new THREE.Group(); half.rotation.z = sd * 0.42;
         const c = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.03, 0.4), cover); c.position.x = sd * 0.15;
@@ -313,7 +333,7 @@ const CHARACTERS = {
     let hands = null;
     if (isHunter) {
       // a ticking clock: time is running out
-      const face = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.06, 32), new THREE.MeshStandardMaterial({ color: 0x2A1036, emissive: 0x3B0F4A, emissiveIntensity: 0.5, roughness: 0.6 }));
+      const face = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.06, 32), litMat({ color: 0x2A1036, emissive: 0x3B0F4A, emissiveIntensity: 0.5, roughness: 0.6 }));
       face.rotation.x = Math.PI / 2;
       const rim = new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.04, 10, 32), glowMat(COL.hunter, 0.7));
       hands = new THREE.Group(); hands.position.z = 0.04;
@@ -324,7 +344,7 @@ const CHARACTERS = {
       core.add(face, rim, hands);
     } else {
       // an hourglass in a gold frame
-      const frame = glowMat(COL.runner, 0.4), sand = new THREE.MeshStandardMaterial({ color: 0xFFF1C2, emissive: 0xC9A040, emissiveIntensity: 0.4, roughness: 0.7, transparent: true, opacity: 0.9 });
+      const frame = glowMat(COL.runner, 0.4), sand = litMat({ color: 0xFFF1C2, emissive: 0xC9A040, emissiveIntensity: 0.4, roughness: 0.7, transparent: true, opacity: 0.9 });
       const top = new THREE.Mesh(new THREE.ConeGeometry(0.19, 0.26, 20), sand); top.rotation.x = Math.PI; top.position.y = 0.14;
       const bot = new THREE.Mesh(new THREE.ConeGeometry(0.19, 0.26, 20), sand); bot.position.y = -0.14;
       [0.29, -0.29].forEach(y => { const p = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 0.05, 24), frame); p.position.y = y; core.add(p); });
@@ -349,7 +369,7 @@ const CHARACTERS = {
     const core = new THREE.Group();
     if (isHunter) {
       // a storm cloud with lightning
-      const cm = new THREE.MeshStandardMaterial({ color: 0x7A3F8C, emissive: COL.hunter, emissiveIntensity: 0.3, roughness: 0.9 });
+      const cm = litMat({ color: 0x7A3F8C, emissive: COL.hunter, emissiveIntensity: 0.3, roughness: 0.9 });
       [[0, 0.04, 0, 0.2], [0.2, 0, 0, 0.15], [-0.2, -0.01, 0, 0.16], [0.08, 0.15, 0.02, 0.14], [-0.1, 0.12, -0.03, 0.13]].forEach(([x, y, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), cm); b.position.set(x, y, z); core.add(b); });
       const bolt = new THREE.Sprite(new THREE.SpriteMaterial({ map: glyphTexture('⚡', '#FFF1C2'), transparent: true, depthWrite: false }));
       bolt.position.set(0, -0.26, 0.05); bolt.scale.setScalar(0.3); core.add(bolt); core.userData.bolt = bolt;
@@ -360,7 +380,7 @@ const CHARACTERS = {
       g.fillStyle = '#5CC96B';
       [[40, 40, 30, 22], [70, 80, 18, 26], [130, 45, 34, 20], [150, 85, 20, 18], [205, 60, 26, 30], [230, 100, 14, 10]].forEach(([x, y, rx, ry]) => { g.beginPath(); g.ellipse(x, y, rx, ry, 0.4, 0, Math.PI * 2); g.fill(); });
       g.fillStyle = '#EEF6FF'; g.fillRect(0, 0, 256, 8); g.fillRect(0, 120, 256, 8);
-      const globe = new THREE.Mesh(new THREE.SphereGeometry(0.26, 32, 20), new THREE.MeshStandardMaterial({ map: new THREE.CanvasTexture(c), emissive: 0x153a52, emissiveIntensity: 0.6, roughness: 0.6 }));
+      const globe = new THREE.Mesh(new THREE.SphereGeometry(0.26, 32, 20), litMat({ map: new THREE.CanvasTexture(c), emissive: 0x153a52, emissiveIntensity: 0.6, roughness: 0.6 }));
       const ring = new THREE.Mesh(new THREE.TorusGeometry(0.33, 0.018, 8, 40), glowMat(COL.runner, 0.7)); ring.rotation.x = Math.PI / 2;
       core.add(globe, ring); core.userData.globe = globe;
     }
@@ -458,6 +478,7 @@ function applyTheme(force) {
   cellMat.color.setHex(th.cell);
   trimBevelMat.color.setHex(th.cell).offsetHSL(0, 0, 0.1);   // the tiles' raised tops follow the look
   const old = floor.material.map; floor.material.map = themeFloorTexture(th); floor.material.color.set(th.floorBg); floor.material.needsUpdate = true; if (old) old.dispose();
+  warmUp();
 }
 
 const auraMat = new THREE.MeshBasicMaterial({ color: COL.hunter, transparent: true, opacity: 0.3 });
@@ -506,8 +527,8 @@ const shockwave = new THREE.Mesh(new THREE.RingGeometry(0.05, 0.2, 48), shockwav
 shockwave.rotation.x = -Math.PI / 2;
 shockwave.visible = false;
 scene.add(shockwave);
-const flareLight = new THREE.PointLight(COL.spark, 0, 12);
-scene.add(flareLight);
+const flareLight = glowLight(COL.spark, 4.5, 16);
+flareLight.intensity = 0;
 
 const victoryRingMat = new THREE.MeshBasicMaterial({ color: COL.runner, transparent: true, opacity: 0, side: THREE.DoubleSide });
 const victoryRing = new THREE.Mesh(new THREE.RingGeometry(0.05, 0.2, 48), victoryRingMat);
@@ -520,7 +541,28 @@ const HOME_BASE_X = -1.6;
 let runnerVelX = 0;
 let hunterVelX = 0;
 const SPRING_K = 0.05;
-const SPRING_DAMPING = 0.82;
+const SPRING_DAMPING = 0.72;   // a little bounce on arrival, without sliding back on screen
+/* Critically damped follow (as game engines do it): eases in and out, never overshoots, and
+   gives the same path at any frame rate. v is a small object holding the velocity. */
+function smoothDamp(cur, target, v, key, time, dt) {
+  const o = 2 / time, x = o * dt, e = 1 / (1 + x + 0.48 * x * x + 0.235 * x * x * x);
+  const ch = cur - target, tmp = ((v[key] || 0) + o * ch) * dt;
+  v[key] = ((v[key] || 0) - o * tmp) * e;
+  return target + (ch + tmp) * e;
+}
+const camVel = {};
+const CAM_TIME = 0.45;   // seconds for the camera to settle: unhurried but never lagging behind a move
+/* The racers' spring, in steps of a quarter of a 60 Hz frame whatever the screen's frame rate
+   (velocity is in scene units per 60 Hz frame, as the surge and lunge kicks are) */
+function springStep(grp, vel, f) {
+  const n = Math.max(1, Math.ceil(f * 4)), s = f / n, damp = Math.pow(SPRING_DAMPING, s);
+  for (let i = 0; i < n; i++) {
+    vel += (grp.userData.targetX - grp.position.x) * SPRING_K * s;
+    vel *= damp;
+    grp.position.x += vel * s;
+  }
+  return vel;
+}
 let shakeAmt = 0;
 const shake = v => { if (!reduced()) shakeAmt = Math.max(shakeAmt, v); };
 
@@ -532,10 +574,10 @@ function cellX(i) { return HOME_BASE_X + i * CELL_SPACING; }
 const trimGeo = new THREE.BoxGeometry(CELL_SPACING - 0.14 - 0.04, 0.05, 0.06);
 const cellGeo = new THREE.BoxGeometry(CELL_SPACING - 0.14, 0.3, 0.96);   // chunky step tiles
 const bevelGeo = new THREE.BoxGeometry(CELL_SPACING - 0.24, 0.04, 0.86);   // a raised, lighter top: reads as a bevelled edge
-const cellMat = new THREE.MeshStandardMaterial({ color: 0x252C6B, roughness: 0.55, metalness: 0.15 });
-const homeMat = new THREE.MeshStandardMaterial({ color: 0x12A4A0, emissive: 0x0A4F4D, roughness: 0.4, metalness: 0.2 });
-const trimMat = new THREE.MeshStandardMaterial({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.5, roughness: 0.3 });
-const homeTrimMat = new THREE.MeshStandardMaterial({ color: 0x9FFCF0, emissive: 0x4FF0D8, emissiveIntensity: 0.8, roughness: 0.3 });
+const cellMat = litMat({ color: 0x252C6B, roughness: 0.55, metalness: 0.15 });
+const homeMat = litMat({ color: 0x12A4A0, emissive: 0x0A4F4D, roughness: 0.4, metalness: 0.2 });
+const trimMat = litMat({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.5, roughness: 0.3 });
+const homeTrimMat = litMat({ color: 0x9FFCF0, emissive: 0x4FF0D8, emissiveIntensity: 0.8, roughness: 0.3 });
 /* Painted tile tops: chevrons pointing home and the number of steps left */
 const tileTex = {};
 function tileTexture(i) {
@@ -557,17 +599,17 @@ function tileTexture(i) {
   return (tileTex[i] = t);
 }
 const tileTopGeo = new THREE.PlaneGeometry(CELL_SPACING - 0.26, 0.84);
-const trimBevelMat = new THREE.MeshStandardMaterial({ color: 0x3A4396, roughness: 0.4, metalness: 0.2 });
-const railMat = new THREE.MeshStandardMaterial({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.9, roughness: 0.3 });
-const plinthMat = new THREE.MeshStandardMaterial({ color: 0x0A0D22, roughness: 0.8 });
+const trimBevelMat = litMat({ color: 0x3A4396, roughness: 0.4, metalness: 0.2 });
+const railMat = litMat({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.9, roughness: 0.3 });
+const plinthMat = litMat({ color: 0x0A0D22, roughness: 0.8 });
 /* The finish arch at home: two chunky pillars and a beam across the track, studded with bulbs,
    with a HOME sign facing the class. The bulbs run a light show when the class gets home. */
 const finishGroup = new THREE.Group();
 const archBulbSets = [];     // one instanced mesh of bulbs per arch: a single draw call each
 const BULB_REST = [0xFFC93C, 0x9FFCF0, 0xFFFFFF].map(c => new THREE.Color(c));
 function buildArch(group, label) {
-  const pillarMat = new THREE.MeshStandardMaterial({ color: 0x0A6663, emissive: 0x0A4F4D, emissiveIntensity: 0.6, roughness: 0.35, metalness: 0.3 });
-  const glow = new THREE.MeshStandardMaterial({ color: 0x9FFCF0, emissive: 0x2BD9C2, emissiveIntensity: 1.1, roughness: 0.3 });
+  const pillarMat = litMat({ color: 0x0A6663, emissive: 0x0A4F4D, emissiveIntensity: 0.6, roughness: 0.35, metalness: 0.3 });
+  const glow = litMat({ color: 0x9FFCF0, emissive: 0x2BD9C2, emissiveIntensity: 1.1, roughness: 0.3 });
   const pillarGeo = new THREE.BoxGeometry(0.26, 2.3, 0.26);
   [-0.66, 0.66].forEach(z => {
     const m = new THREE.Mesh(pillarGeo, pillarMat); m.position.set(0, 1.0, z); group.add(m);
@@ -625,7 +667,7 @@ const stripRest = new THREE.Color(0x5A63C8), stripRed = new THREE.Color(0xFF3B4E
   // a neon line along the foot of the backdrop (it turns red for the last ten seconds of the sprint)
   const line = new THREE.Mesh(new THREE.BoxGeometry(44, 0.08, 0.08), stripMat); line.position.set(0, 0.2, -6.8); setGroup.add(line);
   // two lighting rigs overhead with soft beams falling on the track
-  const truss = new THREE.MeshStandardMaterial({ color: 0x2A2F55, roughness: 0.6, metalness: 0.6 });
+  const truss = litMat({ color: 0x2A2F55, roughness: 0.6, metalness: 0.6 });
   const beamMat = new THREE.MeshBasicMaterial({ color: 0xBFC6FF, transparent: true, opacity: 0.07, depthWrite: false, blending: THREE.AdditiveBlending });
   const coneGeo = new THREE.ConeGeometry(1.2, 4.6, 20, 1, true);
   [-1.4, 1.6].forEach(z => {
@@ -682,11 +724,11 @@ const clockCanvas = document.createElement('canvas'); clockCanvas.width = 256; c
 const clockTex = new THREE.CanvasTexture(clockCanvas);
 const setClock = new THREE.Group();
 (function buildClock() {
-  const frame = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.92, 0.12), new THREE.MeshStandardMaterial({ color: 0x14183A, roughness: 0.5, metalness: 0.4 }));
+  const frame = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.92, 0.12), litMat({ color: 0x14183A, roughness: 0.5, metalness: 0.4 }));
   setClock.add(frame);
   const face = new THREE.Mesh(new THREE.PlaneGeometry(1.76, 0.78), new THREE.MeshBasicMaterial({ map: clockTex }));
   face.position.z = 0.065; setClock.add(face);
-  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 2.2, 8), new THREE.MeshStandardMaterial({ color: 0x2A2F55, metalness: 0.6, roughness: 0.5 }));
+  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 2.2, 8), litMat({ color: 0x2A2F55, metalness: 0.6, roughness: 0.5 }));
   pole.position.y = -1.5; setClock.add(pole);
 })();
 setClock.visible = false;
@@ -741,10 +783,11 @@ function burstConfetti(x) {
 function updateConfetti(dt) {
   if (!confettiMesh.visible) return;
   confettiT -= dt;
+  const f = dt * 60;
   if (confettiT <= 0) { confettiMesh.visible = false; return; }
   for (let i = 0; i < confettiMesh.count; i++) {
     const c = confetti[i];
-    c.v.y -= 0.0022; c.v.multiplyScalar(0.985); c.p.add(c.v); c.r += c.rv;
+    c.v.y -= 0.0022 * f; c.v.multiplyScalar(Math.pow(0.985, f)); c.p.addScaledVector(c.v, f); c.r += c.rv * f;
     confettiDummy.position.copy(c.p); confettiDummy.rotation.set(c.r, c.r * 0.7, 0);
     confettiDummy.updateMatrix(); confettiMesh.setMatrixAt(i, confettiDummy.matrix);
   }
@@ -752,9 +795,9 @@ function updateConfetti(dt) {
 }
 let lightShow = 0;
 const showCol = new THREE.Color();
-function updateArchLights(t) {
+function updateArchLights(t, dt) {
   if (lightShow <= 0) return;
-  lightShow -= 1 / 60;
+  lightShow -= dt;
   const done = lightShow <= 0;
   archBulbSets.forEach(m => {
     for (let i = 0; i < m.count; i++) m.setColorAt(i, done ? BULB_REST[i % 3] : showCol.setHSL((t * 0.9 + i * 0.07) % 1, 1, 0.62));
@@ -975,16 +1018,36 @@ function dealFraming() {
 
 const clock = new THREE.Clock();
 let active = false, rafId = 0;
-let lastFrame = performance.now(), slowMo = 1, lookX = 0, explodeX = 0, escapeConfetti = false;
+let lastFrame = performance.now(), frameT = 0, ease = k => k, slowMo = 1, lookX = 0, explodeX = 0, escapeConfetti = false;
 const V3 = new THREE.Vector3();
-function animate() {
+/* Warm-up: the first time anything is drawn, the browser uploads its geometry and pictures to
+   the graphics chip and waits for it, which showed as a jolt whenever the camera swung part of
+   the set into view (or an effect appeared) for the first time. So once after each change of
+   look, and when the sprint track is built, everything is drawn once with nothing hidden or
+   culled; the real frame is drawn straight after, in the same frame, so it is never seen. */
+let warmPending = true;
+const warmUp = () => { warmPending = true; };
+function warmScene() {
+  warmPending = false;
+  const saved = [];
+  scene.traverse(o => { saved.push([o, o.visible, o.frustumCulled]); o.visible = true; o.frustumCulled = false; });
+  try { renderer.compile(scene, camera); renderer.render(scene, camera); }
+  finally { saved.forEach(([o, v, c]) => { o.visible = v; o.frustumCulled = c; }); }
+}
+function animate(ts) {
   if (!active) return;
   rafId = requestAnimationFrame(animate);
-  const t = clock.getElapsedTime();
-  const nowMs = performance.now(), dt = Math.min(0.05, (nowMs - lastFrame) / 1000);
-  lastFrame = nowMs;
+  // every movement runs on the frame's own timestamp, scaled to a 60 Hz frame (f = 1 at 60 Hz),
+  // so the camera and racers glide at the same speed on 60, 120 and 144 Hz screens and an
+  // uneven frame does not make them jump
+  const nowMs = performance.now(), frameMs = typeof ts === 'number' ? ts : nowMs;
+  const dt = Math.min(0.05, Math.max(0, (frameMs - lastFrame) / 1000));
+  lastFrame = frameMs; frameT += dt;
+  const t = frameT, f = dt * 60;
+  ease = k => 1 - Math.pow(1 - k, f);
+  if (warmPending) warmScene();
   updateConfetti(dt);
-  updateArchLights(t);
+  updateArchLights(t, dt);
   updateTrails(dt);
 
   watchPerformance(performance.now());
@@ -1006,28 +1069,24 @@ function animate() {
   ambientParticles.rotation.y = t * 0.02;
   ambientParticles.position.y = Math.sin(t * 0.3) * 0.15;
 
-  runnerGlow.intensity = 5 + Math.sin(t * 2) * 1.2;
-  hunterGlow.intensity = 6 + Math.sin(t * 3) * 1.8;
+  runnerGlow.position.copy(runnerGroup.position); runnerGlow.visible = runnerGroup.visible;
+  hunterGlow.position.copy(hunterGroup.position); hunterGlow.visible = hunterGroup.visible;
+  runnerGlow.material.opacity = 0.42 + Math.sin(t * 2) * 0.08;
+  hunterGlow.material.opacity = 0.45 + Math.sin(t * 3) * 0.1;
 
+  if (sceneMode !== 'idle') { camVel.x = camVel.y = camVel.z = camVel.l = 0; }
   if (sceneMode === 'idle') {
-    const force = (runnerGroup.userData.targetX - runnerGroup.position.x) * SPRING_K;
-    runnerVelX += force;
-    runnerVelX *= SPRING_DAMPING;
-    runnerGroup.position.x += runnerVelX;
-
-    if (currentRoundType === 'deal') {
-      const hforce = (hunterGroup.userData.targetX - hunterGroup.position.x) * SPRING_K;
-      hunterVelX += hforce;
-      hunterVelX *= SPRING_DAMPING;
-      hunterGroup.position.x += hunterVelX;
-    }
+    runnerVelX = springStep(runnerGroup, runnerVelX, f);
+    if (currentRoundType === 'deal') hunterVelX = springStep(hunterGroup, hunterVelX, f);
 
     if (currentRoundType === 'deal') {
       let fx, fy, fz, lx, ly = 0.35;
       if (state.dealReward && !reduced()) {
         // during the questions: beside and a little behind the class, with the Hunter in view
         // behind it and room ahead towards home, so the gap is plain to see
-        const rx = runnerGroup.position.x, hx = hunterGroup.position.x;
+        // framed on where the racers are heading, so the camera makes one glide while they
+        // bounce into place, instead of wobbling with them
+        const rx = runnerGroup.userData.targetX, hx = hunterGroup.userData.targetX;
         const lo = Math.min(rx, hx) - 1.3, hi = Math.max(rx, hx) + 0.9, mid = (lo + hi) / 2;
         fz = framingZ(hi - lo - 1.2) * 0.95; fx = mid + 0.8; fy = 1.5 + fz * 0.14; lx = mid - 0.15; ly = 0.5;
       } else {
@@ -1035,23 +1094,24 @@ function animate() {
         // arch to the Hunter's furthest start, fills the width
         const f = dealFraming(); fx = f.x; fy = f.y; fz = f.z; lx = f.x;
       }
-      camera.position.x += (fx - camera.position.x) * 0.06;
-      camera.position.y += (fy - camera.position.y) * 0.06;
-      camera.position.z += (fz - camera.position.z) * 0.06;
-      lookX += (lx - lookX) * 0.08;
+      camera.position.x = smoothDamp(camera.position.x, fx, camVel, 'x', CAM_TIME, dt);
+      camera.position.y = smoothDamp(camera.position.y, fy, camVel, 'y', CAM_TIME, dt);
+      camera.position.z = smoothDamp(camera.position.z, fz, camVel, 'z', CAM_TIME, dt);
+      lookX = smoothDamp(lookX, lx, camVel, 'l', CAM_TIME, dt);
       camera.lookAt(lookX, ly, 0);
     } else {
       // Final Sprint: the class and the Hunter, from slightly behind the class; with reduced
       // motion one still view of the whole sprint track
       const wide = reduced();
       const endX = runnerTargetX(1, 1) - 1.2;
-      const lo = wide ? endX : Math.min(runnerGroup.position.x, hunterGroup.position.x), hi = wide ? HUNTER_X + 0.8 : Math.max(runnerGroup.position.x, hunterGroup.position.x);
+      const rT = runnerGroup.userData.targetX;   // where the class is heading, so the Hunter's lunges don't jolt the camera
+      const lo = wide ? endX : Math.min(rT, HUNTER_X), hi = wide ? HUNTER_X + 0.8 : Math.max(rT, HUNTER_X);
       const midX = (lo + hi) / 2;
       const desiredZ = framingZ(hi - lo);
-      camera.position.x += (midX + (wide ? 0 : 0.5) - camera.position.x) * 0.05;
-      camera.position.y += (2.4 - camera.position.y) * 0.05;
-      camera.position.z += (desiredZ - camera.position.z) * 0.05;
-      lookX += (midX - lookX) * 0.08;
+      camera.position.x = smoothDamp(camera.position.x, midX + (wide ? 0 : 0.5), camVel, 'x', CAM_TIME, dt);
+      camera.position.y = smoothDamp(camera.position.y, 2.4, camVel, 'y', CAM_TIME, dt);
+      camera.position.z = smoothDamp(camera.position.z, desiredZ, camVel, 'z', CAM_TIME, dt);
+      lookX = smoothDamp(lookX, midX, camVel, 'l', CAM_TIME, dt);
       camera.lookAt(lookX, 0.6, 0);
       if (sceneMode === 'idle') {      // the Hunter's lunge on a missed question
         hunterLunge = Math.max(0, hunterLunge - dt * 2.4);
@@ -1059,11 +1119,7 @@ function animate() {
       }
     }
 
-    if (shakeAmt > 0.001) {
-      camera.position.x += (Math.random() - 0.5) * shakeAmt;
-      camera.position.y += (Math.random() - 0.5) * shakeAmt * 0.6;
-      shakeAmt *= 0.82;
-    } else { shakeAmt = 0; }
+    if (shakeAmt > 0.001) shakeAmt *= Math.pow(0.82, f); else shakeAmt = 0;
   }
 
   if (currentRoundType === 'sprint' && (sceneMode === 'idle' || sceneMode === 'buildup')) {
@@ -1072,16 +1128,16 @@ function animate() {
     tether.position.set((from.x + to.x) / 2, 0.6, 0);
     tether.scale.set(1, Math.max(0.001, dist), 1);
     tether.rotation.z = Math.PI / 2;
-    tetherPulse *= 0.94;
-    tetherColor.lerp(tetherTargetColor, 0.06);
-    tetherColor.lerp(tetherRest, 0.01);
+    tetherPulse *= Math.pow(0.94, f);
+    tetherColor.lerp(tetherTargetColor, ease(0.06));
+    tetherColor.lerp(tetherRest, ease(0.01));
     tetherMat.color.copy(tetherColor);
     tetherMat.opacity = 0.35 + tetherPulse * 0.5;
     tether.scale.x = tether.scale.z = 1 + tetherPulse * 2.5;
 
     pulses.forEach(p => {
       if (!p.active) return;
-      p.progress += 0.045;
+      p.progress += 0.045 * f;
       const x = from.x + (to.x - from.x) * p.progress;
       p.mesh.position.set(x, 0.6, 0);
       p.mesh.scale.setScalar(1 - p.progress * 0.3);
@@ -1093,17 +1149,14 @@ function animate() {
     const elapsed = (performance.now() - sequenceStart) / 1000;
     const HOP_DURATION = 0.4;
     const progress = Math.min(1, elapsed / HOP_DURATION);
-    hunterGroup.position.x += (hunterGroup.userData.targetX - hunterGroup.position.x) * 0.25;
+    hunterGroup.position.x += (hunterGroup.userData.targetX - hunterGroup.position.x) * ease(0.25);
     shake(progress * 0.05);
 
     const midX = (runnerGroup.position.x + hunterGroup.position.x) / 2;
-    camera.position.x += (midX - camera.position.x) * 0.12;
-    camera.position.z += ((3.4) - camera.position.z) * 0.06;
+    camera.position.x += (midX - camera.position.x) * ease(0.12);
+    camera.position.z += ((3.4) - camera.position.z) * ease(0.06);
     camera.lookAt(midX, 0.6, 0);
-    if (shakeAmt > 0.001) {
-      camera.position.x += (Math.random() - 0.5) * shakeAmt;
-      shakeAmt *= 0.85;
-    }
+    if (shakeAmt > 0.001) shakeAmt *= Math.pow(0.85, f);
 
     if (progress >= 1 && Math.abs(hunterGroup.position.x - hunterGroup.userData.targetX) < 0.02) {
       const collideX = (runnerGroup.position.x + hunterGroup.position.x) / 2;
@@ -1116,8 +1169,8 @@ function animate() {
     const progress = Math.min(1, elapsed / BUILDUP_DURATION);
     const easedProgress = progress * progress;
     const midX = (buildupBaseX + HUNTER_X) / 2;
-    buildupBaseX += (midX - buildupBaseX) * easedProgress * 0.1;
-    hunterGroup.position.x += (midX - hunterGroup.position.x) * easedProgress * 0.14;
+    buildupBaseX += (midX - buildupBaseX) * ease(easedProgress * 0.1);
+    hunterGroup.position.x += (midX - hunterGroup.position.x) * ease(easedProgress * 0.14);
 
     while (buildupYankIndex < yankTimes.length && elapsed >= yankTimes[buildupYankIndex]) {
       const strength = 0.14 + buildupYankIndex * 0.045;
@@ -1134,12 +1187,8 @@ function animate() {
     runnerGroup.position.x = buildupBaseX + Math.sin(elapsed * strainFreq) * strainAmp;
 
     shake(progress * 0.06);
-    camera.position.lerp(new THREE.Vector3(0, 1.4, 3.2), 0.02);
-    if (shakeAmt > 0.001) {
-      camera.position.x += (Math.random() - 0.5) * shakeAmt;
-      camera.position.y += (Math.random() - 0.5) * shakeAmt * 0.7;
-      shakeAmt *= 0.88;
-    }
+    camera.position.lerp(V3.set(0, 1.4, 3.2), ease(0.02));
+    if (shakeAmt > 0.001) shakeAmt *= Math.pow(0.88, f);
 
     if (progress >= 1) {
       const collideX = (runnerGroup.position.x + hunterGroup.position.x) / 2;
@@ -1153,10 +1202,10 @@ function animate() {
     const sm = reduced() ? 1 : Math.min(1, slowMo + elapsed * 0.75);
     const simT = reduced() ? elapsed : Math.max(0, elapsed - (1 - slowMo) * Math.min(elapsed, 0.95) * 0.6);
     explosionParts.forEach(p => {
-      p.mesh.position.addScaledVector(p.vel, sm);
-      p.vel.y -= 0.002 * sm;
-      p.vel.multiplyScalar(1 - 0.015 * sm);
-      p.mesh.scale.multiplyScalar(1 - 0.035 * sm);
+      p.mesh.position.addScaledVector(p.vel, sm * f);
+      p.vel.y -= 0.002 * sm * f;
+      p.vel.multiplyScalar(Math.pow(1 - 0.015 * sm, f));
+      p.mesh.scale.multiplyScalar(Math.pow(1 - 0.035 * sm, f));
     });
     shockwave.scale.setScalar(1 + simT * 14);
     shockwaveMat.opacity = Math.max(0, 0.9 - simT * 1.3);
@@ -1164,7 +1213,7 @@ function animate() {
     if (reduced()) { camera.position.set(explodeX, 1.4, 3.4); camera.lookAt(explodeX, 0.6, 0); }
     else {
       const a = -0.5 + Math.min(1, elapsed / 2.0) * 0.9, r = 4.4, shk = Math.max(0, 0.55 - elapsed) * 0.5;
-      camera.position.set(explodeX + Math.sin(a) * r + (Math.random() - 0.5) * shk, 2.1 + elapsed * 0.15, Math.cos(a) * r);
+      camera.position.set(explodeX + Math.sin(a) * r + Math.sin(elapsed * 47) * shk * 0.5, 2.1 + elapsed * 0.15, Math.cos(a) * r);
       camera.lookAt(explodeX, 0.6, 0);
     }
     if (elapsed > (reduced() ? 1.6 : 2.1) && onSequenceComplete) {
@@ -1182,15 +1231,15 @@ function animate() {
     const zoomProgress = Math.min(1, elapsed / ZOOM_DURATION);
     const px = runnerGroup.position.x, archX = finishGroup.position.x;
     if (!reduced()) {
-      camera.position.x += (archX + 1.0 - camera.position.x) * 0.06;
-      camera.position.z += (3.1 - camera.position.z) * 0.05;
-      camera.position.y += (1.4 - camera.position.y) * 0.05;
+      camera.position.x += (archX + 1.0 - camera.position.x) * ease(0.06);
+      camera.position.z += (3.1 - camera.position.z) * ease(0.05);
+      camera.position.y += (1.4 - camera.position.y) * ease(0.05);
       camera.lookAt(archX + 0.2, 1.0, 0);
     }
     // the class bursts through the finish arch
-    if (elapsed >= BURST_AT) runnerGroup.position.x += (archX - 1.5 - runnerGroup.position.x) * 0.12;
+    if (elapsed >= BURST_AT) runnerGroup.position.x += (archX - 1.5 - runnerGroup.position.x) * ease(0.12);
 
-    if (runnerChar) runnerChar.boost(zoomProgress);
+    if (runnerChar) runnerChar.boost(zoomProgress * f);
 
     if (elapsed >= BURST_AT && !snapFlashDone) {
       snapFlashDone = true;
@@ -1236,14 +1285,14 @@ function animate() {
       tether.visible = true;
       tether.position.set((from.x + to.x) / 2, 0.6, 0);
       tether.rotation.z = Math.PI / 2;
-      tetherPulse *= 0.94;
-      tetherColor.lerp(tetherTargetColor, 0.08);
+      tetherPulse *= Math.pow(0.94, f);
+      tetherColor.lerp(tetherTargetColor, ease(0.08));
       tetherMat.color.copy(tetherColor);
       tetherMat.opacity = 0.4 + tetherPulse * 0.5;
       tether.scale.set(1 + tetherPulse * 2, dist, 1 + tetherPulse * 2);
 
-      camera.position.lerp(new THREE.Vector3((from.x + to.x) / 2 * 0.3, 1.8, 4.4), 0.03);
-      if (shakeAmt > 0.001) { camera.position.x += (Math.random() - 0.5) * shakeAmt; shakeAmt *= 0.85; }
+      camera.position.lerp(V3.set((from.x + to.x) / 2 * 0.3, 1.8, 4.4), ease(0.03));
+      if (shakeAmt > 0.001) shakeAmt *= Math.pow(0.85, f);
 
     } else if (elapsed < ESCAPE_BREAKFREE_DURATION + 0.18) {
       const snapProgress = (elapsed - ESCAPE_BREAKFREE_DURATION) / 0.18;
@@ -1254,10 +1303,10 @@ function animate() {
       }
       const from = hunterGroup.position;
       tether.visible = true;
-      tether.position.lerp(new THREE.Vector3(from.x, 0.6, 0), 0.55);
-      tether.scale.y *= 0.82;
+      tether.position.lerp(V3.set(from.x, 0.6, 0), ease(0.55));
+      tether.scale.y *= Math.pow(0.82, f);
       tetherMat.opacity = Math.max(0, 0.85 * (1 - snapProgress));
-      flareLight.intensity *= 0.8;
+      flareLight.intensity *= Math.pow(0.8, f);
       if (snapProgress >= 1) tether.visible = false;
 
     } else {
@@ -1270,7 +1319,7 @@ function animate() {
         escapeStreakMat.opacity = 0.5 * (1 - progress);
         const archX = sprintArch.position.x;
         if (!escapeConfetti && runnerGroup.position.x < archX) { escapeConfetti = true; burstConfetti(archX); lightShow = reduced() ? 0 : 2.4; setMood('gold'); }
-        if (!reduced()) { camera.position.lerp(V3.set(archX + 2.6, 1.7, 4.4), 0.05); lookX += (archX + 0.8 - lookX) * 0.06; camera.lookAt(lookX, 0.9, 0); }
+        if (!reduced()) { camera.position.lerp(V3.set(archX + 2.6, 1.7, 4.4), ease(0.05)); lookX += (archX + 0.8 - lookX) * ease(0.06); camera.lookAt(lookX, 0.9, 0); }
         if (progress >= 1 && launchElapsed > (reduced() ? 0.85 : 1.9) && onSequenceComplete) {
           runnerGroup.visible = false;
           escapeStreakMat.opacity = 0;
@@ -1281,9 +1330,17 @@ function animate() {
   }
 
   if (++shiftFrame % 6 === 0) updateViewShift();
+  slideView(dt);
+  // the shake is a smooth sway added for this frame only (it used to jump to a new random spot
+  // every frame, which read as stutter, and stayed baked into the camera's glide)
+  const sx = shakeAmt * 0.5 * Math.sin(t * 31), sy = shakeAmt * 0.35 * Math.sin(t * 23 + 1.3);
+  camera.position.x += sx; camera.position.y += sy;
   placeTags();
-  if (useBloom) composer.render(); else renderer.render(scene, camera);
+  renderer.render(scene, camera);
+  camera.position.x -= sx; camera.position.y -= sy;
+  /* @test-only */ frameStats.js += performance.now() - nowMs; frameStats.n++; /* @end-test-only */
 }
+/* @test-only */ const frameStats = { js: 0, n: 0 }; /* @end-test-only */
 runnerGroup.userData.targetX = HOME_BASE_X;
 hunterGroup.userData.targetX = HUNTER_X;
 
@@ -1305,13 +1362,13 @@ function placeTag(el, obj, dy, show) {
   const half = el._w / 2 + 8;
   const left = band.left || 0, right = Math.min(w, band.right || w);
   const sx = (tagV.x + 1) / 2 * w - viewShiftX;
-  const x = Math.round(Math.min(right - half, Math.max(left + half, sx)));
+  const x = +Math.min(right - half, Math.max(left + half, sx)).toFixed(1);   // sub-pixel, so tags glide with the racers
   // keep tags inside the clear band so they never sit on the HUD panels
   const below = el !== $('tagYou');
   let y = (1 - tagV.y) / 2 * h;
   if (below) y = Math.max(band.top + 4, Math.min(band.bottom - el._h - 4, y));
   else y = Math.max(band.top + el._h + 4, Math.min(band.bottom - 4, y));
-  y = Math.round(y);
+  y = +y.toFixed(1);
   // moved with a transform (no page layout), and only when the position changes
   if (x !== el._x || y !== el._y) { el._x = x; el._y = y; el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, ${below ? '0' : '-100%'})`; }
   const vis = tagV.z < 1 && Math.abs(tagV.x) < 1.1;
@@ -1353,38 +1410,59 @@ function updateViewShift() {
       band.top = top; band.bottom = dock;
     }
   } else { band.top = 0; band.bottom = h; }
-  if (Math.abs(want - viewShift) < 2 && Math.abs(wantX - viewShiftX) < 2) return;
-  const k = reduced() ? 1 : 0.25;
-  viewShift += (want - viewShift) * k; viewShiftX += (wantX - viewShiftX) * k;
-  if (Math.abs(viewShift) < 1 && Math.abs(viewShiftX) < 1) { camera.clearViewOffset(); viewShift = viewShiftX = 0; }
+  viewWant.y = want; viewWant.x = wantX; viewWant.w = w; viewWant.h = h;
+  if (reduced()) slideView(1);
+}
+/* ...and slide the picture there smoothly, every frame (it used to jump a quarter of the way
+   every sixth frame, which shook the whole picture whenever the question panel changed size) */
+const viewWant = { x: 0, y: 0, w: 0, h: 0 }, viewVel = {};
+function slideView(dt) {
+  const { w, h } = viewWant;
+  if (!w || !h) return;
+  if (reduced()) { viewShift = viewWant.y; viewShiftX = viewWant.x; viewVel.x = viewVel.y = 0; }
+  else if (Math.abs(viewWant.y - viewShift) > 0.05 || Math.abs(viewWant.x - viewShiftX) > 0.05 || Math.abs(viewVel.y || 0) > 0.05 || Math.abs(viewVel.x || 0) > 0.05) {
+    viewShift = smoothDamp(viewShift, viewWant.y, viewVel, 'y', 0.3, dt);
+    viewShiftX = smoothDamp(viewShiftX, viewWant.x, viewVel, 'x', 0.3, dt);
+  } else if (viewShift === viewWant.y && viewShiftX === viewWant.x && camera.view && camera.view.fullWidth === w) return;
+  else { viewShift = viewWant.y; viewShiftX = viewWant.x; }
+  if (Math.abs(viewShift) < 0.05 && Math.abs(viewShiftX) < 0.05) { if (camera.view) camera.clearViewOffset(); }
   else camera.setViewOffset(w, h, viewShiftX, viewShift, w, h);
 }
+let lastSize = '';
 function resize() {
   const w = wrap.clientWidth, h = wrap.clientHeight;
   if (!w || !h) return;
   camera.aspect = w / h;
   if (viewShift || viewShiftX) camera.setViewOffset(w, h, viewShiftX, viewShift, w, h);
   camera.updateProjectionMatrix();
-  renderer.setSize(w, h, false);
-  composer.setSize(w, h);
+  // resizing the drawing buffer (even to the same size) makes the browser rebuild it and wait,
+  // so only when the size or resolution has really changed
+  const pr = renderer.getPixelRatio(), key = w + 'x' + h + '@' + pr;
+  if (key !== lastSize) { lastSize = key; renderer.setSize(w, h, false); }
   measureTags();
 }
 function applyQuality() {
   showBeams();
-  useBloom = bloomAllowed();
-  renderer.setPixelRatio(opPixelRatio());
-  composer.setPixelRatio(opPixelRatio());
+  // level 1 (and Low graphics): no floating dust, set dressing or light beams; level 2: three-quarter resolution
+  const lean = CGB.settings.get('quality') === 'low' || perf.level >= 1;
+  ambientParticles.visible = !lean;
+  setGroup.children.forEach(o => { if (!o.userData.beam) o.visible = !lean; });
+  const pr = perf.level >= 2 ? 0.75 : opPixelRatio();
+  if (pr !== renderer.getPixelRatio()) {
+    renderer.setPixelRatio(pr);   // three.js resizes the buffer itself here, so resize() need not again
+    const v = renderer.getSize(new THREE.Vector2()); lastSize = v.x + 'x' + v.y + '@' + pr;
+  }
   resize();
 }
-/* Step quality down, one level at a time, if frames stay slow (over 26 ms on average) for two
-   seconds: first the glow goes, then the resolution drops to 1:1. The Graphics setting is untouched. */
+/* Step quality down, one level at a time, as soon as frames stay slow (under about 45 a second on
+   average) for a second and a half. The Graphics setting itself is untouched. */
 function watchPerformance(now) {
   if (!perf.last) { perf.last = now; return; }
   const dt = Math.min(200, now - perf.last); perf.last = now;
   perf.ema += (dt - perf.ema) * 0.05;
   if (perf.level >= 2 || clock.getElapsedTime() < 3) return;
-  perf.slowFor = perf.ema > 26 ? perf.slowFor + dt : 0;
-  if (perf.slowFor > 2000) { perf.level++; perf.slowFor = 0; perf.ema = 16; applyQuality(); }
+  perf.slowFor = perf.ema > 22 ? perf.slowFor + dt : 0;
+  if (perf.slowFor > 1500) { perf.level++; perf.slowFor = 0; perf.ema = 16; applyQuality(); }
 }
 window.addEventListener('resize', resize);
 if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
@@ -1665,7 +1743,7 @@ function startSprint() {
   state.sprintNetScore = 0;
   state.sprintTarget = classTarget();
   state.sprintTimeLeft = 60;
-  buildSprintTrack(state.sprintTarget);
+  buildSprintTrack(state.sprintTarget); warmUp();
   hostSay('hostSprint', `Final Sprint! Sixty seconds. Every correct team is a step. You need ${state.sprintTarget}!`, 'point', 1800);
 
   paintSprintTarget();
@@ -1805,6 +1883,8 @@ resize();
 /* @test-only: shortcuts for tests, removed from the shipped file by build.js */
 CGB.test.outpace = {
   setTime(sec) { state.sprintTimeLeft = sec; },
+  frameStats() { const r = renderer.info.render, o = { calls: r.calls, triangles: r.triangles, programs: renderer.info.programs.length, lights: scene.children.filter(c => c.isLight).length, msPerFrame: frameStats.n ? +(frameStats.js / frameStats.n).toFixed(2) : 0, bloom: useBloom, pixelRatio: renderer.getPixelRatio(), perfLevel: perf.level }; frameStats.js = 0; frameStats.n = 0; return o; },
+  motion() { const v = runnerGroup.position.clone().project(camera), hv = hunterGroup.position.clone().project(camera); return { cam: camera.position.toArray().map(n => +n.toFixed(4)), lookX: +lookX.toFixed(4), shift: [viewShift, viewShiftX], runner: [+runnerGroup.position.x.toFixed(4), +runnerGroup.position.y.toFixed(4)], rs: [+((v.x + 1) / 2 * stageSize.w).toFixed(2), +((1 - v.y) / 2 * stageSize.h).toFixed(2)], hs: +((hv.x + 1) / 2 * stageSize.w).toFixed(2), tag: [$('tagYou')._x, $('tagYou')._y], shake: +shakeAmt.toFixed(4), mode: sceneMode, fov: camera.fov, aspect: camera.aspect }; },
   scene3d() { return { mode: sceneMode, mood, clock: setClock.visible, arch: !!finishGroup.parent, sprintTrack: sprintGroup.visible && sprintGroup.children.length > 0, confetti: confettiMesh.visible, camera: camera.position.toArray() }; },
   // skip the Deal Round: start the Final Sprint with this pot
   toSprint(pot) { clearTimers(); roundEndNext = null; $('roundEnd').classList.remove('show'); state.pot = pot == null ? 600 : pot; startSprint(); }
@@ -1815,6 +1895,7 @@ return {
   enter() {
     active = true;
     applyQuality();
+    warmUp();
     clock.start();
     rafId = requestAnimationFrame(animate);
     if (state.phase === 'home') { renderGroupNames(true); renderPack(); $('startBtn').focus({ preventScroll: true }); }

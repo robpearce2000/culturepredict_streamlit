@@ -384,9 +384,12 @@ details.tnames[open] > summary { margin-bottom: 8px; }
 .start-gate-note { margin: 0; font-weight: 800; font-size: 1.05rem; line-height: 1.4; }
 .start-gate-btn { font-size: 1.6rem; padding: 16px 28px; width: 100%; }
 
-/* SHOWTIME sign bulbs twinkle gently, each on its own timing; still and lit with reduced motion */
-@keyframes bulb-twinkle { 0%, 100% { opacity: 1; } 45% { opacity: 1; } 60% { opacity: 0.45; } 75% { opacity: 1; } }
-.l-wordmark .bulb { animation: bulb-twinkle var(--tw, 3s) ease-in-out var(--td, 0s) infinite; }
-html[data-motion="reduced"] .l-wordmark .bulb { animation: none !important; opacity: 1; }
-@media (prefers-reduced-motion: reduce) { html:not([data-motion="full"]) .l-wordmark .bulb { animation: none; } }
+/* SHOWTIME sign bulbs: a marquee chase runs round the sign, lit bulbs glow and the rest dim
+   right down, so it reads from the back of the room; still and fully lit with reduced motion */
+@keyframes bulb-chase { 0% { opacity: 1; } 22% { opacity: 1; } 40% { opacity: 0.22; } 92% { opacity: 0.22; } 100% { opacity: 1; } }
+@keyframes bulb-halo { 0% { opacity: 1; transform: scale(1.15); } 25% { opacity: 0.8; transform: scale(1); } 40%, 100% { opacity: 0; transform: scale(0.7); } }
+.l-wordmark .bulb { animation: bulb-chase var(--tw, 2.8s) linear var(--td, 0s) infinite; }
+.l-wordmark .bulb .halo { transform-box: fill-box; transform-origin: center; animation: bulb-halo var(--tw, 2.8s) linear var(--td, 0s) infinite; }
+html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wordmark .bulb .halo { animation: none !important; opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { html:not([data-motion="full"]) .l-wordmark .bulb, html:not([data-motion="full"]) .l-wordmark .bulb .halo { animation: none; opacity: 1; } }
 .hc-name[hidden], .ote-bubble .who[hidden] { display: none; }

@@ -323,11 +323,11 @@ test('launcher: subject and exam board dropdowns, the bubble clear of the host, 
   expect(await page.evaluate(() => CGB.bank.subject())).toBe('physics');
   await page.selectOption('#boardSelect', 'edexcel');
   expect(await page.evaluate(() => CGB.bank.board())).toBe('edexcel');
-  // the sign's bulbs twinkle on varied timings, and are still with reduced motion
+  // the sign's bulbs run a marquee chase round the sign (each bulb a step behind the last), and are still with reduced motion
   const anim = await page.locator('#wordmark .bulb').evaluateAll(bs => bs.map(b => getComputedStyle(b).animationName + ' ' + getComputedStyle(b).animationDuration + ' ' + getComputedStyle(b).animationDelay));
   expect(anim.length).toBeGreaterThan(20);
-  expect(anim.every(a => a.startsWith('bulb-twinkle'))).toBe(true);
-  expect(new Set(anim).size).toBeGreaterThan(10);
+  expect(anim.every(a => a.startsWith('bulb-chase'))).toBe(true);
+  expect(new Set(anim).size).toBe(anim.length);
   await page.evaluate(() => CGB.settings.set('reducedMotion', true));
   const still = await page.locator('#wordmark .bulb').evaluateAll(bs => bs.map(b => getComputedStyle(b).animationName + ' ' + getComputedStyle(b).opacity));
   expect(still.every(a => a === 'none 1')).toBe(true);

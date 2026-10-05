@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 – Smoother Outpace (October 2026)
+
+- **Outpace runs about twice as smoothly.** It no longer uses a full-screen glow pass or moving lights; the glows are drawn far more cheaply, every surface uses simpler shading, and it draws at standard resolution. If a computer still struggles, it now steps its quality down sooner (after a second and a half below about 45 frames a second): first the floating dust, set dressing and light beams go, then the resolution drops to three-quarters.
+- **No more stutter when the camera and racers move.** Every movement now runs on the clock rather than counting frames, so the camera glide and the racers' steps are smooth and the same speed on 60, 120 and 144 Hz screens, and one slow frame no longer makes them jump. A browser drawing 3D without the graphics chip (hardware acceleration switched off) now starts in the lightest mode.
+- **No more jolts as the camera swings.** Everything in the set is loaded onto the graphics chip before play, instead of the first time the camera brings it into view (the browser used to pause for that mid-move). The camera shake on each answer is now a short smooth sway instead of a new random jump every frame, and the camera glides once to where the racers are heading rather than wobbling with them as they bounce into place. The picture is no longer rebuilt when nothing about its size has changed.
+- **The picture no longer jitters as the camera moves.** When the question panel changed size (as it does on marking), the 3D picture was nudged to stay clear of it in small jumps ten times a second; it now slides there smoothly. The camera now eases in and out of every move (it used to set off at full speed in a single frame), the class's counter no longer slides back on screen as it lands, and the name tags glide with the racers instead of snapping from pixel to pixel.
+- **The home-screen sign is livelier:** a band of light chases round the bulbs, lit bulbs glow and the rest dim right down. With reduced motion every bulb stays lit and still.
+
 ## 1.0.0 – First release (October 2026)
 
 The first public release. (The 1.1 to 1.4.1 entries below were development builds before release.)
