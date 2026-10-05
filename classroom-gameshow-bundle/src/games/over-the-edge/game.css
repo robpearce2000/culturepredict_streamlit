@@ -141,3 +141,4 @@
 .ote-order li .k { display: inline-grid; place-items: center; width: 1.35em; height: 1.35em; border-radius: 50%; background: var(--ink); color: #fff; font-size: 0.78rem; }
 .ote-order li.done { opacity: 0.45; }
 .ote-order li.now { border-color: var(--ink); box-shadow: 0 0 0 2px var(--pc); }
+.ote-order li.next { border-style: dashed; border-color: var(--pc); }

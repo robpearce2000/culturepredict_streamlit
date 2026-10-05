@@ -15,7 +15,7 @@
   - Category Clash's team panels had been missing from the question card since 1.4.0.
   - Decorative counters behind Over the Edge's setup card could land in a real game.
 - **Frame rates were only measured on a machine with no graphics card,** so please check on your laptop.
-- **A six-team Over the Edge game** is estimated (from measured drop times, not timed end to end) to finish just under 10 minutes now that teams take turns.
+- **Over the Edge with turns,** timed as whole games: about 8.6 minutes with 2 or 4 teams and 9.3 to 10.0 with 6 (you said a little over 10 for big groups is fine).
 
 ## Part 1: Outpace — done
 

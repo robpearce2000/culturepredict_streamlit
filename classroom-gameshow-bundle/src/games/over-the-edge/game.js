@@ -1115,8 +1115,9 @@ function drawActions() {
     const t = G.laneQueue[0], p = G.players[t], n = G.dropCount;
     const ahead = G.step === 'dropping';   // the team before is still dropping: this captain can choose now
     const lead = t === G.catchUp ? `Catch-up counter for ${p.name}.` : G.bonusDrop ? `Bonus counter for ${p.name}.` : `${p.name} won ${n === 1 ? 'a counter' : n + ' counters'}.`;
-    const done = G.dropOrder.length - G.laneQueue.length;
-    const order = G.dropOrder.length > 1 ? `<ol class="ote-order" aria-label="Drop order">${G.dropOrder.map((i, k) => `<li class="${k < done ? 'done' : k === done ? 'now' : ''}" style="--pc:${COLORS.css[i]}"><span class="k">${k + 1}</span>${COLORS.mark[i]} ${escapeHtml(G.players[i].name)}</li>`).join('')}</ol>` : '';
+    // while a team's counter is still dropping, that team is the one highlighted; the next captain is marked "next"
+    const picked = G.dropOrder.length - G.laneQueue.length, done = ahead ? picked - 1 : picked;
+    const order = G.dropOrder.length > 1 ? `<ol class="ote-order" aria-label="Drop order">${G.dropOrder.map((i, k) => `<li class="${k < done ? 'done' : k === done ? 'now' : ahead && k === done + 1 ? 'next' : ''}" style="--pc:${COLORS.css[i]}"><span class="k">${k + 1}</span>${COLORS.mark[i]} ${escapeHtml(G.players[i].name)}</li>`).join('')}</ol>` : '';
     if (ahead && G.queuedLane != null) { add(`${order}<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(p.name)}: lane ${G.queuedLane + 1}<small>It drops as soon as this turn ends.</small></div>`); return; }
     add(`${order}<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(lead)} ${ahead ? 'Next captain: pick a lane now!' : 'Captain: pick a lane!'}<small>${ahead ? 'It drops when this turn ends. ' : ''}Keys 1 to 4 or tap the machine${G.laneQueue.length > 1 ? `. ${G.laneQueue.length - 1} more team${G.laneQueue.length > 2 ? 's' : ''} after this` : ''}. Captains: swap to the next person each time.</small></div>
       <div class="ote-chutes" style="--pc:${COLORS.css[t]}">${[0, 1, 2, 3].map(i => `<button class="ote-chute-btn" type="button" data-act="lane" data-i="${i}" aria-label="Lane ${i + 1}">${i + 1}<small>lane</small></button>`).join('')}</div>
