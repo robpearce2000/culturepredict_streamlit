@@ -75,28 +75,41 @@ if (!renderer) { $('nogl').hidden = false; $('nogl').innerHTML = CGB.noWebGLMess
    track, so shadows add little) and steps its quality down by itself if a laptop cannot keep
    up (see watchPerformance) */
 const perf = { level: 0, ema: 16, slowFor: 0, last: 0 };
-const opPixelRatio = () => perf.level >= 2 ? 1 : Math.min(CGB.settings.pixelRatio(), 1.25);
+const opPixelRatio = () => 1;   // drawn at 1:1 (with antialiasing): the biggest saving on high-resolution laptop screens
 renderer.setPixelRatio(opPixelRatio());
 renderer.shadowMap.enabled = false;
 wrap.insertBefore(renderer.domElement, wrap.firstChild);
 
-const composer = new THREE.EffectComposer(renderer);
-composer.addPass(new THREE.RenderPass(scene, camera));
-const bloomPass = new THREE.UnrealBloomPass(new THREE.Vector2(512, 512), 0.32, 0.4, 0.4);
-composer.addPass(bloomPass);
-const bloomAllowed = () => CGB.settings.get('quality') !== 'low' && perf.level < 1;
-let useBloom = bloomAllowed();
+/* No full-screen glow (bloom) pass: it was the costliest thing drawn each frame on school laptops.
+   The glow comes from cheap see-through sprites instead (see glowSprite). */
+const useBloom = false;
 
-scene.add(new THREE.AmbientLight(0x3A3F7E, 1.1));
-const keyLight = new THREE.DirectionalLight(0xffffff, 0.9);
+scene.add(new THREE.AmbientLight(0x3A3F7E, 1.35));   // a little brighter: there are no point lights now
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.1);
 keyLight.position.set(4, 8, 5);
 scene.add(keyLight);
-const runnerGlow = new THREE.PointLight(COL.runner, 5, 8);
-runnerGlow.position.set(-2.5, 1.2, 0);
-scene.add(runnerGlow);
-const hunterGlow = new THREE.PointLight(COL.hunter, 6, 8);
-hunterGlow.position.set(2.5, 1.2, 0);
-scene.add(hunterGlow);
+/* Only two lights (ambient and one directional), and simple Lambert shading: each extra light and
+   physically based shading cost every pixel of every surface. Glows are additive sprites. */
+function litMat(o) { const c = Object.assign({}, o || {}); delete c.roughness; delete c.metalness; delete c.envMapIntensity; return new THREE.MeshLambertMaterial(c); }
+const glowTex = (() => {
+  const c = document.createElement('canvas'); c.width = c.height = 128;
+  const g = c.getContext('2d'), gr = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.25, 'rgba(255,255,255,0.55)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+  return new THREE.CanvasTexture(c);
+})();
+function glowSprite(color, size) {
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.5 }));
+  sp.scale.setScalar(size); scene.add(sp); return sp;
+}
+// a stand-in for a light: something that glows, with an "intensity" the effects can set
+function glowLight(color, size, per) {
+  const sp = glowSprite(color, size); let v = 0;
+  Object.defineProperty(sp, 'intensity', { get: () => v, set: x => { v = x; sp.visible = x > 0.05; sp.material.opacity = Math.min(1, x / per); sp.scale.setScalar(size * (0.6 + Math.min(1, x / per) * 0.8)); } });
+  sp.color = sp.material.color;
+  return sp;
+}
+const runnerGlow = glowSprite(COL.runner, 2.2), hunterGlow = glowSprite(COL.hunter, 2.4);
 
 function makeHexGridTexture() {
   const size = 512;
@@ -132,7 +145,7 @@ function makeHexGridTexture() {
 
 const floor = new THREE.Mesh(
   new THREE.PlaneGeometry(30, 30),
-  new THREE.MeshStandardMaterial({ color: 0x0D1230, roughness: 0.95, map: makeHexGridTexture() })
+  litMat({ color: 0x0D1230, roughness: 0.95, map: makeHexGridTexture() })
 );
 floor.rotation.x = -Math.PI / 2;
 floor.position.y = -0.3;
@@ -153,8 +166,8 @@ scene.add(ambientParticles);
 function makeNucleus(protonColor, neutronColor, count, spread) {
   const group = new THREE.Group();
   const particlesArr = [];
-  const protonMat = new THREE.MeshStandardMaterial({ color: protonColor, emissive: protonColor, emissiveIntensity: 0.6, roughness: 0.3, metalness: 0.2 });
-  const neutronMat = new THREE.MeshStandardMaterial({ color: neutronColor, emissive: neutronColor, emissiveIntensity: 0.3, roughness: 0.5, metalness: 0.1 });
+  const protonMat = litMat({ color: protonColor, emissive: protonColor, emissiveIntensity: 0.6, roughness: 0.3, metalness: 0.2 });
+  const neutronMat = litMat({ color: neutronColor, emissive: neutronColor, emissiveIntensity: 0.3, roughness: 0.5, metalness: 0.1 });
   const partGeo = new THREE.SphereGeometry(0.1, 14, 14);
   for (let i = 0; i < count; i++) {
     const mesh = new THREE.Mesh(partGeo, i % 2 === 0 ? protonMat : neutronMat);
@@ -163,7 +176,7 @@ function makeNucleus(protonColor, neutronColor, count, spread) {
     group.add(mesh);
     particlesArr.push({ mesh, base: mesh.position.clone(), phase: Math.random() * Math.PI * 2 });
   }
-  const shell = new THREE.Mesh(new THREE.SphereGeometry(spread + 0.14, 20, 20), new THREE.MeshStandardMaterial({ color: protonColor, transparent: true, opacity: 0.12, roughness: 1 }));
+  const shell = new THREE.Mesh(new THREE.SphereGeometry(spread + 0.14, 20, 20), litMat({ color: protonColor, transparent: true, opacity: 0.12, roughness: 1 }));
   group.add(shell);
   return { group, particles: particlesArr };
 }
@@ -176,7 +189,7 @@ function makeElectronOrbits(config) {
     orbitGroup.rotation.x = o.tiltX;
     orbitGroup.rotation.z = o.tiltZ;
     orbitGroup.add(new THREE.Mesh(new THREE.RingGeometry(o.radius - 0.015, o.radius, 48), new THREE.MeshBasicMaterial({ color: config.color, transparent: true, opacity: 0.3, side: THREE.DoubleSide })));
-    const electronMat = new THREE.MeshStandardMaterial({ color: config.electronColor, emissive: config.color, emissiveIntensity: 1 });
+    const electronMat = litMat({ color: config.electronColor, emissive: config.color, emissiveIntensity: 1 });
     const trailMat = new THREE.MeshBasicMaterial({ color: config.electronColor, transparent: true, opacity: 0.18 });
     const trailSteps = 5, trailSpacing = 0.12;
     for (let e = 0; e < o.electrons; e++) {
@@ -230,7 +243,7 @@ function makeGlyphOrbit(glyphs, color, radius, speed, tiltX, tiltZ, size) {
   });
   return { group, speed };
 }
-const glowMat = (hex, k) => new THREE.MeshStandardMaterial({ color: hex, emissive: hex, emissiveIntensity: k == null ? 0.55 : k, roughness: 0.35, metalness: 0.25 });
+const glowMat = (hex, k) => litMat({ color: hex, emissive: hex, emissiveIntensity: k == null ? 0.55 : k, roughness: 0.35, metalness: 0.25 });
 const runnerHex = '#' + new THREE.Color(COL.runnerLight).getHexString(), hunterHex = '#' + new THREE.Color(COL.hunterLight).getHexString();
 
 /* Each builder returns { group, update(t), boost(k) } */
@@ -285,7 +298,7 @@ const CHARACTERS = {
         .forEach(([x, y, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), m); b.position.set(x, y, z); b.userData.base = b.position.clone(); core.add(b); });
     } else {
       // an open book: gold covers with white pages
-      const cover = glowMat(COL.runner, 0.35), page = new THREE.MeshStandardMaterial({ color: 0xFFFDF4, emissive: 0x6B5A2A, emissiveIntensity: 0.25, roughness: 0.8 });
+      const cover = glowMat(COL.runner, 0.35), page = litMat({ color: 0xFFFDF4, emissive: 0x6B5A2A, emissiveIntensity: 0.25, roughness: 0.8 });
       [-1, 1].forEach(sd => {
         const half = new THREE.Group(); half.rotation.z = sd * 0.42;
         const c = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.03, 0.4), cover); c.position.x = sd * 0.15;
@@ -313,7 +326,7 @@ const CHARACTERS = {
     let hands = null;
     if (isHunter) {
       // a ticking clock: time is running out
-      const face = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.06, 32), new THREE.MeshStandardMaterial({ color: 0x2A1036, emissive: 0x3B0F4A, emissiveIntensity: 0.5, roughness: 0.6 }));
+      const face = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.06, 32), litMat({ color: 0x2A1036, emissive: 0x3B0F4A, emissiveIntensity: 0.5, roughness: 0.6 }));
       face.rotation.x = Math.PI / 2;
       const rim = new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.04, 10, 32), glowMat(COL.hunter, 0.7));
       hands = new THREE.Group(); hands.position.z = 0.04;
@@ -324,7 +337,7 @@ const CHARACTERS = {
       core.add(face, rim, hands);
     } else {
       // an hourglass in a gold frame
-      const frame = glowMat(COL.runner, 0.4), sand = new THREE.MeshStandardMaterial({ color: 0xFFF1C2, emissive: 0xC9A040, emissiveIntensity: 0.4, roughness: 0.7, transparent: true, opacity: 0.9 });
+      const frame = glowMat(COL.runner, 0.4), sand = litMat({ color: 0xFFF1C2, emissive: 0xC9A040, emissiveIntensity: 0.4, roughness: 0.7, transparent: true, opacity: 0.9 });
       const top = new THREE.Mesh(new THREE.ConeGeometry(0.19, 0.26, 20), sand); top.rotation.x = Math.PI; top.position.y = 0.14;
       const bot = new THREE.Mesh(new THREE.ConeGeometry(0.19, 0.26, 20), sand); bot.position.y = -0.14;
       [0.29, -0.29].forEach(y => { const p = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 0.05, 24), frame); p.position.y = y; core.add(p); });
@@ -349,7 +362,7 @@ const CHARACTERS = {
     const core = new THREE.Group();
     if (isHunter) {
       // a storm cloud with lightning
-      const cm = new THREE.MeshStandardMaterial({ color: 0x7A3F8C, emissive: COL.hunter, emissiveIntensity: 0.3, roughness: 0.9 });
+      const cm = litMat({ color: 0x7A3F8C, emissive: COL.hunter, emissiveIntensity: 0.3, roughness: 0.9 });
       [[0, 0.04, 0, 0.2], [0.2, 0, 0, 0.15], [-0.2, -0.01, 0, 0.16], [0.08, 0.15, 0.02, 0.14], [-0.1, 0.12, -0.03, 0.13]].forEach(([x, y, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), cm); b.position.set(x, y, z); core.add(b); });
       const bolt = new THREE.Sprite(new THREE.SpriteMaterial({ map: glyphTexture('⚡', '#FFF1C2'), transparent: true, depthWrite: false }));
       bolt.position.set(0, -0.26, 0.05); bolt.scale.setScalar(0.3); core.add(bolt); core.userData.bolt = bolt;
@@ -360,7 +373,7 @@ const CHARACTERS = {
       g.fillStyle = '#5CC96B';
       [[40, 40, 30, 22], [70, 80, 18, 26], [130, 45, 34, 20], [150, 85, 20, 18], [205, 60, 26, 30], [230, 100, 14, 10]].forEach(([x, y, rx, ry]) => { g.beginPath(); g.ellipse(x, y, rx, ry, 0.4, 0, Math.PI * 2); g.fill(); });
       g.fillStyle = '#EEF6FF'; g.fillRect(0, 0, 256, 8); g.fillRect(0, 120, 256, 8);
-      const globe = new THREE.Mesh(new THREE.SphereGeometry(0.26, 32, 20), new THREE.MeshStandardMaterial({ map: new THREE.CanvasTexture(c), emissive: 0x153a52, emissiveIntensity: 0.6, roughness: 0.6 }));
+      const globe = new THREE.Mesh(new THREE.SphereGeometry(0.26, 32, 20), litMat({ map: new THREE.CanvasTexture(c), emissive: 0x153a52, emissiveIntensity: 0.6, roughness: 0.6 }));
       const ring = new THREE.Mesh(new THREE.TorusGeometry(0.33, 0.018, 8, 40), glowMat(COL.runner, 0.7)); ring.rotation.x = Math.PI / 2;
       core.add(globe, ring); core.userData.globe = globe;
     }
@@ -506,8 +519,8 @@ const shockwave = new THREE.Mesh(new THREE.RingGeometry(0.05, 0.2, 48), shockwav
 shockwave.rotation.x = -Math.PI / 2;
 shockwave.visible = false;
 scene.add(shockwave);
-const flareLight = new THREE.PointLight(COL.spark, 0, 12);
-scene.add(flareLight);
+const flareLight = glowLight(COL.spark, 4.5, 16);
+flareLight.intensity = 0;
 
 const victoryRingMat = new THREE.MeshBasicMaterial({ color: COL.runner, transparent: true, opacity: 0, side: THREE.DoubleSide });
 const victoryRing = new THREE.Mesh(new THREE.RingGeometry(0.05, 0.2, 48), victoryRingMat);
@@ -532,10 +545,10 @@ function cellX(i) { return HOME_BASE_X + i * CELL_SPACING; }
 const trimGeo = new THREE.BoxGeometry(CELL_SPACING - 0.14 - 0.04, 0.05, 0.06);
 const cellGeo = new THREE.BoxGeometry(CELL_SPACING - 0.14, 0.3, 0.96);   // chunky step tiles
 const bevelGeo = new THREE.BoxGeometry(CELL_SPACING - 0.24, 0.04, 0.86);   // a raised, lighter top: reads as a bevelled edge
-const cellMat = new THREE.MeshStandardMaterial({ color: 0x252C6B, roughness: 0.55, metalness: 0.15 });
-const homeMat = new THREE.MeshStandardMaterial({ color: 0x12A4A0, emissive: 0x0A4F4D, roughness: 0.4, metalness: 0.2 });
-const trimMat = new THREE.MeshStandardMaterial({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.5, roughness: 0.3 });
-const homeTrimMat = new THREE.MeshStandardMaterial({ color: 0x9FFCF0, emissive: 0x4FF0D8, emissiveIntensity: 0.8, roughness: 0.3 });
+const cellMat = litMat({ color: 0x252C6B, roughness: 0.55, metalness: 0.15 });
+const homeMat = litMat({ color: 0x12A4A0, emissive: 0x0A4F4D, roughness: 0.4, metalness: 0.2 });
+const trimMat = litMat({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.5, roughness: 0.3 });
+const homeTrimMat = litMat({ color: 0x9FFCF0, emissive: 0x4FF0D8, emissiveIntensity: 0.8, roughness: 0.3 });
 /* Painted tile tops: chevrons pointing home and the number of steps left */
 const tileTex = {};
 function tileTexture(i) {
@@ -557,17 +570,17 @@ function tileTexture(i) {
   return (tileTex[i] = t);
 }
 const tileTopGeo = new THREE.PlaneGeometry(CELL_SPACING - 0.26, 0.84);
-const trimBevelMat = new THREE.MeshStandardMaterial({ color: 0x3A4396, roughness: 0.4, metalness: 0.2 });
-const railMat = new THREE.MeshStandardMaterial({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.9, roughness: 0.3 });
-const plinthMat = new THREE.MeshStandardMaterial({ color: 0x0A0D22, roughness: 0.8 });
+const trimBevelMat = litMat({ color: 0x3A4396, roughness: 0.4, metalness: 0.2 });
+const railMat = litMat({ color: 0x9AA2F0, emissive: 0x5A63C8, emissiveIntensity: 0.9, roughness: 0.3 });
+const plinthMat = litMat({ color: 0x0A0D22, roughness: 0.8 });
 /* The finish arch at home: two chunky pillars and a beam across the track, studded with bulbs,
    with a HOME sign facing the class. The bulbs run a light show when the class gets home. */
 const finishGroup = new THREE.Group();
 const archBulbSets = [];     // one instanced mesh of bulbs per arch: a single draw call each
 const BULB_REST = [0xFFC93C, 0x9FFCF0, 0xFFFFFF].map(c => new THREE.Color(c));
 function buildArch(group, label) {
-  const pillarMat = new THREE.MeshStandardMaterial({ color: 0x0A6663, emissive: 0x0A4F4D, emissiveIntensity: 0.6, roughness: 0.35, metalness: 0.3 });
-  const glow = new THREE.MeshStandardMaterial({ color: 0x9FFCF0, emissive: 0x2BD9C2, emissiveIntensity: 1.1, roughness: 0.3 });
+  const pillarMat = litMat({ color: 0x0A6663, emissive: 0x0A4F4D, emissiveIntensity: 0.6, roughness: 0.35, metalness: 0.3 });
+  const glow = litMat({ color: 0x9FFCF0, emissive: 0x2BD9C2, emissiveIntensity: 1.1, roughness: 0.3 });
   const pillarGeo = new THREE.BoxGeometry(0.26, 2.3, 0.26);
   [-0.66, 0.66].forEach(z => {
     const m = new THREE.Mesh(pillarGeo, pillarMat); m.position.set(0, 1.0, z); group.add(m);
@@ -625,7 +638,7 @@ const stripRest = new THREE.Color(0x5A63C8), stripRed = new THREE.Color(0xFF3B4E
   // a neon line along the foot of the backdrop (it turns red for the last ten seconds of the sprint)
   const line = new THREE.Mesh(new THREE.BoxGeometry(44, 0.08, 0.08), stripMat); line.position.set(0, 0.2, -6.8); setGroup.add(line);
   // two lighting rigs overhead with soft beams falling on the track
-  const truss = new THREE.MeshStandardMaterial({ color: 0x2A2F55, roughness: 0.6, metalness: 0.6 });
+  const truss = litMat({ color: 0x2A2F55, roughness: 0.6, metalness: 0.6 });
   const beamMat = new THREE.MeshBasicMaterial({ color: 0xBFC6FF, transparent: true, opacity: 0.07, depthWrite: false, blending: THREE.AdditiveBlending });
   const coneGeo = new THREE.ConeGeometry(1.2, 4.6, 20, 1, true);
   [-1.4, 1.6].forEach(z => {
@@ -682,11 +695,11 @@ const clockCanvas = document.createElement('canvas'); clockCanvas.width = 256; c
 const clockTex = new THREE.CanvasTexture(clockCanvas);
 const setClock = new THREE.Group();
 (function buildClock() {
-  const frame = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.92, 0.12), new THREE.MeshStandardMaterial({ color: 0x14183A, roughness: 0.5, metalness: 0.4 }));
+  const frame = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.92, 0.12), litMat({ color: 0x14183A, roughness: 0.5, metalness: 0.4 }));
   setClock.add(frame);
   const face = new THREE.Mesh(new THREE.PlaneGeometry(1.76, 0.78), new THREE.MeshBasicMaterial({ map: clockTex }));
   face.position.z = 0.065; setClock.add(face);
-  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 2.2, 8), new THREE.MeshStandardMaterial({ color: 0x2A2F55, metalness: 0.6, roughness: 0.5 }));
+  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 2.2, 8), litMat({ color: 0x2A2F55, metalness: 0.6, roughness: 0.5 }));
   pole.position.y = -1.5; setClock.add(pole);
 })();
 setClock.visible = false;
@@ -1006,8 +1019,10 @@ function animate() {
   ambientParticles.rotation.y = t * 0.02;
   ambientParticles.position.y = Math.sin(t * 0.3) * 0.15;
 
-  runnerGlow.intensity = 5 + Math.sin(t * 2) * 1.2;
-  hunterGlow.intensity = 6 + Math.sin(t * 3) * 1.8;
+  runnerGlow.position.copy(runnerGroup.position); runnerGlow.visible = runnerGroup.visible;
+  hunterGlow.position.copy(hunterGroup.position); hunterGlow.visible = hunterGroup.visible;
+  runnerGlow.material.opacity = 0.42 + Math.sin(t * 2) * 0.08;
+  hunterGlow.material.opacity = 0.45 + Math.sin(t * 3) * 0.1;
 
   if (sceneMode === 'idle') {
     const force = (runnerGroup.userData.targetX - runnerGroup.position.x) * SPRING_K;
@@ -1282,8 +1297,10 @@ function animate() {
 
   if (++shiftFrame % 6 === 0) updateViewShift();
   placeTags();
-  if (useBloom) composer.render(); else renderer.render(scene, camera);
+  renderer.render(scene, camera);
+  /* @test-only */ frameStats.js += performance.now() - nowMs; frameStats.n++; /* @end-test-only */
 }
+/* @test-only */ const frameStats = { js: 0, n: 0 }; /* @end-test-only */
 runnerGroup.userData.targetX = HOME_BASE_X;
 hunterGroup.userData.targetX = HUNTER_X;
 
@@ -1366,25 +1383,26 @@ function resize() {
   if (viewShift || viewShiftX) camera.setViewOffset(w, h, viewShiftX, viewShift, w, h);
   camera.updateProjectionMatrix();
   renderer.setSize(w, h, false);
-  composer.setSize(w, h);
   measureTags();
 }
 function applyQuality() {
   showBeams();
-  useBloom = bloomAllowed();
-  renderer.setPixelRatio(opPixelRatio());
-  composer.setPixelRatio(opPixelRatio());
+  // level 1 (and Low graphics): no floating dust, set dressing or light beams; level 2: three-quarter resolution
+  const lean = CGB.settings.get('quality') === 'low' || perf.level >= 1;
+  ambientParticles.visible = !lean;
+  setGroup.children.forEach(o => { if (!o.userData.beam) o.visible = !lean; });
+  renderer.setPixelRatio(perf.level >= 2 ? 0.75 : opPixelRatio());
   resize();
 }
-/* Step quality down, one level at a time, if frames stay slow (over 26 ms on average) for two
-   seconds: first the glow goes, then the resolution drops to 1:1. The Graphics setting is untouched. */
+/* Step quality down, one level at a time, as soon as frames stay slow (under about 45 a second on
+   average) for a second and a half. The Graphics setting itself is untouched. */
 function watchPerformance(now) {
   if (!perf.last) { perf.last = now; return; }
   const dt = Math.min(200, now - perf.last); perf.last = now;
   perf.ema += (dt - perf.ema) * 0.05;
   if (perf.level >= 2 || clock.getElapsedTime() < 3) return;
-  perf.slowFor = perf.ema > 26 ? perf.slowFor + dt : 0;
-  if (perf.slowFor > 2000) { perf.level++; perf.slowFor = 0; perf.ema = 16; applyQuality(); }
+  perf.slowFor = perf.ema > 22 ? perf.slowFor + dt : 0;
+  if (perf.slowFor > 1500) { perf.level++; perf.slowFor = 0; perf.ema = 16; applyQuality(); }
 }
 window.addEventListener('resize', resize);
 if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
@@ -1805,6 +1823,7 @@ resize();
 /* @test-only: shortcuts for tests, removed from the shipped file by build.js */
 CGB.test.outpace = {
   setTime(sec) { state.sprintTimeLeft = sec; },
+  frameStats() { const r = renderer.info.render, o = { calls: r.calls, triangles: r.triangles, programs: renderer.info.programs.length, lights: scene.children.filter(c => c.isLight).length, msPerFrame: frameStats.n ? +(frameStats.js / frameStats.n).toFixed(2) : 0, bloom: useBloom, pixelRatio: renderer.getPixelRatio(), perfLevel: perf.level }; frameStats.js = 0; frameStats.n = 0; return o; },
   scene3d() { return { mode: sceneMode, mood, clock: setClock.visible, arch: !!finishGroup.parent, sprintTrack: sprintGroup.visible && sprintGroup.children.length > 0, confetti: confettiMesh.visible, camera: camera.position.toArray() }; },
   // skip the Deal Round: start the Final Sprint with this pot
   toSprint(pot) { clearTimers(); roundEndNext = null; $('roundEnd').classList.remove('show'); state.pot = pot == null ? 600 : pot; startSprint(); }

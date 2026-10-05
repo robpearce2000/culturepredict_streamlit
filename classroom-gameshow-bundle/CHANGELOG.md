@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 – Smoother Outpace (October 2026)
+
+- **Outpace runs about twice as smoothly.** It no longer uses a full-screen glow pass or moving lights; the glows are drawn far more cheaply, every surface uses simpler shading, and it draws at standard resolution. If a computer still struggles, it now steps its quality down sooner (after a second and a half below about 45 frames a second): first the floating dust, set dressing and light beams go, then the resolution drops to three-quarters.
+
 ## 1.0.0 – First release (October 2026)
 
 The first public release. (The 1.1 to 1.4.1 entries below were development builds before release.)

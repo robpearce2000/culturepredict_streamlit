@@ -238,6 +238,13 @@ Choices made while building the first edition without the owner available. Each 
 | **Host reactions:** a new "gasp" pose (hands up, brows raised) for when the Hunter is one step behind; he groans at a catch, cheers at escapes, star tiles and wins, and claps for claimed hexagons. He stays in his own corner or panel row in these games, so he never covers the board, track, questions or controls. | The brief. |
 | **Tests:** `tests/presentation.spec.js` (Outpace set, sprint track, clock, red lights, catch skip, escape confetti and skip; Category Clash flip, winner tiles, sweep, ★ moment and skip, reduced motion; Hex Hunt 3D hexes, edge glow, chain and skip, reduced motion); the screenshot sweep can now run at High (`npm run test:screens`), Low (`test:screens:low`) and with reduced motion (`test:screens:reduced`), and checks the new Start game card, cursor hint and gap meter for overlaps. Two tests were made robust to a busy machine: the Outpace frame-rate floor and step-down wait, and the Over the Edge jackpot test, which now seeds just before Start. That last one exposed a real bug, fixed: decorative counters dropped behind the setup card could land in the real game. | The brief's test list. |
 
+## 1.0.1: Smoother Outpace
+
+| Decision | Reason |
+|---|---|
+| **No bloom (full-screen glow) pass, no point lights, Lambert instead of physically based shading, and drawing at 1:1 resolution.** The runner's and Hunter's glow and the catch and escape flashes are additive glow sprites; only an ambient and a directional light remain (both a little brighter to make up for the lost point lights). Measured per frame: JavaScript about 1.5 ms (not the problem); 5 lights and 16 shader programs before, 2 lights and 8 after. On the test machine's software renderer at 1366×768: Deal Round 8.7 → 19–21 fps, Final Sprint 15 → 29 fps. | Rob found Outpace still laggy after 1.0.0. The bloom pass (several full-screen blur passes) and three point lights lit on every pixel of every surface were the big costs on school laptops' integrated graphics; the look is almost the same. |
+| **The automatic step-down starts sooner and goes further:** after a second and a half averaging over 22 ms a frame (under about 45 fps), instead of two seconds over 26 ms. Level 1 removes the floating dust, the set dressing (rigs, lamps, neon line) and the light beams; level 2 draws at three-quarter resolution. Low graphics starts at the level-1 look. | Lag that stayed just under the old threshold never triggered it. |
+
 ## Things not done
 
 | Item | Reason |
