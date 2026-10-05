@@ -10,13 +10,14 @@ D: 1
 
 Q: Methane, CH4, contains carbon and hydrogen only. What general name describes compounds like this?
 A: Hydrocarbon
-Accept: Hydrocarbons; Alkane
+Accept: Hydrocarbons
+Note: Alkane is too narrow here; the question asks for compounds of carbon and hydrogen only.
 Ref: 8.1
 D: 1
 
 Q: Ethanol, C2H5OH, contains carbon and hydrogen. Why is it not a hydrocarbon?
-A: It also contains oxygen
-Accept: Contains oxygen; Has oxygen atoms
+A: Contains oxygen as well
+Accept: Contains oxygen; Has oxygen atoms; It also contains oxygen
 Ref: 8.1
 D: 3
 Note: A hydrocarbon contains carbon and hydrogen only, so any other element rules it out.
@@ -89,7 +90,7 @@ Note: Petrol is used in cars but not trains.
 
 Q: Put petrol, bitumen and kerosene in order, from lowest to highest boiling point.
 A: Petrol, kerosene, bitumen
-Ref: 8.4
+Ref: 8.5
 D: 3
 
 Q: Do fractions with smaller molecules ignite more easily or less easily?
@@ -163,9 +164,9 @@ Accept: CO2 and H2O
 Ref: 8.7
 D: 1
 
-Q: Complete the word equation: methane + oxygen → ? + ?
-A: Carbon dioxide + water
-Accept: CO2 + H2O; Carbon dioxide and water
+Q: Complete combustion of a fuel gives out energy to the surroundings. What word describes this type of reaction?
+A: Exothermic
+Accept: Exothermic reaction
 Ref: 8.7
 D: 2
 
@@ -246,15 +247,15 @@ Accept: S + O2 → SO2
 Ref: 8.11
 D: 2
 
-Q: Rain becomes acidic when which gas from fuels dissolves in it?
+Q: Name the gas, formed from impurities in some fuels, that dissolves in rain water to make acid rain.
 A: Sulfur dioxide
 Accept: SO2; Sulphur dioxide
 Ref: 8.12
 D: 1
 
 Q: Give one effect of acid rain on buildings made of limestone.
-A: Erodes or corrodes them
-Accept: Dissolves the stone; Damages stonework; Weathering
+A: Wears away the stone
+Accept: Erodes it; Dissolves the stone; Damages stonework; Weathering; Corrodes it
 Ref: 8.12
 D: 2
 
@@ -378,27 +379,28 @@ Accept: Volcanic activity; Volcanic eruptions
 Ref: 8.18
 D: 1
 
-Q: Which gas, released by early volcanoes, made up most of the early atmosphere?
-A: Carbon dioxide
-Accept: CO2
-Ref: 8.18
-D: 2
-
 Q: Why do scientists think volcanic gases formed the early atmosphere?
 A: Volcanoes today release similar gases
 Accept: Today's volcanoes release carbon dioxide and water vapour
 Ref: 8.18
 D: 3
 
+Q: Early volcanoes released carbon dioxide and which other gas in large amounts?
+A: Water vapour
+Accept: Water; Steam; H2O
+Ref: 8.18
+D: 1
+
+Q: Apart from water vapour, which gas was present in a large amount in the Earth's early atmosphere?
+A: Carbon dioxide
+Accept: CO2
+Ref: 8.19
+D: 1
+Note: Nitrogen, ammonia and methane were present only in small amounts.
+
 Q: How much oxygen did the Earth's early atmosphere contain?
 A: Little or none
 Accept: Little or no oxygen; Very little; None
-Ref: 8.19
-D: 1
-
-Q: Name the vapour, released by volcanoes, present in large amounts in the early atmosphere.
-A: Water vapour
-Accept: Water; Steam
 Ref: 8.19
 D: 1
 
@@ -414,11 +416,11 @@ Accept: No oxygen; Very little oxygen
 Ref: 8.19
 D: 3
 
-Q: How did the oceans form from water vapour in the early atmosphere?
-A: Condensation as Earth cooled
-Accept: Water vapour condensed; Condensed as the Earth cooled
+Q: As the early Earth cooled, water vapour in the atmosphere condensed. What did this liquid water form?
+A: Oceans
+Accept: Ocean; Seas
 Ref: 8.20
-D: 2
+D: 1
 
 Q: Name the change of state that turned water vapour into the oceans.
 A: Condensation
@@ -439,12 +441,12 @@ Accept: CO2 dissolved in the oceans
 Ref: 8.21
 D: 2
 
-Q: Explain how dissolving in oceans permanently removed carbon dioxide from the atmosphere.
-A: Formed carbonates in sediments and rocks
-Accept: Formed carbonate rocks; Made shells and sedimentary rocks
+Q: Name the two processes in this topic that reduced the carbon dioxide in Earth's early atmosphere.
+A: Dissolving in oceans and photosynthesis
+Accept: Dissolving in water and photosynthesis; Photosynthesis and dissolving in oceans
 Ref: 8.21
 D: 3
-Note: Dissolved carbon dioxide formed carbonates that were deposited as sediment.
+Note: Dissolving happened as the oceans formed; photosynthesis began later with primitive plants.
 
 Q: Which gas in the early atmosphere decreased because it dissolved in the newly formed oceans?
 A: Carbon dioxide
@@ -470,8 +472,8 @@ Ref: 8.22
 D: 3
 
 Q: Describe the test for oxygen.
-A: Relights a glowing splint
-Accept: Glowing splint relights; Glowing splint reignites
+A: Glowing splint relights
+Accept: Relights a glowing splint; Glowing splint reignites
 Ref: 8.23
 D: 2
 Note: A burning splint with a pop is the hydrogen test.
@@ -494,9 +496,9 @@ A: Greenhouse effect
 Ref: 8.24
 D: 1
 
-Q: Name the three greenhouse gases listed in this topic.
-A: Carbon dioxide, methane, water vapour
-Accept: CO2, CH4, H2O
+Q: Methane is a greenhouse gas. Name two other greenhouse gases.
+A: Carbon dioxide and water vapour
+Accept: CO2 and H2O; any two of carbon dioxide, water vapour, nitrous oxide, ozone, CFCs
 Ref: 8.24
 D: 2
 

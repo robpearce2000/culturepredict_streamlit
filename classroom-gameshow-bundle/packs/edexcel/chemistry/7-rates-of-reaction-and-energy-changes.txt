@@ -28,7 +28,7 @@ A: Sulfur
 Accept: S; sulfur precipitate
 Ref: 7.1
 RP: 7.1
-D: 2
+D: 1
 
 Q: In the sodium thiosulfate and acid reaction, the timer is stopped when what happens?
 A: The cross can no longer be seen
@@ -42,14 +42,14 @@ A: 0.02 s⁻¹
 Accept: 0.02 /s; 0.02; 1/50 s⁻¹
 Ref: 7.1
 RP: 7.1
-D: 3
+D: 2
 
 Q: Which toxic gas given off by sodium thiosulfate and hydrochloric acid means the room must be well ventilated?
 A: Sulfur dioxide
 Accept: SO2
 Ref: 7.1
 RP: 7.1
-D: 3
+D: 2
 Note: Asthmatic students are especially at risk.
 
 Q: Marble chips react with acid in an open flask on a balance. Why does the reading fall?
@@ -60,13 +60,13 @@ D: 2
 
 Q: Suggest a method for following the rate of magnesium reacting with acid to give hydrogen.
 A: Measure gas volume with a gas syringe
-Accept: Collect hydrogen in a gas syringe over time; measure volume of gas over time
+Accept: Collect hydrogen in a gas syringe over time; measure volume of gas over time; upturned measuring cylinder over water; time how long the magnesium takes to disappear
 Ref: 7.2
 D: 2
 
 Q: Why is a mass-loss method poor for following a reaction that gives off hydrogen?
-A: Hydrogen is so light the mass change is tiny
-Accept: Hydrogen has a very low mass; mass change too small to measure
+A: Mass change is too small
+Accept: Hydrogen is very light; hydrogen has a very low mass; mass change too small to measure
 Ref: 7.2
 D: 3
 
@@ -143,7 +143,7 @@ Accept: 3 cm³ s⁻¹; 3 cm3/s
 Ref: 7.5
 D: 2
 
-Q: The same amounts of reactants are used at a higher temperature. How does the final volume of gas compare?
+Q: A gas-producing reaction is repeated at a higher temperature with the same amounts of reactants. How does the final volume of gas compare?
 A: The same
 Accept: Same volume; no change; unchanged
 Ref: 7.5
@@ -198,7 +198,7 @@ Accept: Enzyme
 Ref: 7.8
 D: 1
 
-Q: Enzymes are used in the production of which type of drink?
+Q: Enzymes ferment sugars into ethanol in the production of which type of drinks?
 A: Alcoholic drinks
 Accept: Alcohol; beer; wine
 Ref: 7.8
@@ -215,7 +215,7 @@ Accept: Temperature probe; temperature sensor
 Ref: 7.9
 D: 1
 
-Q: Why are these reactions in solution often carried out in a polystyrene cup?
+Q: Why is a polystyrene cup used when measuring the temperature change of a reaction in solution?
 A: Insulates to reduce heat loss
 Accept: Reduces heat transfer to surroundings; good insulator
 Ref: 7.9
@@ -233,7 +233,7 @@ Accept: Falls; goes down
 Ref: 7.9
 D: 2
 
-Q: Zinc is added to copper sulfate solution and the temperature rises. What type of reaction is this?
+Q: Zinc is added to copper sulfate solution and copper metal forms. What type of reaction is this?
 A: Displacement
 Accept: Displacement reaction; redox
 Ref: 7.9
@@ -243,7 +243,7 @@ Q: What is an exothermic reaction?
 A: Heat energy is given out
 Accept: Releases heat energy to surroundings; gives out heat
 Ref: 7.10
-D: 1
+D: 2
 
 Q: Is combustion exothermic or endothermic?
 A: Exothermic
@@ -260,7 +260,7 @@ Q: What is an endothermic reaction?
 A: Heat energy is taken in
 Accept: Absorbs heat energy from surroundings; takes in heat
 Ref: 7.11
-D: 1
+D: 2
 
 Q: The temperature of a solution falls during a reaction. Is the reaction exothermic or endothermic?
 A: Endothermic
@@ -317,14 +317,14 @@ A: −500 kJ mol⁻¹
 Accept: -500 kJ/mol; −500 kJ mol-1; 500 kJ/mol released
 Ref: 7.14
 HT: yes
-D: 3
+D: 2
 
 Q: Breaking bonds needs 800 kJ mol⁻¹ and making bonds releases 600 kJ mol⁻¹. What is the energy change?
 A: +200 kJ mol⁻¹
 Accept: +200 kJ/mol; 200 kJ/mol; 200 kJ/mol taken in
 Ref: 7.14
 HT: yes
-D: 3
+D: 2
 
 Q: H₂ + Cl₂ → 2HCl. Bond energies: H–H 440, Cl–Cl 240, H–Cl 430 kJ mol⁻¹. What is the energy change?
 A: −180 kJ mol⁻¹
@@ -353,6 +353,13 @@ Accept: Energy to break bonds and start the reaction
 Ref: 7.15
 D: 3
 
+Q: Reaction X has a much higher activation energy than reaction Y. Under the same conditions, how does the rate of X compare?
+A: Slower
+Accept: X is slower; lower rate; slower than Y
+Ref: 7.15
+D: 3
+Note: Fewer collisions have at least the activation energy.
+
 Q: On a reaction profile for an exothermic reaction, are the products higher or lower than the reactants?
 A: Lower
 Accept: Below the reactants; lower energy
@@ -363,7 +370,7 @@ Q: What label goes on the horizontal axis of a reaction profile?
 A: Progress of reaction
 Accept: Reaction progress; course of reaction; reaction pathway
 Ref: 7.16
-D: 2
+D: 1
 
 Q: On a reaction profile, activation energy is measured from the reactants up to which point?
 A: Peak of the curve

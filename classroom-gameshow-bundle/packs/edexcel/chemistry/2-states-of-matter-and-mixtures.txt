@@ -95,7 +95,7 @@ D: 2
 
 Q: In everyday use, what does "pure" usually mean?
 A: Natural with nothing added
-Accept: Nothing added; untreated; natural
+Accept: Nothing added; untreated; natural; unadulterated
 Ref: 2.5
 D: 2
 Note: For example "pure orange juice", which is really a mixture.
@@ -122,7 +122,7 @@ Q: Sample X melts at exactly 122 °C; sample Y melts between 115 °C and 120 °C
 A: Y
 Accept: Sample Y
 Ref: 2.6
-D: 3
+D: 2
 Note: A melting range (often lower than the pure value) shows a mixture.
 
 Q: Which technique separates an insoluble solid from a liquid?
@@ -131,12 +131,12 @@ Accept: Filtering
 Ref: 2.7
 D: 1
 
-Q: Which technique separates a mixture of liquids with different boiling points?
+Q: Which technique separates miscible liquids with fairly close boiling points, such as ethanol and water?
 A: Fractional distillation
 Ref: 2.7
 D: 2
 
-Q: Which technique obtains a solid solute from its solution as crystals?
+Q: Which technique gets a dissolved solid from its solution by evaporating some solvent, then cooling?
 A: Crystallisation
 Accept: Crystallising; crystallization
 Ref: 2.7
@@ -148,18 +148,17 @@ Accept: Solvent evaporates but solute does not; solute has a much higher boiling
 Ref: 2.7
 D: 3
 
-Q: Which technique separates sand from a mixture of sand and salt water?
-A: Filtration
-Accept: Filtering
+Q: Salt and sand are stirred with water and filtered. Which technique then gets the salt from the filtrate?
+A: Crystallisation
+Accept: Crystallising; crystallization; evaporation
 Ref: 2.8
 D: 2
 
-Q: How would you get pure water from salt solution?
-A: Simple distillation
-Accept: Distillation
+Q: Which technique would separate the different coloured dyes in a sample of ink?
+A: Paper chromatography
+Accept: Chromatography
 Ref: 2.8
 D: 2
-Note: Fractional distillation is not needed for one volatile liquid.
 
 Q: Why is a salt solution heated only until crystals start to form, rather than until dry?
 A: To get larger, well-formed crystals
@@ -180,8 +179,8 @@ Ref: 2.9
 D: 1
 
 Q: Why do different substances in a mixture separate during paper chromatography?
-A: They move at different rates
-Accept: Travel at different speeds; different solubilities and attraction to paper
+A: Substances move at different rates
+Accept: Different rates; travel at different speeds; different solubilities and attraction to paper
 Ref: 2.9
 D: 3
 
@@ -191,7 +190,7 @@ Accept: Pure; it is pure
 Ref: 2.10
 D: 2
 
-Q: A dye gives three spots on a chromatogram. How many substances does it contain?
+Q: A dye gives three spots on a chromatogram. What is the smallest number of substances it contains?
 A: 3
 Accept: Three; at least three
 Ref: 2.10
@@ -210,11 +209,12 @@ Accept: 4; 40 mm
 Ref: 2.10
 D: 3
 
-Q: An unknown spot matches a known food colouring in the same solvent. What does this match?
-A: Rf value
-Accept: Same Rf value; same height; distance moved
+Q: On one chromatogram, an unknown spot is level with the spot from known dye X. What is the unknown substance likely to be?
+A: Dye X
+Accept: X; same substance as X
 Ref: 2.10
-D: 3
+D: 2
+Note: Same solvent and same distance moved (same Rf) suggests the same substance.
 
 Q: Why is the start line on chromatography paper drawn in pencil, not ink?
 A: Pencil will not dissolve in the solvent

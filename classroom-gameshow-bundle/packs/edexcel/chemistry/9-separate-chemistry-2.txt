@@ -80,7 +80,7 @@ Accept: Add excess NaOH: aluminium's dissolves, calcium's does not
 Ref: 9.3C
 D: 3
 
-Q: A white precipitate forms with sodium hydroxide and does not dissolve in excess. Which ion is present?
+Q: A solution contains either aluminium or calcium ions. Its white precipitate with sodium hydroxide stays in excess. Which ion is present?
 A: Calcium ion
 Accept: Ca²⁺; calcium
 Ref: 9.3C

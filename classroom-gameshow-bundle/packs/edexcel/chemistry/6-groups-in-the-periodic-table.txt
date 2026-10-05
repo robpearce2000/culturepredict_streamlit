@@ -14,9 +14,9 @@ Accept: The halogens
 Ref: 6.1
 D: 1
 
-Q: Why are lithium, sodium and potassium all classified as alkali metals?
+Q: In terms of electrons, why are lithium, sodium and potassium all placed in group 1?
 A: One electron in their outer shell
-Accept: All in group 1; one outer electron
+Accept: One outer electron; one electron in the outer shell
 Ref: 6.1
 D: 2
 
@@ -61,6 +61,7 @@ A: Melts into a ball, fizzes and moves around
 Accept: Fizzes and darts around; floats, melts and fizzes
 Ref: 6.3
 D: 2
+Note: Accept any two of: floats, melts into a ball, fizzes, moves around.
 
 Q: Write the word equation for the reaction of lithium with water.
 A: Lithium + water → lithium hydroxide + hydrogen
@@ -92,8 +93,8 @@ Ref: 6.4
 D: 2
 
 Q: In terms of electrons, why does potassium react more vigorously than sodium?
-A: Outer electron further from nucleus, so more easily lost
-Accept: Outer electron less strongly attracted, so lost more easily
+A: Outer electron further from nucleus, more easily lost
+Accept: Outer electron less strongly attracted, so lost more easily; outer electron further from nucleus so lost more easily
 Ref: 6.5
 D: 3
 
@@ -103,12 +104,11 @@ Accept: Decrease; gets weaker
 Ref: 6.5
 D: 2
 
-Q: Name the effect where inner shells of electrons reduce the nucleus's pull on the outer electron.
-A: Shielding
-Accept: Screening
+Q: When an alkali metal atom reacts, which of its electrons does it lose?
+A: Outer electron
+Accept: The outer-shell electron; the single outer electron; one outer electron
 Ref: 6.5
-D: 3
-Note: Shielding helps explain why reactivity increases down group 1.
+D: 1
 
 Q: Describe the colour and physical state of chlorine at room temperature.
 A: Pale green gas
@@ -124,7 +124,7 @@ D: 1
 
 Q: Describe the colour and physical state of iodine at room temperature.
 A: Dark grey solid
-Accept: Grey-black solid; black solid; grey solid
+Accept: Grey-black solid; black solid; grey solid; purple-black solid
 Ref: 6.6
 D: 1
 Note: Iodine vapour is purple, but the solid is dark grey.
@@ -162,7 +162,7 @@ Q: Damp blue litmus paper is held in chlorine. Before it is bleached, what colou
 A: Red
 Accept: Pink
 Ref: 6.8
-D: 3
+D: 2
 Note: Chlorine is acidic in water, then bleaches the paper white.
 
 Q: Name the product when sodium burns in chlorine.
@@ -286,8 +286,8 @@ Ref: 6.13
 D: 2
 
 Q: In terms of electronic configuration, why is chlorine more reactive than bromine?
-A: Outer shell nearer nucleus, so gains electron more easily
-Accept: Fewer shells, so stronger attraction for an extra electron
+A: Outer shell nearer nucleus, gains electron more easily
+Accept: Fewer shells, so stronger attraction for an extra electron; outer shell nearer nucleus so gains an electron more easily
 Ref: 6.13
 D: 3
 
@@ -299,6 +299,7 @@ D: 2
 
 Q: What word describes the noble gases, meaning they are chemically unreactive?
 A: Inert
+Accept: Chemically inert
 Ref: 6.14
 D: 1
 
@@ -338,9 +339,9 @@ Accept: Increase; gets higher
 Ref: 6.16
 D: 2
 
-Q: Krypton boils at −153 °C and radon at −62 °C. Estimate the boiling point of xenon, between them.
+Q: Krypton boils at −153 °C and radon at −62 °C. Xenon lies midway between them. Estimate its boiling point.
 A: About −110 °C
-Accept: Any value from −145 °C to −70 °C
+Accept: Any value from −100 °C to −120 °C; −108 °C
 Ref: 6.16
 D: 3
 Note: The actual value is −108 °C.

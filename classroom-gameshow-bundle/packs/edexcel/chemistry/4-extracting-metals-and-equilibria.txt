@@ -31,7 +31,7 @@ Q: In terms of electrons, what is oxidation?
 A: Loss of electrons
 Accept: Losing electrons
 Ref: 4.2
-D: 3
+D: 2
 HT: yes
 Note: OIL RIG: oxidation is loss, reduction is gain.
 
@@ -43,9 +43,9 @@ D: 3
 HT: yes
 Note: Not "copper sulfate": the sulfate ions are spectators.
 
-Q: Write the half equation for an iron atom forming an iron(II) ion.
+Q: Iron displaces copper from copper sulfate solution. Write the half equation for the iron atoms.
 A: Fe → Fe²⁺ + 2e⁻
-Accept: Fe → Fe²⁺ + 2e
+Accept: Fe → Fe²⁺ + 2e; Fe − 2e⁻ → Fe²⁺
 Ref: 4.2
 D: 3
 HT: yes
@@ -103,9 +103,9 @@ Accept: Adding oxygen; gaining oxygen
 Ref: 4.5
 D: 2
 
-Q: In the reaction copper oxide + hydrogen → copper + water, which substance is reduced?
-A: Copper oxide
-Accept: CuO; copper(II) oxide
+Q: In the reaction copper oxide + hydrogen → copper + water, which substance is oxidised?
+A: Hydrogen
+Accept: H₂
 Ref: 4.5
 D: 2
 
@@ -146,7 +146,7 @@ D: 3
 
 Q: Why is extraction by electrolysis expensive?
 A: Large amounts of electricity are needed
-Accept: Uses lots of energy; high energy costs
+Accept: Uses lots of energy; high energy costs; energy to melt the ore
 Ref: 4.7
 D: 3
 
@@ -154,24 +154,24 @@ Q: Which biological extraction method uses plants to absorb metal compounds from
 A: Phytoextraction
 Accept: Phytomining
 Ref: 4.8
-D: 3
+D: 1
 HT: yes
 
 Q: What is the name of the method that uses bacteria to extract metals from ores?
 A: Bioleaching
 Accept: Bacterial extraction; bacterial leaching
 Ref: 4.8
-D: 3
+D: 1
 HT: yes
 
 Q: In phytoextraction, what is done to the plants after they have absorbed metal compounds?
 A: Harvested and burned
 Accept: Burned; burnt to ash
 Ref: 4.8
-D: 3
+D: 2
 HT: yes
 
-Q: Give one main disadvantage of biological methods of metal extraction.
+Q: Compared with smelting or electrolysis, what is the main disadvantage of biological methods of metal extraction?
 A: Very slow
 Accept: Slow; takes a long time
 Ref: 4.8
@@ -361,7 +361,7 @@ Q: In a reversible reaction at equilibrium, more of a reactant is added. Which w
 A: Towards the products
 Accept: Right; forward; to the right
 Ref: 4.17
-D: 3
+D: 2
 HT: yes
 
 Q: When does changing the pressure have no effect on the position of a gaseous equilibrium?

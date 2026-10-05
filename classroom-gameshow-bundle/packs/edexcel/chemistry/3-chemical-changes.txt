@@ -105,13 +105,6 @@ Ref: 3.5
 D: 3
 HT: yes
 
-Q: An acid of pH 2 is diluted until its hydrogen ion concentration is ten times smaller. What is its new pH?
-A: 3
-Accept: pH 3
-Ref: 3.5
-D: 3
-HT: yes
-
 Q: In the core practical on pH change, which solid is added in small portions to dilute hydrochloric acid?
 A: Calcium hydroxide
 Accept: Calcium oxide; Ca(OH)₂; CaO
@@ -136,13 +129,6 @@ D: 2
 Q: How does the pH change as calcium hydroxide is added to dilute hydrochloric acid until in excess?
 A: pH rises, then levels off
 Accept: Increases then stays constant; rises from acidic to alkaline then levels off
-Ref: 3.6
-RP: 3.6
-D: 2
-
-Q: In the core practical, what graph is plotted from the results?
-A: pH against mass of solid added
-Accept: pH on y-axis, mass added on x-axis; pH against mass of calcium hydroxide
 Ref: 3.6
 RP: 3.6
 D: 2
@@ -196,16 +182,9 @@ D: 3
 HT: yes
 Note: Ethanoic acid is weak, so it releases fewer hydrogen ions.
 
-Q: Is hydrochloric acid a strong acid or a weak acid?
-A: Strong
-Accept: Strong acid
-Ref: 3.8
-D: 3
-HT: yes
-
 Q: What is a base?
-A: Substance that reacts with an acid forming only salt and water
-Accept: Neutralises an acid to give salt and water only
+A: Neutralises an acid, forming only salt and water
+Accept: Reacts with an acid to give salt and water only
 Ref: 3.9
 D: 2
 
@@ -251,39 +230,15 @@ Accept: CO₂
 Ref: 3.11
 D: 1
 
-Q: Name the salt formed when magnesium reacts with hydrochloric acid.
-A: Magnesium chloride
-Accept: MgCl₂
-Ref: 3.11
-D: 2
-
 Q: What are the three products when an acid reacts with a metal carbonate?
 A: Salt, water and carbon dioxide
 Accept: Salt, CO₂ and water (any order)
 Ref: 3.11
 D: 2
 
-Q: Name both products when magnesium oxide reacts with hydrochloric acid.
-A: Magnesium chloride and water
-Accept: MgCl₂ and H₂O
-Ref: 3.11
-D: 2
-
-Q: Name the salt formed when sodium hydroxide reacts with nitric acid.
-A: Sodium nitrate
-Accept: NaNO₃
-Ref: 3.11
-D: 2
-
 Q: Which acid would you react with potassium hydroxide to make potassium sulfate?
 A: Sulfuric acid
 Accept: H₂SO₄
-Ref: 3.11
-D: 3
-
-Q: Which two reactants make zinc chloride, water and carbon dioxide?
-A: Zinc carbonate and hydrochloric acid
-Accept: ZnCO₃ and HCl
 Ref: 3.11
 D: 3
 
@@ -305,12 +260,6 @@ Accept: Turns cloudy; white precipitate forms
 Ref: 3.12
 D: 2
 
-Q: Why does limewater turn milky when carbon dioxide passes through it?
-A: Insoluble calcium carbonate forms
-Accept: Calcium carbonate precipitate forms
-Ref: 3.12
-D: 3
-
 Q: What name is given to the reaction between an acid and a base?
 A: Neutralisation
 Accept: Neutralization
@@ -324,7 +273,7 @@ Ref: 3.13
 D: 2
 
 Q: Why is the reaction of zinc oxide with hydrochloric acid a neutralisation?
-A: Zinc oxide is a base reacting with an acid
+A: Zinc oxide is a base
 Accept: Base plus acid gives salt and water only
 Ref: 3.13
 D: 3
@@ -366,7 +315,7 @@ Ref: 3.15
 D: 3
 
 Q: Why must a titration be used when making a salt from an acid and an alkali?
-A: Excess alkali is soluble so cannot be filtered off
+A: Alkali is soluble so excess can't be filtered
 Accept: To find exact amounts so neither is left in excess
 Ref: 3.16
 D: 3
@@ -424,13 +373,6 @@ Ref: 3.17
 RP: 3.17
 D: 3
 
-Q: How are the copper sulfate crystals dried at the end of the core practical?
-A: Pat dry between filter papers
-Accept: Leave in a warm place; leave in a desiccator
-Ref: 3.17
-RP: 3.17
-D: 2
-
 Q: Which apparatus measures out exactly 25.0 cm³ of alkali into the flask for a titration?
 A: Pipette
 Accept: Volumetric pipette; pipet
@@ -442,12 +384,6 @@ A: Burette
 Accept: Buret
 Ref: 3.18
 D: 1
-
-Q: How do you know that the end-point of a titration has been reached?
-A: Indicator changes colour permanently
-Accept: Indicator changes colour; colour change of indicator
-Ref: 3.18
-D: 2
 
 Q: A burette reads 0.50 cm³ at the start and 23.30 cm³ at the end. What is the titre?
 A: 22.80 cm³
@@ -483,21 +419,9 @@ Accept: Lead sulfate, barium sulfate, calcium sulfate (any order)
 Ref: 3.19
 D: 2
 
-Q: All common salts of which three positive ions are soluble in water?
-A: Sodium, potassium and ammonium
-Accept: Na⁺, K⁺ and NH₄⁺ (any order)
-Ref: 3.19
-D: 2
-
 Q: Silver nitrate solution is mixed with sodium chloride solution. Name the precipitate.
 A: Silver chloride
 Accept: AgCl
-Ref: 3.20
-D: 2
-
-Q: Barium chloride solution is added to sodium sulfate solution. Name the precipitate.
-A: Barium sulfate
-Accept: BaSO₄
 Ref: 3.20
 D: 2
 
@@ -597,18 +521,6 @@ Accept: Cu
 Ref: 3.25
 D: 2
 
-Q: Copper chloride solution is electrolysed with inert electrodes. What gas forms at the anode?
-A: Chlorine
-Accept: Cl₂
-Ref: 3.25
-D: 2
-
-Q: Which gas forms at the cathode when sodium chloride solution is electrolysed?
-A: Hydrogen
-Accept: H₂
-Ref: 3.25
-D: 2
-
 Q: Why does hydrogen, not sodium, form at the cathode in the electrolysis of sodium chloride solution?
 A: Sodium is more reactive than hydrogen
 Accept: Hydrogen ions are discharged more easily than sodium ions
@@ -668,13 +580,6 @@ HT: yes
 Q: Write the half equation for hydrogen ions forming hydrogen gas at the cathode.
 A: 2H⁺ + 2e⁻ → H₂
 Accept: 2H+ + 2e- → H2
-Ref: 3.27
-D: 3
-HT: yes
-
-Q: How many electrons does each lead ion, Pb²⁺, gain at the cathode?
-A: 2
-Accept: Two; 2e⁻
 Ref: 3.27
 D: 3
 HT: yes
@@ -739,7 +644,7 @@ Ref: 3.30
 D: 2
 
 Q: Why does copper sulfate solution stay the same colour when it is electrolysed with copper electrodes?
-A: Copper ions replaced as fast as they are removed
+A: Copper ions replaced as fast as removed
 Accept: Copper ion concentration stays constant; anode dissolves as cathode is plated
 Ref: 3.30
 D: 3
@@ -761,13 +666,6 @@ D: 1
 Q: The copper cathode had a mass of 2.45 g before electrolysis and 2.81 g after. What was its change in mass?
 A: +0.36 g
 Accept: 0.36 g; gained 0.36 g
-Ref: 3.31
-RP: 3.31
-D: 2
-
-Q: In the core practical, the current is changed and the change in mass of the cathode is measured. What is the independent variable?
-A: Current
-Accept: The current
 Ref: 3.31
 RP: 3.31
 D: 2

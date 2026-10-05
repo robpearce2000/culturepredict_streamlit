@@ -1,0 +1,1615 @@
+Board: Edexcel
+Spec: 1CH0
+Topic: 1
+
+Q: In Dalton's model, what were atoms thought to be?
+A: Tiny solid spheres that cannot be divided
+Accept: Solid indivisible spheres; solid balls; indivisible particles
+Ref: 1.1
+D: 1
+
+Q: The discovery of which subatomic particle showed that atoms could be divided into smaller parts?
+A: Electron
+Accept: Electrons
+Ref: 1.1
+D: 2
+
+Q: What name is given to the model of the atom as a ball of positive charge with electrons embedded in it?
+A: Plum pudding model
+Accept: Plum pudding
+Ref: 1.1
+D: 1
+
+Q: In the gold foil experiment, why did a few alpha particles bounce back?
+A: Hit a tiny, dense, positive nucleus
+Accept: Repelled by a small positive nucleus; positive nucleus with most of the mass
+Ref: 1.1
+D: 3
+
+Q: Which scientist suggested that electrons orbit the nucleus in fixed shells or energy levels?
+A: Niels Bohr
+Accept: Bohr
+Ref: 1.1
+D: 2
+
+Q: Which subatomic particle in the nucleus was the last of the three to be discovered?
+A: Neutron
+Accept: Neutrons
+Ref: 1.1
+D: 2
+
+Q: Which two types of subatomic particle are found in the nucleus of an atom?
+A: Protons and neutrons
+Accept: Neutrons and protons
+Ref: 1.2
+D: 1
+
+Q: Where are the electrons in an atom found?
+A: Shells around the nucleus
+Accept: Energy levels; orbiting the nucleus; in shells
+Ref: 1.2
+D: 1
+
+Q: Which subatomic particle is found outside the nucleus?
+A: Electron
+Accept: Electrons
+Ref: 1.2
+D: 1
+
+Q: Why does the nucleus of an atom have an overall positive charge?
+A: Contains positive protons; neutrons are neutral
+Accept: Protons are positive and neutrons have no charge
+Ref: 1.2
+D: 3
+
+Q: What is the relative charge of a proton?
+A: +1
+Accept: 1+; positive one
+Ref: 1.3
+D: 1
+
+Q: What is the relative mass of a neutron?
+A: 1
+Accept: One
+Ref: 1.3
+D: 1
+
+Q: What is the relative charge of an electron?
+A: −1
+Accept: -1; 1−; negative one
+Ref: 1.3
+D: 1
+
+Q: What is the relative mass of an electron?
+A: 1/1836
+Accept: About 1/2000; negligible; very small
+Ref: 1.3
+D: 2
+Note: The Edexcel specification uses 1/1836; "negligible" is fine for a quick answer.
+
+Q: Which subatomic particle has no electric charge?
+A: Neutron
+Accept: Neutrons
+Ref: 1.3
+D: 1
+
+Q: Which two subatomic particles have the same relative mass?
+A: Proton and neutron
+Accept: Protons and neutrons
+Ref: 1.3
+D: 2
+
+Q: Why does an atom have no overall charge?
+A: Equal numbers of protons and electrons
+Accept: Same number of protons and electrons; positive and negative charges cancel
+Ref: 1.4
+D: 2
+
+Q: An atom has 17 protons. How many electrons does it have?
+A: 17
+Ref: 1.4
+D: 2
+
+Q: Why do the charges of the protons and electrons in an atom cancel out exactly?
+A: Equal and opposite charges, equal numbers
+Accept: Proton +1 and electron −1, same number of each
+Ref: 1.4
+D: 3
+
+Q: Most of the volume of an atom is made up of what?
+A: Empty space
+Accept: Space; space around the nucleus
+Ref: 1.5
+D: 2
+
+Q: Roughly how many times smaller is the radius of the nucleus than the radius of the atom?
+A: About 100 000 times
+Accept: 10 000 to 100 000 times; 10⁵; 10⁴; about 1/100 000
+Ref: 1.5
+D: 3
+Note: Textbooks quote between 10 000 and 100 000 times smaller; accept either.
+
+Q: In the gold foil experiment, why did most alpha particles pass straight through the foil?
+A: Atoms are mostly empty space
+Accept: The nucleus is tiny; most of the atom is empty
+Ref: 1.5
+D: 3
+
+Q: In which part of an atom is almost all of its mass concentrated?
+A: Nucleus
+Accept: The nucleus
+Ref: 1.6
+D: 1
+
+Q: Why is almost all the mass of an atom in its nucleus?
+A: Protons and neutrons are far heavier than electrons
+Accept: Electrons have negligible mass; electrons are very light
+Ref: 1.6
+D: 3
+
+Q: Which subatomic particle adds almost nothing to the mass of an atom?
+A: Electron
+Accept: Electrons
+Ref: 1.6
+D: 2
+
+Q: What does the mass number of an atom tell you?
+A: Total number of protons and neutrons
+Accept: Number of protons plus neutrons; number of particles in the nucleus
+Ref: 1.7
+D: 2
+
+Q: An atom has 6 protons and 8 neutrons. What is its mass number?
+A: 14
+Ref: 1.7
+D: 2
+
+Q: What name is given to the total number of protons and neutrons in an atom?
+A: Mass number
+Accept: Nucleon number
+Ref: 1.7
+D: 1
+
+Q: In an atomic symbol such as ²³Na, is the mass number the top or the bottom number?
+A: Top
+Accept: The top number; the larger number; upper
+Ref: 1.7
+D: 1
+
+Q: What do all atoms of the same element have in common?
+A: Same number of protons
+Accept: Same atomic number; same number of protons in the nucleus
+Ref: 1.8
+D: 2
+
+Q: What name is given to the number of protons in the nucleus of an atom?
+A: Atomic number
+Accept: Proton number
+Ref: 1.8
+D: 1
+
+Q: An atom has 8 protons and 10 neutrons. Which element is it?
+A: Oxygen
+Accept: O
+Ref: 1.8
+D: 2
+Note: The element is fixed by the number of protons, not neutrons.
+
+Q: Every atom with 6 protons in its nucleus is an atom of which element?
+A: Carbon
+Accept: C
+Ref: 1.8
+D: 2
+
+Q: What are isotopes?
+A: Atoms of an element with different numbers of neutrons
+Accept: Same number of protons, different number of neutrons
+Ref: 1.9
+D: 2
+
+Q: Carbon-12 and carbon-14 atoms differ in the number of which subatomic particle?
+A: Neutrons
+Accept: Neutron
+Ref: 1.9
+D: 1
+
+Q: Chlorine-35 and chlorine-37 are examples of what?
+A: Isotopes
+Accept: Isotopes of chlorine
+Ref: 1.9
+D: 1
+
+Q: Two atoms have the same atomic number but different mass numbers. Why must they be the same element?
+A: Same number of protons
+Accept: Same atomic number means same element
+Ref: 1.9
+D: 3
+
+Q: Aluminium has atomic number 13 and mass number 27. How many neutrons are in one atom?
+A: 14
+Ref: 1.10
+D: 2
+
+Q: Potassium has atomic number 19 and mass number 39. How many electrons are in one atom?
+A: 19
+Ref: 1.10
+D: 2
+
+Q: An atom of chlorine-37 has atomic number 17. How many neutrons does it have?
+A: 20
+Ref: 1.10
+D: 2
+
+Q: Iron has atomic number 26 and mass number 56. How many protons are in one atom?
+A: 26
+Ref: 1.10
+D: 1
+
+Q: An atom has mass number 40 and contains 20 neutrons. Which element is it?
+A: Calcium
+Accept: Ca
+Ref: 1.10
+D: 3
+Note: 40 − 20 = 20 protons, so atomic number 20.
+
+Q: Relative atomic mass is a weighted mean of the masses of an element's what?
+A: Isotopes
+Accept: Isotope
+Ref: 1.11
+D: 2
+
+Q: Why is the relative atomic mass of chlorine not a whole number?
+A: Mean mass of its isotopes
+Accept: It has isotopes of different masses; average of chlorine-35 and chlorine-37
+Ref: 1.11
+D: 3
+
+Q: Chlorine has isotopes of mass 35 and 37, and its relative atomic mass is 35.5. Which isotope is more abundant?
+A: Chlorine-35
+Accept: 35; Cl-35; the lighter isotope
+Ref: 1.11
+D: 3
+
+Q: What is the relative atomic mass of chlorine, as given on the periodic table?
+A: 35.5
+Ref: 1.11
+D: 1
+
+Q: A sample of chlorine is 75% chlorine-35 and 25% chlorine-37. What is its relative atomic mass?
+A: 35.5
+Ref: 1.12
+D: 3
+HT: yes
+
+Q: Boron is 20% boron-10 and 80% boron-11. What is its relative atomic mass?
+A: 10.8
+Ref: 1.12
+D: 3
+HT: yes
+
+Q: Bromine is 50% bromine-79 and 50% bromine-81. What is its relative atomic mass?
+A: 80
+Ref: 1.12
+D: 3
+HT: yes
+
+Q: An element is 90% of an isotope of mass 24 and 10% of an isotope of mass 26. What is its relative atomic mass?
+A: 24.2
+Ref: 1.12
+D: 3
+HT: yes
+
+Q: Copper is 70% copper-63 and 30% copper-65. What is its relative atomic mass?
+A: 63.6
+Ref: 1.12
+D: 3
+HT: yes
+
+Q: What is the first step when calculating relative atomic mass from isotope data?
+A: Multiply each isotope's mass by its abundance
+Accept: Mass × percentage abundance for each isotope
+Ref: 1.12
+D: 3
+HT: yes
+Note: Then add the results and divide by 100 (the total abundance).
+
+Q: Which Russian chemist published a periodic table that left gaps for undiscovered elements?
+A: Dmitri Mendeleev
+Accept: Mendeleev
+Ref: 1.13
+D: 1
+
+Q: Mendeleev placed elements in order of which quantity?
+A: Relative atomic mass
+Accept: Atomic weight; atomic mass
+Ref: 1.13
+D: 2
+
+Q: Apart from atomic mass, what did Mendeleev use to decide which group an element belonged in?
+A: Properties of the element and its compounds
+Accept: Chemical properties; formulae of its compounds; similar properties
+Ref: 1.13
+D: 2
+
+Q: Why did Mendeleev group elements such as lithium, sodium and potassium together?
+A: Similar properties
+Accept: Similar chemical properties; their compounds have similar formulae
+Ref: 1.13
+D: 3
+
+Q: Why did Mendeleev leave gaps in his periodic table?
+A: For elements not yet discovered
+Accept: Undiscovered elements
+Ref: 1.14
+D: 2
+
+Q: Name an element whose properties Mendeleev predicted before it was discovered.
+A: Germanium
+Accept: Gallium; scandium
+Ref: 1.14
+D: 2
+
+Q: How did Mendeleev predict the properties of undiscovered elements?
+A: From properties of neighbouring elements in the group
+Accept: Using elements above and below the gap
+Ref: 1.14
+D: 3
+
+Q: How did the discovery of germanium support Mendeleev's table?
+A: Its properties matched his predictions
+Accept: Fitted his predicted gap
+Ref: 1.14
+D: 3
+
+Q: Iodine has a lower relative atomic mass than tellurium. Why did Mendeleev still place iodine after tellurium?
+A: Iodine's properties match the halogens
+Accept: Iodine is like chlorine and bromine; to fit groups by properties
+Ref: 1.15
+D: 3
+
+Q: Tellurium has fewer protons than iodine. Why is its relative atomic mass higher?
+A: Its common isotopes have more neutrons
+Accept: Abundance of heavier isotopes
+Ref: 1.15
+D: 3
+
+Q: Argon has a higher relative atomic mass than the element after it. Name that element.
+A: Potassium
+Accept: K
+Ref: 1.15
+D: 2
+
+Q: Mendeleev thought he had ordered elements by relative atomic mass. What does the modern table actually order them by?
+A: Atomic number
+Accept: Proton number; number of protons
+Ref: 1.15
+D: 2
+
+Q: What does the atomic number of an element tell you about its atoms?
+A: Number of protons
+Accept: Number of protons in the nucleus
+Ref: 1.16
+D: 1
+
+Q: An element is 16th in the periodic table. How many protons are in each of its atoms?
+A: 16
+Ref: 1.16
+D: 2
+
+Q: Which element has atomic number 1?
+A: Hydrogen
+Accept: H
+Ref: 1.16
+D: 1
+
+Q: Element X comes directly after element Y in the periodic table. How do their nuclei differ?
+A: X has one more proton
+Accept: One more proton
+Ref: 1.16
+D: 3
+
+Q: What are the horizontal rows of the periodic table called?
+A: Periods
+Accept: Period
+Ref: 1.17
+D: 1
+
+Q: What are the vertical columns of the periodic table called?
+A: Groups
+Accept: Group
+Ref: 1.17
+D: 1
+
+Q: In the modern periodic table, elements are arranged in order of increasing what?
+A: Atomic number
+Accept: Proton number; number of protons
+Ref: 1.17
+D: 1
+
+Q: Lithium, sodium and potassium are in the same group. What does this tell you about them?
+A: Similar chemical properties
+Accept: Similar properties; react in similar ways
+Ref: 1.17
+D: 2
+
+Q: Are most elements metals or non-metals?
+A: Metals
+Ref: 1.18
+D: 1
+
+Q: On which side of the periodic table are the non-metals found?
+A: Right
+Accept: Right-hand side; top right
+Ref: 1.18
+D: 1
+
+Q: An element has the electronic configuration 2.8.7. Is it a metal or a non-metal?
+A: Non-metal
+Accept: Nonmetal
+Ref: 1.18
+D: 2
+
+Q: In terms of electrons, why do metals form positive ions?
+A: Lose their few outer electrons
+Accept: They have 1, 2 or 3 outer electrons to lose
+Ref: 1.18
+D: 3
+
+Q: What is the electronic configuration of sodium (atomic number 11)?
+A: 2.8.1
+Accept: 2,8,1
+Ref: 1.19
+D: 2
+
+Q: What is the electronic configuration of calcium (atomic number 20)?
+A: 2.8.8.2
+Accept: 2,8,8,2
+Ref: 1.19
+D: 2
+
+Q: What is the electronic configuration of chlorine (atomic number 17)?
+A: 2.8.7
+Accept: 2,8,7
+Ref: 1.19
+D: 2
+
+Q: What is the maximum number of electrons in the first shell?
+A: 2
+Accept: Two
+Ref: 1.19
+D: 1
+
+Q: What is the electronic configuration of oxygen (atomic number 8)?
+A: 2.6
+Accept: 2,6
+Ref: 1.19
+D: 2
+
+Q: Which element has the electronic configuration 2.8.3?
+A: Aluminium
+Accept: Al
+Ref: 1.19
+D: 3
+
+Q: An element has the electronic configuration 2.8.6. Which group is it in?
+A: Group 6
+Accept: 6
+Ref: 1.20
+D: 2
+
+Q: An element has the electronic configuration 2.8.6. Which period is it in?
+A: Period 3
+Accept: 3
+Ref: 1.20
+D: 2
+
+Q: Why do elements in the same group have similar chemical properties?
+A: Same number of outer electrons
+Accept: Same number of electrons in the outer shell
+Ref: 1.20
+D: 3
+
+Q: What does the number of occupied electron shells tell you about an element's position?
+A: Its period
+Accept: Period number; which row it is in
+Ref: 1.20
+D: 2
+
+Q: Argon is in group 0 and period 3. What is its electronic configuration?
+A: 2.8.8
+Accept: 2,8,8
+Ref: 1.20
+D: 3
+
+Q: What happens to electrons when an ionic bond forms between a metal and a non-metal?
+A: Transferred from the metal to the non-metal
+Accept: Metal loses electrons and non-metal gains them
+Ref: 1.21
+D: 2
+
+Q: What is a positively charged ion called?
+A: Cation
+Accept: Cations
+Ref: 1.21
+D: 1
+
+Q: What is a negatively charged ion called?
+A: Anion
+Accept: Anions
+Ref: 1.21
+D: 1
+
+Q: In a dot and cross diagram of sodium chloride, how many electrons are in the outer shell of the chloride ion?
+A: 8
+Accept: Eight
+Ref: 1.21
+D: 2
+
+Q: When magnesium reacts with oxygen, how many electrons does each magnesium atom transfer?
+A: 2
+Accept: Two
+Ref: 1.21
+D: 2
+
+Q: In a dot and cross diagram, why are the electrons from different atoms drawn as dots and crosses?
+A: To show which atom each electron came from
+Accept: Shows where the electrons came from
+Ref: 1.21
+D: 3
+
+Q: What is an ion?
+A: Atom or group of atoms with a charge
+Accept: Charged atom or group of atoms; charged particle
+Ref: 1.22
+D: 2
+
+Q: What does an atom become when it gains or loses electrons?
+A: Ion
+Accept: An ion
+Ref: 1.22
+D: 1
+
+Q: Is the nitrate ion, NO₃⁻, positively or negatively charged?
+A: Negatively
+Accept: Negative
+Ref: 1.22
+D: 1
+
+Q: An atom gains two electrons. What is the charge on the ion formed?
+A: 2−
+Accept: −2; 2-; minus two
+Ref: 1.22
+D: 2
+
+Q: Sodium has atomic number 11. How many electrons are in a sodium ion, Na⁺?
+A: 10
+Ref: 1.23
+D: 2
+
+Q: Oxygen has atomic number 8. How many electrons are in an oxide ion, O²⁻?
+A: 10
+Ref: 1.23
+D: 2
+
+Q: Chlorine has atomic number 17. How many electrons are in a chloride ion, Cl⁻?
+A: 18
+Ref: 1.23
+D: 2
+
+Q: An aluminium ion, Al³⁺, has mass number 27 and atomic number 13. How many neutrons does it have?
+A: 14
+Ref: 1.23
+D: 2
+Note: Forming an ion changes the electrons only, not the neutrons.
+
+Q: A magnesium ion, Mg²⁺, has atomic number 12 and mass number 24. Give its protons, neutrons and electrons.
+A: 12 protons, 12 neutrons, 10 electrons
+Accept: 12, 12, 10
+Ref: 1.23
+D: 3
+
+Q: An ion has 20 protons and 18 electrons. What is its charge?
+A: 2+
+Accept: +2
+Ref: 1.23
+D: 3
+
+Q: What is the charge on the ion formed by a group 1 metal?
+A: 1+
+Accept: +1; +
+Ref: 1.24
+D: 1
+
+Q: What is the charge on the ion formed by a group 2 metal?
+A: 2+
+Accept: +2
+Ref: 1.24
+D: 1
+
+Q: What is the charge on the ion formed by a group 7 element?
+A: 1−
+Accept: −1; -1; −
+Ref: 1.24
+D: 2
+
+Q: What is the charge on the ion formed by a group 6 element such as sulfur?
+A: 2−
+Accept: −2; 2-
+Ref: 1.24
+D: 2
+
+Q: Why do group 7 atoms form ions with a 1− charge?
+A: Gain one electron for a full outer shell
+Accept: Gain 1 electron to have 8 outer electrons
+Ref: 1.24
+D: 3
+
+Q: Why does a magnesium atom form a 2+ ion?
+A: Loses its two outer electrons
+Accept: Loses 2 electrons to get a full outer shell
+Ref: 1.24
+D: 3
+
+Q: What does the ending "-ide" in a compound's name, such as sodium chloride, usually tell you?
+A: Contains only those two elements
+Accept: Two elements only; no oxygen in the negative ion
+Ref: 1.25
+D: 2
+Note: Hydroxide is an exception: it contains oxygen and hydrogen.
+
+Q: What does the ending "-ate" in a compound's name, such as copper sulfate, tell you?
+A: The negative ion contains oxygen
+Accept: Contains oxygen; oxygen is also present
+Ref: 1.25
+D: 2
+
+Q: Name the compound formed when potassium reacts with bromine.
+A: Potassium bromide
+Ref: 1.25
+D: 2
+
+Q: What is the name of the ion SO₄²⁻?
+A: Sulfate
+Accept: Sulfate ion; sulphate
+Ref: 1.25
+D: 1
+
+Q: What is the name of the compound Na₂S?
+A: Sodium sulfide
+Accept: Sodium sulphide
+Ref: 1.25
+D: 3
+Note: Not sodium sulfate: there is no oxygen.
+
+Q: What is the name of the compound CaCO₃?
+A: Calcium carbonate
+Ref: 1.25
+D: 2
+
+Q: Magnesium ions are Mg²⁺ and oxide ions are O²⁻. What is the formula of magnesium oxide?
+A: MgO
+Ref: 1.26
+D: 2
+
+Q: Calcium ions are Ca²⁺ and chloride ions are Cl⁻. What is the formula of calcium chloride?
+A: CaCl₂
+Accept: CaCl2
+Ref: 1.26
+D: 2
+
+Q: Sodium ions are Na⁺ and oxide ions are O²⁻. What is the formula of sodium oxide?
+A: Na₂O
+Accept: Na2O
+Ref: 1.26
+D: 2
+
+Q: Potassium ions are K⁺ and carbonate ions are CO₃²⁻. What is the formula of potassium carbonate?
+A: K₂CO₃
+Accept: K2CO3
+Ref: 1.26
+D: 2
+
+Q: Calcium ions are Ca²⁺ and hydroxide ions are OH⁻. What is the formula of calcium hydroxide?
+A: Ca(OH)₂
+Accept: Ca(OH)2
+Ref: 1.26
+D: 3
+Note: Brackets are needed; CaOH₂ is wrong.
+
+Q: Magnesium ions are Mg²⁺ and nitrate ions are NO₃⁻. What is the formula of magnesium nitrate?
+A: Mg(NO₃)₂
+Accept: Mg(NO3)2
+Ref: 1.26
+D: 3
+
+Q: Aluminium ions are Al³⁺ and sulfate ions are SO₄²⁻. What is the formula of aluminium sulfate?
+A: Al₂(SO₄)₃
+Accept: Al2(SO4)3
+Ref: 1.26
+D: 3
+
+Q: What name is given to the regular three-dimensional arrangement of ions in an ionic compound?
+A: Lattice
+Accept: Giant ionic lattice; ionic lattice
+Ref: 1.27
+D: 1
+
+Q: What holds the ions together in an ionic lattice?
+A: Strong electrostatic forces between oppositely charged ions
+Accept: Ionic bonds; attraction between opposite charges
+Ref: 1.27
+D: 2
+
+Q: In an ionic lattice, in which directions do the electrostatic forces act?
+A: All directions
+Accept: Every direction
+Ref: 1.27
+D: 3
+
+Q: In a sodium chloride lattice, what particles surround each sodium ion?
+A: Chloride ions
+Accept: Cl⁻ ions; negative ions
+Ref: 1.27
+D: 2
+
+Q: What is a covalent bond?
+A: Shared pair of electrons between two atoms
+Accept: A pair of shared electrons
+Ref: 1.28
+D: 2
+
+Q: Covalent bonds usually form between atoms of which type of element?
+A: Non-metals
+Accept: Nonmetals; non-metal
+Ref: 1.28
+D: 1
+
+Q: How many electrons make up one single covalent bond?
+A: 2
+Accept: Two; one pair
+Ref: 1.28
+D: 1
+
+Q: How many electrons are shared in a double covalent bond?
+A: 4
+Accept: Four; two pairs
+Ref: 1.28
+D: 2
+
+Q: Why does a shared pair of electrons hold two atoms together?
+A: Both nuclei attract the shared electrons
+Accept: Electrostatic attraction between shared electrons and nuclei
+Ref: 1.28
+D: 3
+
+Q: What type of particle forms when atoms are joined by covalent bonds?
+A: Molecule
+Accept: Molecules
+Ref: 1.29
+D: 1
+
+Q: Is water made of molecules or ions?
+A: Molecules
+Ref: 1.29
+D: 2
+
+Q: Which type of bonding results in the formation of molecules?
+A: Covalent
+Accept: Covalent bonding
+Ref: 1.29
+D: 2
+
+Q: What is the typical order of magnitude of the radius of an atom, in metres?
+A: 10⁻¹⁰ m
+Accept: 1 × 10⁻¹⁰ m; 0.1 nm
+Ref: 1.30
+D: 2
+
+Q: To the nearest order of magnitude, how wide is a small molecule, in metres?
+A: 10⁻⁹ m
+Accept: 10⁻¹⁰ m; 1 nm; 0.1 nm
+Ref: 1.30
+D: 2
+Note: Atoms and small molecules are both about 10⁻¹⁰ to 10⁻⁹ m across.
+
+Q: An atom is about 0.1 nm across. What is that in metres, in standard form?
+A: 1 × 10⁻¹⁰ m
+Accept: 10⁻¹⁰ m
+Ref: 1.30
+D: 3
+
+Q: Atoms are about 10⁻¹⁰ m across. Roughly how many fit side by side across 1 mm?
+A: 10⁷
+Accept: 10 million; 10 000 000
+Ref: 1.30
+D: 3
+Note: 1 mm = 10⁻³ m, and 10⁻³ ÷ 10⁻¹⁰ = 10⁷.
+
+Q: How many covalent bonds are there in a hydrogen molecule, H₂?
+A: 1
+Accept: One; one single bond
+Ref: 1.31
+D: 1
+
+Q: How many covalent bonds are there in a methane molecule, CH₄?
+A: 4
+Accept: Four
+Ref: 1.31
+D: 1
+
+Q: In a dot and cross diagram of hydrogen chloride, how many non-bonding pairs of electrons does chlorine have?
+A: 3
+Accept: Three; three lone pairs
+Ref: 1.31
+D: 3
+
+Q: In a water molecule, how many lone (non-bonding) pairs of electrons does the oxygen atom have?
+A: 2
+Accept: Two
+Ref: 1.31
+D: 3
+
+Q: What type of covalent bond joins the two atoms in an oxygen molecule, O₂?
+A: Double bond
+Accept: Double covalent bond; double
+Ref: 1.31
+D: 2
+
+Q: How many double bonds are there in a carbon dioxide molecule?
+A: 2
+Accept: Two
+Ref: 1.31
+D: 2
+
+Q: In a dot and cross diagram of methane, how many electrons are in carbon's outer shell?
+A: 8
+Accept: Eight
+Ref: 1.31
+D: 2
+
+Q: What type of substance is diamond?
+A: Giant covalent
+Accept: Giant covalent structure; macromolecular
+Ref: 1.32
+D: 1
+
+Q: What type of substance is copper?
+A: Metallic
+Accept: Metal; giant metallic
+Ref: 1.32
+D: 1
+
+Q: A substance melts at 801 °C and conducts electricity when molten but not when solid. What type of substance is it?
+A: Ionic
+Accept: Ionic compound; giant ionic
+Ref: 1.32
+D: 3
+
+Q: A substance melts at −95 °C and does not conduct electricity. What type of substance is it?
+A: Simple molecular
+Accept: Simple molecular covalent; small molecules; covalent molecular
+Ref: 1.32
+D: 3
+
+Q: A substance has a very high melting point, is insoluble in water and does not conduct when solid or molten. What type is it?
+A: Giant covalent
+Accept: Giant covalent structure; macromolecular
+Ref: 1.32
+D: 3
+Note: Silicon dioxide is an example; graphite is the exception that conducts.
+
+Q: Which type of substance typically conducts electricity both as a solid and as a liquid?
+A: Metallic
+Accept: Metals
+Ref: 1.32
+D: 2
+
+Q: Which type of substance often dissolves in water to give a solution that conducts electricity?
+A: Ionic
+Accept: Ionic compounds
+Ref: 1.32
+D: 2
+
+Q: Why do ionic compounds have high melting points?
+A: Much energy needed to overcome strong forces between ions
+Accept: Strong electrostatic attraction between ions takes a lot of energy to overcome
+Ref: 1.33
+D: 3
+
+Q: In which two states does an ionic compound conduct electricity?
+A: Molten and in aqueous solution
+Accept: Melted and dissolved in water; liquid and solution
+Ref: 1.33
+D: 2
+
+Q: Why does a solid ionic compound not conduct electricity?
+A: Ions are fixed and cannot move
+Accept: Ions held in place in the lattice
+Ref: 1.33
+D: 3
+
+Q: Which particles carry the charge when molten sodium chloride conducts electricity?
+A: Ions
+Accept: Na⁺ and Cl⁻ ions
+Ref: 1.33
+D: 2
+Note: Not electrons: electrons carry the charge in metals.
+
+Q: Why do simple molecular substances have low boiling points?
+A: Weak intermolecular forces need little energy to overcome
+Accept: Weak forces between molecules
+Ref: 1.34
+D: 3
+Note: The covalent bonds inside the molecules do not break.
+
+Q: When water boils, what is overcome: covalent bonds or intermolecular forces?
+A: Intermolecular forces
+Accept: Forces between molecules
+Ref: 1.34
+D: 2
+
+Q: What name is given to the weak forces between molecules?
+A: Intermolecular forces
+Accept: Intermolecular force
+Ref: 1.34
+D: 1
+
+Q: Why are simple molecular substances poor conductors of electricity?
+A: Molecules have no overall charge
+Accept: No ions or delocalised electrons to move; no charged particles free to move
+Ref: 1.34
+D: 3
+
+Q: Diamond and graphite are both forms of which element?
+A: Carbon
+Accept: C
+Ref: 1.35
+D: 1
+
+Q: What type of structure do diamond and graphite both have?
+A: Giant covalent
+Accept: Giant covalent structure; macromolecular
+Ref: 1.35
+D: 1
+
+Q: What type of bond joins the carbon atoms in diamond?
+A: Covalent
+Accept: Covalent bonds; single covalent bonds
+Ref: 1.35
+D: 2
+
+Q: In diamond, how many other carbon atoms is each carbon atom bonded to?
+A: 4
+Accept: Four
+Ref: 1.36
+D: 2
+
+Q: In graphite, how many other carbon atoms is each carbon atom bonded to?
+A: 3
+Accept: Three
+Ref: 1.36
+D: 2
+
+Q: The carbon atoms in graphite are arranged in what shape of rings?
+A: Hexagons
+Accept: Hexagonal rings; six-membered rings
+Ref: 1.36
+D: 2
+
+Q: Graphite's carbon atoms are arranged in flat what?
+A: Layers
+Accept: Sheets
+Ref: 1.36
+D: 1
+
+Q: What holds the layers of graphite together?
+A: Weak forces between layers
+Accept: Weak intermolecular forces
+Ref: 1.36
+D: 3
+
+Q: Which form of carbon is used in cutting tools?
+A: Diamond
+Ref: 1.37
+D: 1
+
+Q: Why is graphite used as a lubricant?
+A: Layers slide easily over each other
+Accept: Weak forces between layers so they slide
+Ref: 1.37
+D: 3
+
+Q: Why does graphite conduct electricity?
+A: Delocalised electrons can move between the layers
+Accept: Each carbon has one delocalised electron; free electrons
+Ref: 1.37
+D: 3
+
+Q: Why is diamond hard enough for cutting tools?
+A: Each atom has four strong covalent bonds
+Accept: Rigid network of strong covalent bonds
+Ref: 1.37
+D: 3
+
+Q: Which form of carbon is used to make electrodes?
+A: Graphite
+Ref: 1.37
+D: 1
+
+Q: Why does diamond not conduct electricity?
+A: No delocalised electrons
+Accept: All outer electrons are used in bonds
+Ref: 1.37
+D: 3
+
+Q: What is the molecular formula of buckminsterfullerene?
+A: C₆₀
+Accept: C60
+Ref: 1.38
+D: 1
+
+Q: What is graphene?
+A: A single layer of graphite
+Accept: One layer of carbon atoms in hexagons; one atom thick sheet of carbon
+Ref: 1.38
+D: 2
+
+Q: What shape is a C₆₀ molecule?
+A: Hollow sphere
+Accept: Sphere; ball; cage
+Ref: 1.38
+D: 2
+
+Q: Why does graphene conduct electricity?
+A: Delocalised electrons
+Accept: Free electrons that can move
+Ref: 1.38
+D: 3
+
+Q: Why does C₆₀ have a much lower melting point than diamond?
+A: Weak intermolecular forces between C₆₀ molecules
+Accept: It is molecular; only intermolecular forces are overcome
+Ref: 1.38
+D: 3
+
+Q: Fullerenes shaped like long cylinders are called what?
+A: Nanotubes
+Accept: Carbon nanotubes
+Ref: 1.38
+D: 2
+
+Q: Why is graphene very strong?
+A: Strong covalent bonds between its carbon atoms
+Accept: Network of strong covalent bonds
+Ref: 1.38
+D: 3
+
+Q: Which polymer is made from ethene?
+A: Poly(ethene)
+Accept: Polyethene; polythene; polyethylene
+Ref: 1.39
+D: 1
+
+Q: Simple polymers such as poly(ethene) consist of large molecules containing chains of which atoms?
+A: Carbon
+Accept: Carbon atoms
+Ref: 1.39
+D: 2
+
+Q: What are the small molecules that join together to make a polymer called?
+A: Monomers
+Accept: Monomer
+Ref: 1.39
+D: 1
+
+Q: What is a polymer?
+A: Very large molecule made of repeating units
+Accept: Long chain molecule; large molecule made from many monomers
+Ref: 1.39
+D: 2
+
+Q: Why is poly(ethene) a solid at room temperature when ethene is a gas?
+A: Larger molecules, stronger intermolecular forces
+Accept: Long chains have stronger forces between them
+Ref: 1.39
+D: 3
+
+Q: What does malleable mean?
+A: Can be hammered into shape
+Accept: Can be bent or shaped without breaking
+Ref: 1.40
+D: 2
+
+Q: Why are metals malleable?
+A: Layers of ions slide over each other
+Accept: Layers of atoms can slide
+Ref: 1.40
+D: 3
+
+Q: Why do metals conduct electricity?
+A: Delocalised electrons move through the structure
+Accept: Free electrons carry the charge
+Ref: 1.40
+D: 3
+
+Q: A metal has a lattice of positive ions in a sea of what?
+A: Delocalised electrons
+Accept: Free electrons
+Ref: 1.40
+D: 2
+
+Q: Which particles carry the electric current through a metal wire?
+A: Electrons
+Accept: Delocalised electrons; free electrons
+Ref: 1.40
+D: 1
+
+Q: In a dot and cross diagram, electrons are drawn as dots and crosses. Why is this misleading?
+A: All electrons are identical
+Accept: Electrons are all the same
+Ref: 1.41
+D: 3
+
+Q: What does a dot and cross diagram of a molecule not show?
+A: Its 3D shape
+Accept: Shape; bond angles; relative sizes of atoms
+Ref: 1.41
+D: 2
+
+Q: In a ball and stick model, what is unrealistic about the sticks?
+A: Bonds are not physical sticks
+Accept: Atoms are really much closer together; bonds are forces, not rods
+Ref: 1.41
+D: 3
+
+Q: Which type of model shows atoms as spheres joined by rods to show the 3D arrangement?
+A: Ball and stick
+Accept: Ball and stick model
+Ref: 1.41
+D: 1
+
+Q: Describe the appearance of most metals.
+A: Shiny
+Accept: Lustrous
+Ref: 1.42
+D: 1
+
+Q: Do most non-metals have high or low boiling points?
+A: Low
+Accept: Low boiling points
+Ref: 1.42
+D: 1
+
+Q: Do most metals have high or low density?
+A: High
+Accept: High density
+Ref: 1.42
+D: 1
+
+Q: An element is dull, has a low boiling point and is a poor conductor of electricity. Is it a metal or a non-metal?
+A: Non-metal
+Accept: Nonmetal
+Ref: 1.42
+D: 2
+
+Q: What is the state of most metals at room temperature?
+A: Solid
+Ref: 1.42
+D: 1
+
+Q: What is the relative formula mass of water, H₂O? (H = 1, O = 16)
+A: 18
+Ref: 1.43
+D: 1
+
+Q: What is the relative formula mass of carbon dioxide, CO₂? (C = 12, O = 16)
+A: 44
+Ref: 1.43
+D: 2
+
+Q: What is the relative formula mass of sodium hydroxide, NaOH? (Na = 23, O = 16, H = 1)
+A: 40
+Ref: 1.43
+D: 2
+
+Q: What is the relative formula mass of calcium carbonate, CaCO₃? (Ca = 40, C = 12, O = 16)
+A: 100
+Ref: 1.43
+D: 2
+
+Q: What is the relative formula mass of magnesium hydroxide, Mg(OH)₂? (Mg = 24, O = 16, H = 1)
+A: 58
+Ref: 1.43
+D: 3
+Note: The bracket doubles both O and H.
+
+Q: What is the relative formula mass of sulfuric acid, H₂SO₄? (H = 1, S = 32, O = 16)
+A: 98
+Ref: 1.43
+D: 2
+
+Q: What is the percentage by mass of calcium in calcium carbonate, CaCO₃? (Ca = 40, C = 12, O = 16)
+A: 40%
+Accept: 40
+Ref: 1.43
+D: 3
+
+Q: What is the percentage by mass of hydrogen in methane, CH₄? (C = 12, H = 1)
+A: 25%
+Accept: 25
+Ref: 1.43
+D: 3
+
+Q: What is the percentage by mass of nitrogen in ammonium nitrate, NH₄NO₃? (Mr = 80, N = 14)
+A: 35%
+Accept: 35
+Ref: 1.43
+D: 3
+
+Q: What does an empirical formula show?
+A: Simplest whole-number ratio of atoms
+Accept: Simplest ratio of atoms of each element
+Ref: 1.44
+D: 2
+
+Q: 2.4 g of magnesium combines with 1.6 g of oxygen. What is the empirical formula? (Mg = 24, O = 16)
+A: MgO
+Ref: 1.44
+D: 3
+
+Q: A compound is 75% carbon and 25% hydrogen by mass. What is its empirical formula? (C = 12, H = 1)
+A: CH₄
+Accept: CH4
+Ref: 1.44
+D: 3
+
+Q: 5.6 g of iron combines with 3.2 g of sulfur. What is the empirical formula? (Fe = 56, S = 32)
+A: FeS
+Ref: 1.44
+D: 3
+
+Q: Working out an empirical formula from reacting masses, what do you first divide each mass by?
+A: Relative atomic mass
+Accept: Ar; the element's Ar
+Ref: 1.44
+D: 2
+
+Q: What is the empirical formula of ethane, C₂H₆?
+A: CH₃
+Accept: CH3
+Ref: 1.45
+D: 2
+
+Q: What is the empirical formula of glucose, C₆H₁₂O₆?
+A: CH₂O
+Accept: CH2O
+Ref: 1.45
+D: 2
+
+Q: What is the empirical formula of hydrogen peroxide, H₂O₂?
+A: HO
+Accept: OH
+Ref: 1.45
+D: 2
+
+Q: A compound has empirical formula CH₂ and relative molecular mass 42. What is its molecular formula? (C = 12, H = 1)
+A: C₃H₆
+Accept: C3H6
+Ref: 1.45
+D: 3
+
+Q: A compound has empirical formula CH and relative molecular mass 78. What is its molecular formula? (C = 12, H = 1)
+A: C₆H₆
+Accept: C6H6
+Ref: 1.45
+D: 3
+
+Q: A compound has empirical formula NO₂ and relative molecular mass 92. What is its molecular formula? (N = 14, O = 16)
+A: N₂O₄
+Accept: N2O4
+Ref: 1.45
+D: 3
+
+Q: In the magnesium oxide experiment, what container is the magnesium heated in?
+A: Crucible
+Accept: Crucible with a lid
+Ref: 1.46
+D: 1
+
+Q: Why is the magnesium ribbon rubbed with sandpaper before heating?
+A: To remove the oxide layer
+Accept: Remove surface oxide; clean off oxide coating
+Ref: 1.46
+D: 2
+
+Q: Why is the crucible lid lifted from time to time during heating?
+A: To let oxygen in
+Accept: Lets air in
+Ref: 1.46
+D: 2
+
+Q: Why is the crucible lid kept on for most of the heating?
+A: Stops magnesium oxide escaping
+Accept: Prevents loss of white smoke; stops product escaping
+Ref: 1.46
+D: 3
+
+Q: Why is the crucible heated, cooled and weighed repeatedly until the mass stops changing?
+A: To make sure all the magnesium has reacted
+Accept: Heat to constant mass so reaction is complete
+Ref: 1.46
+D: 3
+
+Q: 0.24 g of magnesium makes 0.40 g of magnesium oxide. What mass of oxygen reacted?
+A: 0.16 g
+Accept: 0.16
+Ref: 1.46
+D: 2
+
+Q: What does the law of conservation of mass state?
+A: Total mass of reactants equals total mass of products
+Accept: Mass is not created or destroyed; atoms are not lost or made
+Ref: 1.47
+D: 2
+
+Q: A precipitation reaction happens in a sealed flask. What happens to the total mass?
+A: Stays the same
+Accept: No change; unchanged
+Ref: 1.47
+D: 2
+
+Q: Marble chips react with acid in an open flask. Why does the mass of the flask decrease?
+A: Carbon dioxide gas escapes
+Accept: A gas is given off and lost to the air
+Ref: 1.47
+D: 3
+
+Q: Magnesium is burned in an open crucible. Why does the mass increase?
+A: Oxygen from the air is added
+Accept: Oxygen combines with the magnesium
+Ref: 1.47
+D: 3
+
+Q: What name is given to a system where no substances can enter or leave?
+A: Closed system
+Accept: Closed; sealed system
+Ref: 1.47
+D: 1
+
+Q: 5.0 g of one solution is mixed with 3.0 g of another in a sealed flask, forming a precipitate. What is the total mass afterwards?
+A: 8.0 g
+Accept: 8 g; 8
+Ref: 1.47
+D: 2
+
+Q: In 2Mg + O₂ → 2MgO, what is the mole ratio of Mg to MgO?
+A: 1:1
+Accept: 2:2; one to one
+Ref: 1.48
+D: 2
+
+Q: 2Mg + O₂ → 2MgO. What mass of magnesium oxide forms from 48 g of magnesium? (Mg = 24, O = 16)
+A: 80 g
+Accept: 80
+Ref: 1.48
+D: 3
+
+Q: CaCO₃ → CaO + CO₂. What mass of calcium oxide forms from 100 g of calcium carbonate? (Ca = 40, C = 12, O = 16)
+A: 56 g
+Accept: 56
+Ref: 1.48
+D: 3
+
+Q: 2H₂ + O₂ → 2H₂O. What mass of water forms from 4 g of hydrogen? (H = 1, O = 16)
+A: 36 g
+Accept: 36
+Ref: 1.48
+D: 3
+
+Q: C + O₂ → CO₂. What mass of carbon dioxide forms from 6 g of carbon? (C = 12, O = 16)
+A: 22 g
+Accept: 22
+Ref: 1.48
+D: 3
+
+Q: CaCO₃ → CaO + CO₂. What mass of carbon dioxide forms from 50 g of calcium carbonate? (Ca = 40, C = 12, O = 16)
+A: 22 g
+Accept: 22
+Ref: 1.48
+D: 3
+
+Q: What unit is used for concentration measured by mass?
+A: g dm⁻³
+Accept: g/dm³; grams per cubic decimetre
+Ref: 1.49
+D: 1
+
+Q: How many cm³ are there in 1 dm³?
+A: 1000
+Accept: 1000 cm³
+Ref: 1.49
+D: 1
+
+Q: 20 g of salt is dissolved to make 0.5 dm³ of solution. What is the concentration?
+A: 40 g dm⁻³
+Accept: 40 g/dm³; 40
+Ref: 1.49
+D: 2
+
+Q: 4 g of solute is dissolved to make 250 cm³ of solution. What is the concentration in g dm⁻³?
+A: 16 g dm⁻³
+Accept: 16 g/dm³; 16
+Ref: 1.49
+D: 3
+Note: Convert 250 cm³ to 0.25 dm³ first.
+
+Q: What mass of solute is in 2 dm³ of a 15 g dm⁻³ solution?
+A: 30 g
+Accept: 30
+Ref: 1.49
+D: 2
+
+Q: What is the formula linking concentration, mass of solute and volume of solution?
+A: Concentration = mass ÷ volume
+Accept: c = m ÷ V; mass of solute ÷ volume of solution
+Ref: 1.49
+D: 2
+
+Q: What is the value of the Avogadro constant?
+A: 6.02 × 10²³
+Accept: 6.02 × 10²³ per mole
+Ref: 1.50
+D: 3
+HT: yes
+
+Q: What name is given to the amount of a substance that contains 6.02 × 10²³ particles?
+A: Mole
+Accept: One mole; 1 mol
+Ref: 1.50
+D: 3
+HT: yes
+
+Q: One mole of a substance has a mass in grams equal to what?
+A: Its relative formula mass
+Accept: Mr; relative particle mass; relative atomic mass
+Ref: 1.50
+D: 2
+
+Q: What is the mass of one mole of carbon dioxide, CO₂? (C = 12, O = 16)
+A: 44 g
+Accept: 44
+Ref: 1.50
+D: 2
+
+Q: What is the mass of one mole of carbon atoms? (C = 12)
+A: 12 g
+Accept: 12
+Ref: 1.50
+D: 1
+
+Q: How many moles are in 88 g of carbon dioxide? (Mr = 44)
+A: 2 mol
+Accept: 2; 2 moles
+Ref: 1.51
+D: 3
+HT: yes
+
+Q: What is the mass of 0.5 mol of sodium hydroxide? (Mr = 40)
+A: 20 g
+Accept: 20
+Ref: 1.51
+D: 3
+HT: yes
+
+Q: How many moles are in 9 g of water? (Mr = 18)
+A: 0.5 mol
+Accept: 0.5; half a mole
+Ref: 1.51
+D: 3
+HT: yes
+
+Q: How many particles are in 2 mol of a substance? (Avogadro constant = 6.02 × 10²³)
+A: 1.204 × 10²⁴
+Accept: 12.04 × 10²³; 1.2 × 10²⁴
+Ref: 1.51
+D: 3
+HT: yes
+
+Q: How many molecules are in 0.5 mol of water? (Avogadro constant = 6.02 × 10²³)
+A: 3.01 × 10²³
+Accept: 3.0 × 10²³
+Ref: 1.51
+D: 3
+HT: yes
+
+Q: How many atoms are in 12 g of carbon? (C = 12)
+A: 6.02 × 10²³
+Accept: 6 × 10²³
+Ref: 1.51
+D: 3
+HT: yes
+
+Q: How many oxygen atoms are in 16 g of oxygen gas, O₂? (O = 16, Avogadro constant = 6.02 × 10²³)
+A: 6.02 × 10²³
+Accept: 6 × 10²³
+Ref: 1.51
+D: 3
+HT: yes
+Note: 16 g of O₂ is 0.5 mol of molecules but 1 mol of atoms.
+
+Q: What is the mass of 3.01 × 10²³ atoms of magnesium? (Mg = 24)
+A: 12 g
+Accept: 12
+Ref: 1.51
+D: 3
+HT: yes
+
+Q: State the equation linking number of moles, mass and relative formula mass.
+A: Moles = mass ÷ Mr
+Accept: n = m ÷ Mr; mass = moles × Mr
+Ref: 1.51
+D: 3
+HT: yes
+
+Q: What name is given to the reactant that is completely used up and stops the reaction?
+A: Limiting reactant
+Accept: Limiting reagent
+Ref: 1.52
+D: 3
+HT: yes
+
+Q: What term describes a reactant that is left over when the reaction stops?
+A: Excess
+Accept: In excess
+Ref: 1.52
+D: 3
+HT: yes
+
+Q: Why does the mass of product depend on the reactant that is not in excess?
+A: Reaction stops when it is used up
+Accept: Once used up, no more product can form
+Ref: 1.52
+D: 3
+HT: yes
+
+Q: Magnesium reacts with excess acid. What happens to the mass of hydrogen made if the mass of magnesium is doubled?
+A: Doubles
+Accept: It doubles; twice as much
+Ref: 1.52
+D: 3
+HT: yes
+
+Q: 2H₂ + O₂ → 2H₂O. If 2 mol of H₂ is mixed with 2 mol of O₂, which reactant is limiting?
+A: Hydrogen
+Accept: H₂
+Ref: 1.52
+D: 3
+HT: yes
+
+Q: To deduce a balanced equation from reacting masses, what do you first convert each mass into?
+A: Moles
+Accept: Number of moles; amount in moles
+Ref: 1.53
+D: 3
+HT: yes
+
+Q: 24 g of magnesium reacts with 73 g of HCl. How many moles of HCl react per mole of Mg? (Mg = 24, HCl = 36.5)
+A: 2
+Accept: Two; 2 mol
+Ref: 1.53
+D: 3
+HT: yes
+
+Q: 46 g of sodium reacts with 71 g of chlorine, Cl₂. What is the mole ratio of Na to Cl₂? (Na = 23, Cl₂ = 71)
+A: 2:1
+Accept: 2 to 1
+Ref: 1.53
+D: 3
+HT: yes
+
+Q: 4 g of H₂ reacts with 32 g of O₂ to give 36 g of H₂O. What is the mole ratio H₂ : O₂ : H₂O? (H = 1, O = 16)
+A: 2:1:2
+Accept: 2 : 1 : 2
+Ref: 1.53
+D: 3
+HT: yes
