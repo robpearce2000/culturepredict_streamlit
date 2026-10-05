@@ -338,5 +338,25 @@ note in smaller type under the answer, for built-in and teachers' own questions.
 scope may reach roughly 6 MB; the packs are already compact arrays, and if size becomes a
 problem they will be compressed inside the single file, as the brief allows.
 
-**Pearson Edexcel specifications.** qualifications.pearson.com reset the connection from this
-environment on every attempt so far; recorded in QUESTION-BANK-PROGRESS.md, to retry next run.
+**Pearson Edexcel specifications (workaround).** qualifications.pearson.com resets every
+connection from the build environment. The specifications were therefore taken from the Internet
+Archive's copies of Pearson's own PDFs, at the same qualifications.pearson.com addresses, captured
+in September 2026 (each registry's `sourceNote` gives the capture date). These are Pearson's
+published files, unchanged; the issue number and date printed in each are recorded. Rob should
+confirm on Pearson's site that each issue is still current (listed in QUESTIONS-TO-CHECK.md).
+
+**Edexcel subtopics.** Edexcel science specifications number points (1.1, 1.2, …, with B/C/P for
+separate-science-only points) but have no subtopic headings. For Category Clash columns the points
+of each topic are grouped into 2–5 subtopics in specification order (e.g. "Cells and microscopy",
+"Enzyme action"); the groups are app labels only, held in the registry's `parents` map, and every
+question's Ref is still the specification's own point number.
+
+**Edexcel Higher tier.** Pearson prints Higher-tier-only content in bold. Bold was read from the
+PDF's font information: whole points in bold are Higher only; where only part of a point is bold,
+only questions on that part are tagged Higher.
+
+**AQA Maths.** Version 1.1 (September 2026) is used. Its content is in three columns (Basic
+foundation, Additional foundation, Higher only); the third column is Higher tier only. Ratio,
+Probability and Statistics have no subheadings, so their points are grouped for Category Clash
+(Ratio: units and fractions; ratio and percentages; proportion; rates and growth. Probability:
+experiments; combined events. Statistics: samples and charts; averages and correlation).

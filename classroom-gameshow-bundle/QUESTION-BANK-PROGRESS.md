@@ -30,10 +30,10 @@ This file says what is finished and what is left, so any run can carry on where 
 | AQA | Biology | 8461 | 1.0 | 21 April 2016 | Fetched from aqa.org.uk (confirmed as the current version on the specification page) |
 | AQA | Chemistry | 8462 | 1.1 | 4 October 2019 | Fetched from aqa.org.uk |
 | AQA | Physics | 8463 | 1.1 | 30 September 2019 | Fetched from aqa.org.uk (with Appendix A, the equations students recall or select from the sheet) |
-| AQA | Mathematics | 8300 | | | Not started |
+| AQA | Mathematics | 8300 | 1.1 | September 2026 | Fetched from aqa.org.uk. Higher-only content is the spec's HIGHER ONLY column |
 | AQA | History | 8145 | | | Not started |
 | AQA | Geography | 8035 | | | Not started |
-| Pearson Edexcel | Biology, Chemistry, Physics | 1BI0, 1CH0, 1PH0 | | | Not started. Note: qualifications.pearson.com dropped connections from this environment on the first try; a direct PDF link returned an HTML page. To retry. |
+| Pearson Edexcel | Biology, Chemistry, Physics | 1BI0, 1CH0, 1PH0 | Issue 4 | March 2024 | Pearson's own published PDFs, as captured by the Internet Archive in September 2026 (qualifications.pearson.com cannot be reached from the build environment). To confirm against Pearson's site that Issue 4 is still current |
 | Pearson Edexcel | Mathematics | 1MA1 | | | Not started |
 | Pearson Edexcel | History | 1HI0 | | | Not started |
 | Pearson Edexcel | Geography A, Geography B | 1GA0, 1GB0 | | | Not started |
