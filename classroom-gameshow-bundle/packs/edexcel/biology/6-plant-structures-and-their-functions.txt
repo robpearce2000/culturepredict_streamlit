@@ -1,0 +1,394 @@
+Board: Edexcel
+Spec: 1BI0
+Topic: 6
+
+Q: What name is given to organisms, such as plants and algae, that make their own food by photosynthesis?
+A: Producers
+Accept: Producer; Autotrophs
+Ref: 6.1
+D: 1
+Id: edexcel-bio-6-001
+
+Q: Which group of photosynthetic organisms are the main producers of biomass in oceans and lakes?
+A: Algae
+Accept: Phytoplankton
+Ref: 6.1
+D: 2
+Id: edexcel-bio-6-002
+
+Q: Photosynthetic organisms start almost every food chain. What do they make that every other organism in the chain relies on?
+A: Biomass
+Accept: Food; Glucose; Organic compounds; Sugars
+Ref: 6.1
+D: 2
+Id: edexcel-bio-6-003
+
+Q: Give the word equation for photosynthesis.
+A: Carbon dioxide + water → glucose + oxygen
+Accept: CO2 + H2O → glucose + O2
+Ref: 6.2
+D: 2
+Id: edexcel-bio-6-004
+
+Q: Photosynthesis takes in energy from the surroundings. What type of reaction is it?
+A: Endothermic
+Ref: 6.2
+D: 1
+Id: edexcel-bio-6-005
+
+Q: In which sub-cellular structure does photosynthesis take place?
+A: Chloroplasts
+Accept: Chloroplast
+Ref: 6.2
+D: 1
+Id: edexcel-bio-6-006
+
+Q: What term describes a factor that is in shortest supply and so stops the rate of photosynthesis rising?
+A: Limiting factor
+Ref: 6.3
+D: 1
+Id: edexcel-bio-6-007
+
+Q: Besides light intensity, which two limiting factors of photosynthesis does your GCSE course study?
+A: Temperature and carbon dioxide concentration
+Accept: CO2 concentration and temperature; Temperature and CO2
+Ref: 6.3
+D: 2
+Id: edexcel-bio-6-008
+
+Q: Why does the rate of photosynthesis fall sharply when the temperature gets too high?
+A: Enzymes are denatured
+Accept: Enzymes denature; The enzymes' active sites change shape
+Ref: 6.3
+D: 3
+Id: edexcel-bio-6-009
+
+Q: At high light intensity the rate stops rising. Raising carbon dioxide concentration then increases the rate. What was the limiting factor?
+A: Carbon dioxide concentration
+Accept: CO2 concentration; Carbon dioxide
+Ref: 6.4
+HT: yes
+D: 3
+Id: edexcel-bio-6-010
+
+Q: On a cold, bright day with plenty of carbon dioxide, which factor is most likely limiting photosynthesis?
+A: Temperature
+Ref: 6.4
+HT: yes
+D: 2
+Id: edexcel-bio-6-011
+
+Q: At very low light intensity, doubling the carbon dioxide concentration barely changes the rate of photosynthesis. Which factor is limiting?
+A: Light intensity
+Accept: Light
+Ref: 6.4
+HT: yes
+D: 3
+Id: edexcel-bio-6-012
+
+Q: In the light intensity core practical, what is the independent variable?
+A: Light intensity
+Accept: Distance from the lamp; Distance of lamp from plant
+Ref: 6.5
+RP: 6.5
+D: 1
+Id: edexcel-bio-6-013
+
+Q: Why is sodium hydrogencarbonate added to the water around the pondweed?
+A: Supplies carbon dioxide
+Accept: Provides CO2; So carbon dioxide is not limiting
+Ref: 6.5
+RP: 6.5
+D: 2
+Id: edexcel-bio-6-014
+
+Q: Why might a beaker of water be placed between the lamp and the pondweed?
+A: Keeps temperature constant
+Accept: Absorbs heat from the lamp; Stops the lamp warming the plant
+Ref: 6.5
+RP: 6.5
+D: 2
+Note: An LED lamp, which gives off little heat, does the same job.
+Id: edexcel-bio-6-015
+
+Q: Why is counting bubbles less accurate than measuring the volume of gas produced?
+A: Bubbles are different sizes
+Accept: Bubbles vary in size; Bubbles may be missed
+Ref: 6.5
+RP: 6.5
+D: 3
+Id: edexcel-bio-6-016
+
+Q: Why is the pondweed left for a few minutes at each new lamp distance before measuring?
+A: To adjust to the new light intensity
+Accept: To acclimatise; So the rate becomes steady
+Ref: 6.5
+RP: 6.5
+D: 3
+Id: edexcel-bio-6-017
+
+Q: What law links light intensity to distance from a light source?
+A: Inverse square law
+Accept: Inverse square
+Ref: 6.6
+HT: yes
+D: 1
+Id: edexcel-bio-6-018
+
+Q: A lamp is moved from 10 cm to 20 cm from a plant. What fraction of the original light intensity now reaches the plant?
+A: One quarter
+Accept: 1/4; 0.25; Quarter; 25%
+Ref: 6.6
+HT: yes
+D: 3
+Id: edexcel-bio-6-019
+
+Q: Using light intensity = 1/d², what is the relative light intensity at 5 cm from the lamp?
+A: 0.04
+Accept: 1/25; 0.04 arbitrary units
+Ref: 6.6
+HT: yes
+D: 2
+Id: edexcel-bio-6-020
+
+Q: By what process does water move from the soil into root hair cells?
+A: Osmosis
+Ref: 6.7
+D: 1
+Id: edexcel-bio-6-021
+
+Q: By what process are mineral ions absorbed against a concentration gradient into root hair cells?
+A: Active transport
+Ref: 6.7
+D: 2
+Id: edexcel-bio-6-022
+
+Q: Why do root hair cells contain many mitochondria?
+A: Release energy for active transport
+Accept: Respiration for active transport of minerals; Energy to absorb mineral ions
+Ref: 6.7
+D: 3
+Id: edexcel-bio-6-023
+
+Q: Which plant tissue transports water and mineral ions up from the roots?
+A: Xylem
+Ref: 6.8
+D: 1
+Id: edexcel-bio-6-024
+
+Q: What substance strengthens the walls of xylem vessels?
+A: Lignin
+Ref: 6.8
+D: 1
+Id: edexcel-bio-6-025
+
+Q: Why are xylem vessels hollow with no end walls?
+A: Water flows through in a continuous column
+Accept: Allows water to flow freely; No obstruction to water flow
+Ref: 6.8
+D: 3
+Id: edexcel-bio-6-026
+
+Q: In phloem, which cells contain many mitochondria to supply energy for transport?
+A: Companion cells
+Accept: Companion cell
+Ref: 6.8
+D: 2
+Id: edexcel-bio-6-027
+
+Q: What is the loss of water vapour from a plant's leaves called?
+A: Transpiration
+Ref: 6.9
+D: 1
+Id: edexcel-bio-6-028
+
+Q: What are the pores on the underside of a leaf that let water vapour out?
+A: Stomata
+Accept: Stoma; Stomates
+Ref: 6.9
+D: 1
+Id: edexcel-bio-6-029
+
+Q: How does water loss from leaves pull water up through the xylem?
+A: Evaporation creates a pull on the water column
+Accept: Transpiration stream pulls water up; Water molecules pulled up as water evaporates
+Ref: 6.9
+D: 3
+Id: edexcel-bio-6-030
+
+Q: What name is given to the movement of sucrose through the phloem?
+A: Translocation
+Ref: 6.10
+D: 1
+Id: edexcel-bio-6-031
+
+Q: Water moves only upwards in the xylem. In which directions can sucrose be moved in the phloem?
+A: Up and down
+Accept: Both directions; Upwards and downwards; Two-way
+Ref: 6.10
+D: 2
+Id: edexcel-bio-6-032
+
+Q: Which form of sugar is transported in the phloem?
+A: Sucrose
+Ref: 6.10
+D: 1
+Id: edexcel-bio-6-033
+
+Q: Which leaf layer contains the most chloroplasts?
+A: Palisade mesophyll
+Accept: Palisade layer; Palisade cells
+Ref: 6.11B
+D: 1
+Id: edexcel-bio-6-034
+
+Q: How do air spaces in the spongy mesophyll help the leaf?
+A: Allow gases to diffuse to and from cells
+Accept: Gas exchange; Let carbon dioxide diffuse to cells
+Ref: 6.11B
+D: 2
+Id: edexcel-bio-6-035
+
+Q: Why are leaves thin?
+A: Short diffusion distance for gases
+Accept: Short distance for carbon dioxide to diffuse; Short diffusion path; Light reaches all cells
+Ref: 6.11B
+D: 3
+Id: edexcel-bio-6-036
+
+Q: Why is the upper epidermis of a leaf transparent?
+A: Light passes through to the palisade cells
+Accept: Lets light reach the palisade layer; Lets light through to chloroplasts
+Ref: 6.11B
+D: 2
+Id: edexcel-bio-6-037
+
+Q: What device measures the rate of water uptake by a leafy shoot?
+A: Potometer
+Ref: 6.12
+D: 1
+Id: edexcel-bio-6-038
+
+Q: Why does transpiration rate increase in brighter light?
+A: More stomata open
+Accept: Stomata open; Stomata open wider; More stomata open for photosynthesis
+Ref: 6.12
+D: 3
+Id: edexcel-bio-6-039
+
+Q: Why does a higher temperature increase the rate of transpiration?
+A: Water molecules gain energy, so evaporate faster
+Accept: Faster evaporation and diffusion; More kinetic energy so faster evaporation
+Ref: 6.12
+D: 3
+Id: edexcel-bio-6-040
+
+Q: Why does wind speed up transpiration?
+A: Moves water vapour away, keeping a steep gradient
+Accept: Keeps a steep concentration gradient; Removes water vapour from around the leaf
+Ref: 6.12
+D: 3
+Id: edexcel-bio-6-041
+
+Q: A potometer bubble moves 30 mm in 5 minutes. What is the rate of water uptake?
+A: 6 mm per minute
+Accept: 6 mm/min
+Ref: 6.13
+D: 2
+Id: edexcel-bio-6-042
+
+Q: A potometer bubble moves 40 mm in 2 minutes, then 20 mm in the next 2 minutes. What is the mean rate?
+A: 15 mm per minute
+Accept: 15 mm/min
+Ref: 6.13
+D: 3
+Id: edexcel-bio-6-043
+
+Q: A plant loses 3 g of mass in 30 minutes. What is its rate of water loss in g per hour?
+A: 6 g per hour
+Accept: 6 g/h; 6 g/hr
+Ref: 6.13
+D: 3
+Id: edexcel-bio-6-044
+
+Q: What waxy layer on a leaf surface reduces water loss?
+A: Cuticle
+Accept: Waxy cuticle
+Ref: 6.14B
+D: 1
+Id: edexcel-bio-6-045
+
+Q: Cacti have spines instead of broad leaves. How does this reduce water loss?
+A: Smaller surface area for transpiration
+Accept: Reduces surface area; Less surface area to lose water
+Ref: 6.14B
+D: 2
+Id: edexcel-bio-6-046
+
+Q: How do sunken stomata reduce water loss in plants from dry places?
+A: Trap moist air, reducing the concentration gradient
+Accept: Trap water vapour near stomata; Less steep diffusion gradient
+Ref: 6.14B
+D: 3
+Id: edexcel-bio-6-047
+
+Q: What is the growth response of a plant shoot towards light called?
+A: Phototropism
+Ref: 6.15B
+D: 1
+Id: edexcel-bio-6-048
+
+Q: Name the plant hormone responsible for phototropism and gravitropism.
+A: Auxin
+Accept: Auxins; IAA
+Ref: 6.15B
+D: 1
+Id: edexcel-bio-6-049
+
+Q: Why does a shoot bend towards light?
+A: More cell elongation on the shaded side
+Accept: Shaded side cells elongate more; Cells on shaded side grow faster
+Ref: 6.15B
+D: 3
+Id: edexcel-bio-6-050
+
+Q: In a horizontal root, auxin collects on the lower side. What effect does it have there?
+A: Inhibits cell elongation
+Accept: Slows growth; Reduces cell elongation
+Ref: 6.15B
+D: 3
+Note: Auxin promotes elongation in shoots but inhibits it in roots, so the root bends down.
+Id: edexcel-bio-6-051
+
+Q: Which plant hormone is used in rooting powders for cuttings?
+A: Auxin
+Accept: Auxins
+Ref: 6.16B
+HT: yes
+D: 1
+Id: edexcel-bio-6-052
+
+Q: Which plant hormone is used commercially to ripen fruit?
+A: Ethene
+Accept: Ethylene
+Ref: 6.16B
+HT: yes
+D: 1
+Id: edexcel-bio-6-053
+
+Q: Which plant hormone is used to start seed germination and to produce seedless fruit?
+A: Gibberellins
+Accept: Gibberellin; Gibberellic acid
+Ref: 6.16B
+HT: yes
+D: 1
+Id: edexcel-bio-6-054
+
+Q: Why do auxin weedkillers kill broad-leaved weeds but not grass crops?
+A: Uncontrolled growth in broad-leaved plants only
+Accept: Broad-leaved plants absorb more auxin; Weeds grow too fast and die; Only broad-leaved weeds are affected
+Ref: 6.16B
+HT: yes
+D: 3
+Note: Credit uncontrolled or too-rapid growth of the broad-leaved weeds; grasses are largely unaffected.
+Id: edexcel-bio-6-055

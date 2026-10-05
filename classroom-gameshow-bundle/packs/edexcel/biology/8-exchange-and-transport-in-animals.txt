@@ -1,0 +1,339 @@
+Board: Edexcel
+Spec: 1BI0
+Topic: 8
+
+Q: Which waste product, made in the liver, is carried by the blood to the kidneys for removal?
+A: Urea
+Ref: 8.1
+D: 1
+Id: edexcel-bio-8-001
+
+Q: Name the waste gas made by aerobic respiration that must be transported out of cells.
+A: Carbon dioxide
+Accept: CO2
+Ref: 8.1
+D: 1
+Id: edexcel-bio-8-002
+
+Q: How do substances such as oxygen enter a single-celled organism like an amoeba?
+A: Diffusion
+Accept: Diffusion across the cell membrane; Diffusion through its surface
+Ref: 8.1
+D: 2
+Id: edexcel-bio-8-003
+
+Q: What is the surface area : volume ratio of a cube with 1 cm sides?
+A: 6 : 1
+Accept: 6:1; 6
+Ref: 8.2
+D: 2
+Note: Surface area 6 cm², volume 1 cm³.
+Id: edexcel-bio-8-004
+
+Q: What is the surface area : volume ratio of a cube with 3 cm sides?
+A: 2 : 1
+Accept: 2:1; 2; 54 : 27
+Ref: 8.2
+D: 3
+Note: Surface area 6 × 9 = 54 cm², volume 27 cm³.
+Id: edexcel-bio-8-005
+
+Q: As an organism gets larger, what happens to its surface area : volume ratio?
+A: Decreases
+Accept: Gets smaller; Goes down
+Ref: 8.2
+D: 1
+Id: edexcel-bio-8-006
+
+Q: Why do large multicellular organisms need a transport system rather than relying on diffusion alone?
+A: Small SA:V ratio and long diffusion distances
+Accept: Diffusion too slow over long distances; Surface area too small for volume
+Ref: 8.2
+D: 3
+Id: edexcel-bio-8-007
+
+Q: Name the tiny air sacs in the lungs where gas exchange takes place.
+A: Alveoli
+Accept: Alveolus
+Ref: 8.3
+D: 1
+Id: edexcel-bio-8-008
+
+Q: Why is it useful that the alveolus wall and capillary wall are each only one cell thick?
+A: Short diffusion distance
+Accept: Thin so gases diffuse quickly
+Ref: 8.3
+D: 2
+Id: edexcel-bio-8-009
+
+Q: How does a good blood supply around the alveoli help gas exchange?
+A: Maintains a steep concentration gradient
+Accept: Keeps a high concentration gradient; Carries oxygen away quickly
+Ref: 8.3
+D: 3
+Note: Blood flow removes oxygen and brings carbon dioxide, keeping the gradient.
+Id: edexcel-bio-8-010
+
+Q: State three factors that affect the rate of diffusion.
+A: Surface area, concentration gradient, diffusion distance
+Accept: Concentration difference (for gradient); Membrane thickness (for distance); Temperature (as one of the three)
+Ref: 8.4B
+D: 2
+Note: Temperature is a genuine factor, so accept it as one of the three.
+Id: edexcel-bio-8-011
+
+Q: If the concentration gradient across a membrane gets steeper, what happens to the rate of diffusion?
+A: Increases
+Accept: Gets faster; Goes up
+Ref: 8.4B
+D: 1
+Id: edexcel-bio-8-012
+
+Q: Why does a thicker exchange membrane slow down the rate of diffusion?
+A: Longer diffusion distance
+Accept: Further for molecules to travel
+Ref: 8.4B
+D: 2
+Id: edexcel-bio-8-013
+
+Q: Name the law stating that rate of diffusion is proportional to surface area × concentration difference ÷ membrane thickness.
+A: Fick's law
+Accept: Ficks law
+Ref: 8.5B
+D: 1
+Id: edexcel-bio-8-014
+
+Q: Use rate ∝ (surface area × concentration difference) ÷ thickness: area 20, difference 3, thickness 2. What is the rate?
+A: 30
+Accept: 30 arbitrary units; 30 au
+Ref: 8.5B
+D: 2
+Note: Fick's law is a proportionality, so the answer is a relative rate with no unit.
+Id: edexcel-bio-8-015
+
+Q: Using Fick's law, what happens to the rate of diffusion if membrane thickness doubles and nothing else changes?
+A: Halves
+Accept: Rate halves; Half as fast
+Ref: 8.5B
+D: 2
+Id: edexcel-bio-8-016
+
+Q: Using Fick's law, what happens to diffusion rate if surface area and concentration difference both double?
+A: Quadruples
+Accept: Four times as fast; ×4; Increases fourfold
+Ref: 8.5B
+D: 3
+Id: edexcel-bio-8-017
+
+Q: Name the red protein in red blood cells that binds to oxygen.
+A: Haemoglobin
+Accept: Hemoglobin
+Ref: 8.6
+D: 1
+Id: edexcel-bio-8-018
+
+Q: Why does a red blood cell having no nucleus help it carry oxygen?
+A: More room for haemoglobin
+Accept: More space for haemoglobin
+Ref: 8.6
+D: 2
+Id: edexcel-bio-8-019
+
+Q: How does the biconcave disc shape of a red blood cell help its function?
+A: Large surface area for oxygen diffusion
+Accept: Increases surface area for absorbing oxygen
+Ref: 8.6
+D: 3
+Id: edexcel-bio-8-020
+
+Q: Name the white blood cells that engulf and digest pathogens.
+A: Phagocytes
+Accept: Phagocyte
+Ref: 8.6
+D: 1
+Id: edexcel-bio-8-021
+
+Q: Name the white blood cells that produce antibodies.
+A: Lymphocytes
+Accept: Lymphocyte
+Ref: 8.6
+D: 1
+Id: edexcel-bio-8-022
+
+Q: Name the liquid part of the blood that carries dissolved substances such as glucose, urea and carbon dioxide.
+A: Plasma
+Ref: 8.6
+D: 1
+Id: edexcel-bio-8-023
+
+Q: What are platelets and what is their function?
+A: Cell fragments that help blood clot
+Accept: Fragments of cells that form clots
+Ref: 8.6
+D: 2
+Id: edexcel-bio-8-024
+
+Q: Which type of blood vessel has walls only one cell thick?
+A: Capillaries
+Accept: Capillary
+Ref: 8.7
+D: 1
+Id: edexcel-bio-8-025
+
+Q: Why do arteries have thick, muscular and elastic walls?
+A: Withstand high pressure from the heart
+Accept: To cope with high blood pressure
+Ref: 8.7
+D: 2
+Id: edexcel-bio-8-026
+
+Q: Why do veins contain valves?
+A: Prevent backflow of low-pressure blood
+Accept: Stop blood flowing backwards
+Ref: 8.7
+D: 2
+Note: Blood in veins is at low pressure.
+Id: edexcel-bio-8-027
+
+Q: Compare the lumen of a vein with the lumen of an artery.
+A: Vein lumen is larger
+Accept: Veins have a wider lumen; Artery lumen is narrower
+Ref: 8.7
+D: 3
+Id: edexcel-bio-8-028
+
+Q: Which blood vessel carries oxygenated blood from the left ventricle to the body?
+A: Aorta
+Ref: 8.8
+D: 1
+Id: edexcel-bio-8-029
+
+Q: Which blood vessel carries deoxygenated blood from the body into the right atrium?
+A: Vena cava
+Accept: Venae cavae
+Ref: 8.8
+D: 1
+Id: edexcel-bio-8-030
+
+Q: Which blood vessel carries deoxygenated blood from the heart to the lungs?
+A: Pulmonary artery
+Ref: 8.8
+D: 2
+Note: An artery carrying deoxygenated blood is a common surprise.
+Id: edexcel-bio-8-031
+
+Q: Why is the left ventricle wall thicker than the right ventricle wall?
+A: Pumps blood around the whole body
+Accept: Must pump at higher pressure around the body
+Ref: 8.8
+D: 3
+Note: The right ventricle only pumps blood to the nearby lungs.
+Id: edexcel-bio-8-032
+
+Q: Humans have a double circulatory system. What does "double" mean?
+A: Blood passes through the heart twice per circuit
+Accept: Blood goes through the heart twice
+Ref: 8.8
+D: 2
+Id: edexcel-bio-8-033
+
+Q: Is respiration an exothermic or an endothermic reaction?
+A: Exothermic
+Ref: 8.9
+D: 1
+Id: edexcel-bio-8-034
+
+Q: Give the word equation for aerobic respiration.
+A: Glucose + oxygen → carbon dioxide + water
+Ref: 8.9
+D: 2
+Id: edexcel-bio-8-035
+
+Q: Why must cellular respiration happen continuously in living cells?
+A: Constantly releases energy for metabolic processes
+Accept: Cells constantly need energy
+Ref: 8.9
+D: 2
+Id: edexcel-bio-8-036
+
+Q: Name the substance produced by anaerobic respiration in human muscle cells.
+A: Lactic acid
+Accept: Lactate
+Ref: 8.10
+D: 1
+Id: edexcel-bio-8-037
+
+Q: Which type of respiration releases more energy per glucose molecule: aerobic or anaerobic?
+A: Aerobic
+Ref: 8.10
+D: 2
+Id: edexcel-bio-8-038
+
+Q: Why do muscles respire anaerobically during very vigorous exercise?
+A: Not enough oxygen reaches the muscles
+Accept: Oxygen supply cannot meet demand
+Ref: 8.10
+D: 3
+Id: edexcel-bio-8-039
+
+Q: In a respirometer, what is soda lime used for?
+A: Absorbing carbon dioxide
+Accept: Absorbs CO2; Removes carbon dioxide
+Ref: 8.11
+RP: 8.11
+D: 2
+Id: edexcel-bio-8-040
+
+Q: In a respirometer with woodlice and soda lime, which gas does the movement of the coloured liquid measure?
+A: Oxygen taken in
+Accept: Oxygen; Oxygen used; O2
+Ref: 8.11
+RP: 8.11
+D: 3
+Note: CO2 is absorbed, so the volume falls as oxygen is used.
+Id: edexcel-bio-8-041
+
+Q: The coloured liquid in a respirometer moves 30 mm in 10 minutes. What is the rate of respiration?
+A: 3 mm per minute
+Accept: 3 mm/min; 0.3 cm/min
+Ref: 8.11
+RP: 8.11
+D: 2
+Id: edexcel-bio-8-042
+
+Q: When investigating the effect of temperature on respiration, what equipment keeps each temperature constant?
+A: Water bath
+Accept: Thermostatically controlled water bath
+Ref: 8.11
+RP: 8.11
+D: 1
+Id: edexcel-bio-8-043
+
+Q: Why is a respirometer with glass beads instead of organisms set up alongside the test?
+A: Control to show organisms cause the change
+Accept: As a control; Control
+Ref: 8.11
+RP: 8.11
+D: 3
+Id: edexcel-bio-8-044
+
+Q: State the equation linking cardiac output, stroke volume and heart rate.
+A: Cardiac output = stroke volume × heart rate
+Accept: CO = SV × HR
+Ref: 8.12
+D: 2
+Id: edexcel-bio-8-045
+
+Q: Stroke volume is 80 cm³ and heart rate is 60 beats per minute. What is the cardiac output?
+A: 4800 cm³ per minute
+Accept: 4800 cm³/min; 4800 ml/min; 4.8 dm³/min; 4.8 litres per minute
+Ref: 8.12
+D: 2
+Id: edexcel-bio-8-046
+
+Q: Cardiac output is 5000 cm³ per minute and heart rate is 50 beats per minute. What is the stroke volume?
+A: 100 cm³
+Accept: 100 cm³ per beat; 100 ml; 0.1 dm³
+Ref: 8.12
+D: 3
+Id: edexcel-bio-8-047

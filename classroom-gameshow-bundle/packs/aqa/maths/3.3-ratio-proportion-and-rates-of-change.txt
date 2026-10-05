@@ -1,0 +1,416 @@
+Board: AQA
+Spec: 8300
+Topic: 3.3
+
+Q: Which metric unit of capacity is equal to 1000 cm³?
+A: Litre
+Accept: Litres; l; L; liter
+Ref: R1
+D: 1
+Id: aqa-maths-3.3-001
+
+Q: Mass is measured in grams and volume in cm³. What is the unit of density?
+A: Grams per cubic centimetre
+Accept: g/cm³; g per cm³; grams per centimetre cubed
+Ref: R1
+D: 1
+Id: aqa-maths-3.3-002
+
+Q: Convert 3 m² to cm².
+A: 30 000 cm²
+Accept: 30000; 30 000 square centimetres
+Ref: R1
+D: 2
+Note: Common error is 300; 1 m² = 100 × 100 = 10 000 cm².
+Id: aqa-maths-3.3-003
+
+Q: On a map with scale 1 : 50 000, two towns are 4 cm apart. What is the real distance in kilometres?
+A: 2 km
+Accept: 2; 2 kilometres; 2000 m
+Ref: R2
+D: 3
+Note: 4 × 50 000 = 200 000 cm = 2000 m.
+Id: aqa-maths-3.3-004
+
+Q: Name the transformation that changes the size of a shape using a scale factor.
+A: Enlargement
+Accept: Enlarge
+Ref: R2
+D: 1
+Id: aqa-maths-3.3-005
+
+Q: A scale drawing uses 1 cm to represent 5 m. A wall is 3.5 cm long on the drawing. How long is the real wall?
+A: 17.5 m
+Accept: 17.5; 17½ m; 1750 cm
+Ref: R2
+D: 2
+Id: aqa-maths-3.3-006
+
+Q: Write 15 minutes as a fraction of an hour, in its simplest form.
+A: 1/4
+Accept: ¼; one quarter; quarter
+Ref: R3
+D: 1
+Id: aqa-maths-3.3-007
+
+Q: Write 40 cm as a fraction of 1 m, in its simplest form.
+A: 2/5
+Accept: two fifths
+Ref: R3
+D: 2
+Note: Convert to the same units first: 40/100.
+Id: aqa-maths-3.3-008
+
+Q: What name is given to a fraction, such as 7/4, whose numerator is larger than its denominator?
+A: Improper fraction
+Accept: Improper; top-heavy fraction; top heavy
+Ref: R3
+D: 1
+Id: aqa-maths-3.3-009
+
+Q: Simplify the ratio 12 : 18.
+A: 2 : 3
+Accept: 2:3
+Ref: R4
+D: 1
+Id: aqa-maths-3.3-010
+
+Q: Write the ratio 50 cm : 2 m in its simplest form.
+A: 1 : 4
+Accept: 1:4
+Ref: R4
+D: 3
+Note: Convert to the same units first: 50 : 200.
+Id: aqa-maths-3.3-011
+
+Q: A ratio such as 2 : 3 cannot be divided further by a common factor. What form is it in?
+A: Simplest form
+Accept: Lowest terms; simplest terms; simplified form
+Ref: R4
+D: 1
+Id: aqa-maths-3.3-012
+
+Q: Share £40 in the ratio 3 : 5.
+A: £15 and £25
+Accept: 15 and 25; £15 : £25
+Ref: R5
+D: 2
+Id: aqa-maths-3.3-013
+
+Q: The ratio of boys to girls in a club is 2 : 3. There are 12 boys. How many girls are there?
+A: 18
+Accept: 18 girls
+Ref: R5
+D: 2
+Id: aqa-maths-3.3-014
+
+Q: Pack A has 300 g for £1.50. Pack B has 500 g for £2.25. Which pack is better value?
+A: Pack B
+Accept: B
+Ref: R5
+D: 3
+Note: A costs 0.5p per gram; B costs 0.45p per gram.
+Id: aqa-maths-3.3-015
+
+Q: A is three times as big as B. Write the ratio A : B.
+A: 3 : 1
+Accept: 3:1
+Ref: R6
+D: 1
+Id: aqa-maths-3.3-016
+
+Q: The ratio x : y is 2 : 5. Write x as a fraction of y.
+A: 2/5
+Accept: two fifths; x = 2y/5; 0.4
+Ref: R6
+D: 2
+Id: aqa-maths-3.3-017
+
+Q: Red and blue counters are in the ratio 3 : 7. What fraction of the counters are red?
+A: 3/10
+Accept: three tenths; 0.3
+Ref: R6
+D: 2
+Note: Common error is 3/7; the total is 10 parts.
+Id: aqa-maths-3.3-018
+
+Q: Find x if 3 : 4 = 9 : x.
+A: 12
+Accept: x = 12
+Ref: R7
+D: 2
+Id: aqa-maths-3.3-019
+
+Q: Ratios such as 2 : 3 and 4 : 6, which simplify to the same ratio, are called what?
+A: Equivalent ratios
+Accept: Equivalent; equal ratios
+Ref: R7
+D: 1
+Id: aqa-maths-3.3-020
+
+Q: A recipe for 4 people uses 300 g of flour. How much flour is needed for 6 people?
+A: 450 g
+Accept: 450
+Ref: R7
+D: 2
+Id: aqa-maths-3.3-021
+
+Q: For every point on a graph, y : x = 3 : 1. Write y in terms of x.
+A: y = 3x
+Accept: 3x
+Ref: R8
+D: 2
+Id: aqa-maths-3.3-022
+
+Q: Every point on a straight line has y : x = 5 : 2. What is the equation of the line?
+A: y = 2.5x
+Accept: y = 5x/2; y = 5/2 x; 2y = 5x
+Ref: R8
+D: 3
+Id: aqa-maths-3.3-023
+
+Q: A straight-line graph where y : x is always the same ratio must pass through which point?
+A: Origin
+Accept: The origin; (0, 0)
+Ref: R8
+D: 2
+Id: aqa-maths-3.3-024
+
+Q: "Per cent" means number of parts per what?
+A: Hundred
+Accept: 100; per hundred
+Ref: R9
+D: 1
+Id: aqa-maths-3.3-025
+
+Q: A price rises from £40 to £50. What is the percentage increase?
+A: 25%
+Accept: 25
+Ref: R9
+D: 2
+Note: Divide the increase by the original price, not the new price (not 20%).
+Id: aqa-maths-3.3-026
+
+Q: After a 20% reduction, a coat costs £64. What was the original price?
+A: £80
+Accept: 80
+Ref: R9
+D: 3
+Note: £64 is 80% of the original; adding 20% of £64 (£76.80) is wrong.
+Id: aqa-maths-3.3-027
+
+Q: £200 is invested at 3% simple interest per year. How much interest is earned in 4 years?
+A: £24
+Accept: 24
+Ref: R9
+D: 2
+Id: aqa-maths-3.3-028
+
+Q: Interest paid only on the original amount, the same each year, is called what?
+A: Simple interest
+Accept: Simple
+Ref: R9
+D: 1
+Id: aqa-maths-3.3-029
+
+Q: 4 workers take 6 days to paint a house. How long would 3 workers take at the same rate?
+A: 8 days
+Accept: 8
+Ref: R10
+D: 3
+Note: Inverse proportion: 4 × 6 = 24 worker-days.
+Id: aqa-maths-3.3-030
+
+Q: When one quantity doubles, the other halves. What type of proportion is this?
+A: Inverse proportion
+Accept: Inverse; indirect proportion; inversely proportional
+Ref: R10
+D: 1
+Id: aqa-maths-3.3-031
+
+Q: y is directly proportional to x, and y = 12 when x = 3. Find y when x = 5.
+A: 20
+Accept: y = 20
+Ref: R10
+D: 2
+Id: aqa-maths-3.3-032
+
+Q: A car travels 150 km in 2.5 hours. What is its average speed?
+A: 60 km/h
+Accept: 60; 60 kilometres per hour; 60 kph
+Ref: R11
+D: 2
+Id: aqa-maths-3.3-033
+
+Q: Speed, density and pressure are measured in what kind of units?
+A: Compound units
+Accept: Compound
+Ref: R11
+D: 1
+Id: aqa-maths-3.3-034
+
+Q: Pressure = force ÷ area. With force in newtons and area in m², what is the unit of pressure?
+A: Newtons per square metre
+Accept: N/m²; pascals; Pa; newtons per metre squared
+Ref: R11
+D: 1
+Id: aqa-maths-3.3-035
+
+Q: Shop X sells 6 eggs for £1.20. Shop Y sells 10 eggs for £1.90. Which shop is cheaper per egg?
+A: Shop Y
+Accept: Y
+Ref: R11
+D: 3
+Note: X is 20p per egg; Y is 19p per egg.
+Id: aqa-maths-3.3-036
+
+Q: Two shapes have the same angles and their sides are in the same ratio. What are they called?
+A: Similar
+Accept: Similar shapes; mathematically similar
+Ref: R12
+D: 1
+Id: aqa-maths-3.3-037
+
+Q: Two squares have sides 2 cm and 6 cm. Write the ratio of their areas in its simplest form.
+A: 1 : 9
+Accept: 1:9
+Ref: R12
+D: 2
+Note: The areas are 4 cm² and 36 cm².
+Id: aqa-maths-3.3-038
+
+Q: Two similar shapes have areas in the ratio 4 : 9. What is the ratio of their lengths?
+A: 2 : 3
+Accept: 2:3
+Ref: R12
+D: 3
+HT: yes
+Id: aqa-maths-3.3-039
+
+Q: A right-angled triangle is enlarged by scale factor 3. How does tan of a corresponding angle change?
+A: Unchanged
+Accept: Stays the same; same; equal; no change
+Ref: R12
+D: 3
+Note: Similar triangles have equal angles, so their trigonometric ratios are equal.
+Id: aqa-maths-3.3-040
+
+Q: The equation y = 5x describes what type of proportion between y and x?
+A: Direct proportion
+Accept: Direct; directly proportional
+Ref: R13
+D: 1
+Id: aqa-maths-3.3-041
+
+Q: If y is inversely proportional to x, then y is directly proportional to what?
+A: 1/x
+Accept: the reciprocal of x; one over x
+Ref: R13
+D: 1
+Id: aqa-maths-3.3-042
+
+Q: y is directly proportional to x², and y = 18 when x = 3. Write an equation for y in terms of x.
+A: y = 2x²
+Accept: 2x²
+Ref: R13
+D: 3
+HT: yes
+Id: aqa-maths-3.3-043
+
+Q: y is inversely proportional to x, and y = 6 when x = 4. Write an equation for y in terms of x.
+A: y = 24/x
+Accept: 24/x; xy = 24
+Ref: R13
+D: 2
+HT: yes
+Id: aqa-maths-3.3-044
+
+Q: On a distance–time graph, what does the gradient represent?
+A: Speed
+Accept: Velocity
+Ref: R14
+D: 1
+Id: aqa-maths-3.3-045
+
+Q: On a velocity–time graph, what does the gradient represent?
+A: Acceleration
+Ref: R14
+D: 1
+Id: aqa-maths-3.3-046
+
+Q: What is the name of the graph of y = k/x, which shows inverse proportion?
+A: Reciprocal graph
+Accept: Reciprocal; hyperbola
+Ref: R14
+D: 2
+Id: aqa-maths-3.3-047
+
+Q: A straight-line graph of cost (£) against mass (kg) passes through (0, 0) and (4, 10). What does its gradient show?
+A: £2.50 per kg
+Accept: 2.5 pounds per kilogram; cost per kg is £2.50; 2.5
+Ref: R14
+D: 3
+Id: aqa-maths-3.3-048
+
+Q: The gradient of the tangent at a point on a curve gives what?
+A: Instantaneous rate of change
+Accept: Rate of change at that point
+Ref: R15
+D: 2
+HT: yes
+Id: aqa-maths-3.3-049
+
+Q: The gradient of a chord joining two points on a curve gives what?
+A: Average rate of change
+Accept: Mean rate of change
+Ref: R15
+D: 2
+HT: yes
+Id: aqa-maths-3.3-050
+
+Q: On a distance–time graph (metres, seconds), the tangent at t = 2 passes through (2, 10) and (4, 18). Estimate the speed at t = 2.
+A: 4 m/s
+Accept: 4; 4 metres per second
+Ref: R15
+D: 3
+HT: yes
+Id: aqa-maths-3.3-051
+
+Q: £1000 is invested at 10% compound interest per year. What is it worth after 2 years?
+A: £1210
+Accept: 1210
+Ref: R16
+D: 3
+Note: 1000 × 1.1²; simple interest would wrongly give £1200.
+Id: aqa-maths-3.3-052
+
+Q: Interest earned on both the original amount and on previous interest is called what?
+A: Compound interest
+Accept: Compound
+Ref: R16
+D: 1
+Id: aqa-maths-3.3-053
+
+Q: The loss in value of something, such as a car, by a percentage each year is called what?
+A: Depreciation
+Accept: Depreciate
+Ref: R16
+D: 1
+Id: aqa-maths-3.3-054
+
+Q: A population Pₙ grows by 10% each year. Write an iterative formula for Pₙ₊₁ in terms of Pₙ.
+A: Pₙ₊₁ = 1.1Pₙ
+Accept: 1.1Pₙ; P(n+1) = 1.1P(n)
+Ref: R16
+D: 2
+HT: yes
+Id: aqa-maths-3.3-055
+
+Q: Use xₙ₊₁ = (xₙ + 6) ÷ 2 with x₁ = 2. Find x₃.
+A: 5
+Accept: x₃ = 5
+Ref: R16
+D: 3
+HT: yes
+Note: x₂ = 4, then x₃ = 5.
+Id: aqa-maths-3.3-056

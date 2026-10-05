@@ -360,3 +360,10 @@ foundation, Additional foundation, Higher only); the third column is Higher tier
 Probability and Statistics have no subheadings, so their points are grouped for Category Clash
 (Ratio: units and fractions; ratio and percentages; proportion; rates and growth. Probability:
 experiments; combined events. Statistics: samples and charts; averages and correlation).
+
+**Compressed question data.** The built-in packs are stored inside the single file
+DEFLATE-compressed and base64-encoded, one string per topic (about 40% of the plain size), and a
+small built-in decoder (src/shared/inflate.js, no network, no libraries) unpacks a topic the first
+time it is used. With every board and subject the file would otherwise grow by about 1.5 MB of
+question text; compressed it grows by about 0.6 MB, so it opens faster from school network drives
+and email. Unpacking a topic takes about a millisecond.

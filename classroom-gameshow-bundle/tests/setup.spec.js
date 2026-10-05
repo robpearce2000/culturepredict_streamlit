@@ -152,12 +152,12 @@ test('Higher tier only questions can be left out for a Foundation class', async 
 test('a subject with no built-in pack says so, holds the Start buttons, and takes the teacher\'s own set', async ({ page: first }) => {
   let page = first;
   const log = await openBundle(page);
-  await page.selectOption('#subjectSelect', 'maths');
-  await expect(page.locator('#subjectNote')).toContainText('Built-in AQA-style Maths packs are coming soon');
+  await page.selectOption('#subjectSelect', 'history');
+  await expect(page.locator('#subjectNote')).toContainText('Built-in AQA-style History packs are coming soon');
   await expect(page.locator('#packBtn')).toHaveText('No questions yet');
   for (const id of GAMES) {
     await openGame(page, id);
-    await expect(card(page, id).locator('.packline')).toContainText('No Maths questions yet');
+    await expect(card(page, id).locator('.packline')).toContainText('No History questions yet');
     await expect(card(page, id).locator('.setup-go .btn')).toBeDisabled();
     await page.keyboard.press('Enter');                       // Enter does not start it either
     expect((await state(page, id)).phase).toBe('home');
@@ -166,13 +166,13 @@ test('a subject with no built-in pack says so, holds the Start buttons, and take
     await expect(page.locator('#launcher')).toBeVisible();
     await expect(page.locator('#subjectSelect')).toBeFocused();
   }
-  // the teacher adds a Maths set: the subject is filled in for them
+  // the teacher adds a History set: the subject is filled in for them
   await page.click('#openBank');
-  await expect(page.locator('#bankSubject')).toHaveValue('maths');
+  await expect(page.locator('#bankSubject')).toHaveValue('history');
   await page.fill('#bankName', 'Fractions');
-  await page.fill('#bankText', 'Subject: Maths\nTopic: Fractions\nQ: What is half of three quarters?\nA: Three eighths\nQ: Simplify 6/8\nA: 3/4');
+  await page.fill('#bankText', 'Subject: History\nTopic: Fractions\nQ: What is half of three quarters?\nA: Three eighths\nQ: Simplify 6/8\nA: 3/4');
   await page.click('#bankSave');
-  await expect(page.locator('#bankFormStatus')).toContainText('in every game for Maths');
+  await expect(page.locator('#bankFormStatus')).toContainText('in every game for History');
   await page.keyboard.press('Escape');
   await expect(page.locator('#subjectNote')).toContainText('coming soon');   // still no built-in pack
   await expect(page.locator('#packBtn')).toHaveText('Fractions (2)');
@@ -181,11 +181,11 @@ test('a subject with no built-in pack says so, holds the Start buttons, and take
   await page.click('#ote-startBtn');
   expect((await state(page, 'over-the-edge')).q.topic).toBe('Fractions');
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
-  // it only shows under Maths
+  // it only shows under History
   await page.selectOption('#subjectSelect', 'physics');
   expect((await packLabels(page)).some(l => l.includes('Fractions'))).toBe(false);
   // and can be moved to another subject from the Question bank
-  await page.selectOption('#subjectSelect', 'maths');
+  await page.selectOption('#subjectSelect', 'history');
   await page.click('#openBank');
   await page.selectOption('#bankList select[data-subj]', 'physics');
   await expect(page.locator('#bankList .bank-item')).toHaveCount(0);
@@ -199,11 +199,12 @@ test('the exam board choice is shown and remembered, and a board with no packs y
   let page = first;
   await openBundle(page);
   await page.selectOption('#boardSelect', 'edexcel');
+  await page.selectOption('#subjectSelect', 'geography');
   await expect(page.locator('#boardSelect option:checked')).toHaveText(/Edexcel/);
-  await expect(page.locator('#subjectNote')).toContainText('Built-in Edexcel-style Biology packs are coming soon');
+  await expect(page.locator('#subjectNote')).toContainText('Built-in Edexcel-style Geography packs are coming soon');
   await expect(page.locator('#packBtn')).toHaveText('No questions yet');
   await openGame(page, 'hex-hunt');
-  await expect(page.locator('#hh-pack')).toContainText('No Biology questions yet');
+  await expect(page.locator('#hh-pack')).toContainText('No Geography questions yet');
   page = await reopen(page);
   await expect(page.locator('#boardSelect option:checked')).toHaveText(/Edexcel/);
 });

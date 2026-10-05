@@ -1,0 +1,646 @@
+Board: Edexcel
+Spec: 1BI0
+Topic: 5
+
+Q: Which organisation defines health as complete physical, mental and social well-being?
+A: World Health Organization
+Accept: WHO; World Health Organisation
+Ref: 5.1
+D: 1
+Id: edexcel-bio-5-001
+
+Q: Health is more than the absence of disease. Name the three types of well-being in the WHO definition.
+A: Physical, mental and social
+Accept: Physical, social, mental (any order)
+Ref: 5.1
+D: 2
+Id: edexcel-bio-5-002
+
+Q: Why might a person with no disease still not be healthy, by the WHO definition?
+A: Poor mental or social well-being
+Accept: Not mentally or socially well; lacks mental or social well-being
+Ref: 5.1
+D: 3
+Id: edexcel-bio-5-003
+
+Q: What name is given to a disease that can be passed from one person to another?
+A: Communicable
+Accept: Communicable disease; infectious disease
+Ref: 5.2
+D: 1
+Id: edexcel-bio-5-004
+
+Q: What is the cause of every communicable disease?
+A: Pathogen
+Accept: A pathogen; pathogens; a microorganism that causes disease
+Ref: 5.2
+D: 2
+Id: edexcel-bio-5-005
+
+Q: Coronary heart disease cannot be caught from another person. What type of disease is it?
+A: Non-communicable
+Accept: Non-communicable disease; non-infectious
+Ref: 5.2
+D: 2
+Id: edexcel-bio-5-006
+
+Q: Which group of white blood cells does HIV destroy, making other infections more likely?
+A: Lymphocytes
+Accept: White blood cells; T cells; T lymphocytes; helper T cells
+Ref: 5.3
+D: 2
+Note: Spec wording is "destroys white blood cells"; accept the general term.
+Id: edexcel-bio-5-007
+
+Q: Why are people with HIV more likely to develop tuberculosis?
+A: Weakened immune system
+Accept: Fewer white blood cells; immune system damaged
+Ref: 5.3
+D: 3
+Id: edexcel-bio-5-008
+
+Q: Why can malnutrition make a person more likely to catch infections?
+A: Weakens the immune system
+Accept: Weaker immune system; immune system less effective
+Ref: 5.3
+D: 3
+Id: edexcel-bio-5-009
+
+Q: What is a pathogen?
+A: A disease-causing organism
+Accept: Organism that causes disease; microorganism that causes disease
+Ref: 5.4
+D: 1
+Id: edexcel-bio-5-010
+
+Q: Name the four types of pathogen.
+A: Viruses, bacteria, fungi, protists
+Accept: Any order; virus, bacterium, fungus, protist
+Ref: 5.4
+D: 2
+Id: edexcel-bio-5-011
+
+Q: Which type of pathogen can only reproduce inside a host cell?
+A: Virus
+Accept: Viruses
+Ref: 5.4
+D: 2
+Id: edexcel-bio-5-012
+
+Q: What is the main symptom of cholera?
+A: Diarrhoea
+Accept: Watery diarrhoea
+Ref: 5.5
+D: 1
+Id: edexcel-bio-5-013
+
+Q: Name the fungal disease that causes leaf loss and bark lesions in ash trees.
+A: Chalara ash dieback
+Accept: Ash dieback; Chalara
+Ref: 5.5
+D: 1
+Id: edexcel-bio-5-014
+
+Q: What type of pathogen causes malaria?
+A: Protist
+Accept: Protists; a protist; protozoan
+Ref: 5.5
+D: 1
+Id: edexcel-bio-5-015
+
+Q: Which two parts of the body does malaria damage?
+A: Blood and liver
+Accept: Liver and blood; red blood cells and liver
+Ref: 5.5
+D: 2
+Id: edexcel-bio-5-016
+
+Q: Which condition develops when HIV has destroyed many white blood cells?
+A: AIDS
+Accept: Acquired immunodeficiency syndrome
+Ref: 5.5
+D: 2
+Id: edexcel-bio-5-017
+
+Q: Which bacterium causes stomach ulcers?
+A: Helicobacter
+Accept: Helicobacter pylori; H. pylori
+Ref: 5.5
+D: 1
+Id: edexcel-bio-5-018
+
+Q: Ebola is caused by a virus. Name the type of illness it causes.
+A: Haemorrhagic fever
+Accept: Hemorrhagic fever
+Ref: 5.5
+D: 2
+Id: edexcel-bio-5-019
+
+Q: How is cholera spread?
+A: Contaminated water
+Accept: Water; drinking dirty water; unclean water
+Ref: 5.6
+D: 1
+Id: edexcel-bio-5-020
+
+Q: How is tuberculosis spread from person to person?
+A: Airborne droplets
+Accept: Through the air; airborne; coughs and sneezes
+Ref: 5.6
+D: 1
+Id: edexcel-bio-5-021
+
+Q: Mosquitoes carry malaria between people. What is the general term for an animal that spreads a pathogen?
+A: Vector
+Accept: Animal vector; vectors
+Ref: 5.6
+D: 1
+Id: edexcel-bio-5-022
+
+Q: Give one way to reduce the spread of malaria that targets the vector.
+A: Mosquito nets
+Accept: Insecticide; insect repellent; drain standing water; kill mosquitoes; remove mosquito breeding sites
+Ref: 5.6
+D: 2
+Id: edexcel-bio-5-023
+
+Q: Why does burning fallen leaves of infected ash trees help reduce the spread of ash dieback?
+A: Destroys spores spread by wind
+Accept: Kills fungal spores; stops airborne spores spreading
+Ref: 5.6
+D: 3
+Id: edexcel-bio-5-024
+
+Q: Why must healthcare workers treating Ebola patients wear full protective clothing?
+A: Ebola spreads through body fluids
+Accept: Spread by body fluids; avoid contact with body fluids
+Ref: 5.6
+D: 3
+Id: edexcel-bio-5-025
+
+Q: In which pathway does a virus copy itself straight away and burst the host cell?
+A: Lytic
+Accept: Lytic pathway; lytic cycle
+Ref: 5.7B
+D: 1
+Id: edexcel-bio-5-026
+
+Q: In which pathway does viral genetic material join the host DNA and stay dormant?
+A: Lysogenic
+Accept: Lysogenic pathway; lysogenic cycle
+Ref: 5.7B
+D: 1
+Id: edexcel-bio-5-027
+
+Q: In the lytic pathway, what happens to the host cell when the new viruses are released?
+A: Bursts
+Accept: Lysis; the cell bursts; lyses; splits open
+Ref: 5.7B
+D: 2
+Id: edexcel-bio-5-028
+
+Q: How can a virus in the lysogenic pathway pass into many cells without being active?
+A: Copied when host cell divides
+Accept: Viral DNA replicated with host DNA; copied during cell division
+Ref: 5.7B
+D: 3
+Id: edexcel-bio-5-029
+
+Q: What type of pathogen causes Chlamydia?
+A: Bacterium
+Accept: Bacteria; a bacterium
+Ref: 5.8
+D: 1
+Id: edexcel-bio-5-030
+
+Q: Name one way HIV is spread other than sexual intercourse.
+A: Sharing needles
+Accept: Contaminated needles; blood transfusion; mother to baby; breast milk; infected blood
+Ref: 5.8
+D: 2
+Id: edexcel-bio-5-031
+
+Q: Why do condoms reduce the spread of Chlamydia and HIV?
+A: Barrier stops exchange of body fluids
+Accept: Prevent contact with semen or vaginal fluids; barrier to body fluids
+Ref: 5.8
+D: 3
+Id: edexcel-bio-5-032
+
+Q: Name the waxy layer on a leaf that acts as a barrier to pathogens.
+A: Cuticle
+Accept: Waxy cuticle; leaf cuticle
+Ref: 5.9B
+D: 1
+Id: edexcel-bio-5-033
+
+Q: Which plant cell structure, made of cellulose, forms a barrier against pathogens?
+A: Cell wall
+Accept: Cellulose cell wall
+Ref: 5.9B
+D: 1
+Id: edexcel-bio-5-034
+
+Q: Why does damage to a leaf's cuticle make infection more likely?
+A: Pathogens can enter
+Accept: Removes the barrier so pathogens get in; opening for pathogens
+Ref: 5.9B
+D: 3
+Id: edexcel-bio-5-035
+
+Q: Name the painkiller developed from a chemical found in willow bark.
+A: Aspirin
+Accept: Salicylic acid; salicin
+Ref: 5.10B
+D: 1
+Id: edexcel-bio-5-036
+
+Q: Which heart drug was first extracted from foxglove plants?
+A: Digitalis
+Accept: Digoxin
+Ref: 5.10B
+D: 2
+Id: edexcel-bio-5-037
+
+Q: Why do some plants produce poisons in their leaves?
+A: Deter herbivores
+Accept: Stop animals eating them; defence against pests; deter insects
+Ref: 5.10B
+D: 3
+Id: edexcel-bio-5-038
+
+Q: Why do scientists first rule out environmental causes before testing a sick plant for pathogens?
+A: Environmental factors can cause similar symptoms
+Accept: Could be mineral or nutrient deficiency; could be drought, frost or waterlogging; symptoms may not be due to a pathogen
+Ref: 5.11B
+D: 3
+HT: yes
+Id: edexcel-bio-5-039
+
+Q: Name one type of laboratory test used to identify a plant pathogen.
+A: DNA analysis
+Accept: Monoclonal antibody test; diagnostic kit; culturing the pathogen; microscopy; antibody test
+Ref: 5.11B
+D: 2
+HT: yes
+Id: edexcel-bio-5-040
+
+Q: Name one visible symptom a farmer could look for to detect plant disease in the field.
+A: Spots on leaves
+Accept: Stunted growth; discoloured or yellowing leaves; rotting; wilting; malformed stems or leaves; growths or galls; leaf loss; bark lesions; pests visible
+Note: Accept any sensible visible abnormality of the plant.
+Ref: 5.11B
+D: 2
+HT: yes
+Id: edexcel-bio-5-041
+
+Q: Name the tiny hairs that sweep mucus out of the airways.
+A: Cilia
+Accept: Cilium
+Ref: 5.12
+D: 1
+Id: edexcel-bio-5-042
+
+Q: Which acid in the stomach kills pathogens in food?
+A: Hydrochloric acid
+Accept: HCl
+Ref: 5.12
+D: 1
+Id: edexcel-bio-5-043
+
+Q: Name the enzymes in tears that break down bacterial cell walls.
+A: Lysozymes
+Accept: Lysozyme
+Ref: 5.12
+D: 2
+Id: edexcel-bio-5-044
+
+Q: Why do smokers get more chest infections than non-smokers?
+A: Cilia damaged
+Accept: Cilia stop working; mucus not removed; cilia paralysed
+Ref: 5.12
+D: 3
+Id: edexcel-bio-5-045
+
+Q: What name is given to the molecules on a pathogen's surface that trigger an immune response?
+A: Antigens
+Accept: Antigen
+Ref: 5.13
+D: 1
+Id: edexcel-bio-5-046
+
+Q: What do lymphocytes produce when antigens trigger an immune response?
+A: Antibodies
+Accept: Antibody
+Ref: 5.13
+D: 1
+Id: edexcel-bio-5-047
+
+Q: Why is the secondary response to an antigen faster than the primary response?
+A: Memory lymphocytes already present
+Accept: Memory cells recognise the antigen; memory cells quickly make antibodies
+Ref: 5.13
+D: 3
+Id: edexcel-bio-5-048
+
+Q: What does a vaccine contain?
+A: Inactive form of a pathogen
+Accept: Dead or weakened pathogen; inactive pathogen; antigens from a pathogen
+Ref: 5.14
+D: 1
+Id: edexcel-bio-5-049
+
+Q: After immunisation, which cells stay in the blood to give long-term protection?
+A: Memory lymphocytes
+Accept: Memory cells
+Ref: 5.14
+D: 2
+Id: edexcel-bio-5-050
+
+Q: Why does a vaccinated person not become ill when they meet the live pathogen?
+A: Memory cells make antibodies quickly
+Accept: Fast secondary response; antibodies made before symptoms develop
+Ref: 5.14
+D: 3
+Id: edexcel-bio-5-051
+
+Q: What is the protection of unvaccinated people when most of a population is vaccinated called?
+A: Herd immunity
+Ref: 5.15B
+D: 1
+Id: edexcel-bio-5-052
+
+Q: Give one disadvantage of immunisation.
+A: Side effects
+Accept: Mild illness; allergic reaction; sore arm; not 100% effective; needs boosters
+Ref: 5.15B
+D: 2
+Id: edexcel-bio-5-053
+
+Q: Why does herd immunity protect babies too young to be vaccinated?
+A: Pathogen less likely to reach them
+Accept: Fewer infected people to pass it on; disease cannot spread easily
+Ref: 5.15B
+D: 3
+Id: edexcel-bio-5-054
+
+Q: What type of pathogen can antibiotics be used to treat?
+A: Bacteria
+Accept: Bacterium; bacterial infections
+Ref: 5.16
+D: 1
+Id: edexcel-bio-5-055
+
+Q: Why can antibiotics kill bacteria without harming human cells?
+A: Inhibit processes found only in bacteria
+Accept: Target bacterial cell processes not in human cells; target bacterial cell walls
+Ref: 5.16
+D: 3
+Id: edexcel-bio-5-056
+
+Q: Why do antibiotics not work against viral infections such as flu?
+A: Viruses lack the cell processes targeted
+Accept: Viruses are not cells; viruses live inside host cells; viruses have no cell processes to inhibit
+Ref: 5.16
+D: 3
+Id: edexcel-bio-5-057
+
+Q: Name the machine that sterilises growth medium using steam at high pressure.
+A: Autoclave
+Ref: 5.17B
+D: 1
+Id: edexcel-bio-5-058
+
+Q: How is an inoculating loop sterilised before use?
+A: Heat in a Bunsen flame
+Accept: Pass through a flame; flame until red hot
+Ref: 5.17B
+D: 2
+Id: edexcel-bio-5-059
+
+Q: Why should a Petri dish lid be kept on and taped?
+A: Stops microorganisms from the air contaminating it
+Accept: Prevents contamination; keeps out airborne microbes
+Ref: 5.17B
+D: 2
+Id: edexcel-bio-5-060
+
+Q: In the antiseptic practical, what is the clear area around a disc where bacteria have not grown called?
+A: Inhibition zone
+Accept: Zone of inhibition; clear zone
+Ref: 5.18B
+RP: 5.18B
+D: 1
+Id: edexcel-bio-5-061
+
+Q: Paper discs soaked in different antiseptics are placed on a bacterial lawn. What is the independent variable?
+A: Type of antiseptic
+Accept: Antiseptic used; different antiseptics
+Ref: 5.18B
+RP: 5.18B
+D: 2
+Id: edexcel-bio-5-062
+
+Q: What measurement shows which antiseptic is most effective against the bacteria?
+A: Diameter of the clear zone
+Accept: Area of inhibition zone; size of clear zone; radius of clear zone
+Ref: 5.18B
+RP: 5.18B
+D: 2
+Id: edexcel-bio-5-063
+
+Q: Why is a disc soaked in sterile water included in the antiseptic practical?
+A: Control
+Accept: As a control; shows the effect is due to the antiseptic
+Ref: 5.18B
+RP: 5.18B
+D: 3
+Id: edexcel-bio-5-064
+
+Q: Which formula gives the area of a circular clear zone of radius r?
+A: πr²
+Accept: pi r squared; π × r × r
+Ref: 5.19B
+D: 1
+Id: edexcel-bio-5-065
+
+Q: Using π = 3, what is the area of a clear zone with radius 4 mm?
+A: 48 mm²
+Accept: 48 square millimetres; 48
+Ref: 5.19B
+D: 2
+Id: edexcel-bio-5-066
+
+Q: Using π = 3, what is the area of a clear zone with diameter 10 mm?
+A: 75 mm²
+Accept: 75 square millimetres; 75
+Ref: 5.19B
+D: 3
+Note: Halve the diameter to get the radius (5 mm) first.
+Id: edexcel-bio-5-067
+
+Q: In which stage of drug testing is a new drug first tested on cells, tissues and live animals?
+A: Preclinical testing
+Accept: Preclinical; preclinical trials
+Ref: 5.20
+D: 1
+Id: edexcel-bio-5-068
+
+Q: Which stage of drug development tests the drug on human volunteers?
+A: Clinical testing
+Accept: Clinical trials; clinical
+Ref: 5.20
+D: 1
+Id: edexcel-bio-5-069
+
+Q: What is given to the control group in a clinical trial instead of the drug?
+A: Placebo
+Accept: A placebo; dummy pill
+Ref: 5.20
+D: 2
+Id: edexcel-bio-5-070
+
+Q: Why is a double-blind trial used when testing a new drug?
+A: Prevents bias
+Accept: Removes bias; neither doctor nor patient influences results
+Ref: 5.20
+D: 3
+Id: edexcel-bio-5-071
+
+Q: Which two cells are fused to make a hybridoma cell?
+A: Lymphocyte and tumour cell
+Accept: Lymphocyte and cancer cell; B cell and myeloma cell; white blood cell and tumour cell
+Ref: 5.21B
+D: 2
+HT: yes
+Id: edexcel-bio-5-072
+
+Q: What is the name of the cell formed by fusing a lymphocyte with a tumour cell?
+A: Hybridoma
+Accept: Hybridoma cell
+Ref: 5.21B
+D: 1
+HT: yes
+Id: edexcel-bio-5-073
+
+Q: Why is a lymphocyte fused with a tumour cell to make monoclonal antibodies?
+A: Lymphocytes cannot divide but tumour cells can
+Accept: Tumour cell lets it divide; lymphocyte gives the antibody, tumour cell gives division
+Ref: 5.21B
+D: 3
+HT: yes
+Id: edexcel-bio-5-074
+
+Q: Which hormone do monoclonal antibodies detect in a pregnancy test?
+A: hCG
+Accept: Human chorionic gonadotrophin; HCG
+Ref: 5.22B
+D: 1
+HT: yes
+Id: edexcel-bio-5-075
+
+Q: Monoclonal antibodies with a radioactive label can show the position of which blockage in blood vessels?
+A: Blood clots
+Accept: Clot; blood clot
+Ref: 5.22B
+D: 2
+HT: yes
+Id: edexcel-bio-5-076
+
+Q: Why do anti-cancer drugs attached to monoclonal antibodies cause fewer side effects than chemotherapy?
+A: Only target cancer cells
+Accept: Healthy cells not harmed; bind only to cancer cell antigens
+Ref: 5.22B
+D: 3
+HT: yes
+Id: edexcel-bio-5-077
+
+Q: What name is given to diseases of the heart and blood vessels?
+A: Cardiovascular diseases
+Accept: Cardiovascular disease; CVD
+Ref: 5.23
+D: 1
+Id: edexcel-bio-5-078
+
+Q: Name one non-communicable disease influenced by nutrition.
+A: Obesity
+Accept: Type 2 diabetes; scurvy; rickets; anaemia; kwashiorkor; malnutrition
+Ref: 5.23
+D: 2
+Id: edexcel-bio-5-079
+
+Q: Why is it hard to say what causes most non-communicable diseases?
+A: Caused by interaction of many factors
+Accept: Several factors interact; many risk factors involved
+Ref: 5.23
+D: 3
+Id: edexcel-bio-5-080
+
+Q: A person has a mass of 72 kg and a height of 1.5 m. What is their BMI?
+A: 32
+Accept: 32 kg/m²
+Ref: 5.24
+D: 3
+Note: 1.5² = 2.25 and 72 ÷ 2.25 = 32.
+Id: edexcel-bio-5-081
+
+Q: What is the waist : hip ratio for a waist of 80 cm and hips of 100 cm?
+A: 0.8
+Accept: 0.80; 4:5
+Ref: 5.24
+D: 2
+Id: edexcel-bio-5-082
+
+Q: Long-term heavy drinking of alcohol mainly damages which organ?
+A: Liver
+Ref: 5.24
+D: 1
+Id: edexcel-bio-5-083
+
+Q: Name the liver disease in which scar tissue replaces healthy liver tissue after heavy drinking.
+A: Cirrhosis
+Accept: Liver cirrhosis
+Ref: 5.24
+D: 1
+Id: edexcel-bio-5-084
+
+Q: Which addictive substance in tobacco smoke raises heart rate and blood pressure?
+A: Nicotine
+Ref: 5.24
+D: 1
+Id: edexcel-bio-5-085
+
+Q: Why does lack of exercise combined with a high-energy diet lead to obesity?
+A: Energy intake exceeds energy used
+Accept: More energy taken in than used; excess stored as fat
+Ref: 5.24
+D: 3
+Id: edexcel-bio-5-086
+
+Q: Name the drugs taken for life to lower blood cholesterol and reduce cardiovascular disease.
+A: Statins
+Accept: Statin
+Ref: 5.25
+D: 1
+Id: edexcel-bio-5-087
+
+Q: Name the surgical procedure in which a mesh tube holds a narrowed artery open.
+A: Stent
+Accept: Inserting a stent; stents
+Ref: 5.25
+D: 1
+Id: edexcel-bio-5-088
+
+Q: Name the operation that uses a blood vessel from elsewhere to bypass a blocked coronary artery.
+A: Coronary bypass surgery
+Accept: Bypass; heart bypass; coronary artery bypass graft; CABG
+Ref: 5.25
+D: 2
+Id: edexcel-bio-5-089
+
+Q: Why must statins be taken for life rather than as a short course?
+A: Cholesterol rises again when they stop
+Accept: Effect wears off when stopped; cholesterol level goes back up
+Ref: 5.25
+D: 3
+Id: edexcel-bio-5-090

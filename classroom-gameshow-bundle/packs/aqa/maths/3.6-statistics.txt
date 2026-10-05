@@ -1,0 +1,391 @@
+Board: AQA
+Spec: 8300
+Topic: 3.6
+
+# S1 Samples and populations
+
+Q: A survey asks some of a school's pupils. What word describes the whole group the survey wants to find out about?
+A: Population
+Ref: S1
+D: 1
+Id: aqa-maths-3.6-001
+
+Q: What name is given to a sample in which every member of the population has an equal chance of being chosen?
+A: Random sample
+Accept: Random; Simple random sample
+Ref: S1
+D: 1
+Id: aqa-maths-3.6-002
+
+Q: A survey about how often people exercise only asks people leaving a gym. What word describes this sample?
+A: Biased
+Accept: Unrepresentative; Not representative
+Ref: S1
+D: 2
+Note: Gym-goers are likely to exercise more than the population as a whole.
+Id: aqa-maths-3.6-003
+
+Q: What happens to the reliability of an estimate from a sample when the sample size is increased?
+A: Reliability increases
+Accept: More reliable; It becomes more reliable; Increases
+Ref: S1
+D: 2
+Id: aqa-maths-3.6-004
+
+Q: In a sample of 50 pupils, 10 walk to school. Estimate how many of the school's 600 pupils walk to school.
+A: 120
+Ref: S1
+D: 2
+Id: aqa-maths-3.6-005
+
+Q: A sample of 200 bulbs has 6 faulty ones. Estimate the number of faulty bulbs in a batch of 5000.
+A: 150
+Ref: S1
+D: 3
+Note: 6/200 = 3%, and 3% of 5000 = 150.
+
+# S2 Tables, charts and diagrams
+Id: aqa-maths-3.6-006
+
+Q: Name the chart for ungrouped discrete data where each value has a thin vertical line whose height is its frequency.
+A: Vertical line chart
+Accept: Line chart; Stick graph; Vertical line graph
+Ref: S2
+D: 1
+Id: aqa-maths-3.6-007
+
+Q: What type of graph joins plotted points with straight lines to show how a quantity changes over time?
+A: Line graph
+Accept: Time series graph; Time series; Time series line graph
+Ref: S2
+D: 1
+Id: aqa-maths-3.6-008
+
+Q: In a bar chart for categorical data, what should be left between the bars?
+A: Gaps
+Accept: Equal gaps; Spaces; Equal spaces
+Ref: S2
+D: 1
+Id: aqa-maths-3.6-009
+
+Q: Name the chart that best shows each category as a proportion of the whole, using sectors of a circle.
+A: Pie chart
+Ref: S2
+D: 1
+Id: aqa-maths-3.6-010
+
+Q: In a pictogram, one symbol represents 8 cars. How many cars are shown by 3.5 symbols?
+A: 28
+Accept: 28 cars
+Ref: S2
+D: 2
+Id: aqa-maths-3.6-011
+
+Q: Of 90 pupils, 30 chose maths as their favourite subject. What angle is the maths sector in a pie chart?
+A: 120°
+Accept: 120; 120 degrees
+Ref: S2
+D: 2
+Id: aqa-maths-3.6-012
+
+Q: Two sectors of a pie chart have angles 80° and 150°. What is the angle of the only other sector?
+A: 130°
+Accept: 130; 130 degrees
+Ref: S2
+D: 2
+Id: aqa-maths-3.6-013
+
+Q: Monthly sales: Jan 20, Feb 25, Mar 30, Apr 35. If the trend continues, what are May's sales?
+A: 40
+Ref: S2
+D: 2
+Id: aqa-maths-3.6-014
+
+Q: In a pie chart, a 90° sector represents 15 people. How many people are shown in the whole pie chart?
+A: 60
+Accept: 60 people
+Ref: S2
+D: 3
+Note: 90° is a quarter of 360°, so the total is 4 × 15.
+
+# S3 Histograms and cumulative frequency
+Id: aqa-maths-3.6-015
+
+Q: On a histogram with unequal class widths, what is plotted on the vertical axis?
+A: Frequency density
+Ref: S3
+D: 1
+HT: yes
+Id: aqa-maths-3.6-016
+
+Q: What is the formula for frequency density in a histogram?
+A: Frequency ÷ class width
+Accept: Frequency / class width; Frequency divided by class width
+Ref: S3
+D: 2
+HT: yes
+Id: aqa-maths-3.6-017
+
+Q: The class 10 < x ≤ 30 has a frequency of 40. What is its frequency density?
+A: 2
+Ref: S3
+D: 3
+HT: yes
+Note: The class width is 20, not 30.
+Id: aqa-maths-3.6-018
+
+Q: On a histogram, the class 20 < t ≤ 25 has a frequency density of 6. What is its frequency?
+A: 30
+Ref: S3
+D: 3
+HT: yes
+Note: Class width is 5; frequency = frequency density × class width.
+Id: aqa-maths-3.6-019
+
+Q: In a histogram, what does the area of each bar represent?
+A: Frequency
+Accept: The frequency of the class
+Ref: S3
+D: 1
+HT: yes
+Id: aqa-maths-3.6-020
+
+Q: On a cumulative frequency graph, each point is plotted at which value of its class?
+A: Upper class boundary
+Accept: Upper bound; Upper boundary; End of the class
+Ref: S3
+D: 2
+HT: yes
+Note: A common error is plotting at the midpoint.
+Id: aqa-maths-3.6-021
+
+Q: A cumulative frequency graph shows 100 students. At what cumulative frequency do you read the lower quartile?
+A: 25
+Accept: 25.25
+Ref: S3
+D: 2
+HT: yes
+
+# S4 Averages, spread and types of data
+Id: aqa-maths-3.6-022
+
+Q: What is the mode of 2, 3, 3, 5, 7, 3, 5?
+A: 3
+Ref: S4
+D: 1
+Id: aqa-maths-3.6-023
+
+Q: What is the range of 12, 5, 19, 8?
+A: 14
+Ref: S4
+D: 1
+Id: aqa-maths-3.6-024
+
+Q: What name is given to a value that is much bigger or smaller than the rest of the data?
+A: Outlier
+Accept: Anomaly; Extreme value
+Ref: S4
+D: 1
+Id: aqa-maths-3.6-025
+
+Q: What is the name for data you collect yourself, for example by your own survey?
+A: Primary data
+Accept: Primary
+Ref: S4
+D: 1
+Id: aqa-maths-3.6-026
+
+Q: What is the name for data collected by someone else, for example from the internet?
+A: Secondary data
+Accept: Secondary
+Ref: S4
+D: 1
+Id: aqa-maths-3.6-027
+
+Q: Height can take any value within a range. What type of data is it?
+A: Continuous
+Accept: Continuous data
+Ref: S4
+D: 1
+Id: aqa-maths-3.6-028
+
+Q: Number of siblings can only take whole number values. What type of data is it?
+A: Discrete
+Accept: Discrete data
+Ref: S4
+D: 1
+Id: aqa-maths-3.6-029
+
+Q: For grouped data, what name is given to the class with the highest frequency?
+A: Modal class
+Ref: S4
+D: 1
+Id: aqa-maths-3.6-030
+
+Q: What is the median of 3, 7, 2, 9, 5?
+A: 5
+Ref: S4
+D: 2
+Note: Order the values first: 2, 3, 5, 7, 9.
+Id: aqa-maths-3.6-031
+
+Q: What is the mean of 4, 6, 8, 10, 12?
+A: 8
+Ref: S4
+D: 2
+Id: aqa-maths-3.6-032
+
+Q: To estimate the mean from grouped data, which value of each class do you multiply by its frequency?
+A: Midpoint
+Accept: Mid-point; Midpoint of the class; Class midpoint
+Ref: S4
+D: 2
+Id: aqa-maths-3.6-033
+
+Q: Five numbers have a mean of 7. Four of them are 4, 6, 8 and 9. What is the fifth number?
+A: 8
+Ref: S4
+D: 3
+Note: Total is 5 × 7 = 35; 35 − 27 = 8.
+Id: aqa-maths-3.6-034
+
+Q: Scores: 1 scored by 2 people, 2 scored by 3 people, 3 scored by 5 people. What is the mean score?
+A: 2.3
+Accept: 23/10
+Ref: S4
+D: 3
+Note: Total 23 divided by 10 people, not by 3.
+Id: aqa-maths-3.6-035
+
+Q: For the data 6, 7, 7, 8, 52, which average, mean or median, is affected more by the 52?
+A: Mean
+Ref: S4
+D: 3
+Id: aqa-maths-3.6-036
+
+Q: In a box plot, what does the line inside the box show?
+A: Median
+Accept: The median
+Ref: S4
+D: 1
+HT: yes
+Id: aqa-maths-3.6-037
+
+Q: The lower quartile is 12 and the upper quartile is 20. What is the interquartile range?
+A: 8
+Ref: S4
+D: 2
+HT: yes
+Id: aqa-maths-3.6-038
+
+Q: Class A has median 60, IQR 10. Class B has median 55, IQR 20. Which class's marks are more consistent?
+A: Class A
+Accept: A
+Ref: S4
+D: 3
+HT: yes
+Note: The smaller IQR shows less spread, so more consistent.
+
+# S5 Describing a population
+Id: aqa-maths-3.6-039
+
+Q: A shop wants to know which shoe size to stock most of. Which average should it use?
+A: Mode
+Accept: The mode
+Ref: S5
+D: 2
+Id: aqa-maths-3.6-040
+
+Q: Most workers at a firm earn £20 000 but the owner earns £500 000. Which average, mean or median, best shows a typical wage?
+A: Median
+Accept: The median
+Ref: S5
+D: 2
+Note: The one very large wage pulls the mean upwards.
+Id: aqa-maths-3.6-041
+
+Q: In a class, 6 of the 30 pupils are left-handed. What percentage of the class is left-handed?
+A: 20%
+Accept: 20; 20 per cent
+Ref: S5
+D: 2
+Id: aqa-maths-3.6-042
+
+Q: 20 girls have a mean score of 60 and 10 boys have a mean score of 90. What is the mean of all 30?
+A: 70
+Ref: S5
+D: 3
+Note: Not 75: find the totals 1200 + 900 = 2100, then divide by 30.
+
+# S6 Scatter graphs and correlation
+Id: aqa-maths-3.6-043
+
+Q: Taller people tend to have longer arms. What type of correlation is this?
+A: Positive
+Accept: Positive correlation
+Ref: S6
+D: 1
+Id: aqa-maths-3.6-044
+
+Q: As a car gets older, its value tends to fall. What type of correlation is this?
+A: Negative
+Accept: Negative correlation
+Ref: S6
+D: 1
+Id: aqa-maths-3.6-045
+
+Q: Name the straight line drawn on a scatter graph to show the general trend of the points.
+A: Line of best fit
+Accept: Best fit line; Trend line
+Ref: S6
+D: 1
+Id: aqa-maths-3.6-046
+
+Q: The points on a scatter graph lie close to a straight line sloping downwards. Describe the correlation.
+A: Strong negative
+Accept: Strong negative correlation
+Ref: S6
+D: 2
+Id: aqa-maths-3.6-047
+
+Q: Ice cream sales and sunburn cases show positive correlation. What does correlation alone not prove?
+A: Causation
+Accept: Cause; That one causes the other
+Ref: S6
+D: 2
+Id: aqa-maths-3.6-048
+
+Q: What is it called when you use a line of best fit to estimate a value inside the range of the data?
+A: Interpolation
+Accept: Interpolating; Interpolate
+Ref: S6
+D: 2
+Id: aqa-maths-3.6-049
+
+Q: What is it called when you use a line of best fit to predict a value outside the range of the data?
+A: Extrapolation
+Accept: Extrapolating; Extrapolate
+Ref: S6
+D: 2
+Id: aqa-maths-3.6-050
+
+Q: A line of best fit is y = 2x + 10, where x is hours revised and y is test score. Predict the score for 15 hours.
+A: 40
+Ref: S6
+D: 2
+Id: aqa-maths-3.6-051
+
+Q: A line of best fit passes through (0, 10) and (5, 20). Use it to predict y when x = 8.
+A: 26
+Accept: y = 26
+Ref: S6
+D: 3
+Note: Gradient is 10 ÷ 5 = 2, so y = 2x + 10.
+Id: aqa-maths-3.6-052
+
+Q: Why is a prediction made by extrapolation less reliable than one made by interpolation?
+A: Trend may not continue beyond the data
+Accept: Outside the range of the data; The pattern may change outside the data
+Ref: S6
+D: 3
+Id: aqa-maths-3.6-053

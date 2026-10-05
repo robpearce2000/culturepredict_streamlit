@@ -112,13 +112,13 @@ CGB.bank = (() => {
     const pack = {
       id: p.id, builtin: true, board, subject: p.subject, specCode: p.specCode, specVersion: DATA.specs[p.board + ' ' + p.specCode] || '',
       topic: p.topic, ref: p.ref, order: p.order, subtopics: p.subtopics, course: SPEC_NAMES[p.specCode] || '',
-      name: `${p.topic} (${style} GCSE ${course ? course.slice(0, -2) : sj} ${p.specCode}, ${p.ref})`, short: course + p.topic, count: p.q.length
+      name: `${p.topic} (${style} GCSE ${course ? course.slice(0, -2) : sj} ${p.specCode}, ${p.ref})`, short: course + p.topic, count: p.n
     };
     let qs = null;   // expanded the first time the pack is used
     Object.defineProperty(pack, 'questions', {
       enumerable: true,
       get() {
-        if (!qs) qs = p.q.map(r => {
+        if (!qs) qs = (p.q || CGB.unpackJSON(p.z)).map(r => {
           const q = { id: r[0], board: p.board, subject: sj, specCode: p.specCode, specRef: r[1], topic: p.topic, subtopic: p.subtopics[r[2]] || p.topic, difficulty: r[3], tier: r[4] ? 'Higher' : 'Foundation and Higher', q: r[5], a: r[6], accept: r[7] ? r[7].split(';') : [], hexOk: !!r[8], notes: r[9] || '' };
           if (r[10]) Object.assign(q, r[10]);
           return q;

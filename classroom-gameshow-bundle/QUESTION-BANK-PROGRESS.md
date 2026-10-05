@@ -70,13 +70,29 @@ Removed / Rewritten / Added = changes made in checking; Flagged = items in QUEST
 | AQA Physics 4.6 Waves | 39 | 55 | 58 | 0 | 10 | 3 | 0 | Done |
 | AQA Physics 4.7 Magnetism and electromagnetism | 30 | 48 | 48 | 0 | 3 | 0 | 0 | Done |
 | AQA Physics 4.8 Space physics | 30 | 42 | 44 | 5 | 6 | 7 | 0 | Done |
+| Edexcel Biology 1 Key concepts in biology | 51 | 62 | 64 | 0 | 15 | 2 | 0 | Done |
+| Edexcel Biology 2 Cells and control | 51 | 62 | 62 | 0 | 2 | 0 | 0 | Done |
+| Edexcel Biology 3 Genetics | 69 | 83 | 83 | 0 | 8 | 0 | 0 | Done |
+| Edexcel Biology 4 Natural selection and genetic modification | 42 | 51 | 52 | 0 | 6 | 1 | 0 | Done |
+| Edexcel Biology 5 Health, disease and the development of medicines | 75 | 88 | 90 | 0 | 7 | 2 | 0 | Done |
+| Edexcel Biology 6 Plant structures and their functions | 48 | 55 | 55 | 1 | 6 | 1 | 0 | Done |
+| Edexcel Biology 7 Animal coordination, control and homeostasis | 66 | 76 | 76 | 1 | 7 | 1 | 0 | Done |
+| Edexcel Biology 8 Exchange and transport in animals | 36 | 47 | 47 | 0 | 10 | 0 | 0 | Done |
+| Edexcel Biology 9 Ecosystems and material cycles | 57 | 68 | 68 | 0 | 5 | 0 | 0 | Done |
+| AQA Maths 3.1 Number | 48 | 59 | 62 | 0 | 5 | 3 | 0 | Done |
+| AQA Maths 3.2 Algebra | 75 | 134 | 91 | 43 | 2 | 0 | 0 | Done |
+| AQA Maths 3.3 Ratio, proportion and rates of change | 48 | 56 | 56 | 0 | 4 | 0 | 0 | Done |
+| AQA Maths 3.4 Geometry and measures | 75 | 93 | 94 | 0 | 6 | 1 | 0 | Done |
+| AQA Maths 3.5 Probability | 30 | 46 | 46 | 0 | 2 | 0 | 1 | Done |
+| AQA Maths 3.6 Statistics | 30 | 52 | 53 | 0 | 2 | 1 | 0 | Done |
 
 Topic 4.8 "Key ideas" in the AQA science specifications is a list of cross-cutting ideas examined
 through the other topics, not a topic of its own, so it has no pack (see DECISIONS.md).
 
-Totals: AQA sciences, 25 packs, 1,425 questions.
+Totals so far: AQA sciences, 25 packs, 1,425 questions; Edexcel Biology, 9 packs, 597 questions;
+AQA Maths, 6 packs, 402 questions.
 
 ## Next
 
-Pearson Edexcel sciences (specifications to fetch), AQA and
-Edexcel Maths, Geography, History (the brief's order).
+Edexcel Chemistry and Physics (being written), Edexcel Maths, then Geography (AQA, Edexcel A,
+Edexcel B) and History (AQA, Edexcel), in the brief's order.

@@ -1,0 +1,542 @@
+Board: Edexcel
+Spec: 1BI0
+Topic: 7
+
+Q: How are hormones transported from endocrine glands to their target organs?
+A: In the blood
+Accept: Bloodstream; Blood plasma; Plasma
+Ref: 7.1
+D: 1
+Id: edexcel-bio-7-001
+
+Q: Which endocrine gland at the base of the brain releases TSH, FSH, LH and ADH?
+A: Pituitary gland
+Accept: Pituitary
+Ref: 7.1
+D: 1
+Id: edexcel-bio-7-002
+
+Q: Which endocrine gland produces insulin and glucagon?
+A: Pancreas
+Ref: 7.1
+D: 1
+Id: edexcel-bio-7-003
+
+Q: Name the two endocrine glands that produce sex hormones.
+A: Ovaries and testes
+Accept: Ovary and testis; Testes and ovaries
+Ref: 7.1
+D: 2
+Id: edexcel-bio-7-004
+
+Q: Adrenalin stimulates the liver to convert which storage carbohydrate into glucose?
+A: Glycogen
+Ref: 7.2
+D: 2
+HT: yes
+Id: edexcel-bio-7-005
+
+Q: Why does adrenalin increasing heart rate help in a fight or flight situation?
+A: More oxygen and glucose to muscles for respiration
+Accept: Faster delivery of oxygen and glucose to muscles; More respiration in muscles
+Ref: 7.2
+D: 3
+HT: yes
+Id: edexcel-bio-7-006
+
+Q: Apart from heart rate, state two effects of adrenalin on the circulation.
+A: Raised blood pressure; more blood flow to muscles
+Accept: Increased blood pressure and increased blood flow to muscles
+Ref: 7.2
+D: 2
+HT: yes
+Id: edexcel-bio-7-007
+
+Q: Thyroxine controls the rate of which body process?
+A: Metabolism
+Accept: Metabolic rate; Basal metabolic rate
+Ref: 7.3
+D: 1
+HT: yes
+Id: edexcel-bio-7-008
+
+Q: Low thyroxine levels stimulate the hypothalamus to release which hormone?
+A: TRH
+Accept: Thyrotropin-releasing hormone; Thyrotrophin-releasing hormone
+Ref: 7.3
+D: 2
+HT: yes
+Id: edexcel-bio-7-009
+
+Q: Which hormone, released by the pituitary gland, stimulates the thyroid to produce thyroxine?
+A: TSH
+Accept: Thyroid-stimulating hormone
+Ref: 7.3
+D: 2
+HT: yes
+Id: edexcel-bio-7-010
+
+Q: When thyroxine levels are normal, how does thyroxine affect TRH and TSH?
+A: Inhibits release of TRH and TSH
+Accept: Stops TRH and TSH being released; Reduces TRH and TSH
+Ref: 7.3
+D: 3
+HT: yes
+Id: edexcel-bio-7-011
+
+Q: Which hormone causes the uterus lining to build up again after menstruation?
+A: Oestrogen
+Accept: Estrogen
+Ref: 7.4
+D: 2
+Id: edexcel-bio-7-012
+
+Q: Which hormone maintains the thick uterus lining after ovulation?
+A: Progesterone
+Ref: 7.4
+D: 2
+Id: edexcel-bio-7-013
+
+Q: What happens to the uterus lining when progesterone levels fall at the end of the cycle?
+A: Lining breaks down and is shed
+Accept: Menstruation; The lining is lost as a period
+Ref: 7.4
+D: 3
+Id: edexcel-bio-7-014
+
+Q: Which hormone from the pituitary gland causes a follicle to mature in the ovary?
+A: FSH
+Accept: Follicle-stimulating hormone; Follicle stimulating hormone
+Ref: 7.5
+D: 1
+HT: yes
+Id: edexcel-bio-7-015
+
+Q: A surge in which hormone triggers ovulation?
+A: LH
+Accept: Luteinising hormone; Luteinizing hormone
+Ref: 7.5
+D: 2
+HT: yes
+Id: edexcel-bio-7-016
+
+Q: How does high progesterone after ovulation stop another egg maturing?
+A: Inhibits release of FSH and LH
+Accept: Inhibits FSH and LH; Stops FSH and LH being released
+Ref: 7.5
+D: 3
+HT: yes
+Id: edexcel-bio-7-017
+
+Q: High oestrogen levels just before ovulation have what effect on LH release?
+A: Stimulates an LH surge
+Accept: Increases LH release; Stimulates LH
+Ref: 7.5
+D: 3
+HT: yes
+Id: edexcel-bio-7-018
+
+Q: Which two hormones does the combined contraceptive pill contain?
+A: Oestrogen and progesterone
+Accept: Estrogen and progesterone; Oestrogen and progestogen
+Ref: 7.6
+D: 1
+Id: edexcel-bio-7-019
+
+Q: The combined pill contains oestrogen. Which pituitary hormone does this inhibit, so no eggs mature?
+A: FSH
+Accept: Follicle-stimulating hormone
+Ref: 7.6
+D: 2
+Id: edexcel-bio-7-020
+
+Q: How does progesterone in the mini-pill make it hard for sperm to reach an egg?
+A: Thickens mucus at the cervix
+Accept: Thicker cervical mucus; Makes cervical mucus thick
+Ref: 7.6
+D: 3
+Id: edexcel-bio-7-021
+
+Q: Name a barrier method of contraception that also protects against sexually transmitted infections.
+A: Condom
+Accept: Condoms; Male condom; Female condom; Femidom
+Ref: 7.7
+D: 1
+Id: edexcel-bio-7-022
+
+Q: Give one advantage of hormonal contraception over condoms.
+A: More effective at preventing pregnancy
+Accept: More reliable; Does not interrupt sex; Lower failure rate
+Ref: 7.7
+D: 2
+Id: edexcel-bio-7-023
+
+Q: Give one disadvantage of hormonal contraception compared with condoms.
+A: No protection against sexually transmitted infections
+Accept: Does not protect against STIs; Side effects; Must remember to take it daily
+Ref: 7.7
+D: 2
+Id: edexcel-bio-7-024
+
+Q: Which drug is given to women who do not ovulate regularly, to help them ovulate?
+A: Clomifene
+Accept: Clomiphene; Clomifene citrate
+Ref: 7.8
+D: 1
+HT: yes
+Id: edexcel-bio-7-025
+
+Q: In IVF, why is the woman given FSH and LH before eggs are collected?
+A: To make several eggs mature
+Accept: Stimulate many eggs to mature; Stimulate egg production
+Ref: 7.8
+D: 3
+HT: yes
+Id: edexcel-bio-7-026
+
+Q: How does clomifene therapy help a woman become pregnant?
+A: Increases FSH and LH, triggering ovulation
+Accept: Stimulates FSH and LH release so eggs mature and are released; Causes ovulation
+Ref: 7.8
+D: 3
+HT: yes
+Id: edexcel-bio-7-027
+
+Q: What term means keeping a constant internal environment in the body?
+A: Homeostasis
+Ref: 7.9
+D: 1
+Id: edexcel-bio-7-028
+
+Q: Name the three internal conditions controlled by homeostasis at GCSE.
+A: Body temperature, blood glucose, water content
+Accept: Temperature, blood sugar and water levels; Temperature, blood glucose concentration and water
+Ref: 7.9
+D: 2
+Id: edexcel-bio-7-029
+
+Q: Why must internal conditions be kept constant even when exercise changes them?
+A: So enzymes and cells work at optimum conditions
+Accept: Keeps enzymes at optimum; Cells function properly
+Ref: 7.9
+D: 3
+Id: edexcel-bio-7-030
+
+Q: What is the normal human core body temperature?
+A: 37 °C
+Accept: 37°C; 37 degrees Celsius; 37
+Ref: 7.10B
+D: 1
+Id: edexcel-bio-7-031
+
+Q: What is the control of body water content called?
+A: Osmoregulation
+Ref: 7.10B
+D: 1
+Id: edexcel-bio-7-032
+
+Q: Why does a core temperature well above 37 °C slow body reactions?
+A: Enzymes denature as the active site changes shape
+Accept: Enzymes denature; Active site changes shape so substrate no longer fits
+Ref: 7.10B
+D: 3
+Id: edexcel-bio-7-033
+
+Q: What happens to red blood cells placed in pure water?
+A: Gain water by osmosis and burst
+Accept: Swell and burst; Burst; Lyse
+Ref: 7.10B
+D: 2
+Id: edexcel-bio-7-034
+
+Q: Which part of the brain monitors blood temperature and controls thermoregulation?
+A: Hypothalamus
+Ref: 7.11B
+D: 1
+Id: edexcel-bio-7-035
+
+Q: Which layer of the skin contains sweat glands and blood vessels?
+A: Dermis
+Ref: 7.11B
+D: 1
+Id: edexcel-bio-7-036
+
+Q: How does sweating cool the body?
+A: Evaporation of sweat transfers heat from skin
+Accept: Sweat evaporates, taking heat energy away; Evaporation
+Ref: 7.11B
+D: 2
+Id: edexcel-bio-7-037
+
+Q: When cold, hair erector muscles contract. Why does this reduce heat loss?
+A: Raised hairs trap an insulating layer of air
+Accept: Traps air for insulation; Trapped air insulates
+Ref: 7.11B
+D: 3
+Id: edexcel-bio-7-038
+
+Q: What is the rapid involuntary contraction of muscles when the body is cold called?
+A: Shivering
+Ref: 7.12B
+D: 1
+Id: edexcel-bio-7-039
+
+Q: Why does shivering raise body temperature?
+A: Muscle respiration releases heat
+Accept: Respiration in muscles transfers heat; Increased respiration releases energy as heat
+Ref: 7.12B
+D: 3
+Id: edexcel-bio-7-040
+
+Q: What is the narrowing of blood vessels near the skin surface called?
+A: Vasoconstriction
+Ref: 7.12B
+D: 1
+HT: yes
+Id: edexcel-bio-7-041
+
+Q: What is the widening of blood vessels near the skin surface called?
+A: Vasodilation
+Accept: Vasodilatation
+Ref: 7.12B
+D: 1
+HT: yes
+Id: edexcel-bio-7-042
+
+Q: Why does vasoconstriction make skin look pale on a cold day?
+A: Less blood flows to capillaries near skin
+Accept: Less blood near the skin surface; Reduced blood flow to skin
+Ref: 7.12B
+D: 3
+HT: yes
+Id: edexcel-bio-7-043
+
+Q: Which hormone lowers blood glucose concentration?
+A: Insulin
+Ref: 7.13
+D: 1
+Id: edexcel-bio-7-044
+
+Q: Describe how insulin lowers blood glucose concentration after a meal.
+A: Glucose enters cells; liver stores it as glycogen
+Accept: Glucose moves into cells and is converted to glycogen
+Ref: 7.13
+D: 2
+Id: edexcel-bio-7-045
+
+Q: After a meal, insulin secretion rises and then falls. What causes the fall?
+A: Blood glucose falls back to normal
+Accept: Lower blood glucose; Glucose returns to normal; Negative feedback
+Ref: 7.13
+D: 3
+Id: edexcel-bio-7-046
+
+Q: Which hormone raises blood glucose concentration?
+A: Glucagon
+Ref: 7.14
+D: 1
+HT: yes
+Id: edexcel-bio-7-047
+
+Q: Glucagon stimulates the liver to convert glycogen into what?
+A: Glucose
+Ref: 7.14
+D: 2
+HT: yes
+Id: edexcel-bio-7-048
+
+Q: Why are insulin and glucagon said to work antagonistically?
+A: Have opposite effects on blood glucose
+Accept: One lowers glucose, the other raises it; Opposite effects
+Ref: 7.14
+D: 3
+HT: yes
+Id: edexcel-bio-7-049
+
+Q: What causes type 1 diabetes?
+A: Pancreas produces little or no insulin
+Accept: Pancreas does not produce insulin; Insulin-producing cells destroyed
+Ref: 7.15
+D: 2
+Id: edexcel-bio-7-050
+
+Q: What is the main treatment for type 1 diabetes?
+A: Insulin injections
+Accept: Injecting insulin; Insulin pump; Insulin
+Ref: 7.15
+D: 1
+Id: edexcel-bio-7-051
+
+Q: Why do people with type 1 diabetes monitor blood glucose before meals?
+A: To match insulin dose to glucose and food
+Accept: To know how much insulin to inject; Adjust insulin dose
+Ref: 7.15
+D: 3
+Id: edexcel-bio-7-052
+
+Q: What causes type 2 diabetes?
+A: Body cells no longer respond to insulin
+Accept: Insulin resistance; Cells resistant to insulin; Pancreas makes too little insulin
+Ref: 7.16
+D: 2
+Id: edexcel-bio-7-053
+
+Q: Give one lifestyle change used to control type 2 diabetes.
+A: Low-sugar, healthy diet
+Accept: Healthy diet; Eat less sugar; More exercise; Lose weight; Diet control
+Ref: 7.16
+D: 1
+Id: edexcel-bio-7-054
+
+Q: Why is insulin injection often not the first treatment for type 2 diabetes?
+A: Cells respond poorly to insulin
+Accept: Cells resist insulin; Body still makes insulin but cells do not respond; Diet and exercise can control it
+Ref: 7.16
+D: 3
+Id: edexcel-bio-7-055
+
+Q: Calculate BMI for a person of mass 80 kg and height 2 m. BMI = mass ÷ height².
+A: 20 kg/m²
+Accept: 20
+Ref: 7.17
+D: 2
+Id: edexcel-bio-7-056
+
+Q: Calculate BMI for a person of mass 64 kg and height 1.6 m. BMI = mass ÷ height².
+A: 25 kg/m²
+Accept: 25
+Ref: 7.17
+D: 3
+Id: edexcel-bio-7-057
+
+Q: A person's waist is 90 cm and hips are 100 cm. What is their waist:hip ratio?
+A: 0.9
+Accept: 9:10; 0.90
+Ref: 7.17
+D: 2
+Id: edexcel-bio-7-058
+
+Q: Why can a waist:hip ratio show diabetes risk better than BMI?
+A: Shows fat around the abdomen
+Accept: Measures abdominal fat; BMI includes muscle mass; Shows central fat
+Ref: 7.17
+D: 3
+Id: edexcel-bio-7-059
+
+Q: Which tube carries urine from each kidney to the bladder?
+A: Ureter
+Accept: Ureters
+Ref: 7.18B
+D: 1
+Id: edexcel-bio-7-060
+
+Q: Which tube carries urine from the bladder out of the body?
+A: Urethra
+Ref: 7.18B
+D: 1
+Id: edexcel-bio-7-061
+
+Q: Which blood vessel carries blood into the kidney?
+A: Renal artery
+Ref: 7.18B
+D: 2
+Id: edexcel-bio-7-062
+
+Q: Which knot of capillaries in the nephron filters the blood?
+A: Glomerulus
+Ref: 7.19B
+D: 1
+Id: edexcel-bio-7-063
+
+Q: Name two blood components too large to be filtered into Bowman's capsule.
+A: Proteins and blood cells
+Accept: Red blood cells and proteins; Platelets and proteins
+Ref: 7.19B
+D: 2
+Id: edexcel-bio-7-064
+
+Q: Glucose is reabsorbed from the filtrate in the first convoluted tubule. By what process?
+A: Active transport
+Accept: Selective reabsorption by active transport; Selective reabsorption
+Ref: 7.19B
+D: 2
+Note: Edexcel calls this selective reabsorption; the process moving glucose against its gradient is active transport.
+Id: edexcel-bio-7-065
+
+Q: Why should healthy urine contain no glucose?
+A: All glucose is selectively reabsorbed into the blood
+Accept: Glucose is reabsorbed; Selective reabsorption
+Ref: 7.19B
+D: 3
+Id: edexcel-bio-7-066
+
+Q: Which part of the nephron, between the tubules, helps reabsorb water?
+A: Loop of Henle
+Accept: Loop of Henlé
+Ref: 7.19B
+D: 2
+Id: edexcel-bio-7-067
+
+Q: What does ADH do to the permeability of the collecting duct?
+A: Increases it
+Accept: Makes it more permeable to water; More permeable
+Ref: 7.20B
+D: 2
+HT: yes
+Id: edexcel-bio-7-068
+
+Q: After heavy sweating on a hot day, how do ADH levels and urine change?
+A: More ADH; less, more concentrated urine
+Accept: ADH rises; small volume of concentrated urine
+Ref: 7.20B
+D: 3
+HT: yes
+Id: edexcel-bio-7-069
+
+Q: A person drinks a lot of water. Why do they produce large volumes of dilute urine?
+A: Less ADH, so less water reabsorbed
+Accept: Low ADH makes collecting duct less permeable; Less water reabsorbed
+Ref: 7.20B
+D: 3
+HT: yes
+Id: edexcel-bio-7-070
+
+Q: Name the treatment for kidney failure in which blood passes through a machine to remove urea.
+A: Dialysis
+Accept: Kidney dialysis; Haemodialysis
+Ref: 7.21B
+D: 1
+Id: edexcel-bio-7-071
+
+Q: Why does dialysis fluid contain glucose at the same concentration as normal blood?
+A: So no glucose diffuses out of the blood
+Accept: No net loss of glucose; Glucose not lost by diffusion
+Ref: 7.21B
+D: 3
+Id: edexcel-bio-7-072
+
+Q: After a kidney transplant, why must the patient take immunosuppressant drugs?
+A: To stop the new kidney being rejected
+Accept: Prevent rejection; Stop the immune system attacking it
+Ref: 7.21B
+D: 2
+Id: edexcel-bio-7-073
+
+Q: Which waste substance is made in the liver from excess amino acids?
+A: Urea
+Ref: 7.22B
+D: 1
+Id: edexcel-bio-7-074
+
+Q: In which organ are excess amino acids broken down to form urea?
+A: Liver
+Ref: 7.22B
+D: 1
+Id: edexcel-bio-7-075
+
+Q: Urea is made from the breakdown of excess molecules of which type?
+A: Amino acids
+Accept: Amino acid
+Ref: 7.22B
+D: 2
+Id: edexcel-bio-7-076

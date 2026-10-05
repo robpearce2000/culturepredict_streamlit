@@ -1,0 +1,678 @@
+Board: AQA
+Spec: 8300
+Topic: 3.4
+
+Q: What is the name for a polygon whose sides are all equal and whose angles are all equal?
+A: Regular polygon
+Accept: Regular
+Ref: G1
+D: 1
+Id: aqa-maths-3.4-001
+
+Q: Two lines meet at a right angle. What word describes the two lines?
+A: Perpendicular
+Ref: G1
+D: 1
+Id: aqa-maths-3.4-002
+
+Q: How many lines of reflection symmetry does a regular hexagon have?
+A: 6
+Accept: Six
+Ref: G1
+D: 2
+Note: Three through opposite vertices and three through midpoints of opposite sides.
+Id: aqa-maths-3.4-003
+
+Q: Name the ruler-and-compasses construction that cuts a line segment in half at right angles.
+A: Perpendicular bisector
+Ref: G2
+D: 1
+Id: aqa-maths-3.4-004
+
+Q: Describe the locus of all points exactly 3 cm from a fixed point P.
+A: Circle, centre P, radius 3 cm
+Accept: Circle of radius 3 cm; Circle centred on P
+Ref: G2
+D: 2
+Id: aqa-maths-3.4-005
+
+Q: Inside an angle, what is the locus of points that are the same distance from both arms of the angle?
+A: Angle bisector
+Accept: Bisector of the angle; Bisector of the angle between the lines
+Ref: G2
+D: 2
+Id: aqa-maths-3.4-006
+
+Q: Which distance from a point to a straight line is the shortest?
+A: Perpendicular distance
+Accept: Perpendicular; The distance at right angles to the line
+Ref: G2
+D: 1
+Id: aqa-maths-3.4-007
+
+Q: Two parallel lines are crossed by a transversal. What are the equal angles on opposite sides of the transversal, between the parallel lines, called?
+A: Alternate angles
+Accept: Alternate
+Ref: G3
+D: 1
+Note: Do not accept "Z angles"; the specification rules out colloquial terms.
+Id: aqa-maths-3.4-008
+
+Q: Three angles meet at a point: 100°, 150° and x. What is x?
+A: 110°
+Accept: 110
+Ref: G3
+D: 2
+Id: aqa-maths-3.4-009
+
+Q: What is the size of each interior angle of a regular octagon?
+A: 135°
+Accept: 135
+Ref: G3
+D: 3
+Note: Exterior angle 360 ÷ 8 = 45°, then 180 − 45.
+Id: aqa-maths-3.4-010
+
+Q: Each exterior angle of a regular polygon is 24°. How many sides does the polygon have?
+A: 15
+Accept: Fifteen
+Ref: G3
+D: 2
+Id: aqa-maths-3.4-011
+
+Q: What is the sum of the interior angles of a pentagon?
+A: 540°
+Accept: 540
+Ref: G3
+D: 2
+Id: aqa-maths-3.4-012
+
+Q: Name the quadrilateral that has exactly one pair of parallel sides.
+A: Trapezium
+Ref: G4
+D: 1
+Id: aqa-maths-3.4-013
+
+Q: What is the name of a polygon with ten sides?
+A: Decagon
+Ref: G4
+D: 1
+Id: aqa-maths-3.4-014
+
+Q: Name the quadrilateral with two pairs of equal adjacent sides and exactly one line of symmetry.
+A: Kite
+Ref: G4
+D: 2
+Id: aqa-maths-3.4-015
+
+Q: A quadrilateral's diagonals are equal in length and bisect each other at right angles. Name the quadrilateral.
+A: Square
+Ref: G4
+D: 3
+Note: A rhombus has perpendicular bisecting diagonals, but they are not equal.
+Id: aqa-maths-3.4-016
+
+Q: Two triangles have all three pairs of corresponding sides equal. Which congruence condition does this give?
+A: SSS
+Accept: Side, side, side
+Ref: G5
+D: 1
+Id: aqa-maths-3.4-017
+
+Q: Two right-angled triangles have equal hypotenuses and one other pair of equal sides. Which congruence condition applies?
+A: RHS
+Accept: Right angle, hypotenuse, side
+Ref: G5
+D: 2
+Id: aqa-maths-3.4-018
+
+Q: Why do three pairs of equal angles not prove two triangles congruent?
+A: Different sizes are possible
+Accept: Same shape, but sizes may differ; Triangles are similar, not necessarily congruent; Could be different sizes
+Ref: G5
+D: 3
+Id: aqa-maths-3.4-019
+
+Q: An isosceles triangle has a base angle of 50°. What is the third angle (between the two equal sides)?
+A: 80°
+Accept: 80
+Ref: G6
+D: 2
+Id: aqa-maths-3.4-020
+
+Q: An isosceles triangle has one angle of 100°. What size is each of the other two angles?
+A: 40°
+Accept: 40
+Ref: G6
+D: 3
+Note: 100° cannot be a base angle, because two of them would exceed 180°.
+Id: aqa-maths-3.4-021
+
+Q: An exterior angle of a triangle is equal to the sum of which two angles?
+A: Interior opposite angles
+Accept: The two opposite interior angles; The two interior angles not next to it
+Ref: G6
+D: 2
+Id: aqa-maths-3.4-022
+
+Q: Name the transformation that turns a shape through an angle about a fixed point.
+A: Rotation
+Ref: G7
+D: 1
+Id: aqa-maths-3.4-023
+
+Q: What word describes two shapes that are exactly the same shape and size?
+A: Congruent
+Ref: G7
+D: 1
+Id: aqa-maths-3.4-024
+
+Q: A triangle with a base of 10 cm is enlarged by scale factor one half. What is the base of the image?
+A: 5 cm
+Accept: 5
+Ref: G7
+D: 2
+Id: aqa-maths-3.4-025
+
+Q: The point (3, 1) is enlarged by scale factor −2 with centre the origin. Where is its image?
+A: (−6, −2)
+Accept: (-6, -2)
+Ref: G7
+D: 3
+HT: yes
+Id: aqa-maths-3.4-026
+
+Q: A translation by column vector (3 over −2) is followed by a translation by (−1 over 5). What single column vector is equivalent?
+A: (2 over 3)
+Accept: (2, 3); 2 right, 3 up
+Ref: G8
+D: 2
+HT: yes
+Note: Students should write it as a column vector.
+Id: aqa-maths-3.4-027
+
+Q: A shape is reflected in the x-axis and then in the y-axis. What single transformation is equivalent?
+A: Rotation of 180° about the origin
+Accept: Half-turn about the origin; Rotation 180° about (0, 0)
+Ref: G8
+D: 3
+HT: yes
+Id: aqa-maths-3.4-028
+
+Q: Under a reflection, which points are invariant (stay in the same place)?
+A: Points on the mirror line
+Accept: The mirror line; Points on the line of reflection
+Ref: G8
+D: 2
+HT: yes
+Id: aqa-maths-3.4-029
+
+Q: What is the name of a straight line joining two points on the circumference of a circle?
+A: Chord
+Ref: G9
+D: 1
+Id: aqa-maths-3.4-030
+
+Q: What is the name of a straight line that touches a circle at exactly one point?
+A: Tangent
+Ref: G9
+D: 1
+Id: aqa-maths-3.4-031
+
+Q: What is the name of the region bounded by two radii and an arc?
+A: Sector
+Ref: G9
+D: 1
+Id: aqa-maths-3.4-032
+
+Q: What is the name of the region of a circle between a chord and its arc?
+A: Segment
+Ref: G9
+D: 2
+Note: Pupils often confuse segment and sector.
+Id: aqa-maths-3.4-033
+
+Q: An arc subtends an angle of 140° at the centre of a circle. What angle does it subtend at the circumference?
+A: 70°
+Accept: 70
+Ref: G10
+D: 2
+HT: yes
+Id: aqa-maths-3.4-034
+
+Q: One angle of a cyclic quadrilateral is 115°. What is the opposite angle?
+A: 65°
+Accept: 65
+Ref: G10
+D: 2
+HT: yes
+Id: aqa-maths-3.4-035
+
+Q: Two tangents are drawn from a point P to a circle, touching it at A and B. PA is 8 cm. How long is PB?
+A: 8 cm
+Accept: 8
+Ref: G10
+D: 2
+HT: yes
+Id: aqa-maths-3.4-036
+
+Q: Which circle theorem states that the angle between a tangent and a chord equals the angle in the opposite segment?
+A: Alternate segment theorem
+Accept: Alternate segment
+Ref: G10
+D: 1
+HT: yes
+Id: aqa-maths-3.4-037
+
+Q: AB is a diameter of a circle and C is on the circumference. Angle CAB is 35°. What is angle ABC?
+A: 55°
+Accept: 55
+Ref: G10
+D: 3
+HT: yes
+Note: Angle ACB is 90° (angle in a semicircle), then 180 − 90 − 35.
+Id: aqa-maths-3.4-038
+
+Q: What is the midpoint of the line segment joining (2, 3) and (8, 7)?
+A: (5, 5)
+Ref: G11
+D: 2
+Id: aqa-maths-3.4-039
+
+Q: Three vertices of a square are (0, 0), (4, 0) and (4, 4). What are the coordinates of the fourth vertex?
+A: (0, 4)
+Ref: G11
+D: 2
+Id: aqa-maths-3.4-040
+
+Q: What is the length of the line segment from (1, 2) to (4, 6)?
+A: 5
+Accept: 5 units
+Ref: G11
+D: 3
+Note: Horizontal 3, vertical 4, then Pythagoras.
+Id: aqa-maths-3.4-041
+
+Q: How many edges does a cuboid have?
+A: 12
+Accept: Twelve
+Ref: G12
+D: 1
+Id: aqa-maths-3.4-042
+
+Q: Name the 3D shape that has no edges and no vertices.
+A: Sphere
+Ref: G12
+D: 1
+Id: aqa-maths-3.4-043
+
+Q: Which 3D shape has one flat face, one curved surface and one vertex?
+A: Cone
+Ref: G12
+D: 2
+Id: aqa-maths-3.4-044
+
+Q: How many edges does a hexagonal prism have?
+A: 18
+Accept: Eighteen
+Ref: G12
+D: 2
+Note: Six on each hexagonal end plus six joining them.
+Id: aqa-maths-3.4-045
+
+Q: What is the name for the view of a 3D shape seen from directly above?
+A: Plan
+Accept: Plan view
+Ref: G13
+D: 1
+Id: aqa-maths-3.4-046
+
+Q: A solid has a circle as its plan and rectangles as its front and side elevations. Name the solid.
+A: Cylinder
+Ref: G13
+D: 2
+Id: aqa-maths-3.4-047
+
+Q: A solid's plan is a square with both diagonals drawn, and its front and side elevations are triangles. Name the solid.
+A: Square-based pyramid
+Accept: Square pyramid; Pyramid
+Ref: G13
+D: 3
+Id: aqa-maths-3.4-048
+
+Q: How many grams are there in 2.5 kg?
+A: 2500 g
+Accept: 2500
+Ref: G14
+D: 1
+Id: aqa-maths-3.4-049
+
+Q: How many square millimetres are there in 1 square centimetre?
+A: 100 mm²
+Accept: 100
+Ref: G14
+D: 2
+Note: 10 × 10, not 10.
+Id: aqa-maths-3.4-050
+
+Q: How many cubic centimetres are there in 1 cubic metre?
+A: 1 000 000 cm³
+Accept: 1000000; 1 000 000; One million
+Ref: G14
+D: 3
+Id: aqa-maths-3.4-051
+
+Q: What is the three-figure bearing of due east?
+A: 090°
+Accept: 090
+Ref: G15
+D: 1
+Id: aqa-maths-3.4-052
+
+Q: Which compass point lies on a bearing of 225°?
+A: South-west
+Accept: SW; South west
+Ref: G15
+D: 2
+Id: aqa-maths-3.4-053
+
+Q: The bearing of B from A is 070°. What is the bearing of A from B?
+A: 250°
+Accept: 250
+Ref: G15
+D: 2
+Id: aqa-maths-3.4-054
+
+Q: A map has scale 1 : 25 000. What real distance in kilometres does 6 cm on the map represent?
+A: 1.5 km
+Accept: 1.5; 1500 m
+Ref: G15
+D: 3
+Id: aqa-maths-3.4-055
+
+Q: The area of a parallelogram is the base multiplied by which other measurement?
+A: Perpendicular height
+Accept: Vertical height; Height
+Ref: G16
+D: 1
+Note: Not the slanted side length.
+Id: aqa-maths-3.4-056
+
+Q: A trapezium has parallel sides of 6 cm and 10 cm, 4 cm apart. What is its area?
+A: 32 cm²
+Accept: 32
+Ref: G16
+D: 2
+Id: aqa-maths-3.4-057
+
+Q: A prism has a cross-sectional area of 12 cm² and a length of 10 cm. What is its volume?
+A: 120 cm³
+Accept: 120
+Ref: G16
+D: 2
+Id: aqa-maths-3.4-058
+
+Q: A cylinder has radius 3 cm and height 10 cm. What is its volume in terms of π?
+A: 90π cm³
+Accept: 90π; 90 pi
+Ref: G16
+D: 3
+Id: aqa-maths-3.4-059
+
+Q: A triangle has a base of 10 cm and a perpendicular height of 6 cm. What is its area?
+A: 30 cm²
+Accept: 30
+Ref: G16
+D: 2
+Id: aqa-maths-3.4-060
+
+Q: What is the circumference of a circle of diameter 10 cm, in terms of π?
+A: 10π cm
+Accept: 10π; 10 pi
+Ref: G17
+D: 2
+Id: aqa-maths-3.4-061
+
+Q: What is the perimeter of a semicircle of diameter 10 cm, in terms of π?
+A: (5π + 10) cm
+Accept: 5π + 10; 10 + 5π; 5(π + 2)
+Ref: G17
+D: 3
+Note: Remember to add the straight edge (the diameter).
+Id: aqa-maths-3.4-062
+
+Q: What is the name of the solid left when the top of a cone is cut off parallel to its base?
+A: Frustum
+Ref: G17
+D: 2
+Id: aqa-maths-3.4-063
+
+Q: Using volume of a sphere = (4/3)πr³, what is the volume of a sphere of radius 3 cm in terms of π?
+A: 36π cm³
+Accept: 36π; 36 pi
+Ref: G17
+D: 2
+Id: aqa-maths-3.4-064
+
+Q: What is the name of the curved part of the edge of a sector?
+A: Arc
+Ref: G18
+D: 1
+Id: aqa-maths-3.4-065
+
+Q: What is the arc length of a quarter circle of radius 4 cm, in terms of π?
+A: 2π cm
+Accept: 2π; 2 pi
+Ref: G18
+D: 3
+Id: aqa-maths-3.4-066
+
+Q: A sector has radius 6 cm and angle 90°. What is its area in terms of π?
+A: 9π cm²
+Accept: 9π; 9 pi
+Ref: G18
+D: 3
+Id: aqa-maths-3.4-067
+
+Q: What word describes two shapes that are the same shape but may be different sizes?
+A: Similar
+Ref: G19
+D: 1
+Id: aqa-maths-3.4-068
+
+Q: Two triangles are similar. A 4 cm side corresponds to a 12 cm side. What length corresponds to a 5 cm side?
+A: 15 cm
+Accept: 15
+Ref: G19
+D: 2
+Id: aqa-maths-3.4-069
+
+Q: Two similar shapes have a length scale factor of 3. What is the area scale factor?
+A: 9
+Accept: Nine
+Ref: G19
+D: 2
+HT: yes
+Id: aqa-maths-3.4-070
+
+Q: Two similar solids have lengths in the ratio 1 : 2. The smaller has volume 40 cm³. What is the volume of the larger?
+A: 320 cm³
+Accept: 320
+Ref: G19
+D: 3
+HT: yes
+Note: Volume scale factor is 2³ = 8.
+Id: aqa-maths-3.4-071
+
+Q: What is the name of the longest side of a right-angled triangle?
+A: Hypotenuse
+Ref: G20
+D: 1
+Id: aqa-maths-3.4-072
+
+Q: Which trigonometric ratio equals the opposite side divided by the adjacent side?
+A: Tangent
+Accept: Tan
+Ref: G20
+D: 1
+Id: aqa-maths-3.4-073
+
+Q: A right-angled triangle has shorter sides 6 cm and 8 cm. How long is the hypotenuse?
+A: 10 cm
+Accept: 10
+Ref: G20
+D: 2
+Id: aqa-maths-3.4-074
+
+Q: A right-angled triangle has hypotenuse 10 cm and an angle of 30°. How long is the side opposite the 30° angle?
+A: 5 cm
+Accept: 5
+Ref: G20
+D: 3
+Note: sin 30° = 1/2.
+Id: aqa-maths-3.4-075
+
+Q: A cuboid measures 3 cm by 4 cm by 12 cm. How long is the diagonal from one corner to the opposite corner?
+A: 13 cm
+Accept: 13
+Ref: G20
+D: 3
+HT: yes
+Note: Base diagonal 5 cm, then √(25 + 144).
+Id: aqa-maths-3.4-076
+
+Q: What is the exact value of sin 30°?
+A: 1/2
+Accept: 0.5; ½
+Ref: G21
+D: 1
+Id: aqa-maths-3.4-077
+
+Q: What is the exact value of cos 30°?
+A: √3/2
+Accept: root 3 over 2
+Ref: G21
+D: 2
+Id: aqa-maths-3.4-078
+
+Q: For which angle between 0° and 90° are sin θ and cos θ equal?
+A: 45°
+Accept: 45
+Ref: G21
+D: 2
+Id: aqa-maths-3.4-079
+
+Q: Which rule states that a / sin A = b / sin B = c / sin C in any triangle?
+A: Sine rule
+Ref: G22
+D: 1
+HT: yes
+Id: aqa-maths-3.4-080
+
+Q: In triangle ABC, b = 3, c = 5 and angle A = 60°. What is the exact length of a?
+A: √19
+Accept: root 19
+Ref: G22
+D: 3
+HT: yes
+Note: a² = 9 + 25 − 2 × 3 × 5 × cos 60° = 19.
+Id: aqa-maths-3.4-081
+
+Q: A triangle has sides 3 cm, 5 cm and 7 cm. What is its largest angle?
+A: 120°
+Accept: 120
+Ref: G22
+D: 3
+HT: yes
+Note: Cosine rule gives cos C = −1/2.
+Id: aqa-maths-3.4-082
+
+Q: Which rule finds an unknown side from two sides and the angle between them, in a non-right-angled triangle?
+A: Cosine rule
+Ref: G22
+D: 1
+HT: yes
+Id: aqa-maths-3.4-083
+
+Q: Use area = ½ab sin C. Two sides of a triangle are 6 cm and 8 cm with 30° between them. What is the area?
+A: 12 cm²
+Accept: 12
+Ref: G23
+D: 3
+HT: yes
+Id: aqa-maths-3.4-084
+
+Q: Use area = ½ab sin C. Two sides of a triangle are 10 cm each, with 150° between them. What is the area?
+A: 25 cm²
+Accept: 25
+Ref: G23
+D: 3
+HT: yes
+Note: sin 150° = sin 30° = 1/2.
+Id: aqa-maths-3.4-085
+
+Q: A triangle has area 20 cm² and two sides of 8 cm and 10 cm. What is the acute angle between those sides?
+A: 30°
+Accept: 30
+Ref: G23
+D: 3
+HT: yes
+Note: sin C = 40 ÷ 80 = 1/2.
+Id: aqa-maths-3.4-086
+
+Q: What is the name of the transformation that a column vector describes?
+A: Translation
+Ref: G24
+D: 1
+Id: aqa-maths-3.4-087
+
+Q: Write a translation of 3 units right and 2 units down as a column vector.
+A: (3 over −2)
+Accept: (3, −2); (3, -2)
+Ref: G24
+D: 2
+Note: Students should write it as a column vector.
+Id: aqa-maths-3.4-088
+
+Q: The point (1, 4) is translated by the column vector (2 over −5). What are the coordinates of its image?
+A: (3, −1)
+Accept: (3, -1)
+Ref: G24
+D: 2
+Id: aqa-maths-3.4-089
+
+Q: What is the name of a quantity that has both magnitude and direction?
+A: Vector
+Ref: G25
+D: 1
+Id: aqa-maths-3.4-090
+
+Q: Vector a is (2 over 3) and vector b is (1 over −4). What is a + b as a column vector?
+A: (3 over −1)
+Accept: (3, −1); (3, -1)
+Ref: G25
+D: 2
+Id: aqa-maths-3.4-091
+
+Q: Vector a is (2 over −1). What is 3a as a column vector?
+A: (6 over −3)
+Accept: (6, −3); (6, -3)
+Ref: G25
+D: 2
+Id: aqa-maths-3.4-092
+
+Q: O is the origin, with OA = a and OB = b as vectors. What is vector AB in terms of a and b?
+A: b − a
+Accept: −a + b; b - a
+Ref: G25
+D: 3
+HT: yes
+Id: aqa-maths-3.4-093
+
+Q: Vector PQ = 2 × vector QR. What word describes the points P, Q and R?
+A: Collinear
+Accept: On a straight line
+Ref: G25
+D: 3
+HT: yes
+Id: aqa-maths-3.4-094

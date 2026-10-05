@@ -1,0 +1,331 @@
+Board: AQA
+Spec: 8300
+Topic: 3.5
+
+Q: Name the diagram that splits a total into branches showing how many people or items fall into each group.
+A: Frequency tree
+Accept: Frequency tree diagram
+Ref: P1
+D: 1
+Note: A tree diagram shows probabilities on its branches; a frequency tree shows counts.
+Id: aqa-maths-3.5-001
+
+Q: What name is given to the number of times an outcome happens divided by the total number of trials?
+A: Relative frequency
+Accept: Experimental probability
+Ref: P1
+D: 1
+Id: aqa-maths-3.5-002
+
+Q: A spinner is spun 50 times and lands on red 15 times. What is the relative frequency of red?
+A: 3/10
+Accept: 0.3; 30%; 15/50
+Ref: P1
+D: 2
+Id: aqa-maths-3.5-003
+
+Q: A frequency tree starts with 80 students: 30 walk and 50 do not. 12 walkers and 8 non-walkers are late. What fraction of all students are late?
+A: 1/4
+Accept: 0.25; 25%; 20/80
+Ref: P1
+D: 3
+Note: Add the two "late" branches (12 + 8 = 20) before dividing by 80.
+Id: aqa-maths-3.5-004
+
+Q: A fair six-sided dice is rolled 60 times. How many times would you expect it to land on 4?
+A: 10
+Ref: P2
+D: 2
+Id: aqa-maths-3.5-005
+
+Q: A coin where heads and tails are equally likely is described by what word?
+A: Fair
+Accept: Unbiased
+Ref: P2
+D: 1
+Id: aqa-maths-3.5-006
+
+Q: A coin lands on heads 35 times in 50 flips. Estimate how many heads there would be in 400 flips.
+A: 280
+Ref: P2
+D: 3
+Note: Relative frequency 0.7, then 0.7 × 400.
+Id: aqa-maths-3.5-007
+
+Q: The probability a spinner lands on red is 3/8. It is spun 40 times. How many times would you expect it NOT to land on red?
+A: 25
+Ref: P2
+D: 3
+Id: aqa-maths-3.5-008
+
+Q: What word describes an event with a probability of 0?
+A: Impossible
+Ref: P3
+D: 1
+Id: aqa-maths-3.5-009
+
+Q: What word describes an event with a probability of 1?
+A: Certain
+Ref: P3
+D: 1
+Id: aqa-maths-3.5-010
+
+Q: Describe, using the word likely or unlikely, an event with a probability of 0.1.
+A: Unlikely
+Accept: Very unlikely
+Ref: P3
+D: 1
+Id: aqa-maths-3.5-011
+
+Q: Write these probabilities in order from least likely to most likely: 2/3, 0.6, 65%.
+A: 0.6, 65%, 2/3
+Ref: P3
+D: 2
+Note: 2/3 is 0.666..., which is greater than 0.65.
+Id: aqa-maths-3.5-012
+
+Q: The probability of rain tomorrow is 0.3. What is the probability it does not rain tomorrow?
+A: 0.7
+Accept: 7/10; 70%
+Ref: P4
+D: 2
+Id: aqa-maths-3.5-013
+
+Q: A spinner is red, blue or green. P(red) = 0.2 and P(blue) = 0.35. What is P(green)?
+A: 0.45
+Accept: 45%; 9/20
+Ref: P4
+D: 2
+Id: aqa-maths-3.5-014
+
+Q: What name is given to events that cannot happen at the same time?
+A: Mutually exclusive
+Accept: Mutually exclusive events
+Ref: P4
+D: 1
+Id: aqa-maths-3.5-015
+
+Q: What word describes a set of outcomes that includes every possible outcome?
+A: Exhaustive
+Ref: P4
+D: 1
+Id: aqa-maths-3.5-016
+
+Q: A spinner has red, blue, green and yellow. P(red) = 0.1, P(blue) = 0.3, and green and yellow are equally likely. What is P(yellow)?
+A: 0.3
+Accept: 3/10; 30%
+Ref: P4
+D: 3
+Id: aqa-maths-3.5-017
+
+Q: Three outcomes have probabilities x, 2x and 0.4, and these are the only outcomes. What is x?
+A: 0.2
+Accept: x = 0.2; 1/5
+Ref: P4
+D: 3
+Note: 3x = 0.6.
+Id: aqa-maths-3.5-018
+
+Q: As the number of trials increases, the relative frequency tends towards what?
+A: Theoretical probability
+Accept: The theoretical probability; the true probability
+Ref: P5
+D: 2
+Id: aqa-maths-3.5-019
+
+Q: Tom flips a coin 10 times and Amy flips it 1000 times. Whose relative frequency is the more reliable estimate?
+A: Amy's
+Accept: Amy
+Ref: P5
+D: 2
+Id: aqa-maths-3.5-020
+
+Q: To make an experimental estimate of a probability more reliable, what should you increase?
+A: Number of trials
+Accept: The number of trials; sample size; number of experiments
+Ref: P5
+D: 1
+Id: aqa-maths-3.5-021
+
+Q: Ali rolls a dice 20 times and gets 8 sixes. Bea rolls it 500 times and gets 85 sixes. Give the better estimate of P(six) as a decimal.
+A: 0.17
+Accept: 85/500; 17/100; 17%
+Ref: P5
+D: 3
+Note: Use Bea's results because she did more trials.
+Id: aqa-maths-3.5-022
+
+Q: What is the name of the diagram that uses overlapping circles inside a rectangle to show sets?
+A: Venn diagram
+Accept: Venn
+Ref: P6
+D: 1
+Id: aqa-maths-3.5-023
+
+Q: In set notation, what is the name of the symbol ∩?
+A: Intersection
+Ref: P6
+D: 1
+Id: aqa-maths-3.5-024
+
+Q: What is the name of the diagram with branches labelled with probabilities for each stage of an experiment?
+A: Tree diagram
+Accept: Probability tree
+Ref: P6
+D: 1
+Id: aqa-maths-3.5-025
+
+Q: A coin is flipped and a six-sided dice is rolled. How many different outcomes are there altogether?
+A: 12
+Ref: P6
+D: 2
+Id: aqa-maths-3.5-026
+
+Q: The universal set is the whole numbers 1 to 10. A is the even numbers and B is the multiples of 3. List A ∩ B.
+A: 6
+Accept: {6}
+Ref: P6
+D: 2
+Id: aqa-maths-3.5-027
+
+Q: The universal set is the whole numbers 1 to 10. A is the even numbers and B is the multiples of 3. How many numbers are in A ∪ B?
+A: 7
+Ref: P6
+D: 3
+Note: 2, 3, 4, 6, 8, 9, 10: count 6 only once.
+Id: aqa-maths-3.5-028
+
+Q: 30 students: 18 play football, 12 play tennis and 5 play both. How many play neither?
+A: 5
+Ref: P6
+D: 3
+Note: 18 + 12 − 5 = 25 play at least one sport.
+Id: aqa-maths-3.5-029
+
+Q: What name is given to a list or grid showing all the possible outcomes of an experiment?
+A: Sample space
+Accept: Sample space diagram; possibility space; possibility space diagram
+Ref: P7
+D: 1
+Id: aqa-maths-3.5-030
+
+Q: A bag holds 4 red and 6 blue counters. One counter is taken at random. What is the probability it is red?
+A: 2/5
+Accept: 4/10; 0.4; 40%
+Ref: P7
+D: 2
+Id: aqa-maths-3.5-031
+
+Q: Two fair six-sided dice are rolled and the scores added. What is the probability of a total of 7?
+A: 1/6
+Accept: 6/36; 0.16 recurring
+Ref: P7
+D: 3
+Note: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) is six of 36 outcomes.
+Id: aqa-maths-3.5-032
+
+Q: A and B are independent events. What operation do you use on P(A) and P(B) to find P(A and B)?
+A: Multiply
+Accept: Multiplication; multiply them; times
+Ref: P8
+D: 1
+Id: aqa-maths-3.5-033
+
+Q: A and B are mutually exclusive events. What operation do you use on P(A) and P(B) to find P(A or B)?
+A: Add
+Accept: Addition; add them
+Ref: P8
+D: 1
+Id: aqa-maths-3.5-034
+
+Q: What word describes two events where the outcome of the first changes the probability of the second?
+A: Dependent
+Accept: Dependent events
+Ref: P8
+D: 1
+Id: aqa-maths-3.5-035
+
+Q: You find P(A and B) by multiplying P(A) by P(B). What must you assume about events A and B?
+A: Independent
+Accept: They are independent; A and B are independent
+Ref: P8
+D: 2
+Id: aqa-maths-3.5-036
+
+Q: A and B are independent with P(A) = 0.5 and P(B) = 0.4. What is P(A and B)?
+A: 0.2
+Accept: 1/5; 20%
+Ref: P8
+D: 2
+Id: aqa-maths-3.5-037
+
+Q: A fair coin is flipped three times. What is the probability of three heads?
+A: 1/8
+Accept: 0.125; 12.5%
+Ref: P8
+D: 2
+Id: aqa-maths-3.5-038
+
+Q: A bag holds 3 red and 2 blue counters. Two are taken without replacement. What is the probability both are red?
+A: 3/10
+Accept: 0.3; 30%; 6/20
+Ref: P8
+D: 3
+Note: 3/5 × 2/4; the second fraction changes because the first counter is not replaced.
+Id: aqa-maths-3.5-039
+
+Q: Two friends each pass a test with probability 0.6, independently. What is the probability exactly one of them passes?
+A: 0.48
+Accept: 48%; 12/25
+Ref: P8
+D: 3
+Note: Two routes: 0.6 × 0.4 + 0.4 × 0.6.
+Id: aqa-maths-3.5-040
+
+Q: What name is given to the probability that an event happens given that another event has already happened?
+A: Conditional probability
+Ref: P9
+D: 1
+HT: yes
+Id: aqa-maths-3.5-041
+
+Q: In words, how do you read the notation P(B | A)?
+A: Probability of B given A
+Accept: The probability of B given A; B given A
+Ref: P9
+D: 1
+HT: yes
+Id: aqa-maths-3.5-042
+
+Q: A two-way table: of 20 boys, 8 wear glasses; of 30 girls, 6 wear glasses. A boy is chosen at random. What is P(he wears glasses)?
+A: 2/5
+Accept: 8/20; 0.4; 40%
+Ref: P9
+D: 2
+HT: yes
+Id: aqa-maths-3.5-043
+
+Q: A two-way table: of 20 boys, 8 wear glasses; of 30 girls, 6 wear glasses. A glasses-wearer is chosen at random. What is P(girl)?
+A: 3/7
+Accept: 6/14
+Ref: P9
+D: 3
+HT: yes
+Note: The denominator is the 14 glasses-wearers, not 50.
+Id: aqa-maths-3.5-044
+
+Q: A Venn diagram of 40 people: 15 in A only, 10 in both A and B, 5 in B only, 10 in neither. What is P(B given A)?
+A: 2/5
+Accept: 10/25; 0.4; 40%
+Ref: P9
+D: 3
+HT: yes
+Note: A contains 15 + 10 = 25 people.
+Id: aqa-maths-3.5-045
+
+Q: A bag holds 5 red and 3 blue counters. Two are taken without replacement. Given the first is red, what is P(second is red)?
+A: 4/7
+Ref: P9
+D: 2
+HT: yes
+Id: aqa-maths-3.5-046

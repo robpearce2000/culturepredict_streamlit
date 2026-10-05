@@ -1,0 +1,663 @@
+Board: AQA
+Spec: 8300
+Topic: 3.2
+
+Q: Write 3 × y × y in its simplest algebraic form.
+A: 3y²
+Accept: 3y^2
+Ref: A1
+D: 1
+Id: aqa-maths-3.2-001
+
+Q: Write a × a × a × b using index notation.
+A: a³b
+Accept: a^3b; a^3 b
+Ref: A1
+D: 1
+Id: aqa-maths-3.2-002
+
+Q: What is the coefficient of x in the expression 5 − 7x?
+A: −7
+Accept: -7
+Ref: A1
+D: 2
+Note: The sign belongs to the coefficient; 7 alone is wrong.
+Id: aqa-maths-3.2-003
+
+Q: Find the value of 3a + 2b when a = 4 and b = −5.
+A: 2
+Ref: A2
+D: 2
+Id: aqa-maths-3.2-004
+
+Q: Find the value of 2x² when x = −3.
+A: 18
+Ref: A2
+D: 2
+Note: Square first, then multiply; −3 squared is 9, so not −18 or 36.
+Id: aqa-maths-3.2-005
+
+Q: Use s = ut + ½at² to find s when u = 2, t = 4 and a = 3.
+A: 32
+Ref: A2
+D: 3
+Note: 2 × 4 = 8 and ½ × 3 × 16 = 24.
+Id: aqa-maths-3.2-006
+
+Q: What word describes 2(x + 3) ≡ 2x + 6, which is true for every value of x?
+A: Identity
+Accept: An identity
+Ref: A3
+D: 1
+Id: aqa-maths-3.2-007
+
+Q: What is the word for 5x − 2, a collection of terms with no equals sign?
+A: Expression
+Accept: An expression
+Ref: A3
+D: 1
+Id: aqa-maths-3.2-008
+
+Q: What word describes 3x + 1 = 10, which is true for only one value of x?
+A: Equation
+Accept: An equation; Linear equation
+Ref: A3
+D: 1
+Id: aqa-maths-3.2-009
+
+Q: Simplify 5x + 3y − 2x + y.
+A: 3x + 4y
+Ref: A4
+D: 1
+Id: aqa-maths-3.2-010
+
+Q: Simplify (y³)⁴.
+A: y¹²
+Accept: y^12
+Ref: A4
+D: 2
+Note: Multiply the powers; y⁷ is the common error.
+Id: aqa-maths-3.2-011
+
+Q: Factorise x² + 7x + 12.
+A: (x + 3)(x + 4)
+Accept: (x + 4)(x + 3)
+Ref: A4
+D: 2
+Id: aqa-maths-3.2-012
+
+Q: What name is given to an expression of the form a² − b², which factorises to (a + b)(a − b)?
+A: Difference of two squares
+Ref: A4
+D: 1
+Id: aqa-maths-3.2-013
+
+Q: Factorise 4x² − 10x fully.
+A: 2x(2x − 5)
+Ref: A4
+D: 2
+Id: aqa-maths-3.2-014
+
+Q: Expand and simplify (√3 + 1)(√3 − 1).
+A: 2
+Ref: A4
+D: 3
+Id: aqa-maths-3.2-015
+
+Q: Factorise 2x² + 7x + 3.
+A: (2x + 1)(x + 3)
+Accept: (x + 3)(2x + 1)
+Ref: A4
+D: 3
+HT: yes
+Id: aqa-maths-3.2-016
+
+Q: Simplify (x² − 9) ÷ (x + 3).
+A: x − 3
+Accept: x - 3
+Ref: A4
+D: 3
+HT: yes
+Id: aqa-maths-3.2-017
+
+Q: Rearrange v = u + at to make t the subject.
+A: t = (v − u)/a
+Accept: (v − u)/a; t = (v - u) ÷ a
+Ref: A5
+D: 2
+Id: aqa-maths-3.2-018
+
+Q: Make r the subject of A = πr², where r is positive.
+A: r = √(A/π)
+Accept: √(A/π); r = √(A ÷ π)
+Ref: A5
+D: 3
+Id: aqa-maths-3.2-019
+
+Q: In P = 2l + 2w, P is on its own on one side. What is P called?
+A: Subject
+Accept: The subject of the formula
+Ref: A5
+D: 1
+Id: aqa-maths-3.2-020
+
+Q: What symbol is used in place of = to show that a statement is an identity?
+A: ≡
+Accept: Three-line equals sign; Triple bar
+Ref: A6
+D: 1
+Id: aqa-maths-3.2-021
+
+Q: n + (n + 1) simplifies to 2n + 1. What type of number is the sum of two consecutive integers always?
+A: Odd
+Accept: Odd number; An odd number
+Ref: A6
+D: 2
+Id: aqa-maths-3.2-022
+
+Q: What word is used for one example that shows a general statement is false?
+A: Counterexample
+Accept: Counter-example
+Ref: A6
+D: 1
+Id: aqa-maths-3.2-023
+
+Q: To prove that the difference of consecutive squares is odd, simplify (n + 1)² − n².
+A: 2n + 1
+Ref: A6
+D: 3
+HT: yes
+Id: aqa-maths-3.2-024
+
+Q: A function machine multiplies by 3 and then adds 4. Which input gives an output of 25?
+A: 7
+Ref: A7
+D: 2
+Note: Work backwards: subtract 4, then divide by 3.
+Id: aqa-maths-3.2-025
+
+Q: f(x) = 2x − 1. Find f⁻¹(x).
+A: (x + 1)/2
+Accept: f⁻¹(x) = (x + 1)/2; ½(x + 1)
+Ref: A7
+D: 3
+HT: yes
+Id: aqa-maths-3.2-026
+
+Q: f(x) = x + 3 and g(x) = 2x. Find fg(5).
+A: 13
+Ref: A7
+D: 3
+HT: yes
+Note: fg(5) means f(g(5)): apply g first; 16 comes from doing f first.
+Id: aqa-maths-3.2-027
+
+Q: What name is given to the function f⁻¹ that reverses the function f?
+A: Inverse function
+Accept: Inverse; The inverse
+Ref: A7
+D: 1
+HT: yes
+Id: aqa-maths-3.2-028
+
+Q: A point is 2 units left of the origin and 5 units up. What are its coordinates?
+A: (−2, 5)
+Accept: (-2, 5)
+Ref: A8
+D: 1
+Id: aqa-maths-3.2-029
+
+Q: A square has vertices A(1, 1), B(4, 1) and C(4, 4). What are the coordinates of the fourth vertex D?
+A: (1, 4)
+Ref: A8
+D: 2
+Id: aqa-maths-3.2-030
+
+Q: Every point with coordinates (0, y) lies on which axis?
+A: y-axis
+Accept: The y-axis; y axis
+Ref: A8
+D: 2
+Id: aqa-maths-3.2-031
+
+Q: What word describes two straight lines that have the same gradient?
+A: Parallel
+Ref: A9
+D: 1
+Id: aqa-maths-3.2-032
+
+Q: Find the equation of the line through (1, 5) and (3, 9).
+A: y = 2x + 3
+Ref: A9
+D: 3
+Id: aqa-maths-3.2-033
+
+Q: What is the gradient of a line perpendicular to y = 2x + 5?
+A: −½
+Accept: -1/2; −0.5; -0.5
+Ref: A9
+D: 2
+HT: yes
+Id: aqa-maths-3.2-034
+
+Q: Two straight lines have gradients whose product is −1. What word describes the lines?
+A: Perpendicular
+Ref: A9
+D: 1
+HT: yes
+Id: aqa-maths-3.2-035
+
+Q: What name is given to the steepness of a straight line?
+A: Gradient
+Accept: Slope
+Ref: A10
+D: 1
+Id: aqa-maths-3.2-036
+
+Q: What is the y-intercept of y = 5 − 2x?
+A: 5
+Accept: (0, 5); y = 5
+Ref: A10
+D: 1
+Id: aqa-maths-3.2-037
+
+Q: What is the gradient of the line 2y = 6x + 4?
+A: 3
+Ref: A10
+D: 2
+Note: Divide by 2 first; 6 is the common error.
+Id: aqa-maths-3.2-038
+
+Q: A taxi fare is C = 2m + 3 pounds for m miles. What does the 3 represent?
+A: Fixed charge before any miles
+Accept: Starting fee; Standing charge; Cost for 0 miles; Fixed charge
+Ref: A10
+D: 3
+Id: aqa-maths-3.2-039
+
+Q: What name is given to the x-values where a quadratic graph crosses the x-axis?
+A: Roots
+Accept: Solutions; Zeros; x-intercepts
+Ref: A11
+D: 1
+Id: aqa-maths-3.2-040
+
+Q: A quadratic graph crosses the x-axis at x = 1 and x = 7. What is the x-coordinate of its turning point?
+A: 4
+Accept: x = 4
+Ref: A11
+D: 2
+Note: The line of symmetry is halfway between the roots.
+Id: aqa-maths-3.2-041
+
+Q: What are the coordinates of the turning point of y = (x − 3)² + 2?
+A: (3, 2)
+Ref: A11
+D: 2
+HT: yes
+Note: (−3, 2) is the common sign error.
+Id: aqa-maths-3.2-042
+
+Q: Write x² + 6x + 1 in the form (x + a)² + b.
+A: (x + 3)² − 8
+Accept: (x + 3)^2 - 8
+Ref: A11
+D: 3
+HT: yes
+Id: aqa-maths-3.2-043
+
+Q: What type of function is y = x³ + 2?
+A: Cubic
+Accept: Cubic function
+Ref: A12
+D: 1
+Id: aqa-maths-3.2-044
+
+Q: What type of function is y = 1/x?
+A: Reciprocal
+Accept: Reciprocal function
+Ref: A12
+D: 2
+Id: aqa-maths-3.2-045
+
+Q: What are the coordinates of the point where y = 2ˣ crosses the y-axis?
+A: (0, 1)
+Ref: A12
+D: 2
+HT: yes
+Note: Any number to the power 0 is 1.
+Id: aqa-maths-3.2-046
+
+Q: Which trigonometric graph has asymptotes at x = 90° and x = 270°?
+A: Tan
+Accept: y = tan x; Tangent graph
+Ref: A12
+D: 2
+HT: yes
+Id: aqa-maths-3.2-047
+
+Q: Name the transformation that maps the graph of y = f(x) onto y = f(x) + 5.
+A: Translation
+Accept: Translation by (0, 5)
+Ref: A13
+D: 2
+HT: yes
+Id: aqa-maths-3.2-048
+
+Q: y = f(x) is mapped onto y = f(x − 2). By what column vector is the graph translated?
+A: (2, 0)
+Accept: 2 over 0; 2 right
+Ref: A13
+D: 3
+HT: yes
+Note: f(x − 2) moves right, not left; (−2, 0) is the common error.
+Id: aqa-maths-3.2-049
+
+Q: y = f(x) is mapped onto y = f(−x). The graph is reflected in which axis?
+A: y-axis
+Accept: The y-axis; x = 0
+Ref: A13
+D: 2
+HT: yes
+Id: aqa-maths-3.2-050
+
+Q: On a distance-time graph, what does a horizontal section show?
+A: Stationary
+Accept: At rest; Not moving; Stopped
+Ref: A14
+D: 1
+Id: aqa-maths-3.2-051
+
+Q: A distance-time graph is a straight line from (0 h, 0 km) to (2 h, 30 km). What is the speed?
+A: 15 km/h
+Accept: 15 kilometres per hour
+Ref: A14
+D: 2
+Id: aqa-maths-3.2-052
+
+Q: A population P after n years is modelled by P = 100 × 2ⁿ. What is P after 3 years?
+A: 800
+Ref: A14
+D: 2
+HT: yes
+Id: aqa-maths-3.2-053
+
+Q: What does the gradient of a velocity-time graph represent?
+A: Acceleration
+Ref: A15
+D: 1
+HT: yes
+Id: aqa-maths-3.2-054
+
+Q: Velocity rises steadily from 0 to 20 m/s in 5 s. Use the area under the graph to find the distance.
+A: 50 m
+Accept: 50 metres
+Ref: A15
+D: 3
+HT: yes
+Id: aqa-maths-3.2-055
+
+Q: What line is drawn at a point on a curve to estimate the gradient there?
+A: Tangent
+Ref: A15
+D: 1
+HT: yes
+Id: aqa-maths-3.2-056
+
+Q: What is the radius of the circle x² + y² = 49?
+A: 7
+Ref: A16
+D: 2
+HT: yes
+Id: aqa-maths-3.2-057
+
+Q: Write the equation of the circle with centre the origin and radius 5.
+A: x² + y² = 25
+Accept: x^2 + y^2 = 25
+Ref: A16
+D: 2
+HT: yes
+Id: aqa-maths-3.2-058
+
+Q: What is the gradient of the tangent to x² + y² = 25 at the point (3, 4)?
+A: −¾
+Accept: -3/4; −0.75; -0.75
+Ref: A16
+D: 3
+HT: yes
+Note: The radius has gradient 4/3; the tangent is perpendicular to it.
+Id: aqa-maths-3.2-059
+
+Q: Solve 3x + 7 = 22.
+A: x = 5
+Accept: 5
+Ref: A17
+D: 1
+Id: aqa-maths-3.2-060
+
+Q: Solve 5x − 3 = 2x + 9.
+A: x = 4
+Accept: 4
+Ref: A17
+D: 2
+Id: aqa-maths-3.2-061
+
+Q: Solve 4(x − 2) = 20.
+A: x = 7
+Accept: 7
+Ref: A17
+D: 2
+Id: aqa-maths-3.2-062
+
+Q: Solve x² − 5x + 6 = 0.
+A: x = 2 or x = 3
+Accept: 2 and 3; 2, 3
+Ref: A18
+D: 2
+Id: aqa-maths-3.2-063
+
+Q: Solve x² − 16 = 0.
+A: x = 4 or x = −4
+Accept: ±4; 4 and −4; x = ±4
+Ref: A18
+D: 2
+Id: aqa-maths-3.2-064
+
+Q: Solve x² = 3x.
+A: x = 0 or x = 3
+Accept: 0 and 3; 0, 3
+Ref: A18
+D: 3
+HT: yes
+Note: Dividing both sides by x loses the solution x = 0.
+Id: aqa-maths-3.2-065
+
+Q: Solve x² + 6x + 4 = 0 by completing the square, giving exact answers.
+A: x = −3 ± √5
+Accept: −3 + √5 and −3 − √5; -3 ± √5
+Ref: A18
+D: 3
+HT: yes
+Id: aqa-maths-3.2-066
+
+Q: Two straight-line graphs cross at (2, 5). What is the solution of their simultaneous equations?
+A: x = 2, y = 5
+Accept: x = 2 and y = 5
+Ref: A19
+D: 1
+Id: aqa-maths-3.2-067
+
+Q: Solve the simultaneous equations x + y = 10 and x − y = 4.
+A: x = 7, y = 3
+Accept: x = 7 and y = 3
+Ref: A19
+D: 2
+Id: aqa-maths-3.2-068
+
+Q: Find the x-coordinates of the points where y = x² meets y = x + 2.
+A: x = 2 and x = −1
+Accept: 2 and −1; 2, -1
+Ref: A19
+D: 3
+HT: yes
+Id: aqa-maths-3.2-069
+
+Q: What is the name of the method that repeatedly substitutes each answer back into a formula?
+A: Iteration
+Accept: Iterating; Iterative method
+Ref: A20
+D: 1
+HT: yes
+Id: aqa-maths-3.2-070
+
+Q: Use xₙ₊₁ = ½xₙ + 3 with x₁ = 2 to find x₃.
+A: 5
+Accept: x₃ = 5
+Ref: A20
+D: 3
+HT: yes
+Note: x₂ = 4, then x₃ = 5.
+Id: aqa-maths-3.2-071
+
+Q: For f(x) = x³ + x − 5, f(1) = −3 and f(2) = 5. What shows a root lies between 1 and 2?
+A: Change of sign
+Accept: Sign change; f changes sign
+Ref: A20
+D: 2
+HT: yes
+Id: aqa-maths-3.2-072
+
+Q: A rectangle has width x cm and length (x + 3) cm. Write an expression for its perimeter.
+A: 4x + 6
+Accept: (4x + 6) cm; 2(2x + 3)
+Ref: A21
+D: 2
+Id: aqa-maths-3.2-073
+
+Q: The angles of a triangle are x, 2x and 3x degrees. Find x.
+A: 30
+Accept: x = 30; 30°
+Ref: A21
+D: 3
+Id: aqa-maths-3.2-074
+
+Q: Ali is n years old and his sister is 4 years older. Their ages total 30. How old is Ali?
+A: 13
+Accept: 13 years; n = 13
+Ref: A21
+D: 3
+Id: aqa-maths-3.2-075
+
+Q: On a number line, what type of circle marks the 2 in x ≥ 2?
+A: Closed circle
+Accept: Filled circle; Solid circle; Closed; Filled
+Ref: A22
+D: 1
+Note: An open circle is only for strict inequalities (< or >).
+Id: aqa-maths-3.2-076
+
+Q: List the integers n that satisfy −2 < n ≤ 1.
+A: −1, 0, 1
+Accept: -1, 0, 1
+Ref: A22
+D: 2
+Id: aqa-maths-3.2-077
+
+Q: Solve −3x > 12.
+A: x < −4
+Accept: x < -4; −4 > x
+Ref: A22
+D: 3
+Note: Dividing by a negative number reverses the inequality sign.
+Id: aqa-maths-3.2-078
+
+Q: Solve x² < 9.
+A: −3 < x < 3
+Accept: -3 < x < 3
+Ref: A22
+D: 3
+HT: yes
+Id: aqa-maths-3.2-079
+
+Q: When shading the region y < 2x + 1 on a graph, what type of line is used for y = 2x + 1?
+A: Dashed line
+Accept: Dashed; Broken line; Dotted line
+Ref: A22
+D: 2
+HT: yes
+Id: aqa-maths-3.2-080
+
+Q: A sequence starts at 5 and the rule is "multiply by 2, then subtract 1". What is the third term?
+A: 17
+Ref: A23
+D: 2
+Note: 5, 9, 17.
+Id: aqa-maths-3.2-081
+
+Q: Write the first three terms of the sequence with nth term n² + 1.
+A: 2, 5, 10
+Ref: A23
+D: 2
+Id: aqa-maths-3.2-082
+
+Q: What name is given to a rule such as "add 4" that gives each term from the one before?
+A: Term-to-term rule
+Accept: Term to term rule
+Ref: A23
+D: 1
+Id: aqa-maths-3.2-083
+
+Q: What name is given to the sequence 1, 3, 6, 10, 15, ...?
+A: Triangular numbers
+Accept: Triangle numbers
+Ref: A24
+D: 1
+Id: aqa-maths-3.2-084
+
+Q: Each term of 2, 3, 5, 8, ... is the sum of the two before it. What is the next term?
+A: 13
+Ref: A24
+D: 1
+Id: aqa-maths-3.2-085
+
+Q: What type of sequence multiplies by the same number each time, such as 3, 6, 12, 24, ...?
+A: Geometric
+Accept: Geometric progression; Geometric sequence
+Ref: A24
+D: 2
+Id: aqa-maths-3.2-086
+
+Q: What is the next term of the sequence 1, √2, 2, 2√2, ...?
+A: 4
+Ref: A24
+D: 2
+HT: yes
+Id: aqa-maths-3.2-087
+
+Q: Find the nth term of the sequence 5, 8, 11, 14, ...
+A: 3n + 2
+Ref: A25
+D: 2
+Id: aqa-maths-3.2-088
+
+Q: Find the nth term of the sequence 20, 16, 12, 8, ...
+A: 24 − 4n
+Accept: 24 - 4n; −4n + 24
+Ref: A25
+D: 3
+Id: aqa-maths-3.2-089
+
+Q: A sequence has nth term 4n − 1. Which term is equal to 79?
+A: 20th
+Accept: 20; n = 20
+Ref: A25
+D: 2
+Id: aqa-maths-3.2-090
+
+Q: Find the nth term of the quadratic sequence 3, 6, 11, 18, ...
+A: n² + 2
+Accept: n^2 + 2
+Ref: A25
+D: 3
+HT: yes
+Id: aqa-maths-3.2-091

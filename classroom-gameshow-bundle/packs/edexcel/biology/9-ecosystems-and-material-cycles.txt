@@ -1,0 +1,473 @@
+Board: Edexcel
+Spec: 1BI0
+Topic: 9
+
+Q: What term describes all the organisms of one species living in the same area?
+A: Population
+Ref: 9.1
+D: 1
+Id: edexcel-bio-9-001
+
+Q: What term describes all the populations of different species living in the same area?
+A: Community
+Ref: 9.1
+D: 1
+Id: edexcel-bio-9-002
+
+Q: What is an ecosystem?
+A: A community plus its abiotic environment
+Accept: Living organisms interacting with non-living surroundings
+Ref: 9.1
+D: 2
+Id: edexcel-bio-9-003
+
+Q: Name the type of factor that is the non-living part of an environment, such as temperature.
+A: Abiotic
+Ref: 9.2
+D: 1
+Id: edexcel-bio-9-004
+
+Q: Predation and competition are examples of which type of factor?
+A: Biotic
+Ref: 9.2
+D: 1
+Id: edexcel-bio-9-005
+
+Q: Why might fewer plants grow on the floor of a dense woodland?
+A: Less light reaches the ground
+Accept: Trees shade the floor; competition with trees for light
+Ref: 9.2
+D: 3
+Id: edexcel-bio-9-006
+
+Q: Why does the predator population usually peak after the prey population peaks?
+A: Predators need time to breed after food increases
+Accept: Lag while predators reproduce
+Ref: 9.2
+D: 3
+Id: edexcel-bio-9-007
+
+Q: What term describes the way species in a community depend on each other for food, shelter and pollination?
+A: Interdependence
+Ref: 9.3
+D: 1
+Id: edexcel-bio-9-008
+
+Q: In a food web, why can removing one species affect many other species?
+A: Other species depend on it for food
+Accept: Food chains are linked
+Ref: 9.3
+D: 3
+Id: edexcel-bio-9-009
+
+Q: Name one thing many animals depend on plants for, other than food.
+A: Shelter
+Accept: Oxygen; nesting sites; nesting materials
+Ref: 9.3
+D: 2
+Id: edexcel-bio-9-010
+
+Q: What term describes a relationship where one organism benefits and the other, its host, is harmed?
+A: Parasitism
+Ref: 9.4
+D: 1
+Id: edexcel-bio-9-011
+
+Q: What term describes a relationship where both organisms benefit?
+A: Mutualism
+Ref: 9.4
+D: 1
+Id: edexcel-bio-9-012
+
+Q: In the mutualism between legumes and their root nodule bacteria, what food substance does the plant give the bacteria?
+A: Sugars
+Accept: Sugar; glucose; sucrose; carbohydrates
+Ref: 9.4
+D: 2
+Id: edexcel-bio-9-013
+
+Q: Name the square frame used to sample plants in a field.
+A: Quadrat
+Ref: 9.5
+D: 1
+RP: 9.5
+Id: edexcel-bio-9-014
+
+Q: Name the line along which quadrats are placed to study how plant distribution changes across a habitat.
+A: Belt transect
+Accept: Transect
+Ref: 9.5
+D: 1
+RP: 9.5
+Id: edexcel-bio-9-015
+
+Q: Why should quadrats be placed at random positions when sampling a field?
+A: To avoid bias
+Accept: So the sample is representative
+Ref: 9.5
+D: 2
+RP: 9.5
+Id: edexcel-bio-9-016
+
+Q: In a belt transect from a hedge into a field, what is the independent variable?
+A: Distance from the hedge
+Ref: 9.5
+D: 2
+RP: 9.5
+Id: edexcel-bio-9-017
+
+Q: Name one abiotic factor that could be measured along a belt transect to explain changes in plants.
+A: Light intensity
+Accept: Soil moisture; soil water content; soil pH; temperature; wind speed
+Ref: 9.5
+D: 2
+RP: 9.5
+Id: edexcel-bio-9-018
+
+Q: Why is it better to use many quadrats rather than one when estimating a population?
+A: Results are more representative
+Accept: Reduces effect of anomalies; more reliable mean
+Ref: 9.5
+D: 3
+RP: 9.5
+Id: edexcel-bio-9-019
+
+Q: Five quadrats contain 2, 4, 3, 5 and 6 daisies. What is the mean number per quadrat?
+A: 4
+Ref: 9.6
+D: 2
+Id: edexcel-bio-9-020
+
+Q: A mean of 3 plants per 1 m² quadrat is found in a 50 m² lawn. Estimate the total population.
+A: 150
+Accept: 150 plants
+Ref: 9.6
+D: 2
+Id: edexcel-bio-9-021
+
+Q: A 0.25 m² quadrat has a mean of 2 buttercups. Estimate the number in a 100 m² field.
+A: 800
+Accept: 800 buttercups
+Ref: 9.6
+D: 3
+Note: Mean per m² is 8, then multiply by 100.
+Id: edexcel-bio-9-022
+
+Q: Why must a quadrat count be an estimate rather than an exact population size?
+A: Only a sample of the area is counted
+Ref: 9.6
+D: 3
+Id: edexcel-bio-9-023
+
+Q: Respiration at each trophic level transfers much of the energy to the surroundings in which less useful form?
+A: Heat
+Accept: Thermal energy; heat energy
+Ref: 9.7B
+D: 1
+Id: edexcel-bio-9-024
+
+Q: Which trophic level forms the widest bar of a typical pyramid of biomass?
+A: Producers
+Accept: Producer; plants; first trophic level
+Ref: 9.7B
+D: 1
+Id: edexcel-bio-9-025
+
+Q: Why are food chains rarely longer than five trophic levels?
+A: Too little energy remains for higher levels
+Accept: Energy lost at each level; not enough energy left
+Ref: 9.7B
+D: 3
+Id: edexcel-bio-9-026
+
+Q: Grass has 10 000 kJ and rabbits get 1000 kJ. What is the efficiency of the energy transfer?
+A: 10%
+Accept: 10 percent
+Ref: 9.8B
+D: 2
+Id: edexcel-bio-9-027
+
+Q: A level has 2000 kJ and 5% passes to the next level. How much energy is transferred?
+A: 100 kJ
+Ref: 9.8B
+D: 2
+Id: edexcel-bio-9-028
+
+Q: Producers have 1000 g of biomass and primary consumers 150 g. What percentage of the biomass is transferred?
+A: 15%
+Accept: 15 percent
+Ref: 9.8B
+D: 2
+Id: edexcel-bio-9-029
+
+Q: Primary consumers have 400 kJ and secondary consumers 20 kJ. What percentage of energy is lost?
+A: 95%
+Accept: 95 percent
+Ref: 9.8B
+D: 3
+Note: Efficiency is 5%, so 95% is not transferred.
+Id: edexcel-bio-9-030
+
+Q: What is the name for excess nutrients in water causing algal growth and the death of aquatic life?
+A: Eutrophication
+Ref: 9.9
+D: 1
+Id: edexcel-bio-9-031
+
+Q: In eutrophication, why do fish die after the algae die?
+A: Bacteria decomposing algae use up the oxygen
+Accept: Oxygen levels fall due to decomposers' respiration
+Ref: 9.9
+D: 3
+Id: edexcel-bio-9-032
+
+Q: What term describes a species introduced by humans to an area where it does not naturally live?
+A: Non-indigenous species
+Accept: Non-native species; alien species; non-indigenous
+Ref: 9.9
+D: 1
+Note: "Invasive" is narrower: a non-native species that spreads and causes harm.
+Id: edexcel-bio-9-033
+
+Q: Give one way a non-indigenous species can reduce biodiversity.
+A: Outcompetes native species
+Accept: Eats native species; brings new diseases
+Ref: 9.9
+D: 2
+Id: edexcel-bio-9-034
+
+Q: Give one negative impact of fish farming on wild fish populations.
+A: Spread of disease or parasites
+Accept: Disease; parasites; escaped fish breed with wild fish; pollution from waste
+Ref: 9.9
+D: 2
+Id: edexcel-bio-9-035
+
+Q: Give one positive impact of fish farming on biodiversity.
+A: Less overfishing of wild stocks
+Accept: Reduces pressure on wild fish
+Ref: 9.9
+D: 3
+Id: edexcel-bio-9-036
+
+Q: What term describes planting trees to restore an area that has been cleared of forest?
+A: Reforestation
+Ref: 9.10
+D: 1
+Id: edexcel-bio-9-037
+
+Q: How can reforestation help reduce climate change?
+A: Trees absorb carbon dioxide by photosynthesis
+Accept: Removes carbon dioxide from the air
+Ref: 9.10
+D: 3
+Id: edexcel-bio-9-038
+
+Q: Give one reason why maintaining biodiversity benefits humans.
+A: Source of new medicines
+Accept: Food sources; stable ecosystems; new crops; tourism
+Ref: 9.10
+D: 2
+Id: edexcel-bio-9-039
+
+Q: What term describes everyone having access to enough safe, nutritious food?
+A: Food security
+Ref: 9.11B
+D: 1
+Id: edexcel-bio-9-040
+
+Q: Why does increasing meat consumption reduce food security?
+A: Energy is lost feeding crops to animals
+Accept: More land needed to grow animal feed
+Ref: 9.11B
+D: 3
+Id: edexcel-bio-9-041
+
+Q: How does growing crops for biofuels threaten food security?
+A: Uses land that could grow food
+Ref: 9.11B
+D: 2
+Id: edexcel-bio-9-042
+
+Q: Name the process by which plants take carbon dioxide out of the atmosphere.
+A: Photosynthesis
+Ref: 9.12
+D: 1
+Id: edexcel-bio-9-043
+
+Q: Name the process by which organisms return carbon dioxide to the atmosphere.
+A: Respiration
+Accept: Aerobic respiration
+Ref: 9.12
+D: 1
+Id: edexcel-bio-9-044
+
+Q: How do mineral ions in dead leaves get back into the soil?
+A: Decomposers break down the leaves
+Accept: Decomposition; decay by microorganisms
+Ref: 9.12
+D: 2
+Id: edexcel-bio-9-045
+
+Q: Name two groups of microorganisms that act as decomposers.
+A: Bacteria and fungi
+Ref: 9.13
+D: 1
+Id: edexcel-bio-9-046
+
+Q: Which process releases carbon dioxide when fossil fuels are used?
+A: Combustion
+Accept: Burning
+Ref: 9.13
+D: 1
+Id: edexcel-bio-9-047
+
+Q: Why are decomposers important in the carbon cycle?
+A: Their respiration returns carbon dioxide to the air
+Accept: Release carbon from dead organisms as carbon dioxide
+Ref: 9.13
+D: 3
+Id: edexcel-bio-9-048
+
+Q: What term describes water that is safe to drink?
+A: Potable water
+Accept: Potable
+Ref: 9.14
+D: 1
+Id: edexcel-bio-9-049
+
+Q: Name the process of removing salt from seawater to make potable water.
+A: Desalination
+Ref: 9.14
+D: 1
+Id: edexcel-bio-9-050
+
+Q: Why is desalination mostly used only in areas of drought?
+A: Uses a lot of energy so is expensive
+Accept: Expensive
+Ref: 9.14
+D: 3
+Id: edexcel-bio-9-051
+
+Q: In what form do plants absorb nitrogen from the soil?
+A: Nitrates
+Accept: Nitrate ions; ammonium ions
+Ref: 9.15
+D: 1
+Id: edexcel-bio-9-052
+
+Q: What type of bacteria convert nitrogen gas from the air into nitrogen compounds?
+A: Nitrogen-fixing bacteria
+Ref: 9.15
+D: 1
+Id: edexcel-bio-9-053
+
+Q: Why does growing a legume crop in a crop rotation increase soil nitrates?
+A: Root nodule bacteria fix nitrogen
+Accept: Nitrogen-fixing bacteria in roots
+Ref: 9.15
+D: 3
+Id: edexcel-bio-9-054
+
+Q: Name a pollution indicator species found in heavily polluted water.
+A: Bloodworm
+Accept: Sludgeworm; bloodworms; sludgeworms
+Ref: 9.16B
+D: 1
+HT: yes
+Id: edexcel-bio-9-055
+
+Q: Name an indicator species whose presence shows a stream has clean, well-oxygenated water.
+A: Stonefly
+Accept: Freshwater shrimp; stonefly larvae; stonefly nymph
+Ref: 9.16B
+D: 1
+HT: yes
+Id: edexcel-bio-9-056
+
+Q: Many types of lichen grow on trees in an area. What does this show about the air?
+A: Low sulfur dioxide pollution
+Accept: Clean air; little air pollution
+Ref: 9.16B
+D: 2
+HT: yes
+Id: edexcel-bio-9-057
+
+Q: Why is blackspot fungus on roses more common where air is clean?
+A: Sulfur dioxide kills the fungus
+Accept: Fungus is sensitive to sulfur dioxide pollution
+Ref: 9.16B
+D: 3
+HT: yes
+Id: edexcel-bio-9-058
+
+Q: Give one limitation of using indicator species to assess pollution.
+A: Does not give exact pollution levels
+Accept: Other factors affect presence; not quantitative
+Ref: 9.16B
+D: 3
+HT: yes
+Id: edexcel-bio-9-059
+
+Q: Why does storing food in a fridge slow decomposition?
+A: Low temperature slows microorganism enzymes
+Accept: Slows growth of microorganisms
+Ref: 9.17B
+D: 3
+Id: edexcel-bio-9-060
+
+Q: How does drying food help preserve it?
+A: Microorganisms need water to grow
+Accept: Removes water decomposers need
+Ref: 9.17B
+D: 2
+Id: edexcel-bio-9-061
+
+Q: Why does vacuum packing slow the decay of food?
+A: Removes oxygen for aerobic decomposers
+Accept: No oxygen for microorganisms to respire
+Ref: 9.17B
+D: 2
+Id: edexcel-bio-9-062
+
+Q: Why do gardeners turn compost heaps regularly?
+A: Adds oxygen for aerobic decomposers
+Accept: To let air in; oxygen for respiration
+Ref: 9.18B
+D: 2
+Id: edexcel-bio-9-063
+
+Q: Why does a compost heap decay faster when it is warm?
+A: Decomposer enzymes work faster
+Accept: Microorganisms grow and respire faster
+Ref: 9.18B
+D: 3
+Id: edexcel-bio-9-064
+
+Q: Why does a very dry compost heap decay slowly?
+A: Decomposers need water
+Accept: Microorganisms need moisture to grow
+Ref: 9.18B
+D: 2
+Id: edexcel-bio-9-065
+
+Q: An apple loses 20 g of mass in 4 days as it decays. What is the rate of decay?
+A: 5 g per day
+Accept: 5 g/day
+Ref: 9.19B
+D: 2
+Id: edexcel-bio-9-066
+
+Q: Bread decays from 80 g to 50 g in 10 days. What is the rate of mass loss?
+A: 3 g per day
+Accept: 3 g/day
+Ref: 9.19B
+D: 3
+Id: edexcel-bio-9-067
+
+Q: State the equation for the rate of decay.
+A: Change in mass ÷ time
+Accept: Mass lost ÷ time taken
+Ref: 9.19B
+D: 2
+Id: edexcel-bio-9-068

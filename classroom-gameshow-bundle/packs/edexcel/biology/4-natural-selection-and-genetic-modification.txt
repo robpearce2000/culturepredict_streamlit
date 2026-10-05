@@ -1,0 +1,375 @@
+Board: Edexcel
+Spec: 1BI0
+Topic: 4
+
+Q: Which naturalist proposed the theory of evolution by natural selection and published "On the Origin of Species"?
+A: Charles Darwin
+Accept: Darwin
+Ref: 4.1B
+D: 1
+Id: edexcel-bio-4-001
+
+Q: Which naturalist independently came up with the theory of natural selection at the same time as Darwin?
+A: Alfred Russel Wallace
+Accept: Wallace; Alfred Wallace
+Ref: 4.1B
+D: 1
+Id: edexcel-bio-4-002
+
+Q: Why was Darwin's theory slow to be accepted in the 19th century?
+A: Challenged religious belief that God created life
+Accept: Conflicted with creation beliefs; Not enough evidence at the time; Genes and inheritance were not yet understood
+Ref: 4.1B
+D: 3
+Id: edexcel-bio-4-003
+
+Q: Give one way the theory of natural selection has influenced modern biology.
+A: Explains antibiotic resistance
+Accept: Basis of modern classification; Explains how species are related; Shapes how we tackle resistant pests
+Ref: 4.1B
+D: 3
+Id: edexcel-bio-4-004
+
+Q: What name is given to the differences between individuals of the same species, which natural selection acts on?
+A: Variation
+Accept: Genetic variation
+Ref: 4.2
+D: 1
+Id: edexcel-bio-4-005
+
+Q: In natural selection, what do survivors pass on to their offspring that makes an advantageous characteristic more common?
+A: Alleles
+Accept: Genes; Advantageous alleles
+Ref: 4.2
+D: 2
+Id: edexcel-bio-4-006
+
+Q: Why do individuals in a population compete with each other?
+A: Limited resources such as food
+Accept: Limited food, water, mates or space; Resources are limited
+Ref: 4.2
+D: 2
+Id: edexcel-bio-4-007
+
+Q: Explain why a peppered moth population could become mostly dark after trees were blackened by soot.
+A: Dark moths camouflaged, survived, passed on alleles
+Accept: Pale moths eaten more; dark moths reproduced more
+Ref: 4.2
+D: 3
+Id: edexcel-bio-4-008
+
+Q: Which antibiotic-resistant strain of Staphylococcus aureus, known by a four-letter abbreviation, causes infections in hospitals?
+A: MRSA
+Accept: Methicillin-resistant Staphylococcus aureus; Meticillin-resistant Staphylococcus aureus
+Ref: 4.3
+D: 1
+Id: edexcel-bio-4-009
+
+Q: Why do antibiotic-resistant bacteria become common when an antibiotic is used?
+A: Resistant bacteria survive and reproduce
+Accept: Non-resistant bacteria killed; resistant ones multiply
+Ref: 4.3
+D: 2
+Id: edexcel-bio-4-010
+
+Q: Why does antibiotic resistance in bacteria provide good evidence for Darwin's theory?
+A: Evolution can be observed quickly
+Accept: Bacteria reproduce fast, so selection seen within years
+Ref: 4.3
+D: 3
+Id: edexcel-bio-4-011
+
+Q: Why should patients complete the full course of antibiotics?
+A: Kills all bacteria, leaving no resistant survivors
+Accept: Kills all bacteria so none survive to become resistant; Prevents resistant bacteria surviving; Reduces resistance developing
+Ref: 4.3
+D: 3
+Id: edexcel-bio-4-012
+
+Q: What is the nickname of the 4.4-million-year-old hominid fossil found in Ethiopia?
+A: Ardi
+Accept: Ardipithecus ramidus
+Ref: 4.4
+D: 1
+Id: edexcel-bio-4-013
+
+Q: How old is the hominid fossil known as Lucy?
+A: 3.2 million years
+Accept: 3.2 million years old
+Ref: 4.4
+D: 1
+Id: edexcel-bio-4-014
+
+Q: Richard Leakey's team found the skeleton known as Turkana Boy. Roughly how old is it?
+A: 1.6 million years
+Accept: About 1.6 million years old; 1.5 million years
+Ref: 4.4
+D: 2
+Id: edexcel-bio-4-015
+
+Q: How does brain size change from Ardi to Lucy to Turkana Boy?
+A: Brain size increases
+Accept: Gets bigger; Larger over time
+Ref: 4.4
+D: 3
+Id: edexcel-bio-4-016
+
+Q: How did stone tools change over time?
+A: Became more complex and refined
+Accept: More complex; More specialised; More finely shaped
+Ref: 4.5
+D: 2
+Id: edexcel-bio-4-017
+
+Q: Stone tools are often dated from the rock layer they are found in. What is this method called?
+A: Stratigraphy
+Accept: Dating rock layers; Using rock strata
+Ref: 4.5
+D: 2
+Id: edexcel-bio-4-018
+
+Q: Why can volcanic ash layers above and below a stone tool help date it?
+A: Ash can be dated radiometrically
+Accept: Radiometric dating of volcanic rock; Isotopes in ash give its age
+Ref: 4.5
+D: 3
+Id: edexcel-bio-4-019
+
+Q: What name is given to a limb with five digits, found in mammals, birds, reptiles and amphibians?
+A: Pentadactyl limb
+Accept: Pentadactyl
+Ref: 4.6B
+D: 1
+Id: edexcel-bio-4-020
+
+Q: What does the word "pentadactyl" mean?
+A: Five digits
+Accept: Five fingers; Five fingers or toes; Five-digited
+Ref: 4.6B
+D: 2
+Id: edexcel-bio-4-021
+
+Q: Bat wings, whale flippers and human arms do different jobs but share one bone pattern. Why is this evidence for evolution?
+A: Same structure adapted from a common ancestor
+Accept: Similar bones adapted for different uses from common ancestor; Evolved from a common ancestor; Shared ancestry
+Ref: 4.6B
+D: 3
+Id: edexcel-bio-4-022
+
+Q: How many kingdoms were used in the older classification system?
+A: Five
+Accept: 5
+Ref: 4.7
+D: 1
+Id: edexcel-bio-4-023
+
+Q: Name the three domains of life.
+A: Archaea, Bacteria, Eukarya
+Accept: Archaea, Bacteria, Eukaryota; Archaea, Eubacteria, Eukarya; Archaea, Bacteria, Eukaryotes
+Ref: 4.7
+D: 2
+Note: Accept any order; all three needed.
+Id: edexcel-bio-4-024
+
+Q: Which domain contains all organisms whose cells have a nucleus?
+A: Eukarya
+Accept: Eukaryota; Eukaryotes
+Ref: 4.7
+D: 1
+Id: edexcel-bio-4-025
+
+Q: Why did genetic analysis lead to prokaryotes being split into two domains?
+A: Archaea DNA differs greatly from bacteria
+Accept: Archaea and bacteria genetically very different; RNA sequences very different
+Ref: 4.7
+D: 3
+Id: edexcel-bio-4-026
+
+Q: What is the term for humans choosing which organisms breed to produce desired characteristics?
+A: Selective breeding
+Accept: Artificial selection
+Ref: 4.8
+D: 1
+Id: edexcel-bio-4-027
+
+Q: Describe the main steps of selective breeding.
+A: Breed best parents, select best offspring, repeat
+Accept: Choose desired parents, breed, select offspring, repeat over generations
+Ref: 4.8
+D: 2
+Id: edexcel-bio-4-028
+
+Q: Why can selectively bred animals be more at risk from a new disease?
+A: Reduced genetic variation
+Accept: Less variation; Inbreeding; Small gene pool
+Ref: 4.8
+D: 3
+Id: edexcel-bio-4-029
+
+Q: What is the name for growing new plants from small groups of cells in a sterile nutrient medium?
+A: Tissue culture
+Accept: Micropropagation
+Ref: 4.9B
+D: 1
+Id: edexcel-bio-4-030
+
+Q: Give one advantage of tissue culture in plant breeding programmes.
+A: Many identical plants produced quickly
+Accept: Large numbers quickly; Saves rare species; Keeps desired characteristics
+Ref: 4.9B
+D: 2
+Id: edexcel-bio-4-031
+
+Q: Why are cultured human cells useful in medical research?
+A: Test drugs without using whole organisms
+Accept: Study effects on cells without animals or people; Reduces animal testing
+Ref: 4.9B
+D: 3
+Id: edexcel-bio-4-032
+
+Q: What is the name for altering an organism's genome to introduce a desirable characteristic?
+A: Genetic engineering
+Accept: Genetic modification; GM
+Ref: 4.10
+D: 1
+Id: edexcel-bio-4-033
+
+Q: What substance do bacteria make after being genetically engineered with the human gene to treat diabetes?
+A: Insulin
+Accept: Human insulin
+Ref: 4.10
+D: 1
+Id: edexcel-bio-4-034
+
+Q: How does genetic engineering differ from selective breeding in where genes can come from?
+A: Genes can come from another species
+Accept: Genes transferred between different species
+Ref: 4.10
+D: 3
+Id: edexcel-bio-4-035
+
+Q: Which enzymes cut DNA at specific base sequences?
+A: Restriction enzymes
+Accept: Restriction enzyme; Restriction endonucleases
+Ref: 4.11
+D: 1
+HT: yes
+Id: edexcel-bio-4-036
+
+Q: Which enzyme joins the cut ends of DNA together?
+A: Ligase
+Accept: DNA ligase
+Ref: 4.11
+D: 1
+HT: yes
+Id: edexcel-bio-4-037
+
+Q: What are the short unpaired single-stranded ends left after some restriction enzymes cut DNA?
+A: Sticky ends
+Accept: Sticky end
+Ref: 4.11
+D: 2
+HT: yes
+Id: edexcel-bio-4-038
+
+Q: What is the name for a carrier, such as a plasmid or virus, used to insert a gene into a cell?
+A: Vector
+Accept: Vectors
+Ref: 4.11
+D: 1
+HT: yes
+Id: edexcel-bio-4-039
+
+Q: Why must the same restriction enzyme cut both the gene and the plasmid?
+A: Gives matching complementary sticky ends
+Accept: Sticky ends match and pair up; Complementary sticky ends
+Ref: 4.11
+D: 3
+HT: yes
+Id: edexcel-bio-4-040
+
+Q: Bt crops contain a gene from which bacterium?
+A: Bacillus thuringiensis
+Accept: B. thuringiensis
+Ref: 4.12B
+D: 1
+Id: edexcel-bio-4-041
+
+Q: What does the Bt gene make the crop produce?
+A: Toxin that kills insects
+Accept: Insecticidal toxin; Bt toxin; Poison that kills insect larvae
+Ref: 4.12B
+D: 2
+Id: edexcel-bio-4-042
+
+Q: Give one advantage of growing insect-resistant Bt crops.
+A: Less insecticide spraying needed
+Accept: Higher yield; Less crop damage; Lower pesticide costs
+Ref: 4.12B
+D: 2
+Id: edexcel-bio-4-043
+
+Q: Give one disadvantage of growing Bt crops.
+A: Insects may become resistant to toxin
+Accept: Harms non-target insects; Genes may spread to wild plants; Seeds expensive
+Ref: 4.12B
+D: 3
+Note: Resistance arises by natural selection, linking back to 4.3.
+Id: edexcel-bio-4-044
+
+Q: What is the name for using a predator, parasite or pathogen to reduce a pest population?
+A: Biological control
+Accept: Biocontrol
+Ref: 4.13B
+D: 1
+Id: edexcel-bio-4-045
+
+Q: What can happen to lakes and rivers if fertiliser runs off fields?
+A: Eutrophication
+Accept: Algal bloom; Water life dies from lack of oxygen
+Ref: 4.13B
+D: 2
+Id: edexcel-bio-4-046
+
+Q: Give one disadvantage of biological control.
+A: Control organism may become a pest
+Accept: May eat other species; Can upset food chains; Slower than pesticides
+Ref: 4.13B
+D: 3
+Note: Cane toads in Australia are a well-known example.
+Id: edexcel-bio-4-047
+
+Q: Give one advantage of biological control compared with chemical pesticides.
+A: No toxic chemicals left in the environment
+Accept: No chemical residues; Targets only the pest; Long-lasting; Pests less likely to become resistant; Does not need repeated application
+Ref: 4.13B
+D: 2
+Id: edexcel-bio-4-048
+
+Q: Give one ethical objection some people raise to genetic engineering.
+A: Interfering with nature
+Accept: Unnatural; Playing God; Animal welfare concerns
+Ref: 4.14
+D: 2
+Id: edexcel-bio-4-049
+
+Q: Why do some people worry about eating GM crops?
+A: Unknown long-term health effects
+Accept: Possible allergies; Long-term effects not known
+Ref: 4.14
+D: 2
+Id: edexcel-bio-4-050
+
+Q: Give one reason genetic engineering produces new crop varieties faster than selective breeding.
+A: Gene inserted directly in one generation
+Accept: No need to breed over many generations
+Ref: 4.14
+D: 3
+Id: edexcel-bio-4-051
+
+Q: Why might a poor farmer be unable to benefit from GM crops?
+A: GM seeds are expensive
+Accept: Must buy new seed each year; High seed cost
+Ref: 4.14
+D: 3
+Id: edexcel-bio-4-052

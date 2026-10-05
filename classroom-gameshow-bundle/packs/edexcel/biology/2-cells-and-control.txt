@@ -1,0 +1,437 @@
+Board: Edexcel
+Spec: 1BI0
+Topic: 2
+
+Q: Name the stage of the cell cycle in which DNA is replicated before mitosis begins.
+A: Interphase
+Ref: 2.1
+D: 1
+Id: edexcel-bio-2-001
+
+Q: In which stage of mitosis do the chromosomes line up along the middle (equator) of the cell?
+A: Metaphase
+Ref: 2.1
+D: 1
+Id: edexcel-bio-2-002
+
+Q: Name the final step of the cell cycle, in which the cytoplasm and cell membrane divide.
+A: Cytokinesis
+Ref: 2.1
+D: 1
+Note: Cytokinesis follows telophase; it is not itself a stage of mitosis in the strict sense.
+Id: edexcel-bio-2-003
+
+Q: What happens to the chromosomes and the nuclear membrane during prophase?
+A: Chromosomes condense; nuclear membrane breaks down
+Accept: Chromosomes become visible and nucleus breaks down; chromosomes shorten and thicken, membrane disappears
+Ref: 2.1
+D: 2
+Id: edexcel-bio-2-004
+
+Q: Why must a cell copy its DNA during interphase before it divides by mitosis?
+A: Each daughter cell needs a full chromosome set
+Accept: So each daughter cell gets a full set of chromosomes; both new cells get identical, complete genetic information
+Ref: 2.1
+D: 3
+Id: edexcel-bio-2-005
+
+Q: Give three reasons why mitosis is important to living organisms.
+A: Growth, repair and asexual reproduction
+Accept: Growth, repair, asexual reproduction (any order); replacing cells for repair
+Ref: 2.2
+D: 2
+Id: edexcel-bio-2-006
+
+Q: A strawberry plant produces new plants from its runners. Which type of cell division makes these new plants?
+A: Mitosis
+Ref: 2.2
+D: 1
+Id: edexcel-bio-2-007
+
+Q: Why are offspring produced by asexual reproduction genetically identical to their parent?
+A: Made by mitosis, so same chromosomes as parent
+Accept: Only mitosis is involved, copying the parent's DNA exactly
+Ref: 2.2
+D: 3
+Note: Students should link identical offspring to mitosis, with no fusion of gametes.
+Id: edexcel-bio-2-008
+
+Q: A human body cell has 46 chromosomes. How many chromosomes are in each daughter cell after mitosis?
+A: 46
+Ref: 2.3
+D: 2
+Id: edexcel-bio-2-009
+
+Q: Body cells contain two sets of chromosomes. What term describes a cell like this?
+A: Diploid
+Ref: 2.3
+D: 1
+Id: edexcel-bio-2-010
+
+Q: Compare the genetic information in the two daughter cells made by mitosis with that of the parent cell.
+A: Genetically identical to each other and the parent
+Accept: Identical; the same
+Ref: 2.3
+D: 2
+Id: edexcel-bio-2-011
+
+Q: Cancer develops when changes in a cell make which process go out of control?
+A: Cell division
+Accept: Mitosis; uncontrolled cell division
+Ref: 2.4
+D: 1
+Id: edexcel-bio-2-012
+
+Q: What name is given to a mass of cells formed by uncontrolled cell division?
+A: Tumour
+Accept: Tumor; growth
+Note: A tumour is not always cancerous (benign tumours exist), so do not accept just "cancer".
+Ref: 2.4
+D: 1
+Id: edexcel-bio-2-013
+
+Q: Explain why a cancer cell gives rise to a large tumour, unlike a normal body cell.
+A: Division is uncontrolled, so it keeps dividing
+Accept: It divides uncontrollably instead of stopping; its division is no longer controlled
+Ref: 2.4
+D: 3
+Id: edexcel-bio-2-014
+
+Q: Plants grow by cell division, differentiation and one more process that animals do not use. Name it.
+A: Elongation
+Accept: Cell elongation
+Ref: 2.5
+D: 1
+Id: edexcel-bio-2-015
+
+Q: Name the two processes by which animals grow.
+A: Cell division and differentiation
+Accept: Mitosis and differentiation
+Ref: 2.5
+D: 2
+Id: edexcel-bio-2-016
+
+Q: Plant cells can differentiate throughout the plant's life. How does this differ from most animal cells?
+A: Most animal cells differentiate only early in life
+Accept: Animal cells lose the ability to differentiate early; animal cells differentiate mainly in the embryo
+Ref: 2.5
+D: 3
+Id: edexcel-bio-2-017
+
+Q: What is the name of the process by which an unspecialised cell becomes specialised?
+A: Differentiation
+Accept: Cell differentiation
+Ref: 2.6
+D: 1
+Id: edexcel-bio-2-018
+
+Q: Why do multicellular organisms need cell differentiation?
+A: To make specialised cells that carry out different functions
+Accept: So cells become adapted to particular jobs
+Ref: 2.6
+D: 3
+Id: edexcel-bio-2-019
+
+Q: After differentiation, a cell has the structures it needs to carry out one particular function. What word describes such a cell?
+A: Specialised
+Accept: Specialized; specialised cell
+Ref: 2.6
+D: 1
+Id: edexcel-bio-2-020
+
+Q: A baby's mass is on the 25th percentile. What percentage of babies of the same age are lighter?
+A: 25%
+Accept: 25 per cent
+Ref: 2.7
+D: 2
+Id: edexcel-bio-2-021
+
+Q: A baby's head circumference is on the 90th percentile. What percentage of babies of the same age have a larger head?
+A: 10%
+Accept: 10 per cent
+Ref: 2.7
+D: 3
+Id: edexcel-bio-2-022
+
+Q: A baby's mass rises from 4 kg to 5 kg. What is the percentage gain in mass?
+A: 25%
+Accept: 25 per cent
+Ref: 2.7
+D: 3
+Note: Percentage gain = increase ÷ starting mass × 100.
+Id: edexcel-bio-2-023
+
+Q: What is the name of the region of unspecialised, dividing cells at a plant's root and shoot tips?
+A: Meristem
+Accept: Meristems
+Ref: 2.8
+D: 1
+Id: edexcel-bio-2-024
+
+Q: What type of stem cell can differentiate into any type of cell in the body?
+A: Embryonic stem cell
+Accept: Embryonic stem cells
+Ref: 2.8
+D: 1
+Id: edexcel-bio-2-025
+
+Q: How do adult stem cells differ from embryonic stem cells in what they can become?
+A: Adult stem cells form only a few cell types
+Accept: Adult stem cells are limited; embryonic can become any cell
+Ref: 2.8
+D: 3
+Id: edexcel-bio-2-026
+
+Q: Give one potential medical benefit of using stem cells.
+A: Replacing damaged or diseased cells or tissues
+Accept: Treating diseases such as diabetes or paralysis; growing new tissue
+Ref: 2.9
+D: 2
+Id: edexcel-bio-2-027
+
+Q: Transplanted stem cells might keep dividing out of control. Which disease could this cause?
+A: Cancer
+Accept: Tumour; tumours
+Ref: 2.9
+D: 2
+Id: edexcel-bio-2-028
+
+Q: Using stem cells taken from the patient's own body avoids which risk?
+A: Rejection
+Accept: Immune rejection
+Ref: 2.9
+D: 2
+Id: edexcel-bio-2-029
+
+Q: Which part of the brain coordinates balance and muscle movement?
+A: Cerebellum
+Ref: 2.10B
+D: 1
+Id: edexcel-bio-2-030
+
+Q: Which part of the brain controls unconscious activities such as breathing and heart rate?
+A: Medulla oblongata
+Accept: Medulla
+Ref: 2.10B
+D: 1
+Id: edexcel-bio-2-031
+
+Q: Which part of the brain is responsible for conscious thought, memory and language?
+A: Cerebral hemispheres
+Accept: Cerebrum; cerebral cortex
+Ref: 2.10B
+D: 1
+Id: edexcel-bio-2-032
+
+Q: A patient has damage to the medulla oblongata. Explain why this could be life-threatening.
+A: Medulla controls breathing and heart rate
+Accept: It controls breathing and heart rate; breathing or heartbeat may stop
+Ref: 2.10B
+D: 3
+Id: edexcel-bio-2-033
+
+Q: Which brain scan uses X-rays to produce detailed images of the brain's structure?
+A: CT scan
+Accept: CT; computerised tomography
+Ref: 2.11B
+D: 1
+HT: yes
+Id: edexcel-bio-2-034
+
+Q: What is injected into a patient before a PET scan of the brain?
+A: Radioactive tracer
+Accept: Radioactive glucose; a radioactive substance
+Ref: 2.11B
+D: 2
+HT: yes
+Id: edexcel-bio-2-035
+
+Q: Why is a PET scan more useful than a CT scan for showing which brain areas are active?
+A: PET shows activity; CT shows only structure
+Accept: Active areas take up more tracer; CT shows structure not function
+Ref: 2.11B
+D: 3
+HT: yes
+Id: edexcel-bio-2-036
+
+Q: Why are scans used to investigate the brain rather than taking samples of brain tissue?
+A: Brain is inside skull; sampling risks damage
+Accept: Brain tissue is hard to reach and easily damaged
+Ref: 2.11B
+D: 3
+HT: yes
+Note: Accept either idea: the skull blocks access, or removing tissue could damage the brain.
+Id: edexcel-bio-2-037
+
+Q: Why does damage to the spinal cord often cause permanent paralysis?
+A: Damaged neurones in the CNS do not repair
+Accept: Nerve cells cannot regrow or be replaced
+Ref: 2.12B
+D: 3
+HT: yes
+Id: edexcel-bio-2-038
+
+Q: Why is surgery to remove a brain tumour risky?
+A: Healthy brain tissue may be damaged
+Accept: Tumour hard to reach; may damage nearby brain tissue
+Ref: 2.12B
+D: 3
+HT: yes
+Id: edexcel-bio-2-039
+
+Q: Many drugs do not work well on brain diseases. Why not?
+A: Drugs cannot easily pass into the brain
+Accept: Blood-brain barrier stops drugs reaching brain tissue
+Ref: 2.12B
+D: 3
+HT: yes
+Id: edexcel-bio-2-040
+
+Q: What is the name of the fatty layer that insulates an axon and speeds up the impulse?
+A: Myelin sheath
+Accept: Myelin
+Ref: 2.13
+D: 1
+Id: edexcel-bio-2-041
+
+Q: What is the name of the small gap between two neurones?
+A: Synapse
+Accept: Synaptic gap; synaptic cleft
+Ref: 2.13
+D: 1
+Id: edexcel-bio-2-042
+
+Q: Describe how an impulse crosses a synapse.
+A: Neurotransmitter diffuses across and binds to next neurone
+Accept: Chemical released, diffuses across gap, triggers impulse
+Ref: 2.13
+D: 2
+Id: edexcel-bio-2-043
+
+Q: In a sensory neurone, which long fibre carries the impulse towards the cell body?
+A: Dendron
+Ref: 2.13
+D: 2
+Id: edexcel-bio-2-044
+
+Q: An impulse travels 1.2 m along a neurone in 0.02 s. Use speed = distance ÷ time to find its speed.
+A: 60 m/s
+Accept: 60 metres per second; 60 m s⁻¹
+Ref: 2.13
+D: 2
+Note: 1.2 ÷ 0.02 = 60; watch for answers of 0.6 or 6 from decimal slips.
+Id: edexcel-bio-2-045
+
+Q: Name the type of neurone in a reflex arc that carries impulses to the effector.
+A: Motor neurone
+Accept: Motor neuron
+Ref: 2.14
+D: 1
+Id: edexcel-bio-2-046
+
+Q: Why is a reflex response faster than a conscious response?
+A: Impulse bypasses the conscious brain
+Accept: Does not involve conscious thought; fewer synapses
+Ref: 2.14
+D: 3
+Id: edexcel-bio-2-047
+
+Q: Put in order: motor neurone, receptor, relay neurone, effector, sensory neurone.
+A: Receptor, sensory, relay, motor, effector
+Ref: 2.14
+D: 2
+Id: edexcel-bio-2-048
+
+Q: Which transparent layer at the front of the eye does most of the refracting of light?
+A: Cornea
+Ref: 2.15B
+D: 1
+Id: edexcel-bio-2-049
+
+Q: Which part of the eye controls how much light enters by changing the size of the pupil?
+A: Iris
+Ref: 2.15B
+D: 1
+Id: edexcel-bio-2-050
+
+Q: Which cells in the retina detect colour?
+A: Cones
+Accept: Cone cells
+Ref: 2.15B
+D: 1
+Id: edexcel-bio-2-051
+
+Q: Which cells in the retina are sensitive to dim light?
+A: Rods
+Accept: Rod cells
+Ref: 2.15B
+D: 1
+Id: edexcel-bio-2-052
+
+Q: What happens to the size of the pupil in bright light, and why?
+A: Smaller, to protect the retina
+Accept: Constricts to let less light in; gets smaller to stop retina damage
+Ref: 2.15B
+D: 3
+Id: edexcel-bio-2-053
+
+Q: What is the function of the lens in the eye?
+A: Focuses light onto the retina
+Accept: Refracts light to focus it on the retina
+Ref: 2.15B
+D: 2
+Id: edexcel-bio-2-054
+
+Q: Which eye defect makes the lens cloudy?
+A: Cataracts
+Accept: Cataract
+Ref: 2.16B
+D: 1
+Id: edexcel-bio-2-055
+
+Q: In short-sightedness, where is light from a distant object focused?
+A: In front of the retina
+Ref: 2.16B
+D: 2
+Id: edexcel-bio-2-056
+
+Q: In long-sightedness, where is light from a near object focused?
+A: Behind the retina
+Ref: 2.16B
+D: 2
+Id: edexcel-bio-2-057
+
+Q: Why can someone with colour blindness not tell some colours apart?
+A: Some cone cells do not work properly
+Accept: Faulty or missing cones in the retina
+Ref: 2.16B
+D: 3
+Id: edexcel-bio-2-058
+
+Q: What type of lens in glasses corrects short-sightedness?
+A: Concave lens
+Accept: Diverging lens; concave
+Ref: 2.17B
+D: 2
+Id: edexcel-bio-2-059
+
+Q: What type of lens in glasses corrects long-sightedness?
+A: Convex lens
+Accept: Converging lens; convex
+Ref: 2.17B
+D: 2
+Id: edexcel-bio-2-060
+
+Q: How is a cataract treated?
+A: Cloudy lens replaced with an artificial lens
+Accept: Surgery to replace the lens
+Ref: 2.17B
+D: 2
+Id: edexcel-bio-2-061
+
+Q: Explain how a concave lens corrects short-sightedness.
+A: Spreads light out so it focuses on retina
+Accept: Diverges light rays so the image falls on the retina
+Ref: 2.17B
+D: 3
+Id: edexcel-bio-2-062

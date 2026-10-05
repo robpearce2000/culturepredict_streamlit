@@ -1,0 +1,592 @@
+Board: Edexcel
+Spec: 1BI0
+Topic: 3
+
+Q: Asexual reproduction needs only one parent. What does this mean an organism does not need to find?
+A: A mate
+Accept: Partner
+Ref: 3.1B
+D: 1
+Id: edexcel-bio-3-001
+
+Q: Offspring from asexual reproduction are genetically identical. What is the main disadvantage of this for a population?
+A: No variation
+Accept: All could be killed by one disease; Whole population vulnerable to disease or environmental change
+Ref: 3.1B
+D: 2
+Id: edexcel-bio-3-002
+
+Q: Why can asexual reproduction let a species quickly colonise a new habitat when conditions are good?
+A: Rapid reproductive cycle, no mate needed
+Accept: Reproduces quickly; Many offspring fast without finding a mate
+Ref: 3.1B
+D: 3
+Id: edexcel-bio-3-003
+
+Q: Name the main advantage of sexual reproduction for a population of a species.
+A: Variation
+Accept: Genetic variation; Offspring are genetically different
+Ref: 3.2B
+D: 1
+Id: edexcel-bio-3-004
+
+Q: State one disadvantage of sexual reproduction compared with asexual reproduction.
+A: Needs to find a mate
+Accept: Requires a mate; Slower; Takes more time and energy
+Ref: 3.2B
+D: 2
+Id: edexcel-bio-3-005
+
+Q: Why is a sexually reproducing population more likely to survive a new disease than an asexual one?
+A: Variation means some individuals may be resistant
+Accept: Some have resistant alleles and survive
+Ref: 3.2B
+D: 3
+Id: edexcel-bio-3-006
+
+Q: Name the type of cell division that produces gametes.
+A: Meiosis
+Accept: Meiotic division
+Ref: 3.3
+D: 1
+Id: edexcel-bio-3-007
+
+Q: How many daughter cells are produced when one cell divides by meiosis?
+A: 4
+Accept: Four
+Ref: 3.3
+D: 1
+Id: edexcel-bio-3-008
+
+Q: What word describes a cell, such as a gamete, that contains half the normal number of chromosomes?
+A: Haploid
+Ref: 3.3
+D: 1
+Id: edexcel-bio-3-009
+
+Q: Why is it important that gametes have half the number of chromosomes of body cells?
+A: Fertilisation restores the full (diploid) number
+Accept: Zygote gets the normal chromosome number; Number does not double each generation
+Ref: 3.3
+D: 3
+Id: edexcel-bio-3-010
+
+Q: What name describes the shape of a DNA molecule, two strands coiled together?
+A: Double helix
+Ref: 3.4
+D: 1
+Id: edexcel-bio-3-011
+
+Q: Name the small repeating units that join together to make the DNA polymer.
+A: Nucleotides
+Accept: Nucleotide
+Ref: 3.4
+D: 1
+Id: edexcel-bio-3-012
+
+Q: Which base always pairs with adenine (A) in DNA?
+A: Thymine
+Accept: T
+Ref: 3.4
+D: 1
+Id: edexcel-bio-3-013
+
+Q: Name the three parts of a DNA nucleotide.
+A: Sugar, phosphate and a base
+Accept: Deoxyribose, phosphate, base; Phosphate group, sugar, base
+Ref: 3.4
+D: 2
+Id: edexcel-bio-3-014
+
+Q: In a DNA sample, 20% of the bases are adenine. What percentage are cytosine?
+A: 30%
+Accept: 30
+Ref: 3.4
+D: 3
+Note: A = T = 20%, leaving 60% shared equally between C and G.
+Id: edexcel-bio-3-015
+
+Q: What type of bond holds the complementary base pairs together between the two DNA strands?
+A: Hydrogen bonds
+Accept: Weak hydrogen bonds; Hydrogen bond
+Ref: 3.4
+D: 1
+Id: edexcel-bio-3-016
+
+Q: What term means the entire DNA of an organism?
+A: Genome
+Ref: 3.5
+D: 1
+Id: edexcel-bio-3-017
+
+Q: Define a gene.
+A: Section of DNA that codes for a specific protein
+Accept: Part of a DNA molecule coding for a protein
+Ref: 3.5
+D: 2
+Id: edexcel-bio-3-018
+
+Q: What is the difference between an organism's genome and one of its genes?
+A: Genome is all its DNA; gene is one section
+Accept: Genome is entire DNA; gene codes for one protein
+Ref: 3.5
+D: 3
+Id: edexcel-bio-3-019
+
+Q: When extracting DNA from fruit, what is added to break down the cell membranes?
+A: Detergent
+Accept: Washing-up liquid
+Ref: 3.6
+D: 1
+Id: edexcel-bio-3-020
+
+Q: When extracting DNA from fruit, what is added with the detergent to help the DNA strands clump together?
+A: Salt
+Accept: Sodium chloride
+Ref: 3.6
+D: 2
+Id: edexcel-bio-3-021
+
+Q: What liquid is poured down the side of the tube so the DNA precipitates out as white strands?
+A: Ice-cold ethanol
+Accept: Ethanol; Cold ethanol; Ice-cold alcohol
+Ref: 3.6
+D: 1
+Id: edexcel-bio-3-022
+
+Q: Why is the fruit mixture filtered before ethanol is added in DNA extraction?
+A: Remove cell debris and pulp
+Accept: To remove cell debris; Remove solid fruit pieces; Leave a filtrate containing DNA
+Ref: 3.6
+D: 3
+Id: edexcel-bio-3-023
+
+Q: What does the order of bases in a gene decide in the protein made?
+A: Order of amino acids
+Accept: Sequence of amino acids; Amino acid sequence
+Ref: 3.7B
+D: 2
+HT: yes
+Id: edexcel-bio-3-024
+
+Q: After the chain of amino acids is made, what does it do to form a specifically shaped protein?
+A: Folds
+Accept: Folds into a specific shape
+Ref: 3.7B
+D: 1
+HT: yes
+Id: edexcel-bio-3-025
+
+Q: Why does an enzyme's specific shape depend on the base sequence of its gene?
+A: Bases set amino acid order, which sets folding
+Accept: Amino acid sequence determines how it folds
+Ref: 3.7B
+D: 3
+HT: yes
+Id: edexcel-bio-3-026
+
+Q: Name the first stage of protein synthesis, in which mRNA is made from DNA.
+A: Transcription
+Ref: 3.8B
+D: 1
+HT: yes
+Id: edexcel-bio-3-027
+
+Q: Name the enzyme that binds to non-coding DNA in front of a gene and makes mRNA.
+A: RNA polymerase
+Ref: 3.8B
+D: 1
+HT: yes
+Id: edexcel-bio-3-028
+
+Q: At which cell structure is mRNA translated into a polypeptide?
+A: Ribosome
+Accept: Ribosomes
+Ref: 3.8B
+D: 1
+HT: yes
+Id: edexcel-bio-3-029
+
+Q: What name is given to a triplet of bases on mRNA that codes for one amino acid?
+A: Codon
+Ref: 3.8B
+D: 2
+HT: yes
+Id: edexcel-bio-3-030
+
+Q: Which molecule carries specific amino acids to the ribosome during translation?
+A: tRNA
+Accept: Transfer RNA
+Ref: 3.8B
+D: 2
+HT: yes
+Id: edexcel-bio-3-031
+
+Q: How many bases of mRNA code for a polypeptide 50 amino acids long?
+A: 150
+Accept: 150 bases
+Ref: 3.8B
+D: 3
+HT: yes
+Note: Three bases (one codon) per amino acid; ignore stop codons.
+Id: edexcel-bio-3-032
+
+Q: A variant changes how well RNA polymerase binds, but not the protein's amino acids. Is it in coding or non-coding DNA?
+A: Non-coding DNA
+Accept: Non-coding; Non-coding DNA in front of the gene
+Ref: 3.9B
+D: 2
+HT: yes
+Id: edexcel-bio-3-033
+
+Q: A variant in non-coding DNA changes how well RNA polymerase binds. What does this alter about the protein?
+A: Quantity of protein produced
+Accept: Amount of protein made; How much protein is made
+Ref: 3.9B
+D: 2
+HT: yes
+Id: edexcel-bio-3-034
+
+Q: A non-coding variant helps RNA polymerase bind to the gene for a pigment-making enzyme. How might the phenotype change?
+A: More enzyme, so more pigment
+Accept: Darker colour; More pigment produced; More of the enzyme made
+Ref: 3.9B
+D: 3
+HT: yes
+Id: edexcel-bio-3-035
+
+Q: A genetic variant in the coding DNA of a gene directly alters the sequence of what in the protein?
+A: Amino acids
+Accept: Amino acid sequence
+Ref: 3.10B
+D: 2
+HT: yes
+Id: edexcel-bio-3-036
+
+Q: A coding variant changes one amino acid in an enzyme. Which part of the enzyme may change shape?
+A: Active site
+Ref: 3.10B
+D: 2
+HT: yes
+Id: edexcel-bio-3-037
+
+Q: Explain how a variant in coding DNA can reduce an enzyme's activity.
+A: Changed amino acids alter folding and active site shape
+Accept: Active site changes shape so substrate no longer fits
+Ref: 3.10B
+D: 3
+HT: yes
+Id: edexcel-bio-3-038
+
+Q: Which plants did Gregor Mendel breed in his experiments on inheritance?
+A: Pea plants
+Accept: Peas; Garden peas
+Ref: 3.11B
+D: 1
+Id: edexcel-bio-3-039
+
+Q: Mendel crossed pure-breeding tall and short pea plants, then bred their offspring together. What ratio of tall to short plants did he get?
+A: 3 : 1
+Accept: 3:1; 3 tall : 1 short
+Ref: 3.11B
+D: 2
+Id: edexcel-bio-3-040
+
+Q: Mendel proposed that characteristics were passed on as separate "units". What do we now call these units?
+A: Genes
+Accept: Alleles; Gene
+Ref: 3.11B
+D: 2
+Id: edexcel-bio-3-041
+
+Q: Why was Mendel's work not understood or accepted in his lifetime?
+A: Genes, chromosomes and DNA were not yet known
+Accept: No mechanism of inheritance known; Chromosomes not yet discovered
+Ref: 3.11B
+D: 3
+Id: edexcel-bio-3-042
+
+Q: What name is given to different versions of the same gene?
+A: Alleles
+Accept: Allele
+Ref: 3.12
+D: 1
+Id: edexcel-bio-3-043
+
+Q: Two pea plants have the same gene for flower colour but different flower colours. What is the reason?
+A: Different alleles
+Accept: Different alleles of the gene
+Ref: 3.12
+D: 2
+Id: edexcel-bio-3-044
+
+Q: Why can different alleles of one gene produce different characteristics?
+A: Each codes for a different version of the protein
+Accept: Different base sequences give different proteins; Code for different proteins
+Ref: 3.12
+D: 3
+Id: edexcel-bio-3-045
+
+Q: What term describes an organism with two identical alleles for a gene, such as BB or bb?
+A: Homozygous
+Ref: 3.13
+D: 1
+Id: edexcel-bio-3-046
+
+Q: What term describes the alleles an organism has for a characteristic, such as BB or Bb?
+A: Genotype
+Ref: 3.13
+D: 1
+Id: edexcel-bio-3-047
+
+Q: What term describes the observable characteristics of an organism, such as brown eyes?
+A: Phenotype
+Ref: 3.13
+D: 1
+Id: edexcel-bio-3-048
+
+Q: What name is given to the cell formed when two gametes fuse at fertilisation?
+A: Zygote
+Ref: 3.13
+D: 1
+Id: edexcel-bio-3-049
+
+Q: Define a recessive allele.
+A: Expressed only when two copies are present
+Accept: Only shows when homozygous; Masked by a dominant allele
+Ref: 3.13
+D: 2
+Id: edexcel-bio-3-050
+
+Q: In a genetic diagram, what does a capital letter usually represent?
+A: Dominant allele
+Accept: A dominant allele
+Ref: 3.14
+D: 1
+Id: edexcel-bio-3-051
+
+Q: Name the grid used to show all possible combinations of alleles from two parents' gametes.
+A: Punnett square
+Ref: 3.14
+D: 1
+Id: edexcel-bio-3-052
+
+Q: In a family pedigree, two unaffected parents have an affected child. Is the disorder caused by a dominant or recessive allele?
+A: Recessive
+Accept: Recessive allele
+Ref: 3.14
+D: 3
+Note: Both parents must be carriers (heterozygous) of the hidden allele.
+Id: edexcel-bio-3-053
+
+Q: Which pair of sex chromosomes does a human female have?
+A: XX
+Ref: 3.15
+D: 1
+Id: edexcel-bio-3-054
+
+Q: Which parent's gamete determines the sex of a human baby?
+A: Father's
+Accept: Sperm; The male's
+Ref: 3.15
+D: 2
+Id: edexcel-bio-3-055
+
+Q: Why is the chance of a baby being a boy always 50%?
+A: Half of sperm carry X, half carry Y
+Accept: Sperm are 50% X and 50% Y; All eggs carry X, half of sperm carry Y
+Ref: 3.15
+D: 3
+Id: edexcel-bio-3-056
+
+Q: Two heterozygous parents (Tt × Tt) have a child. What is the probability it shows the recessive phenotype?
+A: 0.25
+Accept: 25%; 1/4; 1 in 4
+Ref: 3.16
+D: 2
+Id: edexcel-bio-3-057
+
+Q: A heterozygous parent (Bb) is crossed with a homozygous recessive parent (bb). What percentage of offspring are expected to be bb?
+A: 50%
+Accept: 0.5; 1/2; 1 in 2
+Ref: 3.16
+D: 2
+Id: edexcel-bio-3-058
+
+Q: A cross gives 120 offspring in a 3 : 1 ratio of dominant to recessive phenotype. How many show the recessive phenotype?
+A: 30
+Ref: 3.16
+D: 2
+Id: edexcel-bio-3-059
+
+Q: Two heterozygous parents (Tt × Tt) have a child with the dominant phenotype. What is the probability it is heterozygous?
+A: 2/3
+Accept: 2 in 3; 67%; 66.7%; 0.67
+Ref: 3.16
+D: 3
+Note: Of the three dominant-phenotype outcomes (TT, Tt, Tt), two are heterozygous.
+Id: edexcel-bio-3-060
+
+Q: What term describes alleles that are both expressed in the phenotype, as with A and B blood group alleles?
+A: Codominance
+Accept: Codominant
+Ref: 3.17B
+D: 1
+Id: edexcel-bio-3-061
+
+Q: The ABO blood group gene has three alleles. What term describes a gene with more than two alleles?
+A: Multiple alleles
+Ref: 3.17B
+D: 1
+Id: edexcel-bio-3-062
+
+Q: Give the genotype of a person with blood group O, using the symbols IA, IB and IO.
+A: IOIO
+Accept: IO IO; Two IO alleles; IoIo; ii
+Ref: 3.17B
+D: 2
+Id: edexcel-bio-3-063
+
+Q: A parent with blood group AB and a parent with blood group O have a child. What is the probability the child is blood group A?
+A: 0.5
+Accept: 50%; 1/2; 1 in 2
+Ref: 3.17B
+D: 3
+Note: IAIB × IOIO gives IAIO and IBIO in equal numbers.
+Id: edexcel-bio-3-064
+
+Q: On which sex chromosome are the alleles for most sex-linked disorders carried?
+A: X chromosome
+Accept: X
+Ref: 3.18B
+D: 1
+HT: yes
+Id: edexcel-bio-3-065
+
+Q: Name one sex-linked genetic disorder.
+A: Haemophilia
+Accept: Red-green colour blindness; Colour blindness; Duchenne muscular dystrophy
+Ref: 3.18B
+D: 1
+HT: yes
+Id: edexcel-bio-3-066
+
+Q: Why are males more likely than females to have a recessive sex-linked disorder?
+A: Males have only one X chromosome
+Accept: No second X to carry a dominant allele; Y has no copy of the gene
+Ref: 3.18B
+D: 3
+HT: yes
+Id: edexcel-bio-3-067
+
+Q: A carrier mother (XHXh) and an unaffected father (XHY) have a son. What is the probability he has haemophilia?
+A: 0.5
+Accept: 50%; 1/2; 1 in 2
+Ref: 3.18B
+D: 3
+HT: yes
+Id: edexcel-bio-3-068
+
+Q: Are most phenotypic features controlled by a single gene or by multiple genes?
+A: Multiple genes
+Accept: Many genes; Several genes
+Ref: 3.19
+D: 1
+Id: edexcel-bio-3-069
+
+Q: Human height shows a wide range of values rather than a few groups. What does this suggest about its inheritance?
+A: Controlled by multiple genes
+Accept: Many genes (and environment); Polygenic
+Ref: 3.19
+D: 3
+Id: edexcel-bio-3-070
+
+Q: Mendel's pea flower colour is controlled by one gene. What is this type of inheritance called, unlike most human features?
+A: Single gene inheritance
+Accept: Single-gene; Monohybrid inheritance; Monogenic
+Ref: 3.19
+D: 2
+Id: edexcel-bio-3-071
+
+Q: Name the type of variation caused by an organism's surroundings, such as a scar.
+A: Environmental variation
+Accept: Environmental; Acquired
+Ref: 3.20
+D: 1
+Id: edexcel-bio-3-072
+
+Q: Name two sources of genetic variation.
+A: Mutation and sexual reproduction
+Accept: Mutations and meiosis/fertilisation
+Ref: 3.20
+D: 2
+Id: edexcel-bio-3-073
+
+Q: Identical twins have the same DNA but different body masses. What causes this difference?
+A: Environmental variation
+Accept: Environment; Diet and exercise
+Ref: 3.20
+D: 3
+Id: edexcel-bio-3-074
+
+Q: Name the international project that worked out the sequence of bases in the human genome.
+A: Human Genome Project
+Ref: 3.21
+D: 1
+Id: edexcel-bio-3-075
+
+Q: Give one use of Human Genome Project data in medicine.
+A: Identifying genes linked to diseases
+Accept: Personalised medicine; Predicting disease risk; Developing new drugs; Gene testing
+Ref: 3.21
+D: 2
+Id: edexcel-bio-3-076
+
+Q: A woman learns she has a gene variant linked to breast cancer. How could this knowledge help her?
+A: Earlier screening or preventive treatment
+Accept: Regular checks; Preventive surgery; Lifestyle changes to reduce risk; Early diagnosis
+Ref: 3.21
+D: 3
+Id: edexcel-bio-3-077
+
+Q: What is the original source of all genetic variants in a population?
+A: Mutations
+Accept: Mutation
+Ref: 3.22
+D: 1
+Id: edexcel-bio-3-078
+
+Q: How much genetic variation is there usually within a population of a species?
+A: Extensive
+Accept: A lot; Large amount
+Ref: 3.22
+D: 2
+Id: edexcel-bio-3-079
+
+Q: Why are individuals of the same species, apart from identical twins, almost never genetically identical?
+A: Mutations create many different alleles
+Accept: Mutations give extensive variation, mixed by sexual reproduction
+Ref: 3.22
+D: 3
+Id: edexcel-bio-3-080
+
+Q: What effect on the phenotype do most genetic mutations have?
+A: No effect
+Accept: None
+Ref: 3.23
+D: 1
+Id: edexcel-bio-3-081
+
+Q: How often does a single mutation significantly affect the phenotype?
+A: Rarely
+Accept: Very rarely
+Ref: 3.23
+D: 2
+Id: edexcel-bio-3-082
+
+Q: Why might a mutation in DNA have no effect on phenotype?
+A: Amino acid sequence of the protein is unchanged
+Accept: Protein unchanged; Same amino acid coded for; Mutation in non-coding DNA
+Ref: 3.23
+D: 3
+Id: edexcel-bio-3-083

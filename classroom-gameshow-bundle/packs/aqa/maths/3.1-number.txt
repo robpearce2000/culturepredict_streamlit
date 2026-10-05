@@ -1,0 +1,452 @@
+Board: AQA
+Spec: 8300
+Topic: 3.1
+
+Q: What does the symbol ≠ mean?
+A: Not equal to
+Accept: Is not equal to; Does not equal
+Ref: N1
+D: 1
+Id: aqa-maths-3.1-001
+
+Q: Put these in order, smallest first: 2/3, 3/5, 0.62.
+A: 3/5, 0.62, 2/3
+Ref: N1
+D: 2
+Note: Convert to decimals: 0.6, 0.62, 0.666…
+Id: aqa-maths-3.1-002
+
+Q: What name is given to a whole number that can be positive, negative or zero?
+A: Integer
+Accept: Integers
+Ref: N1
+D: 1
+Id: aqa-maths-3.1-003
+
+Q: Work out 2½ + 1¾, giving your answer as a mixed number.
+A: 4¼
+Accept: 4 1/4; 17/4; 4.25
+Ref: N2
+D: 2
+Id: aqa-maths-3.1-004
+
+Q: Given that 23 × 47 = 1081, work out 2.3 × 0.47.
+A: 1.081
+Ref: N2
+D: 2
+Note: One decimal place plus two decimal places gives three decimal places.
+Id: aqa-maths-3.1-005
+
+Q: What word describes the money a business makes when the selling price is more than the cost price?
+A: Profit
+Ref: N2
+D: 1
+Id: aqa-maths-3.1-006
+
+Q: On a bank statement, what word describes money paid into the account?
+A: Credit
+Accept: Credits; Deposit
+Ref: N2
+D: 1
+Note: Money taken out is a debit.
+Id: aqa-maths-3.1-007
+
+Q: What tax is added to the price of many goods in the UK, at a standard rate of 20%?
+A: VAT
+Accept: Value added tax
+Ref: N2
+D: 1
+Id: aqa-maths-3.1-008
+
+Q: Work out 3 + 4 × 5.
+A: 23
+Ref: N3
+D: 2
+Note: Not 35: multiply before adding.
+Id: aqa-maths-3.1-009
+
+Q: Work out (2 + 3)² − 4 × 5.
+A: 5
+Ref: N3
+D: 3
+Note: Brackets, then the power, then multiply, then subtract: 25 − 20.
+Id: aqa-maths-3.1-010
+
+Q: What name is given to 1 divided by a number, such as 1/5 for the number 5?
+A: Reciprocal
+Accept: The reciprocal; Multiplicative inverse
+Ref: N3
+D: 1
+Id: aqa-maths-3.1-011
+
+Q: What is the inverse operation of squaring a positive number?
+A: Square root
+Accept: Square rooting; Finding the square root; √
+Ref: N3
+D: 1
+Id: aqa-maths-3.1-012
+
+Q: What name is given to a number with exactly two factors, 1 and itself?
+A: Prime
+Accept: Prime number; Primes
+Ref: N4
+D: 1
+Id: aqa-maths-3.1-013
+
+Q: What name is given to a whole number that divides exactly into another number?
+A: Factor
+Accept: Divisor; Factors
+Ref: N4
+D: 1
+Id: aqa-maths-3.1-014
+
+Q: What name is given to a number in another number's times table, such as 35 for 7?
+A: Multiple
+Accept: Multiples
+Ref: N4
+D: 1
+Id: aqa-maths-3.1-015
+
+Q: Explain why 1 is not a prime number.
+A: Just one factor
+Accept: Only one factor; It has only one factor; Not two factors; Its only factor is 1
+Ref: N4
+D: 3
+Note: A prime has exactly two factors.
+Id: aqa-maths-3.1-016
+
+Q: Write 60 as a product of its prime factors in index form.
+A: 2² × 3 × 5
+Accept: 2^2 × 3 × 5; 3 × 5 × 2²
+Ref: N4
+D: 2
+Id: aqa-maths-3.1-017
+
+Q: Given 72 = 2³ × 3² and 120 = 2³ × 3 × 5, what is the lowest common multiple of 72 and 120?
+A: 360
+Accept: 2³ × 3² × 5
+Ref: N4
+D: 3
+Note: Take the highest power of every prime that appears.
+Id: aqa-maths-3.1-018
+
+Q: Three friends, A, B and C, stand in a line. How many different orders are possible?
+A: 6
+Ref: N5
+D: 2
+Note: ABC, ACB, BAC, BCA, CAB, CBA.
+Id: aqa-maths-3.1-019
+
+Q: A café offers 4 starters and 5 main courses. How many different starter-and-main meals are possible?
+A: 20
+Ref: N5
+D: 2
+HT: yes
+Id: aqa-maths-3.1-020
+
+Q: Name the counting rule: if one choice can be made in m ways and another in n ways, together there are m × n ways.
+A: Product rule
+Accept: The product rule; Product rule for counting
+Ref: N5
+D: 1
+HT: yes
+Id: aqa-maths-3.1-021
+
+Q: What is 13²?
+A: 169
+Ref: N6
+D: 1
+Id: aqa-maths-3.1-022
+
+Q: What name is given to numbers such as 1, 8, 27 and 64?
+A: Cube numbers
+Accept: Cubes; Cube number; Cubed numbers
+Ref: N6
+D: 1
+Id: aqa-maths-3.1-023
+
+Q: Estimate √80 to the nearest whole number.
+A: 9
+Ref: N6
+D: 2
+HT: yes
+Note: 80 is much nearer 81 than 64.
+Id: aqa-maths-3.1-024
+
+Q: In the expression 5³, what name is given to the small raised 3?
+A: Index
+Accept: Power; Exponent; Indices
+Ref: N7
+D: 1
+Id: aqa-maths-3.1-025
+
+Q: Simplify 5³ × 5⁴, leaving your answer as a power of 5.
+A: 5⁷
+Accept: 5^7
+Ref: N7
+D: 2
+Note: Add the indices; not 25⁷.
+Id: aqa-maths-3.1-026
+
+Q: Work out 2⁻³, giving your answer as a fraction.
+A: 1/8
+Accept: 0.125
+Ref: N7
+D: 2
+Id: aqa-maths-3.1-027
+
+Q: Work out 27^(2/3).
+A: 9
+Ref: N7
+D: 3
+HT: yes
+Note: Cube root first (3), then square.
+Id: aqa-maths-3.1-028
+
+Q: Work out 16^(−1/2), giving your answer as a fraction.
+A: 1/4
+Accept: 0.25
+Ref: N7
+D: 3
+HT: yes
+Note: Square root gives 4; the negative index gives the reciprocal.
+Id: aqa-maths-3.1-029
+
+Q: Work out 1/3 + 1/4.
+A: 7/12
+Ref: N8
+D: 2
+Id: aqa-maths-3.1-030
+
+Q: A circle has radius 5 cm. What is its exact area in terms of π?
+A: 25π cm²
+Accept: 25π
+Ref: N8
+D: 2
+Id: aqa-maths-3.1-031
+
+Q: What name is given to a root such as √2 that is left in exact form because it is irrational?
+A: Surd
+Accept: Surds
+Ref: N8
+D: 1
+HT: yes
+Id: aqa-maths-3.1-032
+
+Q: Rationalise the denominator of 6/√3 and simplify fully.
+A: 2√3
+Ref: N8
+D: 3
+HT: yes
+Note: 6√3/3 is not fully simplified; multiply top and bottom by √3, then cancel.
+Id: aqa-maths-3.1-033
+
+Q: What name is given to the process of removing a surd from the denominator of a fraction?
+A: Rationalising the denominator
+Accept: Rationalising; Rationalisation; Rationalize
+Ref: N8
+D: 1
+HT: yes
+Id: aqa-maths-3.1-034
+
+Q: What name is given to writing a number as A × 10ⁿ, where 1 ≤ A < 10 and n is an integer?
+A: Standard form
+Accept: Scientific notation
+Ref: N9
+D: 1
+Id: aqa-maths-3.1-035
+
+Q: Write 3.2 × 10⁻³ as an ordinary number.
+A: 0.0032
+Ref: N9
+D: 2
+Id: aqa-maths-3.1-036
+
+Q: Work out (6 × 10⁴) × (5 × 10³), giving your answer in standard form.
+A: 3 × 10⁸
+Accept: 3 × 10^8
+Ref: N9
+D: 3
+Note: 30 × 10⁷ is not in standard form.
+Id: aqa-maths-3.1-037
+
+Q: Write 0.625 as a fraction in its simplest form.
+A: 5/8
+Ref: N10
+D: 2
+Id: aqa-maths-3.1-038
+
+Q: What name is given to a decimal such as 0.125 that ends after a fixed number of digits?
+A: Terminating decimal
+Accept: Terminating
+Ref: N10
+D: 1
+Id: aqa-maths-3.1-039
+
+Q: Write the recurring decimal 0.444… as a fraction.
+A: 4/9
+Ref: N10
+D: 2
+HT: yes
+Id: aqa-maths-3.1-040
+
+Q: Red and blue counters are in the ratio 2 : 3. What fraction of the counters are red?
+A: 2/5
+Accept: 0.4; 40%
+Ref: N11
+D: 2
+Note: Not 2/3.
+Id: aqa-maths-3.1-041
+
+Q: In a class, 3/8 of the pupils are boys. What is the ratio of boys to girls?
+A: 3 : 5
+Accept: 3:5
+Ref: N11
+D: 2
+Id: aqa-maths-3.1-042
+
+Q: Amy gets 1/4 of £60 and Ben and Cal share the rest equally. How much does Ben get?
+A: £22.50
+Accept: 22.50; 22.5
+Ref: N11
+D: 3
+Id: aqa-maths-3.1-043
+
+Q: What single number do you multiply by to increase an amount by 15%?
+A: 1.15
+Ref: N12
+D: 2
+Id: aqa-maths-3.1-044
+
+Q: In percentage problems, what name is given to a number such as 0.85 used to find a 15% decrease in one step?
+A: Multiplier
+Accept: Decimal multiplier
+Ref: N12
+D: 1
+Id: aqa-maths-3.1-045
+
+Q: A price of £60 is increased by 10% and then the new price is decreased by 10%. What is the final price?
+A: £59.40
+Accept: 59.40; 59.4
+Ref: N12
+D: 3
+Note: Not £60: the 10% decrease is of £66.
+Id: aqa-maths-3.1-046
+
+Q: Which metric unit of capacity is one thousandth of a litre?
+A: Millilitre
+Accept: ml; mL; Millilitres; Milliliter
+Ref: N13
+D: 1
+Id: aqa-maths-3.1-047
+
+Q: How many millimetres are there in 4.5 metres?
+A: 4500 mm
+Accept: 4500; 4 500
+Ref: N13
+D: 2
+Note: 1 m = 1000 mm.
+Id: aqa-maths-3.1-048
+
+Q: Name the metric unit of mass equal to 1000 kilograms.
+A: Tonne
+Accept: Tonnes; Metric tonne; t
+Ref: N13
+D: 1
+Id: aqa-maths-3.1-049
+
+Q: Name the compound measure found by dividing mass by volume.
+A: Density
+Ref: N13
+D: 2
+Id: aqa-maths-3.1-050
+
+Q: What word describes rounding numbers to check roughly whether a calculated answer is sensible?
+A: Estimation
+Accept: Estimating; Estimate; Approximation; Approximating
+Ref: N14
+D: 1
+Id: aqa-maths-3.1-051
+
+Q: Estimate 4.9 × 61 by rounding each number to 1 significant figure.
+A: 300
+Ref: N14
+D: 2
+Note: 5 × 60.
+Id: aqa-maths-3.1-052
+
+Q: Estimate (19.8 × 3.1) ÷ 0.49 by rounding each number to 1 significant figure.
+A: 120
+Ref: N14
+D: 3
+Note: 20 × 3 ÷ 0.5; dividing by 0.5 doubles.
+Id: aqa-maths-3.1-053
+
+Q: Sam estimates 3.8 × 5.7 as 4 × 6 = 24. Is 24 an overestimate or an underestimate of the exact answer?
+A: Overestimate
+Accept: Over; Over estimate
+Ref: N14
+D: 3
+Note: Both numbers were rounded up.
+Id: aqa-maths-3.1-054
+
+Q: Round 0.004837 to 2 significant figures.
+A: 0.0048
+Ref: N15
+D: 2
+Note: Leading zeros are not significant.
+Id: aqa-maths-3.1-055
+
+Q: What name is given to cutting off digits without rounding, as in 3.89 becoming 3.8?
+A: Truncation
+Accept: Truncating; Truncate; Truncated
+Ref: N15
+D: 1
+Id: aqa-maths-3.1-056
+
+Q: A number x is 7.4 when rounded to 1 decimal place. Write the error interval for x.
+A: 7.35 ≤ x < 7.45
+Accept: 7.35 <= x < 7.45
+Ref: N15
+D: 2
+Id: aqa-maths-3.1-057
+
+Q: A number y is 5.2 when truncated to 1 decimal place. Write the error interval for y.
+A: 5.2 ≤ y < 5.3
+Accept: 5.2 <= y < 5.3
+Ref: N15
+D: 3
+Note: Truncation, so the lower limit is 5.2 itself.
+Id: aqa-maths-3.1-058
+
+Q: A pencil is 12 cm long to the nearest centimetre. What is the shortest length it could be?
+A: 11.5 cm
+Accept: 11.5
+Ref: N16
+D: 2
+Id: aqa-maths-3.1-059
+
+Q: A length is 12 cm to the nearest centimetre. What name is given to the value 12.5 cm here?
+A: Upper bound
+Accept: Upper limit; Upper limit of accuracy
+Ref: N16
+D: 1
+HT: yes
+Id: aqa-maths-3.1-060
+
+Q: A rectangle measures 5 cm by 3 cm, both to the nearest centimetre. What is the upper bound of its area?
+A: 19.25 cm²
+Accept: 19.25
+Ref: N16
+D: 3
+HT: yes
+Note: 5.5 × 3.5.
+Id: aqa-maths-3.1-061
+
+Q: a = 9 and b = 3, both correct to the nearest whole number. What is the lower bound of a − b?
+A: 5
+Ref: N16
+D: 3
+HT: yes
+Note: Lower bound of a minus upper bound of b: 8.5 − 3.5.
+Id: aqa-maths-3.1-062

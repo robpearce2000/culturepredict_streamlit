@@ -1,0 +1,479 @@
+Board: Edexcel
+Spec: 1BI0
+Topic: 1
+
+Q: What are the small, separate loops of DNA found in many bacterial cells called?
+A: Plasmids
+Accept: Plasmid; plasmid DNA
+Ref: 1.1
+D: 1
+Id: edexcel-bio-1-001
+
+Q: What is the function of the cell wall in a plant cell?
+A: Strengthens and supports the cell
+Accept: Support; strength; keeps the cell's shape
+Ref: 1.1
+D: 2
+Note: Do not accept "controls what enters the cell", which is the cell membrane.
+Id: edexcel-bio-1-002
+
+Q: A bacterial cell has no nucleus. Where is its chromosomal DNA found?
+A: Cytoplasm
+Accept: Free in the cytoplasm; loose in the cytoplasm
+Ref: 1.1
+D: 2
+Id: edexcel-bio-1-003
+
+Q: Why do muscle cells contain large numbers of mitochondria?
+A: To release lots of energy by aerobic respiration
+Accept: More respiration for more energy for contraction
+Ref: 1.1
+D: 3
+Note: Energy is released (transferred), not made.
+Id: edexcel-bio-1-004
+
+Q: What does the acrosome at the head of a sperm cell contain?
+A: Enzymes
+Accept: Digestive enzymes; enzymes to digest the egg's outer layer
+Ref: 1.2
+D: 1
+Id: edexcel-bio-1-005
+
+Q: Why is the nucleus of a sperm cell haploid?
+A: So the zygote has the full chromosome number
+Accept: So the zygote is diploid; so chromosome number is restored at fertilisation
+Ref: 1.2
+D: 3
+Id: edexcel-bio-1-006
+
+Q: How does the egg cell membrane change straight after fertilisation?
+A: Becomes impermeable to other sperm
+Accept: Blocks other sperm entering; Changes to stop more sperm entering; hardens to block other sperm
+Ref: 1.2
+D: 2
+Id: edexcel-bio-1-007
+
+Q: What do the cilia on epithelial cells lining the airways do?
+A: Sweep mucus and trapped particles away
+Accept: Move mucus; waft mucus up to the throat
+Ref: 1.2
+D: 2
+Id: edexcel-bio-1-008
+
+Q: Which type of microscope can show ribosomes and the internal structure of mitochondria?
+A: Electron microscope
+Accept: Electron
+Ref: 1.3
+D: 1
+Id: edexcel-bio-1-009
+
+Q: What term describes the ability of a microscope to distinguish two close points as separate?
+A: Resolution
+Accept: Resolving power
+Ref: 1.3
+D: 1
+Id: edexcel-bio-1-010
+
+Q: Why did electron microscopes increase our understanding of sub-cellular structures?
+A: Higher resolution shows organelles in much more detail
+Accept: Greater resolution and magnification reveal smaller structures
+Ref: 1.3
+D: 3
+Id: edexcel-bio-1-011
+
+Q: To the nearest power of ten, about how long is a typical bacterial cell in micrometres?
+A: 1 µm
+Accept: 1 micrometre; 10⁻⁶ m; any value from 1 to 5 µm
+Ref: 1.4
+D: 2
+Note: Most bacteria are about 1–5 µm long, so accept answers in that range.
+Id: edexcel-bio-1-012
+
+Q: Cells 20 µm long are lined up end to end. About how many fit across 1 mm?
+A: 50
+Accept: 50 cells
+Ref: 1.4
+D: 3
+Note: 1 mm = 1000 µm, then 1000 ÷ 20.
+Id: edexcel-bio-1-013
+
+Q: Why might a scientist count cells in a few grid squares and multiply up, rather than count all of them?
+A: Counting every cell would take too long
+Accept: Too many cells to count; quicker estimate
+Ref: 1.4
+D: 2
+Id: edexcel-bio-1-014
+
+Q: How many micrometres are there in one millimetre?
+A: 1000
+Accept: 1000 µm; 10³
+Ref: 1.5
+D: 1
+Id: edexcel-bio-1-015
+
+Q: Which unit prefix means 10⁻¹²?
+A: Pico
+Accept: p; picometre
+Ref: 1.5
+D: 1
+Id: edexcel-bio-1-016
+
+Q: Write 0.000 002 m in standard form.
+A: 2 × 10⁻⁶ m
+Accept: 2 × 10^-6 m; 2 × 10⁻⁶
+Ref: 1.5
+D: 2
+HT: yes
+Id: edexcel-bio-1-017
+
+Q: A cell is 2 × 10⁻⁵ m long. What is this length in micrometres?
+A: 20 µm
+Accept: 20 micrometres; 20
+Ref: 1.5
+D: 3
+HT: yes
+Id: edexcel-bio-1-018
+
+Q: State the equation that links magnification, image size and real size.
+A: Magnification = image size ÷ real size
+Accept: M = I ÷ A; magnification = size of image ÷ size of real object
+Ref: 1.6
+RP: 1.6
+D: 2
+Id: edexcel-bio-1-019
+
+Q: A cell image is 6 mm wide at ×300 magnification. What is the real width in micrometres?
+A: 20 µm
+Accept: 20 micrometres; 0.02 mm
+Ref: 1.6
+RP: 1.6
+D: 3
+Note: 6 ÷ 300 = 0.02 mm, then × 1000 to give µm.
+Id: edexcel-bio-1-020
+
+Q: Which objective lens should you select first when focusing on a specimen?
+A: Lowest power objective
+Accept: Lowest magnification; smallest objective; ×4 objective
+Ref: 1.6
+RP: 1.6
+D: 1
+Id: edexcel-bio-1-021
+
+Q: Why is a stain such as iodine added to onion cells on a microscope slide?
+A: Increases contrast
+Accept: Makes the nucleus visible; makes cell parts show up
+Ref: 1.6
+RP: 1.6
+D: 2
+Id: edexcel-bio-1-022
+
+Q: When drawing cells for a labelled scientific drawing, what should you not add?
+A: Shading
+Accept: Colour; shading or colouring
+Ref: 1.6
+RP: 1.6
+D: 1
+Id: edexcel-bio-1-023
+
+Q: Name the part of an enzyme where the substrate binds.
+A: Active site
+Ref: 1.7
+D: 1
+Id: edexcel-bio-1-024
+
+Q: What is formed when a substrate binds to an enzyme's active site?
+A: Enzyme-substrate complex
+Accept: ES complex
+Ref: 1.7
+D: 1
+Id: edexcel-bio-1-025
+
+Q: Why does each enzyme only catalyse one type of reaction?
+A: Active site fits only one substrate
+Accept: Active site is complementary to one substrate; only one substrate fits
+Ref: 1.7
+D: 3
+Note: This is enzyme specificity.
+Id: edexcel-bio-1-026
+
+Q: What word describes an enzyme whose active site has permanently changed shape?
+A: Denatured
+Accept: Denaturation
+Ref: 1.8
+D: 1
+Id: edexcel-bio-1-027
+
+Q: Apart from high temperature, what change can denature an enzyme?
+A: Extreme pH
+Accept: pH too high or too low; very acidic or alkaline conditions
+Ref: 1.8
+D: 2
+Id: edexcel-bio-1-028
+
+Q: Why can a denatured enzyme no longer catalyse its reaction?
+A: Substrate no longer fits the changed active site
+Accept: Active site shape changed so substrate cannot bind
+Ref: 1.8
+D: 3
+Id: edexcel-bio-1-029
+
+Q: What is the temperature at which an enzyme works fastest called?
+A: Optimum temperature
+Accept: Optimum
+Ref: 1.9
+D: 1
+Id: edexcel-bio-1-030
+
+Q: Why does enzyme activity increase as temperature rises up to the optimum?
+A: More kinetic energy, so more frequent successful collisions
+Accept: Molecules move faster and collide more often
+Ref: 1.9
+D: 3
+Id: edexcel-bio-1-031
+
+Q: Why does the rate of an enzyme reaction level off at high substrate concentration?
+A: All the active sites are occupied
+Accept: Enzymes are saturated; enzyme concentration becomes limiting
+Ref: 1.9
+D: 3
+Id: edexcel-bio-1-032
+
+Q: In the practical on pH and amylase, which reagent shows whether starch is still present?
+A: Iodine solution
+Accept: Iodine
+Ref: 1.10
+RP: 1.10
+D: 1
+Id: edexcel-bio-1-033
+
+Q: What is added to each tube to keep the pH constant in the amylase practical?
+A: Buffer solution
+Accept: Buffer; pH buffer
+Ref: 1.10
+RP: 1.10
+D: 1
+Id: edexcel-bio-1-034
+
+Q: Why are the tubes kept in a water bath during the pH and amylase practical?
+A: Keeps temperature constant
+Accept: To keep the temperature constant; Control the temperature; temperature is a control variable
+Ref: 1.10
+RP: 1.10
+D: 2
+Id: edexcel-bio-1-035
+
+Q: In the amylase practical, why are drops removed and tested at regular intervals?
+A: Shows when all the starch is digested
+Accept: To time how long starch takes to be digested; to find when starch has gone
+Ref: 1.10
+RP: 1.10
+D: 3
+Note: That time is used to calculate the rate (1000 ÷ time).
+Id: edexcel-bio-1-036
+
+Q: Starch is fully digested in 50 seconds. Use rate = 1000 ÷ time to find the rate.
+A: 20 s⁻¹
+Accept: 20; 20 per second
+Ref: 1.11
+D: 2
+Id: edexcel-bio-1-037
+
+Q: An enzyme reaction produces 30 cm³ of oxygen in 10 seconds. What is the rate?
+A: 3 cm³/s
+Accept: 3 cm³ per second; 3 cm³ s⁻¹
+Ref: 1.11
+D: 2
+Id: edexcel-bio-1-038
+
+Q: An enzyme reaction produces 60 cm³ of gas in 2 minutes. What is the rate in cm³ per second?
+A: 0.5 cm³/s
+Accept: 0.5 cm³ per second; 0.5 cm³ s⁻¹
+Ref: 1.11
+D: 3
+Note: Convert 2 minutes to 120 seconds first.
+Id: edexcel-bio-1-039
+
+Q: Which group of enzymes breaks carbohydrates down into simple sugars?
+A: Carbohydrases
+Accept: Carbohydrase; amylase
+Ref: 1.12
+D: 1
+Id: edexcel-bio-1-040
+
+Q: What are lipids broken down into by lipase enzymes?
+A: Fatty acids and glycerol
+Accept: Glycerol and fatty acids
+Ref: 1.12
+D: 2
+Note: Both products are needed for the mark.
+Id: edexcel-bio-1-041
+
+Q: Which small molecules do enzymes join together to synthesise proteins?
+A: Amino acids
+Accept: Amino acid
+Ref: 1.12
+D: 2
+Id: edexcel-bio-1-042
+
+Q: Why must large food molecules such as starch be broken down during digestion?
+A: Small enough to be absorbed into the blood
+Accept: Too big to be absorbed; small molecules can pass into the blood
+Ref: 1.12
+D: 3
+Id: edexcel-bio-1-043
+
+Q: Which reagent is used to test for reducing sugars?
+A: Benedict's reagent
+Accept: Benedict's solution; Benedict's
+Ref: 1.13B
+RP: 1.13B
+D: 1
+Id: edexcel-bio-1-044
+
+Q: After heating with Benedict's reagent, what colour shows a high concentration of reducing sugar?
+A: Brick red
+Accept: Red; orange-red
+Ref: 1.13B
+RP: 1.13B
+D: 2
+Note: Green, yellow or orange show lower concentrations; blue means none.
+Id: edexcel-bio-1-045
+
+Q: What colour does iodine solution turn when starch is present?
+A: Blue-black
+Accept: Black; dark blue; blue
+Ref: 1.13B
+RP: 1.13B
+D: 1
+Note: Iodine stays orange-brown when there is no starch.
+Id: edexcel-bio-1-046
+
+Q: What colour change shows protein is present in the biuret test?
+A: Blue to purple
+Accept: Purple; lilac; mauve
+Ref: 1.13B
+RP: 1.13B
+D: 2
+Id: edexcel-bio-1-047
+
+Q: Which type of food molecule is shown by a white cloudy emulsion in the ethanol test?
+A: Lipids
+Accept: Fats; lipid; fat
+Ref: 1.13B
+RP: 1.13B
+D: 2
+Id: edexcel-bio-1-048
+
+Q: Why is a tube of distilled water tested alongside the food samples in food tests?
+A: Shows a negative result to compare against
+Accept: As a control for comparison
+Ref: 1.13B
+RP: 1.13B
+D: 3
+Id: edexcel-bio-1-049
+
+Q: What is the name for measuring the energy in food by burning it to heat water?
+A: Calorimetry
+Ref: 1.14B
+D: 1
+Id: edexcel-bio-1-050
+
+Q: A 2 g food sample heats 20 g of water by 10 °C. Use energy = mass × 4.2 × temperature rise. What is the energy per gram?
+A: 420 J/g
+Accept: 420 J per gram; 420
+Ref: 1.14B
+D: 3
+Note: 840 J in total, then divide by the 2 g of food.
+Id: edexcel-bio-1-051
+
+Q: Why does simple calorimetry give a lower energy value than the true value?
+A: Heat is lost to the surroundings
+Accept: Energy lost to air; food does not burn completely
+Ref: 1.14B
+D: 3
+Id: edexcel-bio-1-052
+
+Q: Name the net movement of particles from a higher to a lower concentration.
+A: Diffusion
+Ref: 1.15
+D: 1
+Id: edexcel-bio-1-053
+
+Q: Which process moves water across a partially permeable membrane from a dilute to a concentrated solution?
+A: Osmosis
+Ref: 1.15
+D: 1
+Id: edexcel-bio-1-054
+
+Q: Which transport process needs energy from respiration?
+A: Active transport
+Ref: 1.15
+D: 1
+Id: edexcel-bio-1-055
+
+Q: Why does active transport need energy?
+A: Moves substances against a concentration gradient
+Accept: From low to high concentration
+Ref: 1.15
+D: 3
+Id: edexcel-bio-1-056
+
+Q: Root hair cells take in mineral ions from very dilute soil water. Which process do they use?
+A: Active transport
+Ref: 1.15
+D: 2
+Id: edexcel-bio-1-057
+
+Q: What is the independent variable in the potato osmosis practical?
+A: Concentration of the sugar solution
+Accept: Solution concentration; salt or sugar concentration
+Ref: 1.16
+RP: 1.16
+D: 1
+Id: edexcel-bio-1-058
+
+Q: Why are potato cylinders blotted dry before they are weighed at the end?
+A: Removes surface water
+Accept: To remove surface water; so only water inside is measured; mass is not falsely high
+Ref: 1.16
+RP: 1.16
+D: 2
+Id: edexcel-bio-1-059
+
+Q: Why is percentage change in mass used rather than change in mass?
+A: The starting masses were different
+Accept: Allows fair comparison of cylinders of different starting mass
+Ref: 1.16
+RP: 1.16
+D: 3
+Id: edexcel-bio-1-060
+
+Q: On a graph of percentage mass change against concentration, what does the x-axis crossing show?
+A: Concentration equal to that inside the potato cells
+Accept: No net osmosis; solution concentration matches the cell sap
+Ref: 1.16
+RP: 1.16
+D: 3
+Id: edexcel-bio-1-061
+
+Q: A potato cylinder's mass rises from 2.0 g to 2.5 g. What is the percentage gain?
+A: 25%
+Accept: 25; +25%
+Ref: 1.17
+D: 2
+Id: edexcel-bio-1-062
+
+Q: A potato cylinder's mass falls from 4.0 g to 3.6 g. What is the percentage change?
+A: −10%
+Accept: 10% loss; -10
+Ref: 1.17
+D: 2
+Id: edexcel-bio-1-063
+
+Q: A potato cylinder's mass falls from 2.50 g to 2.20 g. What is the percentage change?
+A: −12%
+Accept: 12% loss; -12
+Ref: 1.17
+D: 3
+Note: The change is 0.30 g; 0.30 ÷ 2.50 × 100.
+Id: edexcel-bio-1-064

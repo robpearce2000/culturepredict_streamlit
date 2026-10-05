@@ -34,6 +34,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 const hexLetter = require('../src/shared/hexletter.js');
 
 const ROOT = path.join(__dirname, '..', 'packs');
@@ -260,11 +261,13 @@ function bundleData() {
     packs: packs.map(p => ({
       id: p.id, board: p.board, subject: p.subject, specCode: p.specCode, topic: p.topic, ref: p.topicRef, order: p.order, subtopics: p.subtopics,
       // [id, specRef, subtopic index, difficulty, Higher only, question, answer, accepted answers, hexOk, note, extras]
-      q: p.questions.map(q => {
+      n: p.questions.length,
+      // the rows, DEFLATE-compressed and base64 (src/shared/inflate.js unpacks a pack when first used)
+      z: zlib.deflateRawSync(Buffer.from(JSON.stringify(p.questions.map(q => {
         const row = [q.id, q.specRef, p.subtopics.indexOf(q.subtopic), q.difficulty, q.tier === 'Higher' ? 1 : 0, q.q, q.a, q.accept.join(';'), q.hexOk ? 1 : 0, q.notes];
         if (q.rp || q.calc) row.push({ rp: q.rp, calc: q.calc });
         return row;
-      })
+      })), 'utf8'), { level: 9 }).toString('base64')
     }))
   };
 }
