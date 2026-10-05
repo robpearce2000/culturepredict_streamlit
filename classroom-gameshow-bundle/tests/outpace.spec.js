@@ -90,3 +90,40 @@ for (const quality of ['low', 'high']) {
     expect((await state(page, 'outpace')).perfLevel).toBeLessThanOrEqual(2);
   });
 }
+
+/* Smoothness: on a perfectly steady 60 Hz clock, a move after marking must glide. The camera
+   eases in and out (no sudden change of speed) and the picture never jumps to make room for the
+   question panel (it used to step a few pixels every sixth frame, which read as jitter). */
+test('the camera and picture glide smoothly through a move', async ({ page }) => {
+  await page.addInitScript(() => {
+    let vt = 0; const q = new Map(); let id = 0;
+    const realNow = performance.now.bind(performance), origRaf = window.requestAnimationFrame.bind(window);
+    let on = false;
+    performance.now = () => on ? vt : realNow();
+    window.requestAnimationFrame = cb => { if (!on) return origRaf(cb); const i = ++id; q.set(i, cb); return i; };
+    window.cancelAnimationFrame = i => q.delete(i);
+    window.__virtOn = () => { on = true; vt = realNow(); };
+    window.__queued = () => q.size;
+    window.__step = n => { const out = []; for (let k = 0; k < n; k++) { vt += 1000 / 60; const cbs = [...q.values()]; q.clear(); cbs.forEach(cb => cb(vt)); out.push(CGB.test.outpace.motion()); } return out; };
+  });
+  await page.setViewportSize({ width: 1366, height: 768 });
+  await openBundle(page, '#outpace');
+  await page.click('#op-startBtn');
+  await page.keyboard.press('2');
+  await page.waitForTimeout(1500);
+  await page.evaluate(() => window.__virtOn());
+  await page.waitForFunction(() => window.__queued() > 0);   // the game's loop now runs on the steady clock
+  let rec = await page.evaluate(() => window.__step(60));
+  await page.keyboard.press('Space'); rec = rec.concat(await page.evaluate(() => window.__step(5)));
+  await page.keyboard.press('Space'); rec = rec.concat(await page.evaluate(() => window.__step(5)));
+  for (let i = 0; i < 4; i++) await page.keyboard.press(String(i + 1));
+  await page.keyboard.press('Enter');
+  rec = rec.concat(await page.evaluate(() => window.__step(180)));
+  const d = f => rec.slice(1).map((r, i) => f(r) - f(rec[i]));
+  const camMoved = Math.max(...d(r => Math.hypot(r.cam[0], r.cam[2])).map(Math.abs));
+  expect(camMoved).toBeGreaterThan(0.003);                          // the camera did follow the class
+  const shiftSteps = d(r => r.shift[0]).map(Math.abs);
+  expect(Math.max(...shiftSteps)).toBeLessThan(2.5);                 // the picture slides, never jumps
+  const vel = d(r => r.cam[0]), acc = vel.slice(1).map((v, i) => Math.abs(v - vel[i]));
+  expect(Math.max(...acc)).toBeLessThan(0.02);                       // the camera's speed changes gradually
+});

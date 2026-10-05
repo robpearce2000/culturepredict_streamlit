@@ -541,7 +541,17 @@ const HOME_BASE_X = -1.6;
 let runnerVelX = 0;
 let hunterVelX = 0;
 const SPRING_K = 0.05;
-const SPRING_DAMPING = 0.82;
+const SPRING_DAMPING = 0.72;   // a little bounce on arrival, without sliding back on screen
+/* Critically damped follow (as game engines do it): eases in and out, never overshoots, and
+   gives the same path at any frame rate. v is a small object holding the velocity. */
+function smoothDamp(cur, target, v, key, time, dt) {
+  const o = 2 / time, x = o * dt, e = 1 / (1 + x + 0.48 * x * x + 0.235 * x * x * x);
+  const ch = cur - target, tmp = ((v[key] || 0) + o * ch) * dt;
+  v[key] = ((v[key] || 0) - o * tmp) * e;
+  return target + (ch + tmp) * e;
+}
+const camVel = {};
+const CAM_TIME = 0.45;   // seconds for the camera to settle: unhurried but never lagging behind a move
 /* The racers' spring, in steps of a quarter of a 60 Hz frame whatever the screen's frame rate
    (velocity is in scene units per 60 Hz frame, as the surge and lunge kicks are) */
 function springStep(grp, vel, f) {
@@ -1064,6 +1074,7 @@ function animate(ts) {
   runnerGlow.material.opacity = 0.42 + Math.sin(t * 2) * 0.08;
   hunterGlow.material.opacity = 0.45 + Math.sin(t * 3) * 0.1;
 
+  if (sceneMode !== 'idle') { camVel.x = camVel.y = camVel.z = camVel.l = 0; }
   if (sceneMode === 'idle') {
     runnerVelX = springStep(runnerGroup, runnerVelX, f);
     if (currentRoundType === 'deal') hunterVelX = springStep(hunterGroup, hunterVelX, f);
@@ -1083,10 +1094,10 @@ function animate(ts) {
         // arch to the Hunter's furthest start, fills the width
         const f = dealFraming(); fx = f.x; fy = f.y; fz = f.z; lx = f.x;
       }
-      camera.position.x += (fx - camera.position.x) * ease(0.06);
-      camera.position.y += (fy - camera.position.y) * ease(0.06);
-      camera.position.z += (fz - camera.position.z) * ease(0.06);
-      lookX += (lx - lookX) * ease(0.08);
+      camera.position.x = smoothDamp(camera.position.x, fx, camVel, 'x', CAM_TIME, dt);
+      camera.position.y = smoothDamp(camera.position.y, fy, camVel, 'y', CAM_TIME, dt);
+      camera.position.z = smoothDamp(camera.position.z, fz, camVel, 'z', CAM_TIME, dt);
+      lookX = smoothDamp(lookX, lx, camVel, 'l', CAM_TIME, dt);
       camera.lookAt(lookX, ly, 0);
     } else {
       // Final Sprint: the class and the Hunter, from slightly behind the class; with reduced
@@ -1097,10 +1108,10 @@ function animate(ts) {
       const lo = wide ? endX : Math.min(rT, HUNTER_X), hi = wide ? HUNTER_X + 0.8 : Math.max(rT, HUNTER_X);
       const midX = (lo + hi) / 2;
       const desiredZ = framingZ(hi - lo);
-      camera.position.x += (midX + (wide ? 0 : 0.5) - camera.position.x) * ease(0.05);
-      camera.position.y += (2.4 - camera.position.y) * ease(0.05);
-      camera.position.z += (desiredZ - camera.position.z) * ease(0.05);
-      lookX += (midX - lookX) * ease(0.08);
+      camera.position.x = smoothDamp(camera.position.x, midX + (wide ? 0 : 0.5), camVel, 'x', CAM_TIME, dt);
+      camera.position.y = smoothDamp(camera.position.y, 2.4, camVel, 'y', CAM_TIME, dt);
+      camera.position.z = smoothDamp(camera.position.z, desiredZ, camVel, 'z', CAM_TIME, dt);
+      lookX = smoothDamp(lookX, midX, camVel, 'l', CAM_TIME, dt);
       camera.lookAt(lookX, 0.6, 0);
       if (sceneMode === 'idle') {      // the Hunter's lunge on a missed question
         hunterLunge = Math.max(0, hunterLunge - dt * 2.4);
@@ -1319,6 +1330,7 @@ function animate(ts) {
   }
 
   if (++shiftFrame % 6 === 0) updateViewShift();
+  slideView(dt);
   // the shake is a smooth sway added for this frame only (it used to jump to a new random spot
   // every frame, which read as stutter, and stayed baked into the camera's glide)
   const sx = shakeAmt * 0.5 * Math.sin(t * 31), sy = shakeAmt * 0.35 * Math.sin(t * 23 + 1.3);
@@ -1350,13 +1362,13 @@ function placeTag(el, obj, dy, show) {
   const half = el._w / 2 + 8;
   const left = band.left || 0, right = Math.min(w, band.right || w);
   const sx = (tagV.x + 1) / 2 * w - viewShiftX;
-  const x = Math.round(Math.min(right - half, Math.max(left + half, sx)));
+  const x = +Math.min(right - half, Math.max(left + half, sx)).toFixed(1);   // sub-pixel, so tags glide with the racers
   // keep tags inside the clear band so they never sit on the HUD panels
   const below = el !== $('tagYou');
   let y = (1 - tagV.y) / 2 * h;
   if (below) y = Math.max(band.top + 4, Math.min(band.bottom - el._h - 4, y));
   else y = Math.max(band.top + el._h + 4, Math.min(band.bottom - 4, y));
-  y = Math.round(y);
+  y = +y.toFixed(1);
   // moved with a transform (no page layout), and only when the position changes
   if (x !== el._x || y !== el._y) { el._x = x; el._y = y; el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, ${below ? '0' : '-100%'})`; }
   const vis = tagV.z < 1 && Math.abs(tagV.x) < 1.1;
@@ -1398,10 +1410,22 @@ function updateViewShift() {
       band.top = top; band.bottom = dock;
     }
   } else { band.top = 0; band.bottom = h; }
-  if (Math.abs(want - viewShift) < 2 && Math.abs(wantX - viewShiftX) < 2) return;
-  const k = reduced() ? 1 : 0.25;
-  viewShift += (want - viewShift) * k; viewShiftX += (wantX - viewShiftX) * k;
-  if (Math.abs(viewShift) < 1 && Math.abs(viewShiftX) < 1) { camera.clearViewOffset(); viewShift = viewShiftX = 0; }
+  viewWant.y = want; viewWant.x = wantX; viewWant.w = w; viewWant.h = h;
+  if (reduced()) slideView(1);
+}
+/* ...and slide the picture there smoothly, every frame (it used to jump a quarter of the way
+   every sixth frame, which shook the whole picture whenever the question panel changed size) */
+const viewWant = { x: 0, y: 0, w: 0, h: 0 }, viewVel = {};
+function slideView(dt) {
+  const { w, h } = viewWant;
+  if (!w || !h) return;
+  if (reduced()) { viewShift = viewWant.y; viewShiftX = viewWant.x; viewVel.x = viewVel.y = 0; }
+  else if (Math.abs(viewWant.y - viewShift) > 0.05 || Math.abs(viewWant.x - viewShiftX) > 0.05 || Math.abs(viewVel.y || 0) > 0.05 || Math.abs(viewVel.x || 0) > 0.05) {
+    viewShift = smoothDamp(viewShift, viewWant.y, viewVel, 'y', 0.3, dt);
+    viewShiftX = smoothDamp(viewShiftX, viewWant.x, viewVel, 'x', 0.3, dt);
+  } else if (viewShift === viewWant.y && viewShiftX === viewWant.x && camera.view && camera.view.fullWidth === w) return;
+  else { viewShift = viewWant.y; viewShiftX = viewWant.x; }
+  if (Math.abs(viewShift) < 0.05 && Math.abs(viewShiftX) < 0.05) { if (camera.view) camera.clearViewOffset(); }
   else camera.setViewOffset(w, h, viewShiftX, viewShift, w, h);
 }
 let lastSize = '';
@@ -1860,6 +1884,7 @@ resize();
 CGB.test.outpace = {
   setTime(sec) { state.sprintTimeLeft = sec; },
   frameStats() { const r = renderer.info.render, o = { calls: r.calls, triangles: r.triangles, programs: renderer.info.programs.length, lights: scene.children.filter(c => c.isLight).length, msPerFrame: frameStats.n ? +(frameStats.js / frameStats.n).toFixed(2) : 0, bloom: useBloom, pixelRatio: renderer.getPixelRatio(), perfLevel: perf.level }; frameStats.js = 0; frameStats.n = 0; return o; },
+  motion() { const v = runnerGroup.position.clone().project(camera), hv = hunterGroup.position.clone().project(camera); return { cam: camera.position.toArray().map(n => +n.toFixed(4)), lookX: +lookX.toFixed(4), shift: [viewShift, viewShiftX], runner: [+runnerGroup.position.x.toFixed(4), +runnerGroup.position.y.toFixed(4)], rs: [+((v.x + 1) / 2 * stageSize.w).toFixed(2), +((1 - v.y) / 2 * stageSize.h).toFixed(2)], hs: +((hv.x + 1) / 2 * stageSize.w).toFixed(2), tag: [$('tagYou')._x, $('tagYou')._y], shake: +shakeAmt.toFixed(4), mode: sceneMode, fov: camera.fov, aspect: camera.aspect }; },
   scene3d() { return { mode: sceneMode, mood, clock: setClock.visible, arch: !!finishGroup.parent, sprintTrack: sprintGroup.visible && sprintGroup.children.length > 0, confetti: confettiMesh.visible, camera: camera.position.toArray() }; },
   // skip the Deal Round: start the Final Sprint with this pot
   toSprint(pot) { clearTimers(); roundEndNext = null; $('roundEnd').classList.remove('show'); state.pot = pot == null ? 600 : pot; startSprint(); }
