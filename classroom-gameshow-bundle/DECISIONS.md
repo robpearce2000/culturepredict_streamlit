@@ -251,3 +251,8 @@ Choices made while building the first edition without the owner available. Each 
 |---|---|
 | Manual playtesting on a real interactive whiteboard and in Safari. | Not possible from the build environment; recommended before release. |
 | Trade-mark searches beyond a quick web search. | A formal UK IPO search for "Over the Edge" and "Outpace" in classes 9, 28 and 41 is worth doing before selling. |
+
+**Frame-rate independent motion (after Rob's laptop test: still stuttering when the camera and racers moved, even at Low).** Low graphics did not help, so the cost was not drawing: the camera follow, the racers' spring and the sequence effects all stepped a fixed amount per frame, so speed depended on the screen's refresh rate and any uneven frame showed as a jerk. Every step is now scaled by the real frame time from the browser's own frame timestamp (`ease(k) = 1 − (1 − k)^(dt·60)` for the follows; the spring sub-stepped in quarter-frames, which gives the same path at 30, 60 and 144 Hz to three decimal places). A software WebGL renderer (SwiftShader, llvmpipe, Microsoft Basic Render) is detected at start and begins at step-down level 1.
+
+**The sign's bulbs** changed from a gentle random twinkle (dipping to 45%) to a marquee chase: a lit band runs along the top and back along the bottom in 2.8 s, lit bulbs carry a soft halo, unlit ones sit at 22%.
+

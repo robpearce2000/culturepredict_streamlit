@@ -75,6 +75,13 @@ if (!renderer) { $('nogl').hidden = false; $('nogl').innerHTML = CGB.noWebGLMess
    track, so shadows add little) and steps its quality down by itself if a laptop cannot keep
    up (see watchPerformance) */
 const perf = { level: 0, ema: 16, slowFor: 0, last: 0 };
+/* A browser drawing 3D without the graphics chip (hardware acceleration off, common on managed
+   school laptops) starts lean rather than waiting to stutter first */
+try {
+  const gl = renderer.getContext(), ext = gl.getExtension('WEBGL_debug_renderer_info');
+  const name = String(ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+  if (/swiftshader|llvmpipe|softpipe|software|basic render/i.test(name)) perf.level = 1;
+} catch (e) { /* unknown: start at full quality */ }
 const opPixelRatio = () => 1;   // drawn at 1:1 (with antialiasing): the biggest saving on high-resolution laptop screens
 renderer.setPixelRatio(opPixelRatio());
 renderer.shadowMap.enabled = false;
@@ -534,6 +541,17 @@ let runnerVelX = 0;
 let hunterVelX = 0;
 const SPRING_K = 0.05;
 const SPRING_DAMPING = 0.82;
+/* The racers' spring, in steps of a quarter of a 60 Hz frame whatever the screen's frame rate
+   (velocity is in scene units per 60 Hz frame, as the surge and lunge kicks are) */
+function springStep(grp, vel, f) {
+  const n = Math.max(1, Math.ceil(f * 4)), s = f / n, damp = Math.pow(SPRING_DAMPING, s);
+  for (let i = 0; i < n; i++) {
+    vel += (grp.userData.targetX - grp.position.x) * SPRING_K * s;
+    vel *= damp;
+    grp.position.x += vel * s;
+  }
+  return vel;
+}
 let shakeAmt = 0;
 const shake = v => { if (!reduced()) shakeAmt = Math.max(shakeAmt, v); };
 
@@ -754,10 +772,11 @@ function burstConfetti(x) {
 function updateConfetti(dt) {
   if (!confettiMesh.visible) return;
   confettiT -= dt;
+  const f = dt * 60;
   if (confettiT <= 0) { confettiMesh.visible = false; return; }
   for (let i = 0; i < confettiMesh.count; i++) {
     const c = confetti[i];
-    c.v.y -= 0.0022; c.v.multiplyScalar(0.985); c.p.add(c.v); c.r += c.rv;
+    c.v.y -= 0.0022 * f; c.v.multiplyScalar(Math.pow(0.985, f)); c.p.addScaledVector(c.v, f); c.r += c.rv * f;
     confettiDummy.position.copy(c.p); confettiDummy.rotation.set(c.r, c.r * 0.7, 0);
     confettiDummy.updateMatrix(); confettiMesh.setMatrixAt(i, confettiDummy.matrix);
   }
@@ -765,9 +784,9 @@ function updateConfetti(dt) {
 }
 let lightShow = 0;
 const showCol = new THREE.Color();
-function updateArchLights(t) {
+function updateArchLights(t, dt) {
   if (lightShow <= 0) return;
-  lightShow -= 1 / 60;
+  lightShow -= dt;
   const done = lightShow <= 0;
   archBulbSets.forEach(m => {
     for (let i = 0; i < m.count; i++) m.setColorAt(i, done ? BULB_REST[i % 3] : showCol.setHSL((t * 0.9 + i * 0.07) % 1, 1, 0.62));
@@ -988,16 +1007,21 @@ function dealFraming() {
 
 const clock = new THREE.Clock();
 let active = false, rafId = 0;
-let lastFrame = performance.now(), slowMo = 1, lookX = 0, explodeX = 0, escapeConfetti = false;
+let lastFrame = performance.now(), frameT = 0, ease = k => k, slowMo = 1, lookX = 0, explodeX = 0, escapeConfetti = false;
 const V3 = new THREE.Vector3();
-function animate() {
+function animate(ts) {
   if (!active) return;
   rafId = requestAnimationFrame(animate);
-  const t = clock.getElapsedTime();
-  const nowMs = performance.now(), dt = Math.min(0.05, (nowMs - lastFrame) / 1000);
-  lastFrame = nowMs;
+  // every movement runs on the frame's own timestamp, scaled to a 60 Hz frame (f = 1 at 60 Hz),
+  // so the camera and racers glide at the same speed on 60, 120 and 144 Hz screens and an
+  // uneven frame does not make them jump
+  const nowMs = performance.now(), frameMs = typeof ts === 'number' ? ts : nowMs;
+  const dt = Math.min(0.05, Math.max(0, (frameMs - lastFrame) / 1000));
+  lastFrame = frameMs; frameT += dt;
+  const t = frameT, f = dt * 60;
+  ease = k => 1 - Math.pow(1 - k, f);
   updateConfetti(dt);
-  updateArchLights(t);
+  updateArchLights(t, dt);
   updateTrails(dt);
 
   watchPerformance(performance.now());
@@ -1025,17 +1049,8 @@ function animate() {
   hunterGlow.material.opacity = 0.45 + Math.sin(t * 3) * 0.1;
 
   if (sceneMode === 'idle') {
-    const force = (runnerGroup.userData.targetX - runnerGroup.position.x) * SPRING_K;
-    runnerVelX += force;
-    runnerVelX *= SPRING_DAMPING;
-    runnerGroup.position.x += runnerVelX;
-
-    if (currentRoundType === 'deal') {
-      const hforce = (hunterGroup.userData.targetX - hunterGroup.position.x) * SPRING_K;
-      hunterVelX += hforce;
-      hunterVelX *= SPRING_DAMPING;
-      hunterGroup.position.x += hunterVelX;
-    }
+    runnerVelX = springStep(runnerGroup, runnerVelX, f);
+    if (currentRoundType === 'deal') hunterVelX = springStep(hunterGroup, hunterVelX, f);
 
     if (currentRoundType === 'deal') {
       let fx, fy, fz, lx, ly = 0.35;
@@ -1050,10 +1065,10 @@ function animate() {
         // arch to the Hunter's furthest start, fills the width
         const f = dealFraming(); fx = f.x; fy = f.y; fz = f.z; lx = f.x;
       }
-      camera.position.x += (fx - camera.position.x) * 0.06;
-      camera.position.y += (fy - camera.position.y) * 0.06;
-      camera.position.z += (fz - camera.position.z) * 0.06;
-      lookX += (lx - lookX) * 0.08;
+      camera.position.x += (fx - camera.position.x) * ease(0.06);
+      camera.position.y += (fy - camera.position.y) * ease(0.06);
+      camera.position.z += (fz - camera.position.z) * ease(0.06);
+      lookX += (lx - lookX) * ease(0.08);
       camera.lookAt(lookX, ly, 0);
     } else {
       // Final Sprint: the class and the Hunter, from slightly behind the class; with reduced
@@ -1063,10 +1078,10 @@ function animate() {
       const lo = wide ? endX : Math.min(runnerGroup.position.x, hunterGroup.position.x), hi = wide ? HUNTER_X + 0.8 : Math.max(runnerGroup.position.x, hunterGroup.position.x);
       const midX = (lo + hi) / 2;
       const desiredZ = framingZ(hi - lo);
-      camera.position.x += (midX + (wide ? 0 : 0.5) - camera.position.x) * 0.05;
-      camera.position.y += (2.4 - camera.position.y) * 0.05;
-      camera.position.z += (desiredZ - camera.position.z) * 0.05;
-      lookX += (midX - lookX) * 0.08;
+      camera.position.x += (midX + (wide ? 0 : 0.5) - camera.position.x) * ease(0.05);
+      camera.position.y += (2.4 - camera.position.y) * ease(0.05);
+      camera.position.z += (desiredZ - camera.position.z) * ease(0.05);
+      lookX += (midX - lookX) * ease(0.08);
       camera.lookAt(lookX, 0.6, 0);
       if (sceneMode === 'idle') {      // the Hunter's lunge on a missed question
         hunterLunge = Math.max(0, hunterLunge - dt * 2.4);
@@ -1077,7 +1092,7 @@ function animate() {
     if (shakeAmt > 0.001) {
       camera.position.x += (Math.random() - 0.5) * shakeAmt;
       camera.position.y += (Math.random() - 0.5) * shakeAmt * 0.6;
-      shakeAmt *= 0.82;
+      shakeAmt *= Math.pow(0.82, f);
     } else { shakeAmt = 0; }
   }
 
@@ -1087,16 +1102,16 @@ function animate() {
     tether.position.set((from.x + to.x) / 2, 0.6, 0);
     tether.scale.set(1, Math.max(0.001, dist), 1);
     tether.rotation.z = Math.PI / 2;
-    tetherPulse *= 0.94;
-    tetherColor.lerp(tetherTargetColor, 0.06);
-    tetherColor.lerp(tetherRest, 0.01);
+    tetherPulse *= Math.pow(0.94, f);
+    tetherColor.lerp(tetherTargetColor, ease(0.06));
+    tetherColor.lerp(tetherRest, ease(0.01));
     tetherMat.color.copy(tetherColor);
     tetherMat.opacity = 0.35 + tetherPulse * 0.5;
     tether.scale.x = tether.scale.z = 1 + tetherPulse * 2.5;
 
     pulses.forEach(p => {
       if (!p.active) return;
-      p.progress += 0.045;
+      p.progress += 0.045 * f;
       const x = from.x + (to.x - from.x) * p.progress;
       p.mesh.position.set(x, 0.6, 0);
       p.mesh.scale.setScalar(1 - p.progress * 0.3);
@@ -1108,16 +1123,16 @@ function animate() {
     const elapsed = (performance.now() - sequenceStart) / 1000;
     const HOP_DURATION = 0.4;
     const progress = Math.min(1, elapsed / HOP_DURATION);
-    hunterGroup.position.x += (hunterGroup.userData.targetX - hunterGroup.position.x) * 0.25;
+    hunterGroup.position.x += (hunterGroup.userData.targetX - hunterGroup.position.x) * ease(0.25);
     shake(progress * 0.05);
 
     const midX = (runnerGroup.position.x + hunterGroup.position.x) / 2;
-    camera.position.x += (midX - camera.position.x) * 0.12;
-    camera.position.z += ((3.4) - camera.position.z) * 0.06;
+    camera.position.x += (midX - camera.position.x) * ease(0.12);
+    camera.position.z += ((3.4) - camera.position.z) * ease(0.06);
     camera.lookAt(midX, 0.6, 0);
     if (shakeAmt > 0.001) {
       camera.position.x += (Math.random() - 0.5) * shakeAmt;
-      shakeAmt *= 0.85;
+      shakeAmt *= Math.pow(0.85, f);
     }
 
     if (progress >= 1 && Math.abs(hunterGroup.position.x - hunterGroup.userData.targetX) < 0.02) {
@@ -1131,8 +1146,8 @@ function animate() {
     const progress = Math.min(1, elapsed / BUILDUP_DURATION);
     const easedProgress = progress * progress;
     const midX = (buildupBaseX + HUNTER_X) / 2;
-    buildupBaseX += (midX - buildupBaseX) * easedProgress * 0.1;
-    hunterGroup.position.x += (midX - hunterGroup.position.x) * easedProgress * 0.14;
+    buildupBaseX += (midX - buildupBaseX) * ease(easedProgress * 0.1);
+    hunterGroup.position.x += (midX - hunterGroup.position.x) * ease(easedProgress * 0.14);
 
     while (buildupYankIndex < yankTimes.length && elapsed >= yankTimes[buildupYankIndex]) {
       const strength = 0.14 + buildupYankIndex * 0.045;
@@ -1149,11 +1164,11 @@ function animate() {
     runnerGroup.position.x = buildupBaseX + Math.sin(elapsed * strainFreq) * strainAmp;
 
     shake(progress * 0.06);
-    camera.position.lerp(new THREE.Vector3(0, 1.4, 3.2), 0.02);
+    camera.position.lerp(V3.set(0, 1.4, 3.2), ease(0.02));
     if (shakeAmt > 0.001) {
       camera.position.x += (Math.random() - 0.5) * shakeAmt;
       camera.position.y += (Math.random() - 0.5) * shakeAmt * 0.7;
-      shakeAmt *= 0.88;
+      shakeAmt *= Math.pow(0.88, f);
     }
 
     if (progress >= 1) {
@@ -1168,10 +1183,10 @@ function animate() {
     const sm = reduced() ? 1 : Math.min(1, slowMo + elapsed * 0.75);
     const simT = reduced() ? elapsed : Math.max(0, elapsed - (1 - slowMo) * Math.min(elapsed, 0.95) * 0.6);
     explosionParts.forEach(p => {
-      p.mesh.position.addScaledVector(p.vel, sm);
-      p.vel.y -= 0.002 * sm;
-      p.vel.multiplyScalar(1 - 0.015 * sm);
-      p.mesh.scale.multiplyScalar(1 - 0.035 * sm);
+      p.mesh.position.addScaledVector(p.vel, sm * f);
+      p.vel.y -= 0.002 * sm * f;
+      p.vel.multiplyScalar(Math.pow(1 - 0.015 * sm, f));
+      p.mesh.scale.multiplyScalar(Math.pow(1 - 0.035 * sm, f));
     });
     shockwave.scale.setScalar(1 + simT * 14);
     shockwaveMat.opacity = Math.max(0, 0.9 - simT * 1.3);
@@ -1197,15 +1212,15 @@ function animate() {
     const zoomProgress = Math.min(1, elapsed / ZOOM_DURATION);
     const px = runnerGroup.position.x, archX = finishGroup.position.x;
     if (!reduced()) {
-      camera.position.x += (archX + 1.0 - camera.position.x) * 0.06;
-      camera.position.z += (3.1 - camera.position.z) * 0.05;
-      camera.position.y += (1.4 - camera.position.y) * 0.05;
+      camera.position.x += (archX + 1.0 - camera.position.x) * ease(0.06);
+      camera.position.z += (3.1 - camera.position.z) * ease(0.05);
+      camera.position.y += (1.4 - camera.position.y) * ease(0.05);
       camera.lookAt(archX + 0.2, 1.0, 0);
     }
     // the class bursts through the finish arch
-    if (elapsed >= BURST_AT) runnerGroup.position.x += (archX - 1.5 - runnerGroup.position.x) * 0.12;
+    if (elapsed >= BURST_AT) runnerGroup.position.x += (archX - 1.5 - runnerGroup.position.x) * ease(0.12);
 
-    if (runnerChar) runnerChar.boost(zoomProgress);
+    if (runnerChar) runnerChar.boost(zoomProgress * f);
 
     if (elapsed >= BURST_AT && !snapFlashDone) {
       snapFlashDone = true;
@@ -1251,14 +1266,14 @@ function animate() {
       tether.visible = true;
       tether.position.set((from.x + to.x) / 2, 0.6, 0);
       tether.rotation.z = Math.PI / 2;
-      tetherPulse *= 0.94;
-      tetherColor.lerp(tetherTargetColor, 0.08);
+      tetherPulse *= Math.pow(0.94, f);
+      tetherColor.lerp(tetherTargetColor, ease(0.08));
       tetherMat.color.copy(tetherColor);
       tetherMat.opacity = 0.4 + tetherPulse * 0.5;
       tether.scale.set(1 + tetherPulse * 2, dist, 1 + tetherPulse * 2);
 
-      camera.position.lerp(new THREE.Vector3((from.x + to.x) / 2 * 0.3, 1.8, 4.4), 0.03);
-      if (shakeAmt > 0.001) { camera.position.x += (Math.random() - 0.5) * shakeAmt; shakeAmt *= 0.85; }
+      camera.position.lerp(V3.set((from.x + to.x) / 2 * 0.3, 1.8, 4.4), ease(0.03));
+      if (shakeAmt > 0.001) { camera.position.x += (Math.random() - 0.5) * shakeAmt; shakeAmt *= Math.pow(0.85, f); }
 
     } else if (elapsed < ESCAPE_BREAKFREE_DURATION + 0.18) {
       const snapProgress = (elapsed - ESCAPE_BREAKFREE_DURATION) / 0.18;
@@ -1269,10 +1284,10 @@ function animate() {
       }
       const from = hunterGroup.position;
       tether.visible = true;
-      tether.position.lerp(new THREE.Vector3(from.x, 0.6, 0), 0.55);
-      tether.scale.y *= 0.82;
+      tether.position.lerp(V3.set(from.x, 0.6, 0), ease(0.55));
+      tether.scale.y *= Math.pow(0.82, f);
       tetherMat.opacity = Math.max(0, 0.85 * (1 - snapProgress));
-      flareLight.intensity *= 0.8;
+      flareLight.intensity *= Math.pow(0.8, f);
       if (snapProgress >= 1) tether.visible = false;
 
     } else {
@@ -1285,7 +1300,7 @@ function animate() {
         escapeStreakMat.opacity = 0.5 * (1 - progress);
         const archX = sprintArch.position.x;
         if (!escapeConfetti && runnerGroup.position.x < archX) { escapeConfetti = true; burstConfetti(archX); lightShow = reduced() ? 0 : 2.4; setMood('gold'); }
-        if (!reduced()) { camera.position.lerp(V3.set(archX + 2.6, 1.7, 4.4), 0.05); lookX += (archX + 0.8 - lookX) * 0.06; camera.lookAt(lookX, 0.9, 0); }
+        if (!reduced()) { camera.position.lerp(V3.set(archX + 2.6, 1.7, 4.4), ease(0.05)); lookX += (archX + 0.8 - lookX) * ease(0.06); camera.lookAt(lookX, 0.9, 0); }
         if (progress >= 1 && launchElapsed > (reduced() ? 0.85 : 1.9) && onSequenceComplete) {
           runnerGroup.visible = false;
           escapeStreakMat.opacity = 0;

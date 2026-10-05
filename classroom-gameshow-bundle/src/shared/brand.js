@@ -23,9 +23,13 @@ CGB.brand = (() => {
     const title = opts.title !== false ? '<title>Showtime: Classroom Gameshows</title>' : '';
     // marquee bulbs around the main word
     let bulbs = '';
-    // each bulb twinkles on its own (fixed, varied) timing, so they never all flash together
-    const tw = k => `--tw:${(2.6 + ((k * 37) % 23) / 10).toFixed(1)}s;--td:-${(((k * 53) % 41) / 10).toFixed(1)}s`;
-    for (let i = 0; i < 17; i++) { const x = 80 + i * 52.5; bulbs += `<circle class="bulb" style="${tw(i)}" cx="${x.toFixed(1)}" cy="34" r="9" fill="${i % 2 ? SUN : '#fff'}" stroke="${INK}" stroke-width="3"/><circle class="bulb" style="${tw(i + 17)}" cx="${x.toFixed(1)}" cy="266" r="9" fill="${i % 2 ? '#fff' : SUN}" stroke="${INK}" stroke-width="3"/>`; }
+    // marquee chase: a bright band of light runs round the sign (along the top, back along the
+    // bottom), each bulb with a soft halo
+    const N = 34, LAP = 2.8;
+    const at = k => `--td:-${(LAP - (k * LAP) / N).toFixed(2)}s;--tw:${LAP}s`;
+    const bulb = (x, y, fill, k) => `<g class="bulb" style="${at(k)}"><circle class="halo" cx="${x}" cy="${y}" r="27" fill="url(#cgb-bulb-glow)"/><circle cx="${x}" cy="${y}" r="10" fill="${fill}" stroke="${INK}" stroke-width="3"/></g>`;
+    for (let i = 0; i < 17; i++) { const x = (80 + i * 52.5).toFixed(1); bulbs += bulb(x, 34, i % 2 ? SUN : '#fff', i) + bulb(x, 266, i % 2 ? '#fff' : SUN, N - 1 - i); }
+    bulbs = `<defs><radialGradient id="cgb-bulb-glow"><stop offset="0" stop-color="#FFF8D6" stop-opacity="1"/><stop offset="0.4" stop-color="${SUN}" stop-opacity="0.75"/><stop offset="1" stop-color="${SUN}" stop-opacity="0"/></radialGradient></defs>` + bulbs;
     return `<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Showtime: Classroom Gameshows">${title}
   <g>
     ${star(36, 150, 30, SUN, 0.2)}${star(966, 140, 26, TAN, 0.5)}${star(950, 330, 16, TEAL, 0.1)}${star(52, 340, 16, SUN, 0.7)}

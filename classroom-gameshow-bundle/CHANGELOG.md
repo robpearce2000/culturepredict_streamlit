@@ -3,6 +3,8 @@
 ## 1.0.1 – Smoother Outpace (October 2026)
 
 - **Outpace runs about twice as smoothly.** It no longer uses a full-screen glow pass or moving lights; the glows are drawn far more cheaply, every surface uses simpler shading, and it draws at standard resolution. If a computer still struggles, it now steps its quality down sooner (after a second and a half below about 45 frames a second): first the floating dust, set dressing and light beams go, then the resolution drops to three-quarters.
+- **No more stutter when the camera and racers move.** Every movement now runs on the clock rather than counting frames, so the camera glide and the racers' steps are smooth and the same speed on 60, 120 and 144 Hz screens, and one slow frame no longer makes them jump. A browser drawing 3D without the graphics chip (hardware acceleration switched off) now starts in the lightest mode.
+- **The home-screen sign is livelier:** a band of light chases round the bulbs, lit bulbs glow and the rest dim right down. With reduced motion every bulb stays lit and still.
 
 ## 1.0.0 – First release (October 2026)
 
