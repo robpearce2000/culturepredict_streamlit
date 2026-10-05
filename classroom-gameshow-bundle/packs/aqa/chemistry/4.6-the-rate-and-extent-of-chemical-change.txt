@@ -1,0 +1,379 @@
+Board: AQA
+Spec: 8462
+Topic: 4.6
+
+# 4.6.1.1 Calculating rates of reactions
+
+Q: A reaction produces 60 cm³ of gas in 20 seconds. What is the mean rate of reaction?
+A: 3 cm³/s
+Accept: 3 cm3/s; 3 cm³ per second
+Ref: 4.6.1.1
+D: 2
+Note: Mean rate = quantity of product formed ÷ time taken.
+Id: aqa-chem-4.6-001
+
+Q: The mass of a reactant is measured in grams and time in seconds. What is the unit of rate of reaction?
+A: g/s
+Accept: Grams per second
+Ref: 4.6.1.1
+D: 1
+Id: aqa-chem-4.6-002
+
+Q: On a graph of volume of gas produced against time, what does the slope of a tangent to the curve measure?
+A: Rate of reaction
+Accept: Rate; Reaction rate
+Ref: 4.6.1.1
+D: 2
+Id: aqa-chem-4.6-003
+
+Q: Why does a graph of product formed against time eventually become horizontal?
+A: Reactant used up
+Accept: Reaction has stopped; One reactant has run out; Reaction is complete
+Ref: 4.6.1.1
+D: 3
+Note: The line goes flat because no more product is being made once a reactant runs out.
+Id: aqa-chem-4.6-004
+
+Q: In a reaction, 0.6 mol of a reactant is used up in 30 seconds. What is the mean rate of reaction in mol/s?
+A: 0.02 mol/s
+Accept: 0.02
+Ref: 4.6.1.1
+HT: yes
+D: 3
+Note: Rate in mol/s is Higher tier only.
+Id: aqa-chem-4.6-005
+
+Q: A tangent drawn at 20 s on a gas volume–time graph rises 40 cm³ over 10 s. What is the rate at 20 s?
+A: 4 cm³/s
+Accept: 4 cm3/s; 4 cm³ per second
+Ref: 4.6.1.1
+HT: yes
+D: 3
+Note: Gradient of the tangent = change in volume ÷ change in time.
+
+# 4.6.1.2 Factors which affect the rates of chemical reactions
+Id: aqa-chem-4.6-006
+
+Q: Grinding a solid reactant into a powder changes which factor that affects the rate of reaction?
+A: Surface area
+Accept: Surface area to volume ratio
+Ref: 4.6.1.2
+D: 1
+Id: aqa-chem-4.6-007
+
+Q: Increasing which factor speeds up a reaction between gases by squeezing the gas particles closer together?
+A: Pressure
+Ref: 4.6.1.2
+D: 1
+Id: aqa-chem-4.6-008
+
+Q: In the required practical on rates, what is the independent variable?
+A: Concentration
+Accept: Concentration of the acid; Concentration of sodium thiosulfate
+Ref: 4.6.1.2
+RP: 5
+D: 1
+Id: aqa-chem-4.6-009
+
+Q: Sodium thiosulfate reacts with hydrochloric acid. Which solid forms and makes the mixture turn cloudy?
+A: Sulfur
+Accept: Sulfur precipitate; S
+Ref: 4.6.1.2
+RP: 5
+D: 2
+Id: aqa-chem-4.6-010
+
+Q: In the disappearing cross method, what is timed to measure the rate of reaction?
+A: Time for the cross to disappear
+Accept: Time until the cross can no longer be seen; Time for the cross to vanish
+Ref: 4.6.1.2
+RP: 5
+D: 2
+Id: aqa-chem-4.6-011
+
+Q: In the disappearing cross method, the reactant concentration is increased. What happens to the time for the cross to disappear?
+A: Decreases
+Accept: Gets shorter; Less time; Shorter
+Ref: 4.6.1.2
+RP: 5
+D: 2
+Note: A shorter time means a faster rate.
+Id: aqa-chem-4.6-012
+
+Q: In the gas collection practical, why does the volume of gas produced each second fall as the reaction goes on?
+A: Reactants are used up
+Accept: Acid concentration decreases; Acid is used up; Concentration of reactants falls; Fewer collisions per second; Less magnesium left
+Ref: 4.6.1.2
+RP: 5
+D: 3
+Note: Lower concentration means less frequent collisions.
+
+# 4.6.1.3 Collision theory and activation energy
+Id: aqa-chem-4.6-013
+
+Q: What is the minimum amount of energy that colliding particles must have to react called?
+A: Activation energy
+Ref: 4.6.1.3
+D: 1
+Id: aqa-chem-4.6-014
+
+Q: According to collision theory, what must reacting particles do for a reaction to happen?
+A: Collide with sufficient energy
+Accept: Collide with at least the activation energy; Collide with enough energy
+Ref: 4.6.1.3
+D: 2
+Note: Colliding is not enough on its own: the energy condition is needed.
+Id: aqa-chem-4.6-015
+
+Q: Using collision theory, why does increasing the concentration of a solution increase the rate of reaction?
+A: More frequent collisions
+Accept: More collisions per second; Collisions happen more often
+Ref: 4.6.1.3
+D: 3
+Note: "More collisions" alone is weak: it needs per second or more frequent.
+Id: aqa-chem-4.6-016
+
+Q: Give the two effects of raising the temperature on collisions between reacting particles.
+A: More frequent and more energetic collisions
+Accept: Collide more often and with more energy
+Ref: 4.6.1.3
+D: 2
+Note: Both effects are needed: frequency and energy.
+Id: aqa-chem-4.6-017
+
+Q: Why does a powder react faster than a single lump of the same mass?
+A: Larger surface area to volume ratio
+Accept: Larger surface area; More surface exposed
+Ref: 4.6.1.3
+D: 3
+
+# 4.6.1.4 Catalysts
+Id: aqa-chem-4.6-018
+
+Q: What is a substance that speeds up a reaction without being used up called?
+A: Catalyst
+Ref: 4.6.1.4
+D: 1
+Id: aqa-chem-4.6-019
+
+Q: What are the catalysts in biological systems called?
+A: Enzymes
+Accept: Enzyme
+Ref: 4.6.1.4
+D: 1
+Id: aqa-chem-4.6-020
+
+Q: How does a catalyst increase the rate of a reaction?
+A: Provides a pathway with lower activation energy
+Accept: Different route with lower activation energy; Lowers the activation energy
+Ref: 4.6.1.4
+D: 3
+Id: aqa-chem-4.6-021
+
+Q: Why is a catalyst not written as a reactant in the chemical equation?
+A: Not used up in the reaction
+Accept: Not used up; Unchanged at the end
+Ref: 4.6.1.4
+D: 2
+Id: aqa-chem-4.6-022
+
+Q: On a reaction profile, does a catalyst change the activation energy or the overall energy change?
+A: Activation energy
+Ref: 4.6.1.4
+D: 2
+Note: The energies of the reactants and products are unchanged.
+
+# 4.6.2.1 Reversible reactions
+Id: aqa-chem-4.6-023
+
+Q: What symbol in an equation shows that a reaction is reversible?
+A: ⇌
+Accept: Double half arrows; Two half arrows
+Ref: 4.6.2.1
+D: 1
+Id: aqa-chem-4.6-024
+
+Q: What is a reversible reaction?
+A: Products can react to re-form the reactants
+Accept: Reaction that can go both ways; Reaction that can go forwards and backwards
+Ref: 4.6.2.1
+D: 2
+Id: aqa-chem-4.6-025
+
+Q: Solid ammonium chloride is heated. Name the two gases it decomposes into.
+A: Ammonia and hydrogen chloride
+Accept: NH₃ and HCl; NH3 and HCl
+Ref: 4.6.2.1
+D: 2
+Note: On cooling the gases react to re-form ammonium chloride.
+
+# 4.6.2.2 Energy changes and reversible reactions
+Id: aqa-chem-4.6-026
+
+Q: A reversible reaction is exothermic in the forward direction. What is it in the reverse direction?
+A: Endothermic
+Ref: 4.6.2.2
+D: 1
+Id: aqa-chem-4.6-027
+
+Q: Blue hydrated copper sulfate is heated. What colour is the anhydrous copper sulfate that forms?
+A: White
+Accept: White anhydrous copper sulfate
+Ref: 4.6.2.2
+D: 1
+Id: aqa-chem-4.6-028
+
+Q: The forward reaction of a reversible reaction releases 50 kJ. How much energy does the reverse reaction take in?
+A: 50 kJ
+Accept: 50
+Ref: 4.6.2.2
+D: 2
+Note: The same amount of energy is transferred in each direction.
+Id: aqa-chem-4.6-029
+
+Q: Why does white anhydrous copper sulfate get hot when water is added to it?
+A: Reaction with water is exothermic
+Accept: Hydration is exothermic; Adding water is exothermic; Reverse reaction is exothermic
+Ref: 4.6.2.2
+D: 3
+Note: Removing the water needs heating (endothermic), so adding it back releases the same energy.
+
+# 4.6.2.3 Equilibrium
+Id: aqa-chem-4.6-030
+
+Q: In a closed system, what is reached when a reversible reaction goes forwards and backwards at equal rates?
+A: Equilibrium
+Accept: Dynamic equilibrium
+Ref: 4.6.2.3
+D: 1
+Id: aqa-chem-4.6-031
+
+Q: At equilibrium the amounts of reactants and products stay constant. What is still happening to the forward and reverse reactions?
+A: Both are still happening
+Accept: Both continue; Still occurring at equal rates; Neither has stopped
+Ref: 4.6.2.3
+D: 2
+Note: Equilibrium is dynamic: the reactions have not stopped.
+Id: aqa-chem-4.6-032
+
+Q: What kind of apparatus is needed for a reversible reaction to reach equilibrium?
+A: Closed system
+Accept: Sealed container; Apparatus that stops anything escaping
+Ref: 4.6.2.3
+D: 2
+Id: aqa-chem-4.6-033
+
+Q: Why can a reversible reaction that gives off a gas not reach equilibrium in an open beaker?
+A: Gas escapes
+Accept: Product escapes; Products are lost so the reverse reaction cannot happen
+Ref: 4.6.2.3
+D: 3
+
+# 4.6.2.4 The effect of changing conditions on equilibrium (HT only)
+Id: aqa-chem-4.6-034
+
+Q: Which principle is used to predict the effect of changing conditions on a system at equilibrium?
+A: Le Chatelier's principle
+Accept: Le Chatelier
+Ref: 4.6.2.4
+HT: yes
+D: 1
+Id: aqa-chem-4.6-035
+
+Q: A system is at equilibrium and one of the conditions is changed. How does the system respond?
+A: Counteracts the change
+Accept: Opposes the change; Shifts to counteract the change
+Ref: 4.6.2.4
+HT: yes
+D: 2
+Id: aqa-chem-4.6-036
+
+Q: Name the three conditions that can be changed to alter the position of equilibrium.
+A: Concentration, temperature and pressure
+Accept: Concentration, temperature, pressure
+Ref: 4.6.2.4
+HT: yes
+D: 2
+Note: Any order. A catalyst does not change the position of equilibrium.
+
+# 4.6.2.5 The effect of changing concentration (HT only)
+Id: aqa-chem-4.6-037
+
+Q: The concentration of a reactant in an equilibrium mixture is increased. What happens to the amount of product?
+A: Increases
+Accept: More product forms; Goes up
+Ref: 4.6.2.5
+HT: yes
+D: 2
+Id: aqa-chem-4.6-038
+
+Q: A product is removed from an equilibrium mixture. In which direction does the position of equilibrium shift?
+A: Right
+Accept: Towards the products; Forwards; To the right
+Ref: 4.6.2.5
+HT: yes
+D: 2
+Note: More reactants react to replace the product that was removed.
+Id: aqa-chem-4.6-039
+
+Q: Fe³⁺ + SCN⁻ ⇌ FeSCN²⁺, where FeSCN²⁺ is blood red. More Fe³⁺ is added. How does the colour change?
+A: Darker red
+Accept: Deeper red; More red; Redder
+Ref: 4.6.2.5
+HT: yes
+D: 3
+
+# 4.6.2.6 The effect of temperature changes on equilibrium (HT only)
+Id: aqa-chem-4.6-040
+
+Q: The forward reaction is exothermic. What happens to the amount of product at equilibrium if the temperature is increased?
+A: Decreases
+Accept: Less product; Goes down
+Ref: 4.6.2.6
+HT: yes
+D: 2
+Id: aqa-chem-4.6-041
+
+Q: The forward reaction is endothermic. Should the temperature be raised or lowered to increase the relative amount of product?
+A: Raised
+Accept: Raise; Increased; Higher
+Ref: 4.6.2.6
+HT: yes
+D: 2
+Id: aqa-chem-4.6-042
+
+Q: N₂O₄ (colourless) ⇌ 2NO₂ (brown). The forward reaction is endothermic. The mixture is heated. How does its colour change?
+A: Darker brown
+Accept: More brown; Browner
+Ref: 4.6.2.6
+HT: yes
+D: 3
+Note: Raising the temperature favours the endothermic direction, making more NO₂.
+
+# 4.6.2.7 The effect of pressure changes on equilibrium (HT only)
+Id: aqa-chem-4.6-043
+
+Q: For gases at equilibrium, increasing the pressure shifts the position towards which side of the equation?
+A: Side with fewer molecules
+Accept: Fewer molecules; Smaller number of molecules
+Ref: 4.6.2.7
+HT: yes
+D: 2
+Id: aqa-chem-4.6-044
+
+Q: N₂ + 3H₂ ⇌ 2NH₃, all gases. The pressure is increased. What happens to the amount of ammonia at equilibrium?
+A: Increases
+Accept: More ammonia; Goes up
+Ref: 4.6.2.7
+HT: yes
+D: 3
+Note: Four molecules on the left, two on the right.
+Id: aqa-chem-4.6-045
+
+Q: H₂ + I₂ ⇌ 2HI, all gases. Why does changing the pressure not shift the position of equilibrium?
+A: Same number of molecules on each side
+Accept: Equal numbers of molecules on both sides
+Ref: 4.6.2.7
+HT: yes
+D: 3
+Id: aqa-chem-4.6-046

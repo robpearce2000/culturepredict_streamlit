@@ -1,0 +1,361 @@
+Board: AQA
+Spec: 8462
+Topic: 4.10
+
+# 4.10.1.1 Using the Earth's resources and sustainable development
+
+Q: What term describes meeting people's needs today in a way that does not stop future generations meeting their own?
+A: Sustainable development
+Ref: 4.10.1.1
+D: 1
+Id: aqa-chem-4.10-001
+
+Q: What word describes a resource, such as crude oil, that is being used up faster than it is replaced?
+A: Finite
+Accept: Non-renewable
+Ref: 4.10.1.1
+D: 1
+Id: aqa-chem-4.10-002
+
+Q: Known reserves of a metal ore are 2 000 000 tonnes and 20 000 tonnes are mined each year. How many years will the reserves last?
+A: 100 years
+Accept: 100
+Ref: 4.10.1.1
+D: 2
+Id: aqa-chem-4.10-003
+
+Q: Why is timber classed as a renewable resource but coal is not?
+A: New trees can be grown to replace timber
+Accept: Trees can be regrown quickly; Coal takes millions of years to form
+Ref: 4.10.1.1
+D: 3
+
+# 4.10.1.2 Potable water
+Id: aqa-chem-4.10-004
+
+Q: What is the name for water that is safe to drink?
+A: Potable water
+Accept: Potable
+Ref: 4.10.1.2
+D: 1
+Id: aqa-chem-4.10-005
+
+Q: Why is potable water not pure water in the chemical sense?
+A: Contains dissolved substances
+Accept: Dissolved salts; Has dissolved salts or minerals in it
+Ref: 4.10.1.2
+D: 2
+Id: aqa-chem-4.10-006
+
+Q: Apart from chlorine, name a sterilising agent used to treat drinking water.
+A: Ozone
+Accept: Ultraviolet light; UV light; UV
+Ref: 4.10.1.2
+D: 1
+Id: aqa-chem-4.10-007
+
+Q: What is the name of the membrane process used to desalinate sea water?
+A: Reverse osmosis
+Ref: 4.10.1.2
+D: 1
+Id: aqa-chem-4.10-008
+
+Q: Why is desalination of sea water used only where fresh water supplies are limited?
+A: Needs large amounts of energy
+Accept: Expensive energy costs; Uses a lot of energy
+Ref: 4.10.1.2
+D: 3
+Id: aqa-chem-4.10-009
+
+Q: Name an instrument that measures the pH of a water sample more precisely than universal indicator.
+A: pH meter
+Accept: pH probe
+Ref: 4.10.1.2
+RP: 8
+D: 1
+Id: aqa-chem-4.10-010
+
+Q: Evaporating 50 cm³ of a water sample leaves 0.10 g of solid. What is the concentration of dissolved solids in g/dm³?
+A: 2 g/dm³
+Accept: 2; 2 g per dm³
+Ref: 4.10.1.2
+RP: 8
+D: 3
+Note: 50 cm³ is 0.05 dm³, and 0.10 ÷ 0.05 = 2.
+Id: aqa-chem-4.10-011
+
+Q: When distilling salty water, what is the job of the condenser?
+A: Cools the steam so it condenses
+Accept: Turns water vapour back into liquid water; Condenses the steam; Cools the water vapour
+Ref: 4.10.1.2
+RP: 8
+D: 2
+
+# 4.10.1.3 Waste water treatment
+Id: aqa-chem-4.10-012
+
+Q: What is the first stage of sewage treatment, before sedimentation?
+A: Screening and grit removal
+Accept: Screening; Grit removal
+Ref: 4.10.1.3
+D: 1
+Id: aqa-chem-4.10-013
+
+Q: Sedimentation of sewage separates it into which two parts?
+A: Sewage sludge and effluent
+Accept: Sludge and effluent
+Ref: 4.10.1.3
+D: 2
+Id: aqa-chem-4.10-014
+
+Q: What process is used to treat sewage sludge?
+A: Anaerobic digestion
+Ref: 4.10.1.3
+D: 1
+Id: aqa-chem-4.10-015
+
+Q: Why is it usually easier to produce potable water from ground water than from sea water?
+A: Ground water has far fewer dissolved salts
+Accept: No desalination needed; Low levels of dissolved substances; Sea water needs desalination
+Ref: 4.10.1.3
+D: 3
+
+# 4.10.1.4 Alternative methods of extracting metals (HT only)
+Id: aqa-chem-4.10-016
+
+Q: What is the name of the method that uses plants to absorb metal compounds from the soil?
+A: Phytomining
+Ref: 4.10.1.4
+HT: yes
+D: 1
+Id: aqa-chem-4.10-017
+
+Q: What is the solution containing metal compounds that bioleaching produces called?
+A: Leachate
+Ref: 4.10.1.4
+HT: yes
+D: 1
+Id: aqa-chem-4.10-018
+
+Q: Name a cheap metal that can displace copper from a solution of a copper compound.
+A: Iron
+Accept: Scrap iron
+Ref: 4.10.1.4
+HT: yes
+D: 2
+Note: Copper can also be obtained from the solution by electrolysis.
+Id: aqa-chem-4.10-019
+
+Q: Why are phytomining and bioleaching being used to extract copper?
+A: Copper ores are becoming scarce
+Accept: High-grade ores are running out; To use low-grade ores; Avoid digging and disposing of large amounts of rock
+Ref: 4.10.1.4
+HT: yes
+D: 3
+
+# 4.10.2.1 Life cycle assessment
+Id: aqa-chem-4.10-020
+
+Q: What does a life cycle assessment (LCA) assess for a product?
+A: Environmental impact at each stage of its life
+Accept: Environmental impact
+Ref: 4.10.2.1
+D: 2
+Id: aqa-chem-4.10-021
+
+Q: What raw material are most plastic shopping bags made from?
+A: Crude oil
+Accept: Oil; Petroleum
+Ref: 4.10.2.1
+D: 1
+Id: aqa-chem-4.10-022
+
+Q: An LCA gives 1.6 MJ of energy for a paper bag and 0.4 MJ for a plastic bag. How many times more energy does the paper bag use?
+A: 4 times
+Accept: 4; Four
+Ref: 4.10.2.1
+D: 2
+Id: aqa-chem-4.10-023
+
+Q: Why is a life cycle assessment not a purely objective process?
+A: Pollutant effects need value judgements
+Accept: Value judgements are needed
+Ref: 4.10.2.1
+D: 3
+Note: Energy, water and waste are easy to quantify; pollution effects are not.
+
+# 4.10.2.2 Ways of reducing the use of resources
+Id: aqa-chem-4.10-024
+
+Q: Name the three ways end users can cut their use of limited resources, often called the three Rs.
+A: Reduce, reuse, recycle
+Ref: 4.10.2.2
+D: 1
+Id: aqa-chem-4.10-025
+
+Q: How are glass bottles recycled into new glass products?
+A: Crushed and melted
+Accept: Crushing and melting
+Ref: 4.10.2.2
+D: 2
+Id: aqa-chem-4.10-026
+
+Q: Why is scrap steel added to iron from the blast furnace?
+A: Less iron needs extracting from iron ore
+Accept: Reduces iron extracted from ore; Saves iron ore
+Ref: 4.10.2.2
+D: 3
+
+# 4.10.3.1 Corrosion and its prevention
+Id: aqa-chem-4.10-027
+
+Q: Which two substances must both be present for iron to rust?
+A: Air and water
+Accept: Oxygen and water
+Ref: 4.10.3.1
+D: 1
+Id: aqa-chem-4.10-028
+
+Q: In a rusting experiment, why is the water boiled before an iron nail is placed in it?
+A: Removes dissolved air
+Accept: To remove dissolved air; Removes dissolved oxygen
+Ref: 4.10.3.1
+D: 3
+Note: A layer of oil on top then stops air dissolving back in.
+Id: aqa-chem-4.10-029
+
+Q: Which metal is used to galvanise iron?
+A: Zinc
+Ref: 4.10.3.1
+D: 1
+Id: aqa-chem-4.10-030
+
+Q: Why does galvanised iron not rust even when the zinc coating is scratched?
+A: Zinc is more reactive so corrodes instead
+Accept: Sacrificial protection by more reactive zinc
+Ref: 4.10.3.1
+D: 3
+
+# 4.10.3.2 Alloys as useful materials
+Id: aqa-chem-4.10-031
+
+Q: Bronze is an alloy of copper and which other metal?
+A: Tin
+Ref: 4.10.3.2
+D: 1
+Id: aqa-chem-4.10-032
+
+Q: What percentage of an 18 carat gold alloy is gold?
+A: 75%
+Accept: 75
+Ref: 4.10.3.2
+D: 2
+Id: aqa-chem-4.10-033
+
+Q: Stainless steel contains iron and which two other metals?
+A: Chromium and nickel
+Ref: 4.10.3.2
+D: 2
+Id: aqa-chem-4.10-034
+
+Q: How do the properties of high carbon steel differ from low carbon steel?
+A: Stronger but more brittle
+Accept: Strong but brittle; Harder but less easily shaped
+Ref: 4.10.3.2
+D: 3
+
+# 4.10.3.3 Ceramics, polymers and composites
+Id: aqa-chem-4.10-035
+
+Q: Why is borosilicate glass, not soda-lime glass, used for glassware that is heated strongly?
+A: Higher melting point
+Accept: Melts at a higher temperature
+Ref: 4.10.3.3
+D: 3
+Id: aqa-chem-4.10-036
+
+Q: Why do LDPE and HDPE have different properties though made from the same monomer?
+A: Made under different reaction conditions
+Accept: Different conditions; Different catalysts and conditions; Different temperature and pressure
+Ref: 4.10.3.3
+D: 3
+Id: aqa-chem-4.10-037
+
+Q: In terms of structure, why do thermosetting polymers not melt when heated?
+A: Cross-links between polymer chains
+Accept: Crosslinks; Covalent bonds between chains
+Ref: 4.10.3.3
+D: 3
+Note: Thermosoftening polymers have only weak intermolecular forces between chains.
+Id: aqa-chem-4.10-038
+
+Q: In a composite, what is the material surrounding and binding the reinforcement called?
+A: Matrix
+Accept: Binder
+Ref: 4.10.3.3
+D: 1
+
+# 4.10.4.1 The Haber process
+Id: aqa-chem-4.10-039
+
+Q: What is the usual source of the hydrogen used in the Haber process?
+A: Natural gas
+Accept: Methane
+Ref: 4.10.4.1
+D: 1
+Id: aqa-chem-4.10-040
+
+Q: What temperature and pressure are used in the Haber process?
+A: About 450 °C and 200 atmospheres
+Accept: 450 °C and 200 atm
+Ref: 4.10.4.1
+D: 2
+Id: aqa-chem-4.10-041
+
+Q: Why is a temperature of 450 °C a compromise in the Haber process?
+A: Lower temperature gives more ammonia but too slowly
+Accept: Higher yield at lower temperature but slower rate
+Ref: 4.10.4.1
+HT: yes
+D: 3
+Note: The forward reaction is exothermic.
+Id: aqa-chem-4.10-042
+
+Q: Increasing the pressure in the Haber process shifts the equilibrium in which direction?
+A: Towards ammonia
+Accept: Right; Forward; Towards the products
+Ref: 4.10.4.1
+HT: yes
+D: 2
+Note: Four gas molecules react to give two, so higher pressure favours fewer molecules.
+
+# 4.10.4.2 Production and uses of NPK fertilisers
+Id: aqa-chem-4.10-043
+
+Q: Which three elements are supplied by NPK fertilisers?
+A: Nitrogen, phosphorus, potassium
+Ref: 4.10.4.2
+D: 1
+Id: aqa-chem-4.10-044
+
+Q: Why can phosphate rock not be used directly as a fertiliser?
+A: Insoluble
+Accept: Not soluble; Doesn't dissolve in water
+Ref: 4.10.4.2
+D: 2
+Id: aqa-chem-4.10-045
+
+Q: What fertiliser is made when phosphate rock reacts with sulfuric acid?
+A: Single superphosphate
+Accept: Superphosphate; Calcium phosphate and calcium sulfate
+Ref: 4.10.4.2
+D: 1
+Id: aqa-chem-4.10-046
+
+Q: What fertiliser is made when phosphate rock reacts with phosphoric acid?
+A: Triple superphosphate
+Accept: Calcium phosphate
+Ref: 4.10.4.2
+D: 1
+Note: With nitric acid the products are phosphoric acid and calcium nitrate.
+Id: aqa-chem-4.10-047

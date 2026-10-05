@@ -1,0 +1,353 @@
+Board: AQA
+Spec: 8462
+Topic: 4.9
+
+# 4.9.1.1 The proportions of different gases in the atmosphere
+
+Q: Which gas makes up about four-fifths of the Earth's atmosphere today?
+A: Nitrogen
+Accept: N2
+Ref: 4.9.1.1
+D: 1
+Id: aqa-chem-4.9-001
+
+Q: Roughly what percentage of today's atmosphere is oxygen?
+A: 20%
+Accept: About 20%; 21%; One-fifth
+Ref: 4.9.1.1
+D: 1
+Id: aqa-chem-4.9-002
+
+Q: Name the group of unreactive elements found in small proportions in air, alongside carbon dioxide and water vapour.
+A: Noble gases
+Accept: Group 0; Group 8; Inert gases
+Ref: 4.9.1.1
+D: 1
+Id: aqa-chem-4.9-003
+
+Q: Air is about 80% nitrogen. Roughly what volume of nitrogen is in a 500 cm³ sample of air?
+A: 400 cm³
+Accept: 400; 390 cm³
+Ref: 4.9.1.1
+D: 2
+Note: 390 cm³ comes from using 78%; accept either.
+
+# 4.9.1.2 The Earth's early atmosphere
+Id: aqa-chem-4.9-004
+
+Q: According to the main theory, what released the gases that formed the Earth's early atmosphere?
+A: Volcanoes
+Accept: Volcanic activity; Volcanic eruptions
+Ref: 4.9.1.2
+D: 1
+Id: aqa-chem-4.9-005
+
+Q: Which gas made up most of the Earth's early atmosphere?
+A: Carbon dioxide
+Accept: CO2
+Ref: 4.9.1.2
+D: 1
+Note: Like the atmospheres of Mars and Venus today, with little or no oxygen.
+Id: aqa-chem-4.9-006
+
+Q: How did the oceans form in the Earth's early history?
+A: Water vapour condensed
+Accept: Water vapour from volcanoes condensed; Condensation of water vapour
+Ref: 4.9.1.2
+D: 2
+Id: aqa-chem-4.9-007
+
+Q: Why is the evidence about the Earth's early atmosphere limited?
+A: Very long time scale (4.6 billion years)
+Accept: It was 4.6 billion years ago; So long ago
+Ref: 4.9.1.2
+D: 3
+Id: aqa-chem-4.9-008
+
+Q: How did the formation of the oceans reduce carbon dioxide in the atmosphere?
+A: Dissolved, then precipitated as carbonate sediments
+Accept: Carbon dioxide dissolved in the oceans; Carbonates precipitated as sediments
+Ref: 4.9.1.2
+D: 3
+Note: Full answer: CO2 dissolved in the water and carbonates were precipitated.
+
+# 4.9.1.3 How oxygen increased
+Id: aqa-chem-4.9-009
+
+Q: Which process produced the oxygen that is now in the atmosphere?
+A: Photosynthesis
+Ref: 4.9.1.3
+D: 1
+Id: aqa-chem-4.9-010
+
+Q: Which organisms were the first to produce oxygen on Earth?
+A: Algae
+Accept: Alga
+Ref: 4.9.1.3
+D: 1
+Id: aqa-chem-4.9-011
+
+Q: Roughly how long ago did algae first produce oxygen?
+A: 2.7 billion years ago
+Accept: 2.7 billion years; 2700 million years
+Ref: 4.9.1.3
+D: 2
+Id: aqa-chem-4.9-012
+
+Q: In the balanced equation for photosynthesis, how many oxygen molecules are made for each glucose molecule, C6H12O6?
+A: 6
+Accept: Six; 6O2
+Ref: 4.9.1.3
+D: 2
+Note: 6CO2 + 6H2O → C6H12O6 + 6O2
+
+# 4.9.1.4 How carbon dioxide decreased
+Id: aqa-chem-4.9-013
+
+Q: Which sedimentary rock formed mainly from the shells and skeletons of marine organisms?
+A: Limestone
+Accept: Chalk
+Ref: 4.9.1.4
+D: 1
+Note: Limestone is mainly calcium carbonate.
+Id: aqa-chem-4.9-014
+
+Q: Which fossil fuel formed from the remains of plants and trees buried in swamps?
+A: Coal
+Ref: 4.9.1.4
+D: 1
+Id: aqa-chem-4.9-015
+
+Q: Crude oil and natural gas formed from the buried remains of which organisms?
+A: Plankton
+Accept: Tiny sea organisms; Marine organisms; Plankton in mud
+Ref: 4.9.1.4
+D: 1
+Id: aqa-chem-4.9-016
+
+Q: Explain why the formation of fossil fuels decreased the carbon dioxide in the atmosphere.
+A: Carbon locked away underground in them
+Accept: Carbon stored in fossil fuels; Carbon removed from the air and buried
+Ref: 4.9.1.4
+D: 3
+Note: The carbon came from CO2 taken in by the organisms when alive.
+
+# 4.9.2.1 Greenhouse gases
+Id: aqa-chem-4.9-017
+
+Q: Apart from water vapour, name the two main greenhouse gases.
+A: Carbon dioxide and methane
+Accept: CO2 and CH4
+Note: Nitrous oxide and ozone are also greenhouse gases but are not required; do not penalise them as extras.
+Ref: 4.9.2.1
+D: 2
+Id: aqa-chem-4.9-018
+
+Q: What type of radiation from the Sun passes through the atmosphere to the Earth's surface?
+A: Short wavelength radiation
+Accept: Short wavelength; Short-wave radiation
+Ref: 4.9.2.1
+D: 2
+Id: aqa-chem-4.9-019
+
+Q: Why are greenhouse gases in the atmosphere essential for life on Earth?
+A: Keep Earth warm enough for life
+Accept: Maintain temperatures high enough for life; Earth would be too cold without them
+Ref: 4.9.2.1
+D: 2
+Id: aqa-chem-4.9-020
+
+Q: Explain how greenhouse gases keep the Earth warm.
+A: Absorb long wavelength radiation emitted by Earth
+Accept: Absorb and re-emit long wavelength radiation; Trap infrared from the Earth
+Ref: 4.9.2.1
+D: 3
+Note: Short wavelength radiation passes in; the Earth emits long wavelength radiation that the gases absorb.
+
+# 4.9.2.2 Human activities which contribute to an increase in greenhouse gases
+Id: aqa-chem-4.9-021
+
+Q: Apart from burning fossil fuels, which human activity involving forests increases atmospheric carbon dioxide?
+A: Deforestation
+Accept: Cutting down trees; Burning forests
+Ref: 4.9.2.2
+D: 1
+Id: aqa-chem-4.9-022
+
+Q: Which farm animals release large amounts of methane from their digestion?
+A: Cattle
+Accept: Cows; Ruminants
+Ref: 4.9.2.2
+D: 1
+Id: aqa-chem-4.9-023
+
+Q: Rotting waste in which kind of site releases methane into the atmosphere?
+A: Landfill sites
+Accept: Landfill; Rubbish tips
+Ref: 4.9.2.2
+D: 1
+Id: aqa-chem-4.9-024
+
+Q: What is the checking of scientific results by other experts before publication called?
+A: Peer review
+Ref: 4.9.2.2
+D: 1
+Id: aqa-chem-4.9-025
+
+Q: Why might media reports about climate change be unreliable?
+A: Biased or based on partial evidence
+Accept: Biased; Based on only part of the evidence; Oversimplified; Speculation or opinion
+Ref: 4.9.2.2
+D: 3
+Id: aqa-chem-4.9-026
+
+Q: Why is it hard for scientists to predict global climate change precisely?
+A: Climate is too complex to model accurately
+Accept: Complex system; Models are simplified
+Ref: 4.9.2.2
+D: 3
+
+# 4.9.2.3 Global climate change
+Id: aqa-chem-4.9-027
+
+Q: An increase in what is a major cause of global climate change?
+A: Average global temperature
+Accept: Global temperature; Mean global temperature
+Ref: 4.9.2.3
+D: 1
+Id: aqa-chem-4.9-028
+
+Q: Rising sea levels from climate change increase which two risks for low-lying coasts?
+A: Flooding and coastal erosion
+Accept: Floods and erosion
+Ref: 4.9.2.3
+D: 2
+Id: aqa-chem-4.9-029
+
+Q: Global climate change may shift where a species can live. What is the pattern of where a species is found called?
+A: Distribution
+Accept: Range; Geographical distribution
+Ref: 4.9.2.3
+D: 2
+Id: aqa-chem-4.9-030
+
+Q: Explain how climate change could reduce food production in some regions.
+A: Changed rainfall and temperature harm crops
+Accept: Drought damages crops; Water stress; Crops fail in extreme weather; Farmland flooded
+Ref: 4.9.2.3
+D: 3
+Note: Accept any valid climate effect that lowers crop yields.
+
+# 4.9.2.4 The carbon footprint and its reduction
+Id: aqa-chem-4.9-031
+
+Q: What term means the total greenhouse gases emitted over the full life cycle of a product, service or event?
+A: Carbon footprint
+Ref: 4.9.2.4
+D: 1
+Id: aqa-chem-4.9-032
+
+Q: What is the process called that traps carbon dioxide from power stations and stores it underground?
+A: Carbon capture and storage
+Accept: Carbon capture; CCS; Carbon sequestration
+Ref: 4.9.2.4
+D: 2
+Id: aqa-chem-4.9-033
+
+Q: Capturing which gas from landfill sites, to burn as a fuel, reduces greenhouse gas emissions?
+A: Methane
+Accept: CH4
+Ref: 4.9.2.4
+D: 2
+Id: aqa-chem-4.9-034
+
+Q: Give one reason why actions to reduce carbon emissions may be limited.
+A: Cost
+Accept: Too expensive; Lack of money; Slows economic development; Lack of public cooperation; Lack of international agreement
+Ref: 4.9.2.4
+D: 3
+Note: Also accept lifestyle changes people resist, or a lack of education or legislation.
+Id: aqa-chem-4.9-035
+
+Q: Why does buying locally grown food usually give a smaller carbon footprint?
+A: Less fuel burned transporting it
+Accept: Less transport; Fewer food miles
+Ref: 4.9.2.4
+D: 3
+
+# 4.9.3.1 Atmospheric pollutants from fuels
+Id: aqa-chem-4.9-036
+
+Q: Which toxic gas forms when a carbon fuel burns with too little oxygen?
+A: Carbon monoxide
+Accept: CO
+Ref: 4.9.3.1
+D: 1
+Id: aqa-chem-4.9-037
+
+Q: Which black solid made of carbon particles forms when fuels burn in very little oxygen?
+A: Soot
+Accept: Carbon; Carbon particles; Particulates
+Ref: 4.9.3.1
+D: 1
+Id: aqa-chem-4.9-038
+
+Q: How is sulfur dioxide produced when some fuels are burned?
+A: Sulfur in the fuel reacts with oxygen
+Accept: Sulfur impurities oxidised; Sulfur in fuel burns
+Ref: 4.9.3.1
+D: 2
+Id: aqa-chem-4.9-039
+
+Q: A fuel contains only carbon and hydrogen. Name the two products when it burns completely.
+A: Carbon dioxide and water
+Accept: CO2 and H2O; Carbon dioxide and water vapour
+Ref: 4.9.3.1
+D: 2
+Id: aqa-chem-4.9-040
+
+Q: Explain how oxides of nitrogen form when fuels burn in car engines.
+A: Nitrogen and oxygen react at high temperature
+Accept: Nitrogen from air oxidised at high temperatures; Nitrogen and oxygen react in the hot engine
+Ref: 4.9.3.1
+D: 3
+Note: The nitrogen comes from the air, not from the fuel.
+
+# 4.9.3.2 Properties and effects of atmospheric pollutants
+Id: aqa-chem-4.9-041
+
+Q: What effect do particulates in the atmosphere have on the sunlight reaching the ground?
+A: Global dimming
+Accept: Reduce sunlight reaching the ground; Dimming
+Ref: 4.9.3.2
+D: 1
+Id: aqa-chem-4.9-042
+
+Q: Why is carbon monoxide difficult to detect?
+A: Colourless and odourless
+Accept: No colour or smell; Cannot be seen or smelled
+Ref: 4.9.3.2
+D: 2
+Id: aqa-chem-4.9-043
+
+Q: Name the two pollutants from burning fuels that cause acid rain.
+A: Sulfur dioxide and oxides of nitrogen
+Accept: SO2 and NOx; Sulfur dioxide and nitrogen oxides; Sulfur dioxide and nitrogen dioxide
+Ref: 4.9.3.2
+D: 2
+Id: aqa-chem-4.9-044
+
+Q: Apart from acid rain, what health problem do sulfur dioxide and oxides of nitrogen cause in humans?
+A: Respiratory problems
+Accept: Breathing problems; Lung problems; Asthma attacks
+Ref: 4.9.3.2
+D: 1
+Id: aqa-chem-4.9-045
+
+Q: Explain why carbon monoxide is toxic to humans.
+A: Reduces the oxygen the blood carries
+Accept: Binds to haemoglobin; Stops red blood cells carrying oxygen
+Ref: 4.9.3.2
+D: 3
+Note: The spec only says CO is toxic; accept any answer about less oxygen carried in the blood.
+Id: aqa-chem-4.9-046

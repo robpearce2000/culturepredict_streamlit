@@ -1,0 +1,356 @@
+Board: AQA
+Spec: 8462
+Topic: 4.5
+
+# 4.5.1.1 Energy transfer during exothermic and endothermic reactions
+
+Q: What name is given to a reaction that transfers energy to the surroundings?
+A: Exothermic
+Accept: Exothermic reaction
+Ref: 4.5.1.1
+D: 1
+Id: aqa-chem-4.5-001
+
+Q: What name is given to a reaction that takes in energy from the surroundings?
+A: Endothermic
+Accept: Endothermic reaction
+Ref: 4.5.1.1
+D: 1
+Id: aqa-chem-4.5-002
+
+Q: During an endothermic reaction, what happens to the temperature of the surroundings?
+A: Decreases
+Accept: Falls; Goes down; Drops
+Ref: 4.5.1.1
+D: 1
+Id: aqa-chem-4.5-003
+
+Q: Is the combustion of a fuel exothermic or endothermic?
+A: Exothermic
+Ref: 4.5.1.1
+D: 1
+Id: aqa-chem-4.5-004
+
+Q: Name the type of reaction between an acid and an alkali, which is exothermic.
+A: Neutralisation
+Accept: Neutralization
+Ref: 4.5.1.1
+D: 1
+Id: aqa-chem-4.5-005
+
+Q: Name one everyday product that uses an exothermic reaction to warm something up.
+A: Hand warmer
+Accept: Hand warmers; Self-heating can; Self-heating cans
+Ref: 4.5.1.1
+D: 1
+Id: aqa-chem-4.5-006
+
+Q: Some sports injury packs get cold when activated. What type of reaction do they use?
+A: Endothermic
+Accept: Endothermic reaction
+Ref: 4.5.1.1
+D: 2
+Id: aqa-chem-4.5-007
+
+Q: Name the type of reaction in which one substance breaks down into simpler substances when heated, which is endothermic.
+A: Thermal decomposition
+Ref: 4.5.1.1
+D: 2
+Id: aqa-chem-4.5-008
+
+Q: Citric acid reacts with sodium hydrogencarbonate. Is this reaction exothermic or endothermic?
+A: Endothermic
+Ref: 4.5.1.1
+D: 2
+Id: aqa-chem-4.5-009
+
+Q: State the law that says the total energy in the universe is the same before and after a reaction.
+A: Conservation of energy
+Accept: Law of conservation of energy; Energy is conserved
+Ref: 4.5.1.1
+D: 2
+Id: aqa-chem-4.5-010
+
+Q: A reaction transfers energy to the surroundings. How does the energy of the products compare with the reactants?
+A: Products have less energy
+Accept: Less energy; Lower; Products lower than reactants
+Ref: 4.5.1.1
+D: 3
+Note: The difference equals the energy transferred to the surroundings.
+Id: aqa-chem-4.5-011
+
+Q: Why must a self-heating can use an exothermic reaction rather than an endothermic one?
+A: Exothermic reactions release energy, raising the temperature
+Accept: Transfers energy to surroundings; Heats the food; Temperature increases
+Ref: 4.5.1.1
+D: 3
+
+# Required practical 4: temperature changes in reacting solutions
+Id: aqa-chem-4.5-012
+
+Q: Which measuring instrument is used to find the temperature change in a reacting solution?
+A: Thermometer
+Accept: Temperature probe; Digital thermometer
+Ref: 4.5.1.1
+RP: 4
+D: 1
+Id: aqa-chem-4.5-013
+
+Q: Acid and alkali are mixed. The temperature rises from 19 °C to 26 °C. What is the temperature change?
+A: 7 °C
+Accept: 7; +7 °C; 7 degrees; Increase of 7 °C
+Ref: 4.5.1.1
+RP: 4
+D: 2
+Id: aqa-chem-4.5-014
+
+Q: A student varies the concentration of acid added to sodium hydroxide. What is the dependent variable?
+A: Temperature change
+Accept: Change in temperature; Temperature rise; Maximum temperature
+Ref: 4.5.1.1
+RP: 4
+D: 2
+Id: aqa-chem-4.5-015
+
+Q: Why is the reaction mixture placed in a polystyrene cup with a lid?
+A: Reduces energy transfer to the surroundings
+Accept: Insulation; Reduces heat loss; Stops heat escaping; Insulates the mixture
+Ref: 4.5.1.1
+RP: 4
+D: 2
+Id: aqa-chem-4.5-016
+
+Q: Zinc powder added to copper sulfate solution makes the temperature rise. Is this reaction exothermic or endothermic?
+A: Exothermic
+Accept: Exothermic reaction
+Ref: 4.5.1.1
+RP: 4
+D: 2
+Id: aqa-chem-4.5-017
+
+Q: Why should the student stir the mixture before reading the temperature?
+A: Even temperature throughout the mixture
+Accept: Mixes reactants evenly; So the temperature is the same throughout; Makes reading accurate
+Ref: 4.5.1.1
+RP: 4
+D: 3
+
+# 4.5.1.2 Reaction profiles
+Id: aqa-chem-4.5-018
+
+Q: What is the minimum energy that colliding particles must have in order to react?
+A: Activation energy
+Ref: 4.5.1.2
+D: 1
+Id: aqa-chem-4.5-019
+
+Q: What is another name for an energy level diagram that shows how energy changes as a reaction proceeds?
+A: Reaction profile
+Accept: Energy profile
+Ref: 4.5.1.2
+D: 1
+Id: aqa-chem-4.5-020
+
+Q: State the two conditions needed for particles to react.
+A: Collide with sufficient energy
+Accept: Collide with at least the activation energy; Collision and enough energy
+Ref: 4.5.1.2
+D: 2
+Id: aqa-chem-4.5-021
+
+Q: On a reaction profile, the products are lower in energy than the reactants. Is the reaction exothermic or endothermic?
+A: Exothermic
+Ref: 4.5.1.2
+D: 2
+Id: aqa-chem-4.5-022
+
+Q: On a reaction profile, the products are higher in energy than the reactants. Is the reaction exothermic or endothermic?
+A: Endothermic
+Ref: 4.5.1.2
+D: 2
+Id: aqa-chem-4.5-023
+
+Q: On a reaction profile, the activation energy is measured from the reactants to which point?
+A: Peak of the curve
+Accept: Top of the curve; Highest point; Maximum of the curve; Top of the hump
+Ref: 4.5.1.2
+D: 3
+Note: A common error is measuring from the products, or from zero.
+Id: aqa-chem-4.5-024
+
+Q: On a reaction profile, reactants are at 50 kJ, products at 20 kJ and the peak at 90 kJ. What is the activation energy?
+A: 40 kJ
+Accept: 40
+Ref: 4.5.1.2
+D: 3
+Note: Peak minus reactants (90 − 50); the overall energy change would be 30 kJ released.
+
+# 4.5.1.3 The energy change of reactions (HT only)
+Id: aqa-chem-4.5-025
+
+Q: Is breaking chemical bonds exothermic or endothermic?
+A: Endothermic
+Ref: 4.5.1.3
+HT: yes
+D: 2
+Note: Energy must be supplied to break bonds.
+Id: aqa-chem-4.5-026
+
+Q: Is energy taken in or released when new bonds form in the products?
+A: Released
+Accept: Given out; Energy released
+Ref: 4.5.1.3
+HT: yes
+D: 2
+Id: aqa-chem-4.5-027
+
+Q: In an exothermic reaction, which is greater: energy needed to break bonds or energy released making bonds?
+A: Energy released making bonds
+Accept: Making bonds; Bond forming; Energy released forming new bonds
+Ref: 4.5.1.3
+HT: yes
+D: 3
+Id: aqa-chem-4.5-028
+
+Q: Breaking bonds in the reactants needs 500 kJ/mol; forming the products releases 300 kJ/mol. What is the overall energy change?
+A: +200 kJ/mol
+Accept: 200 kJ/mol taken in; 200 kJ/mol; +200
+Ref: 4.5.1.3
+HT: yes
+D: 3
+Note: Energy change = bonds broken − bonds made; positive means endothermic.
+Id: aqa-chem-4.5-029
+
+Q: Breaking bonds needs 600 kJ/mol; making bonds releases 800 kJ/mol. Is the reaction exothermic or endothermic?
+A: Exothermic
+Ref: 4.5.1.3
+HT: yes
+D: 3
+Note: More energy is released making bonds than is taken in breaking them (overall −200 kJ/mol).
+Id: aqa-chem-4.5-030
+
+Q: H–H bond energy is 400 kJ/mol. How much energy is needed to break the bonds in 3 moles of H₂?
+A: 1200 kJ
+Accept: 1200
+Ref: 4.5.1.3
+HT: yes
+D: 3
+Note: Friendly value used; the data-book value is 436 kJ/mol.
+Id: aqa-chem-4.5-031
+
+Q: For H₂ + Cl₂ → 2HCl, bond energies are H–H 400, Cl–Cl 200, H–Cl 400 kJ/mol. What is the overall energy change?
+A: −200 kJ/mol
+Accept: -200 kJ/mol; 200 kJ/mol released; −200
+Ref: 4.5.1.3
+HT: yes
+D: 3
+Note: Broken 400 + 200 = 600; made 2 × 400 = 800; 600 − 800 = −200. Friendly, not data-book, values.
+
+# 4.5.2.1 Cells and batteries
+Id: aqa-chem-4.5-032
+
+Q: What is made when two or more cells are connected together in series?
+A: Battery
+Accept: A battery; Batteries
+Ref: 4.5.2.1
+D: 1
+Id: aqa-chem-4.5-033
+
+Q: A simple cell is made from two different metals in contact with what?
+A: Electrolyte
+Accept: An electrolyte; Electrolyte solution
+Ref: 4.5.2.1
+D: 1
+Id: aqa-chem-4.5-034
+
+Q: Name the type of battery, with a basic (not acidic) electrolyte, that cannot be recharged.
+A: Alkaline
+Accept: Alkaline battery; Alkaline batteries
+Ref: 4.5.2.1
+D: 1
+Id: aqa-chem-4.5-035
+
+Q: Why does a non-rechargeable cell eventually stop working?
+A: One reactant has been used up
+Accept: Reactant used up; Chemicals run out; Reactants used up
+Ref: 4.5.2.1
+D: 2
+Id: aqa-chem-4.5-036
+
+Q: The voltage of a simple cell depends on the electrolyte used and on the type of what else?
+A: Electrodes
+Accept: Electrode; Metals used as electrodes; Metals
+Ref: 4.5.2.1
+D: 1
+Id: aqa-chem-4.5-037
+
+Q: How can a rechargeable cell be recharged?
+A: Supply an external electric current
+Accept: Connect to an external current; Pass a current through it; Plug into a charger
+Ref: 4.5.2.1
+D: 2
+Note: The current reverses the chemical reactions.
+Id: aqa-chem-4.5-038
+
+Q: Cells use pairs of metals. Which pair gives the larger voltage: zinc and copper, or iron and copper?
+A: Zinc and copper
+Accept: Zinc-copper; Zinc
+Ref: 4.5.2.1
+D: 3
+Note: The bigger the difference in reactivity, the larger the voltage.
+
+# 4.5.2.2 Fuel cells
+Id: aqa-chem-4.5-039
+
+Q: Apart from oxygen or air, what fuel is supplied to the most common type of fuel cell?
+A: Hydrogen
+Accept: H₂; Hydrogen gas
+Ref: 4.5.2.2
+D: 1
+Id: aqa-chem-4.5-040
+
+Q: What is the only product of the overall reaction in a hydrogen fuel cell?
+A: Water
+Accept: H₂O; Water vapour; Steam
+Ref: 4.5.2.2
+D: 1
+Id: aqa-chem-4.5-041
+
+Q: In a fuel cell, hydrogen is oxidised electrochemically to produce what?
+A: Potential difference
+Accept: Voltage; Electricity; Electric current; pd
+Ref: 4.5.2.2
+D: 2
+Id: aqa-chem-4.5-042
+
+Q: Give one advantage of a hydrogen fuel cell over a rechargeable battery.
+A: Only product is water
+Accept: Does not need recharging; No toxic waste; Runs as long as fuel is supplied; Water is the only product; Fewer disposal problems
+Ref: 4.5.2.2
+D: 3
+Id: aqa-chem-4.5-043
+
+Q: Give one disadvantage of hydrogen fuel cells compared with rechargeable batteries.
+A: Hydrogen is difficult to store
+Accept: Hydrogen is flammable; Hydrogen is explosive; Hydrogen is hard to store; Hydrogen is made using fossil fuels; Few refuelling stations
+Ref: 4.5.2.2
+D: 3
+Id: aqa-chem-4.5-044
+
+Q: Write the half equation at the negative electrode of a hydrogen fuel cell with an acidic electrolyte.
+A: H₂ → 2H⁺ + 2e⁻
+Accept: 2H₂ → 4H⁺ + 4e⁻
+Ref: 4.5.2.2
+HT: yes
+D: 3
+Note: Hydrogen is oxidised (loses electrons) at the negative electrode.
+Id: aqa-chem-4.5-045
+
+Q: Write the half equation at the positive electrode of a hydrogen fuel cell with an acidic electrolyte.
+A: O₂ + 4H⁺ + 4e⁻ → 2H₂O
+Accept: ½O₂ + 2H⁺ + 2e⁻ → H₂O
+Ref: 4.5.2.2
+HT: yes
+D: 3
+Note: Oxygen is reduced (gains electrons) at the positive electrode.
+Id: aqa-chem-4.5-046

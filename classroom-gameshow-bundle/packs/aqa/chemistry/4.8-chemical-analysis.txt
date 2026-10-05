@@ -1,0 +1,487 @@
+Board: AQA
+Spec: 8462
+Topic: 4.8
+
+# 4.8.1.1 Pure substances
+
+Q: In chemistry, what name is given to a single element or compound that is not mixed with any other substance?
+A: Pure substance
+Accept: Pure
+Ref: 4.8.1.1
+D: 1
+Id: aqa-chem-4.8-001
+
+Q: Pure water boils at 100 °C. A sample of water boils at 102 °C. Is the sample pure or impure?
+A: Impure
+Accept: Mixture; Not pure
+Ref: 4.8.1.1
+D: 2
+Id: aqa-chem-4.8-002
+
+Q: How does the melting behaviour of a pure substance differ from that of a mixture?
+A: Pure substance melts at one specific temperature
+Accept: Mixture melts over a range of temperatures; Pure has a sharp melting point
+Ref: 4.8.1.1
+D: 3
+Id: aqa-chem-4.8-003
+
+Q: In everyday language, what does "pure" mean, as in "pure milk"?
+A: Nothing added; in its natural state
+Accept: Unadulterated; Nothing has been added
+Ref: 4.8.1.1
+D: 2
+Note: Contrast with the chemistry meaning: a single element or compound.
+
+# 4.8.1.2 Formulations
+Id: aqa-chem-4.8-004
+
+Q: What name is given to a mixture that has been designed as a useful product?
+A: Formulation
+Ref: 4.8.1.2
+D: 1
+Id: aqa-chem-4.8-005
+
+Q: A paint contains a pigment, a binder and a solvent, each with a particular job, mixed in measured amounts. What type of mixture is it?
+A: Formulation
+Ref: 4.8.1.2
+D: 2
+Id: aqa-chem-4.8-006
+
+Q: Why are the components of a formulation mixed in carefully measured quantities?
+A: So the product has the required properties
+Accept: To give the right properties; So it works as intended
+Ref: 4.8.1.2
+D: 3
+
+# 4.8.1.3 Chromatography
+Id: aqa-chem-4.8-007
+
+Q: In paper chromatography, what is the stationary phase?
+A: Paper
+Accept: Chromatography paper; Filter paper
+Ref: 4.8.1.3
+D: 1
+RP: 6
+Id: aqa-chem-4.8-008
+
+Q: In paper chromatography, what is the mobile phase?
+A: Solvent
+Accept: Water; Eluent
+Ref: 4.8.1.3
+D: 1
+RP: 6
+Id: aqa-chem-4.8-009
+
+Q: In chromatography, a spot moves 3 cm and the solvent front moves 6 cm from the start line. What is the Rf value?
+A: 0.5
+Accept: 0.50; 1/2
+Ref: 4.8.1.3
+D: 2
+RP: 6
+Note: Rf has no units.
+Id: aqa-chem-4.8-010
+
+Q: The solvent front moves 10 cm and a dye has an Rf value of 0.3. How far did the dye spot move?
+A: 3 cm
+Accept: 3.0 cm; 30 mm
+Ref: 4.8.1.3
+D: 3
+RP: 6
+Id: aqa-chem-4.8-011
+
+Q: When measuring how far a spot has moved on a chromatogram, where do you measure from and to?
+A: Start line to centre of the spot
+Accept: Origin to centre of spot
+Ref: 4.8.1.3
+D: 2
+RP: 6
+Id: aqa-chem-4.8-012
+
+Q: Why is the start line on chromatography paper drawn in pencil, not ink?
+A: Pencil does not dissolve in the solvent
+Accept: Ink would dissolve and move up the paper; Graphite is insoluble
+Ref: 4.8.1.3
+D: 3
+RP: 6
+Id: aqa-chem-4.8-013
+
+Q: An unknown dye and a reference dye both have Rf = 0.62 in the same solvent. What does this suggest about the unknown dye?
+A: Same substance as the reference dye
+Accept: Probably the reference dye; Same compound
+Ref: 4.8.1.3
+D: 2
+RP: 6
+Note: Matching Rf values in more than one solvent gives stronger evidence.
+Id: aqa-chem-4.8-014
+
+Q: A substance gives a single spot in every solvent tried. What does this suggest about the substance?
+A: Pure
+Accept: Pure substance; Single compound
+Ref: 4.8.1.3
+D: 2
+Id: aqa-chem-4.8-015
+
+Q: Why do different substances in a mixture travel different distances up the chromatography paper?
+A: Different distribution between mobile and stationary phases
+Accept: Different solubility in the solvent; Different attraction to the paper
+Ref: 4.8.1.3
+D: 3
+
+# 4.8.2.1 Test for hydrogen
+Id: aqa-chem-4.8-016
+
+Q: Name the gas that burns rapidly with a pop when a burning splint is held at the open end of its test tube.
+A: Hydrogen
+Accept: H2
+Ref: 4.8.2.1
+D: 1
+Id: aqa-chem-4.8-017
+
+Q: Describe the test for hydrogen and its positive result.
+A: Burning splint at tube opening; pop
+Accept: Lit splint gives a squeaky pop
+Ref: 4.8.2.1
+D: 2
+Id: aqa-chem-4.8-018
+
+Q: Magnesium reacts with dilute hydrochloric acid. What happens when a burning splint is held at the open end of a tube of the gas?
+A: Pop
+Accept: Squeaky pop; Gas burns with a pop
+Ref: 4.8.2.1
+D: 3
+Note: Students must first recognise the gas as hydrogen.
+
+# 4.8.2.2 Test for oxygen
+Id: aqa-chem-4.8-019
+
+Q: Which gas relights a glowing splint?
+A: Oxygen
+Accept: O2
+Ref: 4.8.2.2
+D: 1
+Id: aqa-chem-4.8-020
+
+Q: Describe the test for oxygen and its positive result.
+A: Glowing splint inserted; splint relights
+Accept: Glowing splint relights; Glowing splint reignites
+Ref: 4.8.2.2
+D: 2
+Note: A glowing splint, not a burning one.
+Id: aqa-chem-4.8-021
+
+Q: A student holds a burning splint in a tube to test for oxygen. What kind of splint should they use instead?
+A: Glowing splint
+Accept: Glowing
+Ref: 4.8.2.2
+D: 2
+
+# 4.8.2.3 Test for carbon dioxide
+Id: aqa-chem-4.8-022
+
+Q: Which gas turns limewater milky?
+A: Carbon dioxide
+Accept: CO2
+Ref: 4.8.2.3
+D: 1
+Id: aqa-chem-4.8-023
+
+Q: Limewater is an aqueous solution of which compound?
+A: Calcium hydroxide
+Accept: Ca(OH)2
+Ref: 4.8.2.3
+D: 1
+Id: aqa-chem-4.8-024
+
+Q: Describe the test for carbon dioxide and its positive result.
+A: Bubble through limewater; limewater turns milky
+Accept: Limewater turns cloudy; Shake with limewater, goes milky
+Ref: 4.8.2.3
+D: 2
+
+# 4.8.2.4 Test for chlorine
+Id: aqa-chem-4.8-025
+
+Q: Which gas bleaches damp litmus paper?
+A: Chlorine
+Accept: Cl2
+Ref: 4.8.2.4
+D: 1
+Id: aqa-chem-4.8-026
+
+Q: Describe the test for chlorine and its positive result.
+A: Damp litmus paper is bleached white
+Accept: Damp litmus turns white
+Ref: 4.8.2.4
+D: 2
+Id: aqa-chem-4.8-027
+
+Q: A student tests a gas for chlorine using dry litmus paper. What should they do to the litmus paper first?
+A: Dampen it
+Accept: Make it damp; Wet it; Moisten it
+Ref: 4.8.2.4
+D: 2
+Note: Blue litmus may turn red briefly before it is bleached.
+
+# 4.8.3.1 Flame tests
+Id: aqa-chem-4.8-028
+
+Q: What colour flame do lithium compounds give in a flame test?
+A: Crimson
+Ref: 4.8.3.1
+D: 1
+RP: 7
+Id: aqa-chem-4.8-029
+
+Q: What colour flame do sodium compounds give in a flame test?
+A: Yellow
+Ref: 4.8.3.1
+D: 1
+RP: 7
+Id: aqa-chem-4.8-030
+
+Q: What colour flame do calcium compounds give in a flame test?
+A: Orange-red
+Accept: Orange red
+Ref: 4.8.3.1
+D: 1
+RP: 7
+Note: The specification says orange-red; do not accept plain "red" (that is closer to lithium's crimson).
+Id: aqa-chem-4.8-031
+
+Q: A compound gives a green flame in a flame test. Which metal ion does it contain?
+A: Copper
+Accept: Copper ion; Copper(II); Cu2+
+Ref: 4.8.3.1
+D: 2
+RP: 7
+Id: aqa-chem-4.8-032
+
+Q: A compound gives a lilac flame in a flame test. Which metal ion does it contain?
+A: Potassium
+Accept: Potassium ion; K+
+Ref: 4.8.3.1
+D: 2
+RP: 7
+Id: aqa-chem-4.8-033
+
+Q: Why can a flame test on a sample containing a mixture of metal ions give a misleading result?
+A: Some flame colours can be masked
+Accept: One colour hides another
+Ref: 4.8.3.1
+D: 3
+
+# 4.8.3.2 Metal hydroxides
+Id: aqa-chem-4.8-034
+
+Q: What colour precipitate forms when sodium hydroxide solution is added to copper(II) ions?
+A: Blue
+Ref: 4.8.3.2
+D: 1
+RP: 7
+Id: aqa-chem-4.8-035
+
+Q: What colour precipitate forms when sodium hydroxide solution is added to iron(III) ions?
+A: Brown
+Accept: Red-brown; Orange-brown
+Ref: 4.8.3.2
+D: 1
+RP: 7
+Id: aqa-chem-4.8-036
+
+Q: Which metal ion gives a green precipitate with sodium hydroxide solution?
+A: Iron(II)
+Accept: Fe2+; Iron(II) ion
+Ref: 4.8.3.2
+D: 2
+RP: 7
+Note: Not iron(III), which gives brown.
+Id: aqa-chem-4.8-037
+
+Q: Aluminium, calcium and magnesium ions all give white precipitates with sodium hydroxide. Which precipitate dissolves in excess sodium hydroxide?
+A: Aluminium hydroxide
+Accept: Aluminium; Al(OH)3
+Ref: 4.8.3.2
+D: 2
+RP: 7
+Id: aqa-chem-4.8-038
+
+Q: What is the formula of the precipitate formed when sodium hydroxide solution is added to iron(III) ions?
+A: Fe(OH)3
+Accept: Iron(III) hydroxide
+Ref: 4.8.3.2
+D: 3
+Id: aqa-chem-4.8-039
+
+Q: Balance: CuSO4 + __ NaOH → Cu(OH)2 + Na2SO4. What number goes in the gap?
+A: 2
+Accept: Two
+Ref: 4.8.3.2
+D: 3
+Id: aqa-chem-4.8-040
+
+Q: A solution gives an orange-red flame and a white precipitate with sodium hydroxide that does not dissolve in excess. Which metal ion is present?
+A: Calcium
+Accept: Calcium ion; Ca2+
+Ref: 4.8.3.2
+D: 3
+RP: 7
+
+# 4.8.3.3 Carbonates
+Id: aqa-chem-4.8-041
+
+Q: Which gas is produced when a carbonate reacts with a dilute acid?
+A: Carbon dioxide
+Accept: CO2
+Ref: 4.8.3.3
+D: 1
+RP: 7
+Id: aqa-chem-4.8-042
+
+Q: A white solid fizzes with dilute acid, giving a gas that turns limewater milky. Which negative ion is present?
+A: Carbonate
+Accept: Carbonate ion; CO3 2-
+Ref: 4.8.3.3
+D: 2
+RP: 7
+Id: aqa-chem-4.8-043
+
+Q: A green solid gives a green flame, and fizzes with dilute acid giving a gas that turns limewater milky. Name the compound.
+A: Copper carbonate
+Accept: Copper(II) carbonate; CuCO3
+Ref: 4.8.3.3
+D: 3
+RP: 7
+
+# 4.8.3.4 Halides
+Id: aqa-chem-4.8-044
+
+Q: What colour is the silver chloride precipitate in the halide test?
+A: White
+Ref: 4.8.3.4
+D: 1
+RP: 7
+Id: aqa-chem-4.8-045
+
+Q: What colour is the silver iodide precipitate in the halide test?
+A: Yellow
+Ref: 4.8.3.4
+D: 1
+RP: 7
+Id: aqa-chem-4.8-046
+
+Q: Which two solutions are added to a sample to test for halide ions?
+A: Dilute nitric acid and silver nitrate
+Accept: Silver nitrate and nitric acid; Acidified silver nitrate
+Ref: 4.8.3.4
+D: 2
+RP: 7
+Id: aqa-chem-4.8-047
+
+Q: A solution gives a cream precipitate with silver nitrate in dilute nitric acid. Which ion is present?
+A: Bromide
+Accept: Bromide ion; Br-
+Ref: 4.8.3.4
+D: 2
+RP: 7
+Id: aqa-chem-4.8-048
+
+Q: A solution gives a yellow flame and a yellow precipitate with silver nitrate in dilute nitric acid. Name the compound.
+A: Sodium iodide
+Accept: NaI
+Ref: 4.8.3.4
+D: 3
+RP: 7
+
+# 4.8.3.5 Sulfates
+Id: aqa-chem-4.8-049
+
+Q: What colour precipitate do sulfate ions form with barium chloride solution in dilute hydrochloric acid?
+A: White
+Ref: 4.8.3.5
+D: 1
+RP: 7
+Id: aqa-chem-4.8-050
+
+Q: Which two solutions are added to a sample to test for sulfate ions?
+A: Dilute hydrochloric acid and barium chloride
+Accept: Barium chloride and hydrochloric acid; Acidified barium chloride
+Ref: 4.8.3.5
+D: 2
+RP: 7
+Id: aqa-chem-4.8-051
+
+Q: Name the white precipitate formed when sulfate ions react with barium chloride solution.
+A: Barium sulfate
+Accept: BaSO4
+Ref: 4.8.3.5
+D: 2
+RP: 7
+Id: aqa-chem-4.8-052
+
+Q: A solution gives a green precipitate with sodium hydroxide and a white precipitate with acidified barium chloride. Name the compound.
+A: Iron(II) sulfate
+Accept: FeSO4
+Ref: 4.8.3.5
+D: 3
+RP: 7
+
+# 4.8.3.6 Instrumental methods
+Id: aqa-chem-4.8-053
+
+Q: What name is given to methods that use machines, rather than chemical tests, to detect and identify substances?
+A: Instrumental methods
+Accept: Instrumental analysis; Instrumental
+Ref: 4.8.3.6
+D: 1
+Id: aqa-chem-4.8-054
+
+Q: State three advantages of instrumental methods compared with chemical tests.
+A: Accurate, sensitive and rapid
+Accept: More accurate, more sensitive, faster
+Ref: 4.8.3.6
+D: 2
+Id: aqa-chem-4.8-055
+
+Q: An instrumental method can detect a tiny amount of a substance in a sample. Which advantage does this show?
+A: Sensitive
+Accept: Sensitivity; Very sensitive
+Ref: 4.8.3.6
+D: 2
+
+# 4.8.3.7 Flame emission spectroscopy
+Id: aqa-chem-4.8-056
+
+Q: What type of spectrum is produced by flame emission spectroscopy?
+A: Line spectrum
+Accept: Emission line spectrum
+Ref: 4.8.3.7
+D: 1
+Id: aqa-chem-4.8-057
+
+Q: In flame emission spectroscopy, what instrument is the light from the flame passed through?
+A: Spectroscope
+Accept: Spectrometer
+Ref: 4.8.3.7
+D: 1
+Id: aqa-chem-4.8-058
+
+Q: Apart from identifying the metal ions, what else can flame emission spectroscopy measure?
+A: Concentration of the metal ions
+Accept: Concentration; How much of each ion
+Ref: 4.8.3.7
+D: 2
+Id: aqa-chem-4.8-059
+
+Q: How are the metal ions in a solution identified from its flame emission spectrum?
+A: Compare lines with reference spectra
+Accept: Match lines to known spectra
+Ref: 4.8.3.7
+D: 3
+Id: aqa-chem-4.8-060
+
+Q: A sample's spectrum contains every line of the lithium reference spectrum and every line of the sodium reference spectrum. Which ions are present?
+A: Lithium and sodium ions
+Accept: Lithium and sodium; Li+ and Na+
+Ref: 4.8.3.7
+D: 3
+Id: aqa-chem-4.8-061

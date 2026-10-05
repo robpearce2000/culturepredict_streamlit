@@ -52,11 +52,21 @@ Removed / Rewritten / Added = changes made in checking; Flagged = items in QUEST
 | AQA Biology 4.5 Homeostasis and response | 42 | 60 | 68 | 0 | 22 | 8 | 0 | Done |
 | AQA Biology 4.6 Inheritance, variation and evolution | 63 | 82 | 84 | 0 | 11 | 2 | 0 | Done |
 | AQA Biology 4.7 Ecology | 63 | 80 | 80 | 0 | 14 | 0 | 0 | Done |
+| AQA Chemistry 4.1 Atomic structure and the periodic table | 45 | 55 | 56 | 0 | 12 | 1 | 0 | Done |
+| AQA Chemistry 4.2 Bonding, structure, and the properties of matter | 54 | 88 | 89 | 0 | 3 | 1 | 0 | Done |
+| AQA Chemistry 4.3 Quantitative chemistry | 39 | 52 | 52 | 0 | 4 | 0 | 0 | Done |
+| AQA Chemistry 4.4 Chemical changes | 45 | 55 | 55 | 0 | 15 | 0 | 0 | Done |
+| AQA Chemistry 4.5 Energy changes | 30 | 46 | 46 | 0 | 6 | 0 | 0 | Done |
+| AQA Chemistry 4.6 The rate and extent of chemical change | 33 | 46 | 46 | 0 | 5 | 0 | 0 | Done |
+| AQA Chemistry 4.7 Organic chemistry | 36 | 60 | 60 | 0 | 2 | 0 | 0 | Done |
+| AQA Chemistry 4.8 Chemical analysis | 42 | 61 | 61 | 0 | 4 | 0 | 0 | Done |
+| AQA Chemistry 4.9 Chemistry of the atmosphere | 30 | 44 | 46 | 0 | 9 | 2 | 0 | Done |
+| AQA Chemistry 4.10 Using resources | 33 | 46 | 47 | 0 | 2 | 1 | 0 | Done |
 
 Topic 4.8 "Key ideas" in the AQA science specifications is a list of cross-cutting ideas examined
 through the other topics, not a topic of its own, so it has no pack (see DECISIONS.md).
 
 ## Next
 
-AQA Chemistry and Physics (written; checking in progress), then Pearson Edexcel sciences, AQA and
+AQA Physics (written; checking in progress), then Pearson Edexcel sciences, AQA and
 Edexcel Maths, Geography, History (the brief's order).

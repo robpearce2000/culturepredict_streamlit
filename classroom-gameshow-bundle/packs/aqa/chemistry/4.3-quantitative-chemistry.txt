@@ -1,0 +1,430 @@
+Board: AQA
+Spec: 8462
+Topic: 4.3
+
+# 4.3.1.1 Conservation of mass and balanced chemical equations
+
+Q: Which law says that no atoms are lost or made in a chemical reaction, so mass is unchanged?
+A: Conservation of mass
+Accept: Law of conservation of mass
+Ref: 4.3.1.1
+D: 1
+Id: aqa-chem-4.3-001
+
+Q: In a sealed flask, 10 g of reactants react completely. What is the total mass of the products?
+A: 10 g
+Accept: 10 grams
+Ref: 4.3.1.1
+D: 1
+Id: aqa-chem-4.3-002
+
+Q: What does the small 4 in the formula H₂SO₄ show?
+A: Four oxygen atoms
+Accept: 4 oxygen atoms; Four atoms of oxygen
+Ref: 4.3.1.1
+D: 2
+Note: A subscript multiplies only the atom just before it; a large number in front multiplies the whole formula.
+Id: aqa-chem-4.3-003
+
+Q: Balance the equation __Na + Cl₂ → __NaCl. What numbers go in front of Na and NaCl?
+A: 2 and 2
+Accept: 2Na + Cl₂ → 2NaCl; 2, 2
+Ref: 4.3.1.1
+D: 2
+Id: aqa-chem-4.3-004
+
+Q: Why must a symbol equation have the same number of atoms of each element on both sides?
+A: Atoms are not made or destroyed in reactions
+Accept: No atoms are lost or made; Conservation of mass
+Ref: 4.3.1.1
+D: 3
+
+# 4.3.1.2 Relative formula mass
+Id: aqa-chem-4.3-005
+
+Q: What name is given to the sum of the relative atomic masses of all the atoms in a formula?
+A: Relative formula mass
+Accept: Mr; Formula mass
+Ref: 4.3.1.2
+D: 1
+Id: aqa-chem-4.3-006
+
+Q: What is the relative formula mass of carbon dioxide, CO₂? (C = 12, O = 16)
+A: 44
+Ref: 4.3.1.2
+D: 2
+Id: aqa-chem-4.3-007
+
+Q: In 2H₂ + O₂ → 2H₂O, what is the total relative formula mass of the products shown? (H = 1, O = 16)
+A: 36
+Ref: 4.3.1.2
+D: 2
+Note: 2 × 18 = 36, which equals the reactants' total of 4 + 32.
+Id: aqa-chem-4.3-008
+
+Q: What is the percentage by mass of oxygen in magnesium oxide, MgO? (Mg = 24, O = 16)
+A: 40%
+Accept: 40 percent; 40
+Ref: 4.3.1.2
+D: 3
+Note: Mr = 40, so 16 ÷ 40 × 100 = 40%.
+
+# 4.3.1.3 Mass changes when a reactant or product is a gas
+Id: aqa-chem-4.3-009
+
+Q: A metal carbonate is heated strongly in an open tube. What happens to the mass of the solid?
+A: Decreases
+Accept: Goes down; Falls; Gets less
+Ref: 4.3.1.3
+D: 1
+Id: aqa-chem-4.3-010
+
+Q: Which gas escapes when copper carbonate is thermally decomposed?
+A: Carbon dioxide
+Accept: CO₂
+Ref: 4.3.1.3
+D: 1
+Id: aqa-chem-4.3-011
+
+Q: Heating 10.0 g of calcium carbonate leaves 5.6 g of calcium oxide. What mass of carbon dioxide escaped?
+A: 4.4 g
+Accept: 4.4 grams
+Ref: 4.3.1.3
+D: 2
+Id: aqa-chem-4.3-012
+
+Q: Magnesium is heated in an open crucible. Why is the mass of solid product greater than the mass of magnesium?
+A: Oxygen atoms from the air are added
+Accept: Gains oxygen from the air; Oxygen from the air combines with the magnesium
+Ref: 4.3.1.3
+D: 3
+Note: Mass is still conserved; the oxygen's mass was not measured at the start.
+
+# 4.3.1.4 Chemical measurements
+Id: aqa-chem-4.3-013
+
+Q: No measured value is ever exactly certain. What word describes this doubt in a result?
+A: Uncertainty
+Ref: 4.3.1.4
+D: 1
+Id: aqa-chem-4.3-014
+
+Q: Which measure of the spread of repeat results is used to estimate their uncertainty?
+A: Range
+Ref: 4.3.1.4
+D: 1
+Id: aqa-chem-4.3-015
+
+Q: Three titres are 24.2 cm³, 24.8 cm³ and 24.5 cm³. What is their range?
+A: 0.6 cm³
+Accept: 24.2 to 24.8 cm³; 0.6
+Ref: 4.3.1.4
+D: 2
+Id: aqa-chem-4.3-016
+
+Q: Repeat masses are 2.4 g, 2.6 g and 2.5 g. What is the uncertainty, taken as half the range about the mean?
+A: ±0.1 g
+Accept: 0.1 g; 2.5 ± 0.1 g
+Ref: 4.3.1.4
+D: 3
+
+# 4.3.2.1 Moles (HT only)
+Id: aqa-chem-4.3-017
+
+Q: What is the name of the unit used to measure amounts of chemical substances?
+A: Mole
+Accept: Moles; mol
+Ref: 4.3.2.1
+HT: yes
+D: 1
+Id: aqa-chem-4.3-018
+
+Q: What name is given to the number of particles in one mole of a substance?
+A: Avogadro constant
+Accept: Avogadro's constant; Avogadro's number; Avogadro number
+Ref: 4.3.2.1
+HT: yes
+D: 1
+Id: aqa-chem-4.3-019
+
+Q: What is the value of the Avogadro constant?
+A: 6.02 × 10²³ per mole
+Accept: 6.02 × 10^23; 6.02 × 10²³; 6.02 × 10²³ per mol; 6.02 × 10²³ mol⁻¹
+Ref: 4.3.2.1
+HT: yes
+D: 1
+Id: aqa-chem-4.3-020
+
+Q: How many moles are in 88 g of carbon dioxide? (Mr of CO₂ = 44)
+A: 2 mol
+Accept: 2; 2 moles
+Ref: 4.3.2.1
+HT: yes
+D: 2
+Note: Moles = mass ÷ Mr.
+Id: aqa-chem-4.3-021
+
+Q: What is the mass of 0.5 mol of sodium hydroxide? (Mr of NaOH = 40)
+A: 20 g
+Accept: 20 grams
+Ref: 4.3.2.1
+HT: yes
+D: 2
+
+# 4.3.2.2 Amounts of substances in equations (HT only)
+Id: aqa-chem-4.3-022
+
+Q: Reading Mg + 2HCl → MgCl₂ + H₂ in terms of moles, what does the 2 in front of HCl show?
+A: Two moles of hydrochloric acid
+Accept: 2 mol HCl; 2 moles of HCl
+Ref: 4.3.2.2
+HT: yes
+D: 2
+Note: Two moles of HCl react with one mole of magnesium.
+Id: aqa-chem-4.3-023
+
+Q: 2H₂ + O₂ → 2H₂O. What mass of water forms from 4 g of hydrogen? (H = 1, O = 16)
+A: 36 g
+Accept: 36 grams
+Ref: 4.3.2.2
+HT: yes
+D: 3
+Note: 4 g of H₂ is 2 mol, which makes 2 mol of water (2 × 18 g).
+Id: aqa-chem-4.3-024
+
+Q: CaCO₃ → CaO + CO₂. What mass of calcium oxide forms from 50 g of calcium carbonate? (Mr: CaCO₃ = 100, CaO = 56)
+A: 28 g
+Accept: 28 grams
+Ref: 4.3.2.2
+HT: yes
+D: 3
+Note: 50 g is 0.5 mol, giving 0.5 × 56 = 28 g.
+
+# 4.3.2.3 Using moles to balance equations (HT only)
+Id: aqa-chem-4.3-025
+
+Q: To work out balancing numbers from reacting masses, what are the masses first converted into?
+A: Moles
+Accept: Amounts in moles; Number of moles
+Ref: 4.3.2.3
+HT: yes
+D: 1
+Id: aqa-chem-4.3-026
+
+Q: 48 g of Mg reacts with 32 g of O₂ to make 80 g of MgO. Write the balanced equation. (Mg = 24, O = 16)
+A: 2Mg + O₂ → 2MgO
+Ref: 4.3.2.3
+HT: yes
+D: 3
+Note: 2 mol Mg, 1 mol O₂ and 2 mol MgO give the ratio 2 : 1 : 2.
+Id: aqa-chem-4.3-027
+
+Q: 28 g of N₂ reacts with 6 g of H₂ to form 34 g of NH₃. What is the mole ratio N₂ : H₂ : NH₃? (N = 14, H = 1)
+A: 1 : 3 : 2
+Accept: 1:3:2; N₂ + 3H₂ → 2NH₃
+Ref: 4.3.2.3
+HT: yes
+D: 3
+
+# 4.3.2.4 Limiting reactants (HT only)
+Id: aqa-chem-4.3-028
+
+Q: What is the reactant that is completely used up, and so limits the amount of product, called?
+A: Limiting reactant
+Accept: Limiting reagent
+Ref: 4.3.2.4
+HT: yes
+D: 1
+Note: The other reactant is said to be in excess.
+Id: aqa-chem-4.3-029
+
+Q: 2H₂ + O₂ → 2H₂O. If 3 mol of hydrogen is mixed with 3 mol of oxygen, which reactant is limiting?
+A: Hydrogen
+Accept: H₂
+Ref: 4.3.2.4
+HT: yes
+D: 3
+Note: 3 mol of H₂ needs only 1.5 mol of O₂, so oxygen is in excess.
+Id: aqa-chem-4.3-030
+
+Q: The amount of the limiting reactant is halved and the other reactant stays in excess. What happens to the maximum mass of product?
+A: Halves
+Accept: Is halved; Goes down by half
+Ref: 4.3.2.4
+HT: yes
+D: 2
+
+# 4.3.2.5 Concentration of solutions
+Id: aqa-chem-4.3-031
+
+Q: Concentration can be given in g/dm³. Write this unit in words.
+A: Grams per decimetre cubed
+Accept: Grams per cubic decimetre; Grams per dm³
+Ref: 4.3.2.5
+D: 1
+Note: 1 dm³ = 1 litre, so "grams per litre" is the same size of unit but not the name asked for.
+Id: aqa-chem-4.3-032
+
+Q: In a solution, what is the dissolved substance called?
+A: Solute
+Ref: 4.3.2.5
+D: 1
+Id: aqa-chem-4.3-033
+
+Q: 20 g of salt is dissolved to make 0.5 dm³ of solution. What is the concentration in g/dm³?
+A: 40 g/dm³
+Accept: 40
+Ref: 4.3.2.5
+D: 2
+Id: aqa-chem-4.3-034
+
+Q: What mass of solute is in 2 dm³ of a solution with a concentration of 15 g/dm³?
+A: 30 g
+Accept: 30 grams
+Ref: 4.3.2.5
+D: 2
+Id: aqa-chem-4.3-035
+
+Q: The mass of solute is doubled but the volume of solution stays the same. What happens to the concentration?
+A: Doubles
+Accept: Is doubled; Goes up by two times
+Ref: 4.3.2.5
+HT: yes
+D: 2
+
+# 4.3.3.1 Percentage yield
+Id: aqa-chem-4.3-036
+
+Q: What is the amount of product obtained from a reaction called?
+A: Yield
+Ref: 4.3.3.1
+D: 1
+Id: aqa-chem-4.3-037
+
+Q: A reaction could make 20 g of product but only 15 g is made. What is the percentage yield?
+A: 75%
+Accept: 75 percent; 75
+Ref: 4.3.3.1
+D: 2
+Note: Percentage yield = actual mass ÷ maximum theoretical mass × 100.
+Id: aqa-chem-4.3-038
+
+Q: What type of reaction may not go to completion, giving a lower yield than calculated?
+A: Reversible reaction
+Accept: Reversible
+Ref: 4.3.3.1
+D: 1
+Id: aqa-chem-4.3-039
+
+Q: 2Mg + O₂ → 2MgO. What is the theoretical mass of magnesium oxide from 12 g of magnesium? (Mg = 24, MgO = 40)
+A: 20 g
+Accept: 20 grams
+Ref: 4.3.3.1
+HT: yes
+D: 3
+Note: 12 g is 0.5 mol of Mg, giving 0.5 mol of MgO, so 0.5 × 40 = 20 g.
+
+# 4.3.3.2 Atom economy
+Id: aqa-chem-4.3-040
+
+Q: Which percentage compares the Mr of the desired product with the total Mr of all reactants in the equation?
+A: Atom economy
+Accept: Atom utilisation
+Ref: 4.3.3.2
+D: 1
+Id: aqa-chem-4.3-041
+
+Q: Choosing reactions with a high atom economy saves money and helps which kind of development?
+A: Sustainable development
+Accept: Sustainable; Sustainability
+Ref: 4.3.3.2
+D: 1
+Id: aqa-chem-4.3-042
+
+Q: CaCO₃ → CaO + CO₂. What is the percentage atom economy for making calcium oxide? (Mr: CaCO₃ = 100, CaO = 56)
+A: 56%
+Accept: 56 percent; 56
+Ref: 4.3.3.2
+D: 2
+Note: Atom economy = Mr of desired product ÷ total Mr of reactants × 100.
+Id: aqa-chem-4.3-043
+
+Q: A reaction has only one product, which is the desired product. What is its percentage atom economy?
+A: 100%
+Accept: 100 percent; 100
+Ref: 4.3.3.2
+D: 2
+Id: aqa-chem-4.3-044
+
+Q: Two routes have the same atom economy and rate, but route X has a 50% yield and route Y a 90% yield. Which is chosen?
+A: Route Y
+Accept: Y
+Ref: 4.3.3.2
+HT: yes
+D: 2
+Note: Higher yield means less waste of reactants for the same atom economy.
+
+# 4.3.4 Using concentrations of solutions in mol/dm³ (chemistry only) (HT only)
+Id: aqa-chem-4.3-045
+
+Q: Concentration can be given in mol/dm³. Write this unit in words.
+A: Moles per decimetre cubed
+Accept: Moles per cubic decimetre; Moles per dm³
+Ref: 4.3.4
+HT: yes
+D: 1
+Id: aqa-chem-4.3-046
+
+Q: How many moles of solute are in 0.5 dm³ of a solution with a concentration of 2 mol/dm³?
+A: 1 mol
+Accept: 1; 1 mole
+Ref: 4.3.4
+HT: yes
+D: 2
+Id: aqa-chem-4.3-047
+
+Q: Concentration in mol/dm³ equals the amount of solute in moles divided by what?
+A: Volume in dm³
+Accept: Volume of solution; Volume
+Ref: 4.3.4
+HT: yes
+D: 2
+Id: aqa-chem-4.3-048
+
+Q: 25 cm³ of NaOH is exactly neutralised by 50 cm³ of 0.1 mol/dm³ HCl. NaOH + HCl → NaCl + H₂O. What is the NaOH concentration?
+A: 0.2 mol/dm³
+Accept: 0.2
+Ref: 4.3.4
+HT: yes
+D: 3
+Note: 0.005 mol of HCl reacts with 0.005 mol of NaOH in 0.025 dm³.
+
+# 4.3.5 Use of amount of substance in relation to volumes of gases (chemistry only) (HT only)
+Id: aqa-chem-4.3-049
+
+Q: What volume does one mole of any gas occupy at room temperature and pressure?
+A: 24 dm³
+Accept: 24 000 cm³; 24 litres
+Ref: 4.3.5
+HT: yes
+D: 1
+Note: Room temperature and pressure means 20 °C and 1 atmosphere.
+Id: aqa-chem-4.3-050
+
+Q: What volume does 8 g of methane, CH₄, occupy at room temperature and pressure? (Mr of CH₄ = 16)
+A: 12 dm³
+Accept: 12 000 cm³; 12 litres
+Ref: 4.3.5
+HT: yes
+D: 3
+Note: 8 g is 0.5 mol, and 0.5 × 24 = 12 dm³.
+Id: aqa-chem-4.3-051
+
+Q: N₂ + 3H₂ → 2NH₃. What volume of ammonia forms from 30 dm³ of hydrogen, all gases at the same conditions?
+A: 20 dm³
+Accept: 20 000 cm³; 20 litres
+Ref: 4.3.5
+HT: yes
+D: 2
+Note: Gas volumes react in the same ratio as moles, so 3 : 2.
+Id: aqa-chem-4.3-052

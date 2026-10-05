@@ -1,0 +1,676 @@
+Board: AQA
+Spec: 8462
+Topic: 4.2
+
+# 4.2.1.1 Chemical bonds
+
+Q: Name the three types of strong chemical bond.
+A: Ionic, covalent and metallic
+Accept: Ionic, covalent, metallic (any order)
+Ref: 4.2.1.1
+D: 1
+Id: aqa-chem-4.2-001
+
+Q: What type of bonding is found in sodium chloride?
+A: Ionic
+Accept: Ionic bonding
+Ref: 4.2.1.1
+D: 1
+Id: aqa-chem-4.2-002
+
+Q: What type of bonding holds the atoms together in a compound made only of non-metals, such as methane?
+A: Covalent
+Accept: Covalent bonding
+Ref: 4.2.1.1
+D: 1
+Id: aqa-chem-4.2-003
+
+Q: What type of bonding is found in alloys such as brass and steel?
+A: Metallic
+Accept: Metallic bonding
+Ref: 4.2.1.1
+D: 2
+Id: aqa-chem-4.2-004
+
+Q: In ionic bonding, what type of force holds the oppositely charged ions together?
+A: Electrostatic attraction
+Accept: Electrostatic forces; Electrostatic forces of attraction
+Ref: 4.2.1.1
+D: 1
+
+# 4.2.1.2 Ionic bonding
+Id: aqa-chem-4.2-005
+
+Q: When a metal atom reacts with a non-metal atom, what happens to the electrons in the metal atom's outer shell?
+A: Transferred to the non-metal atom
+Accept: Lost to the non-metal; Given to the non-metal
+Ref: 4.2.1.2
+D: 2
+Id: aqa-chem-4.2-006
+
+Q: What is the charge on the ion formed by a Group 1 metal?
+A: 1+
+Accept: +1; +; Positive one
+Ref: 4.2.1.2
+D: 1
+Id: aqa-chem-4.2-007
+
+Q: What is the charge on a magnesium ion? Magnesium is in Group 2.
+A: 2+
+Accept: +2; Mg²⁺
+Ref: 4.2.1.2
+D: 2
+Id: aqa-chem-4.2-008
+
+Q: Oxygen is in Group 6. What is the charge on an oxide ion?
+A: 2−
+Accept: -2; −2; 2-; O²⁻
+Ref: 4.2.1.2
+D: 2
+Id: aqa-chem-4.2-009
+
+Q: Ions formed by elements in Groups 1, 2, 6 and 7 have the same electronic structure as which type of element?
+A: Noble gas
+Accept: Group 0 element; Noble gases; Group 0
+Ref: 4.2.1.2
+D: 2
+Id: aqa-chem-4.2-010
+
+Q: What type of diagram shows the transfer of electrons when an ionic compound forms?
+A: Dot and cross diagram
+Accept: Dot and cross; Dot-and-cross
+Ref: 4.2.1.2
+D: 1
+Id: aqa-chem-4.2-011
+
+Q: Potassium is in Group 1 and sulfur is in Group 6. How many potassium ions combine with each sulfide ion?
+A: Two
+Accept: 2
+Ref: 4.2.1.2
+D: 3
+Note: K⁺ and S²⁻, so two K⁺ balance one S²⁻ (K₂S).
+
+# 4.2.1.3 Ionic compounds
+Id: aqa-chem-4.2-012
+
+Q: What name is given to the regular giant structure of ions in an ionic compound?
+A: Giant ionic lattice
+Accept: Ionic lattice; Lattice; Giant lattice
+Ref: 4.2.1.3
+D: 1
+Id: aqa-chem-4.2-013
+
+Q: In a giant ionic lattice, in which directions do the electrostatic forces act?
+A: All directions
+Accept: In all directions; Every direction
+Ref: 4.2.1.3
+D: 2
+Id: aqa-chem-4.2-014
+
+Q: A diagram shows a regular 3D grid of alternating positive and negative ions. What type of compound does it show?
+A: Ionic compound
+Accept: Ionic; Giant ionic lattice
+Ref: 4.2.1.3
+D: 2
+Id: aqa-chem-4.2-015
+
+Q: A model of an ionic compound shows two aluminium ions for every three oxide ions. What is its empirical formula?
+A: Al₂O₃
+Accept: Al2O3
+Ref: 4.2.1.3
+D: 2
+Id: aqa-chem-4.2-016
+
+Q: Give one limitation of using a ball and stick model to show the structure of sodium chloride.
+A: Shows gaps between the ions
+Accept: Ions are really touching; Bonds are not sticks; Forces shown as sticks are not real; Ions not to scale; Shows only a small part of the lattice
+Ref: 4.2.1.3
+D: 3
+Note: Accept any sensible limitation; the forces are not physical sticks.
+
+# 4.2.1.4 Covalent bonding
+Id: aqa-chem-4.2-017
+
+Q: What type of bond forms when two atoms share a pair of electrons?
+A: Covalent bond
+Accept: Covalent; Single covalent bond
+Ref: 4.2.1.4
+D: 1
+Id: aqa-chem-4.2-018
+
+Q: How many covalent bonds are there in one molecule of ammonia, NH₃?
+A: Three
+Accept: 3
+Ref: 4.2.1.4
+D: 2
+Id: aqa-chem-4.2-019
+
+Q: How many pairs of electrons are shared between the two atoms in an oxygen molecule, O₂?
+A: Two
+Accept: 2; Two pairs
+Ref: 4.2.1.4
+D: 2
+Note: A double bond.
+Id: aqa-chem-4.2-020
+
+Q: How many pairs of electrons are shared between the two atoms in a nitrogen molecule, N₂?
+A: Three
+Accept: 3; Three pairs
+Ref: 4.2.1.4
+D: 2
+Note: A triple bond; students often guess two or one.
+Id: aqa-chem-4.2-021
+
+Q: A ball and stick model shows one carbon atom bonded to four hydrogen atoms. What is the molecular formula?
+A: CH₄
+Accept: CH4
+Ref: 4.2.1.4
+D: 2
+Id: aqa-chem-4.2-022
+
+Q: In the repeating unit of a polymer drawn in brackets, what does the letter n represent?
+A: A large number
+Accept: Large number of repeating units; Number of repeating units
+Ref: 4.2.1.4
+D: 1
+Id: aqa-chem-4.2-023
+
+Q: Give one limitation of a two-dimensional displayed formula for showing a molecule.
+A: Does not show the 3D shape
+Accept: No 3D shape shown; Does not show shape; Does not show which electrons came from which atom
+Ref: 4.2.1.4
+D: 3
+
+# 4.2.1.5 Metallic bonding
+Id: aqa-chem-4.2-024
+
+Q: What name is given to the outer shell electrons in a metal that are free to move through the whole structure?
+A: Delocalised electrons
+Accept: Delocalised; Free electrons; Sea of electrons
+Ref: 4.2.1.5
+D: 1
+Id: aqa-chem-4.2-025
+
+Q: How are the atoms arranged in the giant structure of a metal?
+A: Regular pattern
+Accept: Regular layers; Regular arrangement; In layers; Regular lattice
+Ref: 4.2.1.5
+D: 2
+Id: aqa-chem-4.2-026
+
+Q: What is the attraction in a metallic bond between?
+A: Positive metal ions and delocalised electrons
+Accept: Positive ions and delocalised electrons; Metal ions and delocalised electrons
+Ref: 4.2.1.5
+D: 3
+
+# 4.2.2.1 The three states of matter
+Id: aqa-chem-4.2-027
+
+Q: At which temperature do both melting and freezing take place?
+A: Melting point
+Accept: The melting point; Freezing point
+Ref: 4.2.2.1
+D: 1
+Id: aqa-chem-4.2-028
+
+Q: What is the change of state from gas to liquid called?
+A: Condensing
+Accept: Condensation
+Ref: 4.2.2.1
+D: 1
+Id: aqa-chem-4.2-029
+
+Q: A substance melts at −39 °C and boils at 357 °C. What state is it in at −50 °C?
+A: Solid
+Ref: 4.2.2.1
+D: 2
+Id: aqa-chem-4.2-030
+
+Q: Why do different substances melt at different temperatures?
+A: Forces between particles differ in strength
+Accept: Different strength of forces between particles; Different amounts of energy needed to overcome forces; Different types of bonding
+Ref: 4.2.2.1
+D: 3
+Id: aqa-chem-4.2-031
+
+Q: Melting point and electrical conductivity belong to a material, not to single atoms. What are these properties called?
+A: Bulk properties
+Accept: Bulk property
+Ref: 4.2.2.1
+D: 2
+Id: aqa-chem-4.2-032
+
+Q: The simple particle model shows particles as solid spheres. What does the model leave out between the particles?
+A: Forces
+Accept: Forces between particles; Attractive forces; Intermolecular forces
+Ref: 4.2.2.1
+D: 2
+HT: yes
+Id: aqa-chem-4.2-033
+
+Q: Apart from missing forces, give one limitation of showing particles as small solid spheres.
+A: Particles are not all spherical
+Accept: Particles are not solid; Particles are not hard spheres; Spheres are inelastic but real particles are not
+Ref: 4.2.2.1
+D: 3
+HT: yes
+
+# 4.2.2.2 State symbols
+Id: aqa-chem-4.2-034
+
+Q: What does the state symbol (aq) stand for?
+A: Aqueous
+Accept: Aqueous solution; Dissolved in water
+Ref: 4.2.2.2
+D: 1
+Id: aqa-chem-4.2-035
+
+Q: Magnesium reacts with hydrochloric acid to make hydrogen, H₂. What state symbol follows H₂ in the equation?
+A: (g)
+Accept: g; Gas
+Ref: 4.2.2.2
+D: 2
+Id: aqa-chem-4.2-036
+
+Q: Silver nitrate solution is mixed with sodium chloride solution and a white precipitate forms. What state symbol does the precipitate have?
+A: (s)
+Accept: s; Solid
+Ref: 4.2.2.2
+D: 3
+Note: A precipitate is an insoluble solid, so not (aq).
+
+# 4.2.2.3 Properties of ionic compounds
+Id: aqa-chem-4.2-037
+
+Q: Do ionic compounds have high or low melting points?
+A: High
+Accept: High melting points
+Ref: 4.2.2.3
+D: 1
+Id: aqa-chem-4.2-038
+
+Q: In what two conditions can an ionic compound conduct electricity?
+A: Melted or dissolved in water
+Accept: Molten or in solution; Molten or aqueous
+Ref: 4.2.2.3
+D: 2
+Id: aqa-chem-4.2-039
+
+Q: Which particles carry the charge when molten sodium chloride conducts electricity?
+A: Ions
+Accept: Sodium and chloride ions; Charged ions
+Ref: 4.2.2.3
+D: 2
+Note: Not electrons.
+Id: aqa-chem-4.2-040
+
+Q: Why does solid sodium chloride not conduct electricity?
+A: Ions are fixed and cannot move
+Accept: Ions cannot move; Ions held in fixed positions; Ions not free to move
+Ref: 4.2.2.3
+D: 3
+Id: aqa-chem-4.2-041
+
+Q: Why do ionic compounds have high melting points?
+A: Much energy needed to break many strong bonds
+Accept: Many strong electrostatic forces need lots of energy to overcome; Strong forces between oppositely charged ions
+Ref: 4.2.2.3
+D: 3
+
+# 4.2.2.4 Properties of small molecules
+Id: aqa-chem-4.2-042
+
+Q: What name is given to the weak forces between molecules?
+A: Intermolecular forces
+Accept: Intermolecular force; Forces between molecules
+Ref: 4.2.2.4
+D: 1
+Id: aqa-chem-4.2-043
+
+Q: What are substances made of small molecules usually like at room temperature?
+A: Gases or liquids
+Accept: Gas or liquid; Liquids or gases
+Ref: 4.2.2.4
+D: 1
+Id: aqa-chem-4.2-044
+
+Q: When water boils, what is overcome: the covalent bonds or the intermolecular forces?
+A: Intermolecular forces
+Accept: Forces between molecules
+Ref: 4.2.2.4
+D: 2
+Note: A common misconception is that the covalent bonds break.
+Id: aqa-chem-4.2-045
+
+Q: What type of structure does carbon dioxide, CO₂, have?
+A: Small molecules
+Accept: Simple molecular; Small molecule; Molecular
+Ref: 4.2.2.4
+D: 2
+Id: aqa-chem-4.2-046
+
+Q: Why does a substance made of small molecules not conduct electricity?
+A: Molecules have no overall charge
+Accept: No overall electric charge; No charged particles free to move
+Ref: 4.2.2.4
+D: 3
+Id: aqa-chem-4.2-047
+
+Q: Octane molecules are larger than methane molecules. Why does octane have the higher boiling point?
+A: Stronger intermolecular forces
+Accept: Larger molecules have stronger intermolecular forces; More energy needed to overcome intermolecular forces
+Ref: 4.2.2.4
+D: 3
+
+# 4.2.2.5 Polymers
+Id: aqa-chem-4.2-048
+
+Q: What type of bond links the atoms within a polymer molecule?
+A: Covalent
+Accept: Strong covalent bonds; Covalent bonds
+Ref: 4.2.2.5
+D: 1
+Id: aqa-chem-4.2-049
+
+Q: What state are polymers usually in at room temperature?
+A: Solid
+Accept: Solids
+Ref: 4.2.2.5
+D: 1
+Id: aqa-chem-4.2-050
+
+Q: A diagram shows a repeating unit in brackets, with bonds extending through the brackets and n after them. What type of substance is this?
+A: Polymer
+Accept: A polymer
+Ref: 4.2.2.5
+D: 2
+Id: aqa-chem-4.2-051
+
+Q: Why are polymers solid at room temperature?
+A: Relatively strong intermolecular forces
+Accept: Strong forces between polymer molecules; Strong intermolecular forces
+Ref: 4.2.2.5
+D: 3
+
+# 4.2.2.6 Giant covalent structures
+Id: aqa-chem-4.2-052
+
+Q: Silica is the common name for which compound with a giant covalent structure?
+A: Silicon dioxide
+Accept: SiO₂; SiO2
+Ref: 4.2.2.6
+D: 1
+Id: aqa-chem-4.2-053
+
+Q: Name the two forms of carbon given as examples of giant covalent structures.
+A: Diamond and graphite
+Accept: Graphite and diamond
+Ref: 4.2.2.6
+D: 1
+Id: aqa-chem-4.2-054
+
+Q: A diagram shows a network of atoms all joined by covalent bonds, with no separate molecules. What type of structure is this?
+A: Giant covalent
+Accept: Giant covalent structure; Macromolecular; Giant covalent lattice
+Ref: 4.2.2.6
+D: 2
+Id: aqa-chem-4.2-055
+
+Q: What must be broken to melt a giant covalent substance such as silicon dioxide?
+A: Covalent bonds
+Accept: Strong covalent bonds
+Ref: 4.2.2.6
+D: 2
+Note: Not intermolecular forces: there are no separate molecules.
+Id: aqa-chem-4.2-056
+
+Q: Why do giant covalent substances have very high melting points?
+A: Many strong covalent bonds must be broken
+Accept: Lots of energy needed to break many strong covalent bonds
+Ref: 4.2.2.6
+D: 3
+
+# 4.2.2.7 Properties of metals and alloys
+Id: aqa-chem-4.2-057
+
+Q: What name is given to a mixture of a metal with other metals?
+A: Alloy
+Accept: Alloys
+Ref: 4.2.2.7
+D: 1
+Id: aqa-chem-4.2-058
+
+Q: Why can pure metals be bent and shaped?
+A: Layers of atoms can slide
+Accept: Layers slide over each other; Atoms in layers slide
+Ref: 4.2.2.7
+D: 2
+Id: aqa-chem-4.2-059
+
+Q: Why do most metals have high melting points?
+A: Strong metallic bonding
+Accept: Strong metallic bonds need lots of energy to break; Strong attraction between ions and delocalised electrons
+Ref: 4.2.2.7
+D: 2
+Id: aqa-chem-4.2-060
+
+Q: Why are alloys harder than pure metals?
+A: Distorted layers cannot slide over each other
+Accept: Different-sized atoms distort the layers; Layers cannot slide; Different sized atoms stop layers sliding
+Note: Both ideas needed for full credit: layers distorted, so sliding is harder.
+Ref: 4.2.2.7
+D: 3
+
+# 4.2.2.8 Metals as conductors
+Id: aqa-chem-4.2-061
+
+Q: What carries electrical charge through a metal?
+A: Delocalised electrons
+Accept: Free electrons; Electrons
+Ref: 4.2.2.8
+D: 1
+Id: aqa-chem-4.2-062
+
+Q: Which particles transfer thermal energy through a metal, making metals good thermal conductors?
+A: Delocalised electrons
+Accept: Free electrons; Electrons
+Ref: 4.2.2.8
+D: 2
+Id: aqa-chem-4.2-063
+
+Q: Solid copper conducts electricity but solid sodium chloride does not. What does copper have that solid sodium chloride lacks?
+A: Delocalised electrons
+Accept: Free electrons; Charged particles free to move; Mobile electrons
+Ref: 4.2.2.8
+D: 3
+Note: In solid sodium chloride the ions are held in fixed positions and cannot move.
+
+# 4.2.3.1 Diamond
+Id: aqa-chem-4.2-064
+
+Q: How many covalent bonds does each carbon atom form in diamond?
+A: Four
+Accept: 4
+Ref: 4.2.3.1
+D: 1
+Id: aqa-chem-4.2-065
+
+Q: Why is diamond very hard?
+A: Each carbon has four strong covalent bonds
+Accept: Giant structure of strong covalent bonds; Many strong covalent bonds in a rigid lattice
+Ref: 4.2.3.1
+D: 3
+Id: aqa-chem-4.2-066
+
+Q: Why does diamond not conduct electricity?
+A: No delocalised electrons
+Accept: All outer electrons used in bonding; No free electrons
+Ref: 4.2.3.1
+D: 3
+
+# 4.2.3.2 Graphite
+Id: aqa-chem-4.2-067
+
+Q: How many covalent bonds does each carbon atom form in graphite?
+A: Three
+Accept: 3
+Ref: 4.2.3.2
+D: 1
+Id: aqa-chem-4.2-068
+
+Q: What shape are the rings of carbon atoms in the layers of graphite?
+A: Hexagonal
+Accept: Hexagons; Six-membered rings
+Ref: 4.2.3.2
+D: 1
+Id: aqa-chem-4.2-069
+
+Q: In what way is graphite similar to metals in its bonding?
+A: Delocalised electrons
+Accept: Has delocalised electrons; Free electrons
+Ref: 4.2.3.2
+D: 2
+Id: aqa-chem-4.2-070
+
+Q: Why can graphite conduct electricity?
+A: One delocalised electron per carbon atom
+Accept: Delocalised electrons; Delocalised electrons free to move
+Ref: 4.2.3.2
+D: 3
+Id: aqa-chem-4.2-071
+
+Q: Why is graphite soft and slippery?
+A: Layers slide; no covalent bonds between them
+Accept: Layers can slide over each other; No covalent bonds between layers; Weak forces between layers
+Ref: 4.2.3.2
+D: 3
+
+# 4.2.3.3 Graphene and fullerenes
+Id: aqa-chem-4.2-072
+
+Q: What is a single layer of graphite called?
+A: Graphene
+Ref: 4.2.3.3
+D: 1
+Id: aqa-chem-4.2-073
+
+Q: Name the first fullerene to be discovered.
+A: Buckminsterfullerene
+Accept: C₆₀; C60; Buckyball
+Ref: 4.2.3.3
+D: 1
+Id: aqa-chem-4.2-074
+
+Q: What name is given to cylindrical fullerenes with a very high length to diameter ratio?
+A: Carbon nanotubes
+Accept: Nanotubes; Nanotube
+Ref: 4.2.3.3
+D: 1
+Id: aqa-chem-4.2-075
+
+Q: Fullerenes are mainly based on rings of six carbon atoms. What other ring sizes can they contain?
+A: Five or seven
+Accept: 5 or 7; Five and seven; Pentagons or heptagons
+Ref: 4.2.3.3
+D: 2
+Id: aqa-chem-4.2-076
+
+Q: Why can graphene conduct electricity, making it useful in electronics?
+A: Delocalised electrons free to move
+Accept: Delocalised electrons; Free electrons
+Ref: 4.2.3.3
+D: 3
+Id: aqa-chem-4.2-077
+
+Q: Give one use of carbon nanotubes.
+A: Any one of: electronics, nanotechnology, strengthening materials
+Accept: Electronics; Nanotechnology; Reinforcing materials; Composites; Strengthening sports equipment
+Ref: 4.2.3.3
+D: 1
+
+# 4.2.4.1 Sizes of particles and their properties
+Id: aqa-chem-4.2-078
+
+Q: What size range, in nanometres, does nanoscience refer to?
+A: 1–100 nm
+Accept: 1 to 100 nm; 1-100 nm
+Ref: 4.2.4.1
+D: 1
+Id: aqa-chem-4.2-079
+
+Q: What common name is given to coarse particles (PM10)?
+A: Dust
+Ref: 4.2.4.1
+D: 1
+Id: aqa-chem-4.2-080
+
+Q: What name is given to particles with diameters between 100 nm and 2500 nm?
+A: Fine particles
+Accept: PM2.5; Fine particles (PM2.5)
+Ref: 4.2.4.1
+D: 2
+Id: aqa-chem-4.2-081
+
+Q: How many metres is 1 nanometre?
+A: 1 × 10⁻⁹ m
+Accept: 10⁻⁹ m; 0.000000001 m; 1 x 10^-9 m
+Ref: 4.2.4.1
+D: 2
+Id: aqa-chem-4.2-082
+
+Q: The side of a cube decreases by a factor of 10. What happens to its surface area to volume ratio?
+A: Increases by a factor of 10
+Accept: Increases ten times; ×10; Ten times bigger
+Ref: 4.2.4.1
+D: 2
+Id: aqa-chem-4.2-083
+
+Q: What is the surface area to volume ratio of a cube with sides of 2 nm?
+A: 3 : 1
+Accept: 3:1; 3; 3 per nm; 3 nm⁻¹
+Ref: 4.2.4.1
+D: 3
+Calc: yes
+Note: Surface area 24 nm², volume 8 nm³.
+Id: aqa-chem-4.2-084
+
+Q: A nanoparticle is 10 nm across and an atom is 0.1 nm across. How many times wider is the nanoparticle?
+A: 100 times
+Accept: 100; 10²
+Ref: 4.2.4.1
+D: 2
+Calc: yes
+Id: aqa-chem-4.2-085
+
+Q: Why can nanoparticles have different properties from the same material in bulk?
+A: High surface area to volume ratio
+Accept: Large surface area to volume ratio; Much larger surface area to volume ratio
+Ref: 4.2.4.1
+D: 3
+
+# 4.2.4.2 Uses of nanoparticles
+Id: aqa-chem-4.2-086
+
+Q: Name one cosmetic or personal-care product that may contain nanoparticles.
+A: Sun cream
+Accept: Sunscreen; Deodorant; Cosmetics; Make-up
+Ref: 4.2.4.2
+D: 1
+Id: aqa-chem-4.2-087
+
+Q: Give one advantage of nanoparticles over normal-sized particles of the same material.
+A: Smaller quantities needed
+Accept: Less material needed; More effective; Higher surface area to volume ratio
+Ref: 4.2.4.2
+D: 2
+Note: Accept any sensible advantage linked to their small size.
+Id: aqa-chem-4.2-088
+
+Q: Give one possible risk of using nanoparticles in products such as sun cream.
+A: Long-term health effects unknown
+Accept: May enter body cells and cause harm; May be toxic; May harm the environment
+Ref: 4.2.4.2
+D: 2
+Note: Accept any sensible risk; the key idea is that effects are not yet fully known.
+Id: aqa-chem-4.2-089

@@ -1,0 +1,450 @@
+Board: AQA
+Spec: 8462
+Topic: 4.4
+
+# 4.4.1.1 Metal oxides
+
+Q: What type of reaction happens when a metal gains oxygen?
+A: Oxidation
+Ref: 4.4.1.1
+D: 1
+Id: aqa-chem-4.4-001
+
+Q: Define reduction in terms of oxygen.
+A: Loss of oxygen
+Accept: Removal of oxygen; Losing oxygen
+Ref: 4.4.1.1
+D: 2
+Id: aqa-chem-4.4-002
+
+Q: Copper is heated in air and turns black. Why is this an oxidation reaction?
+A: Copper gains oxygen
+Accept: Copper combines with oxygen; Copper oxide forms by gaining oxygen
+Ref: 4.4.1.1
+D: 3
+Note: The black solid is copper oxide.
+
+# 4.4.1.2 The reactivity series
+Id: aqa-chem-4.4-003
+
+Q: Of potassium, sodium, lithium, calcium and magnesium, which metal is the most reactive?
+A: Potassium
+Accept: K
+Ref: 4.4.1.2
+D: 1
+Id: aqa-chem-4.4-004
+
+Q: The reactivity of a metal is related to its tendency to form what?
+A: Positive ions
+Accept: Cations; Positive ion
+Ref: 4.4.1.2
+D: 2
+Id: aqa-chem-4.4-005
+
+Q: Iron is added to copper sulfate solution. Name the solid metal formed.
+A: Copper
+Accept: Cu
+Ref: 4.4.1.2
+D: 2
+Note: A more reactive metal displaces a less reactive metal from its compound.
+Id: aqa-chem-4.4-006
+
+Q: Metal X displaces Y from its salt solution, and Y displaces Z. Which metal is the least reactive?
+A: Z
+Ref: 4.4.1.2
+D: 3
+Id: aqa-chem-4.4-007
+
+Q: Why does potassium react more vigorously with water than lithium does?
+A: Potassium forms positive ions more easily
+Accept: Potassium loses its outer electron more easily; Potassium has a greater tendency to form positive ions
+Ref: 4.4.1.2
+D: 3
+
+# 4.4.1.3 Extraction of metals and reduction
+Id: aqa-chem-4.4-008
+
+Q: Name an unreactive metal found in the Earth as the metal itself.
+A: Gold
+Accept: Au; Platinum; Silver
+Ref: 4.4.1.3
+D: 1
+Id: aqa-chem-4.4-009
+
+Q: Which non-metal element is used to extract iron from iron oxide by reduction?
+A: Carbon
+Accept: C; Coke
+Ref: 4.4.1.3
+D: 1
+Id: aqa-chem-4.4-010
+
+Q: In the reaction 2CuO + C → 2Cu + CO₂, which substance is reduced?
+A: Copper oxide
+Accept: CuO; Copper(II) oxide
+Ref: 4.4.1.3
+D: 2
+
+# 4.4.1.4 Oxidation and reduction in terms of electrons (HT only)
+Id: aqa-chem-4.4-011
+
+Q: Define oxidation in terms of electrons.
+A: Loss of electrons
+Accept: Losing electrons
+Ref: 4.4.1.4
+D: 2
+HT: yes
+Id: aqa-chem-4.4-012
+
+Q: Write the ionic equation for zinc displacing copper from copper sulfate solution.
+A: Zn + Cu²⁺ → Zn²⁺ + Cu
+Ref: 4.4.1.4
+D: 3
+HT: yes
+Note: Sulfate ions are spectator ions and are left out.
+Id: aqa-chem-4.4-013
+
+Q: In the reaction Fe + Cu²⁺ → Fe²⁺ + Cu, which species is oxidised?
+A: Iron atoms
+Accept: Fe; Iron
+Ref: 4.4.1.4
+D: 2
+HT: yes
+Note: Iron atoms lose two electrons to become Fe²⁺.
+
+# 4.4.2.1 Reactions of acids with metals
+Id: aqa-chem-4.4-014
+
+Q: Name the gas produced when magnesium reacts with dilute hydrochloric acid.
+A: Hydrogen
+Accept: H₂; Hydrogen gas
+Ref: 4.4.2.1
+D: 1
+Id: aqa-chem-4.4-015
+
+Q: Name the salt formed when zinc reacts with hydrochloric acid.
+A: Zinc chloride
+Accept: ZnCl₂
+Ref: 4.4.2.1
+D: 2
+Id: aqa-chem-4.4-016
+
+Q: In the reaction Mg + 2H⁺ → Mg²⁺ + H₂, which species is reduced?
+A: Hydrogen ions
+Accept: H⁺; Hydrogen ion
+Ref: 4.4.2.1
+D: 3
+HT: yes
+Note: Each hydrogen ion gains an electron.
+
+# 4.4.2.2 Neutralisation of acids and salt production
+Id: aqa-chem-4.4-017
+
+Q: Which type of salt is produced by nitric acid?
+A: Nitrates
+Accept: Nitrate; A nitrate
+Ref: 4.4.2.2
+D: 1
+Id: aqa-chem-4.4-018
+
+Q: Name the three products when an acid reacts with a metal carbonate.
+A: Salt, water and carbon dioxide
+Accept: A salt, water and carbon dioxide
+Ref: 4.4.2.2
+D: 2
+Id: aqa-chem-4.4-019
+
+Q: Name the salt formed when calcium carbonate reacts with hydrochloric acid.
+A: Calcium chloride
+Accept: CaCl₂
+Ref: 4.4.2.2
+D: 2
+Id: aqa-chem-4.4-020
+
+Q: Sodium hydroxide neutralises sulfuric acid. What is the formula of the salt formed?
+A: Na₂SO₄
+Ref: 4.4.2.2
+D: 3
+Note: Na⁺ and SO₄²⁻, so two sodium ions balance one sulfate ion.
+
+# 4.4.2.3 Soluble salts
+Id: aqa-chem-4.4-021
+
+Q: Which separation method removes the excess unreacted solid from the salt solution?
+A: Filtration
+Accept: Filtering; Filter
+Ref: 4.4.2.3
+RP: 1
+D: 1
+Id: aqa-chem-4.4-022
+
+Q: Which process turns the filtered salt solution into solid salt?
+A: Crystallisation
+Accept: Crystallising; Evaporation; Evaporating then crystallising
+Ref: 4.4.2.3
+RP: 1
+D: 1
+Id: aqa-chem-4.4-023
+
+Q: When making copper sulfate, what shows that enough copper oxide has been added?
+A: Black solid stays undissolved
+Accept: Solid no longer dissolves; Excess solid left at the bottom; Some solid remains; No more solid reacts
+Ref: 4.4.2.3
+RP: 1
+D: 2
+Id: aqa-chem-4.4-024
+
+Q: Why is the insoluble oxide or carbonate added in excess when making a salt?
+A: So all the acid reacts
+Accept: To use up all the acid; No acid left in the salt
+Ref: 4.4.2.3
+RP: 1
+D: 3
+
+# 4.4.2.4 The pH scale and neutralisation
+Id: aqa-chem-4.4-025
+
+Q: What is the pH of a neutral solution?
+A: 7
+Accept: pH 7; Seven
+Ref: 4.4.2.4
+D: 1
+Id: aqa-chem-4.4-026
+
+Q: Which ions do acids produce in aqueous solution?
+A: Hydrogen ions
+Accept: H⁺; Hydrogen ion
+Ref: 4.4.2.4
+D: 1
+Id: aqa-chem-4.4-027
+
+Q: Which ions are in aqueous solutions of alkalis?
+A: Hydroxide ions
+Accept: OH⁻; Hydroxide ion
+Ref: 4.4.2.4
+D: 1
+Id: aqa-chem-4.4-028
+
+Q: Write the ionic equation for neutralisation of an acid by an alkali.
+A: H⁺ + OH⁻ → H₂O
+Accept: H⁺(aq) + OH⁻(aq) → H₂O(l)
+Ref: 4.4.2.4
+D: 2
+
+# 4.4.2.5 Titrations (chemistry only)
+Id: aqa-chem-4.4-029
+
+Q: Which piece of apparatus is used to add acid gradually and measure its volume in a titration?
+A: Burette
+Ref: 4.4.2.5
+RP: 2
+D: 1
+Id: aqa-chem-4.4-030
+
+Q: Why is universal indicator not used in a titration?
+A: Gradual colour change, no sharp end point
+Accept: Colour changes gradually; No single clear colour change
+Ref: 4.4.2.5
+RP: 2
+D: 3
+Note: Use a single indicator such as phenolphthalein or methyl orange.
+Id: aqa-chem-4.4-031
+
+Q: 20.0 cm³ of 0.10 mol/dm³ HCl neutralises 25.0 cm³ of NaOH. What is the NaOH concentration?
+A: 0.080 mol/dm³
+Accept: 0.08 mol/dm³; 0.08
+Ref: 4.4.2.5
+RP: 2
+D: 3
+HT: yes
+Calc: yes
+Note: 0.0020 mol HCl reacts 1:1, then 0.0020 ÷ 0.025 dm³.
+Id: aqa-chem-4.4-032
+
+Q: A sodium hydroxide solution is 0.50 mol/dm³. What is its concentration in g/dm³? (Mr of NaOH = 40)
+A: 20 g/dm³
+Accept: 20
+Ref: 4.4.2.5
+RP: 2
+D: 2
+HT: yes
+
+# 4.4.2.6 Strong and weak acids (HT only)
+Id: aqa-chem-4.4-033
+
+Q: What is meant by a strong acid?
+A: Completely ionised in aqueous solution
+Accept: Fully ionised in water; Fully dissociates into ions
+Ref: 4.4.2.6
+D: 2
+HT: yes
+Id: aqa-chem-4.4-034
+
+Q: Hydrochloric acid and ethanoic acid have the same concentration. Which has the lower pH?
+A: Hydrochloric acid
+Accept: HCl
+Ref: 4.4.2.6
+D: 3
+HT: yes
+Note: The stronger acid is more ionised, so it has a higher H⁺ concentration.
+Id: aqa-chem-4.4-035
+
+Q: The pH of an acid falls from 4 to 2. By what factor does the hydrogen ion concentration change?
+A: Increases 100 times
+Accept: 100; ×100; Factor of 100; 100 times greater
+Ref: 4.4.2.6
+D: 3
+HT: yes
+Note: Each fall of one pH unit is a tenfold increase.
+Id: aqa-chem-4.4-036
+
+Q: What does "dilute" mean when describing an acid?
+A: Low concentration of acid
+Accept: Low concentration; Small amount of acid per unit volume; Little acid in a given volume of solution
+Ref: 4.4.2.6
+D: 2
+HT: yes
+Note: Dilute and concentrated are about amount of substance, not degree of ionisation.
+
+# 4.4.3.1 The process of electrolysis
+Id: aqa-chem-4.4-037
+
+Q: What name is given to a molten or dissolved ionic compound that conducts electricity?
+A: Electrolyte
+Ref: 4.4.3.1
+D: 1
+Id: aqa-chem-4.4-038
+
+Q: In electrolysis, to which electrode do positive ions move?
+A: Cathode
+Accept: Negative electrode; The cathode
+Ref: 4.4.3.1
+D: 1
+Id: aqa-chem-4.4-039
+
+Q: Why can solid sodium chloride not be electrolysed?
+A: Ions cannot move
+Accept: Ions are not free to move; Ions are fixed in place
+Ref: 4.4.3.1
+D: 2
+
+# 4.4.3.2 Electrolysis of molten ionic compounds
+Id: aqa-chem-4.4-040
+
+Q: Molten lead bromide is electrolysed. Name the product at the cathode.
+A: Lead
+Accept: Pb
+Ref: 4.4.3.2
+D: 1
+Id: aqa-chem-4.4-041
+
+Q: Molten zinc chloride is electrolysed. Name the product at the anode.
+A: Chlorine
+Accept: Cl₂; Chlorine gas
+Ref: 4.4.3.2
+D: 2
+Id: aqa-chem-4.4-042
+
+Q: Molten potassium iodide is electrolysed. Name the product at the negative electrode.
+A: Potassium
+Accept: K
+Ref: 4.4.3.2
+D: 2
+
+# 4.4.3.3 Using electrolysis to extract metals
+Id: aqa-chem-4.4-043
+
+Q: Which compound is mixed with aluminium oxide in the electrolysis cell?
+A: Cryolite
+Ref: 4.4.3.3
+D: 1
+Id: aqa-chem-4.4-044
+
+Q: Why is aluminium extracted by electrolysis and not by reduction with carbon?
+A: Aluminium is more reactive than carbon
+Accept: Carbon is less reactive than aluminium
+Ref: 4.4.3.3
+D: 2
+Id: aqa-chem-4.4-045
+
+Q: Why is a mixture of aluminium oxide and cryolite used as the electrolyte?
+A: Lowers the melting point
+Accept: Lower melting point saves energy; Less energy needed to melt it
+Ref: 4.4.3.3
+D: 3
+Id: aqa-chem-4.4-046
+
+Q: Why must the positive electrodes be replaced regularly in aluminium extraction?
+A: Carbon anode reacts with oxygen
+Accept: Anode burns away; Oxygen reacts with the carbon anode; Carbon reacts with oxygen to form carbon dioxide
+Ref: 4.4.3.3
+D: 3
+
+# 4.4.3.4 Electrolysis of aqueous solutions
+Id: aqa-chem-4.4-047
+
+Q: Name a material commonly used for inert electrodes in the electrolysis of aqueous solutions.
+A: Graphite
+Accept: Carbon; Platinum
+Ref: 4.4.3.4
+RP: 3
+D: 1
+Id: aqa-chem-4.4-048
+
+Q: Sodium chloride solution is electrolysed. Name the product at the anode.
+A: Chlorine
+Accept: Cl₂; Chlorine gas
+Ref: 4.4.3.4
+RP: 3
+D: 2
+Note: Chloride is a halide, so the halogen is produced, not oxygen.
+Id: aqa-chem-4.4-049
+
+Q: Copper sulfate solution is electrolysed with inert electrodes. Name the product at the cathode.
+A: Copper
+Accept: Cu
+Ref: 4.4.3.4
+RP: 3
+D: 2
+Id: aqa-chem-4.4-050
+
+Q: Copper sulfate solution is electrolysed with inert electrodes. Name the product at the anode.
+A: Oxygen
+Accept: O₂; Oxygen gas
+Ref: 4.4.3.4
+RP: 3
+D: 2
+Note: Sulfate is not a halide, so oxygen is produced.
+Id: aqa-chem-4.4-051
+
+Q: In electrolysis of potassium bromide solution, why is hydrogen produced at the cathode, not potassium?
+A: Potassium is more reactive than hydrogen
+Accept: Hydrogen is less reactive than potassium
+Ref: 4.4.3.4
+RP: 3
+D: 3
+
+# 4.4.3.5 Representation of reactions at electrodes as half equations (HT only)
+Id: aqa-chem-4.4-052
+
+Q: Positive ions gain electrons at the cathode. What type of reaction is this?
+A: Reduction
+Ref: 4.4.3.5
+D: 1
+HT: yes
+Id: aqa-chem-4.4-053
+
+Q: Write the half equation for chloride ions forming chlorine at the anode.
+A: 2Cl⁻ → Cl₂ + 2e⁻
+Accept: 2Cl⁻ − 2e⁻ → Cl₂
+Ref: 4.4.3.5
+D: 3
+HT: yes
+Id: aqa-chem-4.4-054
+
+Q: In the half equation 4OH⁻ → O₂ + 2H₂O + ne⁻, what is the value of n?
+A: 4
+Accept: Four; 4e⁻
+Ref: 4.4.3.5
+D: 2
+HT: yes
+Id: aqa-chem-4.4-055

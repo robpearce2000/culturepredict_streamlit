@@ -1,0 +1,430 @@
+Board: AQA
+Spec: 8462
+Topic: 4.1
+
+# 4.1.1.1 Atoms, elements and compounds
+
+Q: What name is given to the smallest particle of an element that can exist on its own?
+A: Atom
+Accept: An atom; Atoms
+Ref: 4.1.1.1
+D: 1
+Id: aqa-chem-4.1-001
+
+Q: Name the compound with the formula CaCO₃.
+A: Calcium carbonate
+Ref: 4.1.1.1
+D: 2
+Id: aqa-chem-4.1-002
+
+Q: Chlorine is bubbled into potassium bromide solution. Write the ionic equation for the reaction.
+A: Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂
+Accept: Cl₂(aq) + 2Br⁻(aq) → 2Cl⁻(aq) + Br₂(aq)
+Ref: 4.1.1.1
+HT: yes
+D: 3
+Note: Potassium ions are spectator ions, so they are left out.
+
+# 4.1.1.2 Mixtures
+Id: aqa-chem-4.1-003
+
+Q: Which separation method removes insoluble sand from salty water?
+A: Filtration
+Accept: Filtering
+Ref: 4.1.1.2
+D: 1
+Id: aqa-chem-4.1-004
+
+Q: Which separation method separates the different coloured dyes in an ink?
+A: Chromatography
+Accept: Paper chromatography
+Ref: 4.1.1.2
+D: 1
+Id: aqa-chem-4.1-005
+
+Q: Which separation method separates ethanol from water, using their different boiling points?
+A: Fractional distillation
+Ref: 4.1.1.2
+D: 2
+Id: aqa-chem-4.1-006
+
+Q: Why is separating a mixture a physical process rather than a chemical reaction?
+A: No new substances are made
+Accept: No chemical reaction happens; Substances are not chemically combined
+Ref: 4.1.1.2
+D: 3
+
+# 4.1.1.3 The development of the model of the atom
+Id: aqa-chem-4.1-007
+
+Q: The discovery of which subatomic particle led to the plum pudding model?
+A: Electron
+Accept: Electrons; The electron
+Ref: 4.1.1.3
+D: 1
+Id: aqa-chem-4.1-008
+
+Q: Which scientist suggested that electrons orbit the nucleus at specific distances?
+A: Niels Bohr
+Accept: Bohr
+Ref: 4.1.1.3
+D: 1
+Id: aqa-chem-4.1-009
+
+Q: Describe the plum pudding model of the atom.
+A: Positive sphere with electrons embedded in it
+Accept: Ball of positive charge containing negative electrons; Positive pudding with electrons scattered through it
+Ref: 4.1.1.3
+D: 2
+Id: aqa-chem-4.1-010
+
+Q: Which experiment showed that most of an atom's mass is in a tiny charged centre?
+A: Alpha particle scattering experiment
+Accept: Alpha scattering; Rutherford's scattering experiment; Gold foil experiment
+Ref: 4.1.1.3
+D: 2
+Id: aqa-chem-4.1-011
+
+Q: In the scattering experiment, why were a few alpha particles deflected back?
+A: Repelled by a small, positive, massive nucleus
+Accept: Hit the concentrated positive nucleus; Bounced off a small dense positive nucleus
+Ref: 4.1.1.3
+D: 3
+Note: The plum pudding model could not explain this, so it was replaced by the nuclear model.
+
+# 4.1.1.4 Relative electrical charges of subatomic particles
+Id: aqa-chem-4.1-012
+
+Q: What is the relative charge of an electron?
+A: −1
+Accept: -1; Minus one; Negative one
+Ref: 4.1.1.4
+D: 1
+Id: aqa-chem-4.1-013
+
+Q: What does the atomic number of an element tell you about its atoms?
+A: Number of protons
+Accept: Proton number; Number of protons in the nucleus
+Ref: 4.1.1.4
+D: 2
+Id: aqa-chem-4.1-014
+
+Q: Explain why an atom has no overall electrical charge.
+A: Equal numbers of protons and electrons
+Accept: Same number of protons and electrons; Positive and negative charges cancel
+Ref: 4.1.1.4
+D: 3
+
+# 4.1.1.5 Size and mass of atoms
+Id: aqa-chem-4.1-015
+
+Q: What is the approximate radius of an atom, in nanometres?
+A: 0.1 nm
+Accept: 0.1 nanometres; 1 × 10⁻¹⁰ m
+Ref: 4.1.1.5
+D: 1
+Id: aqa-chem-4.1-016
+
+Q: What name is given to atoms of the same element with different numbers of neutrons?
+A: Isotopes
+Accept: Isotope
+Ref: 4.1.1.5
+D: 1
+Id: aqa-chem-4.1-017
+
+Q: An atom has 11 protons and a mass number of 23. How many neutrons does it have?
+A: 12
+Ref: 4.1.1.5
+D: 2
+Id: aqa-chem-4.1-018
+
+Q: A magnesium ion, Mg²⁺, has atomic number 12 and mass number 24. How many electrons does it have?
+A: 10
+Accept: Ten
+Ref: 4.1.1.5
+D: 3
+Note: The 2+ charge means two electrons have been lost from the 12 in the atom.
+
+# 4.1.1.6 Relative atomic mass
+Id: aqa-chem-4.1-019
+
+Q: Relative atomic mass is an average. Besides the masses of the isotopes, what else does it take into account?
+A: Abundance of each isotope
+Accept: Abundances of the isotopes; Percentage of each isotope; How common each isotope is
+Ref: 4.1.1.6
+D: 2
+Id: aqa-chem-4.1-020
+
+Q: Chlorine is 75% chlorine-35 and 25% chlorine-37. What is its relative atomic mass?
+A: 35.5
+Ref: 4.1.1.6
+D: 3
+Note: (35 × 75 + 37 × 25) ÷ 100 = 35.5
+Id: aqa-chem-4.1-021
+
+Q: Boron is 20% boron-10 and 80% boron-11. What is its relative atomic mass?
+A: 10.8
+Ref: 4.1.1.6
+D: 3
+Note: (10 × 20 + 11 × 80) ÷ 100 = 10.8
+
+# 4.1.1.7 Electronic structure
+Id: aqa-chem-4.1-022
+
+Q: What is the electronic structure of chlorine, atomic number 17?
+A: 2,8,7
+Accept: 2.8.7
+Ref: 4.1.1.7
+D: 2
+Id: aqa-chem-4.1-023
+
+Q: Which element has the electronic structure 2,8,3?
+A: Aluminium
+Accept: Al
+Ref: 4.1.1.7
+D: 2
+Id: aqa-chem-4.1-024
+
+Q: Which shells do electrons in an atom fill first?
+A: Innermost shells
+Accept: Lowest available energy levels; Lowest energy level; Shells closest to the nucleus
+Ref: 4.1.1.7
+D: 1
+
+# 4.1.2.1 The periodic table
+Id: aqa-chem-4.1-025
+
+Q: In what order are the elements arranged in the modern periodic table?
+A: Atomic number
+Accept: Proton number; Increasing atomic number
+Ref: 4.1.2.1
+D: 1
+Id: aqa-chem-4.1-026
+
+Q: What are the vertical columns in the periodic table called?
+A: Groups
+Accept: Group
+Ref: 4.1.2.1
+D: 1
+Id: aqa-chem-4.1-027
+
+Q: Why do elements in the same group have similar chemical properties?
+A: Same number of outer-shell electrons
+Accept: Same number of outer electrons
+Ref: 4.1.2.1
+D: 3
+
+# 4.1.2.2 Development of the periodic table
+Id: aqa-chem-4.1-028
+
+Q: Which scientist left gaps in his periodic table?
+A: Dmitri Mendeleev
+Accept: Mendeleev
+Ref: 4.1.2.2
+D: 1
+Id: aqa-chem-4.1-029
+
+Q: Why did Mendeleev leave gaps in his periodic table?
+A: Elements not yet discovered
+Accept: For undiscovered elements
+Ref: 4.1.2.2
+D: 2
+Id: aqa-chem-4.1-030
+
+Q: What evidence later supported Mendeleev's periodic table?
+A: Elements discovered matching his predicted properties
+Accept: Gaps filled by elements with predicted properties
+Ref: 4.1.2.2
+D: 3
+Id: aqa-chem-4.1-031
+
+Q: Knowledge of what explained why ordering by atomic weight was not always correct?
+A: Isotopes
+Accept: Isotope
+Ref: 4.1.2.2
+D: 2
+
+# 4.1.2.3 Metals and non-metals
+Id: aqa-chem-4.1-032
+
+Q: What type of element reacts to form positive ions?
+A: Metals
+Accept: Metal
+Ref: 4.1.2.3
+D: 1
+Id: aqa-chem-4.1-033
+
+Q: In which part of the periodic table are non-metals found?
+A: Right and top
+Accept: Top right; Right-hand side
+Ref: 4.1.2.3
+D: 1
+Id: aqa-chem-4.1-034
+
+Q: In terms of electrons, why do metal atoms form positive ions?
+A: Lose their outer-shell electrons
+Accept: Lose outer electrons; Lose electrons
+Ref: 4.1.2.3
+D: 3
+
+# 4.1.2.4 Group 0
+Id: aqa-chem-4.1-035
+
+Q: What name is given to the elements in Group 0?
+A: Noble gases
+Accept: Noble gas
+Ref: 4.1.2.4
+D: 1
+Id: aqa-chem-4.1-036
+
+Q: How many electrons are in the outer shell of a helium atom?
+A: 2
+Accept: Two
+Ref: 4.1.2.4
+D: 2
+Note: All the other noble gases have eight outer electrons.
+Id: aqa-chem-4.1-037
+
+Q: How do the boiling points of the noble gases change going down the group?
+A: Increase
+Accept: Increases; Get higher; Go up
+Ref: 4.1.2.4
+D: 2
+Id: aqa-chem-4.1-038
+
+Q: Why are the noble gases unreactive?
+A: Stable arrangement of electrons
+Accept: Full outer shell; Stable electron arrangement
+Ref: 4.1.2.4
+D: 3
+
+# 4.1.2.5 Group 1
+Id: aqa-chem-4.1-039
+
+Q: What name is given to the elements in Group 1?
+A: Alkali metals
+Accept: Alkali metal
+Ref: 4.1.2.5
+D: 1
+Id: aqa-chem-4.1-040
+
+Q: How does the reactivity of the alkali metals change going down Group 1?
+A: Increases
+Accept: Increase; Gets more reactive
+Ref: 4.1.2.5
+D: 2
+Id: aqa-chem-4.1-041
+
+Q: Sodium reacts with water to form sodium hydroxide and hydrogen. Write the balanced symbol equation.
+A: 2Na + 2H₂O → 2NaOH + H₂
+Accept: 2Na(s) + 2H₂O(l) → 2NaOH(aq) + H₂(g)
+Ref: 4.1.2.5
+D: 3
+Id: aqa-chem-4.1-042
+
+Q: What compound forms when sodium burns in chlorine?
+A: Sodium chloride
+Accept: NaCl
+Ref: 4.1.2.5
+D: 1
+Id: aqa-chem-4.1-043
+
+Q: Why does reactivity increase going down Group 1?
+A: Outer electron further from nucleus, lost more easily
+Accept: Outer electron less strongly attracted to the nucleus
+Ref: 4.1.2.5
+D: 3
+
+# 4.1.2.6 Group 7
+Id: aqa-chem-4.1-044
+
+Q: What name is given to the elements in Group 7?
+A: Halogens
+Accept: Halogen
+Ref: 4.1.2.6
+D: 1
+Id: aqa-chem-4.1-045
+
+Q: How does the reactivity of the halogens change going down Group 7?
+A: Decreases
+Accept: Decrease; Gets less reactive
+Ref: 4.1.2.6
+D: 2
+Id: aqa-chem-4.1-046
+
+Q: Chlorine water is added to potassium bromide solution. Which halogen is produced?
+A: Bromine
+Accept: Br₂
+Ref: 4.1.2.6
+D: 2
+Id: aqa-chem-4.1-047
+
+Q: What type of compound forms when a halogen reacts with a metal?
+A: Ionic compound
+Accept: Ionic; Salt; Metal halide
+Ref: 4.1.2.6
+D: 2
+Note: With non-metals, halogens form covalent compounds.
+Id: aqa-chem-4.1-048
+
+Q: Why does iodine solution not react with sodium chloride solution?
+A: Iodine is less reactive than chlorine
+Accept: Iodine cannot displace chlorine
+Ref: 4.1.2.6
+D: 3
+
+# 4.1.3.1 Comparison with Group 1 elements
+Id: aqa-chem-4.1-049
+
+Q: Compared with Group 1 metals, are the melting points of transition metals higher or lower?
+A: Higher
+Accept: Much higher
+Ref: 4.1.3.1
+D: 1
+Id: aqa-chem-4.1-050
+
+Q: Which metals have densities low enough that some float on water, Group 1 or transition metals?
+A: Group 1 metals
+Accept: Alkali metals; Group 1
+Ref: 4.1.3.1
+D: 2
+Id: aqa-chem-4.1-051
+
+Q: Why is iron, not sodium, used to build bridges?
+A: Iron is stronger and less reactive
+Accept: Iron is stronger, harder and reacts slowly with water
+Note: Look for strength or hardness plus lower reactivity with water and oxygen.
+Ref: 4.1.3.1
+D: 3
+
+# 4.1.3.2 Typical properties
+Id: aqa-chem-4.1-052
+
+Q: Iron speeds up the Haber process without being used up. What is iron acting as?
+A: Catalyst
+Accept: A catalyst
+Ref: 4.1.3.2
+D: 2
+Id: aqa-chem-4.1-053
+
+Q: Iron forms Fe²⁺ and Fe³⁺ ions. Which typical transition metal property does this show?
+A: Ions with different charges
+Accept: Forms more than one ion; Variable charges
+Ref: 4.1.3.2
+D: 2
+Id: aqa-chem-4.1-054
+
+Q: Why are cobalt and chromium compounds used to colour glass and pottery glazes?
+A: Transition metal compounds are coloured
+Accept: Coloured compounds; Transition metals form coloured compounds
+Ref: 4.1.3.2
+D: 3
+Id: aqa-chem-4.1-055
+
+Q: Copper forms Cu⁺ and Cu²⁺ ions. What is the charge on the copper ion in CuO?
+A: 2+
+Accept: +2; Cu²⁺; Two plus
+Note: The oxide ion is O²⁻, so copper must be 2+ to balance it.
+Ref: 4.1.3.2
+D: 3
+Id: aqa-chem-4.1-056
