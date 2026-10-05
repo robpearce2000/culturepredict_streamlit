@@ -4,12 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src data:; img-src data: blob:; media-src 'none'; connect-src 'none'; form-action 'none'">
-<meta name="description" content="Two 3D revision quiz games for the classroom: Over the Edge and Outpace. Works offline.">
+<meta name="description" content="Four revision quiz games for the classroom: Over the Edge, Outpace, Category Clash and Hex Hunt. Works offline.">
 <title>Showtime: Classroom Gameshows</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="shared/ui.css">
 <link rel="stylesheet" href="games/over-the-edge/game.css">
 <link rel="stylesheet" href="games/outpace/game.css">
+<link rel="stylesheet" href="games/category-clash/game.css">
+<link rel="stylesheet" href="games/hex-hunt/game.css">
 </head>
 <body>
 
@@ -20,8 +22,28 @@
   </svg>
   <div class="wrap">
     <header class="l-hero">
+      <section class="l-subject" id="subjectPanel" aria-labelledby="subjectTitle">
+        <h2 id="subjectTitle">Your class</h2>
+        <div class="l-row">
+          <label class="lab" for="subjectSelect">Subject</label>
+          <select class="cgb-select l-pick" id="subjectSelect"></select>
+        </div>
+        <div class="l-row">
+          <label class="lab" for="boardSelect">Exam board</label>
+          <select class="cgb-select l-pick" id="boardSelect"></select>
+        </div>
+        <div class="l-row l-qrow">
+          <label class="lab" for="launcherSet">Questions</label>
+          <select class="cgb-select l-pick" id="launcherSet"></select>
+        </div>
+        <button class="btn go sm" type="button" id="openBank">Question bank</button>
+        <p class="l-note" id="subjectNote" role="status"></p>
+      </section>
       <h1 class="l-wordmark" id="wordmark" style="margin:0"></h1>
-      <div class="l-mascot" id="mascot"><div class="hello" id="mascotHello"></div></div>
+      <div class="l-host">
+        <div class="l-mascot" id="mascot"><div class="hello" id="mascotHello"><b class="who" id="mascotWho" hidden></b><span id="mascotLine">Choose your subject, then pick a game!</span></div></div>
+        <button class="btn plain sm" type="button" id="openHost">Customise the host</button>
+      </div>
     </header>
 
     <section class="l-cards" aria-label="Games">
@@ -29,16 +51,32 @@
         <div class="art" id="artOTE"></div>
         <div class="body">
           <h3>Over the Edge</h3>
-          <p>Answer right to win a counter, drop it down a lane and push the pile over the edge. Team up in the final to win the jackpot.</p>
-          <button class="btn brand" type="button" data-play="over-the-edge">Play Over the Edge</button>
+          <p>Every team that answers right wins a counter to drop down a lane. Push the pile over the edge, then play for the jackpot together.</p>
+          <button class="btn brand play" type="button" data-play="over-the-edge" aria-label="Play Over the Edge">Play</button>
         </div>
       </article>
       <article class="gcard">
         <div class="art" id="artOP"></div>
         <div class="body">
           <h3>Outpace</h3>
-          <p>Pick a deal, then answer your way home before the Hunter catches you. Finish with a 60-second Final Sprint.</p>
-          <button class="btn brand" type="button" data-play="outpace">Play Outpace</button>
+          <p>The whole class is one runner. Pick a deal, then answer your way home before the Hunter catches you.</p>
+          <button class="btn brand play" type="button" data-play="outpace" aria-label="Play Outpace">Play</button>
+        </div>
+      </article>
+      <article class="gcard">
+        <div class="art" id="artCC"></div>
+        <div class="body">
+          <h3>Category Clash</h3>
+          <p>Teams take turns to pick a category and a points value, and every team answers. Harder questions are worth more.</p>
+          <button class="btn brand play" type="button" data-play="category-clash" aria-label="Play Category Clash">Play</button>
+        </div>
+      </article>
+      <article class="gcard">
+        <div class="art" id="artHH"></div>
+        <div class="body">
+          <h3>Hex Hunt</h3>
+          <p>Two halves of the class race to build a path across the hexagon board. Each letter is the first letter of the answer.</p>
+          <button class="btn brand play" type="button" data-play="hex-hunt" aria-label="Play Hex Hunt">Play</button>
         </div>
       </article>
       <article class="gcard soon" aria-label="More shows coming soon">
@@ -47,15 +85,9 @@
       </article>
     </section>
 
-    <section class="l-bar" aria-label="Question bank">
-      <div class="l-active">Questions in use: <strong id="activeSetName"></strong> (<span id="activeSetCount"></span>)</div>
-      <div class="group">
-        <button class="btn go" type="button" id="openBank" style="font-size:1.15rem">Question bank</button>
-        <button class="btn plain" type="button" id="openAbout">About</button>
-      </div>
-    </section>
     <section class="l-bar" aria-label="Settings">
       <div class="group settings-row" id="launcherSettings"></div>
+      <button class="btn plain" type="button" id="openAbout">About</button>
     </section>
     <p class="l-foot">Everything is saved on this computer only. Nothing is sent anywhere. <span id="storageNote" hidden>This browser is blocking storage, so changes will be lost when you close the page.</span></p>
   </div>
@@ -64,37 +96,41 @@
 <!-- ================= GAMES ================= -->
 <!-- @include games/over-the-edge/game.html -->
 <!-- @include games/outpace/game.html -->
+<!-- @include games/category-clash/game.html -->
+<!-- @include games/hex-hunt/game.html -->
 
 <!-- ================= MODALS ================= -->
 <div class="modal" id="bankModal" role="dialog" aria-modal="true" aria-labelledby="bankTitle" hidden>
   <div class="cgb-panel">
     <div class="modal-head"><h2 id="bankTitle">Question bank</h2><button class="btn plain sm" type="button" data-close="bankModal">Close <span class="kbd">Esc</span></button></div>
     <div class="modal-body">
-      <p class="hint" style="margin-top:0">Choose the set to use. Both games use the same set and share each player's wrong-answer history.</p>
+      <p class="hint" style="margin-top:0" id="bankIntro"></p>
       <div class="bank-list" id="bankList"></div>
       <div class="bank-section" id="bankForm">
         <h3 id="bankFormTitle">Add a question set</h3>
-        <div class="field"><label class="lab" for="bankName">Set name</label><input class="cgb-input" id="bankName" type="text" maxlength="60" placeholder="For example: Bonding lesson 2"></div>
+        <div class="bank-two"><div class="field"><label class="lab" for="bankName">Set name</label><input class="cgb-input" id="bankName" type="text" maxlength="60" placeholder="For example: Bonding lesson 2"></div>
+        <div class="field"><label class="lab" for="bankSubject">Subject</label><select class="cgb-select" id="bankSubject"></select></div></div>
         <div class="field">
           <label class="lab" for="bankText">Questions</label>
           <div class="fmt" aria-hidden="true">Subject: Chemistry
 Topic: Bonding
 Q: What type of bonding is in sodium chloride?
 A: Ionic</div>
-          <p class="hint" style="margin:6px 0">Subject and Topic lines apply to every question under them until the next Topic line. Each Q: line needs an A: line straight after it.</p>
+          <p class="hint" style="margin:6px 0">Subject and Topic lines apply to every question under them until the next Topic line. Each Q: line needs an A: line straight after it. Optional: a <b>Tier: 1</b>, <b>Tier: 2</b> or <b>Tier: 3</b> line applies to the questions below it until the next Tier or Topic line. Category Clash puts tier 1 on the 100 row, tier 2 on the 200 row and tier 3 on the 300 row.</p>
+          <details class="tierhelp"><summary>Which tier is a question?</summary><p class="hint" style="margin:6px 0">Tag a question by the most demanding thing it asks.<br><b>Tier 1, Recall:</b> one fact, name, term or number (Name, State, Which…?). <i>Which gland produces insulin?</i><br><b>Tier 2, Describe and apply:</b> a definition, a process or test and its result, an equation to recall, several facts, or a one-step use of a rule (Describe, Give…). <i>What is the test for starch, and what is a positive result?</i><br><b>Tier 3, Explain and extend:</b> a reason (why or how), a comparison, a calculation where the equation isn't given, a new context, or Higher-tier-only content (Explain, Why, Compare, Calculate). <i>Why do veins have valves?</i><br>Questions without a Tier line get one from their wording. Sets with the older <b>Difficulty: 1–5</b> lines still work (1–2 count as tier 1, 3 as tier 2, 4–5 as tier 3). The other games ignore tiers.</p></details>
           <textarea class="cgb-textarea" id="bankText" spellcheck="false" aria-describedby="bankFormStatus"></textarea>
         </div>
         <div class="row-btns" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn ok" type="button" id="bankSave">Save as new set</button><button class="btn plain" type="button" id="bankCancel" hidden>Cancel</button></div>
         <div class="status" id="bankFormStatus" role="status" style="margin-top:8px"></div>
       </div>
       <div class="bank-section">
-        <h3>Players' wrong answers</h3>
-        <p class="hint" style="margin-top:0">Saved by player name. Use the same name in either game to keep a player's history together.</p>
+        <h3>Teams' wrong answers</h3>
+        <p class="hint" style="margin-top:0">Saved by team name. Use the same team name in any game to keep that team's history together.</p>
         <div class="players-list" id="bankPlayers"></div>
       </div>
       <div class="bank-section">
         <h3>Backup</h3>
-        <p class="hint" style="margin-top:0">Save all your sets and players' history to a file, then load it on another computer. Loading a backup adds to what is here; it never deletes anything.</p>
+        <p class="hint" style="margin-top:0">Save all your sets and teams' history to a file, then load it on another computer. Loading a backup adds to what is here; it never deletes anything.</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn teal" type="button" id="bankExport">Save backup file</button><button class="btn plain" type="button" id="bankImport">Load backup file</button><input type="file" id="bankImportFile" accept=".json,application/json" hidden></div>
         <div class="status" id="bankBackupStatus" role="status" style="margin-top:8px"></div>
       </div>
@@ -106,6 +142,25 @@ A: Ionic</div>
   <div class="cgb-panel">
     <div class="modal-head"><h2 id="settingsTitle">Settings</h2><button class="btn plain sm" type="button" data-close="settingsModal">Close <span class="kbd">Esc</span></button></div>
     <div class="modal-body"><div class="set-grid" id="modalSettings"></div></div>
+  </div>
+</div>
+
+<div class="modal" id="hostModal" role="dialog" aria-modal="true" aria-labelledby="hostTitle" hidden>
+  <div class="cgb-panel">
+    <div class="modal-head"><h2 id="hostTitle">Customise the host</h2><button class="btn plain sm" type="button" data-close="hostModal">Close <span class="kbd">Esc</span></button></div>
+    <div class="modal-body host-editor">
+      <div class="host-preview" id="hostPreview" aria-hidden="true"></div>
+      <div class="host-grid">
+        <div class="full"><label class="lab" for="hostName">Host name</label><input class="cgb-input" type="text" id="hostName" maxlength="20" placeholder="No name (optional)"></div>
+        <div><span class="lab">Skin</span><div class="swatches" id="swSkin"></div></div>
+        <div><span class="lab">Hair colour</span><div class="swatches" id="swHair"></div></div>
+        <div><span class="lab">Hair style</span><div class="seg" id="segStyle"></div></div>
+        <div><span class="lab">Facial hair</span><div class="seg" id="segBeard"></div></div>
+        <div><span class="lab">Suit</span><div class="swatches" id="swSuit"></div></div>
+        <div><span class="lab">Glasses</span><div class="seg" id="segGlasses"></div></div>
+        <p class="hint full">Changes apply in every game.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -122,10 +177,10 @@ A: Ionic</div>
     <div class="modal-head"><h2 id="aboutTitle">About</h2><button class="btn plain sm" type="button" data-close="aboutModal">Close <span class="kbd">Esc</span></button></div>
     <div class="modal-body about">
       <p><strong>Showtime: Classroom Gameshows</strong>, first edition, version <span id="aboutVersion"></span>.</p>
-      <p>Two revision games for the classroom, inspired by classic TV quiz formats: Over the Edge and Outpace. Game design and question packs by Rob Pearce.</p>
+      <p>Four revision games for the classroom, inspired by classic TV quiz formats: Over the Edge, Outpace, Category Clash and Hex Hunt. Game design and question packs by Rob Pearce.</p>
       <p>The GCSE Combined Science starter packs are AQA-style practice questions written for Showtime. They are not produced or endorsed by AQA.</p>
       <h3>Privacy</h3>
-      <p>Showtime makes no network connections. Question sets, player names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a player's history there at any time.</p>
+      <p>Showtime makes no network connections. Question sets, team names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a team's history there at any time.</p>
       <h3>Third-party software and fonts</h3>
       <p>three.js r128 and its post-processing examples (MIT licence). Lilita One by Juan Montoreano and Nunito by The Nunito Project Authors (SIL Open Font License 1.1).</p>
       <pre><!-- @text vendor/three-LICENSE.txt --></pre>
@@ -146,12 +201,16 @@ A: Ionic</div>
 <script src="shared/settings.js"></script>
 <script src="shared/packs.js"></script>
 <script src="shared/bank.js"></script>
+<script src="shared/teams.js"></script>
+<script src="shared/classmode.js"></script>
 <script src="shared/sfx.js"></script>
 <script src="shared/host.js"></script>
 <script src="shared/brand.js"></script>
 <script src="shared/app.js"></script>
 <script src="games/over-the-edge/game.js"></script>
 <script src="games/outpace/game.js"></script>
+<script src="games/category-clash/game.js"></script>
+<script src="games/hex-hunt/game.js"></script>
 <script>CGB.app.init();</script>
 </body>
 </html>

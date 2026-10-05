@@ -1,9 +1,9 @@
 'use strict';
 /* =========================================================
    OVER THE EDGE
-   A 3D counter-pusher quiz game for two players.
+   A 3D counter-pusher quiz game for two teams.
    Round 1: answer to win counters, drop them down lanes 1 to 4.
-   Final: players team up to push the jackpot counter over the edge.
+   Final: both teams join forces to push the jackpot counter over the edge.
    The physics and difficulty numbers are tuned; change with care.
    ========================================================= */
 (function () {
@@ -16,7 +16,7 @@ const bank = CGB.bank;
 const picker = bank.createPicker();
 const GAME_NAME = 'Over the Edge';
 
-function pickQuestion(playerName) { return picker.pick(playerName, G.focusWeak); }
+const pickQuestion = () => picker.pick(G.players.map(p => p.name));
 function loadWrongLog(n) { return bank.wrongLog(n); }
 
 /* =========================================================
@@ -30,7 +30,7 @@ function pusherFront(t) { const ph = (1 - Math.cos(2 * Math.PI * t / PHY.PERIOD)
 function makeTray() { return { lower: [], upper: [], t: 0, pf: PHY.PF_MIN, nextId: 1, onTransfer: null }; }
 function mkBody(tray, x, y, o) {
   o = o || {}; const r = o.r || PHY.R;
-  return { id: tray.nextId++, x, y, vx: 0, vy: 0, r, m: (r * r) / (PHY.R * PHY.R) * (o.heavy || 1), kind: o.kind || 'std', owner: o.owner == null ? -1 : o.owner, wildcard: o.wildcard || null, rot: Math.random() * 6.28, mesh: null, anim: 0, base: null, rider: null, ox: 0, oy: 0, h: 0, hv: 0 };
+  return { id: tray.nextId++, x, y, vx: 0, vy: 0, r, m: (r * r) / (PHY.R * PHY.R) * (o.heavy || 1), kind: o.kind || 'std', owner: o.owner == null ? -1 : o.owner, wildcard: o.wildcard || null, rot: CGB.random() * 6.28, mesh: null, anim: 0, base: null, rider: null, ox: 0, oy: 0, h: 0, hv: 0 };
 }
 function addLower(tray, x, y, o) { const b = mkBody(tray, x, y, o); tray.lower.push(b); return b; }
 function addUpper(tray, x, y, o) { const b = mkBody(tray, x, y, o); tray.upper.push(b); return b; }
@@ -90,7 +90,7 @@ function stepTray(tray, dt, onFall) {
       if (tray.onTransfer) moved.forEach(m => tray.onTransfer(m));
     }
     for (const T of [tray.lower, tray.upper]) for (const b of T) {
-      if (!b.base || Math.random() > 0.001) continue;
+      if (!b.base || CGB.random() > 0.001) continue;
       const tx = b.base.x + (b.ox >= 0 ? 1 : -1) * (b.r * 2 + 1), ty = b.base.y + 4;
       if (tx > b.r && tx < PHY.W - b.r && overlapInfo(T, tx, ty, b.r, b).worst < 2) { b.base.rider = null; b.base = null; b.x = tx; b.y = ty; b.h = Math.max(b.h, 0.16); }
     }
@@ -111,7 +111,7 @@ function stepTray(tray, dt, onFall) {
 }
 function upperLanding(tray, x) {
   const r = PHY.R; x = Math.min(PHY.W - r, Math.max(r, x));
-  if (Math.random() < 0.25) {
+  if (CGB.random() < 0.25) {
     let best = null, bd = 1e9;
     for (const b of tray.upper) {
       if (b.base || b.rider || Math.abs(b.x - x) > r * 2) continue;
@@ -126,23 +126,27 @@ function upperLanding(tray, x) {
   }
   return { x, y: PHY.WALL + r + 2 };
 }
+/* How close to the front edge the bottom shelf starts filled, in counter radii. Filled right to
+   the edge (0.3, the old value), the first question paid out twice the usual and gave the first
+   team to drop a head start; one row back, the first question is like any other. */
+let FILL_FRONT = 4;
 function fillTray(tray) {
   const r = PHY.R, dx = r * 2.02, dy = r * 1.76;
   let row = 0;
-  for (let y = PHY.PF_MAX + r + 1; y < PHY.D - r * 0.3; y += dy, row++)
-    for (let x = r + (row % 2 ? dx / 2 : 1); x < PHY.W - r; x += dx) if (Math.random() < 0.93) addLower(tray, x + (Math.random() - 0.5) * 3, y + (Math.random() - 0.5) * 3);
+  for (let y = PHY.PF_MAX + r + 1; y < PHY.D - r * FILL_FRONT; y += dy, row++)
+    for (let x = r + (row % 2 ? dx / 2 : 1); x < PHY.W - r; x += dx) if (CGB.random() < 0.93) addLower(tray, x + (CGB.random() - 0.5) * 3, y + (CGB.random() - 0.5) * 3);
   row = 0;
   for (let y = PHY.WALL + r + 1; y < PHY.PF_MAX - r * 0.2; y += dy, row++)
-    for (let x = r + (row % 2 ? dx / 2 : 1); x < PHY.W - r; x += dx) if (Math.random() < 0.97) addUpper(tray, x, y);
+    for (let x = r + (row % 2 ? dx / 2 : 1); x < PHY.W - r; x += dx) if (CGB.random() < 0.97) addUpper(tray, x, y);
   for (let i = 0; i < 240; i++) stepTray(tray, 1 / 60, null);
   // a few ready-made stacks
   for (let k = 0; k < 6; k++) {
     const T = k < 3 ? tray.upper : tray.lower;
     const free = T.filter(b => !b.base && !b.rider && b.kind === 'std');
-    const pair = free.slice(0, -1)[Math.floor(Math.random() * (free.length - 1))];
+    const pair = free.slice(0, -1)[Math.floor(CGB.random() * (free.length - 1))];
     if (!pair) continue;
     const top = (k < 3 ? addUpper : addLower)(tray, pair.x, pair.y);
-    top.base = pair; pair.rider = top; top.ox = (Math.random() - 0.5) * 12; top.oy = (Math.random() - 0.5) * 12;
+    top.base = pair; pair.rider = top; top.ox = (CGB.random() - 0.5) * 12; top.oy = (CGB.random() - 0.5) * 12;
   }
 }
 
@@ -169,10 +173,10 @@ function stepPegCoin(c, dt) {
         const vn = c.vx * nx + c.vy * ny;
         if (vn < 0) {
           c.vx -= (1 + PEG.E) * vn * nx; c.vy -= (1 + PEG.E) * vn * ny;
-          c.vx += (Math.random() - 0.5) * 22; c.spin += c.vx * 0.02;
+          c.vx += (CGB.random() - 0.5) * 22; c.spin += c.vx * 0.02;
           if (-vn > 60) { SFX.peg(); p.flash = 1; }
         }
-        if (Math.abs(nx) < 0.08) c.vx += (Math.random() < 0.5 ? -1 : 1) * 25;
+        if (Math.abs(nx) < 0.08) c.vx += (CGB.random() < 0.5 ? -1 : 1) * 25;
       }
     }
     if (c.x < PEG.R) { c.x = PEG.R; c.vx = Math.abs(c.vx) * 0.5; }
@@ -206,19 +210,25 @@ const SFX = (() => {
 /* =========================================================
    GAME STATE
    ========================================================= */
-const COLORS = { hex: [0x1F6FEB, 0xE8600C], css: ['#1F6FEB', '#E8600C'], text: ['#1557C0', '#B54708'], mark: ['●', '■'] };
+const T2 = CGB.TEAMS;   // up to six teams
+const COLORS = { hex: T2.map(t => t.hex), css: T2.map(t => t.css), text: T2.map(t => t.text), mark: T2.map(t => t.mark) };
 const VALUE = 100, JACKPOT_VALUE = 5000;
 const WILDCARDS = [
   { id: 'bonus', title: 'Bonus counter', text: n => `${n} gets an extra drop` },
   { id: 'cash', title: 'Cash bonus', text: n => `+£250 for ${n}` },
   { id: 'steal', title: 'Steal', text: (n, o) => `${n} takes up to £150 from ${o}` }
 ];
+/* Fixed settings: 6 questions in Round 1 and 4 in the final (under 10 minutes with a class),
+   a 20-second countdown before "show me", and the jackpot counter set at Normal difficulty */
+const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
+const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The 20-second countdown for the first question starts when you press Start.');
 const G = {
+  nTeams: +CGB.store.get('ote.nTeams') || 4,
+  laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, autoLanes: false, nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
   phase: 'home', step: null, attract: true,
   players: [], team: 0, finalWinnings: 0,
-  r1Each: 6, finalN: 12, finalDiff: 'normal', focusWeak: false,
-  qIndex: 0, qTotal: 0, q: null, turn: 0, answerShown: false,
-  dropper: -1, dropCount: 1, lastDropper: -1, pending: 0, landed: 0, settleAt: 0,
+  qIndex: 0, qTotal: 0, q: null, answerShown: false,
+  dropCount: 1, lastDropper: -1, pending: 0, landed: 0, settleAt: 0,
   dropWon: 0, dropLost: 0, dropNotes: [], pendingExtra: [], bonusDrop: false, cascadeSaid: false,
   jackpot: null, jackpotY0: 0, jackpotWon: false, jackpotFell: false, lastMsg: null
 };
@@ -234,7 +244,6 @@ const TX = x => (x - PHY.W / 2) * S, TZ = y => (y - 180) * S;
 const BOARD_BOTTOM = UH + 0.6, BOARD_Z = TZ(PHY.WALL) - 0.3;
 const BX = x => (x - PEG.W / 2) * S, BY = y => BOARD_BOTTOM + (PEG.H - y) * S;
 const COIN_T = 0.16, JACK_T = 0.26;
-const HOST_POS = new THREE.Vector3(9.9, -4.6, 2.6);
 
 /* Set palette (original to this game) */
 const SET = { bg: 0x0B2A3A, aqua: 0x4FF0D8, coral: 0xFF6B4A, sun: 0xFFC93C, teal: 0x127C82, navy: 0x16324A };
@@ -283,9 +292,6 @@ key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.
 scene.add(key); scene.add(key.target);
 const coralBack = new THREE.PointLight(0xff8a66, 0.55, 40); coralBack.position.set(0, 9, -10); scene.add(coralBack);
 const aquaL = new THREE.PointLight(0x4ff0d8, 0.65, 26); aquaL.position.set(-10, 6, 4); scene.add(aquaL);
-const hostLight = new THREE.SpotLight(0xfff4e6, 0.25, 30, Math.PI / 7, 0.6, 1);
-hostLight.position.set(12, 10, 12); hostLight.target.position.copy(HOST_POS).add(new THREE.Vector3(0, 6, 0));
-scene.add(hostLight); scene.add(hostLight.target);
 
 function canvasTex(w, h, draw) {
   const c = document.createElement('canvas'); c.width = w; c.height = h;
@@ -329,7 +335,7 @@ const towerMat = new THREE.MeshStandardMaterial({ color: SET.navy, metalness: 0.
 const aquaGlow = glow(0x9ffcf0, 1.2), coralGlow = glow(0xff9a7a, 1.15);
 [[-17, -12, 0.3], [-13.5, -9, -0.2], [17.5, -12, -0.3], [21.5, -9, 0.2], [14.5, -15, 0.1], [-21, -15, -0.1]].forEach(([x, z, ry], i) => {
   const p = box(1.3, 30, 1.3, towerMat, x, 8, z); p.rotation.y = ry;
-  const s = box(0.22, 30, 0.22, i % 2 ? coralGlow : aquaGlow, x, 8, z + 0.72); s.rotation.y = ry;
+  const s = box(0.22, 29.9, 0.22, i % 2 ? coralGlow : aquaGlow, x, 8, z + 0.72); s.rotation.y = ry;
 });
 
 /* Glossy studio floor with an aqua light ring */
@@ -337,8 +343,6 @@ const floor = new THREE.Mesh(new THREE.CircleGeometry(40, 64), new THREE.MeshSta
 floor.rotation.x = -Math.PI / 2; floor.position.y = -4.6; floor.receiveShadow = true; scene.add(floor);
 const ring = new THREE.Mesh(new THREE.RingGeometry(11.5, 11.8, 96), glow(0x9ffcf0, 1.2));
 ring.rotation.x = -Math.PI / 2; ring.position.set(1.5, -4.58, 0); scene.add(ring);
-const hostDisc = new THREE.Mesh(new THREE.CircleGeometry(2.2, 48), new THREE.MeshStandardMaterial({ color: SET.coral, emissive: 0x8a2a14, emissiveIntensity: 0.6, metalness: 0.3, roughness: 0.3 }));
-hostDisc.rotation.x = -Math.PI / 2; hostDisc.position.set(HOST_POS.x, -4.57, HOST_POS.z); scene.add(hostDisc);
 
 /* Machine materials */
 const chrome = new THREE.MeshStandardMaterial({ color: 0xe8ecf2, metalness: 1.0, roughness: 0.18 });
@@ -363,12 +367,12 @@ box(winW, 0.06, 0.12, chrome, 0, 0.0, TZ(PHY.D) + 0.03);
 [-1, 1].forEach(s => {
   const cx = s * (winW / 2 + lostW / 2);
   const plate = new THREE.Mesh(new THREE.PlaneGeometry(lostW, 1.5), new THREE.MeshStandardMaterial({ color: 0x3a4148, metalness: 0.6, roughness: 0.35 }));
-  plate.rotation.x = -Math.PI / 2; plate.position.set(cx, 0.003, TZ(PHY.D) - 0.75); plate.receiveShadow = true; scene.add(plate);
+  plate.rotation.x = -Math.PI / 2; plate.position.set(cx, 0.008, TZ(PHY.D) - 0.75); plate.receiveShadow = true; scene.add(plate);
   box(lostW, 0.06, 0.12, chromeDark, cx, 0.0, TZ(PHY.D) + 0.03);
   // side walls: clear acrylic with chrome caps
   box(0.12, 1.5, 11.4, acrylic, s * 6.24, 0.75, -0.2);
-  box(0.2, 0.12, 11.4, chrome, s * 6.24, 1.52, -0.2);
-  box(0.18, 0.08, 11.4, aquaNeon, s * 6.36, 0.05, -0.2);
+  box(0.2, 0.12, 11.44, chrome, s * 6.24, 1.52, -0.2);
+  box(0.18, 0.08, 11.36, aquaNeon, s * 6.36, 0.05, -0.2);
 });
 
 /* Moving top shelf (it is also the pusher for the bottom shelf) */
@@ -390,10 +394,13 @@ const boardBack = box(12.6, 9.3, 0.25, new THREE.MeshStandardMaterial({ color: 0
   for (let i = 1; i < 4; i++) { const x = i * w / 4; g.beginPath(); g.moveTo(x, 0); g.lineTo(x, h); g.stroke(); }
 }) }), 0, BOARD_BOTTOM + 4.6, BOARD_Z - 0.38);
 boardBack.receiveShadow = true;
+/* Side columns and their neon strips stop just under the header sign's box: where they ran into
+   it, their front faces shared a plane with the sign's and flickered (z-fighting) */
+const COLUMN_TOP = BY(0) + 0.78, COLUMN_FOOT = BOARD_BOTTOM - 0.3;
 [-1, 1].forEach(s => {
-  box(0.55, 10.6, 1.2, tealPanel, s * 6.6, BOARD_BOTTOM + 5.0, BOARD_Z - 0.1);
-  box(0.08, 10.6, 0.08, aquaNeon, s * 6.32, BOARD_BOTTOM + 5.0, BOARD_Z + 0.52);
-  box(0.08, 10.6, 0.08, glow(0xff9a7a, 1.15), s * 6.88, BOARD_BOTTOM + 5.0, BOARD_Z + 0.52);
+  box(0.55, COLUMN_TOP - COLUMN_FOOT, 1.2, tealPanel, s * 6.6, (COLUMN_TOP + COLUMN_FOOT) / 2, BOARD_Z - 0.1);
+  box(0.08, COLUMN_TOP - COLUMN_FOOT - 0.04, 0.08, aquaNeon, s * 6.32, (COLUMN_TOP + COLUMN_FOOT) / 2, BOARD_Z + 0.52);
+  box(0.08, COLUMN_TOP - COLUMN_FOOT - 0.04, 0.08, glow(0xff9a7a, 1.15), s * 6.88, (COLUMN_TOP + COLUMN_FOOT) / 2, BOARD_Z + 0.52);
 });
 
 /* Header sign */
@@ -409,10 +416,12 @@ function drawSign(g, w, h) {
 const signTex = canvasTex(1024, 128, drawSign);
 const sign = new THREE.Mesh(new THREE.PlaneGeometry(12.4, 1.5), new THREE.MeshBasicMaterial({ map: signTex }));
 sign.position.set(0, BY(0) + 1.75, BOARD_Z + 0.52); scene.add(sign);
-box(14.2, 0.08, 0.08, aquaNeon, 0, BY(0) + 0.82, BOARD_Z + 0.52);
-box(14.2, 0.08, 0.08, aquaNeon, 0, BY(0) + 2.68, BOARD_Z + 0.52);
-const glass = new THREE.Mesh(new THREE.PlaneGeometry(12.6, 9.3), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0.06, metalness: 1, roughness: 0.05, depthWrite: false }));
-glass.position.set(0, BOARD_BOTTOM + 4.6, BOARD_Z + 0.42); scene.add(glass);
+box(14.2, 0.08, 0.1, aquaNeon, 0, BY(0) + 0.83, BOARD_Z + 0.55);
+box(14.2, 0.08, 0.1, aquaNeon, 0, BY(0) + 2.67, BOARD_Z + 0.55);
+// the glass covers the peg board only, stopping below the lane blocks (it overlapped their
+// fronts, 0.005 apart, and flickered)
+const glass = new THREE.Mesh(new THREE.PlaneGeometry(12.6, BY(0) - 0.12 - BOARD_BOTTOM + 0.05), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0.06, metalness: 1, roughness: 0.05, depthWrite: false }));
+glass.position.set(0, (BY(0) - 0.12 + BOARD_BOTTOM - 0.05) / 2, BOARD_Z + 0.42); scene.add(glass);
 
 const brass = new THREE.MeshStandardMaterial({ color: 0xd9a441, metalness: 1, roughness: 0.25 });
 const pegGeo = new THREE.CylinderGeometry(PEG.PR * S, PEG.PR * S, 0.75, 12); pegGeo.rotateX(Math.PI / 2);
@@ -477,7 +486,7 @@ function drawStar(g, cx, cy, r) {
 function faceTexture(kind, owner) {
   return canvasTex(256, 256, (g, w) => {
     const c = w / 2;
-    let base = ['#ffffff', '#c3cad3', '#7d8792'];
+    let base = ['#eef1f5', '#b9c1cb', '#76808b'];
     if (kind === 'wildcard') base = ['#d9fffa', '#2fc9bf', '#0a6663'];
     if (kind === 'jackpot') base = ['#fff6cf', '#f4c24a', '#9a6a10'];
     const gr = g.createRadialGradient(c * 0.7, c * 0.6, 10, c, c, c);
@@ -501,8 +510,9 @@ function coinMats(kind, owner) {
   const k = kind + ':' + owner;
   if (MAT[k]) return MAT[k];
   const sideColor = kind === 'jackpot' ? 0xf2c14e : kind === 'wildcard' ? 0x12a4a0 : owner >= 0 ? COLORS.hex[owner] : 0xd5dbe2;
-  const side = new THREE.MeshStandardMaterial({ color: sideColor, metalness: 0.95, roughness: 0.22 });
-  const face = new THREE.MeshStandardMaterial({ map: faceTexture(kind, owner), metalness: 0.55, roughness: 0.35 });
+  // a little less mirror-like than polished metal, so the studio lights don't glare off the pile
+  const side = new THREE.MeshStandardMaterial({ color: sideColor, metalness: 0.85, roughness: 0.3, envMapIntensity: 0.6 });
+  const face = new THREE.MeshStandardMaterial({ map: faceTexture(kind, owner), metalness: 0.45, roughness: 0.38, envMapIntensity: 0.55 });
   if (kind === 'wildcard') { side.emissive = new THREE.Color(0x064442); face.emissive = new THREE.Color(0x05302e); }
   if (kind === 'jackpot') { side.emissive = new THREE.Color(0x4a3200); face.emissive = new THREE.Color(0x2a1c00); }
   MAT[k] = [side, face, face];
@@ -518,24 +528,104 @@ function makeCoinMesh(kind, owner) {
 /* =========================================================
    THE HOST (shared Showtime mascot) with speech captions
    ========================================================= */
-const host = CGB.createHost(scene, { position: HOST_POS, rotationY: -0.42 });
-CGB.hostListeners.push(() => host.rebuild());
-function hostGesture(name, ms) { host.gesture(name, ms); }
-function updateHost(dt, now) {
-  host.update(dt, now, {
-    rest: (G.step === 'chute' || G.step === 'dropping') ? 'present' : 'idle',
-    watching: drops.length || transits.length || G.step === 'dropping'
+const host = CGB.createHost2D($('host'), { className: 'host-ote' });
+/* The machine's outline on screen: bottom shelf (with its front edge), lanes, peg board and
+   header sign. The host is placed and sized so he never covers any of it. */
+const machineParts = [lowerShelf, pusher, glass, sign];
+const machineBox = new THREE.Box3(), corner = new THREE.Vector3();
+/* The drawn figure (head, body and arms), in page coordinates */
+function hostRect() {
+  const r = { left: Infinity, right: -Infinity, top: Infinity, bottom: -Infinity };
+  $('host').querySelectorAll('.host-head, .host-body, .host-arm-a, .host-arm-b').forEach(el => {
+    const b = el.getBoundingClientRect(); if (!b.width) return;
+    r.left = Math.min(r.left, b.left); r.right = Math.max(r.right, b.right); r.top = Math.min(r.top, b.top); r.bottom = Math.max(r.bottom, b.bottom);
   });
+  return r;
+}
+/* Camera shots (the camera eases between them) */
+const CAM = {
+  play: { x: 2.2, y: 8.0, z: 21.5, lx: 2.2, ly: 3.0 },
+  board: { x: 1.2, y: 8.8, z: 20.4, lx: 1.2, ly: 4.0 },
+  jackpot: { x: 1.2, y: 7.0, z: 17.8, lx: 1.2, ly: 1.6 },
+  home: { x: 3.0, y: 7.6, z: 21.5, lx: 3.6, ly: 3.2 }
+};
+const SWAY = 0.35;
+/* Size and place the host in the space to the right of the machine. The machine's
+   right edge is taken as the furthest it reaches in any camera shot (with the sway),
+   and the host's widest gestures span from 0.16 of his height left of the art's left edge
+   (pointing) to 0.76 right of it (shrugging), measured with every pose applied. */
+const FIG_L = 0.16, FIG_R = 0.76, ART_W = 300 / 440;
+let hostFit = { h: 0, hidden: false, machineRight: 0, shot: 'home', shotRight: null };
+function rightEdgeFor(c) {
+  const keep = camera.position.clone(), keepQ = camera.quaternion.clone();
+  let right = 0;
+  [-SWAY, SWAY].forEach(sw => {
+    camera.position.set(c.x + sw, c.y, c.z); camera.lookAt(c.lx, c.ly, 0); camera.updateMatrixWorld();
+    right = Math.max(right, machineRect().right);
+  });
+  camera.position.copy(keep); camera.quaternion.copy(keepQ); camera.updateMatrixWorld();
+  return right;
+}
+/* Fit the host to the camera. He is sized for the further-reaching of the shot the camera is
+   heading for and where the machine is on screen right now, checked every 150 ms, so he
+   shrinks as soon as the machine comes his way and only grows once it has moved away. */
+function fitHost(shot) {
+  const w = wrap.clientWidth, h = wrap.clientHeight;
+  if (!w || !h) return;
+  if (shot || hostFit.shotRight == null) { if (shot) hostFit.shot = shot; hostFit.shotRight = rightEdgeFor(CAM[hostFit.shot]); }
+  const right = Math.max(hostFit.shotRight, machineRect().right + 4);
+  const gapPx = 12, edge = 6;
+  const H = Math.floor(Math.min(h * 0.66, 560, (w - edge - gapPx - right) / (FIG_L + FIG_R)));
+  if (H === hostFit.h) return;
+  const el = $('host');
+  el.classList.toggle('growing', H > hostFit.h);   // shrink instantly, grow smoothly
+  hostFit.h = H; hostFit.hidden = H < 140; hostFit.machineRight = right;
+  el.classList.toggle('nofit', hostFit.hidden);
+  if (hostFit.hidden) return;
+  el.style.height = H + 'px';
+  el.style.right = Math.ceil(edge + (FIG_R - ART_W) * H) + 'px';
+}
+function machineRect() {
+  // each part is projected on its own: one box round them all would pull the top of the
+  // board forward to the shelf's front edge and claim far more of the screen than it uses
+  const w = wrap.clientWidth, h = wrap.clientHeight, r = { left: Infinity, right: -Infinity, top: Infinity, bottom: -Infinity };
+  machineParts.forEach(o => {
+    machineBox.setFromObject(o);
+    for (let i = 0; i < 8; i++) {
+      corner.set(i & 1 ? machineBox.max.x : machineBox.min.x, i & 2 ? machineBox.max.y : machineBox.min.y, i & 4 ? machineBox.max.z : machineBox.min.z).project(camera);
+      const x = (corner.x + 1) / 2 * w, y = (1 - corner.y) / 2 * h;
+      r.left = Math.min(r.left, x); r.right = Math.max(r.right, x); r.top = Math.min(r.top, y); r.bottom = Math.max(r.bottom, y);
+    }
+  });
+  return r;
+}
+function hostGesture(name, ms) { host.gesture(name, ms); }
+let hostCheck = 0;
+function updateHost(force) {
+  host.setRest((G.step === 'lanes' || G.step === 'dropping') ? 'present' : 'idle');
+  host.setLook(drops.length || transits.length || G.step === 'dropping' ? 'left' : '');
+  // step aside when the setup or results card would cover him
+  const now = performance.now();
+  if (!force && now - hostCheck < 150) return;
+  hostCheck = now;
+  fitHost();
+  const hr = $('host').getBoundingClientRect();
+  let covered = false;
+  ['home', 'summary'].forEach(id => {
+    const ov = $(id); if (ov.classList.contains('hidden')) return;
+    const c = ov.querySelector('.ote-card').getBoundingClientRect();
+    if (c.right > hr.left + 8 && c.left < hr.right - 8 && c.bottom > hr.top && c.top < hr.bottom) covered = true;
+  });
+  $('host').classList.toggle('away', covered);
 }
 
 /* Speech bubble */
 const bubble = $('bubble');
 let typeTimer = null, hideTimer = null;
-const headWorld = new THREE.Vector3();
 function hostSay(text, gesture, ms) {
   if (!text) return;
   if (gesture) hostGesture(gesture, ms || 1800);
-  $('bubbleWho').textContent = CGB.hostCfg.name || 'Host';
+  $('bubbleWho').textContent = CGB.hostName(); $('bubbleWho').hidden = !CGB.hostName();
   const el = $('bubbleText');
   clearInterval(typeTimer); clearTimeout(hideTimer);
   el.textContent = '';
@@ -551,13 +641,12 @@ function hostSay(text, gesture, ms) {
 }
 function hideBubble() { clearInterval(typeTimer); clearTimeout(hideTimer); bubble.classList.remove('show'); }
 function placeBubble() {
-  if (!host.group || !bubble.classList.contains('show')) return;
-  host.parts.head.getWorldPosition(headWorld);
-  headWorld.y += 2.0;
-  headWorld.project(camera);
+  if (!bubble.classList.contains('show')) return;
+  const hp = host.headPoint(); if (!hp) return;
   const w = wrap.clientWidth, h = wrap.clientHeight;
-  const hx = (headWorld.x + 1) / 2 * w;
-  let x = hx, y = (1 - headWorld.y) / 2 * h;
+  const wr = wrap.getBoundingClientRect();
+  const hx = hp.x - wr.left;
+  let x = hx, y = hp.y - wr.top - 6;
   const bw = bubble.offsetWidth, bh = bubble.offsetHeight + 14;   // include the tail
   x = Math.min(w - bw / 2 - 10, Math.max(bw / 2 + 10, x));
   y = Math.max(bh + 60, Math.min(h - 10, y));   // keep clear of the menu bar
@@ -566,17 +655,20 @@ function placeBubble() {
   const rel = el => { const r = el.getBoundingClientRect(); return { l: r.left - base.left, t: r.top - base.top, r: r.right - base.left, b: r.bottom - base.top }; };
   const hits = (o, yy) => !(x + bw / 2 < o.l || x - bw / 2 > o.r || yy < o.t || yy - bh > o.b);
   let hidden = false;
+  // things the bubble must not cover: the round banner and the host's own head
+  const avoid = [];
   const banner = $('banner');
   if (banner.classList.contains('show')) {
     const parts = [banner.querySelector('.verdict'), banner.querySelector('.detail')].filter(el => el.offsetParent).map(rel);
-    if (parts.length) {
-      const o = { l: Math.min(...parts.map(p => p.l)) - 8, t: Math.min(...parts.map(p => p.t)) - 8, r: Math.max(...parts.map(p => p.r)) + 8, b: Math.max(...parts.map(p => p.b)) + 8 };
-      if (hits(o, y)) {
-        if (o.b + bh <= h - 10) y = o.b + bh;          // move below the banner
-        else if (o.t - bh >= 60) y = o.t;               // or above it
-        else hidden = true;
-      }
-    }
+    if (parts.length) avoid.push({ l: Math.min(...parts.map(p => p.l)) - 8, t: Math.min(...parts.map(p => p.t)) - 8, r: Math.max(...parts.map(p => p.r)) + 8, b: Math.max(...parts.map(p => p.b)) + 8 });
+  }
+  const pipEl = $('host').querySelector('.host-body');   // his whole figure, head included
+  if (pipEl && !$('host').classList.contains('away')) { const r = rel(pipEl); avoid.push({ l: r.l, t: r.t + 4, r: r.r, b: r.b }); }
+  const clear = yy => yy - bh >= 56 && yy <= h - 10 && !avoid.some(o => hits(o, yy));
+  if (!clear(y)) {
+    // try just above or below each obstacle, nearest first
+    const options = avoid.flatMap(o => [o.t - 2, o.b + bh + 2]).filter(clear).sort((p, q) => Math.abs(p - y) - Math.abs(q - y));
+    if (options.length) y = options[0]; else hidden = true;
   }
   ['home', 'summary'].forEach(id => {
     const ov = $(id);
@@ -590,27 +682,19 @@ function placeBubble() {
   const tail = Math.max(18, Math.min(bw - 18, bw / 2 + (hx - x)));
   bubble.style.setProperty('--tail', tail + 'px');
 }
-const pick = a => a[Math.floor(Math.random() * a.length)];
+const pick = a => a[Math.floor(CGB.random() * a.length)];
 const LINES = {
-  intro: ["Welcome to Over the Edge! Let's see who's been revising.", "Hello and welcome! Two players, one machine, and a lot of revision."],
-  ask: ["{n}, here's your question.", "This one's for you, {n}.", "Over to you, {n}.", "{n}, have a think about this one."],
-  correct: ["That's right! Have a counter.", "Spot on, {n}!", "Correct! Nicely done.", "Yes! Textbook answer."],
-  wrong: ["Ooh, not quite.", "Sorry {n}, that's not the one.", "Close, but no counter."],
-  steal: ["{o}, can you steal it?", "Over to you, {o}. Steal it for a counter!"],
-  chute: ["Which lane, {n}?", "Pick your lane, {n}.", "Lane 1, 2, 3 or 4, {n}?"],
   dropping: ["Here it comes...", "Come on, come on...", "Let's see where it lands..."],
   cascade: ["Look at that! They're pouring off!", "The machine's paying out!"],
   one: ["One over the edge! That's £100.", "There's one!"],
   some: ["{k} counters over the edge! Lovely.", "{k} of them! Brilliant drop."],
   none: ["Nothing that time.", "The machine's being stubborn.", "Not this time. It'll come."],
   edge: ["Ooh, it's right on the edge!", "So close! It's hanging there!", "That one's teetering..."],
-  lost: ["Straight down the side, unlucky."],
   wildcard: ["A wildcard counter!", "Ooh, a wildcard!"],
-  final: ["It's the final! Work together and push that jackpot over the edge.", "Team up, you two. There's £5,000 on that gold counter."],
   close: ["The jackpot's teetering!", "It's so close to the edge!"],
   jackpot: ["JACKPOT! Incredible! £5,000!"],
   noJackpot: ["So close! The jackpot lives to see another day.", "Not quite, but what a game."],
-  outro: ["Great game, both of you. Well played!"]
+  outro: ["Great game, everyone. Well played!"]
 };
 function line(key, vars) {
   let t = pick(LINES[key] || ['']);
@@ -622,7 +706,13 @@ function line(key, vars) {
 const labelsEl = $('labels');
 const labels = [];
 let combo = null;
-function popWin(amount, pos) {
+function popWin(amount, pos, who) {
+  if (who >= 0) {
+    // each label is in the team's colour with its mark, so the class sees who won it
+    popLabel(`${COLORS.mark[who]} +${fmt(amount)}`, pos, 'team', 1.9);
+    labels[labels.length - 1].el.style.color = T2[who].light;
+    return;
+  }
   if (combo && combo.L.t < combo.L.life * 0.6 && labels.includes(combo.L)) {
     combo.total += amount; combo.count++;
     combo.L.el.textContent = '+' + fmt(combo.total) + (combo.count > 1 ? '  ×' + combo.count : '');
@@ -652,25 +742,47 @@ function clearLabels() { labels.forEach(L => L.el.remove()); labels.length = 0; 
 const tmpV = new THREE.Vector3();
 function updateLabels(dt) {
   const w = wrap.clientWidth, h = wrap.clientHeight;
+  // keep labels clear of the host: anything that would land on him moves to his left
+  const body = labels.length && !$('host').classList.contains('away') ? $('host').querySelector('.host-body') : null;
+  const base = body ? wrap.getBoundingClientRect() : null;
+  const hb = body ? body.getBoundingClientRect() : null;
+  const placed = [];
   for (let i = labels.length - 1; i >= 0; i--) {
     const L = labels[i]; L.t += dt;
     const k = L.t / L.life;
     if (k >= 1) { L.el.remove(); labels.splice(i, 1); continue; }
     tmpV.copy(L.pos); tmpV.y += k * 1.4; tmpV.project(camera);
-    L.el.style.left = ((tmpV.x + 1) / 2 * w) + 'px';
-    L.el.style.top = ((1 - tmpV.y) / 2 * h) + 'px';
+    let lx = (tmpV.x + 1) / 2 * w;
+    const ly = (1 - tmpV.y) / 2 * h;
+    if (hb) {
+      const half = L.el.offsetWidth / 2 + 6, hh = L.el.offsetHeight / 2;
+      const left = hb.left - base.left, top = hb.top - base.top, bottom = hb.bottom - base.top;
+      if (lx + half > left && ly + hh > top && ly - hh < bottom) lx = left - half;
+    }
+    // stack labels that would land on one another
+    const lw = L.el.offsetWidth, lh = L.el.offsetHeight;
+    let top = ly;
+    for (let tries = 0; tries < 6; tries++) {
+      const hit = placed.find(r => lx - lw / 2 < r.r + 4 && lx + lw / 2 > r.l - 4 && top - lh / 2 < r.b + 2 && top + lh / 2 > r.t - 2);
+      if (!hit) break;
+      top = hit.t - lh / 2 - 4;
+    }
+    placed.push({ l: lx - lw / 2, r: lx + lw / 2, t: top - lh / 2, b: top + lh / 2 });
+    L.el.style.left = lx + 'px';
+    L.el.style.top = top + 'px';
     L.el.style.opacity = k < 0.15 ? k / 0.15 : k > 0.7 ? (1 - k) / 0.3 : 1;
   }
 }
 
 /* Moving coins: peg board, flight to the top shelf, falling off */
 const drops = [], transits = [], falling = [];
-function launchDrop(chute, owner, onLand) {
-  const c = { x: PEG.CHUTES[chute] + (Math.random() - 0.5) * 10, y: 4, vx: (Math.random() - 0.5) * 30, vy: 0, spin: (Math.random() - 0.5) * 4, ang: 0, done: false, owner, onLand };
+function launchDrop(chute, owner, onLand, rnd) {
+  rnd = rnd || CGB.random;
+  const c = { x: PEG.CHUTES[chute] + (rnd() - 0.5) * 10, y: 4, vx: (rnd() - 0.5) * 30, vy: 0, spin: (rnd() - 0.5) * 4, ang: 0, done: false, owner, onLand };
   c.mesh = makeCoinMesh('std', owner);
   drops.push(c);
   chuteMats[chute].emissive.setHex(owner >= 0 ? COLORS.hex[owner] : SET.aqua); chuteMats[chute].emissiveIntensity = 1.2;
-  setTimeout(() => { if (G.step !== 'chute') resetChuteGlow(); }, 400);
+  setTimeout(() => { if (G.step !== 'lanes') resetChuteGlow(); }, 400);
 }
 function updateDrops(dt) {
   for (let i = drops.length - 1; i >= 0; i--) {
@@ -704,7 +816,7 @@ function updateTransits(dt) {
       let b;
       if (T.onto && tray.upper.includes(T.onto) && !T.onto.rider) {
         b = addUpper(tray, T.onto.x, T.onto.y, { owner: T.owner });
-        b.base = T.onto; T.onto.rider = b; b.ox = (Math.random() - 0.5) * 12; b.oy = (Math.random() - 0.5) * 12;
+        b.base = T.onto; T.onto.rider = b; b.ox = (CGB.random() - 0.5) * 12; b.oy = (CGB.random() - 0.5) * 12;
       } else {
         const LL = T.onto ? upperLanding(tray, T.L.x) : T.L;
         b = addUpper(tray, LL.x, LL.y, { owner: T.owner });
@@ -764,13 +876,17 @@ function clearTray() {
   tray.onTransfer = b => { b.h = UH; b.hv = 0; };
 }
 function newTray(withWildcards) {
+  // decorative counters still dropping or landing from the setup screen go too: they must not
+  // land in (and change) a real game
+  drops.concat(transits).forEach(c => scene.remove(c.mesh));
+  drops.length = 0; transits.length = 0;
   clearTray();
   fillTray(tray);
   if (withWildcards) {
     const cand = tray.lower.filter(b => !b.base && !b.rider && b.y > 220 && b.y < 360 && b.x > 90 && b.x < 390);
-    const ids = WILDCARDS.map(m => m.id).sort(() => Math.random() - 0.5);
+    const ids = WILDCARDS.map(m => m.id).sort(() => CGB.random() - 0.5);
     for (let i = 0; i < 3 && cand.length; i++) {
-      const b = cand.splice(Math.floor(Math.random() * cand.length), 1)[0];
+      const b = cand.splice(Math.floor(CGB.random() * cand.length), 1)[0];
       b.kind = 'wildcard'; b.wildcard = ids[i];
     }
   }
@@ -788,11 +904,19 @@ function onTrayFall(b, inWin) {
   if (!inWin) { SFX.lost(); popLost(pos); G.dropLost++; renderScores(); return; }
   SFX.win();
   G.dropWon++;
+  const fell = { x: b.x, y: b.y, wildcard: b.wildcard, pos };
+  creditFall(fell, true);
+}
+/* Whatever comes out of the machine during a team's drop is that team's to keep. In Round 1 the
+   correct teams take turns: a team drops, the shelf finishes its push, then the next team drops.
+   (In the final every counter goes to the class pot, so the teams drop together.) */
+function creditFall(f, label) {
   const who = G.lastDropper;
-  if (G.phase === 'final') { G.team += VALUE; G.finalWinnings += VALUE; popWin(VALUE, pos); }
-  else if (who >= 0) { G.players[who].money += VALUE; G.players[who].won++; popWin(VALUE, pos); }
+  if (who >= 0) G.dropByTeam[who] = (G.dropByTeam[who] || 0) + 1;
+  if (G.phase === 'final') { G.team += VALUE; G.finalWinnings += VALUE; if (label) popWin(VALUE, f.pos, who); }
+  else if (who >= 0) { G.players[who].money += VALUE; G.players[who].won++; popWin(VALUE, f.pos, who); }
   if (G.dropWon >= 3 && !G.cascadeSaid && G.step === 'dropping') { G.cascadeSaid = true; hostSay(line('cascade'), 'cheer', 2200); }
-  if (b.wildcard) triggerWildcard(b.wildcard, who, pos);
+  if (f.wildcard) triggerWildcard(f.wildcard, who, f.pos);
   renderScores();
 }
 function triggerWildcard(id, who, pos) {
@@ -804,11 +928,15 @@ function triggerWildcard(id, who, pos) {
     popLabel('★ +£250', pos.clone().add(new THREE.Vector3(0, 1.3, 0)), 'wild', 2.2);
     return;
   }
-  const P = G.players[who], O = G.players[1 - who];
+  const P = G.players[who];
+  // a steal takes from the leading team other than the thief
+  const others = G.players.map((x, i) => i).filter(i => i !== who);
+  const oi = others.reduce((a, i) => G.players[i].money > G.players[a].money ? i : a, others[0]);
+  const O = G.players[oi];
   if (id === 'bonus') G.pendingExtra.push(who);
   else if (id === 'cash') P.money += 250;
   else if (id === 'steal') { const amt = Math.min(150, O.money); O.money -= amt; P.money += amt; }
-  const ln = def.title + ': ' + def.text(P.name, O.name);
+  const ln = def.title + ': ' + (id === 'steal' && G.players.length > 2 ? `${P.name} takes up to £150 from the leading team, ${O.name}` : def.text(P.name, O.name));
   G.dropNotes.push(ln);
   popLabel('★ ' + def.title + '!', pos.clone().add(new THREE.Vector3(0, 1.3, 0)), 'wild', 2.4);
   showBanner('★ Wildcard', ln, 2600);
@@ -856,6 +984,8 @@ function resize() {
   // on narrow stages (portrait tablets) drop the picture a little so the header sign clears the menu buttons
   if (w < 900) camera.setViewOffset(w, h, 0, -Math.round(Math.min(64, h * 0.11)), w, h); else camera.clearViewOffset();
   camera.updateProjectionMatrix();
+  hostFit.shotRight = null;
+  fitHost();
 }
 window.addEventListener('resize', resize);
 if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
@@ -875,35 +1005,42 @@ CGB.settings.onChange(k => {
 });
 
 function updateCamera(dt, now) {
-  const inBoard = drops.length > 0;
-  let t = { x: 2.2, y: 8.0, z: 21.5, lx: 2.2, ly: 3.0 };
-  if (inBoard) t = { x: 1.2, y: 8.8, z: 20.4, lx: 1.2, ly: 4.0 };
-  else if (G.phase === 'final' && G.jackpot && !G.jackpotFell && jackpotProgress() > 0.7) t = { x: 1.2, y: 7.0, z: 17.8, lx: 1.2, ly: 1.6 };
-  else if (G.phase === 'home') t = { x: 3.0, y: 7.6, z: 21.5, lx: 3.6, ly: 3.2 };
-  const k = 1 - Math.exp(-dt * 1.5);
+  // while setup (or the Start game button) is showing the camera holds one still view of the
+  // machine: the decorative drops behind the setup card don't move it, and there is no sway
+  const still = G.phase === 'home' || G.step === 'ready';
+  const inBoard = drops.length > 0 && !still;
+  let t = CAM.play;
+  if (inBoard) t = CAM.board;
+  else if (G.phase === 'final' && G.jackpot && !G.jackpotFell && jackpotProgress() > 0.7) t = CAM.jackpot;
+  else if (G.phase === 'home') t = CAM.home;
+  const shot = Object.keys(CAM).find(k => CAM[k] === t);
+  if (shot !== hostFit.shot) fitHost(shot);
+  const k = G.phase === 'home' ? 1 : 1 - Math.exp(-dt * 1.5);    // the setup view is set at once, then held
   Object.keys(cam).forEach(key => { cam[key] += (t[key] - cam[key]) * k; });
-  const sway = CGB.settings.reduced() ? 0 : Math.sin(now * 0.00022) * 0.35;
+  const sway = CGB.settings.reduced() || still ? 0 : Math.sin(now * 0.00022) * SWAY;
   camera.position.set(cam.x + sway, cam.y, cam.z);
   camera.lookAt(cam.lx, cam.ly, 0);
 }
 
 const raycaster = new THREE.Raycaster(), ndc = new THREE.Vector2();
 renderer.domElement.addEventListener('pointerdown', e => {
-  if (G.step !== 'chute') return;
+  if (!canPick()) return;
+  const pickLane = chooseLane;
   const r = renderer.domElement.getBoundingClientRect();
   ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
   raycaster.setFromCamera(ndc, camera);
   const hit = raycaster.intersectObjects(chuteMeshes.concat([boardBack, glass]))[0];
   if (!hit) return;
-  if (hit.object.userData.chute != null) { chooseChute(hit.object.userData.chute); return; }
+  if (hit.object.userData.chute != null) { pickLane(hit.object.userData.chute); return; }
   const px = hit.point.x / S + PEG.W / 2;
   let best = 0; PEG.CHUTES.forEach((cx, i) => { if (Math.abs(cx - px) < Math.abs(PEG.CHUTES[best] - px)) best = i; });
-  chooseChute(best);
+  pickLane(best);
 });
 function updateChuteGlow(now) {
-  if (G.step !== 'chute') return;
+  if (G.step !== 'lanes') return;
   const pulse = CGB.settings.reduced() ? 0.9 : 0.7 + Math.sin(now * 0.008) * 0.5;
-  chuteMats.forEach(m => { m.emissive.setHex(G.dropper >= 0 ? COLORS.hex[G.dropper] : SET.aqua); m.emissiveIntensity = pulse; });
+  const who = G.laneQueue[0];
+  chuteMats.forEach(m => { m.emissive.setHex(who >= 0 ? COLORS.hex[who] : SET.aqua); m.emissiveIntensity = pulse; });
 }
 function resetChuteGlow() { chuteMats.forEach(m => { m.emissive.setHex(CHUTE_BASE); m.emissiveIntensity = 0.3; }); }
 
@@ -921,12 +1058,6 @@ function showBanner(title, detail, ms) {
   bannerTimer = setTimeout(() => b.classList.remove('show'), ms || 2200);
 }
 function hideBanner() { clearTimeout(bannerTimer); $('banner').classList.remove('show'); }
-function feed(text) {
-  const f = $('feed');
-  const d = document.createElement('div'); d.textContent = text;
-  f.insertBefore(d, f.firstChild);
-  while (f.children.length > 5) f.removeChild(f.lastChild);
-}
 function jackpotProgress() {
   if (!G.jackpot) return 0;
   if (G.jackpotFell) return 1;
@@ -934,22 +1065,14 @@ function jackpotProgress() {
   return Math.max(0, Math.min(1, (G.jackpot.y - G.jackpotY0) / (end - G.jackpotY0)));
 }
 function renderScores() {
-  if (G.phase === 'home') {
-    [0, 1].forEach(i => {
-      const c = $('pc' + i);
-      c.querySelector('.name').textContent = $('name' + i).value.trim() || 'Player ' + (i + 1);
-      c.querySelector('.num').textContent = fmt(0);
-      c.querySelector('.meta').textContent = 'Ready to play';
-      c.classList.remove('active');
-    });
-  } else G.players.forEach((p, i) => {
-    const c = $('pc' + i);
-    c.querySelector('.name').textContent = p.name;
-    c.querySelector('.num').textContent = fmt(p.money);
-    c.querySelector('.meta').textContent = `${p.correct} correct` + (p.steals ? `, ${p.steals} stolen` : '');
-    const active = (G.step === 'chute' || G.step === 'dropping') ? G.dropper === i : (G.step === 'steal' ? i === 1 - G.turn : G.turn === i && G.step === 'ask');
-    c.classList.toggle('active', active && G.phase !== 'home');
-  });
+  // the team panels appear when the game starts (the setup card covers this area on tablets)
+  $('board').hidden = G.phase === 'home' || G.phase === 'summary';   // the results card lists every team
+  const teams = G.phase === 'home'
+    ? [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => ({ name: ($('cname' + i) || {}).value || CGB.teamFallback(i), score: fmt(0) }))
+    : G.players.map(p => ({ name: p.name, score: fmt(p.money) }));
+  board.set({ teams, turn: G.step === 'lanes' ? G.laneQueue[0] : -1,
+    badge: G.players.map((p, i) => i === G.catchUp ? 'Catch-up counter'
+      : G.step === 'lanes' && G.laneQueue.includes(i) ? 'Drops ' + ORDINAL[G.dropOrder.indexOf(i)] : '') });
   $('teamCard').style.display = G.phase === 'final' ? 'block' : 'none';
   if (G.phase === 'final') {
     $('teamVal').textContent = fmt(G.team);
@@ -968,38 +1091,40 @@ function updateJackpotMeter(now) {
 }
 function renderQuestion() {
   const q = G.q;
-  const who = G.step === 'steal' ? 1 - G.turn : G.turn;
   if (!q) { $('qWho').textContent = ''; $('qTag').textContent = ''; $('qText').textContent = ''; $('qAnswer').classList.remove('show'); return; }
-  $('qcard').style.setProperty('--pc', COLORS.css[who]);
-  $('qcard').style.setProperty('--pct', COLORS.text[who]);
-  const label = G.phase === 'final'
-    ? (G.step === 'steal' ? `${G.players[who].name} to the rescue` : `${G.players[who].name} answers for the team`)
-    : (G.step === 'steal' ? `${G.players[who].name} can steal` : `${G.players[who].name}'s question`);
-  $('qWho').textContent = COLORS.mark[who] + ' ' + label;
-  $('qTag').textContent = `${q.subject}: ${q.topic}`;
-  $('qText').textContent = q.q;
-  $('qAnswer').textContent = q.a;
+  $('qWho').textContent = G.phase === 'final' ? 'Every team answers: the whole class plays for the jackpot' : 'Every team answers on their whiteboards';
+  $('qTag').textContent = `${q.subject}: ${q.topic}`; $('qText').textContent = q.q; $('qAnswer').textContent = q.a;
   $('qAnswer').classList.toggle('show', G.answerShown);
 }
+// on a short panel (portrait tablets) bring the new step's controls into view once, when the step changes
+let shownStep = '';
 function renderActions() {
+  drawActions();
+  const key = G.step + ':' + G.laneQueue.length, panel = $('actions').parentElement;
+  if (key === shownStep) return;
+  shownStep = key;
+  if (G.step !== 'ask' && panel.scrollHeight > panel.clientHeight + 4) $('actions').scrollIntoView({ block: 'nearest' });
+}
+function drawActions() {
   const a = $('actions');
   a.innerHTML = '';
   const add = html => { const d = document.createElement('div'); d.innerHTML = html; while (d.firstChild) a.appendChild(d.firstChild); };
-  const ansBtn = `<button class="linkish" type="button" data-act="answer">${G.answerShown ? 'Hide answer' : 'Show answer'} <span class="kbd">A</span></button>`;
-  if (G.step === 'ask') {
-    add(`<div class="act-row"><button class="btn ok" type="button" data-act="correct">✓ Correct <kbd>C</kbd></button><button class="btn no" type="button" data-act="wrong">✗ Wrong <kbd>W</kbd></button></div>${ansBtn}`);
-  } else if (G.step === 'steal') {
-    const o = G.players[1 - G.turn].name;
-    const verb = G.phase === 'final' ? 'rescue' : 'steal';
-    add(`<div class="hint">${escapeHtml(G.players[G.turn].name)} got it wrong. ${escapeHtml(o)} can ${verb} it for one counter.</div>
-      <div class="act-row"><button class="btn ok" type="button" data-act="scorrect">✓ ${escapeHtml(o)} correct <kbd>C</kbd></button><button class="btn no" type="button" data-act="swrong">✗ Wrong <kbd>W</kbd></button></div>
-      <button class="btn plain" type="button" data-act="snone">No attempt <kbd>N</kbd></button>${ansBtn}`);
-  } else if (G.step === 'chute') {
-    const p = G.players[G.dropper], n = G.dropCount;
-    const lead = G.bonusDrop ? `Bonus counter for ${p.name}.` : `${p.name} wins ${n === 1 ? 'a counter' : n + ' counters'}.`;
-    add(`<div class="ote-dropmsg" style="--pct:${COLORS.text[G.dropper]}">${COLORS.mark[G.dropper]} ${escapeHtml(lead)}<small>Pick a lane with the buttons or keys 1 to 4, or tap one on the machine</small></div>
-      <div class="ote-chutes" style="--pc:${COLORS.css[G.dropper]}">${[0, 1, 2, 3].map(i => `<button class="ote-chute-btn" type="button" data-act="chute" data-i="${i}" aria-label="Lane ${i + 1}">${i + 1}<small>lane</small></button>`).join('')}</div>`);
-  } else if (G.step === 'dropping') {
+  $('cmActions').hidden = !(G.step === 'ask' || round.undoable);
+  if (G.step === 'ask') return;
+  if (canPick() || (G.step === 'dropping' && G.queuedLane != null)) {
+    const t = G.laneQueue[0], p = G.players[t], n = G.dropCount;
+    const ahead = G.step === 'dropping';   // the team before is still dropping: this captain can choose now
+    const lead = t === G.catchUp ? `Catch-up counter for ${p.name}.` : G.bonusDrop ? `Bonus counter for ${p.name}.` : `${p.name} won ${n === 1 ? 'a counter' : n + ' counters'}.`;
+    // while a team's counter is still dropping, that team is the one highlighted; the next captain is marked "next"
+    const picked = G.dropOrder.length - G.laneQueue.length, done = ahead ? picked - 1 : picked;
+    const order = G.dropOrder.length > 1 ? `<ol class="ote-order" aria-label="Drop order">${G.dropOrder.map((i, k) => `<li class="${k < done ? 'done' : k === done ? 'now' : ahead && k === done + 1 ? 'next' : ''}" style="--pc:${COLORS.css[i]}"><span class="k">${k + 1}</span>${COLORS.mark[i]} ${escapeHtml(G.players[i].name)}</li>`).join('')}</ol>` : '';
+    if (ahead && G.queuedLane != null) { add(`${order}<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(p.name)}: lane ${G.queuedLane + 1}<small>It drops as soon as this turn ends.</small></div>`); return; }
+    add(`${order}<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(lead)} ${ahead ? 'Next captain: pick a lane now!' : 'Captain: pick a lane!'}<small>${ahead ? 'It drops when this turn ends. ' : ''}Keys 1 to 4 or tap the machine${G.laneQueue.length > 1 ? `. ${G.laneQueue.length - 1} more team${G.laneQueue.length > 2 ? 's' : ''} after this` : ''}. Captains: swap to the next person each time.</small></div>
+      <div class="ote-chutes" style="--pc:${COLORS.css[t]}">${[0, 1, 2, 3].map(i => `<button class="ote-chute-btn" type="button" data-act="lane" data-i="${i}" aria-label="Lane ${i + 1}">${i + 1}<small>lane</small></button>`).join('')}</div>
+      ${G.laneQueue.length > 1 ? '<button class="btn plain" type="button" data-act="random">Random lanes for the rest <kbd>R</kbd></button>' : ''}`);
+    return;
+  }
+  if (G.step === 'dropping') {
     add(`<div class="ote-dropmsg">Counters dropping<small>Waiting for the shelves to settle</small></div>`);
   } else if (G.step === 'next') {
     if (G.lastMsg) add(`<div class="ote-dropmsg">${escapeHtml(G.lastMsg.title)}<small>${escapeHtml(G.lastMsg.detail)}</small></div>`);
@@ -1012,13 +1137,8 @@ $('actions').addEventListener('click', e => {
   const btn = e.target.closest('button[data-act]');
   if (!btn) return;
   const act = btn.dataset.act;
-  if (act === 'correct') markCorrect();
-  else if (act === 'wrong') markWrong();
-  else if (act === 'answer') toggleAnswer();
-  else if (act === 'scorrect') stealResult('correct');
-  else if (act === 'swrong') stealResult('wrong');
-  else if (act === 'snone') stealResult('none');
-  else if (act === 'chute') chooseChute(+btn.dataset.i);
+  if (act === 'lane') chooseLane(+btn.dataset.i);
+  else if (act === 'random') randomLanes();
   else if (act === 'next') nextQuestion();
 });
 function render() { renderScores(); renderQuestion(); renderActions(); }
@@ -1026,126 +1146,178 @@ function render() { renderScores(); renderQuestion(); renderActions(); }
 /* =========================================================
    GAME FLOW
    ========================================================= */
-function startGame() {
-  const names = [0, 1].map(i => ($('name' + i).value.trim() || 'Player ' + (i + 1)).slice(0, 16));
-  CGB.store.setJSON('names', names);
-  G.players = names.map(n => ({ name: n, money: 0, correct: 0, asked: 0, won: 0, steals: 0, wrong: [] }));
-  G.focusWeak = $('focusWeak').checked;
-  G.team = 0; G.finalWinnings = 0; G.jackpot = null; G.jackpotWon = false; G.jackpotFell = false;
-  G.pendingExtra = []; G.lastDropper = -1; G.q = null; G.lastMsg = null; closeSaid = false;
-  picker.reset();
-  $('feed').innerHTML = '';
-  clearLabels();
-  G.attract = false;
-  newTray(true);
-  G.phase = 'r1'; G.qIndex = 0; G.qTotal = G.r1Each * 2;
-  $('home').classList.add('hidden'); $('summary').classList.add('hidden');
-  $('roundName').textContent = 'Round 1: Counter Drop';
-  showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
-  hostSay(line('intro'), 'cheer', 2200);
-  nextQuestion(true);
-}
-function nextQuestion(quiet) {
-  resetChuteGlow();
-  if (G.jackpotWon || G.qIndex >= G.qTotal) { endRound(); return; }
-  G.turn = G.qIndex % 2;
-  G.q = pickQuestion(G.players[G.turn].name);
-  G.players[G.turn].asked++;
-  G.qIndex++;
-  G.answerShown = false; G.bonusDrop = false; G.lastMsg = null;
-  G.step = 'ask';
-  $('qCount').textContent = `Question ${G.qIndex} of ${G.qTotal}`;
-  if (!quiet) hostSay(line('ask', { n: G.players[G.turn].name }), 'present', 1400);
-  render();
-}
-function toggleAnswer() { G.answerShown = !G.answerShown; renderQuestion(); renderActions(); }
-function logWrong(i) { const p = G.players[i]; p.wrong.push(G.q); bank.logWrong(p.name, G.q, GAME_NAME); }
-function markCorrect() {
-  if (G.step !== 'ask') return;
-  SFX.correct();
-  G.players[G.turn].correct++;
+/* ---------- Every team answers, every correct team wins a counter ---------- */
+const misc = CGB.createMisconceptions();
+const board = CGB.createTeamBoard($('board'), { className: 'cols-2' });
+let undoSnap = null;
+const round = CGB.createClassRound({
+  root: document.getElementById('game-over-the-edge'), board, countEl: $('count'), btnEl: $('cmActions'),
+  seconds: () => CGB.COUNTDOWN, teams: () => G.players.length,
+  onConfirm: classResult, onUndo: undoClassResult
+});
+function classResult(res) {
+  const c = res.filter(Boolean).length, n = res.length;
+  undoSnap = { res, correct: G.players.map(p => p.correct) };
+  G.markAt = simT; G.markReal = performance.now();
+  res.forEach((ok, i) => { if (ok) G.players[i].correct++; else logWrong(i); });
+  misc.add(G.q, (n - c) / n, `${n - c} of ${n} teams wrong`);
   G.answerShown = true;
-  G.dropper = G.turn;
-  G.dropCount = G.phase === 'final' ? 2 : 1;
-  G.step = 'chute';
-  hostSay(line('correct', { n: G.players[G.turn].name }) + ' ' + line('chute', { n: G.players[G.turn].name }), 'clap', 1300);
-  render();
-}
-function markWrong() {
-  if (G.step !== 'ask') return;
-  SFX.wrong();
-  logWrong(G.turn);
-  G.step = 'steal';
-  hostSay(line('wrong', { n: G.players[G.turn].name }) + ' ' + line('steal', { o: G.players[1 - G.turn].name }), 'shrug', 1600);
-  render();
-}
-function stealResult(res) {
-  if (G.step !== 'steal') return;
-  const o = 1 - G.turn;
-  G.answerShown = true;
-  if (res === 'correct') {
-    SFX.correct();
-    G.players[o].steals++;
-    G.dropper = o; G.dropCount = 1; G.step = 'chute';
-    hostSay(line('correct', { n: G.players[o].name }) + ' ' + line('chute', { n: G.players[o].name }), 'clap', 1300);
-  } else {
-    if (res === 'wrong') { SFX.wrong(); logWrong(o); }
-    G.lastMsg = { title: 'No counter this time', detail: res === 'wrong' ? 'Both answers were wrong.' : 'Nobody took the counter.' };
-    hostSay(res === 'wrong' ? "Nobody got that one. Here's the answer." : "No steal. Here's the answer.", 'shrug', 1500);
-    G.step = 'next';
+  const per = G.phase === 'final' ? 2 : 1;
+  board.set({ earned: res.map(ok => ok ? `+${per} counter${per > 1 ? 's' : ''}` : '') });
+  hostSay(CGB.classLine(c, n) + (c ? ' Captains, pick your lanes!' : ''), CGB.classGesture(c, n), 1600);
+  if (c) { SFX.correct(); startLanes(res.map((ok, i) => ok ? i : -1).filter(i => i >= 0), per, false); }
+  else {
+    SFX.wrong();
+    G.lastMsg = { title: 'No counters this time', detail: 'No team got that one. The answer is on the screen.' };
+    G.step = 'next'; G.dropDoneAt = simT;
+    render();
   }
+}
+function undoClassResult() {
+  const u = undoSnap; if (!u || G.released) return;
+  G.players.forEach((p, i) => { p.correct = u.correct[i]; if (!u.res[i]) { p.wrong.pop(); bank.unlogWrong(p.name, G.q); } });
+  misc.remove(G.q);
+  G.answerShown = false; G.laneQueue = []; G.lastMsg = null; G.step = 'ask';
+  undoSnap = null;
   render();
 }
-let dropTimers = [];
-function chooseChute(i) {
-  if (G.step !== 'chute' || i < 0 || i > 3) return;
-  G.step = 'dropping';
-  G.dropWon = 0; G.dropLost = 0; G.dropNotes = []; G.cascadeSaid = false;
-  G.pending = G.dropCount; G.landed = 0; G.settleAt = Infinity;
-  const owner = G.dropper;
-  hostSay(line('dropping'), 'point', 2200);
+/* Lanes: each team that won counters picks a lane in turn; its counters drop at once,
+   0.35 s apart, so six teams' counters are all on their way within a couple of seconds. */
+/* The teams that won counters drop in a random order, new each question, shown on screen as a
+   numbered list and on each team's panel ("Drops 1st", "Drops 2nd"...) */
+const ORDINAL = ['1st', '2nd', '3rd', '4th', '5th', '6th'];
+function startLanes(teams, per, bonus) {
+  const order = teams.slice();
+  for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(CGB.random() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+  G.laneQueue = order; G.dropOrder = order.slice(); G.dropSerial++; G.autoLanes = false; G.queuedLane = null; G.dropCount = per; G.bonusDrop = bonus;
+  G.dropWon = 0; G.dropLost = 0; G.dropNotes = []; G.dropByTeam = []; G.cascadeSaid = false;
+  G.pending = 0; G.landed = 0; G.settleAt = Infinity; G.released = 0; G.nextRelease = simT;
+  G.step = 'lanes';
+  render();
+}
+/* Round 1 is turn by turn. While one team's counter is dropping, the next captain may already
+   choose a lane; that counter is released the moment the turn ends. */
+function canPick() { return G.step === 'lanes' || (G.step === 'dropping' && G.phase !== 'final' && G.laneQueue.length > 0 && G.queuedLane == null); }
+function chooseLane(i) {
+  if (i < 0 || i > 3 || !G.laneQueue.length) return;
+  if (G.step === 'dropping' && canPick()) { G.queuedLane = i; render(); return; }
+  if (G.step !== 'lanes') return;
+  const team = G.laneQueue.shift();
+  round.lock();                                   // once counters drop, the marking stands
+  if (G.catchUp === team) G.catchUp = -1;
+  const turns = G.phase !== 'final';               // Round 1: one team at a time
+  if (turns) { G.lastDropper = team; G.pending = 0; G.landed = 0; G.settleAt = Infinity; }
   for (let k = 0; k < G.dropCount; k++) {
-    dropTimers.push(setTimeout(() => launchDrop(i, owner, () => {
-      G.lastDropper = owner;
+    const at = Math.max(simT, G.nextRelease);
+    G.nextRelease = at + 0.35;
+    G.pending++; G.released++;
+    dropTimers.push({ at, go: () => launchDrop(i, team, b => {
+      if (!turns) G.lastDropper = team;
+      b.dropSerial = G.dropSerial;
       G.landed++;
-      if (G.landed >= G.pending) G.settleAt = performance.now() + PHY.PERIOD * 1000 * 1.4;
-    }), k * 650));
+      // settled: once the shelf has finished its next push forward
+      if (G.landed >= G.pending && G.step === 'dropping') G.settleAt = turns ? nextPushEnd() : simT + PHY.PERIOD;
+    }) });
   }
+  if (turns || !G.laneQueue.length) { G.step = 'dropping'; if (!G.laneQueue.length || G.released === G.dropCount) hostSay(line('dropping'), 'point', 1800); }
   render();
 }
-function edgeTeeter() { return tray.lower.some(b => !b.base && b.y > PHY.D - b.r * 0.35); }
-function finishDrop() {
-  const p = G.players[G.dropper];
-  const won = G.dropWon * VALUE;
-  let title;
-  if (G.phase === 'final') title = G.dropWon ? `${G.dropWon} over the edge: +${fmt(won)} for the team` : 'Nothing fell this time';
-  else title = G.dropWon ? `${p.name} pushed ${G.dropWon} over the edge: +${fmt(won)}` : `Nothing fell for ${p.name}`;
-  const detail = [G.dropLost ? `${G.dropLost} lost down the sides.` : '', ...G.dropNotes].filter(Boolean).join(' ') || 'The shelves have settled.';
-  G.lastMsg = { title, detail };
-  feed(title);
-  if (!G.jackpotWon && !G.cascadeSaid) {
-    if (G.dropWon === 1) hostSay(line('one'), 'clap', 1400);
-    else if (G.dropWon > 1) hostSay(line('some', { k: G.dropWon }), 'cheer', 1800);
-    else if (edgeTeeter()) hostSay(line('edge'), 'groan', 2000);
-    else hostSay(line('none'), 'shrug', 1500);
+// the moment the shelf is next at its furthest forward, plus a moment for counters to drop off
+function nextPushEnd() { const P = PHY.PERIOD; let t = Math.ceil((simT - P / 2) / P) * P + P / 2; if (t - simT < 0.25) t += P; return t + 0.3; }
+// a team's turn is over: the next team picks its lane (straight away if R was pressed), or the drop is done
+function endTurn() {
+  if (G.phase !== 'final' && G.laneQueue.length) {
+    G.step = 'lanes';
+    const q = G.queuedLane; G.queuedLane = null;
+    if (q != null) { chooseLane(q); return; }
+    render();
+    if (G.autoLanes) chooseLane(Math.floor(CGB.random() * 4));
+    return;
   }
-  if (G.jackpotWon) { G.step = 'next'; render(); return; }
-  if (G.pendingExtra.length && G.phase === 'r1') {
-    G.dropper = G.pendingExtra.shift(); G.dropCount = 1; G.bonusDrop = true; G.step = 'chute';
-    render(); return;
+  classFinishDrop();
+}
+function randomLanes() { G.autoLanes = true; if (G.step === 'dropping') { render(); return; } while (G.step === 'lanes' && G.laneQueue.length) { chooseLane(Math.floor(CGB.random() * 4)); if (G.phase !== 'final') break; } }
+function classFinishDrop() {
+  G.dropLog.push({ phase: G.phase, order: (G.dropOrder || []).slice(), won: G.players.map((p, i) => G.dropByTeam[i] || 0) });
+  const won = G.dropByTeam.map((n, i) => n ? `${COLORS.mark[i]} ${G.players[i].name} +${fmt(n * VALUE)}` : '').filter(Boolean);
+  const title = G.dropWon ? `${G.dropWon} over the edge` + (G.phase === 'final' ? `: +${fmt(G.dropWon * VALUE)} for the class` : '') : 'Nothing fell this time';
+  const detail = [G.phase === 'final' ? '' : won.join(', '), G.dropLost ? `${G.dropLost} lost down the sides.` : '', ...G.dropNotes].filter(Boolean).join(' · ') || 'The shelves have settled.';
+  G.lastMsg = { title, detail };
+  G.dropDoneAt = simT; G.dropDoneReal = performance.now();
+  if (!G.jackpotWon && !G.cascadeSaid) {
+    if (G.dropWon) hostSay(line(G.dropWon === 1 ? 'one' : 'some', { k: G.dropWon }), 'cheer', 1600);
+    else if (edgeTeeter()) hostSay(line('edge'), 'groan', 2000);
+    else hostSay(line('none'), 'shrug', 1600);
+  }
+  if (!G.jackpotWon && G.pendingExtra.length && G.phase === 'r1') {
+    const extra = G.pendingExtra.slice(); G.pendingExtra = [];
+    startLanes(extra, 1, true); return;
   }
   G.step = 'next';
   render();
 }
+function startGame() {
+  if (!bank.active()) { renderPack(); return; }
+  CGB.leaveField();
+  const n = Math.min(6, Math.max(2, G.nTeams));
+  const names = CGB.saveTeamNames([0, 1, 2, 3, 4, 5].slice(0, n).map(i => $('cname' + i).value)).map(x => x.slice(0, 16));
+  G.players = names.map(x => ({ name: x, money: 0, correct: 0, asked: 0, won: 0, wrong: [] }));
+  misc.reset(); round.stop(); G.laneQueue = []; G.dropOrder = []; G.dropLog = []; G.catchUp = -1;
+  G.team = 0; G.finalWinnings = 0; G.jackpot = null; G.jackpotWon = false; G.jackpotFell = false;
+  G.pendingExtra = []; G.lastDropper = -1; G.q = null; G.lastMsg = null; closeSaid = false;
+  picker.reset();
+  clearLabels();
+  G.attract = false;
+  newTray(true);
+  G.phase = 'r1'; G.qIndex = 0; G.qTotal = R1_QUESTIONS;
+  $('home').classList.add('hidden'); $('summary').classList.add('hidden');
+  $('roundName').textContent = 'Round 1: Counter Drop';
+  $('qCount').textContent = `${G.qTotal} questions, then the final`;
+  G.step = 'ready'; G.q = null;
+  hideBubble();                                   // the setup greeting goes before the Start game card
+  render();
+  // nothing ticks until the teacher presses Start game
+  gate.show(() => {
+    showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
+    hostSay(`Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!`, 'cheer', 2200);
+    nextQuestion(true);
+  });
+}
+function nextQuestion(quiet) {
+  resetChuteGlow();
+  round.stop(); undoSnap = null;
+  if (G.jackpotWon || G.qIndex >= G.qTotal) { endRound(); return; }
+  G.q = pickQuestion();
+  G.players.forEach(p => p.asked++);
+  G.qIndex++;
+  G.answerShown = false; G.bonusDrop = false; G.lastMsg = null; G.released = 0;
+  G.step = 'ask';
+  $('qCount').textContent = `Question ${G.qIndex} of ${G.qTotal}`;
+  if (!quiet) hostSay("Here's one for every team. Boards ready!", 'present', 1400);
+  render();
+  round.think();
+}
+function logWrong(i) { const p = G.players[i]; p.wrong.push(G.q); bank.logWrong(p.name, G.q, GAME_NAME); }
+let dropTimers = [];
+function edgeTeeter() { return tray.lower.some(b => !b.base && b.y > PHY.D - b.r * 0.35); }
 function endRound() {
   if (G.phase === 'r1') {
     G.phase = 'final';
-    G.team = G.players[0].money + G.players[1].money;
+    G.team = G.players.reduce((a, p) => a + p.money, 0);
     setupFinal();
-    G.qIndex = 0; G.qTotal = G.finalN;
+    G.qIndex = 0; G.qTotal = FINAL_QUESTIONS;
     $('roundName').textContent = 'The Final: Jackpot';
-    showBanner('The Final', 'Team up to push the jackpot counter over the edge. Each correct answer wins two counters.', 3400);
-    hostSay(line('final'), 'cheer', 2200);
+    board.set({ earned: [], marks: [] });
+    showBanner('The Final', 'The whole class plays together for the jackpot. Every correct team wins two counters.', 3400);
+    hostSay("It's the final! The whole class together now. Push that jackpot over the edge!", 'cheer', 2200);
+    // catch-up: a team with no more than half the leader's money drops one extra counter first
+    const money = G.players.map(p => p.money), lead = Math.max(...money), last = money.indexOf(Math.min(...money));
+    if (G.players.length > 1 && lead >= 200 && money[last] * 2 <= lead) {
+      G.catchUp = last; G.q = null;
+      hostSay(`${G.players[last].name}, you get a catch-up counter to start the final!`, 'point', 2200);
+      startLanes([last], 1, false);
+      return;
+    }
     nextQuestion(true);
   } else {
     G.phase = 'summary'; G.step = null;
@@ -1153,20 +1325,77 @@ function endRound() {
     showSummary();
   }
 }
+/* Where the jackpot counter starts and how heavy it is to push, for each number of teams.
+   Every correct team drops two counters in the 4-question final, so more teams push harder.
+   Tuned by playing whole seeded games with the real physics so the class wins the jackpot
+   about half the time, whatever the number of teams (see DECISIONS.md). [units back from
+   the edge, weight compared with a counter of its size]; with two teams it starts already
+   hanging a little over the edge. */
+const JACKPOT = { 2: [-22, 0.4], 3: [-12, 0.4], 4: [-8, 0.4], 5: [11, 0.5], 6: [15, 0.6] };
+let jackpotOverride = null;
 function setupFinal() {
-  const diff = { easy: [4, 0.5], normal: [12, 0.6], hard: [24, 0.8] }[G.finalDiff] || [12, 0.6];
-  const jx = PHY.W / 2, jy = PHY.D - PHY.JR - diff[0];
+  const [JACKPOT_GAP, JACKPOT_HEAVY] = jackpotOverride || JACKPOT[G.players.length] || JACKPOT[4];
+  const jx = PHY.W / 2, jy = PHY.D - PHY.JR - JACKPOT_GAP;
+  clearSpace(jx, jy);
+  const J = addLower(tray, jx, jy, { r: PHY.JR, kind: 'jackpot', heavy: JACKPOT_HEAVY });
+  J.mesh = makeCoinMesh('jackpot', -1);
+  J.anim = 1;
+  G.jackpot = J; G.jackpotY0 = jy;
+}
+/* Remove the counters where the jackpot counter is about to go */
+function clearSpace(jx, jy) {
   tray.lower = tray.lower.filter(b => {
     const keep = Math.hypot(b.x - jx, b.y - jy) > PHY.JR + b.r - 2 && !(b.base && Math.hypot(b.base.x - jx, b.base.y - jy) <= PHY.JR + b.r - 2);
     if (!keep) { if (b.mesh) scene.remove(b.mesh); if (b.rider) { b.rider.base = null; } if (b.base) b.base.rider = null; }
     return keep;
   });
   tray.lower.forEach(b => { if (b.base && !tray.lower.includes(b.base)) b.base = null; if (b.rider && !tray.lower.includes(b.rider)) b.rider = null; });
-  const J = addLower(tray, jx, jy, { r: PHY.JR, kind: 'jackpot', heavy: diff[1] });
-  J.mesh = makeCoinMesh('jackpot', -1);
-  J.anim = 1;
-  G.jackpot = J; G.jackpotY0 = jy;
 }
+
+/* @test-only: shortcuts for tests, removed from the shipped file by build.js */
+CGB.test.ote = {
+  // manual clock: the game only moves on when a test calls advance(), so physics is exactly repeatable
+  manual(on) { manualClock = !!on; simAcc = 0; },
+  advance(seconds) { const n = Math.round(seconds / STEP); for (let i = 0; i < n; i++) simulate(STEP); },
+  toFinal() { if (G.phase === 'r1' && G.step !== 'dropping') { G.step = null; endRound(); } },
+  // put the jackpot counter's centre this fraction of its radius short of where it falls
+  jackpotNear(frac) {
+    const J = G.jackpot; if (!J || G.jackpotFell) return;
+    const y = PHY.D + PHY.JR * 0.1 - PHY.JR * (frac == null ? 0.4 : frac);
+    tray.lower = tray.lower.filter(b => b !== J); clearSpace(J.x, y); tray.lower.push(J); J.y = y; J.vx = J.vy = 0;
+  },
+  simTime: () => simT,
+  jackpot(gap, heavy) { jackpotOverride = [gap, heavy]; },   // for tuning
+  fillFront(k) { FILL_FRONT = k; },                            // for tuning
+  // pairs of fixed set pieces with faces on the same plane that overlap (they would flicker)
+  coplanar() {
+    const items = [];
+    scene.traverse(o => {
+      if (!o.isMesh || o.isInstancedMesh || !o.geometry || !o.visible) return;
+      const t = o.geometry.type; if (t !== 'BoxGeometry' && t !== 'PlaneGeometry') return;
+      if (pusher.children.includes(o) || o === boardBack) return;   // the moving shelf; the board is behind everything
+      o.updateWorldMatrix(true, false);
+      const bb = new THREE.Box3().setFromObject(o); items.push({ o, bb });
+    });
+    const out = [], ax = ['x', 'y', 'z'], E = 0.003;
+    const desc = o => `${o.geometry.type}(${Object.values(o.geometry.parameters).slice(0, 3).map(v => +v.toFixed(2))})@${o.position.toArray().map(v => +v.toFixed(2))}`;
+    for (let i = 0; i < items.length; i++) for (let j = i + 1; j < items.length; j++) {
+      const a = items[i].bb, b = items[j].bb;
+      for (const k of ax) for (const fa of ['min', 'max']) for (const fb of ['min', 'max']) {
+        if (Math.abs(a[fa][k] - b[fb][k]) > E) continue;
+        const others = ax.filter(q => q !== k);
+        const ov = others.every(q => Math.min(a.max[q], b.max[q]) - Math.max(a.min[q], b.min[q]) > E);
+        // both faces must face the same way to fight (a box's front against another's front)
+        if (ov && fa === fb) out.push(`${k}=${a[fa][k].toFixed(3)} ${desc(items[i].o)} / ${desc(items[j].o)}`);
+      }
+    }
+    return out;
+  },
+  setMoney(list) { list.forEach((m, i) => { if (G.players[i]) G.players[i].money = m; }); render(); },
+  info: () => ({ jackpotWon: !!G.jackpotWon, jackpotFell: !!G.jackpotFell, progress: jackpotProgress(), team: G.team,
+    tray: tray.lower.map(b => `${b.kind}:${b.x.toFixed(2)},${b.y.toFixed(2)}`).join(';') })
+};
+/* @end-test-only */
 
 /* =========================================================
    SUMMARY
@@ -1174,43 +1403,35 @@ function setupFinal() {
 function showSummary() {
   const total = G.team;
   const head = G.jackpotWon
-    ? `<div class="big">Jackpot won: ${fmt(total)}</div><div class="small">Round 1 ${fmt(G.players[0].money + G.players[1].money)}, final ${fmt(G.finalWinnings)} including the £5,000 jackpot</div>`
-    : `<div class="big">Team total: ${fmt(total)}</div><div class="small">The jackpot counter finished ${Math.round(jackpotProgress() * 100)}% of the way to the edge. Final winnings ${fmt(G.finalWinnings)}.</div>`;
-  const cols = G.players.map((p, i) => {
-    const missed = p.wrong.length ? p.wrong.map(q => `<div class="missed"><div>${escapeHtml(q.q)}</div><div class="a">${escapeHtml(q.a)}</div><div class="t">${escapeHtml(q.subject)}: ${escapeHtml(q.topic)}</div></div>`).join('') : '<div class="none">No wrong answers this game.</div>';
-    const hist = bank.weakTopics(p.name, 5);
-    const histHtml = hist.length ? hist.map(([t, n]) => `<div class="trow"><span>${escapeHtml(t)}</span><span>${n} wrong</span></div>`).join('') : '<div class="none">No history yet.</div>';
-    return `<div class="sum-p" style="--pc:${COLORS.css[i]}">
-      <h3>${COLORS.mark[i]} ${escapeHtml(p.name)}</h3>
-      <div class="sum-stats">Round 1: ${fmt(p.money)}. ${p.correct} correct from ${p.asked} questions${p.steals ? `, plus ${p.steals} steal${p.steals > 1 ? 's' : ''}` : ''}.</div>
-      <div class="sum-sub">Missed this game</div>${missed}
-      <div class="sum-sub">Weakest topics across all games</div>${histHtml}
-      <button class="linkish" type="button" data-clear="${i}">Clear ${escapeHtml(p.name)}'s history</button>
-    </div>`;
-  }).join('');
-  $('sumCard').innerHTML = `<div class="sum-head">${head}</div><div class="sum-grid">${cols}</div>
-    <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change settings</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>`;
+    ? `<div class="big">Jackpot won: ${fmt(total)}</div><div class="small">Round 1 ${fmt(G.players.reduce((a, p) => a + p.money, 0))}, final ${fmt(G.finalWinnings)} including the £5,000 jackpot</div>`
+    : `<div class="big">Class total: ${fmt(total)}</div><div class="small">The jackpot counter finished ${Math.round(jackpotProgress() * 100)}% of the way to the edge. Final winnings ${fmt(G.finalWinnings)}.</div>`;
+  const ranks = G.players.map((p, i) => ({ p, i })).sort((a, b) => b.p.money - a.p.money)
+    .map(({ p, i }, k) => `<div class="sum-rank" style="--pc:${COLORS.css[i]}"><span class="pos">${k + 1}</span><span class="nm">${COLORS.mark[i]} ${escapeHtml(p.name)}<small>${p.correct} correct · ${p.won} counters over the edge</small></span><span class="sc">${fmt(p.money)}</span></div>`).join('');
+  const body = `<div class="sum-ranks"><h3>Round 1</h3>${ranks}</div>${misc.html(5)}`;
+  $('sumCard').innerHTML = `<div class="sum-head">${head}</div>${body}
+    <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change teams</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.remove('hidden');
   clearLabels();
+  updateHost(true);
   $('againBtn').onclick = () => startGame();
   $('homeBtn').onclick = () => goHome();
   $('menuBtn2').onclick = () => CGB.app.requestLauncher();
-  $('sumCard').querySelectorAll('[data-clear]').forEach(btn => {
-    btn.onclick = () => CGB.armButton(btn, 'Tap again to clear', () => { bank.clearHistory(G.players[+btn.dataset.clear].name); showSummary(); });
-  });
   render();
   $('summary').scrollTop = 0; $('sumCard').scrollTop = 0;
   $('againBtn').focus({ preventScroll: true });
 }
 function goHome() {
-  dropTimers.forEach(clearTimeout); dropTimers = [];
+  if (CGB.fitSetups) CGB.fitSetups();
+  dropTimers = []; round.stop(); G.laneQueue = []; gate.hide();
   $('summary').classList.add('hidden');
   $('home').classList.remove('hidden');
+  updateHost(true);
   G.phase = 'home'; G.step = null; G.q = null; G.attract = true;
   $('roundName').textContent = 'Ready'; $('qCount').textContent = '';
   hideBanner(); clearLabels();
   newTray(false);
   render();
+  renderPack();
   $('qText').textContent = 'Set up the game to begin.';
 }
 
@@ -1218,78 +1439,30 @@ function goHome() {
    SETUP SCREEN
    ========================================================= */
 $('logo').innerHTML = CGB.brand.oteLogo();
-function renderSetSelect() {
-  const sel = $('setSelect');
-  sel.innerHTML = bank.all().map(s => `<option value="${escapeHtml(s.id)}">${escapeHtml(s.name)} (${s.questions.length} questions)</option>`).join('');
-  sel.value = bank.active().id;
+function renderPack() { $('startBtn').disabled = !CGB.renderPackLine($('pack')); }
+bank.onChange(() => { picker.reset(); if (G.phase === 'home') renderPack(); });
+/* The number of teams, and their names behind "Edit team names" */
+if (![2, 3, 4, 5, 6].includes(G.nTeams)) G.nTeams = 4;
+function renderClassNames(fresh) {
+  const prev = [0, 1, 2, 3, 4, 5].map(i => { const el = $('cname' + i); return el && !fresh ? el.value : null; });
+  $('cnames').innerHTML = [0, 1, 2, 3, 4, 5].slice(0, G.nTeams).map(i => `<label style="--pc:${COLORS.css[i]};--pct:${COLORS.text[i]}"><span>${COLORS.mark[i]} Team ${i + 1}</span><input id="ote-cname${i}" type="text" maxlength="16" autocomplete="off" value="${escapeHtml(prev[i] || CGB.teamNames(6)[i].slice(0, 16))}"></label>`).join('');
 }
-$('setSelect').addEventListener('change', e => { bank.setActive(e.target.value); picker.reset(); });
-bank.onChange(renderSetSelect);
-$('openBank').addEventListener('click', () => CGB.bankUI.open());
-function wireToggle(btnId, panelId, openText, closedText) {
-  $(btnId).addEventListener('click', () => {
-    const p = $(panelId); p.classList.toggle('show');
-    const open = p.classList.contains('show');
-    $(btnId).textContent = open ? openText : closedText;
-    $(btnId).setAttribute('aria-expanded', String(open));
-  });
-}
-wireToggle('toggleHost', 'hostEditor', 'Hide host options', 'Customise the host');
-function wireSeg(id, key) {
-  const seg = $(id);
-  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === G[key])));
-  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; G[key] = +b.dataset.v; CGB.store.set('ote.' + key, String(G[key])); paint(); });
-  const saved = +CGB.store.get('ote.' + key); if ([4, 6, 8, 12, 16].includes(saved)) G[key] = saved;
-  paint();
-}
-wireSeg('segR1', 'r1Each');
-wireSeg('segF', 'finalN');
-(function wireDiff() {
-  const seg = $('segDiff');
-  const saved = CGB.store.get('ote.finalDiff'); if (['easy', 'normal', 'hard'].includes(saved)) G.finalDiff = saved;
-  const paint = () => seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === G.finalDiff)));
-  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; G.finalDiff = b.dataset.v; CGB.store.set('ote.finalDiff', G.finalDiff); paint(); });
-  paint();
-})();
-
-/* Host editor (changes the Showtime mascot everywhere) */
-function saveHost() { CGB.saveHost(); hostSay('How do I look?', 'present', 1200); }
-function swatchRow(id, list, key, label) {
-  const el = $(id);
-  el.innerHTML = list.map((c, i) => `<button type="button" class="sw" data-i="${i}" style="background:${c}" aria-label="${label} option ${i + 1}"></button>`).join('');
-  const paint = () => el.querySelectorAll('.sw').forEach(b => { const on = +b.dataset.i === CGB.hostCfg[key]; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
-  el.addEventListener('click', e => { const b = e.target.closest('.sw'); if (!b) return; CGB.hostCfg[key] = +b.dataset.i; paint(); saveHost(); });
-  paint();
-}
-function segRow(id, list, key) {
-  const el = $(id);
-  el.innerHTML = list.map(([v, label]) => `<button type="button" data-v="${v}">${label}</button>`).join('');
-  const paint = () => el.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === CGB.hostCfg[key])));
-  el.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; CGB.hostCfg[key] = b.dataset.v; paint(); saveHost(); });
-  paint();
-}
-swatchRow('swSkin', CGB.hostOpts.skin, 'skin', 'Skin');
-swatchRow('swHair', CGB.hostOpts.hair, 'hair', 'Hair colour');
-swatchRow('swSuit', CGB.hostOpts.suit, 'suit', 'Suit colour');
-segRow('segStyle', CGB.hostOpts.style, 'style');
-segRow('segBeard', CGB.hostOpts.beard, 'beard');
-segRow('segGlasses', CGB.hostOpts.glasses, 'glasses');
-$('hostName').value = CGB.hostCfg.name;
-$('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim() || 'Host'; CGB.store.setJSON('host', CGB.hostCfg); });
-$('hostName').addEventListener('change', () => CGB.saveHost());
-
-const savedNames = CGB.store.getJSON('names', null);
-if (Array.isArray(savedNames)) savedNames.forEach((n, i) => { if (n && i < 2) $('name' + i).value = n; });
-[0, 1].forEach(i => $('name' + i).addEventListener('input', renderScores));
-$('focusWeak').checked = CGB.store.get('ote.focusWeak') === '1';
-$('focusWeak').addEventListener('change', e => CGB.store.set('ote.focusWeak', e.target.checked ? '1' : '0'));
+function paintTeams() { $('segTeams').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === G.nTeams))); }
+$('segTeams').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  G.nTeams = +b.dataset.v; CGB.store.set('ote.nTeams', String(G.nTeams));
+  paintTeams(); renderClassNames(); renderScores(); CGB.fitSetups(); updateHost(true);
+});
+$('cnames').addEventListener('input', renderScores);
+paintTeams();
+renderClassNames(true);
 $('startBtn').addEventListener('click', startGame);
 function paintMute() { $('muteBtn').textContent = CGB.settings.get('sound') ? 'Sound on' : 'Sound off'; $('muteBtn').setAttribute('aria-pressed', String(!CGB.settings.get('sound'))); }
 $('muteBtn').addEventListener('click', () => { CGB.settings.set('sound', !CGB.settings.get('sound')); CGB.sfx.unlock(); });
 $('menuBtn').addEventListener('click', () => CGB.app.requestLauncher());
 $('settingsBtn').addEventListener('click', () => CGB.modal.open('settingsModal'));
 paintMute();
-renderSetSelect();
+renderPack();
 
 let active = false;
 document.addEventListener('keydown', e => {
@@ -1297,7 +1470,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { e.preventDefault(); CGB.app.requestLauncher(); return; }
   const inField = e.target.matches && e.target.matches('input, textarea, select');
   if (G.phase === 'home') {
-    if (e.key === 'Enter' && !(e.target.matches && e.target.matches('button, select, textarea'))) { e.preventDefault(); startGame(); }
+    if (e.key === 'Enter' && !(e.target.matches && e.target.matches('button, select, textarea, summary'))) { e.preventDefault(); startGame(); }
     return;
   }
   if (G.phase === 'summary') {
@@ -1306,9 +1479,9 @@ document.addEventListener('keydown', e => {
   }
   if (inField) return;
   const k = e.key.toLowerCase();
-  if (G.step === 'ask') { if (k === 'c') markCorrect(); else if (k === 'w') markWrong(); else if (k === 'a') toggleAnswer(); }
-  else if (G.step === 'steal') { if (k === 'c') stealResult('correct'); else if (k === 'w') stealResult('wrong'); else if (k === 'n') stealResult('none'); else if (k === 'a') toggleAnswer(); }
-  else if (G.step === 'chute') { if (['1', '2', '3', '4'].includes(k)) chooseChute(+k - 1); }
+  if (G.step === 'ask') { if (round.handleKey(k)) e.preventDefault(); return; }
+  if (k === 'u' && round.handleKey('u')) { e.preventDefault(); return; }
+  if (canPick()) { if (['1', '2', '3', '4'].includes(k)) chooseLane(+k - 1); else if (k === 'r') randomLanes(); }
   else if (G.step === 'next') { if (k === ' ' || k === 'enter') { e.preventDefault(); nextQuestion(); } }
 });
 
@@ -1319,33 +1492,47 @@ let lastAttract = 0;
 function attractTick(now) {
   if (now - lastAttract < 3400 || drops.length || transits.length) return;
   lastAttract = now;
-  launchDrop(Math.floor(Math.random() * 4), -1, null);
+  launchDrop(Math.floor(Math.random() * 4), -1, null, Math.random);   // decoration on the setup screen: not part of play
 }
 newTray(false);
 resize();
 render();
 $('qText').textContent = 'Set up the game to begin.';
 let lastT = performance.now(), rafId = 0;
+/* The game advances in fixed 1/60 s steps of simulation time (up to 4 per frame), so
+   the physics gives the same result whatever the frame rate. */
+const STEP = 1 / 60, MAX_STEPS = 4;
+let simT = 0, simAcc = 0, manualClock = false;
+/* @test-only */ if (window.__SHOWTIME_MANUAL__) manualClock = true; /* @end-test-only */
+function simulate(h) {
+  simT += h;
+  for (let k = dropTimers.length - 1; k >= 0; k--) if (dropTimers[k].at <= simT) dropTimers.splice(k, 1)[0].go();
+  stepTray(tray, h, onTrayFall);
+  tray.lower.forEach(b => { if (b.anim > 0) b.anim = Math.max(0, b.anim - h * 1.1); });
+  updateDrops(h);
+  updateTransits(h);
+  if (G.step === 'dropping' && G.landed >= G.pending && simT >= G.settleAt) endTurn();
+}
 function loop(now) {
   if (!active) return;
   rafId = requestAnimationFrame(loop);
-  const dt = Math.min(0.033, Math.max(0, (now - lastT) / 1000));
+  const raw = Math.max(0, (now - lastT) / 1000), dt = Math.min(0.033, raw);
   lastT = now;
-  stepTray(tray, dt, onTrayFall);
-  tray.lower.forEach(b => { if (b.anim > 0) b.anim = Math.max(0, b.anim - dt * 1.1); });
-  updateDrops(dt);
-  updateTransits(dt);
+  if (!manualClock) {
+    simAcc = Math.min(simAcc + raw, STEP * MAX_STEPS);
+    let n = 0;
+    while (simAcc >= STEP && n < MAX_STEPS) { simulate(STEP); simAcc -= STEP; n++; }
+  }
   updateFalling(dt);
   syncTray(dt);
   pusher.position.z = TZ(tray.pf);
   updateChuteGlow(now);
   updateCamera(dt, now);
-  updateHost(dt, now);
+  updateHost();
   updateLabels(dt);
   placeBubble();
   dust.rotation.y += dt * 0.01;
   if (G.attract) attractTick(now);
-  if (G.step === 'dropping' && G.landed >= G.pending && now >= G.settleAt) finishDrop();
   if (G.phase === 'final') updateJackpotMeter(now);
   if (useBloom) composer.render(); else renderer.render(scene, camera);
 }
@@ -1356,8 +1543,10 @@ return {
     applyQuality();
     lastT = performance.now();
     rafId = requestAnimationFrame(loop);
+    updateHost(true);
     if (G.phase === 'home') {
-      setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! I'm ${CGB.hostCfg.name || 'your host'}. Set up the game and let's play.`, 'present', 1800); }, 700);
+      renderClassNames(true); renderPack(); renderScores();
+      setTimeout(() => { if (active && G.phase === 'home') hostSay(`Hello! Set up the game and let's play.`, 'present', 1800); }, 700);
       $('startBtn').focus();
     }
   },
@@ -1369,7 +1558,11 @@ return {
   },
   inProgress: () => G.phase === 'r1' || G.phase === 'final',
   /* used by the automated tests */
-  _state: () => ({ phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
+  _layout: () => {
+    const sr = wrap.getBoundingClientRect(), hr = hostRect();
+    return { stage: { w: sr.width, h: sr.height }, machine: machineRect(), machineRight: hostFit.machineRight, hidden: hostFit.hidden, host: { left: hr.left - sr.left, right: hr.right - sr.left, top: hr.top - sr.top, bottom: hr.bottom - sr.top }, away: $('host').classList.contains('away') };
+  },
+  _state: () => ({ camera: camera.position.toArray().map(v => +v.toFixed(4)), dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
 };
 }
 
@@ -1379,6 +1572,7 @@ CGB.registerGame('over-the-edge', {
   enter() { if (game) game.enter(); },
   exit() { if (game) game.exit(); },
   inProgress() { return !!(game && game.inProgress()); },
-  state() { return game && game._state(); }
+  state() { return game && game._state(); },
+  layout() { return game && game._layout(); }
 });
 })();

@@ -1,0 +1,92 @@
+// Outpace: winning as soon as the target is reached, the subject looks, and the frame rate.
+const { test } = require('@playwright/test');
+const { openBundle, state, mark, PICK, expect } = require('./helpers');
+const note = (name, value) => test.info().annotations.push({ type: name, description: String(value) });
+
+test('the Final Sprint is won as soon as the target is reached, after a short undo window', async ({ page }) => {
+  const log = await openBundle(page, '#outpace');
+  await page.click(PICK('#op-segGroups', 4));
+  await page.click('#op-startBtn');
+  await page.evaluate(() => CGB.test.outpace.toSprint(600));          // target: 4 teams × 2.25 = 9 steps
+  let s = await state(page, 'outpace');
+  expect(s.target).toBe(9);
+  await mark(page, 'outpace', () => true);                             // 4
+  await expect.poll(async () => (await state(page, 'outpace')).round, { timeout: 5000 }).toBe('think');
+  await mark(page, 'outpace', () => true);                             // 8
+  await expect.poll(async () => (await state(page, 'outpace')).round, { timeout: 5000 }).toBe('think');
+  await mark(page, 'outpace', i => i < 2);                             // 10: target reached
+  s = await state(page, 'outpace');
+  expect(s.net).toBe(10); expect(s.frozen).toBe(true);
+  // the clock has stopped
+  const t0 = s.timeLeft; await page.waitForTimeout(600);
+  expect((await state(page, 'outpace')).timeLeft).toBe(t0);
+  // undo inside the window: the clock starts again and the sprint carries on
+  await page.keyboard.press('u');
+  s = await state(page, 'outpace');
+  expect(s.net).toBe(8); expect(s.frozen).toBe(false); expect(s.phase).toBe('sprint');
+  await page.waitForTimeout(500);
+  expect((await state(page, 'outpace')).timeLeft).toBeLessThan(t0);
+  // reach it again and let the window pass: the escape plays with time still on the clock
+  await page.keyboard.press('Enter');
+  await expect.poll(async () => (await state(page, 'outpace')).frozen).toBe(true);
+  const left = (await state(page, 'outpace')).timeLeft;
+  expect(left).toBeGreaterThan(40);
+  await expect.poll(async () => (await state(page, 'outpace')).phase, { timeout: 20000 }).toBe('summary');
+  await expect(page.locator('#op-finalVerdict')).toContainText('Escaped');
+  expect((await state(page, 'outpace')).timeLeft).toBe(left);
+  expect(log.errors).toEqual([]);
+});
+
+test('the look follows the subject chosen on the main screen', async ({ page }) => {
+  const log = await openBundle(page);
+  const expected = { biology: 'science', chemistry: 'science', physics: 'science', combined: 'science', maths: 'maths', english: 'english', history: 'history', geography: 'geography' };
+  await page.click('[data-play="outpace"]', { timeout: 60000 });
+  for (const [sj, look] of Object.entries(expected)) {
+    await page.evaluate(sj => CGB.bank.setSubject(sj), sj);
+    expect((await state(page, 'outpace')).look, sj).toBe(look);
+  }
+  // a subject the game does not know gets the general look
+  await page.evaluate(() => CGB.bank.setSubject('combined'));
+  expect((await state(page, 'outpace')).look).toBe('science');
+  // there is no look setting on the setup card
+  await expect(page.locator('#op-setupCard')).not.toContainText(/look/i);
+  // every look draws a race: play into the Deal Round in each and check the racers are on screen
+  for (const sj of ['combined', 'maths', 'english', 'history', 'geography']) {
+    await page.keyboard.press('Escape');
+    await page.evaluate(sj => { CGB.bank.setSubject(sj); if (!CGB.bank.active()) CGB.bank.addSet('Look ' + sj, 'Subject: S\nTopic: T\nQ: One?\nA: Yes\nQ: Two?\nA: No', sj); }, sj);
+    await page.click('[data-play="outpace"]');
+    await page.click('#op-startBtn');
+    await expect(page.locator('#op-tagYou')).toBeVisible();
+    await expect(page.locator('#op-tagHunter')).toBeVisible();
+    await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+  }
+  expect(log.errors).toEqual([]);
+});
+
+/* Frames per second in the Deal Round at 1366×768. The test machine draws with a software
+   renderer, so the numbers are far below a real laptop's; they are recorded with the result,
+   and the test checks the automatic step-down engages when frames are slow. */
+for (const quality of ['low', 'high']) {
+  test(`Outpace frame rate at ${quality} graphics (recorded)`, async ({ page }) => {
+    await page.setViewportSize({ width: 1366, height: 768 });
+    await openBundle(page, '#outpace', { quality });
+    await page.click('#op-startBtn');
+    await page.keyboard.press('2');
+    await page.waitForTimeout(1500);
+    const fps = await page.evaluate(() => new Promise(res => {
+      let n = 0; const t0 = performance.now();
+      const tick = () => { n++; if (performance.now() - t0 < 4000) requestAnimationFrame(tick); else res(n / ((performance.now() - t0) / 1000)); };
+      requestAnimationFrame(tick);
+    }));
+    const s = await state(page, 'outpace');
+    note(`fps at ${quality}`, fps.toFixed(1));
+    note('automatic quality step-down level', s.perfLevel);
+    console.log(`Outpace ${quality}: ${fps.toFixed(1)} fps (software renderer), step-down level ${s.perfLevel}`);
+    // a sanity check only: with other test workers sharing the CPU the software renderer can drop to 2–3 fps
+    expect(fps).toBeGreaterThan(1.5);
+    // slow frames for a sustained spell step the quality down (at most two levels); under a
+    // heavily loaded test machine the first frames come so slowly that this can take a few seconds more
+    if (fps < 30) await expect.poll(async () => (await state(page, 'outpace')).perfLevel, { timeout: 15000 }).toBeGreaterThanOrEqual(1);
+    expect((await state(page, 'outpace')).perfLevel).toBeLessThanOrEqual(2);
+  });
+}

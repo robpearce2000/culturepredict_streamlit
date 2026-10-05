@@ -16,6 +16,11 @@ CGB.createRenderer = function (opts) {
 };
 CGB.noWebGLMessage = '<div class="cgb-panel" style="max-width:560px;margin:15vh auto 0;padding:24px 26px;"><h2 style="font-family:var(--display);font-weight:400;margin:0 0 8px;">3D graphics are switched off</h2><p class="hint" style="font-size:1rem">This browser could not start 3D graphics (WebGL). Try another browser (Chrome, Edge, Firefox or Safari), or ask IT to turn on hardware acceleration.</p></div>';
 
+/* Starting a game: take the keyboard off the setup card (a name box or the Start button), so
+   the game's keys work at once (Space for "show me", Enter to pick) instead of going to
+   controls that are about to disappear */
+CGB.leaveField = () => { const a = document.activeElement; if (a && a !== document.body && a.closest && a.closest('.setup') && a.blur) a.blur(); };
+
 /* Two-tap confirm for destructive buttons */
 CGB.armButton = function (btn, armedText, onConfirm) {
   if (btn.dataset.armed === '1') { btn.dataset.armed = ''; onConfirm(); return; }
@@ -81,7 +86,28 @@ CGB.renderSettings = function (el, compact) {
     S.set(key, JSON.parse(b.dataset.v));
   };
 };
+/* Setup cards must fit on screen without scrolling. Each one shows "How to play"
+   open when there is room; if the card would overflow it first tightens its
+   spacing, then closes "How to play" (one click opens it again). */
+CGB.fitSetups = () => requestAnimationFrame(() => {
+  document.querySelectorAll('.setup').forEach(card => {
+    if (!card.offsetParent) return;
+    const how = card.querySelector('details.howto');
+    const over = () => card.scrollHeight > card.clientHeight + 1;
+    card.classList.remove('tight', 'tighter', 'twocol');
+    if (how) how.open = true;
+    if (over()) card.classList.add('tight');
+    if (over() && how) how.open = false;
+    if (over()) card.classList.add('tighter');
+    // a portrait tablet with six class teams: two narrower columns instead of one long one
+    if (over() && window.innerWidth >= 640) card.classList.add('twocol');
+  });
+});
+window.addEventListener('resize', () => { clearTimeout(CGB.fitSetups.t); CGB.fitSetups.t = setTimeout(CGB.fitSetups, 120); });
+// opening "Edit team names" makes the card taller, so fit it again
+document.addEventListener('toggle', e => { if (e.target.matches && e.target.matches('.setup details.tnames')) CGB.fitSetups(); }, true);
 CGB.settings.onChange(() => {
+  CGB.fitSetups();
   document.querySelectorAll('.seg[data-key]').forEach(seg => {
     const v = CGB.settings.get(seg.dataset.key);
     seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(JSON.parse(b.dataset.v) === v)));
@@ -94,13 +120,17 @@ CGB.bankUI = (() => {
   let editing = null;   // id of the set being edited, or null when adding
   const $ = id => document.getElementById(id);
   function subjectTag(s) { const k = s.toLowerCase(); return k.startsWith('bio') ? 'b' : k.startsWith('chem') ? 'c' : k.startsWith('phys') ? 'p' : ''; }
+  const subjectOptions = (sel) => '<option value="">Any subject</option>' + B.SUBJECTS.map(x => `<option value="${x.id}"${x.id === sel ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
   function renderList() {
-    const act = B.active().id;
-    $('bankList').innerHTML = B.all().map(s => {
+    const a = B.active(), act = a ? a.id : '';
+    $('bankIntro').textContent = `${B.subjectLabel()} sets (${B.boardLabel()}). Choose the set to use: every game uses it, and each team's wrong answers are shared between games. Change the subject on the main screen.`;
+    const list = B.available();
+    $('bankList').innerHTML = (list.length ? '' : `<p class="hint">${esc(B.subjectNote())}</p>`) + list.map(s => {
       const sum = B.summary(s);
       const tags = sum.subjects.map(x => `<span class="tag ${subjectTag(x)}">${esc(x)}</span>`).join('') +
         `<span class="tag">${sum.count} questions</span><span class="tag">${sum.topics.length} topics</span>` +
-        (s.builtin ? '<span class="tag">Built-in</span>' : '<span class="tag own">Your set</span>');
+        (s.builtin ? '<span class="tag">Built-in</span>' : '<span class="tag own">Your set</span>') +
+        (s.builtin ? '' : `<label class="tag sj">Subject <select data-subj="${esc(s.id)}" aria-label="Subject for ${esc(s.name)}">${subjectOptions(s.subject)}</select></label>`);
       const acts = s.builtin
         ? `<button class="btn plain sm" type="button" data-act="copy" data-id="${esc(s.id)}">Copy to edit</button>`
         : `<button class="btn plain sm" type="button" data-act="rename" data-id="${esc(s.id)}">Rename</button>
@@ -123,20 +153,26 @@ CGB.bankUI = (() => {
     $('bankFormTitle').textContent = set ? 'Edit questions' : 'Add a question set';
     $('bankName').value = set ? set.name : '';
     $('bankText').value = set ? B.toText(set.questions) : '';
+    $('bankSubject').innerHTML = B.SUBJECTS.map(x => `<option value="${x.id}">${esc(x.label)}</option>`).join('');
+    $('bankSubject').value = set && set.subject ? set.subject : B.subject();
+    $('bankSubject').disabled = !!set;
     $('bankSave').textContent = set ? 'Save changes' : 'Save as new set';
     $('bankCancel').hidden = !set;
     setStatus('bankFormStatus', '');
     if (set) { $('bankForm').scrollIntoView({ block: 'start', behavior: CGB.settings.reduced() ? 'auto' : 'smooth' }); $('bankName').focus(); }
   }
   function init() {
-    $('bankList').addEventListener('change', e => { if (e.target.name === 'activeSet') { B.setActive(e.target.value); } });
+    $('bankList').addEventListener('change', e => {
+      if (e.target.name === 'activeSet') B.setActive(e.target.value);
+      else if (e.target.dataset.subj) B.setSubjectOf(e.target.dataset.subj, e.target.value);
+    });
     $('bankList').addEventListener('click', e => {
       const b = e.target.closest('button[data-act]'); if (!b) return;
       const set = B.get(b.dataset.id); if (!set) return;
       if (b.dataset.act === 'delete') CGB.armButton(b, 'Tap again to delete', () => { B.deleteSet(set.id); if (editing === set.id) startEdit(null); });
       else if (b.dataset.act === 'edit') startEdit(set);
       else if (b.dataset.act === 'copy') {
-        const r = B.addSet(set.short + ' (my copy)', B.toText(set.questions));
+        const r = B.addSet(set.short + ' (my copy)', B.toText(set.questions), B.subject());
         if (r.ok) startEdit(r.set);
       } else if (b.dataset.act === 'rename') {
         const nm = b.closest('.bank-item').querySelector('.nm');
@@ -153,9 +189,9 @@ CGB.bankUI = (() => {
     });
     $('bankSave').addEventListener('click', () => {
       const name = $('bankName').value, text = $('bankText').value;
-      const r = editing ? B.updateSet(editing, name, text) : B.addSet(name, text);
+      const r = editing ? B.updateSet(editing, name, text) : B.addSet(name, text, $('bankSubject').value);
       if (!r.ok) { setStatus('bankFormStatus', r.error, true); return; }
-      setStatus('bankFormStatus', `${editing ? 'Saved' : 'Added'} "${r.set.name}" with ${r.set.questions.length} questions. It is now in use in every game.${CGB.store.available ? '' : ' Storage is blocked, so it will be lost when the page closes.'}`);
+      setStatus('bankFormStatus', `${editing ? 'Saved' : 'Added'} "${r.set.name}" with ${r.set.questions.length} questions. It is now in use in every game for ${B.subjectLabel(r.set.subject || B.subject())}.${CGB.store.available ? '' : ' Storage is blocked, so it will be lost when the page closes.'}`);
       if (!editing) { $('bankName').value = ''; $('bankText').value = ''; }
       else B.setActive(editing);
     });
@@ -189,11 +225,65 @@ CGB.bankUI = (() => {
   return { init, open() { renderList(); startEdit(null); CGB.modal.open('bankModal'); }, renderList };
 })();
 
+/* ---------- Host editor (on the main screen; changes the host in every game) ---------- */
+CGB.hostEditor = (() => {
+  const $ = id => document.getElementById(id);
+  let preview = null;
+  const save = () => { CGB.saveHost(); if (preview) { preview.gesture('present', 1200); preview.talk(700); } };
+  function swatchRow(id, list, key, label) {
+    const el = $(id);
+    el.innerHTML = list.map((c, i) => `<button type="button" class="sw" data-i="${i}" style="background:${c}" aria-label="${label} option ${i + 1}"></button>`).join('');
+    const paint = () => el.querySelectorAll('.sw').forEach(b => { const on = +b.dataset.i === CGB.hostCfg[key]; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
+    el.addEventListener('click', e => { const b = e.target.closest('.sw'); if (!b) return; CGB.hostCfg[key] = +b.dataset.i; paint(); save(); });
+    paint();
+  }
+  function segRow(id, list, key) {
+    const el = $(id);
+    el.innerHTML = list.map(([v, label]) => `<button type="button" data-v="${v}">${label}</button>`).join('');
+    const paint = () => el.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === CGB.hostCfg[key])));
+    el.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; CGB.hostCfg[key] = b.dataset.v; paint(); save(); });
+    paint();
+  }
+  function init() {
+    swatchRow('swSkin', CGB.hostOpts.skin, 'skin', 'Skin');
+    swatchRow('swHair', CGB.hostOpts.hair, 'hair', 'Hair colour');
+    swatchRow('swSuit', CGB.hostOpts.suit, 'suit', 'Suit colour');
+    segRow('segStyle', CGB.hostOpts.style, 'style');
+    segRow('segBeard', CGB.hostOpts.beard, 'beard');
+    segRow('segGlasses', CGB.hostOpts.glasses, 'glasses');
+    $('hostName').value = CGB.hostName();
+    // empty means nameless: no name label anywhere
+    $('hostName').addEventListener('input', e => { CGB.hostCfg.name = e.target.value.trim(); CGB.store.setJSON('host', CGB.hostCfg); CGB.hostListeners.forEach(fn => { try { fn(); } catch (x) { /* ignore */ } }); });
+    $('hostName').addEventListener('change', () => CGB.saveHost());
+  }
+  function open() {
+    if (!preview) preview = CGB.createHost2D($('hostPreview'), { className: 'host-preview-fig' });
+    CGB.modal.open('hostModal');
+    preview.gesture('wave', 1800); preview.talk(800);
+  }
+  return { init, open };
+})();
+
+/* ---------- The questions line on every setup card ----------
+   Shows the subject and set in use, with a link back to the main screen to change them.
+   Returns false when the subject has no questions yet, so the game can hold its Start button. */
+CGB.renderPackLine = function (el) {
+  const B = CGB.bank, esc = CGB.escapeHtml, a = B.active();
+  const where = `${esc(B.subjectLabel())} · ${esc(B.boardLabel())}`;
+  el.classList.add('packline');
+  el.innerHTML = a
+    ? `<span class="lab">Questions</span><span class="pk"><b title="${esc(a.name)}">${esc(a.short || a.name)}</b> <span class="n">${where} · ${a.questions.length} questions</span></span><button class="linkish" type="button" data-pack="change">Change</button>`
+    : `<span class="lab">Questions</span><span class="pk"><b>No ${esc(B.subjectLabel())} questions yet</b> <span class="n">Add your own in the Question bank, or choose another subject.</span></span><button class="linkish" type="button" data-pack="change">Change</button>`;
+  el.classList.toggle('empty', !a);
+  if (!el.dataset.wired) { el.dataset.wired = '1'; el.addEventListener('click', e => { if (e.target.closest('[data-pack]')) CGB.app.chooseSubject(); }); }
+  return !!a;
+};
+
 /* ---------- Launcher ---------- */
 CGB.app = (() => {
   const $ = id => document.getElementById(id);
   let current = 'launcher';
-  const routes = { 'over-the-edge': 'over-the-edge', 'outpace': 'outpace' };
+  const routes = { 'over-the-edge': 'over-the-edge', 'outpace': 'outpace', 'category-clash': 'category-clash', 'hex-hunt': 'hex-hunt' };
   let mascot = null;
 
   function show(id) {
@@ -205,7 +295,7 @@ CGB.app = (() => {
       $('launcher').hidden = false;
       document.title = 'Showtime: Classroom Gameshows';
       if (mascot) mascot.resume();
-      renderActive();
+      renderSubject();
       const card = prev !== 'launcher' && document.querySelector(`[data-play="${prev}"]`);
       if (card) card.focus();
     } else {
@@ -216,6 +306,7 @@ CGB.app = (() => {
       if (!g.ready) { g.init($('game-' + id)); g.ready = true; }
       document.title = g.title + ' | Showtime: Classroom Gameshows';
       g.enter();
+      CGB.fitSetups();
     }
     const want = id === 'launcher' ? '' : '#' + id;
     if (location.hash !== want) {
@@ -229,47 +320,26 @@ CGB.app = (() => {
     if (g && g.inProgress && g.inProgress()) { CGB.modal.open('leaveModal'); return; }
     show('launcher');
   }
-  function renderActive() {
-    const s = CGB.bank.active();
-    $('activeSetName').textContent = s.name;
-    $('activeSetCount').textContent = s.questions.length + ' questions';
+  /* The subject panel: subject, exam board and the question set in use */
+  function renderSubject() {
+    const B = CGB.bank, esc = CGB.escapeHtml, sj = B.subject(), bd = B.board();
+    // compact dropdowns: native selects work with mouse, touch and keyboard everywhere
+    $('subjectSelect').innerHTML = B.SUBJECTS.map(x => `<option value="${x.id}"${x.id === sj ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
+    $('boardSelect').innerHTML = B.BOARDS.map(x => `<option value="${x.id}"${x.id === bd ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
+    B.fillSelect($('launcherSet'));
+    const note = B.subjectNote();
+    $('subjectNote').textContent = note;
+    $('subjectNote').hidden = !note;
   }
-
-  /* The mascot on the launcher: a small 3D scene with the host waving hello */
+  /* The mascot on the launcher: the host waves hello now and then */
   function createMascot() {
     const box = $('mascot');
-    const renderer = CGB.createRenderer({ alpha: true });
-    if (!renderer) { box.hidden = true; return null; }
-    renderer.setClearColor(0x000000, 0);
-    box.appendChild(renderer.domElement);
-    const scene = new THREE.Scene();
-    const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
-    cam.position.set(0, 4.2, 23); cam.lookAt(0, 2.9, 0);
-    scene.add(new THREE.HemisphereLight(0xfff3e0, 0x30365e, 0.9));
-    const key = new THREE.DirectionalLight(0xffffff, 0.8); key.position.set(4, 10, 8); scene.add(key);
-    const rim = new THREE.DirectionalLight(0x4ff0d8, 0.5); rim.position.set(-6, 6, -6); scene.add(rim);
-    const host = CGB.createHost(scene, { position: new THREE.Vector3(0, -2.6, 0), rotationY: 0.25 });
-    CGB.hostListeners.push(() => host.rebuild());
-    let raf = 0, last = performance.now(), running = false, nextWave = performance.now() + 600;
-    function size() {
-      const w = box.clientWidth, h = box.clientHeight; if (!w || !h) return;
-      renderer.setPixelRatio(CGB.settings.pixelRatio());
-      renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
-    }
-    function frame(now) {
-      if (!running) return;
-      raf = requestAnimationFrame(frame);
-      const dt = Math.min(0.05, (now - last) / 1000); last = now;
-      if (now > nextWave) { host.gesture(Math.random() < 0.6 ? 'wave' : 'present', 2200); host.talk(900); nextWave = now + 7000 + Math.random() * 4000; }
-      host.update(dt, now, { rest: 'idle' });
-      renderer.render(scene, cam);
-    }
-    window.addEventListener('resize', size);
-    CGB.settings.onChange(k => { if (k === 'quality') size(); });
-    size();
+    const host = CGB.createHost2D(box, { className: 'host-launcher' });
+    let timer = 0;
+    const loop = () => { host.gesture(Math.random() < 0.65 ? 'wave' : 'present', 2200); host.talk(900); timer = setTimeout(loop, 7000 + Math.random() * 4000); };
     return {
-      resume() { if (running) return; running = true; last = performance.now(); size(); raf = requestAnimationFrame(frame); },
-      pause() { running = false; cancelAnimationFrame(raf); },
+      resume() { clearTimeout(timer); timer = setTimeout(loop, 600); },
+      pause() { clearTimeout(timer); },
       wave() { host.gesture('wave', 2200); host.talk(900); }
     };
   }
@@ -278,24 +348,38 @@ CGB.app = (() => {
     $('wordmark').innerHTML = CGB.brand.wordmark();
     $('artOTE').innerHTML = CGB.brand.oteArt();
     $('artOP').innerHTML = CGB.brand.opArt();
+    $('artCC').innerHTML = CGB.brand.ccArt();
+    $('artHH').innerHTML = CGB.brand.hhArt();
     CGB.renderSettings($('launcherSettings'), true);
     CGB.renderSettings($('modalSettings'), false);
     CGB.bankUI.init();
-    $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Pick a game.`;
-    CGB.hostListeners.push(() => { $('mascotHello').textContent = `Hello, I'm ${CGB.hostCfg.name}! Pick a game.`; });
+    // the greeting never introduces him; his name label shows only if the teacher has given him one
+    const paintHello = () => { const n = CGB.hostName(); $('mascotWho').textContent = n; $('mascotWho').hidden = !n; };
+    paintHello();
+    CGB.hostListeners.push(paintHello);
     document.querySelectorAll('[data-play]').forEach(b => b.addEventListener('click', () => show(b.dataset.play)));
     $('openBank').addEventListener('click', () => CGB.bankUI.open());
+    $('subjectSelect').addEventListener('change', e => CGB.bank.setSubject(e.target.value));
+    $('boardSelect').addEventListener('change', e => CGB.bank.setBoard(e.target.value));
+    $('launcherSet').addEventListener('change', e => CGB.bank.setActive(e.target.value));
+    $('openHost').addEventListener('click', () => CGB.hostEditor.open());
     $('openAbout').addEventListener('click', () => CGB.modal.open('aboutModal'));
     $('leaveConfirm').addEventListener('click', () => { CGB.modal.close('leaveModal'); show('launcher'); });
     $('aboutVersion').textContent = CGB.VERSION;
     $('storageNote').hidden = CGB.store.available;
-    CGB.bank.onChange(renderActive);
-    renderActive();
+    CGB.bank.onChange(renderSubject);
+    renderSubject();
+    CGB.hostEditor.init();
     mascot = createMascot();
     window.addEventListener('hashchange', () => { const r = routes[location.hash.slice(1)]; show(r || 'launcher'); });
     const start = routes[location.hash.slice(1)];
     if (start) show(start);
     else if (mascot) mascot.resume();
   }
-  return { init, show, requestLauncher, get current() { return current; } };
+  /* "Change" on a setup card: back to the main screen with the subject panel in focus */
+  function chooseSubject() {
+    show('launcher');
+    $('subjectSelect').focus();
+  }
+  return { init, show, requestLauncher, chooseSubject, get current() { return current; } };
 })();

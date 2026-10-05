@@ -1,0 +1,127 @@
+/* =========================================================
+   HEX HUNT: two teams race to link opposite edges of a hex board.
+   Identity: deep sea-teal night, indigo hexagons with white letters,
+   Team 1 blue (left to right) and Team 2 orange (top to bottom).
+   ========================================================= */
+.hh { --hh-bg: #0A1A2C; --hh-bg2: #14425A; --hh-hex: #262C66; --hh-text: #F4F8FF; --hh-muted: #C7D6E6; --ha: var(--team0); --hb: var(--team1);
+  background: radial-gradient(ellipse at 50% 20%, var(--hh-bg2) 0%, var(--hh-bg) 75%); color: var(--hh-text); }
+.hh-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; }
+.hh-screen.active { display: flex; }
+.hh-card { width: 100%; max-width: 620px; padding: 20px 24px 22px; margin: auto; }
+.hh-logo svg { display: block; width: 100%; max-width: 400px; height: auto; margin: 0 auto 8px; }
+.hh-rules { font-size: 0.95rem; font-weight: 700; color: var(--ink-soft); line-height: 1.5; background: var(--raised); border-radius: 12px; padding: 10px 14px; margin-bottom: 14px; }
+.hh-rules b { color: var(--ink); }
+.hh-names { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.hh-names label { display: block; background: #fff; border-radius: 12px; padding: 7px 12px; border: 2px solid var(--line); border-bottom: 6px solid var(--tc); }
+.hh-names span { font-size: 0.8rem; font-weight: 900; color: var(--ink-soft); }
+.hh-names input { width: 100%; background: transparent; border: none; color: var(--ink); font-weight: 900; font-size: 1.2rem; padding: 2px 0; font-family: var(--body); }
+
+/* Board */
+.hh-play { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px 16px; }
+.hh-play[hidden] { display: none; }
+.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding-left: 25rem; }
+.hh-turn { font-family: var(--display); font-size: 1.5rem; }
+.hh-turn b { font-weight: 400; color: var(--tc); }
+.hh-round { font-weight: 900; color: var(--hh-muted); white-space: nowrap; }
+.hh-boardwrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.hh-board { width: 100%; height: 100%; display: block; }
+.hh-hex { cursor: pointer; }
+.hh-hex .face { fill: var(--hh-hex); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; transition: fill .25s; }
+.hh-hex .side { fill: #0C1230; stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+.hh-hex .bev { fill: none; stroke: rgba(255,255,255,0.22); stroke-width: 3; pointer-events: none; }
+.hh-hex:hover .face { fill: #34408A; }
+.hh-hex text { font-family: var(--display); fill: #fff; text-anchor: middle; pointer-events: none; }
+.hh-hex .mk { font-family: var(--body); font-weight: 900; fill: var(--ink); }
+.hh-hex.own-0 .face { fill: var(--ha); }
+.hh-hex.own-1 .face { fill: var(--hb); }
+.hh-hex.own-0 .side { fill: color-mix(in srgb, var(--ha) 45%, #000); }
+.hh-hex.own-1 .side { fill: color-mix(in srgb, var(--hb) 45%, #000); }
+.hh-hex.own-0 text.lt, .hh-hex.own-1 text.lt { fill: #fff; opacity: 0.6; }
+.hh-hex.own-0 .mk, .hh-hex.own-1 .mk { fill: #fff; }
+.hh-hex.cursor .face { stroke: var(--sun); stroke-width: 9; }
+.hh-hex.path .face { stroke: #fff; stroke-width: 8; animation: hhGlow 1s ease-in-out infinite alternate; }
+@keyframes hhGlow { from { filter: brightness(1); } to { filter: brightness(1.35); } }
+.hh-edge-0 { fill: var(--ha); filter: drop-shadow(0 0 calc(var(--g0, 0) * 16px) var(--ha)); opacity: calc(0.7 + var(--g0, 0) * 0.3); }
+.hh-edge-1 { fill: var(--hb); filter: drop-shadow(0 0 calc(var(--g1, 0) * 16px) var(--hb)); opacity: calc(0.7 + var(--g1, 0) * 0.3); }
+
+/* claiming a hexagon: it pops up and flashes with a ring of light */
+.hh-hex { transform-box: fill-box; transform-origin: 50% 50%; }
+.hh-hex.claim { animation: hhClaim 0.6s cubic-bezier(.3,1.6,.5,1); }
+@keyframes hhClaim { 0% { transform: scale(0.85); } 45% { transform: scale(1.14) translateY(-4px); } 100% { transform: none; } }
+.hh-hex .burst { fill: none; stroke: #fff; stroke-width: 6; transform-box: fill-box; transform-origin: 50% 50%; animation: hhBurst 0.7s ease-out forwards; pointer-events: none; }
+@keyframes hhBurst { from { opacity: 0.9; transform: scale(0.6); } to { opacity: 0; transform: scale(1.6); } }
+/* the winning chain lights up hex by hex */
+.hh-hex.chain .face { animation: hhChain 0.5s ease-out both; animation-delay: calc(var(--i) * 0.14s); stroke: #fff; stroke-width: 8; }
+@keyframes hhChain { from { filter: brightness(0.6); } 50% { filter: brightness(2.1); } to { filter: brightness(1.35); } }
+.hh-board { transition: transform 0.5s ease; }
+.hh-boardwrap { overflow: hidden; }
+.hh-confetti { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.hh-confetti i { position: absolute; top: -20px; left: var(--x); width: 10px; height: 16px; background: var(--c); border-radius: 2px; transform: rotate(var(--r)); animation: hhFall 2.2s ease-in var(--d) forwards; }
+@keyframes hhFall { to { transform: translateY(110vh) rotate(calc(var(--r) + 540deg)); } }
+html[data-motion="reduced"] .hh-hex, html[data-motion="reduced"] .hh-hex .face, html[data-motion="reduced"] .hh-board { animation: none !important; transition: none !important; }
+html[data-motion="reduced"] .hh-hex .burst, html[data-motion="reduced"] .hh-confetti { display: none; }
+html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filter: none; }
+.hh-teams { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.hh-team { background: #fff; color: var(--ink); border: 3px solid var(--ink); border-bottom: 8px solid var(--tc); border-radius: 14px; padding: 6px 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; min-width: 0; }
+.hh-team .nm { font-weight: 900; font-size: 1.05rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.hh-team .nm small { font-weight: 800; color: var(--ink-soft); font-size: 0.78rem; }
+.hh-team .sc { font-family: var(--display); font-size: 1.6rem; white-space: nowrap; }
+.hh-team.turn { box-shadow: 0 0 0 4px var(--sun); }
+.hh-keys { color: var(--hh-muted); text-align: center; }
+
+/* Question */
+.hh-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 92px; background: rgba(6, 14, 26, 0.8); }
+.hh-q[hidden] { display: none; }
+.hh-qcard { width: 100%; max-width: 980px; max-height: 100%; overflow-y: auto; background: var(--paper); color: var(--ink); border: 5px solid var(--ink); border-radius: 22px; box-shadow: 0 10px 0 rgba(0,0,0,0.35); padding: 18px 26px 22px; display: flex; flex-direction: column; gap: 10px; }
+.hh-qtop { display: flex; align-items: center; gap: 16px; }
+.hh-letter { flex: none; width: 92px; height: 104px; display: grid; place-items: center; font-family: var(--display); font-size: 3.4rem; color: #fff; background: var(--hh-hex); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+.hh-qclue { font-weight: 900; font-size: 1.25rem; }
+.hh-qtag { font-weight: 800; font-size: 0.9rem; color: var(--ink-soft); }
+.hh-qtext { font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.3; font-weight: 800; overflow-wrap: anywhere; }
+.hh-qanswer { display: none; font-size: clamp(1.15rem, 2.2vw, 1.6rem); font-weight: 900; color: #064442; background: #E3F6F5; border: 2px solid #9ED9D6; border-radius: 12px; padding: 10px 14px; }
+.hh-qanswer::before { content: 'Answer: '; color: var(--ink-soft); }
+.hh-qanswer.shown { display: block; }
+.hh-qmsg { font-weight: 900; font-size: 1.1rem; min-height: 1.3em; }
+.hh-qbtns { display: flex; gap: 10px; flex-wrap: wrap; }
+.hh-qbtns .btn { flex: 1 1 200px; }
+.hh-qbtns .btn.buzz { background: #fff; color: var(--ink); border: 3px solid var(--ink); box-shadow: 0 5px 0 var(--tc); }
+
+/* Round won */
+.hh-win { position: absolute; inset: 0; z-index: 30; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; padding: 16px; background: rgba(6, 14, 26, 0.5); }
+.hh-win[hidden] { display: none; }
+.hh-wintitle { font-family: var(--display); font-size: clamp(2.4rem, 6vw, 4.4rem); color: #fff; paint-order: stroke fill; -webkit-text-stroke: 8px var(--ink); text-shadow: 0 6px 0 var(--ink); }
+.hh-windetail { background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 999px; padding: 8px 18px; font-weight: 900; font-size: 1.1rem; }
+
+/* Results */
+.hh-sum { max-width: 900px; }
+.hh-sum h2 { font-family: var(--display); font-weight: 400; font-size: 2.6rem; margin: 0 0 10px; text-align: center; }
+
+.hh-sum-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+
+@media (max-width: 900px) {
+  .hh-head { padding-left: 0; padding-top: 52px; }
+}
+@media (max-width: 560px) { .hh-names { grid-template-columns: 1fr; } }
+
+.hh-qcard:focus { outline: none; }
+.hh-win { padding-bottom: 92px; }
+
+/* whole class: press the half that had more right answers, or Neither */
+.hh-turn small { display: block; font-family: var(--body); font-weight: 800; font-size: 0.85rem; color: var(--hh-muted); }
+.hh-share { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; }
+.hh-share[hidden] { display: none; }
+.hh-side { display: grid; justify-items: center; align-content: center; gap: 2px; min-height: 92px; padding: 10px 12px; border: 3px solid var(--ink); border-bottom-width: 7px; border-radius: 16px; background: var(--tc); color: #fff; font: inherit; cursor: pointer; text-align: center; }
+.hh-side b { font-family: var(--display); font-weight: 400; font-size: 1.5rem; line-height: 1.1; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hh-side small { font-weight: 800; font-size: 0.9rem; opacity: 0.95; }
+.hh-side .kbd { background: rgba(255,255,255,0.92); color: var(--ink); }
+.hh-side:hover { filter: brightness(1.06); }
+.hh-side:active { transform: translateY(2px); border-bottom-width: 5px; }
+.hh-side:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
+.hh-side.neither { --tc: #fff; background: #fff; color: var(--ink); min-width: 140px; }
+.hh-side.neither .kbd { background: var(--paper); }
+.hh-side[aria-pressed="true"] { box-shadow: 0 0 0 4px var(--sun); }
+@media (max-width: 700px) { .hh-share { grid-template-columns: 1fr 1fr; } .hh-side.neither { grid-column: 1 / -1; min-height: 56px; } }
+/* the keyboard cursor's hint */
+.hh-boardwrap { position: relative; }
+.hh-curhint { position: absolute; top: 4px; right: 4px; background: rgba(255,255,255,0.92); border: 2px solid var(--sun); border-radius: 999px; padding: 2px 10px; font-weight: 800; font-size: 0.78rem; color: var(--ink); pointer-events: none; }
+.hh-curhint[hidden] { display: none; }

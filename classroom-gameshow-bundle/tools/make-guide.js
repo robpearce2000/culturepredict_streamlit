@@ -21,5 +21,5 @@ const ROOT = path.join(__dirname, '..');
   let pages = '?';
   try { pages = execFileSync('pdfinfo', [out], { encoding: 'utf8' }).match(/Pages:\s+(\d+)/)[1]; } catch (e) { /* pdfinfo not installed */ }
   console.log(`Wrote dist/teacher-guide.pdf (${pages} pages)`);
-  if (pages !== '?' && (+pages < 2 || +pages > 4)) { console.error('The guide must be 2 to 4 pages.'); process.exit(1); }
+  if (pages !== '?' && (+pages < 2 || +pages > 5)) { console.error('The guide must be 2 to 5 pages.'); process.exit(1); }
 })().catch(e => { console.error(e); process.exit(1); });

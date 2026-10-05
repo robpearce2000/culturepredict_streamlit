@@ -1,7 +1,7 @@
 // The shared question bank: import, both games, backup round trip, shared history.
 const fs = require('fs');
 const { test } = require('@playwright/test');
-const { openBundle, state, playOutpace, setNames, expect } = require('./helpers');
+const { openBundle, state, mark, playOutpace, setNames, PICK, expect } = require('./helpers');
 
 const PASTE = `Subject: Chemistry
 Topic: Test topic alpha
@@ -14,7 +14,7 @@ Topic: Test topic beta
 Q: What is the unit of force?
 A: The newton (N)`;
 
-test('a pasted question set appears in both games', async ({ page }) => {
+test('a pasted question set appears in every game', async ({ page }) => {
   const log = await openBundle(page);
   await page.click('#openBank');
   await page.fill('#bankName', 'Pasted test set');
@@ -23,14 +23,12 @@ test('a pasted question set appears in both games', async ({ page }) => {
   await expect(page.locator('#bankFormStatus')).toContainText('3 questions');
   await expect(page.locator('#bankList')).toContainText('Pasted test set');
   await page.keyboard.press('Escape');
-  await expect(page.locator('#activeSetName')).toHaveText('Pasted test set');
+  // it is now the set in use on the main screen
+  expect(await page.locator('#launcherSet').evaluate(s => s.options[s.selectedIndex].text)).toContain('Pasted test set');
 
-  // Over the Edge: the set is listed, selected, and its questions are asked
+  // Over the Edge: the setup card names it, and its questions are asked
   await page.click('[data-play="over-the-edge"]');
-  const oteSel = page.locator('#ote-setSelect');
-  await expect(oteSel.locator('option', { hasText: 'Pasted test set' })).toHaveCount(1);
-  const selectedOte = await oteSel.evaluate(s => s.options[s.selectedIndex].text);
-  expect(selectedOte).toContain('Pasted test set');
+  await expect(page.locator('#ote-pack')).toContainText('Pasted test set');
   await page.click('#ote-startBtn');
   const q1 = (await state(page, 'over-the-edge')).q;
   expect(['Test topic alpha', 'Test topic beta']).toContain(q1.topic);
@@ -38,8 +36,7 @@ test('a pasted question set appears in both games', async ({ page }) => {
 
   // Outpace: same
   await page.click('[data-play="outpace"]');
-  const opSel = page.locator('#op-setSelect');
-  expect(await opSel.evaluate(s => s.options[s.selectedIndex].text)).toContain('Pasted test set');
+  await expect(page.locator('#op-pack')).toContainText('Pasted test set');
   await page.click('#op-startBtn');
   await page.keyboard.press('1');
   const q2 = (await state(page, 'outpace')).q;
@@ -90,29 +87,48 @@ test('JSON backup export and re-import round-trips with no loss', async ({ page 
   expect(strip(await page.evaluate(() => CGB.bank.exportData()))).toEqual(strip(before));
 });
 
-test('wrong answers logged in one game show up in the other for the same player', async ({ page }) => {
+test('wrong answers logged in one game are shared with the others for the same team', async ({ page }) => {
   const log = await openBundle(page, '#over-the-edge');
-  await setNames(page, 'ote', 'Gina', 'Hal');
+  await page.click(PICK('#ote-segTeams', 2));
+  await setNames(page, 'over-the-edge', ['Gina', 'Hal']);
   await page.click('#ote-startBtn');
   const s = await state(page, 'over-the-edge');
   expect(s.step).toBe('ask');
   const missedTopic = s.q.topic;
-  await page.keyboard.press('w');      // Gina is wrong
-  await page.keyboard.press('n');      // no steal
+  await mark(page, 'over-the-edge', i => i === 1);     // Gina is wrong, Hal right
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
 
-  // Outpace remembers the names; play a short game and read Gina's history
+  // Outpace remembers the names; play a short game
   await page.click('[data-play="outpace"]');
-  await expect(page.locator('#op-name0')).toHaveValue('Gina');
+  await page.click(PICK('#op-segGroups', 2));
+  await page.locator('#game-outpace details.tnames summary').click();
+  await expect(page.locator('#op-gname0')).toHaveValue('Gina');
   await page.click('#op-startBtn');
   await playOutpace(page, { shortSprint: true });
-  const ginaCard = page.locator('.op-sum-p', { hasText: 'Gina' });
-  await expect(ginaCard).toContainText('Weakest topics, all games');
-  await expect(ginaCard).toContainText(missedTopic);
-  // and the bank agrees the entry came from Over the Edge
+  // Gina's history holds both games, and the Question bank lists her
   const games = await page.evaluate(() => CGB.bank.wrongLog('gina').map(e => e.game));
   expect(games).toContain('Over the Edge');
+  expect(games).toContain('Outpace');
+  expect(await page.evaluate(() => CGB.bank.weakTopics('gina', 50).map(t => t[0]))).toContain(missedTopic);
+  await page.keyboard.press('Escape');
+  await page.click('#openBank');
+  await expect(page.locator('#bankPlayers')).toContainText('Gina');
   expect(log.errors).toEqual([]);
+});
+
+test('questions from topics the playing teams got wrong before come up more often', async ({ page }) => {
+  await openBundle(page);
+  const r = await page.evaluate(() => {
+    const set = CGB.bank.active(), topic = set.questions[0].topic;
+    const inTopic = set.questions.filter(q => q.topic === topic).length / set.questions.length;
+    CGB.bank.logWrong('Weak team', set.questions[0], 'Test');
+    const p = CGB.bank.createPicker();
+    let hits = 0; const N = 30;
+    for (let i = 0; i < N; i++) if (p.pick(['Weak team', 'Other team']).topic === topic) hits++;
+    return { share: hits / N, base: inTopic };
+  });
+  expect(r.share).toBeGreaterThan(r.base * 2);
+  expect(r.share).toBeLessThan(0.75);                  // still a mix, not only that topic
 });
 
 test('the page still works when storage is blocked', async ({ browser }) => {

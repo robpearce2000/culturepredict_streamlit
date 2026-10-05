@@ -7,6 +7,22 @@
    ========================================================= */
 window.CGB = window.CGB || {};
 CGB.VERSION = '1.0.0';
+/* Every random choice that affects play (question order, boards, counters, physics
+   nudges) goes through CGB.random, so tests can make runs repeatable. Purely visual
+   randomness (sparkles, camera shake) uses Math.random. */
+CGB.random = Math.random;
+/* @test-only: removed from the shipped file by build.js */
+CGB.test = {
+  // mulberry32: a small, fast seeded generator
+  seed(n) {
+    let a = n >>> 0;
+    CGB.random = () => { a = (a + 0x6D2B79F5) >>> 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  }
+};
+if (window.__SHOWTIME_SEED__ != null) CGB.test.seed(window.__SHOWTIME_SEED__);
+/* @end-test-only */
+/* A quiet thank-you line at the bottom of every end screen (text only, no link) */
+CGB.REVIEW_NOTE = '<p class="cgb-review">Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!</p>';
 CGB.store = (() => {
   const PREFIX = 'cgb.';
   let ok = true;

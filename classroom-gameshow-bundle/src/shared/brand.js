@@ -23,7 +23,9 @@ CGB.brand = (() => {
     const title = opts.title !== false ? '<title>Showtime: Classroom Gameshows</title>' : '';
     // marquee bulbs around the main word
     let bulbs = '';
-    for (let i = 0; i < 17; i++) { const x = 80 + i * 52.5; bulbs += `<circle cx="${x.toFixed(1)}" cy="34" r="9" fill="${i % 2 ? SUN : '#fff'}" stroke="${INK}" stroke-width="3"/><circle cx="${x.toFixed(1)}" cy="266" r="9" fill="${i % 2 ? '#fff' : SUN}" stroke="${INK}" stroke-width="3"/>`; }
+    // each bulb twinkles on its own (fixed, varied) timing, so they never all flash together
+    const tw = k => `--tw:${(2.6 + ((k * 37) % 23) / 10).toFixed(1)}s;--td:-${(((k * 53) % 41) / 10).toFixed(1)}s`;
+    for (let i = 0; i < 17; i++) { const x = 80 + i * 52.5; bulbs += `<circle class="bulb" style="${tw(i)}" cx="${x.toFixed(1)}" cy="34" r="9" fill="${i % 2 ? SUN : '#fff'}" stroke="${INK}" stroke-width="3"/><circle class="bulb" style="${tw(i + 17)}" cx="${x.toFixed(1)}" cy="266" r="9" fill="${i % 2 ? '#fff' : SUN}" stroke="${INK}" stroke-width="3"/>`; }
     return `<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Showtime: Classroom Gameshows">${title}
   <g>
     ${star(36, 150, 30, SUN, 0.2)}${star(966, 140, 26, TAN, 0.5)}${star(950, 330, 16, TEAL, 0.1)}${star(52, 340, 16, SUN, 0.7)}
@@ -123,5 +125,78 @@ CGB.brand = (() => {
   </g>
 </svg>`;
   }
-  return { wordmark, oteLogo, opLogo, oteArt, opArt, star };
+
+  /* Category Clash logo */
+  function ccLogo() {
+    return `<svg viewBox="0 0 620 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Category Clash">
+  <rect x="150" y="10" width="320" height="64" rx="32" fill="${INK}" stroke="#fff" stroke-width="5"/>
+  ${T(310, 58, 46, 'CATEGORY', `fill="${SUN}" textLength="250" lengthAdjust="spacingAndGlyphs"`)}
+  <g transform="rotate(-3 310 150)">
+    ${T(316, 190, 118, 'CLASH', `fill="${TAN}" stroke="${INK}" stroke-width="14" stroke-linejoin="round" paint-order="stroke" textLength="380" lengthAdjust="spacingAndGlyphs"`)}
+    ${T(310, 182, 118, 'CLASH', `fill="#fff" stroke="${INK}" stroke-width="14" stroke-linejoin="round" paint-order="stroke" textLength="380" lengthAdjust="spacingAndGlyphs"`)}
+  </g>
+  <path d="M86 92 L112 92 L98 124 L120 124 L80 178 L92 138 L72 138 Z" fill="${SUN}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M534 92 L560 92 L546 124 L568 124 L528 178 L540 138 L520 138 Z" fill="${SUN}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
+</svg>`;
+  }
+
+  /* Hex Hunt logo */
+  function hexPath(cx, cy, r) {
+    let d = '';
+    for (let i = 0; i < 6; i++) { const a = Math.PI / 180 * (60 * i - 30); d += (i ? 'L' : 'M') + (cx + r * Math.cos(a)).toFixed(1) + ' ' + (cy + r * Math.sin(a)).toFixed(1); }
+    return d + 'Z';
+  }
+  function hhLogo() {
+    return `<svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hex Hunt">
+  <path d="${hexPath(118, 100, 86)}" fill="${TEAL_D}" stroke="${INK}" stroke-width="8" stroke-linejoin="round"/>
+  <path d="${hexPath(118, 100, 66)}" fill="none" stroke="${SUN}" stroke-width="4" stroke-dasharray="10 8"/>
+  ${T(118, 124, 70, 'HEX', `fill="#fff" stroke="${INK}" stroke-width="10" paint-order="stroke" textLength="112" lengthAdjust="spacingAndGlyphs"`)}
+  ${T(400, 150, 128, 'HUNT', `fill="${TAN}" stroke="${INK}" stroke-width="14" stroke-linejoin="round" paint-order="stroke" textLength="360" lengthAdjust="spacingAndGlyphs"`)}
+  ${T(394, 142, 128, 'HUNT', `fill="#fff" stroke="${INK}" stroke-width="14" stroke-linejoin="round" paint-order="stroke" textLength="360" lengthAdjust="spacingAndGlyphs"`)}
+</svg>`;
+  }
+
+  /* Launcher art: a category board */
+  function ccArt() {
+    let tiles = '';
+    const cols = 5, w = 104, h = 52, x0 = 44, y0 = 82;
+    for (let c = 0; c < cols; c++) {
+      tiles += `<rect x="${x0 + c * (w + 8)}" y="22" width="${w}" height="50" rx="9" fill="${INK}" stroke="#000" stroke-width="3"/><rect x="${x0 + c * (w + 8) + 18}" y="40" width="${w - 36}" height="12" rx="6" fill="${SUN}"/>`;
+      for (let r = 0; r < 4; r++) {
+        const x = x0 + c * (w + 8), y = y0 + r * (h + 8);
+        const used = (c === 1 && r === 0) || (c === 3 && r === 1) || (c === 0 && r === 2);
+        tiles += used
+          ? `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="#2B2045" stroke="#120A20" stroke-width="3"/><text x="${x + w / 2}" y="${y + 36}" font-size="26" text-anchor="middle" fill="${c === 3 ? SUN : TEAL}">${c === 3 ? '■' : '●'}</text>`
+          : `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="#F06A12" stroke="${INK}" stroke-width="4"/>` + T(x + w / 2, y + 38, 30, String((r + 1) * 100), `fill="#fff" stroke="${INK}" stroke-width="6" paint-order="stroke"`);
+      }
+    }
+    return `<svg viewBox="0 0 640 328" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs><radialGradient id="ccBg" cx="0.5" cy="0" r="1"><stop offset="0" stop-color="#3A1650"/><stop offset="1" stop-color="#1A0F2E"/></radialGradient></defs>
+  <rect width="640" height="328" fill="url(#ccBg)"/>${tiles}
+  <g transform="translate(560 286)">${star(0, 0, 26, SUN, 0.2)}</g>
+</svg>`;
+  }
+
+  /* Launcher art: a hexagon board with two paths */
+  function hhArt() {
+    const r = 30, dx = r * Math.sqrt(3), dy = r * 1.5;
+    const A = new Set(['0,2', '1,2', '2,1', '3,1', '4,2']), B = new Set(['2,0', '2,3', '3,4']);
+    const letters = 'PCRGAMHDEOSTNBLKVIFW';
+    let hexes = '', k = 0;
+    for (let row = 0; row < 5; row++) for (let col = 0; col < 7; col++) {
+      const cx = 92 + col * dx + (row % 2 ? dx / 2 : 0), cy = 58 + row * dy * 1.12;
+      const key = col + ',' + row;
+      const fill = A.has(key) ? TAN : B.has(key) ? TEAL : '#262C66';
+      hexes += `<path d="${hexPath(cx, cy, r)}" fill="${fill}" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>`;
+      if (!A.has(key) && !B.has(key)) hexes += T(cx, cy + 9, 26, letters[k++ % letters.length], `fill="#fff"`);
+      else hexes += `<text x="${cx}" y="${cy + 8}" font-size="22" text-anchor="middle" fill="${INK}">${A.has(key) ? '●' : '■'}</text>`;
+    }
+    return `<svg viewBox="0 0 640 328" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs><radialGradient id="hhBg" cx="0.5" cy="0.3" r="0.9"><stop offset="0" stop-color="#14425A"/><stop offset="1" stop-color="#0A1A2C"/></radialGradient></defs>
+  <rect width="640" height="328" fill="url(#hhBg)"/>
+  <rect x="18" y="20" width="14" height="290" rx="7" fill="${TAN}"/><rect x="608" y="20" width="14" height="290" rx="7" fill="${TAN}"/>
+  ${hexes}
+</svg>`;
+  }
+  return { wordmark, oteLogo, opLogo, oteArt, opArt, ccLogo, hhLogo, ccArt, hhArt, hexPath, star };
 })();
