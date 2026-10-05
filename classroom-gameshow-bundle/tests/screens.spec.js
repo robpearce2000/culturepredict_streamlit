@@ -291,6 +291,8 @@ for (const size of SIZES) {
       test.setTimeout(section === 'launcher' ? 90000 : section.startsWith('over-the-edge') ? 900000 : 420000);
       const ctx = await browser.newContext({ viewport: { width: size.width, height: size.height } });
       const page = await ctx.newPage();
+      // building Over the Edge's 3D machine on a software renderer shared with other tests can take far longer than a click normally waits
+      if (section.startsWith('over-the-edge')) page.setDefaultTimeout(60000);
       if (VARIANT === 'reduced') await page.addInitScript(() => { try { localStorage.setItem('cgb.settings', JSON.stringify({ reducedMotion: true })); } catch (e) { /* no storage */ } });
       const log = await openBundle(page, '', { quality: VARIANT === 'low' ? 'low' : 'high', gate: section === 'start-gate' });
       const problems = [];
