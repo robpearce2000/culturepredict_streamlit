@@ -46,6 +46,7 @@ The first public release. (The 1.1 to 1.4.1 entries below were development build
 
 ### Fixed
 - Decorative counters dropping behind Over the Edge's setup card could land in the real game.
+- Category Clash's team panels were missing from the question card (since 1.4.0), so teams could only be marked by number key. They are back and can be tapped.
 
 
 ## 1.4.1 – Ten-minute games (October 2026)

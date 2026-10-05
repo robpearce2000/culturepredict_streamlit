@@ -29,7 +29,7 @@ const WATCH = [
   '.hh-head > *', '.hh-q:not([hidden]) .hh-qcard', '.hh-win:not([hidden]) > *', '.hh-screen.active .cgb-panel', '.ote-host .host-head', '.ote-host .host-body',
   '.host-foot .hc-bust', '.host-foot .hc-bubble.show', '.op-hostrow .hc-bust', '.op-hostrow .hc-bubble.show',
   '.cm-team', '.hh-side',
-  '.start-gate:not([hidden]) .start-gate-card', '.hh-curhint:not([hidden])', '.op-hud.active .op-gap'
+  '.hh-curhint:not([hidden])', '.op-hud.active .op-gap'
 ];
 
 async function findProblems(page) {
@@ -274,6 +274,9 @@ const SECTIONS = {
       await page.click(`[data-play="${id}"]`, { timeout: 60000 });
       await page.click(`#game-${id} .setup-go .btn`);
       await shot(`${n}-start-game`, 1200);
+      // the Start game card sits over the dimmed game on purpose: it must be whole, on screen and below the top bar
+      const g = await page.evaluate(i => { const c = document.querySelector(`#game-${i} .start-gate-card`).getBoundingClientRect(), bar = document.querySelector(`#game-${i} .topbar`).getBoundingClientRect(); return { top: c.top, bottom: c.bottom, left: c.left, right: c.right, bar: bar.bottom, w: innerWidth, h: innerHeight }; }, id);
+      expect(g.top >= g.bar && g.bottom <= g.h && g.left >= 0 && g.right <= g.w, `${n} Start game card on screen`).toBe(true);
       await page.click(`#game-${id} .start-gate-btn`);
       await page.waitForTimeout(400);
       await page.keyboard.press('Escape'); const leave = page.locator('#leaveConfirm'); if (await leave.isVisible()) await leave.click();

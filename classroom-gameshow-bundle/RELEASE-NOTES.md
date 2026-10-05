@@ -28,7 +28,12 @@
 
 ## Known issues
 
-TO FILL
+- **Frame rate has only been measured without a graphics card.** The test machine draws with a software renderer (about 8–9 fps in Outpace); real laptops are far faster, and Outpace steps its own quality down if a computer struggles. Please check on the computers you'll use.
+- **Over the Edge with six teams takes about a minute and a half longer than before.** Turn-by-turn drops take about 3 seconds per team (sometimes 6), so six teams use about 24 seconds per question for the drops; a six-team game should still finish just under 10 minutes. This is an estimate from the measured drop times; a full six-team game wasn't timed end to end, so check it in your classroom trial.
+- **Luck matters in Over the Edge.** With "your drop, your counters", which team wins most depends on where counters land (over 12 test games teams ranged from about −30% to +60% of the average); dropping first is no advantage.
+- **The jackpot is "about half the time" within sampling noise:** last measured at 45% (2 teams), 65% (4 teams) and 40% (6 teams) over 20 games each.
+- **Untagged questions in teachers' own sets get an estimated tier** from their wording, which matches a hand tag about two times in three (and is within one tier 97% of the time); adding `Tier:` lines makes Category Clash exact.
+- Not tested in Safari or on a real interactive whiteboard.
 
 ## Rob's checklist before selling
 
