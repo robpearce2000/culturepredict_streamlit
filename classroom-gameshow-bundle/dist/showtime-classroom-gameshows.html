@@ -846,7 +846,7 @@ html[data-motion="reduced"] .l-wordmark .bulb { animation: none !important; opac
 .cc-tile.used.won .mk { color: var(--ink); }
 .cc-tile.empty { box-shadow: none; }
 .cc-tile.flipping { animation: cc-flip-out 0.4s ease-in forwards; }
-@keyframes cc-flip-out { to { transform: rotateY(90deg) scale(1.1); opacity: 0.4; } }
+@keyframes cc-flip-out { to { transform: rotateY(90deg) scale(1.1); opacity: 0; } }
 .cc-tile.flip-in { animation: cc-flip-in 0.5s cubic-bezier(.2,.8,.25,1); }
 @keyframes cc-flip-in { from { transform: rotateX(-90deg); } to { transform: none; } }
 .cc-qcard { transform-origin: 50% 50%; backface-visibility: hidden; }
@@ -1293,7 +1293,7 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
       <div class="cm-count" id="cc-count" hidden></div>
       <div class="cc-qanswer" id="cc-qAnswer"></div>
       <div class="cc-qmsg" id="cc-qMsg" role="status"></div>
-      <div class="cc-qboard" id="cc-qboard" hidden></div>
+      <div class="cc-qboard" id="cc-qboard"></div>
       <div class="cc-qbtns" id="cc-qBtns"></div>
     </div>
   </div>
@@ -6200,6 +6200,7 @@ function startGame() {
   $('roundName').textContent = 'Round 1: Counter Drop';
   $('qCount').textContent = `${G.qTotal} questions, then the final`;
   G.step = 'ready'; G.q = null;
+  hideBubble();                                   // the setup greeting goes before the Start game card
   render();
   // nothing ticks until the teacher presses Start game
   gate.show(() => {

@@ -58,6 +58,14 @@ test('Category Clash: a picked tile flips into the question, the ★ moment can 
   await page.keyboard.press('Enter');
   let s = await state(page, 'category-clash');
   expect(s.round).toBe('think');
+  // the team panels show in the question card, and a tap on one marks that team
+  await expect(page.locator('#cc-qboard .cm-team')).toHaveCount(4);
+  await expect(page.locator('#cc-qboard')).toBeVisible();
+  await page.keyboard.press('Space'); await page.keyboard.press('Space');
+  await expect.poll(async () => (await state(page, 'category-clash')).round).toBe('mark');
+  await page.locator('#cc-qboard .cm-team').first().click();
+  await expect(page.locator('#cc-qboard .cm-team').first()).toHaveClass(/ok/);
+  await page.locator('#cc-qboard .cm-team').first().click();     // back to unmarked, then mark by key below
   await mark(page, 'category-clash', i => i === 0);
   await page.keyboard.press('Enter');
   await expect(page.locator('.cc-tile.used.won')).toHaveCount(1);

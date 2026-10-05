@@ -1273,6 +1273,7 @@ function startGame() {
   $('roundName').textContent = 'Round 1: Counter Drop';
   $('qCount').textContent = `${G.qTotal} questions, then the final`;
   G.step = 'ready'; G.q = null;
+  hideBubble();                                   // the setup greeting goes before the Start game card
   render();
   // nothing ticks until the teacher presses Start game
   gate.show(() => {
