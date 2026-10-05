@@ -143,15 +143,20 @@ for (const n of [2, 4, 6]) {
     s = await state(page, id);
     expect(s.step).toBe('ask'); expect(s.correct.every(c => c === 0)).toBe(true);
     await page.keyboard.press('c'); await page.keyboard.press('Enter');
-    for (let i = 0; i < n; i++) await page.keyboard.press(String(1 + i % 4));
+    // the teams take turns: one captain picks a lane, that counter drops and the shelf pushes, then the next
+    await page.keyboard.press('1');
     s = await state(page, id);
-    expect(s.step).toBe('dropping'); expect(s.undoable).toBe(false);
-    for (let i = 0; i < 40 && (await state(page, id)).step !== 'next'; i++) await page.evaluate(() => CGB.test.ote.advance(0.5));
+    expect(s.step).toBe('dropping'); expect(s.undoable).toBe(false); expect(s.laneQueue).toHaveLength(n - 1);
+    for (let i = 0, k = 1; i < 120 && (s = await state(page, id)).step !== 'next'; i++) {
+      if (s.step === 'lanes') await page.keyboard.press(String(1 + k++ % 4));
+      else await page.evaluate(() => CGB.test.ote.advance(0.5));
+    }
     s = await state(page, id);
     const dropSeconds = s.dropDoneAt - s.markAt;
     note('drop phase (game seconds)', dropSeconds.toFixed(2));
     expect(s.step).toBe('next');
-    expect(dropSeconds, 'the drop phase finishes within about 10 seconds of marking').toBeLessThanOrEqual(10);
+    // one turn is the drop through the pegs (about 2.5 s) and the shelf's next push: about 3 s, sometimes 6
+    expect(dropSeconds / n, 'each team\'s turn takes about 3 to 6 seconds').toBeLessThanOrEqual(6.5);
     // the rest of the game
     for (let guard = 0, k = 0; guard < 600; guard++) {
       s = await state(page, id);

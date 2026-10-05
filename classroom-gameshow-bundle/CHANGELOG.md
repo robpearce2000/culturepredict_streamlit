@@ -11,7 +11,8 @@
 
 ### Over the Edge
 - **Teams drop in a random order for every question**, shown on screen.
-- **Fairer winnings:** a counter pushed over the edge goes to the team whose new counter landed nearest to it, shared out so no team is paid twice before every team has been paid once. Dropping first is no longer an advantage.
+- **Teams take turns to drop again, and whatever comes over the edge on your drop is yours.** (In 1.3 every team's counter dropped at once, so it wasn't clear whose drop pushed what off.)
+- **No more huge payout on the very first drop:** the shelf starts a little less full at the front.
 - The jackpot is retuned for the fairer rule.
 - **No more flickering** set pieces under the OVER THE EDGE sign, and the counters are a little less shiny.
 

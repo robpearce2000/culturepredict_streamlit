@@ -1,5 +1,7 @@
 // Over the Edge fairness: whole games with six teams, all correct every time, the real physics.
-// Teams must win about the same per drop, and dropping first must not be an advantage.
+// Teams take turns and keep whatever comes over the edge on their own drop. Which team wins
+// most is down to luck, but dropping first (above all on the first drop of the game) must not
+// be an advantage.
 const { test } = require('@playwright/test');
 const { openBundle, expect } = require('./helpers');
 const note = (name, value) => test.info().annotations.push({ type: name, description: String(value) });
@@ -30,7 +32,7 @@ async function playRound1(browser, seed) {
   return log.map((d, q) => Object.assign(d, { q }));
 }
 
-test('@slow Over the Edge: six teams win about the same per drop, whatever order they drop in (54 questions)', async ({ browser }) => {
+test('@slow Over the Edge: dropping first is no advantage, on the first question or after (54 questions)', async ({ browser }) => {
   test.setTimeout(900000);
   const GAMES = 9, logs = []; let next = 1;
   await Promise.all([0, 1, 2].map(async () => { while (next <= GAMES) { const sd = next++; logs.push(...await playRound1(browser, sd)); } }));
@@ -50,9 +52,9 @@ test('@slow Over the Edge: six teams win about the same per drop, whatever order
   note('by place in the drop order vs the average', posDiff.map(d => (d * 100).toFixed(0) + '%').join(' '));
   note('first question: first to drop vs average team', `${(q1First / q1n).toFixed(2)} vs ${(q1All / q1n).toFixed(2)}`);
   expect(total / logs.length, 'counters are being won').toBeGreaterThan(2);
-  teamDiff.forEach((d, i) => expect(Math.abs(d), `team ${i + 1} is within 15% of the average`).toBeLessThanOrEqual(0.15));
-  // dropping first is no advantage: the first place in the order wins no more than the others,
-  // on average and on the first question of a game
+  // each team's total is recorded (above) but not tested: with "your drop, your counters" it is
+  // down to where the counters land. Dropping first wins no more than the others, on average
+  // and on the first question of a game
   expect(posDiff[0], 'first to drop is not ahead').toBeLessThanOrEqual(0.15);
   expect(q1First / q1n, 'first to drop on question 1 is not ahead').toBeLessThanOrEqual(q1All / q1n * 1.15 + 0.1);
 });

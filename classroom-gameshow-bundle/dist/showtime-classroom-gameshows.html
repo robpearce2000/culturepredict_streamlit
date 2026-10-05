@@ -1120,7 +1120,7 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
   <div class="cgb-panel ote-card setup" id="ote-setupCard">
     <div class="setup-intro">
     <div class="ote-logo" id="ote-logo"></div>
-    <details class="howto" open><summary>How to play</summary><div class="ote-rules">Every team answers every question on whiteboards, and every correct team wins a counter. The teams drop in a random order, shown on screen: each captain picks a lane from 1 to 4 and the counters bounce through the pegs onto the moving top shelf. Every counter pushed over the front edge wins £100 for the team whose new counter landed nearest to it (shared out so no team is paid twice before the others are paid once); counters that fall off the sides are lost. Look out for the star wildcard counters. In the final the whole class plays together: every correct team wins two counters, and pushing the gold jackpot counter over the edge adds £5,000.</div></details>
+    <details class="howto" open><summary>How to play</summary><div class="ote-rules">Every team answers every question on whiteboards, and every correct team wins a counter. The correct teams take turns to drop, in a random order shown on screen: the captain picks a lane from 1 to 4, the counter bounces through the pegs onto the moving top shelf, and every counter pushed over the front edge during that team's drop wins £100 for that team; counters that fall off the sides are lost. Look out for the star wildcard counters. In the final the whole class plays together: every correct team wins two counters, and pushing the gold jackpot counter over the edge adds £5,000.</div></details>
     <p class="cm-rule"><b>Team rule:</b> a team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.</p>
     </div>
     <div class="setup-form">
@@ -5056,7 +5056,7 @@ function upperLanding(tray, x) {
 /* How close to the front edge the bottom shelf starts filled, in counter radii. Filled right to
    the edge (0.3, the old value), the first question paid out twice the usual and gave the first
    team to drop a head start; one row back, the first question is like any other. */
-let FILL_FRONT = 3;
+let FILL_FRONT = 4;
 function fillTray(tray) {
   const r = PHY.R, dx = r * 2.02, dy = r * 1.76;
   let row = 0;
@@ -5151,7 +5151,7 @@ const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
 const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The 20-second countdown for the first question starts when you press Start.');
 const G = {
   nTeams: +CGB.store.get('ote.nTeams') || 4,
-  laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, fallPool: [], nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
+  laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, autoLanes: false, nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
   phase: 'home', step: null, attract: true,
   players: [], team: 0, finalWinnings: 0,
   qIndex: 0, qTotal: 0, q: null, answerShown: false,
@@ -5832,39 +5832,19 @@ function onTrayFall(b, inWin) {
   SFX.win();
   G.dropWon++;
   const fell = { x: b.x, y: b.y, wildcard: b.wildcard, pos };
-  // while this question's counters are still on their way, a fallen counter waits: crediting it
-  // now would favour the teams whose counters landed first
-  if (G.step === 'lanes' || (G.step === 'dropping' && G.landed < G.pending)) { G.fallPool.push(fell); popLabel('+' + fmt(VALUE), pos, '', 1.6); return; }
   creditFall(fell, true);
 }
-/* The counter goes to the team whose counter, dropped this question, is nearest to it */
+/* Whatever comes out of the machine during a team's drop is that team's to keep. In Round 1 the
+   correct teams take turns: a team drops, the shelf finishes its push, then the next team drops.
+   (In the final every counter goes to the class pot, so the teams drop together.) */
 function creditFall(f, label) {
-  const who = nearestDropper(f);
+  const who = G.lastDropper;
   if (who >= 0) G.dropByTeam[who] = (G.dropByTeam[who] || 0) + 1;
   if (G.phase === 'final') { G.team += VALUE; G.finalWinnings += VALUE; if (label) popWin(VALUE, f.pos, who); }
   else if (who >= 0) { G.players[who].money += VALUE; G.players[who].won++; popWin(VALUE, f.pos, who); }
   if (G.dropWon >= 3 && !G.cascadeSaid && G.step === 'dropping') { G.cascadeSaid = true; hostSay(line('cascade'), 'cheer', 2200); }
   if (f.wildcard) triggerWildcard(f.wildcard, who, f.pos);
   renderScores();
-}
-/* Every counter has landed: credit the ones that fell while they were on their way */
-function creditPool() { const pool = G.fallPool; G.fallPool = []; pool.forEach(f => creditFall(f, true)); }
-/* Who gets a counter that falls: the counters pushed off in one question are shared out
-   among the teams that dropped in it. Each goes to the team whose counter (from this question)
-   is nearest to it, among the teams that have had the fewest so far this question, so every
-   team gets one before any team gets a second. Where the counters land still decides who is
-   lucky when there are not enough to go round. It does not depend on the drop order. */
-function nearestDropper(fell) {
-  const got = t => G.dropByTeam[t] || 0;
-  let fewest = Infinity;
-  for (const t of G.dropOrder || []) fewest = Math.min(fewest, got(t));
-  let best = -1, bd = Infinity;
-  for (const T of [tray.lower, tray.upper]) for (const b of T) {
-    if (b.owner < 0 || b.dropSerial !== G.dropSerial || got(b.owner) > fewest) continue;
-    const d = Math.abs(b.x - fell.x) + 0.25 * Math.abs(b.y - fell.y);   // across the shelf counts most: counters are pushed straight forward
-    if (d < bd) { bd = d; best = b.owner; }
-  }
-  return best >= 0 ? best : G.lastDropper;
 }
 function triggerWildcard(id, who, pos) {
   SFX.wildcard();
@@ -5971,7 +5951,7 @@ function updateCamera(dt, now) {
 
 const raycaster = new THREE.Raycaster(), ndc = new THREE.Vector2();
 renderer.domElement.addEventListener('pointerdown', e => {
-  if (G.step !== 'lanes') return;
+  if (!canPick()) return;
   const pickLane = chooseLane;
   const r = renderer.domElement.getBoundingClientRect();
   ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
@@ -6058,12 +6038,14 @@ function drawActions() {
   const add = html => { const d = document.createElement('div'); d.innerHTML = html; while (d.firstChild) a.appendChild(d.firstChild); };
   $('cmActions').hidden = !(G.step === 'ask' || round.undoable);
   if (G.step === 'ask') return;
-  if (G.step === 'lanes') {
+  if (canPick() || (G.step === 'dropping' && G.queuedLane != null)) {
     const t = G.laneQueue[0], p = G.players[t], n = G.dropCount;
+    const ahead = G.step === 'dropping';   // the team before is still dropping: this captain can choose now
     const lead = t === G.catchUp ? `Catch-up counter for ${p.name}.` : G.bonusDrop ? `Bonus counter for ${p.name}.` : `${p.name} won ${n === 1 ? 'a counter' : n + ' counters'}.`;
     const done = G.dropOrder.length - G.laneQueue.length;
     const order = G.dropOrder.length > 1 ? `<ol class="ote-order" aria-label="Drop order">${G.dropOrder.map((i, k) => `<li class="${k < done ? 'done' : k === done ? 'now' : ''}" style="--pc:${COLORS.css[i]}"><span class="k">${k + 1}</span>${COLORS.mark[i]} ${escapeHtml(G.players[i].name)}</li>`).join('')}</ol>` : '';
-    add(`${order}<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(lead)} Captain: pick a lane!<small>Keys 1 to 4 or tap the machine${G.laneQueue.length > 1 ? `. ${G.laneQueue.length - 1} more team${G.laneQueue.length > 2 ? 's' : ''} after this` : ''}. Captains: swap to the next person each time.</small></div>
+    if (ahead && G.queuedLane != null) { add(`${order}<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(p.name)}: lane ${G.queuedLane + 1}<small>It drops as soon as this turn ends.</small></div>`); return; }
+    add(`${order}<div class="ote-dropmsg" style="--pct:${COLORS.text[t]}">${COLORS.mark[t]} ${escapeHtml(lead)} ${ahead ? 'Next captain: pick a lane now!' : 'Captain: pick a lane!'}<small>${ahead ? 'It drops when this turn ends. ' : ''}Keys 1 to 4 or tap the machine${G.laneQueue.length > 1 ? `. ${G.laneQueue.length - 1} more team${G.laneQueue.length > 2 ? 's' : ''} after this` : ''}. Captains: swap to the next person each time.</small></div>
       <div class="ote-chutes" style="--pc:${COLORS.css[t]}">${[0, 1, 2, 3].map(i => `<button class="ote-chute-btn" type="button" data-act="lane" data-i="${i}" aria-label="Lane ${i + 1}">${i + 1}<small>lane</small></button>`).join('')}</div>
       ${G.laneQueue.length > 1 ? '<button class="btn plain" type="button" data-act="random">Random lanes for the rest <kbd>R</kbd></button>' : ''}`);
     return;
@@ -6133,35 +6115,55 @@ const ORDINAL = ['1st', '2nd', '3rd', '4th', '5th', '6th'];
 function startLanes(teams, per, bonus) {
   const order = teams.slice();
   for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(CGB.random() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
-  G.laneQueue = order; G.dropOrder = order.slice(); G.dropSerial++; G.fallPool = []; G.dropCount = per; G.bonusDrop = bonus;
+  G.laneQueue = order; G.dropOrder = order.slice(); G.dropSerial++; G.autoLanes = false; G.queuedLane = null; G.dropCount = per; G.bonusDrop = bonus;
   G.dropWon = 0; G.dropLost = 0; G.dropNotes = []; G.dropByTeam = []; G.cascadeSaid = false;
   G.pending = 0; G.landed = 0; G.settleAt = Infinity; G.released = 0; G.nextRelease = simT;
   G.step = 'lanes';
   render();
 }
+/* Round 1 is turn by turn. While one team's counter is dropping, the next captain may already
+   choose a lane; that counter is released the moment the turn ends. */
+function canPick() { return G.step === 'lanes' || (G.step === 'dropping' && G.phase !== 'final' && G.laneQueue.length > 0 && G.queuedLane == null); }
 function chooseLane(i) {
-  if (G.step !== 'lanes' || i < 0 || i > 3 || !G.laneQueue.length) return;
+  if (i < 0 || i > 3 || !G.laneQueue.length) return;
+  if (G.step === 'dropping' && canPick()) { G.queuedLane = i; render(); return; }
+  if (G.step !== 'lanes') return;
   const team = G.laneQueue.shift();
   round.lock();                                   // once counters drop, the marking stands
   if (G.catchUp === team) G.catchUp = -1;
+  const turns = G.phase !== 'final';               // Round 1: one team at a time
+  if (turns) { G.lastDropper = team; G.pending = 0; G.landed = 0; G.settleAt = Infinity; }
   for (let k = 0; k < G.dropCount; k++) {
     const at = Math.max(simT, G.nextRelease);
     G.nextRelease = at + 0.35;
     G.pending++; G.released++;
     dropTimers.push({ at, go: () => launchDrop(i, team, b => {
-      G.lastDropper = team;
+      if (!turns) G.lastDropper = team;
       b.dropSerial = G.dropSerial;
       G.landed++;
-      if (G.landed >= G.pending && G.step === 'dropping') creditPool();
-      if (G.landed >= G.pending && G.step === 'dropping') G.settleAt = simT + PHY.PERIOD;
+      // settled: once the shelf has finished its next push forward
+      if (G.landed >= G.pending && G.step === 'dropping') G.settleAt = turns ? nextPushEnd() : simT + PHY.PERIOD;
     }) });
   }
-  if (!G.laneQueue.length) { G.step = 'dropping'; hostSay(line('dropping'), 'point', 1800); }
+  if (turns || !G.laneQueue.length) { G.step = 'dropping'; if (!G.laneQueue.length || G.released === G.dropCount) hostSay(line('dropping'), 'point', 1800); }
   render();
 }
-function randomLanes() { while (G.step === 'lanes' && G.laneQueue.length) chooseLane(Math.floor(CGB.random() * 4)); }
+// the moment the shelf is next at its furthest forward, plus a moment for counters to drop off
+function nextPushEnd() { const P = PHY.PERIOD; let t = Math.ceil((simT - P / 2) / P) * P + P / 2; if (t - simT < 0.25) t += P; return t + 0.3; }
+// a team's turn is over: the next team picks its lane (straight away if R was pressed), or the drop is done
+function endTurn() {
+  if (G.phase !== 'final' && G.laneQueue.length) {
+    G.step = 'lanes';
+    const q = G.queuedLane; G.queuedLane = null;
+    if (q != null) { chooseLane(q); return; }
+    render();
+    if (G.autoLanes) chooseLane(Math.floor(CGB.random() * 4));
+    return;
+  }
+  classFinishDrop();
+}
+function randomLanes() { G.autoLanes = true; if (G.step === 'dropping') { render(); return; } while (G.step === 'lanes' && G.laneQueue.length) { chooseLane(Math.floor(CGB.random() * 4)); if (G.phase !== 'final') break; } }
 function classFinishDrop() {
-  creditPool();
   G.dropLog.push({ phase: G.phase, order: (G.dropOrder || []).slice(), won: G.players.map((p, i) => G.dropByTeam[i] || 0) });
   const won = G.dropByTeam.map((n, i) => n ? `${COLORS.mark[i]} ${G.players[i].name} +${fmt(n * VALUE)}` : '').filter(Boolean);
   const title = G.dropWon ? `${G.dropWon} over the edge` + (G.phase === 'final' ? `: +${fmt(G.dropWon * VALUE)} for the class` : '') : 'Nothing fell this time';
@@ -6360,7 +6362,7 @@ document.addEventListener('keydown', e => {
   const k = e.key.toLowerCase();
   if (G.step === 'ask') { if (round.handleKey(k)) e.preventDefault(); return; }
   if (k === 'u' && round.handleKey('u')) { e.preventDefault(); return; }
-  if (G.step === 'lanes') { if (['1', '2', '3', '4'].includes(k)) chooseLane(+k - 1); else if (k === 'r') randomLanes(); }
+  if (canPick()) { if (['1', '2', '3', '4'].includes(k)) chooseLane(+k - 1); else if (k === 'r') randomLanes(); }
   else if (G.step === 'next') { if (k === ' ' || k === 'enter') { e.preventDefault(); nextQuestion(); } }
 });
 
@@ -6389,7 +6391,7 @@ function simulate(h) {
   tray.lower.forEach(b => { if (b.anim > 0) b.anim = Math.max(0, b.anim - h * 1.1); });
   updateDrops(h);
   updateTransits(h);
-  if (G.step === 'dropping' && G.landed >= G.pending && simT >= G.settleAt) classFinishDrop();
+  if (G.step === 'dropping' && G.landed >= G.pending && simT >= G.settleAt) endTurn();
 }
 function loop(now) {
   if (!active) return;

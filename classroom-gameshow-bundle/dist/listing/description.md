@@ -26,7 +26,7 @@ Split the class into 2 to 6 teams with mini whiteboards. No pupil devices are ne
 Two teams play exactly the same way, so it works for a pair or a tutoring session too.
 
 **Over the Edge** (2 to 6 teams)
-Every team that answers correctly wins a counter. In a random order shown on screen, each captain chooses one of four lanes and the counters bounce down the peg board onto a moving 3D shelf, all within a few seconds. Every counter pushed over the edge wins prize money for the team whose counter landed nearest to it, shared fairly between the teams, and star wildcard counters bring bonuses and steals. In the final, the whole class teams up to push the gold jackpot counter over the edge.
+Every team that answers correctly wins a counter. Teams take turns, in a random order shown on screen: the captain chooses one of four lanes and the counter bounces down the peg board onto a moving 3D shelf. Whatever comes over the edge on a team's drop is theirs to keep, and star wildcard counters bring bonuses and steals. In the final, the whole class teams up to push the gold jackpot counter over the edge.
 
 **Outpace** (the whole class as one runner, 2 to 6 teams)
 The class votes on a deal with one, two or three fingers, then answers its way home before the Hunter catches it. If at least half the teams are right, the class moves a step; if not, the Hunter gains. Bigger deals give the Hunter a shorter gap. After one Deal Round, everyone faces a 60-second Final Sprint, with every correct team adding a step.
