@@ -1,0 +1,853 @@
+Board: Edexcel
+Spec: 1CH0
+Topic: 9
+
+Q: Why must the test for an ion give a result that no other ion gives?
+A: So the ion cannot be confused with another
+Accept: So the result identifies only that ion; to avoid a false positive
+Ref: 9.1C
+D: 2
+
+Q: In the sulfate test, why is hydrochloric acid added rather than sulfuric acid?
+A: Sulfuric acid adds sulfate ions
+Accept: Sulfuric acid contains sulfate ions; it would give a false positive
+Ref: 9.1C
+D: 3
+
+Q: Why is a flame test unreliable for identifying the metal ions in a mixture of salts?
+A: One flame colour can mask another
+Accept: Colours mix or hide each other; sodium's yellow masks other colours
+Ref: 9.1C
+D: 3
+
+Q: What colour flame do lithium ions give?
+A: Red
+Accept: Crimson; crimson red
+Ref: 9.2C
+D: 1
+
+Q: What colour flame do sodium ions give?
+A: Yellow
+Accept: Orange-yellow
+Ref: 9.2C
+D: 1
+
+Q: What colour flame do potassium ions give?
+A: Lilac
+Accept: Lilac purple
+Ref: 9.2C
+D: 1
+
+Q: What colour flame do calcium ions give?
+A: Orange-red
+Accept: Brick red; orange red
+Ref: 9.2C
+D: 1
+
+Q: What colour flame do copper(II) ions give?
+A: Blue-green
+Accept: Green-blue; blue green
+Ref: 9.2C
+D: 1
+
+Q: Why is the wire loop dipped in hydrochloric acid and heated before a flame test?
+A: To clean off other ions
+Accept: To remove contamination; so old samples do not colour the flame
+Ref: 9.2C
+D: 2
+
+Q: Sodium hydroxide solution is added to a solution of copper(II) ions. What colour is the precipitate?
+A: Blue
+Accept: Blue precipitate; pale blue
+Ref: 9.3C
+D: 1
+
+Q: Sodium hydroxide solution is added to a solution of iron(II) ions. What colour is the precipitate?
+A: Green
+Accept: Green precipitate; dirty green; grey-green
+Ref: 9.3C
+D: 1
+
+Q: Sodium hydroxide solution is added to a solution of iron(III) ions. What colour is the precipitate?
+A: Brown
+Accept: Orange-brown; red-brown; rust brown
+Ref: 9.3C
+D: 1
+
+Q: Aluminium ions and calcium ions both give a white precipitate with sodium hydroxide. How can you tell them apart?
+A: Aluminium precipitate dissolves in excess sodium hydroxide
+Accept: Add excess NaOH: aluminium's dissolves, calcium's does not
+Ref: 9.3C
+D: 3
+
+Q: A white precipitate forms with sodium hydroxide and does not dissolve in excess. Which ion is present?
+A: Calcium ion
+Accept: Ca²⁺; calcium
+Ref: 9.3C
+D: 2
+
+Q: How is sodium hydroxide used to test a solid for ammonium ions?
+A: Warm with sodium hydroxide; ammonia is given off
+Accept: Heat with NaOH and test the gas for ammonia
+Ref: 9.3C
+D: 2
+
+Q: Which gas is given off when an ammonium salt is warmed with sodium hydroxide solution?
+A: Ammonia
+Accept: NH₃
+Ref: 9.3C
+D: 1
+
+Q: What is the test for ammonia gas?
+A: Damp red litmus paper turns blue
+Accept: Damp universal indicator paper turns blue or purple
+Ref: 9.4C
+D: 2
+
+Q: Why must the litmus paper be damp when testing for ammonia?
+A: Ammonia must dissolve to form an alkali
+Accept: Ammonia dissolves in the water to make an alkaline solution
+Ref: 9.4C
+D: 3
+
+Q: What colour does damp red litmus paper turn in ammonia gas?
+A: Blue
+Ref: 9.4C
+D: 1
+
+Q: What do you see when dilute acid is added to a carbonate?
+A: Fizzing
+Accept: Effervescence; bubbles
+Ref: 9.5C
+D: 1
+
+Q: Which reagent is used to show that the gas from a carbonate and acid is carbon dioxide?
+A: Limewater
+Accept: Calcium hydroxide solution
+Ref: 9.5C
+D: 1
+
+Q: Which two solutions are added to test for sulfate ions?
+A: Dilute hydrochloric acid and barium chloride solution
+Accept: HCl and BaCl₂
+Ref: 9.5C
+D: 2
+
+Q: What is the positive result of the sulfate ion test?
+A: White precipitate
+Accept: White precipitate of barium sulfate
+Ref: 9.5C
+D: 1
+
+Q: Dilute nitric acid and silver nitrate are added to a halide solution. What colour precipitate shows bromide ions?
+A: Cream
+Accept: Cream precipitate; off-white
+Ref: 9.5C
+D: 2
+
+Q: What colour precipitate do iodide ions give with dilute nitric acid and silver nitrate solution?
+A: Yellow
+Accept: Yellow precipitate; pale yellow
+Ref: 9.5C
+D: 2
+
+Q: Why is dilute acid added first in the tests for sulfate and halide ions?
+A: To remove carbonate ions
+Accept: Carbonate ions would also give a precipitate
+Ref: 9.5C
+D: 3
+
+Q: In the halide test, why is nitric acid used rather than hydrochloric acid?
+A: Hydrochloric acid adds chloride ions
+Accept: HCl contains chloride ions; it would give a false positive
+Ref: 9.6C
+RP: 9.6C
+D: 3
+
+Q: In the unknown salts practical, which test identifies the anion when adding acid gives fizzing?
+A: Carbonate
+Accept: Carbonate ion test; CO₃²⁻
+Ref: 9.6C
+RP: 9.6C
+D: 2
+Note: Fizzing with dilute acid, gas turning limewater milky, shows carbonate ions.
+
+Q: In the unknown salts practical, what hazard does concentrated hydrochloric acid on the flame test wire present?
+A: Corrosive
+Accept: Corrosive acid; irritant
+Ref: 9.6C
+RP: 9.6C
+D: 2
+
+Q: In the unknown salts practical, why are only a few drops of sodium hydroxide added at first?
+A: To see the precipitate before adding excess
+Accept: So a precipitate that dissolves in excess is not missed
+Ref: 9.6C
+RP: 9.6C
+D: 3
+
+Q: In the unknown salts practical, what equipment holds the solid sample in the flame for a flame test?
+A: Wire loop
+Accept: Nichrome wire; platinum wire; flame test wire
+Ref: 9.6C
+RP: 9.6C
+D: 1
+
+Q: A salt gives a yellow flame and a white precipitate with nitric acid and silver nitrate. Name the salt.
+A: Sodium chloride
+Accept: NaCl
+Ref: 9.7C
+D: 3
+
+Q: A solution gives a brown precipitate with sodium hydroxide and a white precipitate with acidified barium chloride. Name the salt.
+A: Iron(III) sulfate
+Accept: Fe₂(SO₄)₃; iron 3 sulfate
+Ref: 9.7C
+D: 3
+
+Q: A salt gives a blue-green flame and fizzes with dilute acid. Name the salt.
+A: Copper carbonate
+Accept: Copper(II) carbonate; CuCO₃
+Ref: 9.7C
+D: 3
+
+Q: Give one advantage of instrumental methods of analysis over simple chemical tests.
+A: More sensitive
+Accept: More accurate; faster; need only tiny samples
+Ref: 9.8C
+D: 1
+
+Q: What does it mean to say an instrumental method is more sensitive than a chemical test?
+A: It detects very small amounts
+Accept: It detects tiny quantities or very low concentrations
+Ref: 9.8C
+D: 2
+
+Q: Why are instrumental methods useful when many samples must be tested, for example in hospitals?
+A: They are much faster
+Accept: Quicker; rapid; can be automated
+Ref: 9.8C
+D: 2
+
+Q: What graph, made using solutions of known concentration, lets a flame photometer reading be turned into a concentration?
+A: Calibration curve
+Accept: Calibration graph; calibration line
+Ref: 9.9C
+D: 2
+
+Q: How is a metal ion identified from flame photometer data?
+A: Compare with reference data for known ions
+Accept: Match the data to reference data
+Ref: 9.9C
+D: 2
+
+Q: On a straight-line calibration graph, a reading of 20 units means 1 mg/dm³. What concentration gives a reading of 60 units?
+A: 3 mg/dm³
+Accept: 3
+Ref: 9.9C
+D: 3
+
+Q: What is the molecular formula of methane?
+A: CH₄
+Accept: CH4
+Ref: 9.10C
+D: 1
+
+Q: What is the molecular formula of propane?
+A: C₃H₈
+Accept: C3H8
+Ref: 9.10C
+D: 2
+
+Q: What is the molecular formula of butane?
+A: C₄H₁₀
+Accept: C4H10
+Ref: 9.10C
+D: 2
+
+Q: Why are alkanes described as saturated?
+A: Only single carbon–carbon bonds
+Accept: No C=C double bonds; all C–C bonds are single
+Ref: 9.11C
+D: 2
+
+Q: What word describes a hydrocarbon whose molecules contain only single covalent bonds?
+A: Saturated
+Ref: 9.11C
+D: 1
+
+Q: Why can no more hydrogen atoms be added to an alkane molecule?
+A: Every carbon already has four single bonds
+Accept: It has no double bonds; each carbon is fully bonded
+Ref: 9.11C
+D: 3
+
+Q: What is the molecular formula of ethene?
+A: C₂H₄
+Accept: C2H4
+Ref: 9.12C
+D: 1
+
+Q: What is the molecular formula of propene?
+A: C₃H₆
+Accept: C3H6
+Ref: 9.12C
+D: 2
+
+Q: How do the structures of but-1-ene and but-2-ene differ?
+A: Position of the C=C double bond
+Accept: Where the double bond is
+Ref: 9.12C
+D: 3
+
+Q: What is the functional group of the alkenes?
+A: C=C
+Accept: Carbon–carbon double bond; double bond
+Ref: 9.13C
+D: 1
+
+Q: What word describes alkenes because they contain a C=C double bond?
+A: Unsaturated
+Ref: 9.13C
+D: 1
+
+Q: Why can alkenes take part in addition reactions but alkanes cannot?
+A: Alkenes have a C=C double bond
+Accept: The double bond can open up; alkenes are unsaturated
+Ref: 9.13C
+D: 3
+
+Q: Name the product of the addition reaction between ethene and bromine.
+A: 1,2-dibromoethane
+Accept: Dibromoethane
+Ref: 9.14C
+D: 2
+
+Q: What type of reaction happens when bromine reacts with ethene?
+A: Addition
+Accept: Addition reaction
+Ref: 9.14C
+D: 1
+
+Q: Name the product of the addition reaction between propene and bromine.
+A: 1,2-dibromopropane
+Accept: Dibromopropane
+Ref: 9.14C
+D: 3
+
+Q: What is the colour change when bromine water is shaken with an alkene?
+A: Orange to colourless
+Accept: Orange-brown to colourless; yellow-orange to colourless
+Ref: 9.15C
+D: 2
+Note: Colourless, not "clear".
+
+Q: Bromine water is shaken with an alkane. What colour is the mixture?
+A: Orange
+Accept: Stays orange; orange-brown; no change
+Ref: 9.15C
+D: 2
+
+Q: Why does an alkene decolourise bromine water but an alkane does not?
+A: Bromine adds across the C=C double bond
+Accept: Alkenes have a C=C bond that bromine adds to
+Ref: 9.15C
+D: 3
+
+Q: What are the two products of the complete combustion of an alkane?
+A: Carbon dioxide and water
+Accept: CO₂ and H₂O
+Ref: 9.16C
+D: 1
+
+Q: In complete combustion, what happens to the carbon and hydrogen in a hydrocarbon?
+A: Oxidised
+Accept: Oxidation; they combine with oxygen
+Ref: 9.16C
+D: 2
+
+Q: How many molecules of oxygen are needed to burn one methane molecule completely?
+A: 2
+Accept: Two
+Ref: 9.16C
+D: 3
+Note: CH₄ + 2O₂ → CO₂ + 2H₂O
+
+Q: What is a polymer?
+A: Large molecule of many repeating units
+Accept: Long chain made from many monomers joined together
+Ref: 9.17C
+D: 2
+
+Q: What name is given to the small molecules that join to make a polymer?
+A: Monomers
+Accept: Monomer
+Ref: 9.17C
+D: 1
+
+Q: Why is a polymer described by its average relative molecular mass rather than a single value?
+A: Chains have different lengths
+Accept: Its molecules are not all the same length
+Ref: 9.17C
+D: 3
+
+Q: Name the polymer made from ethene.
+A: Poly(ethene)
+Accept: Polyethene; polythene; polyethylene
+Ref: 9.18C
+D: 1
+
+Q: What type of polymerisation joins ethene molecules together?
+A: Addition
+Accept: Addition polymerisation
+Ref: 9.18C
+D: 1
+
+Q: What happens to the C=C double bond when ethene molecules join to form poly(ethene)?
+A: Opens to a single bond
+Accept: Breaks and becomes a C–C single bond
+Ref: 9.18C
+D: 2
+
+Q: Name the monomer used to make PVC.
+A: Chloroethene
+Accept: Vinyl chloride
+Ref: 9.19C
+D: 1
+
+Q: Name the monomer used to make PTFE.
+A: Tetrafluoroethene
+Ref: 9.19C
+D: 2
+
+Q: What feature must a monomer molecule have to form an addition polymer?
+A: C=C double bond
+Accept: Carbon–carbon double bond; double bond
+Ref: 9.19C
+D: 2
+
+Q: The repeating unit of a polymer is –CH₂–CHCl–. Name the monomer.
+A: Chloroethene
+Accept: CH₂=CHCl
+Ref: 9.20C
+D: 3
+
+Q: The repeating unit of a polymer is –CF₂–CF₂–. Name the polymer.
+A: PTFE
+Accept: Poly(tetrafluoroethene); polytetrafluoroethene
+Ref: 9.20C
+D: 3
+
+Q: How many carbon atoms are in the main chain of the repeating unit of poly(propene)?
+A: 2
+Accept: Two
+Ref: 9.20C
+D: 3
+Note: The third carbon is a CH₃ side group, not in the main chain.
+
+Q: To draw the repeat unit from a monomer, what do you change the C=C double bond to?
+A: Single bond
+Accept: C–C single bond
+Ref: 9.20C
+D: 2
+
+Q: Which property of PTFE makes it a good coating for frying pans?
+A: Non-stick
+Accept: Very slippery; low friction
+Ref: 9.21C
+D: 2
+
+Q: Give one use of PVC.
+A: Window frames
+Accept: Water pipes; drainpipes; electrical cable insulation
+Ref: 9.21C
+D: 1
+
+Q: Why is poly(propene) suitable for making ropes and crates?
+A: Strong and tough
+Accept: Strong; tough; hard-wearing; flexible
+Ref: 9.21C
+D: 3
+
+Q: Why is a polyester described as a condensation polymer?
+A: Water is given off as it forms
+Accept: A small molecule (water) is released for each link
+Ref: 9.22C
+HT: yes
+D: 3
+
+Q: What small molecule is released each time an ester link forms in a polyester?
+A: Water
+Accept: H₂O
+Ref: 9.22C
+HT: yes
+D: 2
+
+Q: A polyester is made from a dicarboxylic acid and which other type of monomer?
+A: Diol
+Accept: Monomer with two alcohol groups; two –OH groups
+Ref: 9.22C
+HT: yes
+D: 2
+
+Q: Name the link that joins the monomers in a polyester.
+A: Ester link
+Accept: Ester; –COO–
+Ref: 9.22C
+HT: yes
+D: 1
+
+Q: Most polymers are made from chemicals from which finite resource?
+A: Crude oil
+Accept: Oil; petroleum
+Ref: 9.23C
+D: 1
+
+Q: Why do most polymers persist in landfill sites for a long time?
+A: Non-biodegradable
+Accept: Not broken down by microorganisms; not biodegradable
+Ref: 9.23C
+D: 2
+
+Q: Name one harmful gas that can be produced when polymers are burned.
+A: Carbon monoxide
+Accept: Hydrogen chloride; carbon dioxide; toxic fumes
+Ref: 9.23C
+D: 2
+Note: Burning PVC can release hydrogen chloride.
+
+Q: Why must waste polymers be sorted before they are melted and recycled?
+A: Different polymers have different properties and melting points
+Accept: Mixed polymers make a poor product
+Ref: 9.23C
+D: 3
+
+Q: Give one environmental advantage of recycling polymers.
+A: Less waste in landfill
+Accept: Conserves crude oil; less burning; saves energy
+Ref: 9.24C
+D: 1
+
+Q: Give one economic disadvantage of recycling polymers.
+A: Collecting and sorting is expensive
+Accept: Costly to collect, transport and sort
+Ref: 9.24C
+D: 2
+
+Q: Why can a recycled polymer often not be used for the same product again?
+A: Its quality is lower
+Accept: Properties get worse; chains are damaged
+Ref: 9.24C
+D: 3
+
+Q: DNA is a polymer made from four different types of which monomer?
+A: Nucleotides
+Accept: Nucleotide
+Ref: 9.25C
+D: 1
+
+Q: Starch is a natural polymer built from which type of monomer?
+A: Sugars
+Accept: Glucose; sugar
+Ref: 9.25C
+D: 1
+
+Q: Name the monomers that join to make proteins.
+A: Amino acids
+Accept: Amino acid
+Ref: 9.25C
+D: 1
+
+Q: What is the molecular formula of methanol?
+A: CH₃OH
+Accept: CH3OH; CH₄O
+Ref: 9.26C
+D: 2
+
+Q: Name the alcohol with the formula C₂H₅OH.
+A: Ethanol
+Ref: 9.26C
+D: 1
+
+Q: What is the molecular formula of propan-1-ol?
+A: C₃H₇OH
+Accept: C3H7OH; CH₃CH₂CH₂OH; C₃H₈O
+Ref: 9.26C
+D: 2
+
+Q: What is the molecular formula of butan-1-ol?
+A: C₄H₉OH
+Accept: C4H9OH; CH₃CH₂CH₂CH₂OH; C₄H₁₀O
+Ref: 9.26C
+D: 3
+
+Q: What is the functional group of the alcohols?
+A: –OH
+Accept: OH; hydroxyl group
+Ref: 9.27C
+D: 1
+
+Q: Which type of compound is made when an alcohol is dehydrated?
+A: Alkene
+Accept: Alkenes
+Ref: 9.27C
+D: 2
+
+Q: Name the alkene made by dehydrating ethanol.
+A: Ethene
+Accept: C₂H₄
+Ref: 9.27C
+D: 3
+Note: Dehydration removes a molecule of water.
+
+Q: In the alcohol combustion practical, what is the independent variable?
+A: The alcohol burned
+Accept: Type of alcohol; the alcohol used
+Ref: 9.28C
+RP: 9.28C
+D: 2
+
+Q: In the alcohol combustion practical, what is measured on the water to compare the alcohols?
+A: Temperature rise
+Accept: Temperature change; increase in temperature
+Ref: 9.28C
+RP: 9.28C
+D: 1
+
+Q: In the alcohol combustion practical, why is the spirit burner weighed before and after burning?
+A: To find the mass of alcohol burned
+Accept: To find the mass of fuel used
+Ref: 9.28C
+RP: 9.28C
+D: 2
+
+Q: In the alcohol combustion practical, give one variable that must be kept the same.
+A: Mass of water
+Accept: Volume of water; distance of flame from calorimeter; mass of alcohol burned
+Ref: 9.28C
+RP: 9.28C
+D: 2
+
+Q: Burning 2 g of an alcohol raises the water temperature by 30 °C. What is the temperature rise per gram?
+A: 15 °C per gram
+Accept: 15 °C/g; 15
+Ref: 9.28C
+RP: 9.28C
+D: 3
+
+Q: In the alcohol combustion practical, why is the measured temperature rise lower than expected?
+A: Heat lost to the surroundings
+Accept: Energy lost to the air; incomplete combustion
+Ref: 9.28C
+RP: 9.28C
+D: 3
+
+Q: Why should the cap be put back on a spirit burner when it is not lit?
+A: Alcohol evaporates
+Accept: Stops the alcohol evaporating; alcohols are volatile
+Ref: 9.28C
+RP: 9.28C
+D: 3
+Note: Evaporation would make the mass burned seem larger.
+
+Q: What is the formula of methanoic acid?
+A: HCOOH
+Accept: HCO₂H
+Ref: 9.29C
+D: 2
+
+Q: What is the formula of ethanoic acid?
+A: CH₃COOH
+Accept: CH3COOH; CH₃CO₂H
+Ref: 9.29C
+D: 2
+
+Q: Name the carboxylic acid with the formula C₂H₅COOH.
+A: Propanoic acid
+Ref: 9.29C
+D: 2
+
+Q: What is the formula of butanoic acid?
+A: C₃H₇COOH
+Accept: C3H7COOH; CH₃CH₂CH₂COOH
+Ref: 9.29C
+D: 3
+Note: The carbon in –COOH counts as one of the four carbons.
+
+Q: What is the functional group of the carboxylic acids?
+A: –COOH
+Accept: COOH; carboxyl group
+Ref: 9.30C
+D: 1
+
+Q: Which gas is given off when ethanoic acid reacts with sodium carbonate?
+A: Carbon dioxide
+Accept: CO₂
+Ref: 9.30C
+D: 2
+
+Q: Name the salt formed when ethanoic acid reacts with sodium hydroxide.
+A: Sodium ethanoate
+Accept: CH₃COONa
+Ref: 9.30C
+D: 3
+
+Q: Name the carboxylic acid made when ethanol is oxidised.
+A: Ethanoic acid
+Accept: Acetic acid
+Ref: 9.31C
+D: 1
+
+Q: Name the carboxylic acid made when propanol is oxidised.
+A: Propanoic acid
+Ref: 9.31C
+D: 2
+
+Q: Why does wine left open to the air turn sour?
+A: Ethanol is oxidised to ethanoic acid
+Accept: Ethanol turns into ethanoic acid (vinegar)
+Ref: 9.31C
+D: 3
+
+Q: Why do members of a homologous series have similar chemical reactions?
+A: Same functional group
+Accept: They have the same functional group
+Ref: 9.32C
+D: 2
+
+Q: Name the product when pentene reacts with bromine.
+A: 1,2-dibromopentane
+Accept: Dibromopentane
+Ref: 9.32C
+D: 3
+
+Q: Name the alkene formed when butanol is dehydrated.
+A: Butene
+Accept: But-1-ene; C₄H₈
+Ref: 9.32C
+D: 3
+
+Q: What name is given to making ethanol from sugars using yeast?
+A: Fermentation
+Ref: 9.33C
+D: 1
+
+Q: What does yeast provide that makes fermentation happen?
+A: Enzymes
+Accept: Enzyme
+Ref: 9.33C
+D: 2
+
+Q: Why is fermentation carried out at about 30 °C rather than at a much higher temperature?
+A: Higher temperatures denature the enzymes
+Accept: Enzymes in yeast would be denatured
+Ref: 9.33C
+D: 3
+
+Q: What process is used to get a concentrated solution of ethanol from a fermentation mixture?
+A: Fractional distillation
+Ref: 9.34C
+D: 1
+
+Q: Why can ethanol be separated from water by fractional distillation?
+A: Ethanol has a lower boiling point
+Accept: Different boiling points
+Ref: 9.34C
+D: 2
+
+Q: During fractional distillation of a fermentation mixture, what does the thermometer read while ethanol collects?
+A: 78 °C
+Accept: About 78 °C; 78
+Ref: 9.34C
+D: 3
+
+Q: What is the size range of nanoparticles?
+A: 1 to 100 nm
+Accept: 1–100 nanometres
+Ref: 9.35C
+D: 2
+
+Q: How many metres is one nanometre?
+A: 1 × 10⁻⁹ m
+Accept: 10⁻⁹ m; 0.000000001 m
+Ref: 9.35C
+D: 1
+
+Q: An atom is about 0.1 nm across. About how many times wider is a 100 nm nanoparticle?
+A: 1000 times
+Accept: 1000; 10³
+Ref: 9.35C
+D: 3
+
+Q: Why are nanoparticles good catalysts?
+A: Very large surface area to volume ratio
+Accept: High surface area to volume ratio; large surface area
+Ref: 9.36C
+D: 2
+
+Q: What is the surface area to volume ratio of a cube with sides of 2 nm?
+A: 3 : 1
+Accept: 3; 3 per nm; 3 nm⁻¹
+Ref: 9.36C
+D: 3
+Note: Surface area 24 nm², volume 8 nm³.
+
+Q: Why are nanoparticles of titanium dioxide used in sunscreens?
+A: Absorb UV without leaving white marks
+Accept: Block UV and are transparent on skin
+Ref: 9.36C
+D: 2
+
+Q: Give one possible risk of nanoparticles in sunscreens.
+A: Absorbed into the body
+Accept: Could enter cells; unknown long-term effects; may be toxic
+Ref: 9.37C
+D: 1
+
+Q: Why might nanoparticles be more harmful than larger particles of the same substance?
+A: Small enough to enter cells
+Accept: Larger surface area makes them more reactive; can pass into the body
+Ref: 9.37C
+D: 3
+
+Q: Why are scientists unsure about the safety of many nanoparticulate materials?
+A: Long-term effects are not yet known
+Accept: Not enough research yet; too new to know effects
+Ref: 9.37C
+D: 2
+
+Q: Which type of material is hard and strong but breaks easily when dropped, like a plate?
+A: Ceramic
+Accept: Ceramics; clay ceramic; glass
+Ref: 9.38C
+D: 1
+
+Q: Which material type is usually a good conductor of electricity and malleable?
+A: Metal
+Accept: Metals
+Ref: 9.38C
+D: 1
+
+Q: Material A has a density of 1.1 g/cm³ and material B has 7.9 g/cm³. Which is more likely to be a polymer?
+A: Material A
+Accept: A
+Ref: 9.38C
+D: 2
+
+Q: What type of material is made of two materials, a matrix and a reinforcement, combined?
+A: Composite
+Accept: Composites
+Ref: 9.39C
+D: 1
+
+Q: Why is carbon fibre composite used for racing bicycle frames?
+A: Strong but low density
+Accept: Strong and lightweight; high strength-to-weight ratio
+Ref: 9.39C
+D: 3
+
+Q: Why is glass rather than metal used for windows?
+A: Transparent
+Accept: Lets light through; see-through
+Ref: 9.39C
+D: 2

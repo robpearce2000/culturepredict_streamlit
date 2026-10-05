@@ -1,0 +1,787 @@
+Board: Edexcel
+Spec: 1CH0
+Topic: 3
+
+Q: Which ion do all acids release when they are in solution?
+A: Hydrogen ion
+Accept: H⁺; H+; hydrogen ions
+Ref: 3.1
+D: 1
+
+Q: Name the ion that alkalis release in solution.
+A: Hydroxide ion
+Accept: OH⁻; OH-; hydroxide ions
+Ref: 3.1
+D: 1
+
+Q: Hydrogen chloride gas dissolves in water to make hydrochloric acid. What is the formula of the ion that makes the solution acidic?
+A: H⁺
+Accept: H+; hydrogen ion
+Ref: 3.1
+D: 2
+
+Q: What is the pH of a neutral solution?
+A: 7
+Accept: pH 7; seven
+Ref: 3.2
+D: 1
+
+Q: A solution has a pH of 3. Is it acidic, neutral or alkaline?
+A: Acidic
+Accept: Acid
+Ref: 3.2
+D: 1
+
+Q: Solution X has pH 12 and solution Y has pH 9. Which solution is more alkaline?
+A: X
+Accept: Solution X; the pH 12 solution
+Ref: 3.2
+D: 2
+
+Q: What colour is litmus in an acidic solution?
+A: Red
+Ref: 3.3
+D: 1
+
+Q: What colour is phenolphthalein in an alkaline solution?
+A: Pink
+Accept: Magenta; purple-pink
+Ref: 3.3
+D: 1
+
+Q: What colour is phenolphthalein in an acidic solution?
+A: Colourless
+Accept: Colorless
+Ref: 3.3
+D: 2
+Note: Not "clear": clear means see-through, and coloured solutions can be clear.
+
+Q: What colour is methyl orange in an alkaline solution?
+A: Yellow
+Ref: 3.3
+D: 2
+Note: Methyl orange is red in acid and yellow in alkali.
+
+Q: Solution A has a higher concentration of hydrogen ions than solution B. Which solution has the lower pH?
+A: A
+Accept: Solution A
+Ref: 3.4
+D: 3
+HT: yes
+
+Q: What happens to the pH of an alkaline solution as its hydroxide ion concentration increases?
+A: pH increases
+Accept: Rises; goes up; increases
+Ref: 3.4
+D: 3
+HT: yes
+
+Q: An acid is made more acidic by raising its hydrogen ion concentration. What happens to its pH?
+A: pH decreases
+Accept: Falls; goes down; decreases
+Ref: 3.4
+D: 3
+HT: yes
+
+Q: The hydrogen ion concentration of a solution increases by a factor of 10. How does its pH change?
+A: Decreases by 1
+Accept: Falls by 1; goes down by one; −1
+Ref: 3.5
+D: 3
+HT: yes
+
+Q: An acid at pH 4 is changed to pH 2. By what factor has its hydrogen ion concentration increased?
+A: 100
+Accept: ×100; 100 times; a hundred
+Ref: 3.5
+D: 3
+HT: yes
+Note: Each pH unit is a factor of 10, so two units is 10 × 10.
+
+Q: An acid of pH 5 has its hydrogen ion concentration made 1000 times greater. What is its new pH?
+A: 2
+Accept: pH 2
+Ref: 3.5
+D: 3
+HT: yes
+
+Q: An acid of pH 2 is diluted until its hydrogen ion concentration is ten times smaller. What is its new pH?
+A: 3
+Accept: pH 3
+Ref: 3.5
+D: 3
+HT: yes
+
+Q: In the core practical on pH change, which solid is added in small portions to dilute hydrochloric acid?
+A: Calcium hydroxide
+Accept: Calcium oxide; Ca(OH)₂; CaO
+Ref: 3.6
+RP: 3.6
+D: 1
+
+Q: Name the electronic instrument that can measure pH more precisely than universal indicator paper.
+A: pH meter
+Accept: pH probe; pH sensor
+Ref: 3.6
+RP: 3.6
+D: 1
+
+Q: In the core practical, what is kept fixed for the dilute hydrochloric acid?
+A: Volume and concentration
+Accept: Volume; concentration; the volume of acid
+Ref: 3.6
+RP: 3.6
+D: 2
+
+Q: How does the pH change as calcium hydroxide is added to dilute hydrochloric acid until in excess?
+A: pH rises, then levels off
+Accept: Increases then stays constant; rises from acidic to alkaline then levels off
+Ref: 3.6
+RP: 3.6
+D: 2
+
+Q: In the core practical, what graph is plotted from the results?
+A: pH against mass of solid added
+Accept: pH on y-axis, mass added on x-axis; pH against mass of calcium hydroxide
+Ref: 3.6
+RP: 3.6
+D: 2
+
+Q: Why is the mixture stirred and left briefly after each addition, before the pH is read?
+A: So the solid reacts and pH settles
+Accept: So the reading is steady; to let the reaction finish; to mix evenly
+Ref: 3.6
+RP: 3.6
+D: 3
+
+Q: What does "concentrated" mean for a solution?
+A: Large amount of solute per unit volume
+Accept: Lots of solute in a given volume; high amount of substance per dm³
+Ref: 3.7
+D: 3
+HT: yes
+
+Q: Solution P has 0.5 mol of acid in 1 dm³; solution Q has 0.1 mol in 1 dm³. Which is more dilute?
+A: Q
+Accept: Solution Q
+Ref: 3.7
+D: 3
+HT: yes
+
+Q: Water is added to a solution of an acid. What happens to its concentration?
+A: Decreases
+Accept: Becomes more dilute; goes down; falls
+Ref: 3.7
+D: 3
+HT: yes
+
+Q: What is a strong acid, in terms of ions?
+A: Acid fully dissociated into ions in solution
+Accept: Completely ionised in water; fully dissociates
+Ref: 3.8
+D: 3
+HT: yes
+
+Q: What is a weak acid, in terms of ions?
+A: Acid only partially dissociated into ions
+Accept: Partly ionised in water; partially dissociates
+Ref: 3.8
+D: 3
+HT: yes
+
+Q: Ethanoic acid and hydrochloric acid have the same concentration. Which has the higher pH?
+A: Ethanoic acid
+Ref: 3.8
+D: 3
+HT: yes
+Note: Ethanoic acid is weak, so it releases fewer hydrogen ions.
+
+Q: Is hydrochloric acid a strong acid or a weak acid?
+A: Strong
+Accept: Strong acid
+Ref: 3.8
+D: 3
+HT: yes
+
+Q: What is a base?
+A: Substance that reacts with an acid forming only salt and water
+Accept: Neutralises an acid to give salt and water only
+Ref: 3.9
+D: 2
+
+Q: Name the two products when a base reacts with an acid.
+A: Salt and water
+Accept: A salt and water
+Ref: 3.9
+D: 1
+
+Q: Copper oxide reacts with sulfuric acid to form only a salt and water. What type of substance is copper oxide?
+A: Base
+Accept: A base; metal oxide
+Ref: 3.9
+D: 2
+
+Q: What name is given to a base that dissolves in water?
+A: Alkali
+Accept: An alkali
+Ref: 3.10
+D: 1
+
+Q: Sodium hydroxide dissolves in water but copper oxide does not. Which of the two is an alkali?
+A: Sodium hydroxide
+Accept: NaOH
+Ref: 3.10
+D: 2
+
+Q: Why are all alkalis bases, but not all bases alkalis?
+A: Alkalis are only the soluble bases
+Accept: Many bases are insoluble; alkalis are bases that dissolve in water
+Ref: 3.10
+D: 3
+
+Q: Which gas is produced when a metal reacts with a dilute acid?
+A: Hydrogen
+Accept: H₂
+Ref: 3.11
+D: 1
+
+Q: Which gas is produced when calcium carbonate reacts with hydrochloric acid?
+A: Carbon dioxide
+Accept: CO₂
+Ref: 3.11
+D: 1
+
+Q: Name the salt formed when magnesium reacts with hydrochloric acid.
+A: Magnesium chloride
+Accept: MgCl₂
+Ref: 3.11
+D: 2
+
+Q: What are the three products when an acid reacts with a metal carbonate?
+A: Salt, water and carbon dioxide
+Accept: Salt, CO₂ and water (any order)
+Ref: 3.11
+D: 2
+
+Q: Name both products when magnesium oxide reacts with hydrochloric acid.
+A: Magnesium chloride and water
+Accept: MgCl₂ and H₂O
+Ref: 3.11
+D: 2
+
+Q: Name the salt formed when sodium hydroxide reacts with nitric acid.
+A: Sodium nitrate
+Accept: NaNO₃
+Ref: 3.11
+D: 2
+
+Q: Which acid would you react with potassium hydroxide to make potassium sulfate?
+A: Sulfuric acid
+Accept: H₂SO₄
+Ref: 3.11
+D: 3
+
+Q: Which two reactants make zinc chloride, water and carbon dioxide?
+A: Zinc carbonate and hydrochloric acid
+Accept: ZnCO₃ and HCl
+Ref: 3.11
+D: 3
+
+Q: Describe the test for hydrogen and its positive result.
+A: Lighted splint gives a squeaky pop
+Accept: Burning splint pops; lit splint, squeaky pop
+Ref: 3.12
+D: 2
+
+Q: Which solution is used to test for carbon dioxide?
+A: Limewater
+Accept: Calcium hydroxide solution; lime water
+Ref: 3.12
+D: 1
+
+Q: What is seen when carbon dioxide is bubbled through limewater?
+A: Limewater turns milky
+Accept: Turns cloudy; white precipitate forms
+Ref: 3.12
+D: 2
+
+Q: Why does limewater turn milky when carbon dioxide passes through it?
+A: Insoluble calcium carbonate forms
+Accept: Calcium carbonate precipitate forms
+Ref: 3.12
+D: 3
+
+Q: What name is given to the reaction between an acid and a base?
+A: Neutralisation
+Accept: Neutralization
+Ref: 3.13
+D: 1
+
+Q: Hydrochloric acid exactly neutralises sodium hydroxide solution. What is the pH of the final solution?
+A: 7
+Accept: pH 7
+Ref: 3.13
+D: 2
+
+Q: Why is the reaction of zinc oxide with hydrochloric acid a neutralisation?
+A: Zinc oxide is a base reacting with an acid
+Accept: Base plus acid gives salt and water only
+Ref: 3.13
+D: 3
+
+Q: Write the ionic equation for the neutralisation of an acid by an alkali.
+A: H⁺ + OH⁻ → H₂O
+Accept: H+ + OH- → H2O; H⁺(aq) + OH⁻(aq) → H₂O(l)
+Ref: 3.14
+D: 2
+
+Q: In an acid-alkali neutralisation, hydrogen ions react with hydroxide ions. What do they form?
+A: Water
+Accept: H₂O
+Ref: 3.14
+D: 1
+
+Q: Why do all acid-alkali neutralisations share the same ionic equation?
+A: All are H⁺ and OH⁻ forming water
+Accept: The other ions are spectator ions; every one is H⁺ + OH⁻ → H₂O
+Ref: 3.14
+D: 3
+
+Q: When making a soluble salt from an acid and an insoluble base, why is the base added in excess?
+A: To make sure all the acid reacts
+Accept: So all the acid is used up; to neutralise all the acid
+Ref: 3.15
+D: 3
+
+Q: Which separation method removes the leftover insoluble reactant when making a soluble salt?
+A: Filtration
+Accept: Filtering; filter
+Ref: 3.15
+D: 1
+
+Q: Why does the filtrate contain only salt and water when an insoluble base is used in excess?
+A: All acid reacted; excess solid filtered off
+Accept: No acid left and unreacted base removed by filtering
+Ref: 3.15
+D: 3
+
+Q: Why must a titration be used when making a salt from an acid and an alkali?
+A: Excess alkali is soluble so cannot be filtered off
+Accept: To find exact amounts so neither is left in excess
+Ref: 3.16
+D: 3
+
+Q: When a salt is made from an acid and an alkali, what does the titration find out?
+A: Exact volumes that react together
+Accept: Volume of acid needed to neutralise the alkali; correct proportions
+Ref: 3.16
+D: 2
+
+Q: An acid and an alkali are mixed in exactly the right proportions. What does the solution then contain?
+A: Only salt and water
+Accept: Salt and water only; salt solution
+Ref: 3.16
+D: 2
+
+Q: In the copper sulfate core practical, which black solid is reacted with dilute sulfuric acid?
+A: Copper oxide
+Accept: Copper(II) oxide; CuO
+Ref: 3.17
+RP: 3.17
+D: 1
+
+Q: What colour is the copper sulfate solution formed in the core practical?
+A: Blue
+Ref: 3.17
+RP: 3.17
+D: 1
+
+Q: When making copper sulfate, how can you tell that the copper oxide is in excess?
+A: Black solid remains undissolved
+Accept: Solid stops disappearing; unreacted copper oxide left
+Ref: 3.17
+RP: 3.17
+D: 2
+
+Q: Why is the acid warmed in a water bath rather than heated directly over a flame?
+A: Gentle, controlled heating so acid does not boil
+Accept: Safer, stops acid boiling or spitting; heats evenly and gently
+Ref: 3.17
+RP: 3.17
+D: 3
+
+Q: After filtering, how is the copper sulfate solution turned into crystals?
+A: Evaporate some water, then leave to crystallise
+Accept: Heat to concentrate, then cool; heat gently then leave to cool
+Ref: 3.17
+RP: 3.17
+D: 2
+
+Q: Why should the copper sulfate solution not be evaporated to dryness?
+A: Water of crystallisation would be lost
+Accept: Crystals would become anhydrous; white powder forms instead of blue crystals
+Ref: 3.17
+RP: 3.17
+D: 3
+
+Q: How are the copper sulfate crystals dried at the end of the core practical?
+A: Pat dry between filter papers
+Accept: Leave in a warm place; leave in a desiccator
+Ref: 3.17
+RP: 3.17
+D: 2
+
+Q: Which apparatus measures out exactly 25.0 cm³ of alkali into the flask for a titration?
+A: Pipette
+Accept: Volumetric pipette; pipet
+Ref: 3.18
+D: 1
+
+Q: Which apparatus is used to add acid a little at a time during a titration?
+A: Burette
+Accept: Buret
+Ref: 3.18
+D: 1
+
+Q: How do you know that the end-point of a titration has been reached?
+A: Indicator changes colour permanently
+Accept: Indicator changes colour; colour change of indicator
+Ref: 3.18
+D: 2
+
+Q: A burette reads 0.50 cm³ at the start and 23.30 cm³ at the end. What is the titre?
+A: 22.80 cm³
+Accept: 22.8 cm³; 22.80
+Ref: 3.18
+D: 2
+
+Q: After a titration, why is it repeated without indicator before the salt is crystallised?
+A: Indicator would contaminate the salt
+Accept: So the salt is pure; to keep indicator out of the salt
+Ref: 3.18
+D: 3
+
+Q: Are all nitrates soluble or insoluble in water?
+A: Soluble
+Ref: 3.19
+D: 1
+
+Q: Is calcium carbonate soluble or insoluble in water?
+A: Insoluble
+Ref: 3.19
+D: 1
+
+Q: Name the two common chlorides that are insoluble in water.
+A: Silver chloride and lead chloride
+Accept: AgCl and PbCl₂
+Ref: 3.19
+D: 2
+
+Q: Name the three common sulfates that are insoluble in water.
+A: Lead, barium and calcium sulfates
+Accept: Lead sulfate, barium sulfate, calcium sulfate (any order)
+Ref: 3.19
+D: 2
+
+Q: All common salts of which three positive ions are soluble in water?
+A: Sodium, potassium and ammonium
+Accept: Na⁺, K⁺ and NH₄⁺ (any order)
+Ref: 3.19
+D: 2
+
+Q: Silver nitrate solution is mixed with sodium chloride solution. Name the precipitate.
+A: Silver chloride
+Accept: AgCl
+Ref: 3.20
+D: 2
+
+Q: Barium chloride solution is added to sodium sulfate solution. Name the precipitate.
+A: Barium sulfate
+Accept: BaSO₄
+Ref: 3.20
+D: 2
+
+Q: Sodium chloride solution is mixed with potassium nitrate solution. Name the precipitate, if any.
+A: No precipitate
+Accept: None; nothing forms
+Ref: 3.20
+D: 3
+Note: All sodium and potassium salts and all nitrates are soluble.
+
+Q: Copper sulfate solution is mixed with sodium hydroxide solution. Name the precipitate.
+A: Copper hydroxide
+Accept: Copper(II) hydroxide; Cu(OH)₂
+Ref: 3.20
+D: 3
+
+Q: Name the method used to make an insoluble salt by mixing two solutions.
+A: Precipitation
+Accept: Precipitation reaction
+Ref: 3.21
+D: 1
+
+Q: Why is a precipitate washed with distilled water after it is filtered off?
+A: To remove soluble impurities
+Accept: To wash away leftover solution; remove other dissolved ions
+Ref: 3.21
+D: 3
+
+Q: After an insoluble salt is filtered and washed, how is it dried?
+A: Leave in a warm oven
+Accept: Pat dry with filter paper; leave somewhere warm; desiccator
+Ref: 3.21
+D: 2
+
+Q: What is an electrolyte?
+A: Ionic compound, molten or dissolved in water
+Accept: Molten or dissolved ionic substance
+Ref: 3.22
+D: 2
+
+Q: Why does solid sodium chloride not conduct electricity?
+A: Ions cannot move
+Accept: Ions fixed in the lattice; ions not free to move
+Ref: 3.22
+D: 3
+
+Q: Lead bromide is a solid at room temperature. What must be done to it before it can be electrolysed?
+A: Melt it
+Accept: Heat until molten; make it molten
+Ref: 3.22
+D: 2
+
+Q: What is electrolysis?
+A: Decomposing an electrolyte using electricity
+Accept: Breaking down an ionic compound using direct current
+Ref: 3.23
+D: 2
+
+Q: What type of current is used in electrolysis?
+A: Direct current
+Accept: d.c.; DC
+Ref: 3.23
+D: 1
+
+Q: In electrolysis, what type of energy is used to decompose the electrolyte?
+A: Electrical energy
+Accept: Electrical; electricity
+Ref: 3.23
+D: 1
+
+Q: What is the name of the negative electrode in electrolysis?
+A: Cathode
+Ref: 3.24
+D: 1
+
+Q: What name is given to positively charged ions?
+A: Cations
+Accept: Cation
+Ref: 3.24
+D: 1
+
+Q: During the electrolysis of molten lead bromide, towards which electrode do the bromide ions move?
+A: Anode
+Accept: Positive electrode
+Ref: 3.24
+D: 2
+
+Q: Explain why anions move to the anode in electrolysis.
+A: Negative ions attracted to positive electrode
+Accept: Opposite charges attract
+Ref: 3.24
+D: 3
+
+Q: Copper chloride solution is electrolysed with inert electrodes. What forms at the cathode?
+A: Copper
+Accept: Cu
+Ref: 3.25
+D: 2
+
+Q: Copper chloride solution is electrolysed with inert electrodes. What gas forms at the anode?
+A: Chlorine
+Accept: Cl₂
+Ref: 3.25
+D: 2
+
+Q: Which gas forms at the cathode when sodium chloride solution is electrolysed?
+A: Hydrogen
+Accept: H₂
+Ref: 3.25
+D: 2
+
+Q: Why does hydrogen, not sodium, form at the cathode in the electrolysis of sodium chloride solution?
+A: Sodium is more reactive than hydrogen
+Accept: Hydrogen ions are discharged more easily than sodium ions
+Ref: 3.25
+D: 3
+
+Q: Which gas forms at the anode when sodium sulfate solution is electrolysed?
+A: Oxygen
+Accept: O₂
+Ref: 3.25
+D: 2
+
+Q: Water acidified with sulfuric acid is electrolysed. What is the ratio of hydrogen volume to oxygen volume?
+A: 2:1
+Accept: 2 to 1; twice as much hydrogen
+Ref: 3.25
+D: 3
+
+Q: Molten lead bromide is electrolysed. What forms at the cathode?
+A: Lead
+Accept: Pb; molten lead
+Ref: 3.25
+D: 2
+
+Q: Molten zinc chloride is electrolysed. What forms at the cathode?
+A: Zinc
+Accept: Zn
+Ref: 3.26
+D: 2
+
+Q: Molten potassium iodide is electrolysed. What forms at the anode?
+A: Iodine
+Accept: I₂
+Ref: 3.26
+D: 2
+
+Q: Molten sodium chloride is electrolysed. Name the products at the cathode and at the anode.
+A: Sodium at cathode, chlorine at anode
+Accept: Sodium and chlorine
+Ref: 3.26
+D: 3
+
+Q: Complete the cathode half equation: Cu²⁺ + 2e⁻ → ?
+A: Cu
+Accept: Copper
+Ref: 3.27
+D: 3
+HT: yes
+
+Q: Write the half equation for chloride ions forming chlorine at the anode.
+A: 2Cl⁻ → Cl₂ + 2e⁻
+Accept: 2Cl- → Cl2 + 2e-; 2Cl⁻ − 2e⁻ → Cl₂
+Ref: 3.27
+D: 3
+HT: yes
+
+Q: Write the half equation for hydrogen ions forming hydrogen gas at the cathode.
+A: 2H⁺ + 2e⁻ → H₂
+Accept: 2H+ + 2e- → H2
+Ref: 3.27
+D: 3
+HT: yes
+
+Q: How many electrons does each lead ion, Pb²⁺, gain at the cathode?
+A: 2
+Accept: Two; 2e⁻
+Ref: 3.27
+D: 3
+HT: yes
+
+Q: What is reduction in terms of electrons?
+A: Gain of electrons
+Accept: Gaining electrons
+Ref: 3.28
+D: 3
+HT: yes
+
+Q: What is oxidation in terms of electrons?
+A: Loss of electrons
+Accept: Losing electrons
+Ref: 3.28
+D: 3
+HT: yes
+Note: OIL RIG: oxidation is loss, reduction is gain.
+
+Q: Bromide ions lose electrons to form bromine at the anode. Is this oxidation or reduction?
+A: Oxidation
+Ref: 3.28
+D: 3
+HT: yes
+
+Q: At which electrode does reduction take place during electrolysis?
+A: Cathode
+Accept: Negative electrode
+Ref: 3.29
+D: 3
+HT: yes
+
+Q: Which process, oxidation or reduction, happens at the anode in electrolysis?
+A: Oxidation
+Ref: 3.29
+D: 3
+HT: yes
+
+Q: Why does reduction happen at the cathode in electrolysis?
+A: Positive ions gain electrons there
+Accept: Cations gain electrons from the cathode
+Ref: 3.29
+D: 3
+HT: yes
+
+Q: Copper sulfate solution is electrolysed with copper electrodes. What happens to the mass of the anode?
+A: Decreases
+Accept: Loses mass; goes down
+Ref: 3.30
+D: 2
+
+Q: In the purification of copper by electrolysis, which electrode is made of impure copper?
+A: Anode
+Accept: Positive electrode
+Ref: 3.30
+D: 2
+
+Q: What happens to the impurities from the impure copper anode during purification?
+A: Fall to the bottom as sludge
+Accept: Form a sludge under the anode; anode mud
+Ref: 3.30
+D: 2
+
+Q: Why does copper sulfate solution stay the same colour when it is electrolysed with copper electrodes?
+A: Copper ions replaced as fast as they are removed
+Accept: Copper ion concentration stays constant; anode dissolves as cathode is plated
+Ref: 3.30
+D: 3
+
+Q: In the core practical, copper sulfate solution is electrolysed with inert electrodes. What gas forms at the anode?
+A: Oxygen
+Accept: O₂
+Ref: 3.31
+RP: 3.31
+D: 2
+
+Q: In the core practical with inert electrodes, what coats the cathode?
+A: Copper
+Accept: Cu
+Ref: 3.31
+RP: 3.31
+D: 1
+
+Q: The copper cathode had a mass of 2.45 g before electrolysis and 2.81 g after. What was its change in mass?
+A: +0.36 g
+Accept: 0.36 g; gained 0.36 g
+Ref: 3.31
+RP: 3.31
+D: 2
+
+Q: In the core practical, the current is changed and the change in mass of the cathode is measured. What is the independent variable?
+A: Current
+Accept: The current
+Ref: 3.31
+RP: 3.31
+D: 2
+
+Q: Why are the copper electrodes washed and dried before they are reweighed?
+A: Water left on would add to the mass
+Accept: So only the mass of copper is measured; remove solution
+Ref: 3.31
+RP: 3.31
+D: 3
+
+Q: Why does the blue colour fade when copper sulfate solution is electrolysed with inert electrodes?
+A: Copper ions are removed from the solution
+Accept: Cu²⁺ ions discharged at the cathode
+Ref: 3.31
+RP: 3.31
+D: 3

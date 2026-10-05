@@ -1,0 +1,587 @@
+Board: Edexcel
+Spec: 1CH0
+Topic: 8
+
+Q: Hydrocarbons are compounds of which two elements only?
+A: Carbon and hydrogen
+Accept: C and H; Hydrogen and carbon
+Ref: 8.1
+D: 1
+
+Q: Methane, CH4, contains carbon and hydrogen only. What general name describes compounds like this?
+A: Hydrocarbon
+Accept: Hydrocarbons; Alkane
+Ref: 8.1
+D: 1
+
+Q: Ethanol, C2H5OH, contains carbon and hydrogen. Why is it not a hydrocarbon?
+A: It also contains oxygen
+Accept: Contains oxygen; Has oxygen atoms
+Ref: 8.1
+D: 3
+Note: A hydrocarbon contains carbon and hydrogen only, so any other element rules it out.
+
+Q: Crude oil is a complex mixture of which type of compound?
+A: Hydrocarbons
+Accept: Hydrocarbon; Mostly alkanes
+Ref: 8.2
+D: 1
+
+Q: In crude oil molecules, carbon atoms are joined in chains or in which other arrangement?
+A: Rings
+Accept: Ring
+Ref: 8.2
+D: 1
+
+Q: Apart from fuels, crude oil is a source of feedstock for which industry?
+A: Petrochemical industry
+Accept: Petrochemicals; Petrochemical
+Ref: 8.2
+D: 2
+
+Q: Crude oil is described as a finite resource. What does finite mean here?
+A: Limited supply that will run out
+Accept: It will run out; Not being replaced; Being used faster than it forms
+Ref: 8.2
+D: 2
+
+Q: Name the process used to separate crude oil into fractions.
+A: Fractional distillation
+Ref: 8.3
+D: 1
+
+Q: What physical property of hydrocarbons is used to separate crude oil into fractions?
+A: Boiling point
+Accept: Boiling points; Different boiling points
+Ref: 8.3
+D: 2
+
+Q: Explain why each fraction collects at a different height in the fractionating column.
+A: Each condenses where cooler than its boiling point
+Accept: Fractions condense at different temperatures; Different boiling points so condense at different heights
+Ref: 8.3
+D: 3
+Note: The column is hot at the bottom and cooler at the top.
+
+Q: Which crude oil fraction is used to surface roads and roofs?
+A: Bitumen
+Ref: 8.4
+D: 1
+
+Q: Which crude oil fraction is used as fuel for aircraft?
+A: Kerosene
+Accept: Paraffin
+Ref: 8.4
+D: 1
+
+Q: Which crude oil fraction is used for domestic heating and cooking?
+A: Gases
+Accept: Refinery gases; Gas
+Ref: 8.4
+D: 1
+
+Q: Name the crude oil fraction used as fuel for some cars and trains.
+A: Diesel oil
+Accept: Diesel
+Ref: 8.4
+D: 2
+Note: Petrol is used in cars but not trains.
+
+Q: Put petrol, bitumen and kerosene in order, from lowest to highest boiling point.
+A: Petrol, kerosene, bitumen
+Ref: 8.4
+D: 3
+
+Q: Do fractions with smaller molecules ignite more easily or less easily?
+A: More easily
+Accept: More
+Ref: 8.5
+D: 2
+
+Q: Most hydrocarbons in crude oil fractions belong to which homologous series?
+A: Alkanes
+Accept: Alkane
+Ref: 8.5
+D: 1
+
+Q: Explain why larger hydrocarbon molecules have higher boiling points.
+A: Stronger intermolecular forces need more energy
+Accept: Stronger forces between molecules; More energy to overcome intermolecular forces
+Ref: 8.5
+D: 3
+Note: The forces broken are between molecules, not the covalent bonds within them.
+
+Q: Diesel and gases are two fractions. Which one has the higher viscosity?
+A: Diesel
+Accept: Diesel oil
+Ref: 8.5
+D: 2
+
+Q: Why is petrol harder to ignite than the gases fraction?
+A: Larger molecules, higher boiling point
+Accept: Larger molecules; Higher boiling point; Less volatile
+Ref: 8.5
+D: 3
+
+Q: What name is given to a family of compounds with the same general formula and similar chemical properties?
+A: Homologous series
+Ref: 8.6
+D: 1
+
+Q: Neighbouring members of a homologous series differ by which group of atoms?
+A: CH2
+Ref: 8.6
+D: 1
+
+Q: What is the general formula of the alkanes?
+A: CnH2n+2
+Accept: C(n)H(2n+2)
+Ref: 8.6
+D: 2
+
+Q: Ethane and propane are both alkanes. Would you expect their chemical reactions to be similar or different?
+A: Similar
+Accept: Similar chemical properties; The same
+Ref: 8.6
+D: 2
+
+Q: Use the general formula to give the molecular formula of the alkane with 5 carbon atoms.
+A: C5H12
+Ref: 8.6
+D: 2
+
+Q: Methane boils at −162 °C and propane at −42 °C. Predict whether ethane boils above or below −42 °C.
+A: Below
+Accept: Below −42 °C; Between −162 and −42 °C
+Ref: 8.6
+D: 3
+Note: Boiling points rise gradually along the series.
+
+Q: Name the two products of the complete combustion of a hydrocarbon.
+A: Carbon dioxide and water
+Accept: CO2 and H2O
+Ref: 8.7
+D: 1
+
+Q: Complete the word equation: methane + oxygen → ? + ?
+A: Carbon dioxide + water
+Accept: CO2 + H2O; Carbon dioxide and water
+Ref: 8.7
+D: 2
+
+Q: Balance this: CH4 + ?O2 → CO2 + 2H2O. What number goes before O2?
+A: 2
+Ref: 8.7
+D: 3
+
+Q: What condition causes incomplete combustion?
+A: Insufficient oxygen
+Accept: Not enough oxygen; Limited oxygen; Too little air
+Ref: 8.8
+D: 1
+
+Q: Name the two products that incomplete combustion can make that complete combustion does not.
+A: Carbon and carbon monoxide
+Accept: Soot and carbon monoxide; C and CO
+Ref: 8.8
+D: 2
+
+Q: Explain why incomplete combustion produces carbon monoxide instead of carbon dioxide.
+A: Not enough oxygen to fully oxidise carbon
+Accept: Insufficient oxygen so carbon only partly oxidised
+Ref: 8.8
+D: 3
+
+Q: Carbon monoxide combines with which substance in red blood cells?
+A: Haemoglobin
+Accept: Hemoglobin
+Ref: 8.9
+D: 2
+
+Q: Explain why carbon monoxide is toxic.
+A: Reduces blood's ability to carry oxygen
+Accept: Binds to haemoglobin so less oxygen carried; Stops blood carrying oxygen
+Ref: 8.9
+D: 3
+
+Q: Why is carbon monoxide hard to detect without an alarm?
+A: Colourless and odourless
+Accept: No colour or smell; Colourless and has no smell
+Ref: 8.9
+D: 2
+
+Q: What device in a home warns people about carbon monoxide from a faulty boiler?
+A: Carbon monoxide detector
+Accept: CO alarm; Carbon monoxide alarm; CO detector
+Ref: 8.10
+D: 1
+
+Q: State one problem caused by soot from a faulty gas fire.
+A: Blackens surfaces
+Accept: Blocks flues; Blocks chimneys; Makes appliances dirty; Breathing problems
+Ref: 8.10
+D: 2
+
+Q: Why does a gas appliance with a blocked air supply become dangerous?
+A: Incomplete combustion makes carbon monoxide
+Accept: Produces carbon monoxide; Makes CO
+Ref: 8.10
+D: 3
+
+Q: Which element, present as an impurity in some fuels, forms an acidic gas when burned?
+A: Sulfur
+Accept: Sulphur; S
+Ref: 8.11
+D: 1
+
+Q: Explain how burning coal or diesel can produce sulfur dioxide.
+A: Sulfur impurities react with oxygen
+Accept: Sulfur in fuel is oxidised; Sulfur burns in oxygen
+Ref: 8.11
+D: 2
+
+Q: Write the word equation for sulfur burning in oxygen.
+A: Sulfur + oxygen → sulfur dioxide
+Accept: S + O2 → SO2
+Ref: 8.11
+D: 2
+
+Q: Rain becomes acidic when which gas from fuels dissolves in it?
+A: Sulfur dioxide
+Accept: SO2; Sulphur dioxide
+Ref: 8.12
+D: 1
+
+Q: Give one effect of acid rain on buildings made of limestone.
+A: Erodes or corrodes them
+Accept: Dissolves the stone; Damages stonework; Weathering
+Ref: 8.12
+D: 2
+
+Q: Give one effect of acid rain on lakes.
+A: Kills fish and aquatic life
+Accept: Makes lakes acidic; Kills fish; Harms aquatic organisms
+Ref: 8.12
+D: 2
+
+Q: Why does acid rain damage metal structures such as bridges?
+A: Acid reacts with metal
+Accept: Corrodes metal; Acid reacts with the metal, corroding it
+Ref: 8.12
+D: 3
+
+Q: Give the general name for the pollutants formed from nitrogen and oxygen in engines.
+A: Oxides of nitrogen
+Accept: Nitrogen oxides; NOx
+Ref: 8.13
+D: 1
+
+Q: Why do nitrogen and oxygen react in engines but not in normal air?
+A: Very high temperature in engines
+Accept: High temperatures; Engines are very hot
+Ref: 8.13
+D: 3
+Note: Nitrogen comes from the air, not from the fuel.
+
+Q: State one problem caused by oxides of nitrogen.
+A: Acid rain
+Accept: Breathing problems; Photochemical smog; Respiratory problems
+Ref: 8.13
+D: 2
+
+Q: What is the only product when hydrogen burns in a car engine?
+A: Water
+Accept: H2O; Water vapour
+Ref: 8.14
+D: 1
+
+Q: Give one advantage of using hydrogen rather than petrol as a car fuel.
+A: No carbon dioxide produced
+Accept: Only water produced; No CO2; Can be made from renewable sources
+Ref: 8.14
+D: 2
+
+Q: Give one disadvantage of hydrogen as a car fuel.
+A: Difficult to store safely
+Accept: Explosive gas; Few filling stations; Large tank needed; Made using fossil fuel energy
+Ref: 8.14
+D: 2
+
+Q: Hydrogen cars emit no carbon dioxide. Why might using them still release carbon dioxide overall?
+A: Hydrogen production uses fossil fuels
+Accept: Making hydrogen uses fossil-fuel energy; Electricity for electrolysis from fossil fuels
+Ref: 8.14
+D: 3
+
+Q: Methane is a fossil fuel found in which natural resource?
+A: Natural gas
+Ref: 8.15
+D: 1
+
+Q: Petrol, kerosene and diesel oil are fossil fuels obtained from which resource?
+A: Crude oil
+Accept: Petroleum
+Ref: 8.15
+D: 1
+
+Q: Why are fossil fuels described as non-renewable?
+A: Not replaced as fast as used
+Accept: Take millions of years to form; Will run out; Cannot be replaced
+Ref: 8.15
+D: 2
+
+Q: What is the name of the process that breaks large alkane molecules into smaller ones?
+A: Cracking
+Ref: 8.16
+D: 1
+
+Q: Cracking produces smaller alkanes and which other type of hydrocarbon?
+A: Alkenes
+Accept: Alkene; Unsaturated hydrocarbons
+Ref: 8.16
+D: 1
+
+Q: Complete the cracking equation: C10H22 → C8H18 + ?
+A: C2H4
+Accept: Ethene
+Ref: 8.16
+D: 3
+Note: Count atoms: 10 − 8 = 2 carbons and 22 − 18 = 4 hydrogens.
+
+Q: What is meant by an unsaturated hydrocarbon?
+A: Contains a carbon–carbon double bond
+Accept: Has a C=C double bond; Has a double bond
+Ref: 8.16
+D: 2
+
+Q: Explain why cracking is necessary.
+A: Demand for small molecules exceeds supply
+Accept: More demand for petrol than supplied; Too many large molecules, not enough small
+Ref: 8.17
+D: 3
+
+Q: Give one use of the alkenes produced by cracking.
+A: Making polymers
+Accept: Making plastics; Petrochemical feedstock; Making ethanol
+Ref: 8.17
+D: 2
+
+Q: Why are short-chain hydrocarbons in high demand?
+A: Useful as fuels like petrol
+Accept: Make good fuels; Ignite easily
+Ref: 8.17
+D: 3
+
+Q: The Earth's early atmosphere was formed mainly from gases released by what?
+A: Volcanoes
+Accept: Volcanic activity; Volcanic eruptions
+Ref: 8.18
+D: 1
+
+Q: Which gas, released by early volcanoes, made up most of the early atmosphere?
+A: Carbon dioxide
+Accept: CO2
+Ref: 8.18
+D: 2
+
+Q: Why do scientists think volcanic gases formed the early atmosphere?
+A: Volcanoes today release similar gases
+Accept: Today's volcanoes release carbon dioxide and water vapour
+Ref: 8.18
+D: 3
+
+Q: How much oxygen did the Earth's early atmosphere contain?
+A: Little or none
+Accept: Little or no oxygen; Very little; None
+Ref: 8.19
+D: 1
+
+Q: Name the vapour, released by volcanoes, present in large amounts in the early atmosphere.
+A: Water vapour
+Accept: Water; Steam
+Ref: 8.19
+D: 1
+
+Q: Why are scientists uncertain about the composition of the early atmosphere?
+A: No direct evidence from billions of years ago
+Accept: No one there to measure it; Evidence is limited; Too long ago
+Ref: 8.19
+D: 3
+
+Q: Rocks over 2.5 billion years old contain unoxidised iron compounds. What does this suggest about the early atmosphere?
+A: Little or no oxygen
+Accept: No oxygen; Very little oxygen
+Ref: 8.19
+D: 3
+
+Q: How did the oceans form from water vapour in the early atmosphere?
+A: Condensation as Earth cooled
+Accept: Water vapour condensed; Condensed as the Earth cooled
+Ref: 8.20
+D: 2
+
+Q: Name the change of state that turned water vapour into the oceans.
+A: Condensation
+Accept: Condensing
+Ref: 8.20
+D: 1
+
+Q: The early Earth was too hot for liquid water. What had to happen before oceans could form?
+A: Earth cooled down
+Accept: The Earth cooled; Surface cooled below 100 °C
+Ref: 8.20
+D: 3
+Note: Cooling allowed water vapour to condense.
+
+Q: Why did the forming of oceans reduce carbon dioxide levels in the atmosphere?
+A: Carbon dioxide dissolves in water
+Accept: CO2 dissolved in the oceans
+Ref: 8.21
+D: 2
+
+Q: Explain how dissolving in oceans permanently removed carbon dioxide from the atmosphere.
+A: Formed carbonates in sediments and rocks
+Accept: Formed carbonate rocks; Made shells and sedimentary rocks
+Ref: 8.21
+D: 3
+Note: Dissolved carbon dioxide formed carbonates that were deposited as sediment.
+
+Q: Which gas in the early atmosphere decreased because it dissolved in the newly formed oceans?
+A: Carbon dioxide
+Accept: CO2
+Ref: 8.21
+D: 1
+
+Q: Name the process by which primitive plants added oxygen to the atmosphere.
+A: Photosynthesis
+Ref: 8.22
+D: 1
+
+Q: Write the word equation for photosynthesis.
+A: Carbon dioxide + water → glucose + oxygen
+Accept: CO2 + H2O → glucose + O2
+Ref: 8.22
+D: 2
+
+Q: Explain why the oxygen level in the atmosphere increased only gradually.
+A: Photosynthesising plants grew slowly over time
+Accept: Plants took millions of years to spread; Oxygen slowly built up from photosynthesis
+Ref: 8.22
+D: 3
+
+Q: Describe the test for oxygen.
+A: Relights a glowing splint
+Accept: Glowing splint relights; Glowing splint reignites
+Ref: 8.23
+D: 2
+Note: A burning splint with a pop is the hydrogen test.
+
+Q: What would you expect to see if a glowing splint is placed in a tube of carbon dioxide?
+A: Splint goes out
+Accept: Goes out; Does not relight; Extinguished
+Ref: 8.23
+D: 3
+Note: Only oxygen relights a glowing splint.
+
+Q: A glowing splint is put into a test tube of gas and relights. What is the gas?
+A: Oxygen
+Accept: O2
+Ref: 8.23
+D: 1
+
+Q: What name is given to the warming of the Earth caused by gases absorbing heat?
+A: Greenhouse effect
+Ref: 8.24
+D: 1
+
+Q: Name the three greenhouse gases listed in this topic.
+A: Carbon dioxide, methane, water vapour
+Accept: CO2, CH4, H2O
+Ref: 8.24
+D: 2
+
+Q: Explain how greenhouse gases keep the Earth warm.
+A: Absorb heat radiated by Earth, then re-release it
+Accept: Absorb infrared from Earth and re-emit it; Trap heat radiated from the surface
+Ref: 8.24
+D: 3
+Note: The gases absorb heat radiated from the Earth's surface, not incoming sunlight.
+
+Q: Since 1850, carbon dioxide levels and global temperature have both risen. What is this link called?
+A: Correlation
+Accept: Positive correlation
+Ref: 8.25
+D: 1
+Note: A correlation alone does not prove one causes the other.
+
+Q: Why does a correlation between carbon dioxide and temperature not prove that carbon dioxide caused warming?
+A: Another factor could be responsible
+Accept: Correlation does not show cause; Other factors may be involved
+Ref: 8.25
+D: 3
+
+Q: Give one reason why historical temperature records are less certain than modern ones.
+A: Fewer, less accurate measurements
+Accept: Less accurate instruments; Fewer locations measured; Fewer readings
+Ref: 8.25
+D: 2
+
+Q: Why does the location where carbon dioxide is measured cause uncertainty?
+A: Levels vary from place to place
+Accept: Local sources affect readings; Not representative of the whole Earth
+Ref: 8.25
+D: 3
+
+Q: Roughly what percentage of today's atmosphere is nitrogen?
+A: 78%
+Accept: About 80%; Four-fifths; 78
+Ref: 8.26
+D: 1
+
+Q: Roughly what percentage of today's atmosphere is oxygen?
+A: 21%
+Accept: About 20%; One-fifth; 21
+Ref: 8.26
+D: 1
+
+Q: Which noble gas makes up just under 1% of today's atmosphere?
+A: Argon
+Accept: Ar
+Ref: 8.26
+D: 2
+
+Q: Roughly what percentage of today's atmosphere is carbon dioxide?
+A: 0.04%
+Accept: About 0.04; 0.04
+Ref: 8.26
+D: 2
+
+Q: Name the farming activity that releases large amounts of methane.
+A: Livestock farming
+Accept: Cattle farming; Rearing cattle; Cows
+Ref: 8.26
+D: 1
+
+Q: Give one potential effect on the climate of increased carbon dioxide levels.
+A: Rising global temperatures
+Accept: Global warming; Melting ice caps; Rising sea levels; More extreme weather
+Ref: 8.26
+D: 2
+
+Q: Give one way to mitigate the increase in atmospheric carbon dioxide.
+A: Use renewable energy
+Accept: Carbon capture and storage; Plant trees; Burn less fossil fuel; Improve energy efficiency
+Ref: 8.26
+D: 2
+
+Q: Why is it hard to reduce carbon dioxide emissions on a global scale?
+A: Needs international agreement and cooperation
+Accept: Countries must all agree; Economic costs; Developing countries need energy
+Ref: 8.26
+D: 3
+
+Q: Give one environmental risk of storing captured carbon dioxide underground.
+A: Leaks back into the atmosphere
+Accept: It could leak; Leakage
+Ref: 8.26
+D: 3

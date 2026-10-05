@@ -1,0 +1,372 @@
+Board: Edexcel
+Spec: 1CH0
+Topic: 4
+
+Q: Which gas is given off when magnesium reacts with dilute hydrochloric acid?
+A: Hydrogen
+Accept: H₂; hydrogen gas
+Ref: 4.1
+D: 1
+
+Q: What name is given to a reaction in which a more reactive metal takes the place of a less reactive metal in a compound?
+A: Displacement
+Accept: Displacement reaction; competition reaction
+Ref: 4.1
+D: 1
+
+Q: Magnesium is added to blue copper sulfate solution. Which metal is formed as a brown solid?
+A: Copper
+Accept: Cu
+Ref: 4.1
+D: 2
+
+Q: A piece of copper is placed in zinc sulfate solution. What is observed?
+A: No reaction
+Accept: Nothing happens; no change
+Ref: 4.1
+D: 2
+Note: Copper is less reactive than zinc, so it cannot displace it.
+
+Q: In terms of electrons, what is oxidation?
+A: Loss of electrons
+Accept: Losing electrons
+Ref: 4.2
+D: 3
+HT: yes
+Note: OIL RIG: oxidation is loss, reduction is gain.
+
+Q: Zinc displaces copper from copper sulfate solution. Which species is reduced?
+A: Copper ions
+Accept: Cu²⁺; copper(II) ions; Cu²⁺ ions
+Ref: 4.2
+D: 3
+HT: yes
+Note: Not "copper sulfate": the sulfate ions are spectators.
+
+Q: Write the half equation for an iron atom forming an iron(II) ion.
+A: Fe → Fe²⁺ + 2e⁻
+Accept: Fe → Fe²⁺ + 2e
+Ref: 4.2
+D: 3
+HT: yes
+
+Q: Which metal is at the top of the reactivity series?
+A: Potassium
+Accept: K
+Ref: 4.3
+D: 1
+
+Q: Which non-metal is placed between aluminium and zinc in the reactivity series?
+A: Carbon
+Accept: C
+Ref: 4.3
+D: 1
+
+Q: Why does copper not react with dilute acids?
+A: Copper is less reactive than hydrogen
+Accept: Below hydrogen in the reactivity series
+Ref: 4.3
+D: 3
+
+Q: In terms of ions, what does a metal's position in the reactivity series show?
+A: How readily its atoms form positive ions
+Accept: Tendency to form cations; how easily atoms lose electrons
+Ref: 4.3
+D: 3
+
+Q: In which part of the Earth are most metal ores found?
+A: Crust
+Accept: Earth's crust
+Ref: 4.4
+D: 1
+
+Q: What is an ore?
+A: Rock containing enough metal to extract economically
+Accept: Rock with enough metal compound to extract profitably
+Ref: 4.4
+D: 2
+
+Q: Why is gold found in the Earth's crust as the uncombined element?
+A: Gold is very unreactive
+Accept: Very unreactive; does not react with other substances
+Ref: 4.4
+D: 3
+
+Q: What name is given to the loss of oxygen from a substance?
+A: Reduction
+Ref: 4.5
+D: 1
+
+Q: In terms of oxygen, what is oxidation?
+A: Gain of oxygen
+Accept: Adding oxygen; gaining oxygen
+Ref: 4.5
+D: 2
+
+Q: In the reaction copper oxide + hydrogen → copper + water, which substance is reduced?
+A: Copper oxide
+Accept: CuO; copper(II) oxide
+Ref: 4.5
+D: 2
+
+Q: Extracting a metal from its ore involves which type of reaction?
+A: Reduction
+Accept: Reduction of the ore
+Ref: 4.6
+D: 1
+
+Q: Why is extracting a metal from its oxide described as reduction?
+A: Oxygen is removed from the metal oxide
+Accept: The ore loses oxygen; loss of oxygen
+Ref: 4.6
+D: 2
+
+Q: Iron oxide is heated with carbon. Which substance is reduced?
+A: Iron oxide
+Accept: Iron(III) oxide; Fe₂O₃
+Ref: 4.6
+D: 2
+
+Q: Which extraction method is used for aluminium?
+A: Electrolysis
+Ref: 4.7
+D: 1
+
+Q: Zinc is below carbon in the reactivity series. Which extraction method can be used for zinc?
+A: Heating with carbon
+Accept: Reduction with carbon; smelting with carbon
+Ref: 4.7
+D: 2
+
+Q: Why can aluminium not be extracted by heating its oxide with carbon?
+A: Aluminium is more reactive than carbon
+Accept: Aluminium is above carbon in the reactivity series
+Ref: 4.7
+D: 3
+
+Q: Why is extraction by electrolysis expensive?
+A: Large amounts of electricity are needed
+Accept: Uses lots of energy; high energy costs
+Ref: 4.7
+D: 3
+
+Q: Which biological extraction method uses plants to absorb metal compounds from the soil?
+A: Phytoextraction
+Accept: Phytomining
+Ref: 4.8
+D: 3
+HT: yes
+
+Q: What is the name of the method that uses bacteria to extract metals from ores?
+A: Bioleaching
+Accept: Bacterial extraction; bacterial leaching
+Ref: 4.8
+D: 3
+HT: yes
+
+Q: In phytoextraction, what is done to the plants after they have absorbed metal compounds?
+A: Harvested and burned
+Accept: Burned; burnt to ash
+Ref: 4.8
+D: 3
+HT: yes
+
+Q: Give one main disadvantage of biological methods of metal extraction.
+A: Very slow
+Accept: Slow; takes a long time
+Ref: 4.8
+D: 3
+HT: yes
+
+Q: Which metal in the reactivity series is most resistant to oxidation?
+A: Gold
+Accept: Au
+Ref: 4.9
+D: 1
+
+Q: Are metals higher in the reactivity series more or less resistant to oxidation?
+A: Less resistant
+Accept: Less
+Ref: 4.9
+D: 2
+
+Q: Iron rusts in air but silver stays shiny for much longer. Explain using the reactivity series.
+A: Silver is less reactive than iron
+Accept: Iron is more reactive than silver; silver is lower in the series
+Ref: 4.9
+D: 3
+
+Q: Recycling metals reduces the amount of waste sent where?
+A: Landfill
+Accept: Landfill sites
+Ref: 4.10
+D: 1
+
+Q: Recycling metals means fewer ores are dug out of the ground. Which activity is reduced?
+A: Mining
+Accept: Quarrying
+Ref: 4.10
+D: 2
+
+Q: Give one cost of recycling metals.
+A: Collecting and sorting the scrap
+Accept: Collection; transport; sorting; separating metals
+Ref: 4.10
+D: 2
+
+Q: Why does recycling aluminium save money compared with extracting it from its ore?
+A: Uses much less energy
+Accept: Less electricity needed; no electrolysis of ore needed
+Ref: 4.10
+D: 3
+
+Q: What does LCA stand for?
+A: Life-cycle assessment
+Accept: Life cycle assessment; life-cycle analysis
+Ref: 4.11
+D: 1
+
+Q: Which stage of a life-cycle assessment covers sending a product to landfill?
+A: Disposal
+Accept: Disposing of the product; end of life
+Ref: 4.11
+D: 1
+
+Q: Name the four stages considered in a life-cycle assessment.
+A: Raw materials, manufacture, use, disposal
+Accept: Obtaining raw materials, manufacturing, using, disposing
+Ref: 4.11
+D: 2
+
+Q: An LCA gives CO₂ emissions: raw materials 40 kg, manufacture 30 kg, use 20 kg, disposal 10 kg. What is the total?
+A: 100 kg
+Accept: 100 kg CO₂; 100
+Ref: 4.12
+D: 2
+
+Q: Making a paper bag uses 3 MJ of energy and a plastic bag 2 MJ. How many times more energy does the paper bag use?
+A: 1.5
+Accept: 1.5 times; one and a half times
+Ref: 4.12
+D: 3
+
+Q: Why can two life-cycle assessments of the same product reach different conclusions?
+A: Some effects need value judgements
+Accept: Some impacts are hard to measure; may be biased; selective data
+Ref: 4.12
+D: 3
+
+Q: What does the symbol ⇌ mean in a chemical equation?
+A: Reversible reaction
+Accept: The reaction is reversible; reaction goes both ways
+Ref: 4.13
+D: 1
+
+Q: What is a reversible reaction?
+A: Products can react to re-form the reactants
+Accept: A reaction that can go in both directions
+Ref: 4.13
+D: 2
+
+Q: Heating solid ammonium chloride produces which two gases?
+A: Ammonia and hydrogen chloride
+Accept: NH₃ and HCl
+Ref: 4.13
+D: 2
+Note: The gases recombine to form white ammonium chloride on the cooler part of the tube.
+
+Q: Dynamic equilibrium can only be reached in what type of system?
+A: Closed system
+Accept: Closed; sealed container
+Ref: 4.14
+D: 1
+
+Q: At dynamic equilibrium, how do the rates of the forward and reverse reactions compare?
+A: Equal
+Accept: The same; equal rates
+Ref: 4.14
+D: 2
+
+Q: At dynamic equilibrium, what happens to the concentrations of reactants and products?
+A: Stay constant
+Accept: Stay the same; do not change; constant
+Ref: 4.14
+D: 2
+Note: Constant does not mean equal.
+
+Q: Why is the equilibrium described as "dynamic"?
+A: Forward and reverse reactions are still happening
+Accept: Reactions continue in both directions
+Ref: 4.14
+D: 3
+
+Q: Which product is made by the Haber process?
+A: Ammonia
+Accept: NH₃
+Ref: 4.15
+D: 1
+
+Q: Where is the nitrogen for the Haber process obtained from?
+A: Air
+Accept: The air; the atmosphere
+Ref: 4.15
+D: 1
+
+Q: Where is the hydrogen for the Haber process obtained from?
+A: Natural gas
+Accept: Methane
+Ref: 4.15
+D: 1
+
+Q: Write the balanced symbol equation for the formation of ammonia.
+A: N₂ + 3H₂ ⇌ 2NH₃
+Accept: N2 + 3H2 ⇌ 2NH3; N₂ + 3H₂ → 2NH₃
+Ref: 4.15
+D: 2
+Note: Look for the ⇌ symbol; accept → if the balancing is correct.
+
+Q: What temperature is used in the Haber process?
+A: 450 °C
+Accept: 450 degrees Celsius; 450
+Ref: 4.16
+D: 1
+
+Q: What pressure is used in the Haber process?
+A: 200 atmospheres
+Accept: 200 atm; 200
+Ref: 4.16
+D: 1
+
+Q: Which metal is used as the catalyst in the Haber process?
+A: Iron
+Accept: Fe
+Ref: 4.16
+D: 1
+
+Q: For N₂ + 3H₂ ⇌ 2NH₃, which way does the equilibrium shift if the pressure is increased?
+A: Right, towards ammonia
+Accept: Right; forward; towards fewer gas molecules
+Ref: 4.17
+D: 3
+HT: yes
+
+Q: The forward reaction in the Haber process is exothermic. Which way does the equilibrium shift if temperature rises?
+A: Left, towards nitrogen and hydrogen
+Accept: Left; backward; to the reactants; endothermic direction
+Ref: 4.17
+D: 3
+HT: yes
+
+Q: In a reversible reaction at equilibrium, more of a reactant is added. Which way does the position shift?
+A: Towards the products
+Accept: Right; forward; to the right
+Ref: 4.17
+D: 3
+HT: yes
+
+Q: When does changing the pressure have no effect on the position of a gaseous equilibrium?
+A: Equal numbers of gas molecules on each side
+Accept: Same number of gas molecules on both sides
+Ref: 4.17
+D: 3
+HT: yes

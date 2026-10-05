@@ -1,0 +1,270 @@
+Board: Edexcel
+Spec: 1CH0
+Topic: 2
+
+Q: In which state of matter are the particles in a regular arrangement, vibrating about fixed positions?
+A: Solid
+Ref: 2.1
+D: 1
+
+Q: In which state of matter do the particles have the most energy?
+A: Gas
+Accept: Gases; gaseous state
+Ref: 2.1
+D: 1
+
+Q: Describe the arrangement of particles in a liquid.
+A: Close together, randomly arranged
+Accept: Touching but irregular; close together with no regular pattern
+Ref: 2.1
+D: 2
+Note: "Close together" and "random/irregular" are both needed.
+
+Q: Describe the movement of particles in a gas.
+A: Move quickly in random directions
+Accept: Fast, random movement; move randomly at high speed
+Ref: 2.1
+D: 2
+
+Q: What is the name of the change of state from gas to liquid?
+A: Condensing
+Accept: Condensation
+Ref: 2.2
+D: 1
+
+Q: What is the name of the change of state from solid directly to gas?
+A: Subliming
+Accept: Sublimation
+Ref: 2.2
+D: 1
+
+Q: Is melting ice a physical change or a chemical change?
+A: Physical change
+Accept: Physical
+Ref: 2.2
+D: 2
+Note: Changes of state make no new substance and are easily reversed.
+
+Q: Why is boiling water a physical change rather than a chemical change?
+A: No new substance is formed
+Accept: No new substances made; still water, just a different state
+Ref: 2.2
+D: 3
+
+Q: What happens to the energy of the particles when a solid melts?
+A: Increases
+Accept: They gain energy; particles gain energy
+Ref: 2.3
+D: 2
+
+Q: When a liquid freezes, what happens to the movement of its particles?
+A: Slows down to vibrating in fixed positions
+Accept: Slows down; only vibrate; stop moving past each other
+Ref: 2.3
+D: 2
+
+Q: Why must energy be transferred to a liquid to make it boil?
+A: To overcome the forces between particles
+Accept: Overcome forces of attraction between particles; break the attractions between particles
+Ref: 2.3
+D: 3
+Note: No covalent bonds are broken when a molecular substance boils.
+
+Q: A substance melts at 10 °C and boils at 80 °C. What is its state at 50 °C?
+A: Liquid
+Ref: 2.4
+D: 2
+
+Q: Ethanol melts at −114 °C and boils at 78 °C. What is its state at 100 °C?
+A: Gas
+Accept: Gaseous; vapour
+Ref: 2.4
+D: 2
+
+Q: A substance melts at −7 °C and boils at 59 °C. What is its state at −20 °C?
+A: Solid
+Ref: 2.4
+D: 3
+Note: Watch for students comparing −20 with −7 as if larger.
+
+Q: In chemistry, what is a pure substance?
+A: A single element or compound
+Accept: Only one element or compound; one substance not mixed with anything else
+Ref: 2.5
+D: 2
+
+Q: In everyday use, what does "pure" usually mean?
+A: Natural with nothing added
+Accept: Nothing added; untreated; natural
+Ref: 2.5
+D: 2
+Note: For example "pure orange juice", which is really a mixture.
+
+Q: Why is "pure" orange juice not pure in the chemistry sense?
+A: Contains more than one substance
+Accept: Mixture of different substances; mixture
+Ref: 2.5
+D: 3
+
+Q: What word describes the melting point of a pure substance, as opposed to a mixture?
+A: Sharp
+Accept: Sharp melting point; fixed; single temperature
+Ref: 2.6
+D: 1
+
+Q: How does a mixture melt, compared with a pure substance?
+A: Over a range of temperatures
+Accept: Over a temperature range; gradually over a range
+Ref: 2.6
+D: 2
+
+Q: Sample X melts at exactly 122 °C; sample Y melts between 115 °C and 120 °C. Which sample is a mixture?
+A: Y
+Accept: Sample Y
+Ref: 2.6
+D: 3
+Note: A melting range (often lower than the pure value) shows a mixture.
+
+Q: Which technique separates an insoluble solid from a liquid?
+A: Filtration
+Accept: Filtering
+Ref: 2.7
+D: 1
+
+Q: Which technique separates a mixture of liquids with different boiling points?
+A: Fractional distillation
+Ref: 2.7
+D: 2
+
+Q: Which technique obtains a solid solute from its solution as crystals?
+A: Crystallisation
+Accept: Crystallising; crystallization
+Ref: 2.7
+D: 1
+
+Q: Simple distillation separates a solvent from a solution. Why does it work?
+A: The solvent has a much lower boiling point
+Accept: Solvent evaporates but solute does not; solute has a much higher boiling point
+Ref: 2.7
+D: 3
+
+Q: Which technique separates sand from a mixture of sand and salt water?
+A: Filtration
+Accept: Filtering
+Ref: 2.8
+D: 2
+
+Q: How would you get pure water from salt solution?
+A: Simple distillation
+Accept: Distillation
+Ref: 2.8
+D: 2
+Note: Fractional distillation is not needed for one volatile liquid.
+
+Q: Why is a salt solution heated only until crystals start to form, rather than until dry?
+A: To get larger, well-formed crystals
+Accept: Avoid decomposing the salt; avoid spitting; bigger crystals
+Ref: 2.8
+D: 3
+Note: Overheating may decompose the salt or drive off water of crystallisation.
+
+Q: In paper chromatography, what is the name for the solvent that moves through the paper?
+A: Mobile phase
+Ref: 2.9
+D: 1
+
+Q: In paper chromatography, what contains the stationary phase?
+A: Paper
+Accept: Chromatography paper; the paper
+Ref: 2.9
+D: 1
+
+Q: Why do different substances in a mixture separate during paper chromatography?
+A: They move at different rates
+Accept: Travel at different speeds; different solubilities and attraction to paper
+Ref: 2.9
+D: 3
+
+Q: A substance gives one spot on a chromatogram in every solvent tested. What does this show?
+A: Pure substance
+Accept: Pure; it is pure
+Ref: 2.10
+D: 2
+
+Q: A dye gives three spots on a chromatogram. How many substances does it contain?
+A: 3
+Accept: Three; at least three
+Ref: 2.10
+D: 2
+
+Q: A spot moves 3 cm and the solvent front moves 6 cm. What is the Rf value?
+A: 0.5
+Accept: 0.50; 1/2
+Ref: 2.10
+D: 2
+Note: Rf = distance moved by substance ÷ distance moved by solvent.
+
+Q: A spot has Rf 0.4 and the solvent front moved 10 cm. How far did the spot move?
+A: 4 cm
+Accept: 4; 40 mm
+Ref: 2.10
+D: 3
+
+Q: An unknown spot matches a known food colouring in the same solvent. What does this match?
+A: Rf value
+Accept: Same Rf value; same height; distance moved
+Ref: 2.10
+D: 3
+
+Q: Why is the start line on chromatography paper drawn in pencil, not ink?
+A: Pencil will not dissolve in the solvent
+Accept: Pencil is insoluble; ink would dissolve and separate
+Ref: 2.11
+D: 3
+RP: 2.11
+Note: Ink lines would run with the solvent and spoil the chromatogram.
+
+Q: Why must the start line be above the solvent level in the beaker?
+A: Ink would dissolve into the solvent
+Accept: Spots would wash into the solvent; ink would dissolve in the solvent
+Ref: 2.11
+D: 3
+RP: 2.11
+
+Q: In the ink core practical, which technique collects the solvent from the ink?
+A: Simple distillation
+Accept: Distillation
+Ref: 2.11
+D: 1
+RP: 2.11
+
+Q: When distilling a water-based ink, what temperature should the thermometer read?
+A: 100 °C
+Accept: 100; 100 degrees Celsius
+Ref: 2.11
+D: 2
+RP: 2.11
+Note: A steady 100 °C shows the distillate is water.
+
+Q: What process is used in the final stage of treating fresh water to kill microbes?
+A: Chlorination
+Accept: Adding chlorine; chlorinating
+Ref: 2.12
+D: 1
+
+Q: In treating ground water, which stage lets solid particles settle to the bottom?
+A: Sedimentation
+Ref: 2.12
+D: 1
+
+Q: Which separation technique can make sea water potable?
+A: Distillation
+Accept: Simple distillation
+Ref: 2.12
+D: 2
+
+Q: Why is deionised or distilled water, not tap water, used in chemical analysis?
+A: Tap water contains dissolved salts
+Accept: Dissolved ions would interfere with results; tap water has dissolved salts
+Ref: 2.12
+D: 3
