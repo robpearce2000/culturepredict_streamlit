@@ -1,0 +1,331 @@
+Board: AQA
+Spec: 8461
+Topic: 4.2
+
+# 4.2.1 Principles of organisation
+
+Q: What is the name for a group of cells with a similar structure and function?
+A: Tissue
+Accept: Tissues
+Ref: 4.2.1
+D: 1
+Id: aqa-bio-4.2-001
+
+Q: Put these in order from smallest to largest: organ, cell, organ system, tissue.
+A: Cell, tissue, organ, organ system
+Ref: 4.2.1
+D: 2
+Id: aqa-bio-4.2-002
+
+Q: The stomach contains muscular, glandular and epithelial tissue. Why is the stomach classed as an organ, not a tissue?
+A: Several different tissues working together
+Accept: Made of different tissues; Different tissues performing a specific function
+Ref: 4.2.1
+D: 3
+Note: A tissue is made of similar cells; an organ is made of several tissues.
+
+# 4.2.2.1 The human digestive system
+Id: aqa-bio-4.2-003
+
+Q: What name is given to the part of an enzyme where the substrate binds?
+A: Active site
+Ref: 4.2.2.1
+D: 1
+Id: aqa-bio-4.2-004
+
+Q: Lipase enzymes break lipids down into which two products?
+A: Glycerol and fatty acids
+Accept: Fatty acids and glycerol
+Ref: 4.2.2.1
+D: 2
+Id: aqa-bio-4.2-005
+
+Q: Give the two ways bile helps lipase digest fat faster.
+A: Neutralises stomach acid and emulsifies fat
+Accept: Emulsifies fat and neutralises stomach acid; Alkaline and emulsifies fats
+Ref: 4.2.2.1
+D: 3
+Note: Emulsifying gives small droplets with a larger surface area; it is not digestion.
+Id: aqa-bio-4.2-006
+
+Q: Use the lock and key model to explain why amylase cannot digest protein.
+A: Protein does not fit amylase's active site
+Accept: Wrong shape for the active site; Active site not complementary to protein
+Ref: 4.2.2.1
+D: 3
+
+# Required practical 4: food tests
+Id: aqa-bio-4.2-007
+
+Q: In the iodine test, what is the colour change when starch is present?
+A: Orange-brown to blue-black
+Accept: Brown to blue-black; Orange to black; Blue-black
+Ref: 4.2.2.1
+RP: 4
+D: 2
+Id: aqa-bio-4.2-008
+
+Q: What colour does Biuret reagent turn when protein is present?
+A: Purple
+Accept: Lilac; Mauve; Violet
+Ref: 4.2.2.1
+RP: 4
+D: 1
+Note: Biuret reagent starts blue.
+Id: aqa-bio-4.2-009
+
+Q: What must be done to a food sample mixed with Benedict's reagent before the result can be seen?
+A: Heat in a hot water bath
+Accept: Heat; Warm; Warm in a water bath; Boil
+Ref: 4.2.2.1
+RP: 4
+D: 2
+Note: A water bath at about 75-80 °C is typical; any answer saying heat or warm is enough.
+
+# Required practical 5: effect of pH on amylase
+Id: aqa-bio-4.2-010
+
+Q: In the amylase and pH practical, what is the independent variable?
+A: pH
+Ref: 4.2.2.1
+RP: 5
+D: 1
+Id: aqa-bio-4.2-011
+
+Q: In the amylase and pH practical, how is the temperature kept constant?
+A: Water bath
+Accept: Electric heater; Thermostatically controlled water bath
+Ref: 4.2.2.1
+RP: 5
+D: 1
+Id: aqa-bio-4.2-012
+
+Q: In the amylase practical, what colour does iodine stay once all the starch has been digested?
+A: Orange-brown
+Accept: Orange; Brown; Yellow-brown
+Ref: 4.2.2.1
+RP: 5
+D: 2
+Id: aqa-bio-4.2-013
+
+Q: All the starch was digested in 50 seconds. Using rate = 1000 ÷ time, what is the rate?
+A: 20 s⁻¹
+Accept: 20; 20 per second; 20 /s; 20 per s
+Ref: 4.2.2.1
+RP: 5
+D: 2
+Note: The 1000 is arbitrary, so the bare number 20 (or 20 per second) is fine.
+Id: aqa-bio-4.2-014
+
+Q: Why does amylase take longer to digest starch at pH 11 than at its optimum pH?
+A: Active site changes shape so starch no longer fits
+Accept: Enzyme denatured; Active site changes shape; Starch no longer fits the active site; Active site no longer complementary to starch
+Ref: 4.2.2.1
+RP: 5
+D: 3
+
+# 4.2.2.2 The heart and blood vessels
+Id: aqa-bio-4.2-015
+
+Q: In which chamber of the heart is the group of cells that acts as the natural pacemaker?
+A: Right atrium
+Ref: 4.2.2.2
+D: 1
+Id: aqa-bio-4.2-016
+
+Q: Why is the human circulatory system described as a double circulatory system?
+A: Blood passes through the heart twice per circuit
+Accept: Two circuits, one to lungs and one to body; Heart pumps blood to lungs and body separately
+Ref: 4.2.2.2
+D: 2
+Id: aqa-bio-4.2-017
+
+Q: Why do veins have valves?
+A: Stop backflow of low-pressure blood
+Accept: Prevent blood flowing backwards; Stop backflow
+Ref: 4.2.2.2
+D: 3
+Note: Blood in veins is at low pressure, so it could flow the wrong way.
+Id: aqa-bio-4.2-018
+
+Q: Why do arteries have thick muscular and elastic walls?
+A: Withstand high-pressure blood from the heart
+Accept: Cope with high pressure; Blood is at high pressure
+Ref: 4.2.2.2
+D: 3
+Id: aqa-bio-4.2-019
+
+Q: 1500 ml of blood flows through a vessel in 5 minutes. What is the rate of blood flow?
+A: 300 ml/min
+Accept: 300 ml per minute; 300 cm³/min; 300
+Ref: 4.2.2.2
+D: 2
+Note: Rate = volume ÷ time.
+
+# 4.2.2.3 Blood
+Id: aqa-bio-4.2-020
+
+Q: Which component of the blood helps blood to clot at a wound?
+A: Platelets
+Accept: Platelet
+Ref: 4.2.2.3
+D: 1
+Id: aqa-bio-4.2-021
+
+Q: State the main function of white blood cells.
+A: Defend the body against pathogens
+Accept: Fight infection; Destroy pathogens; Fight microorganisms; Protect against disease; Engulf pathogens; Produce antibodies
+Ref: 4.2.2.3
+D: 2
+Id: aqa-bio-4.2-022
+
+Q: Why does having no nucleus help a red blood cell do its job?
+A: More room for haemoglobin to carry oxygen
+Accept: More space for haemoglobin; Carries more oxygen
+Ref: 4.2.2.3
+D: 3
+
+# 4.2.2.4 Coronary heart disease
+Id: aqa-bio-4.2-023
+
+Q: Which group of drugs is taken to lower blood cholesterol and slow fatty deposits in arteries?
+A: Statins
+Accept: Statin
+Ref: 4.2.2.4
+D: 1
+Id: aqa-bio-4.2-024
+
+Q: Why does a narrowed coronary artery damage the heart muscle?
+A: Heart muscle gets too little oxygen
+Accept: Lack of oxygen; Less blood flow so less oxygen for respiration
+Ref: 4.2.2.4
+D: 3
+Id: aqa-bio-4.2-025
+
+Q: Name the two types of valve used to replace faulty heart valves.
+A: Biological and mechanical
+Accept: Mechanical and biological
+Ref: 4.2.2.4
+D: 2
+
+# 4.2.2.5 Health issues
+Id: aqa-bio-4.2-026
+
+Q: A defect in which body system makes a person more likely to suffer from infectious diseases?
+A: Immune system
+Ref: 4.2.2.5
+D: 1
+Id: aqa-bio-4.2-027
+
+Q: Asthma and skin rashes can follow an earlier immune reaction to a pathogen. What type of condition are they?
+A: Allergies
+Accept: Allergy; Allergic reactions
+Ref: 4.2.2.5
+D: 2
+Id: aqa-bio-4.2-028
+
+Q: Which non-communicable disease can be triggered by viruses living inside cells?
+A: Cancer
+Ref: 4.2.2.5
+D: 2
+Note: An example of different types of disease interacting.
+
+# 4.2.2.6 The effect of lifestyle on some non-communicable diseases
+Id: aqa-bio-4.2-029
+
+Q: What term is given to anything linked to an increased rate of a disease?
+A: Risk factor
+Accept: Risk factors
+Ref: 4.2.2.6
+D: 1
+Id: aqa-bio-4.2-030
+
+Q: Long-term heavy drinking of alcohol mainly damages the function of which two organs?
+A: Liver and brain
+Accept: Brain and liver
+Ref: 4.2.2.6
+D: 2
+Note: The specification names the liver and brain; do not accept stomach or heart.
+Id: aqa-bio-4.2-031
+
+Q: What must be found to show a risk factor actually causes a disease, not just correlates with it?
+A: Causal mechanism
+Accept: Mechanism; How it causes the disease
+Ref: 4.2.2.6
+D: 3
+
+# 4.2.2.7 Cancer
+Id: aqa-bio-4.2-032
+
+Q: Which type of tumour stays in one area and does not invade other parts of the body?
+A: Benign
+Accept: Benign tumour
+Ref: 4.2.2.7
+D: 1
+Id: aqa-bio-4.2-033
+
+Q: In cancer, what goes wrong with how the changed cells grow and divide?
+A: Uncontrolled growth and division
+Accept: Uncontrolled; Uncontrolled cell division; Uncontrolled growth; Divide out of control
+Ref: 4.2.2.7
+D: 2
+Id: aqa-bio-4.2-034
+
+Q: How do cells from a malignant tumour form secondary tumours in other parts of the body?
+A: Spread in the blood
+Accept: Travel in the bloodstream; Carried in blood
+Ref: 4.2.2.7
+D: 3
+
+# 4.2.3.1 Plant tissues
+Id: aqa-bio-4.2-035
+
+Q: Which leaf tissue is the main site of photosynthesis?
+A: Palisade mesophyll
+Accept: Palisade; Palisade cells
+Ref: 4.2.3.1
+D: 1
+Id: aqa-bio-4.2-036
+
+Q: Where in a plant is meristem tissue found?
+A: Growing tips of shoots and roots
+Accept: Shoot and root tips; Tips of shoots and roots
+Ref: 4.2.3.1
+D: 1
+Id: aqa-bio-4.2-037
+
+Q: How do the air spaces in spongy mesophyll help the leaf exchange gases?
+A: Gases diffuse easily to and from cells
+Accept: Faster diffusion of gases; Carbon dioxide diffuses to cells; Large surface area for diffusion; Gas exchange by diffusion
+Ref: 4.2.3.1
+D: 3
+
+# 4.2.3.2 Plant organ system
+Id: aqa-bio-4.2-038
+
+Q: What is the movement of dissolved sugars through phloem called?
+A: Translocation
+Ref: 4.2.3.2
+D: 1
+Id: aqa-bio-4.2-039
+
+Q: What does xylem tissue transport, and in which direction?
+A: Water and minerals, roots to leaves
+Accept: Water and mineral ions upwards; Water from roots to stems and leaves
+Ref: 4.2.3.2
+D: 2
+Id: aqa-bio-4.2-040
+
+Q: Why does a windy day increase the rate of transpiration?
+A: Water vapour blown away, steeper concentration gradient
+Accept: Water vapour removed from around leaf; Steeper diffusion gradient
+Ref: 4.2.3.2
+D: 3
+Id: aqa-bio-4.2-041
+
+Q: Why do root hair cells have a long, thin extension?
+A: Large surface area for absorption
+Accept: Increase surface area; Absorb more water and minerals
+Ref: 4.2.3.2
+D: 3
+Id: aqa-bio-4.2-042

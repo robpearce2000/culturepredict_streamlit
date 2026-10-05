@@ -1,0 +1,328 @@
+{
+ "board": "AQA",
+ "subject": "Biology",
+ "specCode": "8461",
+ "version": "1.0",
+ "date": "21 April 2016",
+ "source": "https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification",
+ "numbering": "^4\\.\\d+(\\.\\d+){1,3}$",
+ "topics": [
+  {
+   "ref": "4.1",
+   "title": "Cell biology",
+   "subtopics": [
+    {
+     "ref": "4.1.1",
+     "title": "Cell structure"
+    },
+    {
+     "ref": "4.1.2",
+     "title": "Cell division"
+    },
+    {
+     "ref": "4.1.3",
+     "title": "Transport in cells"
+    }
+   ]
+  },
+  {
+   "ref": "4.2",
+   "title": "Organisation",
+   "subtopics": [
+    {
+     "ref": "4.2.1",
+     "title": "Principles of organisation"
+    },
+    {
+     "ref": "4.2.2",
+     "title": "Animal tissues, organs and organ systems"
+    },
+    {
+     "ref": "4.2.3",
+     "title": "Plant tissues, organs and systems"
+    }
+   ]
+  },
+  {
+   "ref": "4.3",
+   "title": "Infection and response",
+   "subtopics": [
+    {
+     "ref": "4.3.1",
+     "title": "Communicable diseases"
+    },
+    {
+     "ref": "4.3.2",
+     "title": "Monoclonal antibodies (biology only) (HT only)"
+    },
+    {
+     "ref": "4.3.3",
+     "title": "Plant disease (biology only)"
+    }
+   ]
+  },
+  {
+   "ref": "4.4",
+   "title": "Bioenergetics",
+   "subtopics": [
+    {
+     "ref": "4.4.1",
+     "title": "Photosynthesis"
+    },
+    {
+     "ref": "4.4.2",
+     "title": "Respiration"
+    }
+   ]
+  },
+  {
+   "ref": "4.5",
+   "title": "Homeostasis and response",
+   "subtopics": [
+    {
+     "ref": "4.5.1",
+     "title": "Homeostasis"
+    },
+    {
+     "ref": "4.5.2",
+     "title": "The human nervous system"
+    },
+    {
+     "ref": "4.5.3",
+     "title": "Hormonal coordination in humans"
+    },
+    {
+     "ref": "4.5.4",
+     "title": "Plant hormones (biology only)"
+    }
+   ]
+  },
+  {
+   "ref": "4.6",
+   "title": "Inheritance, variation and evolution",
+   "subtopics": [
+    {
+     "ref": "4.6.1",
+     "title": "Reproduction"
+    },
+    {
+     "ref": "4.6.2",
+     "title": "Variation and evolution"
+    },
+    {
+     "ref": "4.6.3",
+     "title": "The development of understanding of genetics and evolution"
+    },
+    {
+     "ref": "4.6.4",
+     "title": "Classification of living organisms"
+    }
+   ]
+  },
+  {
+   "ref": "4.7",
+   "title": "Ecology",
+   "subtopics": [
+    {
+     "ref": "4.7.1",
+     "title": "Adaptations, interdependence and competition"
+    },
+    {
+     "ref": "4.7.2",
+     "title": "Organisation of an ecosystem"
+    },
+    {
+     "ref": "4.7.3",
+     "title": "Biodiversity and the effect of human interaction on ecosystems"
+    },
+    {
+     "ref": "4.7.4",
+     "title": "Trophic levels in an ecosystem (biology only)"
+    },
+    {
+     "ref": "4.7.5",
+     "title": "Food production (biology only)"
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "4.1": "Cell biology",
+  "4.1.1": "Cell structure",
+  "4.1.1.1": "Eukaryotes and prokaryotes",
+  "4.1.1.2": "Animal and plant cells",
+  "4.1.1.3": "Cell specialisation",
+  "4.1.1.4": "Cell differentiation",
+  "4.1.1.5": "Microscopy",
+  "4.1.1.6": "Culturing microorganisms (biology only)",
+  "4.1.2": "Cell division",
+  "4.1.2.1": "Chromosomes",
+  "4.1.2.2": "Mitosis and the cell cycle",
+  "4.1.2.3": "Stem cells",
+  "4.1.3": "Transport in cells",
+  "4.1.3.1": "Diffusion",
+  "4.1.3.2": "Osmosis",
+  "4.1.3.3": "Active transport",
+  "4.2": "Organisation",
+  "4.2.1": "Principles of organisation",
+  "4.2.2": "Animal tissues, organs and organ systems",
+  "4.2.2.1": "The human digestive system",
+  "4.2.2.2": "The heart and blood vessels",
+  "4.2.2.3": "Blood",
+  "4.2.2.4": "Coronary heart disease: a non-communicable disease",
+  "4.2.2.5": "Health issues",
+  "4.2.2.6": "The effect of lifestyle on some non-communicable diseases",
+  "4.2.2.7": "Cancer",
+  "4.2.3": "Plant tissues, organs and systems",
+  "4.2.3.1": "Plant tissues",
+  "4.2.3.2": "Plant organ system",
+  "4.3": "Infection and response",
+  "4.3.1": "Communicable diseases",
+  "4.3.1.1": "Communicable (infectious) diseases",
+  "4.3.1.2": "Viral diseases",
+  "4.3.1.3": "Bacterial diseases",
+  "4.3.1.4": "Fungal diseases",
+  "4.3.1.5": "Protist diseases",
+  "4.3.1.6": "Human defence systems",
+  "4.3.1.7": "Vaccination",
+  "4.3.1.8": "Antibiotics and painkillers",
+  "4.3.1.9": "Discovery and development of drugs",
+  "4.3.2": "Monoclonal antibodies (biology only) (HT only)",
+  "4.3.2.1": "Producing monoclonal antibodies",
+  "4.3.2.2": "Uses of monoclonal antibodies",
+  "4.3.3": "Plant disease (biology only)",
+  "4.3.3.1": "Detection and identification of plant diseases",
+  "4.3.3.2": "Plant defence responses",
+  "4.4": "Bioenergetics",
+  "4.4.1": "Photosynthesis",
+  "4.4.1.1": "Photosynthetic reaction",
+  "4.4.1.2": "Rate of photosynthesis",
+  "4.4.1.3": "Uses of glucose from photosynthesis",
+  "4.4.2": "Respiration",
+  "4.4.2.1": "Aerobic and anaerobic respiration",
+  "4.4.2.2": "Response to exercise",
+  "4.4.2.3": "Metabolism",
+  "4.5": "Homeostasis and response",
+  "4.5.1": "Homeostasis",
+  "4.5.2": "The human nervous system",
+  "4.5.2.1": "Structure and function",
+  "4.5.2.2": "The brain (biology only)",
+  "4.5.2.3": "The eye (biology only)",
+  "4.5.2.4": "Control of body temperature (biology only)",
+  "4.5.3": "Hormonal coordination in humans",
+  "4.5.3.1": "Human endocrine system",
+  "4.5.3.2": "Control of blood glucose concentration",
+  "4.5.3.3": "Maintaining water and nitrogen balance in the body (biology only)",
+  "4.5.3.4": "Hormones in human reproduction",
+  "4.5.3.5": "Contraception",
+  "4.5.3.6": "The use of hormones to treat infertility (HT only)",
+  "4.5.3.7": "Negative feedback (HT only)",
+  "4.5.4": "Plant hormones (biology only)",
+  "4.5.4.1": "Control and coordination",
+  "4.5.4.2": "Use of plant hormones (HT only)",
+  "4.6": "Inheritance, variation and evolution",
+  "4.6.1": "Reproduction",
+  "4.6.1.1": "Sexual and asexual reproduction",
+  "4.6.1.2": "Meiosis",
+  "4.6.1.3": "Advantages and disadvantages of sexual and asexual reproduction (biology only)",
+  "4.6.1.4": "DNA and the genome",
+  "4.6.1.5": "DNA structure (biology only)",
+  "4.6.1.6": "Genetic inheritance",
+  "4.6.1.7": "Inherited disorders",
+  "4.6.1.8": "Sex determination",
+  "4.6.2": "Variation and evolution",
+  "4.6.2.1": "Variation",
+  "4.6.2.2": "Evolution",
+  "4.6.2.3": "Selective breeding",
+  "4.6.2.4": "Genetic engineering",
+  "4.6.2.5": "Cloning (biology only)",
+  "4.6.3": "The development of understanding of genetics and evolution",
+  "4.6.3.1": "Theory of evolution (biology only)",
+  "4.6.3.2": "Speciation (biology only)",
+  "4.6.3.3": "The understanding of genetics (biology only)",
+  "4.6.3.4": "Evidence for evolution",
+  "4.6.3.5": "Fossils",
+  "4.6.3.6": "Extinction",
+  "4.6.3.7": "Resistant bacteria",
+  "4.6.4": "Classification of living organisms",
+  "4.7": "Ecology",
+  "4.7.1": "Adaptations, interdependence and competition",
+  "4.7.1.1": "Communities",
+  "4.7.1.2": "Abiotic factors",
+  "4.7.1.3": "Biotic factors",
+  "4.7.1.4": "Adaptations",
+  "4.7.2": "Organisation of an ecosystem",
+  "4.7.2.1": "Levels of organisation",
+  "4.7.2.2": "How materials are cycled",
+  "4.7.2.3": "Decomposition (biology only)",
+  "4.7.2.4": "Impact of environmental change (biology only) (HT only)",
+  "4.7.3": "Biodiversity and the effect of human interaction on ecosystems",
+  "4.7.3.1": "Biodiversity",
+  "4.7.3.2": "Waste management",
+  "4.7.3.3": "Land use",
+  "4.7.3.4": "Deforestation",
+  "4.7.3.5": "Global warming",
+  "4.7.3.6": "Maintaining biodiversity",
+  "4.7.4": "Trophic levels in an ecosystem (biology only)",
+  "4.7.4.1": "Trophic levels",
+  "4.7.4.2": "Pyramids of biomass",
+  "4.7.4.3": "Transfer of biomass",
+  "4.7.5": "Food production (biology only)",
+  "4.7.5.1": "Factors affecting food security",
+  "4.7.5.2": "Farming techniques",
+  "4.7.5.3": "Sustainable fisheries",
+  "4.7.5.4": "Role of biotechnology"
+ },
+ "practicals": [
+  {
+   "n": 1,
+   "ref": "4.1.1.2",
+   "title": "use a light microscope to observe, draw and label a selection of plant"
+  },
+  {
+   "n": 2,
+   "ref": "4.1.1.6",
+   "title": "investigate the effect of antiseptics or antibiotics on bacterial growth"
+  },
+  {
+   "n": 3,
+   "ref": "4.1.3.2",
+   "title": "investigate the effect of a range of concentrations of salt or sugar"
+  },
+  {
+   "n": 4,
+   "ref": "4.2.2.1",
+   "title": "use qualitative reagents to test for a range of carbohydrates, lipids and"
+  },
+  {
+   "n": 5,
+   "ref": "4.2.2.1",
+   "title": "investigate the effect of pH on the rate of reaction of amylase enzyme."
+  },
+  {
+   "n": 6,
+   "ref": "4.4.1.2",
+   "title": "investigate the effect of light intensity on the rate of photosynthesis"
+  },
+  {
+   "n": 7,
+   "ref": "4.5.2.1",
+   "title": "plan and carry out an investigation into the effect of a factor on human"
+  },
+  {
+   "n": 8,
+   "ref": "4.5.4.1",
+   "title": "investigate the effect of light or gravity on the growth of newly"
+  },
+  {
+   "n": 9,
+   "ref": "4.7.2.1",
+   "title": "measure the population size of a common species in a habitat. Use"
+  },
+  {
+   "n": 10,
+   "ref": "4.7.2.3",
+   "title": "investigate the effect of temperature on the rate of decay of fresh milk"
+  }
+ ]
+}

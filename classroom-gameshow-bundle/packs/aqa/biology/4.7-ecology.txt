@@ -1,0 +1,611 @@
+Board: AQA
+Spec: 8461
+Topic: 4.7
+
+# 4.7.1.1 Communities
+
+Q: What do we call a community of organisms together with the non-living surroundings they interact with?
+A: Ecosystem
+Accept: An ecosystem
+Ref: 4.7.1.1
+D: 1
+Id: aqa-bio-4.7-001
+
+Q: Bees need flowers for food and flowers need bees for pollination. What term describes this mutual reliance in a community?
+A: Interdependence
+Accept: Interdependent
+Ref: 4.7.1.1
+D: 1
+Id: aqa-bio-4.7-002
+
+Q: Plants in a habitat compete for light and space. What two things do they compete for from the soil?
+A: Water and mineral ions
+Accept: Water and minerals; Water and mineral salts
+Ref: 4.7.1.1
+D: 2
+Id: aqa-bio-4.7-003
+
+Q: Why can removing one species from a community affect the whole community?
+A: Other species depend on it
+Accept: Interdependence; Other species rely on it for food or shelter
+Ref: 4.7.1.1
+D: 3
+Note: Look for the idea of interdependence, e.g. loss of a food source or pollinator.
+
+# 4.7.1.2 Abiotic factors
+Id: aqa-bio-4.7-004
+
+Q: What is the term for a non-living factor that can affect a community?
+A: Abiotic factor
+Accept: Abiotic
+Ref: 4.7.1.2
+D: 1
+Id: aqa-bio-4.7-005
+
+Q: Which dissolved gas is an important abiotic factor for aquatic animals?
+A: Oxygen
+Accept: O2
+Ref: 4.7.1.2
+D: 1
+Id: aqa-bio-4.7-006
+
+Q: Why does a fall in light intensity on a woodland floor reduce the number of plants growing there?
+A: Less photosynthesis
+Accept: Rate of photosynthesis falls; Plants make less glucose
+Ref: 4.7.1.2
+D: 3
+Id: aqa-bio-4.7-007
+
+Q: Why might the number of fish in a pond fall if the oxygen level in the water drops?
+A: Less oxygen for aerobic respiration
+Accept: Fish cannot respire enough; Not enough oxygen to respire
+Ref: 4.7.1.2
+D: 3
+
+# 4.7.1.3 Biotic factors
+Id: aqa-bio-4.7-008
+
+Q: What is the term for a living factor that can affect a community?
+A: Biotic factor
+Accept: Biotic
+Ref: 4.7.1.3
+D: 1
+Id: aqa-bio-4.7-009
+
+Q: A new predator arrives in a habitat. What is the likely effect on the population of its prey?
+A: Prey population decreases
+Accept: Falls; Decreases; Fewer prey
+Ref: 4.7.1.3
+D: 2
+Id: aqa-bio-4.7-010
+
+Q: Grey squirrels outcompete red squirrels for food. Why might red squirrels then die out in an area?
+A: Too few left to breed
+Accept: Numbers too low to breed; Not enough to reproduce; Not enough food to survive
+Ref: 4.7.1.3
+D: 3
+
+# 4.7.1.4 Adaptations
+Id: aqa-bio-4.7-011
+
+Q: What name is given to organisms that live in very extreme environments?
+A: Extremophiles
+Accept: Extremophile
+Ref: 4.7.1.4
+D: 1
+Id: aqa-bio-4.7-012
+
+Q: Name the three types of adaptation.
+A: Structural, behavioural and functional
+Ref: 4.7.1.4
+D: 2
+Id: aqa-bio-4.7-013
+
+Q: Why do many Arctic mammals have a small surface area to volume ratio?
+A: To reduce heat loss
+Accept: Less heat lost; Keeps them warm
+Ref: 4.7.1.4
+D: 3
+
+# 4.7.2.1 Levels of organisation
+Id: aqa-bio-4.7-014
+
+Q: What type of organism is at the start of every food chain?
+A: Producer
+Accept: Producers; Green plant or alga
+Ref: 4.7.2.1
+D: 1
+Id: aqa-bio-4.7-015
+
+Q: On a predator-prey graph, why does the predator peak come after the prey peak?
+A: Predators breed after food increases
+Accept: Time lag for predators to reproduce; More prey lets predators breed later
+Ref: 4.7.2.1
+D: 3
+Id: aqa-bio-4.7-016
+
+Q: What square frame is placed on the ground to sample plants in a habitat?
+A: Quadrat
+Accept: Quadrats
+Ref: 4.7.2.1
+RP: 9
+D: 1
+Id: aqa-bio-4.7-017
+
+Q: What is the name for a line across a habitat along which samples are taken at intervals?
+A: Transect
+Accept: Line transect
+Ref: 4.7.2.1
+RP: 9
+D: 1
+Id: aqa-bio-4.7-018
+
+Q: Five quadrats contain 3, 5, 6, 8 and 8 buttercups. What is the mean number per quadrat?
+A: 6
+Accept: Six; 6 buttercups
+Ref: 4.7.2.1
+RP: 9
+D: 2
+Id: aqa-bio-4.7-019
+
+Q: Why should quadrats be placed at random when estimating the population size of a plant?
+A: To avoid bias
+Accept: Sample is representative; Unbiased sample
+Ref: 4.7.2.1
+RP: 9
+D: 3
+Id: aqa-bio-4.7-020
+
+Q: The mean is 4 dandelions per 0.25 m² quadrat. Estimate the number of dandelions in a 100 m² field.
+A: 1600
+Accept: 1600 dandelions
+Ref: 4.7.2.1
+RP: 9
+D: 3
+Note: 4 per 0.25 m² is 16 per m²; then multiply by 100 m².
+
+# 4.7.2.2 How materials are cycled
+Id: aqa-bio-4.7-021
+
+Q: Which process in the carbon cycle removes carbon dioxide from the atmosphere?
+A: Photosynthesis
+Ref: 4.7.2.2
+D: 1
+Id: aqa-bio-4.7-022
+
+Q: Which process in plants, animals and microorganisms all returns carbon dioxide to the atmosphere?
+A: Respiration
+Accept: Aerobic respiration
+Ref: 4.7.2.2
+D: 2
+Id: aqa-bio-4.7-023
+
+Q: Which organisms cycle materials by returning carbon dioxide to the air and mineral ions to the soil?
+A: Microorganisms
+Accept: Decomposers; Bacteria and fungi; Microbes
+Ref: 4.7.2.2
+D: 2
+Id: aqa-bio-4.7-024
+
+Q: Why is the water cycle important to plants and animals living on land?
+A: Provides fresh water
+Accept: Supplies fresh water; Gives them fresh water to use
+Ref: 4.7.2.2
+D: 2
+Id: aqa-bio-4.7-025
+
+Q: Why is the carbon cycle important for plants?
+A: Returns carbon dioxide for photosynthesis
+Accept: Supplies carbon dioxide for photosynthesis
+Ref: 4.7.2.2
+D: 3
+
+# 4.7.2.3 Decomposition
+Id: aqa-bio-4.7-026
+
+Q: Which gas is produced by anaerobic decay?
+A: Methane
+Accept: CH4
+Ref: 4.7.2.3
+D: 1
+Id: aqa-bio-4.7-027
+
+Q: A compost heap decays fastest when warm and well aerated. What else must it have enough of?
+A: Water
+Accept: Moisture
+Ref: 4.7.2.3
+D: 2
+Id: aqa-bio-4.7-028
+
+Q: A 100 g pile of grass cuttings decays to 60 g in 10 days. What is the mean rate of decay?
+A: 4 g per day
+Accept: 4 g/day; 4 grams per day
+Ref: 4.7.2.3
+D: 2
+Id: aqa-bio-4.7-029
+
+Q: Why is decay very slow at low temperatures?
+A: Decomposers' enzymes work slowly
+Accept: Less enzyme activity; Slow enzyme reactions; Microorganisms less active
+Ref: 4.7.2.3
+D: 3
+Id: aqa-bio-4.7-030
+
+Q: Why do gardeners regularly turn their compost heaps?
+A: Supplies oxygen for decomposers
+Accept: Adds air; More oxygen for aerobic respiration
+Ref: 4.7.2.3
+D: 3
+Id: aqa-bio-4.7-031
+
+Q: In the practical on the decay of fresh milk, what is the independent variable?
+A: Temperature
+Ref: 4.7.2.3
+RP: 10
+D: 1
+Id: aqa-bio-4.7-032
+
+Q: What happens to the pH of milk as it decays?
+A: Decreases
+Accept: Falls; Goes down; Becomes more acidic
+Ref: 4.7.2.3
+RP: 10
+D: 2
+Id: aqa-bio-4.7-033
+
+Q: In the milk decay practical using lipase, why are milk and lipase warmed separately in the water bath before mixing?
+A: So both reach the test temperature first
+Accept: To reach the right temperature before reacting; Equilibrate to temperature
+Ref: 4.7.2.3
+RP: 10
+D: 3
+
+# 4.7.2.4 Impact of environmental change (HT only)
+Id: aqa-bio-4.7-034
+
+Q: Changes in temperature and water availability affect where species live. Name the third environmental change of this kind.
+A: Composition of atmospheric gases
+Accept: Atmospheric gases; Gases in the air; Atmospheric composition
+Ref: 4.7.2.4
+HT: yes
+D: 1
+Id: aqa-bio-4.7-035
+
+Q: Environmental changes may be seasonal or geographic. What else may cause them?
+A: Human interaction
+Accept: Humans; Human activity
+Ref: 4.7.2.4
+HT: yes
+D: 1
+Id: aqa-bio-4.7-036
+
+Q: As the UK gets warmer, which direction is the range of a warmth-loving insect species likely to spread?
+A: North
+Accept: Northwards; Further north
+Ref: 4.7.2.4
+HT: yes
+D: 3
+Id: aqa-bio-4.7-037
+
+Q: A pond dries out every summer. Is this a seasonal, geographic or human-caused change?
+A: Seasonal
+Accept: Seasonal change
+Ref: 4.7.2.4
+HT: yes
+D: 2
+
+# 4.7.3.1 Biodiversity
+Id: aqa-bio-4.7-038
+
+Q: What word means the range of different species found on Earth or in one ecosystem?
+A: Biodiversity
+Ref: 4.7.3.1
+D: 1
+Id: aqa-bio-4.7-039
+
+Q: What overall effect are many human activities having on biodiversity?
+A: Reducing it
+Accept: Decreasing it; Lowering biodiversity
+Ref: 4.7.3.1
+D: 1
+Id: aqa-bio-4.7-040
+
+Q: Why does great biodiversity make an ecosystem more stable?
+A: Species depend less on any one other species
+Accept: Less dependence on one species for food or shelter
+Ref: 4.7.3.1
+D: 3
+
+# 4.7.3.2 Waste management
+Id: aqa-bio-4.7-041
+
+Q: What name is given to dumping rubbish in large holes in the ground?
+A: Landfill
+Ref: 4.7.3.2
+D: 1
+Id: aqa-bio-4.7-042
+
+Q: Give the two reasons why humans are producing more waste than in the past.
+A: Rapid population growth and higher living standards
+Accept: More people and higher standard of living
+Ref: 4.7.3.2
+D: 2
+Id: aqa-bio-4.7-043
+
+Q: How does pollution reduce biodiversity?
+A: Kills plants and animals
+Accept: Kills organisms; Species die
+Ref: 4.7.3.2
+D: 2
+
+# 4.7.3.3 Land use
+Id: aqa-bio-4.7-044
+
+Q: Peat is dug from bogs mainly to produce what?
+A: Garden compost
+Accept: Compost
+Ref: 4.7.3.3
+D: 1
+Id: aqa-bio-4.7-045
+
+Q: Which gas is released into the atmosphere when peat decays or is burned?
+A: Carbon dioxide
+Accept: CO2
+Ref: 4.7.3.3
+D: 1
+Id: aqa-bio-4.7-046
+
+Q: Why does destroying peat bogs reduce biodiversity?
+A: Habitat lost for the species living there
+Accept: Habitat destroyed; Fewer habitats; Loss of habitat
+Ref: 4.7.3.3
+D: 3
+
+# 4.7.3.4 Deforestation
+Id: aqa-bio-4.7-047
+
+Q: Tropical forests are cleared to grow crops for which type of fuel?
+A: Biofuels
+Accept: Biofuel
+Ref: 4.7.3.4
+D: 1
+Id: aqa-bio-4.7-048
+
+Q: Large-scale tropical deforestation provides land for which two types of farming?
+A: Cattle and rice fields
+Accept: Cattle and rice
+Ref: 4.7.3.4
+D: 2
+Id: aqa-bio-4.7-049
+
+Q: Apart from releasing carbon dioxide by burning, why does clearing tropical forest raise atmospheric carbon dioxide?
+A: Fewer trees to photosynthesise
+Accept: Less photosynthesis; Less carbon dioxide absorbed; Decay of felled trees releases CO2
+Ref: 4.7.3.4
+D: 3
+
+# 4.7.3.5 Global warming
+Id: aqa-bio-4.7-050
+
+Q: Which two gases are increasing in the atmosphere and contributing to global warming?
+A: Carbon dioxide and methane
+Accept: CO2 and CH4
+Ref: 4.7.3.5
+D: 2
+Id: aqa-bio-4.7-051
+
+Q: Why might insect-borne diseases such as malaria spread to new countries as the climate warms?
+A: Insects survive in more places
+Accept: Mosquitoes can live in new areas; Range of mosquitoes spreads
+Ref: 4.7.3.5
+D: 3
+Id: aqa-bio-4.7-052
+
+Q: Why could sea level rise caused by global warming reduce biodiversity?
+A: Flooding destroys coastal habitats
+Accept: Habitats flooded; Loss of coastal habitats
+Ref: 4.7.3.5
+D: 3
+
+# 4.7.3.6 Maintaining biodiversity
+Id: aqa-bio-4.7-053
+
+Q: What type of programme helps increase the numbers of an endangered species?
+A: Breeding programme
+Accept: Captive breeding; Breeding programmes
+Ref: 4.7.3.6
+D: 1
+Id: aqa-bio-4.7-054
+
+Q: Which two things are some governments reducing to help protect biodiversity?
+A: Deforestation and carbon dioxide emissions
+Accept: Deforestation and CO2 emissions
+Ref: 4.7.3.6
+D: 2
+Id: aqa-bio-4.7-055
+
+Q: Why does reintroducing hedgerows and field margins on farms increase biodiversity?
+A: Provides habitats for more species
+Accept: More habitats; Food and shelter for more species
+Ref: 4.7.3.6
+D: 3
+
+# 4.7.4.1 Trophic levels
+Id: aqa-bio-4.7-056
+
+Q: What name is given to carnivores that have no predators?
+A: Apex predators
+Accept: Apex predator
+Ref: 4.7.4.1
+D: 1
+Id: aqa-bio-4.7-057
+
+Q: How do decomposers start to break down dead plant and animal matter?
+A: Secrete enzymes into the environment
+Accept: Release enzymes onto it; Secrete enzymes
+Ref: 4.7.4.1
+D: 2
+Id: aqa-bio-4.7-058
+
+Q: How do organisms at trophic level 1 differ from those at all other levels?
+A: Make their own food
+Accept: Photosynthesise; Producers
+Ref: 4.7.4.1
+D: 3
+
+# 4.7.4.2 Pyramids of biomass
+Id: aqa-bio-4.7-059
+
+Q: Which trophic level is drawn at the bottom of a pyramid of biomass?
+A: Producers
+Accept: Trophic level 1; Level 1; Plants
+Ref: 4.7.4.2
+D: 1
+Id: aqa-bio-4.7-060
+
+Q: Producers have 1000 kg biomass, drawn as a 10 cm bar. To scale, how wide is a 100 kg bar?
+A: 1 cm
+Accept: 10 mm
+Ref: 4.7.4.2
+D: 2
+Id: aqa-bio-4.7-061
+
+Q: Why is each bar in a pyramid of biomass narrower than the one below it?
+A: Biomass is lost between trophic levels
+Accept: Only about 10% transferred; Biomass lost to the next level
+Ref: 4.7.4.2
+D: 3
+
+# 4.7.4.3 Transfer of biomass
+Id: aqa-bio-4.7-062
+
+Q: Approximately what percentage of biomass is transferred from one trophic level to the next?
+A: 10%
+Accept: About 10%; 10 per cent
+Ref: 4.7.4.3
+D: 1
+Id: aqa-bio-4.7-063
+
+Q: Approximately what percentage of the incident light energy do producers transfer for photosynthesis?
+A: 1%
+Accept: About 1%; 1 per cent
+Ref: 4.7.4.3
+D: 1
+Id: aqa-bio-4.7-064
+
+Q: Which process uses large amounts of glucose, so it is not stored as biomass?
+A: Respiration
+Ref: 4.7.4.3
+D: 2
+Id: aqa-bio-4.7-065
+
+Q: One trophic level has 500 g of biomass and the next has 25 g. What is the percentage efficiency of transfer?
+A: 5%
+Accept: 5; 5 per cent
+Ref: 4.7.4.3
+D: 3
+Id: aqa-bio-4.7-066
+
+Q: Why are there usually fewer organisms at higher trophic levels?
+A: Less biomass available to support them
+Accept: Biomass lost at each level; Less food available
+Ref: 4.7.4.3
+D: 3
+
+# 4.7.5.1 Factors affecting food security
+Id: aqa-bio-4.7-067
+
+Q: What term means a population having enough food for all its people?
+A: Food security
+Ref: 4.7.5.1
+D: 1
+Id: aqa-bio-4.7-068
+
+Q: How does an increasing birth rate threaten food security in some countries?
+A: More people need feeding
+Accept: Demand for food outgrows supply; More mouths to feed
+Ref: 4.7.5.1
+D: 2
+Id: aqa-bio-4.7-069
+
+Q: Why can failure of the rains lead to widespread famine?
+A: Crops fail without water
+Accept: Crops cannot grow; Food production falls
+Ref: 4.7.5.1
+D: 3
+
+# 4.7.5.2 Farming techniques
+Id: aqa-bio-4.7-070
+
+Q: What type of food is given to some farm animals to increase their growth?
+A: High protein food
+Accept: High-protein food; Protein
+Ref: 4.7.5.2
+D: 1
+Id: aqa-bio-4.7-071
+
+Q: Why does limiting the movement of farm animals increase the efficiency of food production?
+A: Less energy used in movement
+Accept: Less energy transferred to surroundings; More biomass for growth
+Ref: 4.7.5.2
+D: 3
+Id: aqa-bio-4.7-072
+
+Q: Why are some farm animals kept in sheds at a controlled warm temperature?
+A: Less energy used keeping warm
+Accept: Less energy lost to the surroundings; Less respiration to keep warm
+Ref: 4.7.5.2
+D: 3
+
+# 4.7.5.3 Sustainable fisheries
+Id: aqa-bio-4.7-073
+
+Q: What is a fishing quota?
+A: Limit on how many fish can be caught
+Accept: Limit on the mass of fish caught; Maximum catch allowed
+Ref: 4.7.5.3
+D: 2
+Id: aqa-bio-4.7-074
+
+Q: Why must fish stocks be kept above a certain level?
+A: So enough fish remain to breed
+Accept: So breeding continues; Species may disappear
+Ref: 4.7.5.3
+D: 2
+Id: aqa-bio-4.7-075
+
+Q: How does a larger mesh size in fishing nets help fish stocks recover?
+A: Young fish escape and can breed
+Accept: Small fish escape to breed
+Ref: 4.7.5.3
+D: 3
+
+# 4.7.5.4 Role of biotechnology
+Id: aqa-bio-4.7-076
+
+Q: Which fungus is used to produce mycoprotein?
+A: Fusarium
+Ref: 4.7.5.4
+D: 1
+Id: aqa-bio-4.7-077
+
+Q: Which hormone, used to treat diabetes, is made by genetically modified bacteria?
+A: Insulin
+Accept: Human insulin
+Ref: 4.7.5.4
+D: 1
+Id: aqa-bio-4.7-078
+
+Q: What is Fusarium grown on, and in what conditions, to make mycoprotein?
+A: Glucose syrup, aerobic conditions
+Accept: Glucose syrup with oxygen
+Ref: 4.7.5.4
+D: 2
+Id: aqa-bio-4.7-079
+
+Q: Why is mycoprotein suitable for vegetarians?
+A: Made from a fungus, not animals
+Accept: Comes from a fungus; No animal products
+Ref: 4.7.5.4
+D: 3
+Id: aqa-bio-4.7-080

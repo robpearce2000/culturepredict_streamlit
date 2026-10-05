@@ -1,0 +1,541 @@
+Board: AQA
+Spec: 8461
+Topic: 4.5
+
+# 4.5.1 Homeostasis
+
+Q: What term describes keeping conditions inside the body at optimum levels despite internal and external changes?
+A: Homeostasis
+Ref: 4.5.1
+D: 1
+Id: aqa-bio-4.5-001
+
+Q: In a control system, what name is given to the cells that detect stimuli?
+A: Receptors
+Accept: Receptor; Receptor cells
+Ref: 4.5.1
+D: 1
+Id: aqa-bio-4.5-002
+
+Q: Name the two types of effector in a control system.
+A: Muscles and glands
+Accept: Muscle and gland; Glands and muscles
+Ref: 4.5.1
+D: 2
+Id: aqa-bio-4.5-003
+
+Q: Name the three internal conditions in the human body that homeostasis controls.
+A: Blood glucose, body temperature, water levels
+Accept: Blood sugar, temperature, water; Glucose, temperature, water
+Ref: 4.5.1
+D: 2
+Note: Any order; all three needed.
+Id: aqa-bio-4.5-004
+
+Q: Blood glucose rises after a meal. Which organ acts as the coordination centre for this change?
+A: Pancreas
+Ref: 4.5.1
+D: 2
+Note: The brain and spinal cord are the other coordination centres named in the specification.
+Id: aqa-bio-4.5-005
+
+Q: Why must homeostasis keep body temperature close to its normal value?
+A: Optimum temperature for enzyme action
+Accept: Enzymes work best; Enzymes would denature if too hot; Optimum conditions for enzymes
+Ref: 4.5.1
+D: 3
+Note: Any answer linking it to enzymes working best is fine.
+
+# 4.5.2.1 Structure and function
+Id: aqa-bio-4.5-006
+
+Q: Which type of neurone carries impulses from receptors to the central nervous system?
+A: Sensory neurone
+Accept: Sensory
+Ref: 4.5.2.1
+D: 1
+Id: aqa-bio-4.5-007
+
+Q: In a reflex arc, list the three types of neurone in the order an impulse passes through them.
+A: Sensory, relay, motor
+Accept: Sensory neurone, relay neurone, motor neurone
+Ref: 4.5.2.1
+D: 2
+Id: aqa-bio-4.5-008
+
+Q: How does a nerve signal cross a synapse?
+A: Chemical diffuses across the gap
+Accept: Diffusion of a chemical; Chemical diffuses across; Neurotransmitter diffuses across
+Ref: 4.5.2.1
+D: 2
+Note: Not an electrical impulse jumping the gap.
+Id: aqa-bio-4.5-009
+
+Q: Why are reflex actions faster than conscious responses?
+A: Conscious part of brain not involved
+Accept: Bypass the conscious brain; No conscious decision needed; Do not involve the conscious brain
+Ref: 4.5.2.1
+D: 3
+Id: aqa-bio-4.5-010
+
+Q: In a reaction time investigation using a dropped ruler, what is measured to give the reaction time?
+A: Distance the ruler falls
+Accept: Distance fallen; Distance ruler drops before caught
+Ref: 4.5.2.1
+RP: 7
+D: 2
+Note: A conversion table turns the distance into a time.
+Id: aqa-bio-4.5-011
+
+Q: A student tests whether drinking caffeine affects reaction time. What is the independent variable?
+A: Caffeine
+Accept: Amount of caffeine; Caffeine intake; Caffeine drunk
+Ref: 4.5.2.1
+RP: 7
+D: 2
+Id: aqa-bio-4.5-012
+
+Q: In a ruler-drop reaction time test, each person always uses the same hand. What type of variable is the hand used?
+A: Control variable
+Accept: Controlled variable; Control
+Ref: 4.5.2.1
+RP: 7
+D: 2
+Note: Dominant hand is usually faster, so changing hands would affect the results.
+Id: aqa-bio-4.5-013
+
+Q: Why are reflex actions important to the body?
+A: Protect the body from harm
+Accept: Protection from danger; Prevent injury; Protect from damage
+Ref: 4.5.2.1
+D: 3
+Note: For example, pulling a hand away from a hot object before it is burnt.
+
+# 4.5.2.2 The brain
+Id: aqa-bio-4.5-014
+
+Q: Which region of the brain coordinates muscular activity and balance?
+A: Cerebellum
+Ref: 4.5.2.2
+D: 1
+Id: aqa-bio-4.5-015
+
+Q: Which region of the brain is responsible for consciousness, memory, intelligence and language?
+A: Cerebral cortex
+Accept: Cortex
+Ref: 4.5.2.2
+D: 1
+Id: aqa-bio-4.5-016
+
+Q: Which scanning technique lets neuroscientists map brain regions to functions without surgery?
+A: MRI scanning
+Accept: MRI; Magnetic resonance imaging; fMRI
+Ref: 4.5.2.2
+HT: yes
+D: 1
+Note: Studying brain-damaged patients and electrical stimulation are the other two methods named.
+Id: aqa-bio-4.5-017
+
+Q: Which region of the brain controls unconscious activities such as heartbeat and breathing?
+A: Medulla
+Accept: Medulla oblongata
+Ref: 4.5.2.2
+D: 1
+Id: aqa-bio-4.5-018
+
+Q: Why is it so difficult to investigate and treat disorders of the brain?
+A: Brain is complex and delicate
+Accept: Brain is very complex; Brain is easily damaged; Brain is delicate
+Ref: 4.5.2.2
+HT: yes
+D: 3
+Note: Treatment such as surgery risks damaging other brain regions.
+
+# 4.5.2.3 The eye
+Id: aqa-bio-4.5-019
+
+Q: Which layer at the back of the eye contains receptor cells sensitive to light?
+A: Retina
+Ref: 4.5.2.3
+D: 1
+Id: aqa-bio-4.5-020
+
+Q: What is accommodation in the eye?
+A: Changing lens shape to focus
+Accept: Changing the shape of the lens; Lens changes shape to focus
+Ref: 4.5.2.3
+D: 2
+Id: aqa-bio-4.5-021
+
+Q: To focus on a near object, what do the ciliary muscles do?
+A: Contract
+Accept: They contract; Ciliary muscles contract
+Ref: 4.5.2.3
+D: 2
+Note: A common error is to say they relax.
+Id: aqa-bio-4.5-022
+
+Q: What is the medical name for short sightedness?
+A: Myopia
+Ref: 4.5.2.3
+D: 1
+Id: aqa-bio-4.5-023
+
+Q: When looking at a near object, why does the lens become thicker?
+A: Suspensory ligaments loosen
+Accept: Suspensory ligaments slacken; Ligaments are slack; Ciliary muscles contract so ligaments loosen
+Ref: 4.5.2.3
+D: 3
+Id: aqa-bio-4.5-024
+
+Q: Why does a person with myopia see distant objects as blurred?
+A: Light focuses in front of the retina
+Accept: Image forms in front of the retina; Rays focus before the retina
+Ref: 4.5.2.3
+D: 3
+Note: In hyperopia, light would focus behind the retina.
+
+# 4.5.2.4 Control of body temperature
+Id: aqa-bio-4.5-025
+
+Q: Which part of the brain monitors and controls body temperature?
+A: Thermoregulatory centre
+Accept: Thermoregulatory center; Hypothalamus
+Ref: 4.5.2.4
+D: 1
+Note: The specification says thermoregulatory centre; hypothalamus is correct biology and fine to accept.
+Id: aqa-bio-4.5-026
+
+Q: What name is given to the widening of blood vessels near the skin when the body is too hot?
+A: Vasodilation
+Accept: Vasodilatation
+Ref: 4.5.2.4
+D: 1
+Id: aqa-bio-4.5-027
+
+Q: How does sweating lower body temperature?
+A: Evaporation of sweat transfers energy from skin
+Accept: Sweat evaporates, transferring energy from the skin; Evaporation cools the skin
+Ref: 4.5.2.4
+HT: yes
+D: 3
+Id: aqa-bio-4.5-028
+
+Q: How does vasoconstriction help to raise body temperature on a cold day?
+A: Less blood near skin, so less energy lost
+Accept: Less blood flows near the skin surface; Reduces energy transfer from skin to surroundings
+Ref: 4.5.2.4
+HT: yes
+D: 3
+Note: Blood vessels do not move; they narrow.
+
+# 4.5.3.1 Human endocrine system
+Id: aqa-bio-4.5-029
+
+Q: How are hormones carried to their target organs?
+A: In the bloodstream
+Accept: Blood; By the blood; In the blood plasma
+Ref: 4.5.3.1
+D: 1
+Id: aqa-bio-4.5-030
+
+Q: Which gland in the brain is known as the master gland?
+A: Pituitary gland
+Accept: Pituitary
+Ref: 4.5.3.1
+D: 1
+Id: aqa-bio-4.5-031
+
+Q: Compared with nervous responses, how do the effects of hormones differ in speed and duration?
+A: Slower but last longer
+Accept: Slower and longer lasting; Slower, act for longer
+Ref: 4.5.3.1
+D: 3
+Note: Both parts needed.
+
+# 4.5.3.2 Control of blood glucose concentration
+Id: aqa-bio-4.5-032
+
+Q: Which hormone does the pancreas release when blood glucose concentration is too high?
+A: Insulin
+Ref: 4.5.3.2
+D: 1
+Id: aqa-bio-4.5-033
+
+Q: In liver and muscle cells, what is excess glucose converted to for storage?
+A: Glycogen
+Ref: 4.5.3.2
+D: 1
+Note: Do not accept glucagon, which is a hormone.
+Id: aqa-bio-4.5-034
+
+Q: In which type of diabetes do the body cells no longer respond to insulin?
+A: Type 2
+Accept: Type 2 diabetes; Type two
+Ref: 4.5.3.2
+D: 2
+Id: aqa-bio-4.5-035
+
+Q: After a meal, why does blood glucose stay high for longer in someone with Type 1 diabetes?
+A: Pancreas makes too little insulin
+Accept: Not enough insulin produced; No insulin made
+Ref: 4.5.3.2
+D: 3
+Id: aqa-bio-4.5-036
+
+Q: Which hormone does the pancreas release when blood glucose concentration is too low?
+A: Glucagon
+Ref: 4.5.3.2
+HT: yes
+D: 1
+Note: Watch spelling: glucagon (hormone) versus glycogen (store).
+
+# 4.5.3.3 Maintaining water and nitrogen balance in the body
+Id: aqa-bio-4.5-037
+
+Q: Which organs produce urine to get rid of excess water, ions and urea?
+A: Kidneys
+Accept: Kidney
+Ref: 4.5.3.3
+D: 1
+Id: aqa-bio-4.5-038
+
+Q: The kidneys make urine by filtering the blood and then by what process?
+A: Selective reabsorption
+Accept: Reabsorption
+Ref: 4.5.3.3
+D: 2
+Id: aqa-bio-4.5-039
+
+Q: Name the treatment for kidney failure that uses a machine to remove urea from the blood.
+A: Dialysis
+Accept: Kidney dialysis
+Ref: 4.5.3.3
+D: 1
+Id: aqa-bio-4.5-040
+
+Q: In the liver, what are excess amino acids converted to when they are deaminated?
+A: Ammonia
+Ref: 4.5.3.3
+HT: yes
+D: 2
+Note: Ammonia is toxic, so it is immediately converted to urea.
+Id: aqa-bio-4.5-041
+
+Q: What effect does ADH have on the kidney tubules?
+A: More permeable, so more water reabsorbed
+Accept: Increases permeability to water; More water reabsorbed into the blood
+Ref: 4.5.3.3
+HT: yes
+D: 3
+Id: aqa-bio-4.5-042
+
+Q: Glucose is filtered out of the blood by the kidneys. Why is there normally no glucose in urine?
+A: All glucose is reabsorbed
+Accept: Glucose is all reabsorbed into the blood; Selective reabsorption of glucose
+Ref: 4.5.3.3
+D: 3
+
+# 4.5.3.4 Hormones in human reproduction
+Id: aqa-bio-4.5-043
+
+Q: What is the main female reproductive hormone produced in the ovary?
+A: Oestrogen
+Accept: Estrogen
+Ref: 4.5.3.4
+D: 1
+Id: aqa-bio-4.5-044
+
+Q: Which hormone causes an egg to mature in the ovary?
+A: FSH
+Accept: Follicle stimulating hormone
+Ref: 4.5.3.4
+D: 2
+Id: aqa-bio-4.5-045
+
+Q: Which hormone stimulates the release of an egg?
+A: LH
+Accept: Luteinising hormone; Luteinizing hormone
+Ref: 4.5.3.4
+D: 2
+Id: aqa-bio-4.5-046
+
+Q: Which hormone, made by the ovary, stimulates LH release and inhibits FSH release?
+A: Oestrogen
+Accept: Estrogen
+Ref: 4.5.3.4
+HT: yes
+D: 3
+
+# 4.5.3.5 Contraception
+Id: aqa-bio-4.5-047
+
+Q: Which hormone is released slowly from a contraceptive implant, injection or skin patch?
+A: Progesterone
+Ref: 4.5.3.5
+D: 1
+Id: aqa-bio-4.5-048
+
+Q: Oral contraceptives inhibit the production of which hormone, so no eggs mature?
+A: FSH
+Accept: Follicle stimulating hormone
+Ref: 4.5.3.5
+D: 2
+Id: aqa-bio-4.5-049
+
+Q: How does a non-hormonal intrauterine device (IUD) prevent pregnancy?
+A: Prevents implantation of an embryo
+Accept: Stops embryo implanting; Prevents implantation; Kills or disables sperm; Stops sperm reaching the egg
+Ref: 4.5.3.5
+D: 2
+Note: The specification gives preventing implantation; copper IUDs also act against sperm, so accept that too.
+
+# 4.5.3.6 The use of hormones to treat infertility
+Id: aqa-bio-4.5-050
+
+Q: Which two hormones are given to a woman in a fertility drug?
+A: FSH and LH
+Accept: LH and FSH; Follicle stimulating hormone and luteinising hormone
+Ref: 4.5.3.6
+HT: yes
+D: 2
+Id: aqa-bio-4.5-051
+
+Q: In IVF, where are the eggs fertilised by sperm?
+A: In the laboratory
+Accept: Laboratory; In a lab; Outside the body; In a dish
+Ref: 4.5.3.6
+HT: yes
+D: 1
+Id: aqa-bio-4.5-052
+
+Q: In IVF, why are only one or two embryos placed in the mother's uterus?
+A: Multiple births are risky
+Accept: To avoid multiple births; Reduce the risk of multiple births; Twins or triplets risk mother and babies
+Ref: 4.5.3.6
+HT: yes
+D: 3
+
+# 4.5.3.7 Negative feedback
+Id: aqa-bio-4.5-053
+
+Q: Which glands release adrenaline when a person is frightened?
+A: Adrenal glands
+Accept: Adrenal gland; Adrenals
+Ref: 4.5.3.7
+HT: yes
+D: 1
+Id: aqa-bio-4.5-054
+
+Q: What does thyroxine from the thyroid gland stimulate?
+A: Basal metabolic rate
+Accept: Metabolic rate; Metabolism
+Ref: 4.5.3.7
+HT: yes
+D: 1
+Id: aqa-bio-4.5-055
+
+Q: By what type of control are thyroxine levels kept steady?
+A: Negative feedback
+Ref: 4.5.3.7
+HT: yes
+D: 1
+Id: aqa-bio-4.5-056
+
+Q: In a frightening situation, why is it useful that adrenaline increases the heart rate?
+A: More oxygen and glucose reach muscles
+Accept: More oxygen and glucose to brain and muscles; Prepares body for fight or flight
+Ref: 4.5.3.7
+HT: yes
+D: 3
+
+# 4.5.4.1 Control and coordination
+Id: aqa-bio-4.5-057
+
+Q: What is the growth response of a plant to light called?
+A: Phototropism
+Ref: 4.5.4.1
+D: 1
+Id: aqa-bio-4.5-058
+
+Q: Which plant hormone's unequal distribution causes unequal growth in roots and shoots?
+A: Auxin
+Accept: Auxins
+Ref: 4.5.4.1
+D: 1
+Id: aqa-bio-4.5-059
+
+Q: A shoot is lit from one side. Why does it bend towards the light?
+A: More auxin on shaded side, so faster growth
+Accept: Auxin collects on the shaded side; Cells on shaded side elongate more
+Ref: 4.5.4.1
+D: 3
+Id: aqa-bio-4.5-060
+
+Q: Which plant hormones are important in starting seed germination?
+A: Gibberellins
+Accept: Gibberellin; Gibberellic acid
+Ref: 4.5.4.1
+HT: yes
+D: 1
+Id: aqa-bio-4.5-061
+
+Q: Seedlings are grown in a box lit from one side only. In which direction do the shoots grow?
+A: Towards the light
+Accept: Towards light; Towards the light source
+Ref: 4.5.4.1
+RP: 8
+D: 2
+Id: aqa-bio-4.5-062
+
+Q: As well as length measurements, how should seedling results be recorded in this practical?
+A: Labelled biological drawings
+Accept: Labelled drawings; Biological drawings; Drawings
+Ref: 4.5.4.1
+RP: 8
+D: 2
+Id: aqa-bio-4.5-063
+
+Q: In the seedling light investigation, why are all dishes kept at the same temperature?
+A: Temperature affects growth rate
+Accept: Temperature affects growth; Temperature affects germination; So only light affects growth
+Ref: 4.5.4.1
+RP: 8
+D: 3
+Note: "Fair test" alone is not enough; look for temperature affecting growth.
+Id: aqa-bio-4.5-064
+
+Q: A seedling is laid on its side in the dark. In which direction does its root grow?
+A: Downwards
+Accept: Down; Towards gravity; In the direction of gravity
+Ref: 4.5.4.1
+RP: 8
+D: 2
+Note: Shoots grow upwards, against gravity.
+
+# 4.5.4.2 Use of plant hormones
+Id: aqa-bio-4.5-065
+
+Q: Which plant hormone is used in rooting powders to help cuttings grow roots?
+A: Auxin
+Accept: Auxins
+Ref: 4.5.4.2
+HT: yes
+D: 1
+Id: aqa-bio-4.5-066
+
+Q: Which plant hormone is used in the food industry to control fruit ripening during transport?
+A: Ethene
+Accept: Ethylene
+Ref: 4.5.4.2
+HT: yes
+D: 1
+Id: aqa-bio-4.5-067
+
+Q: Gibberellins can be used to end which state of a seed?
+A: Dormancy
+Accept: Seed dormancy
+Ref: 4.5.4.2
+HT: yes
+D: 1
+Id: aqa-bio-4.5-068

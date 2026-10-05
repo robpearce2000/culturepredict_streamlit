@@ -1,0 +1,637 @@
+Board: AQA
+Spec: 8461
+Topic: 4.6
+
+# 4.6.1.1 Sexual and asexual reproduction
+
+Q: Which type of cell division produces genetically identical cells?
+A: Mitosis
+Ref: 4.6.1.1
+D: 1
+Id: aqa-bio-4.6-001
+
+Q: What name is given to the genetically identical offspring produced by asexual reproduction?
+A: Clones
+Accept: Clone
+Ref: 4.6.1.1
+D: 1
+Id: aqa-bio-4.6-002
+
+Q: In flowering plants, which two cells join together in sexual reproduction?
+A: Pollen and egg cell
+Accept: Pollen nucleus and egg cell; Pollen and ovum; Pollen and egg
+Ref: 4.6.1.1
+D: 2
+Id: aqa-bio-4.6-003
+
+Q: Why do offspring from sexual reproduction show variety while those from asexual reproduction do not?
+A: Genetic information from two parents is mixed
+Accept: Mixing of genetic information; Two parents' genes are combined; Fusion of gametes mixes genes
+Ref: 4.6.1.1
+D: 3
+Note: Asexual reproduction has one parent, no fusion of gametes and only mitosis.
+
+# 4.6.1.2 Meiosis
+Id: aqa-bio-4.6-004
+
+Q: Which type of cell division forms gametes?
+A: Meiosis
+Ref: 4.6.1.2
+D: 1
+Id: aqa-bio-4.6-005
+
+Q: How many gametes are formed when one cell divides by meiosis?
+A: Four
+Accept: 4
+Ref: 4.6.1.2
+D: 1
+Note: The cell divides twice.
+Id: aqa-bio-4.6-006
+
+Q: How many chromosomes are there in a human gamete?
+A: 23
+Accept: Twenty-three; 23 chromosomes
+Ref: 4.6.1.2
+D: 2
+Note: Not 23 pairs: a gamete has a single set.
+Id: aqa-bio-4.6-007
+
+Q: Explain how fertilisation restores the full number of chromosomes.
+A: Two gametes, each with one set, join
+Accept: Two half sets combine; Each gamete has half, they fuse; Sperm and egg each give a single set
+Ref: 4.6.1.2
+D: 3
+
+# 4.6.1.3 Advantages and disadvantages of sexual and asexual reproduction
+Id: aqa-bio-4.6-008
+
+Q: Strawberry plants reproduce asexually using which structures?
+A: Runners
+Accept: Runner
+Ref: 4.6.1.3
+D: 1
+Id: aqa-bio-4.6-009
+
+Q: Malarial parasites reproduce asexually in humans. In which organism do they reproduce sexually?
+A: Mosquito
+Accept: Mosquitoes
+Ref: 4.6.1.3
+D: 2
+Id: aqa-bio-4.6-010
+
+Q: Why is asexual reproduction more time and energy efficient than sexual reproduction?
+A: No need to find a mate
+Accept: Only one parent needed; Does not need a mate
+Ref: 4.6.1.3
+D: 2
+Id: aqa-bio-4.6-011
+
+Q: Why does sexual reproduction help a species survive if its environment changes?
+A: Variation means some offspring survive the change
+Accept: Variation gives a survival advantage; Some individuals will be suited and survive
+Ref: 4.6.1.3
+D: 3
+Note: Credit answers linking variation to natural selection.
+
+# 4.6.1.4 DNA and the genome
+Id: aqa-bio-4.6-012
+
+Q: DNA is a polymer made of two strands forming what shape?
+A: Double helix
+Ref: 4.6.1.4
+D: 1
+Id: aqa-bio-4.6-013
+
+Q: What is meant by the genome of an organism?
+A: Entire genetic material of that organism
+Accept: All of its genetic material; All of an organism's DNA
+Ref: 4.6.1.4
+D: 2
+Id: aqa-bio-4.6-014
+
+Q: What is a gene?
+A: Section of DNA coding for a protein
+Accept: Small section of DNA on a chromosome; Section of DNA coding for a sequence of amino acids
+Ref: 4.6.1.4
+D: 2
+Id: aqa-bio-4.6-015
+
+Q: Apart from medical uses, what can studying the human genome help trace from the past?
+A: Human migration patterns
+Accept: Migration; How humans migrated
+Ref: 4.6.1.4
+D: 2
+
+# 4.6.1.5 DNA structure
+Id: aqa-bio-4.6-016
+
+Q: What name is given to the repeating units that make up the DNA polymer?
+A: Nucleotides
+Accept: Nucleotide
+Ref: 4.6.1.5
+D: 1
+Id: aqa-bio-4.6-017
+
+Q: How many bases code for one amino acid?
+A: Three
+Accept: 3; A triplet
+Ref: 4.6.1.5
+D: 2
+Id: aqa-bio-4.6-018
+
+Q: In complementary DNA strands, which base is always linked to C on the opposite strand?
+A: Guanine
+Accept: G
+Ref: 4.6.1.5
+D: 1
+HT: yes
+Id: aqa-bio-4.6-019
+
+Q: On which sub-cellular structures are proteins synthesised?
+A: Ribosomes
+Accept: Ribosome
+Ref: 4.6.1.5
+D: 1
+HT: yes
+Id: aqa-bio-4.6-020
+
+Q: Explain how a mutation could stop an enzyme from working.
+A: Changes its shape so substrate no longer fits
+Accept: Active site changes shape; Enzyme shape changes; Substrate cannot bind
+Ref: 4.6.1.5
+D: 3
+HT: yes
+Id: aqa-bio-4.6-021
+
+Q: How can variations in non-coding DNA affect an organism?
+A: Alter how genes are switched on and off
+Accept: Change gene expression; Switch genes on or off; Affect how genes are expressed
+Ref: 4.6.1.5
+D: 2
+HT: yes
+
+# 4.6.1.6 Genetic inheritance
+Id: aqa-bio-4.6-022
+
+Q: What name is given to the different forms of the same gene?
+A: Alleles
+Accept: Allele
+Ref: 4.6.1.6
+D: 1
+Id: aqa-bio-4.6-023
+
+Q: What term describes a genotype with two different alleles?
+A: Heterozygous
+Ref: 4.6.1.6
+D: 1
+Id: aqa-bio-4.6-024
+
+Q: What term describes the characteristics produced by an organism's alleles?
+A: Phenotype
+Ref: 4.6.1.6
+D: 1
+Id: aqa-bio-4.6-025
+
+Q: When is a recessive allele expressed?
+A: Only when two copies are present
+Accept: When homozygous; When no dominant allele is present; Two copies needed
+Ref: 4.6.1.6
+D: 2
+Id: aqa-bio-4.6-026
+
+Q: Most human characteristics are not controlled by a single gene. What controls them instead?
+A: Multiple genes interacting
+Accept: Many genes; Several genes; More than one gene
+Ref: 4.6.1.6
+D: 2
+Id: aqa-bio-4.6-027
+
+Q: Two parents with genotypes Tt and Tt have children. What proportion show the recessive phenotype?
+A: 1 in 4
+Accept: 25%; 1/4; 0.25; One quarter
+Ref: 4.6.1.6
+D: 3
+Id: aqa-bio-4.6-028
+
+Q: Construct a Punnett square for the cross Bb × bb. What is the probability that an offspring is bb?
+A: 0.5
+Accept: 1/2; 50%; 1 in 2; Half; 1:1
+Ref: 4.6.1.6
+D: 3
+HT: yes
+
+# 4.6.1.7 Inherited disorders
+Id: aqa-bio-4.6-029
+
+Q: Which inherited disorder causes extra fingers or toes?
+A: Polydactyly
+Ref: 4.6.1.7
+D: 1
+Id: aqa-bio-4.6-030
+
+Q: Cystic fibrosis is caused by which type of allele?
+A: Recessive
+Accept: Recessive allele
+Ref: 4.6.1.7
+D: 1
+Id: aqa-bio-4.6-031
+
+Q: Two parents without cystic fibrosis have a child with it. What must both parents be?
+A: Carriers
+Accept: Heterozygous; Carrier; Ff
+Ref: 4.6.1.7
+D: 3
+
+# 4.6.1.8 Sex determination
+Id: aqa-bio-4.6-032
+
+Q: What are the sex chromosomes of a human male?
+A: XY
+Ref: 4.6.1.8
+D: 1
+Id: aqa-bio-4.6-033
+
+Q: How many pairs of chromosomes are there in an ordinary human body cell?
+A: 23 pairs
+Accept: 23; Twenty-three
+Ref: 4.6.1.8
+D: 1
+Id: aqa-bio-4.6-034
+
+Q: Use a genetic cross of XX and XY. What is the probability that a baby is female?
+A: 0.5
+Accept: 1/2; 50%; 1 in 2; Half
+Ref: 4.6.1.8
+D: 2
+Id: aqa-bio-4.6-035
+
+Q: Why is it the father's gamete, not the mother's, that decides a baby's sex?
+A: Sperm carry X or Y; eggs only X
+Accept: Half of sperm carry Y; All eggs carry X; Sperm can carry a Y chromosome
+Ref: 4.6.1.8
+D: 3
+
+# 4.6.2.1 Variation
+Id: aqa-bio-4.6-036
+
+Q: All genetic variants arise from what?
+A: Mutations
+Accept: Mutation
+Ref: 4.6.2.1
+D: 1
+Id: aqa-bio-4.6-037
+
+Q: Most mutations have what effect on the phenotype?
+A: None
+Accept: No effect
+Ref: 4.6.2.1
+D: 2
+Note: Some influence phenotype; very few determine it.
+Id: aqa-bio-4.6-038
+
+Q: Variation can be due to genetic causes or environmental causes. What is the third possible cause?
+A: Combination of genes and environment
+Accept: Both genes and environment; Genes and environment together
+Ref: 4.6.2.1
+D: 2
+Id: aqa-bio-4.6-039
+
+Q: How can a single new mutation lead to a relatively rapid change in a species?
+A: New phenotype suits an environmental change, so selected
+Accept: New phenotype better suited survives and spreads; Natural selection favours the new phenotype
+Ref: 4.6.2.1
+D: 3
+
+# 4.6.2.2 Evolution
+Id: aqa-bio-4.6-040
+
+Q: Evolution happens through which process, acting on variants within a population?
+A: Natural selection
+Ref: 4.6.2.2
+D: 1
+Id: aqa-bio-4.6-041
+
+Q: When are two populations of one species said to have formed two new species?
+A: Cannot interbreed to produce fertile offspring
+Accept: No longer able to interbreed; Cannot produce fertile offspring together
+Ref: 4.6.2.2
+D: 2
+Id: aqa-bio-4.6-042
+
+Q: In a colder climate, rabbits with thicker fur survive better. Why does the population's fur thicken over generations?
+A: Thick-furred rabbits survive, breed and pass on alleles
+Accept: Thick-furred rabbits survive and pass on genes; Natural selection of thick fur alleles
+Ref: 4.6.2.2
+D: 3
+
+# 4.6.2.3 Selective breeding
+Id: aqa-bio-4.6-043
+
+Q: What is another name for selective breeding?
+A: Artificial selection
+Ref: 4.6.2.3
+D: 1
+Id: aqa-bio-4.6-044
+
+Q: In selective breeding, which individuals are chosen as parents?
+A: Those with the desired characteristic
+Accept: Ones with the wanted characteristic; Ones showing the useful trait
+Ref: 4.6.2.3
+D: 2
+Note: Their offspring with the characteristic are bred again, over many generations.
+Id: aqa-bio-4.6-045
+
+Q: Why is a selectively bred crop more likely to be wiped out by a new disease?
+A: Little genetic variation, so few are resistant
+Accept: Reduced variation; Small gene pool so none resistant; Little variation; Inbreeding
+Ref: 4.6.2.3
+D: 3
+Note: Credit "reduced gene pool"; links to inbreeding making breeds prone to disease.
+Id: aqa-bio-4.6-046
+
+Q: Selective breeding can make some breeds prone to disease or inherited defects. What is this problem called?
+A: Inbreeding
+Ref: 4.6.2.3
+D: 1
+
+# 4.6.2.4 Genetic engineering
+Id: aqa-bio-4.6-047
+
+Q: Which hormone do genetically engineered bacteria produce to treat diabetes?
+A: Insulin
+Accept: Human insulin
+Ref: 4.6.2.4
+D: 1
+Id: aqa-bio-4.6-048
+
+Q: What is genetic engineering?
+A: Inserting another organism's gene into a genome
+Accept: Adding a gene from another organism; Modifying a genome with a gene from another organism
+Ref: 4.6.2.4
+D: 2
+Id: aqa-bio-4.6-049
+
+Q: Give one concern people have about growing GM crops.
+A: Effect on wild flower and insect populations
+Accept: Harm to wild flowers; Harm to insects; Effects on human health not fully explored
+Ref: 4.6.2.4
+D: 2
+Id: aqa-bio-4.6-050
+
+Q: In genetic engineering, what are used to cut out the required gene?
+A: Enzymes
+Accept: Restriction enzymes; Enzyme
+Ref: 4.6.2.4
+D: 1
+HT: yes
+Id: aqa-bio-4.6-051
+
+Q: Apart from a virus, what is usually used as the vector in genetic engineering?
+A: Bacterial plasmid
+Accept: Plasmid; Plasmids
+Ref: 4.6.2.4
+D: 1
+HT: yes
+Id: aqa-bio-4.6-052
+
+Q: Why are genes transferred to cells at an early stage of their development?
+A: So they develop with the desired characteristics
+Accept: So all cells get the gene; Organism develops with the characteristic
+Ref: 4.6.2.4
+D: 3
+HT: yes
+
+# 4.6.2.5 Cloning
+Id: aqa-bio-4.6-053
+
+Q: What is the cloning method that grows new plants from small groups of cells taken from part of a plant?
+A: Tissue culture
+Ref: 4.6.2.5
+D: 1
+Id: aqa-bio-4.6-054
+
+Q: In adult cell cloning, what makes the egg cell start dividing to form an embryo?
+A: Electric shock
+Accept: Electricity; An electric current
+Ref: 4.6.2.5
+D: 2
+Id: aqa-bio-4.6-055
+
+Q: A skin cell nucleus from sheep A goes into an emptied egg from sheep B. Which sheep is the clone identical to?
+A: Sheep A
+Accept: A; The skin cell donor
+Ref: 4.6.2.5
+D: 3
+Note: The egg cell's own nucleus was removed, so all genetic information comes from A.
+
+# 4.6.3.1 Theory of evolution
+Id: aqa-bio-4.6-056
+
+Q: Name the book in which Darwin published his theory of evolution in 1859.
+A: On the Origin of Species
+Accept: Origin of Species; The Origin of Species
+Ref: 4.6.3.1
+D: 1
+Id: aqa-bio-4.6-057
+
+Q: Which scientist's theory was that changes during an organism's lifetime can be inherited?
+A: Lamarck
+Accept: Jean-Baptiste Lamarck
+Ref: 4.6.3.1
+D: 2
+Id: aqa-bio-4.6-058
+
+Q: Why did many religious people object to Darwin's theory of evolution?
+A: Challenged the idea that God made all life
+Accept: God did not create all species; Conflicted with God creating all living things
+Ref: 4.6.3.1
+D: 3
+
+# 4.6.3.2 Speciation
+Id: aqa-bio-4.6-059
+
+Q: Which scientist independently proposed the theory of evolution by natural selection at the same time as Darwin?
+A: Alfred Russel Wallace
+Accept: Wallace; Alfred Wallace
+Ref: 4.6.3.2
+D: 1
+Id: aqa-bio-4.6-060
+
+Q: Wallace is best known for his theory of speciation and his work on what feature of animals?
+A: Warning colouration
+Accept: Warning colours; Warning coloration
+Ref: 4.6.3.2
+D: 2
+Id: aqa-bio-4.6-061
+
+Q: What is usually the first step in the formation of a new species?
+A: Isolation of two populations
+Accept: Isolation; Geographical isolation; Populations become separated; Separation of populations
+Ref: 4.6.3.2
+D: 2
+Id: aqa-bio-4.6-062
+
+Q: Why do two isolated populations of a species gradually develop different phenotypes?
+A: Different conditions select different alleles by natural selection
+Accept: Natural selection differs in each environment; Different environments favour different alleles
+Ref: 4.6.3.2
+D: 3
+
+# 4.6.3.3 The understanding of genetics
+Id: aqa-bio-4.6-063
+
+Q: Which scientist carried out plant breeding experiments in the mid-19th century and described inherited "units"?
+A: Gregor Mendel
+Accept: Mendel
+Ref: 4.6.3.3
+D: 1
+Id: aqa-bio-4.6-064
+
+Q: What are Mendel's inherited "units" now called?
+A: Genes
+Accept: Gene
+Ref: 4.6.3.3
+D: 1
+Id: aqa-bio-4.6-065
+
+Q: In which century was the structure of DNA worked out?
+A: 20th century
+Accept: 20th; Twentieth; Mid-20th century; 1900s
+Ref: 4.6.3.3
+D: 2
+Id: aqa-bio-4.6-066
+
+Q: Why was the importance of Mendel's work not recognised until after his death?
+A: Genes and DNA were not yet discovered
+Accept: Mechanism of inheritance unknown; Chromosomes not yet linked to his units; Nobody knew about genes or DNA
+Ref: 4.6.3.3
+D: 3
+
+# 4.6.3.4 Evidence for evolution
+Id: aqa-bio-4.6-067
+
+Q: Which evidence for evolution, found in rocks, shows how organisms have changed over millions of years?
+A: Fossils
+Accept: Fossil record; Fossil
+Ref: 4.6.3.4
+D: 1
+Id: aqa-bio-4.6-068
+
+Q: Apart from fossils, what evidence for evolution can be seen in bacteria?
+A: Antibiotic resistance
+Accept: Resistance to antibiotics; Antibiotic-resistant bacteria
+Ref: 4.6.3.4
+D: 2
+Id: aqa-bio-4.6-069
+
+Q: Why does antibiotic resistance give strong evidence for evolution by natural selection?
+A: Natural selection can be observed happening quickly
+Accept: Evolution can be seen in a short time; Resistant bacteria are selected and observed; Resistant strains evolve within years
+Ref: 4.6.3.4
+D: 3
+Note: Credit any answer saying the evolution of resistance is seen directly, within a human lifetime.
+
+# 4.6.3.5 Fossils
+Id: aqa-bio-4.6-070
+
+Q: Fossils form when parts of an organism are replaced by what as they decay?
+A: Minerals
+Accept: Mineral
+Ref: 4.6.3.5
+D: 1
+Id: aqa-bio-4.6-071
+
+Q: Why have some parts of organisms not decayed, so forming fossils?
+A: Conditions needed for decay were absent
+Accept: One or more decay conditions absent; No oxygen, water or warmth for decay
+Ref: 4.6.3.5
+D: 2
+Id: aqa-bio-4.6-072
+
+Q: Why are scientists unsure how life began on Earth?
+A: Early life was soft-bodied, leaving few traces
+Accept: Soft-bodied organisms left few fossils; Fossil record incomplete; Traces destroyed by geological activity; Few fossils of early life
+Ref: 4.6.3.5
+D: 3
+
+# 4.6.3.6 Extinction
+Id: aqa-bio-4.6-073
+
+Q: When is a species said to be extinct?
+A: No individuals of the species remain alive
+Accept: None left alive; All have died
+Ref: 4.6.3.6
+D: 1
+Id: aqa-bio-4.6-074
+
+Q: A flightless island bird dies out after rats arrive and eat its eggs. What factor caused this extinction?
+A: New predator
+Accept: Predation; Predators; Rats as predators
+Ref: 4.6.3.6
+D: 2
+Id: aqa-bio-4.6-075
+
+Q: Why can a rapid change in climate cause a species to become extinct?
+A: Species cannot adapt quickly enough
+Accept: Cannot evolve fast enough; Not adapted to the new conditions; Too little time for natural selection
+Ref: 4.6.3.6
+D: 3
+
+# 4.6.3.7 Resistant bacteria
+Id: aqa-bio-4.6-076
+
+Q: Name a strain of bacteria that is resistant to antibiotics.
+A: MRSA
+Ref: 4.6.3.7
+D: 1
+Id: aqa-bio-4.6-077
+
+Q: Why can bacteria evolve rapidly?
+A: Reproduce at a fast rate
+Accept: Reproduce quickly; Fast reproduction; Short generation time
+Ref: 4.6.3.7
+D: 2
+Id: aqa-bio-4.6-078
+
+Q: Why should patients complete their course of antibiotics?
+A: So all bacteria die and none become resistant
+Accept: Kill all bacteria; No survivors to mutate into resistant strains
+Ref: 4.6.3.7
+D: 3
+
+# 4.6.4 Classification of living organisms
+Id: aqa-bio-4.6-079
+
+Q: Which scientist developed the traditional system of classification into kingdom, phylum and so on?
+A: Carl Linnaeus
+Accept: Linnaeus
+Ref: 4.6.4
+D: 1
+Id: aqa-bio-4.6-080
+
+Q: Name the three domains in the three-domain system.
+A: Archaea, bacteria, eukaryota
+Accept: Archaea, bacteria and eukaryotes
+Ref: 4.6.4
+D: 2
+Id: aqa-bio-4.6-081
+
+Q: Humans are named Homo sapiens. Which word is the genus?
+A: Homo
+Ref: 4.6.4
+D: 2
+Id: aqa-bio-4.6-082
+
+Q: What type of evidence led to the three-domain system replacing older classification models?
+A: Chemical analysis
+Accept: Biochemical evidence; Biochemical analysis
+Ref: 4.6.4
+D: 3
+Id: aqa-bio-4.6-083
+
+Q: What diagram do scientists use to show how they believe organisms are related?
+A: Evolutionary tree
+Accept: Evolutionary trees; Phylogenetic tree
+Ref: 4.6.4
+D: 1
+Id: aqa-bio-4.6-084

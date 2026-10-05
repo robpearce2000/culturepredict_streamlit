@@ -1,0 +1,392 @@
+Board: AQA
+Spec: 8461
+Topic: 4.3
+
+# 4.3.1.1 Communicable (infectious) diseases
+
+Q: What name is given to microorganisms that cause infectious disease?
+A: Pathogens
+Accept: Pathogen
+Ref: 4.3.1.1
+D: 1
+Id: aqa-bio-4.3-001
+
+Q: Name the four types of pathogen.
+A: Viruses, bacteria, protists, fungi
+Accept: Virus, bacterium, protist, fungus
+Ref: 4.3.1.1
+D: 2
+Id: aqa-bio-4.3-002
+
+Q: State the three ways pathogens can be spread.
+A: Direct contact, water, air
+Accept: Contact, water and air
+Ref: 4.3.1.1
+D: 2
+Id: aqa-bio-4.3-003
+
+Q: Why does a viral infection cause damage to body cells?
+A: Viruses reproduce inside cells, damaging them
+Accept: Viruses live and reproduce inside cells; Viruses replicate in cells and burst them
+Ref: 4.3.1.1
+D: 3
+
+# 4.3.1.2 Viral diseases
+Id: aqa-bio-4.3-004
+
+Q: What type of pathogen causes measles?
+A: Virus
+Accept: A virus; Viral
+Ref: 4.3.1.2
+D: 1
+Id: aqa-bio-4.3-005
+
+Q: How is the measles virus spread from person to person?
+A: Inhaling droplets from sneezes and coughs
+Accept: Droplets in the air; Airborne droplets; By air
+Ref: 4.3.1.2
+D: 2
+Id: aqa-bio-4.3-006
+
+Q: What is late stage HIV infection called?
+A: AIDS
+Accept: Acquired immune deficiency syndrome
+Ref: 4.3.1.2
+D: 1
+Id: aqa-bio-4.3-007
+
+Q: Why does tobacco mosaic virus reduce the growth of a tomato plant?
+A: Discoloured leaves carry out less photosynthesis
+Accept: Less photosynthesis; Less chlorophyll so less photosynthesis
+Ref: 4.3.1.2
+D: 3
+
+# 4.3.1.3 Bacterial diseases
+Id: aqa-bio-4.3-008
+
+Q: What type of pathogen causes gonorrhoea?
+A: Bacterium
+Accept: Bacteria; A bacterium; Bacterial
+Ref: 4.3.1.3
+D: 1
+Id: aqa-bio-4.3-009
+
+Q: How is the spread of Salmonella controlled in UK poultry?
+A: Vaccination of the poultry
+Accept: Vaccination; Vaccinating chickens
+Ref: 4.3.1.3
+D: 2
+Id: aqa-bio-4.3-010
+
+Q: Name the barrier method of contraception that reduces the spread of gonorrhoea.
+A: Condom
+Accept: Condoms
+Ref: 4.3.1.3
+D: 1
+Id: aqa-bio-4.3-011
+
+Q: Why is gonorrhoea no longer easily treated with penicillin?
+A: Resistant strains of the bacterium have appeared
+Accept: Bacteria are resistant to penicillin; Antibiotic resistance
+Ref: 4.3.1.3
+D: 3
+
+# 4.3.1.4 Fungal diseases
+Id: aqa-bio-4.3-012
+
+Q: What type of pathogen causes rose black spot?
+A: Fungus
+Accept: A fungus; Fungal
+Ref: 4.3.1.4
+D: 1
+Id: aqa-bio-4.3-013
+
+Q: Give the two ways rose black spot can be treated.
+A: Fungicides and removing affected leaves
+Accept: Fungicide and destroying infected leaves
+Ref: 4.3.1.4
+D: 2
+Id: aqa-bio-4.3-014
+
+Q: Why does rose black spot reduce the growth of a rose plant?
+A: Less photosynthesis
+Accept: Spotted leaves fall so less photosynthesis; Reduced photosynthesis
+Ref: 4.3.1.4
+D: 3
+Note: Spotted leaves turn yellow and drop early, so less leaf area photosynthesises.
+
+# 4.3.1.5 Protist diseases
+Id: aqa-bio-4.3-015
+
+Q: What type of pathogen causes malaria?
+A: Protist
+Accept: A protist
+Ref: 4.3.1.5
+D: 1
+Id: aqa-bio-4.3-016
+
+Q: Name the vector that spreads malaria.
+A: Mosquito
+Accept: Mosquitoes; Mosquitos
+Ref: 4.3.1.5
+D: 1
+Id: aqa-bio-4.3-017
+
+Q: Explain why sleeping under a mosquito net reduces the spread of malaria.
+A: Mosquitoes cannot bite and pass on the protist
+Accept: Stops bites so protist not transferred
+Ref: 4.3.1.5
+D: 3
+
+# 4.3.1.6 Human defence systems
+Id: aqa-bio-4.3-018
+
+Q: What process do white blood cells use to engulf and digest pathogens?
+A: Phagocytosis
+Ref: 4.3.1.6
+D: 1
+Id: aqa-bio-4.3-019
+
+Q: What do white blood cells produce to neutralise toxins made by bacteria?
+A: Antitoxins
+Accept: Antitoxin
+Ref: 4.3.1.6
+D: 1
+Note: Not antibodies, which target the pathogen itself.
+Id: aqa-bio-4.3-020
+
+Q: How do the trachea and bronchi stop pathogens reaching the lungs?
+A: Mucus traps pathogens; cilia move it upwards
+Accept: Mucus and cilia; Cilia waft mucus away
+Ref: 4.3.1.6
+D: 2
+Id: aqa-bio-4.3-021
+
+Q: How does the stomach kill pathogens that are swallowed?
+A: Hydrochloric acid
+Accept: Stomach acid; Acid
+Ref: 4.3.1.6
+D: 2
+Note: The stomach produces hydrochloric acid, which kills most swallowed pathogens.
+
+# 4.3.1.7 Vaccination
+Id: aqa-bio-4.3-022
+
+Q: What does a vaccine contain?
+A: Dead or inactive pathogen
+Accept: Small amounts of dead pathogen; Inactive pathogen; Weakened pathogen
+Ref: 4.3.1.7
+D: 2
+Id: aqa-bio-4.3-023
+
+Q: Why does a vaccinated person not become ill if the live pathogen later enters the body?
+A: White blood cells quickly produce the correct antibodies
+Accept: Antibodies made quickly; Fast antibody response
+Ref: 4.3.1.7
+D: 3
+Id: aqa-bio-4.3-024
+
+Q: Why does vaccinating most of a population also protect unvaccinated people?
+A: Fewer people can spread the pathogen
+Accept: Herd immunity; Pathogen less likely to spread
+Ref: 4.3.1.7
+D: 3
+
+# 4.3.1.8 Antibiotics and painkillers
+Id: aqa-bio-4.3-025
+
+Q: What type of pathogen do antibiotics kill?
+A: Bacteria
+Accept: Bacterium
+Ref: 4.3.1.8
+D: 1
+Id: aqa-bio-4.3-026
+
+Q: Why will antibiotics not cure a cold or flu?
+A: Antibiotics cannot kill viruses
+Accept: Colds and flu are caused by viruses
+Ref: 4.3.1.8
+D: 2
+Id: aqa-bio-4.3-027
+
+Q: What do painkillers do that antibiotics do not?
+A: Treat the symptoms of disease
+Accept: Relieve symptoms; Treat symptoms
+Ref: 4.3.1.8
+D: 2
+Note: Painkillers do not kill pathogens.
+Id: aqa-bio-4.3-028
+
+Q: Why is it difficult to develop drugs that kill viruses?
+A: Drugs would also damage body tissues
+Accept: Damaging the body's tissues; Viruses are inside cells so drugs damage cells; Drugs would harm body cells
+Ref: 4.3.1.8
+D: 3
+Note: Viruses reproduce inside body cells, so a drug that kills them may also damage the cells.
+
+# 4.3.1.9 Discovery and development of drugs
+Id: aqa-bio-4.3-029
+
+Q: The heart drug digitalis originates from which plant?
+A: Foxgloves
+Accept: Foxglove
+Ref: 4.3.1.9
+D: 1
+Id: aqa-bio-4.3-030
+
+Q: Which scientist discovered penicillin from the Penicillium mould?
+A: Alexander Fleming
+Accept: Fleming
+Ref: 4.3.1.9
+D: 1
+Id: aqa-bio-4.3-031
+
+Q: Name the three things new drugs are tested for.
+A: Toxicity, efficacy and dose
+Accept: Safety, effectiveness and dose
+Ref: 4.3.1.9
+D: 2
+Id: aqa-bio-4.3-032
+
+Q: Why are very low doses given at the start of a clinical trial?
+A: To check the drug is safe
+Accept: Check for side effects; Check safety; In case it is toxic
+Ref: 4.3.1.9
+D: 3
+Id: aqa-bio-4.3-033
+
+Q: What is a double blind trial?
+A: Neither doctors nor patients know who gets placebo
+Accept: Neither doctor nor patient knows who gets the drug
+Ref: 4.3.1.9
+D: 2
+
+# 4.3.2.1 Producing monoclonal antibodies (HT only)
+Id: aqa-bio-4.3-034
+
+Q: Which mouse cells are stimulated to make a particular antibody when producing monoclonal antibodies?
+A: Lymphocytes
+Accept: Lymphocyte; White blood cells
+Ref: 4.3.2.1
+D: 1
+HT: yes
+Id: aqa-bio-4.3-035
+
+Q: What is the cell made by combining a lymphocyte with a tumour cell called?
+A: Hybridoma cell
+Accept: Hybridoma
+Ref: 4.3.2.1
+D: 1
+HT: yes
+Id: aqa-bio-4.3-036
+
+Q: What two things can a hybridoma cell do that make it useful for producing antibodies?
+A: Divide and make the antibody
+Accept: Divide and produce antibodies; Reproduce and make antibodies
+Ref: 4.3.2.1
+D: 2
+HT: yes
+Id: aqa-bio-4.3-037
+
+Q: Why can a monoclonal antibody target one specific type of cell?
+A: Specific to one binding site on one antigen
+Accept: Binds to only one antigen; Specific to one protein antigen
+Ref: 4.3.2.1
+D: 3
+HT: yes
+
+# 4.3.2.2 Uses of monoclonal antibodies (HT only)
+Id: aqa-bio-4.3-038
+
+Q: Name the home diagnostic test that uses monoclonal antibodies to detect a hormone in urine.
+A: Pregnancy test
+Accept: Pregnancy tests
+Ref: 4.3.2.2
+D: 1
+HT: yes
+Id: aqa-bio-4.3-039
+
+Q: Why can a drug bound to a monoclonal antibody treat cancer without harming other cells?
+A: Antibody binds only to cancer cells
+Accept: Delivers the drug only to cancer cells
+Ref: 4.3.2.2
+D: 3
+HT: yes
+Id: aqa-bio-4.3-040
+
+Q: What is the main disadvantage of monoclonal antibodies that has limited their use?
+A: More side effects than expected
+Accept: Side effects
+Ref: 4.3.2.2
+D: 2
+Note: Cost is not the spec's stated drawback; do not accept it alone.
+HT: yes
+
+# 4.3.3.1 Detection and identification of plant diseases
+Id: aqa-bio-4.3-041
+
+Q: Which small sap-sucking insects, often called greenfly, are a common plant pest?
+A: Aphids
+Accept: Aphid
+Ref: 4.3.3.1
+D: 1
+Id: aqa-bio-4.3-042
+
+Q: Stunted growth in a plant is caused by a deficiency of which ion?
+A: Nitrate
+Accept: Nitrate ions; Nitrates
+Ref: 4.3.3.1
+D: 1
+Id: aqa-bio-4.3-043
+
+Q: Chlorosis (yellowing leaves) is caused by a deficiency of which ion?
+A: Magnesium
+Accept: Magnesium ions
+Ref: 4.3.3.1
+D: 1
+Id: aqa-bio-4.3-044
+
+Q: Why does a lack of magnesium ions turn leaves yellow?
+A: Magnesium is needed to make chlorophyll
+Accept: Chlorophyll needs magnesium; Less chlorophyll
+Ref: 4.3.3.1
+D: 3
+Id: aqa-bio-4.3-045
+
+Q: What do plant disease testing kits contain to identify a pathogen?
+A: Monoclonal antibodies
+Accept: Antibodies
+Ref: 4.3.3.1
+D: 3
+HT: yes
+
+# 4.3.3.2 Plant defence responses
+Id: aqa-bio-4.3-046
+
+Q: What tough, waxy layer on leaves helps resist invasion by microorganisms?
+A: Cuticle
+Accept: Waxy cuticle
+Ref: 4.3.3.2
+D: 1
+Id: aqa-bio-4.3-047
+
+Q: Name the two types of chemical defence produced by plants.
+A: Antibacterial chemicals and poisons
+Accept: Antibacterial chemicals and poisons to deter herbivores
+Ref: 4.3.3.2
+D: 2
+Id: aqa-bio-4.3-048
+
+Q: How do thorns and hairs help to defend a plant?
+A: Deter animals from eating it
+Accept: Deter animals; Deter herbivores
+Ref: 4.3.3.2
+D: 2
+Id: aqa-bio-4.3-049
+
+Q: Why does a layer of bark help protect a tree from microorganisms?
+A: Dead cells fall off, removing pathogens
+Accept: Dead cells shed with the microorganisms; Barrier of dead cells
+Ref: 4.3.3.2
+D: 3
+Id: aqa-bio-4.3-050

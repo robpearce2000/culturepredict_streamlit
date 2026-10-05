@@ -1,0 +1,360 @@
+{
+ "board": "AQA",
+ "subject": "Physics",
+ "specCode": "8463",
+ "version": "1.1",
+ "date": "30 September 2019",
+ "source": "https://www.aqa.org.uk/subjects/physics/gcse/physics-8463/specification",
+ "numbering": "^4\\.\\d+(\\.\\d+){1,3}$",
+ "topics": [
+  {
+   "ref": "4.1",
+   "title": "Energy",
+   "subtopics": [
+    {
+     "ref": "4.1.1",
+     "title": "Energy changes in a system, and the ways energy is stored"
+    },
+    {
+     "ref": "4.1.2",
+     "title": "Conservation and dissipation of energy"
+    },
+    {
+     "ref": "4.1.3",
+     "title": "National and global energy resources"
+    }
+   ]
+  },
+  {
+   "ref": "4.2",
+   "title": "Electricity",
+   "subtopics": [
+    {
+     "ref": "4.2.1",
+     "title": "Current, potential difference and resistance"
+    },
+    {
+     "ref": "4.2.2",
+     "title": "Series and parallel circuits"
+    },
+    {
+     "ref": "4.2.3",
+     "title": "Domestic uses and safety"
+    },
+    {
+     "ref": "4.2.4",
+     "title": "Energy transfers"
+    },
+    {
+     "ref": "4.2.5",
+     "title": "Static electricity (physics only)"
+    }
+   ]
+  },
+  {
+   "ref": "4.3",
+   "title": "Particle model of matter",
+   "subtopics": [
+    {
+     "ref": "4.3.1",
+     "title": "Changes of state and the particle model"
+    },
+    {
+     "ref": "4.3.2",
+     "title": "Internal energy and energy transfers"
+    },
+    {
+     "ref": "4.3.3",
+     "title": "Particle model and pressure"
+    }
+   ]
+  },
+  {
+   "ref": "4.4",
+   "title": "Atomic structure",
+   "subtopics": [
+    {
+     "ref": "4.4.1",
+     "title": "Atoms and isotopes"
+    },
+    {
+     "ref": "4.4.2",
+     "title": "Atoms and nuclear radiation"
+    },
+    {
+     "ref": "4.4.3",
+     "title": "Hazards and uses of radioactive emissions and of background radiation (physics only)"
+    },
+    {
+     "ref": "4.4.4",
+     "title": "Nuclear fission and fusion (physics only)"
+    }
+   ]
+  },
+  {
+   "ref": "4.5",
+   "title": "Forces",
+   "subtopics": [
+    {
+     "ref": "4.5.1",
+     "title": "Forces and their interactions"
+    },
+    {
+     "ref": "4.5.2",
+     "title": "Work done and energy transfer"
+    },
+    {
+     "ref": "4.5.3",
+     "title": "Forces and elasticity"
+    },
+    {
+     "ref": "4.5.4",
+     "title": "Moments, levers and gears (physics only)"
+    },
+    {
+     "ref": "4.5.5",
+     "title": "Pressure and pressure differences in fluids (physics only)"
+    },
+    {
+     "ref": "4.5.6",
+     "title": "Forces and motion"
+    },
+    {
+     "ref": "4.5.7",
+     "title": "Momentum (HT only)"
+    }
+   ]
+  },
+  {
+   "ref": "4.6",
+   "title": "Waves",
+   "subtopics": [
+    {
+     "ref": "4.6.1",
+     "title": "Waves in air, fluids and solids"
+    },
+    {
+     "ref": "4.6.2",
+     "title": "Electromagnetic waves"
+    },
+    {
+     "ref": "4.6.3",
+     "title": "Black body radiation (physics only)"
+    }
+   ]
+  },
+  {
+   "ref": "4.7",
+   "title": "Magnetism and electromagnetism",
+   "subtopics": [
+    {
+     "ref": "4.7.1",
+     "title": "Permanent and induced magnetism, magnetic forces and fields"
+    },
+    {
+     "ref": "4.7.2",
+     "title": "The motor effect"
+    },
+    {
+     "ref": "4.7.3",
+     "title": "Induced potential, transformers and the National Grid (physics only) (HT only)"
+    }
+   ]
+  },
+  {
+   "ref": "4.8",
+   "title": "Space physics",
+   "subtopics": [
+    {
+     "ref": "4.8.1",
+     "title": "Solar system; stability of orbital motions; satellites (physics only)"
+    },
+    {
+     "ref": "4.8.2",
+     "title": "Red-shift (physics only)"
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "4.1": "Energy",
+  "4.1.1": "Energy changes in a system, and the ways energy is stored",
+  "4.1.1.1": "Energy stores and systems",
+  "4.1.1.2": "Changes in energy",
+  "4.1.1.3": "Energy changes in systems",
+  "4.1.1.4": "Power",
+  "4.1.2": "Conservation and dissipation of energy",
+  "4.1.2.1": "Energy transfers in a system",
+  "4.1.2.2": "Efficiency",
+  "4.1.3": "National and global energy resources",
+  "4.2": "Electricity",
+  "4.2.1": "Current, potential difference and resistance",
+  "4.2.1.1": "Standard circuit diagram symbols",
+  "4.2.1.2": "Electrical charge and current",
+  "4.2.1.3": "Current, resistance and potential difference",
+  "4.2.1.4": "Resistors",
+  "4.2.2": "Series and parallel circuits",
+  "4.2.3": "Domestic uses and safety",
+  "4.2.3.1": "Direct and alternating potential difference",
+  "4.2.3.2": "Mains electricity",
+  "4.2.4": "Energy transfers",
+  "4.2.4.1": "Power",
+  "4.2.4.2": "Energy transfers in everyday appliances",
+  "4.2.4.3": "The National Grid",
+  "4.2.5": "Static electricity (physics only)",
+  "4.2.5.1": "Static charge",
+  "4.2.5.2": "Electric fields",
+  "4.3": "Particle model of matter",
+  "4.3.1": "Changes of state and the particle model",
+  "4.3.1.1": "Density of materials",
+  "4.3.1.2": "Changes of state",
+  "4.3.2": "Internal energy and energy transfers",
+  "4.3.2.1": "Internal energy",
+  "4.3.2.2": "Temperature changes in a system and specific heat capacity",
+  "4.3.2.3": "Changes of state and specific latent heat",
+  "4.3.3": "Particle model and pressure",
+  "4.3.3.1": "Particle motion in gases",
+  "4.3.3.2": "Pressure in gases (physics only)",
+  "4.3.3.3": "Increasing the pressure of a gas (physics only) (HT only)",
+  "4.4": "Atomic structure",
+  "4.4.1": "Atoms and isotopes",
+  "4.4.1.1": "The structure of an atom",
+  "4.4.1.2": "Mass number, atomic number and isotopes",
+  "4.4.1.3": "The development of the model of the atom (common content with chemistry)",
+  "4.4.2": "Atoms and nuclear radiation",
+  "4.4.2.1": "Radioactive decay and nuclear radiation",
+  "4.4.2.2": "Nuclear equations",
+  "4.4.2.3": "Half-lives and the random nature of radioactive decay",
+  "4.4.2.4": "Radioactive contamination",
+  "4.4.3": "Hazards and uses of radioactive emissions and of background radiation (physics only)",
+  "4.4.3.1": "Background radiation",
+  "4.4.3.2": "Different half-lives of radioactive isotopes",
+  "4.4.3.3": "Uses of nuclear radiation",
+  "4.4.4": "Nuclear fission and fusion (physics only)",
+  "4.4.4.1": "Nuclear fission",
+  "4.4.4.2": "Nuclear fusion",
+  "4.5": "Forces",
+  "4.5.1": "Forces and their interactions",
+  "4.5.1.1": "Scalar and vector quantities",
+  "4.5.1.2": "Contact and non-contact forces",
+  "4.5.1.3": "Gravity",
+  "4.5.1.4": "Resultant forces",
+  "4.5.2": "Work done and energy transfer",
+  "4.5.3": "Forces and elasticity",
+  "4.5.4": "Moments, levers and gears (physics only)",
+  "4.5.5": "Pressure and pressure differences in fluids (physics only)",
+  "4.5.5.1": "Pressure in a fluid",
+  "4.5.5.1.1": "Pressure in a fluid",
+  "4.5.5.1.2": "Pressure in a fluid 2 (HT only)",
+  "4.5.5.2": "Atmospheric pressure",
+  "4.5.6": "Forces and motion",
+  "4.5.6.1": "Describing motion along a line",
+  "4.5.6.1.1": "Distance and displacement",
+  "4.5.6.1.2": "Speed",
+  "4.5.6.1.3": "Velocity",
+  "4.5.6.1.4": "The distance–time relationship",
+  "4.5.6.1.5": "Acceleration",
+  "4.5.6.2": "Forces, accelerations and Newton's Laws of motion",
+  "4.5.6.2.1": "Newton's First Law",
+  "4.5.6.2.2": "Newton's Second Law",
+  "4.5.6.2.3": "Newton's Third Law",
+  "4.5.6.3": "Forces and braking",
+  "4.5.6.3.1": "Stopping distance",
+  "4.5.6.3.2": "Reaction time",
+  "4.5.6.3.3": "Factors affecting braking distance",
+  "4.5.6.3.4": "Factors affecting braking distance",
+  "4.5.7": "Momentum (HT only)",
+  "4.5.7.1": "Momentum is a property of moving objects",
+  "4.5.7.2": "Conservation of momentum",
+  "4.5.7.3": "Changes in momentum (physics only)",
+  "4.6": "Waves",
+  "4.6.1": "Waves in air, fluids and solids",
+  "4.6.1.1": "Transverse and longitudinal waves",
+  "4.6.1.2": "Properties of waves",
+  "4.6.1.3": "Reflection of waves (physics only)",
+  "4.6.1.4": "Sound waves (physics only) (HT only)",
+  "4.6.1.5": "Waves for detection and exploration (physics only) (HT only)",
+  "4.6.2": "Electromagnetic waves",
+  "4.6.2.1": "Types of electromagnetic waves",
+  "4.6.2.2": "Properties of electromagnetic waves",
+  "4.6.2.3": "Properties of electromagnetic waves",
+  "4.6.2.4": "Uses and applications of electromagnetic waves",
+  "4.6.2.5": "Lenses (physics only)",
+  "4.6.2.6": "Visible light (physics only)",
+  "4.6.3": "Black body radiation (physics only)",
+  "4.6.3.1": "Emission and absorption of infrared radiation",
+  "4.6.3.2": "Perfect black bodies and radiation",
+  "4.7": "Magnetism and electromagnetism",
+  "4.7.1": "Permanent and induced magnetism, magnetic forces and fields",
+  "4.7.1.1": "Poles of a magnet",
+  "4.7.1.2": "Magnetic fields",
+  "4.7.2": "The motor effect",
+  "4.7.2.1": "Electromagnetism",
+  "4.7.2.2": "Fleming's left-hand rule (HT only)",
+  "4.7.2.3": "Electric motors (HT only)",
+  "4.7.2.4": "Loudspeakers (physics only) (HT only)",
+  "4.7.3": "Induced potential, transformers and the National Grid (physics only) (HT only)",
+  "4.7.3.1": "Induced potential (HT only)",
+  "4.7.3.2": "Uses of the generator effect (HT only)",
+  "4.7.3.3": "Microphones (HT only)",
+  "4.7.3.4": "Transformers (HT only)",
+  "4.8": "Space physics (physics only)",
+  "4.8.1": "Solar system; stability of orbital motions; satellites (physics only)",
+  "4.8.1.1": "Our solar system",
+  "4.8.1.2": "The life cycle of a star",
+  "4.8.1.3": "Orbital motion, natural and artificial satellites",
+  "4.8.2": "Red-shift (physics only)"
+ },
+ "practicals": [
+  {
+   "n": 1,
+   "ref": "4.1.1.3",
+   "title": "investigation to determine the specific heat capacity of one or more"
+  },
+  {
+   "n": 2,
+   "ref": "4.1.2.1",
+   "title": "investigate the effectiveness of different materials"
+  },
+  {
+   "n": 3,
+   "ref": "4.2.1.3",
+   "title": "Use circuit diagrams to set up and check appropriate circuits to"
+  },
+  {
+   "n": 4,
+   "ref": "4.2.1.4",
+   "title": "use circuit diagrams to construct appropriate circuits to investigate"
+  },
+  {
+   "n": 5,
+   "ref": "4.3.1.1",
+   "title": "use appropriate apparatus to make and record the measurements"
+  },
+  {
+   "n": 6,
+   "ref": "4.5.3",
+   "title": "investigate the relationship between force and extension for a"
+  },
+  {
+   "n": 7,
+   "ref": "4.5.6.2.2",
+   "title": "investigate the effect of varying the force on the acceleration of an"
+  },
+  {
+   "n": 8,
+   "ref": "4.6.1.2",
+   "title": "make observations to identify the suitability of apparatus to"
+  },
+  {
+   "n": 9,
+   "ref": "4.6.1.3",
+   "title": "investigate the reflection of light by different types"
+  },
+  {
+   "n": 10,
+   "ref": "4.6.2.2",
+   "title": "investigate how the amount of infrared radiation absorbed or"
+  }
+ ]
+}

@@ -1,0 +1,294 @@
+Board: AQA
+Spec: 8461
+Topic: 4.4
+
+# 4.4.1.1 Photosynthetic reaction
+
+Q: Which gas do plants take in from the air to use in photosynthesis?
+A: Carbon dioxide
+Accept: CO₂; CO2
+Ref: 4.4.1.1
+D: 1
+Id: aqa-bio-4.4-001
+
+Q: Write the word equation for photosynthesis.
+A: Carbon dioxide + water → glucose + oxygen
+Accept: CO₂ + H₂O → C₆H₁₂O₆ + O₂; 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂
+Ref: 4.4.1.1
+D: 2
+Note: Light can be written over the arrow; it is not a reactant.
+Id: aqa-bio-4.4-002
+
+Q: Is photosynthesis an endothermic or an exothermic reaction?
+A: Endothermic
+Ref: 4.4.1.1
+D: 1
+Id: aqa-bio-4.4-003
+
+Q: Explain why photosynthesis is described as an endothermic reaction.
+A: Energy is transferred from the environment
+Accept: Takes in energy from the surroundings; Absorbs light energy from the environment
+Ref: 4.4.1.1
+D: 3
+Note: The energy is transferred to the chloroplasts by light.
+
+# 4.4.1.2 Rate of photosynthesis
+Id: aqa-bio-4.4-004
+
+Q: What name is given to a factor that is in short supply and so restricts the rate of photosynthesis?
+A: Limiting factor
+Accept: Limiting factors
+Ref: 4.4.1.2
+D: 1
+Id: aqa-bio-4.4-005
+
+Q: Why does the rate of photosynthesis fall sharply when the temperature rises well above the optimum?
+A: Enzymes denature
+Accept: Enzymes are denatured; Enzyme active sites change shape
+Ref: 4.4.1.2
+D: 3
+Id: aqa-bio-4.4-006
+
+Q: A leaf has yellow patches with little chlorophyll. Why do these patches photosynthesise more slowly?
+A: Absorbs less light
+Accept: Less light absorbed; Less chlorophyll to absorb light
+Ref: 4.4.1.2
+D: 3
+Id: aqa-bio-4.4-007
+
+Q: Light intensity is inversely proportional to the square of the distance from the lamp. If the distance doubles, what fraction of the light intensity remains?
+A: One quarter
+Accept: 1/4; ¼; A quarter; Quarter
+Ref: 4.4.1.2
+HT: yes
+D: 3
+Note: 2² = 4, so the intensity falls to 1/4, not 1/2.
+Id: aqa-bio-4.4-008
+
+Q: Rate is plotted against light intensity at low and high CO₂. The low-CO₂ line levels off below the high-CO₂ line. What limits the low-CO₂ plateau?
+A: Carbon dioxide concentration
+Accept: Carbon dioxide; CO₂; CO2; CO₂ concentration
+Ref: 4.4.1.2
+HT: yes
+D: 3
+Note: Raising CO₂ raises the plateau, so CO₂ (not light) limits the low-CO₂ line there.
+Id: aqa-bio-4.4-009
+
+Q: Photosynthesis in a greenhouse crop is limited by carbon dioxide. Why would buying extra lamps waste money?
+A: Rate of photosynthesis would not increase
+Accept: No extra growth or yield; Light is not the limiting factor; No increase in rate
+Ref: 4.4.1.2
+HT: yes
+D: 3
+Id: aqa-bio-4.4-010
+
+Q: In the pondweed practical on rate of photosynthesis, what is the independent variable?
+A: Light intensity
+Accept: Distance of lamp from pondweed; Distance from the lamp
+Ref: 4.4.1.2
+RP: 6
+D: 1
+Id: aqa-bio-4.4-011
+
+Q: Which gas is given off by the pondweed and counted as bubbles in the photosynthesis practical?
+A: Oxygen
+Accept: O₂; O2
+Ref: 4.4.1.2
+RP: 6
+D: 1
+Id: aqa-bio-4.4-012
+
+Q: Pondweed gives off 30 bubbles of gas in 5 minutes. What is the rate in bubbles per minute?
+A: 6 bubbles per minute
+Accept: 6; 6 bubbles/min
+Ref: 4.4.1.2
+RP: 6
+D: 2
+Id: aqa-bio-4.4-013
+
+Q: In the pondweed practical, what happens to the rate of bubbling as the lamp is moved further away?
+A: Decreases
+Accept: Slows down; Falls; Fewer bubbles
+Ref: 4.4.1.2
+RP: 6
+D: 2
+Id: aqa-bio-4.4-014
+
+Q: In the pondweed practical, why might a beaker of water be placed between the lamp and the pondweed?
+A: Keep the temperature constant
+Accept: Absorbs heat from the lamp; Stops the water heating up; Temperature is a control variable
+Ref: 4.4.1.2
+RP: 6
+D: 3
+Note: An LED lamp, which gives off little heat, does the same job.
+Id: aqa-bio-4.4-015
+
+Q: Why does measuring the volume of gas give more accurate results than counting bubbles?
+A: Bubbles vary in size
+Accept: Bubbles are different sizes; Bubbles are not all the same size; Bubbles may be missed when counting
+Ref: 4.4.1.2
+RP: 6
+D: 3
+
+# 4.4.1.3 Uses of glucose from photosynthesis
+Id: aqa-bio-4.4-016
+
+Q: Plants convert some glucose into which insoluble substance for storage?
+A: Starch
+Ref: 4.4.1.3
+D: 1
+Id: aqa-bio-4.4-017
+
+Q: Which substance, made from glucose, strengthens plant cell walls?
+A: Cellulose
+Ref: 4.4.1.3
+D: 1
+Id: aqa-bio-4.4-018
+
+Q: Which ions, absorbed from the soil, do plants need alongside glucose to make proteins?
+A: Nitrate ions
+Accept: Nitrates; Nitrate; NO₃⁻
+Ref: 4.4.1.3
+D: 1
+Id: aqa-bio-4.4-019
+
+Q: Why do plants store glucose as starch rather than as glucose itself?
+A: Starch is insoluble
+Accept: Insoluble, so it does not affect osmosis; Does not affect water movement into cells
+Ref: 4.4.1.3
+D: 3
+
+# 4.4.2.1 Aerobic and anaerobic respiration
+Id: aqa-bio-4.4-020
+
+Q: Is respiration an endothermic or an exothermic reaction?
+A: Exothermic
+Ref: 4.4.2.1
+D: 1
+Id: aqa-bio-4.4-021
+
+Q: Write the word equation for aerobic respiration.
+A: Glucose + oxygen → carbon dioxide + water
+Accept: C₆H₁₂O₆ + O₂ → CO₂ + H₂O; C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O
+Ref: 4.4.2.1
+D: 2
+Id: aqa-bio-4.4-022
+
+Q: Which substance is produced by anaerobic respiration in human muscle cells?
+A: Lactic acid
+Ref: 4.4.2.1
+D: 1
+Id: aqa-bio-4.4-023
+
+Q: Write the word equation for anaerobic respiration in yeast cells.
+A: Glucose → ethanol + carbon dioxide
+Ref: 4.4.2.1
+D: 2
+Note: Plant cells respire anaerobically by the same equation.
+Id: aqa-bio-4.4-024
+
+Q: What is anaerobic respiration in yeast cells called?
+A: Fermentation
+Ref: 4.4.2.1
+D: 1
+Id: aqa-bio-4.4-025
+
+Q: Why does anaerobic respiration transfer much less energy than aerobic respiration?
+A: Incomplete oxidation of glucose
+Accept: Glucose is not fully oxidised; Glucose is only partly broken down
+Ref: 4.4.2.1
+D: 3
+Id: aqa-bio-4.4-026
+
+Q: Which product of fermentation by yeast makes bread dough rise?
+A: Carbon dioxide
+Accept: CO₂; CO2
+Ref: 4.4.2.1
+D: 2
+Note: A common wrong answer is oxygen.
+Id: aqa-bio-4.4-027
+
+Q: Organisms use energy from respiration for movement, for keeping warm and for chemical reactions that build what?
+A: Larger molecules
+Accept: Large molecules; Bigger molecules; New molecules
+Ref: 4.4.2.1
+D: 1
+
+# 4.4.2.2 Response to exercise
+Id: aqa-bio-4.4-028
+
+Q: During exercise, heart rate and breathing rate rise. Which other breathing measurement increases so more oxygen is taken in?
+A: Breath volume
+Accept: Depth of breathing; Volume of each breath; Tidal volume; Deeper breaths
+Ref: 4.4.2.2
+D: 2
+Id: aqa-bio-4.4-029
+
+Q: After a long spell of hard exercise, muscles tire and contract less well. What is this called?
+A: Fatigue
+Accept: Muscle fatigue
+Ref: 4.4.2.2
+D: 1
+Id: aqa-bio-4.4-030
+
+Q: When muscles respire anaerobically during exercise, lactic acid builds up. What does this create?
+A: Oxygen debt
+Ref: 4.4.2.2
+D: 2
+Id: aqa-bio-4.4-031
+
+Q: What is meant by oxygen debt?
+A: Extra oxygen needed to remove lactic acid
+Accept: Extra oxygen needed after exercise to react with lactic acid
+Ref: 4.4.2.2
+HT: yes
+D: 3
+Id: aqa-bio-4.4-032
+
+Q: To which organ does the blood carry lactic acid, where it is converted back into glucose?
+A: Liver
+Ref: 4.4.2.2
+HT: yes
+D: 3
+
+# 4.4.2.3 Metabolism
+Id: aqa-bio-4.4-033
+
+Q: What name is given to all the chemical reactions taking place in a cell or in the body?
+A: Metabolism
+Ref: 4.4.2.3
+D: 1
+Id: aqa-bio-4.4-034
+
+Q: A lipid molecule is formed from one molecule of glycerol and how many fatty acid molecules?
+A: Three
+Accept: 3; Three fatty acids
+Ref: 4.4.2.3
+D: 2
+Id: aqa-bio-4.4-035
+
+Q: Excess proteins are broken down in the body to form which substance for excretion?
+A: Urea
+Ref: 4.4.2.3
+D: 1
+Id: aqa-bio-4.4-036
+
+Q: Animals convert excess glucose into which storage carbohydrate?
+A: Glycogen
+Ref: 4.4.2.3
+D: 1
+Id: aqa-bio-4.4-037
+
+Q: Amino acids made from glucose and nitrate ions are then used to synthesise which molecules?
+A: Proteins
+Accept: Protein
+Ref: 4.4.2.3
+D: 2
+Id: aqa-bio-4.4-038
+
+Q: Which process transfers the energy used in the enzyme-controlled reactions that synthesise new molecules?
+A: Respiration
+Accept: Cellular respiration
+Ref: 4.4.2.3
+D: 2
+Id: aqa-bio-4.4-039

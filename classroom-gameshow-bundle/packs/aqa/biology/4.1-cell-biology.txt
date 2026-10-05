@@ -1,0 +1,372 @@
+Board: AQA
+Spec: 8461
+Topic: 4.1
+
+# 4.1.1.1 Eukaryotes and prokaryotes
+
+Q: What are the small rings of DNA found in some bacterial cells called?
+A: Plasmids
+Accept: Plasmid
+Ref: 4.1.1.1
+D: 1
+Id: aqa-bio-4.1-001
+
+Q: Apart from plasmids, in what form is the genetic material of a bacterial cell found?
+A: Single loop of DNA
+Accept: DNA loop; Circular DNA; Single DNA loop
+Ref: 4.1.1.1
+D: 2
+Id: aqa-bio-4.1-002
+
+Q: An animal cell is 0.02 mm wide and a bacterium is 2 µm wide. By how many orders of magnitude do they differ?
+A: One order of magnitude
+Accept: 1; One; 10 times bigger; Ten times
+Ref: 4.1.1.1
+D: 3
+Note: 0.02 mm = 20 µm, which is ten times 2 µm.
+
+# 4.1.1.2 Animal and plant cells
+Id: aqa-bio-4.1-003
+
+Q: Which sub-cellular structure is the site of aerobic respiration?
+A: Mitochondria
+Accept: Mitochondrion
+Ref: 4.1.1.2
+D: 1
+Id: aqa-bio-4.1-004
+
+Q: Name the three structures found in plant cells but not in animal cells.
+A: Cell wall, chloroplasts, permanent vacuole
+Accept: Cell wall, chloroplast, vacuole
+Ref: 4.1.1.2
+D: 2
+Note: Accept the three in any order; "vacuole" alone is fine.
+Id: aqa-bio-4.1-005
+
+Q: A light microscope has a ×10 eyepiece lens and a ×40 objective lens. What is the total magnification?
+A: ×400
+Accept: 400; 400 times
+Ref: 4.1.1.2
+RP: 1
+D: 2
+Note: Multiply the eyepiece and objective magnifications.
+Id: aqa-bio-4.1-006
+
+Q: Which stain is commonly added to cheek cells to make the nuclei show up under a light microscope?
+A: Methylene blue
+Ref: 4.1.1.2
+RP: 1
+D: 2
+Note: Onion cells are usually stained with iodine solution instead.
+Id: aqa-bio-4.1-007
+
+Q: Apart from labels, what must a drawing of cells from the light microscope practical include?
+A: Magnification scale
+Accept: Scale bar; Magnification; Scale
+Ref: 4.1.1.2
+RP: 1
+D: 1
+Id: aqa-bio-4.1-008
+
+Q: Why is a layer of onion epidermis only one cell thick used on a microscope slide?
+A: Light can pass through it
+Accept: So light passes through; Cells do not overlap
+Ref: 4.1.1.2
+RP: 1
+D: 3
+
+# 4.1.1.3 Cell specialisation
+Id: aqa-bio-4.1-009
+
+Q: Which specialised plant cell absorbs water and mineral ions from the soil?
+A: Root hair cell
+Accept: Root hair
+Ref: 4.1.1.3
+D: 1
+Id: aqa-bio-4.1-010
+
+Q: Which plant cells transport dissolved sugars around the plant?
+A: Phloem
+Accept: Phloem cells; Phloem tissue
+Ref: 4.1.1.3
+D: 1
+Id: aqa-bio-4.1-011
+
+Q: Why does a sperm cell contain many mitochondria?
+A: Release energy for the tail to swim
+Accept: Energy for swimming; Energy for the tail to move
+Ref: 4.1.1.3
+D: 3
+
+# 4.1.1.4 Cell differentiation
+Id: aqa-bio-4.1-012
+
+Q: What is the process by which a cell becomes specialised to carry out a particular function?
+A: Differentiation
+Accept: Cell differentiation; Differentiating
+Ref: 4.1.1.4
+D: 1
+Id: aqa-bio-4.1-013
+
+Q: In mature animals, what is cell division mainly used for?
+A: Repair and replacement
+Accept: Repairing and replacing cells
+Ref: 4.1.1.4
+D: 2
+Id: aqa-bio-4.1-014
+
+Q: How does the ability of many plant cells to differentiate differ from that of most animal cells?
+A: Plant cells differentiate throughout life
+Accept: Plant cells keep the ability to differentiate; Animal cells only differentiate early
+Ref: 4.1.1.4
+D: 3
+
+# 4.1.1.5 Microscopy
+Id: aqa-bio-4.1-015
+
+Q: Which type of microscope has the higher magnification and resolving power?
+A: Electron microscope
+Accept: Electron
+Ref: 4.1.1.5
+D: 1
+Id: aqa-bio-4.1-016
+
+Q: An image of a cell is 50 mm wide and the real cell is 0.5 mm wide. What is the magnification?
+A: ×100
+Accept: 100; 100 times
+Ref: 4.1.1.5
+D: 2
+Id: aqa-bio-4.1-017
+
+Q: A cell image is 4 mm wide at ×400 magnification. What is the real width in micrometres?
+A: 10 µm
+Accept: 10 micrometres; 0.01 mm
+Ref: 4.1.1.5
+D: 3
+Note: Convert mm to µm (× 1000) before or after dividing.
+
+# 4.1.1.6 Culturing microorganisms
+Id: aqa-bio-4.1-018
+
+Q: By what process do bacteria multiply?
+A: Binary fission
+Accept: Simple cell division
+Ref: 4.1.1.6
+D: 1
+Id: aqa-bio-4.1-019
+
+Q: Why are cultures in school laboratories generally incubated at 25 °C?
+A: Reduces growth of harmful pathogens
+Accept: Pathogens less likely to grow; Human pathogens grow best at 37 °C
+Ref: 4.1.1.6
+D: 3
+Id: aqa-bio-4.1-020
+
+Q: A bacterium divides every 20 minutes. Starting with one bacterium, how many will there be after 2 hours?
+A: 64
+Accept: Sixty-four; 2⁶
+Ref: 4.1.1.6
+D: 3
+Id: aqa-bio-4.1-021
+
+Q: A population of 5 × 10⁶ bacteria doubles twice. How many bacteria are there now, in standard form?
+A: 2 × 10⁷
+Accept: 2 x 10^7
+Ref: 4.1.1.6
+HT: yes
+D: 3
+Note: 5 × 10⁶ × 4 = 20 × 10⁶, which is 2 × 10⁷ in standard form.
+Id: aqa-bio-4.1-022
+
+Q: What is the clear area around an antibiotic disc on an agar plate of bacteria called?
+A: Zone of inhibition
+Accept: Inhibition zone; Clear zone
+Ref: 4.1.1.6
+RP: 2
+D: 1
+Id: aqa-bio-4.1-023
+
+Q: A clear zone has a radius of 2 cm. Using area = πr² with π = 3, what is its area?
+A: 12 cm²
+Accept: 12 square centimetres
+Ref: 4.1.1.6
+RP: 2
+D: 2
+Id: aqa-bio-4.1-024
+
+Q: Why is a paper disc soaked in sterile water placed on the agar plate?
+A: Control to compare with antiseptic discs
+Accept: Control; To show the antiseptic causes the effect
+Ref: 4.1.1.6
+RP: 2
+D: 3
+
+# 4.1.2.1 Chromosomes
+Id: aqa-bio-4.1-025
+
+Q: What molecule are chromosomes made of?
+A: DNA
+Accept: Deoxyribonucleic acid
+Ref: 4.1.2.1
+D: 1
+Id: aqa-bio-4.1-026
+
+Q: Each chromosome carries many units of inherited information. What are these units called?
+A: Genes
+Accept: Gene
+Ref: 4.1.2.1
+D: 1
+Id: aqa-bio-4.1-027
+
+Q: A human body cell contains 46 chromosomes. How many pairs of chromosomes is this?
+A: 23 pairs
+Accept: 23
+Ref: 4.1.2.1
+D: 2
+Note: In body cells chromosomes are normally found in pairs.
+
+# 4.1.2.2 Mitosis and the cell cycle
+Id: aqa-bio-4.1-028
+
+Q: What type of cell division produces new identical body cells for growth in plants and animals?
+A: Mitosis
+Ref: 4.1.2.2
+D: 1
+Id: aqa-bio-4.1-029
+
+Q: What happens to the cytoplasm and cell membrane in the final stage of the cell cycle?
+A: Divide to form two identical cells
+Accept: Divide; Split into two cells
+Ref: 4.1.2.2
+D: 2
+Id: aqa-bio-4.1-030
+
+Q: Why must the DNA replicate before a cell divides by mitosis?
+A: Both new cells get identical chromosomes
+Accept: So both cells get identical genetic material; Each cell gets a copy of every chromosome
+Ref: 4.1.2.2
+D: 3
+
+# 4.1.2.3 Stem cells
+Id: aqa-bio-4.1-031
+
+Q: What type of plant tissue contains stem cells that can differentiate throughout the plant's life?
+A: Meristem
+Accept: Meristems; Meristem tissue
+Ref: 4.1.2.3
+D: 1
+Id: aqa-bio-4.1-032
+
+Q: What is a stem cell?
+A: Undifferentiated cell that can become other cell types
+Accept: An undifferentiated cell; Unspecialised cell that can differentiate
+Ref: 4.1.2.3
+D: 2
+Id: aqa-bio-4.1-033
+
+Q: Apart from ethical or religious objections, state one risk of using stem cells in medicine.
+A: Transfer of viral infection
+Accept: Viral infection; Passing on a virus
+Ref: 4.1.2.3
+D: 2
+Id: aqa-bio-4.1-034
+
+Q: Why are stem cells from therapeutic cloning not rejected by the patient's body?
+A: Embryo has the same genes as the patient
+Accept: Same genes as the patient; Genetically identical to the patient
+Ref: 4.1.2.3
+D: 3
+
+# 4.1.3.1 Diffusion
+Id: aqa-bio-4.1-035
+
+Q: Which waste product diffuses from cells into the blood plasma to be excreted by the kidneys?
+A: Urea
+Ref: 4.1.3.1
+D: 1
+Id: aqa-bio-4.1-036
+
+Q: What is diffusion?
+A: Net movement from high to low concentration
+Accept: Spreading out of particles from higher to lower concentration; Net movement of particles down a concentration gradient
+Ref: 4.1.3.1
+D: 2
+Id: aqa-bio-4.1-037
+
+Q: A cube has sides of 2 cm. What is its surface area to volume ratio?
+A: 3:1
+Accept: 24:8; 3
+Ref: 4.1.3.1
+D: 3
+Note: Surface area 24 cm², volume 8 cm³.
+Id: aqa-bio-4.1-038
+
+Q: Why does a multicellular organism need exchange surfaces and a transport system?
+A: Small surface area to volume ratio
+Accept: Low surface area to volume ratio; Diffusion alone is too slow
+Ref: 4.1.3.1
+D: 3
+
+# 4.1.3.2 Osmosis
+Id: aqa-bio-4.1-039
+
+Q: Through what type of membrane does water move during osmosis?
+A: Partially permeable membrane
+Accept: Partially permeable; Selectively permeable; Semi-permeable
+Ref: 4.1.3.2
+D: 1
+Id: aqa-bio-4.1-040
+
+Q: Why are the potato cylinders blotted dry before being weighed?
+A: Remove surface water
+Accept: Remove excess solution; Remove water on the surface
+Ref: 4.1.3.2
+RP: 3
+D: 2
+Id: aqa-bio-4.1-041
+
+Q: A potato cylinder's mass rises from 4.0 g to 5.0 g. What is the percentage change in mass?
+A: 25% increase
+Accept: +25%; 25%
+Ref: 4.1.3.2
+RP: 3
+D: 2
+Id: aqa-bio-4.1-042
+
+Q: Why is percentage change in mass used rather than change in mass?
+A: Cylinders have different starting masses
+Accept: Starting masses differ; Allows fair comparison
+Ref: 4.1.3.2
+RP: 3
+D: 3
+Id: aqa-bio-4.1-043
+
+Q: On the graph of percentage change in mass, what does the concentration where the line crosses zero show?
+A: Same concentration as inside the cells
+Accept: Concentration inside the potato cells; No net osmosis
+Ref: 4.1.3.2
+RP: 3
+D: 3
+
+# 4.1.3.3 Active transport
+Id: aqa-bio-4.1-044
+
+Q: Active transport needs energy from which process?
+A: Respiration
+Accept: Cellular respiration
+Ref: 4.1.3.3
+D: 1
+Id: aqa-bio-4.1-045
+
+Q: By which process are sugar molecules absorbed from the gut into blood with a higher sugar concentration?
+A: Active transport
+Ref: 4.1.3.3
+D: 2
+Id: aqa-bio-4.1-046
+
+Q: Why do root hair cells use active transport to absorb mineral ions?
+A: Soil solution is very dilute
+Accept: Lower ion concentration in soil than in cell
+Ref: 4.1.3.3
+D: 3
+Id: aqa-bio-4.1-047
