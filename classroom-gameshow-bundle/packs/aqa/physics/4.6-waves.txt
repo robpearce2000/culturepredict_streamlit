@@ -1,0 +1,461 @@
+Board: AQA
+Spec: 8463
+Topic: 4.6
+
+# 4.6.1.1 Transverse and longitudinal waves
+
+Q: What type of wave is a ripple on the surface of water?
+A: Transverse
+Ref: 4.6.1.1
+D: 1
+Id: aqa-phys-4.6-001
+
+Q: In a longitudinal wave, what is a region where the particles are squashed closest together called?
+A: Compression
+Accept: Compressions
+Ref: 4.6.1.1
+D: 1
+Id: aqa-phys-4.6-002
+
+Q: In a longitudinal wave, how is the direction of vibration related to the direction of energy transfer?
+A: Parallel
+Accept: Same direction; Along the direction of travel
+Ref: 4.6.1.1
+D: 2
+Note: In a transverse wave the vibrations are perpendicular to the direction of energy transfer.
+Id: aqa-phys-4.6-003
+
+Q: A cork floating on a pond bobs up and down as ripples pass but does not move along. What does this show?
+A: Wave travels, not the water
+Accept: Water does not travel with the wave; Only the wave moves along
+Ref: 4.6.1.1
+D: 3
+Note: The same idea applies to sound: the air particles vibrate but the air does not travel with the wave.
+
+# 4.6.1.2 Properties of waves
+Id: aqa-phys-4.6-004
+
+Q: What is the maximum displacement of a point on a wave from its undisturbed position called?
+A: Amplitude
+Ref: 4.6.1.2
+D: 1
+Id: aqa-phys-4.6-005
+
+Q: State the equation linking wave speed, frequency and wavelength.
+A: Wave speed = frequency × wavelength
+Accept: v = f × λ; v = fλ
+Ref: 4.6.1.2
+D: 2
+Id: aqa-phys-4.6-006
+
+Q: A wave has a frequency of 50 Hz and a wavelength of 4 m. What is its wave speed?
+A: 200 m/s
+Accept: 200 metres per second
+Ref: 4.6.1.2
+D: 2
+Id: aqa-phys-4.6-007
+
+Q: Using period = 1 ÷ frequency, what is the period of a wave with a frequency of 4 Hz?
+A: 0.25 s
+Accept: 1/4 s; 0.25 seconds
+Ref: 4.6.1.2
+D: 2
+Id: aqa-phys-4.6-008
+
+Q: A sound wave travels at 340 m/s and has a wavelength of 2 m. What is its frequency?
+A: 170 Hz
+Accept: 170 hertz
+Ref: 4.6.1.2
+D: 3
+Note: Rearrange: frequency = wave speed ÷ wavelength.
+Id: aqa-phys-4.6-009
+
+Q: Sound passes from air into water, where it travels faster. What happens to its wavelength?
+A: Increases
+Accept: Gets longer; Longer
+Ref: 4.6.1.2
+D: 3
+Note: Frequency is unchanged, so wavelength = speed ÷ frequency must increase.
+Id: aqa-phys-4.6-010
+
+Q: When measuring the speed of sound with a clap and a stopwatch, why should the distance be hundreds of metres?
+A: Reduces effect of reaction time
+Accept: Longer time to measure; Smaller percentage error in timing
+Ref: 4.6.1.2
+D: 3
+Id: aqa-phys-4.6-011
+
+Q: In a ripple tank, why measure the length of ten waves rather than one to find the wavelength?
+A: Reduces uncertainty
+Accept: More accurate; Smaller percentage error
+Ref: 4.6.1.2
+RP: 8
+D: 3
+Note: Divide the total length by ten.
+Id: aqa-phys-4.6-012
+
+Q: In the practical on waves on a stretched string, what device makes the string vibrate?
+A: Vibration generator
+Accept: Vibrator; Mechanical vibrator; Signal generator and vibrator
+Ref: 4.6.1.2
+RP: 8
+D: 1
+Id: aqa-phys-4.6-013
+
+Q: A wave on a vibrating string shows 4 loops along 1 m. Each loop is half a wavelength. What is the wavelength?
+A: 0.5 m
+Accept: 50 cm
+Ref: 4.6.1.2
+RP: 8
+D: 3
+Note: 4 half wavelengths = 2 whole wavelengths in 1 m.
+
+# 4.6.1.3 Reflection of waves (physics only)
+Id: aqa-phys-4.6-014
+
+Q: Apart from being reflected, what two things can happen to a wave at the boundary between two materials?
+A: Absorbed or transmitted
+Accept: Absorbed and transmitted; Transmitted or absorbed
+Ref: 4.6.1.3
+D: 2
+Id: aqa-phys-4.6-015
+
+Q: In a ray diagram, what is the line drawn at 90° to a surface where a ray strikes it called?
+A: Normal
+Ref: 4.6.1.3
+D: 1
+Id: aqa-phys-4.6-016
+
+Q: A light ray strikes a plane mirror at 35° to the normal. What is the angle of reflection?
+A: 35°
+Accept: 35 degrees
+Ref: 4.6.1.3
+D: 2
+Note: Angle of incidence = angle of reflection, both measured from the normal.
+Id: aqa-phys-4.6-017
+
+Q: In the practical on reflection and refraction of light, what produces a narrow beam of light?
+A: Ray box
+Accept: Ray box with a slit; Raybox
+Ref: 4.6.1.3
+RP: 9
+D: 1
+Id: aqa-phys-4.6-018
+
+Q: A light ray enters a glass block along the normal. What happens to its direction?
+A: Unchanged
+Accept: Does not change; Goes straight through; Not bent
+Ref: 4.6.1.3
+RP: 9
+D: 2
+Id: aqa-phys-4.6-019
+
+Q: A light ray passes from air into a glass block at an angle. Does it bend towards or away from the normal?
+A: Towards the normal
+Accept: Towards
+Ref: 4.6.1.3
+RP: 9
+D: 2
+
+# 4.6.1.4 Sound waves (physics only) (HT only)
+Id: aqa-phys-4.6-020
+
+Q: What is the range of normal human hearing?
+A: 20 Hz to 20 kHz
+Accept: 20 to 20 000 Hz; 20 Hz to 20 000 Hz
+Ref: 4.6.1.4
+HT: yes
+D: 1
+Id: aqa-phys-4.6-021
+
+Q: Which part of the ear is first made to vibrate by sound waves?
+A: Ear drum
+Accept: Eardrum
+Ref: 4.6.1.4
+HT: yes
+D: 1
+Id: aqa-phys-4.6-022
+
+Q: Why can humans not hear sounds with frequencies above about 20 kHz?
+A: Ear parts cannot vibrate that fast
+Accept: Ear drum cannot vibrate at that frequency; Conversion to vibrations only works over a limited range; Ear only responds to a limited frequency range
+Ref: 4.6.1.4
+HT: yes
+D: 3
+
+# 4.6.1.5 Waves for detection and exploration (physics only) (HT only)
+Id: aqa-phys-4.6-023
+
+Q: What name is given to sound waves with a frequency above the upper limit of human hearing?
+A: Ultrasound
+Ref: 4.6.1.5
+HT: yes
+D: 1
+Id: aqa-phys-4.6-024
+
+Q: Which type of seismic wave is longitudinal?
+A: P-waves
+Accept: P-wave; P waves; Primary waves
+Ref: 4.6.1.5
+HT: yes
+D: 1
+Id: aqa-phys-4.6-025
+
+Q: A ship's echo-sounding pulse travels at 1500 m/s and its echo returns 0.4 s later. How deep is the water?
+A: 300 m
+Accept: 300 metres
+Ref: 4.6.1.5
+HT: yes
+D: 3
+Note: 1500 × 0.4 = 600 m there and back, so halve it.
+Id: aqa-phys-4.6-026
+
+Q: S-waves from an earthquake are not detected on the opposite side of the Earth. What does this show about the outer core?
+A: Liquid
+Accept: Outer core is liquid; Liquid outer core
+Ref: 4.6.1.5
+HT: yes
+D: 3
+
+# 4.6.2.1 Types of electromagnetic waves
+Id: aqa-phys-4.6-027
+
+Q: Which part of the electromagnetic spectrum has the longest wavelength?
+A: Radio waves
+Accept: Radio
+Ref: 4.6.2.1
+D: 1
+Id: aqa-phys-4.6-028
+
+Q: What is the same for all electromagnetic waves travelling through a vacuum?
+A: Speed
+Accept: Velocity; Wave speed
+Ref: 4.6.2.1
+D: 2
+Id: aqa-phys-4.6-029
+
+Q: Radio waves travel at 300 000 000 m/s. What is the wavelength of a radio wave of frequency 100 000 000 Hz?
+A: 3 m
+Accept: 3 metres
+Ref: 4.6.2.1
+D: 3
+
+# 4.6.2.2 Properties of electromagnetic waves 1
+Id: aqa-phys-4.6-030
+
+Q: What is the change in direction of light as it passes at an angle from air into glass called?
+A: Refraction
+Ref: 4.6.2.2
+D: 1
+Id: aqa-phys-4.6-031
+
+Q: Why does light change direction when it enters glass at an angle?
+A: Changes speed
+Accept: Slows down; Speed changes; Different speed in glass
+Ref: 4.6.2.2
+HT: yes
+D: 3
+Id: aqa-phys-4.6-032
+
+Q: Whether a material absorbs, transmits, refracts or reflects an electromagnetic wave varies with which property of the wave?
+A: Wavelength
+Accept: Frequency
+Ref: 4.6.2.2
+HT: yes
+D: 2
+Id: aqa-phys-4.6-033
+
+Q: In the Leslie cube practical, which type of surface emits the most infrared radiation?
+A: Matt black
+Accept: Dull black; Black matt
+Ref: 4.6.2.2
+RP: 10
+D: 1
+Id: aqa-phys-4.6-034
+
+Q: What device measures the infrared radiation emitted from each face of a Leslie cube?
+A: Infrared detector
+Accept: Infrared thermometer; Thermopile; IR detector
+Ref: 4.6.2.2
+RP: 10
+D: 1
+Id: aqa-phys-4.6-035
+
+Q: Identical cans of cold water, one matt black and one shiny silver, stand equally far from a heater. Which warms up faster?
+A: Matt black can
+Accept: Matt black; Black can
+Ref: 4.6.2.2
+RP: 10
+D: 3
+Note: Matt black is the better absorber of infrared.
+
+# 4.6.2.3 Properties of electromagnetic waves 2
+Id: aqa-phys-4.6-036
+
+Q: Gamma rays originate from changes in which part of an atom?
+A: Nucleus
+Ref: 4.6.2.3
+D: 1
+Id: aqa-phys-4.6-037
+
+Q: X-rays and gamma rays can cause mutation of genes and cancer. What type of radiation are they?
+A: Ionising radiation
+Accept: Ionising; Ionizing
+Ref: 4.6.2.3
+D: 2
+Id: aqa-phys-4.6-038
+
+Q: What does a radiation dose in sieverts measure?
+A: Risk of harm from exposure
+Accept: Risk of harm; Risk of harm to the body
+Ref: 4.6.2.3
+D: 2
+Note: Students do not need to recall the unit, but should know what dose means.
+Id: aqa-phys-4.6-039
+
+Q: Apart from raising the risk of skin cancer, what harmful effect can ultraviolet have on skin?
+A: Premature ageing
+Accept: Ages skin early; Skin ageing; Ageing
+Ref: 4.6.2.3
+D: 1
+Id: aqa-phys-4.6-040
+
+Q: A 90 MHz radio wave is absorbed by an aerial. What is the frequency of the alternating current it induces?
+A: 90 MHz
+Accept: 90 megahertz; 90 000 000 Hz
+Ref: 4.6.2.3
+HT: yes
+D: 2
+
+# 4.6.2.4 Uses and applications of electromagnetic waves
+Id: aqa-phys-4.6-041
+
+Q: Which part of the electromagnetic spectrum is used for satellite communications?
+A: Microwaves
+Accept: Microwave
+Ref: 4.6.2.4
+D: 1
+Id: aqa-phys-4.6-042
+
+Q: Which part of the electromagnetic spectrum is used in energy efficient lamps and sun tanning?
+A: Ultraviolet
+Accept: UV
+Ref: 4.6.2.4
+D: 1
+Id: aqa-phys-4.6-043
+
+Q: Name the two parts of the electromagnetic spectrum used for cooking food.
+A: Microwaves and infrared
+Accept: Infrared and microwaves
+Ref: 4.6.2.4
+D: 2
+Id: aqa-phys-4.6-044
+
+Q: Why are X-rays suitable for imaging broken bones?
+A: Absorbed by bone, pass through soft tissue
+Accept: Bone absorbs them but flesh transmits them; Pass through flesh but not bone; Bone absorbs X-rays
+Ref: 4.6.2.4
+HT: yes
+D: 3
+
+# 4.6.2.5 Lenses (physics only)
+Id: aqa-phys-4.6-045
+
+Q: What name is given to the distance between a lens and its principal focus?
+A: Focal length
+Ref: 4.6.2.5
+D: 1
+Id: aqa-phys-4.6-046
+
+Q: What type of image does a concave lens always produce?
+A: Virtual
+Accept: Virtual image
+Ref: 4.6.2.5
+D: 2
+Id: aqa-phys-4.6-047
+
+Q: A lens gives a magnification of 3 and the object is 4 mm tall. How tall is the image? (magnification = image height ÷ object height)
+A: 12 mm
+Accept: 1.2 cm
+Ref: 4.6.2.5
+D: 2
+
+# 4.6.2.6 Visible light (physics only)
+Id: aqa-phys-4.6-048
+
+Q: What is reflection from a rough surface, which scatters the light, called?
+A: Diffuse reflection
+Accept: Diffuse
+Ref: 4.6.2.6
+D: 1
+Id: aqa-phys-4.6-049
+
+Q: How does a colour filter work?
+A: Transmits some wavelengths, absorbs the rest
+Accept: Absorbs some colours and lets others through
+Ref: 4.6.2.6
+D: 2
+Id: aqa-phys-4.6-050
+
+Q: Why does an opaque blue object look blue in white light?
+A: Reflects blue, absorbs other colours
+Accept: Blue reflected most strongly, others absorbed
+Ref: 4.6.2.6
+D: 3
+Id: aqa-phys-4.6-051
+
+Q: An opaque object that reflects only green light is viewed in pure red light. What colour does it appear?
+A: Black
+Ref: 4.6.2.6
+D: 3
+Note: The object absorbs the red light and there is no green light for it to reflect.
+
+# 4.6.3.1 Emission and absorption of infrared radiation
+Id: aqa-phys-4.6-052
+
+Q: What name is given to an object that absorbs every bit of radiation falling on it?
+A: Perfect black body
+Accept: Black body
+Ref: 4.6.3.1
+D: 1
+Id: aqa-phys-4.6-053
+
+Q: How does the infrared radiated in a given time by an object change as it gets hotter?
+A: Increases
+Accept: More is radiated; Goes up
+Ref: 4.6.3.1
+D: 2
+Id: aqa-phys-4.6-054
+
+Q: Why would a perfect black body be the best possible emitter of radiation?
+A: Good absorbers are good emitters
+Accept: Best absorber so best emitter
+Ref: 4.6.3.1
+D: 3
+
+# 4.6.3.2 Perfect black bodies and radiation
+Id: aqa-phys-4.6-055
+
+Q: As an object gets hotter, what happens to the wavelength at which it emits most strongly?
+A: Decreases
+Accept: Gets shorter; Shorter
+Ref: 4.6.3.2
+D: 2
+Note: This is why a heated metal glows red, then orange, then white.
+Id: aqa-phys-4.6-056
+
+Q: An object stays at a constant temperature. How does its rate of absorbing radiation compare with its rate of emitting radiation?
+A: Equal
+Accept: The same; Same
+Ref: 4.6.3.2
+HT: yes
+D: 2
+Id: aqa-phys-4.6-057
+
+Q: The Earth absorbs radiation faster than it emits radiation. What happens to its temperature?
+A: Increases
+Accept: Rises; Goes up; Gets warmer
+Ref: 4.6.3.2
+HT: yes
+D: 3
+Id: aqa-phys-4.6-058

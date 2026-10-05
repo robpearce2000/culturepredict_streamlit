@@ -1,0 +1,398 @@
+Board: AQA
+Spec: 8463
+Topic: 4.7
+
+# 4.7.1.1 Poles of a magnet
+
+Q: What name is given to the places on a magnet where the magnetic forces are strongest?
+A: Poles
+Accept: Magnetic poles; North and south poles; The poles
+Ref: 4.7.1.1
+D: 1
+Id: aqa-phys-4.7-001
+
+Q: What happens when the north poles of two bar magnets are brought close together?
+A: Repel
+Accept: They repel; Repulsion; Push apart
+Ref: 4.7.1.1
+D: 1
+Id: aqa-phys-4.7-002
+
+Q: What is the name for a material that becomes a magnet only while it is in a magnetic field?
+A: Induced magnet
+Ref: 4.7.1.1
+D: 1
+Id: aqa-phys-4.7-003
+
+Q: What happens to the magnetism of an induced magnet when it is taken out of the magnetic field?
+A: Lost quickly
+Accept: Loses most or all of it quickly; Disappears quickly
+Ref: 4.7.1.1
+D: 2
+Id: aqa-phys-4.7-004
+
+Q: A metal bar is attracted to both ends of a bar magnet. Why does this not prove the bar is a permanent magnet?
+A: Induced magnetism always attracts
+Accept: It could be unmagnetised iron or steel; Only repulsion proves it is a magnet
+Ref: 4.7.1.1
+D: 3
+Note: Repulsion is the only test that proves an object is a permanent magnet.
+
+# 4.7.1.2 Magnetic fields
+Id: aqa-phys-4.7-005
+
+Q: Name the four magnetic materials you need to know: three metal elements and one alloy.
+A: Iron, cobalt, nickel, steel
+Accept: Fe, Co, Ni and steel; in any order
+Ref: 4.7.1.2
+D: 2
+Note: Steel is an alloy, not an element.
+Id: aqa-phys-4.7-006
+
+Q: What is the region around a magnet where a force acts on another magnet or a magnetic material?
+A: Magnetic field
+Accept: Field
+Ref: 4.7.1.2
+D: 1
+Id: aqa-phys-4.7-007
+
+Q: In which direction do the magnetic field lines point outside a bar magnet?
+A: North to south
+Accept: From the north pole to the south pole; N to S
+Ref: 4.7.1.2
+D: 1
+Id: aqa-phys-4.7-008
+
+Q: On a field diagram, how can you tell where the magnetic field is strongest?
+A: Lines closest together
+Accept: Field lines are most concentrated; Lines most dense
+Ref: 4.7.1.2
+D: 2
+Id: aqa-phys-4.7-009
+
+Q: How is the direction of a magnetic field at a point defined?
+A: Direction of force on a north pole
+Accept: Force on a north pole placed there; Way a north pole would be pushed
+Ref: 4.7.1.2
+D: 2
+Id: aqa-phys-4.7-010
+
+Q: When plotting a magnet's field with a small plotting compass, what do you mark at each position?
+A: Direction the needle points
+Accept: Where the needle points; Needle direction; Arrow along the needle
+Ref: 4.7.1.2
+D: 2
+Note: Move the compass so its tail sits at the last mark, then repeat to build a field line.
+Id: aqa-phys-4.7-011
+
+Q: A compass far from any magnet still settles pointing north. What does this suggest about the Earth's core?
+A: Core is magnetic
+Accept: The Earth's core is magnetic; Magnetic core
+Ref: 4.7.1.2
+D: 3
+Note: A compass contains a small bar magnet, so it lines up with the Earth's magnetic field.
+
+# 4.7.2.1 Electromagnetism
+Id: aqa-phys-4.7-012
+
+Q: What is produced around a wire when a current flows through it?
+A: Magnetic field
+Accept: A magnetic field; Field
+Ref: 4.7.2.1
+D: 1
+Id: aqa-phys-4.7-013
+
+Q: What is a solenoid with an iron core called?
+A: Electromagnet
+Ref: 4.7.2.1
+D: 1
+Id: aqa-phys-4.7-014
+
+Q: What shape do the magnetic field lines around a long straight current-carrying wire make?
+A: Concentric circles
+Accept: Circles; Rings
+Ref: 4.7.2.1
+D: 2
+Id: aqa-phys-4.7-015
+
+Q: Describe the magnetic field inside a current-carrying solenoid.
+A: Strong and uniform
+Accept: Strong, uniform; Uniform and strong
+Ref: 4.7.2.1
+D: 2
+Note: Uniform means the same strength and direction everywhere, shown by parallel, evenly spaced lines.
+Id: aqa-phys-4.7-016
+
+Q: The field outside a solenoid has a similar shape to the field of what object?
+A: Bar magnet
+Accept: A bar magnet
+Ref: 4.7.2.1
+D: 2
+Id: aqa-phys-4.7-017
+
+Q: State the two factors that the strength of the magnetic field around a current-carrying wire depends on.
+A: Current and distance from wire
+Accept: Size of current and distance; Current, distance
+Ref: 4.7.2.1
+D: 2
+Id: aqa-phys-4.7-018
+
+Q: Why does adding an iron core make the magnetic field of a solenoid stronger?
+A: Iron core becomes magnetised
+Accept: Iron becomes an induced magnet; The core's field adds to the coil's field
+Ref: 4.7.2.1
+D: 3
+Id: aqa-phys-4.7-019
+
+Q: In an electric bell or relay, why is an electromagnet used instead of a permanent magnet?
+A: Can be switched on and off
+Accept: Magnetism can be turned off; Switched off when current stops
+Ref: 4.7.2.1
+D: 3
+
+# 4.7.2.2 Fleming's left-hand rule (HT only)
+Id: aqa-phys-4.7-020
+
+Q: What name is given to the force on a current-carrying conductor in a magnetic field?
+A: Motor effect
+Ref: 4.7.2.2
+D: 1
+HT: yes
+Id: aqa-phys-4.7-021
+
+Q: In Fleming's left-hand rule, what does the thumb represent?
+A: Force
+Accept: Motion; Thrust; Direction of the force
+Ref: 4.7.2.2
+D: 1
+HT: yes
+Note: First finger = field, second finger = current.
+Id: aqa-phys-4.7-022
+
+Q: State the three factors that affect the size of the force on a wire at right angles to a magnetic field.
+A: Flux density, current, length
+Accept: Field strength, current, length of wire in field; B, I and l
+Ref: 4.7.2.2
+D: 2
+HT: yes
+Id: aqa-phys-4.7-023
+
+Q: Use F = BIl. A 0.5 m wire carrying 4 A lies at right angles to a 0.2 T field. What is the force?
+A: 0.4 N
+Accept: 0.4 newtons; 0.4
+Ref: 4.7.2.2
+D: 2
+HT: yes
+Note: 0.2 × 4 × 0.5 = 0.4 N.
+Id: aqa-phys-4.7-024
+
+Q: Use F = BIl. A 0.2 m wire carrying 3 A at right angles to a field feels 0.3 N. What is the magnetic flux density?
+A: 0.5 T
+Accept: 0.5 tesla; 0.5
+Ref: 4.7.2.2
+D: 3
+HT: yes
+Note: B = F ÷ (I × l) = 0.3 ÷ 0.6 = 0.5 T.
+
+# 4.7.2.3 Electric motors (HT only)
+Id: aqa-phys-4.7-025
+
+Q: What tends to happen to a current-carrying coil of wire placed in a magnetic field?
+A: Rotates
+Accept: Turns; Spins; It rotates
+Ref: 4.7.2.3
+D: 1
+HT: yes
+Id: aqa-phys-4.7-026
+
+Q: Give one way to make a simple dc motor spin faster.
+A: Increase the current
+Accept: Larger current; Higher potential difference; Higher voltage; Stronger magnet; Stronger magnetic field; More turns on the coil
+Ref: 4.7.2.3
+D: 2
+HT: yes
+Id: aqa-phys-4.7-027
+
+Q: Why does a current-carrying coil in a motor turn rather than just move sideways?
+A: Forces on opposite sides act in opposite directions
+Accept: Current flows opposite ways in each side, so forces are opposite; Opposite forces on the two sides
+Ref: 4.7.2.3
+D: 3
+HT: yes
+Note: Apply Fleming's left-hand rule to each side of the coil.
+
+# 4.7.2.4 Loudspeakers (HT only)
+Id: aqa-phys-4.7-028
+
+Q: Which effect do loudspeakers and headphones use to produce sound?
+A: Motor effect
+Ref: 4.7.2.4
+D: 1
+HT: yes
+Id: aqa-phys-4.7-029
+
+Q: A loudspeaker converts variations in current into variations in what in the sound wave?
+A: Pressure
+Accept: Air pressure; Pressure variations
+Ref: 4.7.2.4
+D: 2
+HT: yes
+Id: aqa-phys-4.7-030
+
+Q: In a moving-coil loudspeaker, why does the cone vibrate when an alternating current flows in the coil?
+A: Force on coil keeps changing direction
+Accept: The coil in the magnetic field feels a force that reverses; Changing force on the coil
+Ref: 4.7.2.4
+D: 3
+HT: yes
+Note: The coil is attached to the cone, so the cone moves back and forth at the frequency of the current.
+
+# 4.7.3.1 Induced potential (HT only)
+Id: aqa-phys-4.7-031
+
+Q: What name is given to inducing a potential difference by moving a conductor relative to a magnetic field?
+A: Generator effect
+Accept: Electromagnetic induction; Induction
+Ref: 4.7.3.1
+D: 1
+HT: yes
+Id: aqa-phys-4.7-032
+
+Q: A potential difference is induced across a wire. What is also needed for a current to be induced?
+A: Complete circuit
+Accept: Closed circuit; The wire is part of a complete circuit
+Ref: 4.7.3.1
+D: 2
+HT: yes
+Id: aqa-phys-4.7-033
+
+Q: Pushing a magnet into a coil gives a positive meter reading. What reading does pulling it out give?
+A: Negative reading
+Accept: Negative; Opposite direction; Reverse reading
+Ref: 4.7.3.1
+D: 2
+HT: yes
+Id: aqa-phys-4.7-034
+
+Q: Give two ways to increase the potential difference induced when a magnet is moved into a coil.
+A: Any two: move faster, stronger magnet, more turns
+Accept: Faster movement; Stronger magnetic field; More turns on the coil
+Ref: 4.7.3.1
+D: 2
+HT: yes
+Id: aqa-phys-4.7-035
+
+Q: How does the magnetic field of an induced current affect the change that produced it?
+A: Opposes it
+Accept: Opposes the change; Opposes the movement
+Ref: 4.7.3.1
+D: 2
+HT: yes
+
+# 4.7.3.2 Uses of the generator effect (HT only)
+Id: aqa-phys-4.7-036
+
+Q: Which device uses the generator effect to produce alternating current?
+A: Alternator
+Accept: AC generator
+Ref: 4.7.3.2
+D: 1
+HT: yes
+Id: aqa-phys-4.7-037
+
+Q: Which device uses the generator effect to produce direct current?
+A: Dynamo
+Accept: DC generator
+Ref: 4.7.3.2
+D: 1
+HT: yes
+Id: aqa-phys-4.7-038
+
+Q: Which part of a dynamo reverses the connections each half turn so the output stays direct current?
+A: Split-ring commutator
+Accept: Commutator; Split ring
+Ref: 4.7.3.2
+D: 2
+HT: yes
+Note: An alternator uses slip rings instead, so its output is ac.
+Id: aqa-phys-4.7-039
+
+Q: An alternator's coil is spun faster. What happens to the peak voltage and the number of cycles each second?
+A: Both increase
+Accept: Higher peaks and higher frequency; Both go up
+Ref: 4.7.3.2
+D: 3
+HT: yes
+Note: On a pd-time graph the peaks get taller and closer together.
+
+# 4.7.3.3 Microphones (HT only)
+Id: aqa-phys-4.7-040
+
+Q: Which effect does a moving-coil microphone use?
+A: Generator effect
+Accept: Electromagnetic induction; Induction
+Ref: 4.7.3.3
+D: 1
+HT: yes
+Id: aqa-phys-4.7-041
+
+Q: A microphone converts pressure variations in sound waves into variations in what?
+A: Current
+Accept: Electric current; Potential difference; Voltage
+Ref: 4.7.3.3
+D: 2
+HT: yes
+Id: aqa-phys-4.7-042
+
+Q: In a moving-coil microphone, why is a current induced when sound waves arrive?
+A: Diaphragm moves the coil in a magnetic field
+Accept: Coil moves relative to the magnet; Sound vibrates the coil in the field
+Ref: 4.7.3.3
+D: 3
+HT: yes
+
+# 4.7.3.4 Transformers (HT only)
+Id: aqa-phys-4.7-043
+
+Q: A basic transformer has two coils. What are they wound on?
+A: Iron core
+Accept: Iron; Soft iron core
+Ref: 4.7.3.4
+D: 1
+HT: yes
+Id: aqa-phys-4.7-044
+
+Q: Use Vp/Vs = np/ns. A transformer has 230 V across 200 primary turns and 20 secondary turns. What is Vs?
+A: 23 V
+Accept: 23 volts; 23
+Ref: 4.7.3.4
+D: 2
+HT: yes
+Note: Ten times fewer turns gives ten times smaller pd: 230 ÷ 10 = 23 V.
+Id: aqa-phys-4.7-045
+
+Q: Use Vp × Ip = Vs × Is. A 100% efficient transformer gives 12 V at 2 A from a 240 V supply. What is Ip?
+A: 0.1 A
+Accept: 0.1 amps; 0.1; 100 mA
+Ref: 4.7.3.4
+D: 3
+HT: yes
+Note: Power out = 12 × 2 = 24 W, so Ip = 24 ÷ 240 = 0.1 A.
+Id: aqa-phys-4.7-046
+
+Q: Why must the primary coil of a transformer be supplied with alternating current?
+A: Changing magnetic field needed
+Accept: To make a changing field that induces a pd in the secondary; Direct current gives no changing field
+Ref: 4.7.3.4
+D: 3
+HT: yes
+Id: aqa-phys-4.7-047
+
+Q: Why does transmitting electrical power at a high potential difference reduce energy losses?
+A: Lower current, so less heating
+Accept: Smaller current means less heating in cables; Current is lower so less power lost
+Ref: 4.7.3.4
+D: 3
+HT: yes
+Note: For the same power, P = VI means a higher V needs a lower I.
+Id: aqa-phys-4.7-048

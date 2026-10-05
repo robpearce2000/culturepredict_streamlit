@@ -29,7 +29,7 @@ This file says what is finished and what is left, so any run can carry on where 
 |---|---|---|---|---|---|
 | AQA | Biology | 8461 | 1.0 | 21 April 2016 | Fetched from aqa.org.uk (confirmed as the current version on the specification page) |
 | AQA | Chemistry | 8462 | 1.1 | 4 October 2019 | Fetched from aqa.org.uk |
-| AQA | Physics | 8463 | 1.1 | 30 September 2019 | Fetched from aqa.org.uk |
+| AQA | Physics | 8463 | 1.1 | 30 September 2019 | Fetched from aqa.org.uk (with Appendix A, the equations students recall or select from the sheet) |
 | AQA | Mathematics | 8300 | | | Not started |
 | AQA | History | 8145 | | | Not started |
 | AQA | Geography | 8035 | | | Not started |
@@ -62,11 +62,21 @@ Removed / Rewritten / Added = changes made in checking; Flagged = items in QUEST
 | AQA Chemistry 4.8 Chemical analysis | 42 | 61 | 61 | 0 | 4 | 0 | 0 | Done |
 | AQA Chemistry 4.9 Chemistry of the atmosphere | 30 | 44 | 46 | 0 | 9 | 2 | 0 | Done |
 | AQA Chemistry 4.10 Using resources | 33 | 46 | 47 | 0 | 2 | 1 | 0 | Done |
+| AQA Physics 4.1 Energy | 30 | 63 | 63 | 0 | 4 | 0 | 0 | Done |
+| AQA Physics 4.2 Electricity | 36 | 51 | 51 | 0 | 6 | 0 | 0 | Done |
+| AQA Physics 4.3 Particle model of matter | 30 | 41 | 42 | 0 | 9 | 1 | 0 | Done |
+| AQA Physics 4.4 Atomic structure | 36 | 47 | 49 | 1 | 4 | 3 | 0 | Done |
+| AQA Physics 4.5 Forces | 75 | 98 | 102 | 0 | 6 | 4 | 0 | Done |
+| AQA Physics 4.6 Waves | 39 | 55 | 58 | 0 | 10 | 3 | 0 | Done |
+| AQA Physics 4.7 Magnetism and electromagnetism | 30 | 48 | 48 | 0 | 3 | 0 | 0 | Done |
+| AQA Physics 4.8 Space physics | 30 | 42 | 44 | 5 | 6 | 7 | 0 | Done |
 
 Topic 4.8 "Key ideas" in the AQA science specifications is a list of cross-cutting ideas examined
 through the other topics, not a topic of its own, so it has no pack (see DECISIONS.md).
 
+Totals: AQA sciences, 25 packs, 1,425 questions.
+
 ## Next
 
-AQA Physics (written; checking in progress), then Pearson Edexcel sciences, AQA and
+Pearson Edexcel sciences (specifications to fetch), AQA and
 Edexcel Maths, Geography, History (the brief's order).

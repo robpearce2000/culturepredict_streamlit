@@ -1,0 +1,333 @@
+Board: AQA
+Spec: 8463
+Topic: 4.3
+
+# 4.3.1.1 Density of materials
+
+Q: What is the SI unit of density?
+A: kg/m³
+Accept: Kilograms per metre cubed; Kilograms per cubic metre; kg/m3; kg m⁻³
+Ref: 4.3.1.1
+D: 1
+Note: g/cm³ is also a unit of density but not the SI unit.
+Id: aqa-phys-4.3-001
+
+Q: State the equation that links density, mass and volume.
+A: Density = mass ÷ volume
+Accept: ρ = m/V; Density = mass/volume; d = m/V
+Ref: 4.3.1.1
+D: 2
+Id: aqa-phys-4.3-002
+
+Q: A block has a mass of 6 kg and a volume of 0.002 m³. What is its density?
+A: 3000 kg/m³
+Accept: 3000 kilograms per metre cubed; 3 000 kg/m³
+Ref: 4.3.1.1
+D: 2
+Note: 6 ÷ 0.002 = 3000; students must recall the density equation.
+Id: aqa-phys-4.3-003
+
+Q: A liquid has a density of 800 kg/m³. What is the mass of 2 m³ of the liquid?
+A: 1600 kg
+Accept: 1600 kilograms; 1 600 kg
+Ref: 4.3.1.1
+D: 3
+Note: Rearrange to mass = density × volume.
+Id: aqa-phys-4.3-004
+
+Q: Describe how the particles are arranged in a liquid.
+A: Close together, randomly arranged
+Accept: Touching but irregular; Close together but random; Close together, no regular pattern
+Ref: 4.3.1.1
+D: 2
+Note: A solid is close together in a regular pattern; a gas is far apart and random.
+Id: aqa-phys-4.3-005
+
+Q: Explain why a substance is much less dense as a gas than as a solid.
+A: Particles much further apart in a gas
+Accept: Particles are far apart; Large spaces between particles; Fewer particles per unit volume
+Ref: 4.3.1.1
+D: 3
+Note: The mass of each particle is the same; only the spacing changes.
+Id: aqa-phys-4.3-006
+
+Q: In the density practical, what technique is used to find the volume of an irregularly shaped solid?
+A: Displacement of water
+Accept: Displacement; Water displacement; Eureka can; Displacement can
+Ref: 4.3.1.1
+RP: 5
+D: 1
+Id: aqa-phys-4.3-007
+
+Q: Name an instrument more precise than a ruler for measuring the width of a small regular block.
+A: Vernier callipers
+Accept: Micrometer; Micrometer screw gauge; Callipers; Vernier calipers; Digital callipers
+Ref: 4.3.1.1
+RP: 5
+D: 1
+Id: aqa-phys-4.3-008
+
+Q: The water in a measuring cylinder rises from 50 cm³ to 70 cm³ when a stone is lowered in. What is the stone's volume?
+A: 20 cm³
+Accept: 20 cubic centimetres; 20 ml; 20 mL
+Ref: 4.3.1.1
+RP: 5
+D: 2
+Id: aqa-phys-4.3-009
+
+Q: A stone of mass 60 g makes the water in a measuring cylinder rise by 20 cm³. What is its density in g/cm³?
+A: 3 g/cm³
+Accept: 3 grams per cubic centimetre; 3 g/cm3
+Ref: 4.3.1.1
+RP: 5
+D: 3
+Note: The volume of water displaced equals the stone's volume; 3 g/cm³ = 3000 kg/m³.
+
+# 4.3.1.2 Changes of state
+Id: aqa-phys-4.3-010
+
+Q: What is the change of state from gas to liquid called?
+A: Condensation
+Accept: Condensing
+Ref: 4.3.1.2
+D: 1
+Id: aqa-phys-4.3-011
+
+Q: What is the change of state directly from solid to gas called?
+A: Sublimation
+Accept: Subliming; Sublimating
+Ref: 4.3.1.2
+D: 1
+Id: aqa-phys-4.3-012
+
+Q: A sealed bag holds 50 g of ice. What is the mass of water in the bag after all the ice melts?
+A: 50 g
+Accept: 50 grams; 0.05 kg
+Ref: 4.3.1.2
+D: 2
+Note: Mass is conserved in a change of state.
+Id: aqa-phys-4.3-013
+
+Q: Why is melting a physical change rather than a chemical change?
+A: Original properties return when reversed
+Accept: Original properties recovered when reversed; No new substance is made; The material recovers its properties when it refreezes
+Ref: 4.3.1.2
+D: 3
+
+# 4.3.2.1 Internal energy
+Id: aqa-phys-4.3-014
+
+Q: What is the name for the total kinetic and potential energy of all the particles in a system?
+A: Internal energy
+Ref: 4.3.2.1
+D: 1
+Id: aqa-phys-4.3-015
+
+Q: Heating a system can raise its temperature. What else can heating a system cause?
+A: Change of state
+Accept: Melting; Boiling; Evaporation; State change
+Ref: 4.3.2.1
+D: 2
+Id: aqa-phys-4.3-016
+
+Q: Ice at 0 °C melts into water at 0 °C. What happens to its internal energy?
+A: Increases
+Accept: Goes up; Rises; Gets bigger
+Ref: 4.3.2.1
+D: 3
+Note: Temperature is unchanged, but the potential energy of the particles increases.
+
+# 4.3.2.2 Temperature changes in a system and specific heat capacity
+Id: aqa-phys-4.3-017
+
+Q: What is the unit of specific heat capacity?
+A: J/kg °C
+Accept: Joules per kilogram per degree Celsius; J/kg°C; J kg⁻¹ °C⁻¹
+Ref: 4.3.2.2
+D: 1
+Id: aqa-phys-4.3-018
+
+Q: Define specific heat capacity.
+A: Energy to raise 1 kg by 1 °C
+Accept: Energy to raise one kilogram by one degree Celsius
+Ref: 4.3.2.2
+D: 2
+Note: Answers must mention 1 kg and 1 °C.
+Id: aqa-phys-4.3-019
+
+Q: Use ΔE = m c Δθ. How much energy heats 2 kg of water by 10 °C? (c = 4200 J/kg °C)
+A: 84 000 J
+Accept: 84000 J; 84 kJ; 84 000 joules
+Ref: 4.3.2.2
+D: 2
+Id: aqa-phys-4.3-020
+
+Q: Use ΔE = m c Δθ. 5000 J raises the temperature of 1 kg of a metal by 10 °C. What is its specific heat capacity?
+A: 500 J/kg °C
+Accept: 500 joules per kilogram per degree Celsius; 500 J/kg°C
+Ref: 4.3.2.2
+D: 3
+Id: aqa-phys-4.3-021
+
+Q: Equal masses of water and oil get the same energy, but the water warms up less. Why?
+A: Water has a higher specific heat capacity
+Accept: Higher specific heat capacity; Water needs more energy per kg per °C
+Ref: 4.3.2.2
+D: 3
+
+# 4.3.2.3 Changes of state and specific latent heat
+Id: aqa-phys-4.3-022
+
+Q: What is the energy needed for a substance to change state called?
+A: Latent heat
+Ref: 4.3.2.3
+D: 1
+Note: Specific latent heat is the energy per kilogram, so it is not the answer here.
+Id: aqa-phys-4.3-023
+
+Q: What is the specific latent heat for a change from solid to liquid called?
+A: Specific latent heat of fusion
+Accept: Latent heat of fusion; Fusion
+Ref: 4.3.2.3
+D: 1
+Id: aqa-phys-4.3-024
+
+Q: What is the specific latent heat for a change from liquid to vapour called?
+A: Specific latent heat of vaporisation
+Accept: Latent heat of vaporisation; Vaporisation; Vaporization
+Ref: 4.3.2.3
+D: 1
+Id: aqa-phys-4.3-025
+
+Q: Define specific latent heat.
+A: Energy per kg to change state, constant temperature
+Accept: Energy to change state of 1 kg with no temperature change; Energy to change the state of one kilogram, temperature constant
+Ref: 4.3.2.3
+D: 2
+Note: Must mention 1 kg and no change in temperature.
+Id: aqa-phys-4.3-026
+
+Q: Use E = m L. How much energy melts 2 kg of ice? (L = 334 000 J/kg)
+A: 668 000 J
+Accept: 668000 J; 668 kJ; 668 000 joules
+Ref: 4.3.2.3
+D: 2
+Id: aqa-phys-4.3-027
+
+Q: Use E = m L. It takes 4 600 000 J to boil away 2 kg of water. What is the specific latent heat of vaporisation?
+A: 2 300 000 J/kg
+Accept: 2300000 J/kg; 2.3 MJ/kg; 2300 kJ/kg; 2 300 000 joules per kilogram
+Ref: 4.3.2.3
+D: 3
+Id: aqa-phys-4.3-028
+
+Q: On a heating graph of temperature against time, what does a flat horizontal section show?
+A: Change of state
+Accept: Melting; Boiling; State changing; Substance changing state
+Ref: 4.3.2.3
+D: 2
+Id: aqa-phys-4.3-029
+
+Q: Why does the temperature of melting ice stay constant even though energy is being supplied?
+A: Energy raises potential energy, not kinetic energy
+Accept: Energy breaks bonds between particles; Energy overcomes forces between particles; Energy increases potential energy of particles
+Ref: 4.3.2.3
+D: 3
+
+# 4.3.3.1 Particle motion in gases
+Id: aqa-phys-4.3-030
+
+Q: Describe the motion of the molecules in a gas.
+A: Constant random motion
+Accept: Random; Moving randomly; Moving in random directions at different speeds
+Ref: 4.3.3.1
+D: 1
+Id: aqa-phys-4.3-031
+
+Q: The temperature of a gas is related to the average value of which quantity for its molecules?
+A: Kinetic energy
+Accept: Average kinetic energy; KE
+Ref: 4.3.3.1
+D: 1
+Note: Speed alone is not enough; the spec links temperature to average kinetic energy.
+Id: aqa-phys-4.3-032
+
+Q: A gas is heated in a sealed rigid container. Explain why its pressure rises.
+A: Faster molecules hit walls harder, more often
+Accept: Faster molecules collide with the walls more often and with more force; More frequent and harder collisions with walls
+Ref: 4.3.3.1
+D: 3
+
+# 4.3.3.2 Pressure in gases
+Id: aqa-phys-4.3-033
+
+Q: In what direction does gas pressure produce a net force on the wall of its container?
+A: At right angles to the wall
+Accept: Perpendicular to the wall; Normal to the surface; At 90° to the wall
+Ref: 4.3.3.2
+D: 1
+Id: aqa-phys-4.3-034
+
+Q: For pV = constant to apply to a fixed mass of gas, which quantity must stay constant?
+A: Temperature
+Ref: 4.3.3.2
+D: 1
+Id: aqa-phys-4.3-035
+
+Q: Use pV = constant. A gas at 100 000 Pa has a volume of 2 m³. It is squeezed to 1 m³ at constant temperature. What is the new pressure?
+A: 200 000 Pa
+Accept: 200000 Pa; 200 kPa; 200 000 pascals
+Ref: 4.3.3.2
+D: 2
+Id: aqa-phys-4.3-036
+
+Q: Use pV = constant. A gas at 150 kPa fills 4 m³. At constant temperature its pressure rises to 300 kPa. What is its new volume?
+A: 2 m³
+Accept: 2 metres cubed; 2 cubic metres; 2 m3
+Ref: 4.3.3.2
+D: 3
+Id: aqa-phys-4.3-037
+
+Q: A gas expands into a bigger volume at constant temperature. Using particles, explain why its pressure falls.
+A: Particles hit the walls less often
+Accept: Fewer collisions with the walls per second; Less frequent collisions with the walls
+Ref: 4.3.3.2
+D: 3
+Note: The particles' speed is unchanged because the temperature is constant.
+
+# 4.3.3.3 Increasing the pressure of a gas (HT only)
+Id: aqa-phys-4.3-038
+
+Q: What is meant by work, in terms of energy and force?
+A: Energy transferred by a force
+Accept: Transfer of energy by a force; Energy transfer by a force
+Ref: 4.3.3.3
+HT: yes
+D: 2
+Id: aqa-phys-4.3-039
+
+Q: Pushing in a bicycle pump quickly makes the air inside warmer. What is done on the gas to cause this?
+A: Work
+Accept: Work done; Work is done on it
+Ref: 4.3.3.3
+HT: yes
+D: 2
+Id: aqa-phys-4.3-040
+
+Q: Doing work on an enclosed gas increases which store of energy of the gas?
+A: Internal energy
+Accept: Internal; Kinetic energy of the particles
+Ref: 4.3.3.3
+HT: yes
+D: 1
+Note: The rise in internal energy shows up as a rise in temperature.
+Id: aqa-phys-4.3-041
+
+Q: A bicycle pump is pushed in quickly. Explain, using particles, why the air inside gets hotter.
+A: Work done increases particles' kinetic energy
+Accept: Particles speed up as work is done on them; Work done raises internal energy, particles move faster; Particles gain kinetic energy
+Ref: 4.3.3.3
+HT: yes
+D: 3
+Note: Temperature rises because the average kinetic energy of the particles rises.
+Id: aqa-phys-4.3-042

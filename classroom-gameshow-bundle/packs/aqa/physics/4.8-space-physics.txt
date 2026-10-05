@@ -1,0 +1,326 @@
+Board: AQA
+Spec: 8463
+Topic: 4.8
+
+# 4.8.1.1 Our solar system
+
+Q: What is the name of the only star in our solar system?
+A: Sun
+Accept: The Sun
+Ref: 4.8.1.1
+D: 1
+Id: aqa-phys-4.8-001
+
+Q: How many planets orbit the Sun in our solar system?
+A: 8
+Accept: Eight
+Ref: 4.8.1.1
+D: 1
+Id: aqa-phys-4.8-002
+
+Q: What name is given to the natural satellites that orbit planets?
+A: Moons
+Accept: Moon
+Ref: 4.8.1.1
+D: 1
+Id: aqa-phys-4.8-003
+
+Q: Apart from the eight planets, what type of body in our solar system orbits the Sun and includes Pluto?
+A: Dwarf planets
+Accept: Dwarf planet
+Ref: 4.8.1.1
+D: 1
+Id: aqa-phys-4.8-004
+
+Q: Name the galaxy that our solar system is a small part of.
+A: Milky Way
+Accept: The Milky Way; Milky Way galaxy
+Ref: 4.8.1.1
+D: 1
+Id: aqa-phys-4.8-005
+
+Q: What is the name for the cloud of dust and gas that the Sun formed from?
+A: Nebula
+Accept: Nebulae
+Ref: 4.8.1.1
+D: 1
+Id: aqa-phys-4.8-006
+
+Q: As dust and gas are pulled together to form a star, why do fusion reactions start?
+A: Gravity makes the core hot and dense enough
+Accept: Temperature and pressure become high enough; Core becomes hot enough for nuclei to fuse
+Ref: 4.8.1.1
+D: 3
+Note: Gravitational collapse heats the gas; nuclei then collide fast enough to fuse.
+Id: aqa-phys-4.8-007
+
+Q: A main sequence star is stable. Which two effects are in equilibrium?
+A: Gravitational collapse and expansion from fusion energy
+Accept: Gravity inwards and fusion energy outwards; Gravity and outward pressure from fusion
+Ref: 4.8.1.1
+D: 2
+Id: aqa-phys-4.8-008
+
+Q: If the energy released by fusion in a stable star suddenly fell, what would happen to the star's size?
+A: Shrinks
+Accept: Contracts; Collapses; Gets smaller; Decreases
+Ref: 4.8.1.1
+D: 3
+Note: Gravitational collapse would no longer be balanced by expansion from fusion energy.
+
+# 4.8.1.2 The life cycle of a star
+Id: aqa-phys-4.8-009
+
+Q: What does the life cycle of a star depend on?
+A: Size of the star
+Accept: Mass of the star; Size; Mass
+Ref: 4.8.1.2
+D: 1
+Id: aqa-phys-4.8-010
+
+Q: What is the stage called when dust and gas have been pulled together but fusion has not yet started?
+A: Protostar
+Ref: 4.8.1.2
+D: 1
+Id: aqa-phys-4.8-011
+
+Q: What is the long, stable stage of a star's life called?
+A: Main sequence
+Accept: Main sequence star
+Ref: 4.8.1.2
+D: 1
+Id: aqa-phys-4.8-012
+
+Q: A star the size of the Sun leaves the main sequence. What does it become next?
+A: Red giant
+Ref: 4.8.1.2
+D: 1
+Id: aqa-phys-4.8-013
+
+Q: What does a red giant become when its outer layers are lost?
+A: White dwarf
+Ref: 4.8.1.2
+D: 1
+Id: aqa-phys-4.8-014
+
+Q: What does a white dwarf eventually become when it has cooled and no longer emits much energy?
+A: Black dwarf
+Ref: 4.8.1.2
+D: 2
+Id: aqa-phys-4.8-015
+
+Q: A star much more massive than the Sun leaves the main sequence. What does it become next?
+A: Red super giant
+Accept: Red supergiant; Supergiant
+Ref: 4.8.1.2
+D: 2
+Id: aqa-phys-4.8-016
+
+Q: Name both possible end stages of a star much more massive than the Sun after a supernova.
+A: Neutron star or black hole
+Accept: Black hole or neutron star
+Ref: 4.8.1.2
+D: 2
+Id: aqa-phys-4.8-017
+
+Q: In the life cycle of a very massive star, what event comes between the red super giant and neutron star stages?
+A: Supernova
+Accept: Supernova explosion
+Ref: 4.8.1.2
+D: 2
+Id: aqa-phys-4.8-018
+
+Q: Elements such as carbon and oxygen were made inside stars by which nuclear process?
+A: Fusion
+Accept: Nuclear fusion
+Ref: 4.8.1.2
+D: 1
+Id: aqa-phys-4.8-019
+
+Q: Elements heavier than which element are produced only in a supernova?
+A: Iron
+Accept: Fe
+Ref: 4.8.1.2
+D: 2
+Id: aqa-phys-4.8-020
+
+Q: How are elements made in a massive star spread throughout the universe?
+A: Supernova explosion distributes them
+Accept: Supernova; Star explodes as a supernova
+Ref: 4.8.1.2
+D: 2
+Id: aqa-phys-4.8-021
+
+Q: Explain how fusion in stars forms new elements.
+A: Lighter nuclei join to form heavier nuclei
+Accept: Small nuclei fuse into bigger nuclei; Nuclei fuse to make heavier elements
+Ref: 4.8.1.2
+D: 3
+Note: For example, hydrogen nuclei fuse to form helium.
+Id: aqa-phys-4.8-022
+
+Q: Iron and gold are both found on Earth. Which of the two could only have been made in a supernova?
+A: Gold
+Accept: Au
+Ref: 4.8.1.2
+D: 3
+Note: Gold is heavier than iron; elements heavier than iron form only in supernovae.
+Id: aqa-phys-4.8-023
+
+Q: Why will the Sun never become a supernova?
+A: Not massive enough
+Accept: Too small; Too little mass; Mass too small
+Ref: 4.8.1.2
+D: 3
+
+# 4.8.1.3 Orbital motion, natural and artificial satellites
+Id: aqa-phys-4.8-024
+
+Q: Which force keeps planets and satellites in their orbits?
+A: Gravity
+Accept: Gravitational force; Gravitational attraction; Gravitational pull
+Ref: 4.8.1.3
+D: 1
+Id: aqa-phys-4.8-025
+
+Q: In GCSE physics, planets and satellites are treated as moving in orbits of what shape?
+A: Circular
+Accept: Circle; Circles
+Ref: 4.8.1.3
+D: 1
+Id: aqa-phys-4.8-026
+
+Q: What name is given to a satellite made by humans and put into orbit around Earth?
+A: Artificial satellite
+Accept: Artificial
+Ref: 4.8.1.3
+D: 1
+Id: aqa-phys-4.8-027
+
+Q: State one difference between a planet and a moon.
+A: Planet orbits a star, moon orbits a planet
+Accept: Planet orbits the Sun, moon orbits a planet; Moon orbits a planet
+Ref: 4.8.1.3
+D: 2
+Id: aqa-phys-4.8-028
+
+Q: Why do planets, moons and artificial satellites move in curved paths instead of straight lines?
+A: Gravity pulls them towards the body they orbit
+Accept: Gravitational attraction to the central body; Gravity pulls them inwards
+Ref: 4.8.1.3
+D: 3
+Id: aqa-phys-4.8-029
+
+Q: In which direction does the force of gravity act on a satellite in a circular orbit?
+A: Towards the centre of the orbit
+Accept: Towards the centre; Towards the planet; Inwards
+Ref: 4.8.1.3
+D: 2
+HT: yes
+Id: aqa-phys-4.8-030
+
+Q: A satellite moves in a circular orbit at constant speed. Why is its velocity changing?
+A: Direction is constantly changing
+Accept: Direction keeps changing; Direction changes
+Ref: 4.8.1.3
+D: 3
+HT: yes
+Note: Velocity is a vector; gravity acts at right angles to the motion so speed stays the same.
+Id: aqa-phys-4.8-031
+
+Q: Why does gravity not change the speed of a satellite in a circular orbit?
+A: Force acts at right angles to motion
+Accept: Force perpendicular to velocity; Force at 90° to direction of motion
+Ref: 4.8.1.3
+D: 3
+HT: yes
+Id: aqa-phys-4.8-032
+
+Q: For a stable orbit, what must happen to a satellite's orbit radius if its speed increases?
+A: Radius decreases
+Accept: Smaller radius; Decreases; Orbit gets smaller
+Ref: 4.8.1.3
+D: 3
+HT: yes
+Note: A closer orbit needs a higher speed.
+Id: aqa-phys-4.8-033
+
+Q: For a satellite in a circular orbit, which stays constant: its speed or its velocity?
+A: Speed
+Ref: 4.8.1.3
+D: 2
+HT: yes
+Note: Velocity changes because the direction of motion changes.
+
+# 4.8.2 Red-shift
+Id: aqa-phys-4.8-034
+
+Q: Light from distant galaxies reaches us with longer wavelengths than expected. What is this effect called?
+A: Red-shift
+Accept: Redshift; Red shift
+Ref: 4.8.2
+D: 1
+Id: aqa-phys-4.8-035
+
+Q: Why is light from a galaxy that is moving away from us red-shifted?
+A: Wavelength is stretched as the galaxy recedes
+Accept: Source moving away increases the wavelength; Waves stretched out; Wavelength increases
+Ref: 4.8.2
+D: 3
+Id: aqa-phys-4.8-036
+
+Q: How does the red-shift of a galaxy depend on its distance from us?
+A: Further galaxies show bigger red-shift
+Accept: Greater distance, greater red-shift; Bigger red-shift further away
+Ref: 4.8.2
+D: 2
+Id: aqa-phys-4.8-037
+
+Q: Galaxy X shows a bigger red-shift than galaxy Y. Which galaxy is moving away from us faster?
+A: Galaxy X
+Accept: X
+Ref: 4.8.2
+D: 2
+Id: aqa-phys-4.8-038
+
+Q: Name the theory that the universe started as a tiny region that was very hot and very dense.
+A: Big Bang theory
+Accept: Big Bang; Big Bang model
+Ref: 4.8.2
+D: 1
+Id: aqa-phys-4.8-039
+
+Q: What does red-shift show is happening to space itself?
+A: Expanding
+Accept: Universe is expanding; Space is expanding; Expansion
+Ref: 4.8.2
+D: 2
+Id: aqa-phys-4.8-040
+
+Q: Explain how red-shift supports the Big Bang theory.
+A: Galaxies receding, so universe expanding from one point
+Accept: Universe expanding so was once smaller; Expansion means universe started small
+Ref: 4.8.2
+D: 3
+Id: aqa-phys-4.8-041
+
+Q: Observations of which exploding stars, since 1998, suggest distant galaxies are receding ever faster?
+A: Supernovae
+Accept: Supernova; Supernovas
+Ref: 4.8.2
+D: 2
+Id: aqa-phys-4.8-042
+
+Q: Name the two things, not yet understood, that scientists suggest make up much of the universe.
+A: Dark mass and dark energy
+Accept: Dark matter and dark energy; Dark energy and dark mass
+Ref: 4.8.2
+D: 2
+Id: aqa-phys-4.8-043
+
+Q: Scientists arrived at theories such as the Big Bang by explaining what?
+A: Observations
+Accept: Evidence; Data; Observed evidence; Red-shift observations
+Ref: 4.8.2
+D: 2
+Id: aqa-phys-4.8-044

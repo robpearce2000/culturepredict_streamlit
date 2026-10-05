@@ -15,3 +15,9 @@ None: the checkers settled all 70 of the writers' doubts across the ten packs. T
 may want to know about are recorded as teacher notes on the questions themselves: "grams per
 litre" for g/dm³ (accepted as the same size of unit but not the name asked for) and the invented
 round bond energies in the 4.5 bond-energy questions (given in the question; not data-book values).
+
+## AQA Physics (8463)
+
+None: the checkers settled all 52 of the writers' doubts across the eight packs. Teacher notes on
+the questions themselves cover the judgement calls (for example 10 m/s² is accepted for free-fall
+acceleration, with a note that the specification value is about 9.8 m/s²).

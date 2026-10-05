@@ -1,0 +1,410 @@
+Board: AQA
+Spec: 8463
+Topic: 4.2
+
+# 4.2.1.1 Standard circuit diagram symbols
+
+Q: A circuit symbol is a triangle pointing at a short bar, with no arrows. Which component is it?
+A: Diode
+Ref: 4.2.1.1
+D: 1
+Note: With two arrows pointing away it would be an LED.
+Id: aqa-phys-4.2-001
+
+Q: A circuit symbol is a resistor box inside a circle with two arrows pointing in towards it. Which component is it?
+A: Light-dependent resistor
+Accept: LDR; Light dependent resistor
+Ref: 4.2.1.1
+D: 1
+Id: aqa-phys-4.2-002
+
+Q: A circle with the letter A inside is which meter, and how is it connected to a component?
+A: Ammeter, in series
+Accept: Ammeter connected in series
+Ref: 4.2.1.1
+D: 2
+Note: Both parts needed; a voltmeter (V) goes in parallel.
+
+# 4.2.1.2 Electrical charge and current
+Id: aqa-phys-4.2-003
+
+Q: What is electric current?
+A: Rate of flow of charge
+Accept: Rate of flow of electrical charge; Charge flowing per second; Flow of charge
+Ref: 4.2.1.2
+D: 2
+Id: aqa-phys-4.2-004
+
+Q: What is the unit of electrical charge?
+A: Coulomb
+Accept: Coulombs; C
+Ref: 4.2.1.2
+D: 1
+Id: aqa-phys-4.2-005
+
+Q: A current of 3 A flows for 20 s. How much charge flows?
+A: 60 C
+Accept: 60 coulombs
+Ref: 4.2.1.2
+D: 2
+Note: Charge flow = current × time.
+Id: aqa-phys-4.2-006
+
+Q: A charge of 120 C flows past a point in 1 minute. What is the current?
+A: 2 A
+Accept: 2 amps; 2 amperes
+Ref: 4.2.1.2
+D: 3
+Note: Convert 1 minute to 60 s first; 120 ÷ 60 = 2.
+
+# 4.2.1.3 Current, resistance and potential difference
+Id: aqa-phys-4.2-007
+
+Q: What is the unit of resistance?
+A: Ohm
+Accept: Ohms; Ω
+Ref: 4.2.1.3
+D: 1
+Id: aqa-phys-4.2-008
+
+Q: A current of 2 A flows through a 6 Ω resistor. What is the potential difference across it?
+A: 12 V
+Accept: 12 volts
+Ref: 4.2.1.3
+D: 2
+Id: aqa-phys-4.2-009
+
+Q: A potential difference of 12 V across a component drives a current of 0.5 A. What is its resistance?
+A: 24 Ω
+Accept: 24 ohms
+Ref: 4.2.1.3
+D: 3
+Note: Resistance = potential difference ÷ current.
+Id: aqa-phys-4.2-010
+
+Q: In the practical investigating the resistance of a wire, which independent variable is changed?
+A: Length of the wire
+Accept: Length; Wire length
+Ref: 4.2.1.3
+RP: 3
+D: 1
+Id: aqa-phys-4.2-011
+
+Q: In the resistance of a wire practical, why is the current kept small and switched off between readings?
+A: Stop the wire heating up
+Accept: Keep the temperature constant; Stop the resistance changing with temperature
+Ref: 4.2.1.3
+RP: 3
+D: 3
+Note: A hotter wire has a higher resistance, which would spoil a fair test.
+Id: aqa-phys-4.2-012
+
+Q: In the resistance practical, a second resistor is connected in parallel with the first. What happens to the total resistance measured?
+A: Decreases
+Accept: Goes down; Gets smaller
+Ref: 4.2.1.3
+RP: 3
+D: 2
+
+# 4.2.1.4 Resistors
+Id: aqa-phys-4.2-013
+
+Q: What is a conductor called if the current through it is directly proportional to the potential difference at constant temperature?
+A: Ohmic conductor
+Accept: Ohmic resistor; Ohmic
+Ref: 4.2.1.4
+D: 1
+Id: aqa-phys-4.2-014
+
+Q: What happens to the resistance of a thermistor as its temperature increases?
+A: Decreases
+Accept: Goes down; Gets smaller
+Ref: 4.2.1.4
+D: 1
+Id: aqa-phys-4.2-015
+
+Q: A circuit switches on a street light automatically when it gets dark. Which sensing component does it use?
+A: Light-dependent resistor
+Accept: LDR; Light dependent resistor
+Ref: 4.2.1.4
+D: 2
+Note: An LDR's resistance increases as light intensity falls.
+Id: aqa-phys-4.2-016
+
+Q: In the I–V characteristics practical, what shape is the graph for a resistor at constant temperature?
+A: Straight line through the origin
+Accept: Straight line through 0; Directly proportional line
+Ref: 4.2.1.4
+RP: 4
+D: 2
+Id: aqa-phys-4.2-017
+
+Q: In the I–V practical, why does the filament lamp's graph of current against potential difference curve and get less steep?
+A: Filament heats up, so resistance increases
+Accept: Resistance increases as temperature rises; Filament gets hotter so resistance rises
+Ref: 4.2.1.4
+RP: 4
+D: 3
+Id: aqa-phys-4.2-018
+
+Q: In the I–V practical, what current flows through a diode when the potential difference is reversed?
+A: Zero current
+Accept: No current; Almost no current; 0 A
+Ref: 4.2.1.4
+RP: 4
+D: 2
+Note: The diode has a very high resistance in the reverse direction.
+Id: aqa-phys-4.2-019
+
+Q: In the I–V practical, how do you get readings for negative values of potential difference?
+A: Reverse the connections to the supply
+Accept: Swap the supply leads over; Turn the component round; Reverse the power supply
+Ref: 4.2.1.4
+RP: 4
+D: 2
+
+# 4.2.2 Series and parallel circuits
+Id: aqa-phys-4.2-020
+
+Q: In which type of circuit is the potential difference across each component the same?
+A: Parallel
+Accept: Parallel circuit
+Ref: 4.2.2
+D: 1
+Id: aqa-phys-4.2-021
+
+Q: What is the total resistance of a 4 Ω resistor and a 6 Ω resistor connected in series?
+A: 10 Ω
+Accept: 10 ohms
+Ref: 4.2.2
+D: 2
+Id: aqa-phys-4.2-022
+
+Q: Two parallel branches carry currents of 0.2 A and 0.3 A. What is the current through the cell?
+A: 0.5 A
+Accept: 0.5 amps; 0.5 amperes
+Ref: 4.2.2
+D: 2
+Id: aqa-phys-4.2-023
+
+Q: A 3 Ω and a 9 Ω resistor are in series with a 6 V supply. What is the potential difference across the 9 Ω resistor?
+A: 4.5 V
+Accept: 4.5 volts
+Ref: 4.2.2
+D: 3
+Note: Total resistance 12 Ω, so current = 0.5 A; then 0.5 × 9 = 4.5 V.
+Id: aqa-phys-4.2-024
+
+Q: Why does adding a resistor in parallel decrease the total resistance of a circuit?
+A: Extra path for the current to flow
+Accept: More paths for current; Total current increases for the same potential difference
+Ref: 4.2.2
+D: 3
+
+# 4.2.3.1 Direct and alternating potential difference
+Id: aqa-phys-4.2-025
+
+Q: What is the frequency of the UK mains electricity supply?
+A: 50 Hz
+Accept: 50 hertz
+Ref: 4.2.3.1
+D: 1
+Id: aqa-phys-4.2-026
+
+Q: What is the approximate potential difference of the UK domestic mains supply?
+A: 230 V
+Accept: 230 volts; About 230 V
+Ref: 4.2.3.1
+D: 1
+Id: aqa-phys-4.2-027
+
+Q: How does an alternating potential difference differ from a direct potential difference?
+A: Direction repeatedly reverses
+Accept: ac keeps changing direction, dc does not; Changes direction; Alternating reverses direction
+Ref: 4.2.3.1
+D: 2
+
+# 4.2.3.2 Mains electricity
+Id: aqa-phys-4.2-028
+
+Q: Which wire in a three-core mains cable has brown insulation?
+A: Live
+Accept: Live wire
+Ref: 4.2.3.2
+D: 1
+Id: aqa-phys-4.2-029
+
+Q: Which wire in a three-core cable is blue, completes the circuit and is at or close to 0 V?
+A: Neutral
+Accept: Neutral wire
+Ref: 4.2.3.2
+D: 1
+Id: aqa-phys-4.2-030
+
+Q: What is the job of the green and yellow striped earth wire?
+A: Stops the appliance casing becoming live
+Accept: Stops the appliance becoming live; Safety wire; Carries current away if there is a fault
+Ref: 4.2.3.2
+D: 2
+Note: The earth wire only carries a current if there is a fault.
+Id: aqa-phys-4.2-031
+
+Q: Why can touching the live wire on the supply side of an open mains switch still give a shock?
+A: Live wire is still at about 230 V
+Accept: Still at a high potential; Still connected to the supply; Still live
+Ref: 4.2.3.2
+D: 3
+Id: aqa-phys-4.2-032
+
+Q: Why does a person standing on the ground get an electric shock if they touch a live wire?
+A: Current flows through the body to earth
+Accept: Large potential difference between live wire and body; Body completes a path to earth
+Ref: 4.2.3.2
+D: 3
+Note: The body is at earth potential (0 V) and the live wire is at about 230 V.
+
+# 4.2.4.1 Power
+Id: aqa-phys-4.2-033
+
+Q: The power of a device equals the potential difference across it multiplied by which other quantity?
+A: Current
+Accept: Current through it; I
+Ref: 4.2.4.1
+D: 1
+Id: aqa-phys-4.2-034
+
+Q: A current of 3 A flows through a 10 Ω resistor. What is the power transferred?
+A: 90 W
+Accept: 90 watts
+Ref: 4.2.4.1
+D: 2
+Note: Power = current² × resistance = 9 × 10.
+Id: aqa-phys-4.2-035
+
+Q: A heater transfers 80 W when a current of 4 A flows through it. What is its resistance?
+A: 5 Ω
+Accept: 5 ohms
+Ref: 4.2.4.1
+D: 3
+Note: R = P ÷ I² = 80 ÷ 16.
+Id: aqa-phys-4.2-036
+
+Q: A 230 V appliance draws a current of 2 A. What is its power?
+A: 460 W
+Accept: 460 watts
+Ref: 4.2.4.1
+D: 2
+
+# 4.2.4.2 Energy transfers in everyday appliances
+Id: aqa-phys-4.2-037
+
+Q: An electric kettle is switched on. Which energy store of the water increases?
+A: Thermal
+Accept: Thermal energy store; Internal; Internal energy
+Note: Do not credit "heat energy"; the spec names the thermal store.
+Ref: 4.2.4.2
+D: 1
+Id: aqa-phys-4.2-038
+
+Q: A battery-powered toy car's motor runs. Name the energy store the energy comes from and the store it goes to.
+A: Chemical to kinetic
+Accept: Chemical store to kinetic store
+Ref: 4.2.4.2
+D: 2
+Id: aqa-phys-4.2-039
+
+Q: A charge of 5 C moves through a potential difference of 12 V. How much energy is transferred?
+A: 60 J
+Accept: 60 joules
+Ref: 4.2.4.2
+D: 2
+Note: Energy transferred = charge flow × potential difference.
+Id: aqa-phys-4.2-040
+
+Q: A 500 W microwave oven runs for 2 minutes. How much energy does it transfer?
+A: 60 000 J
+Accept: 60000 J; 60 kJ; 60 000 joules
+Ref: 4.2.4.2
+D: 3
+Note: Convert 2 minutes to 120 s; 500 × 120 = 60 000.
+
+# 4.2.4.3 The National Grid
+Id: aqa-phys-4.2-041
+
+Q: Which type of transformer increases the potential difference from a power station to the transmission cables?
+A: Step-up transformer
+Accept: Step-up; Step up transformer
+Ref: 4.2.4.3
+D: 1
+Id: aqa-phys-4.2-042
+
+Q: Why is the potential difference stepped down before electricity reaches homes?
+A: Safer for domestic use
+Accept: High potential difference is too dangerous for homes; Safety
+Ref: 4.2.4.3
+D: 2
+Id: aqa-phys-4.2-043
+
+Q: Why does transmitting electricity at a very high potential difference make the National Grid efficient?
+A: Smaller current, so less heating of cables
+Accept: Lower current so less energy lost as heat; Less current so less energy wasted in cables
+Ref: 4.2.4.3
+D: 3
+Note: For the same power, a higher potential difference means a lower current.
+
+# 4.2.5.1 Static charge
+Id: aqa-phys-4.2-044
+
+Q: Which charged particles are transferred when two insulating materials are rubbed together?
+A: Electrons
+Accept: Electron
+Ref: 4.2.5.1
+D: 1
+Note: Protons (positive charges) do not move.
+Id: aqa-phys-4.2-045
+
+Q: Two balloons are both negatively charged. What do they do when brought close together?
+A: Repel
+Accept: Push apart; Repel each other
+Ref: 4.2.5.1
+D: 1
+Id: aqa-phys-4.2-046
+
+Q: An acetate rod becomes positively charged when rubbed with a cloth. What charge does the cloth now have?
+A: Negative
+Accept: Equal negative charge; Negatively charged
+Ref: 4.2.5.1
+D: 2
+Id: aqa-phys-4.2-047
+
+Q: A polythene rod rubbed with a cloth leaves the cloth positively charged. Explain this in terms of electrons.
+A: Cloth loses electrons to the rod
+Accept: Electrons move from the cloth to the rod; Electrons rubbed off the cloth
+Ref: 4.2.5.1
+D: 3
+Note: Not "the cloth gains protons"; only electrons move.
+
+# 4.2.5.2 Electric fields
+Id: aqa-phys-4.2-048
+
+Q: What is the region around a charged object, where another charge feels a force, called?
+A: Electric field
+Accept: Electrostatic field
+Ref: 4.2.5.2
+D: 1
+Id: aqa-phys-4.2-049
+
+Q: Where is the electric field around an isolated charged sphere strongest?
+A: Close to the sphere
+Accept: Near the surface; Nearest the sphere; At the surface
+Ref: 4.2.5.2
+D: 1
+Id: aqa-phys-4.2-050
+
+Q: Why does a spark jump from a highly charged metal dome to a nearby earthed object?
+A: Strong electric field makes the air conduct
+Accept: Air is ionised; Strong field near the dome lets charge flow through the air; Charge flows through the air to earth
+Ref: 4.2.5.2
+D: 3
+Note: The field is strongest close to the dome, so sparks happen when objects are brought near.
+Id: aqa-phys-4.2-051

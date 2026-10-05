@@ -1,0 +1,481 @@
+Board: AQA
+Spec: 8463
+Topic: 4.1
+
+# 4.1.1.1 Energy stores and systems
+
+Q: In physics, what is meant by a system?
+A: An object or group of objects
+Accept: Object or objects; A group of objects
+Ref: 4.1.1.1
+D: 1
+Id: aqa-phys-4.1-001
+
+Q: Water is brought to the boil in an electric kettle. Which energy store of the water increases?
+A: Thermal
+Accept: Thermal energy store; Thermal store; Internal energy
+Ref: 4.1.1.1
+D: 1
+Id: aqa-phys-4.1-002
+
+Q: A ball is thrown straight upwards. As it rises, energy is transferred from which store to which store?
+A: Kinetic to gravitational potential
+Accept: Kinetic store to gravitational potential store; KE to GPE
+Ref: 4.1.1.1
+D: 2
+Id: aqa-phys-4.1-003
+
+Q: A car brakes to a stop. Its kinetic energy is mainly transferred to which store of the brakes?
+A: Thermal
+Accept: Thermal energy store; Thermal store; Internal energy
+Ref: 4.1.1.1
+D: 2
+Note: Some energy is also transferred to the surroundings by sound.
+Id: aqa-phys-4.1-004
+
+Q: Apart from heating and work done by forces, how else can energy be transferred to change a system?
+A: Work done by an electric current
+Accept: Work done when a current flows; Electrical work; Electric current; Electrically; By a current flowing
+Ref: 4.1.1.1
+D: 2
+Id: aqa-phys-4.1-005
+
+Q: A falling ball loses 20 J of gravitational potential energy. Ignoring air resistance, how much kinetic energy does it gain?
+A: 20 J
+Accept: 20 joules
+Ref: 4.1.1.1
+D: 2
+Id: aqa-phys-4.1-006
+
+Q: A ball is thrown upwards and caught at the same height. Ignoring air resistance, how does its catching speed compare with its launch speed?
+A: Same speed
+Accept: Equal; The same; Same
+Ref: 4.1.1.1
+D: 3
+Note: No energy is dissipated, so the kinetic energy at that height is unchanged.
+
+# 4.1.1.2 Changes in energy
+Id: aqa-phys-4.1-007
+
+Q: What is the unit of energy?
+A: Joule
+Accept: Joules; J
+Ref: 4.1.1.2
+D: 1
+Id: aqa-phys-4.1-008
+
+Q: Which energy store does a stretched spring have?
+A: Elastic potential
+Accept: Elastic potential energy; Elastic potential store; Elastic
+Ref: 4.1.1.2
+D: 1
+Id: aqa-phys-4.1-009
+
+Q: What is the unit of spring constant?
+A: Newtons per metre
+Accept: N/m; Newton per metre
+Ref: 4.1.1.2
+D: 1
+Id: aqa-phys-4.1-010
+
+Q: State the equation linking kinetic energy, mass and speed.
+A: Kinetic energy = 0.5 × mass × speed²
+Accept: Ek = ½mv²; KE = ½ × mass × speed squared
+Ref: 4.1.1.2
+D: 2
+Id: aqa-phys-4.1-011
+
+Q: State the equation linking gravitational potential energy, mass, gravitational field strength and height.
+A: GPE = mass × field strength × height
+Accept: Ep = mgh; GPE = m × g × h; GPE = mass × gravitational field strength × height
+Ref: 4.1.1.2
+D: 2
+Id: aqa-phys-4.1-012
+
+Q: Use Ek = ½mv² to find the kinetic energy of a 4 kg trolley moving at 5 m/s.
+A: 50 J
+Accept: 50 joules
+Ref: 4.1.1.2
+D: 2
+Id: aqa-phys-4.1-013
+
+Q: Use Ee = ½ke² to find the energy stored in a spring of spring constant 200 N/m stretched by 0.1 m.
+A: 1 J
+Accept: 1 joule
+Ref: 4.1.1.2
+D: 2
+Note: 0.1 squared is 0.01; a common error is to forget to square the extension.
+Id: aqa-phys-4.1-014
+
+Q: The equation Ee = ½ke² only applies if what has not been exceeded?
+A: Limit of proportionality
+Accept: The limit of proportionality
+Ref: 4.1.1.2
+D: 1
+Id: aqa-phys-4.1-015
+
+Q: What is the kinetic energy of a 2 kg mass moving at 3 m/s?
+A: 9 J
+Accept: 9 joules
+Ref: 4.1.1.2
+D: 3
+Note: Students must recall Ek = ½mv²; a common error is 0.5 × 2 × 3 = 3 J (forgetting to square).
+Id: aqa-phys-4.1-016
+
+Q: How much gravitational potential energy does a 2 kg mass gain when lifted 5 m? (g = 9.8 N/kg)
+A: 98 J
+Accept: 98 joules
+Ref: 4.1.1.2
+D: 3
+Id: aqa-phys-4.1-017
+
+Q: A car's speed doubles. By what factor does its kinetic energy increase?
+A: Four times
+Accept: 4; ×4; Quadruples
+Ref: 4.1.1.2
+D: 3
+Note: Kinetic energy depends on speed squared.
+
+# 4.1.1.3 Energy changes in systems
+Id: aqa-phys-4.1-018
+
+Q: What is the unit of specific heat capacity, written in words?
+A: Joules per kilogram per degree Celsius
+Accept: J/kg °C; Joules per kg per °C
+Ref: 4.1.1.3
+D: 1
+Id: aqa-phys-4.1-019
+
+Q: What is meant by the specific heat capacity of a substance?
+A: Energy to raise 1 kg by 1 °C
+Accept: Energy to heat one kilogram by one degree Celsius; Energy to raise 1 kg by 1 degree
+Ref: 4.1.1.3
+D: 2
+Id: aqa-phys-4.1-020
+
+Q: Use ΔE = mcΔθ to find the energy needed to heat 2 kg of water by 10 °C. (c = 4200 J/kg °C)
+A: 84 000 J
+Accept: 84000 J; 84 kJ; 84 000 joules
+Ref: 4.1.1.3
+D: 2
+Id: aqa-phys-4.1-021
+
+Q: Use ΔE = mcΔθ: 21 000 J heats 0.5 kg of water (c = 4200 J/kg °C). What is the temperature rise?
+A: 10 °C
+Accept: 10 degrees Celsius; 10 degrees
+Ref: 4.1.1.3
+D: 3
+Note: Δθ = 21 000 ÷ (0.5 × 4200) = 21 000 ÷ 2100.
+Id: aqa-phys-4.1-022
+
+Q: In the specific heat capacity practical, which meter can directly measure the energy supplied by the heater?
+A: Joulemeter
+Accept: Joule meter
+Ref: 4.1.1.3
+RP: 1
+D: 1
+Note: An ammeter, voltmeter and stopwatch can be used instead (E = VIt).
+Id: aqa-phys-4.1-023
+
+Q: Why is the metal block wrapped in insulation in the specific heat capacity practical?
+A: Reduce energy lost to the surroundings
+Accept: Reduce energy dissipated; Reduce heat loss; Less energy wasted
+Ref: 4.1.1.3
+RP: 1
+D: 2
+Id: aqa-phys-4.1-024
+
+Q: Use ΔE = mcΔθ: 9000 J raises the temperature of a 1 kg block by 10 °C. What is its specific heat capacity?
+A: 900 J/kg °C
+Accept: 900 joules per kilogram per degree Celsius; 900
+Ref: 4.1.1.3
+RP: 1
+D: 3
+Id: aqa-phys-4.1-025
+
+Q: In the specific heat capacity practical, why is the value calculated usually higher than the true value?
+A: Energy lost to the surroundings
+Accept: Some energy heats the surroundings; Not all energy heats the block; Energy dissipated
+Ref: 4.1.1.3
+RP: 1
+D: 3
+Note: The energy supplied is counted, but not all of it raises the block's temperature.
+
+# 4.1.1.4 Power
+Id: aqa-phys-4.1-026
+
+Q: What is the unit of power?
+A: Watt
+Accept: Watts; W
+Ref: 4.1.1.4
+D: 1
+Id: aqa-phys-4.1-027
+
+Q: A power of 1 watt is equal to an energy transfer of how much?
+A: One joule per second
+Accept: 1 J/s; 1 joule per second
+Ref: 4.1.1.4
+D: 1
+Id: aqa-phys-4.1-028
+
+Q: What is the definition of power?
+A: Rate of energy transfer
+Accept: Rate of doing work; Energy transferred per second; Work done per second
+Ref: 4.1.1.4
+D: 2
+Id: aqa-phys-4.1-029
+
+Q: State the equation linking power, work done and time.
+A: Power = work done ÷ time
+Accept: P = W/t; Power = work done / time
+Ref: 4.1.1.4
+D: 2
+Id: aqa-phys-4.1-030
+
+Q: A lamp transfers 600 J of energy in 20 s. What is its power?
+A: 30 W
+Accept: 30 watts; 30 J/s
+Ref: 4.1.1.4
+D: 2
+Id: aqa-phys-4.1-031
+
+Q: Two motors lift the same load through the same height. Motor A takes 5 s and motor B takes 10 s. How many times more powerful is A?
+A: Twice
+Accept: 2; Two times; Double
+Ref: 4.1.1.4
+D: 3
+Id: aqa-phys-4.1-032
+
+Q: How much energy does a 2 kW heater transfer in 10 seconds?
+A: 20 000 J
+Accept: 20000 J; 20 kJ; 20 000 joules
+Ref: 4.1.1.4
+D: 3
+Note: Convert 2 kW to 2000 W before using E = Pt.
+
+# 4.1.2.1 Energy transfers in a system
+Id: aqa-phys-4.1-033
+
+Q: What word describes energy spreading out into the surroundings in less useful ways?
+A: Dissipated
+Accept: Dissipation; Wasted
+Ref: 4.1.2.1
+D: 1
+Id: aqa-phys-4.1-034
+
+Q: What method reduces unwanted energy transfers caused by friction between moving parts?
+A: Lubrication
+Accept: Lubricating; Oiling; Using oil
+Ref: 4.1.2.1
+D: 1
+Id: aqa-phys-4.1-035
+
+Q: What does the principle of conservation of energy state?
+A: Energy cannot be created or destroyed
+Accept: Energy is neither created nor destroyed
+Ref: 4.1.2.1
+D: 2
+Id: aqa-phys-4.1-036
+
+Q: What is the net change in the total energy of a closed system?
+A: No change
+Accept: Zero; Nothing; It stays the same
+Ref: 4.1.2.1
+D: 2
+Id: aqa-phys-4.1-037
+
+Q: What happens to the rate of energy transfer by conduction through a material with a higher thermal conductivity?
+A: Higher rate
+Accept: Increases; Faster; Higher
+Ref: 4.1.2.1
+D: 2
+Id: aqa-phys-4.1-038
+
+Q: How do thicker walls with a lower thermal conductivity affect the rate of cooling of a house?
+A: Slower rate of cooling
+Accept: Slower; Decreases; Lower; Reduces it
+Ref: 4.1.2.1
+D: 3
+Id: aqa-phys-4.1-039
+
+Q: In the thermal insulation practical, what is measured at regular intervals to compare the materials?
+A: Temperature of the water
+Accept: Temperature; Water temperature
+Ref: 4.1.2.1
+RP: 2
+D: 1
+Id: aqa-phys-4.1-040
+
+Q: In the thermal insulation practical, apart from starting temperature, which property of the water must be kept the same?
+A: Volume of water
+Accept: Volume; Mass of water; Mass; Amount of water
+Ref: 4.1.2.1
+RP: 2
+D: 2
+Id: aqa-phys-4.1-041
+
+Q: In the thermal insulation practical, apart from the type of material, which property of the insulating layer could be investigated?
+A: Thickness
+Accept: Number of layers; Thickness of insulation
+Ref: 4.1.2.1
+RP: 2
+D: 2
+Id: aqa-phys-4.1-042
+
+Q: In the thermal insulation practical, the best insulator shows the smallest what over ten minutes?
+A: Temperature drop
+Accept: Temperature change; Fall in temperature; Decrease in temperature
+Ref: 4.1.2.1
+RP: 2
+D: 2
+Id: aqa-phys-4.1-043
+
+Q: In the thermal insulation practical, why is a lid placed on each beaker of hot water?
+A: Reduce energy lost from the top
+Accept: Reduce evaporation; Reduce energy lost by evaporation; Reduce convection losses; Reduce heat loss; Reduce energy lost to surroundings
+Ref: 4.1.2.1
+RP: 2
+D: 3
+
+# 4.1.2.2 Efficiency
+Id: aqa-phys-4.1-044
+
+Q: What is the unit of efficiency?
+A: No unit
+Accept: None; It has no unit; Unitless
+Ref: 4.1.2.2
+D: 1
+Note: Efficiency is a ratio, written as a decimal or a percentage.
+Id: aqa-phys-4.1-045
+
+Q: State the equation for efficiency in terms of energy.
+A: Useful energy out ÷ total energy in
+Accept: Useful energy out / total energy in; Useful output energy transfer ÷ total input energy transfer
+Ref: 4.1.2.2
+D: 2
+Id: aqa-phys-4.1-046
+
+Q: A motor takes in 100 J and transfers 40 J usefully. What is its efficiency?
+A: 0.4
+Accept: 40%; 40 percent
+Ref: 4.1.2.2
+D: 2
+Id: aqa-phys-4.1-047
+
+Q: A motor is 25% efficient and has a total power input of 200 W. What is its useful power output?
+A: 50 W
+Accept: 50 watts
+Ref: 4.1.2.2
+D: 3
+Id: aqa-phys-4.1-048
+
+Q: Why can no device have an efficiency greater than 100%?
+A: Energy cannot be created
+Accept: Energy cannot be created or destroyed; Output cannot exceed input
+Ref: 4.1.2.2
+D: 3
+Id: aqa-phys-4.1-049
+
+Q: Streamlining a car increases its efficiency by reducing which force?
+A: Air resistance
+Accept: Drag
+Ref: 4.1.2.2
+HT: yes
+D: 2
+Id: aqa-phys-4.1-050
+
+Q: How does insulating a hot water tank increase the efficiency of keeping water hot?
+A: Less energy dissipated to the surroundings
+Accept: Reduces energy lost to surroundings; Less wasted heating of surroundings; Less energy wasted
+Ref: 4.1.2.2
+HT: yes
+D: 3
+
+# 4.1.3 National and global energy resources
+Id: aqa-phys-4.1-051
+
+Q: Name the three fossil fuels.
+A: Coal, oil and gas
+Accept: Coal, oil, natural gas
+Ref: 4.1.3
+D: 1
+Id: aqa-phys-4.1-052
+
+Q: Which energy resource uses energy from hot rocks underground?
+A: Geothermal
+Accept: Geothermal energy
+Ref: 4.1.3
+D: 1
+Id: aqa-phys-4.1-053
+
+Q: Which energy resource is made from plants or animal waste?
+A: Bio-fuel
+Accept: Biofuel; Biofuels
+Ref: 4.1.3
+D: 1
+Id: aqa-phys-4.1-054
+
+Q: Which renewable energy resource uses the rise and fall of the sea level each day?
+A: Tides
+Accept: Tidal; Tidal energy
+Ref: 4.1.3
+D: 1
+Note: Do not accept waves, which are driven by the wind.
+Id: aqa-phys-4.1-055
+
+Q: What is a renewable energy resource?
+A: One that is replenished as it is used
+Accept: Replenished as it is used; Can be replaced as it is used; Will not run out
+Ref: 4.1.3
+D: 2
+Id: aqa-phys-4.1-056
+
+Q: Which non-renewable energy resource produces no carbon dioxide when used to generate electricity?
+A: Nuclear fuel
+Accept: Nuclear; Uranium; Plutonium
+Ref: 4.1.3
+D: 2
+Id: aqa-phys-4.1-057
+
+Q: Which gas released by burning fossil fuels contributes to global warming?
+A: Carbon dioxide
+Accept: CO2; CO₂
+Ref: 4.1.3
+D: 1
+Id: aqa-phys-4.1-058
+
+Q: Which gas released by burning coal causes acid rain?
+A: Sulfur dioxide
+Accept: SO2; SO₂; Sulphur dioxide
+Ref: 4.1.3
+D: 2
+Id: aqa-phys-4.1-059
+
+Q: Apart from generating electricity, what is solar energy used for directly in homes?
+A: Heating water
+Accept: Heating; Water heating; Solar water heating
+Ref: 4.1.3
+D: 2
+Id: aqa-phys-4.1-060
+
+Q: Why is wind a less reliable energy resource than gas?
+A: Wind speed varies
+Accept: Not always windy; Wind is unpredictable; No wind on calm days
+Ref: 4.1.3
+D: 3
+Id: aqa-phys-4.1-061
+
+Q: Give the main environmental reason the UK has greatly reduced its use of coal for generating electricity.
+A: Reduce carbon dioxide emissions
+Accept: Reduce CO2 emissions; Reduce global warming; Climate change; Reduce sulfur dioxide emissions; Reduce acid rain
+Ref: 4.1.3
+D: 3
+Id: aqa-phys-4.1-062
+
+Q: Science can identify environmental problems from energy resources. Give one type of reason why it cannot always solve them.
+A: Economic
+Accept: Cost; Political; Social; Ethical; Money
+Ref: 4.1.3
+D: 3
+Note: The specification lists political, social, ethical and economic reasons; accept any one.
+Id: aqa-phys-4.1-063

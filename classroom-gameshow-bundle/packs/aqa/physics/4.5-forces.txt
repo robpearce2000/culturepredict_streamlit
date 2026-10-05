@@ -1,0 +1,808 @@
+Board: AQA
+Spec: 8463
+Topic: 4.5
+
+# 4.5.1.1 Scalar and vector quantities
+
+Q: What type of quantity has magnitude only?
+A: Scalar
+Accept: Scalar quantity; Scalars
+Ref: 4.5.1.1
+D: 1
+Id: aqa-phys-4.5-001
+
+Q: What does a vector quantity have that a scalar quantity does not?
+A: Direction
+Accept: A direction
+Ref: 4.5.1.1
+D: 1
+Id: aqa-phys-4.5-002
+
+Q: A vector is drawn as an arrow. What does the length of the arrow represent?
+A: Magnitude
+Accept: Size; Size of the quantity
+Ref: 4.5.1.1
+D: 2
+
+# 4.5.1.2 Contact and non-contact forces
+Id: aqa-phys-4.5-003
+
+Q: What type of force acts between two objects that are physically separated?
+A: Non-contact force
+Accept: Non-contact
+Ref: 4.5.1.2
+D: 1
+Id: aqa-phys-4.5-004
+
+Q: Name the contact force that a table exerts upwards on a book resting on it.
+A: Normal contact force
+Accept: Normal force; Normal reaction; Reaction force; Contact force
+Ref: 4.5.1.2
+D: 2
+Id: aqa-phys-4.5-005
+
+Q: A magnet attracts a steel paperclip. In which direction does the paperclip's force on the magnet act?
+A: Towards the paperclip
+Accept: Towards the clip; Opposite to the magnet's pull on the clip
+Ref: 4.5.1.2
+D: 2
+Note: Interacting objects each feel a force; the pair are equal in size and opposite in direction.
+Id: aqa-phys-4.5-006
+
+Q: Name the non-contact force between two electrically charged objects.
+A: Electrostatic force
+Accept: Electrostatic; Electrostatic attraction; Electrostatic repulsion
+Ref: 4.5.1.2
+D: 1
+
+# 4.5.1.3 Gravity
+Id: aqa-phys-4.5-007
+
+Q: What is the force acting on an object due to gravity called?
+A: Weight
+Ref: 4.5.1.3
+D: 1
+Id: aqa-phys-4.5-008
+
+Q: What is the weight of a 5 kg mass where g = 9.8 N/kg?
+A: 49 N
+Accept: 49 newtons
+Ref: 4.5.1.3
+D: 2
+Id: aqa-phys-4.5-009
+
+Q: Why does an astronaut weigh less on the Moon than on Earth, although their mass is unchanged?
+A: Lower gravitational field strength on the Moon
+Accept: Weaker gravitational field; Smaller g; Weaker gravity
+Ref: 4.5.1.3
+D: 3
+Id: aqa-phys-4.5-010
+
+Q: Name the calibrated instrument used to measure the weight of an object.
+A: Newtonmeter
+Accept: Newton meter; Spring balance; Force meter
+Ref: 4.5.1.3
+D: 1
+
+# 4.5.1.4 Resultant forces
+Id: aqa-phys-4.5-011
+
+Q: What is the single force that has the same effect as all the forces acting on an object together?
+A: Resultant force
+Accept: Resultant; Net force
+Ref: 4.5.1.4
+D: 1
+Id: aqa-phys-4.5-012
+
+Q: A box is pulled with 30 N to the right and 12 N to the left. What is the resultant force?
+A: 18 N to the right
+Accept: 18 N; 18 newtons right
+Ref: 4.5.1.4
+D: 2
+Id: aqa-phys-4.5-013
+
+Q: What is the resultant force on an object in equilibrium shown on a free body diagram?
+A: Zero
+Accept: 0 N; Nothing; Zero newtons
+Ref: 4.5.1.4
+HT: yes
+D: 2
+Id: aqa-phys-4.5-014
+
+Q: A single force can be resolved into two components acting at what angle to each other?
+A: Right angles
+Accept: 90°; 90 degrees; Perpendicular
+Ref: 4.5.1.4
+HT: yes
+D: 1
+
+# 4.5.2 Work done and energy transfer
+Id: aqa-phys-4.5-015
+
+Q: What is the unit of work done?
+A: Joule
+Accept: J; Joules
+Ref: 4.5.2
+D: 1
+Id: aqa-phys-4.5-016
+
+Q: One joule is equal to one of which other unit?
+A: Newton-metre
+Accept: Nm; Newton metre; N m
+Ref: 4.5.2
+D: 1
+Id: aqa-phys-4.5-017
+
+Q: A force of 20 N pushes a box 3 m along the floor. How much work is done?
+A: 60 J
+Accept: 60 joules; 60 Nm
+Ref: 4.5.2
+D: 2
+Id: aqa-phys-4.5-018
+
+Q: A force of 50 N does 200 J of work moving a crate. How far does the crate move?
+A: 4 m
+Accept: 4 metres
+Ref: 4.5.2
+D: 3
+Note: Distance = work done ÷ force.
+
+# 4.5.3 Forces and elasticity
+Id: aqa-phys-4.5-019
+
+Q: What name is given to a change of shape where the object returns to its original shape when the forces are removed?
+A: Elastic deformation
+Accept: Elastic
+Ref: 4.5.3
+D: 1
+Id: aqa-phys-4.5-020
+
+Q: What name is given to a change of shape where the object does not return to its original shape when the forces are removed?
+A: Inelastic deformation
+Accept: Inelastic; Plastic deformation
+Ref: 4.5.3
+D: 1
+Id: aqa-phys-4.5-021
+
+Q: The extension of a spring is directly proportional to the force applied, provided what is not exceeded?
+A: Limit of proportionality
+Accept: The limit of proportionality
+Ref: 4.5.3
+D: 2
+Id: aqa-phys-4.5-022
+
+Q: A force of 2 N stretches a spring by 0.1 m. What is the spring constant?
+A: 20 N/m
+Accept: 20 newtons per metre
+Ref: 4.5.3
+D: 3
+Note: Spring constant = force ÷ extension.
+Id: aqa-phys-4.5-023
+
+Q: Use Ee = 0.5 × k × e². A spring with k = 100 N/m is stretched by 0.2 m. How much elastic potential energy is stored?
+A: 2 J
+Accept: 2 joules
+Ref: 4.5.3
+D: 3
+Note: 0.2² = 0.04; 0.5 × 100 × 0.04 = 2.
+Id: aqa-phys-4.5-024
+
+Q: In the spring practical, how is the extension worked out from the ruler readings?
+A: Subtract original length from new length
+Accept: New length minus original length; Stretched length minus unstretched length
+Ref: 4.5.3
+RP: 6
+D: 2
+Id: aqa-phys-4.5-025
+
+Q: Give one safety precaution for the spring practical in case the spring snaps.
+A: Wear eye protection
+Accept: Wear safety goggles; Wear safety glasses; Goggles; Keep feet clear of masses
+Ref: 4.5.3
+RP: 6
+D: 1
+Id: aqa-phys-4.5-026
+
+Q: In the spring practical, force (y-axis) is plotted against extension (x-axis). What does the gradient of the straight section give?
+A: Spring constant
+Accept: k; The spring constant
+Ref: 4.5.3
+RP: 6
+D: 3
+
+# 4.5.4 Moments, levers and gears
+Id: aqa-phys-4.5-027
+
+Q: What is the turning effect of a force called?
+A: Moment
+Accept: Moment of a force; Torque
+Ref: 4.5.4
+D: 1
+Id: aqa-phys-4.5-028
+
+Q: A force of 10 N acts 0.5 m from a pivot, at right angles. What is the moment?
+A: 5 Nm
+Accept: 5 newton-metres; 5 N m
+Ref: 4.5.4
+D: 2
+Id: aqa-phys-4.5-029
+
+Q: When an object is balanced, the total clockwise moment about a pivot equals what?
+A: Total anticlockwise moment
+Accept: Anticlockwise moment; The anticlockwise moments
+Ref: 4.5.4
+D: 2
+Id: aqa-phys-4.5-030
+
+Q: A 300 N child sits 2 m from the pivot of a see-saw. How far from the pivot must a 400 N child sit to balance it?
+A: 1.5 m
+Accept: 1.5 metres; 150 cm
+Ref: 4.5.4
+D: 3
+Note: 300 × 2 = 600 Nm; 600 ÷ 400 = 1.5 m.
+Id: aqa-phys-4.5-031
+
+Q: A small gear drives a larger gear. How does the moment on the larger gear compare with the moment on the small gear?
+A: Larger
+Accept: Bigger; Greater; Increased
+Ref: 4.5.4
+D: 3
+Note: The larger gear turns more slowly but with a bigger moment.
+
+# 4.5.5.1.1 Pressure in a fluid 1
+Id: aqa-phys-4.5-032
+
+Q: What is the unit of pressure?
+A: Pascal
+Accept: Pa; Pascals; N/m²; Newtons per metre squared
+Ref: 4.5.5.1.1
+D: 1
+Id: aqa-phys-4.5-033
+
+Q: At what angle to a surface does the force caused by pressure in a fluid act?
+A: Right angles
+Accept: 90°; 90 degrees; Normal; Perpendicular
+Ref: 4.5.5.1.1
+D: 2
+Id: aqa-phys-4.5-034
+
+Q: A force of 600 N acts on an area of 2 m². What is the pressure?
+A: 300 Pa
+Accept: 300 pascals; 300 N/m²
+Ref: 4.5.5.1.1
+D: 2
+Id: aqa-phys-4.5-035
+
+Q: A pressure of 50 Pa acts on a surface of area 4 m². What force acts on the surface?
+A: 200 N
+Accept: 200 newtons
+Ref: 4.5.5.1.1
+D: 3
+Note: Force = pressure × area.
+
+# 4.5.5.1.2 Pressure in a fluid 2 (HT only)
+Id: aqa-phys-4.5-036
+
+Q: Use p = hρg. What is the pressure due to a 2 m column of water? (density 1000 kg/m³, g = 10 N/kg)
+A: 20 000 Pa
+Accept: 20000 Pa; 20 kPa; 20 000 pascals
+Ref: 4.5.5.1.2
+HT: yes
+D: 2
+Id: aqa-phys-4.5-037
+
+Q: Name the resultant upward force on an object submerged in a liquid.
+A: Upthrust
+Accept: Buoyancy force; Buoyant force
+Ref: 4.5.5.1.2
+HT: yes
+D: 1
+Id: aqa-phys-4.5-038
+
+Q: Why does the pressure in a liquid increase with depth?
+A: Greater weight of liquid above
+Accept: More liquid above; Taller column of liquid above
+Ref: 4.5.5.1.2
+HT: yes
+D: 3
+
+# 4.5.5.2 Atmospheric pressure
+Id: aqa-phys-4.5-039
+
+Q: How does atmospheric pressure change as height above sea level increases?
+A: Decreases
+Accept: Falls; Gets lower; Goes down
+Ref: 4.5.5.2
+D: 1
+Id: aqa-phys-4.5-040
+
+Q: What causes atmospheric pressure on a surface?
+A: Air molecules colliding with it
+Accept: Air particles hitting the surface; Collisions of air molecules
+Ref: 4.5.5.2
+D: 2
+Id: aqa-phys-4.5-041
+
+Q: Explain why atmospheric pressure is lower at the top of a mountain than at its foot.
+A: Fewer air molecules above
+Accept: Less air above; Smaller weight of air above; Less dense air
+Ref: 4.5.5.2
+D: 3
+
+# 4.5.6.1.1 Distance and displacement
+Id: aqa-phys-4.5-042
+
+Q: What type of quantity is displacement: scalar or vector?
+A: Vector
+Ref: 4.5.6.1.1
+D: 1
+Id: aqa-phys-4.5-043
+
+Q: A person walks 40 m east and then 10 m west. What is their displacement?
+A: 30 m east
+Accept: 30 m to the east; 30 metres east
+Ref: 4.5.6.1.1
+D: 2
+Note: A displacement needs a direction; "30 m" alone is incomplete.
+Id: aqa-phys-4.5-044
+
+Q: A runner completes exactly one lap of a 400 m track. What is the runner's displacement?
+A: Zero
+Accept: 0 m; 0; Zero metres
+Ref: 4.5.6.1.1
+D: 3
+Note: The distance is 400 m but the runner ends where they started.
+
+# 4.5.6.1.2 Speed
+Id: aqa-phys-4.5-045
+
+Q: What is a typical walking speed for a person?
+A: 1.5 m/s
+Accept: 1.5 metres per second; About 1.5 m/s
+Ref: 4.5.6.1.2
+D: 1
+Id: aqa-phys-4.5-046
+
+Q: What is a typical value for the speed of sound in air?
+A: 330 m/s
+Accept: 330 metres per second; About 330 m/s
+Ref: 4.5.6.1.2
+D: 1
+Id: aqa-phys-4.5-047
+
+Q: A car travels 3 km in 2 minutes. What is its average speed in m/s?
+A: 25 m/s
+Accept: 25 metres per second
+Ref: 4.5.6.1.2
+D: 3
+Note: 3000 m ÷ 120 s.
+
+# 4.5.6.1.3 Velocity
+Id: aqa-phys-4.5-048
+
+Q: What name is given to speed in a given direction?
+A: Velocity
+Ref: 4.5.6.1.3
+D: 1
+Id: aqa-phys-4.5-049
+
+Q: Two cars travel at 20 m/s, one going north and one going south. Name the quantity that is the same for both.
+A: Speed
+Accept: Their speed
+Ref: 4.5.6.1.3
+D: 2
+Note: Their velocities are different because their directions differ.
+Id: aqa-phys-4.5-050
+
+Q: Why is an object moving in a circle at constant speed said to be accelerating?
+A: Direction changes, so velocity changes
+Accept: Velocity is changing; Changing direction; Changing velocity
+Ref: 4.5.6.1.3
+HT: yes
+D: 3
+
+# 4.5.6.1.4 The distance–time relationship
+Id: aqa-phys-4.5-051
+
+Q: What does the gradient of a distance–time graph represent?
+A: Speed
+Accept: Velocity
+Ref: 4.5.6.1.4
+D: 1
+Id: aqa-phys-4.5-052
+
+Q: What does a horizontal line on a distance–time graph show?
+A: Stationary
+Accept: At rest; Not moving; Stopped; Speed is zero
+Ref: 4.5.6.1.4
+D: 2
+Id: aqa-phys-4.5-053
+
+Q: A straight line on a distance–time graph goes from 0 m at 0 s to 100 m at 20 s. What is the speed?
+A: 5 m/s
+Accept: 5 metres per second
+Ref: 4.5.6.1.4
+D: 2
+Id: aqa-phys-4.5-054
+
+Q: How is the speed found at one instant from the curved distance–time graph of an accelerating object?
+A: Gradient of a tangent at that time
+Accept: Draw a tangent and find its gradient; Tangent gradient
+Ref: 4.5.6.1.4
+HT: yes
+D: 2
+
+# 4.5.6.1.5 Acceleration
+Id: aqa-phys-4.5-055
+
+Q: What is the acceleration of an object falling freely under gravity near the Earth's surface?
+A: 9.8 m/s²
+Accept: About 9.8 m/s²; 9.8 metres per second squared; About 10 m/s²
+Ref: 4.5.6.1.5
+D: 1
+Note: The specification value is about 9.8 m/s²; accept 10 m/s² as a rounded value.
+Id: aqa-phys-4.5-056
+
+Q: What does the gradient of a velocity–time graph represent?
+A: Acceleration
+Ref: 4.5.6.1.5
+D: 1
+Id: aqa-phys-4.5-057
+
+Q: What is the constant velocity reached by a falling object when the resultant force on it is zero?
+A: Terminal velocity
+Ref: 4.5.6.1.5
+D: 1
+Id: aqa-phys-4.5-058
+
+Q: A car speeds up from 0 to 20 m/s in 5 s. What is its acceleration?
+A: 4 m/s²
+Accept: 4 metres per second squared
+Ref: 4.5.6.1.5
+D: 2
+Id: aqa-phys-4.5-059
+
+Q: Why does the acceleration of a falling skydiver decrease as the skydiver speeds up?
+A: Air resistance increases with speed
+Accept: Drag increases; Air resistance gets bigger; Resultant force decreases
+Ref: 4.5.6.1.5
+D: 3
+Id: aqa-phys-4.5-060
+
+Q: Use v² − u² = 2as. A car starts from rest and accelerates at 2 m/s² over 25 m. What is its final velocity?
+A: 10 m/s
+Accept: 10 metres per second
+Ref: 4.5.6.1.5
+D: 3
+Note: v² = 2 × 2 × 25 = 100.
+Id: aqa-phys-4.5-061
+
+Q: What does the area under a velocity–time graph represent?
+A: Distance travelled
+Accept: Distance; Displacement
+Ref: 4.5.6.1.5
+HT: yes
+D: 1
+
+# 4.5.6.2.1 Newton's First Law
+Id: aqa-phys-4.5-062
+
+Q: What is the resultant force on an object moving at a constant velocity?
+A: Zero
+Accept: 0 N; Zero newtons
+Ref: 4.5.6.2.1
+D: 1
+Id: aqa-phys-4.5-063
+
+Q: A car travels at a steady speed on a straight road. How does the driving force compare with the resistive forces?
+A: Equal
+Accept: Balanced; The same; Equal and opposite
+Ref: 4.5.6.2.1
+D: 2
+Id: aqa-phys-4.5-064
+
+Q: What is the tendency of an object to stay at rest or keep moving with uniform velocity called?
+A: Inertia
+Ref: 4.5.6.2.1
+HT: yes
+D: 1
+
+# 4.5.6.2.2 Newton's Second Law
+Id: aqa-phys-4.5-065
+
+Q: A resultant force acts on a 1000 kg car, giving it an acceleration of 2 m/s². What is the resultant force?
+A: 2000 N
+Accept: 2000 newtons; 2 kN
+Ref: 4.5.6.2.2
+D: 2
+Id: aqa-phys-4.5-066
+
+Q: The acceleration of an object is inversely proportional to which quantity?
+A: Mass
+Accept: Its mass; Mass of the object
+Ref: 4.5.6.2.2
+D: 2
+Id: aqa-phys-4.5-067
+
+Q: A resultant force of 12 N acts on a 3 kg mass. What is its acceleration?
+A: 4 m/s²
+Accept: 4 metres per second squared
+Ref: 4.5.6.2.2
+D: 3
+Note: Acceleration = force ÷ mass.
+Id: aqa-phys-4.5-068
+
+Q: What is inertial mass a measure of?
+A: How difficult it is to change velocity
+Accept: How hard it is to change its velocity; Resistance to change in velocity
+Ref: 4.5.6.2.2
+HT: yes
+D: 2
+Id: aqa-phys-4.5-069
+
+Q: Name one piece of equipment used to measure the acceleration of the trolley in the force and acceleration practical.
+A: Light gate
+Accept: Light gates; Ticker timer; Data logger
+Ref: 4.5.6.2.2
+RP: 7
+D: 1
+Id: aqa-phys-4.5-070
+
+Q: In the force and acceleration practical, acceleration against force is a straight line through the origin. What does this show?
+A: Acceleration is directly proportional to force
+Accept: Directly proportional; a ∝ F
+Ref: 4.5.6.2.2
+RP: 7
+D: 2
+Id: aqa-phys-4.5-071
+
+Q: In the force and acceleration practical, where are masses taken from to increase the accelerating force without changing total mass?
+A: The trolley
+Accept: Trolley; From the trolley onto the hanger
+Ref: 4.5.6.2.2
+RP: 7
+D: 3
+Note: Moving masses keeps the total accelerated mass constant.
+Id: aqa-phys-4.5-072
+
+Q: In the force and acceleration practical, why may the runway be tilted slightly?
+A: Compensate for friction
+Accept: Cancel out friction; To balance friction; Reduce effect of friction
+Ref: 4.5.6.2.2
+RP: 7
+D: 3
+Id: aqa-phys-4.5-073
+
+Q: In the force and acceleration practical, the force stays constant while the trolley's mass is increased. What happens to the acceleration?
+A: Decreases
+Accept: Goes down; Gets smaller; Falls
+Ref: 4.5.6.2.2
+RP: 7
+D: 2
+
+# 4.5.6.2.3 Newton's Third Law
+Id: aqa-phys-4.5-074
+
+Q: Which of Newton's laws says that when two objects interact, the forces they exert on each other are equal and opposite?
+A: Third law
+Accept: Newton's third law; 3rd law
+Ref: 4.5.6.2.3
+D: 1
+Id: aqa-phys-4.5-075
+
+Q: You push on a wall with a force of 50 N. What force does the wall exert on you?
+A: 50 N
+Accept: 50 newtons; 50 N away from the wall
+Ref: 4.5.6.2.3
+D: 2
+Id: aqa-phys-4.5-076
+
+Q: The Earth pulls a book downwards with its weight. What is the Newton's Third Law partner of this force?
+A: Book pulling Earth upwards
+Accept: Book's gravitational pull on Earth; Gravitational force of book on Earth
+Ref: 4.5.6.2.3
+D: 3
+Note: Not the table's normal contact force: third law pairs are the same type of force on different objects.
+
+# 4.5.6.3.1 Stopping distance
+Id: aqa-phys-4.5-077
+
+Q: Stopping distance is the sum of which two distances?
+A: Thinking distance and braking distance
+Accept: Thinking and braking distance; Braking distance and thinking distance
+Ref: 4.5.6.3.1
+D: 1
+Id: aqa-phys-4.5-078
+
+Q: What is the distance a vehicle travels during the driver's reaction time called?
+A: Thinking distance
+Ref: 4.5.6.3.1
+D: 1
+Id: aqa-phys-4.5-079
+
+Q: A car's thinking distance is 12 m and its braking distance is 24 m. What is its stopping distance?
+A: 36 m
+Accept: 36 metres
+Ref: 4.5.6.3.1
+D: 2
+Id: aqa-phys-4.5-080
+
+Q: For a given braking force, how does stopping distance change as the speed of a vehicle increases?
+A: Increases
+Accept: Gets longer; Gets bigger
+Ref: 4.5.6.3.1
+D: 2
+
+# 4.5.6.3.2 Reaction time
+Id: aqa-phys-4.5-081
+
+Q: What is the typical range of human reaction times?
+A: 0.2 s to 0.9 s
+Accept: 0.2–0.9 s; 0.2 to 0.9 seconds
+Ref: 4.5.6.3.2
+D: 1
+Id: aqa-phys-4.5-082
+
+Q: Apart from distractions, give one factor that can make a driver's reaction time longer.
+A: Any one of: tiredness, alcohol, drugs
+Accept: Tiredness; Alcohol; Drugs; Fatigue
+Ref: 4.5.6.3.2
+D: 1
+Id: aqa-phys-4.5-083
+
+Q: In the ruler-drop test, a student's ruler falls further before being caught. What does this show about their reaction time?
+A: Slower reaction time
+Accept: Longer reaction time; Longer; Slower
+Ref: 4.5.6.3.2
+D: 2
+Id: aqa-phys-4.5-084
+
+Q: A driver with a reaction time of 0.7 s is travelling at 20 m/s. What is the thinking distance?
+A: 14 m
+Accept: 14 metres
+Ref: 4.5.6.3.2
+D: 3
+Note: Distance = speed × reaction time.
+
+# 4.5.6.3.3 Factors affecting braking distance 1
+Id: aqa-phys-4.5-085
+
+Q: Apart from wet roads, name one adverse road condition that increases a car's braking distance.
+A: Ice
+Accept: Icy road; Icy; Black ice; Snow
+Ref: 4.5.6.3.3
+D: 1
+Note: The specification's adverse road conditions are wet or icy roads.
+Id: aqa-phys-4.5-086
+
+Q: Poor condition of which two parts of a vehicle can increase its braking distance?
+A: Brakes and tyres
+Accept: Tyres and brakes
+Ref: 4.5.6.3.3
+D: 2
+Id: aqa-phys-4.5-087
+
+Q: Why does a wet road increase a car's braking distance?
+A: Less friction between tyres and road
+Accept: Less grip; Reduced friction
+Ref: 4.5.6.3.3
+D: 3
+Id: aqa-phys-4.5-088
+
+Q: Braking distance is proportional to speed squared. By what factor does braking distance increase when speed doubles?
+A: 4
+Accept: Four; × 4; Four times
+Ref: 4.5.6.3.3
+D: 3
+
+# 4.5.6.3.4 Factors affecting braking distance 2
+Id: aqa-phys-4.5-089
+
+Q: When a driver brakes, work done by which force reduces the kinetic energy of the vehicle?
+A: Friction
+Accept: Friction force; Friction between brakes and wheel; Frictional force
+Ref: 4.5.6.3.4
+D: 1
+Id: aqa-phys-4.5-090
+
+Q: What happens to the temperature of a car's brakes when the car brakes?
+A: Increases
+Accept: Rises; Gets hotter; Goes up
+Ref: 4.5.6.3.4
+D: 2
+Id: aqa-phys-4.5-091
+
+Q: Apart from brakes overheating, name one danger of a very large braking deceleration of a car.
+A: Loss of control
+Accept: Losing control of the car; Skidding; Injury to passengers
+Ref: 4.5.6.3.4
+D: 2
+Id: aqa-phys-4.5-092
+
+Q: A 1000 kg car decelerates at 5 m/s² in an emergency stop. What is the braking force?
+A: 5000 N
+Accept: 5000 newtons; 5 kN
+Ref: 4.5.6.3.4
+HT: yes
+D: 2
+
+# 4.5.7.1 Momentum is a property of moving objects
+Id: aqa-phys-4.5-093
+
+Q: What is the unit of momentum?
+A: kg m/s
+Accept: Kilogram metres per second; kgm/s; kg m s⁻¹
+Ref: 4.5.7.1
+HT: yes
+D: 1
+Id: aqa-phys-4.5-094
+
+Q: What is the momentum of a 2 kg trolley moving at 3 m/s?
+A: 6 kg m/s
+Accept: 6 kilogram metres per second; 6 kgm/s
+Ref: 4.5.7.1
+HT: yes
+D: 2
+Id: aqa-phys-4.5-095
+
+Q: A 50 kg runner has a momentum of 300 kg m/s. What is the runner's velocity?
+A: 6 m/s
+Accept: 6 metres per second
+Ref: 4.5.7.1
+HT: yes
+D: 3
+Note: Velocity = momentum ÷ mass.
+
+# 4.5.7.2 Conservation of momentum
+Id: aqa-phys-4.5-096
+
+Q: In a closed system, total momentum before an event equals total momentum after. What is this called?
+A: Conservation of momentum
+Accept: Law of conservation of momentum; Principle of conservation of momentum
+Ref: 4.5.7.2
+HT: yes
+D: 2
+Id: aqa-phys-4.5-097
+
+Q: A stationary firework explodes into pieces. What is the total momentum of the pieces just after the explosion?
+A: Zero
+Accept: 0; 0 kg m/s
+Ref: 4.5.7.2
+HT: yes
+D: 3
+Note: Pieces move in opposite directions, so their momenta cancel.
+Id: aqa-phys-4.5-098
+
+Q: A 2 kg trolley at 3 m/s hits a stationary 1 kg trolley and they stick together. What is their velocity afterwards?
+A: 2 m/s
+Accept: 2 metres per second
+Ref: 4.5.7.2
+HT: yes
+D: 3
+Note: Momentum 6 kg m/s shared by a total mass of 3 kg.
+
+# 4.5.7.3 Changes in momentum
+Id: aqa-phys-4.5-099
+
+Q: Force is equal to the rate of change of which quantity?
+A: Momentum
+Ref: 4.5.7.3
+HT: yes
+D: 2
+Id: aqa-phys-4.5-100
+
+Q: Use F = mΔv ÷ Δt. A 0.5 kg ball's velocity changes by 10 m/s in 0.1 s. What is the force on it?
+A: 50 N
+Accept: 50 newtons
+Ref: 4.5.7.3
+HT: yes
+D: 3
+Id: aqa-phys-4.5-101
+
+Q: How does an air bag reduce the force on a passenger in a crash?
+A: Increases the time taken to stop
+Accept: Increases collision time; Reduces rate of change of momentum; Longer time to change momentum
+Ref: 4.5.7.3
+HT: yes
+D: 3
+Id: aqa-phys-4.5-102
