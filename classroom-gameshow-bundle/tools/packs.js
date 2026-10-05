@@ -119,28 +119,35 @@ function buildPack(p) {
   const subject = SUBJECT_IDS[spec.subject];
   const numbering = new RegExp(spec.numbering);
   const htRefs = Object.keys(spec.refs).filter(r => /\(HT only\)/.test(spec.refs[r]));
-  const isHtOnly = ref => htRefs.some(h => ref === h || ref.startsWith(h + '.'));
+  // Higher tier only: a heading marked "(HT only)", or a point the registry lists in htRefs
+  // (Edexcel marks Higher-only statements in bold rather than with a heading)
+  const isHtOnly = ref => htRefs.some(h => ref === h || ref.startsWith(h + '.')) || (spec.htRefs || []).includes(ref);
+  // Specifications whose point numbers do not nest under their headings (AQA Maths N1, Edexcel 2.10B,
+  // History and Geography content) give each point's subtopic in "parents"
+  const parentOf = ref => spec.parents ? spec.parents[ref] : null;
+  const inTopic = ref => spec.parents ? topic.subtopics.some(t => t.ref === parentOf(ref)) : (ref + '.').startsWith(topic.ref + '.');
   const subRef = ref => { const parts = ref.split('.'); const depth = spec.subtopicDepth || 3; return parts.slice(0, depth).join('.'); };
   const topicName = displayName(topic.title);
   const questions = p.questions.map(q => {
     ['a', 'ref', 'd'].forEach(k => { if (!q[k]) err(q, `missing ${k === 'd' ? 'D' : k[0].toUpperCase() + k.slice(1)}: for "${q.q.slice(0, 50)}"`); });
     const out = { id: q.id || '', board, subject, specCode: spec.specCode, specRef: q.ref || '', topic: topicName, subtopic: '', tier: yes(q.ht) ? 'Higher' : 'Foundation and Higher', difficulty: +q.d, q: q.q, a: q.a || '', accept: q.accept ? q.accept.split(';').map(s => s.trim()).filter(Boolean) : [], hexOk: false, notes: q.note || '', line: q.line };
-    if (q.rp) out.rp = +q.rp;
+    if (q.rp) out.rp = /^\d+$/.test(q.rp) ? +q.rp : q.rp;   // AQA numbers its practicals; Edexcel names them by specification point
     if (yes(q.calc)) out.calc = true;
     if (q.ref) {
       if (!numbering.test(q.ref)) err(q, `Ref ${q.ref} does not match the ${spec.specCode} numbering`);
       else if (!spec.refs[q.ref]) err(q, `Ref ${q.ref} is not a point in the ${spec.specCode} specification`);
-      else if (!(q.ref + '.').startsWith(topic.ref + '.')) err(q, `Ref ${q.ref} is outside topic ${topic.ref}`);
+      else if (!inTopic(q.ref)) err(q, `Ref ${q.ref} is outside topic ${topic.ref}`);
       else {
-        const s = topic.subtopics.find(t => t.ref === subRef(q.ref)) || topic.subtopics.find(t => q.ref.startsWith(t.ref + '.') || q.ref === t.ref);
+        const s = spec.parents ? topic.subtopics.find(t => t.ref === parentOf(q.ref))
+          : topic.subtopics.find(t => t.ref === subRef(q.ref)) || topic.subtopics.find(t => q.ref.startsWith(t.ref + '.') || q.ref === t.ref);
         if (!s) err(q, `Ref ${q.ref} must be at least three levels deep (a subtopic)`);
         else out.subtopic = displayName(s.title);
         if (isHtOnly(q.ref) && out.tier !== 'Higher') err(q, `Ref ${q.ref} is Higher tier only in the specification: add "HT: yes"`);
       }
     }
     if (q.d && ![1, 2, 3].includes(out.difficulty)) err(q, `D: must be 1, 2 or 3`);
-    if (q.id && !new RegExp(`^${p.head.board.toLowerCase()}-${SHORT[subject]}-[0-9a-z.]+-\\d{3}$`).test(q.id)) err(q, `Id ${q.id} has the wrong form`);
-    if (q.rp && !(spec.practicals || []).some(r => r.n === +q.rp)) err(q, `RP: ${q.rp} is not a required practical of ${spec.specCode}`);
+    if (q.id && !new RegExp(`^${p.head.board.toLowerCase()}-${SHORT[subject]}-[0-9A-Za-z.]+-\\d{3}$`).test(q.id)) err(q, `Id ${q.id} has the wrong form`);
+    if (q.rp && !(spec.practicals || []).some(r => String(r.n) === String(q.rp))) err(q, `RP: ${q.rp} is not a required practical of ${spec.specCode}`);
     if (out.a) {
       if (words(out.a) > LIMITS.answerWords) err(q, `answer is ${words(out.a)} words (at most ${LIMITS.answerWords}): ${out.a}`);
       else if (words(out.a) > LIMITS.answerWordsSoft) warnings.push(`${rel(p.file)}:${q.line}: answer is ${words(out.a)} words: ${out.a}`);
@@ -159,7 +166,8 @@ function buildPack(p) {
     else { const s = jaccard(tokens(a.q), tokens(b.q)); if (s >= 0.9 || (s >= 0.75 && norm(a.a) === norm(b.a))) err(a, `near-duplicate of line ${b.line}: "${b.q.slice(0, 60)}"`); }
   }
   // coverage and balance
-  const leaves = Object.keys(spec.refs).filter(r => (r + '.').startsWith(topic.ref + '.') && r.split('.').length >= 3 && !Object.keys(spec.refs).some(x => x.startsWith(r + '.')));
+  const leaves = spec.parents ? Object.keys(spec.parents).filter(inTopic)
+    : Object.keys(spec.refs).filter(r => (r + '.').startsWith(topic.ref + '.') && r.split('.').length >= 3 && !Object.keys(spec.refs).some(x => x.startsWith(r + '.')));
   const target = Math.max(LIMITS.minPerTopic, LIMITS.perLeaf * leaves.length);
   const n = questions.length;
   const byD = [1, 2, 3].map(d => questions.filter(q => q.difficulty === d).length);
@@ -168,7 +176,7 @@ function buildPack(p) {
   byD.forEach((c, i) => { if (n && c < LIMITS.minShare * n) err(null, `only ${c} of ${n} questions at difficulty ${i + 1} (at least a fifth)`); });
   if (n && hex < LIMITS.hexShare * n) err(null, `only ${hex} of ${n} answers work on a Hex Hunt board (at least a third)`);
   leaves.forEach(r => { const c = questions.filter(q => q.specRef === r || q.specRef.startsWith(r + '.')).length; if (c < LIMITS.minLeaf) err(null, `point ${r} (${spec.refs[r]}) has ${c} question${c === 1 ? '' : 's'} (at least ${LIMITS.minLeaf})`); });
-  (spec.practicals || []).filter(r => (r.ref + '.').startsWith(topic.ref + '.')).forEach(r => { const c = questions.filter(q => q.rp === r.n).length; if (c < LIMITS.minRP) err(null, `required practical ${r.n} has ${c} question${c === 1 ? '' : 's'} (at least ${LIMITS.minRP})`); });
+  (spec.practicals || []).filter(r => inTopic(r.ref)).forEach(r => { const c = questions.filter(q => String(q.rp) === String(r.n)).length; if (c < LIMITS.minRP) err(null, `required practical ${r.n} has ${c} question${c === 1 ? '' : 's'} (at least ${LIMITS.minRP})`); });
   // Category Clash, one topic chosen: every subtopic is a column with a question at each difficulty
   const thin = topic.subtopics.filter(s => questions.some(q => q.subtopic === displayName(s.title))).filter(s => [1, 2, 3].some(d => !questions.some(q => q.subtopic === displayName(s.title) && q.difficulty === d)));
   thin.forEach(s => warnings.push(`${rel(p.file)}: subtopic ${s.ref} ${s.title} lacks a question at some difficulty (Category Clash fills it from the nearest)`));

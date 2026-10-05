@@ -1,0 +1,359 @@
+{
+ "board": "AQA",
+ "subject": "Mathematics",
+ "specCode": "8300",
+ "version": "1.1",
+ "date": "September 2026",
+ "source": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+ "numbering": "^[NARGPS]\\d{1,2}$",
+ "topics": [
+  {
+   "ref": "3.1",
+   "title": "Number",
+   "subtopics": [
+    {
+     "ref": "3.1.1",
+     "title": "Structure and calculation"
+    },
+    {
+     "ref": "3.1.2",
+     "title": "Fractions, decimals and percentages"
+    },
+    {
+     "ref": "3.1.3",
+     "title": "Measures and accuracy"
+    }
+   ]
+  },
+  {
+   "ref": "3.2",
+   "title": "Algebra",
+   "subtopics": [
+    {
+     "ref": "3.2.1",
+     "title": "Notation, vocabulary and manipulation"
+    },
+    {
+     "ref": "3.2.2",
+     "title": "Graphs"
+    },
+    {
+     "ref": "3.2.3",
+     "title": "Solving equations and inequalities"
+    },
+    {
+     "ref": "3.2.4",
+     "title": "Sequences"
+    }
+   ]
+  },
+  {
+   "ref": "3.3",
+   "title": "Ratio, proportion and rates of change",
+   "subtopics": [
+    {
+     "ref": "3.3.g1",
+     "title": "Units, scale and fractions"
+    },
+    {
+     "ref": "3.3.g2",
+     "title": "Ratio and percentages"
+    },
+    {
+     "ref": "3.3.g3",
+     "title": "Proportion"
+    },
+    {
+     "ref": "3.3.g4",
+     "title": "Rates of change and growth"
+    }
+   ]
+  },
+  {
+   "ref": "3.4",
+   "title": "Geometry and measures",
+   "subtopics": [
+    {
+     "ref": "3.4.1",
+     "title": "Properties and constructions"
+    },
+    {
+     "ref": "3.4.2",
+     "title": "Mensuration and calculation"
+    },
+    {
+     "ref": "3.4.3",
+     "title": "Vectors"
+    }
+   ]
+  },
+  {
+   "ref": "3.5",
+   "title": "Probability",
+   "subtopics": [
+    {
+     "ref": "3.5.g1",
+     "title": "Probability and experiments"
+    },
+    {
+     "ref": "3.5.g2",
+     "title": "Combined events"
+    }
+   ]
+  },
+  {
+   "ref": "3.6",
+   "title": "Statistics",
+   "subtopics": [
+    {
+     "ref": "3.6.g1",
+     "title": "Samples and charts"
+    },
+    {
+     "ref": "3.6.g2",
+     "title": "Averages and correlation"
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "N1": "order positive and negative integers, decimals and fractions use the symbols =, ≠, , ≤, ≥",
+  "N2": "apply the four operations, including formal written methods, to integers, decimals and simple fractions (proper and improper), and mixed numbers – all both positive and negative understand and use place value (eg when working with very large or very small numbers, and when calculating with decimals)",
+  "N3": "recognise and use relationships between operations, including inverse operations (eg cancellation to simplify calculations and expressions) use conventional notation for priority of operations, including brackets, powers, roots and reciprocals",
+  "N4": "use the concepts and vocabulary of prime numbers, factors (divisors), multiples, common factors, common multiples, highest common factor, lowest common multiple, prime factorisation, including using product notation and the unique factorisation theorem",
+  "N5": "apply systematic listing strategies including use of the product rule for counting",
+  "N6": "use positive integer powers and associated real roots (square, cube and higher), recognise powers of 2, 3, 4, 5 estimate powers and roots of any given positive number",
+  "N7": "calculate with roots, and with integer indices calculate with fractional indices",
+  "N8": "calculate exactly with fractions calculate exactly with π multiples of calculate exactly with surds simplify surd expressions involving squares (eg 12 = 4 × 3 = 4 × 3 = 2 3 ) and rationalise denominators",
+  "N9": "calculate with and interpret n A standard form × , A n where 1 ≤ < 10 and is an integer",
+  "N10": "work interchangeably with terminating decimals and their corresponding fractions (such as 3.5 and or 0.375 and change recurring decimals into their corresponding fractions and vice versa",
+  "N11": "identify and work with fractions in ratio problems",
+  "N12": "interpret fractions and percentages as operators",
+  "N13": "use standard units of mass, length, time, money and other measures (including standard compound measures) using decimal quantities where appropriate",
+  "N14": "estimate answers check calculations using approximation and estimation, including answers obtained using technology",
+  "N15": "round numbers and measures to an appropriate degree of accuracy (eg to a specified number of decimal places or significant figures) use inequality notation to specify simple error intervals due to truncation or rounding",
+  "N16": "apply and interpret limits of accuracy including upper and lower bounds",
+  "A1": "• use and interpret algebraic notation, including: • ab a b in place of × • 3 y y y y in place of + + y and 3 × • a a a a in place of × , in a a a a b place of × × , in a a b place of × × • a a b in place of ÷ b • coefficients written as fractions rather than as decimals • brackets",
+  "A2": "substitute numerical values into formulae and expressions, including scientific formulae",
+  "A3": "understand and use the concepts and vocabulary of expressions, equations, formulae, inequalities, terms and factors to include identities",
+  "A4": "simplify and manipulate algebraic expressions by: • collecting like terms • multiplying a single term over a bracket • taking out common factors • simplifying expressions involving sums, products and powers, including the laws of indices simplify and manipulate algebraic expressions (including those involving surds) by: • expanding products of two binomials • factorising quadratic expressions of the x bx c form + + , including the difference of two squares simplify and manipulate algebraic expre",
+  "A5": "understand and use standard mathematical formulae rearrange formulae to change the subject",
+  "A6": "know the difference between an equation and an identity argue mathematically to show algebraic expressions are equivalent, and use algebra to support and construct arguments to include proofs",
+  "A7": "where appropriate, interpret simple expressions as functions with inputs and outputs − x x x interpret the reverse process as the ‘inverse function’ interpret the succession of two functions as a ‘composite function’",
+  "A8": "work with coordinates in all four quadrants",
+  "A9": "plot graphs of equations that correspond to straight-line graphs in the coordinate plane y mx c use the form = + to identify parallel lines find the equation of the line through two given points, or through one point with a given gradient y mx c use the form = + to identify perpendicular lines",
+  "A10": "identify and interpret gradients and intercepts of linear functions graphically and algebraically",
+  "A11": "identify and interpret roots, intercepts and turning points of quadratic functions graphically deduce roots algebraically deduce turning points by completing the square",
+  "A12": "recognise, sketch and interpret graphs of linear functions and quadratic functions including simple cubic functions and the reciprocal y x function = with ≠ x including exponential functions x y k k = for positive values of ,and the trigonometric functions (with y x arguments in degrees) = sin , y x y x = cos and = tan for angles of any size",
+  "A13": "sketch translations and reflections of a given function",
+  "A14": "plot and interpret graphs, and graphs of non-standard functions in real contexts, to find approximate solutions to problems such as simple kinematic problems involving distance, speed and acceleration including reciprocal graphs including exponential graphs",
+  "A15": "calculate or estimate gradients of graphs and areas under graphs (including quadratic and other non-linear graphs), and interpret results in cases such as distance- time graphs, velocity-time graphs and graphs in financial contexts",
+  "A16": "recognise and use the equation of a circle with centre at the origin find the equation of a tangent to a circle at a given point",
+  "A17": "solve linear equations in one unknown algebraically find approximate solutions using a graph including those with the unknown on both sides of the equation",
+  "A18": "solve quadratic equations algebraically by factorising find approximate solutions using a graph including those that require rearrangement including completing the square and by using the quadratic formula",
+  "A19": "solve two simultaneous equations in two variables (linear/linear) algebraically find approximate solutions using a graph including linear/quadratic",
+  "A20": "find approximate solutions to equations numerically using iteration",
+  "A21": "translate simple situations or procedures into algebraic expressions or formulae derive an equation (or two simultaneous equations), solve the equation(s) and interpret the solution",
+  "A22": "solve linear inequalities in one variable represent the solution set on a number line solve linear inequalities in one or two variable(s), and quadratic inequalities in one variable represent the solution set on a number line, using set notation and on a graph",
+  "A23": "generate terms of a sequence from either a term-to-term or a position-to-term rule",
+  "A24": "recognise and use sequences of triangular, square and cube numbers and simple arithmetic progressions including Fibonacci-type sequences, quadratic sequences, and simple n r geometric progressions n r where is an integer and is a rational number > 0) including other sequences r including where is a surd",
+  "A25": "deduce expressions to n calculate the th term of linear sequences including quadratic sequences",
+  "R1": "change freely between related standard units (eg time, length, area, volume/capacity, mass) and compound units (eg speed, rates of pay, prices) in numerical contexts compound units (eg density, pressure) in numerical and algebraic contexts",
+  "R2": "use scale factors, scale diagrams and maps",
+  "R3": "express one quantity as a fraction of another, where the fraction is less than 1 or greater than 1",
+  "R4": "use ratio notation, including reduction to simplest form",
+  "R5": "divide a given quantity into two parts in a given part : part or part : whole ratio express the division of a quantity into two parts as a ratio apply ratio to real contexts and problems (such as those involving conversion, comparison, scaling, mixing, concentrations)",
+  "R6": "express a multiplicative relationship between two quantities as a ratio or a fraction",
+  "R7": "understand and use proportion as equality of ratios",
+  "R8": "relate ratios to fractions and to linear functions",
+  "R9": "define percentage as ‘number of parts per hundred’ interpret percentages and percentage changes as a fraction or a decimal, and interpret these multiplicatively express one quantity as a percentage of another compare two quantities using percentages work with percentages greater than 100% solve problems involving percentage change, including percentage increase/decrease and original value problems, and simple interest including in financial mathematics",
+  "R10": "solve problems involving direct and inverse proportion, including graphical and algebraic representations",
+  "R11": "use compound units such as speed, rates of pay, unit pricing use compound units such as density and pressure",
+  "R12": "compare lengths, areas and volumes using ratio notation scale factors make links to similarity (including trigonometric ratios)",
+  "R13": "X understand that is inversely Y proportional to is equivalent X to is proportional to Y interpret equations that describe direct and inverse proportion construct and interpret equations that describe direct and inverse proportion",
+  "R14": "interpret the gradient of a straight-line graph as a rate of change recognise and interpret graphs that illustrate direct and inverse proportion",
+  "R15": "interpret the gradient at a point on a curve as the instantaneous rate of change apply the concepts of average and instantaneous rate of change (gradients of chords and tangents) in numerical, algebraic and graphical contexts",
+  "R16": "set up, solve and interpret the answers in growth and decay problems, including compound interest and work with general iterative processes",
+  "G1": "use conventional terms and notations: points, lines, vertices, edges, planes, parallel lines, perpendicular lines, right angles, polygons, regular polygons and polygons with reflection and/or rotation symmetries use the standard conventions for labelling and referring to the sides and angles of triangles draw diagrams from written description",
+  "G2": "use the standard ruler and compass constructions (perpendicular bisector of a line segment, constructing a perpendicular to a given line from/at a given point, bisecting a given angle) use these to construct given figures and solve loci problems know that the perpendicular distance from a point to a line is the shortest distance to the line",
+  "G3": "apply the properties of angles at a point, angles at a point on a straight line, vertically opposite angles understand and use alternate and corresponding angles on parallel lines derive and use the sum of angles in a triangle (eg to deduce and use the angle sum in any polygon, and to derive properties of regular polygons)",
+  "G4": "derive and apply the properties and definitions of: special types of quadrilaterals, including square, rectangle, parallelogram, trapezium, kite and rhombus and triangles and other plane figures using appropriate language",
+  "G5": "use the basic congruence criteria for triangles (SSS, SAS, ASA, RHS)",
+  "G6": "apply angle facts, triangle congruence, similarity and properties of quadrilaterals to conjecture and derive results about angles and sides, including Pythagoras’ theorem and the fact that the base angles of an isosceles triangle are equal, and use known results to obtain simple proofs",
+  "G7": "identify, describe and construct congruent and similar shapes, including on coordinate axes, by considering rotation, reflection, translation and enlargement including fractional scale factors including negative scale factors",
+  "G8": "describe the changes and invariance achieved by combinations of rotations, reflections and translations",
+  "G9": "identify and apply circle definitions and properties, including: centre, radius, chord, diameter, circumference including: tangent, arc, sector and segment",
+  "G10": "apply and prove the standard circle theorems concerning angles, radii, tangents and chords, and use them to prove related results",
+  "G11": "solve geometrical problems on coordinate axes",
+  "G12": "identify properties of the faces, surfaces, edges and vertices of: cubes, cuboids, prisms, cylinders, pyramids, cones and spheres",
+  "G13": "interpret plans and elevations of 3D shapes construct and interpret plans and elevations of 3D shapes",
+  "G14": "use standard units of measure and related concepts (length, area, volume/capacity, mass, time, money etc.)",
+  "G15": "measure line segments and angles in geometric figures, including interpreting maps and scale drawings and use of bearings",
+  "G16": "know and apply formulae to calculate: area of triangles, parallelograms, trapezia; volume of cuboids and other right prisms (including cylinders)",
+  "G17": "know the formulae: circumference of a circle = π π r d = π r area of a circle = calculate perimeters of 2D shapes, including circles areas of circles and composite shapes surface area and volume of spheres, pyramids, cones and composite solids",
+  "G18": "calculate arc lengths, angles and areas of sectors of circles",
+  "G19": "apply the concepts of congruence and similarity, including the relationships between lengths in similar figures including the relationships between lengths, areas and volumes in similar figures",
+  "G20": "know the formulae for: Pythagoras’ theorem, a b c + = and the trigonometric ratios, opposite θ sin = , hypotenuse adjacent θ cos = and hypotenuse opposite θ tan = adjacent apply them to find angles and lengths in right-angled triangles in two dimensional figures apply them to find angles and lengths in right-angled triangles and, where possible, general triangles in two and three dimensional figures",
+  "G21": "know the exact values of θ θ θ sin and cos for = 0°, 30°, 45° , 60° and 90° know the exact value of θ θ tan for = 0°, 30°, 45° , 60°",
+  "G22": "know and apply the sine rule, a b c = = A B C sin sin sin and cosine rule, a b c bc A − = + cos to find unknown lengths and angles",
+  "G23": "know and apply ab C Area = sin to calculate the area, sides or angles of any triangle",
+  "G24": "describe translations as 2D vectors",
+  "G25": "apply addition and subtraction of vectors, multiplication of vectors by a scalar, and diagrammatic and column representations of vectors use vectors to construct geometric arguments and proofs",
+  "P1": "record, describe and analyse the frequency of outcomes of probability experiments using tables and frequency trees",
+  "P2": "apply ideas of randomness, fairness and equally likely events to calculate expected outcomes of multiple future experiments",
+  "P3": "relate relative expected frequencies to theoretical probability, using appropriate language and the 0 to 1 probability scale",
+  "P4": "apply the property that the probabilities of an exhaustive set of outcomes sum to 1 apply the property that the probabilities of an exhaustive set of mutually exclusive events sum to 1",
+  "P5": "understand that empirical unbiased samples tend towards theoretical probability distributions, with increasing sample size",
+  "P6": "enumerate sets and combinations of sets systematically, using tables, grids, Venn diagrams including using tree diagrams",
+  "P7": "construct theoretical possibility spaces for single and combined experiments with equally likely outcomes and use these to calculate theoretical probabilities",
+  "P8": "calculate the probability of independent and dependent combined events, including using tree diagrams and other representations, and know the underlying assumptions",
+  "P9": "calculate and interpret conditional probabilities through representation using expected frequencies with two-way tables, tree diagrams and Venn diagrams",
+  "S1": "infer properties of populations or distributions from a sample, whilst knowing the limitations of sampling",
+  "S2": "interpret and construct tables, charts and diagrams, including frequency tables, bar charts, pie charts and pictograms for categorical data, vertical line charts for ungrouped discrete numerical data, and know their appropriate use including tables and line graphs for time series data",
+  "S3": "construct and interpret diagrams for grouped discrete data and continuous data, ie histograms with equal and unequal class intervals and cumulative frequency graphs, and know their appropriate use",
+  "S4": "interpret, analyse and compare the distributions of data sets from univariate empirical distributions through: • appropriate graphical representation involving discrete, continuous and grouped data • appropriate measures of central tendency (median, mean, mode and modal class) and spread (range, including consideration of outliers) • including box plots • including quartiles and inter-quartile range",
+  "S5": "apply statistics to describe a population",
+  "S6": "use and interpret scatter graphs of bivariate data recognise correlation know that it does not indicate causation draw estimated lines of best fit make predictions interpolate and extrapolate apparent trends whilst knowing the dangers of so doing"
+ },
+ "parents": {
+  "N1": "3.1.1",
+  "N2": "3.1.1",
+  "N3": "3.1.1",
+  "N4": "3.1.1",
+  "N5": "3.1.1",
+  "N6": "3.1.1",
+  "N7": "3.1.1",
+  "N8": "3.1.1",
+  "N9": "3.1.1",
+  "N10": "3.1.2",
+  "N11": "3.1.2",
+  "N12": "3.1.2",
+  "N13": "3.1.3",
+  "N14": "3.1.3",
+  "N15": "3.1.3",
+  "N16": "3.1.3",
+  "A1": "3.2.1",
+  "A2": "3.2.1",
+  "A3": "3.2.1",
+  "A4": "3.2.1",
+  "A5": "3.2.1",
+  "A6": "3.2.1",
+  "A7": "3.2.1",
+  "A8": "3.2.2",
+  "A9": "3.2.2",
+  "A10": "3.2.2",
+  "A11": "3.2.2",
+  "A12": "3.2.2",
+  "A13": "3.2.2",
+  "A14": "3.2.2",
+  "A15": "3.2.2",
+  "A16": "3.2.2",
+  "A17": "3.2.3",
+  "A18": "3.2.3",
+  "A19": "3.2.3",
+  "A20": "3.2.3",
+  "A21": "3.2.3",
+  "A22": "3.2.3",
+  "A23": "3.2.4",
+  "A24": "3.2.4",
+  "A25": "3.2.4",
+  "R1": "3.3.g1",
+  "R2": "3.3.g1",
+  "R3": "3.3.g1",
+  "R4": "3.3.g2",
+  "R5": "3.3.g2",
+  "R6": "3.3.g2",
+  "R7": "3.3.g2",
+  "R8": "3.3.g2",
+  "R9": "3.3.g2",
+  "R10": "3.3.g3",
+  "R11": "3.3.g3",
+  "R12": "3.3.g3",
+  "R13": "3.3.g3",
+  "R14": "3.3.g4",
+  "R15": "3.3.g4",
+  "R16": "3.3.g4",
+  "G1": "3.4.1",
+  "G2": "3.4.1",
+  "G3": "3.4.1",
+  "G4": "3.4.1",
+  "G5": "3.4.1",
+  "G6": "3.4.1",
+  "G7": "3.4.1",
+  "G8": "3.4.1",
+  "G9": "3.4.1",
+  "G10": "3.4.1",
+  "G11": "3.4.1",
+  "G12": "3.4.1",
+  "G13": "3.4.1",
+  "G14": "3.4.2",
+  "G15": "3.4.2",
+  "G16": "3.4.2",
+  "G17": "3.4.2",
+  "G18": "3.4.2",
+  "G19": "3.4.2",
+  "G20": "3.4.2",
+  "G21": "3.4.2",
+  "G22": "3.4.2",
+  "G23": "3.4.2",
+  "G24": "3.4.3",
+  "G25": "3.4.3",
+  "P1": "3.5.g1",
+  "P2": "3.5.g1",
+  "P3": "3.5.g1",
+  "P4": "3.5.g1",
+  "P5": "3.5.g1",
+  "P6": "3.5.g2",
+  "P7": "3.5.g2",
+  "P8": "3.5.g2",
+  "P9": "3.5.g2",
+  "S1": "3.6.g1",
+  "S2": "3.6.g1",
+  "S3": "3.6.g1",
+  "S4": "3.6.g2",
+  "S5": "3.6.g2",
+  "S6": "3.6.g2"
+ },
+ "htRefs": [
+  "A13",
+  "A15",
+  "A16",
+  "A20",
+  "R15",
+  "G8",
+  "G10",
+  "G22",
+  "G23",
+  "P9",
+  "S3"
+ ],
+ "htPartial": {
+  "N5": "Has Higher-only content: see the HIGHER ONLY column",
+  "N6": "Has Higher-only content: see the HIGHER ONLY column",
+  "N7": "Has Higher-only content: see the HIGHER ONLY column",
+  "N8": "Has Higher-only content: see the HIGHER ONLY column",
+  "N10": "Has Higher-only content: see the HIGHER ONLY column",
+  "N16": "Has Higher-only content: see the HIGHER ONLY column",
+  "A4": "Has Higher-only content: see the HIGHER ONLY column",
+  "A6": "Has Higher-only content: see the HIGHER ONLY column",
+  "A7": "Has Higher-only content: see the HIGHER ONLY column",
+  "A9": "Has Higher-only content: see the HIGHER ONLY column",
+  "A11": "Has Higher-only content: see the HIGHER ONLY column",
+  "A12": "Has Higher-only content: see the HIGHER ONLY column",
+  "A14": "Has Higher-only content: see the HIGHER ONLY column",
+  "A18": "Has Higher-only content: see the HIGHER ONLY column",
+  "A19": "Has Higher-only content: see the HIGHER ONLY column",
+  "A22": "Has Higher-only content: see the HIGHER ONLY column",
+  "A24": "Has Higher-only content: see the HIGHER ONLY column",
+  "A25": "Has Higher-only content: see the HIGHER ONLY column",
+  "R13": "Has Higher-only content: see the HIGHER ONLY column",
+  "R16": "Has Higher-only content: see the HIGHER ONLY column",
+  "G7": "Has Higher-only content: see the HIGHER ONLY column",
+  "G19": "Has Higher-only content: see the HIGHER ONLY column",
+  "G20": "Has Higher-only content: see the HIGHER ONLY column",
+  "G25": "Has Higher-only content: see the HIGHER ONLY column",
+  "S4": "Has Higher-only content: see the HIGHER ONLY column"
+ },
+ "practicals": [],
+ "notes": "Ratio, proportion and rates of change, Probability and Statistics have no subtopic headings in the specification; their subtopics are groups of consecutive points named from the content (DECISIONS.md)."
+}

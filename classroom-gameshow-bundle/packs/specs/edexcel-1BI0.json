@@ -1,0 +1,625 @@
+{
+ "board": "Edexcel",
+ "subject": "Biology",
+ "specCode": "1BI0",
+ "version": "Issue 4",
+ "date": "March 2024",
+ "source": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Science/2016/Specification/gcse-biology-spec.pdf",
+ "sourceNote": "Pearson Edexcel GCSE (9-1) Biology specification, Issue 4, March 2024: the copy of Pearson's published PDF captured by the Internet Archive on 2026-09-17 (qualifications.pearson.com could not be reached directly from the build environment).",
+ "numbering": "^\\d+\\.\\d+[BCP]?$",
+ "topics": [
+  {
+   "ref": "1",
+   "title": "Key concepts in biology",
+   "subtopics": [
+    {
+     "ref": "1.g1",
+     "title": "Cells and microscopy"
+    },
+    {
+     "ref": "1.g2",
+     "title": "Enzyme action"
+    },
+    {
+     "ref": "1.g3",
+     "title": "Enzymes and food molecules"
+    },
+    {
+     "ref": "1.g4",
+     "title": "Transport into and out of cells"
+    }
+   ]
+  },
+  {
+   "ref": "2",
+   "title": "Cells and control",
+   "subtopics": [
+    {
+     "ref": "2.g1",
+     "title": "Mitosis and cancer"
+    },
+    {
+     "ref": "2.g2",
+     "title": "Growth and stem cells"
+    },
+    {
+     "ref": "2.g3",
+     "title": "The brain and nervous system"
+    },
+    {
+     "ref": "2.g4",
+     "title": "The eye"
+    }
+   ]
+  },
+  {
+   "ref": "3",
+   "title": "Genetics",
+   "subtopics": [
+    {
+     "ref": "3.g1",
+     "title": "Reproduction and meiosis"
+    },
+    {
+     "ref": "3.g2",
+     "title": "DNA and protein synthesis"
+    },
+    {
+     "ref": "3.g3",
+     "title": "Mendel and inheritance"
+    },
+    {
+     "ref": "3.g4",
+     "title": "Sex determination and inheritance"
+    },
+    {
+     "ref": "3.g5",
+     "title": "Variation and mutation"
+    }
+   ]
+  },
+  {
+   "ref": "4",
+   "title": "Natural selection and genetic modification",
+   "subtopics": [
+    {
+     "ref": "4.g1",
+     "title": "Evolution by natural selection"
+    },
+    {
+     "ref": "4.g2",
+     "title": "Evidence for evolution"
+    },
+    {
+     "ref": "4.g3",
+     "title": "Selective breeding and genetic engineering"
+    },
+    {
+     "ref": "4.g4",
+     "title": "Evaluating genetic modification"
+    }
+   ]
+  },
+  {
+   "ref": "5",
+   "title": "Health, disease and the development of medicines",
+   "subtopics": [
+    {
+     "ref": "5.g1",
+     "title": "Health and pathogens"
+    },
+    {
+     "ref": "5.g2",
+     "title": "Spread of infection"
+    },
+    {
+     "ref": "5.g3",
+     "title": "Plant defences"
+    },
+    {
+     "ref": "5.g4",
+     "title": "Human defences and immunisation"
+    },
+    {
+     "ref": "5.g5",
+     "title": "Antibiotics and new medicines"
+    },
+    {
+     "ref": "5.g6",
+     "title": "Non-communicable diseases"
+    }
+   ]
+  },
+  {
+   "ref": "6",
+   "title": "Plant structures and their functions",
+   "subtopics": [
+    {
+     "ref": "6.g1",
+     "title": "Photosynthesis"
+    },
+    {
+     "ref": "6.g2",
+     "title": "Transport in plants"
+    },
+    {
+     "ref": "6.g3",
+     "title": "Leaves and transpiration"
+    },
+    {
+     "ref": "6.g4",
+     "title": "Plant adaptations and hormones"
+    }
+   ]
+  },
+  {
+   "ref": "7",
+   "title": "Animal coordination, control and homeostasis",
+   "subtopics": [
+    {
+     "ref": "7.g1",
+     "title": "Hormones"
+    },
+    {
+     "ref": "7.g2",
+     "title": "The menstrual cycle"
+    },
+    {
+     "ref": "7.g3",
+     "title": "Homeostasis and thermoregulation"
+    },
+    {
+     "ref": "7.g4",
+     "title": "Blood glucose and diabetes"
+    },
+    {
+     "ref": "7.g5",
+     "title": "The kidneys"
+    }
+   ]
+  },
+  {
+   "ref": "8",
+   "title": "Exchange and transport in animals",
+   "subtopics": [
+    {
+     "ref": "8.g1",
+     "title": "Exchange surfaces"
+    },
+    {
+     "ref": "8.g2",
+     "title": "The circulatory system"
+    },
+    {
+     "ref": "8.g3",
+     "title": "Respiration and heart rate"
+    }
+   ]
+  },
+  {
+   "ref": "9",
+   "title": "Ecosystems and material cycles",
+   "subtopics": [
+    {
+     "ref": "9.g1",
+     "title": "Ecosystems and communities"
+    },
+    {
+     "ref": "9.g2",
+     "title": "Energy transfer and biodiversity"
+    },
+    {
+     "ref": "9.g3",
+     "title": "Material cycles"
+    },
+    {
+     "ref": "9.g4",
+     "title": "Indicator species and decay"
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "1.1": "Explain how the sub-cellular structures of eukaryotic and prokaryotic cells are related to their functions, including: a animal cells – nucleus, cell membrane, mitochondria and ribosomes b plant cells – nucleus, cell membrane, cell wall, chloroplasts, mitochondria, vacuole and ribosomes c bacteria – chromosomal DNA, plasmid DNA, cell membrane, ribosomes and flagella",
+  "1.2": "Describe how specialised cells are adapted to their function, including: a sperm cells – acrosome, haploid nucleus, mitochondria and tail b egg cells – nutrients in the cytoplasm, haploid nucleus and changes in the cell membrane after fertilisation c ciliated epithelial cells",
+  "1.3": "Explain how changes in microscope technology, including electron microscopy, have enabled us to see cell structures and organelles with more clarity and detail than in the past and increased our understanding of the role of sub-cellular structures",
+  "1.4": "Demonstrate an understanding of number, size and scale, including the use of estimations and explain when they should be used",
+  "1.5": "Demonstrate an understanding of the relationship between quantitative units in relation to cells, including: a milli (10 ) b micro (10 ) c nano (10 ) d pico (10 ) e calculations with numbers written in standard form",
+  "1.6": "microscopes, including magnification calculations and labelled scientific drawings from observations",
+  "1.7": "Explain the mechanism of enzyme action including the active site and enzyme specificity",
+  "1.8": "Explain how enzymes can be denatured due to changes in the shape of the active site",
+  "1.9": "Explain the effects of temperature, substrate concentration and pH on enzyme activity",
+  "1.10": "Investigate the effect of pH on enzyme activity",
+  "1.11": "Demonstrate an understanding of rate calculations for enzyme activity",
+  "1.12": "Explain the importance of enzymes as biological catalysts in the synthesis of carbohydrates, proteins and lipids and their breakdown into sugars, amino acids and fatty acids and glycerol",
+  "1.13B": "Investigate the use of chemical reagents to identify starch, reducing sugars, proteins and fats",
+  "1.14B": "Explain how the energy contained in food can be measured using calorimetry",
+  "1.15": "Explain how substances are transported into and out of cells, including by diffusion, osmosis and active transport",
+  "1.16": "Investigate osmosis in potatoes",
+  "1.17": "Calculate percentage gain and loss of mass in osmosis",
+  "2.1": "Describe mitosis as part of the cell cycle, including the stages interphase, prophase, metaphase, anaphase and telophase and cytokinesis",
+  "2.2": "Describe the importance of mitosis in growth, repair and asexual reproduction",
+  "2.3": "Describe the division of a cell by mitosis as the production of two daughter cells, each with identical sets of chromosomes in the nucleus to the parent cell, and that this results in the formation of two genetically identical diploid body cells",
+  "2.4": "Describe cancer as the result of changes in cells that lead to uncontrolled cell division",
+  "2.5": "Describe growth in organisms, including: a cell division and differentiation in animals b cell division, elongation and differentiation in plants",
+  "2.6": "Explain the importance of cell differentiation in the development of specialised cells",
+  "2.7": "Demonstrate an understanding of the use of percentiles charts to monitor growth",
+  "2.8": "Describe the function of embryonic stem cells, stem cells in animals and meristems in plants",
+  "2.9": "Discuss the potential benefits and risks associated with the use of stem cells in medicine",
+  "2.10B": "Describe the structures and functions of the brain including the cerebellum, cerebral hemispheres and medulla oblongata",
+  "2.11B": "Explain how the difficulties of accessing brain tissue inside the skull can be overcome by using CT scanning and PET scanning to investigate brain function",
+  "2.12B": "Explain some of the limitations in treating damage and disease in the brain and other parts of the nervous system, including spinal injuries and brain tumours",
+  "2.13": "Explain the structure and function of sensory receptors, sensory neurones, relay neurones in the CNS, motor neurones and synapses in the transmission of electrical impulses, including the axon, dendron, myelin sheath and the role of neurotransmitters",
+  "2.14": "Explain the structure and function of a reflex arc including sensory, relay and motor neurones 14",
+  "2.15B": "Explain the structure and function of the eye as a sensory receptor including the role of: a the cornea and lens b the iris c rod and cone cells in the retina",
+  "2.16B": "Describe defects of the eye including cataracts, long- sightedness, short-sightedness and colour blindness",
+  "2.17B": "Explain how cataracts, long-sightedness and short-sightedness can be corrected",
+  "3.1B": "Explain some of the advantages and disadvantages of asexual reproduction, including the lack of need to find a mate, a rapid reproductive cycle, but no variation in the population",
+  "3.2B": "Explain some of the advantages and disadvantages of sexual reproduction, including variation in the population, but the requirement to find a mate",
+  "3.3": "Explain the role of meiotic cell division, including the production of four daughter cells, each with half the number of chromosomes, and that this results in the formation of genetically different haploid gametes The stages of meiosis are not required",
+  "3.4": "Describe DNA as a polymer made up of: a two strands coiled to form a double helix b strands linked by a series of complementary base pairs joined together by weak hydrogen bonds c nucleotides that consist of a sugar and phosphate group with one of the four different bases attached to the sugar",
+  "3.5": "Describe the genome as the entire DNA of an organism and a gene as a section of a DNA molecule that codes for a specific protein",
+  "3.6": "Explain how DNA can be extracted from fruit",
+  "3.7B": "Explain how the order of bases in a section of DNA decides the order of amino acids in the protein and that these fold to produce specifically shaped proteins such as enzymes",
+  "3.8B": "Describe the stages of protein synthesis, including transcription and translation: a RNA polymerase binds to non-coding DNA located in front of a gene b RNA polymerase produces a complementary mRNA strand from the coding DNA of the gene c the attachment of the mRNA to the ribosome d the coding by triplets of bases (codons) in the mRNA for specific amino acids e the transfer of amino acids to the ribosome by tRNA f the linking of amino acids to form polypeptides 3 . 9B Describe how genetic variants in the non-coding DNA of a gene can affect phenotype by influencing the binding of RNA polymerase and altering the quantity of protein produced",
+  "3.9B": "Describe how genetic variants in the non-coding DNA of a gene can affect phenotype by influencing the binding of RNA polymerase and altering the quantity of protein",
+  "3.10B": "Describe how genetic variants in the coding DNA of a gene can affect phenotype by altering the sequence of amino acids and therefore the activity of the protein produced 16",
+  "3.11B": "Describe the work of Gregor Me n del in discovering the basis of genetics and recognise the difficulties of understanding inheritance before the mechanism was discovered",
+  "3.12": "Explain why there are differences in the inherited characteristics as a result of alleles",
+  "3.13": "Explain the terms: chromosome, gene, allele, dominant, recessive, homozygous, heterozygous, genotype, phenotype, gamete and zygote",
+  "3.14": "Explain monohybrid inheritance using genetic diagrams, Punnett squares and family pedigrees",
+  "3.15": "Describe how the sex of offspring is determined at fertilisation, using genetic diagrams",
+  "3.16": "Calculate and analyse outcomes (using probabilities, ratios and percentages) from monohybrid crosses and pedigree analysis for dominant and recessive traits",
+  "3.17B": "Describe the inheritance of the ABO blood groups with reference to codominance and multiple alleles",
+  "3.18B": "Explain how sex-linked genetic disorders are inherited",
+  "3.19": "State that most phenotypic features are the result of multiple genes rather than single gene inheritance",
+  "3.20": "Describe the causes of variation that influence phenotype, including: a genetic variation – different characteristics as a result of mutation and sexual reproduction b environmental variation – different characteristics caused by an organism’s environment (acquired characteristics)",
+  "3.21": "Discuss the outcomes of the Human Genome Project and its potential applications within medicine",
+  "3.22": "State that there is usually extensive genetic variation within a population of a species and that these arise through mutations",
+  "3.23": "State that most genetic mutations have no effect on the phenotype, some mutations have a small effect on the phenotype and, rarely, a single mutation will significantly affect the phenotype",
+  "4.1B": "Describe the work of Charles Darwin and Alfred Wallace in the development of the theory of evolution by natural selection and explain the impact of these ideas on modern biology",
+  "4.2": "Explain Charles Darwin's theory of evolution by natural selection",
+  "4.3": "Explain how the emergence of resistant organisms supports Charles Darwin's theory of evolution including antibiotic resistance in bacteria",
+  "4.4": "Describe the evidence for human evolution, based on fossils, including: a Ardi from 4.4 million years ago b Lucy from 3.2 million years ago c Richard Leakey's discovery of fossils from 1.6 million years ago",
+  "4.5": "Describe the evidence for human evolution based on stone tools, including: a the development of stone tools over time b how these can be dated from their environment",
+  "4.6B": "Describe how the anatomy of the pentadactyl limb provides scientists with evidence for evolution",
+  "4.7": "Describe how genetic analysis has led to the suggestion of the three domains rather than the five kingdoms classification method",
+  "4.8": "Explain selective breeding and its impact on food plants and domesticated animals",
+  "4.9B": "Describe the process of tissue culture and its advantages in medical research and plant breeding programmes",
+  "4.10": "Describe genetic engineering as a process which involves modifying the genome of an organism to introduce desirable characteristics",
+  "4.11": "Describe the main stages of genetic engineering including the use of: a restriction enzymes b ligase c sticky ends d vectors",
+  "4.12B": "Explain the advantages and disadvantages of genetic engineering to produce GM organisms including the modification of crop plants, including the introduction of genes for insect resistance from Bacillus thuringiensis into crop plants",
+  "4.13B": "Explain the advantages and disadvantages of agricultural solutions to the demands of a growing human population, including use of fertilisers and biological control",
+  "4.14": "Evaluate the benefits and risks of genetic engineering and selective breeding in modern agriculture and medicine, including practical and ethical implications",
+  "5.1": "Describe health as a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity, as defined by the World Health Organization (WHO)",
+  "5.2": "Describe the difference between communicable and non-communicable diseases",
+  "5.3": "Explain why the presence of one disease can lead to a higher susceptibility to other diseases",
+  "5.4": "Describe a pathogen as a disease-causing organism, including viruses, bacteria, fungi and protists",
+  "5.5": "Describe some common infections, including: a cholera (bacteria) causes diarrhoea b tuberculosis (bacteria) causes lung damage c Chalara ash dieback (fungi) causes leaf loss and bark lesions d malaria (protists) causes damage to blood and liver e HIV (virus) destroys white blood cells, leading to the onset of AIDS fB stomach ulcers caused by Helicobacter (bacteria) gB Ebola (virus) causes haemorrhagic fever",
+  "5.6": "Explain how pathogens are spread and how this spread can be reduced or prevented, including: a cholera (bacteria) – water b tuberculosis (bacteria) – airborne c Chalara ash dieback (fungi) – airborne d malaria (protists) – animal vectors eB stomach ulcers caused by Helicobacter (bacteria) – oral transmission fB Ebola (virus) – body fluids",
+  "5.7B": "Describe the lifecycle of a virus, including lysogenic and lytic pathways",
+  "5.8": "Explain how sexually transmitted infections (STIs) are spread and how this spread can be reduced or prevented, including: a Chlamydia (bacteria) b HIV (virus)",
+  "5.9B": "Describe how some plants defend themselves against attack from pests and pathogens by physical barriers, including the leaf cuticle and cell wall",
+  "5.10B": "Describe how plants defend themselves against attack from pests and pathogens by producing chemicals, some of which can be used to treat human diseases or relieve symptoms",
+  "5.11B": "Describe different ways plant diseases can be detected and identified, in the lab and in the field including the elimination of possible environmental causes, distribution analysis of affected plants, observation of visible symptoms and diagnostic testing to identify pathogens",
+  "5.12": "Describe how the physical barriers and chemical defences of the human body provide protection from pathogens, including: a physical barriers, including mucus, cilia and skin b chemical defence, including lysozymes and hydrochloric acid",
+  "5.13": "Explain the role of the specific immune system of the human body in defence against disease, including: a exposure to pathogen b the antigens trigger an immune response which causes the production of antibodies c the antigens also trigger production of memory lymphocytes d the role of memory lymphocytes in the secondary response to the antigen",
+  "5.14": "Explain the body’s response to immunisation using an inactive form of a pathogen",
+  "5.15B": "Discuss the advantages and disadvantages of immunisation, including the concept of herd immunity",
+  "5.16": "Explain that antibiotics can only be used to treat bacterial infections because they inhibit cell processes in the bacterium but not the host organism",
+  "5.17B": "Explain the aseptic techniques used in culturing microorganisms in the laboratory, including the use of an autoclave to prepare sterile growth medium and petri dishes, the use of sterile inoculating loops to transfer microorganisms and the need to keep petri dishes and culture vials covered",
+  "5.18B": "Investigate the effects of antiseptics, antibiotics or plant extracts on microbial cultures",
+  "5.19B": "Calculate cross-sectional areas of bacterial cultures and clear agar jelly using π r",
+  "5.20": "Describe that the process of developing new medicines, including antibiotics, has many stages, including discovery, development, preclinical and clinical testing 22",
+  "5.21B": "Describe the production of monoclonal antibodies, including: a use of lymphocytes which produce desired antibodies but do not divide b production of hybridoma cells c hybridoma cells produce antibodies as they divide",
+  "5.22B": "Explain the use of monoclonal antibodies, including: a in pregnancy testing b in diagnosis including locating the position of blood clots and cancer cells and in treatment of diseases including cancer c the advantages of using monoclonal antibodies to target specific cells compared to drug and radiotherapy treatments",
+  "5.23": "Describe that many non-communicable human diseases are caused by the interaction of a number of factors, including cardiovascular diseases, many forms of cancer, some lung and liver diseases and diseases influenced by nutrition",
+  "5.24": "Explain the effect of lifestyle factors on non-communicable diseases at local, national and global levels, including: a exercise and diet on obesity and malnutrition, including BMI and waist : hip calculations, using the BMI equation:",
+  "5.25": "Evaluate some different treatments for cardiovascular disease, including: a life-long medication b surgical procedures c lifestyle changes",
+  "6.1": "Describe photosynthetic organisms as the main producers of food and therefore biomass",
+  "6.2": "Describe photosynthesis in plants and algae as an endothermic reaction that uses light energy to react carbon dioxide and water to produce glucose and oxygen",
+  "6.3": "Explain the effect of temperature, light intensity and carbon dioxide concentration as limiting factors on the rate of photosynthesis",
+  "6.4": "Explain the interactions of temperature, light intensity and carbon dioxide concentration in limiting the rate of photosynthesis",
+  "6.5": "Investigate the effect of light intensity on the rate of photosynthesis",
+  "6.6": "Explain how the rate of photosynthesis is directly proportional to light intensity and inversely proportional to the distance from a light source, including the use of the inverse square law calculation",
+  "6.7": "Explain how the structure of the root hair cells is adapted to absorb water and mineral ions",
+  "6.8": "Explain how the structures of the xylem and phloem are adapted to their function in the plant, including: a lignified dead cells in xylem transporting water and minerals through the plant b living cells in phloem using energy to transport sucrose around the plant",
+  "6.9": "Explain how water and mineral ions are transported through the plant by transpiration, including the structure and function of the stomata",
+  "6.10": "Describe how sucrose is transported around the plant by translocation",
+  "6.11B": "Explain how the structure of a leaf is adapted for photosynthesis and gas exchange",
+  "6.12": "Explain the effect of environmental factors on the rate of water uptake by a plant, to include light intensity, air movement and temperature",
+  "6.13": "Demonstrate an understanding of rate calculations for transpiration 24",
+  "6.14B": "Explain how plants are adapted to survive in extreme environments including the effect of leaf size and shape, the cuticle and stomata",
+  "6.15B": "Explain how plant hormones control and coordinate plant growth and development, including the role of auxins in phototropisms and gravitropisms",
+  "6.16B": "Describe the commercial uses of auxins, gibberellins and ethene in plants, including: a auxins in weedkillers and rooting powders b gibberellins in germination, fruit and flower formation and the production of seedless fruit c ethene in fruit ripening",
+  "7.1": "Describe where hormones are produced and how they are transported from endocrine glands to their target organs, including the pituitary gland, thyroid gland, pancreas, adrenal glands, ovaries and testes",
+  "7.2": "Explain that adrenalin is produced by the adrenal glands to prepare the body for fight or flight, including: a increased heart rate b increased blood pressure c increased blood flow to the muscles d raised blood sugar levels by stimulating the liver to change glycogen into glucose",
+  "7.3": "Explain how thyroxine controls metabolic rate as an example of negative feedback, including: a low levels of thyroxine stimulates production of TRH in hypothalamus b this causes release of TSH from the pituitary gland c TSH acts on the thyroid to produce thyroxine d when thyroxine levels are normal thyroxine inhibits the release of TRH and the production of TSH",
+  "7.4": "Describe the stages of the menstrual cycle, including the roles of the hormones oestrogen and progesterone, in the control of the menstrual cycle",
+  "7.5": "Explain the interactions of oestrogen, progesterone, FSH and LH in the control of the menstrual cycle, including the repair and maintenance of the uterus wall, ovulation and menstruation",
+  "7.6": "Explain how hormonal contraception influences the menstrual cycle and prevents pregnancy",
+  "7.7": "Evaluate hormonal and barrier methods of contraception",
+  "7.8": "Explain the use of hormones in Assisted Reproductive Technology (ART) including IVF and clomifene therapy",
+  "7.9": "Explain the importance of maintaining a constant internal environment in response to internal and external change",
+  "7.10B": "Explain the importance of homeostasis, including: a thermoregulation – the effect on enzyme activity b osmoregulation – the effect on animal cells 26",
+  "7.11B": "Explain how thermoregulation takes place, with reference to the function of the skin, including: a the role of the dermis b the role of the epidermis c the role of the hypothalamus",
+  "7.12B": "Explain how thermoregulation takes place, with reference to: a shivering b vasoconstriction c vasodilation",
+  "7.13": "Explain how the hormone insulin controls blood glucose concentration",
+  "7.14": "Explain how blood glucose concentration is regulated by glucagon",
+  "7.15": "Explain the cause of type 1 diabetes and how it is controlled",
+  "7.16": "Explain the cause of type 2 diabetes and how it is controlled",
+  "7.17": "Evaluate the correlation between body mass and type 2 diabetes including waist:hip calculations and BMI, using the BMI equation:",
+  "7.18B": "Describe the structure of the urinary system",
+  "7.19B": "Explain how the structure of the nephron is related to its function in filtering the blood and forming urine including: a filtration in the glomerulus and Bowman’s capsule b selective reabsorption of glucose c reabsorption of water",
+  "7.20B": "Explain the effect of ADH on the permeability of the collecting duct in regulating the water content of the blood",
+  "7.21B": "Describe the treatments for kidney failure, including kidney dialysis and organ donation",
+  "7.22B": "State that urea is produced from the breakdown of excess amino acids in the liver",
+  "8.1": "Describe the need to transport substances into and out of a range of organisms, including oxygen, carbon dioxide, water, dissolved food molecules, mineral ions and urea",
+  "8.2": "Explain the need for exchange surfaces and a transport system in multicellular organisms including the calculation of surface area : volume ratio",
+  "8.3": "Explain how alveoli are adapted for gas exchange by diffusion between air in the lungs and blood in capillaries",
+  "8.4B": "Describe the factors affecting the rate of diffusion, including surface area, concentration gradient and diffusion distance",
+  "8.5B": "Calculate the rate of diffusion using Fick’s law: surface area concentration difference diffusion thickness of membrane",
+  "8.6": "Explain how the structure of the blood is related to its function: a red blood cells (erythrocytes) b white blood cells (phagocytes and lymphocytes) c plasma d platelets",
+  "8.7": "Explain how the structure of the blood vessels is related to their function",
+  "8.8": "Explain how the structure of the heart and circulatory system is related to its function, including the role of the major blood vessels, the valves and the relative thickness of chamber walls",
+  "8.9": "Describe cellular respiration as an exothermic reaction which occurs continuously in living cells to release energy for metabolic processes, including aerobic and anaerobic respiration",
+  "8.10": "Compare the process of aerobic respiration with the process of anaerobic respiration",
+  "8.11": "Investigate the rate of respiration in living organisms",
+  "8.12": "Calculate heart rate, stroke volume and cardiac output, using the equation cardiac output = stroke volume × heart rate",
+  "9.1": "Describe the different levels of organisation from individual organisms, populations, communities, to the whole ecosystem",
+  "9.2": "Explain how communities can be affected by abiotic and biotic factors, including: a temperature, light, water, pollutants b competition, predation",
+  "9.3": "Describe the importance of interdependence in a community",
+  "9.4": "Describe how the survival of some organisms is dependent on other species, including parasitism and mutualism",
+  "9.5": "Investigate the relationship between organisms and their environment using field-work techniques, including quadrats and belt transects Investigate the relationship between organisms and their environment using field- work techniques, including quadrats and belt transects This investigation involves the use of a belt transect along a gradient (e.g. shaded area to an area with no shade). It involves students thinking about how to sample their chosen area, including the identification and observation of plants/organisms. 52",
+  "9.6": "Explain how to determine the number of organisms in a given area using raw data from field-work techniques, including quadrats and belt transects",
+  "9.7B": "Explain how some energy is transferred to less useful forms at each trophic level and that this affects the number of organisms at each trophic level, limits the length of a food chain and determines the shape of a pyramid of biomass in an ecosystem",
+  "9.8B": "Calculate the efficiency of energy transfers between trophic levels and percentage calculations of biomass",
+  "9.9": "Explain the positive and negative human interactions within ecosystems and their impacts on biodiversity, including: a fish farming b introduction of non-indigenous species c eutrophication",
+  "9.10": "Explain the benefits of maintaining local and global biodiversity, including the conservation of animal species and the impact of reforestation",
+  "9.11B": "Describe the biological factors affecting levels of food security, including: a increasing human population b increasing animal farming and the increased meat and fish consumption c the impact of new pests and pathogens d environmental change caused by human activity e sustainability issues, e.g. use of land for biofuel production and the cost of agricultural inputs",
+  "9.12": "Describe how different materials cycle through the abiotic and biotic components of an ecosystem",
+  "9.13": "Explain the importance of the carbon cycle, including the processes involved and the role of microorganisms as decomposers",
+  "9.14": "Explain the importance of the water cycle, including the processes involved and the production of potable water in areas of drought including desalination",
+  "9.15": "Explain how nitrates are made available for plant uptake, including the use of fertilisers, crop rotation and the role of bacteria in the nitrogen cycle",
+  "9.16B": "Evaluate the use of indicator species as evidence to assess the level of pollution, including: a polluted water – bloodworm, sludgeworm b clean water – freshwater shrimps, stonefly c air quality – different species of lichen, blackspot fungus on roses",
+  "9.17B": "Explain the effects of temperature, water content and oxygen availability on the rate of decomposition in food preservation",
+  "9.18B": "Explain the effects of temperature, water content and oxygen availability on the rate of decomposition in composting",
+  "9.19B": "Calculate rate changes in the decay of biological material 32"
+ },
+ "htRefs": [
+  "2.11B",
+  "2.12B",
+  "3.7B",
+  "3.18B",
+  "4.11",
+  "5.11B",
+  "5.21B",
+  "5.22B",
+  "6.4",
+  "6.6",
+  "6.16B",
+  "7.2",
+  "7.3",
+  "7.5",
+  "7.8",
+  "7.14",
+  "7.20B",
+  "9.16B",
+  "3.9B"
+ ],
+ "htPartial": {
+  "1.5": "e calculations with numbers written in standard form",
+  "3.8B": "Describe the stages of protein synthesis, including transcription and translation: a RNA polymerase binds to non-coding DNA located in front of a gene b RNA polymerase produces a complementary mRNA strand from the coding DNA of the gene c the attachment of the mRNA to the ribosome d the coding by tr",
+  "3.10B": "Describe how genetic variants in the coding DNA of a gene can affect phenotype by altering the sequence of amino acids and therefore the activity of the protein produced",
+  "7.12B": "b vasoconstriction c vasodilation"
+ },
+ "practicals": [
+  {
+   "n": "1.6",
+   "ref": "1.6",
+   "title": "Investigate biological specimens using"
+  },
+  {
+   "n": "1.10",
+   "ref": "1.10",
+   "title": "Investigate the effect of pH on enzyme activity"
+  },
+  {
+   "n": "1.13B",
+   "ref": "1.13B",
+   "title": "Investigate the use of chemical reagents to"
+  },
+  {
+   "n": "1.16",
+   "ref": "1.16",
+   "title": "Investigate osmosis in potatoes"
+  },
+  {
+   "n": "5.18B",
+   "ref": "5.18B",
+   "title": "Investigate the effects of antiseptics, antibiotics"
+  },
+  {
+   "n": "6.5",
+   "ref": "6.5",
+   "title": "Investigate the effect of light intensity on the"
+  },
+  {
+   "n": "8.11",
+   "ref": "8.11",
+   "title": "Investigate the rate of respiration in living"
+  },
+  {
+   "n": "9.5",
+   "ref": "9.5",
+   "title": "Investigate the relationship between organisms"
+  }
+ ],
+ "parents": {
+  "1.1": "1.g1",
+  "1.2": "1.g1",
+  "1.3": "1.g1",
+  "1.4": "1.g1",
+  "1.5": "1.g1",
+  "1.6": "1.g1",
+  "1.7": "1.g2",
+  "1.8": "1.g2",
+  "1.9": "1.g2",
+  "1.10": "1.g2",
+  "1.11": "1.g2",
+  "1.12": "1.g3",
+  "1.13B": "1.g3",
+  "1.14B": "1.g3",
+  "1.15": "1.g4",
+  "1.16": "1.g4",
+  "1.17": "1.g4",
+  "2.1": "2.g1",
+  "2.2": "2.g1",
+  "2.3": "2.g1",
+  "2.4": "2.g1",
+  "2.5": "2.g2",
+  "2.6": "2.g2",
+  "2.7": "2.g2",
+  "2.8": "2.g2",
+  "2.9": "2.g2",
+  "2.10B": "2.g3",
+  "2.11B": "2.g3",
+  "2.12B": "2.g3",
+  "2.13": "2.g3",
+  "2.14": "2.g3",
+  "2.15B": "2.g4",
+  "2.16B": "2.g4",
+  "2.17B": "2.g4",
+  "3.1B": "3.g1",
+  "3.2B": "3.g1",
+  "3.3": "3.g1",
+  "3.4": "3.g2",
+  "3.5": "3.g2",
+  "3.6": "3.g2",
+  "3.7B": "3.g2",
+  "3.8B": "3.g2",
+  "3.10B": "3.g3",
+  "3.11B": "3.g3",
+  "3.12": "3.g3",
+  "3.13": "3.g3",
+  "3.14": "3.g3",
+  "3.15": "3.g4",
+  "3.16": "3.g4",
+  "3.17B": "3.g4",
+  "3.18B": "3.g4",
+  "3.19": "3.g5",
+  "3.20": "3.g5",
+  "3.21": "3.g5",
+  "3.22": "3.g5",
+  "3.23": "3.g5",
+  "4.1B": "4.g1",
+  "4.2": "4.g1",
+  "4.3": "4.g1",
+  "4.4": "4.g2",
+  "4.5": "4.g2",
+  "4.6B": "4.g2",
+  "4.7": "4.g2",
+  "4.8": "4.g3",
+  "4.9B": "4.g3",
+  "4.10": "4.g3",
+  "4.11": "4.g3",
+  "4.12B": "4.g4",
+  "4.13B": "4.g4",
+  "4.14": "4.g4",
+  "5.1": "5.g1",
+  "5.2": "5.g1",
+  "5.3": "5.g1",
+  "5.4": "5.g1",
+  "5.5": "5.g1",
+  "5.6": "5.g2",
+  "5.7B": "5.g2",
+  "5.8": "5.g2",
+  "5.9B": "5.g3",
+  "5.10B": "5.g3",
+  "5.11B": "5.g3",
+  "5.12": "5.g4",
+  "5.13": "5.g4",
+  "5.14": "5.g4",
+  "5.15B": "5.g4",
+  "5.16": "5.g5",
+  "5.17B": "5.g5",
+  "5.18B": "5.g5",
+  "5.19B": "5.g5",
+  "5.20": "5.g5",
+  "5.21B": "5.g5",
+  "5.22B": "5.g5",
+  "5.23": "5.g6",
+  "5.24": "5.g6",
+  "5.25": "5.g6",
+  "6.1": "6.g1",
+  "6.2": "6.g1",
+  "6.3": "6.g1",
+  "6.4": "6.g1",
+  "6.5": "6.g1",
+  "6.6": "6.g1",
+  "6.7": "6.g2",
+  "6.8": "6.g2",
+  "6.9": "6.g2",
+  "6.10": "6.g2",
+  "6.11B": "6.g3",
+  "6.12": "6.g3",
+  "6.13": "6.g3",
+  "6.14B": "6.g4",
+  "6.15B": "6.g4",
+  "6.16B": "6.g4",
+  "7.1": "7.g1",
+  "7.2": "7.g1",
+  "7.3": "7.g1",
+  "7.4": "7.g2",
+  "7.5": "7.g2",
+  "7.6": "7.g2",
+  "7.7": "7.g2",
+  "7.8": "7.g2",
+  "7.9": "7.g3",
+  "7.10B": "7.g3",
+  "7.11B": "7.g3",
+  "7.12B": "7.g3",
+  "7.13": "7.g4",
+  "7.14": "7.g4",
+  "7.15": "7.g4",
+  "7.16": "7.g4",
+  "7.17": "7.g4",
+  "7.18B": "7.g5",
+  "7.19B": "7.g5",
+  "7.20B": "7.g5",
+  "7.21B": "7.g5",
+  "7.22B": "7.g5",
+  "8.1": "8.g1",
+  "8.2": "8.g1",
+  "8.3": "8.g1",
+  "8.4B": "8.g1",
+  "8.5B": "8.g1",
+  "8.6": "8.g2",
+  "8.7": "8.g2",
+  "8.8": "8.g2",
+  "8.9": "8.g3",
+  "8.10": "8.g3",
+  "8.11": "8.g3",
+  "8.12": "8.g3",
+  "9.1": "9.g1",
+  "9.2": "9.g1",
+  "9.3": "9.g1",
+  "9.4": "9.g1",
+  "9.5": "9.g1",
+  "9.6": "9.g1",
+  "9.7B": "9.g2",
+  "9.8B": "9.g2",
+  "9.9": "9.g2",
+  "9.10": "9.g2",
+  "9.11B": "9.g2",
+  "9.12": "9.g3",
+  "9.13": "9.g3",
+  "9.14": "9.g3",
+  "9.15": "9.g3",
+  "9.16B": "9.g4",
+  "9.17B": "9.g4",
+  "9.18B": "9.g4",
+  "9.19B": "9.g4",
+  "3.9B": "3.g2"
+ }
+}

@@ -1,0 +1,1011 @@
+{
+ "board": "Edexcel",
+ "subject": "Physics",
+ "specCode": "1PH0",
+ "version": "Issue 4",
+ "date": "March 2024",
+ "source": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Science/2016/Specification/gcse-physics-spec.pdf",
+ "sourceNote": "Pearson Edexcel GCSE (9-1) Physics specification, Issue 4, March 2024: the copy of Pearson's published PDF captured by the Internet Archive on 2026-09-07 (qualifications.pearson.com could not be reached directly from the build environment).",
+ "numbering": "^\\d+\\.\\d+[BCP]?$",
+ "topics": [
+  {
+   "ref": "1",
+   "title": "Key concepts of physics",
+   "subtopics": [
+    {
+     "ref": "1.g1",
+     "title": "SI units and prefixes"
+    },
+    {
+     "ref": "1.g2",
+     "title": "Unit conversion and standard form"
+    }
+   ]
+  },
+  {
+   "ref": "2",
+   "title": "Motion and forces",
+   "subtopics": [
+    {
+     "ref": "2.g1",
+     "title": "Scalars and vectors"
+    },
+    {
+     "ref": "2.g2",
+     "title": "Speed and acceleration"
+    },
+    {
+     "ref": "2.g3",
+     "title": "Newton's laws and weight"
+    },
+    {
+     "ref": "2.g4",
+     "title": "Circular motion and momentum"
+    },
+    {
+     "ref": "2.g5",
+     "title": "Stopping distances"
+    }
+   ]
+  },
+  {
+   "ref": "3",
+   "title": "Conservation of energy",
+   "subtopics": [
+    {
+     "ref": "3.g1",
+     "title": "Energy stores and transfers"
+    },
+    {
+     "ref": "3.g2",
+     "title": "Wasted energy and insulation"
+    },
+    {
+     "ref": "3.g3",
+     "title": "Efficiency and energy resources"
+    }
+   ]
+  },
+  {
+   "ref": "4",
+   "title": "Waves",
+   "subtopics": [
+    {
+     "ref": "4.g1",
+     "title": "Wave properties"
+    },
+    {
+     "ref": "4.g2",
+     "title": "Waves at boundaries"
+    },
+    {
+     "ref": "4.g3",
+     "title": "Sound, ultrasound and infrasound"
+    }
+   ]
+  },
+  {
+   "ref": "5",
+   "title": "Light and the electromagnetic spectrum",
+   "subtopics": [
+    {
+     "ref": "5.g1",
+     "title": "Reflection, colour and lenses"
+    },
+    {
+     "ref": "5.g2",
+     "title": "The electromagnetic spectrum"
+    },
+    {
+     "ref": "5.g3",
+     "title": "Thermal radiation"
+    },
+    {
+     "ref": "5.g4",
+     "title": "Uses and dangers of EM waves"
+    }
+   ]
+  },
+  {
+   "ref": "6",
+   "title": "Radioactivity",
+   "subtopics": [
+    {
+     "ref": "6.g1",
+     "title": "Atomic structure"
+    },
+    {
+     "ref": "6.g2",
+     "title": "Ionising radiation"
+    },
+    {
+     "ref": "6.g3",
+     "title": "Nuclear decay and half-life"
+    },
+    {
+     "ref": "6.g4",
+     "title": "Uses and dangers of radiation"
+    },
+    {
+     "ref": "6.g5",
+     "title": "Nuclear fission"
+    },
+    {
+     "ref": "6.g6",
+     "title": "Nuclear fusion"
+    }
+   ]
+  },
+  {
+   "ref": "7",
+   "title": "Astronomy",
+   "subtopics": [
+    {
+     "ref": "7.g1",
+     "title": "The Solar System and orbits"
+    },
+    {
+     "ref": "7.g2",
+     "title": "The Big Bang and red-shift"
+    },
+    {
+     "ref": "7.g3",
+     "title": "Stars and observing the Universe"
+    }
+   ]
+  },
+  {
+   "ref": "8",
+   "title": "Energy – forces doing work",
+   "subtopics": [
+    {
+     "ref": "8.g1",
+     "title": "Energy stores in systems"
+    },
+    {
+     "ref": "8.g2",
+     "title": "Work done and energy"
+    },
+    {
+     "ref": "8.g3",
+     "title": "Power and efficiency"
+    }
+   ]
+  },
+  {
+   "ref": "9",
+   "title": "Forces and their effects",
+   "subtopics": [
+    {
+     "ref": "9.g1",
+     "title": "Contact and non-contact forces"
+    },
+    {
+     "ref": "9.g2",
+     "title": "Vector and free body diagrams"
+    },
+    {
+     "ref": "9.g3",
+     "title": "Moments, levers and gears"
+    }
+   ]
+  },
+  {
+   "ref": "10",
+   "title": "Electricity and circuits",
+   "subtopics": [
+    {
+     "ref": "10.g1",
+     "title": "Charge, current and voltage"
+    },
+    {
+     "ref": "10.g2",
+     "title": "Resistance in circuits"
+    },
+    {
+     "ref": "10.g3",
+     "title": "I–V graphs and sensors"
+    },
+    {
+     "ref": "10.g4",
+     "title": "Heating effect of current"
+    },
+    {
+     "ref": "10.g5",
+     "title": "Electrical power"
+    },
+    {
+     "ref": "10.g6",
+     "title": "Mains electricity"
+    }
+   ]
+  },
+  {
+   "ref": "11",
+   "title": "Static electricity",
+   "subtopics": [
+    {
+     "ref": "11.g1",
+     "title": "Charging by friction"
+    },
+    {
+     "ref": "11.g2",
+     "title": "Earthing, uses and dangers"
+    },
+    {
+     "ref": "11.g3",
+     "title": "Electric fields"
+    }
+   ]
+  },
+  {
+   "ref": "12",
+   "title": "Magnetism and the motor effect",
+   "subtopics": [
+    {
+     "ref": "12.g1",
+     "title": "Magnets and magnetic fields"
+    },
+    {
+     "ref": "12.g2",
+     "title": "Electromagnets and solenoids"
+    },
+    {
+     "ref": "12.g3",
+     "title": "The motor effect"
+    }
+   ]
+  },
+  {
+   "ref": "13",
+   "title": "Electromagnetic induction",
+   "subtopics": [
+    {
+     "ref": "13.g1",
+     "title": "Electromagnetic induction"
+    },
+    {
+     "ref": "13.g2",
+     "title": "Transformers"
+    },
+    {
+     "ref": "13.g3",
+     "title": "The national grid"
+    }
+   ]
+  },
+  {
+   "ref": "14",
+   "title": "Particle model",
+   "subtopics": [
+    {
+     "ref": "14.g1",
+     "title": "Density and states of matter"
+    },
+    {
+     "ref": "14.g2",
+     "title": "Heating and changes of state"
+    },
+    {
+     "ref": "14.g3",
+     "title": "Gas pressure and temperature"
+    },
+    {
+     "ref": "14.g4",
+     "title": "Gas pressure and volume"
+    }
+   ]
+  },
+  {
+   "ref": "15",
+   "title": "Forces and matter",
+   "subtopics": [
+    {
+     "ref": "15.g1",
+     "title": "Springs and elasticity"
+    },
+    {
+     "ref": "15.g2",
+     "title": "Atmospheric and fluid pressure"
+    },
+    {
+     "ref": "15.g3",
+     "title": "Pressure in liquids"
+    },
+    {
+     "ref": "15.g4",
+     "title": "Upthrust and floating"
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "1.1": "Recall and use the SI unit for physical quantities, as listed in Appendix 3",
+  "1.2": "Recall and use multiples and sub-multiples of units, including giga (G), mega (M), kilo (k), centi (c), milli (m), micro ( μ ) and nano (n)",
+  "1.3": "Be able to convert between different units, including hours to seconds",
+  "1.4": "Use significant figures and standard form where appropriate",
+  "2.1": "Explain that a scalar quantity has magnitude (size) but no specific direction",
+  "2.2": "Explain that a vector quantity has both magnitude (size) and a specific direction",
+  "2.3": "Explain the difference between vector and scalar quantities",
+  "2.4": "Recall vector and scalar quantities, including: a displacement/distance b velocity/speed c acceleration d force e weight/mass f momentum g energy",
+  "2.5": "Recall that velocity is speed in a stated direction",
+  "2.6": "Recall and use the equations: a (average) speed (metre per second, m/s) = distance (metre, m) ÷ time (s) b distance travelled (metre, m) = average speed (metre per second, m/s) × time (s)",
+  "2.7": "Analyse distance/time graphs including determination of speed from the gradient",
+  "2.8": "Recall and use the equation: acceleration (metre per second squared, m/s ) = change in velocity (metre per second, m/s) ÷ time taken (second, s)",
+  "2.9": "Use the equation: (final velocity) ((metre/second) , (m/s) ) – (initial velocity) ((metre/second) , (m/s) ) = 2 × acceleration (metre per second squared, m/s ) × distance (metre, m)",
+  "2.10": "Analyse velocity/time graphs to: a compare acceleration from gradients qualitatively b calculate the acceleration from the gradient (for uniform acceleration only) c determine the distance travelled using the area between the graph line and the time axis (for uniform acceleration only)",
+  "2.11": "Describe a range of laboratory methods for determining the speeds of objects such as the use of light gates",
+  "2.12": "Recall some typical speeds encountered in everyday experience for wind and sound, and for walking, running, cycling and other transportation systems",
+  "2.13": "Recall that the acceleration,",
+  "2.14": "Recall Newton’s first law and use it in the following situations: a where the resultant force on a body is zero, i.e. the body is moving at a constant velocity or is at rest b where the resultant force is not zero, i.e. the speed and/or direction of the body change(s)",
+  "2.15": "Recall and use Newton’s second law as: force (newton, N) = mass (kilogram, kg) × acceleration (metre per second squared, m/s )",
+  "2.16": "Define weight, recall and use the equation: weight (newton, N) = mass (kilogram, kg) × gravitational field strength (newton per kilogram, N/kg)",
+  "2.17": "Describe how weight is measured",
+  "2.18": "Describe the relationship between the weight of a body and the gravitational field strength",
+  "2.19": "mass and acceleration by varying the masses added to trolleys 14",
+  "2.20": "Explain that an object moving in a circular orbit at constant speed has a changing velocity (qualitative only)",
+  "2.21": "Explain that for motion in a circle there must be a resultant force known as a centripetal force that acts towards the centre of the circle",
+  "2.22": "Explain that inertial mass is a measure of how difficult it is to change the velocity of an object (including from rest) and know that it is defined as the ratio of force over acceleration",
+  "2.23": "Recall and apply Newton’s third law both to equilibrium situations and to collision interactions and relate it to the conservation of momentum in collisions",
+  "2.24": "Define momentum, recall and use the equation: momentum (kilogram metre per second, kg m/s) = mass (kilogram, kg) × velocity (metre per second, m/s)",
+  "2.25": "Describe examples of momentum in collisions",
+  "2.26": "Use Newton’s second law as: force (newton, N) = change in momentum (kilogram metre per second, kg m/s) ÷ time (second, s)",
+  "2.27": "Explain methods of measuring human reaction times and recall typical results",
+  "2.28": "Recall that the stopping distance of a vehicle is made up of the sum of the thinking distance and the braking distance",
+  "2.29": "Explain that the stopping distance of a vehicle is affected by a range of factors including: a the mass of the vehicle b the speed of the vehicle c the driver’s reaction time d the state of the vehicle’s brakes e the state of the road f the amount of friction between the tyre and the road surface",
+  "2.30": "Describe the factors affecting a driver’s reaction time including drugs and distractions",
+  "2.31": "Explain the dangers caused by large decelerations and estimate the forces involved in typical situations on a public road",
+  "2.32P": "Estimate how the distance required for a road vehicle to stop in an emergency varies over a range of typical speeds",
+  "2.33P": "Carry out calculations on work done to show the dependence of braking distance for a vehicle on initial velocity squared (work done to bring a vehicle to rest equals its initial kinetic energy)",
+  "3.1": "Recall and use the equation to calculate the change in gravitational PE when an object is raised above the ground: change in gravitational potential energy (joule, J) = mass (kilogram, kg) × gravitational field strength (newton per kilogram, N/kg) × change in vertical height (metre, m)",
+  "3.2": "Recall and use the equation to calculate the amounts of energy associated with a moving object: kinetic energy (joule, J) =",
+  "3.3": "Draw and interpret diagrams to represent energy transfers",
+  "3.4": "Explain what is meant by conservation of energy",
+  "3.5": "Analyse the changes involved in the way energy is stored when a system changes, including: a an object projected upwards or up a slope b a moving object hitting an obstacle c an object being accelerated by a constant force d a vehicle slowing down e bringing water to a boil in an electric kettle",
+  "3.6": "Explain that where there are energy transfers in a closed system there is no net change to the total energy in that system",
+  "3.7": "Explain that mechanical processes become wasteful when they cause a rise in temperature so dissipating energy in heating the surroundings",
+  "3.8": "Explain, using examples, how in all system changes energy is dissipated so that it is stored in less useful ways",
+  "3.9": "Explain ways of reducing unwanted energy transfer including through lubrication, thermal insulation",
+  "3.10": "Describe the effects of the thickness and thermal conductivity of the walls of a building on its rate of cooling qualitatively",
+  "3.11": "Recall and use the equation:",
+  "3.12": "Explain how efficiency can be increased",
+  "3.13": "Describe the main energy sources available for use on Earth (including fossil fuels, nuclear fuel, bio-fuel, wind, hydro- electricity, the tides and the Sun), and compare the ways in which both renewable and non-renewable sources are used",
+  "3.14": "Explain patterns and trends in the use of energy resources Uses of mathematics Make calculations using ratios and proportional reasoning to convert units and to compute rates (1c, 3c). Calculate relevant values of stored energy and energy transfers; convert between newton-metres and joules (1c, 3c). Make calculations of the energy changes associated with changes in a system, recalling or selecting the relevant equations for mechanical, electrical, and thermal processes; thereby express in quantitative form and on a common scale the overall redistribution of energy in the system (1a, 1c, 3c).",
+  "4.1": "Recall that waves transfer energy and information without transferring matter",
+  "4.2": "Describe evidence that with water and sound waves it is the wave and not the water or air itself that travels",
+  "4.3": "Define and use the terms frequency and wavelength as applied to waves",
+  "4.4": "Use the terms amplitude, period, wave velocity and wavefront as applied to waves",
+  "4.5": "Describe the difference between longitudinal and transverse waves by referring to sound, electromagnetic, seismic and water waves",
+  "4.6": "Recall and use both the equations below for all waves: wave speed (metre/second, m/s) = frequency (hertz, Hz) × wavelength (metre, m)",
+  "4.7": "Describe how to measure the velocity of sound in air and ripples on water surfaces",
+  "4.8P": "Calculate depth or distance from time and wave velocity",
+  "4.9P": "Describe the effects of a reflection b refraction c transmission d absorption of waves at material interfaces",
+  "4.10": "Explain how waves will be refracted at a boundary in terms of the change of direction and speed",
+  "4.11": "Recall that different substances may absorb, transmit, refract or reflect waves in ways that vary with wavelength",
+  "4.12P": "Describe the processes which convert wave disturbances between sound waves and vibrations in solids, and a explain why such processes only work over a limited frequency range b use this to explain the way the human ear works",
+  "4.13P": "Recall that sound with frequencies greater than 20 000 hertz, Hz, is known as ultrasound",
+  "4.14P": "Recall that sound with frequencies less than 20 hertz, Hz, is known as infrasound",
+  "4.15P": "Explain uses of ultrasound and infrasound, including a sonar b foetal scanning c exploration of the Earth’s core",
+  "4.16P": "Describe how changes, if any, in velocity, frequency and wavelength, in the transmission of sound waves from one medium to another are inter-related",
+  "4.17": "measure the speed, frequency and wavelength of a wave in a solid and a fluid",
+  "5.1P": "Explain, with the aid of ray diagrams, reflection, refraction and total internal reflection (TIR), including the law of reflection and critical angle",
+  "5.2P": "Explain the difference between specular and diffuse reflection",
+  "5.3P": "Explain how colour of light is related to a differential absorption at surfaces b transmission of light through filters",
+  "5.4P": "Relate the power of a lens to its focal length and shape",
+  "5.5P": "Use ray diagrams to show the similarities and differences in the refraction of light by converging and diverging lenses",
+  "5.6P": "Explain the effects of different types of lens in producing real and virtual images",
+  "5.7": "Recall that all electromagnetic waves are transverse, that they travel at the same speed in a vacuum",
+  "5.8": "Explain, with examples, that all electromagnetic waves transfer energy from source to observer",
+  "5.9": "Investigate refraction in rectangular glass blocks in terms of the interaction of electromagnetic waves with matter",
+  "5.10": "Recall the main groupings of the continuous electromagnetic spectrum including (in order) radio waves, microwaves, infrared, visible (including the colours of the visible spectrum), ultraviolet, x-rays and gamma rays",
+  "5.11": "Describe the electromagnetic spectrum as continuous from radio waves to gamma rays and that the radiations within it can be grouped in order of decreasing wavelength and increasing frequency",
+  "5.12": "Recall that our eyes can only detect a limited range of frequencies of electromagnetic radiation",
+  "5.13": "Recall that different substances may absorb, transmit, refract or reflect electromagnetic waves in ways that vary with wavelength",
+  "5.14": "Explain the effects of differences in the velocities of electromagnetic waves in different substances",
+  "5.15P": "Explain that all bodies emit radiation, that the intensity and wavelength distribution of any emission depends on their temperature",
+  "5.16P": "Explain that for a body to be at a constant temperature it needs to radiate the same average power that it absorbs",
+  "5.17P": "Explain what happens to a body if the average power it radiates is less or more than the average power that it absorbs",
+  "5.18P": "Explain how the temperature of the Earth is affected by factors controlling the balance between incoming radiation and radiation emitted",
+  "5.19P": "the amount of thermal energy radiated or absorbed",
+  "5.20": "Recall that the potential danger associated with an electromagnetic wave increases with increasing frequency",
+  "5.21": "Describe the harmful effects on people of excessive exposure to electromagnetic radiation, including: a microwaves: internal heating of body cells b infrared: skin burns c ultraviolet: damage to surface cells and eyes, leading to skin cancer and eye conditions d x-rays and gamma rays: mutation or damage to cells in the body",
+  "5.22": "Describe some uses of electromagnetic radiation a radio waves: including broadcasting, communications and satellite transmissions b microwaves: including cooking, communications and satellite transmissions c infrared: including cooking, thermal imaging, short range communications, optical fibres, television remote controls and security systems d visible light: including vision, photography and illumination e ultraviolet: including security marking, fluorescent lamps, detecting forged bank notes and disinfecting water f x-rays: including observing the internal structure of objects, airport security scanners and medical x-rays g gamma rays: including sterilising food and medical equipment, and the detection of cancer and its treatment",
+  "5.23": "Recall that radio waves can be produced by, or can themselves induce, oscillations in electrical circuits",
+  "5.24": "Recall that changes in atoms and nuclei can a generate radiations over a wide frequency range b be caused by absorption of a range of radiations 22",
+  "6.1": "Describe an atom as a positively charged nucleus, consisting of protons and neutrons, surrounded by negatively charged electrons, with the nuclear radius much smaller than that of the atom and with almost all of the mass in the nucleus",
+  "6.2": "Recall the typical size (order of magnitude) of atoms and small molecules",
+  "6.3": "Describe the structure of nuclei of isotopes using the terms atomic (proton) number and mass (nucleon) number and using symbols in the format using symbols in the format",
+  "6.4": "Recall that the nucleus of each element has a characteristic positive charge, but that isotopes of an element differ in mass by having different numbers of neutrons",
+  "6.5": "Recall the relative masses and relative electric charges of protons, neutrons, electrons and positrons",
+  "6.6": "Recall that in an atom the number of protons equals the number of electrons and is therefore neutral",
+  "6.7": "Recall that in each atom its electrons orbit the nucleus at different set distances from the nucleus",
+  "6.8": "Explain that electrons change orbit when there is absorption or emission of electromagnetic radiation",
+  "6.9": "Explain how atoms may form positive ions by losing outer electrons",
+  "6.10": "Recall tha t alpha, β – (beta minus), β+ (positron), gamma rays and neutron radiation are emitted from unstable nuclei in a random process",
+  "6.11": "Recall that alpha, β – (beta minus), β+ (positron) and gamma rays are ionising radiations",
+  "6.12": "Explain what is meant by background radiation",
+  "6.13": "Describe the origins of background radiation from Earth and space",
+  "6.14": "Describe methods for measuring and detecting radioactivity limited to photographic film and a Geiger–Müller tube",
+  "6.15": "Recall that an alpha particle is equivalent to a helium nucleus, a beta particle is an electron emitted from the nucleus and a gamma ray is electromagnetic radiation",
+  "6.16": "Compare alpha, beta and gamma radiations in terms of their abilities to penetrate and ionise 24",
+  "6.17": "Describe how and why the atomic model has changed over time including reference to the plum pudding model and Rutherford alpha particle scattering leading to the Bohr model",
+  "6.18": "Describe the process of β – decay (a neutron becomes a proton plus an electron)",
+  "6.19": "Describe the process of β+ decay (a proton becomes a neutron plus a positron)",
+  "6.20": "Explain the effects on the atomic (proton) number and mass (nucleon) number of radioactive decays (α, β, γ and neutron emission)",
+  "6.21": "Recall that nuclei that have undergone radioactive decay often undergo nuclear rearrangement with a loss of energy as gamma radiation",
+  "6.22": "Use given data to balance nuclear equations in terms of mass and charge",
+  "6.23": "Describe how the activity of a radioactive source decreases over a period of time",
+  "6.24": "Recall that the unit of activity of a radioactive isotope is the Becquerel, Bq",
+  "6.25": "Explain that the half-life of a radioactive isotope is the time taken for half the undecayed nuclei to decay or the activity of a source to decay by half",
+  "6.26": "Explain that it cannot be predicted when a particular nucleus will decay but half-life enables the activity of a very large number of nuclei to be predicted during the decay process",
+  "6.27": "Use the concept of half-life to carry out simple calculations on the decay of a radioactive isotope, including graphical representations",
+  "6.28P": "Describe uses of radioactivity, including: a household fire (smoke) alarms b irradiating food c sterilisation of equipment d tracing and gauging thicknesses e diagnosis and treatment of cancer",
+  "6.29": "Describe the dangers of ionising radiation in terms of tissue damage and possible mutations and relate this to the precautions needed",
+  "6.30P": "Explain how the dangers of ionising radiation depend on half- life and relate this to the precautions needed",
+  "6.31": "Explain the precautions taken to ensure the safety of people exposed to radiation, including limiting the dose for patients and the risks to medical personnel",
+  "6.32": "Describe the differences between contamination and irradiation effects and compare the hazards associated with these two",
+  "6.33P": "Compare and contrast the treatment of tumours using radiation applied internally or externally",
+  "6.34P": "Explain some of the uses of radioactive substances in diagnosis of medical conditions, including PET scanners and tracers",
+  "6.35P": "Explain why isotopes used in PET scanners have to be produced nearby",
+  "6.36P": "Evaluate the advantages and disadvantages of nuclear power for generating electricity, including the lack of carbon dioxide emissions, risks, public perception, waste disposal and safety issues",
+  "6.37P": "Recall that nuclear reactions, including fission, fusion and radioactive decay, can be a source of energy",
+  "6.38P": "Explain how the fission of U-235 produces two daughter nuclei and the emission of two or more neutrons, accompanied by a release of energy",
+  "6.39P": "Explain the principle of a controlled nuclear chain reaction",
+  "6.40P": "Explain how the chain reaction is controlled in a nuclear reactor, including the action of moderators and control rods",
+  "6.41P": "Describe how thermal (heat) energy from the chain reaction is used in the generation of electricity in a nuclear power station",
+  "6.42P": "Recall that the products of nuclear fission are radioactive",
+  "6.43P": "Describe nuclear fusion as the creation of larger nuclei resulting in a loss of mass from smaller nuclei, accompanied by a release of energy, and recognise fusion as the energy source for stars",
+  "6.44P": "Explain the difference between nuclear fusion and nuclear fission",
+  "6.45P": "Explain why nuclear fusion does not happen at low temperatures and pressures, due to electrostatic repulsion of protons",
+  "6.46P": "Relate the conditions for fusion to the difficulty of making a practical and economic form of power station 26 Uses of mathematics Make calculations using ratios and proportional reasoning to convert units and to compute rates (1c, 3c). Balance equations representing alpha-, beta- or gamma-radiations in terms of the masses and charges of the atoms involved (1b, 1c, 3c). Calculate the net decline, expressed as a ratio, in a radioactive emission after a given number of half-lives (1c, 3d).",
+  "7.1P": "Explain how and why both the weight of any body and the value of",
+  "7.2P": "Recall that our Solar System consists of the Sun (our star), eight planets and their natural satellites (such as our Moon); dwarf planets; asteroids and comets",
+  "7.3P": "Recall the names and order, in terms of distance from the Sun, of the eight planets",
+  "7.4P": "Describe how ideas about the structure of the Solar System have changed over time",
+  "7.5P": "Describe the orbits of moons, planets, comets and artificial satellites",
+  "7.6P": "Explain for circular orbits how the force of gravity can lead to changing velocity of a planet but unchanged speed",
+  "7.7P": "Explain how, for a stable orbit, the radius must change if orbital speed changes (qualitative only)",
+  "7.8P": "Compare the Steady State and Big Bang theories",
+  "7.9P": "Describe evidence supporting the Big Bang theory, limited to red-shift and the cosmic microwave background (CMB) radiation",
+  "7.10P": "Recall that as there is more evidence supporting the Big Bang theory than the Steady State theory, it is the currently accepted model for the origin of the Universe",
+  "7.11P": "Describe that if a wave source is moving relative to an observer there will be a change in the observed frequency and wavelength",
+  "7.12P": "Describe the red-shift in light received from galaxies at different distances away from the Earth",
+  "7.13P": "Explain why the red-shift of galaxies provides evidence for the Universe expanding",
+  "7.14P": "Explain how both the Big Bang and Steady State theories of the origin of the Universe both account for red-shift of galaxies",
+  "7.15P": "Explain how the discovery of the CMB radiation led to the Big Bang theory becoming the currently accepted model 28",
+  "7.16P": "Describe the evolution of stars of similar mass to the Sun through the following stages: a nebula b star (main sequence) c red giant d white dwarf",
+  "7.17P": "Explain how the balance between thermal expansion and gravity affects the life cycle of stars",
+  "7.18P": "Describe the evolution of stars with a mass larger than the Sun",
+  "7.19P": "Describe how methods of observing the Universe have changed over time including why some telescopes are located outside the Earth’s atmosphere",
+  "8.1": "Describe the changes involved in the way energy is stored when systems change",
+  "8.2": "Draw and interpret diagrams to represent energy transfers",
+  "8.3": "Explain that where there are energy transfers in a closed system there is no net change to the total energy in that system",
+  "8.4": "Identify the different ways that the energy of a system can be changed a through work done by forces b in electrical equipment c in heating",
+  "8.5": "Describe how to measure the work done by a force and understand that energy transferred (joule, J) is equal to work done (joule, J)",
+  "8.6": "Recall and use the equation: work done (joule, J) = force (newton, N) × distance moved in the direction of the force (metre, m)",
+  "8.7": "Describe and calculate the changes in energy involved when a system is changed by work done by forces",
+  "8.8": "Recall and use the equation to calculate the change in gravitational PE when an object is raised above the ground: change in gravitational potential energy (joule, J) = mass (kilogram, kg) × gravitational field strength (newton per kilogram, N/kg) × change in vertical height (metre, m)",
+  "8.9": "Recall and use the equation to calculate the amounts of energy associated with a moving object: kinetic energy (joule, J) =",
+  "8.10": "Explain, using examples, how in all system changes energy is dissipated so that it is stored in less useful ways 30",
+  "8.11": "Explain that mechanical processes become wasteful when they cause a rise in temperature so dissipating energy in heating the surroundings",
+  "8.12": "Define power as the rate at which energy is transferred and use examples to explain this definition",
+  "8.13": "Recall and use the equation: power (watt, W) = work done (joule, J) ÷ time taken (second, s)",
+  "8.14": "Recall that one watt is equal to one joule per second, J/s",
+  "8.15": "Recall and use the equation:",
+  "9.1": "Describe, with examples, how objects can interact a at a distance without contact, linking these to the gravitational, electrostatic and magnetic fields involved b by contact, including normal contact force and friction c producing pairs of forces which can be represented as vectors",
+  "9.2": "Explain the difference between vector and scalar quantities using examples",
+  "9.3": "Use vector diagrams to illustrate resolution of forces, a net force, and equilibrium situations (scale drawings only)",
+  "9.4": "Draw and use free body force diagrams",
+  "9.5": "Explain examples of the forces acting on an isolated solid object or a system where several forces lead to a resultant force on an object and the special case of balanced forces when the resultant force is zero",
+  "9.6P": "Describe situations where forces can cause rotation",
+  "9.7P": "Recall and use the equation: moment of a force (newton metre, N m) = force (newton, N) × distance normal to the direction of the force (metre, m)",
+  "9.8P": "Recall and use the principle of moments in situations where rotational forces are in equilibrium: the sum of clockwise moments = the sum of anti-clockwise moments for rotational forces in equilibrium",
+  "9.9P": "Explain how levers and gears transmit the rotational effects of forces",
+  "9.10": "Explain ways of reducing unwanted energy transfer through lubrication",
+  "10.1": "Describe the structure of the atom, limited to the position, mass and charge of protons, neutrons and electrons",
+  "10.2": "Draw and use electric circuit diagrams representing them with the conventions of positive and negative terminals, and the symbols that represent cells, including batteries, switches, voltmeters, ammeters, resistors, variable resistors, lamps, motors, diodes, thermistors, LDRs and LEDs",
+  "10.3": "Describe the differences between series and parallel circuits",
+  "10.4": "Recall that a voltmeter is connected in parallel with a component to measure the potential difference (voltage), in volt, across it",
+  "10.5": "Explain that potential difference (voltage) is the energy transferred per unit charge passed and hence that the volt is a joule per coulomb",
+  "10.6": "Recall and use the equation: energy transferred (joule, J) = charge moved (coulomb, C) × potential difference (volt, V)",
+  "10.7": "Recall that an ammeter is connected in series with a component to measure the current, in amp, in the component",
+  "10.8": "Explain that an electric current as the rate of flow of charge and the current in metals is a flow of electrons",
+  "10.9": "Recall and use the equation: charge (coulomb, C) = current (ampere, A) × time (second, s)",
+  "10.10": "Describe that when a closed circuit includes a source of potential difference there will be a current in the circuit",
+  "10.11": "Recall that current is conserved at a junction in a circuit",
+  "10.12": "Explain how changing the resistance in a circuit changes the current and how this can be achieved using a variable resistor",
+  "10.13": "Recall and use the equation: potential difference (volt, V) = current (ampere, A) × resistance (ohm, Ω )",
+  "10.14": "Explain why, if two resistors are in series, the net resistance is increased, whereas with two in parallel the net resistance is decreased",
+  "10.15": "Calculate the currents, potential differences and resistances in series circuits",
+  "10.16": "Explain the design and construction of series circuits for testing and measuring",
+  "10.17": "a investigate the relationship between potential difference, current and resistance for a resistor and a filament lamp b test series and parallel circuits using resistors and filament lamps",
+  "10.18": "Explain how current varies with potential difference for the following devices and how this relates to resistance a filament lamps b diodes c fixed resistors",
+  "10.19": "Describe how the resistance of a light-dependent resistor (LDR) varies with light intensity",
+  "10.20": "Describe how the resistance of a thermistor varies with change of temperature (negative temperature coefficient thermistors only)",
+  "10.21": "Explain how the design and use of circuits can be used to explore the variation of resistance in the following devices a filament lamps b diodes c thermistors d LDRs",
+  "10.22": "Recall that, when there is an electric current in a resistor, there is an energy transfer which heats the resistor",
+  "10.23": "Explain that electrical energy is dissipated as thermal energy in the surroundings when an electrical current does work against electrical resistance",
+  "10.24": "Explain the energy transfer (in 10.22 above) as the result of collisions between electrons and the ions in the lattice",
+  "10.25": "Explain ways of reducing unwanted energy transfer through low resistance wires",
+  "10.26": "Describe the advantages and disadvantages of the heating effect of an electric current 34",
+  "10.27": "Use the equation: energy transferred (joule, J) = current (ampere, A) × potential difference (volt, V) × time (second, s)",
+  "10.28": "Describe power as the energy transferred per second and recall that it is measured in watt",
+  "10.29": "Recall and use the equation: power (watt, W) = energy transferred (joule, J) ÷ time taken (second, s)",
+  "10.30": "Explain how the power transfer in any circuit device is related to the potential difference across it and the current in it",
+  "10.31": "Recall and use the equations: electrical power (watt, W) = current (ampere, A) × potential difference (volt, V)",
+  "10.32": "Describe how, in different domestic devices, energy is transferred from batteries and the a.c. mains to the energy of motors and heating devices",
+  "10.33": "Explain the difference between direct and alternating voltage",
+  "10.34": "Describe direct current (d.c.) as movement of charge in one direction only and recall that cells and batteries supply direct current (d.c.)",
+  "10.35": "Describe that in alternating current (a.c.) the movement of charge changes direction",
+  "10.36": "Recall that in the UK the domestic supply is a.c., at a frequency of 50 Hz and a voltage of about 230 V",
+  "10.37": "Explain the difference in function between the live and the neutral mains input wires",
+  "10.38": "Explain the function of an earth wire and of fuses or circuit breakers in ensuring safety",
+  "10.39": "Explain why switches and fuses should be connected in the live wire of a domestic circuit",
+  "10.40": "Recall the potential differences between the live, neutral and earth mains wires",
+  "10.41": "Explain the dangers of providing any connection between the live wire and earth",
+  "10.42": "Describe, with examples, the relationship between the power ratings for domestic electrical appliances and the changes in stored energy when they are in use",
+  "11.1P": "Explain how an insulator can be charged by friction, through the transfer of electrons",
+  "11.2P": "Explain how the material gaining electrons becomes negatively charged and the material losing electrons is left with an equal positive charge",
+  "11.3P": "Recall that like charges repel and unlike charges attract",
+  "11.4P": "Explain common electrostatic phenomena in terms of movement of electrons, including a shocks from everyday objects b lightning c attraction by induction such as a charged balloon attracted to a wall and a charged comb picking up small pieces of paper",
+  "11.5P": "Explain how earthing removes excess charge by movement of electrons",
+  "11.6P": "Explain some of the uses of electrostatic charges in everyday situations, including insecticide sprayers",
+  "11.7P": "Describe some of the dangers of sparking in everyday situations, including fuelling cars, and explain the use of earthing to prevent dangerous build-up of charge",
+  "11.8P": "Define an electric field as the region where an electric charge experiences a force",
+  "11.9P": "Describe the shape and direction of the electric field around a point charge and between parallel plates and relate the strength of the field to the concentration of lines",
+  "11.10P": "Explain how the concept of an electric field helps to explain the phenomena of static electricity",
+  "12.1": "Recall that unlike magnetic poles attract and like magnetic poles repel",
+  "12.2": "Describe the uses of permanent and temporary magnetic materials including cobalt, steel, iron and nickel",
+  "12.3": "Explain the difference between permanent and induced magnets",
+  "12.4": "Describe the shape and direction of the magnetic field around bar magnets and for a uniform field, and relate the strength of the field to the concentration of lines",
+  "12.5": "Describe the use of plotting compasses to show the shape and direction of the field of a magnet and the Earth’s magnetic field",
+  "12.6": "Explain how the behaviour of a magnetic compass is related to evidence that the core of the Earth must be magnetic",
+  "12.7": "Describe how to show that a current can create a magnetic effect around a long straight conductor, describing the shape of the magnetic field produced and relating the direction of the magnetic field to the direction of the current",
+  "12.8": "Recall that the strength of the field depends on the size of the current and the distance from the long straight conductor",
+  "12.9": "Explain how inside a solenoid (an example of an electromagnet) the fields from individual coils a add together to form a very strong almost uniform field along the centre of the solenoid b cancel to give a weaker field outside the solenoid",
+  "12.10": "Recall that a current carrying conductor placed near a magnet experiences a force and that an equal and opposite force acts on the magnet",
+  "12.11": "Explain that magnetic forces are due to interactions between magnetic fields",
+  "12.12": "Recall and use Fleming’s left-hand rule to represent the relative directions of the force, the current and the magnetic field for cases where they are mutually perpendicular 38",
+  "12.13": "Use the equation: force on a conductor at right angles to a magnetic field carrying a current (newton, N) = magnetic flux density (tesla, T or newton per ampere metre, N/A m) × current (ampere, A) × length (metre, m)",
+  "12.14P": "Explain how the force on a conductor in a magnetic field is used to cause rotation in electric motors",
+  "13.1P": "Explain how to produce an electric current by the relative movement of a magnet and a conductor a on a small scale in the laboratory b in the large-scale generation of electrical energy",
+  "13.2": "Recall the factors that affect the size and direction of an induced potential difference, and describe how the magnetic field produced opposes the original change",
+  "13.3P": "Explain how electromagnetic induction is used in alternators to generate current which alternates in direction (a.c.) and in dynamos to generate direct current (d.c.)",
+  "13.4P": "Explain the action of the microphone in converting the pressure variations in sound waves into variations in current in electrical circuits, and the reverse effect as used in loudspeakers and headphones",
+  "13.5": "Explain how an alternating current in one circuit can induce a current in another circuit in a transformer",
+  "13.6": "Recall that a transformer can change the size of an alternating voltage",
+  "13.7P": "Use the turns ratio equation for transformers to calculate either the missing voltage or the missing number of turns: coil ondary sec in turns of number coil primary in turns of number coil ondary sec across difference potential coil primary across difference potential = and 13.10",
+  "13.8": "Explain why, in the national grid, electrical energy is transferred at high voltages from power stations, and then transferred at lower voltages in each locality for domestic uses as it improves the efficiency by reducing heat loss in transmission lines",
+  "13.9": "Explain where and why step-up and step-down transformers are used in the transmission of electricity in the national grid 40",
+  "13.10": "Use the power equation (for transformers with100% efficiency): potential difference across primary coil (volt, V) × current in primary coil (ampere, A) = potential difference across secondary coil (volt, V) × current in secondary coil (ampere, A)",
+  "13.11P": "Explain the advantages of power transmission in high- voltage cables, using the equations in 10.29, 10.31,",
+  "14.1": "Use a simple kinetic theory model to explain the different states of matter (solids, liquids and gases) in terms of the movement and arrangement of particles",
+  "14.2": "Recall and use the equation: density (kilogram per cubic metre, kg/m ) = mass (kilogram, kg) ÷ volume (cubic metre, m )",
+  "14.3": "Core Practical: Investigate the densities of solid and liquids",
+  "14.4": "Explain the differences in density between the different states of matter in terms of the arrangements of the atoms or molecules",
+  "14.5": "Describe that when substances melt, freeze, evaporate, boil, condense or sublimate mass is conserved and that these physical changes differ from some chemical changes because the material recovers its original properties if the change is reversed",
+  "14.6": "Explain how heating a system will change the energy stored within the system and raise its temperature or produce changes of state",
+  "14.7": "Define the terms specific heat capacity and specific latent heat and explain the differences between them",
+  "14.8": "Use the equation: change in thermal energy (joule, J) = mass (kilogram, kg) × specific heat capacity (joule per kilogram degree Celsius, J/kg °C) × change in temperature (degree Celsius, °C)",
+  "14.9": "Use the equation: thermal energy for a change of state (joule , J) = mass (kilogram, kg) × specific latent heat (joule per kilogram, J/kg)",
+  "14.10": "Explain ways of reducing unwanted energy transfer through thermal insulation 42",
+  "14.11": "determining the specific heat capacity of water and obtaining a temperature-time graph for melting ice",
+  "14.12": "Explain the pressure of a gas in terms of the motion of its particles",
+  "14.13": "Explain the effect of changing the temperature of a gas on the velocity of its particles and hence on the pressure produced by a fixed mass of gas at constant volume (qualitative only)",
+  "14.14": "Describe the term absolute zero, −273 °C, in terms of the lack of movement of particles",
+  "14.15": "Convert between the kelvin and Celsius scales",
+  "14.16P": "Explain that gases can be compressed or expanded by pressure changes",
+  "14.17P": "Explain that the pressure of a gas produces a net force at right angles to any surface",
+  "14.18P": "Explain the effect of changing the volume of a gas on the rate at which its particles collide with the walls of its container and hence on the pressure produced by a fixed mass of gas at constant temperature",
+  "14.19P": "Use the equation:",
+  "14.20P": "Explain why doing work on a gas can increase its temperature, including a bicycle pump",
+  "15.1": "Explain, using springs and other elastic objects, that stretching, bending or compressing an object requires more than one force",
+  "15.2": "Describe the difference between elastic and inelastic distortion",
+  "15.3": "Recall and use the equation for linear elastic distortion including calculating the spring constant: force exerted on a spring (newton, N) = spring constant (newton per metre, N/m) × extension (metre, m) force exerted on a spring = spring constant × extension",
+  "15.4": "Use the equation to calculate the work done in stretching a spring: energy transferred in stretching (joules, J) = 0.5 × spring constant (newton per metre, N/m) × (extension (metre, m)) energy transferred in stretching = 0.5 × spring constant × (extension)",
+  "15.5": "Describe the difference between linear and non-linear relationships between force and extension",
+  "15.6": "applying forces to a spring Investigate the extension and work done when applying forces to a spring The stretching of a spring must be investigated by measuring the length of a spring with no weights, followed by adding varying masses and measuring the new length. This must include calculating the work done and an appreciation of the forces involved. 68",
+  "15.7P": "Explain why atmospheric pressure varies with height above the Earth’s surface with reference to a simple model of the Earth’s atmosphere",
+  "15.8P": "Describe the pressure in a fluid as being due to the fluid and atmospheric pressure",
+  "15.9P": "Recall that the pressure in fluids causes a force normal to any surface",
+  "15.10P": "Explain how pressure is related to force and area, using appropriate examples",
+  "15.11P": "Recall and use the equation: pressure (pascal, Pa) = force normal to surface (newton, N) ÷ area of surface (square metre, m ) pressure = force normal to surface ÷ area of surface",
+  "15.12P": "Describe how pressure in fluids increases with depth and density",
+  "15.13P": "Explain why the pressure in liquids varies with density and depth",
+  "15.14P": "Use the equation to calculate the magnitude of the pressure in liquids and calculate the differences in pressure at different depths in a liquid: pressure due to a column of liquid (pascal, Pa) = height of column (metre, m) × density of liquid (kilogram per cubic metre, kg/m ) × gravitational field strength (newton per kilogram, N/kg) pressure due to a column of liquid = height of column × density of liquid × gravitational field strength",
+  "15.15P": "Explain why an object in a fluid is subject to an upwards force (upthrust) and relate this to examples including objects that are fully immersed in a fluid (liquid or gas) or partially immersed in a liquid",
+  "15.16P": "Recall that the upthrust is equal to the weight of fluid displaced",
+  "15.17P": "Explain how the factors (upthrust, weight, density of fluid) influence whether an object will float or sink"
+ },
+ "htRefs": [
+  "2.20",
+  "2.21",
+  "2.22",
+  "2.24",
+  "2.25",
+  "2.26",
+  "3.12",
+  "4.8P",
+  "4.11",
+  "4.12P",
+  "4.13P",
+  "4.14P",
+  "4.15P",
+  "5.13",
+  "5.14",
+  "5.16P",
+  "5.17P",
+  "5.18P",
+  "5.23",
+  "9.3",
+  "9.4",
+  "9.5",
+  "10.25",
+  "12.10",
+  "12.11",
+  "12.13",
+  "12.14P",
+  "13.1P",
+  "13.2",
+  "13.3P",
+  "13.4P",
+  "13.5",
+  "13.6",
+  "13.11P",
+  "14.20P",
+  "15.13P",
+  "15.14P",
+  "15.15P",
+  "15.16P",
+  "15.17P"
+ ],
+ "htPartial": {
+  "2.23": "both and to collision interactions and relate it to the conservation of momentum in collisions",
+  "2.31": "and estimate the forces involved in typical situations on a public road",
+  "3.14": "Uses of mathematics",
+  "4.10": "and speed",
+  "6.46P": "Uses of mathematics Calculate the net decline, expressed as a ratio, in a radioactive emission after a given number of half-lives (1c, 3d).",
+  "12.12": "Recall and use Fleming’s left-hand rule to represent the relative directions of the force, the current and the magnetic field for cases where they are mutually perpendicular",
+  "13.7P": "Use the turns ratio equation for transformers to calculate either the missing voltage or the missing number of turns: and 13.10"
+ },
+ "practicals": [
+  {
+   "n": "2.19",
+   "ref": "2.19",
+   "title": "Investigate the relationship between force,"
+  },
+  {
+   "n": "4.17",
+   "ref": "4.17",
+   "title": "Investigate the suitability of equipment to"
+  },
+  {
+   "n": "5.9",
+   "ref": "5.9",
+   "title": "Investigate refraction in rectangular glass"
+  },
+  {
+   "n": "5.19P",
+   "ref": "5.19P",
+   "title": "Investigate how the nature of a surface affects"
+  },
+  {
+   "n": "10.17",
+   "ref": "10.17",
+   "title": "Construct electrical circuits to:"
+  },
+  {
+   "n": "14.3",
+   "ref": "14.3",
+   "title": "Investigate the densities of solid and liquids"
+  },
+  {
+   "n": "14.11",
+   "ref": "14.11",
+   "title": "Investigate the properties of water by"
+  },
+  {
+   "n": "15.6",
+   "ref": "15.6",
+   "title": "Investigate the extension and work done when"
+  }
+ ],
+ "parents": {
+  "1.1": "1.g1",
+  "1.2": "1.g1",
+  "1.3": "1.g2",
+  "1.4": "1.g2",
+  "2.1": "2.g1",
+  "2.2": "2.g1",
+  "2.3": "2.g1",
+  "2.4": "2.g1",
+  "2.5": "2.g1",
+  "2.6": "2.g2",
+  "2.7": "2.g2",
+  "2.8": "2.g2",
+  "2.9": "2.g2",
+  "2.10": "2.g2",
+  "2.11": "2.g2",
+  "2.12": "2.g2",
+  "2.13": "2.g3",
+  "2.14": "2.g3",
+  "2.15": "2.g3",
+  "2.16": "2.g3",
+  "2.17": "2.g3",
+  "2.18": "2.g3",
+  "2.19": "2.g3",
+  "2.20": "2.g4",
+  "2.21": "2.g4",
+  "2.22": "2.g4",
+  "2.23": "2.g4",
+  "2.24": "2.g4",
+  "2.25": "2.g4",
+  "2.26": "2.g4",
+  "2.27": "2.g5",
+  "2.28": "2.g5",
+  "2.29": "2.g5",
+  "2.30": "2.g5",
+  "2.31": "2.g5",
+  "2.32P": "2.g5",
+  "2.33P": "2.g5",
+  "3.1": "3.g1",
+  "3.2": "3.g1",
+  "3.3": "3.g1",
+  "3.4": "3.g1",
+  "3.5": "3.g1",
+  "3.6": "3.g2",
+  "3.7": "3.g2",
+  "3.8": "3.g2",
+  "3.9": "3.g2",
+  "3.10": "3.g2",
+  "3.11": "3.g3",
+  "3.12": "3.g3",
+  "3.13": "3.g3",
+  "3.14": "3.g3",
+  "4.1": "4.g1",
+  "4.2": "4.g1",
+  "4.3": "4.g1",
+  "4.4": "4.g1",
+  "4.5": "4.g1",
+  "4.6": "4.g1",
+  "4.7": "4.g1",
+  "4.8P": "4.g2",
+  "4.9P": "4.g2",
+  "4.10": "4.g2",
+  "4.11": "4.g2",
+  "4.12P": "4.g3",
+  "4.13P": "4.g3",
+  "4.14P": "4.g3",
+  "4.15P": "4.g3",
+  "4.16P": "4.g3",
+  "4.17": "4.g3",
+  "5.1P": "5.g1",
+  "5.2P": "5.g1",
+  "5.3P": "5.g1",
+  "5.4P": "5.g1",
+  "5.5P": "5.g1",
+  "5.6P": "5.g1",
+  "5.7": "5.g2",
+  "5.8": "5.g2",
+  "5.9": "5.g2",
+  "5.10": "5.g2",
+  "5.11": "5.g2",
+  "5.12": "5.g2",
+  "5.13": "5.g2",
+  "5.14": "5.g2",
+  "5.15P": "5.g3",
+  "5.16P": "5.g3",
+  "5.17P": "5.g3",
+  "5.18P": "5.g3",
+  "5.19P": "5.g3",
+  "5.20": "5.g4",
+  "5.21": "5.g4",
+  "5.22": "5.g4",
+  "5.23": "5.g4",
+  "5.24": "5.g4",
+  "6.1": "6.g1",
+  "6.2": "6.g1",
+  "6.3": "6.g1",
+  "6.4": "6.g1",
+  "6.5": "6.g1",
+  "6.6": "6.g1",
+  "6.7": "6.g1",
+  "6.8": "6.g1",
+  "6.9": "6.g1",
+  "6.10": "6.g2",
+  "6.11": "6.g2",
+  "6.12": "6.g2",
+  "6.13": "6.g2",
+  "6.14": "6.g2",
+  "6.15": "6.g2",
+  "6.16": "6.g2",
+  "6.17": "6.g2",
+  "6.18": "6.g3",
+  "6.19": "6.g3",
+  "6.20": "6.g3",
+  "6.21": "6.g3",
+  "6.22": "6.g3",
+  "6.23": "6.g3",
+  "6.24": "6.g3",
+  "6.25": "6.g3",
+  "6.26": "6.g3",
+  "6.27": "6.g3",
+  "6.28P": "6.g4",
+  "6.29": "6.g4",
+  "6.30P": "6.g4",
+  "6.31": "6.g4",
+  "6.32": "6.g4",
+  "6.33P": "6.g4",
+  "6.34P": "6.g4",
+  "6.35P": "6.g4",
+  "6.36P": "6.g5",
+  "6.37P": "6.g5",
+  "6.38P": "6.g5",
+  "6.39P": "6.g5",
+  "6.40P": "6.g5",
+  "6.41P": "6.g5",
+  "6.42P": "6.g5",
+  "6.43P": "6.g6",
+  "6.44P": "6.g6",
+  "6.45P": "6.g6",
+  "6.46P": "6.g6",
+  "7.1P": "7.g1",
+  "7.2P": "7.g1",
+  "7.3P": "7.g1",
+  "7.4P": "7.g1",
+  "7.5P": "7.g1",
+  "7.6P": "7.g1",
+  "7.7P": "7.g1",
+  "7.8P": "7.g2",
+  "7.9P": "7.g2",
+  "7.10P": "7.g2",
+  "7.11P": "7.g2",
+  "7.12P": "7.g2",
+  "7.13P": "7.g2",
+  "7.14P": "7.g2",
+  "7.15P": "7.g2",
+  "7.16P": "7.g3",
+  "7.17P": "7.g3",
+  "7.18P": "7.g3",
+  "7.19P": "7.g3",
+  "8.1": "8.g1",
+  "8.2": "8.g1",
+  "8.3": "8.g1",
+  "8.4": "8.g1",
+  "8.5": "8.g2",
+  "8.6": "8.g2",
+  "8.7": "8.g2",
+  "8.8": "8.g2",
+  "8.9": "8.g2",
+  "8.10": "8.g3",
+  "8.11": "8.g3",
+  "8.12": "8.g3",
+  "8.13": "8.g3",
+  "8.14": "8.g3",
+  "8.15": "8.g3",
+  "9.1": "9.g1",
+  "9.2": "9.g1",
+  "9.3": "9.g2",
+  "9.4": "9.g2",
+  "9.5": "9.g2",
+  "9.6P": "9.g3",
+  "9.7P": "9.g3",
+  "9.8P": "9.g3",
+  "9.9P": "9.g3",
+  "9.10": "9.g3",
+  "10.1": "10.g1",
+  "10.2": "10.g1",
+  "10.3": "10.g1",
+  "10.4": "10.g1",
+  "10.5": "10.g1",
+  "10.6": "10.g1",
+  "10.7": "10.g1",
+  "10.8": "10.g1",
+  "10.9": "10.g1",
+  "10.10": "10.g2",
+  "10.11": "10.g2",
+  "10.12": "10.g2",
+  "10.13": "10.g2",
+  "10.14": "10.g2",
+  "10.15": "10.g2",
+  "10.16": "10.g2",
+  "10.17": "10.g3",
+  "10.18": "10.g3",
+  "10.19": "10.g3",
+  "10.20": "10.g3",
+  "10.21": "10.g3",
+  "10.22": "10.g4",
+  "10.23": "10.g4",
+  "10.24": "10.g4",
+  "10.25": "10.g4",
+  "10.26": "10.g4",
+  "10.27": "10.g4",
+  "10.28": "10.g5",
+  "10.29": "10.g5",
+  "10.30": "10.g5",
+  "10.31": "10.g5",
+  "10.32": "10.g5",
+  "10.33": "10.g6",
+  "10.34": "10.g6",
+  "10.35": "10.g6",
+  "10.36": "10.g6",
+  "10.37": "10.g6",
+  "10.38": "10.g6",
+  "10.39": "10.g6",
+  "10.40": "10.g6",
+  "10.41": "10.g6",
+  "10.42": "10.g6",
+  "11.1P": "11.g1",
+  "11.2P": "11.g1",
+  "11.3P": "11.g1",
+  "11.4P": "11.g1",
+  "11.5P": "11.g2",
+  "11.6P": "11.g2",
+  "11.7P": "11.g2",
+  "11.8P": "11.g3",
+  "11.9P": "11.g3",
+  "11.10P": "11.g3",
+  "12.1": "12.g1",
+  "12.2": "12.g1",
+  "12.3": "12.g1",
+  "12.4": "12.g1",
+  "12.5": "12.g1",
+  "12.6": "12.g1",
+  "12.7": "12.g2",
+  "12.8": "12.g2",
+  "12.9": "12.g2",
+  "12.10": "12.g3",
+  "12.11": "12.g3",
+  "12.12": "12.g3",
+  "12.13": "12.g3",
+  "12.14P": "12.g3",
+  "13.1P": "13.g1",
+  "13.2": "13.g1",
+  "13.3P": "13.g1",
+  "13.4P": "13.g1",
+  "13.5": "13.g2",
+  "13.6": "13.g2",
+  "13.7P": "13.g2",
+  "13.8": "13.g3",
+  "13.9": "13.g3",
+  "13.10": "13.g3",
+  "13.11P": "13.g3",
+  "14.1": "14.g1",
+  "14.2": "14.g1",
+  "14.3": "14.g1",
+  "14.4": "14.g1",
+  "14.5": "14.g2",
+  "14.6": "14.g2",
+  "14.7": "14.g2",
+  "14.8": "14.g2",
+  "14.9": "14.g2",
+  "14.10": "14.g2",
+  "14.11": "14.g2",
+  "14.12": "14.g3",
+  "14.13": "14.g3",
+  "14.14": "14.g3",
+  "14.15": "14.g3",
+  "14.16P": "14.g4",
+  "14.17P": "14.g4",
+  "14.18P": "14.g4",
+  "14.19P": "14.g4",
+  "14.20P": "14.g4",
+  "15.1": "15.g1",
+  "15.2": "15.g1",
+  "15.3": "15.g1",
+  "15.4": "15.g1",
+  "15.5": "15.g1",
+  "15.6": "15.g1",
+  "15.7P": "15.g2",
+  "15.8P": "15.g2",
+  "15.9P": "15.g2",
+  "15.10P": "15.g2",
+  "15.11P": "15.g2",
+  "15.12P": "15.g3",
+  "15.13P": "15.g3",
+  "15.14P": "15.g3",
+  "15.15P": "15.g4",
+  "15.16P": "15.g4",
+  "15.17P": "15.g4"
+ }
+}
