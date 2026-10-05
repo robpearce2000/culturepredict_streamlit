@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased (overnight work towards 1.0.0)
+## 1.0.0 – First release (October 2026)
+
+The first public release. (The 1.1 to 1.4.1 entries below were development builds before release.)
 
 ### Outpace
 - **Much smoother:** a capped render resolution, no shadows, name tags that no longer make the browser lay out the page every frame, and an automatic step-down in quality if a computer can't keep up.

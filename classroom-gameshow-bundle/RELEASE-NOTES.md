@@ -19,7 +19,12 @@
 
 ## What changed overnight
 
-TO FILL
+- **Outpace:** smoother (capped resolution, no shadows, an automatic quality step-down), the Final Sprint question in a side column on wide screens, an instant escape when the target is reached, racers that follow the subject, and a 3D studio: a chunky step track, a finish arch, a sprint track with a clock in the set (red for the last ten seconds), a camera that follows the class, a gap meter, slow-motion catches and escapes through the arch with confetti.
+- **Over the Edge:** the correct teams take turns again, and whatever comes over the edge on a team's drop is theirs, in a random order shown on screen; the shelf starts emptier at the front, so the first drop of the game no longer pays a fortune; no more flickering under the sign; less glaring counters.
+- **Category Clash:** columns are topics from your subject (choose up to four, or let it mix them); a real three-tier difficulty scale (recall, describe and apply, explain and extend) on every question; a lit wall of 3D tiles that flip, and a star-tile moment.
+- **Hex Hunt:** every letter really is where the answer starts; one-press marking (the half with more right answers, or Neither); the gold keyboard outline only when the arrow keys are used; raised 3D hexes, glowing edges and a winning chain that lights up.
+- **Every game:** a Start game button after setup, so no countdown runs before the class is ready; any big moment skips with Space or Enter.
+- **Home screen:** compact Subject, Exam board and Questions dropdowns, the sign in the middle with twinkling bulbs, equal Play buttons, and a host who has no name unless you give him one.
 
 ## Known issues
 
