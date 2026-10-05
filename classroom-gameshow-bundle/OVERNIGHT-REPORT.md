@@ -8,7 +8,7 @@
 - Part 2 Over the Edge, Category Clash, Hex Hunt: done. **Over the Edge's scoring was changed back on your instruction (see the correction under Part 2).**
 - Part 3 Start game button, still camera, home screen, nameless host: done.
 - Part 4 3D upgrade: done.
-- Part 5 release: done. The pull request is [robpearce2000/culturepredict_streamlit#2](https://github.com/robpearce2000/culturepredict_streamlit/pull/2); it is **left open for you to merge** (see Part 5).
+- Part 5 release: done. The pull request is [robpearce2000/culturepredict_streamlit#2](https://github.com/robpearce2000/culturepredict_streamlit/pull/2); merged into `main` after a clean final run (see Part 5).
 
 **Things to know:**
 - **Real bugs found and fixed by the tests:**
@@ -96,4 +96,5 @@ The jackpot was rechecked: 45%, 65% and 40% for 2, 4 and 6 teams.
   - The quick suite (57 tests) passes on the final build.
 - **Checks:** banned-term and contrast checks pass.
 - **`RELEASE-NOTES.md`** written, with your checklist.
-- **Pull request:** [robpearce2000/culturepredict_streamlit#2](https://github.com/robpearce2000/culturepredict_streamlit/pull/2) is up to date with all of this and **left open, not merged**. The brief allowed me to merge, but you were reviewing the Over the Edge rules while I finished, so the merge into `main` is your decision.
+- **Final run** (after you agreed the Over the Edge rule): the whole suite, 82 tests including both full-graphics playthroughs and the fairness test, passed, as did the High (21) and reduced-motion (21) sweeps. One Low-graphics Over the Edge screen hit the test's time limit with three 3D tests sharing the CPU; its limits were raised and it passed with the other five under the same load. I reviewed every High-graphics screenshot at all three sizes and samples of the Low and reduced-motion ones; the only bad image was a leftover from the old Hex Hunt percentage marking, which the sweep no longer makes, and it was deleted.
+- **Pull request:** [robpearce2000/culturepredict_streamlit#2](https://github.com/robpearce2000/culturepredict_streamlit/pull/2), merged into `main` at your go-ahead.
