@@ -14,6 +14,7 @@
  *   <!-- @text path -->              plain text (HTML-escaped), e.g. licences
  *   <link rel="stylesheet" href>     as <style>, with url(font.woff2) turned into base64 data URIs
  *   <script src>                     as inline <script>
+ *   <!-- @packdata -->               the built-in question packs from packs/ (see tools/packs.js)
  * No dependencies beyond Node itself.
  */
 'use strict';
@@ -36,7 +37,7 @@ function newest(dir) {
   return t;
 }
 if (!process.argv.includes('--force') && fs.existsSync(OUT) && fs.existsSync(TEST_OUT)) {
-  const src = Math.max(newest(SRC), fs.statSync(__filename).mtimeMs);
+  const src = Math.max(newest(SRC), newest(path.join(__dirname, 'packs')), fs.statSync(path.join(__dirname, 'tools', 'packs.js')).mtimeMs, fs.statSync(__filename).mtimeMs);
   if (Math.min(fs.statSync(OUT).mtimeMs, fs.statSync(TEST_OUT).mtimeMs) > src) {
     console.log('Up to date: nothing in src/ has changed since the last build (use --force to rebuild).');
     process.exit(0);
@@ -63,6 +64,11 @@ function inlineJs(rel) {
 
 let html = read('index.html');
 html = html.replace(/<!-- @include ([^ ]+) -->/g, (m, p) => read(p));
+// The built-in question packs (packs/, checked by tools/packs.js) as one data script
+html = html.replace('<!-- @packdata -->', () => {
+  const data = JSON.stringify(require('./tools/packs.js').bundleData()).replace(/<\/(script)/gi, '<\\/$1');
+  return `<script>\nCGB.PACKDATA = ${data};\n</script>`;
+});
 html = html.replace(/<!-- @text ([^ ]+) -->/g, (m, p) => escapeHtml(read(p)));
 html = html.replace(/<link rel="stylesheet" href="([^"]+)">/g, (m, p) => `<style>\n${inlineCss(p)}\n</style>`);
 html = html.replace(/<script src="([^"]+)"><\/script>/g, (m, p) => `<script>\n${inlineJs(p)}\n</script>`);

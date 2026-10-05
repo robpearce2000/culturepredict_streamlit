@@ -61,9 +61,11 @@ renderPack();
    chosen on the main screen). A topic is "full" when it has a question at every tier. */
 function topicsOf(set) {
   const m = new Map();
-  set.questions.forEach(q => { const k = q.topic; if (!m.has(k)) m.set(k, { topic: k, subject: q.subject, qs: [] }); m.get(k).qs.push(q); });
+  // one built-in topic chosen: its specification subtopics are the columns, so a one-topic lesson still has a board
+  const by = set.groupBy === 'subtopic' ? 'subtopic' : 'topic';
+  set.questions.forEach(q => { const k = q[by] || q.topic; if (!m.has(k)) m.set(k, { topic: k, subject: q.subject, qs: [] }); m.get(k).qs.push(q); });
   return Array.from(m.values()).map(t => {
-    t.tiers = [1, 2, 3].map(n => t.qs.filter(q => bank.tierOf(q) === n).length);
+    t.tiers = [1, 2, 3].map(n => t.qs.filter(q => bank.difficultyOf(q) === n).length);
     t.full = t.tiers.every(n => n > 0);
     return t;
   });
@@ -140,7 +142,7 @@ function buildBoard() {
     // questions without a Tier line get one from their wording). If a row has no question at its
     // tier, the nearest tier is used, then any question left. Among the questions that fit a
     // row, one a playing team got wrong before is preferred, so weak spots come round again.
-    const levelOf = q => bank.tierOf(q);
+    const levelOf = q => bank.difficultyOf(q);
     const values = VALUES.slice(0, ROWS);
     const want = k => k + 1;
     const left = t.qs.slice();
@@ -216,7 +218,7 @@ function openTile(c, r) {
   $('qStar').hidden = !t.star;
   $('qFor').innerHTML = `Chosen by <b>${TEAM[S.turn].mark} ${esc(S.teams[S.turn].name)}</b> · every team answers: full points for ${esc(S.teams[S.turn].name)}, half for the others`;
   $('qText').textContent = t.q.q;
-  $('qAnswer').textContent = t.q.a;
+  $('qAnswer').innerHTML = CGB.answerHTML(t.q);
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = '';
   paintQBoard();

@@ -254,9 +254,89 @@ Choices made while building the first edition without the owner available. Each 
 
 **Frame-rate independent motion (after Rob's laptop test: still stuttering when the camera and racers moved, even at Low).** Low graphics did not help, so the cost was not drawing: the camera follow, the racers' spring and the sequence effects all stepped a fixed amount per frame, so speed depended on the screen's refresh rate and any uneven frame showed as a jerk. Every step is now scaled by the real frame time from the browser's own frame timestamp (`ease(k) = 1 − (1 − k)^(dt·60)` for the follows; the spring sub-stepped in quarter-frames, which gives the same path at 30, 60 and 144 Hz to three decimal places). A software WebGL renderer (SwiftShader, llvmpipe, Microsoft Basic Render) is detected at start and begins at step-down level 1.
 
-**The sign's bulbs** changed from a gentle random twinkle (dipping to 45%) to a marquee chase: a lit band runs along the top and back along the bottom in 2.8 s, lit bulbs carry a soft halo, unlit ones sit at 22%.
+**The sign's bulbs** changed from a gentle random twinkle (dipping to 45%) to a running marquee: a lit band runs along the top and back along the bottom in 2.8 s, lit bulbs carry a soft halo, unlit ones sit at 22%.
 
 **Still stuttering as the camera moved (Rob's second laptop test).** A browser trace of one move found three causes. (1) Parts of the set first coming into view, and the speed streaks first appearing, were uploaded to the graphics chip mid-move, and the browser waits for that: now everything is drawn once, unhidden and unculled, inside the first frame after entering the game, after a change of look and after the sprint track is built (the real frame is drawn straight after, so it is never seen). (2) The answer shake moved the camera to a new random spot every frame for about a third of a second, baked into its glide: now a smooth sway added only for the drawn frame. (3) The camera framed the racers' live, springy positions, so it wobbled as they overshot: it now frames where they are heading (Deal Round and Final Sprint). Also: the drawing buffer is resized only when its size or resolution really changes (each resize makes the browser rebuild it and wait). Measured camera speed now rises and falls in one smooth curve through a move.
 
 **Still jittery, yet Over the Edge (with bloom and a higher resolution) is smooth on the same laptop.** So the cause was in Outpace's motion, not drawing. Recording every frame on a steady virtual 60 Hz clock showed it: `updateViewShift` (which keeps the race clear of the HUD panels) ran every sixth frame and moved the picture a quarter of the way each time, so whenever the question panel changed size the whole picture stepped 2–4 px at 10 Hz. Now the layout is measured every sixth frame but the picture slides there every frame with a critically damped follow (0.3 s). The camera follow uses the same critically damped follow (0.45 s), so it eases in instead of starting at full speed; the racers' spring is damped more (0.72 per frame, from 0.82) so the class no longer slides backwards on screen as it lands; tags are placed to a tenth of a pixel. A new test steps a move on the virtual clock and fails if the picture jumps more than 2.5 px in a frame or the camera's speed changes abruptly.
 
+
+## Question banks (QUESTION-BANKS-BRIEF), first run
+
+**One plain-text file per specification topic, checked by a tool.** Packs live in
+`packs/<board>/<subject>/<ref>-<topic>.txt` in an extension of the teachers' own format (Q, A,
+Accept, Ref, D, HT, RP, Calc, Note, Id). Plain text keeps every question readable and reviewable
+by Rob in a text editor and in diffs; `tools/packs.js` parses it, checks it and turns it into
+compact data for the single HTML file. The subtopic is derived from the Ref (its three-level
+heading) and hexOk from the shared Hex Hunt letter rule, so neither can be mistyped.
+
+**Specification registries, not the PDFs, in the repository.** Each specification's numbered
+points, heading titles, Higher-tier-only headings and required practicals are extracted to
+`packs/specs/<board>-<code>.json`. The checker uses them to reject any Ref that is not a real
+point, any question on an HT-only heading that is not tagged Higher, missing coverage of a point
+or a required practical. The PDFs are copyrighted and are not committed. A second scan found
+three headings whose "(HT only)"/"(chemistry only)" label sat on the next line (Chemistry 4.3.4,
+4.3.5, 4.2.4, 4.8.3; Physics 4.4.3); the extractor now reads those too.
+
+**Version used.** The brief asks for the current published specification. AQA's specification
+pages give Biology 8461 version 1.0 (21 April 2016), Chemistry 8462 version 1.1 (4 October 2019)
+and Physics 8463 version 1.1 (30 September 2019); these are what the packs follow and what the
+Question bank shows.
+
+**"Key ideas" (AQA 4.8, 4.11, 4.9) has no pack.** It lists cross-cutting ideas examined through
+the other topics, not content of its own.
+
+**How many questions.** At least max(30, 3 × the number of lowest-level specification points)
+per topic, so larger topics get proportionally more, with every point asked about at least
+twice (three in practice) and every required practical at least twice (three in practice).
+Writers aimed about 15% above target so checking could remove weak questions without a shortfall;
+in practice checkers rewrote far more than they removed.
+
+**Writing and checking are separate.** Each topic was written by one agent from that topic's
+specification text alone, then checked by a different agent that read every question against the
+specification and then again only to hunt errors (re-doing every calculation independently).
+Writers listed their own doubts; checkers had to resolve each one. Across the 25 AQA science
+packs the checkers rewrote 185 questions, added 34 and removed 6, and settled every doubt,
+so QUESTIONS-TO-CHECK.md has no open items for the AQA sciences.
+
+**"Tier" now means Foundation/Higher, "difficulty" means 1-3.** The brief uses tier for the exam
+tier, so the 1-3 scale (called tiers in the overnight brief) is now difficulty everywhere: in the
+data (`difficulty`), the help text and the guide. Teachers' text: `Difficulty: 1-3` sets it;
+`Tier: 1-3` lines from 1.0.x sets still read as difficulty; `Tier: Higher` marks Higher-tier-only
+questions; `Level: 1-5` from the first games still maps 1-2/3/4-5. A pasted `Difficulty: 4` or `5`
+(the old 1-5 scale under that name) reads as 3. Sets already saved keep their difficulty (saved
+values are migrated when loaded).
+
+**Higher tier is not automatically difficulty 3.** The overnight definition counted
+Higher-tier-only content as difficulty 3. With a Foundation/Higher switch now separate, a
+one-word recall of Higher content is difficulty 1; checkers re-judged such questions, so each
+subtopic has a spread at every difficulty and Category Clash rows stay honest.
+
+**Higher tier filter.** "Include Higher tier only questions" in the question pack dropdown
+(default on, remembered). Off, every game leaves out questions tagged Higher.
+
+**Subjects and boards.** The subject list is exactly Biology, Chemistry, Physics, Maths, History,
+Geography, plus Other for teachers' own sets. Boards are AQA and Edexcel only (the brief's scope).
+Teachers' sets filed under Combined Science or English (subjects that no longer exist) are left
+exactly as saved and show under Other; a saved subject of Combined Science opens on Biology.
+
+**The question pack dropdown.** One control on the main screen: "Mixed: all topics" (per
+specification, so Edexcel Geography A and B will each have one), then the topics in specification
+order, then the teacher's own sets, all tickable together; and the Higher tier switch. The choice
+is remembered for each subject and board. Every game reads it as one combined set.
+
+**Category Clash with one topic.** When exactly one built-in topic is ticked, its specification
+subtopics (three-level headings) are the columns. Every AQA science topic has at least two
+subtopics; Biology 4.4 Bioenergetics, Chemistry 4.5 Energy changes and 4.6 The rate and extent of chemical change, and Physics 4.8 Space physics have only two, so the
+board shows two columns for those single-topic lessons (choosing two topics gives the usual
+board). Subtopics with no question at some difficulty borrow from the nearest, as before.
+
+**Accepted answers and notes are shown.** Every game shows "Also accept: …" and the teacher's
+note in smaller type under the answer, for built-in and teachers' own questions.
+
+**Size.** With the 1,425 AQA science questions the file is about 1.45 MB (from 1.18 MB). The full
+scope may reach roughly 6 MB; the packs are already compact arrays, and if size becomes a
+problem they will be compressed inside the single file, as the brief allows.
+
+**Pearson Edexcel specifications.** qualifications.pearson.com reset the connection from this
+environment on every attempt so far; recorded in QUESTION-BANK-PROGRESS.md, to retry next run.

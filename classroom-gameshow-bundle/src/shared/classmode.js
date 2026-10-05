@@ -1,4 +1,15 @@
 'use strict';
+
+/* The answer as the games show it: the expected answer, then any other accepted answers and the
+   teacher's note in smaller type (built-in packs have both; teachers' own sets may) */
+CGB.answerHTML = q => {
+  const esc = CGB.escapeHtml;
+  if (!q) return '';
+  let h = `<span class="ans-main">${esc(q.a)}</span>`;
+  if (q.accept && q.accept.length) h += ` <span class="ans-also">Also accept: ${q.accept.map(esc).join('; ')}</span>`;
+  if (q.notes) h += ` <span class="ans-note">${esc(q.notes)}</span>`;
+  return h;
+};
 /* =========================================================
    THE CLASS ROUND (shared by all four games)
    A whole class of about 30 plays in 2 to 6 teams with mini whiteboards.

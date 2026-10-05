@@ -39,19 +39,16 @@ test('the Final Sprint is won as soon as the target is reached, after a short un
 
 test('the look follows the subject chosen on the main screen', async ({ page }) => {
   const log = await openBundle(page);
-  const expected = { biology: 'science', chemistry: 'science', physics: 'science', combined: 'science', maths: 'maths', english: 'english', history: 'history', geography: 'geography' };
+  const expected = { biology: 'science', chemistry: 'science', physics: 'science', maths: 'maths', history: 'history', geography: 'geography', other: 'general' };
   await page.click('[data-play="outpace"]', { timeout: 60000 });
   for (const [sj, look] of Object.entries(expected)) {
     await page.evaluate(sj => CGB.bank.setSubject(sj), sj);
     expect((await state(page, 'outpace')).look, sj).toBe(look);
   }
-  // a subject the game does not know gets the general look
-  await page.evaluate(() => CGB.bank.setSubject('combined'));
-  expect((await state(page, 'outpace')).look).toBe('science');
   // there is no look setting on the setup card
   await expect(page.locator('#op-setupCard')).not.toContainText(/look/i);
   // every look draws a race: play into the Deal Round in each and check the racers are on screen
-  for (const sj of ['combined', 'maths', 'english', 'history', 'geography']) {
+  for (const sj of ['biology', 'maths', 'history', 'geography', 'other']) {
     await page.keyboard.press('Escape');
     await page.evaluate(sj => { CGB.bank.setSubject(sj); if (!CGB.bank.active()) CGB.bank.addSet('Look ' + sj, 'Subject: S\nTopic: T\nQ: One?\nA: Yes\nQ: Two?\nA: No', sj); }, sj);
     await page.click('[data-play="outpace"]');
@@ -112,7 +109,7 @@ test('the camera and picture glide smoothly through a move', async ({ page }) =>
   await page.keyboard.press('2');
   await page.waitForTimeout(1500);
   await page.evaluate(() => window.__virtOn());
-  await page.waitForFunction(() => window.__queued() > 0);   // the game's loop now runs on the steady clock
+  await page.waitForFunction(() => window.__queued() > 0, null, { polling: 50 });   // the game's loop now runs on the steady clock
   let rec = await page.evaluate(() => window.__step(60));
   await page.keyboard.press('Space'); rec = rec.concat(await page.evaluate(() => window.__step(5)));
   await page.keyboard.press('Space'); rec = rec.concat(await page.evaluate(() => window.__step(5)));

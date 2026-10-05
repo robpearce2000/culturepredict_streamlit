@@ -122,23 +122,27 @@ CGB.bankUI = (() => {
   function subjectTag(s) { const k = s.toLowerCase(); return k.startsWith('bio') ? 'b' : k.startsWith('chem') ? 'c' : k.startsWith('phys') ? 'p' : ''; }
   const subjectOptions = (sel) => '<option value="">Any subject</option>' + B.SUBJECTS.map(x => `<option value="${x.id}"${x.id === sel ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
   function renderList() {
-    const a = B.active(), act = a ? a.id : '';
-    $('bankIntro').textContent = `${B.subjectLabel()} sets (${B.boardLabel()}). Choose the set to use: every game uses it, and each team's wrong answers are shared between games. Change the subject on the main screen.`;
+    const a = B.active(), sel = B.selection();
+    const inUse = id => !!a && (sel.mixed ? (B.get(id) || {}).specCode === sel.mixed : sel.ids.includes(id));
+    $('bankIntro').textContent = `${B.subjectLabel()} questions (${B.boardLabel()}). Tick the packs and sets to use: every game uses them together, and each team's wrong answers are shared between games. Change the subject and exam board on the main screen.`;
     const list = B.available();
-    $('bankList').innerHTML = (list.length ? '' : `<p class="hint">${esc(B.subjectNote())}</p>`) + list.map(s => {
-      const sum = B.summary(s);
-      const tags = sum.subjects.map(x => `<span class="tag ${subjectTag(x)}">${esc(x)}</span>`).join('') +
-        `<span class="tag">${sum.count} questions</span><span class="tag">${sum.topics.length} topics</span>` +
-        (s.builtin ? '<span class="tag">Built-in</span>' : '<span class="tag own">Your set</span>') +
-        (s.builtin ? '' : `<label class="tag sj">Subject <select data-subj="${esc(s.id)}" aria-label="Subject for ${esc(s.name)}">${subjectOptions(s.subject)}</select></label>`);
+    const courses = B.courses();
+    const specLine = courses.map(c => `${B.boardLabel()}-style GCSE ${c.name || B.subjectLabel()} ${c.specCode}, specification version ${c.version}`).join('; ');
+    $('bankList').innerHTML = (specLine ? `<p class="hint bank-spec">Built-in packs follow ${esc(specLine)}. They are practice questions written for Showtime, not produced or endorsed by the exam board.</p>` : '')
+      + (list.length ? '' : `<p class="hint">${esc(B.subjectNote())}</p>`) + list.map(s => {
+      const on = inUse(s.id);
+      const n = s.builtin ? s.count : s.questions.length;
+      const tags = s.builtin
+        ? `<span class="tag">${n} questions</span><span class="tag">${s.subtopics.length} subtopics</span><span class="tag">Spec ${esc(s.specCode)} ${esc(s.ref)}</span><span class="tag">Built-in</span>`
+        : `<span class="tag">${n} questions</span><span class="tag">${B.summary(s).topics.length} topics</span><span class="tag own">Your set</span><label class="tag sj">Subject <select data-subj="${esc(s.id)}" aria-label="Subject for ${esc(s.name)}">${subjectOptions(B.subjectOfSet(s) || '')}</select></label>`;
       const acts = s.builtin
         ? `<button class="btn plain sm" type="button" data-act="copy" data-id="${esc(s.id)}">Copy to edit</button>`
         : `<button class="btn plain sm" type="button" data-act="rename" data-id="${esc(s.id)}">Rename</button>
            <button class="btn plain sm" type="button" data-act="edit" data-id="${esc(s.id)}">Edit questions</button>
            <button class="btn danger sm" type="button" data-act="delete" data-id="${esc(s.id)}">Delete</button>`;
-      return `<div class="bank-item${s.id === act ? ' active' : ''}" data-id="${esc(s.id)}">
-        <input type="radio" name="activeSet" value="${esc(s.id)}" ${s.id === act ? 'checked' : ''} aria-label="Use ${esc(s.name)}">
-        <div><div class="nm">${esc(s.name)}${s.id === act ? ' <span class="tag own">In use</span>' : ''}</div><div class="tags">${tags}</div></div>
+      return `<div class="bank-item${on ? ' active' : ''}" data-id="${esc(s.id)}">
+        <input type="checkbox" name="useSet" value="${esc(s.id)}" ${on ? 'checked' : ''} aria-label="Use ${esc(s.name)}">
+        <div><div class="nm">${esc(s.builtin ? s.ref + ' ' + s.topic : s.name)}${on ? ' <span class="tag own">In use</span>' : ''}</div><div class="tags">${tags}</div></div>
         <div class="acts">${acts}</div>
       </div>`;
     }).join('');
@@ -163,7 +167,7 @@ CGB.bankUI = (() => {
   }
   function init() {
     $('bankList').addEventListener('change', e => {
-      if (e.target.name === 'activeSet') B.setActive(e.target.value);
+      if (e.target.name === 'useSet') B.toggle(e.target.value);
       else if (e.target.dataset.subj) B.setSubjectOf(e.target.dataset.subj, e.target.value);
     });
     $('bankList').addEventListener('click', e => {
@@ -172,7 +176,7 @@ CGB.bankUI = (() => {
       if (b.dataset.act === 'delete') CGB.armButton(b, 'Tap again to delete', () => { B.deleteSet(set.id); if (editing === set.id) startEdit(null); });
       else if (b.dataset.act === 'edit') startEdit(set);
       else if (b.dataset.act === 'copy') {
-        const r = B.addSet(set.short + ' (my copy)', B.toText(set.questions), B.subject());
+        const r = B.addSet((set.short || set.name) + ' (my copy)', B.toText(set.questions), B.subject());
         if (r.ok) startEdit(r.set);
       } else if (b.dataset.act === 'rename') {
         const nm = b.closest('.bank-item').querySelector('.nm');
@@ -193,7 +197,7 @@ CGB.bankUI = (() => {
       if (!r.ok) { setStatus('bankFormStatus', r.error, true); return; }
       setStatus('bankFormStatus', `${editing ? 'Saved' : 'Added'} "${r.set.name}" with ${r.set.questions.length} questions. It is now in use in every game for ${B.subjectLabel(r.set.subject || B.subject())}.${CGB.store.available ? '' : ' Storage is blocked, so it will be lost when the page closes.'}`);
       if (!editing) { $('bankName').value = ''; $('bankText').value = ''; }
-      else B.setActive(editing);
+      else if (!B.selection().ids.includes(editing)) B.setSelection({ ids: [editing] });
     });
     $('bankCancel').addEventListener('click', () => startEdit(null));
     $('bankExport').addEventListener('click', () => {
@@ -326,10 +330,58 @@ CGB.app = (() => {
     // compact dropdowns: native selects work with mouse, touch and keyboard everywhere
     $('subjectSelect').innerHTML = B.SUBJECTS.map(x => `<option value="${x.id}"${x.id === sj ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
     $('boardSelect').innerHTML = B.BOARDS.map(x => `<option value="${x.id}"${x.id === bd ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
-    B.fillSelect($('launcherSet'));
+    renderPacks();
     const note = B.subjectNote();
     $('subjectNote').textContent = note;
     $('subjectNote').hidden = !note;
+  }
+  /* The question pack dropdown: "Mixed: all topics", the topic packs in specification order,
+     then the teacher's own sets, ticked one or more at a time; and the Higher tier switch */
+  function renderPacks() {
+    const B = CGB.bank, esc = CGB.escapeHtml, a = B.active(), sel = B.selection();
+    const packs = B.packs(), own = B.ownSets(), courses = B.courses();
+    $('packBtn').textContent = a ? `${a.short} (${a.questions.length})` : 'No questions yet';
+    $('packBtn').title = a ? a.name : '';
+    const opt = (attrs, on, body, n) => `<label class="pk-opt"><input type="checkbox" ${attrs}${on ? ' checked' : ''}><span>${body}</span><small>${n}</small></label>`;
+    let html = courses.map(c => opt(`data-mixed="${esc(c.specCode)}"`, sel.mixed === c.specCode, `Mixed: all ${c.name ? esc(c.name) + ' ' : ''}topics`, c.count).replace('pk-opt', 'pk-opt mixed')).join('');
+    courses.forEach(c => {
+      const list = packs.filter(p => p.specCode === c.specCode);
+      html += `<div class="pk-head">${c.name ? esc(c.name) + ': ' : ''}topics</div>` + list.map(p => opt(`data-id="${esc(p.id)}"`, !sel.mixed && sel.ids.includes(p.id), `<span class="rf">${esc(p.ref)}</span>${esc(p.topic)}`, p.count)).join('');
+    });
+    if (own.length) html += `<div class="pk-head">Your own sets</div>` + own.map(s => opt(`data-id="${esc(s.id)}"`, !sel.mixed && sel.ids.includes(s.id), esc(s.name), s.questions.length)).join('');
+    if (!courses.length && !own.length) html += `<p class="pk-empty">${esc(B.subjectNote())}</p>`;
+    html += `<div class="pk-foot"><label><input type="checkbox" id="pkHigher"${B.higher() ? ' checked' : ''}>Include Higher tier only questions</label><button class="btn go sm" type="button" data-done>Done</button></div>`;
+    $('packMenu').innerHTML = html;
+  }
+  function openPacks(open) {
+    const menu = $('packMenu'), btn = $('packBtn');
+    const on = open === undefined ? menu.hidden : open;
+    menu.hidden = !on; btn.setAttribute('aria-expanded', String(on));
+    if (on) {
+      // open towards the side with room, and bring all of it into view on short screens
+      menu.style.left = menu.style.right = '';
+      const r = menu.getBoundingClientRect();
+      if (r.right > window.innerWidth - 8) { menu.style.left = 'auto'; menu.style.right = '0'; }
+      menu.scrollIntoView({ block: 'nearest' });
+      const first = menu.querySelector('input:checked') || menu.querySelector('input');
+      if (first) first.focus({ preventScroll: true });
+    }
+  }
+  function wirePacks() {
+    const menu = $('packMenu'), B = CGB.bank;
+    $('packBtn').addEventListener('click', () => openPacks());
+    menu.addEventListener('change', e => {
+      const t = e.target, keep = t.id || t.dataset.id || t.dataset.mixed;
+      if (t.id === 'pkHigher') B.setHigher(t.checked);
+      else if (t.dataset.mixed) B.setSelection(t.checked ? { mixed: t.dataset.mixed } : { ids: [] });
+      else if (t.dataset.id) B.toggle(t.dataset.id);
+      // the menu is drawn again: keep the keyboard on the box just changed
+      const again = t.id ? document.getElementById(t.id) : menu.querySelector(t.dataset.id ? `[data-id="${CSS.escape(keep)}"]` : `[data-mixed="${CSS.escape(keep)}"]`);
+      if (again) again.focus();
+    });
+    menu.addEventListener('click', e => { if (e.target.closest('[data-done]')) { openPacks(false); $('packBtn').focus(); } });
+    menu.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); openPacks(false); $('packBtn').focus(); } });
+    document.addEventListener('pointerdown', e => { if (!menu.hidden && !e.target.closest('#packDrop')) openPacks(false); });
   }
   /* The mascot on the launcher: the host waves hello now and then */
   function createMascot() {
@@ -361,7 +413,7 @@ CGB.app = (() => {
     $('openBank').addEventListener('click', () => CGB.bankUI.open());
     $('subjectSelect').addEventListener('change', e => CGB.bank.setSubject(e.target.value));
     $('boardSelect').addEventListener('change', e => CGB.bank.setBoard(e.target.value));
-    $('launcherSet').addEventListener('change', e => CGB.bank.setActive(e.target.value));
+    wirePacks();
     $('openHost').addEventListener('click', () => CGB.hostEditor.open());
     $('openAbout').addEventListener('click', () => CGB.modal.open('aboutModal'));
     $('leaveConfirm').addEventListener('click', () => { CGB.modal.close('leaveModal'); show('launcher'); });

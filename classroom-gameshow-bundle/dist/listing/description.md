@@ -8,7 +8,7 @@ Showtime: Classroom Gameshows (4 offline revision quiz games)
 
 ## Summary line
 
-Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Shared question bank with 190+ AQA-style GCSE Combined Science questions. One file, works offline.
+Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style GCSE Biology, Chemistry and Physics packs, one for every specification topic (1,400+ questions). One file, works offline.
 
 ## Description
 
@@ -38,9 +38,10 @@ A board of four topics from your subject and points values from 100 to 300, for 
 A tactical race across a board of lettered hexagons. Each letter is the first letter of the answer. Both halves of the class answer every question; you press the half with more right answers (or Neither) and it claims the hexagon and picks the next one. The first half to link its two edges wins the round.
 
 **One question bank for every game**
-- Choose your subject (Biology, Chemistry, Physics, Combined Science, Maths, English, History or Geography) and exam board (AQA or Edexcel) on the menu; every game uses that subject's sets
-- 194 AQA-style GCSE Combined Science questions across Biology, Chemistry and Physics, plus a 63-question Homeostasis lesson set
-- Built-in packs are science only for now; add your own sets for any subject in seconds by pasting simple text (Subject, Topic, Q, A). Add an optional Tier line to set the points in Category Clash
+- Choose your subject (Biology, Chemistry, Physics, Maths, History, Geography or Other) and exam board (AQA or Edexcel) on the menu, then tick the topic you are teaching, several topics, or "Mixed: all topics" for revision; every game uses them
+- AQA-style GCSE Biology (8461), Chemistry (8462) and Physics (8463) packs: every specification topic, including separate-science content and the required practicals, with over 1,400 questions. Every question is tied to a specification point, tagged by difficulty, and marked if it is Higher tier only, so a Foundation class can leave those out
+- Short, markable answers with the accepted alternatives shown, made for mini whiteboards and a 20-second countdown
+- Edexcel science, Maths, History and Geography packs are on the way; meanwhile add your own sets for any subject in seconds by pasting simple text (Subject, Topic, Q, A, with optional Accept, Note and Difficulty lines)
 - Wrong answers are saved for each team, and questions from their weak topics come round again more often in every game
 - Save a backup file to move your sets and history to another computer
 
@@ -59,11 +60,11 @@ No data leaves your computer. There are no accounts, no tracking and no analytic
 - showtime-classroom-gameshows.html (the games)
 - teacher-guide.pdf
 
-The question packs are AQA-style practice questions written to match the AQA GCSE Combined Science: Trilogy topic list. They are not produced or endorsed by AQA. The games are original works and are not connected with any television programme or broadcaster.
+The question packs are AQA-style practice questions written for Showtime to match the AQA GCSE Biology, Chemistry and Physics specifications. They are not produced or endorsed by AQA. The games are original works and are not connected with any television programme or broadcaster.
 
 ## Suggested tags
 
-revision game, quiz, gameshow, interactive whiteboard, GCSE science, combined science, retrieval practice, team game, mini whiteboards, whole class, starter, plenary, KS4, KS3, offline
+revision game, quiz, gameshow, interactive whiteboard, GCSE science, GCSE biology, GCSE chemistry, GCSE physics, retrieval practice, team game, mini whiteboards, whole class, starter, plenary, KS4, KS3, offline
 
 ## Images
 

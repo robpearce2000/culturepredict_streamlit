@@ -86,12 +86,13 @@ test('Hex Hunt letters really are where each answer starts, for every question t
   cells.forEach(([L, want]) => expect(L).toBe(want));
 });
 
-test('Tier lines put Category Clash questions on the matching row, and old Difficulty lines still work', async ({ page }) => {
+test('Difficulty lines put Category Clash questions on the matching row, and older Tier and Level lines still work', async ({ page }) => {
   await openBundle(page);
   await page.evaluate(() => {
     const lines = ['Subject: Test', 'Topic: Graded'];
-    [3, 2, 1].forEach(d => { lines.push('Tier: ' + d, `Q: Tier ${d} question?`, `A: Answer ${d}`); });
-    lines.push('Topic: Older', 'Difficulty: 5', 'Q: Old hard?', 'A: H', 'Difficulty: 3', 'Q: Old middle?', 'A: M', 'Difficulty: 2', 'Q: Old easy?', 'A: E');
+    [3, 2, 1].forEach(d => { lines.push('Difficulty: ' + d, `Q: Tier ${d} question?`, `A: Answer ${d}`); });
+    // "Tier: 1-3" (versions 1.0.x) and "Level: 1-5" (the first stand-alone games)
+    lines.push('Topic: Older', 'Level: 5', 'Q: Old hard?', 'A: H', 'Tier: 2', 'Q: Old middle?', 'A: M', 'Level: 2', 'Q: Old easy?', 'A: E');
     CGB.bank.addSet('Graded set', lines.join('\n'));
   });
   await page.click('[data-play="category-clash"]');
@@ -100,18 +101,18 @@ test('Tier lines put Category Clash questions on the matching row, and old Diffi
   const by = Object.fromEntries(tiles);
   expect(by.Graded).toEqual(['Tier 1 question?', 'Tier 2 question?', 'Tier 3 question?']);   // 100, 200, 300
   expect(by.Older).toEqual(['Old easy?', 'Old middle?', 'Old hard?']);
-  // the tier is kept when the set is written back out as text
+  // the difficulty is kept when the set is written back out as text
   const text = await page.evaluate(() => CGB.bank.toText(CGB.bank.active().questions));
-  expect(text).toContain('Tier: 3\nQ: Tier 3 question?');
-  expect(text).toContain('Tier: 1\nQ: Old easy?');
+  expect(text).toContain('Difficulty: 3\nQ: Tier 3 question?');
+  expect(text).toContain('Difficulty: 1\nQ: Old easy?');
 });
 
 test('Category Clash fills a row from the nearest tier when a tier is missing', async ({ page }) => {
   await openBundle(page);
   await page.evaluate(() => {
-    const lines = ['Subject: Test', 'Topic: Lopsided', 'Tier: 1'];
+    const lines = ['Subject: Test', 'Topic: Lopsided', 'Difficulty: 1'];
     for (let i = 1; i <= 4; i++) lines.push(`Q: Easy ${i}?`, `A: E${i}`);
-    lines.push('Tier: 3', 'Q: Hard one?', 'A: H');
+    lines.push('Difficulty: 3', 'Q: Hard one?', 'A: H');
     CGB.bank.addSet('Lopsided set', lines.join('\n'));
   });
   await page.click('[data-play="category-clash"]');
@@ -122,15 +123,15 @@ test('Category Clash fills a row from the nearest tier when a tier is missing', 
   expect(tiles[0][0]).toMatch(/^Easy/);
 });
 
-test('every built-in question has a tier, and every topic has questions at all three tiers', async ({ page }) => {
+test('every built-in question has a difficulty, and every topic has questions at all three', async ({ page }) => {
   await openBundle(page);
   const r = await page.evaluate(() => {
     const out = { untagged: 0, short: [], counts: [0, 0, 0] };
     CGB.bank.all().filter(s => s.builtin).forEach(s => {
       const topics = {};
       s.questions.forEach(q => {
-        if (![1, 2, 3].includes(q.tier)) out.untagged++; else out.counts[q.tier - 1]++;
-        (topics[q.topic] = topics[q.topic] || [0, 0, 0])[q.tier - 1]++;
+        if (![1, 2, 3].includes(q.difficulty)) out.untagged++; else out.counts[q.difficulty - 1]++;
+        (topics[q.topic] = topics[q.topic] || [0, 0, 0])[q.difficulty - 1]++;
       });
       Object.entries(topics).forEach(([t, n]) => { if (n.some(x => x < 1)) out.short.push(s.id + ': ' + t + ' ' + n.join('/')); });
     });
@@ -139,10 +140,10 @@ test('every built-in question has a tier, and every topic has questions at all t
   expect(r.untagged).toBe(0);
   expect(r.short).toEqual([]);
   // each tier is a real share of the questions, not a token one
-  r.counts.forEach(n => expect(n).toBeGreaterThan(40));
+  r.counts.forEach(n => expect(n).toBeGreaterThan(200));
 });
 
-test('questions without a tier get one from their wording', async ({ page }) => {
+test('questions without a difficulty get one from their wording', async ({ page }) => {
   await openBundle(page);
   const t = await page.evaluate(() => [
     { q: 'Which gland produces insulin?', a: 'The pancreas' },
@@ -173,7 +174,7 @@ test('Category Clash columns are topics the teacher can choose, remembered for t
   expect(cats.slice(0, 2)).toEqual(['Ecology', 'Bioenergetics']);
   expect(new Set(cats).size).toBe(4);
   // every column has a question at each tier, on the matching row
-  const tiers = await page.evaluate(() => CGB.games['category-clash'].board().map(c => c.tiles.map(t => CGB.bank.tierOf(t.q))));
+  const tiers = await page.evaluate(() => CGB.games['category-clash'].board().map(c => c.tiles.map(t => CGB.bank.difficultyOf(t.q))));
   tiers.forEach(col => expect(col).toEqual([1, 2, 3]));
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
   // four chosen: the rest can't be added; remembered next time

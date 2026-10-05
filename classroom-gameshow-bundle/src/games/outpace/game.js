@@ -228,7 +228,7 @@ scene.add(hunterGroup);
    The look follows the subject chosen on the main screen. The runner is always gold and the
    Hunter always magenta, so the race reads the same in every subject; the characters, the
    symbols orbiting them, the track tiles and the floor change with the subject. Biology,
-   Chemistry, Physics and Combined Science share the science look (atoms). */
+   Chemistry and Physics share the science look (atoms); Other has the general look. */
 function glyphTexture(text, color) {
   const c = document.createElement('canvas'); c.width = c.height = 128;
   const g = c.getContext('2d');
@@ -292,38 +292,6 @@ const CHARACTERS = {
     return {
       group,
       update(t) { core.rotation.set(t * (isHunter ? 1.6 : 0.5), t * (isHunter ? 1.1 : 0.7), 0); orbit.group.rotation.y = t * orbit.speed; },
-      boost(k) { orbit.group.rotation.y += 0.08 * k; }
-    };
-  },
-  english(isHunter) {
-    const group = new THREE.Group();
-    const core = new THREE.Group();
-    if (isHunter) {
-      // an ink blot that wobbles
-      const m = glowMat(COL.hunter, 0.45);
-      [[0, 0, 0, 0.24], [0.17, 0.08, 0.05, 0.13], [-0.16, -0.06, 0.04, 0.14], [0.05, -0.18, -0.06, 0.11], [-0.04, 0.17, -0.08, 0.1], [0.2, -0.12, 0.1, 0.07]]
-        .forEach(([x, y, z, r]) => { const b = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), m); b.position.set(x, y, z); b.userData.base = b.position.clone(); core.add(b); });
-    } else {
-      // an open book: gold covers with white pages
-      const cover = glowMat(COL.runner, 0.35), page = litMat({ color: 0xFFFDF4, emissive: 0x6B5A2A, emissiveIntensity: 0.25, roughness: 0.8 });
-      [-1, 1].forEach(sd => {
-        const half = new THREE.Group(); half.rotation.z = sd * 0.42;
-        const c = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.03, 0.4), cover); c.position.x = sd * 0.15;
-        const p = new THREE.Mesh(new THREE.BoxGeometry(0.27, 0.035, 0.36), page); p.position.set(sd * 0.145, 0.03, 0);
-        half.add(c, p); core.add(half);
-      });
-      core.rotation.x = 0.5;
-    }
-    const orbit = isHunter ? makeGlyphOrbit(['?', '!', '…'], hunterHex, 0.6, 2.3, Math.PI / 3, 0.3)
-                           : makeGlyphOrbit(['A', 'b', 'c', '“', '&'], runnerHex, 0.6, 1.2, Math.PI / 2.5, 0);
-    group.add(core, orbit.group);
-    return {
-      group,
-      update(t) {
-        if (isHunter) core.children.forEach((b, i) => { b.position.copy(b.userData.base).multiplyScalar(1 + Math.sin(t * 5 + i) * 0.12); });
-        else { core.rotation.y = Math.sin(t * 0.8) * 0.6; core.position.y = Math.sin(t * 2) * 0.03; }
-        orbit.group.rotation.y = t * orbit.speed;
-      },
       boost(k) { orbit.group.rotation.y += 0.08 * k; }
     };
   },
@@ -430,7 +398,6 @@ const CHARACTERS = {
 const THEMES = {
   science:   { label: 'Science', cell: 0x252C6B,   bg: 0x0B1026, floor: 'hex',     floorBg: '#0D1230', line: 'rgba(150,160,255,0.16)' },
   maths:     { label: 'Maths', cell: 0x1B3E70,     bg: 0x071A2E, floor: 'graph',   floorBg: '#0A1F38', line: 'rgba(120,200,255,0.22)' },
-  english:   { label: 'English', cell: 0x3E2468,   bg: 0x1A0F2E, floor: 'lines',   floorBg: '#1D1336', line: 'rgba(255,190,230,0.2)' },
   history:   { label: 'History', cell: 0x5B3A1E,   bg: 0x1A1108, floor: 'stone',   floorBg: '#2A1D10', line: 'rgba(255,214,150,0.16)' },
   geography: { label: 'Geography', cell: 0x125452, bg: 0x061D1E, floor: 'contour', floorBg: '#0A2628', line: 'rgba(140,255,220,0.2)' },
   general:   { label: 'General', cell: 0x30246E,   bg: 0x120A26, floor: 'stars',   floorBg: '#170E30', line: 'rgba(220,200,255,0.18)' }
@@ -457,7 +424,7 @@ function themeFloorTexture(th) {
   tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(4, 4);
   return tex;
 }
-const LOOK_FOR_SUBJECT = { biology: 'science', chemistry: 'science', physics: 'science', combined: 'science', maths: 'maths', english: 'english', history: 'history', geography: 'geography' };
+const LOOK_FOR_SUBJECT = { biology: 'science', chemistry: 'science', physics: 'science', maths: 'maths', history: 'history', geography: 'geography' };   // Other: the general look
 const lookForSubject = sj => LOOK_FOR_SUBJECT[sj] || 'general';
 let runnerChar = null, hunterChar = null, currentTheme = '';
 function disposeTree(obj) {
@@ -1700,7 +1667,7 @@ function askDealQuestion() {
   state.currentQuestion = q;
   $('dealQTag').textContent = q.subject + ' · ' + q.topic;
   $('dealQText').textContent = q.q;
-  $('dealQAnswer').textContent = q.a;
+  $('dealQAnswer').innerHTML = CGB.answerHTML(q);
   $('dealQAnswer').classList.remove('shown'); $('dealVerdict').textContent = '';
   paintBoards(); dealStatus(); roundDeal.think();
 }
@@ -1790,7 +1757,7 @@ function askSprintQuestion() {
   state.currentQuestion = q;
   $('sprintQTag').textContent = q.subject + ' · every team answers';
   $('sprintQText').textContent = q.q;
-  $('sprintQAnswer').textContent = q.a;
+  $('sprintQAnswer').innerHTML = CGB.answerHTML(q);
   $('sprintQAnswer').classList.remove('shown'); $('sprintVerdict').textContent = '';
   paintBoards(); roundSprint.think();
 }

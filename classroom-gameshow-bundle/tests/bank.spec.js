@@ -24,7 +24,7 @@ test('a pasted question set appears in every game', async ({ page }) => {
   await expect(page.locator('#bankList')).toContainText('Pasted test set');
   await page.keyboard.press('Escape');
   // it is now the set in use on the main screen
-  expect(await page.locator('#launcherSet').evaluate(s => s.options[s.selectedIndex].text)).toContain('Pasted test set');
+  await expect(page.locator('#packBtn')).toContainText('Pasted test set');
 
   // Over the Edge: the setup card names it, and its questions are asked
   await page.click('[data-play="over-the-edge"]');

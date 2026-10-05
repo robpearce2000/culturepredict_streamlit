@@ -101,7 +101,23 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .l-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .l-row { flex-wrap: nowrap; }
 .l-row .lab { margin: 0; min-width: 5.6em; color: #fff; }
-.l-qrow .cgb-select { flex: 1 1 200px; min-width: 0; width: auto; }
+.l-qrow .pk-drop { flex: 1 1 200px; min-width: 0; position: relative; }
+/* the question pack dropdown: tick "Mixed", or one or more topics and own sets */
+.pk-btn { width: 100%; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
+.pk-menu { position: absolute; z-index: 60; top: calc(100% + 6px); left: 0; width: max(100%, 340px); max-width: min(460px, 92vw); max-height: min(62vh, 520px); overflow-y: auto; background: var(--paper, #FFF7EC); color: var(--ink); border: 3px solid var(--ink); border-radius: 16px; box-shadow: 0 14px 40px rgba(0,0,0,0.45); padding: 8px; display: flex; flex-direction: column; gap: 2px; }
+.pk-menu[hidden] { display: none; }
+.pk-menu > .pk-opt + .pk-opt { margin-top: 2px; }
+.pk-opt { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 7px 8px; line-height: 1.25; border-radius: 10px; font-weight: 800; cursor: pointer; min-height: 40px; }
+.pk-opt:hover { background: rgba(27,31,59,0.07); }
+.pk-opt input { width: 20px; height: 20px; margin: 0; accent-color: var(--ink); }
+.pk-opt small { color: #5A5F82; font-weight: 800; }
+.pk-opt .rf { color: #5A5F82; font-weight: 900; margin-right: 4px; }
+.pk-opt.mixed { border-bottom: 2px dashed rgba(27,31,59,0.2); border-radius: 10px 10px 0 0; }
+.pk-head { font-size: 0.78rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: #5A5F82; padding: 8px 8px 2px; }
+.pk-foot { display: flex; align-items: center; justify-content: flex-start; gap: 10px; border-top: 2px solid rgba(27,31,59,0.15); margin-top: 4px; padding: 8px 4px 2px; flex-wrap: wrap; }
+.pk-foot label { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.92rem; cursor: pointer; }
+.pk-foot input { width: 20px; height: 20px; accent-color: var(--ink); }
+.pk-empty { padding: 8px; font-weight: 700; color: #5A5F82; }
 .l-note { margin: 0; font-size: 0.88rem; font-weight: 700; color: #FFE7A8; }
 .l-host { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .l-host .btn { border-color: var(--ink); }
@@ -168,7 +184,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
   .l-subject { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; }
   .l-subject h2, .l-subject .l-note { grid-column: 1 / -1; }
   .l-subject .l-row { flex-direction: column; align-items: stretch; gap: 4px; }
-  .l-subject .l-pick { flex: none; }
+  .l-subject .l-pick, .l-subject .pk-drop { flex: none; }
 }
 @media (max-width: 820px) {
   .l-hero { grid-template-columns: minmax(0, 1fr) 190px; }
@@ -384,12 +400,16 @@ details.tnames[open] > summary { margin-bottom: 8px; }
 .start-gate-note { margin: 0; font-weight: 800; font-size: 1.05rem; line-height: 1.4; }
 .start-gate-btn { font-size: 1.6rem; padding: 16px 28px; width: 100%; }
 
-/* SHOWTIME sign bulbs: a marquee chase runs round the sign, lit bulbs glow and the rest dim
+/* SHOWTIME sign bulbs: a band of light runs round the sign, lit bulbs glow and the rest dim
    right down, so it reads from the back of the room; still and fully lit with reduced motion */
-@keyframes bulb-chase { 0% { opacity: 1; } 22% { opacity: 1; } 40% { opacity: 0.22; } 92% { opacity: 0.22; } 100% { opacity: 1; } }
+@keyframes bulb-run { 0% { opacity: 1; } 22% { opacity: 1; } 40% { opacity: 0.22; } 92% { opacity: 0.22; } 100% { opacity: 1; } }
 @keyframes bulb-halo { 0% { opacity: 1; transform: scale(1.15); } 25% { opacity: 0.8; transform: scale(1); } 40%, 100% { opacity: 0; transform: scale(0.7); } }
-.l-wordmark .bulb { animation: bulb-chase var(--tw, 2.8s) linear var(--td, 0s) infinite; }
+.l-wordmark .bulb { animation: bulb-run var(--tw, 2.8s) linear var(--td, 0s) infinite; }
 .l-wordmark .bulb .halo { transform-box: fill-box; transform-origin: center; animation: bulb-halo var(--tw, 2.8s) linear var(--td, 0s) infinite; }
 html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wordmark .bulb .halo { animation: none !important; opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { html:not([data-motion="full"]) .l-wordmark .bulb, html:not([data-motion="full"]) .l-wordmark .bulb .halo { animation: none; opacity: 1; } }
 .hc-name[hidden], .ote-bubble .who[hidden] { display: none; }
+
+/* The answer line in every game: accepted alternatives and the teacher's note in smaller type */
+.ans-also, .ans-note { display: block; font-size: 0.7em; font-weight: 700; opacity: 0.85; margin-top: 2px; letter-spacing: 0; }
+.ans-note { font-style: italic; }

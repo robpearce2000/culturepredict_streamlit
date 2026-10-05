@@ -1093,7 +1093,7 @@ function renderQuestion() {
   const q = G.q;
   if (!q) { $('qWho').textContent = ''; $('qTag').textContent = ''; $('qText').textContent = ''; $('qAnswer').classList.remove('show'); return; }
   $('qWho').textContent = G.phase === 'final' ? 'Every team answers: the whole class plays for the jackpot' : 'Every team answers on their whiteboards';
-  $('qTag').textContent = `${q.subject}: ${q.topic}`; $('qText').textContent = q.q; $('qAnswer').textContent = q.a;
+  $('qTag').textContent = `${q.subject}: ${q.topic}`; $('qText').textContent = q.q; $('qAnswer').innerHTML = CGB.answerHTML(q);
   $('qAnswer').classList.toggle('show', G.answerShown);
 }
 // on a short panel (portrait tablets) bring the new step's controls into view once, when the step changes

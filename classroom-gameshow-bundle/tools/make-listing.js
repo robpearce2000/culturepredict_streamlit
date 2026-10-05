@@ -54,7 +54,7 @@ async function until(page, fn, ms, arg) {
   // Question bank, with one of the teacher's own sets added
   await page.evaluate(() => {
     CGB.bank.addSet('Year 10 bonding quiz', 'Subject: Chemistry\nTopic: Bonding\nQ: What type of bonding is in sodium chloride?\nA: Ionic\nQ: What type of bonding is in methane?\nA: Covalent\nQ: Why can metals conduct electricity?\nA: They have delocalised electrons');
-    CGB.bank.setActive('gcse-combined-mix');
+    CGB.bank.setSubject('chemistry'); CGB.bank.setBoard('aqa'); CGB.bank.setSelection({ mixed: '8462' });
   });
   await page.click('#openBank');
   await page.waitForTimeout(500);
@@ -155,7 +155,7 @@ async function until(page, fn, ms, arg) {
           <figure class="s3"><img src="${cc}" alt=""><figcaption>${CGB.brand.ccLogo()}</figcaption></figure>
           <figure class="s4"><img src="${hh}" alt=""><figcaption>${CGB.brand.hhLogo()}</figcaption></figure>
         </div>
-        <div class="chips"><span>Whole class: every team answers</span><span>4 games</span><span>190+ AQA-style GCSE science questions</span><span>Works offline</span></div>
+        <div class="chips"><span>Whole class: every team answers</span><span>4 games</span><span>1,400+ AQA-style GCSE science questions</span><span>Works offline</span></div>
       </div>`;
     const st = document.createElement('style');
     st.textContent = `

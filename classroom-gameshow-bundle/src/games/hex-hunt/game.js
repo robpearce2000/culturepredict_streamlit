@@ -37,23 +37,12 @@ const S = {
    starts: answers that open with a pronoun or a link word ("It decreases", "To stop..."),
    start with a number, symbol or formula, list options ("Any two: ..."), are yes/no/true/false,
    are explanations (over ten words) or whose main part is over five words are left out. CGB.hexLetter is shared with the tests. */
-const SKIP_LEAD = /^((in|into|on|at|from)\s+)?((the|a|an)\s+)?/i;
-const NOT_A_CLUE = /^(any|yes|no|true|false|it|its|it's|they|them|their|this|these|those|there|to|so|when|because|by|one|if|both|either|all|each|only|more|less|same|that|which|with|without|after|before|as|for|of|about|roughly|around|over|under|nearly)\b/i;
-function firstLetter(answer) {
-  const a = String(answer).trim();
-  if (NOT_A_CLUE.test(a) || a.split(/\s+/).length > 10 || /[→⇌₀-₉ₙ]/.test(a.split(/[,(]/)[0])) return null;
-  const core = a.split(/[.,;:(]|\s[-–]\s/)[0].trim();
-  if (core.split(/\s+/).length > 5) return null;
-  const s = core.replace(SKIP_LEAD, '');
-  if (NOT_A_CLUE.test(s)) return null;
-  const m = /^[A-Za-z]/.exec(s);
-  return m ? m[0].toUpperCase() : null;
-}
-CGB.hexLetter = firstLetter;
+// the letter rule is shared with the question-pack checker (src/shared/hexletter.js)
+const firstLetter = q => q && q.hexOk === false ? null : CGB.hexLetter(q && q.a !== undefined ? q.a : q);
 let deck = [];
 function buildDeck() {
   const set = bank.active();
-  const eligible = set.questions.filter(q => firstLetter(q.a));
+  const eligible = set.questions.filter(q => firstLetter(q));
   // topics either half got wrong before come up a little more often
   const weak = new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.topic)));
   const shuffled = eligible.map(q => [CGB.random() - (weak.has(q.topic) ? 0.3 : 0), q]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
@@ -182,7 +171,7 @@ function newBoard() {
   const used = new Set();
   for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) {
     const q = drawQuestion(used); if (q) used.add(q.q);
-    S.cells.push({ c, r, q, letter: q ? firstLetter(q.a) : '?', owner: -1, tries: 0 });
+    S.cells.push({ c, r, q, letter: q ? firstLetter(q) : '?', owner: -1, tries: 0 });
   }
   S.path = null;
   S.cursor = { c: Math.floor(n / 2), r: Math.floor(n / 2) };
@@ -201,7 +190,7 @@ function showQuestion() {
   $('qClue').textContent = `The answer begins with ${cell.letter}`;
   $('qTag').textContent = `${cell.q.subject} · ${cell.q.topic} · picked by ${S.teams[S.picker].name}`;
   $('qText').textContent = cell.q.q;
-  $('qAnswer').textContent = cell.q.a;
+  $('qAnswer').innerHTML = CGB.answerHTML(cell.q);
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = 'Everyone answers on their whiteboard.';
   $('q').hidden = false;
@@ -301,7 +290,7 @@ function newQuestionHere() {
   round.stop();
   const cell = S.open;
   const q = drawQuestion(new Set(S.cells.map(c => c.q && c.q.q)));
-  if (q) { cell.q = q; cell.letter = firstLetter(q.a); }
+  if (q) { cell.q = q; cell.letter = firstLetter(q); }
   S.step = 'ask';
   showQuestion();
 }
@@ -311,7 +300,7 @@ function backToBoard() {
   if (S.step === 'nobody') {
     // swap in a fresh question so the hexagon is not stuck on the one nobody knew
     const q = drawQuestion(new Set(S.cells.map(c => c.q && c.q.q)));
-    if (q) { S.open.q = q; S.open.letter = firstLetter(q.a); }
+    if (q) { S.open.q = q; S.open.letter = firstLetter(q); }
   }
   $('q').hidden = true;
   S.phase = 'board'; S.open = null; S.step = null;
@@ -431,7 +420,7 @@ fillNames();
 function renderPack() {
   const ok = CGB.renderPackLine($('pack'));
   $('startBtn').disabled = !ok;
-  const usable = ok ? bank.active().questions.filter(q => firstLetter(q.a)).length : 0;
+  const usable = ok ? bank.active().questions.filter(q => firstLetter(q)).length : 0;
   $('setHint').textContent = ok ? `${usable} of these questions have answers that start with a letter, so they can go on the board.` : '';
 }
 bank.onChange(() => { if (S.phase === 'home') renderPack(); });

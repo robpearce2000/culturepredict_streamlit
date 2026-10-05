@@ -23,7 +23,7 @@ CGB.brand = (() => {
     const title = opts.title !== false ? '<title>Showtime: Classroom Gameshows</title>' : '';
     // marquee bulbs around the main word
     let bulbs = '';
-    // marquee chase: a bright band of light runs round the sign (along the top, back along the
+    // marquee: a bright band of light runs round the sign (along the top, back along the
     // bottom), each bulb with a soft halo
     const N = 34, LAP = 2.8;
     const at = k => `--td:-${(LAP - (k * LAP) / N).toFixed(2)}s;--tw:${LAP}s`;

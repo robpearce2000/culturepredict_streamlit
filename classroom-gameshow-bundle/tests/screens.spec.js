@@ -95,6 +95,11 @@ const SECTIONS = {
     // ---------- Launcher: subject, exam board, questions, host ----------
     await page.waitForTimeout(1500);
     await shot('01-launcher');
+    // the question pack dropdown, open, with two topics ticked
+    await page.click('#packBtn');
+    await page.click('#packMenu [data-id="aqa-biology-8461-4.1"]'); await page.click('#packMenu [data-id="aqa-biology-8461-4.5"]');
+    await shot('01b-launcher-packs', 300);
+    await page.click('#packMenu [data-mixed="8461"]'); await page.keyboard.press('Escape');
     await page.click('#openBank'); await shot('02-question-bank');
     await page.locator('#bankForm').scrollIntoViewIfNeeded(); await shot('03-question-bank-add');
     await page.keyboard.press('Escape');
@@ -102,7 +107,7 @@ const SECTIONS = {
     await page.click('#openHost'); await shot('06-host-menu', 900); await page.keyboard.press('Escape');
     await page.selectOption('#subjectSelect', 'history'); await page.selectOption('#boardSelect', 'edexcel');
     await shot('07-launcher-no-pack', 300);
-    await page.selectOption('#subjectSelect', 'combined'); await page.selectOption('#boardSelect', 'aqa');
+    await page.selectOption('#subjectSelect', 'biology'); await page.selectOption('#boardSelect', 'aqa');
     await page.click('#launcherSettings [data-key="textSize"] button:nth-child(2)');
     await shot('05-launcher-large-text');
   },

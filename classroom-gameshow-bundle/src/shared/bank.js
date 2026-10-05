@@ -1,56 +1,74 @@
 'use strict';
 /* =========================================================
    SHARED QUESTION BANK
-   - Built-in packs plus the teacher's own sets
+   - Built-in packs (one per specification topic) plus the teacher's own sets
    - One subject and exam board, chosen on the main screen and read by every game
-   - One active set for each subject, used by every game
+   - The packs and sets ticked for that subject and board, used by every game as one set
    - Wrong-answer history per player name, shared by every game
    - JSON backup (export / import) of sets and history
    ========================================================= */
 CGB.bank = (() => {
   const store = CGB.store;
 
-  /* The plain-text format: Subject / Topic lines apply until changed; Q: then A:.
-     An optional "Tier: 1", "Tier: 2" or "Tier: 3" line applies to the questions after it, until
-     the next Tier or Topic line (see TIERS below). Sets written for earlier versions used
-     "Difficulty: 1-5" (or "Level:"): 1-2 read as tier 1, 3 as tier 2 and 4-5 as tier 3. */
+  /* The plain-text format teachers paste in: Subject / Topic lines apply until changed; Q: then A:.
+     Optional lines after a question's A: line add to that question:
+       Accept: other accepted answers, separated by ";"
+       Note: a note for the teacher (a misconception, a marking hint)
+     Optional lines that apply to the questions after them, until the next Topic line:
+       Difficulty: 1, 2 or 3   (or "Tier: 1-3", the name used before version 1.1; see TIERS below)
+       Tier: Higher            (Higher tier only content; "Tier: Foundation" ends it)
+     Sets written for the first standalone games used "Level: 1-5": 1-2 read as 1, 3 as 2, 4-5 as 3. */
   const fromLevel = n => n <= 2 ? 1 : n === 3 ? 2 : 3;
   function parse(text) {
     const out = [];
-    let subject = '', topic = '', tier = 0, pendingQ = null;
+    let subject = '', topic = '', diff = 0, higher = false, pendingQ = null, last = null;
     String(text || '').split('\n').forEach(line => {
       const t = line.trim();
-      if (/^subject:/i.test(t)) { subject = t.replace(/^subject:/i, '').trim(); tier = 0; }
-      else if (/^topic:/i.test(t)) { topic = t.replace(/^topic:/i, '').trim(); tier = 0; }
-      else if (/^tier:/i.test(t)) { const n = parseInt(t.replace(/^tier:/i, ''), 10); tier = n >= 1 && n <= 3 ? n : 0; }
-      else if (/^(difficulty|level):/i.test(t)) { const n = parseInt(t.replace(/^(difficulty|level):/i, ''), 10); tier = n >= 1 && n <= 5 ? fromLevel(n) : 0; }
-      else if (/^q:/i.test(t)) pendingQ = t.replace(/^q:/i, '').trim();
+      const val = re => t.replace(re, '').trim();
+      if (/^subject:/i.test(t)) { subject = val(/^subject:/i); diff = 0; higher = false; last = null; }
+      else if (/^topic:/i.test(t)) { topic = val(/^topic:/i); diff = 0; higher = false; last = null; }
+      else if (/^tier:/i.test(t)) {
+        const v = val(/^tier:/i), n = parseInt(v, 10);
+        if (n >= 1 && n <= 3) diff = n;
+        else if (/^higher/i.test(v)) higher = true;
+        else if (/^(foundation|both|all)/i.test(v)) higher = false;
+      }
+      else if (/^difficulty:/i.test(t)) { const n = parseInt(val(/^difficulty:/i), 10); diff = n >= 1 && n <= 3 ? n : n >= 4 && n <= 5 ? 3 : 0; }
+      else if (/^level:/i.test(t)) { const n = parseInt(val(/^level:/i), 10); diff = n >= 1 && n <= 5 ? fromLevel(n) : 0; }
+      else if (/^q:/i.test(t)) { pendingQ = val(/^q:/i); last = null; }
       else if (/^a:/i.test(t) && pendingQ) {
-        const q = { subject: subject || 'Custom', topic: topic || 'General', q: pendingQ, a: t.replace(/^a:/i, '').trim() };
-        if (tier) q.tier = tier;
-        out.push(q);
+        const q = { subject: subject || 'Custom', topic: topic || 'General', q: pendingQ, a: val(/^a:/i) };
+        if (diff) q.difficulty = diff;
+        if (higher) q.tier = 'Higher';
+        out.push(q); last = q;
         pendingQ = null;
       }
+      else if (/^accept:/i.test(t) && last) last.accept = val(/^accept:/i).split(';').map(x => x.trim()).filter(Boolean);
+      else if (/^note:/i.test(t) && last) last.notes = val(/^note:/i);
     });
     return out;
   }
   /* Turn questions back into the plain-text format (used for editing and copying) */
   function toText(questions) {
     const lines = [];
-    let s = null, t = null, l = 0;
+    let s = null, t = null, d = 0, h = false;
     questions.forEach(q => {
       if (q.subject !== s || q.topic !== t) {
         if (lines.length) lines.push('');
         lines.push('Subject: ' + q.subject, 'Topic: ' + q.topic);
-        s = q.subject; t = q.topic; l = 0;
+        s = q.subject; t = q.topic; d = 0; h = false;
       }
-      if ((q.tier || 0) !== l && q.tier) { lines.push('Tier: ' + q.tier); }
-      l = q.tier || l;
+      const qd = difficultyOf(q);
+      if (qd !== d) { lines.push('Difficulty: ' + qd); d = qd; }
+      const qh = q.tier === 'Higher';
+      if (qh !== h) { lines.push(qh ? 'Tier: Higher' : 'Tier: Foundation'); h = qh; }
       lines.push('Q: ' + q.q, 'A: ' + q.a);
+      if (q.accept && q.accept.length) lines.push('Accept: ' + q.accept.join('; '));
+      if (q.notes) lines.push('Note: ' + q.notes);
     });
     return lines.join('\n');
   }
-  /* QUESTION TIERS (explained in DECISIONS.md and the Question bank help). A question's tier is
+  /* DIFFICULTY (explained in DECISIONS.md and the Question bank help). A question's difficulty is
      set by the most demanding thing it asks, judged the way exam boards build mark schemes:
      the command word, the assessment objective, and whether it is Higher-tier-only content.
        1  Recall: one fact, name, term or number. Name, State, Which, What is (a one-word answer).
@@ -59,7 +77,9 @@ CGB.bank = (() => {
        3  Explain and extend: a reason (why or how), a comparison, a calculation where the
           equation isn't given, a new context, or Higher-tier-only content. Explain, Why,
           Compare, Suggest, Calculate.
-     Questions without a Tier line get one from the same rules, read from the wording. */
+     Every built-in question has its difficulty set by hand. Teachers' questions without a
+     Difficulty line get one from the same rules, read from the wording. (The overnight brief and
+     versions 1.0.x called these "tiers"; "tier" now means Foundation or Higher, as exam boards use it.) */
   const TIERS = [{ tier: 1, label: 'Recall' }, { tier: 2, label: 'Describe and apply' }, { tier: 3, label: 'Explain and extend' }];
   function estimateTier(q) {
     const Q = q.q, words = q.a.split(/\s+/).length;
@@ -68,42 +88,65 @@ CGB.bank = (() => {
     if (/^(describe|outline|give|name|state|list) (two|three|four|the (equation|formula|word equation)|an? (equation|formula))\b|equation|formula|^(describe|outline|what does .* do)/i.test(Q) || words > 5) return 2;
     return 1;
   }
-  const tierOf = q => q.tier || estimateTier(q);
+  const difficultyOf = q => q.difficulty || estimateTier(q);
 
-  /* Subjects and exam boards. Every subject can hold the teacher's own sets; built-in packs
-     exist for the sciences only so far. A pack with a board is shown for that board when the
-     subject has any pack for it; until then every pack for the subject is shown. */
+  /* Subjects and exam boards. Built-in packs are one per specification topic (CGB.PACKDATA, made
+     by tools/packs.js from packs/); teachers' own sets can be filed under any subject, or Other. */
   const SUBJECTS = [
     { id: 'biology', label: 'Biology' }, { id: 'chemistry', label: 'Chemistry' }, { id: 'physics', label: 'Physics' },
-    { id: 'combined', label: 'Combined Science' }, { id: 'maths', label: 'Maths' }, { id: 'english', label: 'English' },
-    { id: 'history', label: 'History' }, { id: 'geography', label: 'Geography' }
+    { id: 'maths', label: 'Maths' }, { id: 'history', label: 'History' }, { id: 'geography', label: 'Geography' },
+    { id: 'other', label: 'Other' }
   ];
   const BOARDS = [{ id: 'aqa', label: 'AQA' }, { id: 'edexcel', label: 'Edexcel' }];
   const isSubject = k => SUBJECTS.some(x => x.id === k);
   const isBoard = k => BOARDS.some(x => x.id === k);
+  // sets filed under subjects that no longer exist (Combined Science, English) show under Other
+  const subjectOfSet = s => isSubject(s.subject) ? s.subject : s.subject ? 'other' : null;
 
-  const P = CGB.PACKS;
-  const bio = parse(P.biology), chem = parse(P.chemistry), phys = parse(P.physics);
-  const BUILTIN = [
-    { id: 'gcse-combined-mix', name: 'GCSE Combined Science starter pack: all three sciences (AQA-style)', short: 'Combined Science: mixed', subjects: ['combined'], questions: bio.concat(chem, phys) },
-    { id: 'gcse-combined-biology', name: 'GCSE Combined Science starter pack: Biology (AQA-style)', short: 'Combined Science: Biology', subjects: ['combined', 'biology'], questions: bio },
-    { id: 'gcse-combined-chemistry', name: 'GCSE Combined Science starter pack: Chemistry (AQA-style)', short: 'Combined Science: Chemistry', subjects: ['combined', 'chemistry'], questions: chem },
-    { id: 'gcse-combined-physics', name: 'GCSE Combined Science starter pack: Physics (AQA-style)', short: 'Combined Science: Physics', subjects: ['combined', 'physics'], questions: phys },
-    { id: 'homeostasis-l1', name: 'Homeostasis L1 (Biology)', short: 'Homeostasis L1', subjects: ['biology', 'combined'], questions: parse(P.homeostasis) }
-  ].map(s => Object.assign(s, { builtin: true, board: 'aqa' }));
+  /* ---------- Built-in topic packs ---------- */
+  const DATA = CGB.PACKDATA || { specs: {}, packs: [] };
+  const SPEC_NAMES = { '1GA0': 'Geography A', '1GB0': 'Geography B' };
+  const BUILTIN = DATA.packs.map(p => {
+    const board = p.board.toLowerCase(), sj = (SUBJECTS.find(x => x.id === p.subject) || {}).label || p.subject;
+    const style = `${p.board}-style`, course = SPEC_NAMES[p.specCode] ? SPEC_NAMES[p.specCode] + ': ' : '';
+    const pack = {
+      id: p.id, builtin: true, board, subject: p.subject, specCode: p.specCode, specVersion: DATA.specs[p.board + ' ' + p.specCode] || '',
+      topic: p.topic, ref: p.ref, order: p.order, subtopics: p.subtopics, course: SPEC_NAMES[p.specCode] || '',
+      name: `${p.topic} (${style} GCSE ${course ? course.slice(0, -2) : sj} ${p.specCode}, ${p.ref})`, short: course + p.topic, count: p.q.length
+    };
+    let qs = null;   // expanded the first time the pack is used
+    Object.defineProperty(pack, 'questions', {
+      enumerable: true,
+      get() {
+        if (!qs) qs = p.q.map(r => {
+          const q = { id: r[0], board: p.board, subject: sj, specCode: p.specCode, specRef: r[1], topic: p.topic, subtopic: p.subtopics[r[2]] || p.topic, difficulty: r[3], tier: r[4] ? 'Higher' : 'Foundation and Higher', q: r[5], a: r[6], accept: r[7] ? r[7].split(';') : [], hexOk: !!r[8], notes: r[9] || '' };
+          if (r[10]) Object.assign(q, r[10]);
+          return q;
+        });
+        return qs;
+      }
+    });
+    return pack;
+  });
 
   let custom = [];
-  let subject = 'combined', board = 'aqa';
-  let activeIds = {};    // subject -> id of the set in use for it
+  let subject = 'biology', board = 'aqa';
+  let selections = {};   // "subject|board" -> { mixed: specCode } or { ids: [pack and set ids] }
+  let higher = true;     // include Higher tier only questions
   let history = {};      // key (lower-case name) -> { name, entries: [ {subject, topic, q, a, date, game} ] }
   const listeners = [];
-  const emit = () => listeners.forEach(fn => { try { fn(); } catch (e) { /* ignore */ } });
+  let cached = null;
+  const emit = () => { cached = null; listeners.forEach(fn => { try { fn(); } catch (e) { /* ignore */ } }); };
 
   function validQuestion(q) { return q && typeof q.q === 'string' && typeof q.a === 'string' && q.q.trim() && q.a.trim(); }
   function cleanQuestion(q) {
     const c = { subject: String(q.subject || 'Custom').slice(0, 80), topic: String(q.topic || 'General').slice(0, 120), q: String(q.q).slice(0, 600), a: String(q.a).slice(0, 600) };
-    const t = parseInt(q.tier, 10), l = parseInt(q.level, 10);    // level: sets saved by earlier versions
-    if (t >= 1 && t <= 3) c.tier = t; else if (l >= 1 && l <= 5) c.tier = fromLevel(l);
+    // difficulty: saved as "tier" (1-3) before version 1.1, and "level" (1-5) by the first games
+    const d = parseInt(q.difficulty, 10), t = parseInt(q.tier, 10), l = parseInt(q.level, 10);
+    if (d >= 1 && d <= 3) c.difficulty = d; else if (t >= 1 && t <= 3) c.difficulty = t; else if (l >= 1 && l <= 5) c.difficulty = fromLevel(l);
+    if (q.tier === 'Higher') c.tier = 'Higher';
+    if (Array.isArray(q.accept)) { const a = q.accept.map(x => String(x).trim().slice(0, 120)).filter(Boolean).slice(0, 12); if (a.length) c.accept = a; }
+    if (q.notes) c.notes = String(q.notes).slice(0, 300);
     return c;
   }
   function cleanSet(s) {
@@ -111,7 +154,7 @@ CGB.bank = (() => {
     const qs = s.questions.filter(validQuestion).map(cleanQuestion);
     if (!qs.length) return null;
     const c = { id: String(s.id || newId()), name: String(s.name || 'My questions').slice(0, 60), questions: qs, created: s.created || new Date().toISOString().slice(0, 10) };
-    if (isSubject(s.subject)) c.subject = s.subject;   // sets from before subjects existed have none and show under every subject
+    if (s.subject) c.subject = String(s.subject).slice(0, 30);   // kept as saved; one no longer listed shows under Other
     return c;
   }
   function newId() { return 'set-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7); }
@@ -121,15 +164,23 @@ CGB.bank = (() => {
     custom = Array.isArray(c) ? c.map(cleanSet).filter(Boolean) : [];
     const h = store.getJSON('history', {});
     history = h && typeof h === 'object' && !Array.isArray(h) ? h : {};
-    const sj = store.get('subject'); if (isSubject(sj)) subject = sj;
+    const sj = store.get('subject'); if (isSubject(sj)) subject = sj; else if (sj === 'combined') subject = 'biology'; else if (sj) subject = 'other';
     const bd = store.get('board'); if (isBoard(bd)) board = bd;
+    const sel = store.getJSON('packSelections', {});
+    selections = sel && typeof sel === 'object' && !Array.isArray(sel) ? sel : {};
+    higher = store.get('higherTier') !== '0';
+    // a teacher's own set chosen before version 1.1 stays chosen
     const ids = store.getJSON('activeSets', {});
-    activeIds = ids && typeof ids === 'object' && !Array.isArray(ids) ? ids : {};
-    const a = store.get('activeSet');    // the single set in use before subjects existed
-    if (a && !activeIds[subject] && available().some(s => s.id === a)) activeIds[subject] = a;
+    if (ids && typeof ids === 'object') Object.keys(ids).forEach(k => {
+      const sjk = isSubject(k) ? k : 'other', set = custom.find(x => x.id === ids[k]);
+      BOARDS.forEach(b => { const key = sjk + '|' + b.id; if (set && !selections[key]) selections[key] = { ids: [set.id] }; });
+    });
+    const one = store.get('activeSet');   // the single set in use before subjects existed (version 1.0 beta)
+    if (one && custom.some(x => x.id === one) && !selections[subject + '|' + board]) selections[subject + '|' + board] = { ids: [one] };
   }
   function saveSets() { return store.setJSON('sets', custom); }
   function saveHistory() { return store.setJSON('history', history); }
+  function saveSelections() { store.setJSON('packSelections', selections); }
 
   /* One-off import of data saved by the two earlier stand-alone games on this device */
   function migrateLegacy() {
@@ -156,22 +207,68 @@ CGB.bank = (() => {
 
   function all() { return BUILTIN.concat(custom); }
   function get(id) { return all().find(s => s.id === id) || null; }
-  const setSubjects = s => s.builtin ? s.subjects : s.subject ? [s.subject] : null;   // null: any subject
-  /* The sets for the chosen subject (and board, once that subject has a pack for it) */
-  function available(sj) {
-    sj = sj || subject;
-    const inSubject = all().filter(s => { const k = setSubjects(s); return !k || k.includes(sj); });
-    const forBoard = inSubject.filter(s => s.board === board);
-    return forBoard.length ? inSubject.filter(s => !s.board || s.board === board) : inSubject;
+  /* The built-in topic packs for a subject and board, in specification order */
+  function packs(sj, bd) {
+    sj = sj || subject; bd = bd || board;
+    return BUILTIN.filter(p => p.subject === sj && p.board === bd).sort((a, b) => a.specCode.localeCompare(b.specCode) || a.order - b.order);
   }
-  /* The set in use for the chosen subject, or null when the subject has no questions yet */
+  /* The specifications those packs come from (two for Edexcel Geography) */
+  function courses(sj, bd) {
+    const m = new Map();
+    packs(sj, bd).forEach(p => { if (!m.has(p.specCode)) m.set(p.specCode, { specCode: p.specCode, name: p.course, version: p.specVersion, count: 0 }); m.get(p.specCode).count += p.count; });
+    return Array.from(m.values());
+  }
+  /* The teacher's own sets for a subject (sets saved before subjects existed show under every subject) */
+  function ownSets(sj) { sj = sj || subject; return custom.filter(s => { const k = subjectOfSet(s); return !k || k === sj; }); }
+  /* Everything that can be chosen for the subject and board: topic packs, then the teacher's sets */
+  function available(sj) { return packs(sj).concat(ownSets(sj)); }
+
+  /* ---------- What is chosen ---------- */
+  const selKey = () => subject + '|' + board;
+  function selection() {
+    const s = selections[selKey()], cs = courses();
+    if (s && s.mixed && cs.some(c => c.specCode === s.mixed)) return { mixed: s.mixed };
+    if (s && Array.isArray(s.ids)) { const ids = s.ids.filter(id => available().some(x => x.id === id)); if (ids.length) return { ids }; }
+    // nothing chosen yet (or what was chosen has gone): every topic, or the teacher's first set
+    if (cs.length) return { mixed: cs[0].specCode };
+    const own = ownSets();
+    return own.length ? { ids: [own[0].id] } : { ids: [] };
+  }
+  function setSelection(sel) {
+    if (sel && sel.mixed) selections[selKey()] = { mixed: String(sel.mixed) };
+    else selections[selKey()] = { ids: (sel && sel.ids || []).filter(id => available().some(x => x.id === id)) };
+    saveSelections(); emit(); return true;
+  }
+  /* Tick or untick one pack or set (the dropdown on the main screen) */
+  function toggle(id) {
+    const cur = selection();
+    let ids = cur.mixed ? [] : cur.ids.slice();
+    ids = ids.includes(id) ? ids.filter(x => x !== id) : ids.concat(id);
+    return setSelection(ids.length ? { ids } : { mixed: (courses()[0] || {}).specCode });
+  }
+  function setHigher(on) { higher = !!on; store.set('higherTier', higher ? '1' : '0'); emit(); }
+
+  /* The question set every game uses: what is chosen, as one set. With one topic chosen,
+     Category Clash takes its columns from the specification's subtopics (groupBy). */
   function active() {
-    const list = available();
-    return list.find(s => s.id === activeIds[subject]) || list[0] || null;
-  }
-  function setActive(id) {
-    if (!available().some(s => s.id === id)) return false;
-    activeIds[subject] = id; store.setJSON('activeSets', activeIds); emit(); return true;
+    if (cached) return cached;
+    const sel = selection();
+    const chosen = sel.mixed ? packs().filter(p => p.specCode === sel.mixed) : sel.ids.map(get).filter(Boolean);
+    if (!chosen.length) return null;
+    let questions = [].concat(...chosen.map(s => s.questions));
+    const dropped = higher ? 0 : questions.filter(q => q.tier === 'Higher').length;
+    if (!higher) questions = questions.filter(q => q.tier !== 'Higher');
+    if (!questions.length) return null;
+    const one = chosen.length === 1 ? chosen[0] : null;
+    const course = sel.mixed ? (courses().find(c => c.specCode === sel.mixed) || {}).name : '';
+    const short = sel.mixed ? `Mixed: all ${course ? course + ' ' : ''}topics` : one ? one.short || one.name : `${chosen.length} ${chosen.every(s => s.builtin) ? 'topics' : 'sets'}: ${chosen.map(s => s.builtin ? s.topic : s.name).join(', ')}`;
+    cached = {
+      id: 'sel:' + selKey() + ':' + (sel.mixed ? 'mixed-' + sel.mixed : sel.ids.join('+')) + (higher ? '' : ':f'),
+      name: sel.mixed ? `${short} (${label(BOARDS, board)}-style GCSE ${label(SUBJECTS, subject)})` : one ? one.name : short,
+      short, questions, parts: chosen, builtin: chosen.every(s => s.builtin), withoutHigher: dropped,
+      groupBy: one && one.builtin && one.subtopics.length > 1 ? 'subtopic' : 'topic'
+    };
+    return cached;
   }
   function setSubject(k) { if (!isSubject(k) || k === subject) return false; subject = k; store.set('subject', k); emit(); return true; }
   function setBoard(k) { if (!isBoard(k) || k === board) return false; board = k; store.set('board', k); emit(); return true; }
@@ -179,9 +276,9 @@ CGB.bank = (() => {
   /* What the main screen and the setup cards say about the chosen subject */
   function subjectNote() {
     const sj = label(SUBJECTS, subject), bd = label(BOARDS, board);
-    const builtin = available().filter(s => s.builtin);
-    if (!builtin.length) return `Built-in ${sj} packs are coming soon. For now, add your own ${sj} questions in the Question bank.`;
-    if (!builtin.some(s => s.board === board)) return `The built-in ${sj} packs are AQA-style. ${bd} packs are coming soon.`;
+    if (subject === 'other') return ownSets().length ? '' : 'Add your own questions for any subject in the Question bank.';
+    if (!packs().length) return `Built-in ${bd}-style ${sj} packs are coming soon. For now, add your own ${sj} questions in the Question bank.`;
+    if (!higher) return 'Foundation tier: Higher tier only questions are left out.';
     return '';
   }
   /* Custom sets can be moved to another subject from the Question bank */
@@ -201,8 +298,8 @@ CGB.bank = (() => {
     const set = cleanSet({ id: newId(), name: (name || '').trim() || 'My questions', questions: qs, subject: sj || subject });
     custom.push(set);
     if (!saveSets()) { /* still usable for this session */ }
-    if (set.subject && set.subject !== subject) { subject = set.subject; store.set('subject', subject); }
-    activeIds[subject] = set.id; store.setJSON('activeSets', activeIds);
+    if (set.subject && isSubject(set.subject) && set.subject !== subject) { subject = set.subject; store.set('subject', subject); }
+    selections[selKey()] = { ids: [set.id] }; saveSelections();
     emit();
     return { ok: true, set, saved: store.available };
   }
@@ -222,9 +319,8 @@ CGB.bank = (() => {
     const before = custom.length;
     custom = custom.filter(s => s.id !== id);
     if (custom.length === before) return false;
-    Object.keys(activeIds).forEach(k => { if (activeIds[k] === id) delete activeIds[k]; });
-    store.setJSON('activeSets', activeIds);
-    saveSets(); emit();
+    Object.keys(selections).forEach(k => { const s = selections[k]; if (s && Array.isArray(s.ids)) s.ids = s.ids.filter(x => x !== id); });
+    saveSelections(); saveSets(); emit();
     return true;
   }
 
@@ -255,17 +351,6 @@ CGB.bank = (() => {
     return Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, n || 5);
   }
   function clearHistory(name) { delete history[key(name)]; saveHistory(); emit(); }
-  /* Fill a question-set dropdown with the chosen subject's sets. Options use the short name so
-     they are never cut off; the full name is in the tooltip. */
-  function fillSelect(sel) {
-    const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    const a = active();
-    sel.innerHTML = a ? available().map(s => `<option value="${esc(s.id)}" title="${esc(s.name)}">${esc(s.short || s.name)} (${s.questions.length})</option>`).join('')
-      : '<option value="">No questions yet</option>';
-    sel.disabled = !a;
-    sel.value = a ? a.id : '';
-    sel.title = a ? a.name : '';
-  }
   function players() { return Object.values(history).map(h => ({ name: h.name, count: h.entries.length })).sort((a, b) => a.name.localeCompare(b.name)); }
 
   /* ---------- Question picking (each game session gets its own picker) ---------- */
@@ -302,7 +387,7 @@ CGB.bank = (() => {
     return {
       format: 'classroom-gameshow-bundle-backup', formatVersion: 1, appVersion: CGB.VERSION,
       exported: new Date().toISOString(),
-      subject, board, activeSets: Object.assign({}, activeIds),
+      subject, board, packSelections: JSON.parse(JSON.stringify(selections)), higherTier: higher,
       sets: JSON.parse(JSON.stringify(custom)),
       history: JSON.parse(JSON.stringify(history))
     };
@@ -333,9 +418,8 @@ CGB.bank = (() => {
         addHistoryEntry(name, c); entries++;
       });
     });
-    if (data.activeSets && typeof data.activeSets === 'object') Object.keys(data.activeSets).forEach(k => { if (isSubject(k) && get(data.activeSets[k])) activeIds[k] = data.activeSets[k]; });
-    else if (data.activeSet && get(data.activeSet) && available().some(s => s.id === data.activeSet)) activeIds[subject] = data.activeSet;
-    store.setJSON('activeSets', activeIds);
+    if (data.packSelections && typeof data.packSelections === 'object') Object.keys(data.packSelections).forEach(k => { if (!selections[k]) selections[k] = data.packSelections[k]; });
+    saveSelections();
     saveSets(); saveHistory(); emit();
     return { ok: true, added, updated, entries };
   }
@@ -343,11 +427,12 @@ CGB.bank = (() => {
   load();
   migrateLegacy();
   return {
-    parse, toText, TIERS, tierOf, estimateTier, all, get, active, setActive, available, summary, addSet, updateSet, deleteSet, setSubjectOf,
+    parse, toText, TIERS, difficultyOf, tierOf: difficultyOf, estimateTier, all, get, active, available, packs, courses, ownSets, summary, addSet, updateSet, deleteSet, setSubjectOf,
+    selection, setSelection, toggle, higher: () => higher, setHigher, specs: () => Object.assign({}, DATA.specs),
     SUBJECTS, BOARDS, subject: () => subject, board: () => board, setSubject, setBoard, subjectNote,
     subjectLabel: k => label(SUBJECTS, k || subject), boardLabel: k => label(BOARDS, k || board),
-    logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker, fillSelect,
+    logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker,
     exportData, importData, onChange(fn) { listeners.push(fn); },
-    builtinIds: BUILTIN.map(s => s.id)
+    builtinIds: BUILTIN.map(s => s.id), subjectOfSet
   };
 })();

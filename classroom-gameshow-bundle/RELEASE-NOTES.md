@@ -1,4 +1,4 @@
-# Showtime: Classroom Gameshows 1.0.1: release notes
+# Showtime: Classroom Gameshows 1.1.0: release notes
 
 ## What's in the bundle
 
@@ -15,12 +15,18 @@
 - **Category Clash** (2 to 6 teams): four topics from your subject, three tiers of difficulty, a hidden double-points star tile.
 - **Hex Hunt** (two halves of the class): lettered hexagons, each letter the first letter of the answer; the first half to link its edges wins.
 
-**Questions:** 194 AQA-style GCSE Combined Science questions (Biology, Chemistry, Physics, all hand-tagged by tier) and a 63-question Homeostasis lesson set, plus the teacher's own sets for any subject. The packs are AQA-style practice questions written for Showtime; they are not produced or endorsed by AQA.
+**Questions:** AQA-style GCSE Biology (8461), Chemistry (8462) and Physics (8463) packs, one per specification topic, 1,425 questions, plus the teacher's own sets for any subject. The packs are AQA-style practice questions written for Showtime; they are not produced or endorsed by AQA.
+
+## What changed in 1.1.0
+
+- **Topic packs for AQA GCSE Biology, Chemistry and Physics:** one pack per specification topic (25 packs, 1,425 questions), every question tied to a specification point, with a difficulty and a Higher-tier tag, written from the specification and checked separately. They replace the Combined Science starter packs. Progress on the other boards and subjects is in QUESTION-BANK-PROGRESS.md.
+- **Questions dropdown:** tick one topic, several, or "Mixed: all topics"; a Higher tier switch for Foundation classes; Category Clash uses subtopics as columns when one topic is ticked; accepted answers and teacher's notes shown under every answer.
+- **Subjects:** Biology, Chemistry, Physics, Maths, History, Geography and Other (Combined Science and English removed; sets filed under them show under Other).
 
 ## What changed in 1.0.1
 
 - **Outpace is smooth on real laptops.** About twice the frame rate (no full-screen glow pass or moving lights, simpler shading, standard resolution), and no more jitter or jolts when the camera moves: the picture slides clear of the question panel instead of stepping, the camera eases in and out, everything is loaded onto the graphics chip before play, the answer shake is a smooth sway, and all movement runs on the clock so it is the same on 60, 120 and 144 Hz screens. Checked by Rob on his laptop.
-- **The home-screen sign** has a marquee chase: a band of light runs round the bulbs.
+- **The home-screen sign** has a running marquee: a band of light runs round the bulbs.
 
 ## What changed overnight (1.0.0)
 
@@ -44,7 +50,7 @@
 
 - [ ] **Classroom trials.** Play each game with at least one real class on the classroom PC and interactive whiteboard you will use (and ideally an older school laptop at Low graphics). Check that the 10-minute lengths, the 20-second countdown and the jackpot, sprint and board balance feel right with real pupils.
 - [x] **Frame rate on a real laptop.** Outpace checked smooth on Rob's laptop (1.0.1). Still worth a look on the classroom PC.
-- [ ] **Check the questions.** Read all 257 built-in questions and answers against the current AQA Combined Science: Trilogy specification, including the tier given to each one and the five questions added overnight (Chemical analysis, The atmosphere and resources, Nervous vs hormonal, Nervous system). Make sure the Hex Hunt letters and the "AQA-style" wording are right.
+- [ ] **Check the questions.** Read QUESTIONS-TO-CHECK.md first (nothing open for the AQA sciences yet), then sample the 1,425 built-in questions against the AQA Biology, Chemistry and Physics specifications (each question names its specification point). Make sure the "AQA-style" wording is right.
 - [ ] **Trade mark searches.** Search the UK IPO (and EUIPO if selling beyond the UK) for "Showtime", "Over the Edge", "Outpace", "Category Clash" and "Hex Hunt" in classes 9, 28 and 41, and check that no listing text, image or file name suggests a link to any television programme, broadcaster or exam board.
 - [ ] **Your employment contract.** Check what it says about intellectual property and outside work (resources made in your own time, using school equipment or for your own classes), and get written agreement from the school if needed before selling.
 - [ ] **Tes setup.** Set up your Tes author shop and seller details, choose the price and licence, upload the HTML file, the PDF guide, the listing images and the description, and test-download it on a school computer (some school networks block downloading HTML files; a zip may be needed).
