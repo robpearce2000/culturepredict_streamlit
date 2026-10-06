@@ -1,0 +1,266 @@
+Board: AQA
+Spec: 8145
+Topic: 2BC
+
+Q: Which minister served as Elizabeth's Secretary of State from 1558 and later as Lord Treasurer?
+A: William Cecil
+Accept: Cecil; Lord Burghley; Burghley
+Ref: 2BC.1.1
+D: 1
+
+Q: Which Secretary of State ran Elizabeth's network of spies?
+A: Francis Walsingham
+Accept: Walsingham; Sir Francis Walsingham
+Ref: 2BC.1.1
+D: 1
+
+Q: Who was Elizabeth's long-term favourite, created Earl of Leicester in 1564?
+A: Robert Dudley
+Accept: Dudley; Earl of Leicester; Leicester
+Ref: 2BC.1.1
+D: 1
+
+Q: What name was given to Elizabeth's summer tours of the country, staying with nobles?
+A: Progresses
+Accept: Progress; Royal progresses
+Ref: 2BC.1.1
+D: 1
+
+Q: Why did Elizabeth go on summer progresses?
+A: To be seen by her subjects
+Accept: To win loyalty; To save money on court costs; To show her power
+Ref: 2BC.1.1
+D: 3
+
+Q: Why did courtiers compete so hard for Elizabeth's patronage?
+A: To gain wealth and position
+Accept: Jobs, land and favours; To gain power; To gain titles and money
+Ref: 2BC.1.1
+D: 3
+
+Q: Who succeeded Elizabeth I as King of England in 1603?
+A: James VI of Scotland
+Accept: James I; James VI and I; James Stuart
+Ref: 2BC.1.2
+D: 1
+
+Q: Which Earl led a failed rising in London in 1601?
+A: Earl of Essex
+Accept: Essex; Robert Devereux
+Ref: 2BC.1.2
+D: 1
+
+Q: Which MP was sent to the Tower in 1593 for pressing Elizabeth to name an heir?
+A: Peter Wentworth
+Accept: Wentworth
+Ref: 2BC.1.2
+D: 2
+
+Q: What name is given to Elizabeth's 1601 speech to Parliament, given on the topic of monopolies?
+A: The Golden Speech
+Accept: Golden Speech
+Ref: 2BC.1.2
+D: 2
+
+Q: Which French Duke was Elizabeth's serious suitor from 1579?
+A: Duke of Anjou
+Accept: Anjou; Francis, Duke of Anjou; Alencon
+Ref: 2BC.1.2
+D: 2
+
+Q: Why did the lack of an heir worry Elizabeth's advisers?
+A: Risk of civil war over the succession
+Accept: Uncertain succession; Catholic claimant Mary; Fear of conflict after her death
+Ref: 2BC.1.2
+D: 3
+
+Q: Why did Essex rebel against Elizabeth in 1601?
+A: He had lost royal favour
+Accept: To remove Robert Cecil; He was out of favour; To regain power at court
+Ref: 2BC.1.2
+D: 3
+
+Q: Which theatre, built in 1599 on Bankside, was home to Shakespeare's company?
+A: The Globe
+Accept: Globe; Globe Theatre
+Ref: 2BC.2.1
+D: 1
+
+Q: Who built The Theatre, London's first purpose-built playhouse, in 1576?
+A: James Burbage
+Accept: Burbage
+Ref: 2BC.2.1
+D: 2
+
+Q: Which religious group attacked theatres as immoral?
+A: Puritans
+Accept: Puritan
+Ref: 2BC.2.1
+D: 1
+
+Q: What was a 'groundling' at an Elizabethan playhouse?
+A: A spectator who stood in the pit
+Accept: A standing audience member; Someone paying a penny to stand
+Ref: 2BC.2.1
+D: 2
+
+Q: Why were theatres built outside the walls of the City of London?
+A: City authorities opposed them
+Accept: Fear of plague and disorder; Lord Mayor disliked them; Puritan city officials
+Ref: 2BC.2.1
+D: 3
+
+Q: Which 1572 measure first required a compulsory local tax to pay for poor relief?
+A: Poor rate
+Accept: The poor rate; Poor Law of 1572; A poor tax
+Ref: 2BC.2.2
+D: 2
+
+Q: Which parish officials, created in 1597-98, organised poor relief?
+A: Overseers of the poor
+Accept: Overseers
+Ref: 2BC.2.2
+D: 2
+
+Q: What did the 1576 Act order to be set up to put the able-bodied poor to work?
+A: Houses of correction
+Accept: House of correction; Bridewells
+Ref: 2BC.2.2
+D: 2
+
+Q: What term described the poor who could not work, through age or sickness?
+A: Deserving poor
+Accept: Impotent poor; The impotent
+Ref: 2BC.2.2
+D: 2
+
+Q: Give one reason poverty increased in Elizabethan England.
+A: Rising population
+Accept: Population growth; Rising prices; Inflation; Enclosure; Unemployment; Bad harvests
+Ref: 2BC.2.2
+D: 2
+
+Q: Why did the government fear vagabonds?
+A: They threatened law and order
+Accept: Fear of rebellion; Fear of disorder; Seen as a threat to stability
+Ref: 2BC.2.2
+D: 3
+
+Q: Which sailor made England's first slave-trading voyages, beginning in 1562?
+A: John Hawkins
+Accept: Hawkins
+Ref: 2BC.2.3
+D: 1
+
+Q: What was the name of Drake's ship on his circumnavigation?
+A: Golden Hind
+Accept: The Golden Hind
+Ref: 2BC.2.3
+D: 1
+
+Q: What was the name of the colony in North America that Raleigh sponsored from 1585?
+A: Roanoke
+Accept: Roanoke Island; Virginia
+Ref: 2BC.2.3
+D: 2
+
+Q: Why did Elizabeth secretly support Drake's raids on Spanish treasure ships?
+A: They brought her riches and weakened Spain
+Accept: To gain treasure; To weaken Spain; A share of the profits
+Ref: 2BC.2.3
+D: 3
+
+Q: Which 1559 Act made Elizabeth Supreme Governor of the Church of England?
+A: Act of Supremacy
+Accept: Supremacy; Act of Supremacy 1559
+Ref: 2BC.3.1
+D: 1
+
+Q: Which Pope excommunicated Elizabeth in 1570?
+A: Pius V
+Accept: Pope Pius V; Pius the Fifth
+Ref: 2BC.3.1
+D: 1
+
+Q: What name was given to Catholics who refused to attend Church of England services?
+A: Recusants
+Accept: Recusant
+Ref: 2BC.3.1
+D: 2
+
+Q: Which Jesuit missionary priest was executed in 1581?
+A: Edmund Campion
+Accept: Campion
+Ref: 2BC.3.1
+D: 2
+
+Q: Why did the 1570 excommunication make English Catholics a threat to Elizabeth?
+A: It told them to disobey her
+Accept: Catholics could be urged to rebel; Pope freed them from obedience; It encouraged plots
+Ref: 2BC.3.1
+D: 3
+
+Q: Which 1586 plot led to Mary's trial and execution?
+A: Babington Plot
+Accept: The Babington Plot; Babington
+Ref: 2BC.3.2
+D: 1
+
+Q: At which castle was Mary Queen of Scots executed in 1587?
+A: Fotheringhay
+Accept: Fotheringhay Castle
+Ref: 2BC.3.2
+D: 1
+
+Q: Which Italian banker gave his name to the 1571 plot to put Mary on the throne?
+A: Ridolfi
+Accept: Roberto Ridolfi; The Ridolfi Plot
+Ref: 2BC.3.2
+D: 2
+
+Q: Why did Catholics see Mary as the rightful queen of England?
+A: Great-granddaughter of Henry VII
+Accept: Strong Tudor blood claim; They thought Elizabeth illegitimate; Granddaughter of Margaret Tudor
+Ref: 2BC.3.2
+D: 3
+
+Q: Why did Elizabeth hesitate to execute Mary?
+A: Reluctance to execute an anointed queen
+Accept: Fear of setting a precedent; Fear of Catholic reaction; Mary was a monarch
+Ref: 2BC.3.2
+D: 3
+
+Q: Which Duke commanded the Spanish Armada?
+A: Duke of Medina Sidonia
+Accept: Medina Sidonia
+Ref: 2BC.3.3
+D: 1
+
+Q: Which Spanish port did Drake raid in 1587, 'singeing the King of Spain's beard'?
+A: Cadiz
+Accept: Cadiz harbour
+Ref: 2BC.3.3
+D: 2
+
+Q: At which port did English fireships scatter the anchored Armada in 1588?
+A: Calais
+Ref: 2BC.3.3
+D: 2
+
+Q: Which 1585 treaty committed Elizabeth to support the Dutch rebels against Spain?
+A: Treaty of Nonsuch
+Accept: Nonsuch
+Ref: 2BC.3.3
+D: 2
+
+Q: Give one reason the English ships had an advantage over the Spanish galleons.
+A: Faster and easier to manoeuvre
+Accept: Longer-range guns; Better gunnery; Lower and more manoeuvrable ships
+Ref: 2BC.3.3
+D: 3
+
+Q: Which Spanish army in the Netherlands was the Armada meant to carry to England?
+A: Duke of Parma's army
+Accept: Parma; Army of Flanders; The Duke of Parma
+Ref: 2BC.3.3
+D: 3

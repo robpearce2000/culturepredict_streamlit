@@ -1,0 +1,405 @@
+Board: AQA
+Spec: 8145
+Topic: 1BC
+
+Q: Which three leaders met at the Yalta Conference in February 1945?
+A: Churchill, Roosevelt and Stalin
+Accept: Roosevelt, Churchill and Stalin; Stalin, Roosevelt and Churchill
+Ref: 1BC.1.1
+D: 2
+
+Q: Which new Western leaders replaced Roosevelt and Churchill at the Potsdam Conference?
+A: Truman and Attlee
+Accept: Attlee and Truman
+Ref: 1BC.1.1
+D: 2
+Note: Churchill attended the start of Potsdam; Attlee replaced him after Labour won the 1945 election.
+
+Q: Into how many occupation zones was Germany divided in 1945?
+A: Four
+Accept: 4
+Ref: 1BC.1.1
+D: 1
+
+Q: Which German city, deep inside the Soviet zone, was also divided into four sectors?
+A: Berlin
+Ref: 1BC.1.1
+D: 1
+
+Q: On which Japanese city did the USA drop the first atomic bomb in August 1945?
+A: Hiroshima
+Ref: 1BC.1.1
+D: 1
+
+Q: Which ideology did Stalin's USSR promote, based on state ownership of industry?
+A: Communism
+Accept: Marxism-Leninism; Soviet communism
+Ref: 1BC.1.1
+D: 1
+
+Q: Why did Stalin want a buffer of friendly states in Eastern Europe?
+A: To protect the USSR from invasion
+Accept: Security against another invasion from the west; protection from Germany; to stop future invasion
+Ref: 1BC.1.1
+D: 3
+
+Q: How did the atomic bomb affect Stalin's attitude towards the USA?
+A: Increased Soviet suspicion and distrust
+Accept: Stalin saw it as a threat; he wanted his own bomb; distrust; arms race
+Ref: 1BC.1.1
+D: 3
+
+Q: In which US town did Churchill make his "Iron Curtain" speech in 1946?
+A: Fulton
+Accept: Fulton, Missouri
+Ref: 1BC.1.2
+D: 2
+
+Q: Which 1947 US policy promised support to countries resisting communism?
+A: Truman Doctrine
+Accept: The Truman Doctrine
+Ref: 1BC.1.2
+D: 1
+
+Q: Which American Secretary of State gave his name to the 1947 plan for economic aid to Europe?
+A: George Marshall
+Accept: Marshall; General Marshall
+Ref: 1BC.1.2
+D: 2
+
+Q: What was the name of the Soviet organisation formed in 1949 to coordinate Eastern bloc economies?
+A: Comecon
+Accept: COMECON; Council for Mutual Economic Assistance
+Ref: 1BC.1.2
+D: 1
+
+Q: Which Yugoslav communist leader broke with Stalin in 1948?
+A: Tito
+Accept: Josip Broz Tito; Marshal Tito
+Ref: 1BC.1.2
+D: 2
+
+Q: Which new currency introduced in Western Berlin in 1948 led Stalin to blockade the city?
+A: Deutschmark
+Accept: Deutsche Mark; D-Mark; new German mark
+Ref: 1BC.1.2
+D: 3
+
+Q: What name is given to the Western operation that flew supplies into Berlin in 1948-49?
+A: Berlin Airlift
+Accept: The Airlift; Airlift
+Ref: 1BC.1.2
+D: 1
+
+Q: Why did Stalin object to the Marshall Plan?
+A: It would increase US influence in Europe
+Accept: He saw it as dollar imperialism; it would draw Eastern Europe towards the USA; US control
+Ref: 1BC.1.2
+D: 3
+
+Q: What was the purpose of the Cominform set up in 1947?
+A: Coordinate European communist parties
+Accept: Spread Soviet control; control communist parties; keep communist parties loyal to Moscow
+Ref: 1BC.1.2
+D: 2
+
+Q: Which Chinese Communist leader won the civil war in 1949?
+A: Mao Zedong
+Accept: Mao Tse-tung; Mao
+Ref: 1BC.2.1
+D: 1
+
+Q: Which Chinese Nationalist leader fled to Taiwan in 1949?
+A: Chiang Kai-shek
+Accept: Jiang Jieshi; Chiang
+Ref: 1BC.2.1
+D: 2
+
+Q: Which line of latitude divided North and South Korea?
+A: 38th parallel
+Accept: The 38th parallel; 38th
+Ref: 1BC.2.1
+D: 1
+
+Q: Which American general commanded the UN forces in Korea until dismissed by Truman in 1951?
+A: MacArthur
+Accept: Douglas MacArthur
+Ref: 1BC.2.1
+D: 2
+
+Q: Which guerrilla force, backed by North Vietnam, fought the USA in South Vietnam?
+A: Vietcong
+Accept: Viet Cong; VC; National Liberation Front
+Ref: 1BC.2.1
+D: 1
+
+Q: Which 1954 battle ended French rule in Vietnam?
+A: Dien Bien Phu
+Accept: Dien Bien Phu
+Ref: 1BC.2.1
+D: 2
+
+Q: What name was given to the US belief that if one Asian country turned communist, its neighbours would follow?
+A: Domino theory
+Accept: The domino theory
+Ref: 1BC.2.1
+D: 2
+
+Q: Why did the USA enter the Korean War in 1950?
+A: To stop communism spreading
+Accept: Containment; to defend South Korea from communism; to stop the spread of communism
+Ref: 1BC.2.1
+D: 3
+
+Q: Which Western military alliance was formed in 1949?
+A: NATO
+Accept: North Atlantic Treaty Organisation; North Atlantic Treaty Organization
+Ref: 1BC.2.2
+D: 1
+
+Q: Which Eastern bloc military alliance was formed in 1955?
+A: Warsaw Pact
+Accept: The Warsaw Pact
+Ref: 1BC.2.2
+D: 1
+
+Q: In which year did the USSR test its first atomic bomb?
+A: 1949
+Ref: 1BC.2.2
+D: 2
+
+Q: Which Soviet satellite launched in 1957 started the space race?
+A: Sputnik
+Accept: Sputnik 1
+Ref: 1BC.2.2
+D: 1
+
+Q: What does ICBM stand for?
+A: Intercontinental ballistic missile
+Accept: Intercontinental Ballistic Missile
+Ref: 1BC.2.2
+D: 2
+
+Q: Polaris missiles were fired from what type of vessel?
+A: Submarines
+Accept: Submarine; nuclear submarines
+Ref: 1BC.2.2
+D: 2
+
+Q: Which Soviet cosmonaut became the first human in space in 1961?
+A: Yuri Gagarin
+Accept: Gagarin
+Ref: 1BC.2.2
+D: 1
+
+Q: Which US mission put the first humans on the Moon in 1969?
+A: Apollo 11
+Accept: Apollo
+Ref: 1BC.2.2
+D: 2
+
+Q: Why did the launch of Sputnik alarm the USA?
+A: Same rockets could carry nuclear missiles
+Accept: USSR could hit the USA with ICBMs; US was vulnerable to attack; rocket technology could carry nuclear warheads
+Ref: 1BC.2.2
+D: 3
+
+Q: Which Soviet leader denounced Stalin in his secret speech of 1956?
+A: Khrushchev
+Accept: Nikita Khrushchev
+Ref: 1BC.2.3
+D: 1
+
+Q: Which Hungarian reformer became Prime Minister during the 1956 uprising?
+A: Imre Nagy
+Accept: Nagy
+Ref: 1BC.2.3
+D: 1
+
+Q: Which Eastern bloc alliance did Nagy announce Hungary would leave in 1956?
+A: Warsaw Pact
+Accept: The Warsaw Pact
+Ref: 1BC.2.3
+D: 2
+
+Q: How did the USSR respond to the Hungarian uprising in November 1956?
+A: Invaded with tanks
+Accept: Sent troops and tanks; military invasion; crushed it with force
+Ref: 1BC.2.3
+D: 2
+
+Q: Why did Khrushchev crush the Hungarian uprising?
+A: Fear other satellite states might leave
+Accept: To keep control of Eastern Europe; fear of losing the Warsaw Pact; fear of losing control
+Ref: 1BC.2.3
+D: 3
+
+Q: Which American pilot was shot down over the USSR in May 1960?
+A: Gary Powers
+Accept: Francis Gary Powers; Powers
+Ref: 1BC.2.3
+D: 2
+
+Q: What did Khrushchev demand from Eisenhower at the Paris Summit in 1960?
+A: An apology
+Accept: Apology; a public apology
+Ref: 1BC.2.3
+D: 2
+
+Q: What effect did the U2 Crisis have on the Paris Peace Summit?
+A: It collapsed
+Accept: Summit collapsed; Khrushchev walked out; the summit ended; failure
+Ref: 1BC.2.3
+D: 3
+
+Q: In which year was the Berlin Wall built?
+A: 1961
+Ref: 1BC.3.1
+D: 1
+
+Q: Why did East Germany build the Berlin Wall?
+A: To stop East Germans fleeing to the West
+Accept: Stop emigration; stop the brain drain; to prevent refugees leaving; stop people escaping
+Ref: 1BC.3.1
+D: 2
+
+Q: Which US president said "Ich bin ein Berliner" in West Berlin in 1963?
+A: Kennedy
+Accept: John F. Kennedy; JFK
+Ref: 1BC.3.1
+D: 1
+
+Q: Why did Kennedy not use force to remove the Berlin Wall?
+A: Risk of nuclear war with the USSR
+Accept: It risked war; the Wall was on East German land; war with the USSR; nuclear war risk
+Ref: 1BC.3.1
+D: 3
+
+Q: What was the name of the crossing point in Berlin where US and Soviet tanks faced each other in 1961?
+A: Checkpoint Charlie
+Ref: 1BC.3.1
+D: 2
+
+Q: Which revolutionary leader took power in Cuba in 1959?
+A: Fidel Castro
+Accept: Castro
+Ref: 1BC.3.2
+D: 1
+
+Q: Which US agency trained the exiles who invaded Cuba at the Bay of Pigs?
+A: CIA
+Accept: Central Intelligence Agency
+Ref: 1BC.3.2
+D: 2
+
+Q: Why was the failed Bay of Pigs invasion of 1961 embarrassing for Kennedy?
+A: US-backed invasion failed and was exposed
+Accept: It showed US involvement; it failed in three days; the USA was shown to plot against Cuba
+Ref: 1BC.3.2
+D: 3
+
+Q: Which US aircraft photographed Soviet missile sites in Cuba in October 1962?
+A: U2
+Accept: U-2; U2 spy plane
+Ref: 1BC.3.2
+D: 2
+
+Q: What word did Kennedy use for the US naval blockade of Cuba in 1962?
+A: Quarantine
+Ref: 1BC.3.2
+D: 2
+
+Q: About how many miles from the Florida coast is Cuba?
+A: 90 miles
+Accept: 90; about 90 miles
+Ref: 1BC.3.2
+D: 2
+
+Q: Which US missiles in which NATO country did Kennedy secretly agree to remove to end the crisis?
+A: Turkey
+Accept: Jupiter missiles in Turkey; US missiles in Turkey
+Ref: 1BC.3.2
+D: 3
+
+Q: What direct communication link between Washington and Moscow was set up in 1963 after the Cuban Missile Crisis?
+A: The hotline
+Accept: Hotline; Moscow-Washington hotline; telephone link
+Ref: 1BC.3.2
+D: 2
+
+Q: Who became leader of Czechoslovak communists in January 1968?
+A: Dubcek
+Accept: Alexander Dubcek; Alexander Dubček; Dubček
+Ref: 1BC.3.3
+D: 1
+
+Q: What name was given to Dubcek's 1968 reform movement?
+A: Prague Spring
+Accept: The Prague Spring
+Ref: 1BC.3.3
+D: 1
+
+Q: What phrase did Dubcek use to describe his aim for communism in Czechoslovakia?
+A: Socialism with a human face
+Accept: Communism with a human face
+Ref: 1BC.3.3
+D: 2
+
+Q: Which alliance's troops invaded Czechoslovakia in August 1968?
+A: Warsaw Pact
+Accept: The Warsaw Pact
+Ref: 1BC.3.3
+D: 2
+
+Q: What did the Brezhnev Doctrine claim?
+A: Right to intervene to protect communism
+Accept: USSR could invade to defend communism in Eastern Bloc states; Soviet right to intervene
+Ref: 1BC.3.3
+D: 2
+
+Q: Why did the West not intervene in Czechoslovakia in 1968?
+A: It was in the Soviet sphere of influence
+Accept: Risk of war with the USSR; avoiding nuclear war; they accepted Soviet control there
+Ref: 1BC.3.3
+D: 3
+
+Q: Why did Dubcek's reforms alarm Brezhnev?
+A: Feared the loss of communist control
+Accept: Other Eastern bloc states might copy; Soviet control of Eastern Europe threatened; end of censorship
+Ref: 1BC.3.3
+D: 3
+
+Q: What word means the easing of Cold War tension in the 1970s?
+A: Détente
+Accept: Detente
+Ref: 1BC.3.4
+D: 1
+
+Q: What does SALT stand for?
+A: Strategic Arms Limitation Talks
+Accept: Strategic Arms Limitation Treaty
+Ref: 1BC.3.4
+D: 2
+
+Q: In which year was SALT 1 signed?
+A: 1972
+Ref: 1BC.3.4
+D: 2
+
+Q: Which US president signed SALT 1 with Brezhnev in Moscow?
+A: Nixon
+Accept: Richard Nixon
+Ref: 1BC.3.4
+D: 1
+
+Q: Why did both superpowers want to limit nuclear arms?
+A: Cost of arms race and fear of nuclear war
+Accept: The arms race was too expensive; fear of nuclear war; the cost
+Ref: 1BC.3.4
+D: 3
+
+Q: Why did Nixon's 1972 visit to China encourage the USSR to agree to SALT 1?
+A: The USSR feared a US-China alliance
+Accept: Fear of US-Chinese friendship; USSR feared isolation
+Ref: 1BC.3.4
+D: 3
