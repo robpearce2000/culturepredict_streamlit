@@ -8,11 +8,6 @@ Accept: Four Humours; Humours; Humoural theory
 Ref: 11.1.1
 D: 1
 
-Q: Which ancient Greek-born doctor's writings shaped medieval English ideas about the body and disease and were rarely challenged?
-A: Galen
-Ref: 11.1.1
-D: 1
-
 Q: What was the miasma theory of disease?
 A: Disease was caused by bad air
 Accept: Bad smells; Foul air; Disease spread by bad air
@@ -28,12 +23,6 @@ D: 3
 Q: Which treatment, used to balance the humours, involved cutting a vein to remove blood?
 A: Bloodletting
 Accept: Blood letting; Venesection; Phlebotomy
-Ref: 11.1.2
-D: 1
-
-Q: In medieval England, which medical practitioner was university-trained and diagnosed illness by studying urine and the humours?
-A: Physician
-Accept: A physician
 Ref: 11.1.2
 D: 1
 
@@ -65,19 +54,13 @@ A: Flagellants
 Ref: 11.1.3
 D: 1
 
-Q: Name one way people tried to stop the Black Death spreading by purifying the air, such as carrying scented posies or burning herbs.
-A: Carrying posies
-Accept: Burning herbs; Posies; Burning fires; Strong smells
-Ref: 11.1.3
-D: 2
-
 Q: Why did the Black Death's medical treatments fail?
 A: Causes of the disease were not understood
 Accept: Nobody knew the cause; They did not know it was caused by bacteria carried by fleas; Wrong theories of cause
 Ref: 11.1.3
 D: 3
 
-Q: Which Fellowship of scientists, set up in London in 1660, helped spread new ideas and experiments through its meetings and publications?
+Q: Which society of scientists, founded in London in 1660, helped spread new ideas through meetings and publications?
 A: The Royal Society
 Accept: Royal Society
 Ref: 11.2.1
@@ -113,7 +96,7 @@ Accept: Treatments stayed the same; No new treatments; Causes still unknown; The
 Ref: 11.2.2
 D: 3
 
-Q: Which doctor to King Charles I proved the heart pumps blood around the body in a circulation, in his 1628 book?
+Q: Which doctor to King Charles I proved in 1628 that blood circulates around the body?
 A: William Harvey
 Accept: Harvey
 Ref: 11.2.3
@@ -125,12 +108,12 @@ Accept: De Motu Cordis; The Motion of the Heart
 Ref: 11.2.3
 D: 2
 
-Q: What was Galen's incorrect belief that Harvey disproved, about the blood being made in the liver?
-A: Blood was used up and constantly made
-Accept: Blood was made in the liver and consumed; Blood was used up; Blood was burned up by the body
+Q: According to Galen, which Harvey disproved, what happened to blood once the body had used it?
+A: It was used up
+Accept: Burned up; Consumed; Used up and not recirculated
 Ref: 11.2.3
-D: 3
-Note: Galen taught that blood was continually made in the liver and used up, not recirculated.
+D: 2
+Note: Harvey showed blood circulates; Galen taught it was made in the liver and consumed.
 
 Q: What marking was painted on the doors of houses with plague victims during the Great Plague of 1665?
 A: A red cross
@@ -138,26 +121,13 @@ Accept: Red cross; Cross
 Ref: 11.2.3
 D: 1
 
-Q: In the Great Plague of 1665, what was done to household members of an infected house to try to stop the spread?
-A: Shut up inside the house
-Accept: Quarantined; Locked in; Shut in for forty days; Isolated
-Ref: 11.2.3
-D: 2
-
-Q: Which German scientist proposed in the 1860s that microbes cause decay and disease?
-A: Pasteur
-Accept: Louis Pasteur
-Ref: 11.3.1
-D: 1
-Note: Pasteur was French; a question writer error guard is the answer line, so see the question as rewritten below.
-
 Q: Which French scientist published his Germ Theory in 1861, showing that microbes cause decay?
 A: Louis Pasteur
 Accept: Pasteur
 Ref: 11.3.1
 D: 1
 
-Q: Which German doctor identified the microbe causing anthrax in 1876 and developed staining techniques for microbes?
+Q: Which German scientist identified the microbe causing anthrax in 1876 and developed staining techniques for microbes?
 A: Robert Koch
 Accept: Koch
 Ref: 11.3.1
@@ -223,29 +193,11 @@ Accept: Miasma theory; They thought bad air caused it; Germ theory not yet accep
 Ref: 11.3.3
 D: 3
 
-Q: Which disease did Jenner's vaccination eventually help to eradicate worldwide in 1980?
-A: Smallpox
-Ref: 11.3.3
-D: 2
-
-Q: Which famous double-helix structure of DNA was described by Crick and Watson in 1953?
-A: DNA
-Accept: Deoxyribonucleic acid
-Ref: 11.4.1
-D: 1
-Note: Only one answer fits; the wording gives the structure and the answer is the molecule.
-
 Q: Which project, completed in 2003, mapped all the human genes?
 A: The Human Genome Project
 Accept: Human Genome Project; Genome Project
 Ref: 11.4.1
 D: 2
-
-Q: Name one lifestyle factor, such as smoking, that increases a person's risk of disease.
-A: Smoking
-Accept: Poor diet; Lack of exercise; Alcohol; Obesity; Diet; Drinking alcohol
-Ref: 11.4.1
-D: 1
 
 Q: Why are blood tests and scans useful for diagnosis?
 A: They detect illness early and accurately
@@ -271,12 +223,6 @@ Accept: Magic bullet
 Ref: 11.4.2
 D: 2
 
-Q: Which 2007 law banned smoking in enclosed public places in England?
-A: The Smoking Ban
-Accept: Smoking ban; Health Act 2006; Health Act
-Ref: 11.4.2
-D: 2
-
 Q: Why were mass vaccination programmes, such as against polio, more effective after 1948?
 A: The NHS provided them free to all
 Accept: Free and widely available; The NHS made them free; Government organised them
@@ -295,45 +241,15 @@ Accept: Howard Florey and Ernst Chain; Ernst Chain and Howard Florey; Chain and 
 Ref: 11.4.3
 D: 2
 
-Q: Which 1950 study by Doll and Hill linked smoking with lung cancer?
-A: Smoking
-Accept: Tobacco; Cigarettes
-Ref: 11.4.3
-D: 2
-Note: Question wording is an unusual answer; see rewritten question below.
-
-Q: Name one scan used in the twenty-first century to diagnose lung cancer, such as CT.
-A: CT scan
-Accept: CAT scan; PET scan; X-ray; Chest X-ray; Computed tomography
-Ref: 11.4.3
-D: 2
-
 Q: Why was penicillin not mass-produced until the Second World War?
 A: Government and US funding was needed
 Accept: Wartime demand; Needed money and industry; War created demand; It needed large-scale production
 Ref: 11.4.3
 D: 3
 
-Q: What is the name of the British government's lifestyle campaign encouraging smokers to quit in October?
-A: Stoptober
-Ref: 11.4.3
-D: 2
-
 Q: Which part of the Western Front, where gas was first used by Germans in 1915, was the salient around a Belgian town?
 A: Ypres
 Accept: Ypres salient
-Ref: 11.HE.1
-D: 1
-
-Q: Which battle of 1916 on the Western Front produced very high British casualties, beginning on 1 July?
-A: The Somme
-Accept: Somme; Battle of the Somme
-Ref: 11.HE.1
-D: 1
-
-Q: Which trenches were nearest the enemy, with soldiers holding the line, in the British trench system?
-A: Frontline trenches
-Accept: Front line; Front-line trenches; Frontline
 Ref: 11.HE.1
 D: 1
 
@@ -343,48 +259,18 @@ Accept: Hard to move the wounded; Mud slowed evacuation; Wounds infected by soil
 Ref: 11.HE.1
 D: 3
 
-Q: Which fungal foot condition, caused by standing in cold, wet trenches, could lead to amputation?
+Q: Which foot condition, caused by standing for long periods in cold, wet trenches, could lead to amputation?
 A: Trench foot
 Accept: Trench foot
 Ref: 11.HE.1
 D: 1
-
-Q: What did shrapnel from exploding shells cause that made many wounds so dangerous?
-A: Infection
-Accept: Deep wounds and infection; Wound infection; Gas gangrene
-Ref: 11.HE.1
-D: 2
-
-Q: Which new equipment, introduced in 1915, was issued to British soldiers to reduce head injuries?
-A: Steel helmet
-Accept: Brodie helmet; Metal helmet; Tin hat
-Ref: 11.HE.1
-D: 2
-
-Q: Which gas, used by Germany in 1917, caused blisters on the skin and lungs?
-A: Mustard gas
-Accept: Mustard
-Ref: 11.HE.1
-D: 2
 
 Q: What did the letters RAMC stand for?
 A: Royal Army Medical Corps
 Ref: 11.HE.1
 D: 1
 
-Q: In the chain of evacuation, which was the first place a wounded man was treated, near the front line?
-A: Regimental aid post
-Accept: Aid post; First aid post; RAP
-Ref: 11.HE.1
-D: 1
-
-Q: In the chain of evacuation, what came immediately after the dressing station and before the base hospital?
-A: Casualty clearing station
-Accept: CCS
-Ref: 11.HE.1
-D: 2
-
-Q: Which underground hospital was built in 1917 for the Battle of Arras?
+Q: Which quarry became an underground hospital for the Battle of Arras in 1917?
 A: Wellington Quarry
 Accept: Carriere Wellington; Wellington Tunnels; Wellington quarry
 Ref: 11.HE.1
@@ -396,7 +282,7 @@ Accept: The Thomas splint
 Ref: 11.HE.1
 D: 1
 
-Q: Which battle of 1917 saw the first blood bank on the British sector of the Western Front?
+Q: At which 1917 battle was a blood bank created for British casualties?
 A: Cambrai
 Accept: Battle of Cambrai
 Ref: 11.HE.1
@@ -425,3 +311,23 @@ A: Censored or did not want to worry family
 Accept: Censorship; He was censored; Hid the worst to protect family; Written to reassure family
 Ref: 11.HE.2
 D: 3
+
+
+Q: Which scan, using strong magnets and radio waves, gives detailed images inside the body?
+A: MRI scan
+Accept: MRI; Magnetic resonance imaging
+Ref: 11.4.1
+D: 1
+
+Q: Which molecule's double-helix structure did Watson and Crick describe in 1953?
+A: DNA
+Accept: Deoxyribonucleic acid
+Ref: 11.4.1
+D: 2
+
+Q: Why is early diagnosis of lung cancer so important?
+A: Treatment is more likely to succeed
+Accept: Higher survival chance; Can be treated before it spreads; Better chance of cure
+Ref: 11.4.3
+D: 3
+
