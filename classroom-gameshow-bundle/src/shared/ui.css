@@ -397,6 +397,7 @@ details.tnames[open] > summary { margin-bottom: 8px; }
 .start-gate { position: absolute; inset: 0; z-index: 40; display: grid; place-items: center; background: rgba(10, 14, 30, 0.45); padding: 16px; }
 .start-gate[hidden] { display: none; }
 .start-gate-card { background: var(--paper, #FFF7EC); color: var(--ink, #1B1F3B); border: 4px solid var(--ink, #1B1F3B); border-radius: 22px; box-shadow: 0 14px 40px rgba(0,0,0,0.4); padding: 22px 26px; max-width: 520px; width: 100%; text-align: center; display: grid; gap: 14px; }
+.start-gate-title { margin: 0; font-family: 'Lilita One', sans-serif; font-weight: 400; font-size: 2rem; line-height: 1.1; }
 .start-gate-note { margin: 0; font-weight: 800; font-size: 1.05rem; line-height: 1.4; }
 .start-gate-btn { font-size: 1.6rem; padding: 16px 28px; width: 100%; }
 

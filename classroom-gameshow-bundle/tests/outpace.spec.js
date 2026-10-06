@@ -124,3 +124,23 @@ test('the camera and picture glide smoothly through a move', async ({ page }) =>
   const vel = d(r => r.cam[0]), acc = vel.slice(1).map((v, i) => Math.abs(v - vel[i]));
   expect(Math.max(...acc)).toBeLessThan(0.02);                       // the camera's speed changes gradually
 });
+
+test('Outpace: the Final Sprint waits on a card that explains it, and only starts the clock when Start is pressed', async ({ page }) => {
+  const log = await openBundle(page, '#outpace', { gate: true });
+  await page.click('#op-startBtn');
+  await page.click('#game-outpace .start-gate:not(.sprint-gate) .start-gate-btn');   // the Start game card
+  await page.evaluate(() => CGB.test.outpace.toSprint(600));
+  const card = page.locator('#game-outpace .sprint-gate:not([hidden])');
+  await expect(card).toContainText('Final Sprint');
+  await expect(card).toContainText('60 seconds');
+  await expect(card.locator('button')).toContainText('Start the Final Sprint');
+  await expect(page.locator('#op-sprintCard')).toBeHidden();
+  const t0 = (await state(page, 'outpace')).timeLeft;
+  await page.waitForTimeout(1200);
+  expect((await state(page, 'outpace')).timeLeft).toBe(t0);         // nothing ticks yet
+  await page.keyboard.press('Enter');
+  await expect(card).toHaveCount(0);
+  await expect(page.locator('#op-sprintCard')).toBeVisible();
+  await expect.poll(async () => (await state(page, 'outpace')).timeLeft).toBeLessThan(t0);
+  expect(log.errors).toEqual([]);
+});

@@ -285,7 +285,7 @@ test('every game waits on a Start game button after setup, with no countdown unt
   for (const id of GAMES) {
     await openGame(page, id);
     await page.keyboard.press('Enter');                           // Enter on the setup card starts the game...
-    const gate = page.locator(`#game-${id} .start-gate`);
+    const gate = page.locator(`#game-${id} .start-gate:not(.sprint-gate)`);
     await expect(gate).toBeVisible();                             // ...and the same Start game button appears in every game
     await expect(gate.locator('.start-gate-btn')).toHaveText(/^Start game\s*Enter$/);
     await expect(card(page, id)).toBeHidden();

@@ -234,13 +234,16 @@ CGB.answerHTML = q => {
      Every game shows the same large button over its game screen when the teacher finishes
      setup. Nothing ticks until it is pressed (Enter, Space, click or tap), which gives the
      teacher a moment to explain the rules and get the whiteboards out. Esc still leaves. */
-  CGB.createStartGate = function (root, note) {
+  // opts.title  a heading above the note; opts.label  the button text (default "Start game"); opts.className  an extra class
+  CGB.createStartGate = function (root, note, opts) {
+    opts = opts || {};
     const el = document.createElement('div');
-    el.className = 'start-gate';
+    el.className = 'start-gate' + (opts.className ? ' ' + opts.className : '');
     el.hidden = true;
-    el.innerHTML = `<div class="start-gate-card" role="dialog" aria-modal="false" aria-label="Ready to start">
+    el.innerHTML = `<div class="start-gate-card" role="dialog" aria-modal="false" aria-label="${opts.title || 'Ready to start'}">
+      ${opts.title ? `<h2 class="start-gate-title">${opts.title}</h2>` : ''}
       <p class="start-gate-note">${note}</p>
-      <button class="btn go start-gate-btn" type="button">Start game <span class="kbd">Enter</span></button></div>`;
+      <button class="btn go start-gate-btn" type="button">${opts.label || 'Start game'} <span class="kbd">Enter</span></button></div>`;
     root.appendChild(el);
     let go = null;
     function start() { if (!go) return; const f = go; go = null; el.hidden = true; f(); }
@@ -250,8 +253,9 @@ CGB.answerHTML = q => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopImmediatePropagation(); start(); }
     }, true);
     return {
-      // show the button; onStart runs once when it is pressed
-      show(onStart) {
+      // show the button; onStart runs once when it is pressed (note, if given, replaces the text)
+      show(onStart, note) {
+        if (note) el.querySelector('.start-gate-note').innerHTML = note;
         /* @test-only */
         if (window.__SHOWTIME_NOGATE__) { onStart(); return; }
         /* @end-test-only */

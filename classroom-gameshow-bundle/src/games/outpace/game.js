@@ -656,33 +656,10 @@ const sprintGroup = new THREE.Group();
 scene.add(sprintGroup);
 const sprintArch = new THREE.Group();
 buildArch(sprintArch, 'HOME');
-let sprintTex = null;
+// the Final Sprint has no track: just the two racers (the arch is not shown; its position marks home for the escape)
 function buildSprintTrack(target) {
-  sprintGroup.children.slice().forEach(o => { sprintGroup.remove(o); if (o !== sprintArch) disposeTree(o); });
-  if (sprintTex) { sprintTex.dispose(); sprintTex = null; }
-  const startX = HOME_BASE_X, endX = runnerTargetX(target, target), len = HUNTER_X + 1.2 - (endX - 0.9);
-  const c = document.createElement('canvas'); c.width = 2048; c.height = 128;
-  const g = c.getContext('2d');
-  const px = x => (x - (endX - 0.9)) / len * 2048;
-  g.fillStyle = '#1E2460'; g.fillRect(0, 0, 2048, 128);
-  const step = (startX - endX) / target;
-  for (let k = 0; k < target; k++) {             // one band for each step still to go
-    const x0 = px(endX + k * step), x1 = px(endX + (k + 1) * step);
-    g.fillStyle = k % 2 ? '#2A3180' : '#323B96'; g.fillRect(x0, 8, x1 - x0, 112);
-    if (x1 - x0 > 34 || k % 5 === 4 || k === 0) {
-      g.fillStyle = '#fff'; g.font = `${Math.min(84, Math.max(40, (x1 - x0) * 0.8))}px "Lilita One", sans-serif`; g.textAlign = 'center'; g.textBaseline = 'middle';
-      g.fillText(String(k + 1), (x0 + x1) / 2, 66);   // steps still to go: 1 next to home
-    }
-  }
-  g.fillStyle = '#12A4A0'; g.fillRect(0, 8, px(endX), 112);
-  g.fillStyle = '#9FFCF0'; g.fillRect(px(startX) - 4, 0, 8, 128);   // the start line
-  sprintTex = new THREE.CanvasTexture(c);
-  sprintTex.anisotropy = renderer.capabilities.getMaxAnisotropy();
-  const deck = new THREE.Mesh(new THREE.BoxGeometry(len, 0.3, 0.96), [plinthMat, plinthMat, new THREE.MeshBasicMaterial({ map: sprintTex }), plinthMat, cellMat, plinthMat]);
-  deck.position.set(endX - 0.9 + len / 2, 0.0, 0); sprintGroup.add(deck);
-  [-0.56, 0.56].forEach(z => { const r = new THREE.Mesh(new THREE.BoxGeometry(len, 0.1, 0.08), railMat); r.position.set(deck.position.x, 0.2, z); sprintGroup.add(r); });
+  const startX = HOME_BASE_X, endX = runnerTargetX(target, target);
   sprintArch.position.set(endX - 0.45, 0, 0);
-  sprintGroup.add(sprintArch);
   setClock.position.set((startX + endX) / 2 + 1.0, 2.35, -2.0);   // over the track, behind the race
 }
 
@@ -1711,14 +1688,20 @@ function startSprint() {
   state.sprintTarget = classTarget();
   state.sprintTimeLeft = 60;
   buildSprintTrack(state.sprintTarget); warmUp();
-  hostSay('hostSprint', `Final Sprint! Sixty seconds. Every correct team is a step. You need ${state.sprintTarget}!`, 'point', 1800);
-
   paintSprintTarget();
-
-  $('sprintCard').hidden = false;
   showHud('sprint');
   updateSprintTimer();
-
+  $('sprintCard').hidden = true;
+  // nothing ticks until the teacher presses Start: a short explanation first
+  state.sprintReady = true;
+  sprintGate.show(beginSprint, `You have <b>60 seconds</b>. Every team answers each question on its whiteboard, and each correct team moves the class <b>one step</b> towards home. Reach <b>${state.sprintTarget} steps</b> before the clock runs out to bank the pot of ${state.pot} points. If time runs out first, the Hunter catches you.`);
+}
+const sprintGate = CGB.createStartGate(document.getElementById('game-outpace'), '', { title: 'Final Sprint', label: 'Start the Final Sprint', className: 'sprint-gate' });
+function beginSprint() {
+  if (state.phase !== 'sprint' || !state.sprintReady) return;
+  state.sprintReady = false;
+  hostSay('hostSprint', `Final Sprint! Sixty seconds. Every correct team is a step. You need ${state.sprintTarget}!`, 'point', 1800);
+  $('sprintCard').hidden = false;
   clearInterval(state.sprintTimerHandle);
   state.sprintFrozen = false;
   state.sprintTimerHandle = setInterval(() => {
@@ -1792,7 +1775,7 @@ $('menuBtn2').addEventListener('click', () => CGB.app.requestLauncher());
 
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  clearTimers(); roundDeal.stop(); roundSprint.stop(); clearTimeout(sprintNextT); gate.hide();
+  clearTimers(); roundDeal.stop(); roundSprint.stop(); clearTimeout(sprintNextT); gate.hide(); sprintGate.hide(); state.sprintReady = false;
   state.phase = 'home';
   roundEndNext = null;
   $('roundEnd').classList.remove('show');

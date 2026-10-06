@@ -5,7 +5,7 @@ const { openBundle, state, mark, expect } = require('./helpers');
 
 async function reduce(page) { await page.addInitScript(() => { try { localStorage.setItem('cgb.settings', JSON.stringify({ reducedMotion: true })); } catch (e) { /* no storage */ } }); }
 
-test('Outpace: the set, sprint track and set clock are built, the lights turn red in the last ten seconds, and a catch can be skipped', async ({ page }) => {
+test('Outpace: the set and set clock are built, the Final Sprint has no track, the lights turn red in the last ten seconds, and a catch can be skipped', async ({ page }) => {
   const log = await openBundle(page, '#outpace');
   await page.click('#op-startBtn', { timeout: 60000 });
   let s3 = await page.evaluate(() => CGB.test.outpace.scene3d());
@@ -15,10 +15,10 @@ test('Outpace: the set, sprint track and set clock are built, the lights turn re
   await expect(page.locator('#op-dealGap .op-gapbar i.you')).toHaveCount(1);
   await expect(page.locator('#op-dealGap .op-gapbar i.hunter')).toHaveCount(1);
   await expect(page.locator('#op-dealGap')).toContainText('3 steps ahead of the Hunter');
-  // the Final Sprint: its own track and arch, and a clock in the set
+  // the Final Sprint: no track, just the racers, and a clock in the set
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
   s3 = await page.evaluate(() => CGB.test.outpace.scene3d());
-  expect(s3.sprintTrack).toBe(true); expect(s3.clock).toBe(true); expect(s3.mood).toBe('normal');
+  expect(s3.sprintTrack).toBe(false); expect(s3.clock).toBe(true); expect(s3.mood).toBe('normal');
   await page.evaluate(() => CGB.test.outpace.setTime(8));
   await expect.poll(async () => (await page.evaluate(() => CGB.test.outpace.scene3d())).mood).toBe('red');
   // time runs out: the catch plays, and Enter skips straight to the result
