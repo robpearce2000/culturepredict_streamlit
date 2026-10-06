@@ -29,12 +29,6 @@ Ref: 7.1P
 D: 3
 Note: The body's radius also matters, but its much smaller mass is the main reason.
 
-Q: Which two properties of a planet or moon determine the value of g at its surface?
-A: Mass and radius
-Accept: Mass and size; mass and diameter
-Ref: 7.1P
-D: 2
-
 Q: What type of object is the Sun?
 A: Star
 Accept: A star
@@ -44,12 +38,6 @@ D: 1
 Q: Pluto orbits the Sun but is too small to count as a planet. What type of object is it classified as?
 A: Dwarf planet
 Accept: A dwarf planet
-Ref: 7.2P
-D: 1
-
-Q: What name is given to the small rocky bodies that orbit the Sun, mostly between Mars and Jupiter?
-A: Asteroids
-Accept: Asteroid
 Ref: 7.2P
 D: 1
 
@@ -82,11 +70,6 @@ D: 2
 
 Q: Counting outwards from the Sun, which planet is sixth?
 A: Saturn
-Ref: 7.3P
-D: 2
-
-Q: Which planet orbits the Sun between Saturn and Neptune?
-A: Uranus
 Ref: 7.3P
 D: 2
 
@@ -138,24 +121,12 @@ Accept: Geostationary; geosynchronous
 Ref: 7.5P
 D: 2
 
-Q: What name is given to a low satellite orbit that passes over the North and South Poles?
-A: Polar orbit
-Accept: Polar
-Ref: 7.5P
-D: 2
-
 Q: A planet moves in a circular orbit at constant speed. Which vector quantity describing its motion keeps changing?
 A: Velocity
 Accept: Its velocity; direction of velocity
 Ref: 7.6P
 D: 2
 Note: Speed is constant but the direction changes, so velocity changes.
-
-Q: In which direction does the gravitational force on a planet in a circular orbit act?
-A: Towards the Sun
-Accept: Towards the centre of the orbit; inwards to the Sun
-Ref: 7.6P
-D: 2
 
 Q: Why is a planet in a circular orbit at constant speed said to be accelerating?
 A: Direction, so velocity, keeps changing
@@ -178,12 +149,6 @@ D: 2
 Q: A satellite's orbital speed decreases. For it to stay in a stable orbit, what must happen to its orbital radius?
 A: Increases
 Accept: Gets larger; increase; moves further out
-Ref: 7.7P
-D: 2
-
-Q: Compared with the Earth, does Neptune orbit the Sun at a higher or lower speed?
-A: Lower
-Accept: Slower; lower speed
 Ref: 7.7P
 D: 2
 
@@ -232,12 +197,6 @@ D: 1
 Q: From which directions in the sky does the CMB radiation reach the Earth?
 A: All directions
 Accept: Every direction; everywhere; from all over the sky
-Ref: 7.9P
-D: 2
-
-Q: Name the two pieces of evidence for the Big Bang theory in the specification.
-A: Red-shift and CMB radiation
-Accept: Red-shift and cosmic microwave background; CMB and red-shift
 Ref: 7.9P
 D: 2
 
@@ -301,12 +260,6 @@ Accept: Receding; moving away from the Earth
 Ref: 7.12P
 D: 2
 
-Q: Galaxy A shows a greater red-shift than galaxy B. Which galaxy is moving away from us faster?
-A: Galaxy A
-Accept: A
-Ref: 7.12P
-D: 3
-
 Q: Almost all galaxies show red-shift. What does this suggest is happening to the Universe?
 A: Expanding
 Accept: The Universe is expanding; getting bigger
@@ -361,12 +314,6 @@ Accept: Expansion stretched the wavelength; red-shifted by expansion; Universe e
 Ref: 7.15P
 D: 3
 
-Q: After the CMB was discovered, which theory became the accepted model of the origin of the Universe?
-A: Big Bang theory
-Accept: Big Bang
-Ref: 7.15P
-D: 2
-
 Q: What name is given to the cloud of dust and gas in which a star forms?
 A: Nebula
 Accept: Nebulae
@@ -381,11 +328,6 @@ D: 1
 
 Q: What does a star with a similar mass to the Sun become when it leaves the main sequence?
 A: Red giant
-Ref: 7.16P
-D: 1
-
-Q: What is the final stage, in the specification, of a star with a similar mass to the Sun?
-A: White dwarf
 Ref: 7.16P
 D: 1
 
@@ -428,11 +370,6 @@ A: Supernova
 Ref: 7.18P
 D: 1
 
-Q: After a supernova, what object remains if the core is massive enough that not even light can escape?
-A: Black hole
-Ref: 7.18P
-D: 1
-
 Q: Name the two possible objects left behind after a supernova.
 A: Neutron star or black hole
 Accept: Neutron star and black hole; black hole or neutron star
@@ -460,11 +397,5 @@ D: 2
 Q: Why do space telescopes give sharper visible-light images than telescopes on the ground?
 A: No atmosphere to blur or absorb light
 Accept: Above the atmosphere; atmosphere distorts light; no atmospheric distortion
-Ref: 7.19P
-D: 3
-
-Q: Why are many ground-based optical telescopes built on high mountains?
-A: Less atmosphere above to absorb or blur light
-Accept: Thinner atmosphere; above clouds; less light pollution
 Ref: 7.19P
 D: 3

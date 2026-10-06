@@ -1,0 +1,1315 @@
+Board: Edexcel
+Spec: 1PH0
+Topic: 6
+
+Q: What is the overall charge on the nucleus of an atom?
+A: Positive
+Accept: +; positively charged
+Ref: 6.1
+D: 1
+
+Q: Which two types of particle make up the nucleus of an atom?
+A: Protons and neutrons
+Accept: Neutrons and protons; nucleons
+Ref: 6.1
+D: 1
+
+Q: Which negatively charged particles surround the nucleus of an atom?
+A: Electrons
+Accept: Electron
+Ref: 6.1
+D: 1
+
+Q: In which part of an atom is almost all of its mass found?
+A: Nucleus
+Accept: In the nucleus; the nucleus
+Ref: 6.1
+D: 1
+
+Q: Roughly how many times larger is the radius of an atom than the radius of its nucleus?
+A: About 100 000 times
+Accept: 100 000; 10^5; 10⁵; 10 000 to 100 000 times
+Ref: 6.1
+D: 3
+Note: Most textbooks quote about 1/100 000; accept 10 000 to 100 000.
+
+Q: As a power of ten, roughly what is the radius of a nucleus in metres?
+A: 1 × 10⁻¹⁵ m
+Accept: 10^-15 m; 10⁻¹⁵ m; 1 x 10^-15 m; 10^-14 m
+Ref: 6.1
+D: 3
+
+Q: As a power of ten, what is the typical radius of an atom in metres?
+A: 1 × 10⁻¹⁰ m
+Accept: 10^-10 m; 10⁻¹⁰ m; 1 x 10^-10 m; 0.1 nm
+Ref: 6.2
+D: 1
+
+Q: Give the typical radius of an atom in nanometres.
+A: 0.1 nm
+Accept: 0.1 nanometres; 1 × 10⁻¹ nm
+Ref: 6.2
+D: 2
+
+Q: A small molecule such as water is roughly how many metres across, as a power of ten?
+A: 10⁻¹⁰ m
+Accept: 10^-10 m; 1 × 10⁻¹⁰ m; 10⁻⁹ m; 10^-9 m
+Ref: 6.2
+D: 2
+Note: A water molecule is about 3 × 10⁻¹⁰ m across, so both orders of magnitude are accepted.
+
+Q: An atom has a radius of 1 × 10⁻¹⁰ m. Roughly how many atoms side by side would span 1 mm?
+A: 5 million
+Accept: 5 000 000; 5 × 10⁶; 5 x 10^6; about 5 million
+Ref: 6.2
+D: 3
+Note: Atom diameter is 2 × 10⁻¹⁰ m, so 10⁻³ ÷ (2 × 10⁻¹⁰) = 5 × 10⁶; accept 10⁷ if students used the radius.
+
+Q: What name is given to the number of protons in a nucleus?
+A: Atomic number
+Accept: Proton number; Z
+Ref: 6.3
+D: 1
+
+Q: What name is given to the total number of protons and neutrons in a nucleus?
+A: Mass number
+Accept: Nucleon number; A
+Ref: 6.3
+D: 1
+
+Q: In the symbol ¹³₆C, what does the top number 13 represent?
+A: Mass number
+Accept: Nucleon number; number of protons and neutrons
+Ref: 6.3
+D: 2
+
+Q: Carbon-13 has an atomic number of 6. How many neutrons are in its nucleus?
+A: 7
+Accept: Seven
+Ref: 6.3
+D: 2
+
+Q: Uranium-235 has an atomic number of 92. How many neutrons are in its nucleus?
+A: 143
+Ref: 6.3
+D: 2
+
+Q: What name is given to atoms of the same element with different numbers of neutrons?
+A: Isotopes
+Accept: Isotope
+Ref: 6.4
+D: 1
+
+Q: Isotopes of an element always have the same number of which particle in the nucleus?
+A: Protons
+Accept: Proton
+Ref: 6.4
+D: 1
+
+Q: Why do two isotopes of the same element have different masses?
+A: Different numbers of neutrons
+Accept: Different neutron numbers
+Ref: 6.4
+D: 2
+
+Q: Why does every nucleus of a given element have the same positive charge?
+A: Same number of protons
+Accept: Same proton number; same atomic number
+Ref: 6.4
+D: 3
+
+Q: How many more neutrons does a carbon-14 nucleus have than a carbon-12 nucleus?
+A: 2
+Accept: Two
+Ref: 6.4
+D: 2
+
+Q: What is the relative mass of a proton?
+A: 1
+Accept: One
+Ref: 6.5
+D: 1
+
+Q: What is the relative charge of a neutron?
+A: 0
+Accept: Zero; no charge; neutral
+Ref: 6.5
+D: 1
+
+Q: What is the relative charge of an electron?
+A: −1
+Accept: -1; minus one; negative one
+Ref: 6.5
+D: 1
+
+Q: What is the relative charge of a positron?
+A: +1
+Accept: 1; plus one; positive one
+Ref: 6.5
+D: 2
+
+Q: A positron has the same mass as which other particle?
+A: Electron
+Accept: An electron
+Ref: 6.5
+D: 2
+
+Q: What is the approximate relative mass of an electron?
+A: 1/1836
+Accept: 1/1840; 1/2000; 0.0005; 5 × 10⁻⁴; negligible
+Ref: 6.5
+D: 2
+
+Q: Why is an atom electrically neutral overall?
+A: Equal numbers of protons and electrons
+Accept: Same number of protons and electrons; protons equal electrons
+Ref: 6.6
+D: 2
+
+Q: A neutral atom has 11 protons. How many electrons does it have?
+A: 11
+Accept: Eleven
+Ref: 6.6
+D: 1
+
+Q: A neutral atom has a mass number of 27 and 13 electrons. How many neutrons does it have?
+A: 14
+Accept: Fourteen
+Ref: 6.6
+D: 3
+Note: 13 electrons means 13 protons, so 27 − 13 = 14 neutrons.
+
+Q: Which particles orbit the nucleus at set distances from it?
+A: Electrons
+Accept: Electron
+Ref: 6.7
+D: 1
+
+Q: The set orbits of electrons around the nucleus are also called what?
+A: Energy levels
+Accept: Shells; electron shells; orbits
+Ref: 6.7
+D: 1
+
+Q: Can an electron orbit the nucleus at any distance, or only at certain set distances?
+A: Only at certain set distances
+Accept: Set distances; fixed distances only; certain distances
+Ref: 6.7
+D: 2
+
+Q: What happens to an electron when its atom absorbs electromagnetic radiation of the right energy?
+A: Moves to a higher orbit
+Accept: Moves further from the nucleus; moves to a higher energy level; jumps up an orbit
+Ref: 6.8
+D: 2
+
+Q: What does an atom give out when one of its electrons drops to an orbit closer to the nucleus?
+A: Electromagnetic radiation
+Accept: EM radiation; light; a photon; an electromagnetic wave
+Ref: 6.8
+D: 2
+
+Q: An electron moves to an orbit closer to the nucleus. Does the atom gain or lose energy?
+A: Loses energy
+Accept: Lose; loses
+Ref: 6.8
+D: 2
+
+Q: Heated gas atoms glow. What process inside the atoms gives out this light?
+A: Electrons falling to lower orbits
+Accept: Electrons moving closer to the nucleus; electrons dropping energy levels
+Ref: 6.8
+D: 3
+
+Q: What is formed when an atom loses one or more of its outer electrons?
+A: Positive ion
+Accept: Ion; a positive ion; cation
+Ref: 6.9
+D: 1
+
+Q: Which electrons does an atom lose when it forms a positive ion?
+A: Outer electrons
+Accept: Outermost electrons; electrons in the outer orbit; outer shell electrons
+Ref: 6.9
+D: 2
+
+Q: What is the charge on a sodium atom that has lost one electron?
+A: +1
+Accept: 1+; plus one; positive one
+Ref: 6.9
+D: 2
+
+Q: Why does an atom that loses an electron become positively charged?
+A: More protons than electrons
+Accept: Protons outnumber electrons; fewer electrons than protons
+Ref: 6.9
+D: 3
+
+Q: What word describes radioactive decay, because we cannot predict when a nucleus will decay?
+A: Random
+Accept: Random process; spontaneous
+Ref: 6.10
+D: 1
+
+Q: What type of nucleus emits nuclear radiation?
+A: Unstable
+Accept: An unstable nucleus; unstable nuclei; radioactive
+Ref: 6.10
+D: 1
+
+Q: Name the uncharged particle that some unstable nuclei emit as radiation.
+A: Neutron
+Accept: Neutrons; neutron radiation
+Ref: 6.10
+D: 1
+
+Q: β⁺ radiation is made of which particles?
+A: Positrons
+Accept: Positron
+Ref: 6.10
+D: 1
+
+Q: A Geiger–Müller tube near a source gives a different count every second. Why?
+A: Decay is random
+Accept: Random decay; radioactive decay is random
+Ref: 6.10
+D: 3
+
+Q: Ionising radiation can turn neutral atoms into charged particles. What are these charged particles called?
+A: Ions
+Accept: Ion
+Ref: 6.11
+D: 1
+
+Q: What does ionising radiation do to the atoms it passes?
+A: Removes electrons from them
+Accept: Knocks electrons off; ionises them; turns them into ions
+Ref: 6.11
+D: 2
+
+Q: When radiation knocks an electron out of an atom, what kind of ion is left behind?
+A: Positive ion
+Accept: Positive; cation
+Ref: 6.11
+D: 3
+
+Q: Name the four ionising radiations emitted by unstable nuclei, other than neutrons.
+A: Alpha, beta-minus, beta-plus, gamma
+Accept: α, β⁻, β⁺, γ; alpha, beta, positron, gamma
+Ref: 6.11
+D: 2
+
+Q: What is the name for the low-level radiation that is around us all the time?
+A: Background radiation
+Accept: Background
+Ref: 6.12
+D: 1
+
+Q: A source gives 85 counts per minute and background is 25 counts per minute. What is the corrected count rate?
+A: 60 counts per minute
+Accept: 60; 60 cpm; 60 counts/min
+Ref: 6.12
+D: 2
+
+Q: Why must background radiation be measured before measuring a source's count rate?
+A: To subtract it from the readings
+Accept: To correct the readings; so it can be taken away from the count
+Ref: 6.12
+D: 3
+
+Q: Name the radioactive gas, released from rocks, that gives a large share of UK background radiation.
+A: Radon
+Accept: Radon gas; radon-222
+Ref: 6.13
+D: 1
+
+Q: Name the radiation from space that contributes to background radiation.
+A: Cosmic rays
+Accept: Cosmic radiation; cosmic ray
+Ref: 6.13
+D: 1
+
+Q: Which igneous rock, common in Cornwall, releases radiation and radon gas?
+A: Granite
+Ref: 6.13
+D: 2
+
+Q: Why do airline crews receive a higher dose of background radiation than people on the ground?
+A: More cosmic rays at high altitude
+Accept: Less atmosphere to absorb cosmic rays; more cosmic radiation higher up
+Ref: 6.13
+D: 3
+
+Q: Name the electronic detector that clicks each time radiation enters it.
+A: Geiger–Müller tube
+Accept: GM tube; Geiger-Muller tube; Geiger counter
+Ref: 6.14
+D: 1
+
+Q: Which detector of radiation goes darker the more radiation it receives?
+A: Photographic film
+Accept: Film; film badge
+Ref: 6.14
+D: 1
+
+Q: Give a unit for the count rate measured by a Geiger–Müller tube.
+A: Counts per second
+Accept: Counts per minute; cps; cpm; counts/s; counts/min
+Ref: 6.14
+D: 2
+
+Q: How does a worker's film badge show that they received a larger dose of radiation?
+A: Film is darker
+Accept: More darkening; darker film; film more fogged
+Ref: 6.14
+D: 2
+
+Q: A Geiger–Müller tube records 1200 counts in 2 minutes. What is the count rate in counts per second?
+A: 10 counts per second
+Accept: 10; 10 cps; 10 counts/s
+Ref: 6.14
+D: 3
+Note: 1200 ÷ 120 s = 10.
+
+Q: Why does a film badge have windows made of different materials?
+A: To show which type of radiation
+Accept: To identify the type of radiation; to tell alpha, beta and gamma apart
+Ref: 6.14
+D: 3
+
+Q: An alpha particle is the same as the nucleus of which element?
+A: Helium
+Accept: Helium nucleus; helium-4
+Ref: 6.15
+D: 1
+
+Q: What is a beta-minus particle?
+A: Electron
+Accept: An electron; a fast electron; a high-speed electron; electron from the nucleus
+Ref: 6.15
+D: 1
+
+Q: What type of radiation is a gamma ray?
+A: Electromagnetic radiation
+Accept: Electromagnetic wave; EM radiation; EM wave
+Ref: 6.15
+D: 1
+
+Q: How many protons and how many neutrons are in an alpha particle?
+A: 2 protons, 2 neutrons
+Accept: Two protons and two neutrons; 2 and 2
+Ref: 6.15
+D: 2
+
+Q: Where in the atom does a beta-minus particle come from?
+A: Nucleus
+Accept: The nucleus
+Ref: 6.15
+D: 2
+Note: Not from the electrons orbiting the nucleus.
+
+Q: Which nuclear radiation is the most strongly ionising?
+A: Alpha
+Accept: α; alpha particles
+Ref: 6.16
+D: 1
+
+Q: Which nuclear radiation is the most penetrating?
+A: Gamma
+Accept: γ; gamma rays
+Ref: 6.16
+D: 1
+
+Q: Which nuclear radiation is the least ionising?
+A: Gamma
+Accept: γ; gamma rays
+Ref: 6.16
+D: 1
+
+Q: Which everyday material stops alpha particles?
+A: Paper
+Accept: A sheet of paper; skin; card
+Ref: 6.16
+D: 1
+
+Q: What material is used to absorb beta particles in school experiments?
+A: Aluminium
+Accept: A few mm of aluminium; aluminium sheet
+Ref: 6.16
+D: 2
+
+Q: Which material is often used to greatly reduce gamma radiation?
+A: Lead
+Accept: Thick lead; concrete; thick concrete
+Ref: 6.16
+D: 2
+
+Q: Roughly how far can alpha particles travel in air?
+A: A few centimetres
+Accept: About 5 cm; 3 to 7 cm; a few cm
+Ref: 6.16
+D: 2
+
+Q: Why does alpha radiation penetrate less than beta or gamma?
+A: Ionises strongly, so loses energy quickly
+Accept: Strongly ionising so energy is used up quickly; it ionises more so stops sooner
+Ref: 6.16
+D: 3
+
+Q: Which atomic model pictured electrons embedded in a ball of positive charge?
+A: Plum pudding model
+Accept: Plum pudding
+Ref: 6.17
+D: 1
+
+Q: Which particles did Rutherford's team fire at thin gold foil?
+A: Alpha particles
+Accept: Alpha; α particles
+Ref: 6.17
+D: 1
+
+Q: Which scientist's model placed electrons in orbits at fixed distances from the nucleus?
+A: Bohr
+Accept: Niels Bohr
+Ref: 6.17
+D: 1
+
+Q: In the scattering experiment, most alpha particles went straight through the foil. What did this show?
+A: Atom is mostly empty space
+Accept: Most of the atom is empty space; mostly empty space
+Ref: 6.17
+D: 2
+
+Q: A few alpha particles bounced back from the gold foil. What did this show?
+A: Tiny, dense, positive nucleus
+Accept: Small positive nucleus; mass concentrated in a small positive centre
+Ref: 6.17
+D: 3
+
+Q: Why were some alpha particles deflected as they passed through the gold foil?
+A: Repelled by the positive nucleus
+Accept: Repelled by the nucleus; like charges repel
+Ref: 6.17
+D: 3
+
+Q: Why was the plum pudding model replaced after the alpha scattering experiment?
+A: Could not explain alpha particles bouncing back
+Accept: Could not explain large deflections; did not predict back-scattering
+Ref: 6.17
+D: 3
+
+Q: In β⁻ decay, which particle in the nucleus changes?
+A: Neutron
+Accept: A neutron
+Ref: 6.18
+D: 1
+
+Q: In β⁻ decay, a neutron changes into which two particles?
+A: Proton and electron
+Accept: A proton and an electron; electron and proton
+Ref: 6.18
+D: 2
+
+Q: Why does the mass number stay the same in β⁻ decay?
+A: Neutron replaced by proton, same nucleon total
+Accept: Total number of nucleons unchanged; a neutron becomes a proton
+Ref: 6.18
+D: 3
+
+Q: In β⁺ decay, a proton changes into which two particles?
+A: Neutron and positron
+Accept: A neutron and a positron; positron and neutron
+Ref: 6.19
+D: 2
+
+Q: Which particle is emitted from the nucleus in β⁺ decay?
+A: Positron
+Accept: A positron; β⁺ particle
+Ref: 6.19
+D: 1
+
+Q: How does the atomic number change in β⁺ decay?
+A: Decreases by 1
+Accept: Goes down by one; falls by 1
+Ref: 6.19
+D: 2
+
+Q: Carbon-11, atomic number 6, undergoes β⁺ decay. What is the atomic number of the new nucleus?
+A: 5
+Accept: Five
+Ref: 6.19
+D: 3
+
+Q: How does the mass number change when a nucleus emits an alpha particle?
+A: Decreases by 4
+Accept: Goes down by four; falls by 4
+Ref: 6.20
+D: 2
+
+Q: How does the atomic number change when a nucleus emits an alpha particle?
+A: Decreases by 2
+Accept: Goes down by two; falls by 2
+Ref: 6.20
+D: 2
+
+Q: How does the atomic number change in β⁻ decay?
+A: Increases by 1
+Accept: Goes up by one; rises by 1
+Ref: 6.20
+D: 2
+
+Q: What happens to the mass number and atomic number when a nucleus emits gamma radiation?
+A: Neither changes
+Accept: No change; both stay the same; unchanged
+Ref: 6.20
+D: 2
+
+Q: How does the mass number change when a nucleus emits a neutron?
+A: Decreases by 1
+Accept: Goes down by one; falls by 1
+Ref: 6.20
+D: 2
+
+Q: Which type of decay produces a different isotope of the same element?
+A: Neutron emission
+Accept: Neutron decay; emitting a neutron
+Ref: 6.20
+D: 3
+Note: Gamma emission leaves the same isotope; alpha and beta change the element.
+
+Q: After alpha or beta decay, which radiation does the nucleus often emit as it rearranges?
+A: Gamma
+Accept: Gamma rays; γ; gamma radiation
+Ref: 6.21
+D: 1
+
+Q: When a nucleus emits gamma radiation, which quantity of the nucleus decreases?
+A: Energy
+Accept: Its energy
+Ref: 6.21
+D: 2
+
+Q: Why is gamma radiation often emitted straight after an alpha or beta decay?
+A: Nucleus rearranges and loses excess energy
+Accept: Nucleus is left with too much energy; to lose extra energy
+Ref: 6.21
+D: 3
+
+Q: ²³⁸₉₂U → ²³⁴₉₀Th + X. What is particle X?
+A: Alpha particle
+Accept: Alpha; α; helium nucleus; ⁴₂He
+Ref: 6.22
+D: 2
+
+Q: ¹⁴₆C → ¹⁴₇N + X. What is particle X?
+A: Beta-minus particle
+Accept: Beta; β⁻; electron; ⁰₋₁e
+Ref: 6.22
+D: 2
+
+Q: Strontium-90, atomic number 38, undergoes β⁻ decay. What is the atomic number of the new nucleus?
+A: 39
+Ref: 6.22
+D: 2
+
+Q: What mass number and atomic number are written on an alpha particle in a nuclear equation?
+A: Mass 4, atomic 2
+Accept: 4 and 2; ⁴₂He; ⁴₂α
+Ref: 6.22
+D: 2
+
+Q: What mass number and atomic number are written on a β⁻ particle in a nuclear equation?
+A: Mass 0, atomic −1
+Accept: 0 and −1; 0 and -1; ⁰₋₁e
+Ref: 6.22
+D: 3
+
+Q: Radium-226, atomic number 88, emits an alpha particle. Give the mass and atomic numbers of the product.
+A: Mass 222, atomic 86
+Accept: 222 and 86; ²²²₈₆Rn
+Ref: 6.22
+D: 3
+
+Q: What happens to the activity of a radioactive source over time?
+A: Decreases
+Accept: Goes down; falls; decays
+Ref: 6.23
+D: 1
+
+Q: Describe the shape of a graph of activity against time for a radioactive source.
+A: Curve falling ever less steeply
+Accept: Decay curve; exponential decay curve; downward curve levelling off
+Ref: 6.23
+D: 2
+
+Q: Why does the activity of a radioactive source decrease over time?
+A: Fewer undecayed nuclei remain
+Accept: Fewer unstable nuclei left to decay; nuclei are used up
+Ref: 6.23
+D: 3
+
+Q: What is the unit of activity of a radioactive source?
+A: Becquerel
+Accept: Bq; becquerels
+Ref: 6.24
+D: 1
+
+Q: What does an activity of one becquerel mean?
+A: One decay per second
+Accept: 1 nucleus decays each second; one disintegration per second
+Ref: 6.24
+D: 2
+
+Q: A source has a steady activity of 2000 Bq. How many nuclei decay in 10 seconds?
+A: 20 000
+Accept: 20000; 2 × 10⁴
+Ref: 6.24
+D: 3
+
+Q: What name is given to the time taken for the activity of a source to halve?
+A: Half-life
+Accept: Half life
+Ref: 6.25
+D: 1
+
+Q: Define half-life in terms of the undecayed nuclei in a sample.
+A: Time for half the undecayed nuclei to decay
+Accept: Time for the number of unstable nuclei to halve
+Ref: 6.25
+D: 2
+
+Q: Define half-life in terms of the activity of a source.
+A: Time for the activity to halve
+Accept: Time for activity to fall to half; time for count rate to halve
+Ref: 6.25
+D: 2
+
+Q: A nucleus belongs to an isotope with a half-life of 10 minutes. When will this nucleus decay?
+A: Cannot be predicted
+Accept: Impossible to predict; unknown; any time
+Ref: 6.26
+D: 2
+
+Q: Which quantity lets us predict how the activity of a very large number of nuclei changes?
+A: Half-life
+Accept: Half life
+Ref: 6.26
+D: 2
+
+Q: Why can half-life predict the decay of a large sample but not of one nucleus?
+A: Decay is random; large numbers average out
+Accept: Random decay averages out over many nuclei; it is a statistical average
+Ref: 6.26
+D: 3
+
+Q: An isotope has a half-life of 6 hours. What fraction of it remains undecayed after 12 hours?
+A: 1/4
+Accept: A quarter; 0.25; 25%
+Ref: 6.27
+D: 2
+
+Q: A source has a count rate of 640 counts per minute. What is it after 3 half-lives?
+A: 80 counts per minute
+Accept: 80; 80 cpm
+Ref: 6.27
+D: 2
+
+Q: How many half-lives pass while a source's activity falls to one-eighth of its starting value?
+A: 3
+Accept: Three
+Ref: 6.27
+D: 2
+
+Q: On an activity–time graph, what does the time for activity to fall from 600 Bq to 300 Bq give?
+A: Half-life
+Accept: Half life; one half-life
+Ref: 6.27
+D: 2
+
+Q: A source has an activity of 800 Bq and a half-life of 2 days. What is its activity after 6 days?
+A: 100 Bq
+Accept: 100; 100 becquerels
+Ref: 6.27
+D: 3
+
+Q: A source's activity falls from 400 Bq to 100 Bq in 10 hours. What is its half-life?
+A: 5 hours
+Accept: 5 h; 5
+Ref: 6.27
+D: 3
+
+Q: A sample contains 16 g of an isotope with a half-life of 5 years. How much is undecayed after 15 years?
+A: 2 g
+Accept: 2; 2 grams
+Ref: 6.27
+D: 3
+
+Q: An isotope has a half-life of 20 seconds. How long until only 1/16 of it remains undecayed?
+A: 80 seconds
+Accept: 80 s; 80
+Ref: 6.27
+D: 3
+
+Q: A source's count rate is 50 counts per second after 2 half-lives. What was the starting count rate?
+A: 200 counts per second
+Accept: 200; 200 cps
+Ref: 6.27
+D: 3
+
+Q: Give the net decline in activity after 2 half-lives as a ratio of final to initial activity.
+A: 1 : 4
+Accept: 1:4; 1/4; a quarter
+Ref: 6.27
+D: 3
+HT: yes
+
+Q: Give the net decline in activity after 4 half-lives as a ratio of final to initial activity.
+A: 1 : 16
+Accept: 1:16; 1/16
+Ref: 6.27
+D: 3
+HT: yes
+
+Q: A source's activity has declined in the ratio 1 : 32 (final : initial). How many half-lives have passed?
+A: 5
+Accept: Five
+Ref: 6.27
+D: 3
+HT: yes
+
+Q: Give the net decline in activity after 3 half-lives as a ratio of final to initial activity.
+A: 1 : 8
+Accept: 1:8; 1/8; an eighth
+Ref: 6.27
+D: 3
+HT: yes
+
+Q: Which type of radiation is used in household smoke alarms?
+A: Alpha
+Accept: α; alpha particles
+Ref: 6.28P
+D: 1
+
+Q: In a smoke alarm, what happens to the current when smoke absorbs the alpha particles?
+A: Decreases
+Accept: Falls; drops; current goes down
+Ref: 6.28P
+D: 3
+Note: Fewer air ions means less current, which sets off the alarm.
+
+Q: Which type of radiation is used to sterilise surgical instruments?
+A: Gamma
+Accept: γ; gamma rays
+Ref: 6.28P
+D: 1
+
+Q: Why is some food irradiated with gamma rays?
+A: To kill bacteria
+Accept: To kill microbes; to kill microorganisms; to make it keep longer
+Ref: 6.28P
+D: 2
+
+Q: Which type of radiation is used to monitor the thickness of paper in a factory?
+A: Beta
+Accept: β; beta particles; β⁻
+Ref: 6.28P
+D: 2
+
+Q: Why is beta, not alpha, used to monitor paper thickness?
+A: Alpha would be completely absorbed
+Accept: Alpha cannot pass through paper; beta is partly absorbed by paper
+Ref: 6.28P
+D: 3
+
+Q: Which type of radiation is used to find leaks in underground pipes?
+A: Gamma
+Accept: γ; gamma rays; gamma emitter
+Ref: 6.28P
+D: 2
+
+Q: What name is given to using radiation to kill microorganisms on medical equipment?
+A: Sterilisation
+Accept: Sterilising; sterilization; irradiation
+Ref: 6.28P
+D: 1
+
+Q: Ionising radiation can change the DNA in cells. What are these changes called?
+A: Mutations
+Accept: Mutation
+Ref: 6.29
+D: 1
+
+Q: Which disease can be caused when radiation produces mutations in body cells?
+A: Cancer
+Accept: Tumours
+Ref: 6.29
+D: 1
+
+Q: In school, what tool is used to handle a radioactive source, to keep it away from your hand?
+A: Tongs
+Accept: Forceps; long-handled tongs
+Ref: 6.29
+D: 1
+
+Q: What type of box are radioactive sources stored in?
+A: Lead-lined box
+Accept: Lead box; lead-lined container
+Ref: 6.29
+D: 2
+
+Q: How does ionising radiation damage living cells?
+A: Ionises molecules such as DNA
+Accept: Damages DNA; ionises atoms in cells; kills or mutates cells
+Ref: 6.29
+D: 3
+
+Q: Two sources contain the same number of nuclei. Which has the higher activity: short or long half-life?
+A: Short half-life
+Accept: Short; the short half-life source
+Ref: 6.30P
+D: 3
+
+Q: Isotopes with which kind of half-life stay dangerous for longest: short or long?
+A: Long half-life
+Accept: Long
+Ref: 6.30P
+D: 2
+
+Q: Why do radioactive tracers used in the body have short half-lives?
+A: Activity falls quickly, reducing the dose
+Accept: Decays quickly so less harm; patient is exposed for less time
+Ref: 6.30P
+D: 3
+
+Q: Why must waste with a long half-life be stored safely for thousands of years?
+A: Stays radioactive for a long time
+Accept: Remains dangerous for a long time; activity falls slowly
+Ref: 6.30P
+D: 3
+
+Q: What do hospital staff wear to monitor their dose of radiation?
+A: Film badge
+Accept: Dosimeter; radiation badge
+Ref: 6.31
+D: 1
+
+Q: Apart from shielding and time, what should staff increase between themselves and a source?
+A: Distance
+Ref: 6.31
+D: 1
+
+Q: Why do radiographers leave the room or stand behind a lead screen during X-ray scans?
+A: To reduce their repeated exposure
+Accept: To reduce their dose; to protect from repeated radiation
+Ref: 6.31
+D: 2
+
+Q: Why is a patient given the smallest radiation dose that still gives a useful result?
+A: To reduce the risk of harm
+Accept: To reduce the cancer risk; to limit damage to cells
+Ref: 6.31
+D: 2
+
+Q: Why can medical staff be at greater risk than a patient from the same procedure?
+A: Exposed repeatedly over many years
+Accept: Repeated exposure over time; they work with radiation every day
+Ref: 6.31
+D: 3
+
+Q: What name is given to being exposed to radiation from a source outside the body?
+A: Irradiation
+Ref: 6.32
+D: 1
+
+Q: What name is given to radioactive material getting onto or into an object?
+A: Contamination
+Ref: 6.32
+D: 1
+
+Q: Food is exposed to gamma rays. What does the food not become?
+A: Radioactive
+Ref: 6.32
+D: 2
+
+Q: Why is contamination usually more hazardous than irradiation?
+A: Source stays on or in the body
+Accept: Exposure continues; cannot easily remove the source
+Ref: 6.32
+D: 3
+
+Q: Why is an alpha source more dangerous inside the body than outside it?
+A: Outside, alpha is stopped by skin
+Accept: Alpha is highly ionising inside the body; skin blocks alpha from outside
+Ref: 6.32
+D: 3
+
+Q: Which type of radiation is beamed into the body from outside to treat a tumour?
+A: Gamma
+Accept: Gamma rays; γ; X-rays
+Ref: 6.33P
+D: 1
+
+Q: In internal radiotherapy, where is the radioactive source placed?
+A: Inside or next to the tumour
+Accept: In the tumour; beside the tumour; implanted at the tumour
+Ref: 6.33P
+D: 2
+
+Q: Radioactive iodine is swallowed to treat cancer in which gland?
+A: Thyroid
+Accept: Thyroid gland
+Ref: 6.33P
+D: 2
+
+Q: In external radiotherapy, why are gamma beams aimed at a tumour from several directions?
+A: Tumour gets high dose, healthy tissue less
+Accept: To reduce damage to healthy tissue; beams overlap only at the tumour
+Ref: 6.33P
+D: 3
+
+Q: Give one advantage of internal radiotherapy over external radiotherapy.
+A: Less damage to healthy tissue
+Accept: Targets the tumour directly; less healthy tissue exposed
+Ref: 6.33P
+D: 3
+
+Q: What is a radioactive substance called when it is put into the body to follow its path?
+A: Tracer
+Accept: Radioactive tracer; medical tracer
+Ref: 6.34P
+D: 1
+
+Q: What does PET stand for in PET scanning?
+A: Positron emission tomography
+Ref: 6.34P
+D: 2
+
+Q: Which type of radiation is detected by a PET scanner?
+A: Gamma
+Accept: Gamma rays; γ
+Ref: 6.34P
+D: 2
+
+Q: In a PET scan, a positron meets which particle to produce gamma rays?
+A: Electron
+Accept: An electron
+Ref: 6.34P
+D: 3
+
+Q: Why is a gamma emitter chosen as a medical tracer for imaging?
+A: Gamma passes out of the body
+Accept: Penetrates out to the detector; weakly ionising and penetrating
+Ref: 6.34P
+D: 3
+
+Q: What kind of half-life do the isotopes used in PET scanners have: short or long?
+A: Short
+Accept: Very short; short half-life
+Ref: 6.35P
+D: 1
+
+Q: Why must isotopes for PET scanners be produced near the hospital?
+A: Very short half-lives
+Accept: Short half-life; they decay quickly
+Ref: 6.35P
+D: 2
+
+Q: What would happen to a PET isotope transported a long distance to a hospital?
+A: Decay too much before use
+Accept: Activity too low by arrival; most would have decayed
+Ref: 6.35P
+D: 3
+
+Q: Which greenhouse gas is not released when nuclear power stations generate electricity?
+A: Carbon dioxide
+Accept: CO2; CO₂
+Ref: 6.36P
+D: 1
+
+Q: What is the main long-term disadvantage of generating electricity using nuclear power?
+A: Radioactive waste
+Accept: Nuclear waste; disposing of radioactive waste
+Ref: 6.36P
+D: 1
+
+Q: Where is high-level radioactive waste planned to be stored long-term?
+A: Deep underground
+Accept: Underground; geological disposal facility
+Ref: 6.36P
+D: 2
+
+Q: Give one advantage of nuclear power other than its low carbon dioxide emissions.
+A: Lots of energy from little fuel
+Accept: Reliable supply; not weather dependent; large energy from small mass of fuel
+Ref: 6.36P
+D: 2
+
+Q: Why do many members of the public oppose new nuclear power stations?
+A: Fear of accidents
+Accept: Fear of radiation leaks; past disasters such as Chernobyl; safety concerns
+Ref: 6.36P
+D: 2
+
+Q: Why is a nuclear power station very expensive to close down at the end of its life?
+A: Radioactive parts must be safely dismantled
+Accept: Decommissioning radioactive materials; contaminated parts need safe disposal
+Ref: 6.36P
+D: 3
+
+Q: Which nuclear reaction is used in present-day nuclear power stations?
+A: Fission
+Accept: Nuclear fission
+Ref: 6.37P
+D: 1
+
+Q: Fission and fusion release energy. Which third nuclear process is also a source of energy?
+A: Radioactive decay
+Accept: Decay; nuclear decay
+Ref: 6.37P
+D: 2
+
+Q: A space probe makes electricity from the heat of a plutonium source. Which nuclear process releases this heat?
+A: Radioactive decay
+Accept: Decay; alpha decay
+Ref: 6.37P
+D: 3
+
+Q: What must a uranium-235 nucleus absorb before it undergoes fission?
+A: Neutron
+Accept: A neutron; a slow neutron
+Ref: 6.38P
+D: 1
+
+Q: What are the two smaller nuclei formed in fission called?
+A: Daughter nuclei
+Accept: Daughter nucleus; fission products
+Ref: 6.38P
+D: 1
+
+Q: Apart from two daughter nuclei and energy, what else is released when U-235 splits?
+A: Two or three neutrons
+Accept: Neutrons; 2 or 3 neutrons; two or more neutrons
+Ref: 6.38P
+D: 2
+
+Q: Fission energy is mostly carried away in which energy store of the products?
+A: Kinetic
+Accept: Kinetic energy; kinetic store
+Ref: 6.38P
+D: 3
+
+Q: ²³⁵U + n → ¹⁴¹Ba + ⁹²Kr + neutrons. How many neutrons are released?
+A: 3
+Accept: Three
+Ref: 6.38P
+D: 3
+Note: 235 + 1 = 236 = 141 + 92 + 3.
+
+Q: Uranium (atomic number 92) splits into barium (atomic number 56) and one other nucleus. What is its atomic number?
+A: 36
+Ref: 6.38P
+D: 3
+
+Q: What name is given to a process where neutrons from one fission cause further fissions?
+A: Chain reaction
+Accept: Nuclear chain reaction
+Ref: 6.39P
+D: 1
+
+Q: Why can the fission of uranium-235 lead to a chain reaction?
+A: Each fission releases more neutrons
+Accept: Released neutrons cause more fissions
+Ref: 6.39P
+D: 2
+
+Q: In a steady, controlled chain reaction, how many neutrons from each fission go on to cause another fission?
+A: One
+Accept: 1; one on average
+Ref: 6.39P
+D: 3
+
+Q: What happens in an uncontrolled chain reaction?
+A: Number of fissions rises rapidly
+Accept: Energy released too fast; explosion; reaction runs away
+Ref: 6.39P
+D: 3
+
+Q: Which parts of a nuclear reactor absorb neutrons to control the rate of fission?
+A: Control rods
+Accept: Control rod
+Ref: 6.40P
+D: 1
+
+Q: What is the name of the material that slows down neutrons in a reactor?
+A: Moderator
+Ref: 6.40P
+D: 1
+
+Q: Name a material that control rods are made from.
+A: Boron
+Accept: Cadmium; boron steel
+Ref: 6.40P
+D: 2
+
+Q: Name a material used as a moderator in a nuclear reactor.
+A: Graphite
+Accept: Water; carbon; heavy water
+Ref: 6.40P
+D: 2
+
+Q: Why does a reactor need its neutrons slowed down?
+A: Slow neutrons are more easily absorbed by U-235
+Accept: Slow neutrons more likely to cause fission
+Ref: 6.40P
+D: 3
+
+Q: How are control rods moved to slow down the chain reaction?
+A: Lowered further into the core
+Accept: Pushed further in; inserted deeper
+Ref: 6.40P
+D: 2
+
+Q: Thermal energy from the reactor is used to turn water into what?
+A: Steam
+Ref: 6.41P
+D: 1
+
+Q: In a nuclear power station, what does the steam turn?
+A: Turbine
+Accept: Turbines
+Ref: 6.41P
+D: 1
+
+Q: The turbine in a nuclear power station drives what device to produce electricity?
+A: Generator
+Accept: Dynamo; alternator
+Ref: 6.41P
+D: 1
+
+Q: What is the fluid called that carries thermal energy away from the reactor core?
+A: Coolant
+Accept: Coolant gas; coolant water
+Ref: 6.41P
+D: 2
+
+Q: Why is a coolant pumped through the reactor core?
+A: To carry heat to make steam
+Accept: To transfer thermal energy to the heat exchanger; to stop the core overheating
+Ref: 6.41P
+D: 3
+
+Q: Are the daughter nuclei from fission usually stable or radioactive?
+A: Radioactive
+Ref: 6.42P
+D: 1
+
+Q: Why are used fuel rods handled by remote control?
+A: Fission products are highly radioactive
+Accept: Very radioactive; dangerous radiation from daughter nuclei
+Ref: 6.42P
+D: 3
+
+Q: Which property of fission products means spent fuel needs safe long-term storage?
+A: Radioactive
+Accept: Radioactivity; they are radioactive
+Ref: 6.42P
+D: 2
+
+Q: What name is given to joining two small nuclei to make a larger nucleus?
+A: Fusion
+Accept: Nuclear fusion
+Ref: 6.43P
+D: 1
+
+Q: What is the energy source of stars?
+A: Fusion
+Accept: Nuclear fusion
+Ref: 6.43P
+D: 1
+
+Q: In the Sun, nuclei of which element fuse together to make helium?
+A: Hydrogen
+Accept: Hydrogen isotopes
+Ref: 6.43P
+D: 1
+
+Q: What happens to the total mass of the nuclei during fusion?
+A: Decreases
+Accept: Goes down; some mass is lost
+Ref: 6.43P
+D: 2
+
+Q: Where does the energy released in fusion come from?
+A: Mass lost in the reaction
+Accept: Loss of mass; mass converted to energy
+Ref: 6.43P
+D: 3
+
+Q: Which process splits a large nucleus: fission or fusion?
+A: Fission
+Ref: 6.44P
+D: 1
+
+Q: State the main difference between nuclear fission and nuclear fusion.
+A: Fission splits nuclei; fusion joins them
+Accept: Fission splits large nuclei, fusion joins small nuclei
+Ref: 6.44P
+D: 2
+
+Q: Which process produces radioactive daughter nuclei: fission or fusion?
+A: Fission
+Ref: 6.44P
+D: 2
+
+Q: Which process uses very light nuclei and needs extremely high temperatures: fission or fusion?
+A: Fusion
+Ref: 6.44P
+D: 2
+
+Q: What force pushes two nuclei apart as they approach each other?
+A: Electrostatic repulsion
+Accept: Electrostatic force; repulsion between positive charges
+Ref: 6.45P
+D: 2
+
+Q: Why do two nuclei repel each other?
+A: Both are positively charged
+Accept: Both contain protons; like charges repel
+Ref: 6.45P
+D: 2
+
+Q: Why does fusion need very high temperatures?
+A: Nuclei must move fast to overcome repulsion
+Accept: To overcome electrostatic repulsion; nuclei need high kinetic energy
+Ref: 6.45P
+D: 3
+
+Q: Why does fusion also need very high pressure?
+A: Nuclei closer together, colliding more often
+Accept: More collisions between nuclei; nuclei pushed close together
+Ref: 6.45P
+D: 3
+
+Q: Fusion fuel is held at millions of degrees. What is used to keep it away from the reactor walls?
+A: Magnetic field
+Accept: Magnets; strong magnetic fields
+Ref: 6.46P
+D: 2
+
+Q: Why is it difficult to build a practical fusion power station?
+A: Very high temperature and pressure are hard to achieve
+Accept: Extreme conditions are hard to reach and contain
+Ref: 6.46P
+D: 3
+
+Q: Why are fusion power stations not yet economic?
+A: More energy put in than got out
+Accept: Energy input exceeds output; too expensive to reach fusion conditions
+Ref: 6.46P
+D: 3
+
+Q: Fusion happens naturally in the Sun's core. Which two conditions there are hard to reproduce on Earth?
+A: High temperature and high pressure
+Accept: Temperature and pressure; heat and pressure
+Ref: 6.46P
+D: 2
