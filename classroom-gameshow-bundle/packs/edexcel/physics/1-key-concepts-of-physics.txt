@@ -1,0 +1,288 @@
+Board: Edexcel
+Spec: 1PH0
+Topic: 1
+
+Q: What is the SI base unit of length?
+A: Metre
+Accept: m; metres; meter
+Ref: 1.1
+D: 1
+
+Q: What is the SI base unit of time?
+A: Second
+Accept: s; seconds
+Ref: 1.1
+D: 1
+
+Q: What is the SI base unit of electric current?
+A: Ampere
+Accept: A; amp; amps; amperes
+Ref: 1.1
+D: 1
+
+Q: What is the SI base unit of temperature?
+A: Kelvin
+Accept: K
+Ref: 1.1
+D: 1
+Note: Not degrees Celsius, which is not an SI base unit.
+
+Q: What is the SI base unit for the amount of a substance?
+A: Mole
+Accept: mol; moles
+Ref: 1.1
+D: 1
+
+Q: Which SI base unit already has a prefix in its name?
+A: Kilogram
+Accept: kg
+Ref: 1.1
+D: 3
+Note: The base unit of mass is the kilogram, not the gram.
+
+Q: What is the SI unit of force?
+A: Newton
+Accept: N; newtons
+Ref: 1.1
+D: 1
+
+Q: What is the SI unit of energy?
+A: Joule
+Accept: J; joules
+Ref: 1.1
+D: 1
+
+Q: What is the SI unit of electric charge?
+A: Coulomb
+Accept: C; coulombs
+Ref: 1.1
+D: 1
+
+Q: What is the SI unit of frequency?
+A: Hertz
+Accept: Hz
+Ref: 1.1
+D: 1
+
+Q: What quantity is measured in pascals?
+A: Pressure
+Ref: 1.1
+D: 2
+
+Q: What quantity is measured in ohms?
+A: Resistance
+Accept: Electrical resistance; electric resistance
+Ref: 1.1
+D: 2
+
+Q: What quantity is measured in teslas?
+A: Magnetic flux density
+Accept: Magnetic field strength
+Ref: 1.1
+D: 2
+
+Q: Energy transferred per second is measured in joules per second. What is the special name of this unit?
+A: Watt
+Accept: W; watts
+Ref: 1.1
+D: 2
+
+Q: Energy transferred per unit charge is measured in joules per coulomb. What is the special name of this unit?
+A: Volt
+Accept: V; volts
+Ref: 1.1
+D: 3
+Note: Potential difference is energy transferred per coulomb of charge.
+
+Q: What prefix means multiply by 10⁹ (one thousand million)?
+A: Giga
+Accept: G
+Ref: 1.2
+D: 1
+
+Q: What prefix means multiply by 10⁻⁶ (one millionth)?
+A: Micro
+Accept: μ
+Ref: 1.2
+D: 1
+
+Q: What prefix means multiply by 10⁻⁹?
+A: Nano
+Accept: n
+Ref: 1.2
+D: 2
+
+Q: Which unit prefix has the symbol c?
+A: Centi
+Accept: Centi-
+Ref: 1.2
+D: 1
+
+Q: What power of ten does the prefix mega (M) stand for?
+A: 10⁶
+Accept: 10^6; 1 000 000; one million; × 10⁶
+Ref: 1.2
+D: 1
+
+Q: How many milliamps are there in 1 amp?
+A: 1000 mA
+Accept: 1000; 10³ mA
+Ref: 1.2
+D: 2
+
+Q: Write 5 kV in volts.
+A: 5000 V
+Accept: 5 × 10³ V; 5000 volts
+Ref: 1.2
+D: 2
+
+Q: Write 1.2 kW in watts.
+A: 1200 W
+Accept: 1.2 × 10³ W; 1200 watts
+Ref: 1.2
+D: 2
+
+Q: Write 2.5 GHz in hertz, in standard form.
+A: 2.5 × 10⁹ Hz
+Accept: 2.5 × 10^9 Hz; 2 500 000 000 Hz
+Ref: 1.2
+D: 2
+
+Q: Write 30 μA in amps, in standard form.
+A: 3 × 10⁻⁵ A
+Accept: 3 × 10^-5 A; 0.00003 A; 3.0 × 10⁻⁵ A
+Ref: 1.2
+D: 3
+Note: Watch for 3 × 10⁻⁶ A; the 30 must be written as 3 × 10¹ first.
+
+Q: Write a wavelength of 450 nm in metres, in standard form.
+A: 4.5 × 10⁻⁷ m
+Accept: 4.5 × 10^-7 m; 0.00000045 m
+Ref: 1.2
+D: 3
+
+Q: Write 3 MJ in kilojoules.
+A: 3000 kJ
+Accept: 3 × 10³ kJ; 3000 kilojoules
+Ref: 1.2
+D: 3
+Note: Mega to kilo is a factor of 1000.
+
+Q: How many seconds are there in one hour?
+A: 3600 s
+Accept: 3600 seconds; 3.6 × 10³ s
+Ref: 1.3
+D: 1
+
+Q: Convert 15 minutes into seconds.
+A: 900 s
+Accept: 900 seconds
+Ref: 1.3
+D: 1
+
+Q: Convert 2 hours into seconds.
+A: 7200 s
+Accept: 7200 seconds; 7.2 × 10³ s
+Ref: 1.3
+D: 2
+
+Q: Convert 500 g into kilograms.
+A: 0.5 kg
+Accept: 0.50 kg; 1/2 kg
+Ref: 1.3
+D: 1
+
+Q: Convert 250 mm into centimetres.
+A: 25 cm
+Accept: 25 centimetres
+Ref: 1.3
+D: 2
+
+Q: Convert a speed of 36 km/h into metres per second.
+A: 10 m/s
+Accept: 10 metres per second; 10 m s⁻¹
+Ref: 1.3
+D: 3
+Note: 36 000 m ÷ 3600 s; dividing km/h by 3.6 gives m/s.
+
+Q: Convert a speed of 5 m/s into kilometres per hour.
+A: 18 km/h
+Accept: 18 kilometres per hour; 18 km h⁻¹
+Ref: 1.3
+D: 3
+Note: Multiply m/s by 3.6 to get km/h.
+
+Q: Convert an area of 1 cm² into square metres.
+A: 0.0001 m²
+Accept: 1 × 10⁻⁴ m²; 10⁻⁴ m²; 1 × 10^-4 m²
+Ref: 1.3
+D: 3
+Note: 1 cm² = 0.01 m × 0.01 m, not 0.01 m².
+
+Q: The speed of light is 3 × 10⁸ m/s. What is this in kilometres per second?
+A: 3 × 10⁵ km/s
+Accept: 300 000 km/s; 3 × 10^5 km/s
+Ref: 1.3
+D: 3
+
+Q: What is the name for writing a number as A × 10ⁿ, where A is from 1 up to 10?
+A: Standard form
+Accept: Scientific notation; standard index form
+Ref: 1.4
+D: 1
+
+Q: Write 3 400 000 in standard form.
+A: 3.4 × 10⁶
+Accept: 3.4 × 10^6
+Ref: 1.4
+D: 2
+
+Q: Write 0.00052 in standard form.
+A: 5.2 × 10⁻⁴
+Accept: 5.2 × 10^-4
+Ref: 1.4
+D: 2
+
+Q: Write 6 × 10³ as an ordinary number.
+A: 6000
+Accept: 6 000
+Ref: 1.4
+D: 1
+
+Q: Round 0.04567 to 2 significant figures.
+A: 0.046
+Ref: 1.4
+D: 2
+Note: Leading zeros are not significant.
+
+Q: Round 34 560 to 2 significant figures.
+A: 35 000
+Accept: 35000; 3.5 × 10⁴
+Ref: 1.4
+D: 2
+
+Q: How many significant figures does 0.00340 have?
+A: 3
+Accept: Three
+Ref: 1.4
+D: 3
+Note: Leading zeros do not count; the final zero after the decimal point does.
+
+Q: Work out (2 × 10³) × (3 × 10⁴), in standard form.
+A: 6 × 10⁷
+Accept: 6 × 10^7; 60 000 000
+Ref: 1.4
+D: 3
+
+Q: Work out (8 × 10⁶) ÷ (2 × 10²), in standard form.
+A: 4 × 10⁴
+Accept: 4 × 10^4; 40 000
+Ref: 1.4
+D: 3
+
+Q: Data in a calculation are all given to 2 significant figures. To how many significant figures should the answer be given?
+A: 2
+Accept: Two; 2 significant figures
+Ref: 1.4
+D: 3
+Note: The answer should not be more precise than the least precise data.

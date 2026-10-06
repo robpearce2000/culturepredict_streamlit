@@ -2,14 +2,9 @@ Board: Edexcel
 Spec: 1MA1
 Topic: 1
 
-Q: What does the symbol ≥ mean?
+Q: Read aloud, what words does the inequality symbol ≥ stand for?
 A: Greater than or equal to
 Accept: Is greater than or equal to; At least
-Ref: N1
-D: 1
-
-Q: Put these in order, smallest first: −3, 2, −7, 0.
-A: −7, −3, 0, 2
 Ref: N1
 D: 1
 
@@ -22,6 +17,7 @@ Note: 5/8 = 0.625, which is more than 0.6.
 
 Q: Put these in order, smallest first: −0.5, −1/4, −0.3.
 A: −0.5, −0.3, −1/4
+Accept: −0.5, −0.3, −0.25
 Ref: N1
 D: 3
 Note: −1/4 = −0.25 is the largest; the number further from zero is smaller.
@@ -32,47 +28,29 @@ Accept: Hundredth; 8 hundredths; 0.08
 Ref: N2
 D: 1
 
-Q: What name is given to a fraction such as 7/4, whose numerator is larger than its denominator?
-A: Improper fraction
-Accept: Top-heavy fraction; Improper
-Ref: N2
-D: 1
-
 Q: Work out 0.3 × 0.2.
 A: 0.06
 Ref: N2
 D: 2
 Note: A common wrong answer is 0.6.
 
-Q: Work out 2½ ÷ ¾, giving your answer as a mixed number.
-A: 3⅓
-Accept: 3 1/3; 10/3
-Ref: N2
-D: 3
-Note: 5/2 × 4/3 = 10/3.
-
-Q: Given that 36 × 14 = 504, work out 504 ÷ 1.4.
+Q: Use 36 × 14 = 504 to find 504 ÷ 1.4.
 A: 360
 Ref: N2
 D: 3
+Note: 504 ÷ 14 = 36, and dividing by 1.4 instead of 14 makes the answer ten times bigger.
 
-Q: What is the inverse operation of multiplication?
+Q: Multiplying by 4 can be undone by which operation?
 A: Division
-Accept: Dividing; Divide
+Accept: Dividing by 4; Divide by 4; Dividing
 Ref: N3
 D: 1
 
-Q: Work out 20 − 12 ÷ 4.
-A: 17
+Q: 2/3 × 3/2 = 1. What is 3/2 called in relation to 2/3?
+A: Reciprocal
+Accept: The reciprocal; Multiplicative inverse
 Ref: N3
-D: 2
-Note: Divide before subtracting; 2 is the common wrong answer.
-
-Q: What is the reciprocal of 2/7?
-A: 7/2
-Accept: 3½; 3 1/2; 3.5
-Ref: N3
-D: 2
+D: 1
 
 Q: Work out (10 + 8) ÷ (5 − 2)².
 A: 2
@@ -86,29 +64,23 @@ Accept: HCF; Greatest common divisor
 Ref: N4
 D: 1
 
+Q: What type of number are 2, 3, 5, 7 and 11?
+A: Prime numbers
+Accept: Prime; Primes
+Ref: N4
+D: 1
+
 Q: What name is given to writing a number as a product of prime numbers, such as 12 = 2² × 3?
 A: Prime factorisation
 Accept: Prime factor decomposition; Product of prime factors
 Ref: N4
 D: 1
 
-Q: Write 90 as a product of its prime factors, using index notation.
+Q: Give the prime factor decomposition of 90, using index notation.
 A: 2 × 3² × 5
 Accept: 2 × 3 × 3 × 5
 Ref: N4
 D: 2
-
-Q: What is the lowest common multiple of 6 and 8?
-A: 24
-Ref: N4
-D: 2
-
-Q: Given that A = 2³ × 3 × 5 and B = 2 × 3² × 7, what is the highest common factor of A and B?
-A: 6
-Accept: 2 × 3
-Ref: N4
-D: 3
-Note: Take the lowest power of each prime that appears in both.
 
 Q: One bus leaves every 12 minutes and another every 18 minutes. Both leave at 9:00 am. When do they next leave together?
 A: 9:36 am
@@ -123,28 +95,17 @@ Accept: Systematically; Systematic listing
 Ref: N5
 D: 1
 
-Q: Using the digits 1, 2, 3 and 4, each at most once, how many different two-digit numbers can be made?
-A: 12
+Q: Which counting rule shows that 3 shirts and 4 ties give 3 × 4 = 12 different outfits?
+A: Product rule
+Accept: The product rule; Product rule for counting
 Ref: N5
-D: 2
-Note: 4 choices for the tens digit, then 3 for the units.
-
-Q: Mia picks 2 different flavours from vanilla, mint, lemon and cherry. How many different pairs of flavours are possible?
-A: 6
-Ref: N5
-D: 2
-Note: Order does not matter, so VM is the same pair as MV.
-
-Q: A coin is flipped and an ordinary six-sided dice is rolled. How many different outcomes are possible?
-A: 12
-Ref: N5
-D: 2
+D: 1
 HT: yes
 
 Q: A padlock code has 3 digits, each from 0 to 9, and digits can repeat. How many codes are possible?
 A: 1000
 Ref: N5
-D: 3
+D: 2
 HT: yes
 Note: 10 × 10 × 10 by the product rule.
 
@@ -153,22 +114,16 @@ A: 24
 Ref: N5
 D: 3
 HT: yes
-Note: 4 × 3 × 2 × 1.
+Note: 4 × 3 × 2 × 1; the choices shrink by one each time.
 
-Q: What name is given to the numbers 1, 4, 9, 16 and 25?
+Q: Squaring 1, 2, 3, 4 and 5 gives 1, 4, 9, 16 and 25. What are these numbers called?
 A: Square numbers
 Accept: Squares; Square
 Ref: N6
 D: 1
 
-Q: In the power 2⁵, what name is given to the 2?
+Q: In 2⁵ = 32, the 5 is the index. What is the 2 called?
 A: Base
-Ref: N6
-D: 1
-Note: The 5 is the index (power or exponent).
-
-Q: What is the cube root of 125?
-A: 5
 Ref: N6
 D: 1
 
@@ -178,95 +133,68 @@ Ref: N6
 D: 2
 Note: Not 12: 3 × 3 × 3 × 3.
 
-Q: Between which two consecutive whole numbers does √50 lie?
-A: 7 and 8
-Accept: 7, 8; 7 < √50 < 8
+Q: Between which two consecutive whole numbers does √40 lie?
+A: 6 and 7
+Accept: 6, 7; 6 < √40 < 7
 Ref: N6
-D: 3
+D: 2
 HT: yes
+Note: 6² = 36 and 7² = 49.
 
-Q: Estimate the cube root of 70 to the nearest whole number.
-A: 4
-Ref: N6
-D: 3
-HT: yes
-Note: 4³ = 64 and 5³ = 125, and 70 is much closer to 64.
-
-Q: Work out 5⁰.
-A: 1
-Ref: N7
-D: 1
-
-Q: Simplify 7⁸ ÷ 7³, leaving your answer as a power of 7.
+Q: Write 7⁸ ÷ 7³ as a single power of 7.
 A: 7⁵
 Accept: 7^5
 Ref: N7
 D: 2
-
-Q: Write 10⁻² as a decimal.
-A: 0.01
-Accept: 1/100
-Ref: N7
-D: 2
+Note: Subtract the indices; 7^(8/3) or 1⁵ are common errors.
 
 Q: In 9^(1/2), what does the index ½ tell you to find?
 A: Square root
 Accept: The square root; √9; Square root of 9
 Ref: N7
-D: 2
+D: 1
 HT: yes
 
-Q: Work out 25^(3/2).
+Q: Find the value of 25^(3/2).
 A: 125
 Ref: N7
 D: 3
 HT: yes
 Note: Square root first (5), then cube.
 
-Q: A circle has diameter 9 cm. What is its exact circumference in terms of π?
-A: 9π cm
-Accept: 9π
-Ref: N8
-D: 2
-
-Q: A semicircle has radius 4 cm. What is its exact area in terms of π?
+Q: What is the exact area of a semicircle of radius 4 cm? Leave π in your answer.
 A: 8π cm²
 Accept: 8π
 Ref: N8
 D: 3
 Note: Half of π × 4² = 16π.
 
+Q: √3, √5 and 2√7 are all examples of what?
+A: Surds
+Accept: Surd; Irrational numbers
+Ref: N8
+D: 1
+HT: yes
+
 Q: Is √2 a rational or an irrational number?
 A: Irrational
 Ref: N8
-D: 2
+D: 1
 HT: yes
 
 Q: Simplify √50 fully.
 A: 5√2
 Ref: N8
-D: 3
+D: 2
 HT: yes
 Note: √50 = √25 × √2.
 
-Q: Work out √3 × √12.
-A: 6
-Ref: N8
-D: 3
-HT: yes
-Note: √36 = 6.
-
-Q: Rationalise the denominator of 10/√5 and simplify fully.
+Q: Write 10/√5 in the form a√5.
 A: 2√5
 Ref: N8
 D: 3
 HT: yes
-
-Q: Write 45 000 in standard form.
-A: 4.5 × 10⁴
-Accept: 4.5 × 10^4
-Ref: N9
-D: 1
+Note: 10√5 ÷ 5 = 2√5 after multiplying top and bottom by √5.
 
 Q: Write 0.00062 in standard form.
 A: 6.2 × 10⁻⁴
@@ -274,85 +202,70 @@ Accept: 6.2 × 10^-4
 Ref: N9
 D: 2
 
-Q: Work out (8 × 10⁶) ÷ (2 × 10²), giving your answer in standard form.
-A: 4 × 10⁴
-Accept: 4 × 10^4
+Q: In what form is a number such as 3.6 × 10⁵ written?
+A: Standard form
+Accept: Standard index form; Scientific notation
 Ref: N9
-D: 2
+D: 1
 
-Q: Work out (3 × 10⁵) × (4 × 10³), giving your answer in standard form.
+Q: Each of 4 × 10³ boxes holds 3 × 10⁵ grains of rice. How many grains is that, in standard form?
 A: 1.2 × 10⁹
 Accept: 1.2 × 10^9
 Ref: N9
 D: 3
 Note: 12 × 10⁸ is not in standard form.
 
-Q: Write 7/8 as a decimal.
-A: 0.875
-Ref: N10
-D: 2
-
-Q: Write 0.35 as a fraction in its simplest form.
+Q: What fraction, in its lowest terms, is equal to 0.35?
 A: 7/20
 Ref: N10
 D: 2
+Note: 35/100 simplifies by 5.
 
-Q: What name is given to a decimal such as 0.333… whose digits repeat forever?
-A: Recurring decimal
-Accept: Recurring
+Q: 1/3 = 0.333… What word describes a decimal like this?
+A: Recurring
+Accept: Recurring decimal; Repeating
 Ref: N10
 D: 1
 HT: yes
 
-Q: Write the recurring decimal 0.272727… as a fraction in its simplest form.
+Q: When 3/8 is written as a decimal, is it terminating or recurring?
+A: Terminating
+Accept: Terminating decimal
+Ref: N10
+D: 2
+Note: 3/8 = 0.375; denominators made only of 2s and 5s give terminating decimals.
+
+Q: Convert 0.272727… to a fraction in its lowest terms.
 A: 3/11
 Ref: N10
 D: 3
 HT: yes
 Note: 27/99 simplifies to 3/11.
 
-Q: Write 1/11 as a recurring decimal.
-A: 0.090909…
-Accept: 0.09 recurring; 0.0̇9̇
-Ref: N10
-D: 3
-HT: yes
-
-Q: In a club, the ratio of boys to girls is 4 : 5. What fraction of the club are girls?
+Q: A club has 4 boys for every 5 girls. What fraction of the members are girls?
 A: 5/9
 Ref: N11
 D: 2
+Note: Not 5/4: the whole club is 4 + 5 = 9 parts.
 
-Q: In a bag of sweets, 2/5 are lemon and the rest are orange. What is the ratio of lemon to orange?
-A: 2 : 3
-Accept: 2:3
+Q: A recipe uses flour and sugar in the ratio 5 : 2. The mass of sugar is what fraction of the mass of flour?
+A: 2/5
 Ref: N11
 D: 2
-
-Q: Share £40 in the ratio 3 : 5. What is the smaller share?
-A: £15
-Accept: 15
-Ref: N11
-D: 2
-Note: The smaller share is 3/8 of £40.
+Note: 2/7 would be sugar as a fraction of the whole mixture.
 
 Q: Two numbers are in the ratio 3 : 7 and their difference is 20. What is their total?
 A: 50
 Ref: N11
 D: 3
-Note: The difference is 4/10 of the total.
+Note: The difference is 4 parts, so 1 part is 5 and the total is 10 parts.
 
 Q: Work out 3/5 of 45.
 A: 27
 Ref: N12
-D: 1
-
-Q: Work out 35% of 80.
-A: 28
-Ref: N12
 D: 2
 
-Q: What single number do you multiply by to decrease an amount by 4%?
+Q: Prices fall by 4%. By what decimal do you multiply an old price to get the new price?
 A: 0.96
 Accept: 96%
 Ref: N12
@@ -362,29 +275,19 @@ Q: 3/8 of a number is 24. What is the number?
 A: 64
 Ref: N12
 D: 3
+Note: 1/8 is 8, so the whole is 64.
 
-Q: How many grams are there in 2.5 kilograms?
-A: 2500 g
-Accept: 2500
-Ref: N13
-D: 1
-
-Q: Name the compound measure found by dividing distance by time.
+Q: Kilometres per hour is a unit of which compound measure?
 A: Speed
 Accept: Average speed; Velocity
 Ref: N13
 D: 1
 
-Q: Name the compound measure found by dividing force by area.
-A: Pressure
+Q: A tablet contains 0.5 g of paracetamol. This is the same as 500 of which unit?
+A: Milligrams
+Accept: mg; Milligram
 Ref: N13
-D: 1
-
-Q: Name the metric unit of mass equal to one thousandth of a gram.
-A: Milligram
-Accept: mg; Milligrams
-Ref: N13
-D: 1
+D: 2
 
 Q: How many minutes are there in 0.3 hours?
 A: 18 minutes
@@ -400,25 +303,19 @@ Ref: N13
 D: 3
 Note: 15 × 3600 ÷ 1000.
 
-Q: What does the symbol ≈ mean?
+Q: In an estimate such as 612 ÷ 19.6 ≈ 30, what does the symbol ≈ mean?
 A: Approximately equal to
 Accept: Is approximately equal to; Approximately
 Ref: N14
 D: 1
 
-Q: Estimate 612 ÷ 19.6 by rounding each number to 1 significant figure.
-A: 30
-Ref: N14
-D: 2
-Note: 600 ÷ 20.
-
-Q: A calculator shows 31.2 × 4.87 = 1519.44. Estimate the answer by rounding each number to 1 significant figure.
+Q: A calculator gives 31.2 × 4.87 = 1519.44. What estimate, rounding each number to 1 s.f., shows this is wrong?
 A: 150
 Ref: N14
 D: 2
-Note: 30 × 5 = 150, so the decimal point was misplaced.
+Note: 30 × 5 = 150, so the decimal point was misplaced (the true answer is 151.944).
 
-Q: Estimate √(48.6 + 51.2) by rounding each number to 1 significant figure.
+Q: Round each number to 1 s.f. to estimate √(48.6 + 51.2).
 A: 10
 Ref: N14
 D: 3
@@ -430,29 +327,25 @@ Accept: Significant figure
 Ref: N15
 D: 1
 
-Q: Round 48 350 to 2 significant figures.
-A: 48 000
-Accept: 48000
+Q: What name is given to an inequality such as 4.5 ≤ x < 5.5, showing the values a rounded number could have been?
+A: Error interval
+Accept: Error intervals
 Ref: N15
 D: 1
 
-Q: Round 6.996 to 2 decimal places.
-A: 7.00
-Ref: N15
-D: 3
-Note: Writing 7 loses the required 2 decimal places.
-
-Q: A number x is 60 when rounded to the nearest 10. Write the error interval for x.
+Q: Rounding x to the nearest 10 gives 60. Write the error interval for x as an inequality.
 A: 55 ≤ x < 65
 Ref: N15
 D: 2
+Note: The upper end uses <, not ≤.
 
-Q: A number y is 8 when truncated to a whole number. Write the error interval for y.
+Q: Truncating y to a whole number gives 8. Using inequalities, what values can y take?
 A: 8 ≤ y < 9
 Ref: N15
-D: 3
+D: 2
+Note: Truncation only cuts off digits, so y cannot be below 8.
 
-Q: A mass is 70 kg to the nearest 10 kg. What is the least it could be?
+Q: A dog's mass, rounded to the nearest 10 kg, is 70 kg. What is its minimum possible mass?
 A: 65 kg
 Accept: 65
 Ref: N16
@@ -460,28 +353,23 @@ D: 2
 
 Q: What name is given to the smallest value that a rounded measurement could have been?
 A: Lower bound
-Accept: Minimum bound
+Accept: Minimum bound; Least possible value
 Ref: N16
 D: 1
 HT: yes
 
-Q: A square has sides of 6 cm, correct to the nearest centimetre. What is the upper bound of its perimeter?
-A: 26 cm
-Accept: 26
+Q: To find the upper bound of a ÷ b, you divide the upper bound of a by which bound of b?
+A: Lower bound
+Accept: The lower bound; Lower
 Ref: N16
-D: 3
+D: 2
 HT: yes
+Note: Dividing by a smaller number gives a bigger answer.
 
-Q: a = 20 correct to the nearest 10 and b = 3 correct to the nearest whole number. What is the upper bound of a ÷ b?
-A: 10
+Q: A trip of 20 km (to the nearest 10 km) takes 3 hours (to the nearest hour). What is the upper bound of the average speed?
+A: 10 km/h
+Accept: 10
 Ref: N16
 D: 3
 HT: yes
-Note: Largest a ÷ smallest b: 25 ÷ 2.5.
-
-Q: Three bags each weigh 5 kg, correct to the nearest kilogram. What is the lower bound of their total mass?
-A: 13.5 kg
-Accept: 13.5
-Ref: N16
-D: 3
-HT: yes
+Note: Largest distance ÷ smallest time: 25 ÷ 2.5.
