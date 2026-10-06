@@ -26,11 +26,6 @@ A: Berlin
 Ref: 1BC.1.1
 D: 1
 
-Q: On which Japanese city did the USA drop the first atomic bomb in August 1945?
-A: Hiroshima
-Ref: 1BC.1.1
-D: 1
-
 Q: Which ideology did Stalin's USSR promote, based on state ownership of industry?
 A: Communism
 Accept: Marxism-Leninism; Soviet communism
@@ -67,18 +62,6 @@ Accept: Marshall; General Marshall
 Ref: 1BC.1.2
 D: 2
 
-Q: What was the name of the Soviet organisation formed in 1949 to coordinate Eastern bloc economies?
-A: Comecon
-Accept: COMECON; Council for Mutual Economic Assistance
-Ref: 1BC.1.2
-D: 1
-
-Q: Which Yugoslav communist leader broke with Stalin in 1948?
-A: Tito
-Accept: Josip Broz Tito; Marshal Tito
-Ref: 1BC.1.2
-D: 2
-
 Q: Which new currency introduced in Western Berlin in 1948 led Stalin to blockade the city?
 A: Deutschmark
 Accept: Deutsche Mark; D-Mark; new German mark
@@ -97,23 +80,11 @@ Accept: He saw it as dollar imperialism; it would draw Eastern Europe towards th
 Ref: 1BC.1.2
 D: 3
 
-Q: What was the purpose of the Cominform set up in 1947?
-A: Coordinate European communist parties
-Accept: Spread Soviet control; control communist parties; keep communist parties loyal to Moscow
-Ref: 1BC.1.2
-D: 2
-
 Q: Which Chinese Communist leader won the civil war in 1949?
 A: Mao Zedong
 Accept: Mao Tse-tung; Mao
 Ref: 1BC.2.1
 D: 1
-
-Q: Which Chinese Nationalist leader fled to Taiwan in 1949?
-A: Chiang Kai-shek
-Accept: Jiang Jieshi; Chiang
-Ref: 1BC.2.1
-D: 2
 
 Q: Which line of latitude divided North and South Korea?
 A: 38th parallel
@@ -132,12 +103,6 @@ A: Vietcong
 Accept: Viet Cong; VC; National Liberation Front
 Ref: 1BC.2.1
 D: 1
-
-Q: Which 1954 battle ended French rule in Vietnam?
-A: Dien Bien Phu
-Accept: Dien Bien Phu
-Ref: 1BC.2.1
-D: 2
 
 Q: What name was given to the US belief that if one Asian country turned communist, its neighbours would follow?
 A: Domino theory
@@ -163,11 +128,6 @@ Accept: The Warsaw Pact
 Ref: 1BC.2.2
 D: 1
 
-Q: In which year did the USSR test its first atomic bomb?
-A: 1949
-Ref: 1BC.2.2
-D: 2
-
 Q: Which Soviet satellite launched in 1957 started the space race?
 A: Sputnik
 Accept: Sputnik 1
@@ -177,24 +137,6 @@ D: 1
 Q: What does ICBM stand for?
 A: Intercontinental ballistic missile
 Accept: Intercontinental Ballistic Missile
-Ref: 1BC.2.2
-D: 2
-
-Q: Polaris missiles were fired from what type of vessel?
-A: Submarines
-Accept: Submarine; nuclear submarines
-Ref: 1BC.2.2
-D: 2
-
-Q: Which Soviet cosmonaut became the first human in space in 1961?
-A: Yuri Gagarin
-Accept: Gagarin
-Ref: 1BC.2.2
-D: 1
-
-Q: Which US mission put the first humans on the Moon in 1969?
-A: Apollo 11
-Accept: Apollo
 Ref: 1BC.2.2
 D: 2
 
@@ -215,12 +157,6 @@ A: Imre Nagy
 Accept: Nagy
 Ref: 1BC.2.3
 D: 1
-
-Q: Which Eastern bloc alliance did Nagy announce Hungary would leave in 1956?
-A: Warsaw Pact
-Accept: The Warsaw Pact
-Ref: 1BC.2.3
-D: 2
 
 Q: How did the USSR respond to the Hungarian uprising in November 1956?
 A: Invaded with tanks
@@ -275,11 +211,6 @@ Accept: It risked war; the Wall was on East German land; war with the USSR; nucl
 Ref: 1BC.3.1
 D: 3
 
-Q: What was the name of the crossing point in Berlin where US and Soviet tanks faced each other in 1961?
-A: Checkpoint Charlie
-Ref: 1BC.3.1
-D: 2
-
 Q: Which revolutionary leader took power in Cuba in 1959?
 A: Fidel Castro
 Accept: Castro
@@ -309,23 +240,11 @@ A: Quarantine
 Ref: 1BC.3.2
 D: 2
 
-Q: About how many miles from the Florida coast is Cuba?
-A: 90 miles
-Accept: 90; about 90 miles
-Ref: 1BC.3.2
-D: 2
-
 Q: Which US missiles in which NATO country did Kennedy secretly agree to remove to end the crisis?
 A: Turkey
 Accept: Jupiter missiles in Turkey; US missiles in Turkey
 Ref: 1BC.3.2
 D: 3
-
-Q: What direct communication link between Washington and Moscow was set up in 1963 after the Cuban Missile Crisis?
-A: The hotline
-Accept: Hotline; Moscow-Washington hotline; telephone link
-Ref: 1BC.3.2
-D: 2
 
 Q: Who became leader of Czechoslovak communists in January 1968?
 A: Dubcek
@@ -381,11 +300,6 @@ Accept: Strategic Arms Limitation Treaty
 Ref: 1BC.3.4
 D: 2
 
-Q: In which year was SALT 1 signed?
-A: 1972
-Ref: 1BC.3.4
-D: 2
-
 Q: Which US president signed SALT 1 with Brezhnev in Moscow?
 A: Nixon
 Accept: Richard Nixon
@@ -403,3 +317,4 @@ A: The USSR feared a US-China alliance
 Accept: Fear of US-Chinese friendship; USSR feared isolation
 Ref: 1BC.3.4
 D: 3
+

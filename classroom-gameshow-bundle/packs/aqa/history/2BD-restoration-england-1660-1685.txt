@@ -1,0 +1,340 @@
+Board: AQA
+Spec: 8145
+Topic: 2BD
+
+Q: Which 1660 declaration promised pardons and religious toleration as Charles II prepared to return?
+A: Declaration of Breda
+Accept: Breda; The Breda Declaration
+Ref: 2BD.1.1
+D: 1
+
+Q: Which Parliament, sitting from 1661 to 1679, was named after Charles II's loyal supporters?
+A: Cavalier Parliament
+Accept: The Cavalier Parliament
+Ref: 2BD.1.1
+D: 2
+
+Q: What name was given to Charles II's inner circle of ministers around 1668-73?
+A: The Cabal
+Accept: Cabal
+Ref: 2BD.1.1
+D: 1
+
+Q: Which Act of 1673 excluded Catholics from public office?
+A: Test Act
+Accept: The Test Act; Test Act 1673
+Ref: 2BD.1.1
+D: 2
+
+Q: Which party supported the Exclusion Bill and opposed the Duke of York's succession?
+A: Whigs
+Accept: Whig; The Whigs
+Ref: 2BD.1.1
+D: 2
+
+Q: Which party backed the king and the hereditary succession of James?
+A: Tories
+Accept: Tory; The Tories
+Ref: 2BD.1.1
+D: 2
+
+Q: Why was Charles able to rule without Parliament after 1681?
+A: He had enough money without it
+Accept: Money from Louis XIV; Customs revenue had grown; Increased trade income
+Ref: 2BD.1.1
+D: 3
+
+Q: Why did the Civil War legacy make many MPs distrust Charles II's wish for a strong crown?
+A: Fear of a return to absolute rule
+Accept: Fear of tyranny; Fear of arbitrary government; Memory of Charles I
+Ref: 2BD.1.1
+D: 3
+
+Q: Which man invented the Popish Plot of 1678?
+A: Titus Oates
+Accept: Oates
+Ref: 2BD.1.2
+D: 1
+
+Q: What title did Charles II's Catholic brother James hold?
+A: Duke of York
+Accept: York
+Ref: 2BD.1.2
+D: 1
+
+Q: What was the Exclusion Bill of 1679 intended to do?
+A: Stop James becoming king
+Accept: Exclude James from the throne; Prevent a Catholic succession
+Ref: 2BD.1.2
+D: 2
+
+Q: Which Earl led the Whig campaign to exclude James from the throne?
+A: Earl of Shaftesbury
+Accept: Shaftesbury; Anthony Ashley Cooper
+Ref: 2BD.1.2
+D: 2
+
+Q: What was the aim of the Rye House Plot of 1683?
+A: Assassinate Charles and James
+Accept: To kill the king and his brother; Murder Charles II and the Duke of York
+Ref: 2BD.1.2
+D: 2
+
+Q: Which illegitimate son of Charles II was favoured by the Whigs as heir?
+A: Duke of Monmouth
+Accept: Monmouth; James Scott
+Ref: 2BD.1.2
+D: 2
+
+Q: Why did many MPs fear James becoming king?
+A: He was a Catholic
+Accept: Catholicism; Fear of a Catholic monarch; His religion
+Ref: 2BD.1.2
+D: 3
+
+Q: Why were Oates's claims widely believed in 1678?
+A: Fear of Catholics and a magistrate's murder
+Accept: Anti-Catholic fear; The murder of Godfrey; Murder of Sir Edmund Berry Godfrey
+Ref: 2BD.1.2
+D: 3
+
+Q: Which Portuguese princess did Charles II marry in 1662?
+A: Catherine of Braganza
+Accept: Catherine; Braganza
+Ref: 2BD.1.3
+D: 1
+
+Q: Which actress was one of Charles II's best-known mistresses?
+A: Nell Gwyn
+Accept: Nell Gwynne; Eleanor Gwyn
+Ref: 2BD.1.3
+D: 1
+
+Q: Which nickname reflected Charles II's pleasure-loving court?
+A: The Merry Monarch
+Accept: Merry Monarch
+Ref: 2BD.1.3
+D: 1
+
+Q: Which large artificial hairpiece became a key court fashion for men?
+A: Periwig
+Accept: Wig; Peruke; Periwigs
+Ref: 2BD.1.3
+D: 2
+
+Q: Which disease did Charles II touch sufferers to cure, called the 'King's Evil'?
+A: Scrofula
+Accept: The King's Evil
+Ref: 2BD.1.3
+D: 2
+
+Q: Why was Charles II's court so lavish after the Commonwealth?
+A: Reaction against Puritan restrictions
+Accept: Reaction to Cromwell's strict rule; Rejection of Puritan rule
+Ref: 2BD.1.3
+D: 3
+
+Q: In which year did the Great Plague strike London?
+A: 1665
+Ref: 2BD.2.1
+D: 1
+
+Q: What was painted on the door of a house with plague victims?
+A: A red cross
+Accept: Red cross; Lord have mercy upon us
+Ref: 2BD.2.1
+D: 1
+
+Q: What were the weekly lists recording plague deaths called?
+A: Bills of Mortality
+Accept: Bill of Mortality
+Ref: 2BD.2.1
+D: 2
+
+Q: Which animal's fleas actually spread the plague?
+A: Rats
+Accept: Black rats; Rat fleas
+Ref: 2BD.2.1
+D: 2
+
+Q: What did many Londoners believe caused the plague?
+A: God's punishment
+Accept: Punishment for sin; Miasma; Bad air; God's anger
+Ref: 2BD.2.1
+D: 2
+
+Q: On which London street did the Great Fire begin in 1666?
+A: Pudding Lane
+Ref: 2BD.2.1
+D: 1
+
+Q: Which baker's shop was the source of the Great Fire?
+A: Thomas Farriner's
+Accept: Farriner; Thomas Farriner; The king's baker
+Ref: 2BD.2.1
+D: 2
+
+Q: Which material did the 1667 Rebuilding Act require for new houses instead of wood?
+A: Brick or stone
+Accept: Brick; Stone
+Ref: 2BD.2.1
+D: 2
+
+Q: Why did the Great Fire spread so quickly?
+A: Closely packed wooden houses and strong wind
+Accept: Wooden buildings; Dry weather; Strong east wind; Narrow streets
+Ref: 2BD.2.1
+D: 3
+
+Q: Which woman wrote the 1677 comedy The Rover and was a professional playwright?
+A: Aphra Behn
+Accept: Behn
+Ref: 2BD.2.2
+D: 2
+
+Q: Which playwright wrote The Country Wife in 1675?
+A: William Wycherley
+Accept: Wycherley
+Ref: 2BD.2.2
+D: 2
+
+Q: What important change for women occurred on the English stage after 1660?
+A: Women acted female roles
+Accept: Actresses allowed on stage; Women could perform
+Ref: 2BD.2.2
+D: 2
+
+Q: Which scientific society, founded in 1660, received a royal charter in 1662?
+A: Royal Society
+Accept: The Royal Society
+Ref: 2BD.2.2
+D: 1
+
+Q: Which scientist wrote Micrographia in 1665?
+A: Robert Hooke
+Accept: Hooke
+Ref: 2BD.2.2
+D: 2
+
+Q: Which official kept a famous diary from 1660 to 1669?
+A: Samuel Pepys
+Accept: Pepys
+Ref: 2BD.2.2
+D: 1
+
+Q: Which architect designed the rebuilt St Paul's Cathedral?
+A: Christopher Wren
+Accept: Wren; Sir Christopher Wren
+Ref: 2BD.2.2
+D: 1
+
+Q: Why were coffee houses called 'penny universities'?
+A: A penny bought entry and learned talk
+Accept: Cost a penny and had educated discussion; People learned from conversation
+Ref: 2BD.2.2
+D: 3
+
+Q: Which port, part of Catherine of Braganza's dowry, was leased to the East India Company in 1668?
+A: Bombay
+Accept: Mumbai
+Ref: 2BD.3.1
+D: 1
+
+Q: Which North African port came to Charles II as part of his marriage but was abandoned in 1684?
+A: Tangier
+Ref: 2BD.3.1
+D: 1
+
+Q: Besides trading, which military power did Charles II's charters give the East India Company?
+A: Make war
+Accept: Raise armies; Command troops; Build forts; Make peace and war
+Ref: 2BD.3.1
+D: 2
+
+Q: In which year was the Hudson's Bay Company chartered?
+A: 1670
+Ref: 2BD.3.1
+D: 2
+
+Q: Which privateer sacked Panama in 1671 and later became Jamaica's lieutenant governor?
+A: Henry Morgan
+Accept: Captain Henry Morgan; Morgan
+Ref: 2BD.3.1
+D: 1
+
+Q: Why did England abandon Tangier in 1684?
+A: It was too costly to defend
+Accept: Expense; Constant attacks by Moroccans; Costly garrison
+Ref: 2BD.3.1
+D: 3
+
+Q: Which economic theory held that a nation grows rich by exporting more than it imports?
+A: Mercantilism
+Accept: Mercantile system
+Ref: 2BD.3.2
+D: 1
+
+Q: Which Acts required colonial goods to be carried in English ships?
+A: Navigation Acts
+Accept: The Navigation Acts
+Ref: 2BD.3.2
+D: 1
+
+Q: Which company, chartered in 1672, carried on England's slave trade?
+A: Royal African Company
+Accept: The Royal African Company
+Ref: 2BD.3.2
+D: 2
+
+Q: Which crop, grown by enslaved Africans in the Caribbean, brought huge profits?
+A: Sugar
+Accept: Sugar cane
+Ref: 2BD.3.2
+D: 2
+
+Q: Why did the Navigation Acts anger the Dutch?
+A: They excluded Dutch ships from English trade
+Accept: Dutch lost carrying trade; They hit Dutch trade profits
+Ref: 2BD.3.2
+D: 3
+
+Q: In which year did the Second Dutch War begin?
+A: 1665
+Ref: 2BD.3.3
+D: 1
+
+Q: Which 1667 Dutch raid on the Thames estuary captured the Royal Charles?
+A: Raid on the Medway
+Accept: Medway raid; Medway; Attack on Chatham
+Ref: 2BD.3.3
+D: 2
+
+Q: Which treaty ended the Second Dutch War in 1667?
+A: Treaty of Breda
+Accept: Breda
+Ref: 2BD.3.3
+D: 2
+
+Q: What burning ships were used to scatter an enemy fleet?
+A: Fireships
+Accept: Fire ships; Fireship
+Ref: 2BD.3.3
+D: 1
+
+Q: Which French king paid Charles II under the secret Treaty of Dover of 1670?
+A: Louis XIV
+Accept: Louis; Louis the Fourteenth
+Ref: 2BD.3.3
+D: 2
+
+Q: What was a main cause of the Anglo-Dutch wars?
+A: Trade rivalry
+Accept: Competition for trade; Commercial rivalry; Navigation Acts
+Ref: 2BD.3.3
+D: 3
+
+Q: Why did Charles II agree to the Treaty of Dover in 1670?
+A: To get money from Louis XIV
+Accept: To avoid relying on Parliament; French subsidies
+Ref: 2BD.3.3
+D: 3

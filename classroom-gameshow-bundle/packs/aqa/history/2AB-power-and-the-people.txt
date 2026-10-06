@@ -1,0 +1,303 @@
+Board: AQA
+Spec: 8145
+Topic: 2AB
+
+Q: In which year did the barons force King John to seal Magna Carta?
+A: 1215
+Ref: 2AB.1.1
+D: 1
+
+Q: Which French duchy did John lose in 1204, leading him to demand heavy taxes?
+A: Normandy
+Ref: 2AB.1.1
+D: 2
+
+Q: What long-term principle did Magna Carta establish about the king?
+A: The king was subject to the law
+Accept: Rule of law; king not above the law; king must obey the law
+Ref: 2AB.1.1
+D: 3
+
+Q: Which baron led the rebellion against Henry III and called a parliament in 1265?
+A: Simon de Montfort
+Accept: De Montfort; Montfort
+Ref: 2AB.1.2
+D: 1
+
+Q: Which 1258 agreement set up a baronial council to control Henry III?
+A: Provisions of Oxford
+Accept: The Provisions of Oxford
+Ref: 2AB.1.2
+D: 1
+
+Q: Which new group from towns did de Montfort's 1265 parliament include?
+A: Burgesses
+Accept: Townsmen; townspeople; representatives of towns
+Ref: 2AB.1.2
+D: 2
+
+Q: Henry III's plan to win which island's throne for his son angered the barons?
+A: Sicily
+Ref: 2AB.1.2
+D: 3
+
+Q: In which year did the Peasants' Revolt take place?
+A: 1381
+Ref: 2AB.1.3
+D: 1
+
+Q: Which tax, charged at the same rate per head, sparked the Peasants' Revolt?
+A: Poll tax
+Accept: The poll tax
+Ref: 2AB.1.3
+D: 1
+
+Q: Why did the Peasants' Revolt fail to end serfdom immediately?
+A: Richard II broke his promises
+Accept: Promises were revoked; rebels punished; leaders killed
+Ref: 2AB.1.3
+D: 3
+
+Q: In which year was the Pilgrimage of Grace?
+A: 1536
+Ref: 2AB.2.1
+D: 1
+
+Q: Which policy of Henry VIII, closing religious houses, angered the pilgrims?
+A: Dissolution of the monasteries
+Accept: Closing the monasteries; closure of monasteries
+Ref: 2AB.2.1
+D: 2
+
+Q: Which royal minister did the Pilgrimage of Grace rebels blame for Henry's policies?
+A: Thomas Cromwell
+Accept: Cromwell
+Ref: 2AB.2.1
+D: 2
+
+Q: How did Henry VIII's government treat the rebel leaders after the 1537 risings?
+A: Executed them
+Accept: Hanged; killed; put to death; executions
+Ref: 2AB.2.1
+D: 3
+
+Q: In which year did the English Civil War begin?
+A: 1642
+Ref: 2AB.2.2
+D: 1
+
+Q: Which king was executed in 1649?
+A: Charles I
+Accept: King Charles I
+Ref: 2AB.2.2
+D: 1
+
+Q: Which tax, collected without Parliament's approval from the 1630s, angered many gentry?
+A: Ship Money
+Accept: Ship money
+Ref: 2AB.2.2
+D: 2
+
+Q: Which radical group led by John Lilburne demanded wider voting rights?
+A: Levellers
+Accept: The Levellers
+Ref: 2AB.2.2
+D: 2
+
+Q: Why did the beliefs of Charles I about kingship clash with Parliament?
+A: Belief in Divine Right
+Accept: Divine Right of Kings; king answerable only to God
+Ref: 2AB.2.2
+D: 3
+
+Q: In which year was the American Declaration of Independence adopted?
+A: 1776
+Ref: 2AB.2.3
+D: 1
+
+Q: Which 1765 Act taxed paper goods such as newspapers in the American colonies?
+A: Stamp Act
+Accept: The Stamp Act
+Ref: 2AB.2.3
+D: 2
+
+Q: What word completes the colonists' slogan 'No taxation without ...'?
+A: Representation
+Accept: No taxation without representation
+Ref: 2AB.2.3
+D: 2
+
+Q: Why did colonists object to taxes passed by the British Parliament?
+A: They had no MPs representing them
+Accept: No representation in Parliament; no say
+Ref: 2AB.2.3
+D: 3
+
+Q: In which year was the Great Reform Act passed?
+A: 1832
+Ref: 2AB.3.1
+D: 1
+
+Q: Which Whig Prime Minister pushed the Great Reform Act through Parliament?
+A: Earl Grey
+Accept: Lord Grey; Charles Grey
+Ref: 2AB.3.1
+D: 2
+
+Q: Which 1867 Act gave many working-class men in towns the vote?
+A: Second Reform Act
+Accept: Reform Act 1867; Second Reform Act of 1867
+Ref: 2AB.3.1
+D: 2
+
+Q: Why did the Great Reform Act disappoint working-class campaigners?
+A: They still did not have the vote
+Accept: Working class excluded; no vote for workers
+Ref: 2AB.3.1
+D: 3
+
+Q: Which MP led the parliamentary campaign against the slave trade?
+A: William Wilberforce
+Accept: Wilberforce
+Ref: 2AB.3.2
+D: 1
+
+Q: Which law taxed imported grain and kept the price of bread high?
+A: Corn Laws
+Accept: The Corn Laws
+Ref: 2AB.3.2
+D: 2
+
+Q: Which Tory reformer, later Earl of Shaftesbury, campaigned to cut children's working hours?
+A: Lord Ashley
+Accept: Shaftesbury; Lord Shaftesbury; Anthony Ashley-Cooper
+Ref: 2AB.3.2
+D: 2
+
+Q: What disaster in Ireland pushed Peel to repeal the Corn Laws in 1846?
+A: Potato famine
+Accept: Irish potato famine; Great Famine
+Ref: 2AB.3.2
+D: 3
+
+Q: To which country were the Tolpuddle Martyrs transported in 1834?
+A: Australia
+Ref: 2AB.3.3
+D: 1
+
+Q: The Tolpuddle labourers were convicted of swearing an illegal what?
+A: Oath
+Accept: Secret oath
+Ref: 2AB.3.3
+D: 2
+
+Q: Which London women workers struck over pay and conditions in 1888?
+A: Match girls
+Accept: Bryant and May match girls; matchgirls
+Ref: 2AB.3.3
+D: 2
+
+Q: Which Pankhurst founded the Women's Social and Political Union in 1903?
+A: Emmeline Pankhurst
+Accept: Emmeline
+Ref: 2AB.4.1
+D: 1
+
+Q: Which peaceful suffrage organisation was led by Millicent Fawcett?
+A: NUWSS
+Accept: National Union of Women's Suffrage Societies; suffragists
+Ref: 2AB.4.1
+D: 2
+
+Q: Which 1913 Act allowed weakened hunger strikers to be released and then re-arrested?
+A: Cat and Mouse Act
+Accept: Prisoners (Temporary Discharge for Ill Health) Act
+Ref: 2AB.4.1
+D: 2
+
+Q: In which year did women over 30 first win the vote?
+A: 1918
+Ref: 2AB.4.1
+D: 2
+
+Q: Why did the WSPU stop its militant campaign in 1914?
+A: To support the war effort
+Accept: First World War began; war work
+Ref: 2AB.4.1
+D: 3
+
+Q: In which year was the General Strike?
+A: 1926
+Ref: 2AB.4.2
+D: 1
+
+Q: Which organisation called the General Strike?
+A: Trades Union Congress
+Accept: TUC
+Ref: 2AB.4.2
+D: 2
+
+Q: Which minister edited the government newspaper British Gazette during the strike?
+A: Winston Churchill
+Accept: Churchill
+Ref: 2AB.4.2
+D: 2
+
+Q: Which 1927 Act made general strikes illegal?
+A: Trade Disputes Act
+Accept: Trade Disputes and Trade Unions Act
+Ref: 2AB.4.2
+D: 2
+
+Q: Which Prime Minister passed laws in the 1980s limiting trade union power?
+A: Margaret Thatcher
+Accept: Thatcher
+Ref: 2AB.4.2
+D: 2
+
+Q: What did the 1984 Trade Union Act require unions to hold before strikes?
+A: A ballot
+Accept: Secret ballot; vote of members
+Ref: 2AB.4.2
+D: 3
+
+Q: Which ship brought Caribbean migrants to Britain in 1948?
+A: Empire Windrush
+Accept: Windrush
+Ref: 2AB.4.3
+D: 1
+
+Q: In which London district did riots break out in 1981?
+A: Brixton
+Ref: 2AB.4.3
+D: 1
+
+Q: Which Act of 1965 made racial discrimination in public places illegal?
+A: Race Relations Act
+Accept: The Race Relations Act 1965
+Ref: 2AB.4.3
+D: 2
+
+Q: Which police tactic of stopping people on suspicion increased tension in Brixton in 1981?
+A: Stop and search
+Accept: Sus laws; sus; Operation Swamp 81
+Ref: 2AB.4.3
+D: 2
+
+Q: Scarman recommended that police recruit more people from which groups?
+A: Ethnic minorities
+Accept: Black and Asian people; minority ethnic groups
+Ref: 2AB.4.3
+D: 3
+
+Q: Why did the Statute of Labourers anger peasants after the Black Death?
+A: It held down wages when workers were scarce
+Accept: Limited wages; capped pay; kept wages low
+Ref: 2AB.1.3
+D: 3
+
+Q: Why did the Anti-Corn Law League want the Corn Laws repealed?
+A: To make bread and food cheaper
+Accept: Cheaper food; lower bread prices; cheaper bread
+Ref: 2AB.3.2
+D: 3
