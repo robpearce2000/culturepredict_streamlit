@@ -14,12 +14,6 @@ Accept: Thames
 Ref: 3.1.3.1.1
 D: 1
 
-Q: Are the highlands of Scotland, Wales and the Lake District upland or lowland areas?
-A: Upland
-Accept: Uplands; highland
-Ref: 3.1.3.1.1
-D: 2
-
 Q: Why are most UK uplands found in the north and west rather than the south and east?
 A: Older, harder rocks form the north and west
 Accept: Hard resistant rock; older rock; harder rocks
@@ -27,7 +21,7 @@ Ref: 3.1.3.1.1
 D: 3
 
 Q: Why does a large dam and reservoir reduce flood risk downstream?
-A: It stores floodwater and releases it slowly
+A: Stores floodwater and releases it slowly
 Accept: Controls river flow; holds back water
 Ref: 3.1.3.3.3
 D: 3
@@ -112,12 +106,6 @@ Accept: Lower energy; not enough energy
 Ref: 3.1.3.3.1
 D: 3
 
-Q: Give one reason why a river deposits sediment.
-A: Shallow water or reduced discharge
-Accept: Slower flow; river meets sea; less water; load too big
-Ref: 3.1.3.3.1
-D: 2
-
 Q: Name the interlocking ridges of land that a river winds around in its upper course.
 A: Interlocking spurs
 Accept: Interlocking spur
@@ -169,7 +157,7 @@ Accept: Inner bend; where flow is slowest
 Ref: 3.1.3.3.2
 D: 2
 
-Q: What type of rock lies on top of a softer rock at a waterfall to form a plunge pool below?
+Q: What type of rock forms the resistant cap at the top of a waterfall?
 A: Hard rock
 Accept: Resistant rock; harder rock
 Ref: 3.1.3.3.2
@@ -178,7 +166,7 @@ D: 2
 Q: Name the deep pool at the base of a waterfall, formed by the force of falling water.
 A: Plunge pool
 Ref: 3.1.3.3.2
-D: 2
+D: 1
 
 Q: Explain how undercutting makes a waterfall retreat upstream.
 A: Undercutting of soft rock makes hard rock collapse
@@ -228,7 +216,7 @@ Accept: Dam and reservoir; reservoir
 Ref: 3.1.3.3.3
 D: 1
 
-Q: Name the soft engineering strategy that involves moving homes and businesses away from the flood plain.
+Q: Name the soft engineering strategy that restricts building on land that is likely to flood.
 A: Flood plain zoning
 Accept: Floodplain zoning; zoning
 Ref: 3.1.3.3.3
@@ -236,7 +224,7 @@ D: 1
 
 Q: Rock that does not let water soak in is described as what, increasing flood risk?
 A: Impermeable
-Accept: Non-porous; waterproof
+Accept: Non-porous
 Ref: 3.1.3.3.3
 D: 1
 
@@ -256,7 +244,7 @@ Q: Name the soft engineering strategy in which more trees increase interception 
 A: Planting trees
 Accept: Afforestation; tree planting; reforestation
 Ref: 3.1.3.3.3
-D: 2
+D: 1
 
 Q: Why does a steep-sided valley with heavy rainfall have a short lag time?
 A: Water runs quickly to the river
@@ -264,13 +252,7 @@ Accept: Fast surface runoff; little infiltration
 Ref: 3.1.3.3.3
 D: 3
 
-Q: Give one cost of building a flood relief channel.
-A: Expensive to build
-Accept: High cost; damages habitats; changes natural landscape
-Ref: 3.1.3.3.3
-D: 2
-
-Q: Name the UK flood scheme, opened in 2002, with a channel of about 11 km bypassing Maidenhead, Windsor and Eton.
+Q: Name the UK flood relief channel, opened in 2002, that bypasses Maidenhead, Windsor and Eton.
 A: Jubilee River
 Accept: Maidenhead, Windsor and Eton flood alleviation scheme
 Ref: 3.1.3.3.3
@@ -288,3 +270,38 @@ Accept: Cheap; saves lives; time to evacuate; time to move belongings
 Ref: 3.1.3.3.3
 D: 2
 
+Q: Which major river does the Jubilee River channel carry flood water away from?
+A: River Thames
+Accept: Thames
+Ref: 3.1.3.3.3
+D: 2
+
+Q: Is the Jubilee River scheme hard engineering or soft engineering?
+A: Hard engineering
+Accept: Hard
+Ref: 3.1.3.3.3
+D: 2
+
+Q: Which hard rock forms the cap rock over which the River Tees plunges at High Force?
+A: Whin Sill
+Accept: Great Whin Sill; dolerite
+Ref: 3.1.3.3.2
+D: 2
+
+Q: Name the hard engineering strategy that removes meanders to make a river channel shorter and faster.
+A: Straightening
+Accept: Channel straightening
+Ref: 3.1.3.3.3
+D: 1
+
+Q: Why can straightening a river increase flood risk downstream?
+A: Water travels faster downstream
+Accept: Less time to infiltrate; flood water reaches towns quicker; higher peak flow
+Ref: 3.1.3.3.3
+D: 3
+
+Q: Name the part of a hydrograph where discharge is increasing after the rain starts.
+A: Rising limb
+Accept: Rising
+Ref: 3.1.3.3.3
+D: 1

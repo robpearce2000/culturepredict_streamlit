@@ -39,15 +39,15 @@ D: 1
 
 Q: What process, by moving ice, creates upland features such as corries and U-shaped valleys?
 A: Glacial erosion
-Accept: Erosion; Glaciation
+Accept: Glaciation; Ice erosion
 Ref: 1.2
 D: 2
 
-Q: Give one human activity, other than farming, that has changed UK landscapes, such as planting conifer plantations.
+Q: Name the human activity of planting and managing trees in plantations, which has changed many UK upland landscapes.
 A: Forestry
-Accept: Settlement; Urbanisation
+Accept: Afforestation; Tree planting
 Ref: 1.2
-D: 2
+D: 1
 
 Q: What type of weathering is caused by repeated freezing and thawing of water in rock cracks?
 A: Mechanical weathering
@@ -120,9 +120,20 @@ Accept: Wave cut platform
 Ref: 1.4
 D: 1
 
+Q: Name the transport process in which large pebbles are rolled along the sea bed by waves.
+A: Traction
+Ref: 1.3
+D: 1
+
 Q: Name the coastal landform that is an isolated pillar of rock left when the top of an arch collapses.
 A: Stack
 Accept: Sea stack
+Ref: 1.4
+D: 1
+
+Q: What landform is a natural opening through a headland, formed when a cave is eroded right through?
+A: Arch
+Accept: Natural arch; Sea arch
 Ref: 1.4
 D: 1
 
@@ -131,7 +142,7 @@ A: Cave
 Ref: 1.4
 D: 2
 
-Q: What name is given to the long narrow finger of sand or shingle joined to land at one end, which extends across a bay mouth or estuary.
+Q: What name is given to the long narrow finger of sand or shingle joined to land at one end, which extends across a bay mouth or estuary?
 A: Spit
 Accept: A spit
 Ref: 1.4
@@ -139,7 +150,7 @@ D: 1
 
 Q: Name the ridge of sand or shingle that builds across a bay, joining two headlands and trapping a lagoon behind.
 A: Bar
-Accept: Offshore bar; Bay bar
+Accept: Bay bar; Baymouth bar
 Ref: 1.4
 D: 2
 
@@ -185,12 +196,12 @@ Accept: Managed realignment
 Ref: 1.5
 D: 2
 
-Q: Give one disadvantage of building a sea wall.
-A: Very expensive
-Accept: Costly to build and maintain; Looks unattractive; Wave reflection scours the beach
+Q: What happens to the beach in front of a sea wall because waves reflect off the wall?
+A: Scouring
+Accept: Beach is eroded; Beach is lowered; Scoured away; Erosion
 Ref: 1.5
 D: 2
-Note: Any sensible disadvantage; expense is the usual one.
+Note: Reflected wave energy removes sand and shingle at the base of the wall.
 
 Q: Why can groynes cause increased erosion further along the coast?
 A: They starve downdrift beaches of sediment

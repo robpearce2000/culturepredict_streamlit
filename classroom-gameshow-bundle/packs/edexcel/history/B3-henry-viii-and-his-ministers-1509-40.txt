@@ -93,7 +93,7 @@ D: 1
 
 Q: Why did Charles V's power over the pope make an annulment hard to obtain?
 A: Catherine was Charles V's aunt
-Accept: Charles was Catherine's nephew; Charles V was her nephew and controlled the pope
+Accept: Charles was Catherine's nephew; Charles V was her nephew and controlled the pope; Charles held the pope prisoner after the 1527 sack of Rome
 Ref: B3.1.4
 D: 3
 

@@ -26,11 +26,11 @@ Accept: Tenants-in-chief; tenants in chief
 Ref: B2.1.1
 D: 2
 
-Q: Why was the Church so influential in England at this time?
-A: Controlled religion, land and learning
-Accept: Everyone believed in it; fear of Hell; owned land; educated clerks
+Q: What name was given to the tenth of their produce that peasants paid to the Church?
+A: Tithe
+Accept: Tithes
 Ref: B2.1.1
-D: 3
+D: 2
 
 Q: Which ceremony made a medieval king, with holy oil and an oath, a divinely chosen ruler?
 A: Coronation
@@ -98,9 +98,9 @@ Accept: Usury was banned for Christians; Church banned usury
 Ref: B2.1.4
 D: 3
 
-Q: At which York castle tower were Jews killed in March 1190?
-A: Clifford's Tower
-Accept: Clifford's tower
+Q: In which northern city were Jews killed in a massacre at the castle in March 1190?
+A: York
+Accept: City of York
 Ref: B2.1.4
 D: 2
 
@@ -233,7 +233,7 @@ Q: Which Archbishop of Canterbury died in 1205, starting the dispute over his su
 A: Hubert Walter
 Accept: Walter
 Ref: B2.3.1
-D: 3
+D: 2
 
 Q: Robert Fitzwalter and which other baron were the leading plotters against John in 1212?
 A: Eustace de Vesci
@@ -315,3 +315,15 @@ A: About 9
 Accept: 9; nine
 Ref: B2.3.4
 D: 2
+
+Q: Why did Richard I join the Third Crusade?
+A: To recapture Jerusalem from Saladin
+Accept: Retake Jerusalem; Jerusalem had fallen in 1187; to win back the Holy Land
+Ref: B2.2.2
+D: 3
+
+Q: Why did Pope Innocent III place England under Interdict in 1208?
+A: John refused to accept Stephen Langton as archbishop
+Accept: Dispute over Langton; John rejected the Pope's choice of archbishop
+Ref: B2.3.1
+D: 3

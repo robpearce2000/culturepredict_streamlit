@@ -86,8 +86,8 @@ Ref: 3.1.2.3.1
 D: 1
 
 Q: Give one reason why a hot desert has low biodiversity.
-A: Extreme heat and lack of water
-Accept: Little water; extreme temperatures; harsh conditions; lack of water; extreme heat
+A: Lack of water
+Accept: Little water; low rainfall; extreme temperatures; harsh conditions; extreme heat; aridity
 Ref: 3.1.2.3.1
 D: 2
 
@@ -153,12 +153,6 @@ D: 1
 Q: Why does inaccessibility make it costly to develop hot desert regions?
 A: Roads and pipelines are expensive to build
 Accept: Costly infrastructure; hard to transport goods; expensive to build roads; long distances
-Ref: 3.1.2.3.2
-D: 3
-
-Q: Why can shifting sand dunes be a challenge to development in deserts?
-A: They bury roads and buildings
-Accept: Block roads; cover buildings; damage infrastructure; bury infrastructure
 Ref: 3.1.2.3.2
 D: 3
 
@@ -232,3 +226,9 @@ A: Cheap, local and easy to maintain
 Accept: Low cost; local people can use them; use local materials; do not harm the environment
 Ref: 3.1.2.3.3
 D: 3
+
+Q: Name the soil-management method of growing different crops in turn on the same land to protect soil fertility.
+A: Crop rotation
+Accept: Rotating crops
+Ref: 3.1.2.3.3
+D: 2

@@ -76,7 +76,7 @@ D: 2
 
 Q: Between which two lines of latitude are tropical rainforests mainly found?
 A: Tropics of Cancer and Capricorn
-Accept: 23.5°N and 23.5°S; Either side of the equator
+Accept: 23.5°N and 23.5°S; Tropics
 Ref: 3.1.2.2.1
 D: 2
 
@@ -181,15 +181,15 @@ Accept: No roots to hold soil; No canopy to shelter soil from rain
 Ref: 3.1.2.2.2
 D: 3
 
-Q: Which greenhouse gas is released when rainforest is burned to clear land?
+Q: Which main greenhouse gas is released when rainforest is burned to clear land?
 A: Carbon dioxide
 Accept: CO2; CO₂
 Ref: 3.1.2.2.2
 D: 1
 
-Q: Selling timber, beef and minerals from cleared rainforest brings a country what economic benefit?
+Q: Selling timber, beef and minerals from cleared rainforest earns a country what, helping economic development?
 A: Income
-Accept: Money; Revenue; Export earnings; Economic growth
+Accept: Money; Revenue; Export earnings; Export income; Foreign currency
 Ref: 3.1.2.2.2
 D: 2
 
@@ -198,6 +198,7 @@ A: Fall
 Accept: Fell; Decrease; Decreased
 Ref: 3.1.2.2.2
 D: 2
+Note: INPE figures fell from about 27,000 km² (2004) to about 4,600 km² (2012); rates rose again later.
 
 Q: What term describes forests that absorb and store more carbon dioxide than they release?
 A: Carbon sink

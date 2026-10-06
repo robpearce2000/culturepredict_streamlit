@@ -2,14 +2,14 @@ Board: AQA
 Spec: 8035
 Topic: 3.2.3.1
 
-Q: Which three resources are fundamental to human development in this topic?
+Q: Which three resources are fundamental to human development and economic well-being?
 A: Food, water and energy
 Ref: 3.2.3.1.1
 D: 1
 
 Q: What term describes the total distance food travels from where it is produced to where it is eaten?
 A: Food miles
-Ref: 3.2.3.1.1
+Ref: 3.2.3.1.2
 D: 1
 
 Q: Name the type of country, based on income, where most of the world's people suffering food shortages live.
@@ -20,7 +20,7 @@ D: 1
 
 Q: Name the term for a lack of enough food to meet a person's energy needs over time.
 A: Undernutrition
-Accept: Hunger; Malnutrition; Food insecurity
+Accept: Hunger; Food insecurity
 Ref: 3.2.3.1.1
 D: 1
 
@@ -96,9 +96,9 @@ Accept: More transport emissions; More fossil fuels burned; Greater CO2
 Ref: 3.2.3.1.2
 D: 2
 
-Q: Give one reason UK shoppers choose locally sourced food to cut their carbon footprint.
-A: Fewer food miles
-Accept: Less transport; Lower emissions
+Q: Give one benefit to a low income country of exporting high-value food to the UK.
+A: Earns income for the country
+Accept: Jobs; Foreign currency; Export earnings; Economic growth; Wealth
 Ref: 3.2.3.1.2
 D: 2
 
@@ -109,15 +109,15 @@ Ref: 3.2.3.1.2
 D: 3
 Note: Several valid answers are possible; accept any sensible effect of large-scale, mechanised farming.
 
-Q: Name the region of the UK with a water surplus, generally the wetter north and west.
+Q: Which general part of the UK has a water surplus, because of high rainfall and low population?
 A: North and west
-Accept: Wales; Scotland; Lake District; Northern England
+Accept: Wales; Scotland; Lake District; Northern England; North West
 Ref: 3.2.3.1.2
-D: 2
+D: 1
 
-Q: Which part of the UK has the greatest water deficit, because of low rainfall and high population?
+Q: Which general part of the UK has a water deficit, because of low rainfall and high population?
 A: South-east England
-Accept: South East; The south east
+Accept: South East; The south east; Southern England; East Anglia; London
 Ref: 3.2.3.1.2
 D: 1
 
@@ -187,15 +187,15 @@ Ref: 3.2.3.1.2
 D: 2
 
 Q: Give one economic issue linked to the exploitation of North Sea oil and gas.
-A: Jobs and revenue, but it is costly to extract
-Accept: Jobs; Tax revenue; High extraction costs; Reserves run out; Price changes
+A: Jobs and tax revenue
+Accept: Jobs; Tax revenue; Income; High extraction costs; Price changes
 Ref: 3.2.3.1.2
 D: 3
 Note: Accept any sensible economic point.
 
-Q: Why is the UK's reliance on renewable energy not a complete solution to energy security?
-A: Supply depends on weather
-Accept: Intermittent; Wind and sun are unreliable; Weather dependent
+Q: Why can wind and solar power not guarantee a steady UK electricity supply?
+A: Output depends on the weather
+Accept: Intermittent; Wind and sun are unreliable; Weather dependent; Weather
 Ref: 3.2.3.1.2
 D: 3
 

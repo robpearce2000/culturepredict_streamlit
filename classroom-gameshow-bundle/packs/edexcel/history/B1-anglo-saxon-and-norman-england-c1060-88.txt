@@ -16,7 +16,7 @@ D: 1
 
 Q: What was the payment, set by rank, that a killer paid to the victim's family in Anglo-Saxon law?
 A: Wergild
-Accept: Wergeld; wergeld
+Accept: Wergeld; Weregild
 Ref: B1.1.1
 D: 2
 
@@ -104,7 +104,7 @@ Accept: They pursued the fleeing Normans; fell for the feigned retreat
 Ref: B1.1.4
 D: 3
 
-Q: At which place did Edgar, Edwin and Morcar submit to William in 1066?
+Q: At which Hertfordshire place did leading English nobles submit to William in late 1066?
 A: Berkhamsted
 Accept: Berkhamsted Castle
 Ref: B1.2.1
@@ -157,12 +157,6 @@ Accept: Surrounded by marshland; hard to reach; protected by water and marsh
 Ref: B1.2.2
 D: 3
 
-Q: Which part of England suffered most in the Harrying of the North in 1069-70?
-A: The North
-Accept: Northern England; Yorkshire; Northumbria; North of England
-Ref: B1.2.3
-D: 1
-
 Q: Why did William order the Harrying of the North?
 A: To crush rebellion and deter future revolts
 Accept: Punish rebels; stop further rebellion; stop Danes using the North
@@ -182,7 +176,7 @@ Ref: B1.2.3
 D: 2
 Note: Most land had passed to Normans; the Church held about a quarter.
 
-Q: Which Earl of Norfolk, married at a wedding feast in 1075, led the Revolt of the Earls?
+Q: Which Earl of East Anglia, of Breton descent, joined the Revolt of the Earls in 1075?
 A: Ralph de Gael
 Accept: Ralph de Guader; Ralph Guader; Ralph of Gael; Ralph
 Ref: B1.2.4

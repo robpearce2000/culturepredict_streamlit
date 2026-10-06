@@ -74,8 +74,8 @@ Ref: B4.1.4
 D: 2
 
 Q: Why did many Catholics see Mary as the rightful queen of England?
-A: Descended from Henry VII; Elizabeth seen as illegitimate
-Accept: Great-granddaughter of Henry VII; Elizabeth was illegitimate; stronger claim as a Catholic
+A: Elizabeth was seen as illegitimate
+Accept: Descended from Henry VII; Great-granddaughter of Henry VII; Henry VIII's marriage to Anne Boleyn was not valid; Elizabeth was illegitimate; stronger claim as a Catholic
 Ref: B4.1.4
 D: 3
 
@@ -144,7 +144,7 @@ Accept: Nonsuch
 Ref: B4.2.3
 D: 2
 
-Q: Which title, accepted in the Netherlands against Elizabeth's wishes, angered her with Robert Dudley?
+Q: Which title did Robert Dudley accept in the Netherlands in 1586, against Elizabeth's wishes?
 A: Governor-General
 Accept: Governor General
 Ref: B4.2.3
@@ -178,8 +178,8 @@ Ref: B4.2.4
 D: 2
 
 Q: Give one advantage of the English ships over the Spanish ships in 1588.
-A: Faster, more manoeuvrable, with longer-range guns
-Accept: Longer-range guns; More manoeuvrable; Faster; Easier to handle
+A: Longer-range guns
+Accept: Faster; Better gunnery; More manoeuvrable; Faster; Easier to handle
 Ref: B4.2.4
 D: 3
 
@@ -247,7 +247,7 @@ A: Spain
 Ref: B4.3.3
 D: 3
 
-Q: Which courtier organised the 1585 attempt to settle in Virginia?
+Q: Which courtier sponsored the 1585 attempt to settle in Virginia?
 A: Raleigh
 Accept: Walter Raleigh; Sir Walter Raleigh
 Ref: B4.3.4

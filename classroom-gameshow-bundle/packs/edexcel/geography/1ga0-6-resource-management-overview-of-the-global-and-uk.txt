@@ -135,11 +135,12 @@ Accept: Higher-income; HICs; Richer
 Ref: 6.2
 D: 1
 
-Q: Name the group of countries whose people typically consume the most energy per person.
-A: High-income countries
-Accept: HICs; Developed countries; Richer countries
+Q: Is the east or the west of the UK generally drier, with less rainfall?
+A: East
+Accept: Eastern UK; Eastern side
 Ref: 6.2
 D: 2
+Note: Prevailing south-westerly winds bring most rain to the west and uplands.
 
 Q: Why do high-income countries tend to consume more energy per person?
 A: More industry, transport and appliances
@@ -170,7 +171,7 @@ Accept: Water scarcity
 Ref: 6.2
 D: 2
 
-Q: Which fossil fuel is most widely used to generate electricity in the UK today: coal or natural gas?
+Q: Which fossil fuel generates the most of the UK's electricity today?
 A: Natural gas
 Accept: Gas
 Ref: 6.2
@@ -230,7 +231,7 @@ Ref: 6.2
 D: 3
 
 Q: Why is global water supply uneven even though rain falls everywhere?
-A: Rainfall and population distribution differ
-Accept: Climate varies; wet and dry regions
+A: Rainfall varies between regions
+Accept: Climate varies; wet and dry regions; some areas are dry
 Ref: 6.2
 D: 3

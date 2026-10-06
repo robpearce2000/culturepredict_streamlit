@@ -128,7 +128,7 @@ Ref: 32.2.1
 D: 2
 
 Q: Why did Mao move from voluntary to enforced collectivisation in 1955-56?
-A: Grain was needed to feed towns and fund industry
+A: To feed towns and fund industry
 Accept: Not enough grain was being produced; to increase grain output; to feed industry and cities
 Ref: 32.2.1
 D: 3
@@ -145,9 +145,9 @@ Accept: Coal, iron and steel
 Ref: 32.2.2
 D: 1
 
-Q: Which area of the economy did the first Five-Year Plan largely neglect?
-A: Consumer goods and agriculture
-Accept: Agriculture; farming; consumer goods; light industry
+Q: Which two parts of the economy did the first Five-Year Plan largely neglect?
+A: Agriculture and consumer goods
+Accept: Farming and light industry; agriculture and light industry
 Ref: 32.2.2
 D: 3
 
@@ -168,11 +168,11 @@ Accept: Marshal Peng
 Ref: 32.2.3
 D: 2
 
-Q: What was the significance of the Lushan Conference for Mao's critics?
-A: Criticising Mao became dangerous
-Accept: Critics were purged; Mao crushed opposition; the Great Leap Forward was continued
+Q: Which general replaced Peng Dehuai as defence minister after the Lushan Conference?
+A: Lin Biao
+Accept: Marshal Lin
 Ref: 32.2.3
-D: 3
+D: 2
 
 Q: Which Soviet agronomist's false theories led to deep ploughing and close planting in China?
 A: Lysenko
@@ -217,21 +217,26 @@ Accept: The Socialist Education Movement
 Ref: 32.3.1
 D: 2
 
-Q: Why did Mao fear that Liu Shaoqi and Deng Xiaoping were a threat?
-A: They were taking China away from his policies
-Accept: His authority had fallen after the Great Leap; they were gaining power; they were revisionists
+Q: What label did Mao give Liu Shaoqi and Deng Xiaoping, accusing them of wanting to restore capitalism?
+A: Capitalist roaders
+Accept: Capitalist roader; Revisionists; Taking the capitalist road
 Ref: 32.3.1
-D: 3
+D: 2
 
-Q: Which book of Mao's sayings, used for study in schools and the PLA, became a Cultural Revolution symbol?
-A: The Little Red Book
-Accept: Quotations from Chairman Mao; Little Red Book
+Q: In which year did Mao launch the Cultural Revolution?
+A: 1966
 Ref: 32.3.1
 D: 1
 
 Q: In which city's Tiananmen Square did Mao review mass rallies of Red Guards in 1966?
 A: Beijing
 Accept: Peking
+Ref: 32.3.2
+D: 1
+
+Q: Which book of Mao's sayings, used for study in schools and the PLA, became a Cultural Revolution symbol?
+A: The Little Red Book
+Accept: Quotations from Chairman Mao; Little Red Book
 Ref: 32.3.2
 D: 1
 
@@ -283,7 +288,7 @@ Ref: 32.3.4
 D: 1
 
 Q: What was the aim of the campaign 'Up to the mountains and down to the villages'?
-A: To send young people to work in the countryside
+A: To send young people to the countryside
 Accept: Send Red Guards to farm; send students to the countryside
 Ref: 32.3.4
 D: 2
@@ -332,7 +337,7 @@ Q: Foot binding was a traditional practice done to what group, which the CCP con
 A: Girls and women
 Accept: Girls; women; daughters
 Ref: 32.4.2
-D: 2
+D: 1
 
 Q: Why did communal nurseries and canteens change women's lives in the communes?
 A: They freed women to work in the fields
@@ -380,3 +385,21 @@ A: They rivalled loyalty to the party and Mao
 Accept: They were seen as old ideas; they challenged communist ideology; loyalty to the state
 Ref: 32.4.4
 D: 3
+
+Q: Why did Mao launch the Great Leap Forward in 1958?
+A: To industrialise quickly using peasant labour
+Accept: To catch up with Britain and the West; to rapidly boost steel and grain output; to modernise China fast
+Ref: 32.2.3
+D: 3
+
+Q: Why did Mao use the PLA to end the Red Guards' rule in 1968?
+A: Violence and anarchy were out of control
+Accept: Red Guard factions were fighting each other; to restore order; chaos was damaging China
+Ref: 32.3.4
+D: 3
+
+Q: What name was given to the huge farming units created in 1958 where people lived and worked communally?
+A: People's communes
+Accept: Communes; Commune
+Ref: 32.2.3
+D: 2

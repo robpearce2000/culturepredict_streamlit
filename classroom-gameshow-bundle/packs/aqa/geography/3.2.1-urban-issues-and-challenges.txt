@@ -56,11 +56,6 @@ Accept: Young adults; they are of child-bearing age; many young people; people o
 Ref: 3.2.1.1
 D: 3
 
-Q: Name the continent that contains Lagos, Cairo and Kinshasa, some of the world's fastest-growing cities.
-A: Africa
-Ref: 3.2.1.1
-D: 1
-
 Q: Urbanisation in most HICs is now slow because they already have a high proportion of what?
 A: People living in urban areas
 Accept: Urban population; people already in cities; already highly urbanised
@@ -79,12 +74,6 @@ Accept: Favelas
 Ref: 3.2.1.2
 D: 1
 
-Q: Housing, jobs and services in cities attract migrants. What word describes these attractions?
-A: Pull factors
-Accept: Pull; pull factor
-Ref: 3.2.1.2
-D: 2
-
 Q: Why can urban industrial areas stimulate economic development in an LIC or NEE city?
 A: They create jobs and boost incomes
 Accept: Jobs; employment; create jobs; more taxes; wealth; multiplier effect
@@ -92,8 +81,8 @@ Ref: 3.2.1.2
 D: 3
 
 Q: Give one social opportunity of urban growth in an LIC or NEE city.
-A: Better access to healthcare or education
-Accept: Access to schools; access to hospitals; access to clean water; access to electricity; services
+A: Access to healthcare
+Accept: Access to education; access to schools; healthcare or education; access to hospitals; access to clean water; access to electricity; services
 Ref: 3.2.1.2
 D: 2
 
@@ -129,7 +118,7 @@ D: 2
 
 Q: Name the term for low-cost improvements in slum areas carried out with local people, such as better water taps and toilets.
 A: Self-help schemes
-Accept: Self help; self-help scheme; community-led improvement; site and service
+Accept: Self help; self-help scheme; community-led improvement
 Ref: 3.2.1.2
 D: 2
 
@@ -163,7 +152,7 @@ Accept: Commuter town; commuter village; dormitory settlement; commuter settleme
 Ref: 3.2.1.3
 D: 1
 
-Q: Name the capital city of the UK, its largest city and a world city.
+Q: Which UK city is the capital, the largest city and a major world city?
 A: London
 Ref: 3.2.1.3
 D: 1
@@ -192,7 +181,7 @@ Accept: Regeneration
 Ref: 3.2.1.3
 D: 1
 
-Q: Name the 2012 event whose Olympic Park in Stratford, London, was built on former industrial land.
+Q: Which 2012 sporting event led to the regeneration of Stratford in east London?
 A: Olympic Games
 Accept: Summer Olympics; London Olympics; Olympics; London 2012
 Ref: 3.2.1.3
@@ -254,7 +243,7 @@ D: 3
 
 Q: Name one strategy used to reduce traffic congestion in a city centre.
 A: Congestion charge
-Accept: Park and ride; bus lanes; cycle lanes; tram system; pedestrianisation; integrated transport; car sharing; ULEZ; congestion charging
+Accept: Park and ride; bus lanes; cycle lanes; tram system; pedestrianisation; integrated transport; car sharing; congestion charging
 Ref: 3.2.1.4
 D: 2
 

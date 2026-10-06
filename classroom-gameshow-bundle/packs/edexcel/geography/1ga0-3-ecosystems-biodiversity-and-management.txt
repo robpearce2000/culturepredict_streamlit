@@ -24,7 +24,7 @@ Q: Name the tropical grassland ecosystem with scattered trees and distinct wet a
 A: Savanna
 Accept: Savannah
 Ref: 3.1
-D: 2
+D: 1
 
 Q: Why are tropical rainforests found near the equator rather than at high latitudes?
 A: Hot and wet all year
@@ -68,15 +68,15 @@ Accept: Moor; Moors
 Ref: 3.3
 D: 1
 
-Q: Which lowland UK ecosystem with heather, gorse and sandy, acidic soils is known as a heath?
+Q: Name the lowland UK ecosystem of heather, gorse and sandy, acidic soils.
 A: Heathland
 Accept: Heath; Heaths
 Ref: 3.3
 D: 1
 
-Q: Describe how marine ecosystems in UK waters are a resource for people.
-A: They provide fish
-Accept: Fishing; Food; Fish and seafood; Oil and gas; Wind energy
+Q: Name one resource that UK marine ecosystems provide for people.
+A: Fish
+Accept: Fishing; Food; Seafood; Shellfish; Oil and gas; Wind energy
 Ref: 3.3
 D: 2
 
@@ -86,9 +86,9 @@ Accept: Pollution; Plastic pollution; Oil spills; Sewage discharge
 Ref: 3.3
 D: 2
 
-Q: Why do peat bogs and moorlands have thin, acidic soils that few plants can tolerate?
-A: Cool, wet climate slows decay
-Accept: Waterlogged and cold; Slow decomposition; Leaching of nutrients
+Q: Why do moorland soils become acidic and peaty?
+A: Cold, waterlogged conditions slow decay
+Accept: Waterlogged and cold; Slow decomposition; Cool, wet climate
 Ref: 3.3
 D: 3
 
@@ -170,9 +170,9 @@ Accept: Sustainable; Sustainability
 Ref: 3.5
 D: 2
 
-Q: Name the seasonal process in which deciduous trees lose their leaves in autumn.
-A: Leaf fall
-Accept: Shedding leaves; Deciduous; Abscission
+Q: What word describes trees that shed all their leaves each autumn?
+A: Deciduous
+Accept: Deciduous trees
 Ref: 3.6
 D: 1
 
@@ -206,9 +206,9 @@ Accept: Housing; Population growth; Timber extraction; Agricultural change; Farm
 Ref: 3.7
 D: 2
 
-Q: How might climate change threaten deciduous woodlands?
-A: Pests, drought and species change
-Accept: Drought; New diseases; Trees flower or leaf earlier; Changing species mix
+Q: Give one way climate change could threaten deciduous woodlands.
+A: Drought stress
+Accept: Drought; Pests; New diseases; Trees leaf earlier; Changing species mix; Warmer winters
 Ref: 3.7
 D: 3
 
@@ -219,8 +219,8 @@ Ref: 3.7
 D: 3
 
 Q: Explain why deciduous woodland soils are usually more fertile than rainforest soils.
-A: Leaf litter decays and nutrients stay in soil
-Accept: Leaf fall adds nutrients; Less leaching; Cooler climate means slower decay and humus builds up
+A: Leaf litter returns nutrients to the soil
+Accept: Leaf fall adds nutrients; Less leaching; Larger litter store; Humus builds up
 Ref: 3.6
 D: 3
 

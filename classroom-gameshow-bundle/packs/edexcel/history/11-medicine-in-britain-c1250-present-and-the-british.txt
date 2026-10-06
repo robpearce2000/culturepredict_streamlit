@@ -108,7 +108,7 @@ Accept: De Motu Cordis; The Motion of the Heart
 Ref: 11.2.3
 D: 2
 
-Q: According to Galen, which Harvey disproved, what happened to blood once the body had used it?
+Q: According to Galen, what happened to blood once the body had used it?
 A: It was used up
 Accept: Burned up; Consumed; Used up and not recirculated
 Ref: 11.2.3

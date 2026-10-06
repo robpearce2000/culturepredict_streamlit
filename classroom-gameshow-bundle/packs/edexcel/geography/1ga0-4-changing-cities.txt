@@ -86,8 +86,8 @@ Ref: 4.3
 D: 1
 
 Q: Why are land values highest in the CBD?
-A: It is the most accessible place
-Accept: Accessibility; Best accessibility; Best transport links; Most accessible
+A: Greatest accessibility
+Accept: Accessibility; It is the most accessible place; Best accessibility; Best transport links; Most accessible
 Ref: 4.3
 D: 3
 
@@ -199,6 +199,24 @@ Accept: Hills; Granite hills; Granite mountains
 Ref: 4.6
 D: 2
 
+Q: Which industry, based on beaches and carnival, brings many overseas visitors to Rio de Janeiro?
+A: Tourism
+Accept: Tourist industry
+Ref: 4.6
+D: 1
+
+Q: In Rio de Janeiro, are favelas mostly found on steep hillsides or on flat land by the beach?
+A: Steep hillsides
+Accept: Hillsides; Hills; On the hills
+Ref: 4.6
+D: 2
+
+Q: Why do poorer migrants in Rio often build homes on steep hillsides?
+A: Cheap or unused land close to jobs
+Accept: Land is cheap; Unused land; Land nobody owns; Cannot afford elsewhere
+Ref: 4.6
+D: 3
+
 Q: Is the chance of better-paid jobs in a city a push factor or a pull factor?
 A: Pull factor
 Accept: Pull
@@ -269,4 +287,4 @@ Q: Which Brazilian government scheme pays cash to poor families if children atte
 A: Bolsa Familia
 Accept: Bolsa Familia programme; Bolsa Família
 Ref: 4.8
-D: 3
+D: 2

@@ -24,9 +24,9 @@ A: Active layer
 Ref: 3.1.2.4.1
 D: 2
 
-Q: Roughly what is the average temperature in the warmest month of the tundra?
-A: Below 10°C
-Accept: Under 10 degrees; about 5-10°C; cold
+Q: In tundra, average temperatures in the warmest month stay below about what value?
+A: 10°C
+Accept: Below 10°C; under 10 degrees; 10 degrees
 Ref: 3.1.2.4.1
 D: 2
 
@@ -36,15 +36,15 @@ Accept: Frozen ground is impermeable; permafrost blocks drainage; water cannot s
 Ref: 3.1.2.4.1
 D: 3
 
-Q: Why do tundra soils contain little organic matter and few nutrients?
+Q: Why are tundra soils low in nutrients?
 A: Cold slows decomposition
 Accept: Low temperatures slow decay; slow decomposition; little plant growth
 Ref: 3.1.2.4.1
 D: 3
 
-Q: Name one type of plant found in the tundra, other than trees.
-A: Any one of: moss, lichen, sedge, dwarf shrub
-Accept: Moss; lichens; grasses; sedges; low shrubs; dwarf willow
+Q: Name the tundra organism made of a fungus and an alga that grows on rocks.
+A: Lichen
+Accept: Lichens
 Ref: 3.1.2.4.1
 D: 2
 
@@ -54,7 +54,13 @@ Accept: Avoid wind; keep warm; thin soil; short growing season; shallow roots
 Ref: 3.1.2.4.1
 D: 3
 
-Q: Name the white-furred Arctic predator that has thick fat and fur to adapt to the cold.
+Q: Why can trees not grow in most tundra areas?
+A: Permafrost prevents deep roots
+Accept: Roots cannot penetrate frozen ground; too cold; short growing season; shallow active layer
+Ref: 3.1.2.4.1
+D: 3
+
+Q: Which large white bear is the top predator of the Arctic sea ice?
 A: Polar bear
 Ref: 3.1.2.4.1
 D: 1
@@ -83,9 +89,9 @@ Accept: Few species can survive; extreme cold; short growing season; low tempera
 Ref: 3.1.2.4.1
 D: 3
 
-Q: Climate change is warming cold environments faster than most places. Name one effect on permafrost.
-A: It thaws
-Accept: Melts; thawing permafrost; releases methane; ground collapses
+Q: What happens to permafrost as the climate warms?
+A: Thaws
+Accept: Melts; thawing; ground collapses
 Ref: 3.1.2.4.1
 D: 2
 
@@ -95,21 +101,21 @@ Accept: CH4; carbon dioxide; CO2
 Ref: 3.1.2.4.1
 D: 2
 
+Q: Name the indigenous people of northern Scandinavia who traditionally herd reindeer.
+A: Sami
+Accept: Saami; Sámi; Lapps
+Ref: 3.1.2.4.1
+D: 1
+
 Q: Name the energy resource extracted from the Alaskan North Slope, a tundra area.
 A: Oil
 Accept: Crude oil; petroleum; oil and gas
 Ref: 3.1.2.4.2
 D: 1
 
-Q: Name the type of development opportunity in cold environments that involves extracting oil, gas or coal.
-A: Energy
-Accept: Energy extraction; mineral extraction; oil and gas
-Ref: 3.1.2.4.2
-D: 1
-
-Q: Name one valuable mineral often mined in cold environments.
-A: Any one of: gold, iron ore, coal, copper
-Accept: Gold; iron ore; coal; copper; zinc; diamonds
+Q: Name one metal mined in cold environments such as Alaska and Siberia.
+A: Gold
+Accept: Iron ore; iron; copper; zinc; lead; nickel; silver
 Ref: 3.1.2.4.2
 D: 1
 
@@ -119,17 +125,17 @@ Accept: Commercial fishing
 Ref: 3.1.2.4.2
 D: 1
 
-Q: Name the tourism type that attracts visitors to cold environments to see wilderness, wildlife and glaciers.
-A: Wilderness tourism
+Q: Which economic activity brings visitors to cold environments to see glaciers, wildlife and the northern lights?
+A: Tourism
 Accept: Ecotourism; adventure tourism; cruise tourism
 Ref: 3.1.2.4.2
 D: 2
 
-Q: Give one reason that extreme low temperatures make development difficult in cold environments.
-A: Machinery and workers struggle in cold
-Accept: Equipment fails; frozen fuel; frostbite; materials crack; hard to work outside
+Q: Name one health risk to workers caused by extreme low temperatures.
+A: Frostbite
+Accept: Hypothermia; cold injury
 Ref: 3.1.2.4.2
-D: 2
+D: 1
 
 Q: Why is it difficult to reach many cold environments?
 A: Remote, with ice and snow blocking transport
@@ -155,12 +161,6 @@ Accept: Stop permafrost thawing; avoid subsidence; let animals pass beneath
 Ref: 3.1.2.4.2
 D: 3
 
-Q: Name the term for ground that stays frozen all year, which pipelines and buildings must not melt.
-A: Permafrost
-Accept: Frozen ground
-Ref: 3.1.2.4.2
-D: 2
-
 Q: What term describes a remote natural area little affected by human activity?
 A: Wilderness
 Accept: Wilderness area
@@ -173,11 +173,11 @@ Accept: Easily damaged; low growth rates; slow recovery; easily disturbed
 Ref: 3.1.2.4.3
 D: 3
 
-Q: Why does vegetation take a very long time to recover after damage in the tundra?
-A: Short growing season and cold
-Accept: Slow growth; low temperatures; slow decomposition; poor soils
+Q: Name the samples drilled from Antarctic ice that scientists study to learn about past climates.
+A: Ice cores
+Accept: Ice core
 Ref: 3.1.2.4.3
-D: 3
+D: 2
 
 Q: Name the 1959 international agreement that sets Antarctica aside for peace and science.
 A: Antarctic Treaty
@@ -187,13 +187,13 @@ D: 1
 
 Q: Name the international agreement of 1991 that bans mineral extraction in Antarctica.
 A: Madrid Protocol
-Accept: Protocol on Environmental Protection; Antarctic Treaty
+Accept: Protocol on Environmental Protection; Environmental Protocol
 Ref: 3.1.2.4.3
 D: 2
 
 Q: Name one conservation group that campaigns to protect cold environments.
 A: Greenpeace
-Accept: WWF; World Wide Fund for Nature; Friends of the Earth; Arctic Council
+Accept: WWF; World Wide Fund for Nature; Friends of the Earth
 Ref: 3.1.2.4.3
 D: 1
 
@@ -203,21 +203,20 @@ Accept: National parks; set regulations; licences; limit visitors; fines; protec
 Ref: 3.1.2.4.3
 D: 2
 
-Q: Give one way technology can reduce the environmental impact of oil extraction in cold areas.
-A: Directional drilling or smaller drilling pads
-Accept: Raised pipelines; ice roads; horizontal drilling; leak detection; remote sensing
+Q: Why is directional drilling, which reaches several wells from one pad, less damaging to tundra?
+A: Smaller surface footprint
+Accept: Fewer sites; less land disturbed; fewer pads; less habitat lost
 Ref: 3.1.2.4.3
 D: 3
 
 Q: Why are ice roads used in some oil fields in the Arctic?
-A: They melt in summer leaving little damage
-Accept: No permanent damage; temporary; protect tundra; avoid building roads
+A: Temporary, so tundra is protected
+Accept: Melt in summer; no permanent damage; avoid building roads; little damage
 Ref: 3.1.2.4.3
 D: 3
 
-Q: Name the term for tourism managed to protect the environment and local people, used in Antarctica.
+Q: What term describes tourism managed to protect the environment for future generations?
 A: Sustainable tourism
 Accept: Ecotourism; managed tourism; controlled tourism
 Ref: 3.1.2.4.3
 D: 2
-

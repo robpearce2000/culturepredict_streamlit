@@ -23,18 +23,18 @@ Q: Why did Columbus sail west across the Atlantic in 1492?
 A: To find a route to Asia
 Accept: To reach the Indies; To reach Asia; To find a western route to the East
 Ref: P1.1.1
-D: 2
+D: 3
 
 Q: Give one problem Columbus faced on his first voyage, such as the crew's fear when no land was seen for weeks.
 A: Crew unrest or fear of mutiny
 Accept: Mutiny; Fear; Long time without sight of land; Crew wanted to turn back
 Ref: P1.1.1
-D: 3
+D: 2
 Note: Accept any sensible problem linked to the unknown, very long voyage.
 
 Q: In which island group did Columbus first make landfall in 1492?
 A: The Bahamas
-Accept: Bahamas; San Salvador
+Accept: Bahamas
 Ref: P1.1.2
 D: 1
 
@@ -50,7 +50,7 @@ Accept: Taino; Tainos
 Ref: P1.1.2
 D: 2
 
-Q: What did Columbus hope to find in large amounts that made him want to return to the Caribbean?
+Q: Which precious metal, found in small amounts among the Tainos, drew Spanish interest to the Caribbean?
 A: Gold
 Ref: P1.1.2
 D: 1
@@ -142,11 +142,11 @@ Ref: P1.2.2
 D: 2
 
 Q: Give one reason why Cortes could defeat the much larger Aztec empire.
-A: Native allies or disease or weapons
-Accept: Allies; Smallpox; Disease; Horses and guns; Hatred of the Aztecs by subject peoples
+A: Indigenous allies
+Accept: Native allies; Tlaxcalan allies; Allies; Smallpox; Disease; Horses and guns; Hatred of the Aztecs by subject peoples
 Ref: P1.2.2
 D: 3
-Note: Accept any one of: Indigenous allies, smallpox, superior weapons or Aztec enemies.
+Note: Also accept smallpox, superior weapons or hatred of the Aztecs by subject peoples.
 
 Q: Which Spanish king and Holy Roman Emperor made Cortes Governor and Captain-General of New Spain?
 A: Charles V
@@ -230,11 +230,11 @@ Accept: The Council of the Indies
 Ref: P1.3.3
 D: 2
 
-Q: Name one American food or crop, such as the potato, that was brought to Spain from the Americas.
-A: Potatoes
-Accept: Tomatoes; Maize; Chocolate; Cocoa; Tobacco; Potato; Tomato
+Q: From which continent did Spanish settlers import enslaved labour once Indigenous numbers in the Caribbean collapsed?
+A: Africa
+Accept: West Africa
 Ref: P1.3.3
-D: 1
+D: 2
 
 Q: Why did the flow of American silver cause problems for Spain's economy?
 A: It caused inflation

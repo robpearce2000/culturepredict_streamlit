@@ -24,11 +24,11 @@ Q: What kind of pressure is found at about 30 degrees north and south, where air
 A: High pressure
 Accept: High pressure belt
 Ref: 2.1
-D: 2
+D: 1
 
 Q: Why does sinking air at about 30 degrees latitude usually bring dry, cloud-free weather?
-A: Sinking air warms and holds its moisture
-Accept: Sinking air warms so no condensation; No cloud forms
+A: Warming sinking air stops condensation
+Accept: Sinking air warms so no cloud forms; Air warms as it sinks
 Ref: 2.1
 D: 3
 
@@ -74,6 +74,12 @@ Accept: Dust in atmosphere reflects sunlight; Ash blocks the Sun
 Ref: 2.2
 D: 3
 
+Q: Sunspot cycles are linked to which natural cause of climate change?
+A: Variation in the Sun's output
+Accept: Solar variation; Solar activity; Changes in solar energy
+Ref: 2.2
+D: 2
+
 Q: Pollen preserved in layers of peat is used as evidence of what in the past?
 A: Past vegetation and climate
 Accept: Climate; Plant types; Vegetation
@@ -92,17 +98,17 @@ Accept: CH4
 Ref: 2.3
 D: 1
 
-Q: What name is given to the extra warming caused by human release of greenhouse gases?
-A: Enhanced greenhouse effect
-Accept: Enhanced greenhouse effect
+Q: Melting land ice and warming oceans cause what change to global sea level?
+A: Rising sea level
+Accept: Sea level rises; Rising sea levels; Thermal expansion and melting ice
 Ref: 2.3
 D: 2
 
-Q: How does melting land ice and warming oceans cause coastal flooding risks to increase?
-A: Sea level rises
-Accept: Rising sea levels; Thermal expansion and melting ice
+Q: What is happening to most of the world's mountain glaciers as temperatures rise?
+A: Retreating
+Accept: They are retreating; Shrinking; Melting
 Ref: 2.3
-D: 2
+D: 1
 
 Q: Why does the enhanced greenhouse effect warm the atmosphere?
 A: Extra gases trap more heat
@@ -128,15 +134,15 @@ Accept: Gulf Stream; North Atlantic Current
 Ref: 2.4
 D: 1
 
-Q: Is the west or east of the UK generally wetter?
-A: West
-Accept: The west; Western UK
-Ref: 2.4
-D: 2
-
 Q: Why do upland areas in the west of the UK receive so much relief rainfall?
 A: Moist south-west winds are forced to rise
 Accept: Winds from the Atlantic rise over hills; Air rises and cools over mountains
+Ref: 2.4
+D: 3
+
+Q: Why can the UK's maritime location make its winters milder than inland places at the same latitude?
+A: Sea stays warmer than land in winter
+Accept: The Atlantic warms the air; Sea loses heat slowly; Warm ocean currents
 Ref: 2.4
 D: 3
 
@@ -153,8 +159,8 @@ Ref: 2.4
 D: 2
 
 Q: Why is the south of the UK generally warmer than the north?
-A: It is closer to the equator
-Accept: Lower latitude; Sun's rays are stronger
+A: Lower latitude, so stronger sunlight
+Accept: Closer to the equator; Sun's rays are stronger
 Ref: 2.4
 D: 3
 
@@ -177,8 +183,8 @@ Ref: 2.5
 D: 2
 
 Q: Why do tropical cyclones lose strength when they move over land?
-A: They lose their supply of warm moist air
-Accept: No warm water to supply energy; Cut off from heat and moisture
+A: Loss of warm, moist air supply
+Accept: Cut off from warm water; No warm water to supply energy; Cut off from heat and moisture
 Ref: 2.5
 D: 3
 
@@ -224,12 +230,6 @@ Accept: Less money for defences and evacuation; Weaker buildings and poor warnin
 Ref: 2.6
 D: 3
 
-Q: What do forecasters use to track a tropical cyclone's path and warn people in its way?
-A: Satellite images
-Accept: Satellites; Satellite
-Ref: 2.6
-D: 2
-
 Q: Which type of drought is a long period of below-average rainfall?
 A: Meteorological
 Accept: Meteorological drought
@@ -265,12 +265,7 @@ A: 250 mm
 Accept: Less than 250; About 250
 Ref: 2.7
 D: 2
-
-Q: How does drought directly affect crop yields?
-A: Yields fall
-Accept: Crops fail; Lower yields; Crops die
-Ref: 2.8
-D: 1
+Note: Definitions vary; about 250 mm per year is the usual textbook figure.
 
 Q: Which developed country suffered the long Millennium Drought in the 2000s?
 A: Australia
@@ -283,21 +278,14 @@ Accept: Water restrictions; Water rationing; Hosepipe bans
 Ref: 2.8
 D: 2
 
-Q: Which East African country suffered a severe drought and famine in 2011 and again in 2022?
-A: Somalia
-Accept: Kenya
-Ref: 2.8
-D: 2
-Note: Both Somalia and Kenya were badly affected; either is acceptable.
-
 Q: Why are the impacts of drought usually more severe in developing than developed countries?
-A: Less water storage and food aid access
+A: Less money for water storage and irrigation
 Accept: Reliance on rain-fed farming; Poorer infrastructure; Less money for irrigation
 Ref: 2.8
 D: 3
 
-Q: What do aid organisations commonly deliver to people during a severe drought?
-A: Food and water
-Accept: Food aid; Water supplies; Emergency aid
+Q: What name is given to supplying crops with water through channels, pipes or sprinklers?
+A: Irrigation
+Accept: Irrigating
 Ref: 2.8
 D: 1

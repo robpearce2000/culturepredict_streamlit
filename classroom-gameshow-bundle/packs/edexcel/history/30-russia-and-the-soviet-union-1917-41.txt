@@ -94,7 +94,7 @@ Q: Which Bolshevik leader organised the seizure of power through the Military Re
 A: Trotsky
 Accept: Leon Trotsky
 Ref: 30.1.4
-D: 3
+D: 2
 
 Q: Which 1917 Bolshevik decree gave land to the peasants?
 A: Decree on Land

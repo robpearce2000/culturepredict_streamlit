@@ -30,23 +30,17 @@ Accept: Resistant to erosion; harder rocks
 Ref: 1.1
 D: 3
 
-Q: Name the rock type formed when magma cools and solidifies.
-A: Igneous
-Ref: 1.1
-D: 2
-
 Q: Which human activity of clearing woodland for crops and livestock has shaped many UK lowland landscapes?
 A: Agriculture
 Accept: Farming
 Ref: 1.2
 D: 1
 
-Q: Name one glacial process that has shaped many UK upland landscapes.
-A: Erosion or deposition by ice
-Accept: Glacial erosion; glacial deposition; glaciation; ice erosion
+Q: Which type of erosion by moving ice has shaped many UK upland valleys?
+A: Glacial erosion
+Accept: Erosion by ice; glaciation
 Ref: 1.2
 D: 2
-Note: Accept either glacial erosion or glacial deposition.
 
 Q: What name is given to the time since the last ice age, when rivers and slopes have reshaped the landscape?
 A: Post-glacial
@@ -54,11 +48,11 @@ Accept: Postglacial; after the ice age
 Ref: 1.2
 D: 2
 
-Q: How does human settlement change a landscape over time?
-A: Replaces natural land with buildings and roads
-Accept: Urbanisation; builds on land; land use change
+Q: Which term describes the growth of towns and cities over rural land?
+A: Urbanisation
+Accept: Urban growth; urban sprawl
 Ref: 1.2
-D: 3
+D: 1
 
 Q: Which human activity involves planting and harvesting trees, changing the look of many UK uplands?
 A: Forestry
@@ -109,17 +103,18 @@ Accept: Upper; upper course
 Ref: 1.7
 D: 2
 
-Q: Why is sediment in the upper course of a river typically larger and more angular than in the lower course?
-A: Less attrition so far; fewer transport miles
-Accept: Not yet worn down by attrition; has travelled less far
+Q: Why is sediment in a river's upper course larger and more angular?
+A: Less worn down by attrition
+Accept: Has travelled less far; not yet eroded
 Ref: 1.7
 D: 3
 
-Q: Name the mass movement process in which a section of a river bank collapses by slumping.
+Q: Which mass movement involves a river bank slipping downhill along a curved surface?
 A: Slumping
-Accept: Slump; sliding
+Accept: Slump
 Ref: 1.7
 D: 2
+Note: Sliding is movement along a straight surface; slumping is rotational.
 
 Q: Why does a river's discharge increase downstream?
 A: More tributaries add water
@@ -127,14 +122,45 @@ Accept: More water from tributaries and surface runoff; larger catchment
 Ref: 1.7
 D: 3
 
-Q: What name is given to the amount of water passing a point in a river each second?
+Q: What name is given to the volume of water passing a point in a river each second?
 A: Discharge
+Accept: River discharge
 Ref: 1.7
-D: 2
+D: 1
 
 Q: How does a long period of drought affect river processes?
 A: Lower discharge, so less erosion and transport
 Accept: Reduced erosion; less energy; river carries less
+Ref: 1.7
+D: 3
+
+Q: Which weathering process breaks rock as water freezes in cracks, expands and thaws repeatedly?
+A: Freeze-thaw
+Accept: Freeze thaw; frost shattering; freeze-thaw weathering
+Ref: 1.7
+D: 1
+
+Q: Which type of weathering involves slightly acidic rainwater reacting with rocks such as limestone?
+A: Chemical weathering
+Accept: Chemical; carbonation
+Ref: 1.7
+D: 2
+
+Q: What cross-section shape is typical of a river valley in its upper course?
+A: V-shaped
+Accept: V-shape; V shaped valley
+Ref: 1.7
+D: 1
+
+Q: In which course of a river is the gradient steepest: upper, middle or lower?
+A: Upper course
+Accept: Upper
+Ref: 1.7
+D: 2
+
+Q: Why can intense rain on already saturated ground cause a river to flood quickly?
+A: Little infiltration, so rapid runoff
+Accept: Water cannot soak in; fast surface runoff; ground cannot absorb more
 Ref: 1.7
 D: 3
 
@@ -154,11 +180,11 @@ Accept: Spurs; interlocking spur
 Ref: 1.8
 D: 1
 
-Q: Which erosion process mostly undercuts the softer rock beneath a waterfall to form a plunge pool?
-A: Hydraulic action and abrasion
-Accept: Abrasion; hydraulic action
+Q: What name is given to the deep hollow at the base of a waterfall?
+A: Plunge pool
+Accept: Plunge-pool
 Ref: 1.8
-D: 2
+D: 1
 
 Q: Name the raised natural banks formed along a river's edge when it floods repeatedly.
 A: Levees
@@ -196,9 +222,9 @@ Accept: Ox-bow lake
 Ref: 1.8
 D: 1
 
-Q: Which type of river defence involves building a wall across a valley to store water?
+Q: Which hard-engineering structure built across a valley holds back river water?
 A: Dam
-Accept: Dams; reservoir
+Accept: Dams
 Ref: 1.9
 D: 1
 
@@ -267,9 +293,26 @@ A: Cauldron Snout
 Ref: 1.10
 D: 2
 
-Q: What kind of landscape does the lower River Tees flow through near its mouth?
-A: Wide, flat flood plain
-Accept: Lowland; estuary; meanders
+Q: Is the landscape around High Force in the upper Tees valley upland or lowland?
+A: Upland
+Accept: Upland landscape
 Ref: 1.10
+D: 1
+
+Q: Why is erosion greatest on the outside of a meander bend?
+A: Water flows faster there
+Accept: Faster current; more energy on the outside
+Ref: 1.8
 D: 3
 
+Q: Why do levees build up beside a river during floods?
+A: Coarse sediment dropped first as flow slows
+Accept: Heaviest material deposited at the edge; water slows when it leaves the channel
+Ref: 1.8
+D: 3
+
+Q: How does a dam and reservoir upstream reduce flood risk downstream?
+A: Stores water and releases it slowly
+Accept: Holds back floodwater; controls discharge
+Ref: 1.9
+D: 3

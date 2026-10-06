@@ -41,12 +41,12 @@ Accept: Fluvioglacial deposits; Glaciofluvial deposits
 Ref: 3.1.3.4.1
 D: 1
 
-Q: Roughly how long ago was the last ice age at its coldest, when ice covered much of the UK?
+Q: Roughly how many years ago did ice cover most of the UK at its maximum extent?
 A: About 20,000 years ago
-Accept: 18,000 to 22,000 years ago; Around 20,000 years ago
+Accept: 18,000 to 27,000 years ago; Around 20,000 years ago; 20 thousand years
 Ref: 3.1.3.4.1
-D: 2
-Note: The last glacial maximum was about 20,000 years ago; ice retreated from about 15,000 years ago.
+D: 1
+Note: Estimates for the UK ice maximum vary between about 27,000 and 20,000 years ago; accept any value in that range.
 
 Q: Describe how freeze-thaw weathering breaks up rock on a mountain slope above a glacier.
 A: Water freezes in cracks, expands, widening them
@@ -119,12 +119,12 @@ D: 1
 Q: Name the type of moraine deposited as a ridge across the valley at the furthest point reached by a glacier.
 A: Terminal moraine
 Ref: 3.1.3.4.2
-D: 2
+D: 1
 
 Q: Name the type of moraine found as a ridge of debris along the side of a glacier.
 A: Lateral moraine
 Ref: 3.1.3.4.2
-D: 2
+D: 1
 
 Q: How does a corrie form, in terms of the ice processes that deepen the hollow?
 A: Plucking, abrasion and rotational slip
@@ -137,16 +137,15 @@ A: Helvellyn
 Ref: 3.1.3.4.2
 D: 2
 
-Q: Give the name of a ribbon lake in the Lake District, such as the one at Windermere.
+Q: Name England's longest lake, a ribbon lake in the Lake District.
 A: Windermere
-Accept: Ullswater; Coniston Water; Derwentwater; Buttermere
+Accept: Lake Windermere
 Ref: 3.1.3.4.2
 D: 2
-Note: Several lakes are ribbon lakes; accept any named Lake District ribbon lake.
 
 Q: Explain why a glacial trough is U-shaped rather than V-shaped like a river valley.
-A: Glacier erodes sides and floor widely with abrasion
-Accept: Ice is thick and erodes sideways and downwards
+A: Thick ice erodes sideways as well as downwards
+Accept: Ice is thick and widens the valley; Glacier erodes both sides and floor
 Ref: 3.1.3.4.2
 D: 3
 
@@ -164,16 +163,15 @@ D: 3
 
 Q: Name the economic activity, other than tourism, farming or forestry, that takes rock from glaciated uplands.
 A: Quarrying
-Accept: Mining
 Ref: 3.1.3.4.3
-D: 2
+D: 1
 
 Q: Which economic activity brings the most visitors and money to the Lake District?
 A: Tourism
 Ref: 3.1.3.4.3
 D: 1
 
-Q: Name the Lake District body that is a national park authority, set up to protect the landscape.
+Q: Which organisation manages the Lake District National Park and aims to protect its landscape?
 A: Lake District National Park Authority
 Accept: National Park Authority; LDNPA
 Ref: 3.1.3.4.3
@@ -203,7 +201,7 @@ Accept: Path repair; Signs; Footpath restoration; Stone pitching; Zoning
 Ref: 3.1.3.4.3
 D: 2
 
-Q: Give one way traffic congestion in the Lake District can be managed.
+Q: Give one way traffic congestion in a popular National Park can be managed.
 A: Park and ride
 Accept: Bus services; Cycle paths; Parking charges; Speed limits
 Ref: 3.1.3.4.3
@@ -233,9 +231,9 @@ Accept: To keep the landscape for future generations
 Ref: 3.1.3.4.3
 D: 3
 
-Q: Name the range of mountains in the north west of England, which includes Helvellyn.
+Q: Name the upland area of north-west England that contains Helvellyn and Scafell Pike.
 A: Lake District
-Accept: Cumbrian Mountains; Cumbria
+Accept: The Lakes; Lakeland; Cumbrian Mountains
 Ref: 3.1.3.1.1
 D: 1
 
@@ -250,7 +248,7 @@ Accept: Severn
 Ref: 3.1.3.1.1
 D: 1
 
-Q: Which parts of the UK are mostly upland: the north and west, or the south and east?
+Q: In which two compass directions of the UK do most upland areas lie?
 A: North and west
 Accept: North west
 Ref: 3.1.3.1.1

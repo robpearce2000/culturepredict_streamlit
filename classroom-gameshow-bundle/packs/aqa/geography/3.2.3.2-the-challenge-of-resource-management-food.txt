@@ -54,11 +54,11 @@ Accept: Flooding; Extreme weather; Climate change; Pests; Disease; Frost
 Ref: 3.2.3.2.1
 D: 1
 
-Q: How can the use of modern technology such as machinery and fertiliser affect food supply?
-A: Increases it
-Accept: Increases yields; Raises food production; Improves it
+Q: Explain how modern technology such as fertiliser and machinery raises food supply.
+A: Higher yields and faster, larger-scale farming
+Accept: Increases yields; Adds nutrients to soil; Farms more land; Raises food production
 Ref: 3.2.3.2.1
-D: 2
+D: 3
 
 Q: Explain how armed conflict can reduce food supply in a region.
 A: Farmers flee or fields are destroyed
@@ -84,11 +84,11 @@ Accept: Riots; Protests; Unrest; Hunger; Conflict
 Ref: 3.2.3.2.1
 D: 2
 
-Q: How can food shortages and rising prices lead to political problems?
-A: Protests, riots or unrest
-Accept: Social unrest; Conflict; Riots; Political instability
+Q: Which type of country, HIC or LIC, generally has the lowest daily calorie intake per person?
+A: LIC
+Accept: Low income country; Low-income countries; Poorer countries
 Ref: 3.2.3.2.1
-D: 3
+D: 2
 
 Q: What general term describes organisms such as locusts and insects that damage crops?
 A: Pests
@@ -119,7 +119,7 @@ D: 1
 
 Q: What name is given to the introduction of high-yielding crop varieties, fertilisers and irrigation from the 1960s onwards?
 A: Green revolution
-Accept: The green revolution
+Accept: The green revolution; The new green revolution; New green revolution
 Ref: 3.2.3.2.2
 D: 2
 
@@ -128,6 +128,12 @@ A: Biotechnology
 Accept: Genetic modification; GM crops
 Ref: 3.2.3.2.2
 D: 1
+
+Q: Explain one reason why new green revolution seeds can be costly for poor farmers.
+A: Seeds and fertiliser must be bought
+Accept: Need fertiliser and pesticides; Need irrigation; Cannot save seed; Expensive GM seed
+Ref: 3.2.3.2.2
+D: 3
 
 Q: Name the type of low-cost technology that suits local skills, money and resources.
 A: Appropriate technology
@@ -147,14 +153,14 @@ Ref: 3.2.3.2.2
 D: 1
 
 Q: Give one advantage of the large-scale greenhouse farming at Almeria in Spain.
-A: Jobs and year-round food
-Accept: Employment; Exports; Economic growth; Year-round crops; Higher yields
+A: Jobs
+Accept: Year-round food; Employment; Exports; Economic growth; Year-round crops; Higher yields
 Ref: 3.2.3.2.2
 D: 2
 
 Q: Give one disadvantage of the large-scale greenhouse farming at Almeria in Spain.
-A: Water shortage or plastic waste
-Accept: Depletes groundwater; Plastic pollution; Low pay; Poor working conditions; Habitat loss
+A: Groundwater depletion
+Accept: Water shortage; Uses too much water; Plastic waste; Plastic pollution; Low pay; Poor working conditions; Habitat loss
 Ref: 3.2.3.2.2
 D: 3
 
@@ -171,9 +177,9 @@ D: 1
 
 Q: What term describes growing food in towns and cities, for example on rooftops or in community gardens?
 A: Urban farming
-Accept: Urban agriculture; Urban farming initiatives; Allotments
+Accept: Urban agriculture; Urban farming initiatives; City farming
 Ref: 3.2.3.2.2
-D: 2
+D: 1
 
 Q: Why does eating seasonal food help make food supply more sustainable?
 A: Less transport and energy use

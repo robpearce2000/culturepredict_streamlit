@@ -42,9 +42,9 @@ A: Food security
 Ref: 5.1
 D: 1
 
-Q: Name the term for the gap in development and wealth between richer and poorer places.
+Q: Name the term for the difference in level of development between richer and poorer countries.
 A: Development gap
-Accept: Uneven development; Inequality
+Accept: Uneven development; Global inequality
 Ref: 5.2
 D: 1
 
@@ -78,17 +78,10 @@ Accept: No ports; Harder to trade
 Ref: 5.2
 D: 3
 
-Q: Name the type of physical hazard, such as drought or earthquakes, that can hold back a country's development.
-A: Natural hazards
-Accept: Natural disasters; Hazards
-Ref: 5.2
-D: 2
-
-Q: Name the term for a lack of access to enough clean water for health and farming.
-A: Water insecurity
-Accept: Water stress; Water scarcity
+Q: Name the term for people having reliable access to enough safe water for drinking, hygiene and farming.
+A: Water security
 Ref: 5.3
-D: 2
+D: 1
 
 Q: Why does poor access to education often keep people in poverty?
 A: Fewer skills and job opportunities
@@ -96,9 +89,9 @@ Accept: Low skilled jobs; Low pay
 Ref: 5.3
 D: 3
 
-Q: Name the shortage of safe homes that leaves people living in informal settlements.
-A: Housing shortage
-Accept: Poor housing; Slums
+Q: Name the type of poor-quality, informally built housing found on the edges of cities in poorer countries.
+A: Slum
+Accept: Slums; Shanty town; Informal settlement; Squatter settlement; Favela
 Ref: 5.3
 D: 2
 
@@ -125,6 +118,12 @@ A: Multilateral aid
 Accept: Multilateral
 Ref: 5.4
 D: 2
+
+Q: What do the letters TNC stand for in development?
+A: Transnational corporation
+Accept: Transnational company; Multinational corporation
+Ref: 5.4
+D: 1
 
 Q: Name the type of development led by governments or TNCs, usually large and expensive.
 A: Top-down
@@ -162,7 +161,7 @@ Accept: Primary
 Ref: 5.6
 D: 1
 
-Q: Name the economic sector that makes goods, such as manufacturing.
+Q: Name the economic sector that turns raw materials into products, for example in factories.
 A: Secondary sector
 Accept: Secondary
 Ref: 5.6
@@ -190,13 +189,19 @@ Q: Describe what a growing middle class usually does to a developing economy.
 A: Raises spending and demand for goods
 Accept: Increases consumption; More spending
 Ref: 5.6
-D: 3
+D: 2
 
 Q: Why does life expectancy usually rise as a country develops?
 A: Better healthcare, diet and sanitation
 Accept: Improved health care; Cleaner water
 Ref: 5.6
 D: 3
+
+Q: Name the term for the gap between rich and poor people within a country.
+A: Inequality
+Accept: Income inequality
+Ref: 5.6
+D: 1
 
 Q: Name the term for a population with a large share of people over retirement age.
 A: Ageing population
@@ -214,6 +219,12 @@ Q: Name the term for goods and services sold to other countries.
 A: Exports
 Accept: Exporting
 Ref: 5.6
+D: 1
+
+Q: Name the term for a government's plan for how it deals with other countries.
+A: Foreign policy
+Accept: Foreign policies
+Ref: 5.7
 D: 1
 
 Q: Name the term for an agreement between countries to defend one another.
@@ -269,14 +280,8 @@ Accept: Cut congestion; Cut emissions
 Ref: 5.8
 D: 3
 
-Q: Name the term for the gap between rich and poor people within a country.
-A: Inequality
-Accept: Income inequality
-Ref: 5.6
-D: 2
-
 Q: Name the term for a country with fast-growing industry and rising incomes but not yet fully developed.
-A: Newly emerging economy
-Accept: Emerging country; Emerging economy; NEE
+A: Emerging country
+Accept: Emerging economy; Newly emerging economy; NEE
 Ref: 5.6
 D: 2

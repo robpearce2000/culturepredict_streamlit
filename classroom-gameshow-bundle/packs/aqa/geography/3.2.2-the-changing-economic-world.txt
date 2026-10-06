@@ -38,8 +38,8 @@ D: 3
 Note: Accept any sensible point that GNI is a single average figure.
 
 Q: Why is the death rate falling but birth rate still high in Stage 2 of the Demographic Transition Model?
-A: Better healthcare and water; no birth control
-Accept: Improved medicine and sanitation; lack of contraception; need for children to work
+A: Better healthcare and water; little contraception
+Accept: Improved medicine and sanitation; lack of contraception; no birth control; need for children to work
 Ref: 3.2.2.1
 D: 3
 
@@ -49,11 +49,12 @@ Accept: Two; 2
 Ref: 3.2.2.1
 D: 2
 
-Q: Which two stages of the Demographic Transition Model are typical of most HICs?
-A: Stages 4 and 5
-Accept: 4 and 5; four and five; late stage 3 to 5
+Q: At which stage of the Demographic Transition Model are birth rate and death rate both low?
+A: Stage 4
+Accept: Four; 4
 Ref: 3.2.2.1
 D: 2
+Note: Stage 5 is also low, but birth rate is falling below death rate there; Stage 4 is the usual answer.
 
 Q: A country with a cold climate, poor soil and no coastline is at a physical disadvantage. What type of cause of uneven development is this?
 A: Physical
@@ -68,25 +69,24 @@ Ref: 3.2.2.1
 D: 1
 
 Q: Explain why reliance on exporting primary products can keep an LIC poor.
-A: Low prices and prices fluctuate
+A: Low, unstable prices
 Accept: Low value compared with manufactured goods; unstable prices; little added value
 Ref: 3.2.2.1
 D: 3
 
-Q: Name one consequence of uneven development that causes people to move from poorer to richer countries.
+Q: Name the consequence of uneven development in which people leave poorer countries to live in richer ones.
 A: International migration
-Accept: Migration; Wealth and health disparities; seeking jobs
-Ref: 3.2.2.1
-D: 2
-Note: The consequence listed in the specification is international migration.
-
-Q: Which word describes an LIC that is experiencing rapid industrial growth, such as India or Brazil, often shortened to NEE?
-A: Newly emerging economy
-Accept: NEE; Newly emerging economies
+Accept: Migration; emigration
 Ref: 3.2.2.1
 D: 1
 
-Q: Explain why fairtrade helps farmers in LICs.
+Q: What does NEE stand for in development geography?
+A: Newly emerging economy
+Accept: Newly emerging economies
+Ref: 3.2.2.1
+D: 1
+
+Q: Explain why Fairtrade helps farmers in LICs when world prices fall.
 A: Guaranteed minimum price gives stable income
 Accept: Fair price; secure income; protects from price falls; better wages; community premium
 Ref: 3.2.2.2
@@ -101,12 +101,6 @@ D: 1
 Q: What name is given to money, goods or expertise given by one country or organisation to help another?
 A: Aid
 Accept: International aid; foreign aid
-Ref: 3.2.2.2
-D: 1
-
-Q: Under which scheme do farmers in LICs receive a guaranteed minimum price for their products?
-A: Fairtrade
-Accept: Fair trade
 Ref: 3.2.2.2
 D: 1
 
@@ -219,7 +213,7 @@ Accept: Deindustrialisation; deindustrialization
 Ref: 3.2.2.4
 D: 1
 
-Q: Why did globalisation cause UK manufacturing jobs to decline?
+Q: Explain why many UK manufacturers moved production to countries such as China.
 A: Cheaper labour overseas
 Accept: Lower wages abroad; cheaper production abroad; companies moved factories overseas
 Ref: 3.2.2.4
@@ -244,8 +238,8 @@ Ref: 3.2.2.4
 D: 2
 
 Q: What is a science park?
-A: A site for research and high-tech firms near a university
-Accept: Research and development businesses; high-tech companies linked to universities
+A: Site for research and high-tech firms
+Accept: Research and development businesses; high-tech companies linked to universities; research park
 Ref: 3.2.2.4
 D: 2
 
@@ -255,7 +249,7 @@ Accept: Cheap land; more space; good transport links; less congestion; attractiv
 Ref: 3.2.2.4
 D: 3
 
-Q: Name the type of site, previously used for industry, that can be redeveloped to reduce environmental damage from new building.
+Q: Name the type of previously used industrial site that can be redeveloped to avoid building on countryside.
 A: Brownfield site
 Accept: Brownfield; brown field
 Ref: 3.2.2.4
@@ -273,11 +267,23 @@ Accept: Attracts investment; reduces travel times; improves connections to marke
 Ref: 3.2.2.4
 D: 3
 
-Q: Name one UK high-speed rail project intended to improve links between London and northern cities.
-A: HS2
-Accept: High Speed 2; High Speed Two
+Q: Which new east-west rail line across London, formerly called Crossrail, opened in 2022?
+A: Elizabeth line
+Accept: Crossrail; the Elizabeth line
 Ref: 3.2.2.4
 D: 2
+
+Q: Name the type of rural settlement where many residents travel to a nearby city to work.
+A: Commuter village
+Accept: Commuter settlement; dormitory village; dormitory settlement
+Ref: 3.2.2.4
+D: 1
+
+Q: Why do remote rural areas often lose young adults?
+A: Fewer jobs and services
+Accept: Few job opportunities; poor services; they move to cities for work or study; lack of housing
+Ref: 3.2.2.4
+D: 3
 
 Q: Name the international organisation of mostly former British territories to which the UK belongs.
 A: The Commonwealth

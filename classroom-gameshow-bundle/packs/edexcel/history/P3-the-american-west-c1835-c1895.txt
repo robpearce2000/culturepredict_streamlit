@@ -131,12 +131,6 @@ Accept: Goodnight
 Ref: P3.2.2
 D: 1
 
-Q: What type of cattle, bred in Texas, were driven north on the long drives?
-A: Longhorns
-Accept: Texas longhorns; Longhorn
-Ref: P3.2.2
-D: 1
-
 Q: Why did the cattle industry grow rapidly after 1865 as the railroad network spread?
 A: Cattle could be sent east to meet demand
 Accept: Cattle could be shipped to eastern cities; Railroads carried cattle to markets; Beef was in demand in the East
@@ -215,12 +209,11 @@ Accept: Earp
 Ref: P3.3.2
 D: 1
 
-Q: What surname did Billy the Kid, killed by Sheriff Pat Garrett in 1881, usually use?
-A: Bonney
-Accept: William Bonney; McCarty; Henry McCarty
+Q: Which sheriff shot and killed Billy the Kid in 1881?
+A: Pat Garrett
+Accept: Garrett; Patrick Garrett; Sheriff Garrett
 Ref: P3.3.2
 D: 2
-Note: He was born Henry McCarty; accept either name.
 
 Q: In which US state was the Johnson County War of 1892 fought?
 A: Wyoming

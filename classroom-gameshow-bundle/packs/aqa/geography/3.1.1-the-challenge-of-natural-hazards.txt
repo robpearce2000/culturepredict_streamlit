@@ -114,9 +114,9 @@ Accept: Monitor
 Ref: 3.1.1.2.3
 D: 1
 
-Q: Name one way that buildings in earthquake zones are protected, such as using flexible foundations or cross bracing.
-A: Earthquake-resistant design
-Accept: Cross bracing; Base isolators; Shock absorbers; Flexible foundations; Rubber foundations; Reinforced concrete; Automatic shutters
+Q: Name one design feature that helps a building to withstand an earthquake.
+A: Cross bracing
+Accept: Base isolators; Shock absorbers; Flexible foundations; Rubber foundations; Reinforced concrete; Automatic shutters; Counterweights; Deep foundations
 Ref: 3.1.1.2.3
 D: 2
 
@@ -173,6 +173,12 @@ A: Typhoon
 Ref: 3.1.1.3.2
 D: 1
 
+Q: How might a warming climate change the intensity of tropical storms?
+A: More intense
+Accept: Stronger; Greater intensity; Increase intensity; Higher wind speeds
+Ref: 3.1.1.3.2
+D: 3
+
 Q: Why do tropical storms not form right on the equator?
 A: Not enough Coriolis effect
 Accept: No Coriolis force; Too little spin; Coriolis effect too weak
@@ -204,7 +210,7 @@ Ref: 3.1.1.3.3
 D: 2
 Note: Primary effects are caused directly by the storm; disease that follows is secondary.
 
-Q: Name one secondary effect of a tropical storm, such as disease after flooding.
+Q: Name one secondary effect of a tropical storm on people.
 A: Spread of disease
 Accept: Disease; Food shortages; Landslides; Loss of jobs; Fires; Contaminated water; Homelessness
 Ref: 3.1.1.3.3
@@ -234,15 +240,21 @@ Accept: Low pressure system; Low pressure; Storm; Atlantic depression
 Ref: 3.1.1.3.4
 D: 2
 
+Q: What name is given to a long period of very little rainfall that causes water shortages?
+A: Drought
+Accept: Droughts
+Ref: 3.1.1.3.4
+D: 1
+
 Q: Which low-lying area of southwest England suffered long-lasting floods in winter 2013 to 2014?
 A: Somerset Levels
 Accept: The Somerset Levels; Somerset
 Ref: 3.1.1.3.5
 D: 1
 
-Q: Name one management strategy used to reduce flood risk, such as dredging rivers or building flood barriers.
+Q: What name is given to removing silt from a river bed to increase its capacity and reduce flood risk?
 A: Dredging
-Accept: Flood barriers; Embankments; Flood defences; Flood warnings; Floodplain zoning; Flood storage areas; Pumping
+Accept: Dredge
 Ref: 3.1.1.3.5
 D: 2
 
@@ -252,21 +264,33 @@ Accept: More heatwaves; Wetter winters; More flooding; Warmest years recorded re
 Ref: 3.1.1.3.5
 D: 3
 
+Q: Give one social impact of the 2013 to 2014 floods on the Somerset Levels.
+A: Homes flooded
+Accept: People evacuated; Roads cut off; Villages isolated; Schools closed; Stress; Disruption to transport; People displaced
+Ref: 3.1.1.3.5
+D: 2
+
+Q: What type of weather system brought the repeated heavy rain that caused the Somerset Levels floods?
+A: Depressions
+Accept: Atlantic depressions; Low pressure systems; A series of storms; Series of depressions
+Ref: 3.1.1.3.5
+D: 3
+
 Q: What name is given to the most recent geological period, which began about 2.6 million years ago?
 A: Quaternary
 Accept: Quaternary period
 Ref: 3.1.1.4.1
 D: 1
 
-Q: Name one source of evidence for past climate change, such as ice cores or tree rings.
+Q: Which evidence, drilled from polar ice, records past temperatures and atmospheric gases?
 A: Ice cores
-Accept: Tree rings; Pollen analysis; Pollen; Sea level records; Temperature records; Historical records; Satellite data; Ocean sediments
+Accept: Ice core; Tree rings; Pollen analysis; Pollen; Sea level records; Temperature records; Historical records; Satellite data; Ocean sediments
 Ref: 3.1.1.4.1
 D: 2
 
-Q: Name the natural cause of climate change linked to changes in the Earth's orbit around the Sun.
-A: Orbital changes
-Accept: Milankovitch cycles; Eccentricity; Orbital change
+Q: Name one natural cause of climate change other than changes in the Earth's orbit.
+A: Volcanic activity
+Accept: Volcanic eruptions; Solar output; Sunspots; Changes in solar radiation; Volcanoes
 Ref: 3.1.1.4.1
 D: 2
 

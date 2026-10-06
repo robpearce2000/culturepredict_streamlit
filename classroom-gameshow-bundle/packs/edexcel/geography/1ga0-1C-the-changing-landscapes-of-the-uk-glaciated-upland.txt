@@ -52,11 +52,6 @@ A: Plucking
 Ref: 1.11
 D: 1
 
-Q: Which glacial process wears the valley floor and sides like sandpaper, leaving scratches called striations?
-A: Abrasion
-Ref: 1.11
-D: 2
-
 Q: Name the process by which a glacier drops the material it carries when the ice melts.
 A: Deposition
 Accept: Dropping material
@@ -77,7 +72,7 @@ D: 2
 
 Q: Name the type of weathering in which water freezes in cracks, expands and breaks the rock.
 A: Freeze-thaw
-Accept: Freeze thaw; Frost shattering; Frost action; Mechanical weathering
+Accept: Freeze thaw; Frost shattering; Frost action
 Ref: 1.11
 D: 1
 
@@ -93,16 +88,9 @@ Accept: Frequent freezing and thawing; Temperature crosses freezing point daily
 Ref: 1.11
 D: 3
 
-Q: Does freeze-thaw weathering happen mainly when temperatures stay below freezing all day, or when they cross 0°C?
-A: Cross 0°C
-Accept: Rise and fall around freezing; Fluctuate around 0°C; Day and night variation
-Ref: 1.11
-D: 3
-Note: Needs water to freeze and thaw repeatedly, so a daily (diurnal) cycle around freezing is ideal.
-
-Q: Which type of mass movement involves a saturated layer of soil sliding downhill after heavy rain?
+Q: Rock falls and rock slides are one group of mass movement. Which group involves waterlogged soil flowing or sliding downhill?
 A: Soil movement
-Accept: Soil creep; Mudflow; Landslide; Slide
+Accept: Soil creep; Mudflow; Soil slide; Soil flow
 Ref: 1.11
 D: 2
 
@@ -147,16 +135,16 @@ Ref: 1.12
 D: 1
 
 Q: Why is a glacial trough wider and deeper than the river valley that existed before it?
-A: Glacier's great erosive power
-Accept: Ice is much heavier; Plucking and abrasion are stronger; Glaciers erode sides and floor
+A: Glacier erodes floor and sides more powerfully
+Accept: Plucking and abrasion are stronger; Ice is much heavier; Glacier has more erosive power
 Ref: 1.12
 D: 3
 
-Q: Describe how a corrie forms from a hollow on a mountainside.
-A: Snow gathers, turns to ice, rotates and erodes
-Accept: Rotational slip; Nivation, plucking and abrasion
+Q: Which two erosion processes deepen a mountainside hollow into a corrie?
+A: Plucking and abrasion
+Accept: Abrasion and plucking
 Ref: 1.12
-D: 3
+D: 2
 
 Q: Which type of moraine is a ridge of material marking the furthest point a glacier reached?
 A: Terminal moraine
@@ -182,22 +170,22 @@ Ref: 1.12
 D: 1
 
 Q: Why does a crag and tail have a tail of till behind the rock?
-A: Ice is sheltered and deposits material
-Accept: Rock protects the till; Deposition in its lee
+A: Rock shelters the till from erosion
+Accept: Ice deposits till in the rock's lee; Deposition in its lee; Rock protects the till
 Ref: 1.12
 D: 3
 
-Q: Name the human activity in which sheep and cattle graze, which can reduce vegetation cover and cause soil erosion on hillsides.
-A: Farming
-Accept: Agriculture; Hill farming
+Q: Heavy grazing by sheep strips vegetation from steep hillsides. What problem does this make worse?
+A: Soil erosion
+Accept: Erosion; Increased runoff; Mass movement
 Ref: 1.13
 D: 2
 
-Q: How can planting coniferous forests on upland slopes affect surface runoff?
-A: Reduces it
-Accept: Intercepts rain; Reduces runoff; Slows runoff
+Q: How does planting coniferous forests on upland slopes affect surface runoff?
+A: Reduces runoff
+Accept: Decreases it; Intercepts rain; Slows runoff
 Ref: 1.13
-D: 3
+D: 2
 
 Q: Name one advantage of building reservoirs in glaciated upland valleys.
 A: Water supply for cities
@@ -223,25 +211,26 @@ Accept: The Lake District; Lakeland
 Ref: 1.14
 D: 1
 
-Q: In which country is Snowdonia, a famous glaciated upland?
-A: Wales
-Ref: 1.14
-D: 1
+Q: Why are corries in the UK mostly found on north- and east-facing slopes?
+A: Shade lets snow last through summer
+Accept: Less sunlight; Less melting; Snow survives longer; Sheltered from the sun
+Ref: 1.12
+D: 3
 
 Q: Name the lake in the Lake District which is the longest, formed in a glacial trough.
 A: Windermere
 Ref: 1.14
 D: 2
 
-Q: Why do so many people visit the Lake District, supporting local jobs?
-A: Scenery and recreation
-Accept: Glacial landscape; Walking and water sports; Lakes and mountains
+Q: Why is sheep farming more common than crop growing in the Lake District?
+A: Steep slopes and thin soils
+Accept: Cold, wet climate; Poor soils; Steep land; Upland climate
 Ref: 1.14
 D: 3
 
 Q: Name one human factor that has changed the Lake District landscape.
 A: Tourism
-Accept: Farming; Forestry; Reservoirs; Settlement
+Accept: Farming; Forestry; Reservoirs; Settlement; Quarrying
 Ref: 1.14
 D: 2
 
@@ -260,5 +249,11 @@ D: 3
 Q: Why do terminal moraines often form ridges across a valley?
 A: Glacier stopped and dumped material
 Accept: Ice melted at its furthest point; Deposition at snout
+Ref: 1.12
+D: 3
+
+Q: Why does a tarn form in a corrie once the ice has melted?
+A: Water collects in the deepened hollow
+Accept: Rainwater and meltwater fill the hollow; Corrie floor was overdeepened
 Ref: 1.12
 D: 3

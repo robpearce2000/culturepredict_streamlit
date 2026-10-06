@@ -107,6 +107,12 @@ Accept: Countries fight over resources; Competing for resources; Disputes over s
 Ref: 3.2.3.4.1
 D: 3
 
+Q: Why might a country with few fossil fuel reserves have an insecure energy supply?
+A: Relies on imports
+Accept: Depends on other countries; Must buy energy abroad; Imports can be cut off
+Ref: 3.2.3.4.1
+D: 3
+
 Q: Name the group of non-renewable energy sources that includes coal, oil and natural gas.
 A: Fossil fuels
 Ref: 3.2.3.4.2
@@ -132,6 +138,18 @@ D: 1
 Q: Name the renewable energy source that uses the movement of water down from a dam.
 A: Hydroelectric power
 Accept: HEP; Hydro; Hydroelectricity
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Name the renewable energy source that uses the movement of ocean surface waves.
+A: Wave
+Accept: Wave power; Wave energy
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Name the renewable energy source that uses photovoltaic panels to capture sunlight.
+A: Solar
+Accept: Solar power; Solar energy; Photovoltaic
 Ref: 3.2.3.4.2
 D: 1
 
@@ -170,9 +188,9 @@ Accept: Demand reduction; Conservation
 Ref: 3.2.3.4.2
 D: 1
 
-Q: Give one way a home can be designed to be more energy efficient.
+Q: Give one way a home can be designed to lose less heat.
 A: Loft insulation
-Accept: Double glazing; Solar panels; Draught proofing; Cavity wall insulation
+Accept: Double glazing; Draught proofing; Cavity wall insulation; Insulation
 Ref: 3.2.3.4.2
 D: 2
 
@@ -186,7 +204,7 @@ Q: Give one way technology can make fossil fuel use more efficient.
 A: Clean coal technology
 Accept: Carbon capture; Combined cycle power stations; Hybrid engines; More efficient engines
 Ref: 3.2.3.4.2
-D: 3
+D: 2
 
 Q: Why is a small local solar or hydro scheme in an LIC useful for remote villages?
 A: Not connected to national grid

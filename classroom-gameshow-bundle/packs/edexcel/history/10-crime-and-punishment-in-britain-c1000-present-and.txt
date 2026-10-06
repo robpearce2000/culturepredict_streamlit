@@ -168,7 +168,7 @@ Q: For what offence were the Tolpuddle Martyrs convicted in 1834?
 A: Swearing a secret oath
 Accept: Taking an illegal oath; Swearing illegal oaths; Unlawful oaths
 Ref: 10.3.1
-D: 3
+D: 2
 
 Q: Which two brothers, based in Bow Street, set up the Bow Street Runners?
 A: The Fieldings

@@ -70,7 +70,7 @@ D: 1
 
 Q: Why did Nasser nationalise the Suez Canal in 1956?
 A: To pay for the Aswan High Dam
-Accept: Aswan Dam; West withdrew Aswan Dam funding; To raise money for the dam
+Accept: Aswan Dam; To raise money from canal tolls; West withdrew Aswan Dam funding; To raise money for the dam
 Ref: P5.1.3
 D: 3
 
@@ -124,7 +124,7 @@ D: 1
 
 Q: Why was Yom Kippur chosen as the day for the 1973 attack?
 A: Surprise attack on a Jewish holy day
-Accept: Israel was taken by surprise; It was a Jewish holy day; Ramadan; Israelis were off guard; Many Israelis were fasting and at prayer
+Accept: Israel was taken by surprise; It was a Jewish holy day; Israelis were off guard; Many Israelis were fasting and at prayer
 Ref: P5.2.3
 D: 3
 
@@ -217,4 +217,28 @@ Q: What Arabic word, meaning 'catastrophe', do Palestinians use for the events o
 A: Nakba
 Accept: Al-Nakba; The Nakba
 Ref: P5.1.2
+D: 1
+
+Q: Which 1950 Israeli law gave Jews from anywhere in the world the right to settle in Israel?
+A: Law of Return
+Accept: The Law of Return
+Ref: P5.1.2
+D: 1
+
+Q: Which strait did Nasser close to Israeli shipping in May 1967?
+A: Straits of Tiran
+Accept: Tiran; Strait of Tiran; The Straits of Tiran
+Ref: P5.2.1
+D: 2
+
+Q: In which German city did Black September attack the Israeli Olympic team in 1972?
+A: Munich
+Accept: Munich Olympics
+Ref: P5.2.2
+D: 1
+
+Q: Which US Secretary of State carried out 'shuttle diplomacy' between Israel and Arab states after 1973?
+A: Kissinger
+Accept: Henry Kissinger
+Ref: P5.3.1
 D: 1

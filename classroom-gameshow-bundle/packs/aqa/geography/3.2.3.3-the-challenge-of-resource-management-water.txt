@@ -28,7 +28,7 @@ D: 1
 
 Q: Rising population is one reason for increasing water use. Give one other reason.
 A: Economic development
-Accept: Industrialisation; Rising living standards; Increased wealth; Irrigation
+Accept: Industrialisation; Rising living standards; Increased wealth; Industrial growth
 Ref: 3.2.3.3.1
 D: 2
 
@@ -45,8 +45,8 @@ Ref: 3.2.3.3.1
 D: 3
 
 Q: Why does polluted water reduce the supply available for people to use?
-A: It is unsafe to drink
-Accept: Unsafe; Cannot be used; Needs expensive treatment
+A: Unsafe to drink
+Accept: Unsafe; Not safe to drink; Cannot be used; Needs expensive treatment
 Ref: 3.2.3.3.1
 D: 2
 
@@ -192,7 +192,7 @@ D: 3
 
 Q: Name one low-cost, small-scale way a village in an LIC can increase its water supply sustainably.
 A: Hand-dug well
-Accept: Well; Borehole with hand pump; Sand dam; Rainwater harvesting; Rainwater collection; Small dam
+Accept: Well; Hand pump; Tube well; Borehole with hand pump; Sand dam; Rainwater harvesting; Rainwater collection; Small dam
 Ref: 3.2.3.3.2
 D: 2
 
