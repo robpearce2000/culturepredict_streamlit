@@ -32,12 +32,6 @@ Accept: Whig; The Whigs
 Ref: 2BD.1.1
 D: 2
 
-Q: Which party backed the king and the hereditary succession of James?
-A: Tories
-Accept: Tory; The Tories
-Ref: 2BD.1.1
-D: 2
-
 Q: Why was Charles able to rule without Parliament after 1681?
 A: He had enough money without it
 Accept: Money from Louis XIV; Customs revenue had grown; Increased trade income
@@ -68,21 +62,9 @@ Accept: Exclude James from the throne; Prevent a Catholic succession
 Ref: 2BD.1.2
 D: 2
 
-Q: Which Earl led the Whig campaign to exclude James from the throne?
-A: Earl of Shaftesbury
-Accept: Shaftesbury; Anthony Ashley Cooper
-Ref: 2BD.1.2
-D: 2
-
 Q: What was the aim of the Rye House Plot of 1683?
 A: Assassinate Charles and James
 Accept: To kill the king and his brother; Murder Charles II and the Duke of York
-Ref: 2BD.1.2
-D: 2
-
-Q: Which illegitimate son of Charles II was favoured by the Whigs as heir?
-A: Duke of Monmouth
-Accept: Monmouth; James Scott
 Ref: 2BD.1.2
 D: 2
 
@@ -115,18 +97,6 @@ A: The Merry Monarch
 Accept: Merry Monarch
 Ref: 2BD.1.3
 D: 1
-
-Q: Which large artificial hairpiece became a key court fashion for men?
-A: Periwig
-Accept: Wig; Peruke; Periwigs
-Ref: 2BD.1.3
-D: 2
-
-Q: Which disease did Charles II touch sufferers to cure, called the 'King's Evil'?
-A: Scrofula
-Accept: The King's Evil
-Ref: 2BD.1.3
-D: 2
 
 Q: Why was Charles II's court so lavish after the Commonwealth?
 A: Reaction against Puritan restrictions
@@ -168,12 +138,6 @@ A: Pudding Lane
 Ref: 2BD.2.1
 D: 1
 
-Q: Which baker's shop was the source of the Great Fire?
-A: Thomas Farriner's
-Accept: Farriner; Thomas Farriner; The king's baker
-Ref: 2BD.2.1
-D: 2
-
 Q: Which material did the 1667 Rebuilding Act require for new houses instead of wood?
 A: Brick or stone
 Accept: Brick; Stone
@@ -192,12 +156,6 @@ Accept: Behn
 Ref: 2BD.2.2
 D: 2
 
-Q: Which playwright wrote The Country Wife in 1675?
-A: William Wycherley
-Accept: Wycherley
-Ref: 2BD.2.2
-D: 2
-
 Q: What important change for women occurred on the English stage after 1660?
 A: Women acted female roles
 Accept: Actresses allowed on stage; Women could perform
@@ -207,18 +165,6 @@ D: 2
 Q: Which scientific society, founded in 1660, received a royal charter in 1662?
 A: Royal Society
 Accept: The Royal Society
-Ref: 2BD.2.2
-D: 1
-
-Q: Which scientist wrote Micrographia in 1665?
-A: Robert Hooke
-Accept: Hooke
-Ref: 2BD.2.2
-D: 2
-
-Q: Which official kept a famous diary from 1660 to 1669?
-A: Samuel Pepys
-Accept: Pepys
 Ref: 2BD.2.2
 D: 1
 
@@ -240,19 +186,9 @@ Accept: Mumbai
 Ref: 2BD.3.1
 D: 1
 
-Q: Which North African port came to Charles II as part of his marriage but was abandoned in 1684?
-A: Tangier
-Ref: 2BD.3.1
-D: 1
-
 Q: Besides trading, which military power did Charles II's charters give the East India Company?
 A: Make war
 Accept: Raise armies; Command troops; Build forts; Make peace and war
-Ref: 2BD.3.1
-D: 2
-
-Q: In which year was the Hudson's Bay Company chartered?
-A: 1670
 Ref: 2BD.3.1
 D: 2
 
@@ -298,32 +234,9 @@ Accept: Dutch lost carrying trade; They hit Dutch trade profits
 Ref: 2BD.3.2
 D: 3
 
-Q: In which year did the Second Dutch War begin?
-A: 1665
-Ref: 2BD.3.3
-D: 1
-
 Q: Which 1667 Dutch raid on the Thames estuary captured the Royal Charles?
 A: Raid on the Medway
 Accept: Medway raid; Medway; Attack on Chatham
-Ref: 2BD.3.3
-D: 2
-
-Q: Which treaty ended the Second Dutch War in 1667?
-A: Treaty of Breda
-Accept: Breda
-Ref: 2BD.3.3
-D: 2
-
-Q: What burning ships were used to scatter an enemy fleet?
-A: Fireships
-Accept: Fire ships; Fireship
-Ref: 2BD.3.3
-D: 1
-
-Q: Which French king paid Charles II under the secret Treaty of Dover of 1670?
-A: Louis XIV
-Accept: Louis; Louis the Fourteenth
 Ref: 2BD.3.3
 D: 2
 
