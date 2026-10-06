@@ -7,225 +7,263 @@ A: Polar cell
 Accept: Polar
 Ref: 1.1
 D: 1
+Id: edexcel-geog-1gb0-1-001
 
 Q: Why does the equator receive more heat energy per square metre than the poles?
 A: Sun's rays hit more directly
 Accept: Sun is overhead; Rays are concentrated on a smaller area
 Ref: 1.1
 D: 3
+Id: edexcel-geog-1gb0-1-002
 
 Q: What word describes dry regions such as the Sahara, found beneath sinking air at about 30 degrees latitude?
 A: Arid
 Accept: Desert
 Ref: 1.1
 D: 1
+Id: edexcel-geog-1gb0-1-003
 
 Q: Why does low pressure at the equator bring heavy rainfall?
 A: Warm air rises, cools and condenses
 Accept: Rising air cools and forms clouds
 Ref: 1.1
 D: 3
+Id: edexcel-geog-1gb0-1-004
 
 Q: Which sudden natural event, about 66 million years ago, threw dust into the air and is linked to the dinosaurs' extinction?
 A: Asteroid collision
 Accept: Asteroid impact; Asteroid strike; Meteorite impact
 Ref: 1.2
 D: 2
+Id: edexcel-geog-1gb0-1-005
 
 Q: Which volcanic gas forms tiny particles that reflect sunlight and cool the planet?
 A: Sulfur dioxide
 Accept: Sulphur dioxide; SO2
 Ref: 1.2
 D: 2
+Id: edexcel-geog-1gb0-1-006
 
 Q: What name is given to the warmer periods between glacials in the Quaternary?
 A: Interglacials
 Accept: Interglacial; Interglacial periods
 Ref: 1.2
 D: 1
+Id: edexcel-geog-1gb0-1-007
 
 Q: Why did sea level fall during a cold glacial period?
 A: Water was locked up in ice sheets
 Accept: More water stored as ice; Water frozen on land
 Ref: 1.2
 D: 3
+Id: edexcel-geog-1gb0-1-008
 
 Q: How does cutting down forests raise the amount of carbon dioxide in the air?
 A: Fewer trees absorb carbon dioxide
 Accept: Less photosynthesis; Burning trees releases carbon dioxide
 Ref: 1.3
 D: 2
+Id: edexcel-geog-1gb0-1-009
 
 Q: Which process, caused by warming water taking up more space, helps raise sea level?
 A: Thermal expansion
 Accept: Expansion of water; Water expands when warmed
 Ref: 1.3
 D: 2
+Id: edexcel-geog-1gb0-1-010
 
 Q: Which floating frozen layer in the Arctic Ocean is shrinking, as evidence of global warming?
 A: Sea ice
-Accept: Arctic sea ice; Ice cap
+Accept: Arctic sea ice
 Ref: 1.3
 D: 1
+Id: edexcel-geog-1gb0-1-011
 
 Q: Why are projections of future global temperature uncertain?
 A: Future emissions are unknown
 Accept: Different climate models; Unknown human choices; Feedback effects
 Ref: 1.3
 D: 3
+Id: edexcel-geog-1gb0-1-012
 
 Q: What name is given to tropical cyclones in the North Atlantic Ocean?
 A: Hurricanes
 Accept: Hurricane
 Ref: 1.4
 D: 1
+Id: edexcel-geog-1gb0-1-013
 
 Q: Which effect, caused by Earth's rotation, makes tropical cyclones spin?
 A: Coriolis effect
 Accept: Coriolis force; Coriolis
 Ref: 1.4
 D: 2
+Id: edexcel-geog-1gb0-1-014
 
 Q: What name is given to the ring of tall storm clouds with the strongest winds around the eye of a tropical cyclone?
 A: Eye wall
 Accept: Eyewall
 Ref: 1.4
 D: 1
+Id: edexcel-geog-1gb0-1-015
 
 Q: Why do tropical cyclones intensify while moving over warm ocean water?
 A: Evaporation supplies energy and moisture
 Accept: Warm water provides heat energy; Warm moist air rises faster
 Ref: 1.4
 D: 3
+Id: edexcel-geog-1gb0-1-016
 
 Q: Which tropical cyclone hazard occurs when heavy rain saturates steep slopes and soil and rock move downhill?
 A: Landslides
 Accept: Landslide; Mudslides
 Ref: 1.5
 D: 2
+Id: edexcel-geog-1gb0-1-017
 
 Q: Which Saffir-Simpson category number is the most intense?
 A: 5
 Accept: Category 5
 Ref: 1.5
 D: 1
+Id: edexcel-geog-1gb0-1-018
 
 Q: Why is low-lying coastal land physically more vulnerable to tropical cyclones?
 A: Storm surges flood it easily
 Accept: Easily flooded by storm surge; Little height above sea level
 Ref: 1.5
 D: 3
+Id: edexcel-geog-1gb0-1-019
 
 Q: Why does disease often spread after flooding from a tropical cyclone?
 A: Contaminated water supplies
 Accept: Dirty water; Sewage mixes with drinking water
 Ref: 1.5
 D: 2
+Id: edexcel-geog-1gb0-1-020
 
 Q: What term describes moving people out of a coastal area before a tropical cyclone arrives?
 A: Evacuation
 Accept: Evacuating
 Ref: 1.6
 D: 1
+Id: edexcel-geog-1gb0-1-021
 
 Q: Which 2007 cyclone killed thousands in Bangladesh, far fewer than the cyclone of 1991?
 A: Cyclone Sidr
 Accept: Sidr
 Ref: 1.6
 D: 2
+Id: edexcel-geog-1gb0-1-022
 
 Q: Which centre in Miami issues hurricane forecasts and warnings for the United States?
 A: National Hurricane Center
 Accept: National Hurricane Centre; NHC
 Ref: 1.6
 D: 2
+Id: edexcel-geog-1gb0-1-023
 
 Q: Why is preparing for tropical cyclones usually more effective in a developed country than a developing one?
 A: More money for forecasting and defences
 Accept: Better funding; Better technology and shelters
 Ref: 1.6
 D: 3
+Id: edexcel-geog-1gb0-1-024
 
 Q: Which layer of the Earth is the thickest?
 A: Mantle
 Accept: The mantle
 Ref: 1.7
 D: 1
+Id: edexcel-geog-1gb0-1-025
 
-Q: What name is given to the weaker, partly molten upper layer of the mantle on which plates move?
+Q: What name is given to the weak, slowly flowing layer of upper mantle beneath the rigid plates?
 A: Asthenosphere
 Accept: The asthenosphere
 Ref: 1.7
 D: 1
+Id: edexcel-geog-1gb0-1-026
 
 Q: Which process of unstable atoms breaking down in the core produces heat inside the Earth?
 A: Radioactive decay
 Accept: Radioactivity
 Ref: 1.7
 D: 2
+Id: edexcel-geog-1gb0-1-027
 
 Q: How do convection currents in the mantle move tectonic plates?
 A: Slowly flowing mantle drags plates along
 Accept: Rising and sinking rock pulls plates; Plates ride on moving mantle
 Ref: 1.7
 D: 3
+Id: edexcel-geog-1gb0-1-028
 
 Q: Which type of plate boundary has plates moving apart?
 A: Divergent
 Accept: Constructive; Divergent boundary
 Ref: 1.8
 D: 1
+Id: edexcel-geog-1gb0-1-029
 
 Q: Which type of plate boundary has plates sliding past each other, causing earthquakes but no volcanoes?
 A: Conservative
 Accept: Transform; Conservative boundary
 Ref: 1.8
 D: 1
+Id: edexcel-geog-1gb0-1-030
 
 Q: Which type of volcano has gentle slopes and runny basaltic lava?
 A: Shield volcano
 Accept: Shield
 Ref: 1.8
 D: 2
+Id: edexcel-geog-1gb0-1-031
 
 Q: Why are eruptions at composite volcanoes often explosive?
 A: Sticky magma traps gas
 Accept: Viscous magma; Thick lava blocks gas escape
 Ref: 1.8
 D: 3
+Id: edexcel-geog-1gb0-1-032
 
 Q: Why does a shallow-focus earthquake usually cause more damage than a deep-focus one?
 A: Waves travel less distance and lose less energy
 Accept: Stronger shaking at the surface; Closer to the surface
 Ref: 1.8
 D: 3
+Id: edexcel-geog-1gb0-1-033
 
 Q: What was the approximate magnitude of the 2010 Haiti earthquake?
 A: 7.0
 Accept: 7; About 7; 7.0 to 7.3
 Ref: 1.9
 D: 2
+Id: edexcel-geog-1gb0-1-034
 
 Q: Are landslides triggered by an earthquake a primary or secondary impact?
 A: Secondary
 Accept: Secondary impact
 Ref: 1.9
 D: 2
+Id: edexcel-geog-1gb0-1-035
 
 Q: Which New Zealand city was hit by a deadly magnitude 6.3 earthquake in 2011?
 A: Christchurch
 Accept: Christchurch, New Zealand
 Ref: 1.9
 D: 1
+Id: edexcel-geog-1gb0-1-036
 
 Q: What name is given to the rubber and steel pads that let a building move separately from the shaking ground?
 A: Base isolators
-Accept: Base isolation; Isolation bearings; Rubber dampers
+Accept: Base isolation; Isolation bearings
 Ref: 1.9
 D: 2
+Id: edexcel-geog-1gb0-1-037
 
 Q: Why do earthquakes of similar magnitude usually kill more people in developing countries?
 A: Weaker buildings and poorer emergency services
 Accept: Poor building standards; Less funding for response
 Ref: 1.9
 D: 3
+Id: edexcel-geog-1gb0-1-038

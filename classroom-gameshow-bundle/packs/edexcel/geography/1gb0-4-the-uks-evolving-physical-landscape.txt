@@ -6,261 +6,309 @@ Q: Which main rock type includes granite, which forms much of Dartmoor?
 A: Igneous
 Ref: 4.1
 D: 1
+Id: edexcel-geog-1gb0-4-001
 
 Q: Which main rock type is chalk, forming the North and South Downs?
 A: Sedimentary
 Ref: 4.1
 D: 1
+Id: edexcel-geog-1gb0-4-002
 
 Q: Which sedimentary rock is dissolved by weak acid and forms limestone pavements in the Yorkshire Dales?
 A: Carboniferous limestone
 Accept: Limestone
 Ref: 4.1
 D: 2
+Id: edexcel-geog-1gb0-4-003
 
 Q: Why are most of the UK's highest uplands found in the north and west?
 A: Hard rocks resisted erosion
 Accept: Resistant rocks; harder rock; igneous and metamorphic rock
 Ref: 4.1
 D: 3
+Id: edexcel-geog-1gb0-4-004
 
 Q: Which main rock type forms when existing rock is changed by heat and pressure, as in schist?
 A: Metamorphic
 Ref: 4.1
 D: 1
+Id: edexcel-geog-1gb0-4-005
 
 Q: Name the weathering process in which water freezes in cracks and expands, breaking up upland rock.
 A: Freeze-thaw
 Accept: Freeze thaw; frost shattering; freeze-thaw weathering
 Ref: 4.2
 D: 1
+Id: edexcel-geog-1gb0-4-006
 
 Q: Why do UK uplands receive more rainfall than lowlands?
 A: Air forced to rise and cool
 Accept: Relief rainfall; orographic rainfall; moist air is forced up over high ground
 Ref: 4.2
 D: 3
+Id: edexcel-geog-1gb0-4-007
 
 Q: Which human activity has cleared most original woodland from lowland England to create fields?
 A: Agriculture
 Accept: Farming
 Ref: 4.2
 D: 1
+Id: edexcel-geog-1gb0-4-008
 
 Q: Why are most large UK settlements found in lowland areas?
 A: Flat land, easier to build on
 Accept: Flatter land; fertile soil; easier transport; flat, accessible land
 Ref: 4.2
 D: 3
+Id: edexcel-geog-1gb0-4-009
 
 Q: Name the coastline type where rock layers run parallel to the shore.
 A: Concordant
 Ref: 4.3
 D: 2
+Id: edexcel-geog-1gb0-4-010
 
 Q: What name is given to cracks in coastal rock where the rock has not moved?
 A: Joints
 Accept: Joint
 Ref: 4.3
 D: 1
+Id: edexcel-geog-1gb0-4-011
 
 Q: Name the landform formed when a cave is eroded right through a headland.
 A: Arch
 Accept: Natural arch
 Ref: 4.3
 D: 1
+Id: edexcel-geog-1gb0-4-012
 
 Q: Name the coastal landform formed when the top of an arch collapses, leaving a pillar of rock.
 A: Stack
 Accept: Sea stack
 Ref: 4.3
 D: 1
+Id: edexcel-geog-1gb0-4-013
 
 Q: Which type of wave has a strong backwash and removes sediment from a beach?
 A: Destructive
 Ref: 4.3
 D: 1
+Id: edexcel-geog-1gb0-4-014
 
 Q: Which type of depositional landform is Spurn Head?
 A: Spit
 Ref: 4.3
 D: 2
+Id: edexcel-geog-1gb0-4-015
 
 Q: A cliff retreats 12 metres in 4 years. What is the mean rate of retreat per year?
 A: 3 metres per year
 Accept: 3 m per year; 3 m/year; 3 m
 Ref: 4.3
 D: 2
+Id: edexcel-geog-1gb0-4-016
 
 Q: From which direction do the prevailing winds that bring most UK storms usually blow?
 A: South-west
 Accept: South west; south-westerly; SW
 Ref: 4.3
 D: 2
+Id: edexcel-geog-1gb0-4-017
 
 Q: Which rock type makes up the cliffs of the Holderness coast?
 A: Boulder clay
 Accept: Clay; glacial till; till
 Ref: 4.4
 D: 1
+Id: edexcel-geog-1gb0-4-018
 
 Q: In which direction does longshore drift move sediment along the Holderness coast?
 A: South
 Accept: Southwards; north to south
 Ref: 4.4
 D: 2
+Id: edexcel-geog-1gb0-4-019
 
 Q: Which Holderness village was protected in 1991 with rock armour and groynes?
 A: Mappleton
 Ref: 4.4
 D: 2
+Id: edexcel-geog-1gb0-4-020
 
 Q: Why does a sea wall protecting a town increase erosion further along the coast?
 A: Sediment supply downdrift is cut
 Accept: It cuts off sediment; less sediment moves along the coast; starves coast of sediment
 Ref: 4.4
 D: 3
+Id: edexcel-geog-1gb0-4-021
 
 Q: Approximately how many metres per year is the Holderness coast eroding?
 A: About 2 metres
-Accept: 1.5 to 2 metres; about 2 m; 2 m
+Accept: 1.5 to 2 metres; about 2 m; 2 m; 1.8 m
 Ref: 4.4
 D: 2
+Id: edexcel-geog-1gb0-4-022
 
 Q: Name the process in which warming seawater expands, contributing to rising sea level.
 A: Thermal expansion
 Ref: 4.5
 D: 2
+Id: edexcel-geog-1gb0-4-023
 
 Q: Name the temporary rise in sea level caused by low pressure and strong winds in a storm.
 A: Storm surge
 Ref: 4.5
 D: 2
+Id: edexcel-geog-1gb0-4-024
 
 Q: Name the hard-engineering structure built along the base of a cliff or shore to reflect wave energy.
 A: Sea wall
-Accept: Seawall
+Accept: Seawall; sea walls
 Ref: 4.5
 D: 1
+Id: edexcel-geog-1gb0-4-025
 
 Q: Which soft-engineering method adds sand or shingle to a beach?
 A: Beach replenishment
 Accept: Beach nourishment; beach feeding
 Ref: 4.5
 D: 1
+Id: edexcel-geog-1gb0-4-026
 
 Q: Which approach lets low-lying land flood on purpose to create salt marsh behind a new defence line?
 A: Strategic realignment
 Accept: Managed realignment; managed retreat
 Ref: 4.5
-D: 3
+D: 2
+Id: edexcel-geog-1gb0-4-027
 
 Q: Why might farmers oppose strategic realignment?
 A: They lose farmland
 Accept: Loss of farmland; land flooded; loss of fields
 Ref: 4.5
 D: 3
+Id: edexcel-geog-1gb0-4-028
 
 Q: In which upland area does the River Tees rise?
 A: Pennines
 Accept: North Pennines; Cross Fell
 Ref: 4.6
 D: 2
+Id: edexcel-geog-1gb0-4-029
 
 Q: How does average sediment size change from upper to lower course?
 A: It gets smaller and rounder
 Accept: Smaller; smaller and rounder; decreases
 Ref: 4.6
 D: 3
+Id: edexcel-geog-1gb0-4-030
 
 Q: Name the river erosion process in which the force of water alone breaks banks and bed apart.
 A: Hydraulic action
 Ref: 4.6
 D: 1
+Id: edexcel-geog-1gb0-4-031
 
 Q: Which landform is a steep-sided valley left as a waterfall retreats upstream?
 A: Gorge
 Ref: 4.6
 D: 2
+Id: edexcel-geog-1gb0-4-032
 
 Q: Name the landform formed where a river drops sediment entering a sea and splits into channels.
 A: Delta
 Ref: 4.6
 D: 1
+Id: edexcel-geog-1gb0-4-033
 
 Q: Which process occurs on the inside of a meander bend where flow is slower?
 A: Deposition
 Ref: 4.6
-D: 3
+D: 2
+Id: edexcel-geog-1gb0-4-034
 
 Q: Define lag time on a storm hydrograph.
 A: Time from peak rainfall to peak discharge
 Accept: Time between peak rainfall and peak flow
 Ref: 4.6
-D: 3
+D: 2
+Id: edexcel-geog-1gb0-4-035
 
 Q: Which drainage basin shape gives a shorter lag time: circular or elongated?
 A: Circular
 Ref: 4.6
 D: 3
+Id: edexcel-geog-1gb0-4-036
 
-Q: Which process of rainfall being caught by tree leaves is reduced by deforestation?
+Q: What name is given to rainfall being caught by tree leaves, which deforestation reduces?
 A: Interception
 Ref: 4.7
 D: 2
+Id: edexcel-geog-1gb0-4-037
 
 Q: Why does urbanisation shorten lag time and raise peak discharge?
 A: Drains and hard surfaces speed runoff
 Accept: Impermeable surfaces; faster runoff; tarmac and drains carry water quickly
 Ref: 4.7
 D: 3
+Id: edexcel-geog-1gb0-4-038
 
 Q: Which part of a storm hydrograph shows discharge increasing after rain?
 A: Rising limb
 Ref: 4.7
 D: 2
+Id: edexcel-geog-1gb0-4-039
 
-Q: Name the two rivers, the Tone and which other, that flooded the Somerset Levels in 2013-14?
+Q: Which river, along with the Tone, flooded the Somerset Levels in 2013-14?
 A: Parrett
 Accept: River Parrett
 Ref: 4.7
 D: 2
+Id: edexcel-geog-1gb0-4-040
 
-Q: Which Somerset Levels village was cut off for weeks in the 2014 floods?
-A: Muchelney
+Q: What kind of weather brought the record rainfall that flooded the Somerset Levels in winter 2013-14?
+A: A series of Atlantic storms
+Accept: Storms; depressions; Atlantic depressions; a run of storms
 Ref: 4.7
 D: 2
+Id: edexcel-geog-1gb0-4-041
 
 Q: What silt-removal work was carried out on the Parrett and Tone after the 2014 floods?
 A: Dredging
 Ref: 4.7
 D: 2
+Id: edexcel-geog-1gb0-4-042
 
 Q: Which soft-engineering method lets a river flood certain land to store water?
 A: Flood plain retention
 Accept: Floodplain retention; floodplain zoning
 Ref: 4.8
 D: 2
+Id: edexcel-geog-1gb0-4-043
 
 Q: Which soft-engineering approach returns a straightened river to natural meanders?
 A: River restoration
 Ref: 4.8
 D: 2
+Id: edexcel-geog-1gb0-4-044
 
 Q: Why is river restoration seen as more sustainable than flood walls?
 A: Works with natural processes
 Accept: Cheaper; works with nature; low cost
 Ref: 4.8
 D: 3
+Id: edexcel-geog-1gb0-4-045
 
 Q: Why does building houses on a floodplain increase flood damage?
 A: More property exposed to flooding
 Accept: More people and property at risk
 Ref: 4.8
 D: 3
+Id: edexcel-geog-1gb0-4-046
 
 Q: Why does ploughing and soil compaction on farmland increase flood risk?
 A: More surface runoff
 Accept: Less infiltration; water runs off faster
 Ref: 4.8
 D: 3
+Id: edexcel-geog-1gb0-4-047

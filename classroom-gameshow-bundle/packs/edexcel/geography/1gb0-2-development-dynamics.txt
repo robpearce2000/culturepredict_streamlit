@@ -7,280 +7,348 @@ A: GDP per capita
 Accept: Gross domestic product per capita
 Ref: 2.1
 D: 1
+Id: edexcel-geog-1gb0-2-001
 
 Q: Name the composite index combining income, education and life expectancy.
 A: Human Development Index
 Accept: HDI
 Ref: 2.1
 D: 1
+Id: edexcel-geog-1gb0-2-002
 
 Q: Which type of measure of development, such as GDP per capita, uses only money?
 A: Economic
 Accept: Economic measure
 Ref: 2.1
 D: 1
+Id: edexcel-geog-1gb0-2-003
 
 Q: Name the index that scores countries on how corrupt their public sector is seen to be.
 A: Corruption Perceptions Index
 Accept: CPI
 Ref: 2.1
 D: 1
+Id: edexcel-geog-1gb0-2-004
 
 Q: Name the measure of inequality, scored from 0 to 1, used to compare income spread within countries.
 A: Gini coefficient
 Accept: Gini index; Gini
 Ref: 2.1
 D: 2
+Id: edexcel-geog-1gb0-2-005
 
 Q: Why is GDP per capita alone a limited measure of development?
 A: It ignores inequality and social wellbeing
 Accept: Averages hide inequality; does not show health or education
 Ref: 2.1
 D: 3
+Id: edexcel-geog-1gb0-2-006
 
 Q: Name the term for the average number of children born per woman.
 A: Fertility rate
 Accept: Total fertility rate
 Ref: 2.1
 D: 1
+Id: edexcel-geog-1gb0-2-007
 
 Q: Compared with a developed country, is infant mortality usually higher or lower in a developing country?
 A: Higher
 Ref: 2.1
 D: 2
+Id: edexcel-geog-1gb0-2-008
 
 Q: Describe the usual shape of a population pyramid for a developing country.
 A: Wide base, narrowing quickly
 Accept: Triangular; pyramid-shaped; broad base
 Ref: 2.1
 D: 2
+Id: edexcel-geog-1gb0-2-009
 
 Q: Why does a developed country's population pyramid have a narrower base than a developing country's?
 A: Lower fertility rates
 Accept: Fewer births; lower birth rate
 Ref: 2.1
 D: 3
+Id: edexcel-geog-1gb0-2-010
 
 Q: Name the process by which European countries took control of other territories, affecting their later development.
 A: Colonialism
 Accept: Colonisation
 Ref: 2.2
 D: 1
+Id: edexcel-geog-1gb0-2-011
 
 Q: Name the term for continued economic control of poorer countries by richer ones after independence.
 A: Neo-colonialism
 Accept: Neocolonialism
 Ref: 2.2
 D: 1
+Id: edexcel-geog-1gb0-2-012
 
-Q: Name one environmental factor, such as tropical disease-carrying climate, that can hold back development.
-A: Climate
-Accept: Topography; drought; natural hazards
+Q: Name the environmental factor describing the height and shape of land, such as steep mountains, that can hinder transport and development.
+A: Topography
+Accept: Relief
 Ref: 2.2
 D: 2
+Id: edexcel-geog-1gb0-2-013
 
 Q: Explain how having no coastline can slow a country's economic development.
 A: Poorer access to trade routes and ports
 Accept: No ports; higher transport costs
 Ref: 2.2
 D: 3
+Id: edexcel-geog-1gb0-2-014
 
 Q: Name the term for the political system in which leaders are chosen by free elections.
 A: Democracy
 Ref: 2.2
 D: 1
+Id: edexcel-geog-1gb0-2-015
 
 Q: How can poor education keep a country's development low?
 A: Fewer skilled workers
 Accept: Low productivity; unskilled workforce
 Ref: 2.2
 D: 3
+Id: edexcel-geog-1gb0-2-016
 
 Q: Who proposed the modernisation theory of development in stages?
 A: Rostow
 Accept: Walt Rostow; W. W. Rostow
 Ref: 2.2
 D: 1
+Id: edexcel-geog-1gb0-2-017
 
 Q: In Rostow's model, what is the name of the stage when rapid growth begins?
 A: Take-off
 Accept: Take off
 Ref: 2.2
 D: 2
+Id: edexcel-geog-1gb0-2-018
 
 Q: Which theorist argued that rich core countries keep poorer periphery countries underdeveloped?
 A: Frank
 Accept: Andre Gunder Frank; Gunder Frank
 Ref: 2.2
 D: 1
+Id: edexcel-geog-1gb0-2-019
 
 Q: Name the theory by Frank that explains underdevelopment as caused by exploitation by richer countries.
 A: Dependency theory
 Accept: Dependency
 Ref: 2.2
 D: 2
+Id: edexcel-geog-1gb0-2-020
 
 Q: Name the type of development strategy led by governments or large organisations, usually large-scale.
 A: Top-down
 Accept: Top down
 Ref: 2.3
 D: 1
+Id: edexcel-geog-1gb0-2-021
 
 Q: Name the type of development strategy led by local communities, usually small-scale and locally funded.
 A: Bottom-up
 Accept: Bottom up
 Ref: 2.3
 D: 1
+Id: edexcel-geog-1gb0-2-022
 
 Q: Name the type of simple, low-cost, locally maintained technology promoted by NGOs.
 A: Intermediate technology
 Accept: Appropriate technology
 Ref: 2.3
 D: 1
+Id: edexcel-geog-1gb0-2-023
 
 Q: Name the abbreviation for a company operating in many countries.
 A: TNC
 Accept: Transnational corporation
 Ref: 2.3
 D: 1
+Id: edexcel-geog-1gb0-2-024
 
 Q: Give one advantage of NGO-led intermediate technology projects.
 A: Cheap and easy to maintain locally
 Accept: Locally appropriate; sustainable; low cost; benefits communities directly
 Ref: 2.3
 D: 3
+Id: edexcel-geog-1gb0-2-025
 
 Q: Give one disadvantage of IGO-funded large infrastructure projects.
 A: Costly and may displace people
 Accept: Increases debt; may harm environment; benefits few
 Ref: 2.3
 D: 3
+Id: edexcel-geog-1gb0-2-026
 
 Q: Name the body, such as the World Bank, that is funded by many governments and lends for large projects.
 A: Inter-governmental organisation
 Accept: IGO
 Ref: 2.3
 D: 2
+Id: edexcel-geog-1gb0-2-027
 
 Q: Name the term for the position of a place relative to the surrounding area and other places.
 A: Situation
 Ref: 2.4
 D: 1
+Id: edexcel-geog-1gb0-2-028
 
 Q: Name the term for the physical characteristics of the land on which a settlement or country is built.
 A: Site
 Ref: 2.4
 D: 1
+Id: edexcel-geog-1gb0-2-029
 
 Q: Name the term for how well places are linked by transport and communications.
 A: Connectivity
 Ref: 2.4
 D: 1
+Id: edexcel-geog-1gb0-2-030
 
 Q: Name the term for foreign companies investing money directly in a country's businesses or factories.
 A: Foreign direct investment
 Accept: FDI
 Ref: 2.5
 D: 1
+Id: edexcel-geog-1gb0-2-031
 
 Q: Name the practice of a company paying another firm abroad to carry out some of its work.
 A: Outsourcing
 Accept: Offshoring
 Ref: 2.5
 D: 1
+Id: edexcel-geog-1gb0-2-032
 
 Q: Name the process of increasing links and trade between countries worldwide.
 A: Globalisation
 Accept: Globalization
 Ref: 2.5
 D: 1
+Id: edexcel-geog-1gb0-2-033
 
 Q: Name the economic sector, including farming, whose share of GDP usually falls as a country emerges.
 A: Primary
 Accept: Primary sector
 Ref: 2.5
 D: 2
+Id: edexcel-geog-1gb0-2-034
 
 Q: How do improved communications technology help TNCs to invest in emerging countries?
 A: Easier to manage distant operations
 Accept: Links factories and head offices; cheaper contact
 Ref: 2.5
 D: 3
+Id: edexcel-geog-1gb0-2-035
 
 Q: Name the type of aid that must be spent on goods or services from the donor country.
 A: Tied aid
 Ref: 2.5
 D: 2
+Id: edexcel-geog-1gb0-2-036
 
 Q: Name the movement of people from the countryside to cities.
 A: Rural-urban migration
-Accept: Rural to urban migration; Urbanisation
+Accept: Rural to urban migration
 Ref: 2.6
 D: 1
+Id: edexcel-geog-1gb0-2-037
 
-Q: Name the model describing falling death rates then falling birth rates as a country develops.
-A: Demographic transition model
-Accept: DTM
+Q: As healthcare improves in an emerging country, which usually falls first: the death rate or the birth rate?
+A: Death rate
+Accept: Death rates; Mortality rate
 Ref: 2.6
 D: 2
+Id: edexcel-geog-1gb0-2-038
 
 Q: Why does the fertility rate usually fall as an emerging country's economy grows?
 A: More education and employment for women
 Accept: Women have education and careers; contraception access
 Ref: 2.6
 D: 3
+Id: edexcel-geog-1gb0-2-039
 
 Q: Name the wealthier, more developed part of a country with most jobs and investment.
 A: Core
 Accept: Core region
 Ref: 2.6
 D: 1
+Id: edexcel-geog-1gb0-2-040
 
 Q: Name the poorer region of a country, usually far from the centre of economic activity.
 A: Periphery
 Accept: Peripheral region
 Ref: 2.6
 D: 1
+Id: edexcel-geog-1gb0-2-041
 
-Q: Name one group, such as women, who can gain new jobs from globalisation.
-A: Women
-Accept: Young people; young adults
+Q: Name the age group most likely to migrate from villages to cities for new factory jobs.
+A: Young adults
+Accept: Young people; Working-age people; Youth
 Ref: 2.6
 D: 2
+Id: edexcel-geog-1gb0-2-042
 
 Q: Name the type of pollution from factories and vehicles in fast-growing cities that harms human health.
 A: Air pollution
 Accept: Air
 Ref: 2.6
 D: 1
+Id: edexcel-geog-1gb0-2-043
 
 Q: How do rising greenhouse gas emissions from industry affect the global climate?
 A: Contribute to global warming
 Accept: Climate change; enhanced greenhouse effect
 Ref: 2.6
 D: 2
+Id: edexcel-geog-1gb0-2-044
 
 Q: Name the term for a country's power and influence in world affairs.
 A: Geopolitical influence
-Accept: Geopolitics; Influence
+Accept: Geopolitics
+Ref: 2.7
+D: 1
+Id: edexcel-geog-1gb0-2-045
+
+Q: Name the group of leading economies, including several emerging countries, that holds global economic summits.
+A: G20
+Accept: Group of Twenty; G-20
 Ref: 2.7
 D: 2
-
-Q: Give one way an emerging country gains greater influence in international organisations.
-A: Joins groups such as the G20
-Accept: Membership of G20; BRICS; UN role
-Ref: 2.7
-D: 3
+Id: edexcel-geog-1gb0-2-046
 
 Q: Name one cost or criticism of TNC investment in an emerging country.
 A: Profits sent abroad
 Accept: Low wages; poor conditions; environmental damage; exploitation
 Ref: 2.7
-D: 3
+D: 2
+Id: edexcel-geog-1gb0-2-047
 
 Q: Name one benefit of TNC investment in an emerging country.
 A: Jobs
 Accept: Employment; skills; technology; tax income
 Ref: 2.7
 D: 2
+Id: edexcel-geog-1gb0-2-048
 
+Q: According to dependency theory, how do rich core countries keep poorer countries underdeveloped?
+A: Unequal trade, taking cheap raw materials
+Accept: Exploiting them; unfair trade; taking their resources and profits
+Ref: 2.2
+D: 3
+Id: edexcel-geog-1gb0-2-049
+
+Q: Why can rapid urban growth in an emerging country worsen water pollution?
+A: Untreated sewage and industrial waste
+Accept: Waste dumped in rivers; poor sewerage; factory effluent
+Ref: 2.6
+D: 3
+Id: edexcel-geog-1gb0-2-050
+
+Q: Why might small local firms in an emerging country oppose TNC investment?
+A: Cannot compete with larger foreign firms
+Accept: Competition from TNCs; lose customers; undercut by TNCs
+Ref: 2.7
+D: 3
+Id: edexcel-geog-1gb0-2-051

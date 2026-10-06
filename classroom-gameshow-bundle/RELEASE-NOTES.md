@@ -1,4 +1,4 @@
-# Showtime: Classroom Gameshows 1.1.0: release notes
+# Showtime: Classroom Gameshows 1.2.0: release notes
 
 ## What's in the bundle
 
@@ -15,7 +15,12 @@
 - **Category Clash** (2 to 6 teams): four topics from your subject, three tiers of difficulty, a hidden double-points star tile.
 - **Hex Hunt** (two halves of the class): lettered hexagons, each letter the first letter of the answer; the first half to link its edges wins.
 
-**Questions:** AQA-style GCSE Biology (8461), Chemistry (8462) and Physics (8463) packs, one per specification topic, 1,425 questions, plus the teacher's own sets for any subject. The packs are AQA-style practice questions written for Showtime; they are not produced or endorsed by AQA.
+**Questions:** AQA-style and Edexcel-style GCSE packs for Biology, Chemistry, Physics, Maths, History and Geography (AQA 8461, 8462, 8463, 8300, 8145, 8035; Edexcel 1BI0, 1CH0, 1PH0, 1MA1, 1HI0, 1GA0, 1GB0), one per specification topic or option: 135 packs, 7,792 questions, plus the teacher's own sets. They are practice questions written for Showtime and are not produced or endorsed by AQA or Pearson.
+
+## What changed in 1.2.0
+
+- **Every board and subject in scope:** Edexcel sciences, AQA and Edexcel Maths, History (by option) and Geography (by option, Edexcel A and B), added to the AQA sciences: 135 packs, 7,792 questions, each written from the specification and checked separately. Content that depends on the school (fieldwork, pre-release material, AQA's yearly historic environment site) is left out.
+- The questions are stored compressed in the single file (about 1.8 MB in all).
 
 ## What changed in 1.1.0
 
@@ -50,7 +55,7 @@
 
 - [ ] **Classroom trials.** Play each game with at least one real class on the classroom PC and interactive whiteboard you will use (and ideally an older school laptop at Low graphics). Check that the 10-minute lengths, the 20-second countdown and the jackpot, sprint and board balance feel right with real pupils.
 - [x] **Frame rate on a real laptop.** Outpace checked smooth on Rob's laptop (1.0.1). Still worth a look on the classroom PC.
-- [ ] **Check the questions.** Read QUESTIONS-TO-CHECK.md first (nothing open for the AQA sciences yet), then sample the 1,425 built-in questions against the AQA Biology, Chemistry and Physics specifications (each question names its specification point). Make sure the "AQA-style" wording is right.
+- [ ] **Check the questions.** Read QUESTIONS-TO-CHECK.md first (a short list, mostly Geography case-study choices and Pearson issue numbers to confirm), then sample the 7,792 built-in questions against the specifications (each question names its specification point). Make sure the "AQA-style" wording is right.
 - [ ] **Trade mark searches.** Search the UK IPO (and EUIPO if selling beyond the UK) for "Showtime", "Over the Edge", "Outpace", "Category Clash" and "Hex Hunt" in classes 9, 28 and 41, and check that no listing text, image or file name suggests a link to any television programme, broadcaster or exam board.
 - [ ] **Your employment contract.** Check what it says about intellectual property and outside work (resources made in your own time, using school equipment or for your own classes), and get written agreement from the school if needed before selling.
 - [ ] **Tes setup.** Set up your Tes author shop and seller details, choose the price and licence, upload the HTML file, the PDF guide, the listing images and the description, and test-download it on a school computer (some school networks block downloading HTML files; a zip may be needed).

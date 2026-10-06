@@ -7,303 +7,355 @@ A: Henry VII
 Accept: Henry the Seventh; Henry Tudor
 Ref: B3.1.1
 D: 1
+Id: edexcel-hist-B3-001
 
 Q: Which Spanish princess, widow of his elder brother, did Henry VIII marry in 1509?
 A: Catherine of Aragon
 Accept: Katherine of Aragon
 Ref: B3.1.1
 D: 1
+Id: edexcel-hist-B3-002
 
 Q: Which knightly sport on horseback did the young Henry excel at?
 A: Jousting
 Accept: Joust
 Ref: B3.1.1
 D: 1
+Id: edexcel-hist-B3-003
 
 Q: Which elder brother of Henry VIII died in 1502, leaving Henry as heir?
 A: Arthur
 Accept: Prince Arthur
 Ref: B3.1.1
 D: 2
+Id: edexcel-hist-B3-004
 
 Q: Which post did Wolsey gain in 1515 that made him the king's chief legal and administrative officer?
 A: Lord Chancellor
 Accept: Chancellor
 Ref: B3.1.2
 D: 1
+Id: edexcel-hist-B3-005
 
 Q: Which 1526 reforms aimed to cut the size and cost of the royal household?
 A: Eltham Ordinances
 Accept: The Eltham Ordinance
 Ref: B3.1.2
 D: 1
+Id: edexcel-hist-B3-006
 
 Q: What was the name of the 1525 tax demand, about a sixth of lay wealth, that provoked widespread refusal?
 A: Amicable Grant
 Accept: The Amicable Grant
 Ref: B3.1.2
 D: 1
+Id: edexcel-hist-B3-007
 
 Q: Why did Wolsey need to raise the Amicable Grant in 1525?
 A: To pay for war against France
 Accept: Fund an invasion of France; war with France
 Ref: B3.1.2
 D: 3
+Id: edexcel-hist-B3-008
 
 Q: How did Henry respond to the protests against the Amicable Grant?
 A: He cancelled it
 Accept: Dropped it; abandoned it; blamed Wolsey
 Ref: B3.1.2
 D: 2
+Id: edexcel-hist-B3-009
 
 Q: Which 1518 treaty, arranged by Wolsey, was a non-aggression pact between many European powers?
 A: Treaty of London
 Accept: Treaty of London 1518
 Ref: B3.1.3
 D: 1
+Id: edexcel-hist-B3-010
 
 Q: In which year was the Field of the Cloth of Gold?
 A: 1520
 Ref: B3.1.3
 D: 1
+Id: edexcel-hist-B3-011
 
 Q: Which French king did Henry VIII meet at the Field of the Cloth of Gold?
 A: Francis I
 Accept: Francis the First; Francis
 Ref: B3.1.3
 D: 1
+Id: edexcel-hist-B3-012
 
 Q: Which ruler of the Holy Roman Empire did Wolsey turn to as an ally against France after 1521?
 A: Charles V
 Accept: Emperor Charles V; Charles
 Ref: B3.1.3
 D: 2
+Id: edexcel-hist-B3-013
 
 Q: Why was the Field of the Cloth of Gold a failure in the long term?
 A: It produced no lasting alliance with France
 Accept: Only a show; war with France came soon after; no real treaty
 Ref: B3.1.3
 D: 3
+Id: edexcel-hist-B3-014
 
 Q: Which pope refused to grant Henry an annulment, partly because he was under Charles V's control?
 A: Clement VII
 Accept: Pope Clement VII; Clement
 Ref: B3.1.4
 D: 1
+Id: edexcel-hist-B3-015
 
 Q: Why did Charles V's power over the pope make an annulment hard to obtain?
 A: Catherine was Charles V's aunt
 Accept: Charles was Catherine's nephew; Charles V was her nephew and controlled the pope; Charles held the pope prisoner after the 1527 sack of Rome
 Ref: B3.1.4
 D: 3
+Id: edexcel-hist-B3-016
 
 Q: Which 1529 court at Blackfriars, with Campeggio, failed to annul the marriage and ruined Wolsey?
 A: Legatine court
 Accept: The legatine court; Blackfriars trial
 Ref: B3.1.4
 D: 2
+Id: edexcel-hist-B3-017
 
 Q: What was Henry's main dynastic reason for seeking an annulment?
 A: No surviving legitimate son
 Accept: Lack of a male heir; needed a son; no male heir
 Ref: B3.1.4
 D: 3
+Id: edexcel-hist-B3-018
 
 Q: Cromwell first served which powerful churchman before entering Henry's service?
 A: Wolsey
 Accept: Cardinal Wolsey; Thomas Wolsey
 Ref: B3.2.1
 D: 1
+Id: edexcel-hist-B3-019
 
 Q: In which year was Cromwell first elected an MP?
 A: 1529
 Ref: B3.2.1
 D: 1
+Id: edexcel-hist-B3-020
 
 Q: Which post did Cromwell gain in 1534, giving him control of royal correspondence?
 A: Principal Secretary
 Accept: Chief Secretary; Secretary to the king
 Ref: B3.2.1
 D: 2
+Id: edexcel-hist-B3-021
 
 Q: Cromwell joined which royal body of advisers in 1530?
 A: Royal Council
 Accept: Privy Council; the king's council; King's Council
 Ref: B3.2.1
 D: 2
+Id: edexcel-hist-B3-022
 
 Q: Anne Boleyn failed to give Henry what, a main cause of her fall?
 A: A male heir
 Accept: A son; an heir; a boy
 Ref: B3.2.2
 D: 3
+Id: edexcel-hist-B3-023
 
 Q: Which wife gave Henry a son in October 1537 and died days later?
 A: Jane Seymour
 Accept: Jane
 Ref: B3.2.2
 D: 1
+Id: edexcel-hist-B3-024
 
 Q: Which German princess did Henry marry in January 1540 to form a Protestant alliance?
 A: Anne of Cleves
 Accept: Anne
 Ref: B3.2.2
 D: 1
+Id: edexcel-hist-B3-025
 
 Q: Which court, set up in 1536, managed the lands and income from dissolved monasteries?
 A: Court of Augmentations
 Accept: Augmentations; The Court of Augmentations
 Ref: B3.2.3
 D: 2
+Id: edexcel-hist-B3-026
 
 Q: Which survey of church wealth, begun in 1535, helped Cromwell to reform royal finance?
 A: Valor Ecclesiasticus
 Accept: Valor
 Ref: B3.2.3
 D: 2
+Id: edexcel-hist-B3-027
 
 Q: Why did Cromwell prefer acts of Parliament to royal proclamations for major reforms?
 A: Statute law had more authority
 Accept: Acts were harder to challenge; stronger legal force; carried more authority
 Ref: B3.2.3
 D: 3
+Id: edexcel-hist-B3-028
 
 Q: What was the main aim of Cromwell's financial reforms?
 A: Increase royal income
 Accept: More money for the Crown; raise revenue; make the king solvent
 Ref: B3.2.3
 D: 3
+Id: edexcel-hist-B3-029
 
 Q: Which noble duke led the conservative faction opposed to Cromwell?
 A: Duke of Norfolk
 Accept: Norfolk; Thomas Howard
 Ref: B3.2.4
 D: 1
+Id: edexcel-hist-B3-030
 
 Q: Why was the failure of the Cleves marriage so damaging to Cromwell?
 A: He had arranged it
 Accept: Cromwell promoted the match; Henry blamed him; Henry disliked Anne
 Ref: B3.2.4
 D: 3
+Id: edexcel-hist-B3-031
 
 Q: Which title did the pope give Henry in 1521 for his book against Luther?
 A: Defender of the Faith
 Accept: Fidei Defensor
 Ref: B3.3.1
 D: 1
+Id: edexcel-hist-B3-032
 
 Q: Which 1534 act declared Henry Supreme Head of the Church of England?
 A: Act of Supremacy
 Accept: The Act of Supremacy
 Ref: B3.3.1
 D: 1
+Id: edexcel-hist-B3-033
 
 Q: What did the 1534 Act of Succession require subjects to do?
 A: Swear an oath
 Accept: Take an oath accepting the succession; swear to uphold it
 Ref: B3.3.1
 D: 2
+Id: edexcel-hist-B3-034
 
 Q: Which 1534 law made denying the king's supremacy an act of treason?
 A: Treason Act
 Accept: Treasons Act; Act of Treasons
 Ref: B3.3.1
 D: 2
+Id: edexcel-hist-B3-035
 
 Q: Who was made Archbishop of Canterbury in 1533 and annulled Henry's marriage to Catherine?
 A: Thomas Cranmer
 Accept: Cranmer
 Ref: B3.3.1
 D: 1
+Id: edexcel-hist-B3-036
 
 Q: What did the 1533 Act in Restraint of Appeals end?
 A: Appeals to Rome
 Accept: Legal appeals to the pope; appeals to the pope
 Ref: B3.3.1
 D: 3
+Id: edexcel-hist-B3-037
 
 Q: Which woman, known as the Nun of Kent, was executed in 1534 for prophesying against the king's marriage?
 A: Elizabeth Barton
 Accept: Barton
 Ref: B3.3.2
 D: 1
+Id: edexcel-hist-B3-038
 
 Q: Which Bishop of Rochester was executed in 1535 for refusing to accept Henry as Supreme Head?
 A: John Fisher
 Accept: Fisher
 Ref: B3.3.2
 D: 1
+Id: edexcel-hist-B3-039
 
 Q: Which former Lord Chancellor was executed in 1535 after refusing the oath of the Act of Succession?
 A: Thomas More
 Accept: More; Sir Thomas More
 Ref: B3.3.2
 D: 1
+Id: edexcel-hist-B3-040
 
 Q: Why was the execution of Thomas More significant for opposition to the Reformation?
 A: It showed the king would silence critics
 Accept: He was respected across Europe; martyr; the king would kill his critics; it showed the cost of opposing the king
 Ref: B3.3.2
 D: 3
+Id: edexcel-hist-B3-041
 
 Q: Which English Bible of 1539 was ordered into churches under Cromwell's influence?
 A: Great Bible
 Accept: The Great Bible
 Ref: B3.3.2
 D: 2
+Id: edexcel-hist-B3-042
 
 Q: Cromwell's 1535 commissioners visited monasteries to find evidence of what?
 A: Corruption and wrongdoing
 Accept: Immorality; abuses; corruption; misconduct
 Ref: B3.3.3
 D: 2
+Id: edexcel-hist-B3-043
 
 Q: The first Act of 1536 closed monasteries with an income of under how many pounds a year?
 A: 200
 Accept: £200; 200 pounds
 Ref: B3.3.3
 D: 2
+Id: edexcel-hist-B3-044
 
 Q: In which year did the last monastery, Waltham Abbey, close?
 A: 1540
 Ref: B3.3.3
 D: 2
+Id: edexcel-hist-B3-045
 
 Q: Why did the poor lose out when monasteries closed?
 A: Lost monastic charity
 Accept: They lost alms; relief and help; charity ended
 Ref: B3.3.3
 D: 3
+Id: edexcel-hist-B3-046
 
 Q: In which year did the Pilgrimage of Grace take place?
 A: 1536
 Ref: B3.3.4
 D: 1
+Id: edexcel-hist-B3-047
 
 Q: Which lawyer led the Yorkshire rebels in the Pilgrimage of Grace?
 A: Robert Aske
 Accept: Aske
 Ref: B3.3.4
 D: 1
+Id: edexcel-hist-B3-048
 
 Q: In which county did the Pilgrimage of Grace begin in October 1536?
 A: Lincolnshire
 Ref: B3.3.4
 D: 2
+Id: edexcel-hist-B3-049
 
 Q: Which duke negotiated with the rebels and led the royal forces at Doncaster?
 A: Duke of Norfolk
 Accept: Norfolk; Thomas Howard
 Ref: B3.3.4
 D: 1
+Id: edexcel-hist-B3-050
 
 Q: Why did many northerners rise in 1536 over their local religious houses?
 A: Closure of the monasteries
 Accept: Dissolution; losing the monasteries; closure of religious houses
 Ref: B3.3.4
 D: 3
+Id: edexcel-hist-B3-051
 
 Q: Cromwell was executed in which year?
 A: 1540
 Ref: B3.2.4
 D: 1
+Id: edexcel-hist-B3-052

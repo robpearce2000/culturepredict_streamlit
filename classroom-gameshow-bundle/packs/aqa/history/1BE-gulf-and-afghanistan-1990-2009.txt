@@ -7,214 +7,251 @@ A: 1980 to 1988
 Accept: 1980-1988; 1980–88
 Ref: 1BE.1.1
 D: 1
+Id: aqa-hist-1BE-001
 
 Q: Why were Western governments so concerned about instability in the Gulf?
 A: It threatened oil supplies
 Accept: Oil; the Gulf supplied much of the world's oil; threat to oil supplies
 Ref: 1BE.1.1
 D: 2
+Id: aqa-hist-1BE-002
 
 Q: Which long-running conflict, with US support for Israel, fuelled Arab anger and motives for terrorism?
 A: Israeli-Palestinian conflict
 Accept: Arab-Israeli conflict; Israel and Palestine; Palestinian conflict
 Ref: 1BE.1.1
 D: 2
+Id: aqa-hist-1BE-003
 
 Q: Why did Western powers tend to back Iraq against Iran in the 1980s?
 A: Fear of Iran's revolution spreading
 Accept: To contain Iran; fear of Iranian influence; to stop Iran winning
 Ref: 1BE.1.1
 D: 3
+Id: aqa-hist-1BE-004
 
 Q: In which month and year did Iraq invade Kuwait?
 A: August 1990
 Accept: Aug 1990; 2 August 1990
 Ref: 1BE.1.2
 D: 1
+Id: aqa-hist-1BE-005
 
 Q: Which US president led the coalition against Iraq in 1990-91?
 A: George H. W. Bush
 Accept: Bush; George Bush; Bush senior; George Bush senior
 Ref: 1BE.1.2
 D: 1
+Id: aqa-hist-1BE-006
 
-Q: Which British prime minister is said to have told Bush "this is no time to go wobbly"?
+Q: Which British prime minister is reported to have told Bush "this is no time to go wobbly"?
 A: Margaret Thatcher
 Accept: Thatcher
 Ref: 1BE.1.2
 D: 2
+Id: aqa-hist-1BE-007
 
 Q: What was the name of the 1991 US-led operation that drove Iraqi forces out of Kuwait?
 A: Desert Storm
 Accept: Operation Desert Storm
 Ref: 1BE.1.2
 D: 1
+Id: aqa-hist-1BE-008
 
 Q: Why did the Gulf War end with Saddam Hussein still in power?
 A: UN aim was only to free Kuwait
 Accept: The coalition's aim was only to liberate Kuwait; UN resolutions did not allow regime change; the UN mandate was limited to freeing Kuwait
 Ref: 1BE.1.2
 D: 3
+Id: aqa-hist-1BE-009
 
-Q: Which man founded and led Al-Qaeda?
+Q: Which man led Al-Qaeda at the time of the 11 September 2001 attacks?
 A: Osama bin Laden
 Accept: Bin Laden; Osama Bin Laden
 Ref: 1BE.2.1
 D: 1
+Id: aqa-hist-1BE-010
 
 Q: Which New York landmarks were destroyed in the 11 September 2001 attacks?
 A: World Trade Center
 Accept: Twin Towers; the Twin Towers; WTC
 Ref: 1BE.2.1
 D: 1
+Id: aqa-hist-1BE-011
 
 Q: What kind of rule did Al-Qaeda want to impose on Muslim countries?
 A: Islamic rule
 Accept: Sharia; Sharia law; an Islamic state; a caliphate; strict Islamic government
 Ref: 1BE.2.1
 D: 2
+Id: aqa-hist-1BE-012
 
 Q: Why did US troops stationed in Saudi Arabia after 1990 anger Osama bin Laden?
 A: Saudi Arabia holds Islam's holiest sites
 Accept: Mecca and Medina are there; foreign troops on holy land; holy places of Islam
 Ref: 1BE.2.1
 D: 3
+Id: aqa-hist-1BE-013
 
 Q: Which group ruled most of Afghanistan from 1996 until 2001?
 A: Taliban
 Accept: The Taliban
 Ref: 1BE.2.2
 D: 1
+Id: aqa-hist-1BE-014
 
 Q: Which Shia ethnic minority in Afghanistan was persecuted by the Taliban?
 A: Hazara
 Accept: Hazaras
 Ref: 1BE.2.2
 D: 2
+Id: aqa-hist-1BE-015
 
 Q: Which strict system of religious law did the Taliban enforce, banning girls' education?
 A: Sharia law
 Accept: Sharia; Islamic law
 Ref: 1BE.2.2
 D: 2
+Id: aqa-hist-1BE-016
 
 Q: Which neighbouring country's border areas gave Taliban fighters refuge after 2001?
 A: Pakistan
 Ref: 1BE.2.2
 D: 2
+Id: aqa-hist-1BE-017
 
 Q: Why did Western governments see Taliban-ruled Afghanistan as a rogue state?
 A: It sheltered Al-Qaeda and abused rights
 Accept: Harboured terrorists; sheltered terrorists; protected Al-Qaeda; human rights abuses; supported terrorism
 Ref: 1BE.2.2
 D: 3
+Id: aqa-hist-1BE-018
 
 Q: What name did President Bush give to his campaign against terrorist groups after 11 September?
 A: War on Terror
 Accept: The War on Terror; War against Terror
 Ref: 1BE.2.3
 D: 1
+Id: aqa-hist-1BE-019
 
 Q: Which British prime minister supported Bush's military intervention in Afghanistan in 2001?
 A: Tony Blair
 Accept: Blair
 Ref: 1BE.2.3
 D: 1
+Id: aqa-hist-1BE-020
 
 Q: In which German city was the UN-backed peace conference on Afghanistan held in December 2001?
 A: Bonn
 Ref: 1BE.2.3
 D: 2
+Id: aqa-hist-1BE-021
 
 Q: Who led Afghanistan's interim government after the fall of the Taliban?
 A: Hamid Karzai
 Accept: Karzai
 Ref: 1BE.2.3
 D: 1
+Id: aqa-hist-1BE-022
 
 Q: Why did Karzai's government struggle to control Afghanistan?
 A: Corruption and powerful warlords
 Accept: Warlords; corruption; little power outside Kabul; Taliban resurgence; the Taliban insurgency
 Ref: 1BE.2.3
 D: 3
+Id: aqa-hist-1BE-023
 
 Q: Which ethnic group in northern Iraq did Saddam Hussein attack with chemical weapons at Halabja in 1988?
 A: Kurds
 Accept: Kurdish people; the Kurds
 Ref: 1BE.3.1
 D: 2
+Id: aqa-hist-1BE-024
 
 Q: Which religious group, the majority in Iraq, was repressed by Saddam Hussein's regime?
 A: Shia Muslims
 Accept: Shia; Shiites; Shi'a
 Ref: 1BE.3.1
 D: 1
+Id: aqa-hist-1BE-025
 
-Q: What name was given to the areas of northern and southern Iraq patrolled by US and UK aircraft after 1991?
+Q: What name was given to the areas of northern and southern Iraq patrolled by US and UK aircraft after the Gulf War?
 A: No-fly zones
 Accept: No fly zones; exclusion zones
 Ref: 1BE.3.1
 D: 2
+Id: aqa-hist-1BE-026
 
 Q: Why did many experts doubt that Saddam Hussein would work with Al-Qaeda?
 A: Saddam's regime was secular
 Accept: Saddam was secular; Al-Qaeda was Islamist; Saddam ran a non-religious state
 Ref: 1BE.3.1
 D: 3
+Id: aqa-hist-1BE-027
 
 Q: What does WMD stand for?
 A: Weapons of Mass Destruction
 Ref: 1BE.3.2
 D: 1
+Id: aqa-hist-1BE-028
 
 Q: In which month and year did the US-led invasion of Iraq begin?
 A: March 2003
 Accept: Mar 2003; 20 March 2003
 Ref: 1BE.3.2
 D: 1
+Id: aqa-hist-1BE-029
 
-Q: Which NATO ally of the USA, with a UN veto, led European opposition to the 2003 invasion?
+Q: Under President Jacques Chirac, which European country led opposition to the 2003 invasion of Iraq?
 A: France
 Ref: 1BE.3.2
 D: 2
+Id: aqa-hist-1BE-030
 
 Q: What did the search after the invasion find about Iraq's weapons of mass destruction?
 A: None were found
 Accept: No WMD found; no weapons found; nothing; they did not exist
 Ref: 1BE.3.2
 D: 2
+Id: aqa-hist-1BE-031
 
 Q: Why did critics argue that oil was a motive for invading Iraq?
 A: Iraq has huge oil reserves
 Accept: Large oil reserves; Iraq had some of the world's largest oil reserves; to control Iraqi oil
 Ref: 1BE.3.2
 D: 3
+Id: aqa-hist-1BE-032
 
 Q: What name is given to the armed resistance to the occupation of Iraq after 2003?
 A: Insurgency
 Accept: The insurgency; insurgents
 Ref: 1BE.3.3
 D: 1
+Id: aqa-hist-1BE-033
 
 Q: In which year did Iraqis elect a National Assembly in the first elections after Saddam Hussein?
 A: 2005
 Accept: January 2005
 Ref: 1BE.3.3
 D: 1
+Id: aqa-hist-1BE-034
 
 Q: What was the purpose of the 2007 US troop surge in Iraq?
 A: To improve security and reduce violence
 Accept: To reduce violence; to stabilise Iraq; to defeat the insurgents; to improve security
 Ref: 1BE.3.3
 D: 2
+Id: aqa-hist-1BE-035
 
 Q: Which British city's transport network was bombed on 7 July 2005 by terrorists angry about Iraq?
 A: London
 Ref: 1BE.3.3
 D: 2
+Id: aqa-hist-1BE-036
 
 Q: Why did many Muslims join extremist groups after the 2003 invasion?
 A: Anger at foreign occupation
 Accept: Opposition to the US occupation; anger at the invasion; anger at the USA and UK
 Ref: 1BE.3.3
 D: 3
+Id: aqa-hist-1BE-037

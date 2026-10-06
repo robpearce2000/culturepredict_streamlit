@@ -7,438 +7,512 @@ A: Longbow
 Accept: The longbow; Long bow
 Ref: 12.1.1
 D: 1
+Id: edexcel-hist-12-001
 
 Q: In a medieval army, which type of soldier was the mounted, armoured fighter?
 A: Knight
 Accept: Mounted knight; Knights
 Ref: 12.1.1
 D: 1
+Id: edexcel-hist-12-002
 
 Q: What name is given to the tightly packed circular spear formations used by the Scots at Falkirk?
 A: Schiltrons
 Accept: Schiltron
 Ref: 12.1.1
 D: 2
+Id: edexcel-hist-12-003
 
 Q: Why did the longbow help to bring about the decline of the mounted knight?
 A: Arrows could kill knights from a distance
 Accept: Arrows pierced armour; Archers stopped cavalry charges; Longbow was cheap and deadly
 Ref: 12.1.1
 D: 3
+Id: edexcel-hist-12-004
 
 Q: Which new weapon, using gunpowder, was increasingly used to batter castle walls in the later Middle Ages?
 A: Cannon
 Accept: Cannons; Bombard
 Ref: 12.1.1
 D: 2
+Id: edexcel-hist-12-005
 
 Q: In the medieval feudal army, who usually commanded because of their position in the social structure?
 A: Nobles
 Accept: Barons; Lords; The nobility; The king and nobles
 Ref: 12.1.1
 D: 2
+Id: edexcel-hist-12-006
 
 Q: What was the medieval system called in which men held land from a lord in return for military service?
 A: Feudal system
 Accept: Feudalism; Feudal
 Ref: 12.1.2
 D: 1
+Id: edexcel-hist-12-007
 
 Q: What was the term for civilian goods and valuables seized by soldiers as they passed through an area?
 A: Plunder
 Accept: Looting; Pillage
 Ref: 12.1.2
 D: 1
+Id: edexcel-hist-12-008
 
 Q: How did feudal duties affect ordinary civilians when a war broke out?
 A: Had to fight or supply men and food
 Accept: Forced to fight; Had to pay taxes and supply troops; Lost labour from farms
 Ref: 12.1.2
 D: 3
+Id: edexcel-hist-12-009
 
 Q: Which Scottish leader fought Edward I's army at the Battle of Falkirk in 1298?
 A: William Wallace
 Accept: Wallace
 Ref: 12.1.3
 D: 1
+Id: edexcel-hist-12-010
 
 Q: In which year was the Battle of Falkirk fought?
 A: 1298
 Ref: 12.1.3
 D: 1
+Id: edexcel-hist-12-011
 
 Q: What was the outcome of the Battle of Falkirk for the Scots led by Wallace?
 A: Defeat by Edward I
 Accept: English victory; Scots lost; Wallace was defeated
 Ref: 12.1.3
 D: 2
+Id: edexcel-hist-12-012
 
 Q: Which English king led his army to victory at Agincourt in 1415?
 A: Henry V
 Accept: Henry the Fifth; Henry 5
 Ref: 12.1.3
 D: 1
+Id: edexcel-hist-12-013
 
 Q: Why did the muddy ground at Agincourt help the English?
 A: French knights struggled to advance in armour
 Accept: French charge was slowed; French knights got bogged down
 Ref: 12.1.3
 D: 3
+Id: edexcel-hist-12-014
 
 Q: Which type of soldier, armed with a long spear, protected musketeers in the seventeenth century?
 A: Pikemen
 Accept: Pikeman; Pike
 Ref: 12.2.1
 D: 1
+Id: edexcel-hist-12-015
 
 Q: Which light mounted soldiers fought on horseback or on foot with firearms in the seventeenth century?
 A: Dragoons
 Accept: Dragoon
 Ref: 12.2.1
 D: 2
+Id: edexcel-hist-12-016
 
 Q: What name is given to a permanent, professional army kept even in peacetime?
 A: Standing army
 Accept: A standing army
 Ref: 12.2.1
 D: 1
+Id: edexcel-hist-12-017
 
 Q: Why did muskets gradually replace the longbow in English armies?
 A: Needed little training and could pierce armour
 Accept: Easier to learn than the longbow; Muskets were more powerful
 Ref: 12.2.1
 D: 3
+Id: edexcel-hist-12-018
 
 Q: Which new army was formed by Parliament in 1645?
 A: New Model Army
 Accept: The New Model Army
 Ref: 12.2.2
 D: 1
+Id: edexcel-hist-12-019
 
 Q: What was the term for civilians being forced to hand over food, horses or supplies to an army?
 A: Requisitioning
 Accept: Requisition
 Ref: 12.2.2
 D: 1
+Id: edexcel-hist-12-020
 
 Q: How did the New Model Army differ from earlier part-time forces?
 A: Full-time, paid, trained and promoted on merit
 Accept: Professional; Paid regularly and well trained; Officers chosen on ability
 Ref: 12.2.2
 D: 3
+Id: edexcel-hist-12-021
 
 Q: Which Parliamentary cavalry commander, later Lord Protector, helped win the Battle of Naseby in 1645?
 A: Oliver Cromwell
 Accept: Cromwell
 Ref: 12.2.3
 D: 1
+Id: edexcel-hist-12-022
 
 Q: Naseby was a decisive defeat for the army of which king?
 A: Charles I
 Accept: Charles the First; Charles 1
 Ref: 12.2.3
 D: 1
+Id: edexcel-hist-12-023
 
 Q: Why did Parliament win the Battle of Naseby?
 A: Better trained New Model Army and Cromwell's cavalry
 Accept: Cromwell's cavalry charge; Better discipline; Superior numbers and training
 Ref: 12.2.3
 D: 3
+Id: edexcel-hist-12-024
 
 Q: Which type of soldier declined in importance during the nineteenth century as rifles and artillery improved?
 A: Cavalry
 Accept: Cavalrymen; Mounted soldiers
 Ref: 12.3.1
 D: 1
+Id: edexcel-hist-12-025
 
 Q: Which new type of gun barrel, with spiral grooves, made nineteenth-century firearms more accurate?
 A: Rifle
 Accept: Rifling; Rifled barrel
 Ref: 12.3.1
 D: 2
+Id: edexcel-hist-12-026
 
 Q: How did steam-powered transport change warfare in the nineteenth century?
 A: Moved troops and supplies faster
 Accept: Railways and steamships carried armies quickly; Faster transport
 Ref: 12.3.1
 D: 3
+Id: edexcel-hist-12-027
 
 Q: Which Secretary of State for War reformed the British army from 1868?
 A: Edward Cardwell
 Accept: Cardwell
 Ref: 12.3.2
 D: 1
+Id: edexcel-hist-12-028
 
 Q: Under Cardwell's reforms, what change affected how long soldiers served with the colours?
 A: Short service
 Accept: Shorter service; Short-service enlistment; Six years with the colours
 Ref: 12.3.2
 D: 2
+Id: edexcel-hist-12-029
 
 Q: Which Crimean War reporter for The Times sent shocking reports from the front?
 A: William Howard Russell
 Accept: W. H. Russell; Russell
 Ref: 12.3.2
 D: 2
+Id: edexcel-hist-12-030
 
 Q: Why did newspaper reports and photographs change public attitudes in the Crimean and Boer Wars?
 A: Showed the poor conditions and mistakes
 Accept: Public learned of suffering; People saw the realities of war
 Ref: 12.3.2
 D: 3
+Id: edexcel-hist-12-031
 
 Q: Why did Cardwell abolish the purchase of army officers' commissions in 1871?
 A: So promotion depended on merit, not wealth
 Accept: Officers chosen on ability; Wealth should not decide rank; To professionalise the army
 Ref: 12.3.2
 D: 3
+Id: edexcel-hist-12-032
 
 Q: Which Duke commanded the British army at the Battle of Waterloo?
 A: Duke of Wellington
 Accept: Wellington; Arthur Wellesley
 Ref: 12.3.3
 D: 1
+Id: edexcel-hist-12-033
 
 Q: In which year was the Battle of Waterloo fought?
 A: 1815
 Ref: 12.3.3
 D: 1
+Id: edexcel-hist-12-034
 
 Q: Which Prussian commander arrived late in the day to help Wellington win at Waterloo?
 A: Blucher
 Accept: Gebhard Blucher; Blücher
 Ref: 12.3.3
 D: 2
+Id: edexcel-hist-12-035
 
 Q: Which Lord commanded the British army at Balaclava in 1854?
 A: Lord Raglan
 Accept: Raglan
 Ref: 12.3.3
 D: 1
+Id: edexcel-hist-12-036
 
 Q: In which war was the Battle of Balaclava fought?
 A: Crimean War
 Accept: The Crimean War; Crimea
 Ref: 12.3.3
 D: 1
+Id: edexcel-hist-12-037
 
 Q: Why did the Charge of the Light Brigade at Balaclava go so badly wrong?
 A: Confused orders sent it at the wrong guns
 Accept: Misunderstood orders; Poor communication
 Ref: 12.3.3
 D: 3
+Id: edexcel-hist-12-038
 
 Q: Which weapon, first used heavily in the First World War, fired hundreds of bullets a minute?
 A: Machine gun
 Accept: Machine guns; Maxim gun
 Ref: 12.4.1
 D: 1
+Id: edexcel-hist-12-039
 
 Q: Which armoured vehicle first used at the Somme in 1916 could cross trenches?
 A: Tank
 Accept: Tanks
 Ref: 12.4.1
 D: 1
+Id: edexcel-hist-12-040
 
 Q: Which system, developed in Britain in the 1930s, used radio waves to detect incoming aircraft?
 A: Radar
 Accept: RDF
 Ref: 12.4.1
 D: 1
+Id: edexcel-hist-12-041
 
 Q: Which term describes fighting by small irregular groups using ambushes rather than open battle?
 A: Guerrilla warfare
 Accept: Guerrilla; Guerilla warfare; Insurgency
 Ref: 12.4.1
 D: 2
+Id: edexcel-hist-12-042
 
 Q: What did the Military Service Act of 1916 introduce in Britain?
 A: Conscription
 Accept: Compulsory military service; The draft
 Ref: 12.4.2
 D: 1
+Id: edexcel-hist-12-043
 
 Q: What name was given to compulsory peacetime military service for young men in Britain after the Second World War?
 A: National Service
 Accept: National service
 Ref: 12.4.2
 D: 2
+Id: edexcel-hist-12-044
 
 Q: What name is given to people who refuse to fight on grounds of conscience?
 A: Conscientious Objectors
 Accept: Conscientious objector; COs; Conchies
 Ref: 12.4.2
 D: 1
+Id: edexcel-hist-12-045
 
 Q: Which 1914 Act gave the government wide powers such as censorship during the First World War?
 A: Defence of the Realm Act
 Accept: DORA; Defence of the Realm Act 1914
 Ref: 12.4.2
 D: 2
+Id: edexcel-hist-12-046
 
 Q: Why were Conscientious Objectors often treated harshly by the public in the First World War?
 A: Seen as cowards who avoided fighting
 Accept: Viewed as unpatriotic; Called cowards
 Ref: 12.4.2
 D: 3
+Id: edexcel-hist-12-047
 
 Q: Which battle of 1916 began on 1 July and saw about 57,000 British casualties on the first day?
 A: Battle of the Somme
 Accept: The Somme; Somme
 Ref: 12.4.3
 D: 1
+Id: edexcel-hist-12-048
 
 Q: Which British general commanded the British Expeditionary Force at the Somme?
 A: Douglas Haig
 Accept: Haig; General Haig; Sir Douglas Haig
 Ref: 12.4.3
 D: 1
+Id: edexcel-hist-12-049
 
 Q: What term describes a war aimed at wearing down the enemy through steady losses?
 A: War of attrition
 Accept: Attrition
 Ref: 12.4.3
 D: 2
+Id: edexcel-hist-12-050
 
 Q: Why did the infantry attack on the first day of the Somme largely fail?
 A: German dugouts and barbed wire survived the bombardment
 Accept: Uncut wire; Deep German defences; Machine guns; Bombardment failed to destroy defences
 Ref: 12.4.3
 D: 3
+Id: edexcel-hist-12-051
 
 Q: In which year did the Iraq War begin?
 A: 2003
 Ref: 12.4.3
 D: 1
+Id: edexcel-hist-12-052
 
 Q: Which weapons guided by satellites were used with surveillance in the 2003 Iraq War?
 A: Precision-guided missiles
 Accept: Smart bombs; Guided missiles; Cruise missiles; Precision weapons
 Ref: 12.4.3
 D: 3
+Id: edexcel-hist-12-053
 
 Q: Which small steel shelter was issued to many London households in 1939 for the garden?
 A: Anderson shelter
 Accept: Anderson; Andersons
 Ref: 12.HE.1
 D: 1
+Id: edexcel-hist-12-054
 
 Q: Which river made London an important port, and so a target for German bombers?
 A: River Thames
 Accept: Thames; The Thames
 Ref: 12.HE.1
 D: 1
+Id: edexcel-hist-12-055
 
 Q: Why was London an attractive target for German bombers?
 A: Capital, port and industrial centre
 Accept: Seat of government; Docks and industry; Close to German-held airfields
 Ref: 12.HE.1
 D: 3
+Id: edexcel-hist-12-056
 
 Q: Which date in 1940, known as Black Saturday, began the Blitz on London's docks?
 A: 7 September 1940
 Accept: 7 September; 7th September 1940
 Ref: 12.HE.1
 D: 2
+Id: edexcel-hist-12-057
 
 Q: Which area of London was bombed heavily because it contained the docks?
 A: East End
 Accept: The East End; Docklands
 Ref: 12.HE.1
 D: 1
+Id: edexcel-hist-12-058
 
 Q: Which German rocket weapon of 1944-45, with no warning, hit Deptford in 1944?
 A: V2
 Accept: V2 rocket; V-2
 Ref: 12.HE.1
 D: 2
+Id: edexcel-hist-12-059
 
 Q: Which pilotless flying bomb, nicknamed the doodlebug, hit London from 1944?
 A: V1
 Accept: V-1; Doodlebug; Flying bomb
 Ref: 12.HE.1
 D: 2
+Id: edexcel-hist-12-060
 
 Q: Why were V2 rockets harder to defend against than V1 flying bombs?
 A: They were too fast to shoot down
 Accept: No warning; Supersonic; Could not be intercepted
 Ref: 12.HE.1
 D: 3
+Id: edexcel-hist-12-061
 
 Q: Which small bombs started fires and were a problem for fire-watchers in 1940-41?
 A: Incendiaries
 Accept: Incendiary bombs; Incendiary
 Ref: 12.HE.1
 D: 2
+Id: edexcel-hist-12-062
 
 Q: Where did many Londoners shelter during the Blitz, despite initial government opposition?
 A: Underground stations
 Accept: Tube stations; The Underground
 Ref: 12.HE.1
 D: 1
+Id: edexcel-hist-12-063
 
 Q: Who ran the well-known Stepney shelter nicknamed "Mickey's shelter" during the Blitz?
 A: Mickey Davies
 Accept: Michael Davies; Davies
 Ref: 12.HE.1
 D: 2
+Id: edexcel-hist-12-064
 
 Q: At which Underground station did 173 people die in a crush in 1943?
 A: Bethnal Green
 Accept: Bethnal Green station
 Ref: 12.HE.1
 D: 1
+Id: edexcel-hist-12-065
 
 Q: What happened at South Hallsville School in September 1940?
 A: A bomb hit people waiting for evacuation
 Accept: Bombed while refugees waited for coaches; Many killed in a bombing
 Ref: 12.HE.1
 D: 2
+Id: edexcel-hist-12-066
 
 Q: Which government campaign encouraged people to turn parks into vegetable plots?
 A: Dig for Victory
 Accept: Dig for victory
 Ref: 12.HE.1
 D: 1
+Id: edexcel-hist-12-067
 
 Q: Which moat of a famous London fortress was turned into vegetable plots in the Second World War?
 A: Tower of London
 Accept: The Tower of London; Tower of London moat
 Ref: 12.HE.1
 D: 2
+Id: edexcel-hist-12-068
 
 Q: Where did Winston Churchill's War Cabinet meet underground in Westminster?
 A: Cabinet War Rooms
 Accept: The Cabinet War Rooms; War Rooms
 Ref: 12.HE.1
 D: 1
+Id: edexcel-hist-12-069
 
 Q: Which London royal residence did George VI and his family stay in during the Blitz?
 A: Buckingham Palace
 Accept: The Palace
 Ref: 12.HE.1
 D: 2
+Id: edexcel-hist-12-070
 
 Q: Which Ministry controlled official wartime news and propaganda in Britain?
 A: Ministry of Information
 Accept: MOI
 Ref: 12.HE.1
 D: 2
+Id: edexcel-hist-12-071
 
 Q: Which organisation, founded in 1937, recorded ordinary people's views in reports used by historians?
 A: Mass Observation
 Accept: Mass-Observation
 Ref: 12.HE.2
 D: 1
+Id: edexcel-hist-12-072
 
 Q: Why might a newspaper report from 1940 be limited as evidence of Blitz damage?
 A: Censorship hid the real scale of damage
 Accept: Censored; Government controlled what could be printed; Propaganda
 Ref: 12.HE.2
 D: 3
+Id: edexcel-hist-12-073
 
 Q: Which short films, shown in cinemas, are a national source on the Blitz?
 A: Newsreels
 Accept: Newsreel
 Ref: 12.HE.2
 D: 1
+Id: edexcel-hist-12-074

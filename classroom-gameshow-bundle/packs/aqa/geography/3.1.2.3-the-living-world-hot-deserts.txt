@@ -7,228 +7,267 @@ A: 250 mm
 Accept: 250; under 250 mm
 Ref: 3.1.2.3.1
 D: 1
+Id: aqa-geog-3.1.2.3-001
 
 Q: Name the continent that contains the Sahara, the world's largest hot desert.
 A: Africa
 Ref: 3.1.2.3.1
 D: 1
+Id: aqa-geog-3.1.2.3-002
 
 Q: Hot deserts are found in which two latitude bands, roughly, either side of the Equator?
 A: Around 20-30 degrees north and south
 Accept: 15-30 degrees; 20 to 30 degrees; near the tropics; Tropics of Cancer and Capricorn
 Ref: 3.1.2.3.1
 D: 2
+Id: aqa-geog-3.1.2.3-003
 
 Q: Name the term for the very large temperature difference between day and night in a hot desert.
 A: Diurnal temperature range
 Accept: Large diurnal range; diurnal range
 Ref: 3.1.2.3.1
 D: 1
+Id: aqa-geog-3.1.2.3-004
 
 Q: Why is there a large temperature drop in hot deserts at night?
 A: Cloudless skies let heat escape
 Accept: No cloud cover; clear skies; no clouds to trap heat
 Ref: 3.1.2.3.1
 D: 3
+Id: aqa-geog-3.1.2.3-005
 
 Q: Hot desert soils are often thin, sandy and low in which natural plant-feeding material?
 A: Organic matter
 Accept: Humus; nutrients; humus and nutrients
 Ref: 3.1.2.3.1
 D: 2
+Id: aqa-geog-3.1.2.3-006
 
 Q: Why do hot desert soils contain very little organic matter?
 A: Few plants, so little leaf litter
 Accept: Sparse vegetation; little vegetation; few plants
 Ref: 3.1.2.3.1
 D: 3
+Id: aqa-geog-3.1.2.3-007
 
 Q: Name the term for a plant adapted to survive with very little water.
 A: Xerophyte
 Accept: Xerophytic
 Ref: 3.1.2.3.1
 D: 1
+Id: aqa-geog-3.1.2.3-008
 
 Q: Cacti have thick, fleshy stems. What is the benefit of this adaptation in a desert?
 A: Stores water
 Accept: Water storage; to store water
 Ref: 3.1.2.3.1
 D: 2
+Id: aqa-geog-3.1.2.3-009
 
 Q: How does the cactus's spiky, needle-like leaf shape help it survive in a hot desert?
 A: Reduces water loss
 Accept: Less surface area; less transpiration; reduces transpiration
 Ref: 3.1.2.3.1
 D: 2
+Id: aqa-geog-3.1.2.3-010
 
 Q: Many desert plants have very long roots. Why is this an advantage?
 A: Reach deep underground water
 Accept: Reach groundwater; reach water deep down; absorb water over a wide area
 Ref: 3.1.2.3.1
 D: 3
+Id: aqa-geog-3.1.2.3-011
 
 Q: Many desert animals, such as the fennec fox, are nocturnal. What does nocturnal mean?
 A: Active at night
 Accept: Come out at night; hunt at night
 Ref: 3.1.2.3.1
 D: 1
+Id: aqa-geog-3.1.2.3-012
 
 Q: How do the large ears of the fennec fox help it survive in a hot desert?
 A: Lose heat
 Accept: Lose body heat; keeps it cool; radiate heat
 Ref: 3.1.2.3.1
 D: 2
+Id: aqa-geog-3.1.2.3-013
 
 Q: Name the hump-backed animal that stores fat to survive long periods without food in deserts.
 A: Camel
 Accept: Dromedary
 Ref: 3.1.2.3.1
 D: 1
+Id: aqa-geog-3.1.2.3-014
 
 Q: Give one reason why a hot desert has low biodiversity.
 A: Lack of water
 Accept: Little water; low rainfall; extreme temperatures; harsh conditions; extreme heat; aridity
 Ref: 3.1.2.3.1
 D: 2
+Id: aqa-geog-3.1.2.3-015
 
 Q: What word describes the fact that desert plants, animals, soil and climate all depend on one another?
 A: Interdependence
 Accept: Interdependent
 Ref: 3.1.2.3.1
 D: 2
+Id: aqa-geog-3.1.2.3-016
 
 Q: Name one development opportunity in hot deserts that involves extracting oil, gas or metal ores.
 A: Mineral extraction
 Accept: Mining; oil extraction; mineral mining
 Ref: 3.1.2.3.2
 D: 1
+Id: aqa-geog-3.1.2.3-017
 
 Q: Which renewable energy source suits hot deserts because of their cloudless skies?
 A: Solar power
 Accept: Solar; solar energy; solar farms
 Ref: 3.1.2.3.2
 D: 1
+Id: aqa-geog-3.1.2.3-018
 
 Q: Name the process of supplying water to crops by pipes, canals or sprinklers to allow farming in deserts.
 A: Irrigation
 Ref: 3.1.2.3.2
 D: 1
+Id: aqa-geog-3.1.2.3-019
 
 Q: Why is drip irrigation better than flooding fields in a hot desert?
 A: Less water lost to evaporation
 Accept: Saves water; uses less water; less evaporation; reduces water waste
 Ref: 3.1.2.3.2
 D: 3
+Id: aqa-geog-3.1.2.3-020
 
 Q: Name the layer of underground water-bearing rock that desert farms and towns often tap.
 A: Aquifer
 Accept: Groundwater aquifer
 Ref: 3.1.2.3.2
 D: 2
+Id: aqa-geog-3.1.2.3-021
 
 Q: Why is tourism an opportunity for hot desert regions?
 A: Brings money and jobs
 Accept: Creates jobs; brings income; sunshine and landscapes attract visitors; economic growth
 Ref: 3.1.2.3.2
 D: 2
+Id: aqa-geog-3.1.2.3-022
 
 Q: Give one challenge of hot desert environments for people, linked to temperature.
 A: Extreme heat
 Accept: Very hot days; very cold nights; extreme temperatures; heat stress
 Ref: 3.1.2.3.2
 D: 1
+Id: aqa-geog-3.1.2.3-023
 
 Q: Which resource is scarce in hot deserts and makes farming and settlement difficult?
 A: Water
 Accept: Fresh water; water supply
 Ref: 3.1.2.3.2
 D: 1
+Id: aqa-geog-3.1.2.3-024
 
 Q: Name the term for a place that is difficult to reach because of few roads and rough terrain.
 A: Inaccessibility
 Accept: Inaccessible; remote; remoteness
 Ref: 3.1.2.3.2
 D: 1
+Id: aqa-geog-3.1.2.3-025
 
 Q: Why does inaccessibility make it costly to develop hot desert regions?
 A: Roads and pipelines are expensive to build
 Accept: Costly infrastructure; hard to transport goods; expensive to build roads; long distances
 Ref: 3.1.2.3.2
 D: 3
+Id: aqa-geog-3.1.2.3-026
 
 Q: What is the term for the process by which land turns into desert?
 A: Desertification
 Ref: 3.1.2.3.3
 D: 1
+Id: aqa-geog-3.1.2.3-027
 
 Q: Name the semi-arid belt of Africa on the southern edge of the Sahara that is at risk of desertification.
 A: The Sahel
 Accept: Sahel
 Ref: 3.1.2.3.3
 D: 1
+Id: aqa-geog-3.1.2.3-028
 
 Q: Name the cause of desertification in which too many animals eat the vegetation.
 A: Overgrazing
 Accept: Over-grazing
 Ref: 3.1.2.3.3
 D: 1
+Id: aqa-geog-3.1.2.3-029
 
 Q: Name the cause of desertification in which crops are grown too intensively and exhaust the soil.
 A: Over-cultivation
 Accept: Overcultivation; over-farming; overcropping
 Ref: 3.1.2.3.3
 D: 2
+Id: aqa-geog-3.1.2.3-030
 
 Q: How does the removal of fuel wood lead to desertification?
 A: Roots no longer bind the soil
 Accept: Soil erosion; less vegetation to hold soil; trees removed so soil eroded; soil exposed
 Ref: 3.1.2.3.3
 D: 3
+Id: aqa-geog-3.1.2.3-031
 
 Q: How does rapid population growth increase the risk of desertification?
 A: More demand for food and fuel
 Accept: More pressure on land; more farming and fuelwood use; overuse of land
 Ref: 3.1.2.3.3
 D: 3
+Id: aqa-geog-3.1.2.3-032
 
 Q: How can climate change cause desertification on desert fringes?
 A: Less rainfall and higher temperatures
 Accept: Droughts; less rain; more droughts; hotter and drier
 Ref: 3.1.2.3.3
 D: 2
+Id: aqa-geog-3.1.2.3-033
 
 Q: Name the process by which wind and rain remove dry, exposed topsoil from degraded land.
 A: Soil erosion
 Accept: Erosion
 Ref: 3.1.2.3.3
 D: 2
+Id: aqa-geog-3.1.2.3-034
 
 Q: How does tree planting reduce the risk of desertification?
 A: Roots bind soil and trees give shade
 Accept: Roots hold soil; reduces erosion; windbreak; protects soil; shade
 Ref: 3.1.2.3.3
 D: 2
+Id: aqa-geog-3.1.2.3-035
 
 Q: Name the type of technology, such as simple stone lines or hand tools, that is cheap and locally maintained.
 A: Appropriate technology
 Accept: Intermediate technology
 Ref: 3.1.2.3.3
 D: 2
+Id: aqa-geog-3.1.2.3-036
 
 Q: Which water management strategy collects and stores rainwater for farming in dry areas?
 A: Rainwater harvesting
 Accept: Water harvesting; collecting rainwater; building small dams
 Ref: 3.1.2.3.3
 D: 2
+Id: aqa-geog-3.1.2.3-037
 
 Q: Why are strategies such as stone lines on slopes (Sahel) described as sustainable?
 A: Cheap, local and easy to maintain
 Accept: Low cost; local people can use them; use local materials; do not harm the environment
 Ref: 3.1.2.3.3
 D: 3
+Id: aqa-geog-3.1.2.3-038
 
 Q: Name the soil-management method of growing different crops in turn on the same land to protect soil fertility.
 A: Crop rotation
 Accept: Rotating crops
 Ref: 3.1.2.3.3
 D: 2
+Id: aqa-geog-3.1.2.3-039

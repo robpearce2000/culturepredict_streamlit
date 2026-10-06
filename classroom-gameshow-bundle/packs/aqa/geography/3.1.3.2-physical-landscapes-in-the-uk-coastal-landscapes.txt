@@ -7,288 +7,337 @@ A: Hydraulic power
 Accept: Hydraulic action
 Ref: 3.1.3.2.1
 D: 1
+Id: aqa-geog-3.1.3.2-001
 
 Q: Name the erosion process in which waves hurl pebbles and sand against a cliff, wearing it away.
 A: Abrasion
 Accept: Corrasion
 Ref: 3.1.3.2.1
 D: 1
+Id: aqa-geog-3.1.3.2-002
 
 Q: Name the erosion process in which rocks and pebbles knock into each other and become smaller and rounder.
 A: Attrition
 Ref: 3.1.3.2.1
 D: 1
+Id: aqa-geog-3.1.3.2-003
 
 Q: Name the process by which sediment is moved along the coast in a zigzag pattern by waves.
 A: Longshore drift
 Accept: Littoral drift
 Ref: 3.1.3.2.1
 D: 1
+Id: aqa-geog-3.1.3.2-004
 
 Q: Name the range of hills running down the middle of northern England, often called the backbone of England.
 A: Pennines
 Accept: The Pennines; Pennine Hills
 Ref: 3.1.3.1.1
 D: 1
+Id: aqa-geog-3.1.3.2-005
 
 Q: Which is the longest river in the UK?
 A: River Severn
 Accept: Severn
 Ref: 3.1.3.1.1
 D: 1
+Id: aqa-geog-3.1.3.2-006
 
 Q: Are the Scottish Highlands an upland or a lowland area?
 A: Upland
 Accept: Uplands; highland
 Ref: 3.1.3.1.1
 D: 1
+Id: aqa-geog-3.1.3.2-007
 
 Q: Why are most of the UK's upland areas found in the north and west?
 A: Harder, older rocks resist erosion
 Accept: Hard rock; resistant rock; older harder rock
 Ref: 3.1.3.1.1
 D: 3
+Id: aqa-geog-3.1.3.2-008
 
 Q: Which type of wave has a strong swash, a weak backwash and is low in height, building up beaches?
 A: Constructive wave
 Accept: Constructive
 Ref: 3.1.3.2.1
 D: 2
+Id: aqa-geog-3.1.3.2-009
 
 Q: Which type of wave is high and steep, with a strong backwash, and removes material from a beach?
 A: Destructive wave
 Accept: Destructive
 Ref: 3.1.3.2.1
 D: 2
+Id: aqa-geog-3.1.3.2-010
 
 Q: Name the type of weathering in which freeze-thaw breaks up coastal rock.
 A: Mechanical weathering
 Accept: Mechanical; physical weathering
 Ref: 3.1.3.2.1
 D: 1
+Id: aqa-geog-3.1.3.2-011
 
 Q: Rainwater slowly dissolving limestone cliffs is an example of which type of weathering?
 A: Chemical weathering
 Accept: Chemical; carbonation
 Ref: 3.1.3.2.1
 D: 2
+Id: aqa-geog-3.1.3.2-012
 
 Q: Name the mass movement in which a block of rock suddenly breaks away from a steep cliff face and falls.
 A: Rock fall
 Accept: Rockfall
 Ref: 3.1.3.2.1
 D: 1
+Id: aqa-geog-3.1.3.2-013
 
 Q: Name the mass movement in which saturated soft cliff material moves down a curved surface.
 A: Slumping
 Accept: Slump; rotational slip
 Ref: 3.1.3.2.1
 D: 2
+Id: aqa-geog-3.1.3.2-014
 
 Q: Why do constructive waves deposit sediment on a beach?
 A: Backwash is weaker than swash
 Accept: Swash stronger than backwash; weak backwash
 Ref: 3.1.3.2.1
 D: 3
+Id: aqa-geog-3.1.3.2-015
 
 Q: What is the name for waves dropping the sediment they carry when they lose energy?
 A: Deposition
 Accept: Deposit
 Ref: 3.1.3.2.1
 D: 1
+Id: aqa-geog-3.1.3.2-016
 
 Q: Why is more sediment deposited in a sheltered bay than on an exposed headland?
 A: Waves have less energy there
 Accept: Lower wave energy; calmer water; waves slow down
 Ref: 3.1.3.2.1
 D: 3
+Id: aqa-geog-3.1.3.2-017
 
 Q: Name the landform of resistant rock that sticks out into the sea.
 A: Headland
 Ref: 3.1.3.2.2
 D: 1
+Id: aqa-geog-3.1.3.2-018
 
 Q: Headlands and bays form along a coastline where bands of hard and soft rock lie in which direction relative to the coast?
 A: Alternating at right angles to the coast
 Accept: Perpendicular; alternate hard and soft rock; discordant coastline
 Ref: 3.1.3.2.2
 D: 3
+Id: aqa-geog-3.1.3.2-019
 
 Q: Name the flat, rocky surface left at the base of a retreating cliff.
 A: Wave-cut platform
 Accept: Wave cut platform
 Ref: 3.1.3.2.2
 D: 1
+Id: aqa-geog-3.1.3.2-020
 
 Q: What undercuts a cliff to form a wave-cut notch before the cliff collapses?
 A: Wave erosion at its base
 Accept: Erosion at the base; waves; hydraulic power and abrasion
 Ref: 3.1.3.2.2
 D: 2
+Id: aqa-geog-3.1.3.2-021
 
 Q: Name the landform formed when a cave is eroded right through a headland.
 A: Arch
 Accept: Natural arch
 Ref: 3.1.3.2.2
 D: 1
+Id: aqa-geog-3.1.3.2-022
 
 Q: Name the tall column of rock left when the top of an arch collapses.
 A: Stack
 Accept: Sea stack
 Ref: 3.1.3.2.2
 D: 1
+Id: aqa-geog-3.1.3.2-023
 
 Q: Put in order: stack, cave, arch, crack in headland. Give the correct sequence of formation.
 A: Crack, cave, arch, stack
 Accept: Crack then cave then arch then stack
 Ref: 3.1.3.2.2
 D: 2
+Id: aqa-geog-3.1.3.2-024
 
 Q: Name the landform of sand or shingle found between the high and low tide marks at the coast.
 A: Beach
 Ref: 3.1.3.2.2
 D: 1
+Id: aqa-geog-3.1.3.2-025
 
 Q: Name the long, narrow ridge of sand or shingle joined to land at one end, found where the coast changes direction.
 A: Spit
 Accept: Sand spit
 Ref: 3.1.3.2.2
 D: 1
+Id: aqa-geog-3.1.3.2-026
 
 Q: Name the ridge of sand or shingle that completely joins two headlands, trapping a lagoon behind.
 A: Bar
 Accept: Offshore bar; sand bar
 Ref: 3.1.3.2.2
 D: 2
+Id: aqa-geog-3.1.3.2-027
 
 Q: Name the coastal landform of wind-blown sand that is stabilised by marram grass.
 A: Sand dune
 Accept: Dune; sand dunes
 Ref: 3.1.3.2.2
 D: 1
+Id: aqa-geog-3.1.3.2-028
 
 Q: Why does a spit develop a curved end?
 A: Change in wind and wave direction
 Accept: Waves refract; wind direction changes; waves curve the end
 Ref: 3.1.3.2.2
 D: 3
+Id: aqa-geog-3.1.3.2-029
 
 Q: Name the famous limestone sea arch on the Dorset coast near Lulworth.
 A: Durdle Door
 Accept: The Durdle Door
 Ref: 3.1.3.2.2
 D: 1
+Id: aqa-geog-3.1.3.2-030
 
 Q: Bands of hard and soft rock wear away at different rates, forming headlands and bays. Name this process.
 A: Differential erosion
 Accept: Differential
 Ref: 3.1.3.2.2
 D: 2
+Id: aqa-geog-3.1.3.2-031
 
 Q: Name the type of hard engineering made of a concrete wall at the base of a cliff or promenade that reflects waves.
 A: Sea wall
 Accept: Seawall
 Ref: 3.1.3.2.3
 D: 1
+Id: aqa-geog-3.1.3.2-032
 
 Q: Name the hard engineering strategy that uses large boulders piled at the foot of a cliff to absorb wave energy.
 A: Rock armour
 Accept: Rip rap; riprap
 Ref: 3.1.3.2.3
 D: 1
+Id: aqa-geog-3.1.3.2-033
 
 Q: Name the hard engineering structure of wire cages filled with rocks placed at the foot of a cliff.
 A: Gabions
 Accept: Gabion
 Ref: 3.1.3.2.3
 D: 1
+Id: aqa-geog-3.1.3.2-034
 
 Q: Name the wooden or rock barriers built at right angles to the beach to trap sediment moving by longshore drift.
 A: Groynes
 Accept: Groyne
 Ref: 3.1.3.2.3
 D: 1
+Id: aqa-geog-3.1.3.2-035
 
 Q: State one disadvantage of building a sea wall.
 A: Very expensive to build and maintain
 Accept: Expensive; high cost; ugly; reflects waves causing erosion at base
 Ref: 3.1.3.2.3
 D: 2
+Id: aqa-geog-3.1.3.2-036
 
 Q: Why can groynes increase erosion further along the coast?
 A: They starve downdrift beaches of sediment
 Accept: Less sediment downdrift; beach starved of sand; no sediment reaches the next beach
 Ref: 3.1.3.2.3
 D: 3
+Id: aqa-geog-3.1.3.2-037
 
 Q: Name the soft engineering strategy of adding sand or shingle to a beach to make it wider.
 A: Beach nourishment
 Accept: Nourishment; beach replenishment
 Ref: 3.1.3.2.3
 D: 1
+Id: aqa-geog-3.1.3.2-038
 
 Q: Name the soft engineering strategy that uses fencing and planting marram grass to protect sand dunes.
 A: Dune regeneration
 Accept: Dune stabilisation; dune restoration
 Ref: 3.1.3.2.3
 D: 2
+Id: aqa-geog-3.1.3.2-039
 
 Q: Name the management strategy where the sea is allowed to flood low-lying land behind a removed or breached defence.
 A: Managed retreat
 Accept: Coastal realignment; managed realignment
 Ref: 3.1.3.2.3
 D: 2
+Id: aqa-geog-3.1.3.2-040
 
 Q: State one benefit of beach nourishment compared with a sea wall.
 A: Cheaper and looks natural
 Accept: Cheaper; natural appearance; creates a beach for tourists; absorbs wave energy
 Ref: 3.1.3.2.3
 D: 3
+Id: aqa-geog-3.1.3.2-041
 
 Q: At Mappleton in East Yorkshire, which hard engineering was installed in 1991 to protect the village?
 A: Rock armour
 Accept: Rock armour and two rock groynes; rock groynes
 Ref: 3.1.3.2.3
 D: 2
+Id: aqa-geog-3.1.3.2-042
 
 Q: Which UK coastal realignment scheme in West Sussex, completed in 2013, created new wetland near Selsey?
 A: Medmerry
 Accept: Medmerry Realignment
 Ref: 3.1.3.2.3
 D: 2
+Id: aqa-geog-3.1.3.2-043
 
 Q: Why do some people oppose managed retreat, such as farmers whose land will be flooded?
 A: Loss of farmland and property
 Accept: Land lost; loss of homes; compensation issues; loss of livelihood
 Ref: 3.1.3.2.3
 D: 3
+Id: aqa-geog-3.1.3.2-044
 
 Q: Why is a clay cliff more likely to slump than a cliff of hard chalk?
 A: Clay is soft and weak when wet
 Accept: Soft rock; clay becomes saturated; chalk is resistant
 Ref: 3.1.3.2.2
 D: 3
+Id: aqa-geog-3.1.3.2-045
 
 Q: Why does a wave-cut platform get wider as a cliff retreats?
 A: Cliff base keeps eroding backwards
 Accept: Cliff retreats inland; more rock exposed; cliff erodes back
 Ref: 3.1.3.2.2
 D: 3
+Id: aqa-geog-3.1.3.2-046
 
 Q: Name the process of reshaping a beach, such as bulldozing sediment into a gentler slope, to protect the coast.
 A: Beach reprofiling
 Accept: Reprofiling
 Ref: 3.1.3.2.3
 D: 2
+Id: aqa-geog-3.1.3.2-047
 
 Q: Which stretch of the East Yorkshire coast, ending at Spurn Head, is one of Europe's fastest-eroding?
 A: Holderness
 Accept: Holderness coast
 Ref: 3.1.3.2.2
 D: 1
+Id: aqa-geog-3.1.3.2-048
 
 Q: Why does the Holderness coast erode so quickly?
 A: Soft boulder clay cliffs
 Accept: Cliffs made of soft clay; weak rock; soft rock
 Ref: 3.1.3.2.2
 D: 3
+Id: aqa-geog-3.1.3.2-049

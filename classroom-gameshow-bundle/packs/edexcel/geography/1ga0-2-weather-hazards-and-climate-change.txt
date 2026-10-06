@@ -7,258 +7,301 @@ A: Hadley cell
 Accept: Hadley
 Ref: 2.1
 D: 1
+Id: edexcel-geog-1ga0-2-001
 
 Q: Which circulation cell lies between about 30 and 60 degrees latitude?
 A: Ferrel cell
 Accept: Ferrel
 Ref: 2.1
 D: 1
+Id: edexcel-geog-1ga0-2-002
 
 Q: What kind of pressure belt forms where air rises at the equator, bringing heavy rainfall?
 A: Low pressure
 Accept: Low pressure belt; ITCZ
 Ref: 2.1
 D: 1
+Id: edexcel-geog-1ga0-2-003
 
 Q: What kind of pressure is found at about 30 degrees north and south, where air sinks in the global circulation?
 A: High pressure
 Accept: High pressure belt
 Ref: 2.1
 D: 1
+Id: edexcel-geog-1ga0-2-004
 
 Q: Why does sinking air at about 30 degrees latitude usually bring dry, cloud-free weather?
 A: Warming sinking air stops condensation
 Accept: Sinking air warms so no cloud forms; Air warms as it sinks
 Ref: 2.1
 D: 3
+Id: edexcel-geog-1ga0-2-005
 
 Q: Besides atmospheric cells, what moving water in the oceans helps redistribute heat from the tropics towards the poles?
 A: Ocean currents
 Accept: Currents
 Ref: 2.1
 D: 2
+Id: edexcel-geog-1ga0-2-006
 
 Q: Name the geological period, beginning about 2.6 million years ago, that includes glacial and interglacial periods.
 A: Quaternary
 Accept: The Quaternary
 Ref: 2.2
 D: 1
+Id: edexcel-geog-1ga0-2-007
 
 Q: What name is given to a cold period of the Quaternary when ice sheets spread widely?
 A: Glacial
 Accept: Glacial period; Ice age
 Ref: 2.2
 D: 1
+Id: edexcel-geog-1ga0-2-008
 
 Q: Which scientist's name is given to the cycles of changes in Earth's orbit and tilt that affect climate?
 A: Milankovitch
 Accept: Milutin Milankovitch
 Ref: 2.2
 D: 1
+Id: edexcel-geog-1ga0-2-009
 
 Q: In which ice-based record do trapped air bubbles show past atmospheric gases and temperatures?
 A: Ice cores
 Accept: Ice core
 Ref: 2.2
 D: 1
+Id: edexcel-geog-1ga0-2-010
 
 Q: What do scientists count in a tree trunk to estimate past climate, with wide ones showing good growing years?
 A: Tree rings
 Accept: Rings; Annual rings
 Ref: 2.2
 D: 2
+Id: edexcel-geog-1ga0-2-011
 
 Q: How can volcanic eruptions cause short-term global cooling?
 A: Ash and gases block incoming sunlight
 Accept: Dust in atmosphere reflects sunlight; Ash blocks the Sun
 Ref: 2.2
 D: 3
+Id: edexcel-geog-1ga0-2-012
 
 Q: Sunspot cycles are linked to which natural cause of climate change?
 A: Variation in the Sun's output
 Accept: Solar variation; Solar activity; Changes in solar energy
 Ref: 2.2
 D: 2
+Id: edexcel-geog-1ga0-2-013
 
 Q: Pollen preserved in layers of peat is used as evidence of what in the past?
 A: Past vegetation and climate
 Accept: Climate; Plant types; Vegetation
 Ref: 2.2
 D: 2
+Id: edexcel-geog-1ga0-2-014
 
 Q: Which greenhouse gas is released when fossil fuels are burned in power stations and vehicles?
 A: Carbon dioxide
 Accept: CO2
 Ref: 2.3
 D: 1
+Id: edexcel-geog-1ga0-2-015
 
 Q: Name a greenhouse gas released by cattle and rice paddies.
 A: Methane
 Accept: CH4
 Ref: 2.3
 D: 1
+Id: edexcel-geog-1ga0-2-016
 
 Q: Melting land ice and warming oceans cause what change to global sea level?
 A: Rising sea level
 Accept: Sea level rises; Rising sea levels; Thermal expansion and melting ice
 Ref: 2.3
 D: 2
+Id: edexcel-geog-1ga0-2-017
 
 Q: What is happening to most of the world's mountain glaciers as temperatures rise?
 A: Retreating
 Accept: They are retreating; Shrinking; Melting
 Ref: 2.3
 D: 1
+Id: edexcel-geog-1ga0-2-018
 
 Q: Why does the enhanced greenhouse effect warm the atmosphere?
 A: Extra gases trap more heat
 Accept: More heat is absorbed and re-radiated; Gases trap outgoing heat
 Ref: 2.3
 D: 3
+Id: edexcel-geog-1ga0-2-019
 
 Q: What term describes the UK's mild, wet climate influenced by the nearby Atlantic Ocean?
 A: Temperate maritime
 Accept: Maritime; Temperate
 Ref: 2.4
 D: 1
+Id: edexcel-geog-1ga0-2-020
 
 Q: From which direction do the UK's prevailing winds mainly blow?
 A: South-west
 Accept: Southwest; SW
 Ref: 2.4
 D: 1
+Id: edexcel-geog-1ga0-2-021
 
 Q: Which warm ocean current helps keep the UK's winters mild?
 A: North Atlantic Drift
 Accept: Gulf Stream; North Atlantic Current
 Ref: 2.4
 D: 1
+Id: edexcel-geog-1ga0-2-022
 
 Q: Why do upland areas in the west of the UK receive so much relief rainfall?
 A: Moist south-west winds are forced to rise
 Accept: Winds from the Atlantic rise over hills; Air rises and cools over mountains
 Ref: 2.4
 D: 3
+Id: edexcel-geog-1ga0-2-023
 
 Q: Why can the UK's maritime location make its winters milder than inland places at the same latitude?
 A: Sea stays warmer than land in winter
 Accept: The Atlantic warms the air; Sea loses heat slowly; Warm ocean currents
 Ref: 2.4
 D: 3
+Id: edexcel-geog-1ga0-2-024
 
 Q: Which warmer period in the UK's climate history ran from roughly 950 to 1250 AD?
 A: Medieval Warm Period
 Accept: Medieval warm period
 Ref: 2.4
 D: 2
+Id: edexcel-geog-1ga0-2-025
 
 Q: Which cooler period in the UK's climate history is linked to Thames frost fairs?
 A: Little Ice Age
 Accept: The Little Ice Age
 Ref: 2.4
 D: 2
+Id: edexcel-geog-1ga0-2-026
 
 Q: Why is the south of the UK generally warmer than the north?
 A: Lower latitude, so stronger sunlight
 Accept: Closer to the equator; Sun's rays are stronger
 Ref: 2.4
 D: 3
+Id: edexcel-geog-1ga0-2-027
 
 Q: Between which latitudes do tropical cyclones normally form?
 A: About 5 to 30 degrees north or south
 Accept: 5 to 30 degrees; Between the tropics; Tropics
 Ref: 2.5
 D: 2
+Id: edexcel-geog-1ga0-2-028
 
 Q: What is the name for tropical cyclones in the north-west Pacific Ocean?
 A: Typhoons
 Accept: Typhoon
 Ref: 2.5
 D: 1
+Id: edexcel-geog-1ga0-2-029
 
 Q: What is the minimum sea surface temperature needed for a tropical cyclone to form, in degrees Celsius?
 A: About 27
 Accept: 26 to 27; 26.5; 27
 Ref: 2.5
 D: 2
+Id: edexcel-geog-1ga0-2-030
 
 Q: Why do tropical cyclones lose strength when they move over land?
 A: Loss of warm, moist air supply
 Accept: Cut off from warm water; No warm water to supply energy; Cut off from heat and moisture
 Ref: 2.5
 D: 3
+Id: edexcel-geog-1ga0-2-031
 
 Q: What name is given to the calm, clear centre of a tropical cyclone?
 A: The eye
 Accept: Eye
 Ref: 2.5
 D: 1
+Id: edexcel-geog-1ga0-2-032
 
 Q: Which scale from 1 to 5 ranks hurricanes by wind speed?
 A: Saffir-Simpson scale
 Accept: Saffir-Simpson; Saffir Simpson
 Ref: 2.6
 D: 1
+Id: edexcel-geog-1ga0-2-033
 
 Q: What is the term for a rise in sea level driven ashore by a tropical cyclone's winds and low pressure?
 A: Storm surge
 Accept: Surge
 Ref: 2.6
 D: 1
+Id: edexcel-geog-1ga0-2-034
 
 Q: Name the 2013 typhoon that devastated Tacloban in the Philippines.
 A: Typhoon Haiyan
 Accept: Haiyan; Yolanda
 Ref: 2.6
 D: 1
+Id: edexcel-geog-1ga0-2-035
 
 Q: Which 2005 hurricane flooded New Orleans after its levees failed?
 A: Hurricane Katrina
 Accept: Katrina
 Ref: 2.6
 D: 1
+Id: edexcel-geog-1ga0-2-036
 
 Q: Why are heavy rains from a tropical cyclone a hazard in hilly areas?
 A: They trigger landslides
 Accept: Landslides; Mudslides
 Ref: 2.6
 D: 2
+Id: edexcel-geog-1ga0-2-037
 
 Q: Why do tropical cyclones often cause greater loss of life in developing countries than in developed ones?
 A: Poorer warning, shelter and building quality
 Accept: Less money for defences and evacuation; Weaker buildings and poor warnings
 Ref: 2.6
 D: 3
+Id: edexcel-geog-1ga0-2-038
 
 Q: Which type of drought is a long period of below-average rainfall?
 A: Meteorological
 Accept: Meteorological drought
 Ref: 2.7
 D: 1
+Id: edexcel-geog-1ga0-2-039
 
 Q: Which type of drought is shown by low river flows, falling groundwater and shrinking reservoirs?
 A: Hydrological
 Accept: Hydrological drought
 Ref: 2.7
 D: 2
+Id: edexcel-geog-1ga0-2-040
 
 Q: How can deforestation increase drought risk in a region?
 A: Less transpiration and rainfall
 Accept: Less moisture returned to the air; Soil dries out faster
 Ref: 2.7
 D: 3
+Id: edexcel-geog-1ga0-2-041
 
 Q: How can a dam on a river make drought worse for people living downstream?
 A: It reduces river flow downstream
 Accept: Water is stored upstream; Less water reaches them
 Ref: 2.7
 D: 2
+Id: edexcel-geog-1ga0-2-042
 
 Q: Why are areas near 30 degrees latitude more vulnerable to drought?
 A: Sinking air gives dry high pressure
 Accept: Descending air from Hadley cell; Permanent high pressure
 Ref: 2.7
 D: 3
+Id: edexcel-geog-1ga0-2-043
 
 Q: Rainfall in arid environments is usually below about how many millimetres per year?
 A: 250 mm
@@ -266,26 +309,31 @@ Accept: Less than 250; About 250
 Ref: 2.7
 D: 2
 Note: Definitions vary; about 250 mm per year is the usual textbook figure.
+Id: edexcel-geog-1ga0-2-044
 
 Q: Which developed country suffered the long Millennium Drought in the 2000s?
 A: Australia
 Ref: 2.8
 D: 1
+Id: edexcel-geog-1ga0-2-045
 
 Q: Which ban on garden watering is a typical UK drought restriction?
 A: Hosepipe ban
 Accept: Water restrictions; Water rationing; Hosepipe bans
 Ref: 2.8
 D: 2
+Id: edexcel-geog-1ga0-2-046
 
 Q: Why are the impacts of drought usually more severe in developing than developed countries?
 A: Less money for water storage and irrigation
 Accept: Reliance on rain-fed farming; Poorer infrastructure; Less money for irrigation
 Ref: 2.8
 D: 3
+Id: edexcel-geog-1ga0-2-047
 
 Q: What name is given to supplying crops with water through channels, pipes or sprinklers?
 A: Irrigation
 Accept: Irrigating
 Ref: 2.8
 D: 1
+Id: edexcel-geog-1ga0-2-048

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.0 – Every board and subject (October 2026)
+
+- **Built-in packs for every GCSE specification in scope:** AQA and Pearson Edexcel Biology, Chemistry, Physics, Maths, History and Geography (Edexcel Geography A and B). 135 topic packs, 7,792 questions, one pack per specification topic; in History and Geography every option is its own pack, so you tick the options you teach. Fieldwork, pre-release material and AQA's annually changing historic environment site are left out because they depend on the school.
+- Every question is tied to a numbered point of its specification, has a difficulty from 1 to 3 and is tagged when it is Higher tier only (Maths and the sciences). Each pack was written from the specification text and then checked separately against it and for errors; maths and science calculations were re-worked in code.
+- **Smaller file:** the questions are stored compressed inside the single file and unpacked when a topic is first used, so the whole product is about 1.8 MB.
+- Hex Hunt no longer puts algebra answers (such as "x² + 3x") on the board as if they were words.
+
 ## 1.1.0 – Topic packs (October 2026)
 
 - **Built-in packs for every topic of AQA GCSE Biology, Chemistry and Physics.** One pack per specification topic (25 packs, 1,425 questions), replacing the Combined Science starter packs and the Homeostasis lesson set (their good questions were rewritten into the new packs). Every question is tied to a numbered specification point, has a difficulty from 1 to 3 and is tagged when it is Higher tier only; the separate-science content and every required practical are covered. Each pack was written from the specification text and then checked separately against it and for errors.

@@ -7,206 +7,242 @@ A: Food security
 Accept: Food secure
 Ref: 3.2.3.2.1
 D: 1
+Id: aqa-geog-3.2.3.2-001
 
 Q: What term describes a lack of reliable access to enough food?
 A: Food insecurity
 Ref: 3.2.3.2.1
 D: 1
+Id: aqa-geog-3.2.3.2-002
 
 Q: Name the term for a country having more food than its population needs.
 A: Food surplus
 Accept: Surplus
 Ref: 3.2.3.2.1
 D: 1
+Id: aqa-geog-3.2.3.2-003
 
 Q: Name the term for a severe, widespread shortage of food that causes mass starvation.
 A: Famine
 Ref: 3.2.3.2.1
 D: 1
+Id: aqa-geog-3.2.3.2-004
 
 Q: What term describes a diet that does not provide enough calories or nutrients?
 A: Undernutrition
 Accept: Malnutrition; Undernourishment
 Ref: 3.2.3.2.1
 D: 1
+Id: aqa-geog-3.2.3.2-005
 
 Q: Which continent has the most countries with low daily calorie intake per person?
 A: Africa
 Accept: Sub-Saharan Africa
 Ref: 3.2.3.2.1
 D: 1
+Id: aqa-geog-3.2.3.2-006
 
 Q: Give one reason why global food consumption is rising as countries develop economically.
 A: People can afford more or better food
 Accept: Higher incomes; Wealthier diets; More meat eaten; Rising demand for meat
 Ref: 3.2.3.2.1
 D: 2
+Id: aqa-geog-3.2.3.2-007
 
 Q: Why does a rising global population increase pressure on food supplies?
 A: More people need feeding
 Accept: More mouths to feed; Greater demand for food
 Ref: 3.2.3.2.1
 D: 2
+Id: aqa-geog-3.2.3.2-008
 
 Q: Name one physical factor that can reduce food supply by causing crops to fail.
 A: Drought
 Accept: Flooding; Extreme weather; Climate change; Pests; Disease; Frost
 Ref: 3.2.3.2.1
 D: 1
+Id: aqa-geog-3.2.3.2-009
 
 Q: Explain how modern technology such as fertiliser and machinery raises food supply.
 A: Higher yields and faster, larger-scale farming
 Accept: Increases yields; Adds nutrients to soil; Farms more land; Raises food production
 Ref: 3.2.3.2.1
 D: 3
+Id: aqa-geog-3.2.3.2-010
 
 Q: Explain how armed conflict can reduce food supply in a region.
 A: Farmers flee or fields are destroyed
 Accept: Farmland damaged; Crops destroyed; Farmers displaced; Supply routes blocked; Disrupts farming
 Ref: 3.2.3.2.1
 D: 3
+Id: aqa-geog-3.2.3.2-011
 
 Q: Explain why poverty makes it harder for a farming family to increase food production.
 A: Cannot afford seeds, fertiliser or equipment
 Accept: Cannot afford inputs; No money for tools; Cannot afford fertiliser
 Ref: 3.2.3.2.1
 D: 3
+Id: aqa-geog-3.2.3.2-012
 
 Q: Name the process by which fertile topsoil is removed by wind or water, reducing farming yields.
 A: Soil erosion
 Accept: Erosion
 Ref: 3.2.3.2.1
 D: 1
+Id: aqa-geog-3.2.3.2-013
 
 Q: State one social impact of rising food prices in poorer countries.
 A: Social unrest
 Accept: Riots; Protests; Unrest; Hunger; Conflict
 Ref: 3.2.3.2.1
 D: 2
+Id: aqa-geog-3.2.3.2-014
 
 Q: Which type of country, HIC or LIC, generally has the lowest daily calorie intake per person?
 A: LIC
 Accept: Low income country; Low-income countries; Poorer countries
 Ref: 3.2.3.2.1
 D: 2
+Id: aqa-geog-3.2.3.2-015
 
 Q: What general term describes organisms such as locusts and insects that damage crops?
 A: Pests
 Accept: Pest
 Ref: 3.2.3.2.1
 D: 1
+Id: aqa-geog-3.2.3.2-016
 
 Q: Why can water stress lead to lower food supply?
 A: Crops cannot be irrigated or grown
 Accept: Not enough water for crops; Not enough irrigation; Crops fail without water
 Ref: 3.2.3.2.1
 D: 3
+Id: aqa-geog-3.2.3.2-017
 
 Q: Name the method of supplying water to farmland using channels, pipes or sprinklers.
 A: Irrigation
 Ref: 3.2.3.2.2
 D: 1
+Id: aqa-geog-3.2.3.2-018
 
 Q: Name the method of growing plants in nutrient-rich water instead of soil.
 A: Hydroponics
 Ref: 3.2.3.2.2
 D: 1
+Id: aqa-geog-3.2.3.2-019
 
 Q: Name the method of growing plants with roots hanging in air and sprayed with nutrients.
 A: Aeroponics
 Ref: 3.2.3.2.2
 D: 1
+Id: aqa-geog-3.2.3.2-020
 
 Q: What name is given to the introduction of high-yielding crop varieties, fertilisers and irrigation from the 1960s onwards?
 A: Green revolution
 Accept: The green revolution; The new green revolution; New green revolution
 Ref: 3.2.3.2.2
 D: 2
+Id: aqa-geog-3.2.3.2-021
 
 Q: Name the use of living organisms, such as genetically modified crops, to improve food production.
 A: Biotechnology
 Accept: Genetic modification; GM crops
 Ref: 3.2.3.2.2
 D: 1
+Id: aqa-geog-3.2.3.2-022
 
 Q: Explain one reason why new green revolution seeds can be costly for poor farmers.
 A: Seeds and fertiliser must be bought
 Accept: Need fertiliser and pesticides; Need irrigation; Cannot save seed; Expensive GM seed
 Ref: 3.2.3.2.2
 D: 3
+Id: aqa-geog-3.2.3.2-023
 
 Q: Name the type of low-cost technology that suits local skills, money and resources.
 A: Appropriate technology
 Accept: Intermediate technology
 Ref: 3.2.3.2.2
 D: 1
+Id: aqa-geog-3.2.3.2-024
 
 Q: Give one advantage of hydroponics for food production.
 A: Uses less water or no soil
 Accept: Needs less land; Faster growth; Can be used indoors; Higher yields; Less water
 Ref: 3.2.3.2.2
 D: 2
+Id: aqa-geog-3.2.3.2-025
 
 Q: Name the country in Europe famous for its huge area of plastic greenhouses around Almeria.
 A: Spain
 Ref: 3.2.3.2.2
 D: 1
+Id: aqa-geog-3.2.3.2-026
 
 Q: Give one advantage of the large-scale greenhouse farming at Almeria in Spain.
 A: Jobs
 Accept: Year-round food; Employment; Exports; Economic growth; Year-round crops; Higher yields
 Ref: 3.2.3.2.2
 D: 2
+Id: aqa-geog-3.2.3.2-027
 
 Q: Give one disadvantage of the large-scale greenhouse farming at Almeria in Spain.
 A: Groundwater depletion
 Accept: Water shortage; Uses too much water; Plastic waste; Plastic pollution; Low pay; Poor working conditions; Habitat loss
 Ref: 3.2.3.2.2
 D: 3
+Id: aqa-geog-3.2.3.2-028
 
 Q: Name the type of farming that avoids artificial fertilisers and pesticides.
 A: Organic farming
 Accept: Organic
 Ref: 3.2.3.2.2
 D: 1
+Id: aqa-geog-3.2.3.2-029
 
 Q: Name the approach to farming that designs systems to copy natural ecosystems and need little outside input.
 A: Permaculture
 Ref: 3.2.3.2.2
 D: 1
+Id: aqa-geog-3.2.3.2-030
 
 Q: What term describes growing food in towns and cities, for example on rooftops or in community gardens?
 A: Urban farming
 Accept: Urban agriculture; Urban farming initiatives; City farming
 Ref: 3.2.3.2.2
 D: 1
+Id: aqa-geog-3.2.3.2-031
 
 Q: Why does eating seasonal food help make food supply more sustainable?
 A: Less transport and energy use
 Accept: Fewer food miles; Lower carbon emissions; Less storage and heating
 Ref: 3.2.3.2.2
 D: 3
+Id: aqa-geog-3.2.3.2-032
 
 Q: What is the benefit of getting fish from sustainably managed sources?
 A: Fish stocks are not depleted
 Accept: Prevents overfishing; Fish stocks recover; Protects fish populations
 Ref: 3.2.3.2.2
 D: 2
+Id: aqa-geog-3.2.3.2-033
 
 Q: Give one way that reducing food waste and losses helps food security.
 A: More food available to eat
 Accept: Less food wasted; More food supply; Reduces demand for more production
 Ref: 3.2.3.2.2
 D: 2
+Id: aqa-geog-3.2.3.2-034
 
 Q: In Bangladesh, what two things are produced together in flooded rice fields in a local sustainable scheme?
 A: Rice and fish
 Accept: Fish and rice; Rice-fish farming
 Ref: 3.2.3.2.2
 D: 2
+Id: aqa-geog-3.2.3.2-035
 
 Q: Explain why a small local scheme using appropriate technology may be more sustainable than a large imported project.
 A: Uses local skills, cheap and easy to maintain
 Accept: Local people can maintain it; Lower cost; Fits local needs; Less environmental damage
 Ref: 3.2.3.2.2
 D: 3
+Id: aqa-geog-3.2.3.2-036

@@ -7,192 +7,224 @@ A: Irgun
 Accept: Irgun Zvai Leumi; The Irgun
 Ref: P5.1.1
 D: 1
+Id: edexcel-hist-P5-001
 
 Q: What did UN Resolution 181 of November 1947 propose for Palestine?
 A: Partition into Jewish and Arab states
 Accept: Partition; Dividing Palestine; Split into two states
 Ref: P5.1.1
 D: 2
+Id: edexcel-hist-P5-002
 
 Q: On what date in 1948 did Israel declare itself an independent state?
 A: 14 May 1948
 Accept: 14 May; 14th May 1948
 Ref: P5.1.1
 D: 2
+Id: edexcel-hist-P5-003
 
 Q: Why did Irgun choose the King David Hotel as its target in 1946?
 A: It housed British administrative headquarters
 Accept: British HQ; It was the British headquarters; It was the centre of British government
 Ref: P5.1.1
 D: 3
+Id: edexcel-hist-P5-004
 
 Q: Which Arab state's Arab Legion captured the West Bank and East Jerusalem in the 1948–49 war?
 A: Jordan
 Accept: Transjordan
 Ref: P5.1.1
 D: 2
+Id: edexcel-hist-P5-005
 
 Q: About how many Palestinian Arabs became refugees in 1948–49?
 A: About 700,000
 Accept: 700,000; 600,000 to 750,000; 750,000; Over half a million; 700 thousand
 Ref: P5.1.2
 D: 2
+Id: edexcel-hist-P5-006
 
 Q: Which canal did Egypt keep closed to Israeli ships after the 1948–49 war?
 A: Suez Canal
 Accept: The Suez Canal; Suez
 Ref: P5.1.2
 D: 2
+Id: edexcel-hist-P5-007
 
 Q: Why did the refugee problem make a lasting peace between Israel and Arab states harder?
 A: Refugees demanded return; Israel refused
 Accept: Israel refused to let them return; Refugees wanted to return home; Refugees were angry and wanted their land back
 Ref: P5.1.2
 D: 3
+Id: edexcel-hist-P5-008
 
 Q: Which Egyptian leader nationalised the Suez Canal in July 1956?
 A: Nasser
 Accept: Gamal Abdel Nasser; Gamal Nasser; Colonel Nasser
 Ref: P5.1.3
 D: 1
+Id: edexcel-hist-P5-009
 
 Q: Which three countries attacked Egypt in the Suez Crisis of 1956?
 A: Britain, France and Israel
 Accept: UK, France and Israel
 Ref: P5.1.3
 D: 2
+Id: edexcel-hist-P5-010
 
 Q: What name was given to the union of Egypt and Syria formed in 1958?
 A: United Arab Republic
 Accept: UAR; The UAR
 Ref: P5.1.3
 D: 1
+Id: edexcel-hist-P5-011
 
 Q: Why did Nasser nationalise the Suez Canal in 1956?
 A: To pay for the Aswan High Dam
 Accept: Aswan Dam; To raise money from canal tolls; West withdrew Aswan Dam funding; To raise money for the dam
 Ref: P5.1.3
 D: 3
+Id: edexcel-hist-P5-012
 
 Q: Which Israeli attack of 1955 led Nasser to seek arms from Czechoslovakia?
 A: Raid on Gaza
 Accept: Gaza raid; Attack on Gaza; Israeli attack on Gaza
 Ref: P5.1.3
 D: 2
+Id: edexcel-hist-P5-013
 
 Q: The 1964 Cairo Conference led to the creation of which Palestinian organisation?
 A: PLO
 Accept: Palestine Liberation Organisation; Palestine Liberation Organization
 Ref: P5.2.1
 D: 1
+Id: edexcel-hist-P5-014
 
 Q: The Israeli raid on Samu in November 1966 was against a village in which country?
 A: Jordan
 Accept: West Bank; Jordanian West Bank
 Ref: P5.2.1
 D: 2
+Id: edexcel-hist-P5-015
 
 Q: How many Syrian MiG fighters did Israel shoot down on 7 April 1967?
 A: Six
 Accept: 6
 Ref: P5.2.1
 D: 2
+Id: edexcel-hist-P5-016
 
 Q: Which territory did Israel capture from Syria in 1967?
 A: Golan Heights
 Accept: The Golan Heights; Golan
 Ref: P5.2.2
 D: 1
+Id: edexcel-hist-P5-017
 
 Q: What did UN Resolution 242 (1967) call for Israel to do?
 A: Withdraw from occupied territories
 Accept: Return land taken in 1967; Land for peace; Withdraw from land gained in the war
 Ref: P5.2.2
 D: 2
+Id: edexcel-hist-P5-018
 
 Q: After which event did the Black September group take its name?
 A: Expulsion of the PLO from Jordan
 Accept: PLO expulsion from Jordan; Jordan's crackdown on the PLO in 1970
 Ref: P5.2.2
 D: 2
+Id: edexcel-hist-P5-019
 
 Q: What name is given to the low-level fighting along the Suez Canal between 1967 and 1970?
 A: War of Attrition
 Accept: The War of Attrition
 Ref: P5.2.3
 D: 1
+Id: edexcel-hist-P5-020
 
 Q: Why was Yom Kippur chosen as the day for the 1973 attack?
 A: Surprise attack on a Jewish holy day
 Accept: Israel was taken by surprise; It was a Jewish holy day; Israelis were off guard; Many Israelis were fasting and at prayer
 Ref: P5.2.3
 D: 3
+Id: edexcel-hist-P5-021
 
 Q: How did Arab oil producers respond to Western support for Israel in 1973?
 A: Oil embargo
 Accept: They cut oil supplies; Embargo on oil to the USA; Raised oil prices and cut output
 Ref: P5.3.1
 D: 2
+Id: edexcel-hist-P5-022
 
 Q: Which two leaders signed the 1979 Treaty of Washington?
 A: Sadat and Begin
 Accept: Sadat and Menachem Begin; Begin and Sadat
 Ref: P5.3.1
 D: 2
+Id: edexcel-hist-P5-023
 
 Q: How did other Arab states punish Egypt for making peace with Israel?
 A: Expelled it from the Arab League
 Accept: Suspended it from the Arab League; Arab League expelled Egypt
 Ref: P5.3.1
 D: 3
+Id: edexcel-hist-P5-024
 
 Q: In his 1974 UN speech, Arafat said he carried an olive branch and what else?
 A: A freedom fighter's gun
 Accept: A gun; Gun; Freedom fighter's gun
 Ref: P5.3.2
 D: 2
+Id: edexcel-hist-P5-025
 
 Q: What happened to the PLO leadership as a result of the 1982 invasion?
 A: Forced to leave Lebanon for Tunis
 Accept: Driven out of Lebanon; Moved to Tunisia; Expelled from Beirut
 Ref: P5.3.2
 D: 3
+Id: edexcel-hist-P5-026
 
 Q: What Arabic word, meaning 'shaking off', names the Palestinian uprising that began in 1987?
 A: Intifada
 Accept: The Intifada; First Intifada
 Ref: P5.3.2
 D: 1
+Id: edexcel-hist-P5-027
 
 Q: Why did the Intifada damage Israel's international image?
 A: Soldiers were seen firing on stone-throwers
 Accept: TV images of soldiers against youths; Heavy-handed response was televised
 Ref: P5.3.2
 D: 3
+Id: edexcel-hist-P5-028
 
 Q: What did Arafat publicly renounce in his 1988 UN speech?
 A: Terrorism
 Accept: Terror; Violence
 Ref: P5.3.3
 D: 1
+Id: edexcel-hist-P5-029
 
 Q: Which two leaders shook hands at the White House in 1993 after the Oslo Accords?
 A: Arafat and Rabin
 Accept: Rabin and Arafat; Yasser Arafat and Yitzhak Rabin
 Ref: P5.3.3
 D: 1
+Id: edexcel-hist-P5-030
 
 Q: What body was created to give Palestinians limited self-rule after Oslo?
 A: Palestinian National Authority
 Accept: PNA; Palestinian Authority; PA
 Ref: P5.3.3
 D: 2
+Id: edexcel-hist-P5-031
 
 Q: Under Oslo II (1995), which West Bank zone, A, B or C, was under full Palestinian control?
 A: Area A
 Accept: A; Zone A
 Ref: P5.3.3
 D: 3
+Id: edexcel-hist-P5-032
 
 
 Q: What name is given to Jewish communities Israel built in the occupied territories?
@@ -200,45 +232,53 @@ A: Settlements
 Accept: Israeli settlements
 Ref: P5.2.3
 D: 1
+Id: edexcel-hist-P5-033
 
 Q: Which UN Security Council resolution called for a ceasefire in the Yom Kippur War?
 A: Resolution 338
 Accept: 338; UN Resolution 338
 Ref: P5.2.3
 D: 2
+Id: edexcel-hist-P5-034
 
 Q: Which Israeli parliament did Sadat address in 1977?
 A: Knesset
 Accept: The Knesset
 Ref: P5.3.1
 D: 1
+Id: edexcel-hist-P5-035
 
 Q: What Arabic word, meaning 'catastrophe', do Palestinians use for the events of 1948?
 A: Nakba
 Accept: Al-Nakba; The Nakba
 Ref: P5.1.2
 D: 1
+Id: edexcel-hist-P5-036
 
 Q: Which 1950 Israeli law gave Jews from anywhere in the world the right to settle in Israel?
 A: Law of Return
 Accept: The Law of Return
 Ref: P5.1.2
 D: 1
+Id: edexcel-hist-P5-037
 
 Q: Which strait did Nasser close to Israeli shipping in May 1967?
 A: Straits of Tiran
 Accept: Tiran; Strait of Tiran; The Straits of Tiran
 Ref: P5.2.1
 D: 2
+Id: edexcel-hist-P5-038
 
 Q: In which German city did Black September attack the Israeli Olympic team in 1972?
 A: Munich
 Accept: Munich Olympics
 Ref: P5.2.2
 D: 1
+Id: edexcel-hist-P5-039
 
 Q: Which US Secretary of State carried out 'shuttle diplomacy' between Israel and Arab states after 1973?
 A: Kissinger
 Accept: Henry Kissinger
 Ref: P5.3.1
 D: 1
+Id: edexcel-hist-P5-040

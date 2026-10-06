@@ -7,204 +7,203 @@ A: Proton
 Accept: Protons
 Ref: 10.1
 D: 1
+Id: edexcel-phys-10-001
 
 Q: Which two particles in an atom have almost the same mass?
 A: Protons and neutrons
 Accept: Proton and neutron; neutron and proton
 Ref: 10.1
 D: 1
+Id: edexcel-phys-10-002
 
 Q: What is the relative charge of the particle that orbits the nucleus of an atom?
 A: -1
 Accept: Minus one; negative one; 1-
 Ref: 10.1
 D: 1
+Id: edexcel-phys-10-003
 
 Q: Which particle in an atom has negligible mass compared with a proton, and where is it found?
 A: Electron, outside the nucleus
 Accept: Electrons; in shells; orbiting the nucleus
 Ref: 10.1
 D: 2
+Id: edexcel-phys-10-004
 
 Q: In a circuit diagram, a circle containing the letter A is the symbol for which component?
 A: Ammeter
 Accept: Ammeters
 Ref: 10.2
 D: 1
+Id: edexcel-phys-10-005
 
 Q: In a circuit diagram, a circle containing a cross is the symbol for which component?
 A: Lamp
 Accept: Filament lamp; bulb
 Ref: 10.2
 D: 1
+Id: edexcel-phys-10-006
 
 Q: A triangle pointing at a vertical bar, between two wires, is the circuit symbol for which component?
 A: Diode
 Accept: A diode
 Ref: 10.2
 D: 1
+Id: edexcel-phys-10-007
 
 Q: On the symbol for a cell, which terminal is the longer line?
 A: Positive
 Accept: The positive terminal; +
 Ref: 10.2
 D: 1
-
-Q: Name the component whose symbol is a rectangle with a diagonal arrow through it.
-A: Variable resistor
-Accept: Rheostat
-Ref: 10.2
-D: 2
+Id: edexcel-phys-10-008
 
 Q: In which type of circuit are the components all connected in a single loop?
 A: Series
 Accept: Series circuit
 Ref: 10.3
 D: 1
+Id: edexcel-phys-10-009
 
 Q: Two identical lamps are in series with a cell. One lamp breaks, leaving a gap in the circuit. What happens to the other lamp?
 A: Goes out
 Accept: Switches off; stops working; turns off
 Ref: 10.3
 D: 2
+Id: edexcel-phys-10-010
 
 Q: Two lamps are in parallel with a cell. One lamp is removed. What happens to the lamp on the other branch?
 A: Stays lit
 Accept: Remains lit; keeps working; no change
 Ref: 10.3
 D: 2
+Id: edexcel-phys-10-011
 
 Q: Why are the lights in a house wired in parallel rather than in series?
 A: Each works independently of the others
 Accept: One can be off while others stay on; each gets the full p.d.
 Ref: 10.3
 D: 3
+Id: edexcel-phys-10-012
 
 Q: How must a voltmeter be connected to a component to measure the potential difference across it?
 A: In parallel
 Accept: Parallel
 Ref: 10.4
 D: 1
-
-Q: Which meter is connected in parallel with a component?
-A: Voltmeter
-Accept: Voltmeters
-Ref: 10.4
-D: 1
+Id: edexcel-phys-10-013
 
 Q: In what unit does a voltmeter measure potential difference?
 A: Volt
 Accept: Volts; V
 Ref: 10.4
 D: 1
+Id: edexcel-phys-10-014
 
 Q: Describe where a voltmeter is placed to measure the p.d. across one resistor in a series circuit.
 A: In parallel, across that resistor
 Accept: Across the resistor; connected in parallel with it
 Ref: 10.4
 D: 2
+Id: edexcel-phys-10-015
 
 Q: Potential difference is the energy transferred per unit of what?
 A: Charge
 Accept: Coulomb; per coulomb
 Ref: 10.5
 D: 1
+Id: edexcel-phys-10-016
 
 Q: One volt is equal to one joule per what?
 A: Coulomb
 Accept: Coulombs
 Ref: 10.5
 D: 1
-
-Q: Which quantity is measured as the energy transferred per coulomb of charge?
-A: Potential difference
-Accept: Voltage; p.d.
-Ref: 10.5
-D: 2
+Id: edexcel-phys-10-017
 
 Q: A lamp has a p.d. of 6 V across it. How much energy does each coulomb of charge transfer in the lamp?
 A: 6 J
 Accept: 6 joules
 Ref: 10.5
 D: 2
-
-Q: What is the unit of electric charge?
-A: Coulomb
-Accept: Coulombs; C
-Ref: 10.6
-D: 1
+Id: edexcel-phys-10-018
 
 Q: Write the equation linking energy transferred, charge moved and potential difference.
 A: E = Q × V
 Accept: Energy = charge × potential difference; E = QV
 Ref: 10.6
 D: 2
+Id: edexcel-phys-10-019
 
 Q: A charge of 4 C moves through a p.d. of 5 V. How much energy is transferred?
 A: 20 J
 Accept: 20 joules
 Ref: 10.6
 D: 2
+Id: edexcel-phys-10-020
 
 Q: A 12 V battery transfers 60 J of energy to the charge passing through it. How much charge has moved?
 A: 5 C
 Accept: 5 coulombs
 Ref: 10.6
 D: 3
+Id: edexcel-phys-10-021
 
 Q: Which meter is connected in series with a component to measure the current in it?
 A: Ammeter
 Accept: Ammeters
 Ref: 10.7
 D: 1
+Id: edexcel-phys-10-022
 
 Q: How must an ammeter be connected to measure the current in a component?
 A: In series
 Accept: Series
 Ref: 10.7
 D: 1
+Id: edexcel-phys-10-023
 
 Q: A student wants to measure the current through a lamp. Describe where the ammeter is placed.
 A: In series with the lamp
 Accept: In the same loop as the lamp; in line with the lamp
 Ref: 10.7
 D: 2
+Id: edexcel-phys-10-024
 
 Q: Electric current is the rate of flow of what?
 A: Charge
 Accept: Electric charge
 Ref: 10.8
 D: 1
+Id: edexcel-phys-10-025
 
 Q: Which particles carry the current in a metal wire?
 A: Electrons
 Accept: Electron; free electrons
 Ref: 10.8
 D: 1
+Id: edexcel-phys-10-026
 
 Q: Explain, in terms of charge, what a current of 3 A means.
 A: 3 coulombs flow each second
 Accept: 3 C per second; 3 C of charge passes every second
 Ref: 10.8
 D: 3
+Id: edexcel-phys-10-027
 
 Q: Write the equation linking charge, current and time.
 A: Q = I × t
 Accept: Charge = current × time; Q = It
 Ref: 10.9
 D: 2
+Id: edexcel-phys-10-028
 
 Q: A current of 3 A flows for 10 s. How much charge flows?
 A: 30 C
 Accept: 30 coulombs
 Ref: 10.9
 D: 2
-
-Q: A charge of 60 C flows past a point in 20 s. What is the current?
-A: 3 A
-Accept: 3 amps; 3 amperes
-Ref: 10.9
-D: 3
+Id: edexcel-phys-10-029
 
 Q: A current of 2 A flows for 5 minutes. How much charge flows?
 A: 600 C
@@ -212,174 +211,175 @@ Accept: 600 coulombs
 Ref: 10.9
 D: 3
 Note: Convert 5 minutes to 300 s first.
+Id: edexcel-phys-10-030
 
 Q: A closed circuit contains a cell. What must happen to the charge in the circuit as a result?
-A: It flows, giving a current
+A: Flows, giving a current
 Accept: Current flows; there is a current
 Ref: 10.10
 D: 2
-
-Q: A circuit must be what, as well as containing a source of p.d., for there to be a current?
-A: Closed
-Accept: Complete; a complete loop
-Ref: 10.10
-D: 1
+Id: edexcel-phys-10-031
 
 Q: A lamp is connected to a cell but there is a gap in the wire. What is the current in the circuit?
 A: Zero
 Accept: 0 A; none; nothing
 Ref: 10.10
 D: 2
+Id: edexcel-phys-10-032
 
 Q: Why does a lamp connected to only one terminal of a battery not light?
 A: The circuit is not complete
 Accept: No complete loop; open circuit; circuit is not closed
 Ref: 10.10
 D: 3
+Id: edexcel-phys-10-033
 
 Q: Which quantity is conserved at a junction in a circuit?
 A: Current
 Accept: Charge
 Ref: 10.11
 D: 1
+Id: edexcel-phys-10-034
 
 Q: Three branches meeting at a junction carry 0.5 A, 1.5 A and 2 A into it. What current leaves the junction?
 A: 4 A
 Accept: 4 amps
 Ref: 10.11
 D: 2
+Id: edexcel-phys-10-035
 
 Q: A current of 3 A flows into a junction and splits into two branches. One branch carries 1 A. What does the other carry?
 A: 2 A
 Accept: 2 amps
 Ref: 10.11
 D: 2
+Id: edexcel-phys-10-036
 
 Q: What happens to the current in a circuit if the resistance is increased but the p.d. stays the same?
 A: Decreases
 Accept: Falls; goes down; gets smaller
 Ref: 10.12
 D: 1
-
-Q: Name the component used to change the current in a circuit by altering its resistance.
-A: Variable resistor
-Accept: Rheostat
-Ref: 10.12
-D: 1
+Id: edexcel-phys-10-037
 
 Q: A variable resistor is in series with a lamp. It is adjusted to a higher resistance. What happens to the brightness of the lamp?
 A: Dimmer
 Accept: Gets dimmer; less bright; decreases
 Ref: 10.12
 D: 2
+Id: edexcel-phys-10-038
 
 Q: The resistance in a circuit is halved while the p.d. stays the same. What happens to the current?
 A: Doubles
 Accept: Increases by a factor of 2; twice as big
 Ref: 10.12
 D: 3
+Id: edexcel-phys-10-039
 
 Q: What is the unit of resistance?
 A: Ohm
 Accept: Ohms; Ω
 Ref: 10.13
 D: 1
+Id: edexcel-phys-10-040
 
 Q: Write the equation linking potential difference, current and resistance.
 A: V = I × R
 Accept: Potential difference = current × resistance; V = IR
 Ref: 10.13
 D: 2
+Id: edexcel-phys-10-041
 
 Q: A current of 2 A flows through a 6 Ω resistor. What is the potential difference across it?
 A: 12 V
 Accept: 12 volts
 Ref: 10.13
 D: 2
+Id: edexcel-phys-10-042
 
 Q: A p.d. of 12 V across a resistor gives a current of 3 A. What is its resistance?
 A: 4 Ω
 Accept: 4 ohms
 Ref: 10.13
 D: 3
-
-Q: A p.d. of 20 V is applied across a 10 Ω resistor. What current flows?
-A: 2 A
-Accept: 2 amps
-Ref: 10.13
-D: 3
+Id: edexcel-phys-10-043
 
 Q: What happens to the net resistance when a second resistor is added in series?
 A: Increases
 Accept: Gets bigger; goes up; rises
 Ref: 10.14
 D: 1
+Id: edexcel-phys-10-044
 
 Q: What happens to the net resistance when a second resistor is added in parallel?
 A: Decreases
 Accept: Gets smaller; goes down; falls
 Ref: 10.14
 D: 1
+Id: edexcel-phys-10-045
 
 Q: Why is the net resistance of two resistors in series greater than that of either one alone?
 A: Current must pass through both, so resistances add
 Accept: Charge passes through both resistors; total resistance is the sum
 Ref: 10.14
 D: 3
+Id: edexcel-phys-10-046
 
 Q: Why does adding a second resistor in parallel decrease the net resistance?
-A: It gives more paths for current
+A: More paths for current
 Accept: Extra branch; more routes for charge; more current flows in total
 Ref: 10.14
 D: 3
+Id: edexcel-phys-10-047
 
 Q: Resistors of 4 Ω and 6 Ω are connected in series. What is the net resistance?
 A: 10 Ω
 Accept: 10 ohms
 Ref: 10.15
 D: 2
+Id: edexcel-phys-10-048
 
 Q: A 6 V battery is connected in series to two identical lamps. What is the p.d. across each lamp?
 A: 3 V
 Accept: 3 volts
 Ref: 10.15
 D: 2
-
-Q: A current of 0.5 A passes through the first resistor in a series circuit. What is the current through the second?
-A: 0.5 A
-Accept: 0.5 amps; same
-Ref: 10.15
-D: 1
+Id: edexcel-phys-10-049
 
 Q: A 12 V supply is connected in series to resistors of 4 Ω and 2 Ω. What is the current?
 A: 2 A
 Accept: 2 amps
 Ref: 10.15
 D: 3
+Id: edexcel-phys-10-050
 
 Q: A 6 V supply drives 1 A through a 2 Ω resistor in series with resistor X. What is the resistance of X?
 A: 4 Ω
 Accept: 4 ohms
 Ref: 10.15
 D: 3
+Id: edexcel-phys-10-051
 
 Q: In a series test circuit, which component lets the current and p.d. be altered to give several readings?
 A: Variable resistor
 Accept: Rheostat; variable power supply
 Ref: 10.16
 D: 1
+Id: edexcel-phys-10-052
 
 Q: Which two meters are needed to find the resistance of a component in a series circuit?
 A: Ammeter and voltmeter
 Accept: Voltmeter and ammeter
 Ref: 10.16
 D: 2
+Id: edexcel-phys-10-053
 
 Q: Why is a switch included in a series test circuit?
 A: To turn the current on and off
 Accept: To break the circuit; to control the current; to disconnect the supply
 Ref: 10.16
 D: 2
+Id: edexcel-phys-10-054
 
 Q: In the core practical on a resistor, which two quantities are measured at each setting?
 A: Current and potential difference
@@ -387,13 +387,7 @@ Accept: Current and voltage; p.d. and current
 Ref: 10.17
 D: 2
 RP: 10.17
-
-Q: In the core practical on a filament lamp, name one component used to change the p.d. across the lamp.
-A: Variable resistor
-Accept: Variable power supply; rheostat
-Ref: 10.17
-D: 1
-RP: 10.17
+Id: edexcel-phys-10-055
 
 Q: In the core practical, how is the resistance of the component calculated from the readings?
 A: Potential difference ÷ current
@@ -401,6 +395,7 @@ Accept: V ÷ I; R = V/I; voltage divided by current
 Ref: 10.17
 D: 2
 RP: 10.17
+Id: edexcel-phys-10-056
 
 Q: In the core practical, two identical lamps are in parallel with a 6 V supply. What is the p.d. across each?
 A: 6 V
@@ -408,6 +403,7 @@ Accept: 6 volts; same as the supply
 Ref: 10.17
 D: 2
 RP: 10.17
+Id: edexcel-phys-10-057
 
 Q: In the filament lamp practical, why should the circuit be switched off between readings?
 A: To stop the filament heating up
@@ -415,174 +411,168 @@ Accept: Keep the temperature constant; resistance changes with temperature; to a
 Ref: 10.17
 D: 3
 RP: 10.17
+Id: edexcel-phys-10-058
 
 Q: What shape is the current against p.d. graph for a fixed resistor at constant temperature?
 A: Straight line through the origin
 Accept: Straight line; linear; directly proportional
 Ref: 10.18
 D: 1
-
-Q: What does a straight-line current against p.d. graph show about the resistance of a fixed resistor?
-A: It is constant
-Accept: Constant; stays the same; does not change
-Ref: 10.18
-D: 2
+Id: edexcel-phys-10-059
 
 Q: Describe the shape of the current against p.d. graph for a filament lamp.
 A: Curve getting shallower as p.d. rises
 Accept: Curved; non-linear; S-shaped; gradient decreases
 Ref: 10.18
 D: 2
+Id: edexcel-phys-10-060
 
 Q: Why does the resistance of a filament lamp increase as the current increases?
 A: Filament gets hotter
 Accept: Temperature rises; the wire heats up
 Ref: 10.18
 D: 3
-
-Q: In how many directions does a diode allow current to flow easily?
-A: One
-Accept: 1; one direction only; forward direction only
-Ref: 10.18
-D: 1
+Id: edexcel-phys-10-061
 
 Q: What is the resistance of a diode when connected in its reverse direction?
 A: Very high
 Accept: Infinite; extremely large; high
 Ref: 10.18
 D: 2
+Id: edexcel-phys-10-062
 
 Q: On a current against p.d. graph, what does a steeper gradient show about the resistance?
 A: Lower resistance
 Accept: Smaller resistance; resistance is less
 Ref: 10.18
 D: 3
+Id: edexcel-phys-10-063
 
 Q: What does LDR stand for?
 A: Light-dependent resistor
 Accept: Light dependent resistor
 Ref: 10.19
 D: 1
+Id: edexcel-phys-10-064
 
 Q: How does the resistance of an LDR change as the light intensity increases?
 A: Decreases
 Accept: Falls; goes down
 Ref: 10.19
 D: 1
-
-Q: Is the resistance of an LDR high or low in the dark?
-A: High
-Accept: Very high; large
-Ref: 10.19
-D: 2
+Id: edexcel-phys-10-065
 
 Q: An LDR is in series with a lamp. The room gets darker. What happens to the current in the lamp?
 A: Decreases
 Accept: Falls; gets smaller
 Ref: 10.19
 D: 3
+Id: edexcel-phys-10-066
 
 Q: Which component's resistance falls as its temperature rises?
 A: Thermistor
 Accept: NTC thermistor; thermistors
 Ref: 10.20
 D: 1
-
-Q: What happens to the resistance of a thermistor as it cools?
-A: Increases
-Accept: Rises; goes up; gets bigger
-Ref: 10.20
-D: 1
+Id: edexcel-phys-10-067
 
 Q: How does the resistance of an NTC thermistor change as temperature increases?
 A: Decreases
 Accept: Falls; goes down
 Ref: 10.20
 D: 2
+Id: edexcel-phys-10-068
 
 Q: A thermistor is in series with a lamp. The thermistor is warmed. What happens to the current?
 A: Increases
 Accept: Rises; goes up; gets bigger
 Ref: 10.20
 D: 3
+Id: edexcel-phys-10-069
 
 Q: In a circuit exploring a thermistor, how can its temperature be changed in a controlled way?
 A: Heat it in a water bath
 Accept: Place in a beaker of warm water; hot water; water bath
 Ref: 10.21
 D: 2
+Id: edexcel-phys-10-070
 
 Q: In a circuit exploring an LDR, how can the light intensity be varied?
 A: Move a lamp nearer or further away
 Accept: Change the distance from a lamp; move the light source
 Ref: 10.21
 D: 2
+Id: edexcel-phys-10-071
 
 Q: Why is a protective resistor placed in series with a diode in a test circuit?
 A: To limit the current
 Accept: To protect the diode; to stop the current being too large
 Ref: 10.21
 D: 3
-
-Q: Which calculation, using ammeter and voltmeter readings, shows how the resistance of a lamp varies?
-A: Potential difference ÷ current
-Accept: V ÷ I; R = V/I; voltage divided by current
-Ref: 10.21
-D: 2
+Id: edexcel-phys-10-072
 
 Q: When current flows in a resistor, what happens to the resistor's temperature?
 A: Increases
 Accept: Rises; it heats up; goes up
 Ref: 10.22
 D: 1
+Id: edexcel-phys-10-073
 
 Q: Which energy store of a resistor increases when there is a current in it?
 A: Thermal
 Accept: Thermal energy store; internal; heat
 Ref: 10.22
 D: 2
+Id: edexcel-phys-10-074
 
 Q: What name is given to the energy transfer which heats a resistor when current flows in it?
 A: Heating effect
 Accept: Heating; the heating effect of a current
 Ref: 10.22
 D: 1
+Id: edexcel-phys-10-075
 
 Q: Into which form of energy is most electrical energy dissipated when current does work against resistance?
 A: Thermal energy
 Accept: Heat; thermal
 Ref: 10.23
 D: 1
+Id: edexcel-phys-10-076
 
 Q: A phone charger feels warm in use. Explain where the wasted energy goes.
 A: Dissipated as thermal energy to the surroundings
 Accept: Heat spreads to the surroundings; transferred to the air as heat
 Ref: 10.23
 D: 3
+Id: edexcel-phys-10-077
 
 Q: What does it mean when energy is said to be dissipated?
 A: Spread out to the surroundings
 Accept: Wasted; transferred to the surroundings; spread out
 Ref: 10.23
 D: 2
+Id: edexcel-phys-10-078
 
 Q: What particles do electrons collide with in the lattice of a metal wire?
 A: Ions
 Accept: Positive ions; metal ions
 Ref: 10.24
 D: 1
+Id: edexcel-phys-10-079
 
 Q: When electrons collide with the ions in a wire, what happens to the vibrations of the ions?
 A: Increase
 Accept: They get bigger; ions vibrate more; vibrate faster
 Ref: 10.24
 D: 2
+Id: edexcel-phys-10-080
 
 Q: Explain why a wire heats up when there is a current in it.
 A: Electrons collide with ions, transferring energy
 Accept: Collisions between electrons and lattice ions
 Ref: 10.24
 D: 3
+Id: edexcel-phys-10-081
 
 Q: Why are low-resistance wires used to connect components in circuits?
 A: Less energy transferred as heat
@@ -590,13 +580,7 @@ Accept: Less thermal energy wasted; reduces heating of the wires
 Ref: 10.25
 D: 3
 HT: yes
-
-Q: Which metal is usually used for the connecting wires in household circuits?
-A: Copper
-Accept: Cu
-Ref: 10.25
-D: 1
-HT: yes
+Id: edexcel-phys-10-082
 
 Q: A wire carries a fixed current. Its resistance is halved. What happens to the power wasted in the wire?
 A: Halved
@@ -604,375 +588,426 @@ Accept: Reduced to half; divided by two; half as much
 Ref: 10.25
 D: 3
 HT: yes
+Id: edexcel-phys-10-083
 
 Q: Is the heating effect of a current in a toaster element an advantage or a disadvantage?
 A: Advantage
 Accept: An advantage; useful
 Ref: 10.26
 D: 1
-
-Q: Is the heating effect of a current in a laptop's connecting wires an advantage or a disadvantage?
-A: Disadvantage
-Accept: A disadvantage; wasteful
-Ref: 10.26
-D: 1
+Id: edexcel-phys-10-084
 
 Q: Why is the heating effect a disadvantage in connecting wires?
 A: Energy is wasted as heat
 Accept: Wastes energy; thermal energy dissipated; lowers efficiency
 Ref: 10.26
 D: 2
+Id: edexcel-phys-10-085
 
 Q: Which safety device uses the heating effect of a current to melt and break a circuit?
 A: Fuse
 Accept: A fuse
 Ref: 10.26
 D: 2
+Id: edexcel-phys-10-086
 
 Q: Use E = I × V × t. A 2 A current at 5 V flows for 10 s. What energy is transferred?
 A: 100 J
 Accept: 100 joules
 Ref: 10.27
 D: 2
+Id: edexcel-phys-10-087
 
 Q: Use E = I × V × t. A current of 0.5 A at 6 V flows for 20 s. What energy is transferred?
 A: 60 J
 Accept: 60 joules
 Ref: 10.27
 D: 2
+Id: edexcel-phys-10-088
 
 Q: Use E = I × V × t. A current of 1 A at 12 V flows for one minute. What energy is transferred?
 A: 720 J
 Accept: 720 joules
 Ref: 10.27
 D: 3
+Id: edexcel-phys-10-089
 
 Q: Use E = I × V × t. A 3 A current transfers 90 J in 5 s. What is the p.d.?
 A: 6 V
 Accept: 6 volts
 Ref: 10.27
 D: 3
+Id: edexcel-phys-10-090
 
 Q: Power is the energy transferred per what?
 A: Second
 Accept: Per second; unit time
 Ref: 10.28
 D: 1
+Id: edexcel-phys-10-091
 
 Q: In which unit is the rate of energy transfer measured?
 A: Watt
 Accept: Watts; W
 Ref: 10.28
 D: 1
-
-Q: Power is measured in watts. One watt equals one of which energy unit per second?
-A: Joule
-Accept: Joules; J
-Ref: 10.28
-D: 1
+Id: edexcel-phys-10-092
 
 Q: A lamp transfers 200 J of energy every second. What is its power?
 A: 200 W
 Accept: 200 watts
 Ref: 10.28
 D: 2
+Id: edexcel-phys-10-093
 
 Q: Write the equation linking power, energy transferred and time taken.
 A: P = E ÷ t
 Accept: Power = energy transferred ÷ time; P = E/t
 Ref: 10.29
 D: 2
+Id: edexcel-phys-10-094
 
 Q: A heater transfers 3000 J of energy in 10 s. What is its power?
 A: 300 W
 Accept: 300 watts
 Ref: 10.29
 D: 2
+Id: edexcel-phys-10-095
 
 Q: A 60 W lamp is switched on for 10 s. How much energy does it transfer?
 A: 600 J
 Accept: 600 joules
 Ref: 10.29
 D: 2
+Id: edexcel-phys-10-096
 
 Q: A 2 kW kettle transfers 60 000 J of energy. How long does this take?
 A: 30 s
 Accept: 30 seconds
 Ref: 10.29
 D: 3
+Id: edexcel-phys-10-097
 
 Q: The p.d. across a device is doubled and the current stays the same. What happens to its power?
 A: Doubles
 Accept: Twice as big; increases by a factor of 2
 Ref: 10.30
 D: 2
+Id: edexcel-phys-10-098
 
 Q: The power of an electrical device depends on its p.d. and which other quantity?
 A: Current
 Accept: The current in it
 Ref: 10.30
 D: 1
+Id: edexcel-phys-10-099
 
 Q: Two lamps have the same p.d. across them. Lamp A has twice the current of lamp B. Which has the greater power?
 A: Lamp A
 Accept: A
 Ref: 10.30
 D: 2
+Id: edexcel-phys-10-100
 
 Q: Write the equation for electrical power in terms of current and potential difference.
 A: P = I × V
 Accept: Power = current × potential difference; P = IV
 Ref: 10.31
 D: 2
+Id: edexcel-phys-10-101
 
 Q: A 3 A current flows from a 4 V cell. What is the power?
 A: 12 W
 Accept: 12 watts
 Ref: 10.31
 D: 2
-
-Q: A mains kettle at 230 V draws a current of 10 A. What is its power?
-A: 2300 W
-Accept: 2.3 kW; 2300 watts
-Ref: 10.31
-D: 2
+Id: edexcel-phys-10-102
 
 Q: Write the equation for electrical power in terms of current and resistance.
 A: P = I² × R
 Accept: Power = current squared × resistance; P = I2R
 Ref: 10.31
 D: 2
+Id: edexcel-phys-10-103
 
 Q: A current of 2 A flows through a 5 Ω resistor. What is the power?
 A: 20 W
 Accept: 20 watts
 Ref: 10.31
 D: 2
+Id: edexcel-phys-10-104
 
 Q: A 6 Ω resistor dissipates 24 W. What is the current in it?
 A: 2 A
 Accept: 2 amps
 Ref: 10.31
 D: 3
+Id: edexcel-phys-10-105
 
-Q: Which energy store of a fan does a motor in a mains hairdryer mainly increase?
+Q: A motor turns a fan blade. Which energy store of the blade does the motor increase?
 A: Kinetic
 Accept: Kinetic energy store; movement
 Ref: 10.32
 D: 2
+Id: edexcel-phys-10-106
 
 Q: Which energy store of the water does a mains kettle increase?
 A: Thermal
 Accept: Thermal energy store; internal; heat
 Ref: 10.32
 D: 1
+Id: edexcel-phys-10-107
 
 Q: Describe the main energy transfer when a battery-powered toy car moves.
 A: Chemical to kinetic
 Accept: Chemical store of battery to kinetic store; chemical to electrical to kinetic
 Ref: 10.32
 D: 2
+Id: edexcel-phys-10-108
 
 Q: Does a cell supply direct or alternating potential difference?
 A: Direct
 Accept: d.c.; direct current
 Ref: 10.33
 D: 1
+Id: edexcel-phys-10-109
 
 Q: On an oscilloscope screen, what does a direct p.d. look like?
 A: Horizontal straight line
 Accept: Flat line; constant line
 Ref: 10.33
 D: 2
+Id: edexcel-phys-10-110
 
 Q: How does an alternating p.d. differ from a direct p.d.?
-A: It keeps reversing direction
+A: Keeps reversing direction
 Accept: Changes direction regularly; direct p.d. is in one direction only
 Ref: 10.33
 D: 3
+Id: edexcel-phys-10-111
 
 Q: What does d.c. stand for?
 A: Direct current
 Accept: Direct
 Ref: 10.34
 D: 1
+Id: edexcel-phys-10-112
 
 Q: In direct current, in how many directions does the charge move?
 A: One
 Accept: 1; one direction only
 Ref: 10.34
 D: 1
+Id: edexcel-phys-10-113
 
 Q: Do cells and batteries supply a.c. or d.c.?
 A: d.c.
 Accept: Direct current; direct
 Ref: 10.34
 D: 1
+Id: edexcel-phys-10-114
 
 Q: What does a.c. stand for?
 A: Alternating current
 Accept: Alternating
 Ref: 10.35
 D: 1
+Id: edexcel-phys-10-115
 
 Q: In alternating current, what happens to the direction of the movement of charge?
-A: It changes repeatedly
+A: Changes repeatedly
 Accept: Reverses; keeps changing; back and forth
 Ref: 10.35
 D: 2
+Id: edexcel-phys-10-116
 
 Q: What is the frequency of the UK domestic mains supply?
 A: 50 Hz
 Accept: 50 hertz
 Ref: 10.36
 D: 1
+Id: edexcel-phys-10-117
 
 Q: Is the UK domestic mains supply a.c. or d.c.?
 A: a.c.
 Accept: Alternating current; alternating
 Ref: 10.36
 D: 1
+Id: edexcel-phys-10-118
 
 Q: State the voltage of the UK domestic mains supply, to the nearest ten volts.
 A: 230 V
 Accept: About 230 V; 230 volts
 Ref: 10.36
 D: 1
+Id: edexcel-phys-10-119
 
 Q: State the frequency and voltage of the UK mains supply.
 A: 50 Hz and about 230 V
 Accept: 50 hertz and 230 volts
 Ref: 10.36
 D: 2
+Id: edexcel-phys-10-120
 
 Q: Which mains wire carries the alternating p.d. to an appliance?
 A: Live
 Accept: Live wire
 Ref: 10.37
 D: 1
+Id: edexcel-phys-10-121
 
 Q: What is the function of the neutral wire in a mains circuit?
 A: Completes the circuit
 Accept: Return path for the current; carries current back to the supply
 Ref: 10.37
 D: 2
+Id: edexcel-phys-10-122
 
 Q: Explain why an appliance does not work if its neutral wire is disconnected.
 A: Circuit is incomplete
 Accept: No return path for current; circuit is broken; no complete loop
 Ref: 10.37
 D: 3
-
-Q: Which wire connects the metal case of an appliance to the ground?
-A: Earth
-Accept: Earth wire
-Ref: 10.38
-D: 1
+Id: edexcel-phys-10-123
 
 Q: What is the function of the earth wire in a plug?
 A: Stops the metal case becoming live
 Accept: Carries fault current to earth; safety wire; prevents electric shock
 Ref: 10.38
 D: 2
+Id: edexcel-phys-10-124
 
 Q: What does a fuse do when the current in it is too large?
 A: Melts
 Accept: Melts and breaks the circuit; breaks the circuit; blows
 Ref: 10.38
 D: 2
+Id: edexcel-phys-10-125
 
 Q: Name a device, other than a fuse, which automatically switches off a circuit when the current is too large.
 A: Circuit breaker
 Accept: Trip switch; MCB
 Ref: 10.38
 D: 2
+Id: edexcel-phys-10-126
 
 Q: A fault connects the live wire to a metal case. Explain how the earth wire and fuse make this safe.
 A: Large current to earth melts fuse
 Accept: Big current flows through earth and the fuse blows; circuit is broken
 Ref: 10.38
 D: 3
+Id: edexcel-phys-10-127
 
 Q: In which mains wire should a switch be connected?
 A: Live
 Accept: Live wire
 Ref: 10.39
 D: 1
+Id: edexcel-phys-10-128
 
 Q: In which mains wire should a fuse be connected?
 A: Live
 Accept: Live wire
 Ref: 10.39
 D: 1
+Id: edexcel-phys-10-129
 
 Q: Why must a switch be connected in the live wire rather than the neutral wire?
 A: Disconnects the appliance from the live p.d.
 Accept: Appliance not live when off; isolates the appliance from high voltage
 Ref: 10.39
 D: 3
+Id: edexcel-phys-10-130
 
 Q: What is the p.d. between the live wire and the neutral wire in the UK mains supply?
 A: About 230 V
 Accept: 230 V; 230 volts
 Ref: 10.40
 D: 1
+Id: edexcel-phys-10-131
 
 Q: What is the p.d. between the neutral wire and the earth wire?
 A: About 0 V
 Accept: Zero; 0 volts; none
 Ref: 10.40
 D: 2
+Id: edexcel-phys-10-132
 
 Q: A person standing on the ground touches a live wire. What p.d. is across the person?
 A: About 230 V
 Accept: 230 V; 230 volts
 Ref: 10.40
 D: 3
+Id: edexcel-phys-10-133
 
 Q: What happens to the current if the live wire touches the earth wire?
 A: Becomes very large
 Accept: Increases greatly; surges; huge current
 Ref: 10.41
 D: 2
+Id: edexcel-phys-10-134
 
 Q: Why is a connection between the live wire and earth dangerous?
 A: Very large current causes heating or fire
 Accept: Risk of fire; risk of electric shock; large current overheats wires
 Ref: 10.41
 D: 3
+Id: edexcel-phys-10-135
 
 Q: Which two devices cut off the current if the live wire touches earth?
 A: Fuse and circuit breaker
 Accept: Circuit breaker and fuse
 Ref: 10.41
 D: 2
+Id: edexcel-phys-10-136
 
 Q: A kettle has a power rating of 2 kW. How much energy does it transfer each second?
 A: 2000 J
 Accept: 2000 joules; 2 kJ
 Ref: 10.42
 D: 2
-
-Q: Which has the higher power rating, a kettle or a phone charger?
-A: Kettle
-Accept: A kettle
-Ref: 10.42
-D: 1
+Id: edexcel-phys-10-137
 
 Q: What does a power rating of 60 W tell you about a lamp?
 A: Transfers 60 J each second
 Accept: 60 joules per second; uses 60 J every second
 Ref: 10.42
 D: 2
+Id: edexcel-phys-10-138
 
 Q: Appliance A has a power rating of 2000 W and appliance B has 500 W. How many times more energy per second does A transfer?
 A: 4 times
 Accept: 4; four; four times
 Ref: 10.42
 D: 3
+Id: edexcel-phys-10-139
 
 Q: How much energy does a 100 W lamp transfer from the supply in 10 s?
 A: 1000 J
 Accept: 1000 joules; 1 kJ
 Ref: 10.42
 D: 2
+Id: edexcel-phys-10-140
+
+Q: A wire carries a fixed current. Its resistance is doubled. What happens to the power wasted in the wire?
+A: Doubles
+Accept: Twice as much; increases by a factor of 2
+Ref: 10.25
+D: 2
+HT: yes
+Id: edexcel-phys-10-141
+
+Q: Why are thick wires used for the cables of high-current appliances?
+A: Lower resistance, so less heating
+Accept: Less energy wasted as heat; low resistance; less thermal energy
+Ref: 10.25
+D: 3
+HT: yes
+Id: edexcel-phys-10-142
+
+Q: Name the type of current in which the charge keeps reversing direction.
+A: Alternating
+Accept: a.c.; alternating current
+Ref: 10.35
+D: 1
+Id: edexcel-phys-10-143

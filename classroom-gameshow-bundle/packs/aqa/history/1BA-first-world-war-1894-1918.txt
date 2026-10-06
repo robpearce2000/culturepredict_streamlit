@@ -7,242 +7,283 @@ A: Germany, Austria-Hungary and Italy
 Accept: Germany, Italy and Austria-Hungary
 Ref: 1BA.1.1
 D: 1
+Id: aqa-hist-1BA-001
 
 Q: Which Moroccan port did Kaiser Wilhelm II visit in 1905 to challenge French influence?
 A: Tangier
 Ref: 1BA.1.1
 D: 1
+Id: aqa-hist-1BA-002
 
 Q: Which Balkan territory did Austria-Hungary annex in 1908, angering Serbia and Russia?
 A: Bosnia
 Accept: Bosnia and Herzegovina; Bosnia-Herzegovina
 Ref: 1BA.1.1
 D: 1
+Id: aqa-hist-1BA-003
 
 Q: Which German gunboat was sent to the Moroccan port of Agadir in 1911?
 A: The Panther
 Accept: Panther; SMS Panther
 Ref: 1BA.1.1
 D: 2
+Id: aqa-hist-1BA-004
 
 Q: How did the Moroccan crises of 1905 and 1911 affect Britain and France?
 A: Drew them closer together
 Accept: Strengthened the Entente; Britain and France became closer; strengthened their friendship
 Ref: 1BA.1.1
 D: 3
+Id: aqa-hist-1BA-005
 
 Q: What was the name of Kaiser Wilhelm II's policy of making Germany a world power with colonies and a big navy?
 A: Weltpolitik
 Ref: 1BA.1.2
 D: 1
+Id: aqa-hist-1BA-006
 
 Q: Which British battleship, launched in 1906, made all earlier warships out of date?
 A: HMS Dreadnought
 Accept: Dreadnought
 Ref: 1BA.1.2
 D: 1
+Id: aqa-hist-1BA-007
 
 Q: What name describes Britain's nineteenth-century policy of avoiding permanent European alliances?
 A: Splendid Isolation
 Ref: 1BA.1.2
 D: 2
+Id: aqa-hist-1BA-008
 
 Q: Which 1902 alliance with an Asian power ended Britain's Splendid Isolation?
 A: Anglo-Japanese Alliance
 Accept: Alliance with Japan; Japan; Anglo-Japanese Treaty
 Ref: 1BA.1.2
 D: 2
+Id: aqa-hist-1BA-009
 
 Q: Which German admiral drove the Navy Laws that expanded the German fleet from 1898?
 A: Tirpitz
 Accept: Alfred von Tirpitz; von Tirpitz
 Ref: 1BA.1.2
 D: 2
+Id: aqa-hist-1BA-010
 
 Q: Why did the launch of HMS Dreadnought speed up the Anglo-German naval race?
 A: Old battleships became obsolete
 Accept: Both sides had to build dreadnoughts; it made all other battleships out of date; the race started again from scratch
 Ref: 1BA.1.2
 D: 3
+Id: aqa-hist-1BA-011
 
 Q: In which city was Archduke Franz Ferdinand assassinated in June 1914?
 A: Sarajevo
 Ref: 1BA.1.3
 D: 1
+Id: aqa-hist-1BA-012
 
 Q: Which Bosnian Serb nationalist shot Archduke Franz Ferdinand?
 A: Gavrilo Princip
 Accept: Princip
 Ref: 1BA.1.3
 D: 2
+Id: aqa-hist-1BA-013
 
 Q: What name is given to Germany's July 1914 promise of unconditional support to Austria-Hungary?
 A: Blank cheque
 Accept: Blank check
 Ref: 1BA.1.3
 D: 2
+Id: aqa-hist-1BA-014
 
 Q: Why did Germany declare war on Russia on 1 August 1914?
 A: Russia had mobilised its army
 Accept: Russian mobilisation; Russia mobilised to support Serbia
 Ref: 1BA.1.3
 D: 3
+Id: aqa-hist-1BA-015
 
 Q: Why did Germany want to defeat France quickly under the Schlieffen Plan?
 A: To avoid a war on two fronts
 Accept: Avoid fighting France and Russia at once; to avoid a two-front war
 Ref: 1BA.2.1
 D: 3
+Id: aqa-hist-1BA-016
 
 Q: What did both armies do after the Race to the Sea that created the stalemate on the Western Front?
 A: Dug trenches
 Accept: Trench lines; built trenches; entrenched
 Ref: 1BA.2.1
 D: 2
+Id: aqa-hist-1BA-017
 
 Q: Which battle began on 1 July 1916 with about 57,000 British casualties on the first day?
 A: The Somme
 Accept: Battle of the Somme; Somme
 Ref: 1BA.2.2
 D: 1
+Id: aqa-hist-1BA-018
 
 Q: Which new British weapon was first used at the Somme in September 1916?
 A: Tank
 Accept: Tanks
 Ref: 1BA.2.2
 D: 1
+Id: aqa-hist-1BA-019
 
 Q: What term describes a strategy of winning by wearing the enemy down through constant losses?
 A: War of attrition
 Accept: Attrition
 Ref: 1BA.2.2
 D: 2
+Id: aqa-hist-1BA-020
 
 Q: What was General Falkenhayn's aim at Verdun?
 A: To bleed the French army white
 Accept: Bleed France white; wear down the French army; destroy the French army through attrition
 Ref: 1BA.2.2
 D: 3
+Id: aqa-hist-1BA-021
 
 Q: Which poison gas did Germany first use on a large scale at Ypres in April 1915?
 A: Chlorine
 Accept: Chlorine gas
 Ref: 1BA.2.2
 D: 2
+Id: aqa-hist-1BA-022
 
 Q: At Gallipoli, the Allies attacked which empire?
 A: The Ottoman Empire
 Accept: Ottoman; Turkey; the Turks; Ottoman Empire
 Ref: 1BA.2.3
 D: 1
+Id: aqa-hist-1BA-023
 
 Q: Which First Lord of the Admiralty championed the Gallipoli campaign?
 A: Winston Churchill
 Accept: Churchill
 Ref: 1BA.2.3
 D: 1
+Id: aqa-hist-1BA-024
 
 Q: Which naval battle in 1916 was the largest of the war, fought in the North Sea?
 A: Jutland
 Accept: Battle of Jutland
 Ref: 1BA.2.3
 D: 1
+Id: aqa-hist-1BA-025
 
 Q: Which navy lost more ships at Jutland but kept control of the North Sea?
 A: The British Royal Navy
 Accept: British; Royal Navy; Britain
 Ref: 1BA.2.3
 D: 3
+Id: aqa-hist-1BA-026
 
 Q: What name is given to the system of merchant ships sailing together with warship escorts?
 A: Convoy
 Accept: Convoys; convoy system
 Ref: 1BA.2.3
 D: 1
+Id: aqa-hist-1BA-027
 
 Q: What was Germany's policy of sinking merchant ships without warning called?
 A: Unrestricted submarine warfare
 Accept: U-boat campaign; unrestricted U-boat warfare
 Ref: 1BA.2.3
 D: 2
+Id: aqa-hist-1BA-028
 
 Q: Which March 1918 treaty took Russia out of the war?
 A: Treaty of Brest-Litovsk
 Accept: Brest-Litovsk
 Ref: 1BA.3.1
 D: 1
+Id: aqa-hist-1BA-029
 
 Q: Why did Russia's withdrawal help Germany's strategy in 1918?
 A: Troops could move to the Western Front
 Accept: Germany could concentrate on the west; ended the two-front war
 Ref: 1BA.3.1
 D: 3
+Id: aqa-hist-1BA-030
 
 Q: Which telegram of 1917 offered Mexico US territory if it joined Germany's side?
 A: Zimmermann Telegram
 Accept: Zimmermann Note; Zimmerman Telegram
 Ref: 1BA.3.1
 D: 2
+Id: aqa-hist-1BA-031
 
 Q: What advantage did American entry give the Allies that Germany could not match?
 A: Fresh troops and resources
 Accept: Fresh troops; more men and supplies; American manpower
 Ref: 1BA.3.1
 D: 3
+Id: aqa-hist-1BA-032
 
 Q: Which German units used infiltration tactics, bypassing strong points in 1918?
 A: Stormtroopers
 Accept: Storm troopers; Stosstruppen
 Ref: 1BA.3.2
 D: 2
+Id: aqa-hist-1BA-033
 
 Q: What name is given to the Allied advance from August to November 1918?
 A: The Hundred Days
 Accept: Hundred Days Offensive; Hundred Days
 Ref: 1BA.3.2
 D: 1
+Id: aqa-hist-1BA-034
 
 Q: In which battle of 8 August 1918 did Ludendorff call it "the black day of the German army"?
 A: Amiens
 Accept: Battle of Amiens
 Ref: 1BA.3.2
 D: 2
+Id: aqa-hist-1BA-035
 
 Q: Why did the Spring Offensive fail to win the war?
-A: Troops exhausted and supply lines overstretched
-Accept: Germany ran out of reserves; supplies stretched; heavy losses; overstretched
+A: Germany ran out of reserves and supplies
+Accept: Troops exhausted; supply lines overstretched; heavy losses; no reserves
 Ref: 1BA.3.2
 D: 3
+Id: aqa-hist-1BA-036
 
 Q: Which Allied navy's blockade of Germany caused severe food shortages?
 A: The British Royal Navy
 Accept: British; Royal Navy; Britain
 Ref: 1BA.3.3
 D: 1
+Id: aqa-hist-1BA-037
 
 Q: What name is given to the winter of 1916-17, when Germans ate turnips due to food shortages?
 A: Turnip Winter
 Accept: The Turnip Winter
 Ref: 1BA.3.3
 D: 2
+Id: aqa-hist-1BA-038
 
 Q: In which forest near Compiègne was the armistice of November 1918 signed?
 A: Compiègne
 Accept: Compiegne; Compiègne Forest
 Ref: 1BA.3.3
 D: 2
+Id: aqa-hist-1BA-039
 
 Q: Which British commander-in-chief led the armies in the Hundred Days advance?
 A: Haig
 Accept: Douglas Haig; Sir Douglas Haig
 Ref: 1BA.3.3
 D: 2
+Id: aqa-hist-1BA-040
 
 Q: How did the blockade help to defeat Germany by 1918?
 A: Food shortages lowered morale
 Accept: Starvation; shortages; undermined civilian morale; hunger
 Ref: 1BA.3.3
 D: 3
+Id: aqa-hist-1BA-041
 
 
 Q: Why did Germany's invasion of Belgium bring Britain into the war?
@@ -250,15 +291,46 @@ A: Britain had guaranteed Belgian neutrality
 Accept: 1839 Treaty of London; Britain had promised to protect Belgium
 Ref: 1BA.1.3
 D: 3
+Id: aqa-hist-1BA-042
 
 Q: Why did Serb nationalism worry Austria-Hungary?
 A: It threatened the empire's Slav lands
 Accept: Slavs in the empire might break away; risk of break-up of the empire
 Ref: 1BA.1.3
 D: 3
+Id: aqa-hist-1BA-043
 
 Q: Why did convoys reduce Allied shipping losses to U-boats?
 A: Warships could protect grouped merchant ships
 Accept: Escorts protected ships; harder for U-boats to find ships; escort warships
 Ref: 1BA.2.3
 D: 3
+Id: aqa-hist-1BA-044
+
+Q: Which battle of September 1914 halted the German advance on Paris?
+A: The Marne
+Accept: Battle of the Marne; First Battle of the Marne; Marne
+Ref: 1BA.2.1
+D: 1
+Id: aqa-hist-1BA-045
+
+Q: Which 1917 battle, fought in mud around Ypres, is also known as Third Ypres?
+A: Passchendaele
+Accept: Battle of Passchendaele; Third Ypres
+Ref: 1BA.2.2
+D: 1
+Id: aqa-hist-1BA-046
+
+Q: Which German ruler abdicated on 9 November 1918?
+A: Kaiser Wilhelm II
+Accept: Wilhelm II; Kaiser Wilhelm; the Kaiser; Wilhelm
+Ref: 1BA.3.3
+D: 1
+Id: aqa-hist-1BA-047
+
+Q: Which French general became Supreme Allied Commander in 1918?
+A: Foch
+Accept: Ferdinand Foch; Marshal Foch
+Ref: 1BA.3.3
+D: 2
+Id: aqa-hist-1BA-048

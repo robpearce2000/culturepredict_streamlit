@@ -7,203 +7,238 @@ A: Water surplus
 Accept: Surplus; Water security
 Ref: 3.2.3.3.1
 D: 1
+Id: aqa-geog-3.2.3.3-001
 
 Q: What term describes a place where water supply is lower than demand?
 A: Water deficit
 Accept: Deficit; Water insecurity; Water stress
 Ref: 3.2.3.3.1
 D: 1
+Id: aqa-geog-3.2.3.3-002
 
 Q: Name the process of taking water from rivers or aquifers faster than it is replaced.
 A: Over-abstraction
 Accept: Overabstraction; Over abstraction
 Ref: 3.2.3.3.1
 D: 1
+Id: aqa-geog-3.2.3.3-003
 
 Q: Name the type of rock that stores groundwater and allows it to be extracted.
 A: Aquifer
 Accept: Permeable rock; Porous rock
 Ref: 3.2.3.3.1
 D: 1
+Id: aqa-geog-3.2.3.3-004
 
 Q: Rising population is one reason for increasing water use. Give one other reason.
 A: Economic development
 Accept: Industrialisation; Rising living standards; Increased wealth; Industrial growth
 Ref: 3.2.3.3.1
 D: 2
+Id: aqa-geog-3.2.3.3-005
 
 Q: Why does a hot, dry climate reduce water availability?
 A: Low rainfall and high evaporation
 Accept: Little rain; Little precipitation; High evaporation
 Ref: 3.2.3.3.1
 D: 3
+Id: aqa-geog-3.2.3.3-006
 
 Q: How can the type of rock (geology) increase the water available to a region?
 A: Permeable rock stores groundwater
 Accept: Aquifers; Porous rock holds water; Chalk or sandstone stores water
 Ref: 3.2.3.3.1
 D: 3
+Id: aqa-geog-3.2.3.3-007
 
 Q: Why does polluted water reduce the supply available for people to use?
 A: Unsafe to drink
 Accept: Unsafe; Not safe to drink; Cannot be used; Needs expensive treatment
 Ref: 3.2.3.3.1
 D: 2
+Id: aqa-geog-3.2.3.3-008
 
 Q: Why can poverty leave people without safe water even where rainfall is high?
 A: Cannot afford wells, pipes or treatment
 Accept: Lack of infrastructure; No money for infrastructure; Cannot afford water supply systems
 Ref: 3.2.3.3.1
 D: 3
+Id: aqa-geog-3.2.3.3-009
 
 Q: Name a disease spread by drinking dirty water.
 A: Cholera
 Accept: Typhoid; Dysentery; Diarrhoea; Hepatitis A
 Ref: 3.2.3.3.1
 D: 1
+Id: aqa-geog-3.2.3.3-010
 
 Q: What term describes disease spread through contaminated drinking water?
 A: Waterborne disease
 Accept: Water-borne disease
 Ref: 3.2.3.3.1
 D: 1
+Id: aqa-geog-3.2.3.3-011
 
 Q: How does water insecurity reduce food production?
 A: Not enough water for irrigation
 Accept: Crops fail; Less irrigation; Drought kills crops and livestock
 Ref: 3.2.3.3.1
 D: 3
+Id: aqa-geog-3.2.3.3-012
 
 Q: Why can water insecurity reduce industrial output?
 A: Factories need water for production
 Accept: Industry needs water; Factories cannot operate; Not enough water for manufacturing
 Ref: 3.2.3.3.1
 D: 3
+Id: aqa-geog-3.2.3.3-013
 
 Q: Why might two countries sharing a river come into conflict?
 A: Upstream use reduces water downstream
 Accept: Competition for water; Dam upstream reduces flow; One country uses more than its share
 Ref: 3.2.3.3.1
 D: 3
+Id: aqa-geog-3.2.3.3-014
 
 Q: Which continent has many countries with water deficit in its north and east, including Egypt and Somalia?
 A: Africa
 Ref: 3.2.3.3.1
 D: 1
+Id: aqa-geog-3.2.3.3-015
 
 Q: Which structure built across a river holds back water to create a reservoir?
 A: Dam
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-016
 
 Q: What is the name for a large artificial lake used to store water?
 A: Reservoir
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-017
 
 Q: Name the process of removing salt from sea water to make it drinkable.
 A: Desalination
 Accept: Desalinisation
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-018
 
 Q: Name the strategy of moving water from an area of surplus to an area of deficit by pipes or canals.
 A: Water transfer
 Accept: Water transfer scheme
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-019
 
 Q: Give one disadvantage of desalination.
 A: Expensive or uses lots of energy
 Accept: High cost; High energy use; Energy intensive; Brine waste; Damages marine life
 Ref: 3.2.3.3.2
 D: 2
+Id: aqa-geog-3.2.3.3-020
 
 Q: Give one advantage of building a dam and reservoir.
 A: Stores water for dry periods
 Accept: Provides HEP; Hydroelectric power; Flood control; Reliable supply; Recreation; Irrigation
 Ref: 3.2.3.3.2
 D: 2
+Id: aqa-geog-3.2.3.3-021
 
 Q: Give one environmental problem caused by building a large dam.
 A: Flooding of land and habitats
 Accept: Habitat loss; Loss of farmland; Reduced sediment downstream; Reduced river flow downstream; Affects wildlife
 Ref: 3.2.3.3.2
 D: 2
+Id: aqa-geog-3.2.3.3-022
 
 Q: Give one social problem caused by building a large dam.
 A: People forced to move
 Accept: Displacement; Loss of homes; Loss of farmland; Loss of livelihoods; Resettlement
 Ref: 3.2.3.3.2
 D: 2
+Id: aqa-geog-3.2.3.3-023
 
 Q: Lesotho Highlands Water Project sends water to which South African province, containing Johannesburg?
 A: Gauteng
 Accept: Johannesburg region
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-024
 
 Q: Which country receives money for water sold through the Lesotho Highlands Water Project?
 A: Lesotho
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-025
 
 Q: Give one advantage of a large water transfer scheme such as the Lesotho Highlands project.
 A: Brings water to areas of shortage
 Accept: Income for the supplying country; HEP; Hydroelectric power; Jobs; Better supply to cities
 Ref: 3.2.3.3.2
 D: 2
+Id: aqa-geog-3.2.3.3-026
 
 Q: Give one disadvantage of a large water transfer scheme such as the Lesotho Highlands project.
 A: Villagers displaced
 Accept: Loss of farmland; Very expensive; Habitat loss; Reduced river flow downstream; Loss of homes
 Ref: 3.2.3.3.2
 D: 2
+Id: aqa-geog-3.2.3.3-027
 
 Q: Why do large water transfer schemes often cause disagreement between regions?
 A: One region loses water to benefit another
 Accept: Donor area loses water; Costs and benefits are unequal; Conflict over who gets water
 Ref: 3.2.3.3.2
 D: 3
+Id: aqa-geog-3.2.3.3-028
 
 Q: What term describes using water carefully to reduce the amount used?
 A: Water conservation
 Accept: Conservation
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-029
 
 Q: What term describes waste water from baths, sinks and washing machines that can be reused for flushing toilets or watering gardens?
 A: Grey water
 Accept: Greywater
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-030
 
 Q: Name the process of treating used water so that it can be used again.
 A: Recycling
 Accept: Water recycling; Reuse
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-031
 
 Q: How does groundwater management help make water supplies sustainable?
 A: Limits abstraction to the rate of recharge
 Accept: Controls extraction; Stops over-abstraction; Takes no more than is replaced; Licences for pumping
 Ref: 3.2.3.3.2
 D: 3
+Id: aqa-geog-3.2.3.3-032
 
 Q: Name one low-cost, small-scale way a village in an LIC can increase its water supply sustainably.
 A: Hand-dug well
 Accept: Well; Hand pump; Tube well; Borehole with hand pump; Sand dam; Rainwater harvesting; Rainwater collection; Small dam
 Ref: 3.2.3.3.2
 D: 2
+Id: aqa-geog-3.2.3.3-033
 
 Q: Why are small local water schemes in an LIC often more sustainable than large dams?
 A: Cheap, local people can maintain them
 Accept: Appropriate technology; Low cost; Easy to maintain; Local people run them; Less environmental damage
 Ref: 3.2.3.3.2
 D: 3
+Id: aqa-geog-3.2.3.3-034
 
 Q: Name the term for collecting and storing rain from roofs for later use.
 A: Rainwater harvesting
 Accept: Rainwater collection; Water harvesting
 Ref: 3.2.3.3.2
 D: 1
+Id: aqa-geog-3.2.3.3-035

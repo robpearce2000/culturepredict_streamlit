@@ -155,7 +155,7 @@ async function until(page, fn, ms, arg) {
           <figure class="s3"><img src="${cc}" alt=""><figcaption>${CGB.brand.ccLogo()}</figcaption></figure>
           <figure class="s4"><img src="${hh}" alt=""><figcaption>${CGB.brand.hhLogo()}</figcaption></figure>
         </div>
-        <div class="chips"><span>Whole class: every team answers</span><span>4 games</span><span>1,400+ AQA-style GCSE science questions</span><span>Works offline</span></div>
+        <div class="chips"><span>Whole class: every team answers</span><span>4 games</span><span>7,700+ AQA and Edexcel-style GCSE questions</span><span>Works offline</span></div>
       </div>`;
     const st = document.createElement('style');
     st.textContent = `

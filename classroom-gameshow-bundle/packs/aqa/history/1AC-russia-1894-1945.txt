@@ -7,247 +7,289 @@ A: Sergei Witte
 Accept: Witte; Count Witte
 Ref: 1AC.1.1
 D: 1
+Id: aqa-hist-1AC-001
 
 Q: Which railway across Siberia, begun in 1891, helped Russia's industrial growth?
 A: Trans-Siberian Railway
 Accept: Trans-Siberian; Trans Siberian
 Ref: 1AC.1.1
 D: 1
+Id: aqa-hist-1AC-002
 
 Q: About what percentage of Russians were peasants in 1900?
 A: About 80%
 Accept: 80%; 80 to 85%; over three quarters; about four fifths
 Ref: 1AC.1.1
 D: 2
+Id: aqa-hist-1AC-003
 
 Q: Why were industrial workers in Russian cities increasingly discontented by 1905?
 A: Low pay, long hours and poor housing
 Accept: Poor working and living conditions; overcrowding; low wages; harsh conditions
 Ref: 1AC.1.1
 D: 3
+Id: aqa-hist-1AC-004
 
 Q: Which priest led the peaceful march to the Winter Palace on Bloody Sunday in 1905?
 A: Father Gapon
 Accept: Gapon; Georgy Gapon
 Ref: 1AC.1.2
 D: 1
+Id: aqa-hist-1AC-005
 
 Q: What did the October Manifesto of 1905 promise?
 A: An elected Duma and civil liberties
 Accept: A parliament and civil rights; a Duma; freedom of speech; elected parliament
 Ref: 1AC.1.2
 D: 2
+Id: aqa-hist-1AC-006
 
 Q: What was 'Stolypin's necktie'?
 A: The hangman's noose
 Accept: A noose; hanging; execution by hanging
 Ref: 1AC.1.2
 D: 2
+Id: aqa-hist-1AC-007
 
 Q: Why did Nicholas II dissolve the first two Dumas?
 A: They challenged his autocratic power
 Accept: They criticised him; they demanded reform; they wanted more power; they opposed the Tsar
 Ref: 1AC.1.2
 D: 3
+Id: aqa-hist-1AC-008
 
 Q: What was the aim of Stolypin's land reforms?
 A: Create prosperous, loyal peasant farmers
 Accept: To create a class of wealthy peasants; to create loyal kulaks; to win peasant support for the Tsar
 Ref: 1AC.1.2
 D: 3
+Id: aqa-hist-1AC-009
 
-Q: Which monk-like healer gained influence over Tsarina Alexandra?
+Q: Which Siberian holy man and healer gained influence over Tsarina Alexandra?
 A: Rasputin
 Accept: Grigori Rasputin
 Ref: 1AC.1.3
 D: 1
+Id: aqa-hist-1AC-010
 
 Q: In which month and year did Nicholas II abdicate?
 A: March 1917
 Ref: 1AC.1.3
 D: 1
+Id: aqa-hist-1AC-011
 
 Q: Which decision by Nicholas II in 1915 made him personally blamed for military defeats?
 A: Taking command of the army
 Accept: Becoming commander-in-chief; leading the army himself; taking personal command
 Ref: 1AC.1.3
 D: 2
+Id: aqa-hist-1AC-012
 
 Q: Why did Rasputin's influence damage the Romanovs' reputation?
 A: Seen as controlling the Tsarina and government
 Accept: Rumours about him and the Tsarina; he influenced government appointments; he appeared to run Russia
 Ref: 1AC.1.3
 D: 3
+Id: aqa-hist-1AC-013
 
 Q: Which socialist became head of the Provisional Government in July 1917?
 A: Alexander Kerensky
 Accept: Kerensky
 Ref: 1AC.2.1
 D: 1
+Id: aqa-hist-1AC-014
 
 Q: Which palace in Petrograd did Bolshevik forces storm in October 1917?
 A: Winter Palace
 Accept: The Winter Palace
 Ref: 1AC.2.1
 D: 1
+Id: aqa-hist-1AC-015
 
-Q: Which Bolshevik, chairman of the Petrograd Soviet, helped Lenin organise the October 1917 takeover?
+Q: Which Bolshevik, as chairman of the Petrograd Soviet, helped Lenin organise the October 1917 takeover?
 A: Leon Trotsky
 Accept: Trotsky
 Ref: 1AC.2.1
 D: 2
+Id: aqa-hist-1AC-016
 
 Q: Which document, published by Lenin in April 1917, rejected support for the Provisional Government?
 A: April Theses
 Accept: The April Theses
 Ref: 1AC.2.1
 D: 2
+Id: aqa-hist-1AC-017
 
 Q: Why did continuing the war cost the Provisional Government support?
 A: Soldiers and peasants wanted peace
 Accept: The war was unpopular; defeats; the failed June offensive; people wanted peace and bread
 Ref: 1AC.2.1
 D: 3
+Id: aqa-hist-1AC-018
 
 Q: Which treaty took Russia out of the First World War in March 1918?
 A: Treaty of Brest-Litovsk
 Accept: Brest-Litovsk
 Ref: 1AC.2.2
 D: 1
+Id: aqa-hist-1AC-019
 
 Q: What was the Cheka?
 A: Bolshevik secret police
 Accept: The Bolshevik political police; secret police
 Ref: 1AC.2.2
 D: 2
+Id: aqa-hist-1AC-020
 
 Q: What were the anti-Bolshevik forces in the Civil War collectively called?
 A: Whites
 Accept: The Whites; White Army
 Ref: 1AC.2.2
 D: 1
+Id: aqa-hist-1AC-021
 
 Q: Which Bolshevik, as Commissar for War, built the Red Army?
 A: Leon Trotsky
 Accept: Trotsky
 Ref: 1AC.2.2
 D: 2
+Id: aqa-hist-1AC-022
 
 Q: Why did the Reds win the Civil War?
 A: Controlled central Russia, railways and industry
 Accept: The Whites were divided; Reds held the cities and railways; better organised; Whites divided and far apart
 Ref: 1AC.2.2
 D: 3
+Id: aqa-hist-1AC-023
 
 Q: Which policy of 1918 to 1921 involved seizing peasants' grain and nationalising industry?
 A: War Communism
 Ref: 1AC.2.3
 D: 1
+Id: aqa-hist-1AC-024
 
 Q: Which naval base's sailors rebelled against the Bolsheviks in March 1921?
 A: Kronstadt
 Accept: Kronstadt Rising; Kronstadt Mutiny
 Ref: 1AC.2.3
 D: 1
+Id: aqa-hist-1AC-025
 
 Q: Which 1921 policy replaced grain seizures with a tax and allowed small private trade?
 A: New Economic Policy
 Accept: NEP
 Ref: 1AC.2.3
 D: 2
+Id: aqa-hist-1AC-026
 
 Q: Why did Lenin introduce the NEP in 1921?
 A: Unrest and famine after War Communism
 Accept: Kronstadt and peasant revolts; to prevent revolt; to rebuild the economy; peasants were rebelling
 Ref: 1AC.2.3
 D: 3
+Id: aqa-hist-1AC-027
 
 Q: Which Party post, held by Stalin from 1922, helped him build support among officials?
 A: General Secretary
 Accept: General Secretary of the Communist Party
 Ref: 1AC.3.1
 D: 2
+Id: aqa-hist-1AC-028
 
 Q: Whose murder in December 1934 led to a wave of arrests in Stalin's Terror?
 A: Sergei Kirov
 Accept: Kirov
 Ref: 1AC.3.1
 D: 2
+Id: aqa-hist-1AC-029
 
 Q: What name is given to Stalin's system of forced labour camps?
 A: Gulag
 Accept: The Gulag
 Ref: 1AC.3.1
 D: 1
+Id: aqa-hist-1AC-030
 
 Q: Why did Stalin launch the Purges?
 A: To remove rivals and opposition
 Accept: To eliminate opponents; to secure his power; to get rid of possible rivals; to remove threats
 Ref: 1AC.3.1
 D: 3
+Id: aqa-hist-1AC-031
 
 Q: What was the purpose of Stalin's cult of personality?
 A: Portray him as an all-powerful leader
 Accept: To build loyalty to Stalin; to make him seem a great leader; to increase his authority; to win support
 Ref: 1AC.3.1
 D: 3
+Id: aqa-hist-1AC-032
 
 Q: What were Soviet collective farms called?
 A: Kolkhoz
 Accept: Kolkhozes; Kolkhozy; collective farm
 Ref: 1AC.3.2
 D: 1
+Id: aqa-hist-1AC-033
 
 Q: Which miner became a propaganda hero in 1935 for greatly exceeding his coal quota?
 A: Alexei Stakhanov
 Accept: Stakhanov
 Ref: 1AC.3.2
 D: 1
+Id: aqa-hist-1AC-034
 
 Q: On which type of industry did the First Five Year Plan mainly concentrate?
 A: Heavy industry
 Accept: Coal, iron and steel; coal and steel; heavy industries
 Ref: 1AC.3.2
 D: 2
+Id: aqa-hist-1AC-035
 
 Q: What happened to many kulaks who resisted collectivisation?
 A: Deported, imprisoned or killed
 Accept: Sent to labour camps; shot; deported; sent to Siberia; executed
 Ref: 1AC.3.2
 D: 2
+Id: aqa-hist-1AC-036
 
 Q: Why did many peasants kill their livestock rather than join collective farms?
 A: To avoid handing animals to the state
 Accept: They did not want to give them up; to avoid losing them; to avoid collectivisation
 Ref: 1AC.3.2
 D: 3
+Id: aqa-hist-1AC-037
 
 Q: What code name was given to Germany's 1941 invasion of the USSR?
 A: Operation Barbarossa
 Accept: Barbarossa
 Ref: 1AC.3.3
 D: 1
+Id: aqa-hist-1AC-038
 
 Q: Which city's defeat of the German Sixth Army in 1943 was a turning point in the war?
 A: Stalingrad
 Accept: Battle of Stalingrad
 Ref: 1AC.3.3
 D: 1
+Id: aqa-hist-1AC-039
 
 Q: What name is given to the policy of destroying resources before the German advance?
 A: Scorched earth
 Accept: Scorched earth policy
 Ref: 1AC.3.3
 D: 2
+Id: aqa-hist-1AC-040
 
 Q: Where did the USSR relocate many factories to keep them from German forces?
 A: East of the Urals
 Accept: The Urals; Siberia; beyond the Urals; the east
 Ref: 1AC.3.3
 D: 2
+Id: aqa-hist-1AC-041
 
 Q: Why did Stalin call the war the 'Great Patriotic War'?
 A: To appeal to Russian nationalism
 Accept: To unite the people; to rally patriotism; to inspire people to defend Russia; to appeal to national pride
 Ref: 1AC.3.3
 D: 3
+Id: aqa-hist-1AC-042

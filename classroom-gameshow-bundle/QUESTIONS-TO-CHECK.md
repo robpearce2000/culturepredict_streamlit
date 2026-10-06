@@ -56,3 +56,33 @@ the 7.14 questions are rounded values given in each question, for mental arithme
 
 Specification issue: Pearson's Maths specification read is Issue 2 (June 2015), the latest copy the
 Internet Archive holds. Please confirm on qualifications.pearson.com that Issue 2 is still current.
+
+## Pearson Edexcel Physics (1PH0)
+
+- 1 Key concepts: "What quantity is measured in teslas?" | A: Magnetic flux density | Why: "magnetic field
+  strength" is also accepted; Edexcel's own term is magnetic flux density. Remove that alternative to mark
+  strictly to Edexcel terms.
+- 5 Light and the electromagnetic spectrum: "Name the hollow metal cube with differently finished faces used
+  to compare thermal radiation from surfaces." | A: Leslie cube | Why: standard apparatus, but if your school
+  runs core practical 5.19P with boiling tubes only, you may want to drop it.
+
+## AQA History (8145)
+
+- 1BE Gulf and Afghanistan: "Which British prime minister is reported to have told Bush 'this is no time to
+  go wobbly'?" | A: Margaret Thatcher | Why: widely reported (August 1990) but not a verbatim documented quote.
+
+## Pearson Edexcel History (1HI0)
+
+None: the checkers settled every one of the writers' doubts across the 17 packs.
+
+## Geography (AQA 8035, Edexcel 1GA0 and 1GB0): case studies and named examples
+
+The specifications leave many case studies and named examples to the school. The packs use widely taught
+ones; please check they match yours, or skip those questions:
+- AQA 3.1.1 Natural hazards: the Haiti 2010 and Christchurch 2011 earthquakes, Typhoon Haiyan 2013, the
+  Somerset Levels floods 2013-14.
+- AQA 3.1.3.3 River landscapes: the Jubilee River (River Thames) flood scheme and the River Tees (High Force,
+  Whin Sill).
+- AQA 3.2.3.3 Water: the Lesotho Highlands Water Project ("Gauteng" and "Lesotho" answers).
+- Edexcel A 1B River landscapes: the River Tees (High Force, Whin Sill, Cow Green, Cauldron Snout).
+- Edexcel A 1C Glaciated uplands: the Lake District (Windermere, Borrowdale Volcanic rocks, sheep farming).

@@ -7,36 +7,42 @@ A: Gravitational potential energy store
 Accept: Gravitational store; gravitational potential; GPE
 Ref: 8.1
 D: 1
+Id: edexcel-phys-8-001
 
 Q: A torch is switched on. Which energy store of its battery decreases?
 A: Chemical energy store
 Accept: Chemical store; chemical
 Ref: 8.1
 D: 1
+Id: edexcel-phys-8-002
 
 Q: A stretched catapult is released and fires a stone. Describe the main change in energy stores.
 A: Elastic potential store to kinetic store
 Accept: Elastic to kinetic; strain to kinetic
 Ref: 8.1
 D: 2
+Id: edexcel-phys-8-003
 
 Q: A ball is dropped and falls freely. Describe the change in energy stores as it falls.
 A: Gravitational potential store to kinetic store
 Accept: GPE to KE; gravitational to kinetic
 Ref: 8.1
 D: 2
+Id: edexcel-phys-8-004
 
 Q: On a Sankey diagram, the useful and wasted arrows added together equal the width of which arrow?
 A: Input arrow
 Accept: Total energy supplied; energy input arrow; input
 Ref: 8.2
 D: 2
+Id: edexcel-phys-8-005
 
 Q: A Sankey diagram has an input arrow 8 mm wide and a wasted arrow 2 mm wide. What fraction of the input energy is useful?
 A: Three quarters
 Accept: 3/4; 0.75; 75%
 Ref: 8.2
 D: 3
+Id: edexcel-phys-8-006
 
 Q: On a Sankey diagram, an arrow 10 mm wide represents 400 J. How much energy does an arrow 3 mm wide represent?
 A: 120 J
@@ -44,18 +50,21 @@ Accept: 120 joules
 Ref: 8.2
 D: 3
 Note: Scale is 40 J per mm.
+Id: edexcel-phys-8-007
 
 Q: In a closed system, how does the total energy after a transfer compare with the total energy before it?
 A: Equal
 Accept: The same; unchanged; no change; equal to it
 Ref: 8.3
 D: 1
+Id: edexcel-phys-8-008
 
 Q: A closed system's battery loses 90 J from its chemical store. A lamp gives out 30 J as light. How much goes to the thermal store?
 A: 60 J
 Accept: 60 joules
 Ref: 8.3
 D: 2
+Id: edexcel-phys-8-009
 
 Q: In a closed system, a swinging pendulum loses 60 J of kinetic energy and its thermal store gains 15 J. How much does its gravitational store gain?
 A: 45 J
@@ -63,90 +72,105 @@ Accept: 45 joules
 Ref: 8.3
 D: 3
 Note: Total energy stays the same, so 60 − 15 = 45 J.
+Id: edexcel-phys-8-010
 
 Q: State the three ways the energy of a system can be changed.
 A: Work done by forces, electrically, heating
 Accept: Forces doing work, electrical equipment, heating; mechanical work, electrical work, heating
 Ref: 8.4
 D: 2
+Id: edexcel-phys-8-011
 
 Q: A kettle element warms the water inside it. By which way is energy transferred to the water?
 A: Heating
 Accept: By heating; thermal transfer
 Ref: 8.4
 D: 1
+Id: edexcel-phys-8-012
 
 Q: A girl pushes a box across the floor. By which way is the energy of the box changed?
 A: Work done by a force
 Accept: Work done; forces doing work; mechanical work; mechanically
 Ref: 8.4
 D: 1
+Id: edexcel-phys-8-013
 
 Q: A battery drives a current through a motor. By which way is energy transferred from the battery to the motor?
 A: Electrically
 Accept: Electrical work; by an electric current; electrical equipment
 Ref: 8.4
 D: 1
+Id: edexcel-phys-8-014
 
 Q: What is the unit of work done?
 A: Joule
 Accept: J; joules; newton-metre; N m
 Ref: 8.5
 D: 1
+Id: edexcel-phys-8-015
 
 Q: When a force moves an object, the energy transferred is equal to which quantity?
 A: Work done
 Accept: Work done by the force; work
 Ref: 8.5
 D: 1
+Id: edexcel-phys-8-016
 
 Q: To find the work done pulling a trolley, which two quantities must you measure?
 A: Force and distance moved in its direction
 Accept: Force and distance; force and distance moved
 Ref: 8.5
 D: 2
+Id: edexcel-phys-8-017
 
 Q: Name the instrument used to measure the force when pulling a block along a bench.
 A: Newtonmeter
 Accept: Force meter; spring balance; newton meter
 Ref: 8.5
 D: 1
+Id: edexcel-phys-8-018
 
 Q: State the equation linking work done, force and distance.
 A: Work done = force × distance
 Accept: E = F × d; W = F × d; work = force × distance moved in direction of force
 Ref: 8.6
 D: 2
+Id: edexcel-phys-8-019
 
 Q: A 20 N force pushes a box 5 m along the floor in the direction of the force. How much work is done?
 A: 100 J
 Accept: 100 joules; 100 N m
 Ref: 8.6
 D: 2
+Id: edexcel-phys-8-020
 
 Q: A force does 600 J of work moving a crate 3 m in the direction of the force. What is the size of the force?
 A: 200 N
 Accept: 200 newtons
 Ref: 8.6
 D: 3
+Id: edexcel-phys-8-021
 
 Q: How many joules are equal to one newton-metre?
 A: 1 J
 Accept: One joule; 1 joule
 Ref: 8.6
 D: 1
+Id: edexcel-phys-8-022
 
 Q: A box is pushed at a steady speed across a rough floor. Into which energy store does the work done against friction mainly go?
 A: Thermal energy store
 Accept: Thermal store; thermal; heat
 Ref: 8.7
 D: 2
+Id: edexcel-phys-8-023
 
 Q: A crane does 5000 J of work lifting a load at a steady speed. Ignoring losses, how much gravitational potential energy does the load gain?
 A: 5000 J
 Accept: 5000 joules; 5 kJ
 Ref: 8.7
 D: 2
+Id: edexcel-phys-8-024
 
 Q: A trolley on a frictionless track starts at rest and is pushed by a 10 N resultant force for 4 m. How much kinetic energy does it gain?
 A: 40 J
@@ -154,6 +178,7 @@ Accept: 40 joules
 Ref: 8.7
 D: 3
 Note: All the work done (F × d) goes into the kinetic store.
+Id: edexcel-phys-8-025
 
 Q: A car with 40 000 J of kinetic energy brakes to a stop in 20 m. What is the average braking force?
 A: 2000 N
@@ -161,18 +186,21 @@ Accept: 2000 newtons; 2 kN
 Ref: 8.7
 D: 3
 Note: Work done by the brakes equals the kinetic energy lost, so F = E ÷ d.
+Id: edexcel-phys-8-026
 
 Q: A diver of mass 60 kg stands on a 5 m board. Taking g = 10 N/kg, how much gravitational potential energy does she have above the water?
 A: 3000 J
 Accept: 3000 joules; 3 kJ
 Ref: 8.8
 D: 2
+Id: edexcel-phys-8-027
 
 Q: A 3 kg bag is lifted 2 m. Taking g = 10 N/kg, what is its change in gravitational potential energy?
 A: 60 J
 Accept: 60 joules
 Ref: 8.8
 D: 2
+Id: edexcel-phys-8-028
 
 Q: A 50 kg climber gains 10 000 J of gravitational potential energy. Taking g = 10 N/kg, how high has she climbed?
 A: 20 m
@@ -180,12 +208,14 @@ Accept: 20 metres
 Ref: 8.8
 D: 3
 Note: Δh = ΔGPE ÷ (m × g) = 10 000 ÷ 500.
+Id: edexcel-phys-8-029
 
 Q: State the equation for kinetic energy.
 A: KE = ½ × m × v²
 Accept: Kinetic energy = ½ × mass × speed²; KE = 0.5mv²
 Ref: 8.9
 D: 2
+Id: edexcel-phys-8-030
 
 Q: What is the kinetic energy of a 4 kg ball moving at 5 m/s?
 A: 50 J
@@ -193,84 +223,98 @@ Accept: 50 joules
 Ref: 8.9
 D: 2
 Note: Common error: forgetting to square the speed (giving 10 J).
+Id: edexcel-phys-8-031
 
 Q: Kinetic energy depends on mass and which other quantity?
 A: Speed
 Accept: Velocity
 Ref: 8.9
 D: 1
+Id: edexcel-phys-8-032
 
 Q: A mug of tea cools on a desk. Where does its lost thermal energy go?
 A: The surroundings
 Accept: Into the air; to the surroundings; thermal store of the air
 Ref: 8.10
 D: 2
+Id: edexcel-phys-8-033
 
 Q: Name one way a running electric motor dissipates energy.
 A: Heating the surroundings
 Accept: Heating; heat; sound; noise; thermal energy to the air
 Ref: 8.10
 D: 2
+Id: edexcel-phys-8-034
 
 Q: Heat from a lamp warms a whole room slightly. Why can this energy not easily be used again?
 A: Spread out too thinly
 Accept: Spread out over a large area; too spread out; tiny temperature rise
 Ref: 8.10
 D: 3
+Id: edexcel-phys-8-035
 
 Q: Mechanical processes become wasteful when they cause a rise in which quantity?
 A: Temperature
 Accept: Temperature of the surroundings
 Ref: 8.11
 D: 1
+Id: edexcel-phys-8-036
 
 Q: Why is oil put on the moving parts of a bicycle chain?
 A: Reduce friction so less energy is wasted
 Accept: Lubrication to reduce friction; reduce friction and heating; reduce friction
 Ref: 8.11
 D: 2
+Id: edexcel-phys-8-037
 
 Q: Why do your hands warm up when you rub them together quickly?
 A: Work done against friction heats them
 Accept: Friction transfers energy to the thermal store; energy transferred by heating through friction
 Ref: 8.11
 D: 2
+Id: edexcel-phys-8-038
 
 Q: Define power.
 A: Rate at which energy is transferred
 Accept: Energy transferred per second; rate of energy transfer; rate of doing work
 Ref: 8.12
 D: 2
+Id: edexcel-phys-8-039
 
 Q: Kettle A boils some water in 2 minutes; kettle B boils the same water in 4 minutes. Which kettle has the greater power?
 A: Kettle A
 Accept: A
 Ref: 8.12
 D: 2
+Id: edexcel-phys-8-040
 
 Q: Two students of equal weight run up the same stairs. Why does the faster student have the greater power?
 A: Same energy transferred in less time
 Accept: Same work done in less time; transfers energy at a faster rate
 Ref: 8.12
 D: 3
+Id: edexcel-phys-8-041
 
 Q: State the equation linking power, work done and time.
 A: Power = work done ÷ time
 Accept: P = E ÷ t; P = E/t; power = energy transferred ÷ time taken
 Ref: 8.13
 D: 2
+Id: edexcel-phys-8-042
 
 Q: A motor does 600 J of work in 30 s. What is its power?
 A: 20 W
 Accept: 20 watts; 20 J/s
 Ref: 8.13
 D: 2
+Id: edexcel-phys-8-043
 
 Q: A 50 W motor transfers 1000 J of energy. How long does this take?
 A: 20 s
 Accept: 20 seconds
 Ref: 8.13
 D: 3
+Id: edexcel-phys-8-044
 
 Q: A 60 kg student climbs stairs 3 m high in 6 s. Taking g = 10 N/kg, what is her power?
 A: 300 W
@@ -278,18 +322,21 @@ Accept: 300 watts; 300 J/s
 Ref: 8.13
 D: 3
 Note: ΔGPE = 60 × 10 × 3 = 1800 J, then 1800 ÷ 6.
+Id: edexcel-phys-8-045
 
 Q: One watt is equal to one of which unit per second?
 A: Joule
 Accept: J; joule per second; J/s
 Ref: 8.14
 D: 1
+Id: edexcel-phys-8-046
 
 Q: How much energy does a 40 W lamp transfer each second?
 A: 40 J
 Accept: 40 joules
 Ref: 8.14
 D: 2
+Id: edexcel-phys-8-047
 
 Q: A 2 kW heater transfers how many joules of energy each second?
 A: 2000 J
@@ -297,24 +344,28 @@ Accept: 2000 joules; 2 kJ
 Ref: 8.14
 D: 2
 Note: 1 kW = 1000 W = 1000 J/s.
+Id: edexcel-phys-8-048
 
 Q: A device transfers 30 J usefully and wastes 70 J. What is its efficiency as a percentage?
 A: 30%
 Accept: 0.3; 30 percent
 Ref: 8.15
 D: 2
+Id: edexcel-phys-8-049
 
 Q: A device is supplied with 200 J and transfers 50 J usefully. What is its efficiency?
 A: 0.25
 Accept: 25%; 1/4
 Ref: 8.15
 D: 2
+Id: edexcel-phys-8-050
 
 Q: A motor has an efficiency of 0.4 and is supplied with 500 J. How much energy does it transfer usefully?
 A: 200 J
 Accept: 200 joules
 Ref: 8.15
 D: 3
+Id: edexcel-phys-8-051
 
 
 Q: What quantity is the rate at which energy is transferred?
@@ -322,9 +373,11 @@ A: Power
 Accept: Power of a device
 Ref: 8.12
 D: 1
+Id: edexcel-phys-8-052
 
 Q: What is the unit of power?
 A: Watt
 Accept: W; watts
 Ref: 8.14
 D: 1
+Id: edexcel-phys-8-053

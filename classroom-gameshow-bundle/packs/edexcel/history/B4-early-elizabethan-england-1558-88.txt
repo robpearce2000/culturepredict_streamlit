@@ -6,30 +6,35 @@ Q: Which French port, England's last continental possession, was lost in January
 A: Calais
 Ref: B4.1.1
 D: 1
+Id: edexcel-hist-B4-001
 
 Q: By what nickname was Elizabeth known because she never married?
 A: Virgin Queen
 Accept: The Virgin Queen
 Ref: B4.1.1
 D: 1
+Id: edexcel-hist-B4-002
 
 Q: Why was Elizabeth's gender seen as a problem when she became queen in 1558?
 A: Women were thought unfit to rule alone
 Accept: Women were expected to marry and obey a husband; women should not rule; a woman could not lead in war
 Ref: B4.1.1
 D: 3
+Id: edexcel-hist-B4-003
 
 Q: Which 1559 act made Elizabeth Supreme Governor of the Church of England?
 A: Act of Supremacy
 Accept: Supremacy; Supremacy Act
 Ref: B4.1.2
 D: 1
+Id: edexcel-hist-B4-004
 
 Q: Which 1559 act required use of the Book of Common Prayer and fined people 12 pence for missing church?
 A: Act of Uniformity
 Accept: Uniformity; Uniformity Act
 Ref: B4.1.2
 D: 2
+Id: edexcel-hist-B4-005
 
 Q: Why did Elizabeth take the title Supreme Governor, not Supreme Head, of the Church?
 A: A woman could not head the Church
@@ -37,236 +42,277 @@ Accept: Many objected to a woman as head of the Church; Women could not be head 
 Ref: B4.1.2
 D: 3
 Note: Accept either reason; the main one is objection to a woman as head of the Church.
+Id: edexcel-hist-B4-006
 
 Q: What name was given to Protestants who wanted the Church of England purified of Catholic practices?
 A: Puritans
 Accept: Puritan
 Ref: B4.1.3
 D: 1
+Id: edexcel-hist-B4-007
 
 Q: Which Archbishop of Canterbury refused Elizabeth's order in 1577 to ban 'prophesyings'?
 A: Edmund Grindal
 Accept: Grindal
 Ref: B4.1.3
 D: 2
+Id: edexcel-hist-B4-008
 
 Q: Which pope excommunicated Elizabeth in 1570?
 A: Pius V
 Accept: Pope Pius V; Pius 5; Pius the Fifth
 Ref: B4.1.3
 D: 2
+Id: edexcel-hist-B4-009
 
 Q: After the 1570 excommunication, what were English Catholics told they no longer owed Elizabeth?
 A: Obedience
 Accept: Loyalty; Allegiance; Obedience to her
 Ref: B4.1.3
 D: 3
+Id: edexcel-hist-B4-010
 
 Q: In which year did Mary, Queen of Scots flee Scotland and arrive in England?
 A: 1568
 Ref: B4.1.4
 D: 1
+Id: edexcel-hist-B4-011
 
 Q: What name is given to the letters said to link Mary to the murder of Darnley, examined in 1568-69?
 A: Casket Letters
 Accept: The Casket Letters
 Ref: B4.1.4
 D: 2
+Id: edexcel-hist-B4-012
 
 Q: Why did many Catholics see Mary as the rightful queen of England?
 A: Elizabeth was seen as illegitimate
 Accept: Descended from Henry VII; Great-granddaughter of Henry VII; Henry VIII's marriage to Anne Boleyn was not valid; Elizabeth was illegitimate; stronger claim as a Catholic
 Ref: B4.1.4
 D: 3
+Id: edexcel-hist-B4-013
 
 Q: Which two northern Earls led the Revolt of the Northern Earls in 1569?
 A: Northumberland and Westmorland
 Accept: Percy and Neville; Earls of Northumberland and Westmorland
 Ref: B4.2.1
 D: 2
+Id: edexcel-hist-B4-014
 
 Q: Which Italian banker gave his name to the 1571 plot to replace Elizabeth with Mary using Spanish troops?
 A: Ridolfi
 Accept: Roberto Ridolfi
 Ref: B4.2.1
 D: 1
+Id: edexcel-hist-B4-015
 
 Q: Which Spanish ambassador was expelled from England in 1584 after the Throckmorton Plot was uncovered?
 A: Mendoza
 Accept: Bernardino de Mendoza
 Ref: B4.2.1
 D: 2
+Id: edexcel-hist-B4-016
 
 Q: Which Principal Secretary ran Elizabeth's network of spies and uncovered the Babington Plot?
 A: Walsingham
 Accept: Francis Walsingham; Sir Francis Walsingham
 Ref: B4.2.1
 D: 1
+Id: edexcel-hist-B4-017
 
 Q: In 1586 Walsingham's agents intercepted Mary's secret letters, which were smuggled in what?
 A: Beer barrels
 Accept: Barrels; Beer casks; A beer barrel
 Ref: B4.2.1
 D: 2
+Id: edexcel-hist-B4-018
 
 Q: What did Mary's written approval of the Babington Plot give Walsingham against her?
 A: Proof of treason
 Accept: Evidence; Evidence of treason; Proof
 Ref: B4.2.1
 D: 3
+Id: edexcel-hist-B4-019
 
 Q: In which year was Mary, Queen of Scots executed?
 A: 1587
 Ref: B4.2.1
 D: 1
+Id: edexcel-hist-B4-020
 
 Q: Which Spanish king had been married to Elizabeth's half-sister Mary I?
 A: Philip II
 Accept: Philip; Philip of Spain; King Philip II
 Ref: B4.2.2
 D: 2
+Id: edexcel-hist-B4-021
 
 Q: What term describes private ships licensed to attack enemy shipping, as used by Drake against Spain?
 A: Privateering
 Accept: Privateers; Privateer
 Ref: B4.2.2
 D: 1
+Id: edexcel-hist-B4-022
 
 Q: What nickname, meaning 'the Dragon', did the Spanish give Drake?
 A: El Draque
 Accept: Draque; The Dragon
 Ref: B4.2.2
 D: 2
+Id: edexcel-hist-B4-023
 
 Q: Which 1585 treaty committed Elizabeth to send troops and money to the Dutch rebels?
 A: Treaty of Nonsuch
 Accept: Nonsuch
 Ref: B4.2.3
 D: 2
+Id: edexcel-hist-B4-024
 
 Q: Which title did Robert Dudley accept in the Netherlands in 1586, against Elizabeth's wishes?
 A: Governor-General
 Accept: Governor General
 Ref: B4.2.3
 D: 3
+Id: edexcel-hist-B4-025
 
 Q: In which year did Drake raid Cadiz, 'singeing the King of Spain's beard'?
 A: 1587
 Ref: B4.2.3
 D: 1
+Id: edexcel-hist-B4-026
 
 Q: Drake's Cadiz raid delayed the sailing of what by about a year?
 A: The Spanish Armada
 Accept: Armada; Spanish invasion
 Ref: B4.2.3
 D: 3
+Id: edexcel-hist-B4-027
 
 Q: In which year was the Spanish Armada defeated?
 A: 1588
 Ref: B4.2.4
 D: 1
+Id: edexcel-hist-B4-028
 
 Q: Which duke commanded the Spanish Armada in 1588?
 A: Duke of Medina Sidonia
 Accept: Medina Sidonia; Duke of Medina-Sidonia
 Ref: B4.2.4
 D: 2
+Id: edexcel-hist-B4-029
 
 Q: Off which French port did English fireships scatter the Armada in August 1588?
 A: Calais
 Ref: B4.2.4
 D: 2
+Id: edexcel-hist-B4-030
 
 Q: Give one advantage of the English ships over the Spanish ships in 1588.
 A: Longer-range guns
 Accept: Faster; Better gunnery; More manoeuvrable; Faster; Easier to handle
 Ref: B4.2.4
 D: 3
+Id: edexcel-hist-B4-031
 
 Q: What type of school mainly taught Latin to Elizabethan boys?
 A: Grammar school
 Accept: Grammar
 Ref: B4.3.1
 D: 1
+Id: edexcel-hist-B4-032
 
 Q: Which cruel Elizabethan sport saw a tethered bear attacked by dogs?
 A: Bear-baiting
 Accept: Bear baiting
 Ref: B4.3.1
 D: 1
+Id: edexcel-hist-B4-033
 
 Q: In 1576 James Burbage built which first purpose-built playhouse in London?
 A: The Theatre
 Accept: Theatre
 Ref: B4.3.1
 D: 2
+Id: edexcel-hist-B4-034
 
 Q: The first London theatres were built outside the city walls to escape the control of which body that disapproved of plays?
 A: The city authorities
 Accept: City authorities; Corporation of London; Lord Mayor and aldermen; City council
 Ref: B4.3.1
 D: 3
+Id: edexcel-hist-B4-035
 
 Q: What word describes the able-bodied poor who wandered the country begging?
 A: Vagabonds
 Accept: Vagrants; Vagabond; Vagrant
 Ref: B4.3.2
 D: 1
+Id: edexcel-hist-B4-036
 
 Q: Which farming change, turning arable land into sheep pasture, cut jobs and worsened poverty?
 A: Enclosure
 Accept: Enclosures; Enclosing land
 Ref: B4.3.2
 D: 2
+Id: edexcel-hist-B4-037
 
 Q: Which compulsory local tax for helping the poor was introduced in 1572?
 A: Poor rate
 Accept: The poor rate
 Ref: B4.3.2
 D: 2
+Id: edexcel-hist-B4-038
 
 Q: Elizabethan authorities feared vagabonds mainly because they thought they would cause what?
 A: Disorder
 Accept: Crime; Rebellion; Unrest; Trouble
 Ref: B4.3.2
 D: 2
+Id: edexcel-hist-B4-039
 
 Q: Which ship did Drake sail around the world between 1577 and 1580?
 A: Golden Hind
 Accept: The Golden Hind; Pelican
 Ref: B4.3.3
 D: 1
+Id: edexcel-hist-B4-040
 
 Q: In which year did Drake return to Plymouth after circumnavigating the globe?
 A: 1580
 Ref: B4.3.3
 D: 2
+Id: edexcel-hist-B4-041
 
 Q: Drake's voyage showed England could challenge the overseas power of which country?
 A: Spain
 Ref: B4.3.3
 D: 3
+Id: edexcel-hist-B4-042
 
 Q: Which courtier sponsored the 1585 attempt to settle in Virginia?
 A: Raleigh
 Accept: Walter Raleigh; Sir Walter Raleigh
 Ref: B4.3.4
 D: 1
+Id: edexcel-hist-B4-043
 
 Q: After whom was Virginia named?
 A: Elizabeth, the Virgin Queen
 Accept: Elizabeth I; Queen Elizabeth; Virgin Queen
 Ref: B4.3.4
 D: 2
+Id: edexcel-hist-B4-044
 
 Q: Which island off the coast of North America was the site of the first English settlement attempt?
 A: Roanoke
 Accept: Roanoke Island
 Ref: B4.3.4
 D: 1
+Id: edexcel-hist-B4-045
 
 Q: Who took the struggling first Roanoke colonists back to England in 1586?
 A: Drake
 Accept: Francis Drake; Sir Francis Drake
 Ref: B4.3.4
 D: 2
+Id: edexcel-hist-B4-046

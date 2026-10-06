@@ -7,323 +7,378 @@ A: Homage
 Accept: Paying homage
 Ref: B2.1.1
 D: 1
+Id: edexcel-hist-B2-001
 
 Q: Normally, how many days a year did a knight owe his lord in military service?
 A: 40
 Accept: Forty; 40 days; forty days
 Ref: B2.1.1
 D: 2
+Id: edexcel-hist-B2-002
 
 Q: What was the loss of land by a tenant who broke his oath to his lord called?
 A: Forfeiture
 Accept: Forfeit
 Ref: B2.1.1
 D: 2
+Id: edexcel-hist-B2-003
 
 Q: Which group of nobles held land directly from the king in the feudal hierarchy?
 A: Barons
 Accept: Tenants-in-chief; tenants in chief
 Ref: B2.1.1
 D: 2
+Id: edexcel-hist-B2-004
 
 Q: What name was given to the tenth of their produce that peasants paid to the Church?
 A: Tithe
 Accept: Tithes
 Ref: B2.1.1
 D: 2
+Id: edexcel-hist-B2-005
 
 Q: Which ceremony made a medieval king, with holy oil and an oath, a divinely chosen ruler?
 A: Coronation
 Accept: Anointing
 Ref: B2.1.2
 D: 1
+Id: edexcel-hist-B2-006
 
 Q: Which nickname, meaning he held no lands, was given to John in his youth?
 A: Lackland
 Accept: John Lackland
 Ref: B2.1.2
 D: 2
+Id: edexcel-hist-B2-007
 
 Q: Which young claimant to the throne was imprisoned by John and died in 1203?
 A: Arthur
 Accept: Prince Arthur; Arthur of Brittany
 Ref: B2.1.2
 D: 2
+Id: edexcel-hist-B2-008
 
 Q: Who ran England as Richard I's chief minister, the justiciar, from 1193 while he was away?
 A: Hubert Walter
 Accept: Walter
 Ref: B2.1.3
 D: 2
+Id: edexcel-hist-B2-009
 
 Q: What was the name of the payment that allowed a knight to avoid knight service?
 A: Scutage
 Accept: Shield money
 Ref: B2.1.3
 D: 1
+Id: edexcel-hist-B2-010
 
 Q: Which royal officer collected the king's revenues in each shire?
 A: Sheriff
 Accept: The sheriff
 Ref: B2.1.3
 D: 1
+Id: edexcel-hist-B2-011
 
 Q: In 1207 John introduced a tax on income and moveable goods. What fraction of their value was charged?
 A: A thirteenth
 Accept: 1/13; one thirteenth; 13th
 Ref: B2.1.3
 D: 3
+Id: edexcel-hist-B2-012
 
 Q: Name the land owned directly by the king that provided him with income.
 A: Royal demesne
 Accept: Demesne; Crown lands
 Ref: B2.1.3
 D: 2
+Id: edexcel-hist-B2-013
 
 Q: Why did Richard I's long absences make the justiciar so important in England?
 A: He ruled on the king's behalf
 Accept: Governed England in his place; acted as regent
 Ref: B2.1.3
 D: 3
+Id: edexcel-hist-B2-014
 
 Q: What farming system divided village land into scattered strips worked by peasants?
 A: Open-field system
 Accept: Open field; strip farming; open fields
 Ref: B2.1.4
 D: 2
+Id: edexcel-hist-B2-015
 
 Q: Why were Jews in England so often moneylenders?
 A: Christians were forbidden to charge interest
 Accept: Usury was banned for Christians; Church banned usury
 Ref: B2.1.4
 D: 3
+Id: edexcel-hist-B2-016
 
 Q: In which northern city were Jews killed in a massacre at the castle in March 1190?
 A: York
 Accept: City of York
 Ref: B2.1.4
 D: 2
+Id: edexcel-hist-B2-017
 
 Q: Who held England's Jews and their debts as the king's own property?
 A: The king
 Accept: King; Crown
 Ref: B2.1.4
 D: 2
+Id: edexcel-hist-B2-018
 
 Q: Whose coronation in September 1189 sparked anti-Jewish riots in London?
 A: Richard I
 Accept: Richard; Richard the Lionheart; Richard Lionheart
 Ref: B2.1.4
 D: 2
+Id: edexcel-hist-B2-019
 
 Q: What was the pardon of sins promised to those who went on crusade called?
 A: Indulgence
 Accept: Remission of sins; forgiveness of sins
 Ref: B2.2.1
 D: 2
+Id: edexcel-hist-B2-020
 
 Q: Name one spiritual reason why ordinary English people took the cross.
 A: To gain forgiveness of sins
 Accept: Salvation; to get to Heaven; remission of sins; indulgence
 Ref: B2.2.1
 D: 2
+Id: edexcel-hist-B2-021
 
 Q: What symbol did a person wear to show that they had taken a crusader's vow?
 A: Cross
 Accept: A cross; cloth cross
 Ref: B2.2.1
 D: 2
+Id: edexcel-hist-B2-022
 
 Q: Which French king quarrelled with Richard I on the Third Crusade?
 A: Philip II
 Accept: Philip Augustus; Philip
 Ref: B2.2.2
 D: 1
+Id: edexcel-hist-B2-023
 
 Q: Which battle of September 1191 was Richard's victory over Saladin's army?
 A: Arsuf
 Accept: Battle of Arsuf
 Ref: B2.2.2
 D: 1
+Id: edexcel-hist-B2-024
 
 Q: Which Muslim leader captured Jerusalem in 1187, prompting the Third Crusade?
 A: Saladin
 Accept: Salah al-Din
 Ref: B2.2.2
 D: 1
+Id: edexcel-hist-B2-025
 
 Q: Why did Philip II leave the Third Crusade and return to France in 1191?
 A: To pursue his interests in France
 Accept: Ill health; to attack Richard's lands; to take Normandy
 Ref: B2.2.2
 D: 3
+Id: edexcel-hist-B2-026
 
 Q: Which Duke of Austria captured Richard I on his journey home from the crusade?
 A: Leopold
 Accept: Leopold V
 Ref: B2.2.3
 D: 2
+Id: edexcel-hist-B2-027
 
 Q: Richard was handed over to which Holy Roman Emperor, who demanded a ransom?
 A: Henry VI
 Accept: Emperor Henry VI
 Ref: B2.2.3
 D: 2
+Id: edexcel-hist-B2-028
 
 Q: About how many marks was Richard's ransom?
 A: 150,000 marks
 Accept: 150,000; about 150,000
 Ref: B2.2.3
 D: 2
+Id: edexcel-hist-B2-029
 
 Q: Why did Richard's ransom burden the English people?
 A: Heavy taxes were raised to pay it
 Accept: Taxation; high taxes
 Ref: B2.2.3
 D: 3
+Id: edexcel-hist-B2-030
 
 Q: Which castle on the Seine did Richard build between 1196 and 1198 to defend Normandy?
 A: Chateau Gaillard
 Accept: Château Gaillard
 Ref: B2.2.4
 D: 1
+Id: edexcel-hist-B2-031
 
 Q: In which year did Philip II capture Chateau Gaillard and soon conquer Normandy?
 A: 1204
 Ref: B2.2.4
 D: 1
+Id: edexcel-hist-B2-032
 
 Q: What nickname did John get from the loss of Normandy and other lands?
 A: Softsword
 Accept: Soft-sword
 Ref: B2.2.4
 D: 2
+Id: edexcel-hist-B2-033
 
 Q: Why was the loss of Normandy a blow to English barons holding land in both realms?
 A: They lost their lands in Normandy
 Accept: Lost estates; forfeited Norman lands
 Ref: B2.2.4
 D: 3
+Id: edexcel-hist-B2-034
 
 Q: Which Archbishop of Canterbury did Pope Innocent III appoint, but John refused to accept?
 A: Stephen Langton
 Accept: Langton
 Ref: B2.3.1
 D: 1
+Id: edexcel-hist-B2-035
 
 Q: What ban on most church services was placed on England in 1208?
 A: Interdict
 Accept: The Interdict
 Ref: B2.3.1
 D: 1
+Id: edexcel-hist-B2-036
 
 Q: What was the Pope's punishment, excluding John himself from the Church, in 1209?
 A: Excommunication
 Accept: Excommunicated
 Ref: B2.3.1
 D: 2
+Id: edexcel-hist-B2-037
 
 Q: In 1213 John made England a fief of the Pope. Why did this help him?
 A: It gave him the Pope's support against barons
 Accept: Papal support; Pope's backing
 Ref: B2.3.1
 D: 3
+Id: edexcel-hist-B2-038
 
 Q: Which Archbishop of Canterbury died in 1205, starting the dispute over his successor?
 A: Hubert Walter
 Accept: Walter
 Ref: B2.3.1
 D: 2
+Id: edexcel-hist-B2-039
 
 Q: Robert Fitzwalter and which other baron were the leading plotters against John in 1212?
 A: Eustace de Vesci
 Accept: De Vesci; Vesci
 Ref: B2.3.2
 D: 2
+Id: edexcel-hist-B2-040
 
 Q: At which 1214 battle did Philip II defeat John's ally Otto IV?
 A: Bouvines
 Accept: Battle of Bouvines
 Ref: B2.3.2
 D: 2
+Id: edexcel-hist-B2-041
 
 Q: Which city did rebel barons seize on 17 May 1215?
 A: London
 Ref: B2.3.2
 D: 1
+Id: edexcel-hist-B2-042
 
 Q: Why did the crown need large sums to pay for war with France after 1204?
 A: To try to win back Normandy
 Accept: Recover lost lands; reconquer Normandy
 Ref: B2.3.2
 D: 3
+Id: edexcel-hist-B2-043
 
 Q: At which meadow by the Thames did John seal Magna Carta in June 1215?
 A: Runnymede
 Ref: B2.3.3
 D: 1
+Id: edexcel-hist-B2-044
 
 Q: What did Magna Carta say could not happen to a free man except by lawful judgement?
 A: Imprisonment
 Accept: Being imprisoned; Imprisoned; Seizure; Being seized; Arrest
 Ref: B2.3.3
 D: 2
+Id: edexcel-hist-B2-045
 
 Q: How many barons were to form the committee set up to enforce Magna Carta?
 A: 25
 Accept: Twenty-five
 Ref: B2.3.3
 D: 2
+Id: edexcel-hist-B2-046
 
 Q: Which castle did John besiege in late 1215, taking it after undermining its walls?
 A: Rochester
 Accept: Rochester Castle
 Ref: B2.3.3
 D: 1
+Id: edexcel-hist-B2-047
 
 Q: Which French prince did the rebel barons invite to take the English throne?
 A: Louis
 Accept: Prince Louis; Louis of France
 Ref: B2.3.3
 D: 1
+Id: edexcel-hist-B2-048
 
 Q: Who declared Magna Carta null and void in August 1215?
 A: Pope Innocent III
 Accept: Innocent III; the Pope
 Ref: B2.3.3
 D: 2
+Id: edexcel-hist-B2-049
 
 Q: Which Earl of Pembroke became Protector for the young Henry III?
 A: William Marshal
 Accept: Marshal
 Ref: B2.3.4
 D: 1
+Id: edexcel-hist-B2-050
 
 Q: Why was the succession in 1216 a problem for England?
 A: Heir was a child and Louis held London
 Accept: Henry was a child; Louis's invasion; civil war
 Ref: B2.3.4
 D: 3
+Id: edexcel-hist-B2-051
 
 Q: In which year did John die, leaving a child as heir?
 A: 1216
 Ref: B2.3.4
 D: 1
+Id: edexcel-hist-B2-052
 
 Q: How old, about, was Henry III when he became king?
 A: About 9
 Accept: 9; nine
 Ref: B2.3.4
 D: 2
+Id: edexcel-hist-B2-053
 
 Q: Why did Richard I join the Third Crusade?
 A: To recapture Jerusalem from Saladin
 Accept: Retake Jerusalem; Jerusalem had fallen in 1187; to win back the Holy Land
 Ref: B2.2.2
 D: 3
+Id: edexcel-hist-B2-054
 
 Q: Why did Pope Innocent III place England under Interdict in 1208?
 A: John refused to accept Stephen Langton as archbishop
 Accept: Dispute over Langton; John rejected the Pope's choice of archbishop
 Ref: B2.3.1
 D: 3
+Id: edexcel-hist-B2-055

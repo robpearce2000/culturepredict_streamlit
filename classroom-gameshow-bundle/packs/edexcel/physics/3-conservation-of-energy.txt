@@ -7,18 +7,21 @@ A: ΔGPE = m × g × Δh
 Accept: GPE = mgh; change in GPE = mass × g × change in height
 Ref: 3.1
 D: 2
+Id: edexcel-phys-3-001
 
 Q: What is the unit of gravitational field strength?
 A: Newtons per kilogram
 Accept: N/kg; newton per kilogram
 Ref: 3.1
 D: 1
+Id: edexcel-phys-3-002
 
 Q: A 2 kg box is lifted 5 m. Taking g = 10 N/kg, what is its change in gravitational potential energy?
 A: 100 J
 Accept: 100 joules
 Ref: 3.1
 D: 2
+Id: edexcel-phys-3-003
 
 Q: A 0.5 kg ball gains 20 J of gravitational potential energy. Taking g = 10 N/kg, how high was it raised?
 A: 4 m
@@ -26,6 +29,7 @@ Accept: 4 metres
 Ref: 3.1
 D: 3
 Note: Rearrange: Δh = ΔGPE ÷ (m × g).
+Id: edexcel-phys-3-004
 
 Q: What is the kinetic energy of a 2 kg mass moving at 3 m/s?
 A: 9 J
@@ -33,6 +37,7 @@ Accept: 9 joules
 Ref: 3.2
 D: 2
 Note: Common error: forgetting to square the speed (giving 3 J).
+Id: edexcel-phys-3-005
 
 Q: A 4 kg object has 200 J of kinetic energy. What is its speed?
 A: 10 m/s
@@ -40,24 +45,28 @@ Accept: 10 metres per second
 Ref: 3.2
 D: 3
 Note: v² = 2 × KE ÷ m = 100, so v = 10 m/s.
+Id: edexcel-phys-3-006
 
 Q: If the speed of a car doubles, by what factor does its kinetic energy increase?
 A: Four times
 Accept: 4; ×4; quadruples
 Ref: 3.2
 D: 3
+Id: edexcel-phys-3-007
 
 Q: What name is given to an energy transfer diagram in which the width of each arrow shows the amount of energy?
 A: Sankey diagram
 Accept: Sankey
 Ref: 3.3
 D: 1
+Id: edexcel-phys-3-008
 
 Q: A Sankey diagram for a lamp shows 100 J in and 20 J out as light. How much energy is shown as wasted?
 A: 80 J
 Accept: 80 joules
 Ref: 3.3
 D: 2
+Id: edexcel-phys-3-009
 
 Q: On a Sankey diagram, a 500 J input arrow is 50 mm wide. How wide should an arrow for 200 J be?
 A: 20 mm
@@ -65,30 +74,35 @@ Accept: 2 cm
 Ref: 3.3
 D: 3
 Note: Scale is 10 J per mm.
+Id: edexcel-phys-3-010
 
 Q: What principle states that energy cannot be created or destroyed?
 A: Conservation of energy
 Accept: Law of conservation of energy; principle of conservation of energy
 Ref: 3.4
 D: 1
+Id: edexcel-phys-3-011
 
 Q: State what is meant by conservation of energy.
 A: Energy cannot be created or destroyed
 Accept: Energy is only transferred between stores; total energy stays the same
 Ref: 3.4
 D: 2
+Id: edexcel-phys-3-012
 
 Q: A falling ball loses 40 J from its gravitational potential store. Ignoring air resistance, how much energy does its kinetic store gain?
 A: 40 J
 Accept: 40 joules
 Ref: 3.4
 D: 2
+Id: edexcel-phys-3-013
 
 Q: A ball is thrown straight upwards. As it rises, into which store is energy transferred from its kinetic store?
 A: Gravitational potential store
 Accept: Gravitational potential; GPE store; gravitational store
 Ref: 3.5
 D: 2
+Id: edexcel-phys-3-014
 
 Q: A 0.2 kg ball is thrown upwards at 10 m/s. Ignoring air resistance and taking g = 10 N/kg, how high does it rise?
 A: 5 m
@@ -96,137 +110,160 @@ Accept: 5 metres
 Ref: 3.5
 D: 3
 Note: KE = 10 J becomes GPE, so Δh = 10 ÷ (0.2 × 10).
+Id: edexcel-phys-3-015
 
 Q: A car brakes to a stop. Into which store of the brakes is most of its kinetic energy transferred?
 A: Thermal store
 Accept: Thermal; thermal energy store; heat
 Ref: 3.5
 D: 2
+Id: edexcel-phys-3-016
 
 Q: Water is boiled in an electric kettle. Into which store of the water is energy transferred?
 A: Thermal store
 Accept: Thermal; thermal energy store
 Ref: 3.5
 D: 1
+Id: edexcel-phys-3-017
 
 Q: What is meant by a closed system?
 A: No energy enters or leaves the system
 Accept: Energy cannot enter or leave; no energy transfers in or out
 Ref: 3.6
 D: 2
+Id: edexcel-phys-3-018
 
 Q: Energy is transferred between stores inside a closed system. What is the net change in its total energy?
 A: Zero
 Accept: 0; no change; none
 Ref: 3.6
 D: 1
+Id: edexcel-phys-3-019
 
 Q: In a closed system, one energy store decreases by 30 J. By how much do the other stores increase in total?
 A: 30 J
 Accept: 30 joules
 Ref: 3.6
 D: 2
+Id: edexcel-phys-3-020
 
 Q: Which force between moving parts of a machine causes them to get hot?
 A: Friction
 Accept: Frictional force
 Ref: 3.7
 D: 1
+Id: edexcel-phys-3-021
 
 Q: A drill bit gets hot while drilling. Into which store is energy wasted?
 A: Thermal store
 Accept: Thermal store of the drill bit; thermal store of the surroundings; thermal
 Ref: 3.7
 D: 2
+Id: edexcel-phys-3-022
 
 Q: Why is a rise in temperature of a machine's moving parts wasteful?
 A: Energy is dissipated heating the surroundings
 Accept: Energy goes to thermal store, not useful; heats surroundings instead of useful work
 Ref: 3.7
 D: 3
+Id: edexcel-phys-3-023
 
 Q: What word describes energy that has spread out into the surroundings and is stored in less useful ways?
 A: Dissipated
 Accept: Dissipation; wasted
 Ref: 3.8
 D: 1
+Id: edexcel-phys-3-024
 
 Q: Why does a dropped ball bounce lower each time?
 A: Energy dissipated by heating and sound each bounce
 Accept: Some energy transferred to thermal store and sound; energy wasted on each bounce
 Ref: 3.8
 D: 3
+Id: edexcel-phys-3-025
 
 Q: Why is energy dissipated to the surroundings hard to use again?
 A: Spread out thinly, tiny temperature rise
 Accept: Too spread out; very small temperature increase
 Ref: 3.8
 D: 3
+Id: edexcel-phys-3-026
 
 Q: What is it called when oil or grease is added to moving parts to reduce friction?
 A: Lubrication
 Accept: Lubricating; lubricant
 Ref: 3.9
 D: 1
+Id: edexcel-phys-3-027
 
 Q: What type of insulation is laid on the floor of a roof space?
 A: Loft insulation
 Accept: Loft
 Ref: 3.9
 D: 1
+Id: edexcel-phys-3-028
 
 Q: Which gas, trapped in materials such as fibreglass and foam, makes them good thermal insulators?
 A: Air
 Ref: 3.9
 D: 1
+Id: edexcel-phys-3-029
 
 Q: Why does double glazing reduce energy transfer from a house?
 A: Gas gap between panes is a poor conductor
 Accept: Trapped air layer is a good insulator; air gap reduces conduction
 Ref: 3.9
 D: 3
+Id: edexcel-phys-3-030
 
 Q: What property describes how well a material conducts energy by heating?
 A: Thermal conductivity
 Accept: Conductivity
 Ref: 3.10
 D: 1
+Id: edexcel-phys-3-031
 
 Q: How does making the walls of a building thicker affect its rate of cooling?
 A: Decreases it
 Accept: Lower rate; slower cooling; reduces it; cools more slowly
 Ref: 3.10
 D: 2
+Id: edexcel-phys-3-032
 
 Q: How does using wall material with a lower thermal conductivity affect a building's rate of cooling?
 A: Decreases it
 Accept: Lower rate; slower cooling; reduces it; cools more slowly
 Ref: 3.10
 D: 2
+Id: edexcel-phys-3-033
 
 Q: State the equation for efficiency.
 A: Useful energy transferred ÷ total energy supplied
 Accept: Useful energy out ÷ total energy in; useful output ÷ total input
 Ref: 3.11
 D: 2
+Id: edexcel-phys-3-034
 
 Q: A kettle is supplied with 2000 J and 1800 J goes into the water's thermal store. What is its efficiency as a percentage?
 A: 90%
 Accept: 0.9; 90 percent
 Ref: 3.11
 D: 2
+Id: edexcel-phys-3-035
 
 Q: A lamp is 20% efficient and is supplied with 500 J. How much energy is transferred usefully?
 A: 100 J
 Accept: 100 joules
 Ref: 3.11
 D: 3
+Id: edexcel-phys-3-036
 
 Q: Why can no device have an efficiency greater than 100%?
 A: Energy cannot be created
 Accept: Useful output cannot exceed input; conservation of energy
 Ref: 3.11
 D: 3
+Id: edexcel-phys-3-037
 
 Q: How does lubricating the moving parts of a machine increase its efficiency?
 A: Less friction, so less energy wasted heating
@@ -234,6 +271,7 @@ Accept: Reduces friction so less energy dissipated; less wasted thermal energy
 Ref: 3.12
 D: 2
 HT: yes
+Id: edexcel-phys-3-038
 
 Q: How does streamlining a car increase its efficiency?
 A: Less air resistance, so less energy wasted
@@ -241,6 +279,7 @@ Accept: Reduces drag so less energy dissipated; reduces air resistance
 Ref: 3.12
 D: 3
 HT: yes
+Id: edexcel-phys-3-039
 
 Q: Why does replacing filament lamps with LEDs increase efficiency?
 A: LEDs waste less energy heating
@@ -248,35 +287,41 @@ Accept: Less energy dissipated as heat; more energy transferred as light
 Ref: 3.12
 D: 3
 HT: yes
+Id: edexcel-phys-3-040
 
 Q: Name the solid fossil fuel.
 A: Coal
 Ref: 3.13
 D: 1
+Id: edexcel-phys-3-041
 
 Q: Name the element most commonly used as fuel in nuclear power stations.
 A: Uranium
 Accept: Uranium-235; U-235
 Ref: 3.13
 D: 1
+Id: edexcel-phys-3-042
 
 Q: Which renewable resource uses the rise and fall of sea level twice a day?
 A: Tidal
 Accept: Tides; tidal power; tidal barrage
 Ref: 3.13
 D: 1
+Id: edexcel-phys-3-043
 
 Q: Which non-renewable energy resource releases no carbon dioxide when generating electricity?
 A: Nuclear fuel
 Accept: Nuclear; uranium; nuclear power
 Ref: 3.13
 D: 2
+Id: edexcel-phys-3-044
 
 Q: Why is tidal power more reliable than wind power?
 A: Tides are predictable
 Accept: Tides happen at known times; tides happen every day
 Ref: 3.13
 D: 3
+Id: edexcel-phys-3-045
 
 Q: Give one reason total world energy use has risen over the last century.
 A: Growing world population
@@ -284,15 +329,18 @@ Accept: Population increase; more industry; more electrical devices; more cars; 
 Ref: 3.14
 D: 2
 Note: Accept any sensible reason linked to more people or more energy use per person.
+Id: edexcel-phys-3-046
 
 Q: Why has the UK greatly reduced its use of coal for generating electricity?
 A: To cut carbon dioxide emissions
 Accept: Reduce global warming; reduce climate change; reduce pollution
 Ref: 3.14
 D: 3
+Id: edexcel-phys-3-047
 
 Q: Why do power stations still burn fossil fuels despite their pollution?
 A: Reliable and can meet demand quickly
 Accept: Reliable supply; available on demand; cheap and reliable
 Ref: 3.14
 D: 3
+Id: edexcel-phys-3-048

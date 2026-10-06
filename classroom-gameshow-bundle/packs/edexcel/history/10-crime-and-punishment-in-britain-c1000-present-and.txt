@@ -7,363 +7,424 @@ A: William I
 Accept: William the Conqueror; William
 Ref: 10.1.1
 D: 1
+Id: edexcel-hist-10-001
 
 Q: What name is given to illegally hunting animals on someone else's land?
 A: Poaching
 Accept: Poacher
 Ref: 10.1.1
 D: 1
+Id: edexcel-hist-10-002
 
 Q: Why is poaching often described as a 'social' crime in the Middle Ages?
 A: Many people did not see it as wrong
 Accept: Ordinary people saw it as acceptable; Not seen as a real crime; Done to feed the poor
 Ref: 10.1.1
 D: 3
+Id: edexcel-hist-10-003
 
 Q: In the Anglo-Saxon system of tithings, about how many men were grouped together to keep each other law-abiding?
 A: Ten
 Accept: 10; About ten
 Ref: 10.1.2
 D: 1
+Id: edexcel-hist-10-004
 
 Q: What was the shout raised to call villagers to chase a suspected criminal?
 A: Hue and cry
 Accept: The hue and cry
 Ref: 10.1.2
 D: 1
+Id: edexcel-hist-10-005
 
 Q: In later medieval England, which unpaid local man, chosen from the villagers, kept order and made arrests?
 A: Parish constable
 Accept: The constable; Constable
 Ref: 10.1.2
 D: 1
+Id: edexcel-hist-10-006
 
 Q: What Anglo-Saxon term means the sum paid to a victim's family as compensation for a killing or injury?
 A: Wergild
 Accept: Wergeld; Wer-gild
 Ref: 10.1.2
 D: 2
+Id: edexcel-hist-10-007
 
 Q: Which ruling group's changes after 1066 replaced Wergild with fines paid to the king and harsher punishments?
 A: The Normans
 Accept: Normans; Norman kings
 Ref: 10.1.2
 D: 3
+Id: edexcel-hist-10-008
 
 Q: For how many days could a criminal claim sanctuary in a medieval church before having to face trial or leave the country?
 A: 40 days
 Accept: 40; Forty days; Forty
 Ref: 10.1.3
 D: 2
+Id: edexcel-hist-10-009
 
 Q: Benefit of Clergy allowed some offenders to be tried in which type of court, with lighter punishments?
 A: Church court
 Accept: Church courts; Ecclesiastical court; Ecclesiastical courts
 Ref: 10.1.3
 D: 2
+Id: edexcel-hist-10-010
 
 Q: Which Church council of 1215 forbade priests from taking part in trial by ordeal?
 A: Fourth Lateran Council
 Accept: Lateran Council; The Fourth Lateran Council; 4th Lateran Council
 Ref: 10.1.3
 D: 2
+Id: edexcel-hist-10-011
 
 Q: In the trial by cold water ordeal, what result showed that the accused was innocent?
 A: Sinking
 Accept: They sank; Sinking in the water; Sank
 Ref: 10.1.3
 D: 2
+Id: edexcel-hist-10-012
 
 Q: What was the crime of holding religious beliefs that went against the official teaching of the Church?
 A: Heresy
 Accept: Heretic
 Ref: 10.2.1
 D: 1
+Id: edexcel-hist-10-013
 
 Q: What was the usual punishment for heresy in England in the 1550s under Mary I?
 A: Burning at the stake
 Accept: Burning; Burnt at the stake; Being burned alive
 Ref: 10.2.1
 D: 2
+Id: edexcel-hist-10-014
 
 Q: What name was given in the sixteenth century to the crime of wandering the country without work or a home?
 A: Vagabondage
 Accept: Vagrancy; Vagabond; Vagrant
 Ref: 10.2.1
 D: 1
+Id: edexcel-hist-10-015
 
 Q: Which Henry VIII policy removed monastery charity for the poor and helped increase vagrancy?
 A: Dissolution of the Monasteries
 Accept: Closing the monasteries; Dissolution; Dissolution of the monasteries
 Ref: 10.2.1
 D: 3
+Id: edexcel-hist-10-016
 
 Q: In early modern towns, which men patrolled the streets at night to watch for trouble?
 A: Watchmen
 Accept: The watch; Night watchmen; Town watchmen; Night watch
 Ref: 10.2.2
 D: 1
+Id: edexcel-hist-10-017
 
 Q: Convicted criminals sent to work in colonies such as Virginia were punished by what?
 A: Transportation
 Accept: Being transported
 Ref: 10.2.2
 D: 1
+Id: edexcel-hist-10-018
 
 Q: Name the system of harsh laws, with a growing list of crimes punishable by death, that began to develop in the late 1600s.
 A: Bloody Code
 Accept: The Bloody Code
 Ref: 10.2.2
 D: 1
+Id: edexcel-hist-10-019
 
 Q: In which year was the Gunpowder Plot discovered?
 A: 1605
 Accept: 5 November 1605
 Ref: 10.2.3
 D: 1
+Id: edexcel-hist-10-020
 
 Q: Which plotter was found guarding the gunpowder in a cellar beneath Parliament?
 A: Guy Fawkes
 Accept: Fawkes; Guido Fawkes
 Ref: 10.2.3
 D: 1
+Id: edexcel-hist-10-021
 
 Q: What was the punishment given to the captured Gunpowder Plotters for the crime of high treason?
 A: Hanged, drawn and quartered
 Accept: Hung, drawn and quartered; Hanging, drawing and quartering
 Ref: 10.2.3
 D: 2
+Id: edexcel-hist-10-022
 
 Q: Which self-styled Witchfinder General led witch-hunts in East Anglia in 1645-47?
 A: Matthew Hopkins
 Accept: Hopkins
 Ref: 10.2.3
 D: 1
+Id: edexcel-hist-10-023
 
 Q: Which conflict, breaking down normal order, helped make the witch-hunts of 1645-47 so intense?
 A: The English Civil War
 Accept: Civil War; English Civil War
 Ref: 10.2.3
 D: 2
+Id: edexcel-hist-10-024
 
 Q: Which 1784 Act cut the tax on tea and so reduced smuggling?
 A: Commutation Act
 Accept: The Commutation Act; Commutation Act 1784
 Ref: 10.3.1
 D: 2
+Id: edexcel-hist-10-025
 
 Q: In which year was the Witchcraft Act that ended prosecutions for witchcraft passed?
 A: 1735
 Accept: 1735
 Ref: 10.3.1
 D: 3
+Id: edexcel-hist-10-026
 
 Q: Which group of Dorset farm labourers were transported in 1834 for forming a trade union?
 A: Tolpuddle Martyrs
 Accept: The Tolpuddle Martyrs; Tolpuddle
 Ref: 10.3.1
 D: 1
+Id: edexcel-hist-10-027
 
 Q: For what offence were the Tolpuddle Martyrs convicted in 1834?
 A: Swearing a secret oath
 Accept: Taking an illegal oath; Swearing illegal oaths; Unlawful oaths
 Ref: 10.3.1
 D: 2
+Id: edexcel-hist-10-028
 
 Q: Which two brothers, based in Bow Street, set up the Bow Street Runners?
 A: The Fieldings
 Accept: Henry and John Fielding; Fielding brothers; Fielding
 Ref: 10.3.2
 D: 1
+Id: edexcel-hist-10-029
 
 Q: In which year was the Criminal Investigation Department (CID) set up in London?
 A: 1878
 Accept: 1878 (Scotland Yard)
 Ref: 10.3.2
 D: 2
+Id: edexcel-hist-10-030
 
 Q: Which prison reformer wrote The State of the Prisons in England and Wales in 1777?
 A: John Howard
 Accept: Howard
 Ref: 10.3.2
 D: 1
+Id: edexcel-hist-10-031
 
 Q: In which year did the last convict ship carrying transported prisoners reach Australia?
 A: 1868
 Accept: 1868
 Ref: 10.3.2
 D: 3
+Id: edexcel-hist-10-032
 
 Q: What was the name of the system at Pentonville in which prisoners were kept apart in their own cells?
 A: Separate system
 Accept: The separate system
 Ref: 10.3.3
 D: 1
+Id: edexcel-hist-10-033
 
 Q: Name one serious weakness of the separate system at Pentonville.
 A: Prisoners suffered mental illness
 Accept: Mental illness; Madness; Isolation made prisoners ill; It was very expensive; Insanity
 Ref: 10.3.3
 D: 3
+Id: edexcel-hist-10-034
 
 Q: Which Home Secretary created the Metropolitan Police Force in 1829?
 A: Robert Peel
 Accept: Peel; Sir Robert Peel
 Ref: 10.3.3
 D: 1
+Id: edexcel-hist-10-035
 
 Q: In his penal reforms of the 1820s, what did Peel greatly reduce the number of?
 A: Crimes punishable by death
 Accept: Capital crimes; Capital offences; Death penalty offences
 Ref: 10.3.3
 D: 3
+Id: edexcel-hist-10-036
 
 Q: What was the name of the 1903 Act that set the first number plates and a 20 mph speed limit?
 A: Motor Car Act
 Accept: Motor Car Act 1903; The Motor Car Act
 Ref: 10.4.1
 D: 2
+Id: edexcel-hist-10-037
 
 Q: Which test for drink-driving, using a breath sample, was introduced in 1967?
 A: Breathalyser
 Accept: Breath test; The breathalyser
 Ref: 10.4.1
 D: 1
+Id: edexcel-hist-10-038
 
 Q: Which 1971 Act classified illegal drugs into classes A, B and C?
 A: Misuse of Drugs Act
 Accept: Misuse of Drugs Act 1971; The Misuse of Drugs Act
 Ref: 10.4.1
 D: 2
+Id: edexcel-hist-10-039
 
 Q: Which 1965 Act first made racial discrimination in public places unlawful?
 A: Race Relations Act
 Accept: Race Relations Act 1965; The Race Relations Act
 Ref: 10.4.1
 D: 2
+Id: edexcel-hist-10-040
 
 Q: In which decade did Neighbourhood Watch first begin in Britain?
 A: 1980s
 Accept: 1982; The 1980s; Eighties
 Ref: 10.4.2
 D: 2
+Id: edexcel-hist-10-041
 
 Q: Which technique, first used to convict Colin Pitchfork in 1988, identifies people from their genetic material?
 A: DNA profiling
 Accept: DNA; DNA fingerprinting; Genetic fingerprinting
 Ref: 10.4.2
 D: 2
+Id: edexcel-hist-10-042
 
 Q: In which year did Britain carry out its last executions?
 A: 1964
 Accept: 1964
 Ref: 10.4.2
 D: 2
+Id: edexcel-hist-10-043
 
 Q: Which non-custodial punishment requires an offender to do unpaid work in the community?
 A: Community service
 Accept: Community payback; Unpaid work
 Ref: 10.4.2
 D: 1
+Id: edexcel-hist-10-044
 
 Q: Which 1916 Act introduced conscription, creating the problem of conscientious objectors?
 A: Military Service Act
 Accept: Military Service Act 1916; The Military Service Act
 Ref: 10.4.3
 D: 2
+Id: edexcel-hist-10-045
 
 Q: What name was given to First World War objectors who refused to do any war-related work at all?
 A: Absolutists
 Accept: Absolutist
 Ref: 10.4.3
 D: 2
+Id: edexcel-hist-10-046
 
 Q: Who fired the shot that killed PC Sidney Miles in 1952, a crime for which Derek Bentley was hanged?
 A: Christopher Craig
 Accept: Craig
 Ref: 10.4.3
 D: 2
+Id: edexcel-hist-10-047
 
 Q: Why was Christopher Craig not sentenced to death for the killing of PC Miles?
 A: He was too young
 Accept: He was 16; Under age; Age; Underage
 Ref: 10.4.3
 D: 3
+Id: edexcel-hist-10-048
 
 Q: In which year was Derek Bentley hanged?
 A: 1953
 Accept: January 1953
 Ref: 10.4.3
 D: 1
+Id: edexcel-hist-10-049
 
 Q: Which American philanthropist funded the Peabody Estate housing in Whitechapel?
 A: George Peabody
 Accept: Peabody
 Ref: 10.HE.1
 D: 1
+Id: edexcel-hist-10-050
 
 Q: Why did lodging houses and pubs help make Whitechapel's population hard to police?
 A: People moved often, with no community ties
 Accept: Fluctuating population; Transient population; People came and went
 Ref: 10.HE.1
 D: 3
+Id: edexcel-hist-10-051
 
 Q: What name was given to violent attacks on Jewish people in the Russian Empire, which drove migration to Whitechapel in the 1880s?
 A: Pogroms
 Accept: Pogrom
 Ref: 10.HE.1
 D: 2
+Id: edexcel-hist-10-052
 
 Q: What term describes the fixed route walked by a constable on patrol?
 A: Beat
 Accept: His beat; The beat
 Ref: 10.HE.1
 D: 1
+Id: edexcel-hist-10-053
 
 Q: Which victim of Jack the Ripper was killed in the City of London Police's area, in Mitre Square?
 A: Catherine Eddowes
 Accept: Eddowes; Kate Eddowes
 Ref: 10.HE.1
 D: 3
+Id: edexcel-hist-10-054
 
 Q: Who was the chairman of the Whitechapel Vigilance Committee, set up in 1888?
 A: George Lusk
 Accept: Lusk
 Ref: 10.HE.1
 D: 3
+Id: edexcel-hist-10-055
 
 Q: Which Metropolitan Police Commissioner resigned in November 1888, during the Ripper investigation?
 A: Sir Charles Warren
 Accept: Charles Warren; Warren
 Ref: 10.HE.1
 D: 2
+Id: edexcel-hist-10-056
 
 Q: Why did the press reporting of the Ripper murders create extra work for police?
 A: Hoax letters and false leads
 Accept: Hoax letters; Many false tip-offs; False information; Hoaxes
 Ref: 10.HE.1
 D: 3
+Id: edexcel-hist-10-057
 
 Q: Which social researcher produced a colour-coded poverty map of London, including Whitechapel?
 A: Charles Booth
 Accept: Booth
 Ref: 10.HE.2
 D: 1
+Id: edexcel-hist-10-058
 
 Q: Which London court's trial records are a national source for crimes in Whitechapel?
 A: Old Bailey
 Accept: The Old Bailey; Central Criminal Court
 Ref: 10.HE.2
 D: 1
+Id: edexcel-hist-10-059
 
 Q: Which satirical magazine published cartoons about the police during the Ripper case?
 A: Punch
 Accept: Punch magazine
 Ref: 10.HE.2
 D: 1
+Id: edexcel-hist-10-060
 
 Q: What is a key weakness of a Punch cartoon as evidence of police efficiency?
 A: Shows opinion, not fact
 Accept: It is biased; Exaggerated; Satire; Opinion
 Ref: 10.HE.2
 D: 3
+Id: edexcel-hist-10-061

@@ -8,6 +8,7 @@ Accept: Induction; Electromagnetic induction effect
 Ref: 13.1P
 D: 1
 HT: yes
+Id: edexcel-phys-13-001
 
 Q: A magnet is pushed into a coil connected to a sensitive ammeter. What does the meter do?
 A: Deflects
@@ -15,20 +16,15 @@ Accept: It deflects; Needle moves; Shows a reading briefly
 Ref: 13.1P
 D: 2
 HT: yes
+Id: edexcel-phys-13-002
 
 Q: A magnet is held still inside a coil. Why is no current induced?
 A: No relative movement
 Accept: No movement; Field lines are not cut; No change in field
 Ref: 13.1P
-D: 3
+D: 2
 HT: yes
-
-Q: How does using a stronger magnet change the induced potential difference?
-A: Increases it
-Accept: Increases; Larger; Bigger; Greater
-Ref: 13.2
-D: 1
-HT: yes
+Id: edexcel-phys-13-003
 
 Q: A magnet is pulled out of a coil instead of pushed in. What happens to the direction of the induced current?
 A: It reverses
@@ -36,6 +32,7 @@ Accept: Reverses; Opposite direction
 Ref: 13.2
 D: 2
 HT: yes
+Id: edexcel-phys-13-004
 
 Q: What does doubling the number of turns on a coil do to the induced potential difference?
 A: Increases it
@@ -44,6 +41,7 @@ Ref: 13.2
 D: 2
 HT: yes
 Note: Other factors are a faster movement and a stronger magnet.
+Id: edexcel-phys-13-005
 
 Q: The magnetic field produced by an induced current does what to the change that caused it?
 A: Opposes it
@@ -51,6 +49,7 @@ Accept: Opposes the change; Acts against it
 Ref: 13.2
 D: 3
 HT: yes
+Id: edexcel-phys-13-006
 
 Q: A north pole is pushed into a coil. Which pole forms at the coil end nearest the magnet?
 A: North pole
@@ -59,6 +58,7 @@ Ref: 13.2
 D: 3
 HT: yes
 Note: The induced field repels the approaching pole.
+Id: edexcel-phys-13-007
 
 Q: Which generator uses electromagnetic induction to produce alternating current?
 A: Alternator
@@ -66,6 +66,7 @@ Accept: An alternator
 Ref: 13.3P
 D: 1
 HT: yes
+Id: edexcel-phys-13-008
 
 Q: Which generator uses electromagnetic induction to produce direct current?
 A: Dynamo
@@ -73,6 +74,7 @@ Accept: A dynamo; D.c. generator
 Ref: 13.3P
 D: 1
 HT: yes
+Id: edexcel-phys-13-009
 
 Q: Which part of a dynamo allows it to give direct current?
 A: Split-ring commutator
@@ -80,6 +82,7 @@ Accept: Commutator
 Ref: 13.3P
 D: 2
 HT: yes
+Id: edexcel-phys-13-010
 
 Q: Why does a dynamo give d.c. while an alternator gives a.c.?
 A: Dynamo commutator reverses connections every half turn
@@ -87,6 +90,7 @@ Accept: Commutator reverses the connections; Alternator has slip rings
 Ref: 13.3P
 D: 3
 HT: yes
+Id: edexcel-phys-13-011
 
 Q: Which thin part of a microphone vibrates when sound waves hit it?
 A: Diaphragm
@@ -94,13 +98,15 @@ Accept: The diaphragm
 Ref: 13.4P
 D: 1
 HT: yes
+Id: edexcel-phys-13-012
 
-Q: Which effect does a microphone use to turn pressure variations in sound into a varying current?
+Q: Which effect does a moving-coil microphone use to turn pressure variations in sound into a varying current?
 A: Electromagnetic induction
 Accept: Induction
 Ref: 13.4P
 D: 2
 HT: yes
+Id: edexcel-phys-13-013
 
 Q: Which effect does a loudspeaker use to make its cone vibrate?
 A: Motor effect
@@ -108,6 +114,7 @@ Accept: The motor effect
 Ref: 13.4P
 D: 2
 HT: yes
+Id: edexcel-phys-13-014
 
 Q: In a loudspeaker, why does a varying current make the cone vibrate?
 A: Changing force on the coil in a magnetic field
@@ -115,6 +122,7 @@ Accept: Motor effect force changes direction; Force on the coil alternates
 Ref: 13.4P
 D: 3
 HT: yes
+Id: edexcel-phys-13-015
 
 Q: Name the two coils of a transformer.
 A: Primary and secondary
@@ -122,6 +130,7 @@ Accept: Primary coil and secondary coil
 Ref: 13.5
 D: 1
 HT: yes
+Id: edexcel-phys-13-016
 
 Q: What type of current must flow in the primary coil to induce a current in the secondary?
 A: Alternating current
@@ -129,6 +138,7 @@ Accept: A.c.; AC; Alternating
 Ref: 13.5
 D: 2
 HT: yes
+Id: edexcel-phys-13-017
 
 Q: What is the job of the iron core of a transformer?
 A: Carries the magnetic field between the coils
@@ -136,6 +146,7 @@ Accept: Links the coils magnetically; Passes the changing field to the secondary
 Ref: 13.5
 D: 2
 HT: yes
+Id: edexcel-phys-13-018
 
 Q: Why does a transformer not work with a direct current supply?
 A: No changing magnetic field
@@ -143,6 +154,7 @@ Accept: The field does not change; No induction; Field is constant
 Ref: 13.5
 D: 3
 HT: yes
+Id: edexcel-phys-13-019
 
 Q: Which component can change the size of an alternating voltage?
 A: Transformer
@@ -150,6 +162,7 @@ Accept: A transformer
 Ref: 13.6
 D: 1
 HT: yes
+Id: edexcel-phys-13-020
 
 Q: Which type of transformer increases the voltage?
 A: Step-up
@@ -157,6 +170,7 @@ Accept: Step up; Step-up transformer
 Ref: 13.6
 D: 1
 HT: yes
+Id: edexcel-phys-13-021
 
 Q: A transformer has more turns on its primary coil than its secondary. Is it step-up or step-down?
 A: Step-down
@@ -164,6 +178,7 @@ Accept: Step down; Step-down transformer
 Ref: 13.6
 D: 2
 HT: yes
+Id: edexcel-phys-13-022
 
 Q: Use Vp/Vs = Np/Ns. A transformer has Vp = 12 V, Np = 100 and Ns = 50. What is Vs?
 A: 6 V
@@ -171,6 +186,7 @@ Accept: 6 volts
 Ref: 13.7P
 D: 2
 HT: yes
+Id: edexcel-phys-13-023
 
 Q: Use Vp/Vs = Np/Ns. A transformer has Vp = 100 V, Np = 200 and Ns = 40. What is Vs?
 A: 20 V
@@ -178,6 +194,7 @@ Accept: 20 volts
 Ref: 13.7P
 D: 2
 HT: yes
+Id: edexcel-phys-13-024
 
 Q: Use Vp/Vs = Np/Ns. Vp = 10 V, Vs = 40 V and Np = 50. How many turns are on the secondary?
 A: 200
@@ -185,55 +202,49 @@ Accept: 200 turns
 Ref: 13.7P
 D: 3
 HT: yes
-
-Q: Use Vp/Vs = Np/Ns. A transformer steps 12 V up to 36 V and has 100 primary turns. How many secondary turns?
-A: 300
-Accept: 300 turns
-Ref: 13.7P
-D: 3
-HT: yes
+Id: edexcel-phys-13-025
 
 Q: In what form is energy wasted in the cables of the national grid?
 A: Heat
 Accept: Thermal energy; Heating; Thermal
 Ref: 13.8
 D: 1
+Id: edexcel-phys-13-026
 
 Q: Why is electricity transmitted at high voltage in the national grid?
 A: Reduces energy lost as heat
 Accept: Less energy wasted; Improves efficiency; Reduces heat loss; Lower current
 Ref: 13.8
 D: 2
-
-Q: Compared with low-voltage transmission, how is the current in high-voltage cables for the same power?
-A: Smaller
-Accept: Lower; Less; Reduced
-Ref: 13.8
-D: 2
+Id: edexcel-phys-13-027
 
 Q: Why does a smaller current in transmission cables reduce the energy wasted?
-A: Less heating in the cables
-Accept: Heating depends on current squared; Lower heating effect; Less thermal energy lost
+A: Heat loss depends on current squared
+Accept: Less heating in the cables; Lower heating effect; Less thermal energy lost; Power loss is I squared R
 Ref: 13.8
 D: 3
+Id: edexcel-phys-13-028
 
 Q: Which type of transformer is used at a power station before transmission?
 A: Step-up
 Accept: Step up; Step-up transformer
 Ref: 13.9
 D: 1
+Id: edexcel-phys-13-029
 
 Q: Which type of transformer is used near homes to lower the voltage?
 A: Step-down
 Accept: Step down; Step-down transformer
 Ref: 13.9
 D: 1
+Id: edexcel-phys-13-030
 
 Q: Why are step-up transformers needed after the generators in the national grid?
 A: Raise voltage to cut current and heat loss
 Accept: To reduce energy loss; Raise voltage so current is smaller; Efficient transmission
 Ref: 13.9
 D: 3
+Id: edexcel-phys-13-031
 
 Q: For a transformer that is 100% efficient, the output power equals what?
 A: The input power
@@ -241,6 +252,7 @@ Accept: Input power; Power input
 Ref: 13.10
 D: 1
 HT: yes
+Id: edexcel-phys-13-032
 
 Q: Use VpIp = VsIs. A 100% efficient transformer has Vp = 10 V, Ip = 4 A and Vs = 40 V. What is Is?
 A: 1 A
@@ -248,13 +260,7 @@ Accept: 1 amp; 1 ampere
 Ref: 13.10
 D: 2
 HT: yes
-
-Q: A 100% efficient step-up transformer. Is the secondary current larger or smaller than the primary current?
-A: Smaller
-Accept: Lower; Less
-Ref: 13.10
-D: 2
-HT: yes
+Id: edexcel-phys-13-033
 
 Q: Use VpIp = VsIs. Vp = 100 V, Ip = 2 A and Is = 0.5 A for a 100% efficient transformer. What is Vs?
 A: 400 V
@@ -262,6 +268,7 @@ Accept: 400 volts
 Ref: 13.10
 D: 3
 HT: yes
+Id: edexcel-phys-13-034
 
 Q: Use P = I × V. A 100 kW supply is transmitted at 10 000 V. What is the current?
 A: 10 A
@@ -269,6 +276,7 @@ Accept: 10 amps; 10 amperes
 Ref: 13.11P
 D: 2
 HT: yes
+Id: edexcel-phys-13-035
 
 Q: Use P = I²R. A cable of resistance 2 ohms carries 10 A. What power is wasted as heat?
 A: 200 W
@@ -276,6 +284,7 @@ Accept: 200 watts
 Ref: 13.11P
 D: 2
 HT: yes
+Id: edexcel-phys-13-036
 
 Q: The voltage is raised 10 times for the same transmitted power. By what factor does the cable current change?
 A: Divided by 10
@@ -283,6 +292,7 @@ Accept: One tenth; 1/10; Falls to a tenth; 0.1
 Ref: 13.11P
 D: 2
 HT: yes
+Id: edexcel-phys-13-037
 
 Q: Voltage is raised 10 times for the same power. By what factor is the cable's wasted power reduced?
 A: Divided by 100
@@ -290,3 +300,4 @@ Accept: One hundredth; 1/100; 100 times smaller; 0.01
 Ref: 13.11P
 D: 3
 HT: yes
+Id: edexcel-phys-13-038

@@ -7,266 +7,311 @@ A: Urbanisation
 Accept: Urbanization; urban growth
 Ref: 3.2.1.1
 D: 1
+Id: aqa-geog-3.2.1-001
 
 Q: Roughly what percentage of the world's population now lives in urban areas?
 A: About 55%
 Accept: Over half; 50-60%; 55%; more than half
 Ref: 3.2.1.1
 D: 1
+Id: aqa-geog-3.2.1-002
 
 Q: Which type of country, HIC or LIC, currently has the fastest rate of urbanisation?
 A: LIC
 Accept: Low income country; LICs; low-income countries
 Ref: 3.2.1.1
 D: 1
+Id: aqa-geog-3.2.1-003
 
 Q: Name the term for a city with a population of more than 10 million people.
 A: Megacity
 Accept: Mega city; megacities
 Ref: 3.2.1.1
 D: 1
+Id: aqa-geog-3.2.1-004
 
 Q: Name the movement of people from the countryside to cities.
 A: Rural-urban migration
 Accept: Rural to urban migration; rural urban migration
 Ref: 3.2.1.1
 D: 1
+Id: aqa-geog-3.2.1-005
 
 Q: In push-pull theory, is a lack of jobs in a village a push factor or a pull factor?
 A: Push factor
 Accept: Push
 Ref: 3.2.1.1
 D: 2
+Id: aqa-geog-3.2.1-006
 
 Q: In push-pull theory, is the chance of better healthcare in a city a push factor or a pull factor?
 A: Pull factor
 Accept: Pull
 Ref: 3.2.1.1
 D: 2
+Id: aqa-geog-3.2.1-007
 
 Q: What is natural increase?
 A: Births minus deaths
 Accept: Birth rate higher than death rate; births exceed deaths; difference between birth and death rates
 Ref: 3.2.1.1
 D: 2
+Id: aqa-geog-3.2.1-008
 
 Q: Why do many migrants to cities in LICs help to raise the city's birth rate?
 A: Migrants are mostly young adults
 Accept: Young adults; they are of child-bearing age; many young people; people of reproductive age
 Ref: 3.2.1.1
 D: 3
+Id: aqa-geog-3.2.1-009
 
 Q: Urbanisation in most HICs is now slow because they already have a high proportion of what?
 A: People living in urban areas
 Accept: Urban population; people already in cities; already highly urbanised
 Ref: 3.2.1.1
 D: 3
+Id: aqa-geog-3.2.1-010
 
 Q: Name a settlement of makeshift homes built on land without legal permission, common in LIC cities.
 A: Squatter settlement
 Accept: Slum; shanty town; favela; informal settlement
 Ref: 3.2.1.2
 D: 1
+Id: aqa-geog-3.2.1-011
 
 Q: Name the Brazilian term for a slum or squatter settlement in Rio de Janeiro.
 A: Favela
 Accept: Favelas
 Ref: 3.2.1.2
 D: 1
+Id: aqa-geog-3.2.1-012
 
 Q: Why can urban industrial areas stimulate economic development in an LIC or NEE city?
 A: They create jobs and boost incomes
 Accept: Jobs; employment; create jobs; more taxes; wealth; multiplier effect
 Ref: 3.2.1.2
 D: 3
+Id: aqa-geog-3.2.1-013
 
 Q: Give one social opportunity of urban growth in an LIC or NEE city.
 A: Access to healthcare
 Accept: Access to education; access to schools; healthcare or education; access to hospitals; access to clean water; access to electricity; services
 Ref: 3.2.1.2
 D: 2
+Id: aqa-geog-3.2.1-014
 
 Q: Squatter settlements often lack which basic service, leading to the spread of disease such as cholera?
 A: Clean water and sanitation
 Accept: Sanitation; clean water; sewers; toilets; safe water
 Ref: 3.2.1.2
 D: 2
+Id: aqa-geog-3.2.1-015
 
 Q: Why is unemployment a challenge in LIC and NEE cities?
 A: More migrants than formal jobs
 Accept: Too few jobs; not enough jobs; rapid migration; informal sector
 Ref: 3.2.1.2
 D: 3
+Id: aqa-geog-3.2.1-016
 
 Q: Name the type of work, often unregistered and untaxed, such as street selling, that many urban poor rely on.
 A: Informal sector
 Accept: Informal economy; informal employment; informal jobs
 Ref: 3.2.1.2
 D: 1
+Id: aqa-geog-3.2.1-017
 
 Q: Name one cause of air pollution in a rapidly growing LIC or NEE city.
 A: Traffic fumes
 Accept: Vehicle exhaust; vehicles; factories; industry; burning waste; burning fuel
 Ref: 3.2.1.2
 D: 1
+Id: aqa-geog-3.2.1-018
 
 Q: Uncollected waste in squatter settlements causes which risk to health?
 A: Disease
 Accept: Spread of disease; infections; illness; cholera
 Ref: 3.2.1.2
 D: 2
+Id: aqa-geog-3.2.1-019
 
 Q: Name the term for low-cost improvements in slum areas carried out with local people, such as better water taps and toilets.
 A: Self-help schemes
 Accept: Self help; self-help scheme; community-led improvement
 Ref: 3.2.1.2
 D: 2
+Id: aqa-geog-3.2.1-020
 
 Q: Why are self-help schemes a cheaper way to improve housing than demolishing and rebuilding slums?
 A: Residents do the work themselves
 Accept: Local people provide labour; residents build; people improve their own homes; materials only provided
 Ref: 3.2.1.2
 D: 3
+Id: aqa-geog-3.2.1-021
 
 Q: Name the Brazilian city whose Favela-Bairro project improved services in its favelas.
 A: Rio de Janeiro
 Accept: Rio
 Ref: 3.2.1.2
 D: 1
+Id: aqa-geog-3.2.1-022
 
 Q: Name the term for the movement of cities' edges outwards into the surrounding countryside.
 A: Urban sprawl
 Accept: Sprawl; urban expansion
 Ref: 3.2.1.3
 D: 1
+Id: aqa-geog-3.2.1-023
 
 Q: Name the zone where the edge of a city meets the surrounding countryside.
 A: Rural-urban fringe
 Accept: Rural urban fringe; urban fringe
 Ref: 3.2.1.3
 D: 1
+Id: aqa-geog-3.2.1-024
 
 Q: Name the term for a settlement beyond a city whose residents mostly travel into the city to work.
 A: Commuter settlement
 Accept: Commuter town; commuter village; dormitory settlement; commuter settlements
 Ref: 3.2.1.3
 D: 1
+Id: aqa-geog-3.2.1-025
 
 Q: Which UK city is the capital, the largest city and a major world city?
 A: London
 Ref: 3.2.1.3
 D: 1
+Id: aqa-geog-3.2.1-026
 
 Q: Name the term for land previously used for buildings or industry that is now unused and available for development.
 A: Brownfield site
 Accept: Brownfield; brownfield land
 Ref: 3.2.1.3
 D: 1
+Id: aqa-geog-3.2.1-027
 
 Q: Name the term for undeveloped land, such as a field, on the edge of a city.
 A: Greenfield site
 Accept: Greenfield; greenfield land
 Ref: 3.2.1.3
 D: 1
+Id: aqa-geog-3.2.1-028
 
 Q: Why do many councils prefer building on brownfield rather than greenfield sites?
 A: Protects countryside and reuses land
 Accept: Avoids loss of countryside; reuses derelict land; cleans up dereliction; protects green space; protects wildlife
 Ref: 3.2.1.3
 D: 3
+Id: aqa-geog-3.2.1-029
 
 Q: Name the term for the improvement of a run-down urban area with new investment, housing and facilities.
 A: Urban regeneration
 Accept: Regeneration
 Ref: 3.2.1.3
 D: 1
+Id: aqa-geog-3.2.1-030
 
 Q: Which 2012 sporting event led to the regeneration of Stratford in east London?
 A: Olympic Games
 Accept: Summer Olympics; London Olympics; Olympics; London 2012
 Ref: 3.2.1.3
 D: 2
+Id: aqa-geog-3.2.1-031
 
 Q: Name the term for the lack of access to basic resources and opportunities in some inner-city areas.
 A: Urban deprivation
 Accept: Deprivation; multiple deprivation
 Ref: 3.2.1.3
 D: 2
+Id: aqa-geog-3.2.1-032
 
 Q: Name the term for planting trees and creating parks and green roofs in a city.
 A: Urban greening
 Accept: Greening; green space creation; creating green spaces
 Ref: 3.2.1.3
 D: 1
+Id: aqa-geog-3.2.1-033
 
 Q: How does national or international migration give a UK city a richer cultural mix?
 A: Migrants bring new food, music and festivals
 Accept: Different cultures; new cuisines; diverse restaurants; festivals; languages; diversity
 Ref: 3.2.1.3
 D: 3
+Id: aqa-geog-3.2.1-034
 
 Q: Name the term for an abandoned, run-down area of buildings and land in a city.
 A: Dereliction
 Accept: Derelict land; derelict buildings; derelict
 Ref: 3.2.1.3
 D: 2
+Id: aqa-geog-3.2.1-035
 
 Q: Name the term for a city that uses water, energy and resources in ways that do not harm future generations.
 A: Sustainable city
 Accept: Sustainable urban living; sustainability; sustainable
 Ref: 3.2.1.4
 D: 1
+Id: aqa-geog-3.2.1-036
 
 Q: Name one way a sustainable city can conserve water at home.
 A: Rainwater harvesting
 Accept: Water meters; dual flush toilets; recycling greywater; low-flow showers; fixing leaks; grey water recycling
 Ref: 3.2.1.4
 D: 2
+Id: aqa-geog-3.2.1-037
 
 Q: Name one way that a sustainable city can reduce its energy use.
 A: Insulating buildings
 Accept: Solar panels; renewable energy; energy-efficient appliances; LED bulbs; loft insulation; wind power; double glazing
 Ref: 3.2.1.4
 D: 2
+Id: aqa-geog-3.2.1-038
 
 Q: Name the process of collecting waste such as glass and paper to make new products.
 A: Recycling
 Accept: Recycle
 Ref: 3.2.1.4
 D: 1
+Id: aqa-geog-3.2.1-039
 
 Q: Why does creating green space help to make a city more sustainable?
 A: Absorbs carbon dioxide and cools air
 Accept: Reduces pollution; cleaner air; habitats for wildlife; reduces flooding; cools the city; recreation
 Ref: 3.2.1.4
 D: 3
+Id: aqa-geog-3.2.1-040
 
 Q: Name one strategy used to reduce traffic congestion in a city centre.
 A: Congestion charge
 Accept: Park and ride; bus lanes; cycle lanes; tram system; pedestrianisation; integrated transport; car sharing; congestion charging
 Ref: 3.2.1.4
 D: 2
+Id: aqa-geog-3.2.1-041
 
 Q: How does a park and ride scheme reduce congestion in a city centre?
 A: Fewer cars drive into the centre
 Accept: Cars parked outside the city; people use buses from the edge; reduces number of cars
 Ref: 3.2.1.4
 D: 3
+Id: aqa-geog-3.2.1-042
 
 Q: What name is given to a transport system in which buses, trams and trains link up with shared tickets and timetables?
 A: Integrated transport
 Accept: Integrated transport system; integrated public transport
 Ref: 3.2.1.4
 D: 2
+Id: aqa-geog-3.2.1-043
 
 Q: Why does rapid urban growth often lead to squatter settlements in LIC and NEE cities?
 A: Housing cannot be built fast enough
 Accept: Not enough affordable housing; migrants cannot afford housing; too many people, too few homes; shortage of housing
 Ref: 3.2.1.2
 D: 3
+Id: aqa-geog-3.2.1-044
 
 Q: Why does urban sprawl put pressure on the rural-urban fringe?
 A: Countryside is built on for housing
 Accept: Loss of farmland; loss of green space; greenfield land used; building on countryside
 Ref: 3.2.1.3
 D: 3
+Id: aqa-geog-3.2.1-045

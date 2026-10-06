@@ -150,7 +150,7 @@ function buildPack(p) {
       }
     }
     if (q.d && ![1, 2, 3].includes(out.difficulty)) err(q, `D: must be 1, 2 or 3`);
-    if (q.id && !new RegExp(`^${p.head.board.toLowerCase()}-${SHORT[subject]}-[0-9A-Za-z.]+-\\d{3}$`).test(q.id)) err(q, `Id ${q.id} has the wrong form`);
+    if (q.id && !new RegExp(`^${p.head.board.toLowerCase()}-${SHORT[subject]}-[0-9A-Za-z.-]+-\\d{3}$`).test(q.id)) err(q, `Id ${q.id} has the wrong form`);
     if (q.rp && !(spec.practicals || []).some(r => String(r.n) === String(q.rp))) err(q, `RP: ${q.rp} is not a required practical of ${spec.specCode}`);
     if (out.a) {
       if (words(out.a) > LIMITS.answerWords) err(q, `answer is ${words(out.a)} words (at most ${LIMITS.answerWords}): ${out.a}`);
@@ -232,7 +232,7 @@ function assignIds(only) {
   let added = 0;
   packFiles().filter(f => !only || rel(f).startsWith(only)).forEach(f => {
     const p = parseFile(f);
-    const prefix = `${String(p.head.board).toLowerCase()}-${SHORT[SUBJECT_IDS[(loadSpec(p.head.board, p.head.spec) || {}).subject]] || 'x'}-${p.head.topic}-`;
+    const prefix = `${String(p.head.board).toLowerCase()}-${SHORT[SUBJECT_IDS[(loadSpec(p.head.board, p.head.spec) || {}).subject]] || 'x'}-${/^1G[AB]0$/.test(p.head.spec) ? p.head.spec.toLowerCase() + '-' : ''}${p.head.topic}-`;   // Geography A and B share topic numbers
     let next = 1 + Math.max(0, ...p.questions.map(q => q.id && q.id.startsWith(prefix) ? parseInt(q.id.slice(prefix.length), 10) : 0));
     const lines = p.text.split('\n');
     // insert after each question's last line, from the bottom up so line numbers stay right

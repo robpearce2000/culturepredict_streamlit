@@ -7,18 +7,21 @@ A: Metre
 Accept: m; metres; meter
 Ref: 1.1
 D: 1
+Id: edexcel-phys-1-001
 
 Q: What is the SI base unit of time?
 A: Second
 Accept: s; seconds
 Ref: 1.1
 D: 1
+Id: edexcel-phys-1-002
 
 Q: What is the SI base unit of electric current?
 A: Ampere
 Accept: A; amp; amps; amperes
 Ref: 1.1
 D: 1
+Id: edexcel-phys-1-003
 
 Q: What is the SI base unit of temperature?
 A: Kelvin
@@ -26,12 +29,14 @@ Accept: K; kelvins
 Ref: 1.1
 D: 1
 Note: Not degrees Celsius, which is not an SI base unit.
+Id: edexcel-phys-1-004
 
 Q: What is the SI base unit for the amount of a substance?
 A: Mole
 Accept: mol; moles
 Ref: 1.1
 D: 1
+Id: edexcel-phys-1-005
 
 Q: Which SI base unit already has a prefix in its name?
 A: Kilogram
@@ -39,41 +44,48 @@ Accept: kg
 Ref: 1.1
 D: 3
 Note: The base unit of mass is the kilogram, not the gram.
+Id: edexcel-phys-1-006
 
 Q: What is the SI unit of force?
 A: Newton
 Accept: N; newtons
 Ref: 1.1
 D: 1
+Id: edexcel-phys-1-007
 
 Q: What is the SI unit of energy?
 A: Joule
 Accept: J; joules
 Ref: 1.1
 D: 1
+Id: edexcel-phys-1-008
 
 Q: What is the SI unit of electric charge?
 A: Coulomb
 Accept: C; coulombs
 Ref: 1.1
 D: 1
+Id: edexcel-phys-1-009
 
 Q: What is the SI unit of frequency?
 A: Hertz
 Accept: Hz
 Ref: 1.1
 D: 1
+Id: edexcel-phys-1-010
 
 Q: What quantity is measured in pascals?
 A: Pressure
 Ref: 1.1
 D: 2
+Id: edexcel-phys-1-011
 
 Q: What quantity is measured in ohms?
 A: Resistance
 Accept: Electrical resistance; electric resistance
 Ref: 1.1
 D: 2
+Id: edexcel-phys-1-012
 
 Q: What quantity is measured in teslas?
 A: Magnetic flux density
@@ -81,12 +93,14 @@ Accept: Magnetic field strength
 Ref: 1.1
 D: 2
 Note: Edexcel uses the term magnetic flux density; field strength accepted as a classroom equivalent.
+Id: edexcel-phys-1-013
 
 Q: Energy transferred per second is measured in joules per second. What is the special name of this unit?
 A: Watt
 Accept: W; watts
 Ref: 1.1
 D: 2
+Id: edexcel-phys-1-014
 
 Q: Energy transferred per unit charge is measured in joules per coulomb. What is the special name of this unit?
 A: Volt
@@ -94,48 +108,56 @@ Accept: V; volts
 Ref: 1.1
 D: 3
 Note: Potential difference is energy transferred per coulomb of charge.
+Id: edexcel-phys-1-015
 
 Q: What prefix means multiply by 10⁹ (one thousand million)?
 A: Giga
 Accept: G
 Ref: 1.2
 D: 1
+Id: edexcel-phys-1-016
 
 Q: What prefix means multiply by 10⁻⁶ (one millionth)?
 A: Micro
 Accept: μ; µ; Micro-
 Ref: 1.2
 D: 1
+Id: edexcel-phys-1-017
 
 Q: What prefix means multiply by 10⁻⁹?
 A: Nano
 Accept: n
 Ref: 1.2
 D: 2
+Id: edexcel-phys-1-018
 
 Q: Which unit prefix has the symbol c?
 A: Centi
 Accept: Centi-
 Ref: 1.2
 D: 1
+Id: edexcel-phys-1-019
 
 Q: What power of ten does the prefix mega (M) stand for?
 A: 10⁶
 Accept: 10^6; 1 000 000; one million; × 10⁶
 Ref: 1.2
 D: 1
+Id: edexcel-phys-1-020
 
 Q: Write 5 kV in volts.
 A: 5000 V
 Accept: 5 × 10³ V; 5000 volts
 Ref: 1.2
 D: 2
+Id: edexcel-phys-1-021
 
 Q: Write 2.5 GHz in hertz, in standard form.
 A: 2.5 × 10⁹ Hz
 Accept: 2.5 × 10^9 Hz; 2 500 000 000 Hz; 2500000000 Hz
 Ref: 1.2
 D: 2
+Id: edexcel-phys-1-022
 
 Q: Write 30 μA in amps, in standard form.
 A: 3 × 10⁻⁵ A
@@ -143,12 +165,14 @@ Accept: 3 × 10^-5 A; 0.00003 A; 3.0 × 10⁻⁵ A
 Ref: 1.2
 D: 3
 Note: Watch for 3 × 10⁻⁶ A; the 30 must be written as 3 × 10¹ first.
+Id: edexcel-phys-1-023
 
 Q: Write a wavelength of 450 nm in metres, in standard form.
 A: 4.5 × 10⁻⁷ m
 Accept: 4.5 × 10^-7 m; 0.00000045 m
 Ref: 1.2
 D: 3
+Id: edexcel-phys-1-024
 
 Q: Write 3 MJ in kilojoules.
 A: 3000 kJ
@@ -156,24 +180,28 @@ Accept: 3 × 10³ kJ; 3000 kilojoules
 Ref: 1.2
 D: 3
 Note: Mega to kilo is a factor of 1000.
+Id: edexcel-phys-1-025
 
 Q: How many seconds are there in one hour?
 A: 3600 s
 Accept: 3600 seconds; 3.6 × 10³ s
 Ref: 1.3
 D: 1
+Id: edexcel-phys-1-026
 
 Q: Convert 15 minutes into seconds.
 A: 900 s
 Accept: 900 seconds
 Ref: 1.3
 D: 2
+Id: edexcel-phys-1-027
 
 Q: Convert 500 g into kilograms.
 A: 0.5 kg
 Accept: 0.50 kg; 1/2 kg
 Ref: 1.3
 D: 2
+Id: edexcel-phys-1-028
 
 Q: Convert a speed of 36 km/h into metres per second.
 A: 10 m/s
@@ -181,6 +209,7 @@ Accept: 10 metres per second; 10 m s⁻¹
 Ref: 1.3
 D: 3
 Note: 36 000 m ÷ 3600 s; dividing km/h by 3.6 gives m/s.
+Id: edexcel-phys-1-029
 
 Q: Convert an area of 1 cm² into square metres.
 A: 0.0001 m²
@@ -188,42 +217,49 @@ Accept: 1 × 10⁻⁴ m²; 10⁻⁴ m²; 1 × 10^-4 m²
 Ref: 1.3
 D: 3
 Note: 1 cm² = 0.01 m × 0.01 m, not 0.01 m².
+Id: edexcel-phys-1-030
 
 Q: What is the name for writing a number as A × 10ⁿ, where A is at least 1 but less than 10?
 A: Standard form
 Accept: Scientific notation; standard index form
 Ref: 1.4
 D: 1
+Id: edexcel-phys-1-031
 
 Q: Write 3 400 000 in standard form.
 A: 3.4 × 10⁶
 Accept: 3.4 × 10^6
 Ref: 1.4
 D: 2
+Id: edexcel-phys-1-032
 
 Q: Write 0.00052 in standard form.
 A: 5.2 × 10⁻⁴
 Accept: 5.2 × 10^-4
 Ref: 1.4
 D: 2
+Id: edexcel-phys-1-033
 
 Q: Write 6 × 10³ as an ordinary number.
 A: 6000
 Accept: 6 000
 Ref: 1.4
 D: 2
+Id: edexcel-phys-1-034
 
 Q: Round 0.04567 to 2 significant figures.
 A: 0.046
 Ref: 1.4
 D: 2
 Note: Leading zeros are not significant.
+Id: edexcel-phys-1-035
 
 Q: Round 34 560 to 2 significant figures.
 A: 35 000
 Accept: 35000; 3.5 × 10⁴
 Ref: 1.4
 D: 2
+Id: edexcel-phys-1-036
 
 Q: How many significant figures does 0.00340 have?
 A: 3
@@ -231,9 +267,11 @@ Accept: Three
 Ref: 1.4
 D: 3
 Note: Leading zeros do not count; the final zero after the decimal point does.
+Id: edexcel-phys-1-037
 
 Q: Work out (2 × 10³) × (3 × 10⁴), in standard form.
 A: 6 × 10⁷
 Accept: 6 × 10^7; 60 000 000
 Ref: 1.4
 D: 3
+Id: edexcel-phys-1-038

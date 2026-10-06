@@ -7,30 +7,35 @@ A: Sustainability
 Accept: Sustainable development
 Ref: 8.1
 D: 1
+Id: edexcel-geog-1ga0-8-001
 
 Q: Name the term for the amount of land and sea needed to supply a person's resources and absorb their waste.
 A: Ecological footprint
 Accept: Footprint
 Ref: 8.1
 D: 1
+Id: edexcel-geog-1ga0-8-002
 
 Q: Is the UK's population projected to rise or fall over the next 50 years?
 A: Rise
 Accept: Increase; Grow
 Ref: 8.1
 D: 1
+Id: edexcel-geog-1ga0-8-003
 
-Q: Name one UK ageing-population effect that increases demand for health services and housing adaptations.
-A: More elderly people
-Accept: Older population; Ageing population
+Q: By what term is a population described when the share of older people is rising?
+A: Ageing
+Accept: Ageing population; Aging
 Ref: 8.1
-D: 2
+D: 1
+Id: edexcel-geog-1ga0-8-004
 
 Q: How would a growing UK population affect demand for water, energy and food?
 A: Demand increases
 Accept: Rises; Goes up; More demand
 Ref: 8.1
-D: 2
+D: 1
+Id: edexcel-geog-1ga0-8-005
 
 Q: Why does a growing UK population put pressure on ecosystems such as woodland and wetland?
 A: More land built on for housing
@@ -38,232 +43,269 @@ Accept: Habitat loss; Land taken for development; Urban sprawl
 Ref: 8.1
 D: 3
 Note: Accept any answer about land loss to housing or infrastructure.
+Id: edexcel-geog-1ga0-8-006
 
 Q: Name the type of pollution from vehicles and homes that harms UK habitats and air quality when it is released.
 A: Air pollution
 Accept: Emissions
 Ref: 8.1
-D: 2
+D: 1
+Id: edexcel-geog-1ga0-8-007
 
-Q: What term describes the loss of natural habitat as land is converted to housing and roads?
-A: Habitat loss
-Accept: Habitat destruction; Habitat fragmentation
+Q: Which type of vehicle, powered by batteries, is promoted nationally to cut transport emissions?
+A: Electric vehicles
+Accept: Electric cars; EVs; EV
 Ref: 8.1
 D: 1
+Id: edexcel-geog-1ga0-8-008
 
 Q: Name one sustainable national transport option that is electrically powered and runs on tracks.
 A: Electric trains
 Accept: Rail; Electric railway; Trams
 Ref: 8.1
 D: 1
+Id: edexcel-geog-1ga0-8-009
 
-Q: Which planned UK high-speed rail line aims to link London with northern England?
+Q: Which high-speed rail project is being built to link London and Birmingham?
 A: HS2
 Accept: High Speed 2
 Ref: 8.1
 D: 1
-Note: Parts of the planned route were cancelled in 2023; accept HS2 either way.
+Note: Later sections to the north were cancelled in 2023; accept HS2.
+Id: edexcel-geog-1ga0-8-010
 
 Q: Which transport scheme makes drivers pay to enter a busy city centre to cut traffic?
 A: Congestion charge
 Accept: Congestion charging; Low emission zone; ULEZ
 Ref: 8.1
 D: 2
+Id: edexcel-geog-1ga0-8-011
 
 Q: Why is switching from cars to rail more sustainable for national transport?
 A: Lower carbon emissions per passenger
 Accept: Less pollution; Fewer emissions; Less CO2 per person
 Ref: 8.1
 D: 3
+Id: edexcel-geog-1ga0-8-012
 
 Q: Which part of the UK has the highest average wages and house prices?
-A: South East England
-Accept: London and the South East; South East; London
+A: London and the South East
+Accept: South East England; South East; London
 Ref: 8.2
 D: 1
+Id: edexcel-geog-1ga0-8-013
 
 Q: What term describes the economic gap between the prosperous south east and the rest of the UK?
 A: Two-speed economy
 Accept: North-south divide; Regional inequality
 Ref: 8.2
 D: 1
+Id: edexcel-geog-1ga0-8-014
 
-Q: Give one reason London and the South East grow faster than other UK regions.
-A: Many jobs and investment
-Accept: Financial services; Good transport links; Business headquarters; Skilled workforce
+Q: Which service industry, centred on the City of London, helps drive the South East's economic strength?
+A: Finance
+Accept: Financial services; Banking; Insurance
 Ref: 8.2
-D: 3
-Note: Accept any sensible economic advantage of the region.
+D: 2
+Id: edexcel-geog-1ga0-8-015
 
 Q: Name the type of investment in transport links, such as HS2 and Northern Powerhouse Rail, aimed at reducing the north-south divide.
 A: Infrastructure
 Accept: Transport investment
 Ref: 8.2
 D: 2
+Id: edexcel-geog-1ga0-8-016
 
 Q: What is a brownfield site?
 A: Previously developed land
 Accept: Land used before; Former industrial land
 Ref: 8.2
 D: 1
+Id: edexcel-geog-1ga0-8-017
 
 Q: What is a greenfield site?
 A: Land not built on before
 Accept: Undeveloped land; Countryside land; Undeveloped countryside
 Ref: 8.2
 D: 1
+Id: edexcel-geog-1ga0-8-018
 
 Q: Give one benefit of building homes on brownfield sites rather than greenfield sites.
 A: Protects countryside
 Accept: Reuses derelict land; Near existing services; Regenerates areas; Less habitat loss
 Ref: 8.2
 D: 2
+Id: edexcel-geog-1ga0-8-019
 
 Q: Give one cost of building on brownfield sites compared with greenfield sites.
 A: Land clean-up is expensive
 Accept: Contamination; Higher cost; Demolition cost; Contaminated land
 Ref: 8.2
 D: 2
+Id: edexcel-geog-1ga0-8-020
 
 Q: Why do developers often prefer greenfield sites despite environmental concerns?
 A: They are cheaper and easier to build on
 Accept: Cheaper; Fewer costs; Easier to build on; No demolition
 Ref: 8.2
 D: 3
+Id: edexcel-geog-1ga0-8-021
 
 Q: What term describes improving a run-down area by investing in new buildings, jobs and services?
 A: Regeneration
 Accept: Urban regeneration; Redevelopment
 Ref: 8.2
 D: 1
+Id: edexcel-geog-1ga0-8-022
 
 Q: What does net migration measure?
 A: Immigration minus emigration
 Accept: People arriving minus people leaving; Difference between immigrants and emigrants
 Ref: 8.2
 D: 2
+Id: edexcel-geog-1ga0-8-023
 
 Q: Why can UK net migration statistics be unreliable?
-A: Estimates based on surveys
-Accept: Illegal migrants not counted; Based on samples; Hard to count; Surveys not full counts
+A: Estimates, not exact counts
+Accept: Based on surveys; Illegal migrants not counted; Based on samples; Hard to count
 Ref: 8.2
 D: 3
+Id: edexcel-geog-1ga0-8-024
 
 Q: Name one group likely to support high migration because they need workers to fill vacancies.
 A: Employers
 Accept: Businesses; The NHS; Care sector; Farmers
 Ref: 8.2
-D: 3
+D: 2
 Note: Accept any sensible stakeholder who benefits from migrant labour.
+Id: edexcel-geog-1ga0-8-025
 
 Q: Name the organisations that manage UK national parks and balance conservation with development.
 A: National Park Authorities
 Accept: National Park Authority; NPA
 Ref: 8.3
 D: 1
+Id: edexcel-geog-1ga0-8-026
 
 Q: Which UK national park contains Snowdon, the highest mountain in Wales?
 A: Snowdonia
 Accept: Eryri
 Ref: 8.3
 D: 1
+Id: edexcel-geog-1ga0-8-027
 
 Q: Give one conflict between conservation and development in a UK national park.
 A: Tourism versus protecting habitats
 Accept: Housing versus landscape; Quarrying; Footpath erosion; Traffic and visitors
 Ref: 8.3
-D: 3
+D: 2
 Note: Accept any clear conflict between development and protection.
+Id: edexcel-geog-1ga0-8-028
 
 Q: Name one method used in national parks to protect landscapes from damage caused by visitors.
 A: Footpath repair
 Accept: Park and ride; Zoning; Limiting car parking; Visitor management; Signage
 Ref: 8.3
 D: 2
+Id: edexcel-geog-1ga0-8-029
 
 Q: What term describes protecting and maintaining natural landscapes and wildlife?
 A: Conservation
 Accept: Preservation
 Ref: 8.3
 D: 1
+Id: edexcel-geog-1ga0-8-030
 
 Q: Name the hard engineering structure of concrete or stone built along a coast to absorb wave energy.
 A: Sea wall
 Accept: Seawall
 Ref: 8.3
 D: 1
+Id: edexcel-geog-1ga0-8-031
 
 Q: Which flood management approach uses natural processes, such as planting trees upstream, to slow river flow?
 A: Soft engineering
 Accept: Natural flood management; Catchment management
 Ref: 8.3
 D: 2
+Id: edexcel-geog-1ga0-8-032
 
 Q: Which hard engineering structure holds back river water and stores it behind a dam to reduce flood peaks?
 A: Reservoir
 Accept: Dam
 Ref: 8.3
 D: 2
+Id: edexcel-geog-1ga0-8-033
 
 Q: Why is hard engineering sometimes less sustainable than soft engineering for flood risk?
 A: Expensive and harms the environment
 Accept: High cost; Damages habitats; Costly maintenance; Disrupts natural processes
 Ref: 8.3
 D: 3
+Id: edexcel-geog-1ga0-8-034
 
 Q: Name the term for a rise in the average temperature of the Earth's atmosphere linked to greenhouse gases.
 A: Global warming
-Accept: Climate change
+Accept: Enhanced greenhouse effect
 Ref: 8.4
 D: 1
+Id: edexcel-geog-1ga0-8-035
 
 Q: Why is it uncertain how global climate change will affect the UK's future climate?
 A: Computer models give different predictions
 Accept: Future emissions unknown; Complex climate system; Models differ; Natural variability
 Ref: 8.4
 D: 3
+Id: edexcel-geog-1ga0-8-036
 
 Q: What type of weather are UK summers expected to become under climate change?
 A: Hotter and drier
 Accept: Warmer and drier; Hotter; Drier
 Ref: 8.4
 D: 2
+Id: edexcel-geog-1ga0-8-037
 
 Q: What type of weather are UK winters expected to become under climate change?
 A: Warmer and wetter
 Accept: Milder and wetter; Wetter
 Ref: 8.4
 D: 2
+Id: edexcel-geog-1ga0-8-038
 
 Q: Give one impact of climate change on UK coastal areas.
 A: Rising sea levels
 Accept: Coastal flooding; More erosion; Storm surges; Loss of land
 Ref: 8.4
 D: 2
+Id: edexcel-geog-1ga0-8-039
 
 Q: Give one impact of hotter UK summers on people.
 A: Heat-related illness
 Accept: Heatwave deaths; Health problems; Drought; Water shortages; Wildfires
 Ref: 8.4
 D: 2
+Id: edexcel-geog-1ga0-8-040
 
 Q: Name the process of reducing greenhouse gas emissions to limit climate change.
 A: Mitigation
 Accept: Climate change mitigation
 Ref: 8.4
 D: 1
+Id: edexcel-geog-1ga0-8-041
 
 Q: Name the process of adjusting to the effects of climate change, such as building flood defences.
 A: Adaptation
 Accept: Climate change adaptation
 Ref: 8.4
 D: 1
+Id: edexcel-geog-1ga0-8-042
 
 Q: Name the 2008 UK law that set legally binding carbon reduction targets.
 A: Climate Change Act
 Accept: Climate Change Act 2008
 Ref: 8.4
 D: 2
+Id: edexcel-geog-1ga0-8-043
 
 Q: Give one local response to climate change in the UK.
 A: Planting urban trees
@@ -271,16 +313,48 @@ Accept: Cycle lanes; Recycling schemes; Community energy; Flood defences; Green 
 Ref: 8.4
 D: 2
 Note: Accept any sensible local-scale action.
+Id: edexcel-geog-1ga0-8-044
 
-Q: Name one national response to climate change in the UK, such as the end of coal power or offshore wind expansion.
-A: Renewable energy
-Accept: Offshore wind; Ending coal power; Carbon targets; Banning new petrol cars
+Q: Which UK emissions target, set in law in 2019, aims to balance emissions and removals by 2050?
+A: Net zero
+Accept: Net zero by 2050; Net zero emissions
 Ref: 8.4
 D: 2
+Id: edexcel-geog-1ga0-8-045
 
 Q: Why do flood-prone UK homes cost more to insure as the climate changes?
 A: Flood risk increases
 Accept: More floods; Greater risk of damage; Higher risk
 Ref: 8.4
 D: 3
+Id: edexcel-geog-1ga0-8-046
 
+
+Q: Why do park-and-ride schemes help cut congestion in UK towns?
+A: Fewer cars enter the centre
+Accept: Drivers switch to buses; Less traffic in centre; Fewer cars
+Ref: 8.1
+D: 3
+Id: edexcel-geog-1ga0-8-047
+
+Q: Why might some local residents oppose high migration into their area?
+A: Pressure on housing and services
+Accept: Competition for jobs; Pressure on schools; Cultural change; Housing demand
+Ref: 8.2
+D: 3
+Note: Accept any sensible concern; attitudes differ between stakeholders.
+Id: edexcel-geog-1ga0-8-048
+
+Q: Why do local people sometimes oppose quarrying in a national park?
+A: Noise and landscape damage
+Accept: Spoils scenery; Lorry traffic; Dust and noise; Habitat damage
+Ref: 8.3
+D: 3
+Id: edexcel-geog-1ga0-8-049
+
+Q: Why are low-lying UK coastal areas most at risk from rising sea levels?
+A: Land is close to sea level
+Accept: Flat and low; Easily flooded; Low elevation
+Ref: 8.4
+D: 3
+Id: edexcel-geog-1ga0-8-050

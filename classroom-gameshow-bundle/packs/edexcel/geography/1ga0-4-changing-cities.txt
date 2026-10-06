@@ -9,282 +9,330 @@ A: Urbanisation
 Accept: Urbanization
 Ref: 4.1
 D: 1
+Id: edexcel-geog-1ga0-4-001
 
 Q: Are urban populations growing fastest today in developed countries or in developing and emerging countries?
 A: Developing and emerging countries
 Accept: Developing countries; Emerging countries; Developing
 Ref: 4.1
 D: 2
+Id: edexcel-geog-1ga0-4-002
 
 Q: Which movement of people is the main cause of fast city growth in many developing countries?
 A: Rural-urban migration
 Accept: Rural to urban migration; Migration from the countryside
 Ref: 4.1
 D: 2
+Id: edexcel-geog-1ga0-4-003
 
 Q: Why have urban populations in many developed countries grown only slowly since 1950?
 A: Most people already live in cities
 Accept: Already highly urbanised; Urbanisation happened earlier
 Ref: 4.1
 D: 3
+Id: edexcel-geog-1ga0-4-004
 
 Q: Which UK city has the largest population?
 A: London
 Ref: 4.2
 D: 1
+Id: edexcel-geog-1ga0-4-005
 
 Q: Why is urbanisation lower in the Scottish Highlands than in south-east England?
 A: Remote upland area with fewer jobs
 Accept: Fewer jobs; Remote; Steep upland terrain; Few job opportunities
 Ref: 4.2
 D: 3
+Id: edexcel-geog-1ga0-4-006
 
 Q: Which UK region has attracted many people to its cities with jobs in finance and services?
 A: South East England
 Accept: London and the South East; South East; London
 Ref: 4.2
 D: 2
+Id: edexcel-geog-1ga0-4-007
 
 Q: What name is given to a large urban area formed when several towns and cities have grown into one another?
 A: Conurbation
 Ref: 4.2
 D: 1
+Id: edexcel-geog-1ga0-4-008
 
 Q: What term describes the land on which a settlement is built, such as a river crossing or a hill?
 A: Site
 Ref: 4.3
 D: 1
+Id: edexcel-geog-1ga0-4-009
 
 Q: What term describes how well a city is linked to other places by transport and communications?
 A: Connectivity
 Accept: Connections; Links
 Ref: 4.3
 D: 1
+Id: edexcel-geog-1ga0-4-010
 
 Q: On which river is the UK city of London sited?
 A: River Thames
 Accept: Thames
 Ref: 4.3
 D: 1
+Id: edexcel-geog-1ga0-4-011
 
 Q: Which urban zone has the tallest buildings, the highest land values and the most shops and offices?
 A: Central Business District
 Accept: CBD; City centre; Town centre
 Ref: 4.3
 D: 1
+Id: edexcel-geog-1ga0-4-012
 
 Q: Which urban zone typically has older terraced housing and former factories close to the city centre?
 A: Inner city
 Accept: Inner-city
 Ref: 4.3
 D: 2
+Id: edexcel-geog-1ga0-4-013
 
 Q: What is the name of the zone on the edge of a city where built-up areas meet farmland?
 A: Urban-rural fringe
 Accept: Rural-urban fringe; Urban fringe
 Ref: 4.3
 D: 1
+Id: edexcel-geog-1ga0-4-014
 
 Q: Why are land values highest in the CBD?
 A: Greatest accessibility
 Accept: Accessibility; It is the most accessible place; Best accessibility; Best transport links; Most accessible
 Ref: 4.3
 D: 3
+Id: edexcel-geog-1ga0-4-015
 
 Q: What name is given to the movement of people from city centres to the outskirts?
 A: Suburbanisation
 Accept: Suburbanization
 Ref: 4.4
 D: 1
+Id: edexcel-geog-1ga0-4-016
 
 Q: What name is given to the movement of people from cities to smaller towns and villages in the countryside?
 A: Counter-urbanisation
 Accept: Counterurbanisation; Counter urbanisation
 Ref: 4.4
 D: 1
+Id: edexcel-geog-1ga0-4-017
 
 Q: What process describes people moving back into city centres, often to regenerated areas?
 A: Re-urbanisation
 Accept: Reurbanisation; Re urbanisation
 Ref: 4.4
 D: 2
+Id: edexcel-geog-1ga0-4-018
 
 Q: Why did suburbanisation grow in UK cities during the 20th century?
 A: Rising car ownership and better transport
 Accept: Cars; Growth of car ownership; Rail and road improvements; Improved transport
 Ref: 4.4
 D: 3
+Id: edexcel-geog-1ga0-4-019
 
 Q: What term describes people moving from one country to live in another?
 A: International migration
 Accept: Immigration; Immigration or emigration
 Ref: 4.4
 D: 1
+Id: edexcel-geog-1ga0-4-020
 
 Q: Why do inner-city areas often have a younger age structure than the suburbs?
 A: Young workers and migrants rent cheaper housing there
 Accept: Young migrants and students; Cheaper rented housing; Young adults and students
 Ref: 4.4
 D: 3
+Id: edexcel-geog-1ga0-4-021
 
 Q: Population change in a city has two parts: natural change and what else?
 A: Net migration
 Accept: Migration
 Ref: 4.5
 D: 2
+Id: edexcel-geog-1ga0-4-022
 
 Q: What term describes the decline of manufacturing industry in a country or city?
 A: Deindustrialisation
 Accept: Deindustrialization; De-industrialisation
 Ref: 4.5
 D: 1
+Id: edexcel-geog-1ga0-4-023
 
 Q: Which process, where companies move production to countries with cheaper labour, closed many UK factories?
 A: Globalisation
 Accept: Globalization; Offshoring
 Ref: 4.5
 D: 2
+Id: edexcel-geog-1ga0-4-024
 
 Q: How have technological advances reduced the number of manufacturing jobs in UK cities?
 A: Machines and robots replaced workers
 Accept: Automation; Mechanisation; Robots
 Ref: 4.5
 D: 3
+Id: edexcel-geog-1ga0-4-025
 
 Q: Which type of retail development on the edge of a city has large car parks and big stores?
 A: Out-of-town shopping centre
 Accept: Edge-of-town; Out of town; Retail park
 Ref: 4.5
 D: 1
+Id: edexcel-geog-1ga0-4-026
 
 Q: Which growing form of shopping has caused many high street shops in the CBD to close?
 A: Internet shopping
 Accept: Online shopping; Online retail; Internet
 Ref: 4.5
 D: 1
+Id: edexcel-geog-1ga0-4-027
 
 Q: Why can deindustrialisation increase inequality within a city?
 A: Well-paid jobs are lost in some areas
 Accept: Job losses in certain areas; Unemployment in former industrial areas
 Ref: 4.5
 D: 3
+Id: edexcel-geog-1ga0-4-028
 
 Q: What name is given to a measure of the land area needed to supply a person's resources and absorb their waste?
 A: Ecological footprint
 Accept: Footprint
 Ref: 4.5
 D: 2
+Id: edexcel-geog-1ga0-4-029
 
 Q: Which strategy turns used materials into new products to make a city more sustainable?
 A: Recycling
 Accept: Recycle
 Ref: 4.5
 D: 1
+Id: edexcel-geog-1ga0-4-030
 
 Q: How does better public transport make a city more sustainable?
 A: Fewer car journeys, so less pollution and congestion
 Accept: Reduces car use; Less congestion and pollution; Less traffic
 Ref: 4.5
 D: 3
+Id: edexcel-geog-1ga0-4-031
 
 Q: Which 2016 global sporting event, hosted by Rio, raised the city's international profile?
 A: Summer Olympic Games
 Accept: Olympics; Olympic Games; 2016 Olympics
 Ref: 4.6
 D: 1
+Id: edexcel-geog-1ga0-4-032
 
 Q: Rio's site is between the Atlantic Ocean and which type of steep landform?
 A: Mountains
 Accept: Hills; Granite hills; Granite mountains
 Ref: 4.6
 D: 2
+Id: edexcel-geog-1ga0-4-033
 
 Q: Which industry, based on beaches and carnival, brings many overseas visitors to Rio de Janeiro?
 A: Tourism
 Accept: Tourist industry
 Ref: 4.6
 D: 1
+Id: edexcel-geog-1ga0-4-034
 
 Q: In Rio de Janeiro, are favelas mostly found on steep hillsides or on flat land by the beach?
 A: Steep hillsides
 Accept: Hillsides; Hills; On the hills
 Ref: 4.6
 D: 2
+Id: edexcel-geog-1ga0-4-035
 
 Q: Why do poorer migrants in Rio often build homes on steep hillsides?
 A: Cheap or unused land close to jobs
 Accept: Land is cheap; Unused land; Land nobody owns; Cannot afford elsewhere
 Ref: 4.6
 D: 3
+Id: edexcel-geog-1ga0-4-036
 
 Q: Is the chance of better-paid jobs in a city a push factor or a pull factor?
 A: Pull factor
 Accept: Pull
 Ref: 4.7
 D: 2
+Id: edexcel-geog-1ga0-4-037
 
 Q: What term describes money invested in a country's businesses by foreign companies?
 A: Foreign direct investment
 Accept: FDI
 Ref: 4.7
 D: 2
+Id: edexcel-geog-1ga0-4-038
 
 Q: What name is given to an illegal settlement built by poor migrants on land they do not own?
 A: Squatter settlement
 Accept: Shanty town; Informal settlement; Slum; Favela
 Ref: 4.7
 D: 1
+Id: edexcel-geog-1ga0-4-039
 
 Q: Why is quality of life often lower for people living in favelas?
 A: Poor sanitation and insecure housing
 Accept: Poor services; No clean water; Poor infrastructure; Overcrowding
 Ref: 4.7
 D: 3
+Id: edexcel-geog-1ga0-4-040
 
 Q: What term describes work that is unregistered, untaxed and without contracts, such as street selling?
 A: Informal employment
 Accept: Informal sector; Informal work; Informal economy
 Ref: 4.8
 D: 1
+Id: edexcel-geog-1ga0-4-041
 
 Q: What term describes people working fewer hours or in jobs below their skill level than they would like?
 A: Under-employment
 Accept: Underemployment
 Ref: 4.8
 D: 1
+Id: edexcel-geog-1ga0-4-042
 
 Q: Lack of what basic service causes disease in many informal settlements?
 A: Clean water and sanitation
 Accept: Sanitation; Sewage; Clean water; Sewers
 Ref: 4.8
 D: 2
+Id: edexcel-geog-1ga0-4-043
 
 Q: What name is given to an approach in which local people plan and carry out improvements themselves?
 A: Bottom-up
 Accept: Bottom up; Bottom-up approach
 Ref: 4.8
 D: 2
+Id: edexcel-geog-1ga0-4-044
 
 Q: What name is given to an approach in which the government plans and pays for large projects?
 A: Top-down
 Accept: Top down; Top-down approach
 Ref: 4.8
 D: 2
+Id: edexcel-geog-1ga0-4-045
 
 Q: Why can top-down slum clearance fail the people it is meant to help?
 A: Residents are moved and their needs ignored
 Accept: Displaces residents; Forced to move; Ignores local needs
 Ref: 4.8
 D: 3
+Id: edexcel-geog-1ga0-4-046
 
 Q: Which government project from the 1990s upgraded Rio's favelas with roads, water, drains and services?
 A: Favela-Bairro
 Accept: Favela Bairro
 Ref: 4.8
 D: 2
+Id: edexcel-geog-1ga0-4-047
 
 Q: Which Brazilian government scheme pays cash to poor families if children attend school?
 A: Bolsa Familia
 Accept: Bolsa Familia programme; Bolsa Família
 Ref: 4.8
 D: 2
+Id: edexcel-geog-1ga0-4-048

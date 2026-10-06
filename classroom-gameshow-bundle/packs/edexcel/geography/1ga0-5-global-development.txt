@@ -7,281 +7,329 @@ A: GDP per capita
 Accept: Gross domestic product per capita
 Ref: 5.1
 D: 1
+Id: edexcel-geog-1ga0-5-001
 
 Q: What does HDI stand for in development measurement?
 A: Human Development Index
 Ref: 5.1
 D: 1
+Id: edexcel-geog-1ga0-5-002
 
 Q: Name the three things combined in the Human Development Index.
 A: Income, health and education
 Accept: GNI; life expectancy; schooling
 Ref: 5.1
 D: 2
+Id: edexcel-geog-1ga0-5-003
 
 Q: Name the indicator that ranks countries on how corrupt their public sector is seen to be.
 A: Corruption Perceptions Index
 Accept: CPI; Corruption index
 Ref: 5.1
 D: 1
+Id: edexcel-geog-1ga0-5-004
 
 Q: Why is GDP per capita alone a poor measure of a country's development?
 A: Ignores inequality and social factors
 Accept: Does not show how wealth is shared; averages hide inequality
 Ref: 5.1
 D: 3
+Id: edexcel-geog-1ga0-5-005
 
 Q: Which type of measure, such as HDI, combines several indicators into one figure?
 A: Composite measure
 Accept: Composite index; Composite
 Ref: 5.1
 D: 1
+Id: edexcel-geog-1ga0-5-006
 
 Q: Name the term for people's ability to get enough safe, nutritious food at all times.
 A: Food security
 Ref: 5.1
 D: 1
+Id: edexcel-geog-1ga0-5-007
 
 Q: Name the term for the difference in level of development between richer and poorer countries.
 A: Development gap
 Accept: Uneven development; Global inequality
 Ref: 5.2
 D: 1
+Id: edexcel-geog-1ga0-5-008
 
 Q: Name the three types of factor that explain spatial variations in development globally.
 A: Physical, historic and economic
 Accept: Physical; historical; economic
 Ref: 5.2
 D: 2
+Id: edexcel-geog-1ga0-5-009
 
 Q: Name the UK region with the highest average incomes and GDP per head.
 A: London
 Accept: Greater London; London and the South East
 Ref: 5.2
 D: 1
+Id: edexcel-geog-1ga0-5-010
 
 Q: Name the UK inequality pattern in which the south east is wealthier than the north.
 A: North-south divide
 Accept: North South divide
 Ref: 5.2
 D: 1
+Id: edexcel-geog-1ga0-5-011
 
 Q: Which historic process left many African and Asian countries with borders and economies shaped by outside rulers?
 A: Colonialism
 Accept: Colonisation; Empire; Colonial rule
 Ref: 5.2
 D: 2
+Id: edexcel-geog-1ga0-5-012
 
 Q: Why do landlocked countries often develop more slowly than coastal ones?
 A: Poor access to trade routes and ports
 Accept: No ports; Harder to trade
 Ref: 5.2
 D: 3
+Id: edexcel-geog-1ga0-5-013
 
 Q: Name the term for people having reliable access to enough safe water for drinking, hygiene and farming.
 A: Water security
 Ref: 5.3
 D: 1
+Id: edexcel-geog-1ga0-5-014
 
 Q: Why does poor access to education often keep people in poverty?
 A: Fewer skills and job opportunities
 Accept: Low skilled jobs; Low pay
 Ref: 5.3
 D: 3
+Id: edexcel-geog-1ga0-5-015
 
 Q: Name the type of poor-quality, informally built housing found on the edges of cities in poorer countries.
 A: Slum
 Accept: Slums; Shanty town; Informal settlement; Squatter settlement; Favela
 Ref: 5.3
 D: 2
+Id: edexcel-geog-1ga0-5-016
 
 Q: Why does limited healthcare lower life expectancy in poorer countries?
 A: More deaths from preventable disease
 Accept: Disease goes untreated; Poor healthcare
 Ref: 5.3
 D: 3
+Id: edexcel-geog-1ga0-5-017
 
 Q: Name the money, goods or services given by one country to another to help development.
 A: Aid
 Accept: International aid
 Ref: 5.4
 D: 1
+Id: edexcel-geog-1ga0-5-018
 
 Q: Name aid given directly from one government to another government.
 A: Bilateral aid
 Accept: Bilateral
 Ref: 5.4
 D: 1
+Id: edexcel-geog-1ga0-5-019
 
 Q: Name aid given by governments to an international organisation like the UN to distribute.
 A: Multilateral aid
 Accept: Multilateral
 Ref: 5.4
 D: 2
+Id: edexcel-geog-1ga0-5-020
 
 Q: What do the letters TNC stand for in development?
 A: Transnational corporation
 Accept: Transnational company; Multinational corporation
 Ref: 5.4
 D: 1
+Id: edexcel-geog-1ga0-5-021
 
 Q: Name the type of development led by governments or TNCs, usually large and expensive.
 A: Top-down
 Accept: Top-down development
 Ref: 5.4
 D: 1
+Id: edexcel-geog-1ga0-5-022
 
 Q: Name the type of development led by local communities using small-scale local technology.
 A: Bottom-up
 Accept: Bottom-up development
 Ref: 5.4
 D: 1
+Id: edexcel-geog-1ga0-5-023
 
 Q: Name the term for the richer, more developed region of a country with most jobs and investment.
 A: Core
 Accept: Core region
 Ref: 5.5
 D: 1
+Id: edexcel-geog-1ga0-5-024
 
 Q: Name the term for the poorer region of a country, often far from the centre of economic activity.
 A: Periphery
 Accept: Peripheral region
 Ref: 5.5
 D: 1
+Id: edexcel-geog-1ga0-5-025
 
 Q: Why does development often happen unevenly across regions within one country?
 A: Investment gathers in cities and ports
 Accept: Unequal access to resources; Core attracts investment; Location
 Ref: 5.5
 D: 3
+Id: edexcel-geog-1ga0-5-026
 
 Q: Name the economic sector that includes farming, fishing and mining.
 A: Primary sector
 Accept: Primary
 Ref: 5.6
 D: 1
+Id: edexcel-geog-1ga0-5-027
 
 Q: Name the economic sector that turns raw materials into products, for example in factories.
 A: Secondary sector
 Accept: Secondary
 Ref: 5.6
 D: 1
+Id: edexcel-geog-1ga0-5-028
 
 Q: Name the economic sector that provides services such as retail and healthcare.
 A: Tertiary sector
 Accept: Tertiary
 Ref: 5.6
 D: 1
+Id: edexcel-geog-1ga0-5-029
 
 Q: Name the sector based on research and development and high-tech knowledge industries.
 A: Quaternary sector
 Accept: Quaternary
 Ref: 5.6
 D: 1
+Id: edexcel-geog-1ga0-5-030
 
 Q: Describe how an emerging country's sector balance usually changes as it develops.
 A: Fewer primary jobs, more secondary then tertiary
 Accept: Shift from farming to industry and services
 Ref: 5.6
 D: 3
+Id: edexcel-geog-1ga0-5-031
 
 Q: Describe what a growing middle class usually does to a developing economy.
 A: Raises spending and demand for goods
 Accept: Increases consumption; More spending
 Ref: 5.6
 D: 2
+Id: edexcel-geog-1ga0-5-032
 
 Q: Why does life expectancy usually rise as a country develops?
 A: Better healthcare, diet and sanitation
 Accept: Improved health care; Cleaner water
 Ref: 5.6
 D: 3
+Id: edexcel-geog-1ga0-5-033
 
 Q: Name the term for the gap between rich and poor people within a country.
 A: Inequality
 Accept: Income inequality
 Ref: 5.6
 D: 1
+Id: edexcel-geog-1ga0-5-034
 
 Q: Name the term for a population with a large share of people over retirement age.
 A: Ageing population
 Accept: Aging population
 Ref: 5.6
 D: 1
+Id: edexcel-geog-1ga0-5-035
 
 Q: Name the term for the buying of goods from other countries.
 A: Imports
 Accept: Importing
 Ref: 5.6
 D: 1
+Id: edexcel-geog-1ga0-5-036
 
 Q: Name the term for goods and services sold to other countries.
 A: Exports
 Accept: Exporting
 Ref: 5.6
 D: 1
+Id: edexcel-geog-1ga0-5-037
 
 Q: Name the term for a government's plan for how it deals with other countries.
 A: Foreign policy
 Accept: Foreign policies
 Ref: 5.7
 D: 1
+Id: edexcel-geog-1ga0-5-038
 
 Q: Name the term for an agreement between countries to defend one another.
 A: Military pact
 Accept: Military alliance; Defence pact
 Ref: 5.7
 D: 1
+Id: edexcel-geog-1ga0-5-039
 
 Q: Name the term for a disagreement between countries about who owns an area of land or sea.
 A: Territorial dispute
 Accept: Border dispute
 Ref: 5.7
 D: 1
+Id: edexcel-geog-1ga0-5-040
 
 Q: Why can rapid mobile phone growth help rural people in developing countries?
 A: Gives access to banking and information
 Accept: Mobile banking; Better communication
 Ref: 5.7
 D: 3
+Id: edexcel-geog-1ga0-5-041
 
 Q: Name the term for the spread of internet and phone links that join people to services.
 A: Connectivity
 Accept: Digital connectivity
 Ref: 5.7
 D: 1
+Id: edexcel-geog-1ga0-5-042
 
 Q: Why can rapid urban growth lower quality of life for some people?
 A: Overcrowding and poor services
 Accept: Slums; Pollution; Traffic
 Ref: 5.8
 D: 3
+Id: edexcel-geog-1ga0-5-043
 
 Q: Name the type of pollution caused by factory and vehicle emissions in rapidly growing cities.
 A: Air pollution
 Accept: Smog
 Ref: 5.8
 D: 2
+Id: edexcel-geog-1ga0-5-044
 
 Q: Name the clearing of forests that often follows rapid economic growth and farm expansion.
 A: Deforestation
 Ref: 5.8
 D: 2
+Id: edexcel-geog-1ga0-5-045
 
 Q: Describe one positive social impact of rapid development for a country's people.
 A: Better access to education and healthcare
 Accept: Higher living standards; Longer life expectancy
 Ref: 5.8
 D: 2
+Id: edexcel-geog-1ga0-5-046
 
 Q: Why do governments of rapidly developing countries invest in public transport and clean energy?
 A: Reduce pollution and improve quality of life
 Accept: Cut congestion; Cut emissions
 Ref: 5.8
 D: 3
+Id: edexcel-geog-1ga0-5-047
 
 Q: Name the term for a country with fast-growing industry and rising incomes but not yet fully developed.
 A: Emerging country
 Accept: Emerging economy; Newly emerging economy; NEE
 Ref: 5.6
 D: 2
+Id: edexcel-geog-1ga0-5-048

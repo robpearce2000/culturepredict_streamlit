@@ -7,225 +7,263 @@ A: Tundra
 Accept: Arctic tundra
 Ref: 3.1
 D: 1
+Id: edexcel-geog-1ga0-3-001
 
 Q: Name the forest biome of cold northern lands dominated by coniferous trees such as spruce and pine.
 A: Boreal forest
 Accept: Taiga; Boreal
 Ref: 3.1
 D: 1
+Id: edexcel-geog-1ga0-3-002
 
 Q: Which large-scale ecosystem is found in hot, dry areas with less than 250 mm of rain a year?
 A: Desert
 Accept: Hot desert
 Ref: 3.1
 D: 1
+Id: edexcel-geog-1ga0-3-003
 
 Q: Name the tropical grassland ecosystem with scattered trees and distinct wet and dry seasons.
 A: Savanna
 Accept: Savannah
 Ref: 3.1
 D: 1
+Id: edexcel-geog-1ga0-3-004
 
 Q: Why are tropical rainforests found near the equator rather than at high latitudes?
 A: Hot and wet all year
 Accept: High temperatures and rainfall all year; warm and wet climate
 Ref: 3.1
 D: 3
+Id: edexcel-geog-1ga0-3-005
 
 Q: Which local factor means vegetation changes from forest to tundra-like plants as you climb a mountain?
 A: Altitude
 Accept: Height; Height above sea level
 Ref: 3.1
 D: 2
+Id: edexcel-geog-1ga0-3-006
 
 Q: Name a resource from the biosphere used by people to make medicines.
 A: Plants
 Accept: Plant extracts; Rainforest plants; Herbs
 Ref: 3.2
 D: 1
+Id: edexcel-geog-1ga0-3-007
 
 Q: What do we call the global system made up of all living things and the places they live?
 A: The biosphere
 Accept: Biosphere
 Ref: 3.2
 D: 1
+Id: edexcel-geog-1ga0-3-008
 
 Q: Give one fuel resource that people take from the biosphere.
 A: Fuelwood
 Accept: Firewood; Wood; Charcoal; Peat
 Ref: 3.2
 D: 2
+Id: edexcel-geog-1ga0-3-009
 
 Q: Why does commercial exploitation of the biosphere for minerals and energy often damage ecosystems?
 A: Habitats are destroyed or polluted
 Accept: Habitat loss; Pollution; Land is cleared
 Ref: 3.2
 D: 3
+Id: edexcel-geog-1ga0-3-010
 
 Q: Name the UK ecosystem of open, treeless upland with heather and peaty soils.
 A: Moorland
 Accept: Moor; Moors
 Ref: 3.3
 D: 1
+Id: edexcel-geog-1ga0-3-011
 
 Q: Name the lowland UK ecosystem of heather, gorse and sandy, acidic soils.
 A: Heathland
 Accept: Heath; Heaths
 Ref: 3.3
 D: 1
+Id: edexcel-geog-1ga0-3-012
 
 Q: Name one resource that UK marine ecosystems provide for people.
 A: Fish
 Accept: Fishing; Food; Seafood; Shellfish; Oil and gas; Wind energy
 Ref: 3.3
 D: 2
+Id: edexcel-geog-1ga0-3-013
 
 Q: Name one human activity that is degrading UK marine ecosystems.
 A: Overfishing
 Accept: Pollution; Plastic pollution; Oil spills; Sewage discharge
 Ref: 3.3
 D: 2
+Id: edexcel-geog-1ga0-3-014
 
 Q: Why do moorland soils become acidic and peaty?
 A: Cold, waterlogged conditions slow decay
 Accept: Waterlogged and cold; Slow decomposition; Cool, wet climate
 Ref: 3.3
 D: 3
+Id: edexcel-geog-1ga0-3-015
 
 Q: What term describes the living parts of an ecosystem, such as plants and animals?
 A: Biotic
 Accept: Biotic factors
 Ref: 3.4
 D: 1
+Id: edexcel-geog-1ga0-3-016
 
 Q: What term describes the non-living parts of an ecosystem, such as climate and soil?
 A: Abiotic
 Accept: Abiotic factors
 Ref: 3.4
 D: 1
+Id: edexcel-geog-1ga0-3-017
 
 Q: In the Gersmehl nutrient cycle model for a tropical rainforest, which store is the largest?
 A: Biomass
 Accept: Vegetation; Plants
 Ref: 3.4
 D: 2
+Id: edexcel-geog-1ga0-3-018
 
 Q: In the rainforest nutrient cycle, why is the litter store small?
 A: Rapid decomposition in hot, wet conditions
 Accept: Fast decay; Decomposers work quickly; Hot and humid climate speeds decomposition
 Ref: 3.4
 D: 3
+Id: edexcel-geog-1ga0-3-019
 
 Q: Name the tallest rainforest layer, with trees that poke above the main canopy.
 A: Emergent layer
 Accept: Emergents; Emergent
 Ref: 3.4
 D: 1
+Id: edexcel-geog-1ga0-3-020
 
 Q: What adaptation of rainforest trees helps support their great height in shallow soils?
 A: Buttress roots
 Accept: Buttresses
 Ref: 3.4
 D: 2
+Id: edexcel-geog-1ga0-3-021
 
 Q: Why does the tropical rainforest have very high biodiversity?
 A: Warm, wet, stable climate all year
 Accept: Plenty of sunlight, heat and water; Many habitats and niches
 Ref: 3.4
 D: 3
+Id: edexcel-geog-1ga0-3-022
 
 Q: Name the economic activity that uses rainforest wood for building and furniture.
 A: Timber extraction
 Accept: Logging; Timber; Commercial logging
 Ref: 3.5
 D: 1
+Id: edexcel-geog-1ga0-3-023
 
 Q: Name one rainforest food product eaten around the world.
 A: Cocoa
 Accept: Coffee; Bananas; Brazil nuts; Chocolate; Nuts; Fruit
 Ref: 3.5
 D: 1
+Id: edexcel-geog-1ga0-3-024
 
 Q: Which service do rainforests provide for visitors, bringing money to local economies?
 A: Ecotourism
 Accept: Recreation; Tourism
 Ref: 3.5
 D: 1
+Id: edexcel-geog-1ga0-3-025
 
 Q: Give one economic cause of rainforest deforestation.
 A: Conversion to agriculture
 Accept: Cattle ranching; Soy farming; Palm oil plantations; Logging; Mining; Farming
 Ref: 3.5
 D: 2
+Id: edexcel-geog-1ga0-3-026
 
 Q: How can rising global temperatures and drought threaten rainforest biodiversity?
 A: Species die or are lost
 Accept: Trees die; Forest dieback; Species cannot adapt; Wildfire
 Ref: 3.5
 D: 3
+Id: edexcel-geog-1ga0-3-027
 
 Q: Which term describes forest use that meets present needs without damaging resources for future generations?
 A: Sustainable management
 Accept: Sustainable; Sustainability
 Ref: 3.5
 D: 2
+Id: edexcel-geog-1ga0-3-028
 
 Q: What word describes trees that shed all their leaves each autumn?
 A: Deciduous
 Accept: Deciduous trees
 Ref: 3.6
 D: 1
+Id: edexcel-geog-1ga0-3-029
 
 Q: In which season do deciduous trees conserve water by shedding their leaves?
 A: Winter
 Accept: Autumn into winter
 Ref: 3.6
 D: 2
+Id: edexcel-geog-1ga0-3-030
 
 Q: Name the animal adaptation in which some woodland mammals sleep through winter.
 A: Hibernation
 Accept: Hibernate
 Ref: 3.6
 D: 1
+Id: edexcel-geog-1ga0-3-031
 
 Q: Why are deciduous woodlands less biodiverse than rainforests?
 A: Colder winters and a shorter growing season
 Accept: Seasonal climate; Fewer species can survive winter
 Ref: 3.6
 D: 3
+Id: edexcel-geog-1ga0-3-032
 
 Q: Give one good provided by deciduous woodlands.
 A: Timber
 Accept: Fuel; Fuelwood; Firewood; Wood
 Ref: 3.7
 D: 1
+Id: edexcel-geog-1ga0-3-033
 
 Q: Give one social or economic cause of deforestation of UK deciduous woodland.
 A: Urbanisation
 Accept: Housing; Population growth; Timber extraction; Agricultural change; Farming
 Ref: 3.7
 D: 2
+Id: edexcel-geog-1ga0-3-034
 
 Q: Give one way climate change could threaten deciduous woodlands.
 A: Drought stress
 Accept: Drought; Pests; New diseases; Trees leaf earlier; Changing species mix; Warmer winters
 Ref: 3.7
 D: 3
+Id: edexcel-geog-1ga0-3-035
 
 Q: Why can planting trees on cleared woodland sites help sustainable management?
 A: Replaces timber and restores habitats
 Accept: Keeps woodland for future generations; Restores biodiversity; Renewable timber supply
 Ref: 3.7
 D: 3
+Id: edexcel-geog-1ga0-3-036
 
 Q: Explain why deciduous woodland soils are usually more fertile than rainforest soils.
 A: Leaf litter returns nutrients to the soil
 Accept: Leaf fall adds nutrients; Less leaching; Larger litter store; Humus builds up
 Ref: 3.6
 D: 3
+Id: edexcel-geog-1ga0-3-037
 
 Q: Explain why logging a rainforest for profit may not be sustainable.
 A: Trees are lost faster than they regrow
 Accept: Biodiversity loss; Soil erosion; Habitats destroyed
 Ref: 3.5
 D: 3
+Id: edexcel-geog-1ga0-3-038

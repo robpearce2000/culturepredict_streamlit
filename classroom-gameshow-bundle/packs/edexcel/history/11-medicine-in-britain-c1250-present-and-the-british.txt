@@ -7,106 +7,124 @@ A: The Theory of the Four Humours
 Accept: Four Humours; Humours; Humoural theory
 Ref: 11.1.1
 D: 1
+Id: edexcel-hist-11-001
 
 Q: What was the miasma theory of disease?
 A: Disease was caused by bad air
 Accept: Bad smells; Foul air; Disease spread by bad air
 Ref: 11.1.1
 D: 2
+Id: edexcel-hist-11-002
 
 Q: Why did the Church's teaching help Galen's ideas to last so long in medieval England?
 A: The Church approved his ideas and discouraged challenge
 Accept: Church supported Galen; Church taught his ideas; Church banned dissection
 Ref: 11.1.1
 D: 3
+Id: edexcel-hist-11-003
 
 Q: Which treatment, used to balance the humours, involved cutting a vein to remove blood?
 A: Bloodletting
 Accept: Blood letting; Venesection; Phlebotomy
 Ref: 11.1.2
 D: 1
+Id: edexcel-hist-11-004
 
 Q: Which medieval practitioner, who was often also a barber, carried out bloodletting and simple surgery?
 A: Barber surgeon
 Accept: Barber-surgeon
 Ref: 11.1.2
 D: 1
+Id: edexcel-hist-11-005
 
 Q: What was the job of a medieval apothecary?
 A: Preparing and selling herbal remedies
 Accept: Made and sold medicines; Sold herbs and medicines; Prepared medicines
 Ref: 11.1.2
 D: 2
+Id: edexcel-hist-11-006
 
 Q: Why did most medieval people rely on home remedies and care from family or the community rather than physicians?
 A: Physicians were expensive
 Accept: Cost; Too costly; Physicians were few and costly
 Ref: 11.1.2
 D: 3
+Id: edexcel-hist-11-007
 
 Q: Which year did the Black Death first reach England: 1348, 1349 or 1350?
 A: 1348
 Ref: 11.1.3
 D: 1
+Id: edexcel-hist-11-008
 
 Q: Which religious group whipped themselves in processions in 1348-49, hoping to win God's forgiveness during the Black Death?
 A: Flagellants
 Ref: 11.1.3
 D: 1
+Id: edexcel-hist-11-009
 
 Q: Why did the Black Death's medical treatments fail?
 A: Causes of the disease were not understood
 Accept: Nobody knew the cause; They did not know it was caused by bacteria carried by fleas; Wrong theories of cause
 Ref: 11.1.3
 D: 3
+Id: edexcel-hist-11-010
 
 Q: Which society of scientists, founded in London in 1660, helped spread new ideas through meetings and publications?
 A: The Royal Society
 Accept: Royal Society
 Ref: 11.2.1
 D: 1
+Id: edexcel-hist-11-011
 
 Q: Which English doctor, known as the English Hippocrates, improved diagnosis by carefully observing symptoms to tell diseases apart?
 A: Thomas Sydenham
 Accept: Sydenham
 Ref: 11.2.1
 D: 2
+Id: edexcel-hist-11-012
 
 Q: How did the printing press help change medical ideas in the sixteenth and seventeenth centuries?
 A: Spread new books and ideas more quickly
 Accept: Books and ideas spread faster; Allowed ideas to be shared widely; Made books cheaper
 Ref: 11.2.1
 D: 3
+Id: edexcel-hist-11-013
 
 Q: Which Belgian-born anatomist published an accurate book on the human body, On the Fabric of the Human Body, in 1543?
 A: Vesalius
 Accept: Andreas Vesalius
 Ref: 11.2.2
 D: 1
+Id: edexcel-hist-11-014
 
 Q: How did Vesalius's work show that Galen had made mistakes?
 A: Dissected human bodies and found Galen's errors
 Accept: By dissecting human bodies; Galen used animals
 Ref: 11.2.2
 D: 2
+Id: edexcel-hist-11-015
 
 Q: Why did Vesalius's work have little immediate effect on medical treatment?
 A: It did not change how disease was treated
 Accept: Treatments stayed the same; No new treatments; Causes still unknown; The causes of disease were still unknown
 Ref: 11.2.2
 D: 3
+Id: edexcel-hist-11-016
 
 Q: Which doctor to King Charles I proved in 1628 that blood circulates around the body?
 A: William Harvey
 Accept: Harvey
 Ref: 11.2.3
 D: 1
+Id: edexcel-hist-11-017
 
 Q: Which 1628 book by Harvey set out his discovery of the circulation of the blood?
 A: On the Motion of the Heart and Blood
 Accept: De Motu Cordis; The Motion of the Heart
 Ref: 11.2.3
 D: 2
+Id: edexcel-hist-11-018
 
 Q: According to Galen, what happened to blood once the body had used it?
 A: It was used up
@@ -114,203 +132,237 @@ Accept: Burned up; Consumed; Used up and not recirculated
 Ref: 11.2.3
 D: 2
 Note: Harvey showed blood circulates; Galen taught it was made in the liver and consumed.
+Id: edexcel-hist-11-019
 
 Q: What marking was painted on the doors of houses with plague victims during the Great Plague of 1665?
 A: A red cross
 Accept: Red cross; Cross
 Ref: 11.2.3
 D: 1
+Id: edexcel-hist-11-020
 
 Q: Which French scientist published his Germ Theory in 1861, showing that microbes cause decay?
 A: Louis Pasteur
 Accept: Pasteur
 Ref: 11.3.1
 D: 1
+Id: edexcel-hist-11-021
 
 Q: Which German scientist identified the microbe causing anthrax in 1876 and developed staining techniques for microbes?
 A: Robert Koch
 Accept: Koch
 Ref: 11.3.1
 D: 2
+Id: edexcel-hist-11-022
 
 Q: Why was Germ Theory so important for the development of medicine?
 A: It showed microbes cause disease
 Accept: Identified the real cause of disease; Led to the search for cures; It led to treatments and vaccines for specific microbes; Showed the cause of disease
 Ref: 11.3.1
 D: 3
+Id: edexcel-hist-11-023
 
 Q: Which nurse set up a training school for nurses at St Thomas's Hospital in 1860?
 A: Florence Nightingale
 Accept: Nightingale
 Ref: 11.3.2
 D: 1
+Id: edexcel-hist-11-024
 
 Q: Which substance did Joseph Lister spray in operating theatres from the 1860s as an antiseptic?
 A: Carbolic acid
 Accept: Phenol; Carbolic
 Ref: 11.3.2
 D: 1
+Id: edexcel-hist-11-025
 
 Q: Which Scottish doctor first used chloroform as an anaesthetic in 1847?
 A: James Simpson
 Accept: Simpson; James Young Simpson
 Ref: 11.3.2
 D: 2
+Id: edexcel-hist-11-026
 
 Q: What did the 1875 Public Health Act require local councils to provide?
 A: Clean water and sewers
 Accept: Sewers and clean water; Drains and clean water; Sanitation; Clean water, sewers and rubbish collection
 Ref: 11.3.2
 D: 2
+Id: edexcel-hist-11-027
 
 Q: Why did anaesthetics alone not make surgery much safer in the mid-nineteenth century?
 A: Infection killed many patients
 Accept: Infection; Sepsis; Patients died from infection; Many died from infection
 Ref: 11.3.2
 D: 3
+Id: edexcel-hist-11-028
 
 Q: What did Edward Jenner use in 1796 to protect James Phipps against smallpox?
 A: Cowpox
 Accept: Cowpox pus; Cowpox matter
 Ref: 11.3.3
 D: 1
+Id: edexcel-hist-11-029
 
 Q: Which doctor linked the Soho cholera outbreak of 1854 to the Broad Street water pump?
 A: John Snow
 Accept: Snow
 Ref: 11.3.3
 D: 1
+Id: edexcel-hist-11-030
 
 Q: What did John Snow do to the Broad Street pump to end the outbreak?
 A: Had the handle removed
 Accept: Removed the handle; Took the handle off; Handle taken off
 Ref: 11.3.3
 D: 2
+Id: edexcel-hist-11-031
 
 Q: Why did many people at first reject Snow's theory about the cause of cholera?
 A: They believed in miasma
 Accept: Miasma theory; They thought bad air caused it; Germ theory not yet accepted
 Ref: 11.3.3
 D: 3
+Id: edexcel-hist-11-032
 
 Q: Which project, completed in 2003, mapped all the human genes?
 A: The Human Genome Project
 Accept: Human Genome Project; Genome Project
 Ref: 11.4.1
 D: 2
+Id: edexcel-hist-11-033
 
 Q: Why are blood tests and scans useful for diagnosis?
 A: They detect illness early and accurately
 Accept: Early diagnosis; Show inside the body; Find problems early; More accurate diagnosis
 Ref: 11.4.1
 D: 3
+Id: edexcel-hist-11-034
 
 Q: Which minister for Health launched the National Health Service in 1948?
 A: Aneurin Bevan
 Accept: Bevan; Nye Bevan
 Ref: 11.4.2
 D: 1
+Id: edexcel-hist-11-035
 
 Q: What was the key principle of the NHS when it began in 1948?
 A: Free healthcare for everyone
 Accept: Free at the point of use; Free treatment for all; Free healthcare
 Ref: 11.4.2
 D: 2
+Id: edexcel-hist-11-036
 
 Q: What name did Paul Ehrlich give to chemicals such as Salvarsan 606, which targeted a specific microbe?
 A: Magic bullets
 Accept: Magic bullet
 Ref: 11.4.2
 D: 2
+Id: edexcel-hist-11-037
 
 Q: Why were mass vaccination programmes, such as against polio, more effective after 1948?
 A: The NHS provided them free to all
 Accept: Free and widely available; The NHS made them free; Government organised them
 Ref: 11.4.2
 D: 3
+Id: edexcel-hist-11-038
 
 Q: Which Scottish scientist noticed in 1928 that a mould killed bacteria on a petri dish?
 A: Alexander Fleming
 Accept: Fleming
 Ref: 11.4.3
 D: 1
+Id: edexcel-hist-11-039
 
 Q: Which two scientists led the Oxford team that turned penicillin into a usable drug around 1940?
 A: Florey and Chain
 Accept: Howard Florey and Ernst Chain; Ernst Chain and Howard Florey; Chain and Florey
 Ref: 11.4.3
 D: 2
+Id: edexcel-hist-11-040
 
 Q: Why was penicillin not mass-produced until the Second World War?
 A: Wartime demand and funding were needed
 Accept: Government and US funding; Wartime demand; Needed money and industry; War created demand; It needed large-scale production
 Ref: 11.4.3
 D: 3
+Id: edexcel-hist-11-041
 
 Q: Which part of the Western Front, where gas was first used by Germans in 1915, was the salient around a Belgian town?
 A: Ypres
 Accept: Ypres salient
 Ref: 11.HE.1
 D: 1
+Id: edexcel-hist-11-042
 
 Q: Why did the muddy terrain of Flanders make it difficult to treat wounded soldiers?
 A: Mud slowed the evacuation of the wounded
 Accept: Transport and stretcher carrying was slow; Hard to move the wounded; Mud made transport hard
 Ref: 11.HE.1
 D: 3
+Id: edexcel-hist-11-043
 
 Q: Which foot condition, caused by standing for long periods in cold, wet trenches, could lead to amputation?
 A: Trench foot
 Accept: Trench-foot
 Ref: 11.HE.1
 D: 1
+Id: edexcel-hist-11-044
 
 Q: What did the letters RAMC stand for?
 A: Royal Army Medical Corps
 Ref: 11.HE.1
 D: 1
+Id: edexcel-hist-11-045
 
 Q: Which quarry became an underground hospital for the Battle of Arras in 1917?
 A: Wellington Quarry
 Accept: Carriere Wellington; Wellington Tunnels; Wellington quarry
 Ref: 11.HE.1
 D: 2
+Id: edexcel-hist-11-046
 
 Q: Which splint, promoted by Robert Jones, greatly reduced deaths from broken thigh bones?
 A: Thomas splint
 Accept: The Thomas splint
 Ref: 11.HE.1
 D: 1
+Id: edexcel-hist-11-047
 
 Q: At which 1917 battle was a blood bank created for British casualties?
 A: Cambrai
 Accept: Battle of Cambrai
 Ref: 11.HE.1
 D: 2
+Id: edexcel-hist-11-048
 
 Q: Why did mobile X-ray units help surgeons on the Western Front?
 A: They located shrapnel and bullets
 Accept: Showed where shrapnel was; Found bullets and shrapnel; Located shrapnel; Located bullets
 Ref: 11.HE.1
 D: 3
+Id: edexcel-hist-11-049
 
 Q: Which type of source, such as a soldier's diary or letters, is written by someone who was there?
 A: Primary source
 Accept: Primary; A primary source
 Ref: 11.HE.2
 D: 1
+Id: edexcel-hist-11-050
 
 Q: Which army record, kept by each unit, records its daily activities in the trenches?
 A: War diary
 Accept: Unit war diary
 Ref: 11.HE.2
 D: 2
+Id: edexcel-hist-11-051
 
 Q: Why might a soldier's letter home give an unreliable picture of conditions at the front?
 A: Censored or did not want to worry family
 Accept: Censorship; He was censored; Hid the worst to protect family; Written to reassure family
 Ref: 11.HE.2
 D: 3
+Id: edexcel-hist-11-052
 
 
 Q: Which scan, using strong magnets and radio waves, gives detailed images inside the body?
@@ -318,16 +370,19 @@ A: MRI scan
 Accept: MRI; Magnetic resonance imaging
 Ref: 11.4.1
 D: 1
+Id: edexcel-hist-11-053
 
 Q: Which molecule's double-helix structure did Watson and Crick describe in 1953?
 A: DNA
 Accept: Deoxyribonucleic acid
 Ref: 11.4.1
 D: 2
+Id: edexcel-hist-11-054
 
 Q: Why is early diagnosis of lung cancer so important?
 A: Treatment is more likely to succeed
 Accept: Higher survival chance; Can be treated before it spreads; Better chance of cure
 Ref: 11.4.3
 D: 3
+Id: edexcel-hist-11-055
 

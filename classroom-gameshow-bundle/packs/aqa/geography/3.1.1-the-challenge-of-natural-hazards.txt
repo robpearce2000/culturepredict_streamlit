@@ -6,12 +6,14 @@ Q: What term describes a natural event that threatens people or property, such a
 A: Natural hazard
 Ref: 3.1.1.1.1
 D: 1
+Id: aqa-geog-3.1.1-001
 
 Q: Is a volcanic eruption classed as a tectonic, weather or climate hazard?
 A: Tectonic
 Accept: Tectonic hazard; Geological
 Ref: 3.1.1.1.1
 D: 1
+Id: aqa-geog-3.1.1-002
 
 Q: Name one factor, linked to a country's wealth or planning, that increases the risk from a natural hazard.
 A: Poverty
@@ -19,189 +21,221 @@ Accept: Low income; Poor building quality; Lack of preparation; Lack of warning 
 Ref: 3.1.1.1.1
 D: 2
 Note: Accept any sensible factor that raises vulnerability or exposure.
+Id: aqa-geog-3.1.1-003
 
 Q: Why does a high population density increase the risk from a natural hazard?
 A: More people exposed to harm
 Accept: More people are affected; More people at risk; More deaths and damage
 Ref: 3.1.1.1.1
 D: 3
+Id: aqa-geog-3.1.1-004
 
 Q: What name is given to the theory that the Earth's crust is split into moving slabs?
 A: Plate tectonics
 Accept: Plate tectonic theory
 Ref: 3.1.1.2.1
 D: 1
+Id: aqa-geog-3.1.1-005
 
 Q: Along which type of feature do most earthquakes and volcanoes occur?
 A: Plate margins
 Accept: Plate boundaries
 Ref: 3.1.1.2.1
 D: 1
+Id: aqa-geog-3.1.1-006
 
 Q: Name the type of plate margin where two plates move apart.
 A: Constructive
 Accept: Constructive margin; Divergent
 Ref: 3.1.1.2.1
 D: 1
+Id: aqa-geog-3.1.1-007
 
 Q: Name the type of plate margin where plates slide past each other, causing earthquakes but no volcanoes.
 A: Conservative
 Accept: Conservative margin; Transform
 Ref: 3.1.1.2.1
 D: 1
+Id: aqa-geog-3.1.1-008
 
 Q: At a destructive margin, which plate is subducted: the denser oceanic plate or the lighter continental plate?
 A: Oceanic plate
 Accept: The denser oceanic plate; Oceanic
 Ref: 3.1.1.2.1
 D: 2
+Id: aqa-geog-3.1.1-009
 
 Q: Why are volcanoes common at destructive plate margins?
 A: Subducted plate melts, magma rises
 Accept: Magma rises to the surface; Plate melts forming magma; Melting of the subducting plate
 Ref: 3.1.1.2.1
 D: 3
+Id: aqa-geog-3.1.1-010
 
 Q: What name is given to the damage caused directly by an earthquake, such as buildings collapsing?
 A: Primary effects
 Accept: Primary effect; Primary impacts
 Ref: 3.1.1.2.2
 D: 1
+Id: aqa-geog-3.1.1-011
 
 Q: Are fires caused by broken gas pipes after an earthquake primary or secondary effects?
 A: Secondary
 Accept: Secondary effects
 Ref: 3.1.1.2.2
 D: 2
+Id: aqa-geog-3.1.1-012
 
 Q: Is rescuing people from collapsed buildings an immediate or a long-term response?
 A: Immediate
 Accept: Immediate response
 Ref: 3.1.1.2.2
 D: 1
+Id: aqa-geog-3.1.1-013
 
 Q: Is rebuilding homes and infrastructure after an earthquake an immediate or a long-term response?
 A: Long-term
 Accept: Long term; Long-term response
 Ref: 3.1.1.2.2
 D: 1
+Id: aqa-geog-3.1.1-014
 
 Q: In which country did the magnitude 7.0 earthquake of January 2010, near Port-au-Prince, occur?
 A: Haiti
 Ref: 3.1.1.2.2
 D: 1
+Id: aqa-geog-3.1.1-015
 
 Q: In which country is the city of Christchurch, hit by a damaging earthquake in 2011?
 A: New Zealand
 Ref: 3.1.1.2.2
 D: 1
+Id: aqa-geog-3.1.1-016
 
 Q: Why did a tectonic hazard of similar strength usually cause fewer deaths in a wealthy country than in a poor one?
 A: Better building standards and emergency services
 Accept: Stronger buildings; Better preparation; Better building codes; Better emergency response; Better healthcare
 Ref: 3.1.1.2.2
 D: 3
+Id: aqa-geog-3.1.1-017
 
 Q: Give one reason why people choose to live near an active volcano.
 A: Fertile volcanic soils
 Accept: Fertile soil; Tourism; Jobs from tourism; Geothermal energy; Mineral resources; Cannot afford to move; Family ties
 Ref: 3.1.1.2.3
 D: 2
+Id: aqa-geog-3.1.1-018
 
 Q: What word describes using seismometers and gas or ground-tilt measurements to watch a volcano for warning signs?
 A: Monitoring
 Accept: Monitor
 Ref: 3.1.1.2.3
 D: 1
+Id: aqa-geog-3.1.1-019
 
 Q: Name one design feature that helps a building to withstand an earthquake.
 A: Cross bracing
 Accept: Base isolators; Shock absorbers; Flexible foundations; Rubber foundations; Reinforced concrete; Automatic shutters; Counterweights; Deep foundations
 Ref: 3.1.1.2.3
 D: 2
+Id: aqa-geog-3.1.1-020
 
 Q: What type of planning reduces earthquake risk by controlling where buildings and key services are placed?
 A: Land-use planning
 Accept: Land use planning; Zoning; Hazard zoning
 Ref: 3.1.1.2.3
 D: 2
+Id: aqa-geog-3.1.1-021
 
 Q: Name the circulation cell that lies between the equator and about 30 degrees north or south.
 A: Hadley cell
 Accept: Hadley
 Ref: 3.1.1.3.1
 D: 1
+Id: aqa-geog-3.1.1-022
 
 Q: Is air pressure at the equator generally high or low?
 A: Low
 Accept: Low pressure
 Ref: 3.1.1.3.1
 D: 1
+Id: aqa-geog-3.1.1-023
 
 Q: Name the surface winds that blow towards the equator from about 30 degrees north and south.
 A: Trade winds
 Accept: Trades; Tropical easterlies
 Ref: 3.1.1.3.1
 D: 2
+Id: aqa-geog-3.1.1-024
 
 Q: Why is air pressure low at the equator?
 A: Air is heated and rises
 Accept: Hot air rises; Rising warm air; Heated air rises
 Ref: 3.1.1.3.1
 D: 3
+Id: aqa-geog-3.1.1-025
 
 Q: Over oceans warmer than about what temperature in degrees Celsius can tropical storms form?
 A: 27 °C
 Accept: 27; 27 degrees; 26.5 °C; 26 to 27 °C
 Ref: 3.1.1.3.2
 D: 2
+Id: aqa-geog-3.1.1-026
 
 Q: Which force, caused by the Earth's rotation, makes a tropical storm spin?
 A: Coriolis effect
 Accept: Coriolis force; Coriolis
 Ref: 3.1.1.3.2
 D: 2
+Id: aqa-geog-3.1.1-027
 
 Q: Name the calm, clear, sinking-air centre of a tropical storm.
 A: The eye
 Accept: Eye
 Ref: 3.1.1.3.2
 D: 1
+Id: aqa-geog-3.1.1-028
 
 Q: What name is given to a tropical storm that forms in the Pacific Ocean near Asia?
 A: Typhoon
 Ref: 3.1.1.3.2
 D: 1
+Id: aqa-geog-3.1.1-029
 
 Q: How might a warming climate change the intensity of tropical storms?
 A: More intense
 Accept: Stronger; Greater intensity; Increase intensity; Higher wind speeds
 Ref: 3.1.1.3.2
 D: 3
+Id: aqa-geog-3.1.1-030
 
 Q: Why do tropical storms not form right on the equator?
 A: Not enough Coriolis effect
 Accept: No Coriolis force; Too little spin; Coriolis effect too weak
 Ref: 3.1.1.3.2
 D: 3
+Id: aqa-geog-3.1.1-031
 
 Q: Why do warm ocean temperatures help a tropical storm to develop?
 A: Evaporation supplies heat and moisture
 Accept: Warm moist air rises; Provides energy; Evaporation gives latent heat; Lots of water vapour
 Ref: 3.1.1.3.2
 D: 3
+Id: aqa-geog-3.1.1-032
 
 Q: Why does a tropical storm weaken quickly once it moves over land?
 A: Cut off from warm ocean water
 Accept: No moisture or heat supply; Loses its energy source; No warm water; Friction with land
 Ref: 3.1.1.3.2
 D: 3
+Id: aqa-geog-3.1.1-033
 
 Q: Which Philippine-hitting tropical storm of November 2013 caused a huge storm surge in Tacloban?
 A: Typhoon Haiyan
 Accept: Haiyan
 Ref: 3.1.1.3.3
 D: 1
+Id: aqa-geog-3.1.1-034
 
 Q: Is damage to buildings from strong winds a primary or a secondary effect of a tropical storm?
 A: Primary
@@ -209,127 +243,149 @@ Accept: Primary effect
 Ref: 3.1.1.3.3
 D: 2
 Note: Primary effects are caused directly by the storm; disease that follows is secondary.
+Id: aqa-geog-3.1.1-035
 
 Q: Name one secondary effect of a tropical storm on people.
 A: Spread of disease
 Accept: Disease; Food shortages; Landslides; Loss of jobs; Fires; Contaminated water; Homelessness
 Ref: 3.1.1.3.3
 D: 2
+Id: aqa-geog-3.1.1-036
 
 Q: What word describes tracking a tropical storm with satellites to give people warning?
 A: Monitoring
 Accept: Monitor; Tracking
 Ref: 3.1.1.3.3
 D: 1
+Id: aqa-geog-3.1.1-037
 
 Q: Why do evacuation warnings reduce deaths from tropical storms?
 A: People move to safety before it hits
 Accept: People can evacuate; People leave the area; People prepare in time
 Ref: 3.1.1.3.3
 D: 3
+Id: aqa-geog-3.1.1-038
 
 Q: Name one type of extreme weather hazard that affects the UK, other than flooding.
 A: Heatwave
 Accept: Drought; Storms; Gales; Snow; Cold spell; Heavy snow; Ice; Beast from the East; Strong winds
 Ref: 3.1.1.3.4
 D: 1
+Id: aqa-geog-3.1.1-039
 
 Q: What name is given to a low-pressure weather system that brings strong winds and heavy rain to the UK?
 A: Depression
 Accept: Low pressure system; Low pressure; Storm; Atlantic depression
 Ref: 3.1.1.3.4
 D: 2
+Id: aqa-geog-3.1.1-040
 
 Q: What name is given to a long period of very little rainfall that causes water shortages?
 A: Drought
 Accept: Droughts
 Ref: 3.1.1.3.4
 D: 1
+Id: aqa-geog-3.1.1-041
 
 Q: Which low-lying area of southwest England suffered long-lasting floods in winter 2013 to 2014?
 A: Somerset Levels
 Accept: The Somerset Levels; Somerset
 Ref: 3.1.1.3.5
 D: 1
+Id: aqa-geog-3.1.1-042
 
 Q: What name is given to removing silt from a river bed to increase its capacity and reduce flood risk?
 A: Dredging
 Accept: Dredge
 Ref: 3.1.1.3.5
 D: 2
+Id: aqa-geog-3.1.1-043
 
 Q: Give one piece of evidence that UK weather is becoming more extreme.
 A: Record high temperatures
 Accept: More heatwaves; Wetter winters; More flooding; Warmest years recorded recently; More extreme rainfall; Hottest day record broken
 Ref: 3.1.1.3.5
 D: 3
+Id: aqa-geog-3.1.1-044
 
 Q: Give one social impact of the 2013 to 2014 floods on the Somerset Levels.
 A: Homes flooded
 Accept: People evacuated; Roads cut off; Villages isolated; Schools closed; Stress; Disruption to transport; People displaced
 Ref: 3.1.1.3.5
 D: 2
+Id: aqa-geog-3.1.1-045
 
 Q: What type of weather system brought the repeated heavy rain that caused the Somerset Levels floods?
 A: Depressions
 Accept: Atlantic depressions; Low pressure systems; A series of storms; Series of depressions
 Ref: 3.1.1.3.5
 D: 3
+Id: aqa-geog-3.1.1-046
 
 Q: What name is given to the most recent geological period, which began about 2.6 million years ago?
 A: Quaternary
 Accept: Quaternary period
 Ref: 3.1.1.4.1
 D: 1
+Id: aqa-geog-3.1.1-047
 
 Q: Which evidence, drilled from polar ice, records past temperatures and atmospheric gases?
 A: Ice cores
 Accept: Ice core; Tree rings; Pollen analysis; Pollen; Sea level records; Temperature records; Historical records; Satellite data; Ocean sediments
 Ref: 3.1.1.4.1
 D: 2
+Id: aqa-geog-3.1.1-048
 
 Q: Name one natural cause of climate change other than changes in the Earth's orbit.
 A: Volcanic activity
 Accept: Volcanic eruptions; Solar output; Sunspots; Changes in solar radiation; Volcanoes
 Ref: 3.1.1.4.1
 D: 2
+Id: aqa-geog-3.1.1-049
 
 Q: Which gas released by burning fossil fuels is the main human cause of enhanced global warming?
 A: Carbon dioxide
 Accept: CO2; CO₂
 Ref: 3.1.1.4.1
 D: 1
+Id: aqa-geog-3.1.1-050
 
 Q: Why does deforestation contribute to climate change?
 A: Fewer trees absorb carbon dioxide
 Accept: Less CO2 absorbed; Less photosynthesis; Burning trees releases CO2; Fewer trees to take in carbon dioxide
 Ref: 3.1.1.4.1
 D: 3
+Id: aqa-geog-3.1.1-051
 
 Q: Is planting trees an example of climate change mitigation or adaptation?
 A: Mitigation
 Ref: 3.1.1.4.2
 D: 2
+Id: aqa-geog-3.1.1-052
 
 Q: Is building sea walls to protect against rising sea levels mitigation or adaptation?
 A: Adaptation
 Ref: 3.1.1.4.2
 D: 2
+Id: aqa-geog-3.1.1-053
 
 Q: What name is given to the technology that traps carbon dioxide from power stations and stores it underground?
 A: Carbon capture
 Accept: Carbon capture and storage; CCS
 Ref: 3.1.1.4.2
 D: 1
+Id: aqa-geog-3.1.1-054
 
 Q: Name an international agreement aimed at reducing greenhouse gas emissions.
 A: Paris Agreement
 Accept: Kyoto Protocol; Kyoto; Paris Accord; Paris Climate Agreement
 Ref: 3.1.1.4.2
 D: 2
+Id: aqa-geog-3.1.1-055
 
 Q: How does changing to drought-resistant crops help people adapt to climate change?
 A: Crops survive in drier conditions
 Accept: Still produce food in drought; Keeps food supply secure; Less water needed
 Ref: 3.1.1.4.2
 D: 3
+Id: aqa-geog-3.1.1-056

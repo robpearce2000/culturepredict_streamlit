@@ -7,53 +7,62 @@ A: NHS
 Accept: National Health Service; The NHS
 Ref: 13.4.2
 D: 1
+Id: edexcel-hist-13-001
 
 Q: Which Conservative MP made the 1968 'Rivers of Blood' speech against immigration?
 A: Enoch Powell
 Accept: Powell
 Ref: 13.4.2
 D: 1
+Id: edexcel-hist-13-002
 
 Q: Why did medieval English kings value Jewish moneylenders despite their unpopularity?
 A: Kings could tax them heavily
 Accept: Kings needed money; They provided loans; Royal finance; Raise royal finance
 Ref: 13.1.1
 D: 3
+Id: edexcel-hist-13-003
 
 Q: Which English industry's wealth attracted Flemish weavers and other foreign craftsmen in the Middle Ages?
 A: Wool
 Accept: Wool trade; Cloth; Wool industry
 Ref: 13.1.1
 D: 1
+Id: edexcel-hist-13-004
 
 Q: What term describes the community of Christian lands in medieval Europe that England belonged to?
 A: Christendom
 Ref: 13.1.1
 D: 2
+Id: edexcel-hist-13-005
 
 Q: What term described a foreign-born person living in medieval England, with fewer legal rights?
 A: Alien
 Accept: Aliens
 Ref: 13.1.2
 D: 1
+Id: edexcel-hist-13-006
 
 Q: Which region of eastern England was ruled under Viking law after the ninth-century settlements?
 A: Danelaw
 Accept: The Danelaw
 Ref: 13.1.2
 D: 1
+Id: edexcel-hist-13-007
 
 Q: In which year did the Black Death first reach England?
 A: 1348
 Accept: 1348-49; 1348-1349
 Ref: 13.1.2
 D: 1
+Id: edexcel-hist-13-008
 
 Q: What was the Viking name for the city of York?
 A: Jorvik
 Accept: Jórvík; Jorvic
 Ref: 13.1.3
 D: 1
+Id: edexcel-hist-13-009
 
 Q: In about which year did a Viking army capture York?
 A: 866
@@ -61,174 +70,204 @@ Accept: 867; About 866
 Ref: 13.1.3
 D: 2
 Note: Accept 866 or 867.
+Id: edexcel-hist-13-010
 
 Q: Why was York well placed for Viking trade?
 A: River Ouse linked it to the sea
 Accept: River links to North Sea; On a river route; Rivers
 Ref: 13.1.3
 D: 3
+Id: edexcel-hist-13-011
 
 Q: Which French Protestants fled persecution to England in the sixteenth and seventeenth centuries?
 A: Huguenots
 Accept: Huguenot
 Ref: 13.2.1
 D: 1
+Id: edexcel-hist-13-012
 
 Q: Which Elizabethan sea captain made the first English slave-trading voyages in the 1560s?
 A: John Hawkins
 Accept: Hawkins; Sir John Hawkins
 Ref: 13.2.1
 D: 2
+Id: edexcel-hist-13-013
 
 Q: Which queen's religious settlement of 1559 made England a mainly Protestant nation?
 A: Elizabeth I
 Accept: Elizabeth 1; Queen Elizabeth; Elizabeth
 Ref: 13.2.1
 D: 2
+Id: edexcel-hist-13-014
 
 Q: What did Tudor English people often call foreign migrants, such as Dutch and Walloon church communities?
 A: Strangers
 Accept: Stranger; Stranger churches
 Ref: 13.2.2
 D: 2
+Id: edexcel-hist-13-015
 
 Q: What name was given to the lighter cloths that Flemish and Walloon weavers introduced?
 A: New Draperies
 Accept: The New Draperies
 Ref: 13.2.2
 D: 2
+Id: edexcel-hist-13-016
 
 Q: Which Dutch engineer led the draining of the Fens in the 1630s, improving farmland?
 A: Cornelius Vermuyden
 Accept: Vermuyden
 Ref: 13.2.2
 D: 2
+Id: edexcel-hist-13-017
 
 Q: Why did Flemish and Walloon Protestants flee to Sandwich and Canterbury in the 1560s?
 A: Persecution by Catholic rulers at home
 Accept: Religious persecution; Fleeing Spanish Catholic rule; Religion
 Ref: 13.2.3
 D: 3
+Id: edexcel-hist-13-018
 
 Q: In which year was the Edict of Nantes revoked, sending Huguenots into exile?
 A: 1685
 Ref: 13.2.3
 D: 2
+Id: edexcel-hist-13-019
 
 Q: Which area of London became famous for Huguenot silk weaving?
 A: Spitalfields
 Ref: 13.2.3
 D: 2
+Id: edexcel-hist-13-020
 
 Q: Which crop failure caused the Great Famine that drove many Irish to Britain in the 1840s?
 A: Potato
 Accept: Potato blight; Potatoes
 Ref: 13.3.1
 D: 1
+Id: edexcel-hist-13-021
 
 Q: In which year was the slave trade abolished in the British Empire?
 A: 1807
 Ref: 13.3.1
 D: 1
+Id: edexcel-hist-13-022
 
 Q: What did the Industrial Revolution create that attracted many Irish migrants to Britain's towns?
 A: Demand for unskilled labour
 Accept: Jobs; Factory work; Work
 Ref: 13.3.1
 D: 3
+Id: edexcel-hist-13-023
 
 Q: Which Jewish-born Conservative served as Prime Minister in 1868 and from 1874 to 1880?
 A: Benjamin Disraeli
 Accept: Disraeli
 Ref: 13.3.2
 D: 2
+Id: edexcel-hist-13-024
 
 Q: Why did Irish migrants often face hostility from existing workers in nineteenth-century Britain?
 A: Competition for jobs and low wages
 Accept: Fear of job losses; Jobs; Anti-Catholic prejudice; Cheap labour
 Ref: 13.3.2
 D: 3
+Id: edexcel-hist-13-025
 
 Q: Which Irish-born Chartist leader founded the Northern Star newspaper?
 A: Feargus O'Connor
 Accept: O'Connor; Feargus O Connor
 Ref: 13.3.2
 D: 2
+Id: edexcel-hist-13-026
 
 Q: Why did many migrants only pass through Liverpool in the nineteenth century?
 A: Ships sailed on to America
 Accept: Heading to America; Emigrating to the USA; Transatlantic ships
 Ref: 13.3.3
 D: 3
+Id: edexcel-hist-13-027
 
 Q: What name was given to violent attacks on Jews in the Russian Empire from 1881?
 A: Pogroms
 Accept: Pogrom
 Ref: 13.3.3
 D: 2
+Id: edexcel-hist-13-028
 
 Q: Which part of London did most Jewish migrants settle in during the late nineteenth century?
 A: East End
 Accept: Whitechapel; Spitalfields; The East End
 Ref: 13.3.3
 D: 1
+Id: edexcel-hist-13-029
 
 Q: In which year did Parliament pass the Aliens Act, Britain's first major immigration control?
 A: 1905
 Ref: 13.4.1
 D: 1
+Id: edexcel-hist-13-030
 
 Q: Which group was the 1905 Aliens Act mainly aimed at keeping out?
 A: Poor Jewish migrants from Eastern Europe
 Accept: Jewish refugees; Eastern European Jews; Jews
 Ref: 13.4.1
 D: 2
+Id: edexcel-hist-13-031
 
 Q: Which ship brought Caribbean migrants to Tilbury in 1948?
 A: Empire Windrush
 Accept: Windrush; HMT Empire Windrush
 Ref: 13.4.1
 D: 1
+Id: edexcel-hist-13-032
 
 Q: What did the 1948 British Nationality Act give people across the Commonwealth the right to do?
 A: Live and work in Britain
 Accept: Settle in Britain; Enter Britain; Become British subjects
 Ref: 13.4.1
 D: 2
+Id: edexcel-hist-13-033
 
 Q: Why did Britain recruit workers from the Caribbean after the Second World War?
 A: Labour shortages in rebuilding and public services
 Accept: Shortage of workers; Rebuilding after war; Labour shortage; Need for workers
 Ref: 13.4.1
 D: 3
+Id: edexcel-hist-13-034
 
 Q: The 1965 Race Relations Act banned racial discrimination in which kind of places?
 A: Public places
 Accept: Places like pubs and hotels; Public places such as pubs
 Ref: 13.4.2
 D: 2
+Id: edexcel-hist-13-035
 
 Q: In which year did the Bristol Bus Boycott take place?
 A: 1963
 Ref: 13.4.3
 D: 1
+Id: edexcel-hist-13-036
 
 Q: Which Bristol firm's refusal to employ Black and Asian crews led to the 1963 boycott?
 A: Bristol Omnibus Company
 Accept: Bristol Omnibus; Bristol bus company
 Ref: 13.4.3
 D: 2
+Id: edexcel-hist-13-037
 
 Q: From which African country were Asians expelled in 1972, with many settling in Leicester?
 A: Uganda
 Ref: 13.4.3
 D: 1
+Id: edexcel-hist-13-038
 
 Q: What did Leicester City Council advertise in Uganda in 1972?
 A: Asians should not come to Leicester
 Accept: Not to settle in Leicester; Discouraged migrants; Don't come
 Ref: 13.4.3
 D: 2
+Id: edexcel-hist-13-039
 
 Q: Which Leicester industry employed many Asian migrants in its factories after 1945?
 A: Textiles
@@ -236,93 +275,109 @@ Accept: Hosiery; Knitwear; Clothing; Engineering
 Ref: 13.4.3
 D: 2
 Note: Accept hosiery or engineering too.
+Id: edexcel-hist-13-040
 
 Q: Which notorious landlord exploited tenants in 1950s Notting Hill?
 A: Peter Rachman
 Accept: Rachman
 Ref: 13.HE.1
 D: 1
+Id: edexcel-hist-13-041
 
 Q: What does HMO stand for in the context of Notting Hill housing?
 A: House in multiple occupation
 Accept: Houses of multiple occupation; House of multiple occupation; Houses in multiple occupation
 Ref: 13.HE.1
 D: 2
+Id: edexcel-hist-13-042
 
 Q: Why did many Caribbean migrants rent rooms in Notting Hill?
 A: Colour bar elsewhere and cheap rooms
 Accept: Landlords elsewhere refused them; Cheap housing; Racist landlords elsewhere
 Ref: 13.HE.1
 D: 3
+Id: edexcel-hist-13-043
 
 Q: On which Notting Hill street was the Mangrove Restaurant?
 A: All Saints Road
 Accept: All Saints
 Ref: 13.HE.1
 D: 1
+Id: edexcel-hist-13-044
 
 Q: The Mangrove Nine marched in 1970 to protest against what?
 A: Repeated police raids on the Mangrove
 Accept: Police harassment; Police raids; Racist policing
 Ref: 13.HE.1
 D: 3
+Id: edexcel-hist-13-045
 
 Q: Altheia Jones-LeCointe, one of the Mangrove Nine, led which group?
 A: British Black Panthers
 Accept: Black Panthers; British Black Panther Movement
 Ref: 13.HE.1
 D: 2
+Id: edexcel-hist-13-046
 
 Q: Which Antiguan-born carpenter was murdered in Notting Hill in 1959?
 A: Kelso Cochrane
 Accept: Cochrane
 Ref: 13.HE.1
 D: 2
+Id: edexcel-hist-13-047
 
 Q: Which movement did Oswald Mosley lead when he stood in North Kensington in 1959?
 A: Union Movement
 Accept: The Union Movement
 Ref: 13.HE.1
 D: 1
+Id: edexcel-hist-13-048
 
 Q: Mosley's Union Movement was the successor to which 1930s party he had led?
 A: British Union of Fascists
 Accept: BUF
 Ref: 13.HE.1
 D: 3
+Id: edexcel-hist-13-049
 
 Q: In which building was the first indoor Caribbean Carnival held in January 1959?
 A: St Pancras Town Hall
 Accept: St Pancras
 Ref: 13.HE.1
 D: 2
+Id: edexcel-hist-13-050
 
 Q: Claudia Jones organised the 1959 Caribbean Carnival partly as a response to what?
 A: The 1958 riots and racism
 Accept: Notting Hill Riots; Racial tension; Racism
 Ref: 13.HE.1
 D: 3
+Id: edexcel-hist-13-051
 
 Q: Notting Hill's poverty contrasted with which 1960s image of London?
 A: Swinging Sixties
 Accept: Swinging London; The Swinging Sixties
 Ref: 13.HE.1
 D: 3
+Id: edexcel-hist-13-052
 
 Q: The West Indian Gazette was a newspaper written for which community?
 A: The Caribbean community
 Accept: Caribbean; Black Britons; West Indian community
 Ref: 13.HE.2
 D: 1
+Id: edexcel-hist-13-053
 
 Q: Why might oral memories recorded decades later be a weak source?
 A: Memory fades or is selective
 Accept: Memory can be unreliable; Hindsight; Forgetting
 Ref: 13.HE.2
 D: 3
+Id: edexcel-hist-13-054
 
 Q: Why might a photograph of the Notting Hill Riots be a limited source?
 A: It shows only one moment or view
 Accept: Photographer chose what to show; Selective; Posed
 Ref: 13.HE.2
 D: 3
+Id: edexcel-hist-13-055

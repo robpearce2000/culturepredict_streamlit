@@ -149,8 +149,16 @@ test('Higher tier only questions can be left out for a Foundation class', async 
   expect(log.errors).toEqual([]);
 });
 
+// Every subject now has built-in packs, so these tests hide one subject's packs to see the "none yet" path
+const hidePacks = (page, subject, board) => page.addInitScript(([sj, bd]) => {
+  const cgb = window.CGB = window.CGB || {};
+  let pd;
+  Object.defineProperty(cgb, 'PACKDATA', { configurable: true, get: () => pd, set: v => { v.packs = v.packs.filter(p => !(p.subject === sj && (!bd || p.board.toLowerCase() === bd))); pd = v; } });
+}, [subject, board]);
+
 test('a subject with no built-in pack says so, holds the Start buttons, and takes the teacher\'s own set', async ({ page: first }) => {
   let page = first;
+  await hidePacks(page, 'history');
   const log = await openBundle(page);
   await page.selectOption('#subjectSelect', 'history');
   await expect(page.locator('#subjectNote')).toContainText('Built-in AQA-style History packs are coming soon');
@@ -197,6 +205,7 @@ test('a subject with no built-in pack says so, holds the Start buttons, and take
 
 test('the exam board choice is shown and remembered, and a board with no packs yet says so', async ({ page: first }) => {
   let page = first;
+  await hidePacks(page, 'geography', 'edexcel');
   await openBundle(page);
   await page.selectOption('#boardSelect', 'edexcel');
   await page.selectOption('#subjectSelect', 'geography');

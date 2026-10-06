@@ -7,178 +7,208 @@ A: Chiang Kai-shek
 Accept: Jiang Jieshi; Chiang
 Ref: 32.1.1
 D: 1
+Id: edexcel-hist-32-001
 
 Q: Which foreign power gave the Guomindang money and weapons in the Civil War?
 A: The USA
 Accept: United States; America; USA
 Ref: 32.1.1
 D: 1
+Id: edexcel-hist-32-002
 
 Q: Corruption and which economic problem, with prices soaring, weakened the Guomindang by 1948?
 A: Hyperinflation
 Accept: Inflation; rapidly rising prices
 Ref: 32.1.1
 D: 2
+Id: edexcel-hist-32-003
 
 Q: Why did the CCP win much support from peasants during the Civil War?
 A: It redistributed land to them
 Accept: Land reform; it gave peasants land; land redistribution
 Ref: 32.1.1
 D: 3
+Id: edexcel-hist-32-004
 
 Q: On what date, in 1949, did Mao proclaim the People's Republic of China in Beijing?
 A: 1 October
 Accept: 1st October; October 1st
 Ref: 32.1.1
 D: 2
+Id: edexcel-hist-32-005
 
 Q: What name was given to the CCP's army, which won the Civil War?
 A: People's Liberation Army
 Accept: PLA; Red Army
 Ref: 32.1.1
 D: 1
+Id: edexcel-hist-32-006
 
 Q: Which island did Chiang Kai-shek and the Guomindang flee to in 1949?
 A: Taiwan
 Accept: Formosa
 Ref: 32.1.1
 D: 1
+Id: edexcel-hist-32-007
 
 Q: What title did Mao hold as leader of the CCP?
 A: Chairman
 Accept: Chairman of the CCP; Chairman Mao
 Ref: 32.1.2
 D: 1
+Id: edexcel-hist-32-008
 
 Q: Which system of government meant that decisions made at the top of the CCP had to be obeyed by lower levels?
 A: Democratic centralism
 Ref: 32.1.2
 D: 2
+Id: edexcel-hist-32-009
 
 Q: Mao adapted Marxism to China by relying mainly on which social group rather than city workers?
 A: The peasants
 Accept: Peasantry; peasant farmers
 Ref: 32.1.2
 D: 2
+Id: edexcel-hist-32-010
 
 Q: What name was given to Mao's version of Marxism, written into the CCP constitution in 1945?
 A: Mao Zedong Thought
 Accept: Maoism; Mao Tse-tung Thought; Mao's Thought
 Ref: 32.1.2
 D: 2
+Id: edexcel-hist-32-011
 
 Q: Which 1950-51 campaign targeted landlords, former Guomindang officials and other opponents of CCP rule?
 A: Campaign to Suppress Counter-revolutionaries
 Accept: Suppression of Counter-revolutionaries; the terror campaign
 Ref: 32.1.3
 D: 2
+Id: edexcel-hist-32-012
 
 Q: The 'three antis' campaign of 1951 attacked corruption, waste and which third target?
 A: Bureaucracy
 Accept: Bureaucratic practices
 Ref: 32.1.3
 D: 2
+Id: edexcel-hist-32-013
 
 Q: Who were the main targets of the 'five antis' campaign of 1952?
 A: Businessmen
 Accept: Capitalists; business owners; factory owners
 Ref: 32.1.3
 D: 1
+Id: edexcel-hist-32-014
 
 Q: In 1956 Mao said 'Let a hundred flowers bloom'. Which group did he especially want to encourage to speak out?
 A: Intellectuals
 Accept: Academics; writers and teachers
 Ref: 32.1.4
 D: 1
+Id: edexcel-hist-32-015
 
 Q: What was the main aim of Mao's Hundred Flowers campaign?
 A: To encourage criticism to improve the party
 Accept: To get ideas and criticism from intellectuals; to win over intellectuals
 Ref: 32.1.4
 D: 2
+Id: edexcel-hist-32-016
 
 Q: Why did Mao end the Hundred Flowers campaign in 1957?
 A: Criticism went too far and attacked CCP rule
 Accept: People criticised the party and Mao; he felt his power was threatened
 Ref: 32.1.4
 D: 3
+Id: edexcel-hist-32-017
 
 Q: What name was given to the 1957 purge of critics that followed the Hundred Flowers campaign?
 A: Anti-Rightist campaign
 Accept: Anti-Rightist purge; Anti-Rightist movement
 Ref: 32.1.4
 D: 1
+Id: edexcel-hist-32-018
 
 Q: Which 1950 law redistributed land from landlords to peasants?
 A: Agrarian Reform Law
 Accept: Land Reform Law; Agrarian Law
 Ref: 32.2.1
 D: 1
+Id: edexcel-hist-32-019
 
 Q: Why did the CCP encourage peasants to hold 'speak bitterness' meetings against landlords?
 A: To turn peasants against landlords
 Accept: To stir up hatred of landlords; to justify taking land; to build support for the CCP
 Ref: 32.2.1
 D: 3
+Id: edexcel-hist-32-020
 
 Q: What name was given to the first cooperatives of peasants sharing tools and labour, begun in the early 1950s?
 A: Mutual aid teams
 Accept: Mutual aid; Mutual Aid Teams
 Ref: 32.2.1
 D: 2
+Id: edexcel-hist-32-021
 
 Q: Why did Mao move from voluntary to enforced collectivisation in 1955-56?
 A: To feed towns and fund industry
 Accept: Not enough grain was being produced; to increase grain output; to feed industry and cities
 Ref: 32.2.1
 D: 3
+Id: edexcel-hist-32-022
 
 Q: Which country gave China loans and technical advisers for the first Five-Year Plan?
 A: USSR
 Accept: Soviet Union; Russia
 Ref: 32.2.2
 D: 1
+Id: edexcel-hist-32-023
 
 Q: On what type of industry did the first Five-Year Plan (1953-57) concentrate?
 A: Heavy industry
 Accept: Coal, iron and steel
 Ref: 32.2.2
 D: 1
+Id: edexcel-hist-32-024
 
 Q: Which two parts of the economy did the first Five-Year Plan largely neglect?
 A: Agriculture and consumer goods
 Accept: Farming and light industry; agriculture and light industry
 Ref: 32.2.2
 D: 3
+Id: edexcel-hist-32-025
 
 Q: Which metal did Mao aim to produce so much of that China would overtake Britain's output in 15 years?
 A: Steel
 Ref: 32.2.3
 D: 1
+Id: edexcel-hist-32-026
 
 Q: Where did people make steel during the Great Leap Forward, using any metal they could find?
 A: Backyard furnaces
 Accept: Backyard steel furnaces; small village furnaces
 Ref: 32.2.3
 D: 2
+Id: edexcel-hist-32-027
 
 Q: At the 1959 Lushan Conference, which defence minister criticised the Great Leap Forward and was removed?
 A: Peng Dehuai
 Accept: Marshal Peng
 Ref: 32.2.3
 D: 2
+Id: edexcel-hist-32-028
 
 Q: Which general replaced Peng Dehuai as defence minister after the Lushan Conference?
 A: Lin Biao
 Accept: Marshal Lin
 Ref: 32.2.3
 D: 2
+Id: edexcel-hist-32-029
 
 Q: Which Soviet agronomist's false theories led to deep ploughing and close planting in China?
 A: Lysenko
 Accept: Trofim Lysenko
 Ref: 32.2.3
 D: 2
+Id: edexcel-hist-32-030
 
 Q: Giving the usual textbook estimate, about how many million people died in the Great Famine?
 A: At least 20 million
@@ -186,220 +216,258 @@ Accept: 20-45 million; 30 million; tens of millions
 Ref: 32.2.3
 D: 2
 Note: Estimates vary widely; accept anything from about 20 to 45 million.
+Id: edexcel-hist-32-031
 
 Q: Why did officials exaggerate grain harvest figures during the Great Leap Forward?
 A: Fear of punishment for reporting failure
 Accept: To please Mao; to avoid blame; pressure to meet targets
 Ref: 32.2.3
 D: 3
+Id: edexcel-hist-32-032
 
 Q: Which two leaders restored private farming plots after the Great Famine?
 A: Liu Shaoqi and Deng Xiaoping
 Accept: Liu and Deng
 Ref: 32.2.4
 D: 1
+Id: edexcel-hist-32-033
 
 Q: What point did Deng Xiaoping make with his saying that it does not matter whether a cat is black or white as long as it catches mice?
 A: Practical results matter more than ideology
 Accept: Whatever works is best; the cat saying; pragmatism
 Ref: 32.2.4
 D: 3
+Id: edexcel-hist-32-034
 
 Q: Which two features of the early 1960s reforms gave peasants an incentive to grow more?
 A: Private plots and selling surplus
 Accept: Private plots; farmers' markets; keeping profits
 Ref: 32.2.4
 D: 2
+Id: edexcel-hist-32-035
 
 Q: Which early-1960s campaign aimed to reinforce communist ideas in the countryside and the party?
 A: Socialist Education Movement
 Accept: The Socialist Education Movement
 Ref: 32.3.1
 D: 2
+Id: edexcel-hist-32-036
 
 Q: What label did Mao give Liu Shaoqi and Deng Xiaoping, accusing them of wanting to restore capitalism?
 A: Capitalist roaders
 Accept: Capitalist roader; Revisionists; Taking the capitalist road
 Ref: 32.3.1
 D: 2
+Id: edexcel-hist-32-037
 
 Q: In which year did Mao launch the Cultural Revolution?
 A: 1966
 Ref: 32.3.1
 D: 1
+Id: edexcel-hist-32-038
 
 Q: In which city's Tiananmen Square did Mao review mass rallies of Red Guards in 1966?
 A: Beijing
 Accept: Peking
 Ref: 32.3.2
 D: 1
+Id: edexcel-hist-32-039
 
 Q: Which book of Mao's sayings, used for study in schools and the PLA, became a Cultural Revolution symbol?
 A: The Little Red Book
 Accept: Quotations from Chairman Mao; Little Red Book
 Ref: 32.3.2
 D: 1
+Id: edexcel-hist-32-040
 
 Q: Which group of young people formed the main force of the Cultural Revolution?
 A: Red Guards
 Accept: Students; Red Guard
 Ref: 32.3.2
 D: 1
+Id: edexcel-hist-32-041
 
 Q: Which 'four olds' did the Red Guards attack?
 A: Old customs, culture, habits and ideas
 Accept: Old ideas, culture, customs and habits
 Ref: 32.3.2
 D: 2
+Id: edexcel-hist-32-042
 
 Q: Which wife of Mao led the attack on traditional culture and the CCP in the Cultural Revolution?
 A: Jiang Qing
 Accept: Madame Mao
 Ref: 32.3.2
 D: 2
+Id: edexcel-hist-32-043
 
 Q: Who died after the plane he was fleeing in crashed over Mongolia in 1971?
 A: Lin Biao
 Ref: 32.3.3
 D: 1
+Id: edexcel-hist-32-044
 
 Q: Which former head of state was labelled 'China's Khrushchev' and died in prison in 1969?
 A: Liu Shaoqi
 Accept: Liu
 Ref: 32.3.3
 D: 2
+Id: edexcel-hist-32-045
 
 Q: Why did the Cultural Revolution harm industry?
 A: Technicians and managers were removed and attacked
 Accept: Experts were sent to the countryside; factories were disrupted; managers were criticised
 Ref: 32.3.3
 D: 3
+Id: edexcel-hist-32-046
 
 Q: What happened to China's universities from 1966, which damaged education?
 A: They closed
 Accept: Closed down; shut
 Ref: 32.3.3
 D: 2
+Id: edexcel-hist-32-047
 
 Q: Which organisation restored order by suppressing the Red Guards from 1968?
 A: The PLA
 Accept: People's Liberation Army; army
 Ref: 32.3.4
 D: 1
+Id: edexcel-hist-32-048
 
 Q: What was the aim of the campaign 'Up to the mountains and down to the villages'?
 A: To send young people to the countryside
 Accept: Send Red Guards to farm; send students to the countryside
 Ref: 32.3.4
 D: 2
+Id: edexcel-hist-32-049
 
 Q: Which leader, the Premier, died in January 1976 and was mourned by crowds in Tiananmen Square?
 A: Zhou Enlai
 Ref: 32.3.4
 D: 2
+Id: edexcel-hist-32-050
 
 Q: In which year did Mao die?
 A: 1976
 Ref: 32.3.4
 D: 1
+Id: edexcel-hist-32-051
 
 Q: What happened to the Gang of Four soon after Mao's death?
 A: They were arrested
 Accept: Arrested and put on trial; imprisoned; purged
 Ref: 32.3.4
 D: 2
+Id: edexcel-hist-32-052
 
 Q: Which technique of thought control forced people to confess political mistakes and criticise themselves in public?
 A: Self-criticism
 Accept: Struggle sessions; public criticism; thought reform
 Ref: 32.4.1
 D: 2
+Id: edexcel-hist-32-053
 
 Q: Which system of prison camps sent opponents of the regime to do forced labour?
 A: Reform Through Labour
 Accept: Laogai; Reform through Labour system
 Ref: 32.4.1
 D: 1
+Id: edexcel-hist-32-054
 
 Q: Why was the 'cult of Mao' encouraged by the CCP?
 A: To make Mao seem all-powerful and unquestionable
 Accept: To build loyalty to Mao; to control the people; to boost his image
 Ref: 32.4.1
 D: 3
+Id: edexcel-hist-32-055
 
 Q: Which 1950 law banned arranged marriages and gave women the right to divorce?
 A: Marriage Law
 Accept: The Marriage Law of 1950
 Ref: 32.4.2
 D: 1
+Id: edexcel-hist-32-056
 
 Q: Foot binding was a traditional practice done to what group, which the CCP condemned?
 A: Girls and women
 Accept: Girls; women; daughters
 Ref: 32.4.2
 D: 1
+Id: edexcel-hist-32-057
 
 Q: Why did communal nurseries and canteens change women's lives in the communes?
 A: They freed women to work in the fields
 Accept: They released women from housework and childcare; women could work outside the home
 Ref: 32.4.2
 D: 3
+Id: edexcel-hist-32-058
 
 Q: Which romanised writing system for Chinese was introduced in 1958 to help improve literacy?
 A: Pinyin
 Ref: 32.4.3
 D: 1
+Id: edexcel-hist-32-059
 
 Q: What name was given to peasants given basic medical training to treat people in the countryside?
 A: Barefoot doctors
 Accept: Barefoot doctor
 Ref: 32.4.3
 D: 1
+Id: edexcel-hist-32-060
 
 Q: Why did the Cultural Revolution cause education to collapse after 1966?
 A: Schools closed and teachers were attacked
 Accept: Teachers were persecuted; students rebelled; exams were abolished
 Ref: 32.4.3
 D: 3
+Id: edexcel-hist-32-061
 
 Q: Which religion, strong in Tibet, had its temples and monasteries attacked in the Cultural Revolution?
 A: Buddhism
 Accept: Buddhist
 Ref: 32.4.4
 D: 1
+Id: edexcel-hist-32-062
 
 Q: Which Chinese philosophy was condemned as old-fashioned and backward under Mao?
 A: Confucianism
 Accept: Confucius
 Ref: 32.4.4
 D: 1
+Id: edexcel-hist-32-063
 
 Q: Which woman controlled the 'model works' of revolutionary opera and ballet?
 A: Jiang Qing
 Accept: Madame Mao
 Ref: 32.4.4
 D: 2
+Id: edexcel-hist-32-064
 
 Q: Why did the CCP attack ancestor worship and religion?
 A: They rivalled loyalty to the party and Mao
 Accept: They were seen as old ideas; they challenged communist ideology; loyalty to the state
 Ref: 32.4.4
 D: 3
+Id: edexcel-hist-32-065
 
 Q: Why did Mao launch the Great Leap Forward in 1958?
 A: To industrialise quickly using peasant labour
 Accept: To catch up with Britain and the West; to rapidly boost steel and grain output; to modernise China fast
 Ref: 32.2.3
 D: 3
+Id: edexcel-hist-32-066
 
 Q: Why did Mao use the PLA to end the Red Guards' rule in 1968?
 A: Violence and anarchy were out of control
 Accept: Red Guard factions were fighting each other; to restore order; chaos was damaging China
 Ref: 32.3.4
 D: 3
+Id: edexcel-hist-32-067
 
 Q: What name was given to the huge farming units created in 1958 where people lived and worked communally?
 A: People's communes
 Accept: Communes; Commune
 Ref: 32.2.3
 D: 2
+Id: edexcel-hist-32-068

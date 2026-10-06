@@ -7,371 +7,434 @@ A: Kaiser Wilhelm II
 Accept: Wilhelm II; The Kaiser; Kaiser Wilhelm
 Ref: 31.1.1
 D: 1
+Id: edexcel-hist-31-001
 
 Q: What name is given to the German democratic republic set up in 1919, taken from the town where its assembly met?
 A: Weimar Republic
 Accept: Weimar
 Ref: 31.1.1
 D: 2
+Id: edexcel-hist-31-002
 
 Q: Which voting system in the Weimar Constitution gave parties seats in line with their share of the vote?
 A: Proportional representation
 Accept: PR
 Ref: 31.1.1
 D: 2
+Id: edexcel-hist-31-003
 
 Q: Why did proportional representation weaken Weimar governments?
 A: Led to unstable coalitions
 Accept: Coalitions; No party won a majority; Weak coalition governments
 Ref: 31.1.1
 D: 3
+Id: edexcel-hist-31-004
 
 Q: What name did Germans give to the myth that the army was betrayed by politicians in 1918?
 A: Stab in the back
 Accept: Stab-in-the-back; Dolchstoss
 Ref: 31.1.2
 D: 1
+Id: edexcel-hist-31-005
 
 Q: Which 1919 treaty included the 'war guilt' clause blaming Germany for the war?
 A: Treaty of Versailles
 Accept: Versailles
 Ref: 31.1.2
 D: 1
+Id: edexcel-hist-31-006
 
 Q: Which left-wing group led by Rosa Luxemburg and Karl Liebknecht rose in Berlin in January 1919?
 A: Spartacists
 Accept: Spartacist League; Spartacus League
 Ref: 31.1.2
 D: 1
+Id: edexcel-hist-31-007
 
 Q: What name was given to the ex-soldier paramilitary groups used to crush the Spartacist uprising?
 A: Freikorps
 Accept: Free Corps
 Ref: 31.1.2
 D: 1
+Id: edexcel-hist-31-008
 
 Q: Why did the Kapp Putsch fail?
 A: Workers went on a general strike
 Accept: General strike; Berlin workers' strike
 Ref: 31.1.2
 D: 3
+Id: edexcel-hist-31-009
 
 Q: Which industrial area of Germany did France and Belgium occupy in January 1923?
 A: The Ruhr
 Accept: Ruhr
 Ref: 31.1.2
 D: 1
+Id: edexcel-hist-31-010
 
 Q: Why did France and Belgium occupy the Ruhr in 1923?
 A: Germany missed reparations payments
 Accept: Reparations; Failure to pay reparations
 Ref: 31.1.2
 D: 2
+Id: edexcel-hist-31-011
 
 Q: What was the German government's response to the Ruhr occupation?
 A: Passive resistance
 Accept: Strikes; Told workers to strike
 Ref: 31.1.2
 D: 2
+Id: edexcel-hist-31-012
 
 Q: Why did printing more money in 1923 cause hyperinflation?
 A: Money lost its value as supply soared
 Accept: Money became worthless; Too much money in circulation
 Ref: 31.1.2
 D: 3
+Id: edexcel-hist-31-013
 
 Q: Which politician became Chancellor in August 1923 and ended passive resistance?
 A: Gustav Stresemann
 Accept: Stresemann
 Ref: 31.1.3
 D: 1
+Id: edexcel-hist-31-014
 
 Q: What new currency replaced the worthless mark in late 1923?
 A: Rentenmark
 Accept: The Rentenmark
 Ref: 31.1.3
 D: 1
+Id: edexcel-hist-31-015
 
 Q: Which 1924 plan, named after an American banker, rescheduled German reparations payments?
 A: Dawes Plan
 Accept: The Dawes Plan
 Ref: 31.1.3
 D: 1
+Id: edexcel-hist-31-016
 
 Q: Which 1925 agreement saw Germany accept its western borders with France and Belgium?
 A: Locarno Pact
 Accept: Locarno Treaties; Locarno
 Ref: 31.1.3
 D: 1
+Id: edexcel-hist-31-017
 
 Q: Why was Germany's recovery after 1924 fragile?
 A: It relied on American loans
 Accept: Loans could be withdrawn; Dependent on US money
 Ref: 31.1.3
 D: 3
+Id: edexcel-hist-31-018
 
 Q: Which design school, founded by Walter Gropius, promoted simple functional style?
 A: Bauhaus
 Accept: The Bauhaus
 Ref: 31.1.4
 D: 1
+Id: edexcel-hist-31-019
 
 Q: Which right did women gain in Germany in 1919 under the Weimar Constitution?
 A: The vote
 Accept: Right to vote; Suffrage
 Ref: 31.1.4
 D: 2
+Id: edexcel-hist-31-020
 
 Q: Why did many conservative Germans dislike the new culture of the 1920s?
 A: They saw it as immoral and un-German
 Accept: Decadent; Immoral
 Ref: 31.1.4
 D: 3
+Id: edexcel-hist-31-021
 
 Q: Which party did Hitler join in 1919 while working as an army spy?
 A: German Workers' Party
 Accept: DAP; German Workers Party
 Ref: 31.2.1
 D: 1
+Id: edexcel-hist-31-022
 
 Q: Which Nazi paramilitary force, known as Brownshirts, protected meetings and attacked opponents?
 A: SA
 Accept: Sturmabteilung; Stormtroopers
 Ref: 31.2.1
 D: 2
+Id: edexcel-hist-31-023
 
 Q: Why was the SA useful to Hitler in the early 1920s?
 A: Protected meetings and intimidated opponents
 Accept: Violence against opponents; Protected speakers
 Ref: 31.2.1
 D: 3
+Id: edexcel-hist-31-024
 
 Q: In which city did Hitler launch his putsch in November 1923?
 A: Munich
 Ref: 31.2.2
 D: 1
+Id: edexcel-hist-31-025
 
 Q: What was the title of the book Hitler wrote in Landsberg prison?
 A: Mein Kampf
 Ref: 31.2.2
 D: 1
+Id: edexcel-hist-31-026
 
 Q: Why did the Munich Putsch help Hitler in the long term?
 A: Publicity; he chose a legal route to power
 Accept: Gave him national publicity; Changed tactics to elections
 Ref: 31.2.2
 D: 3
+Id: edexcel-hist-31-027
 
 Q: At which 1926 conference did Hitler assert his authority over the northern Nazis?
 A: Bamberg Conference
 Accept: Bamberg
 Ref: 31.2.2
 D: 1
+Id: edexcel-hist-31-028
 
 Q: Why did the Nazis win few votes between 1924 and 1928?
 A: Germany's economy was recovering
 Accept: Golden Years; Stability and prosperity; Economic recovery
 Ref: 31.2.2
 D: 3
+Id: edexcel-hist-31-029
 
 Q: Which 1929 event in the USA caused Germany's economy to collapse?
 A: Wall Street Crash
 Accept: The Wall Street Crash; Stock market crash
 Ref: 31.2.3
 D: 1
+Id: edexcel-hist-31-030
 
 Q: About how many Germans were unemployed at the peak in 1932?
 A: About six million
 Accept: 6 million; 6,000,000
 Ref: 31.2.3
 D: 2
+Id: edexcel-hist-31-031
 
 Q: Why did unemployment help the Nazis win votes?
 A: Desperate voters wanted jobs and strong leadership
 Accept: Blamed Weimar government; Promised work and bread
 Ref: 31.2.3
 D: 3
+Id: edexcel-hist-31-032
 
 Q: Who beat Hitler in the 1932 presidential election?
 A: Hindenburg
 Accept: Paul von Hindenburg
 Ref: 31.2.4
 D: 1
+Id: edexcel-hist-31-033
 
 Q: Which former Chancellor persuaded Hindenburg to appoint Hitler as Chancellor?
 A: Franz von Papen
 Accept: Papen; von Papen
 Ref: 31.2.4
 D: 1
+Id: edexcel-hist-31-034
 
 Q: Why did Papen believe he could control Hitler as Chancellor?
 A: Nazis were a minority in the cabinet
 Accept: Few Nazis in cabinet; Papen would be Vice-Chancellor
 Ref: 31.2.4
 D: 3
+Id: edexcel-hist-31-035
 
 Q: In which month of 1933 was the Reichstag building set on fire?
 A: February
 Accept: 27 February 1933; February 1933
 Ref: 31.3.1
 D: 1
+Id: edexcel-hist-31-036
 
 Q: Which 1933 law allowed Hitler to make laws without the Reichstag?
 A: Enabling Act
 Accept: The Enabling Act
 Ref: 31.3.1
 D: 2
+Id: edexcel-hist-31-037
 
 Q: Which leader of the SA was killed in the Night of the Long Knives?
 A: Ernst Röhm
 Accept: Rohm; Röhm
 Ref: 31.3.1
 D: 1
+Id: edexcel-hist-31-038
 
 Q: Which title did Hitler take when Hindenburg died in August 1934?
 A: Führer
 Accept: Fuhrer; Leader
 Ref: 31.3.1
 D: 2
+Id: edexcel-hist-31-039
 
 Q: Why did Hitler demand the army's oath of allegiance in 1934?
 A: To secure the army's loyalty to him personally
 Accept: Army loyalty; Soldiers swore loyalty to Hitler
 Ref: 31.3.1
 D: 3
+Id: edexcel-hist-31-040
 
 Q: What was the name of the Nazi secret state police?
 A: Gestapo
 Ref: 31.3.2
 D: 1
+Id: edexcel-hist-31-041
 
 Q: Which Nazi organisation, led by Himmler, ran the concentration camps?
 A: SS
 Accept: Schutzstaffel
 Ref: 31.3.2
 D: 1
+Id: edexcel-hist-31-042
 
 Q: Why did Nazi courts rarely protect people accused of opposing the regime?
 A: Judges were made to serve Nazi aims
 Accept: Judges were Nazi controlled; Law served the party
 Ref: 31.3.2
 D: 3
+Id: edexcel-hist-31-043
 
 Q: Which Nazi leader headed the Ministry of Propaganda?
 A: Goebbels
 Accept: Joseph Goebbels
 Ref: 31.3.3
 D: 1
+Id: edexcel-hist-31-044
 
 Q: Which 1933 agreement with the Pope promised Catholics freedom if the Church stayed out of politics?
 A: Concordat
 Accept: The Concordat; Reich Concordat
 Ref: 31.3.3
 D: 2
+Id: edexcel-hist-31-045
 
 Q: Why did the Nazis hold large rallies such as those at Nuremberg?
 A: To show strength and build loyalty to Hitler
 Accept: Propaganda; Unity and strength
 Ref: 31.3.3
 D: 3
+Id: edexcel-hist-31-046
 
 Q: Which Protestant pastor founded the Pastors' Emergency League and was sent to a camp?
 A: Martin Niemöller
 Accept: Niemoller; Niemöller
 Ref: 31.3.4
 D: 1
+Id: edexcel-hist-31-047
 
 Q: Which young people loved American jazz and swing music and rejected Nazi culture?
 A: Swing Youth
 Accept: Swing Kids; The Swing Youth
 Ref: 31.3.4
 D: 1
+Id: edexcel-hist-31-048
 
 Q: Why was open opposition to the Nazis so rare?
 A: Fear of the Gestapo and terror
 Accept: Terror; Fear; Success of the regime
 Ref: 31.3.4
 D: 3
+Id: edexcel-hist-31-049
 
 Q: The Nazi slogan for women's role was 'Kinder, Küche, ...' what, in English?
 A: Church
 Accept: Kirche; Kinder, Küche, Kirche
 Ref: 31.4.1
 D: 2
+Id: edexcel-hist-31-050
 
 Q: Why did the Nazis encourage women to leave work and marry?
 A: To free jobs for men and raise births
 Accept: To free jobs for men and raise the birth rate; Reduce male unemployment; Have babies
 Ref: 31.4.1
 D: 3
+Id: edexcel-hist-31-051
 
 Q: What was the Nazi youth organisation for boys called?
 A: Hitler Youth
 Accept: Hitlerjugend
 Ref: 31.4.2
 D: 1
+Id: edexcel-hist-31-052
 
 Q: Why were teachers pressed to join the Nazi Teachers' League?
 A: To ensure they taught Nazi ideas
 Accept: Control what was taught
 Ref: 31.4.2
 D: 3
+Id: edexcel-hist-31-053
 
 Q: What name was given to the Nazi programme of building motorways?
 A: Autobahns
 Accept: Autobahn
 Ref: 31.4.3
 D: 1
+Id: edexcel-hist-31-054
 
 Q: What term describes people such as Jews and women left out of the unemployment figures?
 A: Invisible unemployment
 Accept: Hidden unemployment
 Ref: 31.4.3
 D: 2
+Id: edexcel-hist-31-055
 
 Q: Which Nazi organisation offered cheap holidays and leisure for workers?
 A: Strength Through Joy
 Accept: KdF; Kraft durch Freude
 Ref: 31.4.3
 D: 2
+Id: edexcel-hist-31-056
 
 Q: Why did workers lose out under the German Labour Front?
 A: No unions and no right to strike
 Accept: Could not strike; Wages were controlled
 Ref: 31.4.3
 D: 3
+Id: edexcel-hist-31-057
 
 Q: Which 1935 laws took citizenship from Jews and banned marriage with non-Jews?
 A: Nuremberg Laws
 Accept: The Nuremberg Laws
 Ref: 31.4.4
 D: 1
+Id: edexcel-hist-31-058
 
 Q: What name is given to the November 1938 night of attacks on Jewish people and property?
 A: Kristallnacht
 Accept: Night of Broken Glass; Crystal Night
 Ref: 31.4.4
 D: 2
+Id: edexcel-hist-31-059
 
 Q: Why did the Nazis sterilise people with disabilities?
 A: To stop 'inferior' people having children
 Accept: Eugenics; Racial purity
 Ref: 31.4.4
 D: 3
+Id: edexcel-hist-31-060
 
 Q: What was the medal given to women with large families called?
 A: Mother's Cross
 Accept: Honour Cross of the German Mother; Cross of Honour of the German Mother
 Ref: 31.4.1
 D: 2
+Id: edexcel-hist-31-061
 
 Q: What was the Nazi youth organisation for girls called?
 A: League of German Maidens
 Accept: BDM; Bund Deutscher Mädel; League of German Girls
 Ref: 31.4.2
 D: 1
+Id: edexcel-hist-31-062
 
 Q: In which year were the Olympic Games held in Berlin?
 A: 1936
 Ref: 31.3.3
 D: 1
+Id: edexcel-hist-31-063

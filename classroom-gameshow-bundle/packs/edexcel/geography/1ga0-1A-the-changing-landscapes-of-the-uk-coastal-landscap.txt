@@ -6,94 +6,110 @@ Q: Which UK rock type is sedimentary and made mainly of calcium carbonate from t
 A: Chalk
 Ref: 1.1
 D: 1
+Id: edexcel-geog-1ga0-1A-001
 
 Q: Granite and basalt are examples of which main rock type, formed from cooled magma or lava?
 A: Igneous
 Accept: Igneous rock
 Ref: 1.1
 D: 1
+Id: edexcel-geog-1ga0-1A-002
 
 Q: Slate and schist belong to which rock type, formed when existing rock is changed by heat and pressure?
 A: Metamorphic
 Accept: Metamorphic rock
 Ref: 1.1
 D: 1
+Id: edexcel-geog-1ga0-1A-003
 
 Q: In general, are the UK's upland areas mainly made of harder igneous and metamorphic rocks or softer sedimentary rocks?
 A: Harder igneous and metamorphic rocks
 Accept: Igneous and metamorphic
 Ref: 1.1
 D: 2
+Id: edexcel-geog-1ga0-1A-004
 
 Q: Why do softer sedimentary rocks tend to form lowland areas in the UK?
 A: They erode more easily
 Accept: Softer so worn away faster; Less resistant to erosion
 Ref: 1.1
 D: 3
+Id: edexcel-geog-1ga0-1A-005
 
 Q: Name the type of human activity, such as growing crops and grazing animals, that has shaped many UK lowland landscapes over time.
 A: Agriculture
 Accept: Farming
 Ref: 1.2
 D: 1
+Id: edexcel-geog-1ga0-1A-006
 
 Q: What process, by moving ice, creates upland features such as corries and U-shaped valleys?
 A: Glacial erosion
 Accept: Glaciation; Ice erosion
 Ref: 1.2
 D: 2
+Id: edexcel-geog-1ga0-1A-007
 
 Q: Name the human activity of planting and managing trees in plantations, which has changed many UK upland landscapes.
 A: Forestry
 Accept: Afforestation; Tree planting
 Ref: 1.2
 D: 1
+Id: edexcel-geog-1ga0-1A-008
 
 Q: What type of weathering is caused by repeated freezing and thawing of water in rock cracks?
 A: Mechanical weathering
 Accept: Freeze-thaw; Physical weathering
 Ref: 1.3
 D: 1
+Id: edexcel-geog-1ga0-1A-009
 
 Q: Name the erosion process in which waves force air and water into cracks, breaking rock apart.
 A: Hydraulic action
 Ref: 1.3
 D: 1
+Id: edexcel-geog-1ga0-1A-010
 
 Q: Name the erosion process in which waves hurl sand and pebbles at a cliff, scraping it away.
 A: Abrasion
 Accept: Corrasion
 Ref: 1.3
 D: 1
+Id: edexcel-geog-1ga0-1A-011
 
 Q: Name the process in which rocks and pebbles are knocked against each other and become smaller and rounder.
 A: Attrition
 Ref: 1.3
 D: 1
+Id: edexcel-geog-1ga0-1A-012
 
 Q: What term describes the movement of material along a coast by waves approaching at an angle?
 A: Longshore drift
 Accept: Longshore transport
 Ref: 1.3
 D: 1
+Id: edexcel-geog-1ga0-1A-013
 
 Q: Why does heavy rain make a clay cliff more likely to slump?
 A: Water adds weight and lubricates the clay
 Accept: Saturated clay is heavy and slippery; Adds weight
 Ref: 1.3
 D: 3
+Id: edexcel-geog-1ga0-1A-014
 
 Q: Which is stronger on a constructive wave, the swash or the backwash?
 A: Swash
 Ref: 1.3
 D: 2
 Note: Constructive waves build beaches because the swash is stronger than the backwash.
+Id: edexcel-geog-1ga0-1A-015
 
 Q: Why do destructive waves tend to remove sand and pebbles from a beach?
 A: Backwash is stronger than swash
 Accept: Strong backwash; Weak swash
 Ref: 1.3
 D: 3
+Id: edexcel-geog-1ga0-1A-016
 
 Q: What term describes a coastline where bands of different rock run at right angles to the shore?
 A: Discordant
@@ -101,100 +117,117 @@ Accept: Discordant coast
 Ref: 1.3
 D: 2
 Note: Concordant means the rock bands run parallel to the coastline.
+Id: edexcel-geog-1ga0-1A-017
 
 Q: Why do storms and strong prevailing winds increase rates of coastal erosion?
 A: They create bigger, more powerful waves
 Accept: Larger waves; Bigger waves with more energy
 Ref: 1.3
 D: 3
+Id: edexcel-geog-1ga0-1A-018
 
 Q: Is a headland made of harder or softer rock than the bays beside it?
 A: Harder
 Accept: Hard rock; More resistant
 Ref: 1.4
 D: 1
+Id: edexcel-geog-1ga0-1A-019
 
 Q: Name the flat rocky surface left at the foot of a retreating cliff, exposed at low tide.
 A: Wave-cut platform
 Accept: Wave cut platform
 Ref: 1.4
 D: 1
+Id: edexcel-geog-1ga0-1A-020
 
 Q: Name the transport process in which large pebbles are rolled along the sea bed by waves.
 A: Traction
 Ref: 1.3
 D: 1
+Id: edexcel-geog-1ga0-1A-021
 
 Q: Name the coastal landform that is an isolated pillar of rock left when the top of an arch collapses.
 A: Stack
 Accept: Sea stack
 Ref: 1.4
 D: 1
+Id: edexcel-geog-1ga0-1A-022
 
 Q: What landform is a natural opening through a headland, formed when a cave is eroded right through?
 A: Arch
 Accept: Natural arch; Sea arch
 Ref: 1.4
 D: 1
+Id: edexcel-geog-1ga0-1A-023
 
 Q: Which landform forms first on a headland: a cave, an arch or a stack?
 A: Cave
 Ref: 1.4
 D: 2
+Id: edexcel-geog-1ga0-1A-024
 
 Q: What name is given to the long narrow finger of sand or shingle joined to land at one end, which extends across a bay mouth or estuary?
 A: Spit
 Accept: A spit
 Ref: 1.4
 D: 1
+Id: edexcel-geog-1ga0-1A-025
 
 Q: Name the ridge of sand or shingle that builds across a bay, joining two headlands and trapping a lagoon behind.
 A: Bar
 Accept: Bay bar; Baymouth bar
 Ref: 1.4
 D: 2
+Id: edexcel-geog-1ga0-1A-026
 
 Q: Why do bays form between headlands on a coast with alternating hard and soft rock?
 A: Soft rock erodes faster than hard rock
 Accept: Differential erosion; Soft rock erodes more quickly
 Ref: 1.4
 D: 3
+Id: edexcel-geog-1ga0-1A-027
 
 Q: Why does a spit develop a curved or hooked end?
 A: Change in wind or wave direction
 Accept: Wave refraction; Wind direction changes
 Ref: 1.4
 D: 3
+Id: edexcel-geog-1ga0-1A-028
 
 Q: Name the hard engineering structure, built along the base of a cliff or promenade, that reflects wave energy.
 A: Sea wall
 Accept: Seawall
 Ref: 1.5
 D: 1
+Id: edexcel-geog-1ga0-1A-029
 
 Q: Name the wooden or rock barriers built at right angles to the shore to trap sand moved by longshore drift.
 A: Groynes
 Accept: Groyne
 Ref: 1.5
 D: 1
+Id: edexcel-geog-1ga0-1A-030
 
 Q: Name the large boulders piled in front of a cliff or sea wall to absorb wave energy.
 A: Rip rap
 Accept: Rock armour; Riprap
 Ref: 1.5
 D: 1
+Id: edexcel-geog-1ga0-1A-031
 
 Q: Name the soft engineering method in which sand or shingle is added to a beach to widen it.
 A: Beach nourishment
 Accept: Beach replenishment; Nourishment
 Ref: 1.5
 D: 1
+Id: edexcel-geog-1ga0-1A-032
 
 Q: Name the coastal management strategy where the shoreline is allowed to erode or flood naturally, often forming new habitats.
 A: Managed retreat
 Accept: Managed realignment
 Ref: 1.5
 D: 2
+Id: edexcel-geog-1ga0-1A-033
 
 Q: What happens to the beach in front of a sea wall because waves reflect off the wall?
 A: Scouring
@@ -202,33 +235,39 @@ Accept: Beach is eroded; Beach is lowered; Scoured away; Erosion
 Ref: 1.5
 D: 2
 Note: Reflected wave energy removes sand and shingle at the base of the wall.
+Id: edexcel-geog-1ga0-1A-034
 
 Q: Why can groynes cause increased erosion further along the coast?
 A: They starve downdrift beaches of sediment
 Accept: Less sand reaches beaches downdrift; Sediment is trapped
 Ref: 1.5
 D: 3
+Id: edexcel-geog-1ga0-1A-035
 
 Q: What term describes the loss of land as the coastline moves inland through erosion?
 A: Coastal retreat
 Accept: Coastal recession; Recession
 Ref: 1.6
 D: 1
+Id: edexcel-geog-1ga0-1A-036
 
 Q: Which coast in Dorset, with Lulworth Cove and Durdle Door, is a well-known example of a concordant coastline?
 A: Jurassic Coast
 Accept: Dorset coast; Purbeck coast
 Ref: 1.6
 D: 2
+Id: edexcel-geog-1ga0-1A-037
 
 Q: Which coast of eastern England, mostly soft boulder clay, is one of Europe's fastest eroding?
 A: Holderness
 Accept: Holderness coast
 Ref: 1.6
 D: 2
+Id: edexcel-geog-1ga0-1A-038
 
 Q: Why is the Holderness coast eroding so quickly?
 A: Soft boulder clay and strong waves
 Accept: Weak rock and long fetch; Soft clay cliffs
 Ref: 1.6
 D: 3
+Id: edexcel-geog-1ga0-1A-039

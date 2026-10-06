@@ -367,3 +367,15 @@ small built-in decoder (src/shared/inflate.js, no network, no libraries) unpacks
 time it is used. With every board and subject the file would otherwise grow by about 1.5 MB of
 question text; compressed it grows by about 0.6 MB, so it opens faster from school network drives
 and email. Unpacking a topic takes about a millisecond.
+
+**Later packs written with a faster model, in a workflow.** To keep within the usage allowance, the Edexcel
+Physics 10–15, all History and all Geography packs were written and then independently checked by agents
+on a faster model, run as one workflow (one writer and one separate checker per pack), with the same rules,
+the same automated checks and the same reporting. Every pack still had its own checking pass.
+
+**Geography case studies.** Where a specification leaves the named example or case study to the school,
+the packs use widely taught examples (listed in QUESTIONS-TO-CHECK.md) so teachers can skip them if they
+teach different ones.
+
+**Geography A and B ids.** Edexcel Geography A and B share topic numbers, so their question ids include the
+specification code (edexcel-geog-1ga0-8-001), keeping every id unique.

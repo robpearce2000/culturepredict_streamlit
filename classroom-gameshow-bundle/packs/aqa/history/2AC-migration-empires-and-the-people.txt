@@ -6,316 +6,371 @@ Q: Which Anglo-Saxon kingdom was ruled by Alfred the Great?
 A: Wessex
 Ref: 2AC.1.1
 D: 1
+Id: aqa-hist-2AC-001
 
 Q: What name is given to the area of England under Viking law?
 A: Danelaw
 Accept: The Danelaw
 Ref: 2AC.1.1
 D: 1
+Id: aqa-hist-2AC-002
 
 Q: Which Danish king became King of England in 1016?
 A: Cnut
 Accept: Canute; Knut
 Ref: 2AC.1.1
 D: 2
+Id: aqa-hist-2AC-003
 
 Q: Which Norman woman married both Æthelred II and Cnut?
 A: Emma of Normandy
 Accept: Emma
 Ref: 2AC.1.1
 D: 2
+Id: aqa-hist-2AC-004
 
 Q: Why were monasteries a favourite target for the first Viking raiders?
 A: They were rich and poorly defended
 Accept: Wealthy; undefended; held treasure
 Ref: 2AC.1.1
 D: 3
+Id: aqa-hist-2AC-005
 
 Q: Which Angevin king ruled England from 1154 to 1189?
 A: Henry II
 Accept: King Henry II
 Ref: 2AC.1.2
 D: 1
+Id: aqa-hist-2AC-006
 
 Q: In which year did Henry II invade Ireland?
 A: 1171
 Ref: 2AC.1.2
 D: 2
+Id: aqa-hist-2AC-007
 
 Q: Which king lost Normandy to the French king in 1204?
 A: John
 Accept: King John
 Ref: 2AC.1.2
 D: 2
+Id: aqa-hist-2AC-008
 
 Q: At which 1214 battle did John's allies lose to Philip II of France?
 A: Bouvines
 Accept: Battle of Bouvines
 Ref: 2AC.1.2
 D: 3
+Id: aqa-hist-2AC-009
 
 Q: Which war between England and France began in 1337?
 A: Hundred Years' War
 Accept: The Hundred Years War
 Ref: 2AC.1.3
 D: 1
+Id: aqa-hist-2AC-010
 
 Q: Which English king won the Battle of Agincourt in 1415?
 A: Henry V
 Accept: King Henry V
 Ref: 2AC.1.3
 D: 1
+Id: aqa-hist-2AC-011
 
 Q: Which French peasant girl inspired French resistance to England in 1429?
 A: Joan of Arc
 Accept: Joan
 Ref: 2AC.1.3
 D: 2
+Id: aqa-hist-2AC-012
 
 Q: The Hundred Years' War helped create a growing sense of what among English people?
 A: National identity
 Accept: Patriotism; Englishness; English identity; nationalism
 Ref: 2AC.1.3
 D: 3
+Id: aqa-hist-2AC-013
 
 Q: Which English sailor made the first English slave-trading voyage in 1562?
 A: John Hawkins
 Accept: Hawkins
 Ref: 2AC.2.1
 D: 1
+Id: aqa-hist-2AC-014
 
 Q: Which cash crop was grown on Barbados plantations?
 A: Sugar
 Accept: Sugar cane
 Ref: 2AC.2.1
 D: 1
+Id: aqa-hist-2AC-015
 
 Q: What name is given to the trade route linking Britain, Africa and the Caribbean?
 A: Triangular trade
 Accept: The triangular trade
 Ref: 2AC.2.1
 D: 1
+Id: aqa-hist-2AC-016
 
 Q: Which Caribbean island did English forces take from Spain in 1655?
 A: Jamaica
 Ref: 2AC.2.1
 D: 2
+Id: aqa-hist-2AC-017
 
 Q: Why did planters turn to enslaved Africans to grow sugar?
 A: To get a cheap labour force
 Accept: Cheap labour; labour shortage; forced labour
 Ref: 2AC.2.1
 D: 3
+Id: aqa-hist-2AC-018
 
 Q: Which ship carried the Pilgrim Fathers to America in 1620?
 A: Mayflower
 Accept: The Mayflower
 Ref: 2AC.2.2
 D: 1
+Id: aqa-hist-2AC-019
 
 Q: Which crop made Jamestown profitable?
 A: Tobacco
 Ref: 2AC.2.2
 D: 2
+Id: aqa-hist-2AC-020
 
 Q: What name was given to poor workers who paid for their passage by working for a fixed term?
 A: Indentured servants
 Accept: Indentured labourers; indentured workers
 Ref: 2AC.2.2
 D: 2
+Id: aqa-hist-2AC-021
 
 Q: Why did the Pilgrim Fathers leave England?
 A: To worship freely
 Accept: Religious freedom; religious persecution; religion
 Ref: 2AC.2.2
 D: 3
+Id: aqa-hist-2AC-022
 
 Q: Which French Protestants fled to Britain after 1685?
 A: Huguenots
 Accept: Huguenot
 Ref: 2AC.2.3
 D: 1
+Id: aqa-hist-2AC-023
 
 Q: Which animals replaced tenant farmers during the Highland clearances?
 A: Sheep
 Ref: 2AC.2.3
 D: 1
+Id: aqa-hist-2AC-024
 
 Q: Which cloth did Huguenot weavers make in Spitalfields?
 A: Silk
 Ref: 2AC.2.3
 D: 2
+Id: aqa-hist-2AC-025
 
 Q: In which year did the Indian Rebellion begin?
 A: 1857
 Ref: 2AC.3.1
 D: 1
+Id: aqa-hist-2AC-026
 
 Q: Which East India Company soldier won the Battle of Plassey in 1757?
 A: Robert Clive
 Accept: Clive
 Ref: 2AC.3.1
 D: 1
+Id: aqa-hist-2AC-027
 
-Q: Which Governor-General of Bengal was impeached in 1787 for misrule?
+Q: Which first Governor-General of Bengal was impeached by Parliament for misrule after returning to Britain?
 A: Warren Hastings
 Accept: Hastings
 Ref: 2AC.3.1
 D: 2
+Id: aqa-hist-2AC-028
 
 Q: Who took over the government of India from the East India Company after 1857?
 A: The British Crown
 Accept: The Crown; British government
 Ref: 2AC.3.1
 D: 2
+Id: aqa-hist-2AC-029
 
 Q: Why did cheap British factory cloth damage India's economy?
 A: It ruined Indian textile makers
 Accept: Indian weavers lost trade; cotton industry declined
 Ref: 2AC.3.1
 D: 3
+Id: aqa-hist-2AC-030
 
 Q: What name is given to the European race to claim African land in the 1880s?
 A: Scramble for Africa
 Accept: The Scramble for Africa
 Ref: 2AC.3.2
 D: 1
+Id: aqa-hist-2AC-031
 
 Q: Which Scottish missionary and explorer travelled widely in central Africa?
 A: David Livingstone
 Accept: Livingstone
 Ref: 2AC.3.2
 D: 1
+Id: aqa-hist-2AC-032
 
 Q: Which two Boer republics fought Britain in 1899?
 A: Transvaal and Orange Free State
 Accept: Transvaal; Orange Free State; South African Republic
 Ref: 2AC.3.2
 D: 2
+Id: aqa-hist-2AC-033
 
 Q: Which poet wrote 'The White Man's Burden' in 1899?
 A: Rudyard Kipling
 Accept: Kipling
 Ref: 2AC.3.2
 D: 2
+Id: aqa-hist-2AC-034
 
 Q: Why did the discovery of gold in the Transvaal increase tension with Britain?
 A: It drew British settlers and wealth
 Accept: Uitlanders; British miners; Britain wanted the gold
 Ref: 2AC.3.2
 D: 3
+Id: aqa-hist-2AC-035
 
 Q: Which Irish disaster of the 1840s drove migration to Britain?
 A: Potato famine
 Accept: Great Famine; Irish potato famine; Great Hunger
 Ref: 2AC.3.3
 D: 1
+Id: aqa-hist-2AC-036
 
 Q: Which 1905 Act restricted Jewish migration to Britain?
 A: Aliens Act
 Accept: The Aliens Act 1905
 Ref: 2AC.3.3
 D: 2
+Id: aqa-hist-2AC-037
 
 Q: Which scheme brought about 10,000 mostly Jewish children to Britain in 1938-39?
 A: Kindertransport
 Accept: The Kindertransport
 Ref: 2AC.3.3
 D: 2
+Id: aqa-hist-2AC-038
 
 Q: Why did many Jews flee the Russian Empire in the 1880s?
 A: Persecution and pogroms
 Accept: Violence; anti-Jewish attacks; pogroms
 Ref: 2AC.3.3
 D: 3
+Id: aqa-hist-2AC-039
 
 Q: In which year did India gain independence?
 A: 1947
 Ref: 2AC.4.1
 D: 1
+Id: aqa-hist-2AC-040
 
 Q: Which African country, led by Kwame Nkrumah, became independent in 1957?
 A: Ghana
 Accept: Gold Coast
 Ref: 2AC.4.1
 D: 2
+Id: aqa-hist-2AC-041
 
 Q: Which Kenyan leader became the first Prime Minister of independent Kenya?
 A: Jomo Kenyatta
 Accept: Kenyatta
 Ref: 2AC.4.1
 D: 2
+Id: aqa-hist-2AC-042
 
 Q: Which superpower pressured Britain to withdraw from Suez?
 A: United States
 Accept: USA; America; US
 Ref: 2AC.4.1
 D: 3
+Id: aqa-hist-2AC-043
 
 Q: In which year did Idi Amin expel Asians from Uganda?
 A: 1972
 Ref: 2AC.4.2
 D: 1
+Id: aqa-hist-2AC-044
 
 Q: Which newspaper did Claudia Jones found in London in 1958?
 A: West Indian Gazette
 Accept: The West Indian Gazette
 Ref: 2AC.4.2
 D: 2
+Id: aqa-hist-2AC-045
 
 Q: Which country invaded the Falkland Islands in 1982?
 A: Argentina
 Ref: 2AC.4.2
 D: 2
+Id: aqa-hist-2AC-046
 
 Q: In which year did the Berlin Wall fall, symbolising the end of the Cold War?
 A: 1989
 Ref: 2AC.4.3
 D: 1
+Id: aqa-hist-2AC-047
 
 Q: Which Prime Minister took Britain into the European Economic Community in 1973?
 A: Edward Heath
 Accept: Heath
 Ref: 2AC.4.3
 D: 2
+Id: aqa-hist-2AC-048
 
 Q: Which treaty of 1992 created the European Union?
 A: Maastricht Treaty
 Accept: Maastricht
 Ref: 2AC.4.3
 D: 2
+Id: aqa-hist-2AC-049
 
 Q: What right lets EU citizens live and work in other member states?
 A: Freedom of movement
 Accept: Free movement
 Ref: 2AC.4.3
 D: 2
+Id: aqa-hist-2AC-050
 
 Q: After 1945, Britain's trade increasingly turned from the Empire to which continent?
 A: Europe
 Ref: 2AC.4.3
 D: 2
+Id: aqa-hist-2AC-051
 
 Q: Which Prime Minister led Britain in the 1982 Falklands War?
 A: Margaret Thatcher
 Accept: Thatcher
 Ref: 2AC.4.2
 D: 2
+Id: aqa-hist-2AC-052
 
-Q: Why did Britain begin sending convicts to Australia in 1788?
+Q: Why did Britain begin sending convicts to Australia from 1788?
 A: It could no longer send them to America
 Accept: Loss of American colonies; American independence
 Ref: 2AC.3.3
 D: 3
+Id: aqa-hist-2AC-053
 
 Q: Why did the Second World War weaken Britain's hold on its empire?
 A: Britain was exhausted and heavily in debt
 Accept: Britain was bankrupt; financial cost; economic weakness
 Ref: 2AC.4.1
 D: 3
+Id: aqa-hist-2AC-054
 
 Q: Why did Britain occupy Egypt in 1882?
 A: To protect the Suez Canal
 Accept: Protect route to India; protect the canal; Suez Canal
 Ref: 2AC.3.2
 D: 3
+Id: aqa-hist-2AC-055

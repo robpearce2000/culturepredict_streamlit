@@ -7,41 +7,48 @@ A: Thegn
 Accept: Thane
 Ref: B1.1.1
 D: 1
+Id: edexcel-hist-B1-001
 
 Q: Into what local divisions was each Anglo-Saxon shire split, each with its own court?
 A: Hundreds
 Accept: Hundred
 Ref: B1.1.1
 D: 1
+Id: edexcel-hist-B1-002
 
 Q: What was the payment, set by rank, that a killer paid to the victim's family in Anglo-Saxon law?
 A: Wergild
 Accept: Wergeld; Weregild
 Ref: B1.1.1
 D: 2
+Id: edexcel-hist-B1-003
 
 Q: Why were churchmen so valuable to Anglo-Saxon kings in running the government?
 A: They could read and write
 Accept: Literacy; they were literate; scribes; they wrote the writs
 Ref: B1.1.1
 D: 3
+Id: edexcel-hist-B1-004
 
 Q: Who was Earl of Wessex until his death in 1053, and father of Harold Godwinson?
 A: Godwin
 Accept: Earl Godwin
 Ref: B1.1.2
 D: 1
+Id: edexcel-hist-B1-005
 
 Q: In which year did Harold Godwinson succeed his father as Earl of Wessex?
 A: 1053
 Ref: B1.1.2
 D: 1
+Id: edexcel-hist-B1-006
 
 Q: Why did the Northumbrians rise against Earl Tostig in 1065?
 A: His harsh rule and heavy taxes
 Accept: Harsh taxation; his cruelty; high taxes; misrule
 Ref: B1.1.2
 D: 3
+Id: edexcel-hist-B1-007
 
 Q: According to Norman sources, what did Harold swear to William during his embassy to Normandy?
 A: To support William's claim to the throne
@@ -49,125 +56,146 @@ Accept: An oath to back William as king; to support William; oath of loyalty to 
 Ref: B1.1.2
 D: 2
 Note: Anglo-Saxon sources do not mention the oath; the Normans used it to justify the invasion.
+Id: edexcel-hist-B1-008
 
 Q: Which Norwegian king claimed the English throne through an earlier agreement between Magnus and Harthacnut?
 A: Harald Hardrada
 Accept: Hardrada; Harold Hardrada
 Ref: B1.1.3
 D: 1
+Id: edexcel-hist-B1-009
 
 Q: Which young great-nephew of Edward the Confessor was a claimant but was passed over in 1066?
 A: Edgar the Aethling
 Accept: Edgar Aetheling; Edgar Atheling; Edgar
 Ref: B1.1.3
 D: 1
+Id: edexcel-hist-B1-010
 
 Q: What name was given to the council of leading nobles and churchmen that agreed Harold Godwinson should be king?
 A: Witan
 Accept: The Witan; Witenagemot
 Ref: B1.1.3
 D: 1
+Id: edexcel-hist-B1-011
 
 Q: Which Pope gave William of Normandy a blessing and a banner for his invasion of England?
 A: Alexander II
 Accept: Pope Alexander II; Alexander
 Ref: B1.1.3
 D: 2
+Id: edexcel-hist-B1-012
 
 Q: Why did the victory at Stamford Bridge leave Harold weaker against William?
 A: His army was exhausted and depleted
 Accept: Tired and weakened army; lost many men; exhausted troops far from the south
 Ref: B1.1.3
 D: 3
+Id: edexcel-hist-B1-013
 
 Q: On what date in 1066 was the Battle of Hastings fought?
 A: 14 October
 Accept: 14th October; 14 Oct
 Ref: B1.1.4
 D: 1
+Id: edexcel-hist-B1-014
 
 Q: On which ridge near Hastings did Harold place his army?
 A: Senlac Hill
 Accept: Senlac Ridge; Senlac
 Ref: B1.1.4
 D: 2
+Id: edexcel-hist-B1-015
 
 Q: What defensive formation of linked shields did the English use at Hastings?
 A: Shield wall
 Accept: Shieldwall
 Ref: B1.1.4
 D: 1
+Id: edexcel-hist-B1-016
 
 Q: Why did the English shield wall break up during the battle?
 A: Some men chased the retreating Normans
 Accept: They pursued the fleeing Normans; fell for the feigned retreat
 Ref: B1.1.4
 D: 3
+Id: edexcel-hist-B1-017
 
 Q: At which Hertfordshire place did leading English nobles submit to William in late 1066?
 A: Berkhamsted
 Accept: Berkhamsted Castle
 Ref: B1.2.1
 D: 2
+Id: edexcel-hist-B1-018
 
 Q: What did William mainly give to his Norman followers as a reward for their support?
 A: Land
 Accept: Estates; land in England; manors
 Ref: B1.2.1
 D: 1
+Id: edexcel-hist-B1-019
 
 Q: Which Norman friend of William was made Earl of Hereford, guarding the Welsh border?
 A: William FitzOsbern
 Accept: FitzOsbern; William Fitz Osbern
 Ref: B1.2.1
 D: 2
+Id: edexcel-hist-B1-020
 
 Q: Against which people were the Marcher earldoms on the Welsh border mainly meant to defend England?
 A: The Welsh
 Accept: Welsh
 Ref: B1.2.1
 D: 2
+Id: edexcel-hist-B1-021
 
 Q: Why were the first Norman castles built of earth and timber?
 A: They were quick and cheap to build
 Accept: Speed; quick to build; cheap
 Ref: B1.2.1
 D: 3
+Id: edexcel-hist-B1-022
 
 Q: In which year did Earls Edwin and Morcar revolt against William?
 A: 1068
 Ref: B1.2.2
 D: 1
+Id: edexcel-hist-B1-023
 
 Q: Which claimant to the throne led rebels at York in 1069, helped by a Danish fleet?
 A: Edgar the Aethling
 Accept: Edgar Aetheling; Edgar Atheling; Edgar
 Ref: B1.2.2
 D: 2
+Id: edexcel-hist-B1-024
 
 Q: Which Danish king sent a fleet to support the northern rebels in 1069?
 A: Sweyn
 Accept: Sweyn II; Swein; Sweyn Estridsson; Svein
 Ref: B1.2.2
 D: 2
+Id: edexcel-hist-B1-025
 
 Q: Why were the Fens around Ely a good base for Hereward's rebels?
 A: Marshes made it hard to attack
 Accept: Surrounded by marshland; hard to reach; protected by water and marsh
 Ref: B1.2.2
 D: 3
+Id: edexcel-hist-B1-026
 
 Q: Why did William order the Harrying of the North?
 A: To crush rebellion and deter future revolts
 Accept: Punish rebels; stop further rebellion; stop Danes using the North
 Ref: B1.2.3
 D: 3
+Id: edexcel-hist-B1-027
 
 Q: What did William's troops destroy in the Harrying of the North, causing famine?
 A: Crops, livestock and homes
 Accept: Crops; food supplies; farms and villages
 Ref: B1.2.3
 D: 2
+Id: edexcel-hist-B1-028
 
 Q: By 1086, about what percentage of land was held by English lay tenants-in-chief?
 A: About 5%
@@ -175,122 +203,143 @@ Accept: 5%; around 5%; under 10%; five per cent
 Ref: B1.2.3
 D: 2
 Note: Most land had passed to Normans; the Church held about a quarter.
+Id: edexcel-hist-B1-029
 
 Q: Which Earl of East Anglia, of Breton descent, joined the Revolt of the Earls in 1075?
 A: Ralph de Gael
 Accept: Ralph de Guader; Ralph Guader; Ralph of Gael; Ralph
 Ref: B1.2.4
 D: 2
+Id: edexcel-hist-B1-030
 
 Q: Which Earl of Hereford, son of William FitzOsbern, joined the revolt of 1075?
 A: Roger de Breteuil
 Accept: Roger; Roger of Breteuil
 Ref: B1.2.4
 D: 2
+Id: edexcel-hist-B1-031
 
 Q: Where was William I during the Revolt of the Earls in 1075?
 A: Normandy
 Accept: In Normandy; France
 Ref: B1.2.4
 D: 1
+Id: edexcel-hist-B1-032
 
 Q: Which group of nobles held land directly from the king in return for knight service?
 A: Tenants-in-chief
 Accept: Barons; tenant-in-chief; tenants in chief
 Ref: B1.3.1
 D: 1
+Id: edexcel-hist-B1-033
 
 Q: What was the ceremony called in which a tenant knelt and swore loyalty to his lord?
 A: Homage
 Accept: Paying homage
 Ref: B1.3.1
 D: 1
+Id: edexcel-hist-B1-034
 
 Q: What military duty did a knight owe to his lord in return for land?
 A: Knight service
 Accept: Military service; fighting for the lord
 Ref: B1.3.1
 D: 2
+Id: edexcel-hist-B1-035
 
 Q: What was it called when a lord took back land from a tenant who failed in his duties?
 A: Forfeiture
 Accept: Forfeit
 Ref: B1.3.1
 D: 2
+Id: edexcel-hist-B1-036
 
 Q: Which official ran each shire for the Norman king, collecting taxes and keeping order?
 A: Sheriff
 Accept: The sheriff
 Ref: B1.3.2
 D: 1
+Id: edexcel-hist-B1-037
 
 Q: What was the demesne on a lord's estate?
 A: Land kept for the lord's own use
 Accept: The lord's own land; land not rented to tenants
 Ref: B1.3.2
 D: 2
+Id: edexcel-hist-B1-038
 
 Q: Which large royal hunting forest in Hampshire did William create?
 A: New Forest
 Accept: The New Forest
 Ref: B1.3.2
 D: 1
+Id: edexcel-hist-B1-039
 
 Q: Why did the Norman forest laws anger many English people?
 A: They restricted hunting and use of land
 Accept: Harsh punishments; banned hunting; lost common land
 Ref: B1.3.2
 D: 3
+Id: edexcel-hist-B1-040
 
 Q: Which language was spoken by the Norman aristocracy in England?
 A: Norman French
 Accept: French
 Ref: B1.3.3
 D: 1
+Id: edexcel-hist-B1-041
 
 Q: What relation was Bishop Odo of Bayeux to William I?
 A: Half-brother
 Accept: Half brother
 Ref: B1.3.3
 D: 1
+Id: edexcel-hist-B1-042
 
 Q: Which earldom in England did Odo of Bayeux hold?
 A: Kent
 Accept: Earl of Kent
 Ref: B1.3.3
 D: 2
+Id: edexcel-hist-B1-043
 
 Q: Why was Odo arrested by William in 1082?
 A: He planned to take an army to Italy
 Accept: He wanted to become Pope; raising an army for Rome; ambitions to be Pope
 Ref: B1.3.3
 D: 3
+Id: edexcel-hist-B1-044
 
 Q: What was the nickname of William's eldest son Robert?
 A: Curthose
 Accept: Robert Curthose
 Ref: B1.3.4
 D: 2
+Id: edexcel-hist-B1-045
 
 Q: Robert revolted against his father in 1077 over which duchy?
 A: Normandy
 Accept: The Duchy of Normandy
 Ref: B1.3.4
 D: 1
+Id: edexcel-hist-B1-046
 
 Q: Which castle was the scene of the 1079 battle between William I and his rebel son Robert?
 A: Gerberoi
 Accept: Gerberoy
 Ref: B1.3.4
 D: 2
+Id: edexcel-hist-B1-047
 
 Q: In which year did William I die?
 A: 1087
 Ref: B1.3.4
 D: 1
+Id: edexcel-hist-B1-048
 
 Q: What did the barons who rebelled in 1088 hope to achieve?
 A: Unite England and Normandy under Robert
 Accept: Put Robert on the throne; make Robert king
 Ref: B1.3.4
 D: 3
+Id: edexcel-hist-B1-049

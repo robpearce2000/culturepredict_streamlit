@@ -7,12 +7,14 @@ A: Matter
 Accept: Material; particles; the medium; mass
 Ref: 4.1
 D: 1
+Id: edexcel-phys-4-001
 
 Q: Apart from energy, what do waves such as radio waves carry from place to place?
 A: Information
 Accept: Data; signals
 Ref: 4.1
 D: 1
+Id: edexcel-phys-4-002
 
 Q: In a stadium "Mexican wave", spectators stand up and sit down in their seats. What travels round the stadium?
 A: The wave
@@ -20,12 +22,14 @@ Accept: The disturbance; energy; the pattern
 Ref: 4.1
 D: 2
 Note: The people (like particles in a medium) stay in their seats.
+Id: edexcel-phys-4-003
 
 Q: A floating cork bobs as water waves pass under it. In which direction does the cork mainly move?
 A: Up and down
 Accept: Vertically; up and down on the spot
 Ref: 4.2
 D: 2
+Id: edexcel-phys-4-004
 
 Q: A candle flame in front of a loudspeaker flickers back and forth but is not blown away. What do the air particles do?
 A: Vibrate back and forth about fixed positions
@@ -33,42 +37,49 @@ Accept: Oscillate; vibrate on the spot; vibrate backwards and forwards
 Ref: 4.2
 D: 2
 Note: The air vibrates but does not travel with the sound.
+Id: edexcel-phys-4-005
 
 Q: What is the frequency of a wave?
 A: Number of waves passing a point each second
 Accept: Waves per second; number of oscillations per second
 Ref: 4.3
 D: 2
+Id: edexcel-phys-4-006
 
 Q: What is the unit of frequency?
 A: Hertz
 Accept: Hz
 Ref: 4.3
 D: 1
+Id: edexcel-phys-4-007
 
 Q: What is the wavelength of a wave?
 A: Distance between two neighbouring crests
 Accept: Distance between neighbouring troughs; distance from one point to the same point on the next wave; distance between adjacent compressions
 Ref: 4.3
 D: 2
+Id: edexcel-phys-4-008
 
 Q: Thirty waves pass a point in 10 seconds. What is their frequency?
 A: 3 Hz
 Accept: 3 hertz
 Ref: 4.3
 D: 2
+Id: edexcel-phys-4-009
 
 Q: What is the amplitude of a wave?
 A: Maximum displacement from the rest position
 Accept: Maximum displacement from the undisturbed position; height of a crest from the middle
 Ref: 4.4
 D: 2
+Id: edexcel-phys-4-010
 
 Q: What name is given to the time taken for one complete wave to pass a point?
 A: Period
 Accept: Time period
 Ref: 4.4
 D: 1
+Id: edexcel-phys-4-011
 
 Q: A wave's crests are 4 cm above the rest position and its troughs 4 cm below. What is its amplitude?
 A: 4 cm
@@ -76,30 +87,35 @@ Accept: 0.04 m; 40 mm
 Ref: 4.4
 D: 2
 Note: Not 8 cm: amplitude is measured from the rest position, not crest to trough.
+Id: edexcel-phys-4-012
 
 Q: On a diagram of water waves seen from above, what name is given to a line joining all the points along one crest?
 A: Wavefront
 Accept: Wave front
 Ref: 4.4
 D: 1
+Id: edexcel-phys-4-013
 
 Q: In which type of wave are the oscillations at right angles to the direction of energy transfer?
 A: Transverse
 Accept: Transverse waves
 Ref: 4.5
 D: 1
+Id: edexcel-phys-4-014
 
 Q: In a longitudinal wave, how are the oscillations orientated compared with the direction of energy transfer?
 A: Parallel
 Accept: In the same direction; along the direction of travel
 Ref: 4.5
 D: 2
+Id: edexcel-phys-4-015
 
 Q: Name the regions in a sound wave where the air particles are closest together.
 A: Compressions
 Accept: Compression
 Ref: 4.5
 D: 1
+Id: edexcel-phys-4-016
 
 Q: Which type of seismic wave is longitudinal: P waves or S waves?
 A: P waves
@@ -107,30 +123,35 @@ Accept: P; primary waves
 Ref: 4.5
 D: 1
 Note: S waves are transverse; electromagnetic and water surface waves are also transverse.
+Id: edexcel-phys-4-017
 
 Q: State the equation that links wave speed, frequency and wavelength.
 A: Wave speed = frequency × wavelength
 Accept: v = f × λ; v = fλ
 Ref: 4.6
 D: 2
+Id: edexcel-phys-4-018
 
 Q: A wave has a frequency of 50 Hz and a wavelength of 2 m. What is its speed?
 A: 100 m/s
 Accept: 100 metres per second
 Ref: 4.6
 D: 2
+Id: edexcel-phys-4-019
 
 Q: A sound wave travels at 340 m/s and has a wavelength of 2 m. What is its frequency?
 A: 170 Hz
 Accept: 170 hertz
 Ref: 4.6
 D: 3
+Id: edexcel-phys-4-020
 
 Q: A water wave travels at 3 m/s with a frequency of 6 Hz. What is its wavelength?
 A: 0.5 m
 Accept: 50 cm; half a metre
 Ref: 4.6
 D: 3
+Id: edexcel-phys-4-021
 
 Q: To measure the speed of sound in air, one person bangs two cymbals together far away. When should the timer start the stopwatch?
 A: When they see the cymbals hit
@@ -138,6 +159,7 @@ Accept: On seeing the clash; when they see the cymbals meet
 Ref: 4.7
 D: 2
 Note: The stopwatch stops when the sound is heard; light arrives almost instantly.
+Id: edexcel-phys-4-022
 
 Q: A student claps 85 m from a wall and hears the echo 0.5 s later. What is the speed of sound?
 A: 340 m/s
@@ -145,12 +167,14 @@ Accept: 340 metres per second
 Ref: 4.7
 D: 3
 Note: The sound travels 170 m, there and back.
+Id: edexcel-phys-4-023
 
 Q: How can you find the frequency of ripples in a ripple tank?
 A: Count waves passing a point per second
 Accept: Count waves in a set time and divide by the time; count waves in 10 s, divide by 10
 Ref: 4.7
 D: 2
+Id: edexcel-phys-4-024
 
 Q: A ship's sonar pulse returns 2 s after it is sent. Sound travels at 1500 m/s in water. How deep is the sea?
 A: 1500 m
@@ -159,6 +183,7 @@ Ref: 4.8P
 D: 3
 HT: yes
 Note: The pulse travels 3000 m in total, there and back.
+Id: edexcel-phys-4-025
 
 Q: When calculating a depth from an echo, why is the total distance travelled halved?
 A: The pulse travels down and back up
@@ -166,6 +191,7 @@ Accept: Echo goes there and back; it travels to the object and back
 Ref: 4.8P
 D: 3
 HT: yes
+Id: edexcel-phys-4-026
 
 Q: Thunder is heard 3 s after the lightning is seen. Sound travels at 340 m/s. How far away is the storm?
 A: 1020 m
@@ -173,36 +199,42 @@ Accept: 1.02 km; about 1 km
 Ref: 4.8P
 D: 3
 HT: yes
+Id: edexcel-phys-4-027
 
 Q: What name is given to a wave bouncing back off a surface?
 A: Reflection
 Accept: Reflected
 Ref: 4.9P
 D: 1
+Id: edexcel-phys-4-028
 
 Q: What name is given to a wave passing through a material and out the other side?
 A: Transmission
 Accept: Transmitted
 Ref: 4.9P
 D: 1
+Id: edexcel-phys-4-029
 
 Q: What name is given to a wave changing direction as it crosses a boundary between two materials at an angle?
 A: Refraction
 Accept: Refracted
 Ref: 4.9P
 D: 1
+Id: edexcel-phys-4-030
 
 Q: A wave's energy is taken in by a material and it does not pass out the other side. What is this effect called?
 A: Absorption
 Accept: Absorbed
 Ref: 4.9P
 D: 1
+Id: edexcel-phys-4-031
 
 Q: A light ray passes at an angle from air into glass and slows down. Does it bend towards or away from the normal?
 A: Towards the normal
 Accept: Towards
 Ref: 4.10
 D: 2
+Id: edexcel-phys-4-032
 
 Q: A wave meets a boundary travelling along the normal. What happens to its direction?
 A: No change
@@ -210,6 +242,7 @@ Accept: Unchanged; it carries straight on; stays the same
 Ref: 4.10
 D: 2
 Note: Its speed and wavelength still change.
+Id: edexcel-phys-4-033
 
 Q: Water waves travel from deep water into shallow water. What happens to their speed?
 A: Decreases
@@ -217,6 +250,7 @@ Accept: Slows down; goes down
 Ref: 4.10
 D: 2
 HT: yes
+Id: edexcel-phys-4-034
 
 Q: Why does a wave change direction when it crosses a boundary at an angle?
 A: One side of the wavefront changes speed first
@@ -224,6 +258,7 @@ Accept: Part of the wavefront slows down first; one end speeds up or slows first
 Ref: 4.10
 D: 3
 HT: yes
+Id: edexcel-phys-4-035
 
 Q: A glass prism splits white light into a spectrum. Why?
 A: Different wavelengths refract by different amounts
@@ -231,6 +266,7 @@ Accept: Each colour refracts by a different amount; refraction depends on wavele
 Ref: 4.11
 D: 3
 HT: yes
+Id: edexcel-phys-4-036
 
 Q: Whether a substance absorbs, transmits, refracts or reflects a wave can depend on which property of the wave?
 A: Wavelength
@@ -238,6 +274,7 @@ Accept: Frequency
 Ref: 4.11
 D: 1
 HT: yes
+Id: edexcel-phys-4-037
 
 Q: Earth's atmosphere lets visible light pass through but stops most X-rays. Which two wave effects are these?
 A: Transmission and absorption
@@ -245,6 +282,7 @@ Accept: Transmits visible, absorbs X-rays; transmitted and absorbed
 Ref: 4.11
 D: 2
 HT: yes
+Id: edexcel-phys-4-038
 
 Q: Which part of the ear is first made to vibrate by incoming sound waves?
 A: Eardrum
@@ -252,6 +290,7 @@ Accept: Tympanic membrane; ear drum
 Ref: 4.12P
 D: 1
 HT: yes
+Id: edexcel-phys-4-039
 
 Q: What is the group name for the three tiny bones that pass vibrations from the eardrum to the inner ear?
 A: Ossicles
@@ -259,6 +298,7 @@ Accept: Hammer, anvil and stirrup; malleus, incus and stapes; middle ear bones
 Ref: 4.12P
 D: 1
 HT: yes
+Id: edexcel-phys-4-040
 
 Q: Which coiled part of the inner ear has hair cells that turn vibrations into electrical signals?
 A: Cochlea
@@ -266,6 +306,7 @@ Accept: The cochlea
 Ref: 4.12P
 D: 1
 HT: yes
+Id: edexcel-phys-4-041
 
 Q: Why can the human ear only detect sound over a limited frequency range?
 A: Ear parts only vibrate well over certain frequencies
@@ -274,6 +315,7 @@ Ref: 4.12P
 D: 3
 HT: yes
 Note: Conversion between sound waves and vibrations in solids depends on the size, mass and stiffness of the parts.
+Id: edexcel-phys-4-042
 
 Q: What name is given to sound with frequencies above 20 000 Hz?
 A: Ultrasound
@@ -281,6 +323,7 @@ Accept: Ultrasonic
 Ref: 4.13P
 D: 1
 HT: yes
+Id: edexcel-phys-4-043
 
 Q: Above what frequency is sound called ultrasound?
 A: 20 000 Hz
@@ -288,6 +331,7 @@ Accept: 20 kHz; 20 000 hertz
 Ref: 4.13P
 D: 1
 HT: yes
+Id: edexcel-phys-4-044
 
 Q: A bat emits calls at a frequency of 50 000 Hz. What type of sound is this?
 A: Ultrasound
@@ -295,6 +339,7 @@ Accept: Ultrasonic
 Ref: 4.13P
 D: 2
 HT: yes
+Id: edexcel-phys-4-045
 
 Q: What name is given to sound with frequencies below 20 Hz?
 A: Infrasound
@@ -302,6 +347,7 @@ Accept: Infrasonic
 Ref: 4.14P
 D: 1
 HT: yes
+Id: edexcel-phys-4-046
 
 Q: Below what frequency is sound called infrasound?
 A: 20 Hz
@@ -309,6 +355,7 @@ Accept: 20 hertz
 Ref: 4.14P
 D: 1
 HT: yes
+Id: edexcel-phys-4-047
 
 Q: Large volcanic eruptions produce sound waves of a few hertz that humans cannot hear. What type of sound is this?
 A: Infrasound
@@ -316,6 +363,7 @@ Accept: Infrasonic
 Ref: 4.14P
 D: 2
 HT: yes
+Id: edexcel-phys-4-048
 
 Q: What name is given to the use of ultrasound pulses and echoes by ships to detect the seabed or shoals of fish?
 A: Sonar
@@ -323,6 +371,7 @@ Accept: Echo sounding
 Ref: 4.15P
 D: 1
 HT: yes
+Id: edexcel-phys-4-049
 
 Q: In foetal scanning, what happens to some ultrasound at each boundary between different tissues?
 A: Partially reflected
@@ -331,6 +380,7 @@ Ref: 4.15P
 D: 2
 HT: yes
 Note: The rest is transmitted; the echo times build up the image.
+Id: edexcel-phys-4-050
 
 Q: Which type of seismic wave cannot travel through Earth's liquid outer core?
 A: S waves
@@ -338,6 +388,7 @@ Accept: S; secondary waves
 Ref: 4.15P
 D: 2
 HT: yes
+Id: edexcel-phys-4-051
 
 Q: S waves are not detected on the far side of the Earth from an earthquake. What does this show about the outer core?
 A: Liquid
@@ -346,18 +397,21 @@ Ref: 4.15P
 D: 3
 HT: yes
 Note: Transverse S waves cannot pass through liquids, leaving an S-wave shadow zone.
+Id: edexcel-phys-4-052
 
 Q: Sound passes from air into water. What happens to its frequency?
 A: Stays the same
 Accept: Unchanged; no change
 Ref: 4.16P
 D: 2
+Id: edexcel-phys-4-053
 
 Q: Sound passes from air into water. What happens to its speed?
 A: Increases
 Accept: Goes up; speeds up
 Ref: 4.16P
 D: 2
+Id: edexcel-phys-4-054
 
 Q: Sound passes from air into water and speeds up. What happens to its wavelength?
 A: Increases
@@ -365,6 +419,7 @@ Accept: Gets longer; goes up
 Ref: 4.16P
 D: 3
 Note: Frequency is fixed by the source, so wavelength changes in proportion to speed.
+Id: edexcel-phys-4-055
 
 Q: In the ripple tank practical, why is a lamp placed above the tank?
 A: To project the wave pattern onto paper below
@@ -372,6 +427,7 @@ Accept: To cast shadows of the waves onto paper; so the waves can be seen and me
 Ref: 4.17
 RP: 4.17
 D: 2
+Id: edexcel-phys-4-056
 
 Q: In the ripple tank practical, why measure across ten waves and divide by ten rather than measure one wavelength?
 A: To reduce uncertainty
@@ -379,6 +435,7 @@ Accept: More accurate; reduces percentage uncertainty; reduces measurement error
 Ref: 4.17
 RP: 4.17
 D: 3
+Id: edexcel-phys-4-057
 
 Q: Twelve ripples pass a point in 4 s and their wavelength is 2 cm. What is their speed?
 A: 6 cm/s
@@ -387,6 +444,7 @@ Ref: 4.17
 RP: 4.17
 D: 3
 Note: Frequency = 12 ÷ 4 = 3 Hz.
+Id: edexcel-phys-4-058
 
 Q: A metal rod held at its middle is struck at one end. For the lowest frequency, the wavelength is how many times the rod's length?
 A: Twice
@@ -394,6 +452,7 @@ Accept: 2; two times; double
 Ref: 4.17
 RP: 4.17
 D: 3
+Id: edexcel-phys-4-059
 
 Q: In a metal rod, a sound wave has a wavelength of 2 m and a frequency of 2500 Hz. What is its speed?
 A: 5000 m/s
@@ -401,6 +460,7 @@ Accept: 5 km/s; 5000 metres per second
 Ref: 4.17
 RP: 4.17
 D: 2
+Id: edexcel-phys-4-060
 
 Q: Water has spilled near the ripple tank's mains-powered lamp. What hazard does this cause?
 A: Electric shock
@@ -408,3 +468,4 @@ Accept: Electrocution
 Ref: 4.17
 RP: 4.17
 D: 1
+Id: edexcel-phys-4-061

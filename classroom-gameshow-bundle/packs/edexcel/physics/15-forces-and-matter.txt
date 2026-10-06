@@ -7,108 +7,126 @@ A: Two
 Accept: 2
 Ref: 15.1
 D: 1
+Id: edexcel-phys-15-001
 
 Q: To compress a spring, in which directions must the two forces act?
 A: Towards each other
 Accept: Inwards from opposite ends; pushing in opposite directions towards the spring
 Ref: 15.1
 D: 2
+Id: edexcel-phys-15-002
 
 Q: A spring has one end fixed to a wall and the other pulled. Which force balances the pull?
 A: The wall's pull on the spring
 Accept: Force from the wall; reaction from the wall; wall exerts an equal force
 Ref: 15.1
 D: 3
+Id: edexcel-phys-15-003
 
 Q: What name is given to distortion where an object returns to its original shape when the forces are removed?
 A: Elastic
 Accept: Elastic distortion; elastic deformation
 Ref: 15.2
 D: 1
+Id: edexcel-phys-15-004
 
 Q: What name is given to distortion where an object does not return to its original shape?
 A: Inelastic
 Accept: Inelastic distortion; plastic; plastic deformation
 Ref: 15.2
 D: 1
+Id: edexcel-phys-15-005
 
 Q: A spring is stretched too far and stays longer after the force is removed. What type of distortion is this?
 A: Inelastic
 Accept: Plastic; inelastic distortion
 Ref: 15.2
 D: 2
+Id: edexcel-phys-15-006
 
 Q: A lump of plasticine is squashed flat. Is the distortion elastic or inelastic?
 A: Inelastic
 Accept: Plastic
 Ref: 15.2
 D: 2
+Id: edexcel-phys-15-007
 
 Q: State the equation linking force, spring constant and extension.
 A: F = k × x
 Accept: Force = spring constant × extension; F = kx
 Ref: 15.3
 D: 2
+Id: edexcel-phys-15-008
 
 Q: What is the unit of spring constant?
 A: N/m
 Accept: Newtons per metre; newton per metre; N m⁻¹
 Ref: 15.3
 D: 1
+Id: edexcel-phys-15-009
 
 Q: A force of 10 N stretches a spring by 0.5 m. What is the spring constant?
 A: 20 N/m
 Accept: 20
 Ref: 15.3
 D: 2
+Id: edexcel-phys-15-010
 
 Q: A spring has a spring constant of 200 N/m. A force of 10 N stretches it. What is its extension in centimetres?
 A: 5 cm
 Accept: 0.05 m; 5
 Ref: 15.3
 D: 3
+Id: edexcel-phys-15-011
 
 Q: What name is given to the energy store of a stretched spring?
 A: Elastic potential energy
 Accept: Elastic energy; elastic store; elastic potential store; strain energy
 Ref: 15.4
 D: 1
+Id: edexcel-phys-15-012
 
 Q: Use E = ½ × k × x². A spring (k = 100 N/m) is stretched 0.2 m. How much energy is stored?
 A: 2 J
 Accept: 2; 2 joules
 Ref: 15.4
 D: 2
+Id: edexcel-phys-15-013
 
 Q: Use E = ½ × k × x². A spring stores 4 J when stretched 0.2 m. What is its spring constant?
 A: 200 N/m
 Accept: 200
 Ref: 15.4
 D: 3
+Id: edexcel-phys-15-014
 
 Q: A spring is stretched twice as far within its elastic limit. By what factor does the stored energy increase?
 A: Four
 Accept: 4; ×4; four times
 Ref: 15.4
 D: 3
+Id: edexcel-phys-15-015
 
 Q: What shape is a force-extension graph for a spring that obeys F = kx?
 A: A straight line through the origin
 Accept: Straight line; linear; directly proportional line
 Ref: 15.5
 D: 1
+Id: edexcel-phys-15-016
 
 Q: What does the gradient of a straight force-extension graph (force on the y-axis) give?
 A: The spring constant
 Accept: Spring constant; k
 Ref: 15.5
 D: 2
+Id: edexcel-phys-15-017
 
 Q: A rubber band's force-extension graph is curved. What does this show about force and extension?
 A: Not directly proportional
 Accept: Non-linear relationship; not proportional; they are non-linear
 Ref: 15.5
 D: 3
+Id: edexcel-phys-15-018
 
 Q: In the spring practical, which instrument measures the length of the spring?
 A: Ruler
@@ -116,6 +134,7 @@ Accept: Metre rule; Rule; Ruler
 Ref: 15.6
 D: 1
 RP: 15.6
+Id: edexcel-phys-15-019
 
 Q: In the spring practical, what quantity is changed by adding masses?
 A: Force
@@ -123,6 +142,7 @@ Accept: Weight; the force applied; the load
 Ref: 15.6
 D: 2
 RP: 15.6
+Id: edexcel-phys-15-020
 
 Q: How is the extension of the spring found from the lengths measured?
 A: New length minus original length
@@ -130,6 +150,7 @@ Accept: Stretched length − unstretched length; length now − starting length
 Ref: 15.6
 D: 2
 RP: 15.6
+Id: edexcel-phys-15-021
 
 Q: How is the work done in stretching the spring found from the force-extension graph?
 A: Area under the graph
@@ -137,6 +158,7 @@ Accept: Area under the line; area under the curve
 Ref: 15.6
 D: 3
 RP: 15.6
+Id: edexcel-phys-15-022
 
 Q: What safety precaution is sensible when stretching a spring?
 A: Wear eye protection
@@ -144,126 +166,140 @@ Accept: Goggles; safety glasses; wear goggles
 Ref: 15.6
 D: 2
 RP: 15.6
+Id: edexcel-phys-15-023
 
 Q: What happens to atmospheric pressure as height above the Earth's surface increases?
 A: Decreases
 Accept: Falls; gets lower; goes down
 Ref: 15.7P
 D: 1
+Id: edexcel-phys-15-024
 
 Q: Why is atmospheric pressure lower on a mountain top than at sea level?
 A: Less air above, so less weight
 Accept: Fewer air particles above; thinner air; less weight of air above
 Ref: 15.7P
 D: 3
+Id: edexcel-phys-15-025
 
 Q: Atmospheric pressure is caused by air particles doing what to a surface?
 A: Colliding with it
 Accept: Hitting it; collisions; bouncing off it
 Ref: 15.7P
 D: 2
+Id: edexcel-phys-15-026
 
 Q: The pressure at a point in a liquid is due to the liquid and which other pressure?
 A: Atmospheric pressure
 Accept: Air pressure; the atmosphere
 Ref: 15.8P
 D: 2
+Id: edexcel-phys-15-027
 
 Q: What exerts the pressure on the surface of a lake?
 A: The atmosphere
 Accept: Air; atmospheric pressure; the air above
 Ref: 15.8P
 D: 1
+Id: edexcel-phys-15-028
 
 Q: Atmospheric pressure is 100 000 Pa and the water adds 20 000 Pa. What is the total pressure?
 A: 120 000 Pa
 Accept: 120 kPa; 120000
 Ref: 15.8P
 D: 2
+Id: edexcel-phys-15-029
 
 Q: What is the angle between the force caused by fluid pressure and the surface it acts on?
 A: 90°
 Accept: Right angles; 90 degrees; perpendicular
 Ref: 15.9P
 D: 1
+Id: edexcel-phys-15-030
 
 Q: A hole is made in the side wall of a water-filled bottle. Which way does water first leave, relative to the wall?
 A: At right angles to the wall
 Accept: Perpendicular; 90°; normal to the wall
 Ref: 15.9P
 D: 2
-
-Q: Which word means that fluid pressure forces act at right angles to a surface?
-A: Normal
-Accept: Perpendicular
-Ref: 15.9P
-D: 1
+Id: edexcel-phys-15-031
 
 Q: Why do high-heeled shoes damage floors more than flat shoes of the same weight?
 A: Smaller area gives greater pressure
 Accept: Force acts over a smaller area; same force on a smaller area
 Ref: 15.10P
 D: 2
+Id: edexcel-phys-15-032
 
 Q: Why do skis stop a skier sinking into soft snow?
 A: Larger area reduces the pressure
 Accept: Weight spread over a larger area; bigger area, less pressure
 Ref: 15.10P
 D: 2
+Id: edexcel-phys-15-033
 
 Q: The same force acts on half the area. What happens to the pressure?
 A: Doubles
 Accept: Twice as big; ×2; it is multiplied by two
 Ref: 15.10P
 D: 2
+Id: edexcel-phys-15-034
 
 Q: What is the unit of pressure?
 A: Pascal
 Accept: Pa; N/m²; newton per square metre
 Ref: 15.11P
 D: 1
+Id: edexcel-phys-15-035
 
 Q: State the equation linking pressure, force and area.
 A: Pressure = force ÷ area
 Accept: P = F/A; P = F ÷ A; force divided by area
 Ref: 15.11P
 D: 2
+Id: edexcel-phys-15-036
 
 Q: A force of 100 N acts normally on an area of 2 m². What is the pressure?
 A: 50 Pa
 Accept: 50; 50 N/m²
 Ref: 15.11P
 D: 2
+Id: edexcel-phys-15-037
 
 Q: A pressure of 500 Pa acts on an area of 0.4 m². What is the force?
 A: 200 N
 Accept: 200
 Ref: 15.11P
 D: 3
+Id: edexcel-phys-15-038
 
 Q: How does pressure in a liquid change with depth?
 A: Increases
 Accept: Gets bigger; goes up; rises
 Ref: 15.12P
 D: 1
+Id: edexcel-phys-15-039
 
 Q: At the same depth, how does the pressure in a denser liquid compare with a less dense liquid?
 A: Greater
 Accept: Higher; larger; bigger; increases
 Ref: 15.12P
 D: 2
+Id: edexcel-phys-15-040
 
 Q: Why is the pressure deeper in a swimming pool greater?
 A: More water above, so more weight
 Accept: Greater weight of water above; more liquid above
 Ref: 15.12P
 D: 3
+Id: edexcel-phys-15-041
 
 Q: At the same depth, which has the greater pressure: mercury or water?
 A: Mercury
 Accept: Hg
 Ref: 15.12P
 D: 2
+Id: edexcel-phys-15-042
 
 Q: Explain why the pressure in a liquid increases with depth.
 A: More liquid above, so greater weight
@@ -271,6 +307,7 @@ Accept: Weight of liquid above increases; taller column of liquid above
 Ref: 15.13P
 D: 3
 HT: yes
+Id: edexcel-phys-15-043
 
 Q: Why does a denser liquid cause more pressure at the same depth?
 A: Heavier column of liquid above
@@ -278,6 +315,7 @@ Accept: More mass of liquid above; greater weight above; more particles in the s
 Ref: 15.13P
 D: 3
 HT: yes
+Id: edexcel-phys-15-044
 
 Q: Ignoring the atmosphere, what happens to liquid pressure when depth doubles?
 A: Doubles
@@ -285,6 +323,7 @@ Accept: Twice as big; ×2; it is multiplied by two
 Ref: 15.13P
 D: 2
 HT: yes
+Id: edexcel-phys-15-045
 
 Q: Use P = h × ρ × g with g = 10 N/kg. What is the pressure 2 m below the surface of water (1000 kg/m³)?
 A: 20 000 Pa
@@ -292,6 +331,7 @@ Accept: 20 kPa; 20000
 Ref: 15.14P
 D: 2
 HT: yes
+Id: edexcel-phys-15-046
 
 Q: Use P = h × ρ × g with g = 10 N/kg. What is the pressure at 5 m depth in oil of density 800 kg/m³?
 A: 40 000 Pa
@@ -299,6 +339,7 @@ Accept: 40 kPa; 40000
 Ref: 15.14P
 D: 2
 HT: yes
+Id: edexcel-phys-15-047
 
 Q: Use P = h × ρ × g with g = 10 N/kg. What is the pressure difference between 3 m and 8 m depth in water (1000 kg/m³)?
 A: 50 000 Pa
@@ -306,6 +347,7 @@ Accept: 50 kPa; 50000
 Ref: 15.14P
 D: 3
 HT: yes
+Id: edexcel-phys-15-048
 
 Q: Use P = h × ρ × g with g = 10 N/kg. A liquid exerts 32 000 Pa at 4 m depth. What is its density?
 A: 800 kg/m³
@@ -313,6 +355,7 @@ Accept: 800
 Ref: 15.14P
 D: 3
 HT: yes
+Id: edexcel-phys-15-049
 
 Q: Why does a fully submerged object experience an upward force?
 A: Pressure is greater on its lower surface
@@ -320,6 +363,7 @@ Accept: Higher pressure at the bottom than the top; pressure increases with dept
 Ref: 15.15P
 D: 3
 HT: yes
+Id: edexcel-phys-15-050
 
 Q: What name is given to the upward force a fluid exerts on an object in it?
 A: Upthrust
@@ -327,13 +371,15 @@ Accept: Buoyancy; buoyant force
 Ref: 15.15P
 D: 1
 HT: yes
+Id: edexcel-phys-15-051
 
-Q: Can an object in a gas, such as a balloon in air, experience upthrust?
-A: Both liquids and gases give upthrust
-Accept: Any fluid; liquids and gases; gases as well
+Q: Besides liquids, which kind of fluid exerts upthrust on a balloon?
+A: A gas
+Accept: Gas; air; gases
 Ref: 15.15P
 D: 2
 HT: yes
+Id: edexcel-phys-15-052
 
 Q: Upthrust on an object is equal to the weight of what?
 A: Fluid displaced
@@ -341,6 +387,7 @@ Accept: Displaced fluid; the fluid it displaces; water displaced
 Ref: 15.16P
 D: 1
 HT: yes
+Id: edexcel-phys-15-053
 
 Q: A submerged object displaces 3 kg of water. Using g = 10 N/kg, what is the upthrust on it?
 A: 30 N
@@ -348,6 +395,7 @@ Accept: 30
 Ref: 15.16P
 D: 2
 HT: yes
+Id: edexcel-phys-15-054
 
 Q: A fully submerged 8 N block displaces water weighing 5 N. What is the upthrust?
 A: 5 N
@@ -356,6 +404,7 @@ Ref: 15.16P
 D: 2
 HT: yes
 Note: The upthrust equals the weight of water displaced, not the block's weight.
+Id: edexcel-phys-15-055
 
 Q: How does the upthrust compare with the weight of an object floating at rest?
 A: Equal
@@ -363,6 +412,7 @@ Accept: Same; they balance; upthrust = weight
 Ref: 15.17P
 D: 2
 HT: yes
+Id: edexcel-phys-15-056
 
 Q: Why does a steel ship float even though steel is denser than water?
 A: Its average density is less than water
@@ -370,6 +420,7 @@ Accept: It displaces enough water; hollow shape lowers average density; overall 
 Ref: 15.17P
 D: 3
 HT: yes
+Id: edexcel-phys-15-057
 
 Q: What happens to an object when its weight is greater than the upthrust on it?
 A: Sinks
@@ -377,3 +428,4 @@ Accept: It sinks; goes down
 Ref: 15.17P
 D: 1
 HT: yes
+Id: edexcel-phys-15-058

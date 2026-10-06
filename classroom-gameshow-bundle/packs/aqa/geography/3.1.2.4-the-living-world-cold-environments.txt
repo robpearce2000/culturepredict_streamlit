@@ -7,216 +7,253 @@ A: Polar and tundra
 Accept: Tundra and polar; polar; tundra
 Ref: 3.1.2.4.1
 D: 1
+Id: aqa-geog-3.1.2.4-001
 
 Q: Name the frozen ground found in cold environments that stays below 0°C for at least two years.
 A: Permafrost
 Accept: Permanently frozen ground
 Ref: 3.1.2.4.1
 D: 1
+Id: aqa-geog-3.1.2.4-002
 
 Q: Which continent is almost entirely covered by a polar ice sheet?
 A: Antarctica
 Ref: 3.1.2.4.1
 D: 1
+Id: aqa-geog-3.1.2.4-003
 
 Q: Name the tundra layer of soil above the permafrost that thaws in summer.
 A: Active layer
 Ref: 3.1.2.4.1
 D: 2
+Id: aqa-geog-3.1.2.4-004
 
 Q: In tundra, average temperatures in the warmest month stay below about what value?
 A: 10°C
 Accept: Below 10°C; under 10 degrees; 10 degrees
 Ref: 3.1.2.4.1
 D: 2
+Id: aqa-geog-3.1.2.4-005
 
 Q: Why is the ground in tundra areas often waterlogged in summer?
 A: Meltwater cannot drain through permafrost
 Accept: Frozen ground is impermeable; permafrost blocks drainage; water cannot soak away
 Ref: 3.1.2.4.1
 D: 3
+Id: aqa-geog-3.1.2.4-006
 
 Q: Why are tundra soils low in nutrients?
 A: Cold slows decomposition
 Accept: Low temperatures slow decay; slow decomposition; little plant growth
 Ref: 3.1.2.4.1
 D: 3
+Id: aqa-geog-3.1.2.4-007
 
 Q: Name the tundra organism made of a fungus and an alga that grows on rocks.
 A: Lichen
 Accept: Lichens
 Ref: 3.1.2.4.1
 D: 2
+Id: aqa-geog-3.1.2.4-008
 
 Q: Why are plants in the tundra typically small and low-growing?
 A: To shelter from wind and cold
 Accept: Avoid wind; keep warm; thin soil; short growing season; shallow roots
 Ref: 3.1.2.4.1
 D: 3
+Id: aqa-geog-3.1.2.4-009
 
 Q: Why can trees not grow in most tundra areas?
 A: Permafrost prevents deep roots
 Accept: Roots cannot penetrate frozen ground; too cold; short growing season; shallow active layer
 Ref: 3.1.2.4.1
 D: 3
+Id: aqa-geog-3.1.2.4-010
 
 Q: Which large white bear is the top predator of the Arctic sea ice?
 A: Polar bear
 Ref: 3.1.2.4.1
 D: 1
+Id: aqa-geog-3.1.2.4-011
 
 Q: Why do many tundra animals such as Arctic hares have thick fur and a layer of fat?
 A: Insulation against the cold
 Accept: Keep warm; insulate; reduce heat loss
 Ref: 3.1.2.4.1
 D: 2
+Id: aqa-geog-3.1.2.4-012
 
 Q: Name the cold-environment adaptation in which animals travel long distances to avoid winter.
 A: Migration
 Accept: Migrating
 Ref: 3.1.2.4.1
 D: 1
+Id: aqa-geog-3.1.2.4-013
 
 Q: Why do Arctic foxes and ptarmigan change colour to white in winter?
 A: Camouflage in the snow
 Accept: Camouflage; to blend in; hide from predators
 Ref: 3.1.2.4.1
 D: 2
+Id: aqa-geog-3.1.2.4-014
 
 Q: Why is biodiversity low in cold environments?
 A: Harsh conditions limit what can survive
 Accept: Few species can survive; extreme cold; short growing season; low temperatures
 Ref: 3.1.2.4.1
 D: 3
+Id: aqa-geog-3.1.2.4-015
 
 Q: What happens to permafrost as the climate warms?
 A: Thaws
 Accept: Melts; thawing; ground collapses
 Ref: 3.1.2.4.1
 D: 2
+Id: aqa-geog-3.1.2.4-016
 
 Q: Name the greenhouse gas released as permafrost thaws and organic matter decays.
 A: Methane
 Accept: CH4; carbon dioxide; CO2
 Ref: 3.1.2.4.1
 D: 2
+Id: aqa-geog-3.1.2.4-017
 
 Q: Name the indigenous people of northern Scandinavia who traditionally herd reindeer.
 A: Sami
 Accept: Saami; Sámi; Lapps
 Ref: 3.1.2.4.1
 D: 1
+Id: aqa-geog-3.1.2.4-018
 
 Q: Name the energy resource extracted from the Alaskan North Slope, a tundra area.
 A: Oil
 Accept: Crude oil; petroleum; oil and gas
 Ref: 3.1.2.4.2
 D: 1
+Id: aqa-geog-3.1.2.4-019
 
 Q: Name one metal mined in cold environments such as Alaska and Siberia.
 A: Gold
 Accept: Iron ore; iron; copper; zinc; lead; nickel; silver
 Ref: 3.1.2.4.2
 D: 1
+Id: aqa-geog-3.1.2.4-020
 
 Q: Name the economic activity in cold environments carried out by trawlers in seas such as the Barents Sea.
 A: Fishing
 Accept: Commercial fishing
 Ref: 3.1.2.4.2
 D: 1
+Id: aqa-geog-3.1.2.4-021
 
 Q: Which economic activity brings visitors to cold environments to see glaciers, wildlife and the northern lights?
 A: Tourism
 Accept: Ecotourism; adventure tourism; cruise tourism
 Ref: 3.1.2.4.2
 D: 2
+Id: aqa-geog-3.1.2.4-022
 
 Q: Name one health risk to workers caused by extreme low temperatures.
 A: Frostbite
 Accept: Hypothermia; cold injury
 Ref: 3.1.2.4.2
 D: 1
+Id: aqa-geog-3.1.2.4-023
 
 Q: Why is it difficult to reach many cold environments?
 A: Remote, with ice and snow blocking transport
 Accept: Inaccessible; far from cities; ice-covered seas; no roads; snow-covered
 Ref: 3.1.2.4.2
 D: 2
+Id: aqa-geog-3.1.2.4-024
 
 Q: Why are roads and railways hard to build in permafrost areas?
 A: Thawing ground becomes unstable
 Accept: Ground subsides; permafrost melts; ground moves; waterlogged
 Ref: 3.1.2.4.2
 D: 3
+Id: aqa-geog-3.1.2.4-025
 
 Q: Why are buildings in permafrost areas often built on stilts?
 A: To stop heat melting the ground
 Accept: Prevent permafrost thawing; keep heat from melting ground; avoid subsidence
 Ref: 3.1.2.4.2
 D: 3
+Id: aqa-geog-3.1.2.4-026
 
 Q: Why are oil and gas pipelines in Alaska often raised above the ground?
 A: To prevent warm oil melting permafrost
 Accept: Stop permafrost thawing; avoid subsidence; let animals pass beneath
 Ref: 3.1.2.4.2
 D: 3
+Id: aqa-geog-3.1.2.4-027
 
 Q: What term describes a remote natural area little affected by human activity?
 A: Wilderness
 Accept: Wilderness area
 Ref: 3.1.2.4.3
 D: 1
+Id: aqa-geog-3.1.2.4-028
 
 Q: Why are cold environments described as fragile?
 A: Slow to recover from damage
 Accept: Easily damaged; low growth rates; slow recovery; easily disturbed
 Ref: 3.1.2.4.3
 D: 3
+Id: aqa-geog-3.1.2.4-029
 
 Q: Name the samples drilled from Antarctic ice that scientists study to learn about past climates.
 A: Ice cores
 Accept: Ice core
 Ref: 3.1.2.4.3
 D: 2
+Id: aqa-geog-3.1.2.4-030
 
 Q: Name the 1959 international agreement that sets Antarctica aside for peace and science.
 A: Antarctic Treaty
 Accept: The Antarctic Treaty
 Ref: 3.1.2.4.3
 D: 1
+Id: aqa-geog-3.1.2.4-031
 
 Q: Name the international agreement of 1991 that bans mineral extraction in Antarctica.
 A: Madrid Protocol
 Accept: Protocol on Environmental Protection; Environmental Protocol
 Ref: 3.1.2.4.3
 D: 2
+Id: aqa-geog-3.1.2.4-032
 
 Q: Name one conservation group that campaigns to protect cold environments.
 A: Greenpeace
 Accept: WWF; World Wide Fund for Nature; Friends of the Earth
 Ref: 3.1.2.4.3
 D: 1
+Id: aqa-geog-3.1.2.4-033
 
 Q: How can governments help to protect cold environments from damage?
 A: Laws, protected areas or limits on development
 Accept: National parks; set regulations; licences; limit visitors; fines; protected areas
 Ref: 3.1.2.4.3
 D: 2
+Id: aqa-geog-3.1.2.4-034
 
 Q: Why is directional drilling, which reaches several wells from one pad, less damaging to tundra?
 A: Smaller surface footprint
 Accept: Fewer sites; less land disturbed; fewer pads; less habitat lost
 Ref: 3.1.2.4.3
 D: 3
+Id: aqa-geog-3.1.2.4-035
 
 Q: Why are ice roads used in some oil fields in the Arctic?
 A: Temporary, so tundra is protected
 Accept: Melt in summer; no permanent damage; avoid building roads; little damage
 Ref: 3.1.2.4.3
 D: 3
+Id: aqa-geog-3.1.2.4-036
 
 Q: What term describes tourism managed to protect the environment for future generations?
 A: Sustainable tourism
 Accept: Ecotourism; managed tourism; controlled tourism
 Ref: 3.1.2.4.3
 D: 2
+Id: aqa-geog-3.1.2.4-037
