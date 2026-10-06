@@ -1,0 +1,797 @@
+{
+ "board": "Edexcel",
+ "subject": "History",
+ "specCode": "1HI0",
+ "version": "Issue 6",
+ "date": "June 2024",
+ "source": "https://qualifications.pearson.com/content/dam/pdf/GCSE/History/2016/specification-and-sample-assessments/gcse-9-1-history-specification.pdf",
+ "sourceNote": "Pearson Edexcel Level 1/Level 2 GCSE (9-1) in History (1HI0) specification, Issue 6, June 2024 (for first teaching September 2024 and first assessment June 2026; the PDF includes the minor Germany update of 15 August 2024): the copy of Pearson's published PDF captured by the Internet Archive on 2026-09-25 (qualifications.pearson.com could not be reached directly from the build environment).",
+ "numbering": "^(1[0-3]|3[0-3]|B[1-4]|P[1-5])\\.([1-4]|HE)\\.\\d$",
+ "topics": [
+  {
+   "ref": "10",
+   "title": "Crime and punishment in Britain, c1000–present and Whitechapel, c1870–c1900: crime, policing and the inner city",
+   "subtopics": [
+    {
+     "ref": "10.1",
+     "title": "c1000–c1500: Crime and punishment in medieval England"
+    },
+    {
+     "ref": "10.2",
+     "title": "c1500–c1700: Crime and punishment in early modern England"
+    },
+    {
+     "ref": "10.3",
+     "title": "c1700–c1900: Crime and punishment in eighteenth- and nineteenth-century Britain"
+    },
+    {
+     "ref": "10.4",
+     "title": "c1900–present: Crime and punishment in modern Britain"
+    },
+    {
+     "ref": "10.HE",
+     "title": "Whitechapel, c1870–c1900: crime, policing and the inner city (historic environment)"
+    }
+   ]
+  },
+  {
+   "ref": "11",
+   "title": "Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
+   "subtopics": [
+    {
+     "ref": "11.1",
+     "title": "c1250–c1500: Medicine in medieval England"
+    },
+    {
+     "ref": "11.2",
+     "title": "c1500–c1700: The Medical Renaissance in England"
+    },
+    {
+     "ref": "11.3",
+     "title": "c1700–c1900: Medicine in eighteenth- and nineteenth-century Britain"
+    },
+    {
+     "ref": "11.4",
+     "title": "c1900–present: Medicine in modern Britain"
+    },
+    {
+     "ref": "11.HE",
+     "title": "The British sector of the Western Front, 1914–18: injuries, treatment and the trenches (historic environment)"
+    }
+   ]
+  },
+  {
+   "ref": "12",
+   "title": "Warfare and British society, c1250–present and London and the Second World War, 1939–45",
+   "subtopics": [
+    {
+     "ref": "12.1",
+     "title": "c1250–c1500: Medieval warfare and English society"
+    },
+    {
+     "ref": "12.2",
+     "title": "c1500–c1700: Warfare and English society in the early modern period"
+    },
+    {
+     "ref": "12.3",
+     "title": "c1700–c1900: Warfare and British society in the eighteenth and nineteenth centuries"
+    },
+    {
+     "ref": "12.4",
+     "title": "c1900–present: Warfare and British society in the modern era"
+    },
+    {
+     "ref": "12.HE",
+     "title": "London and the Second World War, 1939–45 (historic environment)"
+    }
+   ]
+  },
+  {
+   "ref": "13",
+   "title": "Migrants in Britain, c800–present and Notting Hill, c1948–c1970",
+   "subtopics": [
+    {
+     "ref": "13.1",
+     "title": "c800–c1500: Migration in medieval England"
+    },
+    {
+     "ref": "13.2",
+     "title": "c1500–c1700: Migration in early modern England"
+    },
+    {
+     "ref": "13.3",
+     "title": "c1700–c1900: Migration in eighteenth- and nineteenth-century Britain"
+    },
+    {
+     "ref": "13.4",
+     "title": "c1900–present: Migration in modern Britain"
+    },
+    {
+     "ref": "13.HE",
+     "title": "Notting Hill, c1948–c1970 (historic environment)"
+    }
+   ]
+  },
+  {
+   "ref": "B1",
+   "title": "Anglo-Saxon and Norman England, c1060–88",
+   "subtopics": [
+    {
+     "ref": "B1.1",
+     "title": "Anglo-Saxon England and the Norman Conquest, 1060–66"
+    },
+    {
+     "ref": "B1.2",
+     "title": "William I in power: securing the kingdom, 1066–87"
+    },
+    {
+     "ref": "B1.3",
+     "title": "Norman England, 1066–88"
+    }
+   ]
+  },
+  {
+   "ref": "B2",
+   "title": "The reigns of King Richard I and King John, 1189–1216",
+   "subtopics": [
+    {
+     "ref": "B2.1",
+     "title": "Life and government in England, 1189–1216"
+    },
+    {
+     "ref": "B2.2",
+     "title": "Involvements overseas, 1189–1204"
+    },
+    {
+     "ref": "B2.3",
+     "title": "King John’s downfall, 1205–16"
+    }
+   ]
+  },
+  {
+   "ref": "B3",
+   "title": "Henry VIII and his ministers, 1509–40",
+   "subtopics": [
+    {
+     "ref": "B3.1",
+     "title": "Henry VIII and Wolsey, 1509–29"
+    },
+    {
+     "ref": "B3.2",
+     "title": "Henry VIII and Cromwell, 1529–40"
+    },
+    {
+     "ref": "B3.3",
+     "title": "The Reformation and its impact, 1529–40"
+    }
+   ]
+  },
+  {
+   "ref": "B4",
+   "title": "Early Elizabethan England, 1558–88",
+   "subtopics": [
+    {
+     "ref": "B4.1",
+     "title": "Queen, government and religion, 1558–69"
+    },
+    {
+     "ref": "B4.2",
+     "title": "Challenges to Elizabeth at home and abroad, 1569–88"
+    },
+    {
+     "ref": "B4.3",
+     "title": "Elizabethan society in the Age of Exploration, 1558–88"
+    }
+   ]
+  },
+  {
+   "ref": "P1",
+   "title": "Spain and the ‘New World’, c1490–c1555",
+   "subtopics": [
+    {
+     "ref": "P1.1",
+     "title": "Spain reaches the Americas, c1490–1512"
+    },
+    {
+     "ref": "P1.2",
+     "title": "The conquistadors, 1513–c1528"
+    },
+    {
+     "ref": "P1.3",
+     "title": "The Spanish Empire c1528–c1555"
+    }
+   ]
+  },
+  {
+   "ref": "P2",
+   "title": "British America, 1713–83: empire and revolution",
+   "subtopics": [
+    {
+     "ref": "P2.1",
+     "title": "British settlement in North America, 1713–41"
+    },
+    {
+     "ref": "P2.2",
+     "title": "A disrupted society, 1742–64"
+    },
+    {
+     "ref": "P2.3",
+     "title": "The loss of an empire, 1765–83"
+    }
+   ]
+  },
+  {
+   "ref": "P3",
+   "title": "The American West, c1835–c1895",
+   "subtopics": [
+    {
+     "ref": "P3.1",
+     "title": "The early settlement of the West, c1835–c1862"
+    },
+    {
+     "ref": "P3.2",
+     "title": "Development of the Plains, c1862–c1876"
+    },
+    {
+     "ref": "P3.3",
+     "title": "Later developments in the West, c1876–c1895"
+    }
+   ]
+  },
+  {
+   "ref": "P4",
+   "title": "Superpower relations and the Cold War, 1941–91",
+   "subtopics": [
+    {
+     "ref": "P4.1",
+     "title": "The origins of the Cold War, 1941–58"
+    },
+    {
+     "ref": "P4.2",
+     "title": "Cold War crises, 1958–70"
+    },
+    {
+     "ref": "P4.3",
+     "title": "The end of the Cold War, 1970–91"
+    }
+   ]
+  },
+  {
+   "ref": "P5",
+   "title": "Conflict in the Middle East, 1945–95",
+   "subtopics": [
+    {
+     "ref": "P5.1",
+     "title": "The birth of the state of Israel, 1945–63"
+    },
+    {
+     "ref": "P5.2",
+     "title": "The escalating conflict, 1964–73"
+    },
+    {
+     "ref": "P5.3",
+     "title": "Attempts at a solution, 1974–95"
+    }
+   ]
+  },
+  {
+   "ref": "30",
+   "title": "Russia and the Soviet Union, 1917–41",
+   "subtopics": [
+    {
+     "ref": "30.1",
+     "title": "The revolutions of 1917"
+    },
+    {
+     "ref": "30.2",
+     "title": "The Bolsheviks in power, 1917–24"
+    },
+    {
+     "ref": "30.3",
+     "title": "Stalin’s rise to power and dictatorship, 1924–41"
+    },
+    {
+     "ref": "30.4",
+     "title": "Economic and social changes, 1924–41"
+    }
+   ]
+  },
+  {
+   "ref": "31",
+   "title": "Weimar and Nazi Germany, 1918–39",
+   "subtopics": [
+    {
+     "ref": "31.1",
+     "title": "The Weimar Republic 1918–29"
+    },
+    {
+     "ref": "31.2",
+     "title": "Hitler’s rise to power, 1919–33"
+    },
+    {
+     "ref": "31.3",
+     "title": "Nazi control and dictatorship, 1933–39"
+    },
+    {
+     "ref": "31.4",
+     "title": "Life in Nazi Germany, 1933–39"
+    }
+   ]
+  },
+  {
+   "ref": "32",
+   "title": "Mao’s China, 1945–76",
+   "subtopics": [
+    {
+     "ref": "32.1",
+     "title": "Establishing communist rule, 1945–59"
+    },
+    {
+     "ref": "32.2",
+     "title": "Economic policy, 1949–65"
+    },
+    {
+     "ref": "32.3",
+     "title": "The Cultural Revolution and its aftermath, 1966–76"
+    },
+    {
+     "ref": "32.4",
+     "title": "Life in Mao’s China, 1949–76"
+    }
+   ]
+  },
+  {
+   "ref": "33",
+   "title": "The USA, 1954–75: conflict at home and abroad",
+   "subtopics": [
+    {
+     "ref": "33.1",
+     "title": "The development of the civil rights movement, 1954–60"
+    },
+    {
+     "ref": "33.2",
+     "title": "Protest, progress and radicalism, 1960–75"
+    },
+    {
+     "ref": "33.3",
+     "title": "US involvement in the Vietnam War, 1954–75"
+    },
+    {
+     "ref": "33.4",
+     "title": "Reactions to, and the end of, US involvement in Vietnam, 1964–75"
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "10.1.1": "Nature and changing definitions of criminal activity",
+  "10.1.2": "The nature of law enforcement and punishment",
+  "10.1.3": "Case study",
+  "10.2.1": "Nature and changing definitions of criminal activity",
+  "10.2.2": "The nature of law enforcement and punishment",
+  "10.2.3": "Case studies",
+  "10.3.1": "Nature and changing definitions of criminal activity",
+  "10.3.2": "The nature of law enforcement and punishment",
+  "10.3.3": "Case studies",
+  "10.4.1": "Nature and changing definitions of criminal activity",
+  "10.4.2": "The nature of law enforcement and punishment",
+  "10.4.3": "Case studies",
+  "10.HE.1": "Whitechapel, c1870–c1900: crime, policing and the inner city",
+  "10.HE.2": "Knowledge, selection and use of sources for historical enquiries",
+  "11.1.1": "Ideas about the cause of disease and illness",
+  "11.1.2": "Approaches to prevention and treatment",
+  "11.1.3": "Case study",
+  "11.2.1": "Ideas about the cause of disease and illness",
+  "11.2.2": "Approaches to prevention and treatment",
+  "11.2.3": "Case studies",
+  "11.3.1": "Ideas about the cause of disease and illness",
+  "11.3.2": "Approaches to prevention and treatment",
+  "11.3.3": "Case studies",
+  "11.4.1": "Ideas about the cause of disease and illness",
+  "11.4.2": "Approaches to prevention and treatment",
+  "11.4.3": "Case studies",
+  "11.HE.1": "The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
+  "11.HE.2": "Knowledge, selection and use of sources for historical enquiries",
+  "12.1.1": "The nature of warfare",
+  "12.1.2": "The experience of war",
+  "12.1.3": "Case studies",
+  "12.2.1": "The nature of warfare",
+  "12.2.2": "The experience of war",
+  "12.2.3": "Case study",
+  "12.3.1": "The nature of warfare",
+  "12.3.2": "The experience of war",
+  "12.3.3": "Case studies",
+  "12.4.1": "The nature of warfare",
+  "12.4.2": "The experience of war",
+  "12.4.3": "Case studies",
+  "12.HE.1": "London and the Second World War, 1939–45",
+  "12.HE.2": "Knowledge, selection and use of sources for historical enquiries",
+  "13.1.1": "The context for migration",
+  "13.1.2": "The experience and impact of migrants",
+  "13.1.3": "Case study",
+  "13.2.1": "The context for migration",
+  "13.2.2": "The experience and impact of migrants",
+  "13.2.3": "Case studies",
+  "13.3.1": "The context for migration",
+  "13.3.2": "The experience and impact of migrants",
+  "13.3.3": "Case studies",
+  "13.4.1": "The context for migration",
+  "13.4.2": "The experience and impact of migrants",
+  "13.4.3": "Case studies",
+  "13.HE.1": "Notting Hill, c1948–c1970",
+  "13.HE.2": "Knowledge, selection and use of sources for historical enquiries",
+  "B1.1.1": "Anglo-Saxon government, economy and society",
+  "B1.1.2": "The last years of Edward the Confessor and the succession crisis",
+  "B1.1.3": "The rival claimants for the throne",
+  "B1.1.4": "The Norman invasion",
+  "B1.2.1": "Establishing control",
+  "B1.2.2": "Anglo-Saxon resistance, 1068–71",
+  "B1.2.3": "The legacy of resistance to 1087",
+  "B1.2.4": "Revolt of the Earls, 1075",
+  "B1.3.1": "The feudal system and the Church",
+  "B1.3.2": "Norman government",
+  "B1.3.3": "The Norman aristocracy",
+  "B1.3.4": "William I and the succession",
+  "B2.1.1": "The feudal system",
+  "B2.1.2": "Kingship and succession",
+  "B2.1.3": "Royal government and finances",
+  "B2.1.4": "English society",
+  "B2.2.1": "The nature of crusading",
+  "B2.2.2": "Richard and the Third Crusade",
+  "B2.2.3": "Aftermath of the crusade",
+  "B2.2.4": "Richard, John and the loss of Normandy",
+  "B2.3.1": "The dispute with the Papacy",
+  "B2.3.2": "Worsening relations with the barons",
+  "B2.3.3": "Magna Carta and the First Barons’ War",
+  "B2.3.4": "England in 1216",
+  "B3.1.1": "Henry VIII, Renaissance Prince",
+  "B3.1.2": "The rise of Wolsey and his policies",
+  "B3.1.3": "Wolsey’s foreign policy",
+  "B3.1.4": "Wolsey, Catherine, the succession and annulment",
+  "B3.2.1": "Cromwell’s rise to power, 1529–34",
+  "B3.2.2": "The king’s marriages",
+  "B3.2.3": "Cromwell and government, 1534–40",
+  "B3.2.4": "The fall of Cromwell",
+  "B3.3.1": "The break with Rome",
+  "B3.3.2": "Opposition to, and impact of, Reformation, 1534–40",
+  "B3.3.3": "The dissolution of the monasteries",
+  "B3.3.4": "The Pilgrimage of Grace, 1536",
+  "B4.1.1": "The situation on Elizabeth’s accession",
+  "B4.1.2": "The ‘settlement’ of religion",
+  "B4.1.3": "Challenge to the religious settlement",
+  "B4.1.4": "The problem of Mary, Queen of Scots",
+  "B4.2.1": "Plots and revolts at home",
+  "B4.2.2": "Relations with Spain",
+  "B4.2.3": "Outbreak of war with Spain, 1585–88",
+  "B4.2.4": "The Armada",
+  "B4.3.1": "Education and leisure",
+  "B4.3.2": "The ‘problem’ of the poor",
+  "B4.3.3": "Exploration and voyages of discovery",
+  "B4.3.4": "Attempted colonisation of Virginia",
+  "P1.1.1": "Spanish exploration",
+  "P1.1.2": "Columbus reaches the Americas",
+  "P1.1.3": "Spanish claims in the Caribbean",
+  "P1.2.1": "The start of an empire",
+  "P1.2.2": "The conquest of Mexico",
+  "P1.2.3": "Impact of Spain in the Americas",
+  "P1.3.1": "Pizarro and the conquest of the Incas",
+  "P1.3.2": "Expansion of empire",
+  "P1.3.3": "Impact of the 'New World' on Spain",
+  "P2.1.1": "Developments in colonial society",
+  "P2.1.2": "Slavery in North America",
+  "P2.1.3": "Problems within the colonies",
+  "P2.2.1": "The impact of cultural developments",
+  "P2.2.2": "War in the colonies",
+  "P2.2.3": "The aftermath of the French and Indian war",
+  "P2.3.1": "American colonist relations with Britain: growing opposition, 1765-75",
+  "P2.3.2": "The War of Independence 1775-83",
+  "P2.3.3": "Consequences of the war in America",
+  "P3.1.1": "Indigenous peoples of the Plains: their beliefs and ways of life",
+  "P3.1.2": "Migration and early settlement",
+  "P3.1.3": "Conflict and tension",
+  "P3.2.1": "The development of settlement in the West",
+  "P3.2.2": "Ranching and the cattle industry",
+  "P3.2.3": "Changes in the ways of life of Indigenous peoples of the Plains",
+  "P3.3.1": "Changes in farming, the cattle industry and settlement",
+  "P3.3.2": "Conflict and tension",
+  "P3.3.3": "Indigenous peoples of the Plains: the destruction of their ways of life",
+  "P4.1.1": "Early tension between East and West",
+  "P4.1.2": "The development of the Cold War",
+  "P4.1.3": "The Cold War intensifies",
+  "P4.2.1": "Increased tension between East and West",
+  "P4.2.2": "Cold War crises",
+  "P4.2.3": "Reaction to crisis",
+  "P4.3.1": "Attempts to reduce superpower tensions in the 1970s",
+  "P4.3.2": "The end of détente and the ‘Second Cold War’",
+  "P4.3.3": "The collapse of Soviet control of Eastern Europe, 1985-91",
+  "P5.1.1": "The British withdrawal and the creation of Israel",
+  "P5.1.2": "Aftermath of the 1948–49 war",
+  "P5.1.3": "Increased tension, 1955–63",
+  "P5.2.1": "The Six Day War, 1967",
+  "P5.2.2": "Aftermath of the 1967 war",
+  "P5.2.3": "Israel and Egypt, 1967–73",
+  "P5.3.1": "Diplomatic negotiations",
+  "P5.3.2": "The Palestinian issue",
+  "P5.3.3": "Attempts at a solution",
+  "30.1.1": "The growth of opposition to the tsar in early 1917",
+  "30.1.2": "The February Revolution",
+  "30.1.3": "The Provisional Government",
+  "30.1.4": "The Bolshevik Revolution",
+  "30.2.1": "Early consolidation of power, 1917–18",
+  "30.2.2": "The Civil War, 1918–21",
+  "30.2.3": "Moves towards totalitarianism",
+  "30.2.4": "Economic and social change, 1918–24",
+  "30.3.1": "The struggle for power, 1924–28",
+  "30.3.2": "The use of terror in the 1930s",
+  "30.3.3": "Propaganda and censorship",
+  "30.3.4": "The Cult of Stalin",
+  "30.4.1": "Agriculture and collectivisation",
+  "30.4.2": "Changes in industry",
+  "30.4.3": "Life in the Soviet Union",
+  "30.4.4": "The position of women and ethnic minorities",
+  "31.1.1": "The origins of the Republic, 1918–19",
+  "31.1.2": "The early challenges to the Weimar Republic, 1919–23",
+  "31.1.3": "The ‘Golden Years’: recovery of the Republic, 1924–29",
+  "31.1.4": "Changes in society, 1924–29",
+  "31.2.1": "Early development of the Nazi Party, 1920–22",
+  "31.2.2": "The Munich Putsch and the Nazi Party, 1923–28",
+  "31.2.3": "The growth in support for the Nazis, 1929–32",
+  "31.2.4": "How Hitler became Chancellor, 1932–33",
+  "31.3.1": "The creation of a dictatorship, 1933–34",
+  "31.3.2": "The police state",
+  "31.3.3": "Controlling and influencing attitudes",
+  "31.3.4": "Opposition, resistance and conformity",
+  "31.4.1": "Nazi policies towards women",
+  "31.4.2": "Nazi policies towards the young",
+  "31.4.3": "Employment and living standards",
+  "31.4.4": "The persecution of minorities",
+  "32.1.1": "The Civil War, 1945–49",
+  "32.1.2": "Communist rule",
+  "32.1.3": "Consolidating the CCP’s hold on power, 1951–52",
+  "32.1.4": "The Hundred Flowers campaign, 1956–57",
+  "32.2.1": "Early changes in agriculture, 1949–57",
+  "32.2.2": "Industry and the Five-Year Plan, 1953–57",
+  "32.2.3": "The Great Leap Forward",
+  "32.2.4": "Economic reform",
+  "32.3.1": "Reasons for the Cultural Revolution",
+  "32.3.2": "The Red Guards and the Red Terror",
+  "32.3.3": "The effects of the Cultural Revolution",
+  "32.3.4": "The end of the Cultural Revolution, 1968–76",
+  "32.4.1": "Communist control",
+  "32.4.2": "Family life and the role of women",
+  "32.4.3": "Education and health",
+  "32.4.4": "Cultural change",
+  "33.1.1": "The position of Black Americans in the early 1950s",
+  "33.1.2": "Developments in education",
+  "33.1.3": "The Montgomery Bus Boycott and its impact, 1955–60",
+  "33.1.4": "Opposition to the civil rights movement",
+  "33.2.1": "Developments, 1960–62",
+  "33.2.2": "Peaceful protests and their impact, 1963–65",
+  "33.2.3": "Malcolm X and Black Power, 1963–70",
+  "33.2.4": "The civil rights movement, 1965–75",
+  "33.3.1": "Reasons for US involvement in the conflict in Vietnam, 1954–63",
+  "33.3.2": "Escalation of the conflict under Johnson",
+  "33.3.3": "The nature of the conflict in Vietnam, 1964–68",
+  "33.3.4": "Changes under Nixon, 1969–73",
+  "33.4.1": "Opposition to the war",
+  "33.4.2": "Support for the war",
+  "33.4.3": "The peace process and end of the war",
+  "33.4.4": "Reasons for the failure of the USA in Vietnam"
+ },
+ "parents": {
+  "10.1.1": "10.1",
+  "10.1.2": "10.1",
+  "10.1.3": "10.1",
+  "10.2.1": "10.2",
+  "10.2.2": "10.2",
+  "10.2.3": "10.2",
+  "10.3.1": "10.3",
+  "10.3.2": "10.3",
+  "10.3.3": "10.3",
+  "10.4.1": "10.4",
+  "10.4.2": "10.4",
+  "10.4.3": "10.4",
+  "10.HE.1": "10.HE",
+  "10.HE.2": "10.HE",
+  "11.1.1": "11.1",
+  "11.1.2": "11.1",
+  "11.1.3": "11.1",
+  "11.2.1": "11.2",
+  "11.2.2": "11.2",
+  "11.2.3": "11.2",
+  "11.3.1": "11.3",
+  "11.3.2": "11.3",
+  "11.3.3": "11.3",
+  "11.4.1": "11.4",
+  "11.4.2": "11.4",
+  "11.4.3": "11.4",
+  "11.HE.1": "11.HE",
+  "11.HE.2": "11.HE",
+  "12.1.1": "12.1",
+  "12.1.2": "12.1",
+  "12.1.3": "12.1",
+  "12.2.1": "12.2",
+  "12.2.2": "12.2",
+  "12.2.3": "12.2",
+  "12.3.1": "12.3",
+  "12.3.2": "12.3",
+  "12.3.3": "12.3",
+  "12.4.1": "12.4",
+  "12.4.2": "12.4",
+  "12.4.3": "12.4",
+  "12.HE.1": "12.HE",
+  "12.HE.2": "12.HE",
+  "13.1.1": "13.1",
+  "13.1.2": "13.1",
+  "13.1.3": "13.1",
+  "13.2.1": "13.2",
+  "13.2.2": "13.2",
+  "13.2.3": "13.2",
+  "13.3.1": "13.3",
+  "13.3.2": "13.3",
+  "13.3.3": "13.3",
+  "13.4.1": "13.4",
+  "13.4.2": "13.4",
+  "13.4.3": "13.4",
+  "13.HE.1": "13.HE",
+  "13.HE.2": "13.HE",
+  "B1.1.1": "B1.1",
+  "B1.1.2": "B1.1",
+  "B1.1.3": "B1.1",
+  "B1.1.4": "B1.1",
+  "B1.2.1": "B1.2",
+  "B1.2.2": "B1.2",
+  "B1.2.3": "B1.2",
+  "B1.2.4": "B1.2",
+  "B1.3.1": "B1.3",
+  "B1.3.2": "B1.3",
+  "B1.3.3": "B1.3",
+  "B1.3.4": "B1.3",
+  "B2.1.1": "B2.1",
+  "B2.1.2": "B2.1",
+  "B2.1.3": "B2.1",
+  "B2.1.4": "B2.1",
+  "B2.2.1": "B2.2",
+  "B2.2.2": "B2.2",
+  "B2.2.3": "B2.2",
+  "B2.2.4": "B2.2",
+  "B2.3.1": "B2.3",
+  "B2.3.2": "B2.3",
+  "B2.3.3": "B2.3",
+  "B2.3.4": "B2.3",
+  "B3.1.1": "B3.1",
+  "B3.1.2": "B3.1",
+  "B3.1.3": "B3.1",
+  "B3.1.4": "B3.1",
+  "B3.2.1": "B3.2",
+  "B3.2.2": "B3.2",
+  "B3.2.3": "B3.2",
+  "B3.2.4": "B3.2",
+  "B3.3.1": "B3.3",
+  "B3.3.2": "B3.3",
+  "B3.3.3": "B3.3",
+  "B3.3.4": "B3.3",
+  "B4.1.1": "B4.1",
+  "B4.1.2": "B4.1",
+  "B4.1.3": "B4.1",
+  "B4.1.4": "B4.1",
+  "B4.2.1": "B4.2",
+  "B4.2.2": "B4.2",
+  "B4.2.3": "B4.2",
+  "B4.2.4": "B4.2",
+  "B4.3.1": "B4.3",
+  "B4.3.2": "B4.3",
+  "B4.3.3": "B4.3",
+  "B4.3.4": "B4.3",
+  "P1.1.1": "P1.1",
+  "P1.1.2": "P1.1",
+  "P1.1.3": "P1.1",
+  "P1.2.1": "P1.2",
+  "P1.2.2": "P1.2",
+  "P1.2.3": "P1.2",
+  "P1.3.1": "P1.3",
+  "P1.3.2": "P1.3",
+  "P1.3.3": "P1.3",
+  "P2.1.1": "P2.1",
+  "P2.1.2": "P2.1",
+  "P2.1.3": "P2.1",
+  "P2.2.1": "P2.2",
+  "P2.2.2": "P2.2",
+  "P2.2.3": "P2.2",
+  "P2.3.1": "P2.3",
+  "P2.3.2": "P2.3",
+  "P2.3.3": "P2.3",
+  "P3.1.1": "P3.1",
+  "P3.1.2": "P3.1",
+  "P3.1.3": "P3.1",
+  "P3.2.1": "P3.2",
+  "P3.2.2": "P3.2",
+  "P3.2.3": "P3.2",
+  "P3.3.1": "P3.3",
+  "P3.3.2": "P3.3",
+  "P3.3.3": "P3.3",
+  "P4.1.1": "P4.1",
+  "P4.1.2": "P4.1",
+  "P4.1.3": "P4.1",
+  "P4.2.1": "P4.2",
+  "P4.2.2": "P4.2",
+  "P4.2.3": "P4.2",
+  "P4.3.1": "P4.3",
+  "P4.3.2": "P4.3",
+  "P4.3.3": "P4.3",
+  "P5.1.1": "P5.1",
+  "P5.1.2": "P5.1",
+  "P5.1.3": "P5.1",
+  "P5.2.1": "P5.2",
+  "P5.2.2": "P5.2",
+  "P5.2.3": "P5.2",
+  "P5.3.1": "P5.3",
+  "P5.3.2": "P5.3",
+  "P5.3.3": "P5.3",
+  "30.1.1": "30.1",
+  "30.1.2": "30.1",
+  "30.1.3": "30.1",
+  "30.1.4": "30.1",
+  "30.2.1": "30.2",
+  "30.2.2": "30.2",
+  "30.2.3": "30.2",
+  "30.2.4": "30.2",
+  "30.3.1": "30.3",
+  "30.3.2": "30.3",
+  "30.3.3": "30.3",
+  "30.3.4": "30.3",
+  "30.4.1": "30.4",
+  "30.4.2": "30.4",
+  "30.4.3": "30.4",
+  "30.4.4": "30.4",
+  "31.1.1": "31.1",
+  "31.1.2": "31.1",
+  "31.1.3": "31.1",
+  "31.1.4": "31.1",
+  "31.2.1": "31.2",
+  "31.2.2": "31.2",
+  "31.2.3": "31.2",
+  "31.2.4": "31.2",
+  "31.3.1": "31.3",
+  "31.3.2": "31.3",
+  "31.3.3": "31.3",
+  "31.3.4": "31.3",
+  "31.4.1": "31.4",
+  "31.4.2": "31.4",
+  "31.4.3": "31.4",
+  "31.4.4": "31.4",
+  "32.1.1": "32.1",
+  "32.1.2": "32.1",
+  "32.1.3": "32.1",
+  "32.1.4": "32.1",
+  "32.2.1": "32.2",
+  "32.2.2": "32.2",
+  "32.2.3": "32.2",
+  "32.2.4": "32.2",
+  "32.3.1": "32.3",
+  "32.3.2": "32.3",
+  "32.3.3": "32.3",
+  "32.3.4": "32.3",
+  "32.4.1": "32.4",
+  "32.4.2": "32.4",
+  "32.4.3": "32.4",
+  "32.4.4": "32.4",
+  "33.1.1": "33.1",
+  "33.1.2": "33.1",
+  "33.1.3": "33.1",
+  "33.1.4": "33.1",
+  "33.2.1": "33.2",
+  "33.2.2": "33.2",
+  "33.2.3": "33.2",
+  "33.2.4": "33.2",
+  "33.3.1": "33.3",
+  "33.3.2": "33.3",
+  "33.3.3": "33.3",
+  "33.3.4": "33.3",
+  "33.4.1": "33.4",
+  "33.4.2": "33.4",
+  "33.4.3": "33.4",
+  "33.4.4": "33.4"
+ },
+ "notes": "One topic per option, using Pearson's option codes: 10-13 (Paper 1 thematic studies), B1-B4 (Paper 2 British depth studies), P1-P5 (Paper 2 period studies) and 30-33 (Paper 3 modern depth studies). Subtopics are the key topics (for the thematic studies, the four periods in the order printed, c1000-c1500 = .1 and so on), and each point is one of the numbered items printed in the left column of the content tables, covering the bullets beside it: 31.2.3 = option 31, key topic 2, item 3. Each Paper 1 historic environment (Whitechapel; the British sector of the Western Front; London and the Second World War; Notting Hill) is fixed in the specification and is included in its thematic option's topic as the subtopic <option>.HE, whose items are numbered 1 and 2 as printed (10.HE.2 = knowledge, selection and use of sources). History is untiered: no Higher-only content. Skipped: the 'process of change' statements that introduce each thematic study (they describe the approach, not content), the Paper 2 pairings, and assessment information."
+}

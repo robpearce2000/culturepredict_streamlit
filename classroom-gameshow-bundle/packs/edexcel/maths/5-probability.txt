@@ -123,33 +123,33 @@ Accept: 7/20; 35%; 140/400
 Ref: P5
 D: 2
 
-Q: A fair dice is rolled 6000 times. As the rolls increase, the relative frequency of a six gets closer to what value?
+Q: A fair dice is rolled many times. As the number of rolls increases, the relative frequency of a six gets closer to what value?
 A: 1/6
-Accept: One sixth; 0.16 recurring
+Accept: One sixth; 0.1666...; 0.17
 Ref: P5
 D: 2
 
 Q: Sam gets 7 heads in 10 flips and claims his coin is biased. What should he do to test his claim more reliably?
 A: More trials
-Accept: Flip it many more times; Increase the number of trials; Do more flips
+Accept: Flip it many more times; Increase the number of trials; Do more flips; Flip it more times
 Ref: P5
-D: 3
+D: 2
 Note: Ten trials are too few; relative frequency settles down only with a large number of trials.
 
 # P6 Sets and listing outcomes
 
-Q: In set notation, what is the name of the symbol ∪?
+Q: The set notation A ∪ B is read as "A ___ B". What word fills the gap?
 A: Union
 Ref: P6
 D: 1
 
-Q: In set notation, what does the symbol ξ stand for?
+Q: On a Venn diagram, the rectangle labelled ξ represents which set?
 A: Universal set
 Accept: The universal set
 Ref: P6
 D: 1
 
-Q: The statement 3 ∈ A tells you that 3 is what of set A?
+Q: What name is given to each individual member of a set?
 A: Element
 Accept: An element; Member; A member
 Ref: P6
@@ -261,7 +261,7 @@ Ref: P9
 D: 2
 HT: yes
 
-Q: A bag holds 6 red and 4 blue counters. Two are taken without replacement. Given the first is blue, what is P(second is blue)?
+Q: Ten raffle tickets include 4 winners. Ali draws a winner and keeps it. What is the probability Ben's ticket, drawn next, also wins?
 A: 1/3
 Accept: 3/9
 Ref: P9
@@ -275,13 +275,13 @@ D: 3
 HT: yes
 Note: The denominator is the 19 popcorn buyers.
 
-Q: Venn diagram of 50 people: 12 in A only, 8 in both, 20 in B only, 10 in neither. What is P(A | B)?
+Q: Of 50 students, 20 study French, 28 study Spanish and 8 study both. A Spanish student is picked at random. Find P(also studies French).
 A: 2/7
 Accept: 8/28
 Ref: P9
 D: 3
 HT: yes
-Note: B contains 8 + 20 = 28 people.
+Note: The denominator is the 28 Spanish students, 8 of whom also study French.
 
 Q: Of 200 people, 20 have a condition. A test is positive for 18 of them and for 9 of the other 180. Find P(condition | positive).
 A: 2/3

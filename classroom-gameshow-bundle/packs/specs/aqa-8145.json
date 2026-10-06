@@ -1,0 +1,611 @@
+{
+ "board": "AQA",
+ "subject": "History",
+ "specCode": "8145",
+ "version": "1.3",
+ "date": "24 September 2019",
+ "source": "https://filestore.aqa.org.uk/resources/history/specifications/AQA-8145-SP-2016.PDF",
+ "sourceNote": "AQA GCSE History (8145) specification, Version 1.3, 24 September 2019 (for teaching from September 2016, exams from June 2018), as printed in the PDF at the source URL.",
+ "numbering": "^[12][AB][A-E]\\.[1-4]\\.\\d{1,2}$",
+ "topics": [
+  {
+   "ref": "1AA",
+   "title": "America, 1840–1895: Expansion and consolidation",
+   "subtopics": [
+    {
+     "ref": "1AA.1",
+     "title": "Expansion: opportunities and challenges"
+    },
+    {
+     "ref": "1AA.2",
+     "title": "Conflict across America"
+    },
+    {
+     "ref": "1AA.3",
+     "title": "Consolidation: forging the nation"
+    }
+   ]
+  },
+  {
+   "ref": "1AB",
+   "title": "Germany, 1890–1945: Democracy and dictatorship",
+   "subtopics": [
+    {
+     "ref": "1AB.1",
+     "title": "Germany and the growth of democracy"
+    },
+    {
+     "ref": "1AB.2",
+     "title": "Germany and the Depression"
+    },
+    {
+     "ref": "1AB.3",
+     "title": "The experiences of Germans under the Nazis"
+    }
+   ]
+  },
+  {
+   "ref": "1AC",
+   "title": "Russia, 1894–1945: Tsardom and communism",
+   "subtopics": [
+    {
+     "ref": "1AC.1",
+     "title": "The end of Tsardom"
+    },
+    {
+     "ref": "1AC.2",
+     "title": "Lenin's new society"
+    },
+    {
+     "ref": "1AC.3",
+     "title": "Stalin's USSR"
+    }
+   ]
+  },
+  {
+   "ref": "1AD",
+   "title": "America, 1920–1973: Opportunity and inequality",
+   "subtopics": [
+    {
+     "ref": "1AD.1",
+     "title": "American people and the 'Boom'"
+    },
+    {
+     "ref": "1AD.2",
+     "title": "Bust – Americans' experiences of the Depression and New Deal"
+    },
+    {
+     "ref": "1AD.3",
+     "title": "Post-war America"
+    }
+   ]
+  },
+  {
+   "ref": "1BA",
+   "title": "Conflict and tension: the First World War, 1894–1918",
+   "subtopics": [
+    {
+     "ref": "1BA.1",
+     "title": "The causes of the First World War"
+    },
+    {
+     "ref": "1BA.2",
+     "title": "The First World War: stalemate"
+    },
+    {
+     "ref": "1BA.3",
+     "title": "Ending the war"
+    }
+   ]
+  },
+  {
+   "ref": "1BB",
+   "title": "Conflict and tension: the inter-war years, 1918–1939",
+   "subtopics": [
+    {
+     "ref": "1BB.1",
+     "title": "Peacemaking"
+    },
+    {
+     "ref": "1BB.2",
+     "title": "The League of Nations and international peace"
+    },
+    {
+     "ref": "1BB.3",
+     "title": "The origins and outbreak of the Second World War"
+    }
+   ]
+  },
+  {
+   "ref": "1BC",
+   "title": "Conflict and tension between East and West, 1945–1972",
+   "subtopics": [
+    {
+     "ref": "1BC.1",
+     "title": "The origins of the Cold War"
+    },
+    {
+     "ref": "1BC.2",
+     "title": "The development of the Cold War"
+    },
+    {
+     "ref": "1BC.3",
+     "title": "Transformation of the Cold War"
+    }
+   ]
+  },
+  {
+   "ref": "1BD",
+   "title": "Conflict and tension in Asia, 1950–1975",
+   "subtopics": [
+    {
+     "ref": "1BD.1",
+     "title": "Conflict in Korea"
+    },
+    {
+     "ref": "1BD.2",
+     "title": "Escalation of conflict in Vietnam"
+    },
+    {
+     "ref": "1BD.3",
+     "title": "The ending of conflict in Vietnam"
+    }
+   ]
+  },
+  {
+   "ref": "1BE",
+   "title": "Conflict and tension in the Gulf and Afghanistan, 1990–2009",
+   "subtopics": [
+    {
+     "ref": "1BE.1",
+     "title": "Tensions in the Gulf"
+    },
+    {
+     "ref": "1BE.2",
+     "title": "The war on Al-Qaeda"
+    },
+    {
+     "ref": "1BE.3",
+     "title": "The Iraq War"
+    }
+   ]
+  },
+  {
+   "ref": "2AA",
+   "title": "Britain: Health and the people: c1000 to the present day",
+   "subtopics": [
+    {
+     "ref": "2AA.1",
+     "title": "Medicine stands still"
+    },
+    {
+     "ref": "2AA.2",
+     "title": "The beginnings of change"
+    },
+    {
+     "ref": "2AA.3",
+     "title": "A revolution in medicine"
+    },
+    {
+     "ref": "2AA.4",
+     "title": "Modern medicine"
+    }
+   ]
+  },
+  {
+   "ref": "2AB",
+   "title": "Britain: Power and the people: c1170 to the present day",
+   "subtopics": [
+    {
+     "ref": "2AB.1",
+     "title": "Challenging authority and feudalism"
+    },
+    {
+     "ref": "2AB.2",
+     "title": "Challenging royal authority"
+    },
+    {
+     "ref": "2AB.3",
+     "title": "Reform and reformers"
+    },
+    {
+     "ref": "2AB.4",
+     "title": "Equality and rights"
+    }
+   ]
+  },
+  {
+   "ref": "2AC",
+   "title": "Britain: Migration, empires and the people: c790 to the present day",
+   "subtopics": [
+    {
+     "ref": "2AC.1",
+     "title": "Conquered and conquerors"
+    },
+    {
+     "ref": "2AC.2",
+     "title": "Looking west"
+    },
+    {
+     "ref": "2AC.3",
+     "title": "Expansion and empire"
+    },
+    {
+     "ref": "2AC.4",
+     "title": "Britain in the 20th century"
+    }
+   ]
+  },
+  {
+   "ref": "2BA",
+   "title": "Norman England, c1066–c1100",
+   "subtopics": [
+    {
+     "ref": "2BA.1",
+     "title": "The Normans: conquest and control"
+    },
+    {
+     "ref": "2BA.2",
+     "title": "Life under the Normans"
+    },
+    {
+     "ref": "2BA.3",
+     "title": "The Norman Church and monasticism"
+    }
+   ]
+  },
+  {
+   "ref": "2BB",
+   "title": "Medieval England - the reign of Edward I, 1272–1307",
+   "subtopics": [
+    {
+     "ref": "2BB.1",
+     "title": "Government, the rights of King and people"
+    },
+    {
+     "ref": "2BB.2",
+     "title": "Life in Medieval England"
+    },
+    {
+     "ref": "2BB.3",
+     "title": "Edward I’s military campaigns in Wales and Scotland"
+    }
+   ]
+  },
+  {
+   "ref": "2BC",
+   "title": "Elizabethan England, c1568–1603",
+   "subtopics": [
+    {
+     "ref": "2BC.1",
+     "title": "Elizabeth's court and Parliament"
+    },
+    {
+     "ref": "2BC.2",
+     "title": "Life in Elizabethan times"
+    },
+    {
+     "ref": "2BC.3",
+     "title": "Troubles at home and abroad"
+    }
+   ]
+  },
+  {
+   "ref": "2BD",
+   "title": "Restoration England, 1660–1685",
+   "subtopics": [
+    {
+     "ref": "2BD.1",
+     "title": "Crown, Parliament, plots and court life"
+    },
+    {
+     "ref": "2BD.2",
+     "title": "Life in Restoration England"
+    },
+    {
+     "ref": "2BD.3",
+     "title": "Land, trade and war"
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "1AA.1.1": "The geography of North America",
+  "1AA.1.2": "Why the early settlers went west and the challenges they faced",
+  "1AA.1.3": "Dealing with a different culture",
+  "1AA.2.1": "Increasing conflict on the Plains",
+  "1AA.2.2": "The background to the American Civil War",
+  "1AA.2.3": "Coming to terms with the Mormons",
+  "1AA.3.1": "The aftermath of the American Civil War",
+  "1AA.3.2": "The continued settlement of the west",
+  "1AA.3.3": "The resolution of ‘the Indian problem’ after 1865",
+  "1AB.1.1": "Kaiser Wilhelm and the difficulties of ruling Germany",
+  "1AB.1.2": "Impact of the First World War",
+  "1AB.1.3": "Weimar democracy",
+  "1AB.2.1": "The impact of the Depression",
+  "1AB.2.2": "The failure of Weimar democracy",
+  "1AB.2.3": "The establishment of Hitler’s dictatorship",
+  "1AB.3.1": "Economic changes",
+  "1AB.3.2": "Social policy and practice",
+  "1AB.3.3": "Control",
+  "1AC.1.1": "Russia’s economy and society",
+  "1AC.1.2": "Nicholas II’s autocracy and the court",
+  "1AC.1.3": "The First World War",
+  "1AC.2.1": "The Provisional Government",
+  "1AC.2.2": "The impact of Lenin's dictatorship",
+  "1AC.2.3": "Social and economic developments",
+  "1AC.3.1": "Stalin the dictator",
+  "1AC.3.2": "Stalin's modernisation of the USSR",
+  "1AC.3.3": "Impact of the Second World War",
+  "1AD.1.1": "The ‘Boom’",
+  "1AD.1.2": "Social and cultural developments",
+  "1AD.1.3": "Divided society",
+  "1AD.2.1": "American society during the Depression",
+  "1AD.2.2": "The effectiveness of the New Deal on different groups in society",
+  "1AD.2.3": "The impact of the Second World War",
+  "1AD.3.1": "Post-war American society and economy",
+  "1AD.3.2": "Racial tension and developments in the Civil Rights campaigns in the 1950s and 1960s",
+  "1AD.3.3": "America and the ‘Great Society'",
+  "1BA.1.1": "The Alliance System",
+  "1BA.1.2": "Anglo-German rivalry",
+  "1BA.1.3": "Outbreak of war",
+  "1BA.2.1": "The Schlieffen Plan",
+  "1BA.2.2": "The Western Front",
+  "1BA.2.3": "The wider war",
+  "1BA.3.1": "Changes in the Allied Forces",
+  "1BA.3.2": "Military developments in 1918 and their contribution to Germany’s defeat",
+  "1BA.3.3": "Germany surrenders",
+  "1BB.1.1": "The armistice",
+  "1BB.1.2": "The Versailles Settlement",
+  "1BB.1.3": "Impact of the treaty and wider settlement",
+  "1BB.2.1": "The League of Nations",
+  "1BB.2.2": "Diplomacy outside the League",
+  "1BB.2.3": "The collapse of the League",
+  "1BB.3.1": "The development of tension",
+  "1BB.3.2": "Escalation of tension",
+  "1BB.3.3": "The outbreak of war",
+  "1BC.1.1": "The end of the Second World War",
+  "1BC.1.2": "The Iron Curtain and the evolution of East-West rivalry",
+  "1BC.2.1": "The significance of events in Asia for superpower relations",
+  "1BC.2.2": "Military rivalries",
+  "1BC.2.3": "The ‘Thaw’",
+  "1BC.3.1": "Berlin Wall",
+  "1BC.3.2": "Tensions over Cuba",
+  "1BC.3.3": "Czechoslovakia",
+  "1BC.3.4": "Easing of tension",
+  "1BD.1.1": "The causes of the Korean War",
+  "1BD.1.2": "The development of the Korean War",
+  "1BD.1.3": "The end of the Korean War",
+  "1BD.2.1": "The end of French colonial rule",
+  "1BD.2.2": "The US involvement",
+  "1BD.2.3": "Johnson’s War",
+  "1BD.3.1": "Nixon’s War",
+  "1BD.3.2": "Opposition to war",
+  "1BD.3.3": "The end of the war",
+  "1BE.1.1": "Regional instability",
+  "1BE.1.2": "The Gulf War,1990",
+  "1BE.2.1": "Al-Qaeda",
+  "1BE.2.2": "Afghanistan",
+  "1BE.2.3": "Bush’s war against terror",
+  "1BE.3.1": "Saddam Hussein's regime",
+  "1BE.3.2": "The invasion of Iraq 2003",
+  "1BE.3.3": "The impact of war on the Iraqi people and across the world",
+  "2AA.1.1": "Medieval medicine",
+  "2AA.1.2": "Medical progress",
+  "2AA.1.3": "Public health in the Middle Ages",
+  "2AA.2.1": "The impact of the Renaissance on Britain",
+  "2AA.2.2": "Dealing with disease",
+  "2AA.2.3": "Prevention of disease",
+  "2AA.3.1": "The development of Germ Theory and its impact on the treatment of disease in Britain",
+  "2AA.3.2": "A revolution in surgery",
+  "2AA.3.3": "Improvements in public health",
+  "2AA.4.1": "Modern treatment of disease",
+  "2AA.4.2": "The impact of war and technology on surgery",
+  "2AA.4.3": "Modern public health",
+  "2AB.1.1": "Constraints on kingship",
+  "2AB.1.2": "The origins of parliament",
+  "2AB.1.3": "Medieval revolt and royal authority",
+  "2AB.2.1": "Popular uprisings against the Crown",
+  "2AB.2.2": "Divine Right and parliamentary authority",
+  "2AB.2.3": "Royal authority and the right to representation",
+  "2AB.3.1": "The extension of the franchise",
+  "2AB.3.2": "Protest and change",
+  "2AB.3.3": "Workers movements",
+  "2AB.4.1": "Women’s rights",
+  "2AB.4.2": "Workers’ rights",
+  "2AB.4.3": "Minority rights",
+  "2AC.1.1": "Invasion",
+  "2AC.1.2": "A Norman Kingdom and ‘Angevin’ Empire",
+  "2AC.1.3": "The birth of English identity",
+  "2AC.2.1": "Sugar and the Caribbean",
+  "2AC.2.2": "Colonisation in North America",
+  "2AC.2.3": "Migrants to and from Britain",
+  "2AC.3.1": "Expansion in India",
+  "2AC.3.2": "Expansion in Africa",
+  "2AC.3.3": "Migrants to, from and within Britain",
+  "2AC.4.1": "The end of Empire",
+  "2AC.4.2": "The legacy of Empire",
+  "2AC.4.3": "Britain’s relationship with Europe and its impact",
+  "2BA.1.1": "Causes of Norman Conquest",
+  "2BA.1.2": "Military aspects",
+  "2BA.1.3": "Establishing and maintaining control",
+  "2BA.2.1": "Feudalism and government",
+  "2BA.2.2": "Economic and social changes and their consequences",
+  "2BA.3.1": "The Church",
+  "2BA.3.2": "Monasticism",
+  "2BB.1.1": "Henry III’s legacy",
+  "2BB.1.2": "Development of government, rights and justice",
+  "2BB.2.1": "Trade, towns and villages",
+  "2BB.2.2": "Education and learning",
+  "2BB.2.3": "The development of the legal system",
+  "2BB.3.1": "Medieval warfare, tactics and technology",
+  "2BB.3.2": "The invasion and colonisation of Wales",
+  "2BB.3.3": "The relations with Scotland",
+  "2BC.1.1": "Elizabeth I and her court",
+  "2BC.1.2": "The difficulties of a female ruler",
+  "2BC.2.1": "A ‘Golden Age’",
+  "2BC.2.2": "The poor",
+  "2BC.2.3": "English sailors",
+  "2BC.3.1": "Religious matters",
+  "2BC.3.2": "Mary Queen of Scots",
+  "2BC.3.3": "Conflict with Spain",
+  "2BD.1.1": "Crown and Parliament",
+  "2BD.1.2": "The Catholic question",
+  "2BD.1.3": "Charles II’s court",
+  "2BD.2.1": "Crisis",
+  "2BD.2.2": "Restoration culture",
+  "2BD.3.1": "Land",
+  "2BD.3.2": "Trade",
+  "2BD.3.3": "War"
+ },
+ "parents": {
+  "1AA.1.1": "1AA.1",
+  "1AA.1.2": "1AA.1",
+  "1AA.1.3": "1AA.1",
+  "1AA.2.1": "1AA.2",
+  "1AA.2.2": "1AA.2",
+  "1AA.2.3": "1AA.2",
+  "1AA.3.1": "1AA.3",
+  "1AA.3.2": "1AA.3",
+  "1AA.3.3": "1AA.3",
+  "1AB.1.1": "1AB.1",
+  "1AB.1.2": "1AB.1",
+  "1AB.1.3": "1AB.1",
+  "1AB.2.1": "1AB.2",
+  "1AB.2.2": "1AB.2",
+  "1AB.2.3": "1AB.2",
+  "1AB.3.1": "1AB.3",
+  "1AB.3.2": "1AB.3",
+  "1AB.3.3": "1AB.3",
+  "1AC.1.1": "1AC.1",
+  "1AC.1.2": "1AC.1",
+  "1AC.1.3": "1AC.1",
+  "1AC.2.1": "1AC.2",
+  "1AC.2.2": "1AC.2",
+  "1AC.2.3": "1AC.2",
+  "1AC.3.1": "1AC.3",
+  "1AC.3.2": "1AC.3",
+  "1AC.3.3": "1AC.3",
+  "1AD.1.1": "1AD.1",
+  "1AD.1.2": "1AD.1",
+  "1AD.1.3": "1AD.1",
+  "1AD.2.1": "1AD.2",
+  "1AD.2.2": "1AD.2",
+  "1AD.2.3": "1AD.2",
+  "1AD.3.1": "1AD.3",
+  "1AD.3.2": "1AD.3",
+  "1AD.3.3": "1AD.3",
+  "1BA.1.1": "1BA.1",
+  "1BA.1.2": "1BA.1",
+  "1BA.1.3": "1BA.1",
+  "1BA.2.1": "1BA.2",
+  "1BA.2.2": "1BA.2",
+  "1BA.2.3": "1BA.2",
+  "1BA.3.1": "1BA.3",
+  "1BA.3.2": "1BA.3",
+  "1BA.3.3": "1BA.3",
+  "1BB.1.1": "1BB.1",
+  "1BB.1.2": "1BB.1",
+  "1BB.1.3": "1BB.1",
+  "1BB.2.1": "1BB.2",
+  "1BB.2.2": "1BB.2",
+  "1BB.2.3": "1BB.2",
+  "1BB.3.1": "1BB.3",
+  "1BB.3.2": "1BB.3",
+  "1BB.3.3": "1BB.3",
+  "1BC.1.1": "1BC.1",
+  "1BC.1.2": "1BC.1",
+  "1BC.2.1": "1BC.2",
+  "1BC.2.2": "1BC.2",
+  "1BC.2.3": "1BC.2",
+  "1BC.3.1": "1BC.3",
+  "1BC.3.2": "1BC.3",
+  "1BC.3.3": "1BC.3",
+  "1BC.3.4": "1BC.3",
+  "1BD.1.1": "1BD.1",
+  "1BD.1.2": "1BD.1",
+  "1BD.1.3": "1BD.1",
+  "1BD.2.1": "1BD.2",
+  "1BD.2.2": "1BD.2",
+  "1BD.2.3": "1BD.2",
+  "1BD.3.1": "1BD.3",
+  "1BD.3.2": "1BD.3",
+  "1BD.3.3": "1BD.3",
+  "1BE.1.1": "1BE.1",
+  "1BE.1.2": "1BE.1",
+  "1BE.2.1": "1BE.2",
+  "1BE.2.2": "1BE.2",
+  "1BE.2.3": "1BE.2",
+  "1BE.3.1": "1BE.3",
+  "1BE.3.2": "1BE.3",
+  "1BE.3.3": "1BE.3",
+  "2AA.1.1": "2AA.1",
+  "2AA.1.2": "2AA.1",
+  "2AA.1.3": "2AA.1",
+  "2AA.2.1": "2AA.2",
+  "2AA.2.2": "2AA.2",
+  "2AA.2.3": "2AA.2",
+  "2AA.3.1": "2AA.3",
+  "2AA.3.2": "2AA.3",
+  "2AA.3.3": "2AA.3",
+  "2AA.4.1": "2AA.4",
+  "2AA.4.2": "2AA.4",
+  "2AA.4.3": "2AA.4",
+  "2AB.1.1": "2AB.1",
+  "2AB.1.2": "2AB.1",
+  "2AB.1.3": "2AB.1",
+  "2AB.2.1": "2AB.2",
+  "2AB.2.2": "2AB.2",
+  "2AB.2.3": "2AB.2",
+  "2AB.3.1": "2AB.3",
+  "2AB.3.2": "2AB.3",
+  "2AB.3.3": "2AB.3",
+  "2AB.4.1": "2AB.4",
+  "2AB.4.2": "2AB.4",
+  "2AB.4.3": "2AB.4",
+  "2AC.1.1": "2AC.1",
+  "2AC.1.2": "2AC.1",
+  "2AC.1.3": "2AC.1",
+  "2AC.2.1": "2AC.2",
+  "2AC.2.2": "2AC.2",
+  "2AC.2.3": "2AC.2",
+  "2AC.3.1": "2AC.3",
+  "2AC.3.2": "2AC.3",
+  "2AC.3.3": "2AC.3",
+  "2AC.4.1": "2AC.4",
+  "2AC.4.2": "2AC.4",
+  "2AC.4.3": "2AC.4",
+  "2BA.1.1": "2BA.1",
+  "2BA.1.2": "2BA.1",
+  "2BA.1.3": "2BA.1",
+  "2BA.2.1": "2BA.2",
+  "2BA.2.2": "2BA.2",
+  "2BA.3.1": "2BA.3",
+  "2BA.3.2": "2BA.3",
+  "2BB.1.1": "2BB.1",
+  "2BB.1.2": "2BB.1",
+  "2BB.2.1": "2BB.2",
+  "2BB.2.2": "2BB.2",
+  "2BB.2.3": "2BB.2",
+  "2BB.3.1": "2BB.3",
+  "2BB.3.2": "2BB.3",
+  "2BB.3.3": "2BB.3",
+  "2BC.1.1": "2BC.1",
+  "2BC.1.2": "2BC.1",
+  "2BC.2.1": "2BC.2",
+  "2BC.2.2": "2BC.2",
+  "2BC.2.3": "2BC.2",
+  "2BC.3.1": "2BC.3",
+  "2BC.3.2": "2BC.3",
+  "2BC.3.3": "2BC.3",
+  "2BD.1.1": "2BD.1",
+  "2BD.1.2": "2BD.1",
+  "2BD.1.3": "2BD.1",
+  "2BD.2.1": "2BD.2",
+  "2BD.2.2": "2BD.2",
+  "2BD.3.1": "2BD.3",
+  "2BD.3.2": "2BD.3",
+  "2BD.3.3": "2BD.3"
+ },
+ "notes": "One topic per option. The specification prints each option with a section letter and an option letter (AA-AD and BA-BE on Paper 1, AA-AC and BA-BD on Paper 2), so a topic ref is the paper number plus that code: 1AA America, 1840-1895 ... 2BD Restoration England. The body text prints Britain: Power and the people as 'BB'; the at-a-glance list and its place among the thematic studies make it AB, so it is 2AB. Subtopics are the option's Parts (Part one = .1), and each point is one content bullet in the order printed (2BC.1.2 = Elizabethan England, Part one, second bullet); a point's title is the bullet's own heading, the words before its first colon. The bullets are unnumbered in the specification. History is untiered: no Higher-only content. Skipped: Part four of each British depth study (2BA-2BD), the historic environment, because AQA names a different site each year."
+}
