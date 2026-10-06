@@ -6915,7 +6915,8 @@ function resetAtomsForRound(roundType) {
   auraMesh.visible = true;
   tether.visible = (roundType === 'sprint');
   trackGroup.visible = (roundType === 'deal');
-  sprintGroup.visible = setClock.visible = (roundType === 'sprint');
+  sprintGroup.visible = (roundType === 'sprint');
+  setClock.visible = false;   // the Final Sprint shows one timer, above the question (no clock or pole in the set)
   setMood('normal'); confettiMesh.visible = false; lightShow = 0; hunterLunge = 0; slowMo = 1;
   runnerTrail.userData.life = hunterTrail.userData.life = 0;
   tetherColor.copy(tetherRest);
