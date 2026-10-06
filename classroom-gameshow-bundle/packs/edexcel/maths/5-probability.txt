@@ -9,18 +9,21 @@ A: Trial
 Accept: A trial
 Ref: P1
 D: 1
+Id: edexcel-maths-5-001
 
 Q: Name the table that records results using marks grouped in fives.
 A: Tally chart
 Accept: Tally; Tally table
 Ref: P1
 D: 1
+Id: edexcel-maths-5-002
 
 Q: A dice is rolled 40 times and lands on 5 six times. What is the relative frequency of a 5?
 A: 3/20
 Accept: 0.15; 15%; 6/40
 Ref: P1
 D: 2
+Id: edexcel-maths-5-003
 
 Q: Frequency tree: of 60 people, 25 own a dog. 10 dog owners and 14 non-dog owners own a cat. How many own neither pet?
 A: 21
@@ -30,24 +33,28 @@ D: 3
 Note: 35 people do not own a dog; 35 − 14 = 21.
 
 # P2 Expected outcomes
+Id: edexcel-maths-5-004
 
 Q: What word describes a dice that is more likely to land on some numbers than others?
 A: Biased
 Accept: Unfair; Weighted
 Ref: P2
 D: 1
+Id: edexcel-maths-5-005
 
 Q: Probability multiplied by the number of trials gives what quantity?
 A: Expected frequency
 Accept: Expected number; Expected outcomes; Expected number of outcomes
 Ref: P2
 D: 1
+Id: edexcel-maths-5-006
 
 Q: A fair spinner has five equal sections numbered 1 to 5. It is spun 200 times. How many odd numbers would you expect?
 A: 120
 Ref: P2
 D: 2
 Note: Three of the five numbers are odd: 3/5 × 200.
+Id: edexcel-maths-5-007
 
 Q: Two fair coins are tossed together 100 times. How many times would you expect both to show heads?
 A: 25
@@ -56,24 +63,28 @@ D: 3
 Note: P(two heads) = 1/2 × 1/2 = 1/4, then × 100.
 
 # P3 The probability scale
+Id: edexcel-maths-5-008
 
 Q: Which phrase describes a probability of exactly 0.5 on the probability scale?
 A: Even chance
 Accept: Evens; Even; Fifty-fifty; Equally likely
 Ref: P3
 D: 1
+Id: edexcel-maths-5-009
 
 Q: Which word, likely or unlikely, describes an event with probability 0.8?
 A: Likely
 Accept: Very likely
 Ref: P3
 D: 1
+Id: edexcel-maths-5-010
 
 Q: Which word describes the probability of rolling a number less than 7 on an ordinary six-sided dice?
 A: Certain
 Accept: 1; Certainty
 Ref: P3
 D: 2
+Id: edexcel-maths-5-011
 
 Q: Order these probabilities from least likely to most likely: 0.35, 3/10, 1/3.
 A: 3/10, 1/3, 0.35
@@ -82,18 +93,21 @@ D: 3
 Note: 1/3 is 0.333..., which is less than 0.35.
 
 # P4 Probabilities sum to one
+Id: edexcel-maths-5-012
 
 Q: What word describes the event "not A", written A′?
 A: Complement
 Accept: The complement; Complement of A
 Ref: P4
 D: 1
+Id: edexcel-maths-5-013
 
 Q: Rolling a 2 and rolling an odd number on one roll of a dice are what type of events?
 A: Mutually exclusive
 Accept: Mutually exclusive events
 Ref: P4
 D: 2
+Id: edexcel-maths-5-014
 
 Q: A bag holds only red and blue counters. There are 24 counters and P(red) = 3/8. How many counters are blue?
 A: 15
@@ -101,6 +115,7 @@ Accept: 15 counters
 Ref: P4
 D: 3
 Note: P(blue) = 5/8 and 5/8 of 24 is 15.
+Id: edexcel-maths-5-015
 
 Q: P(red) = 0.25 and P(blue) = 0.15. The only other colours are green and yellow, and green is twice as likely as yellow. Find P(green).
 A: 0.4
@@ -110,24 +125,28 @@ D: 3
 Note: Green and yellow share 0.6 in the ratio 2 : 1.
 
 # P5 Larger samples
+Id: edexcel-maths-5-016
 
 Q: Relative frequency is also known as what type of probability?
 A: Experimental probability
 Accept: Experimental; Empirical probability
 Ref: P5
 D: 1
+Id: edexcel-maths-5-017
 
 Q: A drawing pin lands point up 140 times in 400 throws. Estimate the probability it lands point up, as a decimal.
 A: 0.35
 Accept: 7/20; 35%; 140/400
 Ref: P5
 D: 2
+Id: edexcel-maths-5-018
 
 Q: A fair dice is rolled many times. As the number of rolls increases, the relative frequency of a six gets closer to what value?
 A: 1/6
 Accept: One sixth; 0.1666...; 0.17
 Ref: P5
 D: 2
+Id: edexcel-maths-5-019
 
 Q: Sam gets 7 heads in 10 flips and claims his coin is biased. What should he do to test his claim more reliably?
 A: More trials
@@ -137,35 +156,41 @@ D: 2
 Note: Ten trials are too few; relative frequency settles down only with a large number of trials.
 
 # P6 Sets and listing outcomes
+Id: edexcel-maths-5-020
 
 Q: The set notation A ∪ B is read as "A ___ B". What word fills the gap?
 A: Union
 Ref: P6
 D: 1
+Id: edexcel-maths-5-021
 
 Q: On a Venn diagram, the rectangle labelled ξ represents which set?
 A: Universal set
 Accept: The universal set
 Ref: P6
 D: 1
+Id: edexcel-maths-5-022
 
 Q: What name is given to each individual member of a set?
 A: Element
 Accept: An element; Member; A member
 Ref: P6
 D: 1
+Id: edexcel-maths-5-023
 
 Q: Name the table that shows data for two categories at once, such as gender and wearing glasses.
 A: Two-way table
 Accept: Two way table
 Ref: P6
 D: 1
+Id: edexcel-maths-5-024
 
 Q: ξ = {whole numbers 1 to 10} and A = {prime numbers}. How many elements are in A′?
 A: 6
 Ref: P6
 D: 2
 Note: A = {2, 3, 5, 7}, so A′ = {1, 4, 6, 8, 9, 10}; 1 is not prime.
+Id: edexcel-maths-5-025
 
 Q: In a class of 32, 20 sing in the choir, 15 play in the band and 6 do neither. How many do both?
 A: 9
@@ -175,6 +200,7 @@ D: 3
 Note: 32 − 6 = 26 do at least one; 20 + 15 − 26 = 9.
 
 # P7 Sample spaces
+Id: edexcel-maths-5-026
 
 Q: Two fair coins are flipped. What is the probability of getting one head and one tail?
 A: 1/2
@@ -182,12 +208,14 @@ Accept: 0.5; 50%; 2/4
 Ref: P7
 D: 2
 Note: HT and TH are two of the four outcomes HH, HT, TH, TT.
+Id: edexcel-maths-5-027
 
 Q: A letter is chosen at random from the word EXCELLENT. What is the probability it is an E?
 A: 1/3
 Accept: 3/9
 Ref: P7
 D: 2
+Id: edexcel-maths-5-028
 
 Q: Two fair six-sided dice are rolled and the scores multiplied. What is the probability the product is 12?
 A: 1/9
@@ -195,6 +223,7 @@ Accept: 4/36
 Ref: P7
 D: 3
 Note: (2,6), (6,2), (3,4), (4,3).
+Id: edexcel-maths-5-029
 
 Q: Two fair six-sided dice are rolled. What is the probability that at least one of them shows a 6?
 A: 11/36
@@ -203,12 +232,14 @@ D: 3
 Note: Count the 6 row and 6 column of the grid, but (6,6) only once.
 
 # P8 Combined events
+Id: edexcel-maths-5-030
 
 Q: Putting a counter back in the bag before the next counter is taken is called sampling with what?
 A: Replacement
 Accept: With replacement
 Ref: P8
 D: 1
+Id: edexcel-maths-5-031
 
 Q: Two counters are taken from a bag without replacement. Are the two picks independent or dependent?
 A: Dependent
@@ -216,6 +247,7 @@ Accept: Dependent events
 Ref: P8
 D: 2
 Note: The first pick changes what is left in the bag.
+Id: edexcel-maths-5-032
 
 Q: A fair coin has landed on heads five times in a row. What is the probability the next flip is heads?
 A: 1/2
@@ -223,6 +255,7 @@ Accept: 0.5; 50%
 Ref: P8
 D: 2
 Note: Flips are independent; the coin has no memory of earlier results.
+Id: edexcel-maths-5-033
 
 Q: A and B are independent, with P(A) = 0.3 and P(B) = 0.5. What is the probability that neither happens?
 A: 0.35
@@ -230,6 +263,7 @@ Accept: 7/20; 35%
 Ref: P8
 D: 3
 Note: 0.7 × 0.5.
+Id: edexcel-maths-5-034
 
 Q: A bag holds 4 green and 1 yellow counter. Two are taken without replacement. What is the probability both are green?
 A: 3/5
@@ -237,6 +271,7 @@ Accept: 0.6; 60%; 12/20
 Ref: P8
 D: 3
 Note: 4/5 × 3/4.
+Id: edexcel-maths-5-035
 
 Q: P(rain) is 0.4 on Saturday and 0.4 on Sunday, independently. What is the probability it rains on at least one day?
 A: 0.64
@@ -246,6 +281,7 @@ D: 3
 Note: 1 − P(no rain on both days) = 1 − 0.6 × 0.6.
 
 # P9 Conditional probability
+Id: edexcel-maths-5-036
 
 Q: In the notation P(A | B), what word is the vertical line read as?
 A: Given
@@ -253,6 +289,7 @@ Accept: Given that
 Ref: P9
 D: 1
 HT: yes
+Id: edexcel-maths-5-037
 
 Q: If P(A | B) = P(A), what word describes events A and B?
 A: Independent
@@ -260,6 +297,7 @@ Accept: Independent events
 Ref: P9
 D: 2
 HT: yes
+Id: edexcel-maths-5-038
 
 Q: Ten raffle tickets include 4 winners. Ali draws a winner and keeps it. What is the probability Ben's ticket, drawn next, also wins?
 A: 1/3
@@ -267,6 +305,7 @@ Accept: 3/9
 Ref: P9
 D: 2
 HT: yes
+Id: edexcel-maths-5-039
 
 Q: Of 25 adults, 10 buy popcorn; of 15 children, 9 buy popcorn. A popcorn buyer is chosen at random. What is P(child)?
 A: 9/19
@@ -274,6 +313,7 @@ Ref: P9
 D: 3
 HT: yes
 Note: The denominator is the 19 popcorn buyers.
+Id: edexcel-maths-5-040
 
 Q: Of 50 students, 20 study French, 28 study Spanish and 8 study both. A Spanish student is picked at random. Find P(also studies French).
 A: 2/7
@@ -282,6 +322,7 @@ Ref: P9
 D: 3
 HT: yes
 Note: The denominator is the 28 Spanish students, 8 of whom also study French.
+Id: edexcel-maths-5-041
 
 Q: Of 200 people, 20 have a condition. A test is positive for 18 of them and for 9 of the other 180. Find P(condition | positive).
 A: 2/3
@@ -290,3 +331,4 @@ Ref: P9
 D: 3
 HT: yes
 Note: 27 people test positive and 18 of them have the condition.
+Id: edexcel-maths-5-042

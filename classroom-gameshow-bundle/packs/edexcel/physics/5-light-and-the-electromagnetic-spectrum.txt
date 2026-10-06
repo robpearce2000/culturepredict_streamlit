@@ -1,0 +1,571 @@
+Board: Edexcel
+Spec: 1PH0
+Topic: 5
+
+Q: State the law of reflection.
+A: Angle of incidence equals angle of reflection
+Accept: i = r; angle in = angle out
+Ref: 5.1P
+D: 2
+
+Q: Angles of incidence and reflection are measured from which line drawn at 90° to the surface?
+A: Normal
+Accept: The normal
+Ref: 5.1P
+D: 1
+
+Q: What name is given to the angle of incidence above which total internal reflection happens?
+A: Critical angle
+Ref: 5.1P
+D: 1
+
+Q: Light inside glass meets the glass–air boundary exactly at the critical angle. At what angle to the normal does the refracted ray leave?
+A: 90°
+Accept: 90 degrees; along the boundary; along the surface
+Ref: 5.1P
+D: 3
+
+Q: A light ray passes from air into glass at an angle. Does it bend towards or away from the normal?
+A: Towards the normal
+Accept: Towards
+Ref: 5.1P
+D: 2
+
+Q: What type of reflection happens at a smooth, flat surface such as a mirror?
+A: Specular reflection
+Accept: Specular
+Ref: 5.2P
+D: 1
+
+Q: What type of reflection happens at a rough surface such as paper?
+A: Diffuse reflection
+Accept: Diffuse; scattering
+Ref: 5.2P
+D: 1
+
+Q: Why do parallel rays scatter in many directions when they reflect from a rough surface?
+A: Normals point in different directions
+Accept: Surface is uneven so angles of incidence differ; rays meet the surface at different angles
+Ref: 5.2P
+D: 3
+Note: Each ray still obeys the law of reflection; it is the normal that varies.
+
+Q: Why does a blue book look blue in white light?
+A: Reflects blue light, absorbs other colours
+Accept: Only blue is reflected
+Ref: 5.3P
+D: 2
+
+Q: What colour does a red shirt appear when lit only by blue light?
+A: Black
+Ref: 5.3P
+D: 3
+Note: The red shirt absorbs the blue light, so no light is reflected.
+
+Q: White light shines through a green filter. What colour of light comes out?
+A: Green
+Ref: 5.3P
+D: 1
+
+Q: Red light shines on a blue filter. What colour is seen beyond the filter?
+A: Black
+Accept: No light; dark; none
+Ref: 5.3P
+D: 3
+Note: A blue filter transmits only blue and absorbs the red.
+
+Q: What does a black surface do to all colours of visible light?
+A: Absorbs them
+Accept: Absorbs; absorbs all colours
+Ref: 5.3P
+D: 1
+
+Q: Two lenses are made of the same glass. One has a shorter focal length. Is it more or less powerful?
+A: More powerful
+Accept: More
+Ref: 5.4P
+D: 2
+
+Q: How does making a lens more curved affect its focal length?
+A: Focal length gets shorter
+Accept: Shorter; decreases
+Ref: 5.4P
+D: 2
+
+Q: Lens A has focal length 10 cm and lens B has focal length 25 cm. Which lens is more powerful?
+A: Lens A
+Accept: A
+Ref: 5.4P
+D: 3
+Note: Power increases as focal length decreases.
+
+Q: Which type of lens makes parallel rays of light meet at a point?
+A: Converging lens
+Accept: Converging; convex
+Ref: 5.5P
+D: 1
+
+Q: Which type of lens makes parallel rays of light spread out?
+A: Diverging lens
+Accept: Diverging; concave
+Ref: 5.5P
+D: 1
+
+Q: What is the point called where parallel rays meet after passing through a converging lens?
+A: Principal focus
+Accept: Focal point; focus
+Ref: 5.5P
+D: 1
+
+Q: A lens is thicker in the middle than at its edges. What type of lens is it?
+A: Converging
+Accept: Converging lens; convex
+Ref: 5.5P
+D: 2
+
+Q: Which type of image can be formed on a screen?
+A: Real image
+Accept: Real
+Ref: 5.6P
+D: 1
+
+Q: What type of image does a diverging lens always produce?
+A: Virtual image
+Accept: Virtual; virtual, upright and diminished
+Ref: 5.6P
+D: 2
+
+Q: An object is closer to a converging lens than its focal length. What type of image is formed?
+A: Virtual, upright and magnified
+Accept: Virtual; virtual and magnified
+Ref: 5.6P
+D: 3
+Note: This is how a magnifying glass works.
+
+Q: Why can a virtual image not be formed on a screen?
+A: Light rays do not actually meet there
+Accept: Rays only appear to come from it
+Ref: 5.6P
+D: 3
+
+Q: Are electromagnetic waves transverse or longitudinal?
+A: Transverse
+Ref: 5.7
+D: 1
+
+Q: What is the speed of all electromagnetic waves in a vacuum?
+A: 3 × 10^8 m/s
+Accept: 300 000 000 m/s; 300 000 km/s
+Ref: 5.7
+D: 1
+
+Q: Radio waves and gamma rays leave a distant star together. Which reaches Earth first?
+A: Neither; same speed in a vacuum
+Accept: They arrive together; at the same time
+Ref: 5.7
+D: 2
+
+Q: What do all electromagnetic waves transfer from a source to an observer?
+A: Energy
+Ref: 5.8
+D: 1
+
+Q: Which electromagnetic radiation from the Sun mainly transfers energy that warms your skin?
+A: Infrared
+Accept: IR
+Ref: 5.8
+D: 2
+
+Q: Light travels from a lamp to your eye. Is matter or energy transferred?
+A: Energy
+Accept: Energy only
+Ref: 5.8
+D: 2
+
+Q: In the glass block practical, what piece of equipment produces the narrow beam of light?
+A: Ray box
+Accept: Ray box with a slit; light box
+Ref: 5.9
+RP: 5.9
+D: 1
+
+Q: In the glass block practical, which instrument measures the angles of incidence and refraction?
+A: Protractor
+Ref: 5.9
+RP: 5.9
+D: 1
+
+Q: What is the independent variable in the glass block refraction practical?
+A: Angle of incidence
+Ref: 5.9
+RP: 5.9
+D: 2
+
+Q: Light enters a glass block from air at an angle. Which is larger: the angle of incidence or the angle of refraction?
+A: Angle of incidence
+Ref: 5.9
+RP: 5.9
+D: 2
+
+Q: A ray passes through a rectangular glass block. How is the emerging ray's direction related to the incident ray?
+A: Parallel to it
+Accept: Parallel; same direction (displaced sideways)
+Ref: 5.9
+RP: 5.9
+D: 3
+Note: The bend on entry is undone on exit because the faces are parallel.
+
+Q: Which part of the electromagnetic spectrum lies between microwaves and visible light?
+A: Infrared
+Accept: IR
+Ref: 5.10
+D: 1
+
+Q: Which part of the electromagnetic spectrum lies between visible light and x-rays?
+A: Ultraviolet
+Accept: UV
+Ref: 5.10
+D: 1
+
+Q: Which part of the electromagnetic spectrum has the shortest wavelength?
+A: Gamma rays
+Accept: Gamma
+Ref: 5.10
+D: 1
+
+Q: Which colour of visible light has the longest wavelength?
+A: Red
+Ref: 5.10
+D: 2
+
+Q: Moving along the electromagnetic spectrum from radio waves to gamma rays, what happens to the frequency?
+A: Increases
+Accept: Gets higher
+Ref: 5.11
+D: 2
+
+Q: Moving along the electromagnetic spectrum from radio waves to gamma rays, what happens to the wavelength?
+A: Decreases
+Accept: Gets shorter
+Ref: 5.11
+D: 2
+
+Q: A radio wave has a frequency of 100 MHz and travels at 3 × 10^8 m/s. What is its wavelength?
+A: 3 m
+Accept: 3 metres
+Ref: 5.11
+D: 3
+Note: wavelength = wave speed ÷ frequency; 100 MHz = 1 × 10^8 Hz.
+
+Q: A microwave has a wavelength of 0.1 m and travels at 3 × 10^8 m/s. What is its frequency?
+A: 3 × 10^9 Hz
+Accept: 3 GHz; 3 000 000 000 Hz
+Ref: 5.11
+D: 3
+
+Q: Which is the only part of the electromagnetic spectrum that human eyes can detect?
+A: Visible light
+Accept: Visible; light
+Ref: 5.12
+D: 1
+
+Q: Compared with the whole electromagnetic spectrum, is the range of frequencies our eyes detect large or small?
+A: Small
+Accept: Limited; narrow; very small
+Ref: 5.12
+D: 2
+
+Q: Why can you not see the signal from a television remote control?
+A: Infrared is outside the range eyes detect
+Accept: Infrared is not visible; its frequency is too low for our eyes
+Ref: 5.12
+D: 2
+
+Q: Name the four things a substance may do to an electromagnetic wave that hits it.
+A: Absorb, transmit, refract, reflect
+Accept: Any order
+Ref: 5.13
+HT: yes
+D: 3
+
+Q: A glass prism splits white light into colours. Why?
+A: Different wavelengths refract by different amounts
+Accept: Each colour refracts by a different amount
+Ref: 5.13
+HT: yes
+D: 3
+
+Q: Glass transmits visible light but absorbs much ultraviolet. What does the effect of a substance on EM waves depend on?
+A: Wavelength
+Accept: Frequency; wavelength of the wave
+Ref: 5.13
+HT: yes
+D: 3
+
+Q: What happens to the speed of light as it passes from air into glass?
+A: Decreases
+Accept: Slows down; goes down
+Ref: 5.14
+HT: yes
+D: 3
+
+Q: Light passes from air into glass. What happens to its frequency?
+A: Stays the same
+Accept: No change; unchanged
+Ref: 5.14
+HT: yes
+D: 3
+
+Q: Why does light change direction when it enters glass at an angle to the normal?
+A: Its speed changes
+Accept: Slows down in glass; change in velocity
+Ref: 5.14
+HT: yes
+D: 3
+
+Q: Light of wavelength 600 nm in air (3 × 10^8 m/s) enters glass, where it travels at 2 × 10^8 m/s. What is its wavelength in glass?
+A: 400 nm
+Accept: 4 × 10^-7 m
+Ref: 5.14
+HT: yes
+D: 3
+Note: Frequency is unchanged, so wavelength falls in proportion to speed.
+
+Q: Which objects emit electromagnetic radiation?
+A: All objects
+Accept: All bodies; everything
+Ref: 5.15P
+D: 1
+
+Q: As an object gets hotter, what happens to the intensity of the radiation it emits?
+A: Increases
+Accept: Gets higher; more radiation
+Ref: 5.15P
+D: 2
+
+Q: As an object gets hotter, does the peak wavelength of its emitted radiation get shorter or longer?
+A: Shorter
+Ref: 5.15P
+D: 2
+
+Q: Why does a heated metal bar glow red and then white as its temperature rises?
+A: More shorter-wavelength radiation is emitted
+Accept: Peak wavelength gets shorter; emits more visible wavelengths
+Ref: 5.15P
+D: 3
+
+Q: For a body to stay at a constant temperature, how must the average power it radiates compare with the average power it absorbs?
+A: Equal
+Accept: The same; equal to it
+Ref: 5.16P
+HT: yes
+D: 3
+
+Q: An object absorbs an average of 50 W of radiation and stays at a constant temperature. What average power does it radiate?
+A: 50 W
+Accept: 50 watts
+Ref: 5.16P
+HT: yes
+D: 3
+
+Q: A mug of water stays at room temperature. What is the net power it gains by radiation?
+A: Zero
+Accept: 0 W; 0
+Ref: 5.16P
+HT: yes
+D: 3
+
+Q: A body radiates less average power than it absorbs. What happens to its temperature?
+A: Increases
+Accept: Rises; gets hotter
+Ref: 5.17P
+HT: yes
+D: 3
+
+Q: A body radiates more average power than it absorbs. What happens to its temperature?
+A: Decreases
+Accept: Falls; cools down
+Ref: 5.17P
+HT: yes
+D: 3
+
+Q: A body warms up because it absorbs more power than it radiates. Why does it eventually reach a steady temperature?
+A: Radiated power rises until it equals absorbed power
+Accept: It radiates more as it gets hotter until powers balance
+Ref: 5.17P
+HT: yes
+D: 3
+
+Q: Name a greenhouse gas that absorbs infrared radiation emitted by the Earth.
+A: Carbon dioxide
+Accept: CO2; methane; water vapour
+Ref: 5.18P
+HT: yes
+D: 3
+
+Q: What type of radiation does the Earth's surface mainly emit?
+A: Infrared
+Accept: IR
+Ref: 5.18P
+HT: yes
+D: 3
+
+Q: More greenhouse gas in the atmosphere reduces the radiation escaping to space. What happens to the Earth's temperature?
+A: Increases
+Accept: Rises; goes up
+Ref: 5.18P
+HT: yes
+D: 3
+
+Q: Name the hollow metal cube with differently finished faces used to compare thermal radiation from surfaces.
+A: Leslie cube
+Accept: Leslie's cube
+Ref: 5.19P
+RP: 5.19P
+D: 1
+
+Q: Which surface emits infrared radiation at the greatest rate: matt black or shiny silver?
+A: Matt black
+Accept: Black
+Ref: 5.19P
+RP: 5.19P
+D: 1
+
+Q: Which kind of surface is the best absorber of infrared radiation?
+A: Matt black
+Accept: Dull black; black
+Ref: 5.19P
+RP: 5.19P
+D: 1
+
+Q: In the surfaces practical, why is the detector kept the same distance from each face?
+A: To make it a fair test
+Accept: Distance affects the reading; control variable
+Ref: 5.19P
+RP: 5.19P
+D: 2
+
+Q: Why is using one hot-water-filled cube better than four separate cans for comparing surfaces?
+A: All faces are at the same temperature
+Accept: Same water temperature for every surface
+Ref: 5.19P
+RP: 5.19P
+D: 3
+
+Q: How does the potential danger of an electromagnetic wave change as its frequency increases?
+A: Increases
+Accept: More dangerous; danger increases
+Ref: 5.20
+D: 1
+
+Q: Which is more dangerous to people: ultraviolet or visible light?
+A: Ultraviolet
+Accept: UV
+Ref: 5.20
+D: 2
+
+Q: Radio waves have a lower frequency than x-rays. Which is less dangerous to people?
+A: Radio waves
+Accept: Radio
+Ref: 5.20
+D: 2
+
+Q: What is the harmful effect of excessive exposure to microwaves?
+A: Internal heating of body cells
+Accept: Heating of body cells; internal heating
+Ref: 5.21
+D: 2
+
+Q: What is the harmful effect of excessive exposure to infrared?
+A: Skin burns
+Accept: Burns
+Ref: 5.21
+D: 1
+
+Q: Which disease of the skin can be caused by too much ultraviolet?
+A: Skin cancer
+Accept: Cancer
+Ref: 5.21
+D: 1
+
+Q: What can x-rays and gamma rays cause in the cells of the body?
+A: Mutation
+Accept: Mutations; cell damage; damage to DNA; cancer
+Ref: 5.21
+D: 2
+
+Q: Which electromagnetic waves are used to broadcast radio programmes?
+A: Radio waves
+Accept: Radio
+Ref: 5.22
+D: 1
+
+Q: Which electromagnetic waves are used in thermal imaging cameras?
+A: Infrared
+Accept: IR
+Ref: 5.22
+D: 1
+
+Q: Which electromagnetic waves are used to detect forged bank notes?
+A: Ultraviolet
+Accept: UV
+Ref: 5.22
+D: 1
+
+Q: Which electromagnetic waves are used in airport security scanners to see inside luggage?
+A: X-rays
+Accept: X-ray
+Ref: 5.22
+D: 1
+
+Q: Which electromagnetic waves are used to sterilise medical equipment?
+A: Gamma rays
+Accept: Gamma
+Ref: 5.22
+D: 1
+
+Q: Why are x-rays used to produce images of broken bones?
+A: Bone absorbs x-rays; soft tissue transmits them
+Accept: X-rays pass through flesh but not bone
+Ref: 5.22
+D: 3
+
+Q: Radio waves can be produced by oscillations in what?
+A: Electrical circuits
+Accept: Electric circuits; circuits; electrons in an aerial
+Ref: 5.23
+HT: yes
+D: 3
+
+Q: Radio waves are absorbed by a receiving aerial. What do they induce in the circuit?
+A: Alternating current
+Accept: Oscillations; a.c.; an oscillating current
+Ref: 5.23
+HT: yes
+D: 3
+
+Q: A 90 MHz radio wave is absorbed by an aerial. What is the frequency of the current it induces?
+A: 90 MHz
+Accept: 90 megahertz; 9 × 10^7 Hz
+Ref: 5.23
+HT: yes
+D: 3
+Note: The induced oscillation has the same frequency as the wave.
+
+Q: Gamma rays are produced by changes in which part of an atom?
+A: Nucleus
+Accept: The nucleus
+Ref: 5.24
+D: 1
+
+Q: An electron in an atom absorbs electromagnetic radiation. Where can it move to?
+A: Higher energy level
+Accept: A higher shell; further from the nucleus; out of the atom
+Ref: 5.24
+D: 3
+
+Q: An electron drops from a higher to a lower energy level. What does the atom emit?
+A: Electromagnetic radiation
+Accept: Light; EM radiation; a photon
+Ref: 5.24
+D: 2

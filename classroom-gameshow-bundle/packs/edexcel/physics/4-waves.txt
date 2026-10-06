@@ -54,7 +54,7 @@ D: 1
 
 Q: What is the wavelength of a wave?
 A: Distance between two neighbouring crests
-Accept: Distance from a point on one wave to the same point on the next; distance between adjacent compressions
+Accept: Distance from one point to the same point on the next wave; distance between adjacent compressions
 Ref: 4.3
 D: 2
 
@@ -138,24 +138,12 @@ Accept: 50 cm; half a metre
 Ref: 4.6
 D: 3
 
-Q: A wave travels 600 m in 2 seconds. What is its speed?
-A: 300 m/s
-Accept: 300 metres per second
-Ref: 4.6
-D: 2
-
 Q: To measure the speed of sound in air, one person bangs two cymbals together far away. When should the timer start the stopwatch?
 A: When they see the cymbals hit
 Accept: On seeing the clash; when they see the cymbals meet
 Ref: 4.7
 D: 2
 Note: The stopwatch stops when the sound is heard; light arrives almost instantly.
-
-Q: Why should the two people be at least 100 m apart when measuring the speed of sound in air?
-A: So reaction time is small compared with the measured time
-Accept: Longer time to measure, so more accurate; reduces the effect of reaction time
-Ref: 4.7
-D: 3
 
 Q: A student claps 85 m from a wall and hears the echo 0.5 s later. What is the speed of sound?
 A: 340 m/s
@@ -165,8 +153,8 @@ D: 3
 Note: The sound travels 170 m, there and back.
 
 Q: How can you find the frequency of ripples in a ripple tank?
-A: Count waves passing a point in a set time, divide by time
-Accept: Count waves passing a point per second; count waves in 10 s and divide by 10
+A: Count waves passing a point per second
+Accept: Count waves in a set time and divide by the time; count waves in 10 s, divide by 10
 Ref: 4.7
 D: 2
 
@@ -209,13 +197,6 @@ A: Refraction
 Accept: Refracted
 Ref: 4.9P
 D: 1
-
-Q: When a material absorbs a wave, what usually happens to the temperature of the material?
-A: Increases
-Accept: Goes up; it heats up; rises
-Ref: 4.9P
-D: 2
-Note: The wave's energy is transferred to the material's thermal energy store.
 
 Q: A light ray passes at an angle from air into glass and slows down. Does it bend towards or away from the normal?
 A: Towards the normal
@@ -269,21 +250,21 @@ Q: Which part of the ear is first made to vibrate by incoming sound waves?
 A: Eardrum
 Accept: Tympanic membrane; ear drum
 Ref: 4.12P
-D: 3
+D: 1
 HT: yes
 
 Q: Name the three tiny bones that pass vibrations from the eardrum to the inner ear.
 A: Ossicles
 Accept: Hammer, anvil and stirrup; malleus, incus and stapes; ear bones
 Ref: 4.12P
-D: 3
+D: 2
 HT: yes
 
 Q: Which coiled part of the inner ear has hair cells that turn vibrations into electrical signals?
 A: Cochlea
 Accept: The cochlea
 Ref: 4.12P
-D: 3
+D: 2
 HT: yes
 
 Q: Why can the human ear only detect sound over a limited frequency range?
@@ -298,49 +279,49 @@ Q: What name is given to sound with frequencies above 20 000 Hz?
 A: Ultrasound
 Accept: Ultrasonic
 Ref: 4.13P
-D: 3
+D: 1
 HT: yes
 
 Q: Above what frequency is sound called ultrasound?
 A: 20 000 Hz
 Accept: 20 kHz; 20 000 hertz
 Ref: 4.13P
-D: 3
+D: 2
 HT: yes
 
-Q: A dog whistle produces sound at 30 kHz. What type of sound is this?
+Q: A bat emits calls at a frequency of 50 000 Hz. What type of sound is this?
 A: Ultrasound
 Accept: Ultrasonic
 Ref: 4.13P
-D: 3
+D: 2
 HT: yes
 
 Q: What name is given to sound with frequencies below 20 Hz?
 A: Infrasound
 Accept: Infrasonic
 Ref: 4.14P
-D: 3
+D: 1
 HT: yes
 
 Q: Below what frequency is sound called infrasound?
 A: 20 Hz
 Accept: 20 hertz
 Ref: 4.14P
-D: 3
+D: 2
 HT: yes
 
-Q: Elephants can communicate using sounds of about 15 Hz. What type of sound is this?
+Q: Large volcanic eruptions produce sound waves of a few hertz that humans cannot hear. What type of sound is this?
 A: Infrasound
 Accept: Infrasonic
 Ref: 4.14P
-D: 3
+D: 2
 HT: yes
 
 Q: What name is given to the use of ultrasound pulses and echoes by ships to detect the seabed or shoals of fish?
 A: Sonar
 Accept: Echo sounding
 Ref: 4.15P
-D: 3
+D: 1
 HT: yes
 
 Q: In foetal scanning, what happens to some ultrasound at each boundary between different tissues?
@@ -384,12 +365,6 @@ Accept: Gets longer; goes up
 Ref: 4.16P
 D: 3
 Note: Frequency is fixed by the source, so wavelength changes in proportion to speed.
-
-Q: A 500 Hz sound passes into water, where it travels at 1500 m/s. What is its wavelength in water?
-A: 3 m
-Accept: 3 metres
-Ref: 4.16P
-D: 3
 
 Q: In the ripple tank practical, why is a lamp placed above the tank?
 A: To project the wave pattern onto paper below

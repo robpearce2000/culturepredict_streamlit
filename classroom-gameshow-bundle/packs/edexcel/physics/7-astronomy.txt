@@ -1,0 +1,470 @@
+Board: Edexcel
+Spec: 1PH0
+Topic: 7
+
+Q: When an astronaut travels from the Earth to the Moon, what happens to her mass?
+A: Stays the same
+Accept: Unchanged; does not change; no change
+Ref: 7.1P
+D: 1
+Note: Weight changes, mass does not.
+
+Q: A 50 kg astronaut stands on the Moon, where g = 1.6 N/kg. What is her weight?
+A: 80 N
+Accept: 80 newtons
+Ref: 7.1P
+D: 2
+
+Q: A rock weighs 40 N on Earth, where g = 10 N/kg. What would it weigh on a planet where g = 4 N/kg?
+A: 16 N
+Accept: 16 newtons
+Ref: 7.1P
+D: 3
+Note: First find the mass (4 kg), then multiply by the new g.
+
+Q: Why is the gravitational field strength at the Moon's surface much smaller than at the Earth's surface?
+A: The Moon has much less mass
+Accept: Smaller mass; Moon is less massive; less mass
+Ref: 7.1P
+D: 3
+Note: The body's radius also matters, but its much smaller mass is the main reason.
+
+Q: Which two properties of a planet or moon determine the value of g at its surface?
+A: Mass and radius
+Accept: Mass and size; mass and diameter
+Ref: 7.1P
+D: 2
+
+Q: What type of object is the Sun?
+A: Star
+Accept: A star
+Ref: 7.2P
+D: 1
+
+Q: Pluto orbits the Sun but is too small to count as a planet. What type of object is it classified as?
+A: Dwarf planet
+Accept: A dwarf planet
+Ref: 7.2P
+D: 1
+
+Q: What name is given to the small rocky bodies that orbit the Sun, mostly between Mars and Jupiter?
+A: Asteroids
+Accept: Asteroid
+Ref: 7.2P
+D: 1
+
+Q: What type of icy Solar System object grows a glowing tail when it passes close to the Sun?
+A: Comet
+Accept: Comets
+Ref: 7.2P
+D: 1
+
+Q: The Moon orbits the Earth. What general name is given to a natural object that orbits a planet?
+A: Natural satellite
+Accept: Moon; satellite
+Ref: 7.2P
+D: 2
+
+Q: Which planet is closest to the Sun?
+A: Mercury
+Ref: 7.3P
+D: 1
+
+Q: Which planet is furthest from the Sun?
+A: Neptune
+Ref: 7.3P
+D: 1
+
+Q: Which planet orbits the Sun between Earth and Jupiter?
+A: Mars
+Ref: 7.3P
+D: 2
+
+Q: Counting outwards from the Sun, which planet is sixth?
+A: Saturn
+Ref: 7.3P
+D: 2
+
+Q: Which planet orbits the Sun between Saturn and Neptune?
+A: Uranus
+Ref: 7.3P
+D: 2
+
+Q: What name is given to the early model of the Solar System with the Earth at the centre?
+A: Geocentric model
+Accept: Geocentric; Earth-centred model; Ptolemaic model
+Ref: 7.4P
+D: 1
+
+Q: What name is given to the model of the Solar System with the Sun at the centre?
+A: Heliocentric model
+Accept: Heliocentric; Sun-centred model; Copernican model
+Ref: 7.4P
+D: 1
+
+Q: Galileo used a telescope to see moons orbiting Jupiter. Which model of the Solar System did this support?
+A: Heliocentric model
+Accept: Heliocentric; Sun-centred model; Copernican model
+Ref: 7.4P
+D: 2
+
+Q: Why did Galileo's discovery of moons orbiting Jupiter count against the geocentric model?
+A: Not everything orbits the Earth
+Accept: Some objects orbit another body; objects orbit Jupiter, not Earth
+Ref: 7.4P
+D: 3
+
+Q: What shape are the orbits of the planets around the Sun?
+A: Almost circular
+Accept: Nearly circular; circular; slightly elliptical; ellipse close to a circle
+Ref: 7.5P
+D: 1
+
+Q: What shape is the orbit of a comet around the Sun?
+A: Highly elliptical
+Accept: Very elongated ellipse; very stretched ellipse; elliptical
+Ref: 7.5P
+D: 2
+
+Q: Where in its orbit is a comet travelling fastest?
+A: Closest to the Sun
+Accept: Nearest the Sun; when near the Sun
+Ref: 7.5P
+D: 3
+
+Q: An artificial satellite orbits once a day, staying above the same point on the Equator. What is this orbit called?
+A: Geostationary orbit
+Accept: Geostationary; geosynchronous
+Ref: 7.5P
+D: 2
+
+Q: What name is given to a low satellite orbit that passes over the North and South Poles?
+A: Polar orbit
+Accept: Polar
+Ref: 7.5P
+D: 2
+
+Q: A planet moves in a circular orbit at constant speed. Which vector quantity describing its motion keeps changing?
+A: Velocity
+Accept: Its velocity; direction of velocity
+Ref: 7.6P
+D: 2
+Note: Speed is constant but the direction changes, so velocity changes.
+
+Q: In which direction does the gravitational force on a planet in a circular orbit act?
+A: Towards the Sun
+Accept: Towards the centre of the orbit; inwards to the Sun
+Ref: 7.6P
+D: 2
+
+Q: Why is a planet in a circular orbit at constant speed said to be accelerating?
+A: Direction, so velocity, keeps changing
+Accept: Velocity changes; its direction changes
+Ref: 7.6P
+D: 3
+
+Q: Why does gravity change a planet's velocity but not its speed in a circular orbit?
+A: Force acts at right angles to its motion
+Accept: Force is perpendicular to velocity; force always points to the centre
+Ref: 7.6P
+D: 3
+
+Q: A satellite moves into a stable orbit with a smaller radius. What must happen to its orbital speed?
+A: Increases
+Accept: Gets faster; faster; increase
+Ref: 7.7P
+D: 2
+
+Q: A satellite's orbital speed decreases. For it to stay in a stable orbit, what must happen to its orbital radius?
+A: Increases
+Accept: Gets larger; increase; moves further out
+Ref: 7.7P
+D: 2
+
+Q: Compared with the Earth, does Neptune orbit the Sun at a higher or lower speed?
+A: Lower
+Accept: Slower; lower speed
+Ref: 7.7P
+D: 2
+
+Q: Why must a satellite close to the Earth travel faster than a distant one to stay in a stable orbit?
+A: Gravitational force is stronger closer in
+Accept: Gravity is stronger nearer the Earth; stronger pull of gravity
+Ref: 7.7P
+D: 3
+
+Q: Which theory says the Universe began from a very small, extremely hot and dense region?
+A: Big Bang theory
+Accept: Big Bang
+Ref: 7.8P
+D: 1
+
+Q: Which theory says the Universe has always existed and has no beginning?
+A: Steady State theory
+Accept: Steady State
+Ref: 7.8P
+D: 1
+
+Q: According to the Big Bang theory, what happens to the density of the Universe over time?
+A: Decreases
+Accept: Gets less; falls; decreases as it expands
+Ref: 7.8P
+D: 2
+
+Q: In the Steady State theory, how does the density of the expanding Universe stay the same?
+A: Matter is continuously created
+Accept: New matter is created; continuous creation of matter
+Ref: 7.8P
+D: 3
+
+Q: What does CMB stand for?
+A: Cosmic microwave background
+Accept: Cosmic microwave background radiation
+Ref: 7.9P
+D: 1
+
+Q: In which region of the electromagnetic spectrum is the CMB radiation detected?
+A: Microwaves
+Accept: Microwave
+Ref: 7.9P
+D: 1
+
+Q: From which directions in the sky does the CMB radiation reach the Earth?
+A: All directions
+Accept: Every direction; everywhere; from all over the sky
+Ref: 7.9P
+D: 2
+
+Q: Name the two pieces of evidence for the Big Bang theory in the specification.
+A: Red-shift and CMB radiation
+Accept: Red-shift and cosmic microwave background; CMB and red-shift
+Ref: 7.9P
+D: 2
+
+Q: Which theory is the currently accepted model for the origin of the Universe?
+A: Big Bang theory
+Accept: Big Bang
+Ref: 7.10P
+D: 1
+
+Q: Why is the Big Bang theory accepted rather than the Steady State theory?
+A: More evidence supports it
+Accept: More evidence for it; it explains more of the evidence
+Ref: 7.10P
+D: 2
+
+Q: What would make scientists replace the currently accepted model of the origin of the Universe?
+A: New evidence it cannot explain
+Accept: New evidence; new observations
+Ref: 7.10P
+D: 2
+
+Q: What name is given to the change in observed frequency when a wave source moves relative to an observer?
+A: Doppler effect
+Accept: Doppler shift; Doppler
+Ref: 7.11P
+D: 1
+
+Q: An ambulance siren moves towards you. What happens to the frequency of the sound you hear?
+A: Increases
+Accept: Higher frequency; higher pitch; goes up
+Ref: 7.11P
+D: 2
+
+Q: A light source moves away from an observer. What happens to the wavelength the observer measures?
+A: Increases
+Accept: Longer wavelength; gets longer; goes up
+Ref: 7.11P
+D: 2
+
+Q: An ambulance drives away from you. Why does its siren sound lower in pitch?
+A: Waves stretched out, so lower observed frequency
+Accept: Longer wavelength, lower frequency; frequency decreases as it moves away
+Ref: 7.11P
+D: 3
+
+Q: Light from most distant galaxies is shifted towards which end of the visible spectrum?
+A: Red
+Accept: Red end; longer wavelength end
+Ref: 7.12P
+D: 1
+
+Q: Compared with a nearby galaxy, how big is the red-shift of light from a very distant galaxy?
+A: Greater
+Accept: Larger; bigger; more red-shift
+Ref: 7.12P
+D: 2
+
+Q: What does red-shift in a galaxy's light tell us about its motion?
+A: Moving away from us
+Accept: Receding; moving away from the Earth
+Ref: 7.12P
+D: 2
+
+Q: Galaxy A shows a greater red-shift than galaxy B. Which galaxy is moving away from us faster?
+A: Galaxy A
+Accept: A
+Ref: 7.12P
+D: 3
+
+Q: Almost all galaxies show red-shift. What does this suggest is happening to the Universe?
+A: Expanding
+Accept: The Universe is expanding; getting bigger
+Ref: 7.13P
+D: 2
+
+Q: Why does red-shift increasing with distance provide evidence that the Universe is expanding?
+A: More distant galaxies move away faster
+Accept: Further galaxies recede faster; distant galaxies move away more quickly
+Ref: 7.13P
+D: 3
+
+Q: All galaxies are moving apart. If we imagine time running backwards, what does this suggest about the early Universe?
+A: Started from one small point
+Accept: All matter was together; began at a single point; very small and dense
+Ref: 7.13P
+D: 3
+
+Q: Red-shift shows that galaxies are moving apart. What feature of the Universe do both the Big Bang and Steady State theories include?
+A: Expansion
+Accept: The Universe is expanding; expanding Universe
+Ref: 7.14P
+D: 2
+
+Q: How does the Steady State theory explain red-shift while keeping the Universe unchanged in appearance?
+A: Universe expands as new matter forms
+Accept: Expansion with continuous creation of matter
+Ref: 7.14P
+D: 3
+
+Q: Why can red-shift alone not decide between the Big Bang and Steady State theories?
+A: Both theories explain red-shift
+Accept: Both predict an expanding Universe; both account for expansion
+Ref: 7.14P
+D: 3
+
+Q: The CMB is thought to be radiation left over from which event?
+A: The Big Bang
+Accept: Big Bang
+Ref: 7.15P
+D: 1
+
+Q: Why does the Steady State theory fail to explain the CMB radiation?
+A: No hot, dense early Universe
+Accept: It has no beginning; no hot dense stage
+Ref: 7.15P
+D: 3
+
+Q: Why is radiation released soon after the Big Bang now detected as microwaves?
+A: Its wavelength stretched as the Universe expanded
+Accept: Expansion stretched the wavelength; red-shifted by expansion; Universe expanded and cooled
+Ref: 7.15P
+D: 3
+
+Q: After the CMB was discovered, which theory became the accepted model of the origin of the Universe?
+A: Big Bang theory
+Accept: Big Bang
+Ref: 7.15P
+D: 2
+
+Q: What name is given to the cloud of dust and gas in which a star forms?
+A: Nebula
+Accept: Nebulae
+Ref: 7.16P
+D: 1
+
+Q: The Sun is in the stable, longest stage of its life. What is this stage called?
+A: Main sequence
+Accept: Main-sequence star; main sequence star
+Ref: 7.16P
+D: 1
+
+Q: What does a star with a similar mass to the Sun become when it leaves the main sequence?
+A: Red giant
+Ref: 7.16P
+D: 1
+
+Q: What is the final stage, in the specification, of a star with a similar mass to the Sun?
+A: White dwarf
+Ref: 7.16P
+D: 1
+
+Q: List the four stages in the life of a star like the Sun, in order.
+A: Nebula, main sequence, red giant, white dwarf
+Ref: 7.16P
+D: 2
+
+Q: Which force pulls the matter of a star inwards?
+A: Gravity
+Accept: Gravitational force; gravitational attraction
+Ref: 7.17P
+D: 1
+
+Q: Why does a main-sequence star stay the same size for billions of years?
+A: Thermal expansion balances gravity
+Accept: Outward pressure balances gravity; forces are balanced
+Ref: 7.17P
+D: 3
+
+Q: Why does a star swell into a red giant near the end of its main-sequence stage?
+A: Thermal expansion becomes greater than gravity
+Accept: Outward pressure exceeds gravity; expansion outweighs gravity
+Ref: 7.17P
+D: 3
+
+Q: A red giant's outer layers drift away. Why does the remaining core shrink to a white dwarf?
+A: Fusion stops, so gravity contracts it
+Accept: Gravity is greater than thermal expansion; no outward pressure to balance gravity
+Ref: 7.17P
+D: 3
+
+Q: What does a star much more massive than the Sun become when it leaves the main sequence?
+A: Red supergiant
+Ref: 7.18P
+D: 2
+
+Q: What huge explosion ends the life of a red supergiant?
+A: Supernova
+Ref: 7.18P
+D: 1
+
+Q: After a supernova, what object remains if the core is massive enough that not even light can escape?
+A: Black hole
+Ref: 7.18P
+D: 1
+
+Q: Name the two possible objects left behind after a supernova.
+A: Neutron star or black hole
+Accept: Neutron star and black hole; black hole or neutron star
+Ref: 7.18P
+D: 2
+
+Q: Before telescopes were invented, how did astronomers observe the night sky?
+A: Naked eye
+Accept: With the naked eye; by eye; unaided eye
+Ref: 7.19P
+D: 1
+
+Q: What type of electromagnetic radiation do large ground-based dish telescopes such as Jodrell Bank detect?
+A: Radio waves
+Accept: Radio
+Ref: 7.19P
+D: 1
+
+Q: X-ray telescopes must be placed outside the Earth's atmosphere. Why?
+A: Atmosphere absorbs X-rays
+Accept: X-rays cannot get through the atmosphere; the atmosphere blocks X-rays
+Ref: 7.19P
+D: 2
+
+Q: Why do space telescopes give sharper visible-light images than telescopes on the ground?
+A: No atmosphere to blur or absorb light
+Accept: Above the atmosphere; atmosphere distorts light; no atmospheric distortion
+Ref: 7.19P
+D: 3
+
+Q: Why are many ground-based optical telescopes built on high mountains?
+A: Less atmosphere above to absorb or blur light
+Accept: Thinner atmosphere; above clouds; less light pollution
+Ref: 7.19P
+D: 3

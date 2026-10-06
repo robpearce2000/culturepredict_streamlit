@@ -1,0 +1,728 @@
+Board: Edexcel
+Spec: 1PH0
+Topic: 2
+
+Q: What name is given to a quantity that has magnitude but no specific direction?
+A: Scalar
+Accept: Scalar quantity
+Ref: 2.1
+D: 1
+
+Q: Speed is a scalar quantity. What does a scalar quantity have?
+A: Magnitude only
+Accept: Size only; size but no direction; magnitude but no direction
+Ref: 2.1
+D: 1
+
+Q: Temperature is a scalar. Explain why, in terms of magnitude and direction.
+A: Has magnitude but no direction
+Accept: Has size but no direction; has no direction
+Ref: 2.1
+D: 2
+
+Q: What name is given to a quantity that has both magnitude and a specific direction?
+A: Vector
+Accept: Vector quantity
+Ref: 2.2
+D: 1
+
+Q: A force is drawn as an arrow on a diagram. What two things about the force does the arrow show?
+A: Magnitude and direction
+Accept: Size and direction
+Ref: 2.2
+D: 2
+Note: The length shows the magnitude; the arrowhead shows the direction.
+
+Q: Why must a direction be given when stating a displacement?
+A: Displacement is a vector
+Accept: Displacement has direction as well as magnitude; it is a vector quantity
+Ref: 2.2
+D: 2
+
+Q: What is the difference between a vector quantity and a scalar quantity?
+A: A vector has direction; a scalar does not
+Accept: Vector has magnitude and direction, scalar only magnitude
+Ref: 2.3
+D: 2
+
+Q: A car travels 3 km north and then 3 km south. What total distance has it travelled?
+A: 6 km
+Accept: 6000 m
+Ref: 2.3
+D: 2
+
+Q: A car travels 3 km north and then 3 km south. What is its displacement from the start?
+A: 0 km
+Accept: Zero; 0 m; 0
+Ref: 2.3
+D: 3
+Note: Distance is 6 km, but the car is back where it started.
+
+Q: State whether momentum is a vector or a scalar quantity.
+A: Vector
+Ref: 2.4
+D: 1
+
+Q: State whether energy is a vector or a scalar quantity.
+A: Scalar
+Ref: 2.4
+D: 1
+
+Q: State whether acceleration is a vector or a scalar quantity.
+A: Vector
+Ref: 2.4
+D: 1
+
+Q: Displacement is a vector. Name the scalar quantity that goes with it.
+A: Distance
+Ref: 2.4
+D: 1
+
+Q: Mass is a scalar. Name the vector quantity that goes with it.
+A: Weight
+Ref: 2.4
+D: 2
+Note: Weight is a force, so it has a direction (downwards).
+
+Q: What is velocity?
+A: Speed in a stated direction
+Accept: Speed in a given direction; speed with direction
+Ref: 2.5
+D: 2
+
+Q: A cyclist moves at 8 m/s due east. Is "8 m/s due east" a speed or a velocity?
+A: Velocity
+Ref: 2.5
+D: 1
+
+Q: A car goes round a bend at a steady 15 m/s. Which is changing: its speed or its velocity?
+A: Velocity
+Accept: Its velocity
+Ref: 2.5
+D: 3
+Note: The speed is constant but the direction changes, so the velocity changes.
+
+Q: A runner covers 100 m in 20 s. What is her average speed?
+A: 5 m/s
+Accept: 5 metres per second
+Ref: 2.6
+D: 2
+
+Q: A train travels at an average speed of 40 m/s for 30 s. How far does it travel?
+A: 1200 m
+Accept: 1.2 km
+Ref: 2.6
+D: 2
+
+Q: A cyclist rides at 5 m/s for 2 minutes. How far does she travel?
+A: 600 m
+Accept: 0.6 km
+Ref: 2.6
+D: 3
+Note: Convert 2 minutes to 120 s first.
+
+Q: What does the gradient of a distance/time graph represent?
+A: Speed
+Accept: Velocity
+Ref: 2.7
+D: 1
+
+Q: What does a horizontal line on a distance/time graph show about the object?
+A: Stationary
+Accept: At rest; not moving; speed is zero
+Ref: 2.7
+D: 2
+
+Q: A distance/time graph is a straight line rising 60 m in 12 s. What is the speed?
+A: 5 m/s
+Accept: 5 metres per second
+Ref: 2.7
+D: 2
+
+Q: A line on a distance/time graph gets steeper and steeper. What is the object doing?
+A: Accelerating
+Accept: Speeding up; getting faster
+Ref: 2.7
+D: 3
+
+Q: A car speeds up from rest to 20 m/s in 5 s. What is its acceleration?
+A: 4 m/s²
+Accept: 4 m/s^2; 4 metres per second squared
+Ref: 2.8
+D: 2
+
+Q: What is the unit of acceleration?
+A: m/s²
+Accept: Metres per second squared; m/s^2; m s⁻²
+Ref: 2.8
+D: 1
+
+Q: A cyclist slows from 12 m/s to 4 m/s in 4 s. What is her acceleration?
+A: −2 m/s²
+Accept: -2 m/s^2; deceleration of 2 m/s²
+Ref: 2.8
+D: 3
+Note: The minus sign shows slowing down.
+
+Q: What name is given to the acceleration of an object that is slowing down?
+A: Deceleration
+Accept: Negative acceleration; retardation
+Ref: 2.8
+D: 1
+
+Q: In the equation v² − u² = 2 × a × x, what does u stand for?
+A: Initial velocity
+Accept: Starting velocity; initial speed
+Ref: 2.9
+D: 1
+
+Q: Use v² − u² = 2 × a × x. A car accelerates from rest at 2 m/s² over 25 m. What is its final velocity?
+A: 10 m/s
+Accept: 10 metres per second
+Ref: 2.9
+D: 3
+Note: v² = 2 × 2 × 25 = 100, so v = 10 m/s.
+
+Q: Use v² − u² = 2 × a × x. An object accelerates from rest at 3 m/s² until it reaches 6 m/s. How far does it travel?
+A: 6 m
+Accept: 6 metres
+Ref: 2.9
+D: 3
+
+Q: What does the gradient of a velocity/time graph represent?
+A: Acceleration
+Ref: 2.10
+D: 1
+
+Q: What does the area under a velocity/time graph represent?
+A: Distance travelled
+Accept: Distance; displacement
+Ref: 2.10
+D: 2
+
+Q: A velocity/time graph rises in a straight line from 0 to 10 m/s in 5 s. What is the acceleration?
+A: 2 m/s²
+Accept: 2 m/s^2
+Ref: 2.10
+D: 2
+
+Q: A velocity/time graph rises in a straight line from 0 to 10 m/s in 5 s. How far does the object travel?
+A: 25 m
+Accept: 25 metres
+Ref: 2.10
+D: 3
+Note: Area of the triangle = ½ × 5 × 10.
+
+Q: Name the device that times an object automatically as it breaks a beam of light.
+A: Light gate
+Accept: Light gates
+Ref: 2.11
+D: 1
+
+Q: A student times a ball rolling 2 m with a stopwatch. What should she use to measure the 2 m?
+A: Metre rule
+Accept: Metre ruler; tape measure; measuring tape
+Ref: 2.11
+D: 1
+
+Q: A card 10 cm long takes 0.2 s to pass through a light gate. What is the speed of the card?
+A: 0.5 m/s
+Accept: 50 cm/s
+Ref: 2.11
+D: 3
+Note: Convert 10 cm to 0.1 m first.
+
+Q: Why are light gates more accurate than a hand-held stopwatch for timing a fast trolley?
+A: No human reaction time
+Accept: Removes reaction time error; avoids human reaction time
+Ref: 2.11
+D: 3
+
+Q: What is a typical walking speed?
+A: 1.5 m/s
+Accept: Any value from 1 to 2 m/s
+Ref: 2.12
+D: 1
+
+Q: What is the approximate speed of sound in air?
+A: 330 m/s
+Accept: Any value from 330 to 340 m/s
+Ref: 2.12
+D: 1
+
+Q: What is a typical cycling speed?
+A: 6 m/s
+Accept: Any value from 4 to 8 m/s
+Ref: 2.12
+D: 2
+
+Q: What is a typical running speed for a person (not a sprinter)?
+A: 3 m/s
+Accept: Any value from 2 to 5 m/s
+Ref: 2.12
+D: 2
+
+Q: What is the acceleration in free fall near the Earth's surface?
+A: 10 m/s²
+Accept: 10 m/s^2; 9.8 m/s²
+Ref: 2.13
+D: 1
+
+Q: What symbol is used for the acceleration in free fall?
+A: g
+Accept: Little g
+Ref: 2.13
+D: 1
+
+Q: A ball is dropped from rest and falls freely for 2 s. What speed does it reach? (g = 10 m/s²)
+A: 20 m/s
+Accept: 20 metres per second
+Ref: 2.13
+D: 2
+
+Q: State Newton's first law for an object with no resultant force on it.
+A: Stays at rest or at constant velocity
+Accept: Stays still or keeps moving at constant velocity; velocity does not change
+Ref: 2.14
+D: 2
+
+Q: A book rests on a table. What is the resultant force on the book?
+A: Zero
+Accept: 0 N; no resultant force
+Ref: 2.14
+D: 1
+
+Q: A non-zero resultant force acts on a moving object. What two things about its motion can change?
+A: Speed and direction
+Accept: Speed and/or direction; velocity
+Ref: 2.14
+D: 2
+
+Q: A skydiver of weight 800 N falls at a constant velocity. What is the air resistance on her?
+A: 800 N
+Accept: 800 newtons
+Ref: 2.14
+D: 3
+Note: Constant velocity means the resultant force is zero, so the forces balance.
+
+Q: What is the unit of force?
+A: Newton
+Accept: N; newtons
+Ref: 2.15
+D: 1
+
+Q: A resultant force acts on a 2 kg trolley and gives it an acceleration of 3 m/s². What is the force?
+A: 6 N
+Accept: 6 newtons
+Ref: 2.15
+D: 2
+
+Q: A 1000 kg car has a resultant force of 2000 N on it. What is its acceleration?
+A: 2 m/s²
+Accept: 2 m/s^2
+Ref: 2.15
+D: 2
+
+Q: A 100 kg go-kart has a 500 N driving force and 200 N of friction. What is its acceleration?
+A: 3 m/s²
+Accept: 3 m/s^2
+Ref: 2.15
+D: 3
+Note: Find the resultant force (300 N) first.
+
+Q: Define weight.
+A: Force on a mass due to gravity
+Accept: Gravitational force on an object; force of gravity on a mass
+Ref: 2.16
+D: 2
+
+Q: Give the unit of gravitational field strength.
+A: N/kg
+Accept: Newtons per kilogram; N kg⁻¹; m/s²
+Ref: 2.16
+D: 1
+
+Q: What is the weight of a 5 kg mass on Earth? (g = 10 N/kg)
+A: 50 N
+Accept: 50 newtons
+Ref: 2.16
+D: 2
+
+Q: Name the instrument used to measure weight directly.
+A: Newtonmeter
+Accept: Force meter; spring balance; newton meter
+Ref: 2.17
+D: 1
+
+Q: A newtonmeter contains a spring. What happens to the spring as a heavier object is hung from it?
+A: Stretches more
+Accept: Extension increases; extends further
+Ref: 2.17
+D: 2
+
+Q: A top-pan balance gives a reading in kg. What must you do to that reading to find the weight?
+A: Multiply by g
+Accept: Multiply by gravitational field strength; multiply by 10 N/kg; W = m × g
+Ref: 2.17
+D: 3
+
+Q: A 10 kg mass is taken from the Earth to the Moon. What happens to its mass?
+A: Stays the same
+Accept: Unchanged; does not change; still 10 kg
+Ref: 2.18
+D: 2
+Note: Mass stays the same; weight decreases.
+
+Q: For a fixed mass, how is weight related to gravitational field strength?
+A: Directly proportional
+Accept: Proportional; weight increases as g increases
+Ref: 2.18
+D: 2
+
+Q: Why does an astronaut weigh less on the Moon than on Earth?
+A: Moon's gravitational field strength is smaller
+Accept: Weaker gravitational field; smaller g on the Moon
+Ref: 2.18
+D: 3
+
+Q: In the trolley core practical, what equipment can measure the trolley's velocity at two points on the runway?
+A: Light gates
+Accept: Light gate; two light gates
+Ref: 2.19
+RP: 2.19
+D: 1
+
+Q: In the trolley core practical, a hanging mass of 0.2 kg pulls the trolley. What is the accelerating force? (g = 10 N/kg)
+A: 2 N
+Accept: 2 newtons
+Ref: 2.19
+RP: 2.19
+D: 2
+
+Q: In the trolley core practical, masses are added to the trolley but the pulling force stays the same. What happens to the acceleration?
+A: Decreases
+Accept: Gets smaller; goes down
+Ref: 2.19
+RP: 2.19
+D: 2
+
+Q: In the trolley core practical, why is the runway tilted slightly before taking readings?
+A: To compensate for friction
+Accept: To balance friction; to cancel out friction
+Ref: 2.19
+RP: 2.19
+D: 3
+
+Q: To vary the force but keep total mass constant, where do the extra hanging masses come from?
+A: From the trolley
+Accept: Moved from the trolley to the hanger; taken off the trolley
+Ref: 2.19
+RP: 2.19
+D: 3
+Note: Moving masses from trolley to hanger keeps the accelerated mass the same.
+
+Q: In the trolley core practical with constant mass, what is the shape of the graph of acceleration against force?
+A: Straight line through the origin
+Accept: Directly proportional; straight line through zero
+Ref: 2.19
+RP: 2.19
+D: 2
+
+Q: A satellite moves in a circular orbit at constant speed. Why is its velocity changing?
+A: Direction is constantly changing
+Accept: Its direction changes; it keeps changing direction
+Ref: 2.20
+HT: yes
+D: 3
+
+Q: A car goes round a roundabout at a constant speed. Name the quantity, speed or velocity, that stays constant.
+A: Speed
+Ref: 2.20
+HT: yes
+D: 3
+
+Q: The velocity of an object moving in a circle at constant speed keeps changing. What must the object therefore have?
+A: Acceleration
+Accept: An acceleration; a resultant force
+Ref: 2.20
+HT: yes
+D: 3
+
+Q: What name is given to the resultant force needed for an object to move in a circle?
+A: Centripetal force
+Accept: Centripetal
+Ref: 2.21
+HT: yes
+D: 3
+
+Q: In which direction does the centripetal force on an object moving in a circle act?
+A: Towards the centre of the circle
+Accept: Towards the centre; inwards
+Ref: 2.21
+HT: yes
+D: 3
+
+Q: What force provides the centripetal force that keeps the Moon in orbit around the Earth?
+A: Gravity
+Accept: Gravitational force; gravitational attraction; weight
+Ref: 2.21
+HT: yes
+D: 3
+
+Q: What does the inertial mass of an object measure?
+A: How hard it is to change its velocity
+Accept: How difficult it is to change its velocity; resistance to change in velocity
+Ref: 2.22
+HT: yes
+D: 3
+
+Q: Inertial mass is defined as the ratio of which two quantities?
+A: Force over acceleration
+Accept: Force ÷ acceleration; F/a; force to acceleration
+Ref: 2.22
+HT: yes
+D: 3
+
+Q: Name the tendency of an object to stay at rest or keep moving at constant velocity.
+A: Inertia
+Ref: 2.22
+HT: yes
+D: 3
+
+Q: State Newton's third law.
+A: Interacting objects exert equal and opposite forces on each other
+Accept: Every action has an equal and opposite reaction; equal and opposite forces on each other
+Ref: 2.23
+D: 2
+
+Q: Do the two forces in a Newton's third law pair act on the same object or on different objects?
+A: Different objects
+Accept: On different objects; each acts on a different object
+Ref: 2.23
+D: 2
+Note: This is why third-law pairs never cancel each other out.
+
+Q: In a collision, ball A exerts a 20 N force on ball B. What force does ball B exert on ball A?
+A: 20 N in the opposite direction
+Accept: 20 N; −20 N; 20 N backwards
+Ref: 2.23
+HT: yes
+D: 3
+
+Q: Newton's third law applied to collisions explains the conservation of which quantity?
+A: Momentum
+Ref: 2.23
+HT: yes
+D: 3
+
+Q: What is the unit of momentum?
+A: kg m/s
+Accept: Kilogram metres per second; kg m s⁻¹; N s
+Ref: 2.24
+HT: yes
+D: 3
+
+Q: A 2 kg ball moves at 5 m/s. What is its momentum?
+A: 10 kg m/s
+Accept: 10 kilogram metres per second; 10 N s
+Ref: 2.24
+HT: yes
+D: 3
+
+Q: A 0.5 kg ball has a momentum of 4 kg m/s. What is its velocity?
+A: 8 m/s
+Accept: 8 metres per second
+Ref: 2.24
+HT: yes
+D: 3
+
+Q: What happens to the total momentum of two objects when they collide, if no external forces act?
+A: Stays the same
+Accept: Conserved; unchanged; does not change
+Ref: 2.25
+HT: yes
+D: 3
+
+Q: Two ice skaters at rest push apart. What is their total momentum after they separate?
+A: Zero
+Accept: 0 kg m/s; 0
+Ref: 2.25
+HT: yes
+D: 3
+Note: They move apart with equal and opposite momenta.
+
+Q: A 2 kg trolley at 3 m/s hits a stationary 1 kg trolley and they stick together. What is their velocity afterwards?
+A: 2 m/s
+Accept: 2 metres per second
+Ref: 2.25
+HT: yes
+D: 3
+Note: Momentum before = 6 kg m/s; total mass after = 3 kg.
+
+Q: In the equation F = (mv − mu) ÷ t, what does (mv − mu) represent?
+A: Change in momentum
+Ref: 2.26
+HT: yes
+D: 3
+
+Q: Use F = (mv − mu) ÷ t. A 0.1 kg ball is hit from rest to 20 m/s in 0.01 s. What is the force?
+A: 200 N
+Accept: 200 newtons
+Ref: 2.26
+HT: yes
+D: 3
+
+Q: Why do crumple zones reduce the force on passengers in a crash?
+A: Increase the time taken to stop
+Accept: Momentum changes over a longer time; increase collision time
+Ref: 2.26
+HT: yes
+D: 3
+
+Q: Name the car safety feature at the front and back of a car that crumples to increase the collision time.
+A: Crumple zone
+Accept: Crumple zones
+Ref: 2.26
+HT: yes
+D: 3
+
+Q: Name the simple method for measuring reaction time in which a ruler is released and caught.
+A: Ruler drop test
+Accept: Ruler drop; dropping a ruler; ruler catch test
+Ref: 2.27
+D: 1
+
+Q: What is a typical human reaction time?
+A: About 0.25 s
+Accept: Any value from 0.2 to 0.9 s
+Ref: 2.27
+D: 1
+
+Q: In a ruler drop test, what does a longer drop distance before catching show?
+A: Longer reaction time
+Accept: Slower reactions; slower reaction time
+Ref: 2.27
+D: 2
+
+Q: Stopping distance is the sum of which two distances?
+A: Thinking distance and braking distance
+Accept: Braking distance and thinking distance
+Ref: 2.28
+D: 1
+
+Q: A car's thinking distance is 12 m and its braking distance is 24 m. What is the stopping distance?
+A: 36 m
+Accept: 36 metres
+Ref: 2.28
+D: 2
+
+Q: What is meant by thinking distance?
+A: Distance travelled during driver's reaction time
+Accept: Distance travelled before the brakes are applied
+Ref: 2.28
+D: 2
+
+Q: Which part of the stopping distance is increased by worn tyres?
+A: Braking distance
+Ref: 2.29
+D: 2
+
+Q: Which part of the stopping distance is increased if the driver has a slower reaction time?
+A: Thinking distance
+Ref: 2.29
+D: 2
+
+Q: Why do worn brakes increase a car's braking distance?
+A: Less friction, so smaller braking force
+Accept: Smaller braking force; less friction; smaller deceleration
+Ref: 2.29
+D: 3
+
+Q: Name the legal drug, found in beer and wine, that increases a driver's reaction time.
+A: Alcohol
+Accept: Ethanol
+Ref: 2.30
+D: 1
+
+Q: Using a mobile phone while driving is an example of which factor that affects reaction time?
+A: Distraction
+Accept: Distractions; being distracted
+Ref: 2.30
+D: 1
+
+Q: How does tiredness affect a driver's reaction time?
+A: Increases it
+Accept: Longer reaction time; slower reactions
+Ref: 2.30
+D: 2
+
+Q: Why are large decelerations dangerous to people in a vehicle?
+A: Cause large forces on the body
+Accept: Large forces cause injury; large forces on passengers
+Ref: 2.31
+D: 2
+
+Q: A car brakes more sharply. What happens to the force on the passengers?
+A: Increases
+Accept: Gets bigger; larger force
+Ref: 2.31
+D: 2
+Note: F = m × a: a greater deceleration needs a greater force.
+
+Q: A 60 kg passenger decelerates at 50 m/s² in a crash. Estimate the force on the passenger.
+A: 3000 N
+Accept: 3 kN; 3000 newtons
+Ref: 2.31
+HT: yes
+D: 3
+
+Q: A 1000 kg car hits a wall at 20 m/s and stops in 0.1 s. Estimate the force on the car.
+A: 200 000 N
+Accept: 200000 N; 200 kN; 2 × 10⁵ N
+Ref: 2.31
+HT: yes
+D: 3
+Note: Deceleration = 20 ÷ 0.1 = 200 m/s², then F = m × a.
+
+Q: A driver's reaction time is 0.5 s. What is the thinking distance at 20 m/s?
+A: 10 m
+Accept: 10 metres
+Ref: 2.32P
+D: 2
+
+Q: A car's speed doubles. What happens to its braking distance?
+A: Quadruples
+Accept: ×4; four times as long; increases by a factor of 4
+Ref: 2.32P
+D: 3
+
+Q: A car's braking distance is 8 m at 10 m/s. Estimate its braking distance at 20 m/s.
+A: 32 m
+Accept: 32 metres
+Ref: 2.32P
+D: 3
+
+Q: The work done by the brakes to stop a vehicle is equal to which energy of the vehicle?
+A: Kinetic energy
+Accept: Initial kinetic energy; KE
+Ref: 2.33P
+D: 2
+
+Q: Braking distance is directly proportional to what?
+A: Square of the initial speed
+Accept: Initial velocity squared; speed squared; v²
+Ref: 2.33P
+D: 2
+
+Q: A 1000 kg car travels at 20 m/s. The braking force is 10 000 N. What is the braking distance?
+A: 20 m
+Accept: 20 metres
+Ref: 2.33P
+D: 3
+Note: KE = ½ × 1000 × 20² = 200 000 J; distance = 200 000 ÷ 10 000.
+
+Q: A car's initial speed is tripled. By what factor does its braking distance increase?
+A: 9
+Accept: ×9; nine times; factor of 9
+Ref: 2.33P
+D: 3

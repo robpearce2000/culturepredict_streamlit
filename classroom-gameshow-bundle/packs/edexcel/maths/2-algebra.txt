@@ -7,71 +7,84 @@ A: p/5
 Accept: ⅕p; (1/5)p
 Ref: A1
 D: 1
+Id: edexcel-maths-2-001
 
 Q: Simplify 2 × x × y × x × 5.
 A: 10x²y
 Ref: A1
 D: 2
+Id: edexcel-maths-2-002
 
 Q: Rewrite 0.25x so that its coefficient is a fraction.
 A: ¼x
 Accept: x/4; (1/4)x
 Ref: A1
 D: 2
+Id: edexcel-maths-2-003
 
 Q: Work out the value of 5p − 2q if p = 3 and q = 4.
 A: 7
 Ref: A2
 D: 1
+Id: edexcel-maths-2-004
 
 Q: What is the value of x³ if x = −2?
 A: −8
 Ref: A2
 D: 2
 Note: Watch for 8 or −6.
+Id: edexcel-maths-2-005
 
 Q: Use E = ½mv² to find E when m = 4 and v = 3.
 A: 18
 Ref: A2
 D: 2
 Note: Square v first: ½ × 4 × 9.
+Id: edexcel-maths-2-006
 
 Q: What name is given to each part of an expression separated by + or − signs?
 A: Term
 Accept: Terms
 Ref: A3
 D: 1
+Id: edexcel-maths-2-007
 
 Q: What name is given to a statement such as 2x + 1 > 7?
 A: Inequality
 Ref: A3
 D: 1
+Id: edexcel-maths-2-008
 
 Q: What word describes A = lw, a rule linking area, length and width?
 A: Formula
 Ref: A3
 D: 1
+Id: edexcel-maths-2-009
 
 Q: In the term 9xy, what name is given to the number 9?
 A: Coefficient
 Ref: A3
 D: 1
+Id: edexcel-maths-2-010
 
 Q: Expand and simplify (x + 5)(x − 2).
 A: x² + 3x − 10
 Ref: A4
 D: 2
+Id: edexcel-maths-2-011
 
 Q: Factorise x² − x − 12.
 A: (x − 4)(x + 3)
 Accept: (x + 3)(x − 4)
 Ref: A4
 D: 2
+Id: edexcel-maths-2-012
 
 Q: Simplify 3√2 + 5√2.
 A: 8√2
 Ref: A4
 D: 1
+Id: edexcel-maths-2-013
 
 Q: Factorise 3x² − 5x − 2.
 A: (3x + 1)(x − 2)
@@ -79,6 +92,7 @@ Accept: (x − 2)(3x + 1)
 Ref: A4
 D: 3
 HT: yes
+Id: edexcel-maths-2-014
 
 Q: Simplify (x² + 5x)/(x² − 25).
 A: x/(x − 5)
@@ -86,27 +100,32 @@ Ref: A4
 D: 3
 HT: yes
 Note: Factorise top and bottom, then cancel (x + 5).
+Id: edexcel-maths-2-015
 
 Q: Make x the subject of y = 3x − 6.
 A: x = (y + 6)/3
 Accept: x = y/3 + 2
 Ref: A5
 D: 2
+Id: edexcel-maths-2-016
 
 Q: Make h the subject of A = bh/2.
 A: h = 2A/b
 Ref: A5
 D: 2
+Id: edexcel-maths-2-017
 
 Q: Make a the subject of v² = u² + 2as.
 A: a = (v² − u²)/(2s)
 Ref: A5
 D: 3
+Id: edexcel-maths-2-018
 
 Q: x² = 4 is true only for x = 2 and x = −2. Is it an equation or an identity?
 A: Equation
 Ref: A6
 D: 1
+Id: edexcel-maths-2-019
 
 Q: Simplify n + (n + 1) + (n + 2), the sum of three consecutive integers.
 A: 3n + 3
@@ -114,18 +133,21 @@ Accept: 3(n + 1)
 Ref: A6
 D: 2
 Note: 3(n + 1) shows the sum is always a multiple of 3.
+Id: edexcel-maths-2-020
 
 Q: Simplify (n + 3)² − (n − 3)² to prove it is always a multiple of 12.
 A: 12n
 Ref: A6
 D: 3
 HT: yes
+Id: edexcel-maths-2-021
 
 Q: A function machine subtracts 4 and then divides by 3. The output is 5. What was the input?
 A: 19
 Ref: A7
 D: 2
 Note: Work backwards: 5 × 3 + 4.
+Id: edexcel-maths-2-022
 
 Q: Find the inverse function f⁻¹(x) when f(x) = 4x + 1.
 A: (x − 1)/4
@@ -133,6 +155,7 @@ Accept: f⁻¹(x) = (x − 1)/4
 Ref: A7
 D: 2
 HT: yes
+Id: edexcel-maths-2-023
 
 Q: f(x) = x² and g(x) = x + 1. Find gf(3).
 A: 10
@@ -140,6 +163,7 @@ Ref: A7
 D: 3
 HT: yes
 Note: gf means apply f first, then g; fg(3) = 16 is the common error.
+Id: edexcel-maths-2-024
 
 Q: What name is given to a function made by applying one function and then another?
 A: Composite function
@@ -147,31 +171,37 @@ Accept: Composite
 Ref: A7
 D: 1
 HT: yes
+Id: edexcel-maths-2-025
 
 Q: What name is given to the point (0, 0) on a coordinate grid?
 A: Origin
 Ref: A8
 D: 1
+Id: edexcel-maths-2-026
 
 Q: The points (3, 0), (−1, 0) and (7, 0) all lie on which axis?
 A: x-axis
 Ref: A8
 D: 1
+Id: edexcel-maths-2-027
 
 Q: P is at (−4, 2). Q is 6 units right and 5 units down from P. What are the coordinates of Q?
 A: (2, −3)
 Ref: A8
 D: 2
+Id: edexcel-maths-2-028
 
 Q: What is the gradient of any line parallel to y = 4x − 7?
 A: 4
 Ref: A9
 D: 2
+Id: edexcel-maths-2-029
 
 Q: Find the equation of the line with gradient 3 that passes through (2, 1).
 A: y = 3x − 5
 Ref: A9
 D: 3
+Id: edexcel-maths-2-030
 
 Q: At what angle do the lines y = 2x + 1 and y = −½x + 3 meet?
 A: Right angle
@@ -180,35 +210,41 @@ Ref: A9
 D: 2
 HT: yes
 Note: The product of the gradients is −1.
+Id: edexcel-maths-2-031
 
 Q: What name is given to the point where a straight line crosses the y-axis?
 A: y-intercept
 Accept: Intercept
 Ref: A10
 D: 1
+Id: edexcel-maths-2-032
 
 Q: Find the gradient of the line through (1, 2) and (4, 14).
 A: 4
 Ref: A10
 D: 2
+Id: edexcel-maths-2-033
 
 Q: A plumber charges C = 30h + 45 pounds for h hours. What is the hourly rate?
 A: £30
 Accept: 30
 Ref: A10
 D: 2
+Id: edexcel-maths-2-034
 
 Q: What name is given to the highest or lowest point on a quadratic graph?
 A: Turning point
 Accept: Vertex; Minimum or maximum point
 Ref: A11
 D: 1
+Id: edexcel-maths-2-035
 
 Q: A quadratic graph is symmetrical about a vertical line through its turning point. What is this line called?
 A: Line of symmetry
 Accept: Axis of symmetry
 Ref: A11
 D: 1
+Id: edexcel-maths-2-036
 
 Q: What are the roots of y = (x − 2)(x + 5)?
 A: 2 and −5
@@ -216,29 +252,34 @@ Accept: x = 2 or x = −5
 Ref: A11
 D: 2
 Note: Watch for −2 and 5.
+Id: edexcel-maths-2-037
 
 Q: Write x² + 10x + 30 in the form (x + p)² + q.
 A: (x + 5)² + 5
 Ref: A11
 D: 3
 HT: yes
+Id: edexcel-maths-2-038
 
 Q: Does the graph of y = −x² open upwards or downwards?
 A: Downwards
 Accept: Down; ∩-shaped
 Ref: A12
 D: 2
+Id: edexcel-maths-2-039
 
 Q: What name is given to a line that the graph of y = 1/x approaches but never meets?
 A: Asymptote
 Ref: A12
 D: 1
+Id: edexcel-maths-2-040
 
 Q: What type of function is y = 3ˣ?
 A: Exponential
 Ref: A12
 D: 1
 HT: yes
+Id: edexcel-maths-2-041
 
 Q: After how many degrees does the graph of y = cos x start to repeat?
 A: 360°
@@ -246,18 +287,21 @@ Accept: 360; 360 degrees
 Ref: A12
 D: 1
 HT: yes
+Id: edexcel-maths-2-042
 
 Q: y = −f(x) is a reflection of y = f(x) in which axis?
 A: x-axis
 Ref: A13
 D: 2
 HT: yes
+Id: edexcel-maths-2-043
 
 Q: The graph of y = x² is translated 3 units up. What is its new equation?
 A: y = x² + 3
 Ref: A13
 D: 2
 HT: yes
+Id: edexcel-maths-2-044
 
 Q: The graph of y = f(x) becomes the graph of y = f(x + 4). Describe this transformation.
 A: Translation 4 units left
@@ -266,12 +310,14 @@ Ref: A13
 D: 3
 HT: yes
 Note: + inside the bracket moves the graph left.
+Id: edexcel-maths-2-045
 
 Q: On a distance-time graph, what does the gradient represent?
 A: Speed
 Accept: Velocity
 Ref: A14
 D: 1
+Id: edexcel-maths-2-046
 
 Q: On a velocity-time graph, what does a horizontal line show?
 A: Constant velocity
@@ -279,12 +325,14 @@ Accept: Constant speed; Steady speed; Zero acceleration
 Ref: A14
 D: 2
 Note: Not "stationary" (that is a horizontal distance-time graph).
+Id: edexcel-maths-2-047
 
 Q: The time for a job is t = 24/n hours when n people work on it. How long do 6 people take?
 A: 4 hours
 Accept: 4
 Ref: A14
 D: 2
+Id: edexcel-maths-2-048
 
 Q: A count of 30 bacteria triples every hour. How many bacteria are there after 3 hours?
 A: 810
@@ -292,6 +340,7 @@ Ref: A14
 D: 3
 HT: yes
 Note: 30 × 3³.
+Id: edexcel-maths-2-049
 
 Q: What does the area under a velocity-time graph represent?
 A: Distance travelled
@@ -299,6 +348,7 @@ Accept: Distance; Displacement
 Ref: A15
 D: 1
 HT: yes
+Id: edexcel-maths-2-050
 
 Q: To estimate the area under a curve, what shapes is the area usually split into?
 A: Trapezia
@@ -306,6 +356,7 @@ Accept: Trapeziums; Trapezium; Strips
 Ref: A15
 D: 1
 HT: yes
+Id: edexcel-maths-2-051
 
 Q: Velocity rises steadily from 2 m/s to 10 m/s in 4 s. What distance is travelled?
 A: 24 m
@@ -314,6 +365,7 @@ Ref: A15
 D: 3
 HT: yes
 Note: Trapezium area: (2 + 10) ÷ 2 × 4.
+Id: edexcel-maths-2-052
 
 Q: A savings graph in pounds against months is a straight line rising £300 every 6 months. What does its gradient show?
 A: £50 per month
@@ -321,6 +373,7 @@ Accept: Saves £50 a month; 50
 Ref: A15
 D: 2
 HT: yes
+Id: edexcel-maths-2-053
 
 Q: Where is the centre of the circle x² + y² = 36?
 A: Origin
@@ -328,12 +381,14 @@ Accept: (0, 0)
 Ref: A16
 D: 1
 HT: yes
+Id: edexcel-maths-2-054
 
 Q: The point (6, 8) lies on a circle with centre the origin. What is the equation of the circle?
 A: x² + y² = 100
 Ref: A16
 D: 2
 HT: yes
+Id: edexcel-maths-2-055
 
 Q: Find the equation of the tangent to x² + y² = 20 at the point (2, 4).
 A: y = −½x + 5
@@ -342,36 +397,42 @@ Ref: A16
 D: 3
 HT: yes
 Note: The radius has gradient 2, so the tangent has gradient −½.
+Id: edexcel-maths-2-056
 
 Q: Solve 5 − 2x = 11.
 A: −3
 Accept: x = −3
 Ref: A17
 D: 2
+Id: edexcel-maths-2-057
 
 Q: Solve 2(3x − 1) = 4x + 8.
 A: 5
 Accept: x = 5
 Ref: A17
 D: 3
+Id: edexcel-maths-2-058
 
 Q: On the graph of y = 2x − 1, what is x when y = 7?
 A: 4
 Accept: x = 4
 Ref: A17
 D: 1
+Id: edexcel-maths-2-059
 
 Q: Solve x² + 2x − 15 = 0.
 A: 3 or −5
 Accept: x = 3 or x = −5
 Ref: A18
 D: 2
+Id: edexcel-maths-2-060
 
 Q: How can the solutions of x² − 3x + 1 = 0 be read from the graph of y = x² − 3x + 1?
 A: x-axis crossings
 Accept: Where the curve crosses the x-axis; Where y = 0; x-intercepts
 Ref: A18
 D: 2
+Id: edexcel-maths-2-061
 
 Q: Solve 2x² − 7x + 3 = 0.
 A: ½ or 3
@@ -379,6 +440,7 @@ Accept: 0.5 or 3; x = ½ or x = 3
 Ref: A18
 D: 3
 HT: yes
+Id: edexcel-maths-2-062
 
 Q: By completing the square, find the exact solutions of x² − 10x + 18 = 0.
 A: 5 ± √7
@@ -386,28 +448,33 @@ Accept: x = 5 + √7 or x = 5 − √7
 Ref: A18
 D: 3
 HT: yes
+Id: edexcel-maths-2-063
 
 Q: Name the method that rewrites x² + 6x as (x + 3)² − 9.
 A: Completing the square
 Ref: A18
 D: 1
 HT: yes
+Id: edexcel-maths-2-064
 
 Q: Name the method that adds or subtracts simultaneous equations to remove one unknown.
 A: Elimination
 Ref: A19
 D: 1
+Id: edexcel-maths-2-065
 
 Q: Find x and y if 2x + y = 11 and x − y = 1.
 A: x = 4, y = 3
 Ref: A19
 D: 2
+Id: edexcel-maths-2-066
 
 Q: Find the points where y = x² + 1 meets y = 2x + 4.
 A: (3, 10) and (−1, 2)
 Ref: A19
 D: 3
 HT: yes
+Id: edexcel-maths-2-067
 
 Q: How many times does the line y = 10 meet the circle x² + y² = 25?
 A: None
@@ -416,6 +483,7 @@ Ref: A19
 D: 3
 HT: yes
 Note: The circle only reaches y = 5.
+Id: edexcel-maths-2-068
 
 Q: Use xₙ₊₁ = 3 − 1/xₙ with x₁ = 1 to find x₃.
 A: 2.5
@@ -423,6 +491,7 @@ Accept: 5/2; 2½
 Ref: A20
 D: 2
 HT: yes
+Id: edexcel-maths-2-069
 
 Q: An iteration gives x₄ = 2.531 and x₅ = 2.531. What word describes what the iteration has done?
 A: Converged
@@ -430,6 +499,7 @@ Accept: Converges; Convergence
 Ref: A20
 D: 1
 HT: yes
+Id: edexcel-maths-2-070
 
 Q: Find the value of x³ + 2x − 5 when x = 1 and when x = 2.
 A: −2 and 7
@@ -437,40 +507,47 @@ Ref: A20
 D: 2
 HT: yes
 Note: The change of sign shows a root between 1 and 2.
+Id: edexcel-maths-2-071
 
 Q: Divide x² − 5x + 1 = 0 by x and rearrange it into the form x = 5 − ...
 A: x = 5 − 1/x
 Ref: A20
 D: 3
 HT: yes
+Id: edexcel-maths-2-072
 
 Q: Sam has £x. Kim has £5 more than twice Sam's amount. Write an expression for Kim's amount.
 A: 2x + 5
 Ref: A21
 D: 2
+Id: edexcel-maths-2-073
 
 Q: A rectangle is 3x cm long and x cm wide. Its perimeter is 48 cm. Find x.
 A: 6
 Accept: x = 6
 Ref: A21
 D: 3
+Id: edexcel-maths-2-074
 
 Q: Two adult tickets and one child ticket cost £28. One adult and one child ticket cost £17. What does an adult ticket cost?
 A: £11
 Accept: 11
 Ref: A21
 D: 3
+Id: edexcel-maths-2-075
 
 Q: When x < 5 is shown on a number line, should the circle at 5 be open or filled?
 A: Open
 Accept: Open circle; Hollow; Empty; Unfilled
 Ref: A22
 D: 1
+Id: edexcel-maths-2-076
 
 Q: Solve 3x − 2 < 10.
 A: x < 4
 Ref: A22
 D: 2
+Id: edexcel-maths-2-077
 
 Q: Write x > 3 in set notation.
 A: {x : x > 3}
@@ -478,80 +555,94 @@ Accept: {x | x > 3}
 Ref: A22
 D: 2
 HT: yes
+Id: edexcel-maths-2-078
 
 Q: The region below the line y = 3, including the line, is shaded. What inequality describes it?
 A: y ≤ 3
 Ref: A22
 D: 2
 HT: yes
+Id: edexcel-maths-2-079
 
 Q: Solve x² − 5x + 4 < 0.
 A: 1 < x < 4
 Ref: A22
 D: 3
 HT: yes
+Id: edexcel-maths-2-080
 
 Q: A sequence has nth term 5n − 2. What is its 10th term?
 A: 48
 Ref: A23
 D: 1
+Id: edexcel-maths-2-081
 
 Q: "nth term = 3n + 1" finds any term without the one before it. What kind of rule is this?
 A: Position-to-term rule
 Accept: Position-to-term; nth term rule
 Ref: A23
 D: 1
+Id: edexcel-maths-2-082
 
 Q: The first term of a sequence is 2. Each term is 3 times the term before plus 1. Find the 4th term.
 A: 67
 Ref: A23
 D: 2
 Note: 2, 7, 22, 67.
+Id: edexcel-maths-2-083
 
 Q: The sequence 1, 4, 9, 16, 25, ... is made of which special numbers?
 A: Square numbers
 Ref: A24
 D: 1
+Id: edexcel-maths-2-084
 
 Q: What type of sequence has a constant difference, such as 4, 9, 14, 19, ...?
 A: Arithmetic
 Accept: Linear; Arithmetic progression
 Ref: A24
 D: 1
+Id: edexcel-maths-2-085
 
 Q: In the Fibonacci-type sequence 3, 4, 7, 11, ..., what are the next two terms?
 A: 18, 29
 Accept: 18 and 29
 Ref: A24
 D: 2
+Id: edexcel-maths-2-086
 
 Q: A sequence has a constant second difference. What type of sequence is it?
 A: Quadratic
 Ref: A24
 D: 2
+Id: edexcel-maths-2-087
 
 Q: What is the common ratio of the geometric sequence 3, 3√3, 9, 9√3, ...?
 A: √3
 Ref: A24
 D: 2
 HT: yes
+Id: edexcel-maths-2-088
 
 Q: Find the nth term of the sequence 9, 13, 17, 21, ...
 A: 4n + 5
 Ref: A25
 D: 2
+Id: edexcel-maths-2-089
 
 Q: In the nth term 6n + 1, what does the 6 tell you about the sequence?
 A: Common difference
 Accept: Goes up by 6 each time; Difference of 6
 Ref: A25
 D: 2
+Id: edexcel-maths-2-090
 
 Q: Find the nth term of the sequence 2, −1, −4, −7, ...
 A: 5 − 3n
 Accept: −3n + 5
 Ref: A25
 D: 3
+Id: edexcel-maths-2-091
 
 Q: Find the nth term of 0, 5, 12, 21, 32, ...
 A: n² + 2n − 3
@@ -559,3 +650,4 @@ Accept: (n + 3)(n − 1)
 Ref: A25
 D: 3
 HT: yes
+Id: edexcel-maths-2-092

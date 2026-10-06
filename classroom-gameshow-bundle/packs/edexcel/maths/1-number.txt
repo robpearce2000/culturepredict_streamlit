@@ -7,6 +7,7 @@ A: Greater than or equal to
 Accept: Is greater than or equal to; At least
 Ref: N1
 D: 1
+Id: edexcel-maths-1-001
 
 Q: Which is larger: 5/8 or 0.6?
 A: 5/8
@@ -14,6 +15,7 @@ Accept: 0.625
 Ref: N1
 D: 2
 Note: 5/8 = 0.625, which is more than 0.6.
+Id: edexcel-maths-1-002
 
 Q: Put these in order, smallest first: −0.5, −1/4, −0.3.
 A: −0.5, −0.3, −1/4
@@ -21,66 +23,77 @@ Accept: −0.5, −0.3, −0.25
 Ref: N1
 D: 3
 Note: −1/4 = −0.25 is the largest; the number further from zero is smaller.
+Id: edexcel-maths-1-003
 
 Q: In the number 4.385, what is the place value of the digit 8?
 A: Hundredths
 Accept: Hundredth; 8 hundredths; 0.08
 Ref: N2
 D: 1
+Id: edexcel-maths-1-004
 
 Q: Work out 0.3 × 0.2.
 A: 0.06
 Ref: N2
 D: 2
 Note: A common wrong answer is 0.6.
+Id: edexcel-maths-1-005
 
 Q: Use 36 × 14 = 504 to find 504 ÷ 1.4.
 A: 360
 Ref: N2
 D: 3
 Note: 504 ÷ 14 = 36, and dividing by 1.4 instead of 14 makes the answer ten times bigger.
+Id: edexcel-maths-1-006
 
 Q: Multiplying by 4 can be undone by which operation?
 A: Division
 Accept: Dividing by 4; Divide by 4; Dividing
 Ref: N3
 D: 1
+Id: edexcel-maths-1-007
 
 Q: 2/3 × 3/2 = 1. What is 3/2 called in relation to 2/3?
 A: Reciprocal
 Accept: The reciprocal; Multiplicative inverse
 Ref: N3
 D: 1
+Id: edexcel-maths-1-008
 
 Q: Work out (10 + 8) ÷ (5 − 2)².
 A: 2
 Ref: N3
 D: 3
 Note: Brackets first, then the power, then divide: 18 ÷ 9.
+Id: edexcel-maths-1-009
 
 Q: What name is given to the largest number that divides exactly into each of two numbers?
 A: Highest common factor
 Accept: HCF; Greatest common divisor
 Ref: N4
 D: 1
+Id: edexcel-maths-1-010
 
 Q: What type of number are 2, 3, 5, 7 and 11?
 A: Prime numbers
 Accept: Prime; Primes
 Ref: N4
 D: 1
+Id: edexcel-maths-1-011
 
 Q: What name is given to writing a number as a product of prime numbers, such as 12 = 2² × 3?
 A: Prime factorisation
 Accept: Prime factor decomposition; Product of prime factors
 Ref: N4
 D: 1
+Id: edexcel-maths-1-012
 
 Q: Give the prime factor decomposition of 90, using index notation.
 A: 2 × 3² × 5
 Accept: 2 × 3 × 3 × 5
 Ref: N4
 D: 2
+Id: edexcel-maths-1-013
 
 Q: One bus leaves every 12 minutes and another every 18 minutes. Both leave at 9:00 am. When do they next leave together?
 A: 9:36 am
@@ -88,12 +101,14 @@ Accept: 9.36 am; 09:36
 Ref: N4
 D: 3
 Note: The LCM of 12 and 18 is 36.
+Id: edexcel-maths-1-014
 
 Q: What word describes listing outcomes in an organised order so that none are missed?
 A: Systematic
 Accept: Systematically; Systematic listing
 Ref: N5
 D: 1
+Id: edexcel-maths-1-015
 
 Q: Which counting rule shows that 3 shirts and 4 ties give 3 × 4 = 12 different outfits?
 A: Product rule
@@ -101,6 +116,7 @@ Accept: The product rule; Product rule for counting
 Ref: N5
 D: 1
 HT: yes
+Id: edexcel-maths-1-016
 
 Q: A padlock code has 3 digits, each from 0 to 9, and digits can repeat. How many codes are possible?
 A: 1000
@@ -108,6 +124,7 @@ Ref: N5
 D: 2
 HT: yes
 Note: 10 × 10 × 10 by the product rule.
+Id: edexcel-maths-1-017
 
 Q: In how many different orders can 4 different books be placed in a row on a shelf?
 A: 24
@@ -115,23 +132,27 @@ Ref: N5
 D: 3
 HT: yes
 Note: 4 × 3 × 2 × 1; the choices shrink by one each time.
+Id: edexcel-maths-1-018
 
 Q: Squaring 1, 2, 3, 4 and 5 gives 1, 4, 9, 16 and 25. What are these numbers called?
 A: Square numbers
 Accept: Squares; Square
 Ref: N6
 D: 1
+Id: edexcel-maths-1-019
 
 Q: In 2⁵ = 32, the 5 is the index. What is the 2 called?
 A: Base
 Ref: N6
 D: 1
+Id: edexcel-maths-1-020
 
 Q: Work out 3⁴.
 A: 81
 Ref: N6
 D: 2
 Note: Not 12: 3 × 3 × 3 × 3.
+Id: edexcel-maths-1-021
 
 Q: Between which two consecutive whole numbers does √40 lie?
 A: 6 and 7
@@ -140,6 +161,7 @@ Ref: N6
 D: 2
 HT: yes
 Note: 6² = 36 and 7² = 49.
+Id: edexcel-maths-1-022
 
 Q: Write 7⁸ ÷ 7³ as a single power of 7.
 A: 7⁵
@@ -147,6 +169,7 @@ Accept: 7^5
 Ref: N7
 D: 2
 Note: Subtract the indices; 7^(8/3) or 1⁵ are common errors.
+Id: edexcel-maths-1-023
 
 Q: In 9^(1/2), what does the index ½ tell you to find?
 A: Square root
@@ -154,6 +177,7 @@ Accept: The square root; √9; Square root of 9
 Ref: N7
 D: 1
 HT: yes
+Id: edexcel-maths-1-024
 
 Q: Find the value of 25^(3/2).
 A: 125
@@ -161,6 +185,7 @@ Ref: N7
 D: 3
 HT: yes
 Note: Square root first (5), then cube.
+Id: edexcel-maths-1-025
 
 Q: What is the exact area of a semicircle of radius 4 cm? Leave π in your answer.
 A: 8π cm²
@@ -168,6 +193,7 @@ Accept: 8π
 Ref: N8
 D: 3
 Note: Half of π × 4² = 16π.
+Id: edexcel-maths-1-026
 
 Q: √3, √5 and 2√7 are all examples of what?
 A: Surds
@@ -175,12 +201,14 @@ Accept: Surd; Irrational numbers
 Ref: N8
 D: 1
 HT: yes
+Id: edexcel-maths-1-027
 
 Q: Is √2 a rational or an irrational number?
 A: Irrational
 Ref: N8
 D: 1
 HT: yes
+Id: edexcel-maths-1-028
 
 Q: Simplify √50 fully.
 A: 5√2
@@ -188,6 +216,7 @@ Ref: N8
 D: 2
 HT: yes
 Note: √50 = √25 × √2.
+Id: edexcel-maths-1-029
 
 Q: Write 10/√5 in the form a√5.
 A: 2√5
@@ -195,18 +224,21 @@ Ref: N8
 D: 3
 HT: yes
 Note: 10√5 ÷ 5 = 2√5 after multiplying top and bottom by √5.
+Id: edexcel-maths-1-030
 
 Q: Write 0.00062 in standard form.
 A: 6.2 × 10⁻⁴
 Accept: 6.2 × 10^-4
 Ref: N9
 D: 2
+Id: edexcel-maths-1-031
 
 Q: In what form is a number such as 3.6 × 10⁵ written?
 A: Standard form
 Accept: Standard index form; Scientific notation
 Ref: N9
 D: 1
+Id: edexcel-maths-1-032
 
 Q: Each of 4 × 10³ boxes holds 3 × 10⁵ grains of rice. How many grains is that, in standard form?
 A: 1.2 × 10⁹
@@ -214,12 +246,14 @@ Accept: 1.2 × 10^9
 Ref: N9
 D: 3
 Note: 12 × 10⁸ is not in standard form.
+Id: edexcel-maths-1-033
 
 Q: What fraction, in its lowest terms, is equal to 0.35?
 A: 7/20
 Ref: N10
 D: 2
 Note: 35/100 simplifies by 5.
+Id: edexcel-maths-1-034
 
 Q: 1/3 = 0.333… What word describes a decimal like this?
 A: Recurring
@@ -227,6 +261,7 @@ Accept: Recurring decimal; Repeating
 Ref: N10
 D: 1
 HT: yes
+Id: edexcel-maths-1-035
 
 Q: When 3/8 is written as a decimal, is it terminating or recurring?
 A: Terminating
@@ -234,6 +269,7 @@ Accept: Terminating decimal
 Ref: N10
 D: 2
 Note: 3/8 = 0.375; denominators made only of 2s and 5s give terminating decimals.
+Id: edexcel-maths-1-036
 
 Q: Convert 0.272727… to a fraction in its lowest terms.
 A: 3/11
@@ -241,53 +277,62 @@ Ref: N10
 D: 3
 HT: yes
 Note: 27/99 simplifies to 3/11.
+Id: edexcel-maths-1-037
 
 Q: A club has 4 boys for every 5 girls. What fraction of the members are girls?
 A: 5/9
 Ref: N11
 D: 2
 Note: Not 5/4: the whole club is 4 + 5 = 9 parts.
+Id: edexcel-maths-1-038
 
 Q: A recipe uses flour and sugar in the ratio 5 : 2. The mass of sugar is what fraction of the mass of flour?
 A: 2/5
 Ref: N11
 D: 2
 Note: 2/7 would be sugar as a fraction of the whole mixture.
+Id: edexcel-maths-1-039
 
 Q: Two numbers are in the ratio 3 : 7 and their difference is 20. What is their total?
 A: 50
 Ref: N11
 D: 3
 Note: The difference is 4 parts, so 1 part is 5 and the total is 10 parts.
+Id: edexcel-maths-1-040
 
 Q: Work out 3/5 of 45.
 A: 27
 Ref: N12
 D: 2
+Id: edexcel-maths-1-041
 
 Q: Prices fall by 4%. By what decimal do you multiply an old price to get the new price?
 A: 0.96
 Accept: 96%
 Ref: N12
 D: 2
+Id: edexcel-maths-1-042
 
 Q: 3/8 of a number is 24. What is the number?
 A: 64
 Ref: N12
 D: 3
 Note: 1/8 is 8, so the whole is 64.
+Id: edexcel-maths-1-043
 
 Q: Kilometres per hour is a unit of which compound measure?
 A: Speed
 Accept: Average speed; Velocity
 Ref: N13
 D: 1
+Id: edexcel-maths-1-044
 
 Q: A tablet contains 0.5 g of paracetamol. This is the same as 500 of which unit?
 A: Milligrams
 Accept: mg; Milligram
 Ref: N13
 D: 2
+Id: edexcel-maths-1-045
 
 Q: How many minutes are there in 0.3 hours?
 A: 18 minutes
@@ -295,6 +340,7 @@ Accept: 18
 Ref: N13
 D: 2
 Note: Not 30 minutes: 0.3 × 60.
+Id: edexcel-maths-1-046
 
 Q: Convert 15 metres per second into kilometres per hour.
 A: 54 km/h
@@ -302,54 +348,63 @@ Accept: 54
 Ref: N13
 D: 3
 Note: 15 × 3600 ÷ 1000.
+Id: edexcel-maths-1-047
 
 Q: In an estimate such as 612 ÷ 19.6 ≈ 30, what does the symbol ≈ mean?
 A: Approximately equal to
 Accept: Is approximately equal to; Approximately
 Ref: N14
 D: 1
+Id: edexcel-maths-1-048
 
 Q: A calculator gives 31.2 × 4.87 = 1519.44. What estimate, rounding each number to 1 s.f., shows this is wrong?
 A: 150
 Ref: N14
 D: 2
 Note: 30 × 5 = 150, so the decimal point was misplaced (the true answer is 151.944).
+Id: edexcel-maths-1-049
 
 Q: Round each number to 1 s.f. to estimate √(48.6 + 51.2).
 A: 10
 Ref: N14
 D: 3
 Note: √(50 + 50) = √100.
+Id: edexcel-maths-1-050
 
 Q: What does the abbreviation s.f. stand for when rounding?
 A: Significant figures
 Accept: Significant figure
 Ref: N15
 D: 1
+Id: edexcel-maths-1-051
 
 Q: What name is given to an inequality such as 4.5 ≤ x < 5.5, showing the values a rounded number could have been?
 A: Error interval
 Accept: Error intervals
 Ref: N15
 D: 1
+Id: edexcel-maths-1-052
 
 Q: Rounding x to the nearest 10 gives 60. Write the error interval for x as an inequality.
 A: 55 ≤ x < 65
 Ref: N15
 D: 2
 Note: The upper end uses <, not ≤.
+Id: edexcel-maths-1-053
 
 Q: Truncating y to a whole number gives 8. Using inequalities, what values can y take?
 A: 8 ≤ y < 9
 Ref: N15
 D: 2
 Note: Truncation only cuts off digits, so y cannot be below 8.
+Id: edexcel-maths-1-054
 
 Q: A dog's mass, rounded to the nearest 10 kg, is 70 kg. What is its minimum possible mass?
 A: 65 kg
 Accept: 65
 Ref: N16
 D: 2
+Id: edexcel-maths-1-055
 
 Q: What name is given to the smallest value that a rounded measurement could have been?
 A: Lower bound
@@ -357,6 +412,7 @@ Accept: Minimum bound; Least possible value
 Ref: N16
 D: 1
 HT: yes
+Id: edexcel-maths-1-056
 
 Q: To find the upper bound of a ÷ b, you divide the upper bound of a by which bound of b?
 A: Lower bound
@@ -365,6 +421,7 @@ Ref: N16
 D: 2
 HT: yes
 Note: Dividing by a smaller number gives a bigger answer.
+Id: edexcel-maths-1-057
 
 Q: A trip of 20 km (to the nearest 10 km) takes 3 hours (to the nearest hour). What is the upper bound of the average speed?
 A: 10 km/h
@@ -373,3 +430,4 @@ Ref: N16
 D: 3
 HT: yes
 Note: Largest distance ÷ smallest time: 25 ÷ 2.5.
+Id: edexcel-maths-1-058

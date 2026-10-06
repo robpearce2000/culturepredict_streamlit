@@ -94,14 +94,20 @@ Removed / Rewritten / Added = changes made in checking; Flagged = items in QUEST
 | Edexcel Chemistry 7 Rates of reaction and energy changes | 48 | 61 | 62 | 0 | 7 | 1 | 0 | Done |
 | Edexcel Chemistry 8 Fuels and Earth science | 78 | 97 | 97 | 3 | 9 | 3 | 0 | Done |
 | Edexcel Chemistry 9 Separate chemistry 2 | 117 | 139 | 139 | 0 | 13 | 0 | 0 | Done |
+| Edexcel Maths 1 Number | 48 | 79 | 58 | 30 | 28 | 9 | 1 | Done |
+| Edexcel Maths 2 Algebra | 75 | 146 | 92 | 54 | 15 | 0 | 2 | Done |
+| Edexcel Maths 3 Ratio, proportion and rates of change | 48 | 59 | 62 | 2 | 11 | 5 | 0 | Done |
+| Edexcel Maths 4 Geometry and measures | 75 | 95 | 95 | 0 | 3 | 0 | 0 | Done |
+| Edexcel Maths 5 Probability | 30 | 42 | 42 | 0 | 7 | 0 | 0 | Done |
+| Edexcel Maths 6 Statistics | 30 | 50 | 55 | 1 | 5 | 6 | 0 | Done |
 
 Topic 4.8 "Key ideas" in the AQA science specifications is a list of cross-cutting ideas examined
 through the other topics, not a topic of its own, so it has no pack (see DECISIONS.md).
 
 Totals so far: AQA sciences, 25 packs, 1,425 questions; Edexcel Biology, 9 packs, 597 questions;
-AQA Maths, 6 packs, 402 questions; Edexcel Chemistry, 9 packs, 845 questions.
+AQA Maths, 6 packs, 405 questions; Edexcel Chemistry, 9 packs, 845 questions; Edexcel Maths, 6 packs, 404 questions.
 
 ## Next
 
-Edexcel Physics and Edexcel Maths (being written and checked), then Geography (AQA, Edexcel A,
+Edexcel Physics (being written and checked), then Geography (AQA, Edexcel A,
 Edexcel B) and History (AQA, Edexcel), in the brief's order.

@@ -5,7 +5,7 @@
    "the", "a" and "an" (and a leading "in", "on", "at", "from" or "into"). Answers that can't
    be given away by one letter return null and never go on a Hex Hunt board: numbers,
    equations and formulae, yes/no, long answers, and answers starting with words like
-   "any", "both" or "because".
+   "any", "both" or "because", and algebra or symbols ("x² + 3x", "y = 2x + 1").
    Shared by the game (CGB.hexLetter) and the question-pack checker (tools/packs.js), so a
    pack's hexOk flags always match what the board does.
    ========================================================= */
@@ -19,6 +19,8 @@
     if (core.split(/\s+/).length > 5) return null;
     const s = core.replace(SKIP_LEAD, '');
     if (NOT_A_CLUE.test(s)) return null;
+    // algebra and symbols are not word clues: "x² + 3x", "y = 2x + 1", "C"
+    if (/[=+×÷^²³√<>≤≥]|\s[−-]\s|\d\s*\//.test(s) || /^[A-Za-z]([\s\d(=+−×÷^²³√/]|$)/.test(s)) return null;
     const m = /^[A-Za-z]/.exec(s);
     return m ? m[0].toUpperCase() : null;
   }

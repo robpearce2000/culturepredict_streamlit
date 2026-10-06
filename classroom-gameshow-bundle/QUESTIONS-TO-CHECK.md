@@ -41,3 +41,18 @@ the 7.14 questions are rounded values given in each question, for mental arithme
   notation, what is the name of the symbol ∩?" | A: Intersection | Why: the 3.5 specification text
   says "Venn diagrams" but does not mention set notation. AQA papers do use ∩ and ∪; keep these if
   you are happy for Foundation students to meet set notation in these games.
+
+## Pearson Edexcel Maths (1MA1)
+
+- 1 Number: "Between which two consecutive whole numbers does √40 lie?" | A: 6 and 7 | Why: tagged
+  Higher because 1MA1 N6 prints "estimate powers and roots of any given positive number" in bold
+  (Higher only); Foundation papers sometimes ask this for roots near known squares. Remove the
+  Higher tag if you want it in Foundation games.
+- 2 Algebra: "Find the equation of the tangent to x² + y² = 20 at the point (2, 4)." | A: y = −½x + 5
+  | Why: correct, but three steps; the tightest fit for 20 seconds. Kept as a Higher stretch question.
+- 2 Algebra: "What name is given to a line that the graph of y = 1/x approaches but never meets?" |
+  A: Asymptote | Why: the word is not in the specification text, though it is standard vocabulary for
+  sketching y = 1/x and tan x.
+
+Specification issue: Pearson's Maths specification read is Issue 2 (June 2015), the latest copy the
+Internet Archive holds. Please confirm on qualifications.pearson.com that Issue 2 is still current.

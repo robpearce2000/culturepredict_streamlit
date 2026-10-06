@@ -661,3 +661,24 @@ Ref: A25
 D: 3
 HT: yes
 Id: aqa-maths-3.2-091
+
+Q: In the expression 3x + 2y − 5, what name is given to the −5, a term with no letter?
+A: Constant
+Accept: Constant term
+Ref: A1
+D: 1
+Id: aqa-maths-3.2-092
+
+Q: What word means multiplying out the brackets, as in 3(x + 4) = 3x + 12?
+A: Expand
+Accept: Expanding; Multiply out
+Ref: A4
+D: 1
+Id: aqa-maths-3.2-093
+
+Q: What name is given to a sequence such as 1, 1, 2, 3, 5, 8, where each term is the sum of the two before it?
+A: Fibonacci
+Accept: Fibonacci sequence; Fibonacci-type sequence
+Ref: A24
+D: 1
+Id: aqa-maths-3.2-094

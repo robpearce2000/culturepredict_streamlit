@@ -22,7 +22,7 @@ D: 1
 
 Q: What is the SI base unit of temperature?
 A: Kelvin
-Accept: K
+Accept: K; kelvins
 Ref: 1.1
 D: 1
 Note: Not degrees Celsius, which is not an SI base unit.
@@ -80,6 +80,7 @@ A: Magnetic flux density
 Accept: Magnetic field strength
 Ref: 1.1
 D: 2
+Note: Edexcel uses the term magnetic flux density; field strength accepted as a classroom equivalent.
 
 Q: Energy transferred per second is measured in joules per second. What is the special name of this unit?
 A: Watt
@@ -102,7 +103,7 @@ D: 1
 
 Q: What prefix means multiply by 10⁻⁶ (one millionth)?
 A: Micro
-Accept: μ
+Accept: μ; µ; Micro-
 Ref: 1.2
 D: 1
 
@@ -124,27 +125,15 @@ Accept: 10^6; 1 000 000; one million; × 10⁶
 Ref: 1.2
 D: 1
 
-Q: How many milliamps are there in 1 amp?
-A: 1000 mA
-Accept: 1000; 10³ mA
-Ref: 1.2
-D: 2
-
 Q: Write 5 kV in volts.
 A: 5000 V
 Accept: 5 × 10³ V; 5000 volts
 Ref: 1.2
 D: 2
 
-Q: Write 1.2 kW in watts.
-A: 1200 W
-Accept: 1.2 × 10³ W; 1200 watts
-Ref: 1.2
-D: 2
-
 Q: Write 2.5 GHz in hertz, in standard form.
 A: 2.5 × 10⁹ Hz
-Accept: 2.5 × 10^9 Hz; 2 500 000 000 Hz
+Accept: 2.5 × 10^9 Hz; 2 500 000 000 Hz; 2500000000 Hz
 Ref: 1.2
 D: 2
 
@@ -178,23 +167,11 @@ Q: Convert 15 minutes into seconds.
 A: 900 s
 Accept: 900 seconds
 Ref: 1.3
-D: 1
-
-Q: Convert 2 hours into seconds.
-A: 7200 s
-Accept: 7200 seconds; 7.2 × 10³ s
-Ref: 1.3
 D: 2
 
 Q: Convert 500 g into kilograms.
 A: 0.5 kg
 Accept: 0.50 kg; 1/2 kg
-Ref: 1.3
-D: 1
-
-Q: Convert 250 mm into centimetres.
-A: 25 cm
-Accept: 25 centimetres
 Ref: 1.3
 D: 2
 
@@ -205,13 +182,6 @@ Ref: 1.3
 D: 3
 Note: 36 000 m ÷ 3600 s; dividing km/h by 3.6 gives m/s.
 
-Q: Convert a speed of 5 m/s into kilometres per hour.
-A: 18 km/h
-Accept: 18 kilometres per hour; 18 km h⁻¹
-Ref: 1.3
-D: 3
-Note: Multiply m/s by 3.6 to get km/h.
-
 Q: Convert an area of 1 cm² into square metres.
 A: 0.0001 m²
 Accept: 1 × 10⁻⁴ m²; 10⁻⁴ m²; 1 × 10^-4 m²
@@ -219,13 +189,7 @@ Ref: 1.3
 D: 3
 Note: 1 cm² = 0.01 m × 0.01 m, not 0.01 m².
 
-Q: The speed of light is 3 × 10⁸ m/s. What is this in kilometres per second?
-A: 3 × 10⁵ km/s
-Accept: 300 000 km/s; 3 × 10^5 km/s
-Ref: 1.3
-D: 3
-
-Q: What is the name for writing a number as A × 10ⁿ, where A is from 1 up to 10?
+Q: What is the name for writing a number as A × 10ⁿ, where A is at least 1 but less than 10?
 A: Standard form
 Accept: Scientific notation; standard index form
 Ref: 1.4
@@ -247,7 +211,7 @@ Q: Write 6 × 10³ as an ordinary number.
 A: 6000
 Accept: 6 000
 Ref: 1.4
-D: 1
+D: 2
 
 Q: Round 0.04567 to 2 significant figures.
 A: 0.046
@@ -273,16 +237,3 @@ A: 6 × 10⁷
 Accept: 6 × 10^7; 60 000 000
 Ref: 1.4
 D: 3
-
-Q: Work out (8 × 10⁶) ÷ (2 × 10²), in standard form.
-A: 4 × 10⁴
-Accept: 4 × 10^4; 40 000
-Ref: 1.4
-D: 3
-
-Q: Data in a calculation are all given to 2 significant figures. To how many significant figures should the answer be given?
-A: 2
-Accept: Two; 2 significant figures
-Ref: 1.4
-D: 3
-Note: The answer should not be more precise than the least precise data.

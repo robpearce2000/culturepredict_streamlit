@@ -9,36 +9,42 @@ A: Representative
 Accept: Representative sample; Unbiased
 Ref: S1
 D: 1
+Id: edexcel-maths-6-001
 
 Q: What name is given to a survey that collects data from every member of a population?
 A: Census
 Accept: A census
 Ref: S1
 D: 1
+Id: edexcel-maths-6-002
 
 Q: Of 25 pupils sampled, 4 own a rabbit. Use this to estimate the number of rabbit owners among 500 pupils.
 A: 80
 Accept: 80 pupils
 Ref: S1
 D: 2
+Id: edexcel-maths-6-003
 
 Q: In a sample of 60 cars, 12 are red. Estimate the fraction of all cars that are red, in its simplest form.
 A: 1/5
 Accept: One fifth; 0.2; 20%
 Ref: S1
 D: 2
+Id: edexcel-maths-6-004
 
 Q: What name is given to the smaller group chosen from a population so that data can be collected from it?
 A: Sample
 Accept: A sample
 Ref: S1
 D: 1
+Id: edexcel-maths-6-005
 
 Q: Why is asking only 5 people unlikely to give a good estimate for a whole town?
 A: Sample is too small
 Accept: Too small a sample; Sample size too small; Not enough people asked
 Ref: S1
 D: 3
+Id: edexcel-maths-6-006
 
 Q: A sample of 50 voters gives 30% for a party; a sample of 500 voters gives 26%. Which sample gives the more reliable estimate?
 A: Larger sample
@@ -48,54 +54,63 @@ D: 3
 Note: The larger sample gives the more reliable estimate.
 
 # S2 Tables, charts and diagrams
+Id: edexcel-maths-6-007
 
 Q: Name the chart that shows data using symbols, where each symbol stands for a fixed number of items.
 A: Pictogram
 Accept: Pictograph
 Ref: S2
 D: 1
+Id: edexcel-maths-6-008
 
 Q: Name the chart for categorical data that uses separate bars of equal width, with heights showing frequency.
 A: Bar chart
 Accept: Bar graph; Bar diagram
 Ref: S2
 D: 1
+Id: edexcel-maths-6-009
 
 Q: What name is given to a set of data values recorded at regular intervals over time, such as monthly sales?
 A: Time series
 Accept: Time series data
 Ref: S2
 D: 1
+Id: edexcel-maths-6-010
 
 Q: What must a pictogram include to show how many items one symbol represents?
 A: Key
 Accept: A key
 Ref: S2
 D: 1
+Id: edexcel-maths-6-011
 
 Q: Name the table that lists each value or category next to the number of times it occurs.
 A: Frequency table
 Accept: Tally chart; Tally table
 Ref: S2
 D: 1
+Id: edexcel-maths-6-012
 
 Q: A pie chart shows 60 people. How many degrees represent each person?
 A: 6°
 Accept: 6; 6 degrees
 Ref: S2
 D: 2
+Id: edexcel-maths-6-013
 
 Q: A pie chart sector has an angle of 72°. What fraction of the whole does it represent, in its simplest form?
 A: 1/5
 Accept: One fifth; 0.2; 20%
 Ref: S2
 D: 2
+Id: edexcel-maths-6-014
 
 Q: A pie chart shows 40 pupils. How many pupils does a 45° sector represent?
 A: 5
 Accept: 5 pupils
 Ref: S2
 D: 2
+Id: edexcel-maths-6-015
 
 Q: Pets owned: cats 12, dogs 18, rabbits 6. What angle is the dogs sector in a pie chart?
 A: 180°
@@ -103,6 +118,7 @@ Accept: 180; 180 degrees
 Ref: S2
 D: 3
 Note: Total is 36, so dogs are half of the pie chart.
+Id: edexcel-maths-6-016
 
 Q: Pie chart A shows 100 people and pie chart B shows 200 people. Both have a 90° tea sector. How many more chose tea in B?
 A: 25
@@ -112,18 +128,21 @@ D: 3
 Note: Equal angles do not mean equal frequencies: 25 in A and 50 in B.
 
 # S3 Histograms and cumulative frequency
+Id: edexcel-maths-6-017
 
 Q: Name the diagram for grouped continuous data in which the area of each bar is proportional to the frequency.
 A: Histogram
 Ref: S3
 D: 1
 HT: yes
+Id: edexcel-maths-6-018
 
 Q: The class 0 < t ≤ 5 has a frequency of 15. What is its frequency density?
 A: 3
 Ref: S3
 D: 2
 HT: yes
+Id: edexcel-maths-6-019
 
 Q: Name the graph that plots running totals of frequency against the upper class boundaries.
 A: Cumulative frequency graph
@@ -131,6 +150,7 @@ Accept: Cumulative frequency curve; Cumulative frequency diagram; Cumulative fre
 Ref: S3
 D: 1
 HT: yes
+Id: edexcel-maths-6-020
 
 Q: A cumulative frequency graph shows 80 values. At what cumulative frequency do you read off the median?
 A: 40
@@ -138,6 +158,7 @@ Accept: 40.5
 Ref: S3
 D: 2
 HT: yes
+Id: edexcel-maths-6-021
 
 Q: A cumulative frequency graph shows 120 students. At what cumulative frequency do you read off the upper quartile?
 A: 90
@@ -145,12 +166,14 @@ Accept: 90.75
 Ref: S3
 D: 2
 HT: yes
+Id: edexcel-maths-6-022
 
 Q: Frequencies: 0 < x ≤ 10 is 4; 10 < x ≤ 20 is 7; 20 < x ≤ 30 is 9. What cumulative frequency is plotted at 30?
 A: 20
 Ref: S3
 D: 2
 HT: yes
+Id: edexcel-maths-6-023
 
 Q: On a histogram, the class 50 < m ≤ 75 has a frequency density of 0.8. What is its frequency?
 A: 20
@@ -158,6 +181,7 @@ Ref: S3
 D: 3
 HT: yes
 Note: Class width is 25, and 25 × 0.8 = 20.
+Id: edexcel-maths-6-024
 
 Q: Histogram bars: 0 < x ≤ 10 has frequency density 2; 10 < x ≤ 30 has frequency density 1.5. How many values in total?
 A: 50
@@ -165,6 +189,7 @@ Ref: S3
 D: 3
 HT: yes
 Note: 10 × 2 = 20 and 20 × 1.5 = 30.
+Id: edexcel-maths-6-025
 
 Q: Why does a histogram with unequal class widths use frequency density rather than frequency on the vertical axis?
 A: Area represents frequency
@@ -174,17 +199,20 @@ D: 3
 HT: yes
 
 # S4 Averages and spread
+Id: edexcel-maths-6-026
 
 Q: Times (minutes): 0 < t ≤ 10 is 3; 10 < t ≤ 20 is 7; 20 < t ≤ 30 is 5. What is the modal class?
 A: 10 < t ≤ 20
 Accept: 10–20; 10 to 20
 Ref: S4
 D: 1
+Id: edexcel-maths-6-027
 
 Q: What is the mean of 3, 5, 6, 9, 12?
 A: 7
 Ref: S4
 D: 2
+Id: edexcel-maths-6-028
 
 Q: What is the median of 4, 9, 1, 7, 3, 8?
 A: 5.5
@@ -192,23 +220,27 @@ Accept: 11/2
 Ref: S4
 D: 2
 Note: Order first: 1, 3, 4, 7, 8, 9, then take halfway between 4 and 7.
+Id: edexcel-maths-6-029
 
 Q: Data: 3, 6, 9, 5, 41. What is the range if the outlier 41 is left out?
 A: 6
 Ref: S4
 D: 2
+Id: edexcel-maths-6-030
 
 Q: When comparing two distributions, you compare an average and what other feature?
 A: Spread
 Accept: Range; Consistency; Interquartile range
 Ref: S4
 D: 1
+Id: edexcel-maths-6-031
 
 Q: The mean of 4 numbers is 6. The number 11 is added to the list. What is the new mean?
 A: 7
 Ref: S4
 D: 3
 Note: New total is 24 + 11 = 35, shared between 5 numbers.
+Id: edexcel-maths-6-032
 
 Q: Grouped data: 0 < x ≤ 10 has frequency 1; 10 < x ≤ 20 has frequency 3. Estimate the mean.
 A: 12.5
@@ -216,12 +248,14 @@ Accept: 25/2
 Ref: S4
 D: 3
 Note: Use midpoints 5 and 15: (5 + 45) ÷ 4.
+Id: edexcel-maths-6-033
 
 Q: Why is a mean worked out from a grouped frequency table only an estimate?
 A: Exact data values are unknown
 Accept: Midpoints are used instead of actual values; Actual values are not known
 Ref: S4
 D: 3
+Id: edexcel-maths-6-034
 
 Q: Name the diagram that shows the minimum, lower quartile, median, upper quartile and maximum of a data set.
 A: Box plot
@@ -229,18 +263,21 @@ Accept: Box and whisker plot; Box-and-whisker diagram
 Ref: S4
 D: 1
 HT: yes
+Id: edexcel-maths-6-035
 
 Q: What is the lower quartile of 2, 4, 6, 8, 10, 12, 14?
 A: 4
 Ref: S4
 D: 2
 HT: yes
+Id: edexcel-maths-6-036
 
 Q: A box plot shows: minimum 10, lower quartile 18, median 25, upper quartile 31, maximum 40. What is the interquartile range?
 A: 13
 Ref: S4
 D: 2
 HT: yes
+Id: edexcel-maths-6-037
 
 Q: What fraction of a data set lies between the lower quartile and the upper quartile?
 A: Half
@@ -248,6 +285,7 @@ Accept: 1/2; 0.5; 50%
 Ref: S4
 D: 1
 HT: yes
+Id: edexcel-maths-6-038
 
 Q: Why is the interquartile range a better measure of spread than the range when there is an outlier?
 A: Outliers do not affect it
@@ -257,30 +295,35 @@ D: 3
 HT: yes
 
 # S5 Describing a population
+Id: edexcel-maths-6-039
 
 Q: What word describes a single value used to represent a typical member of a data set?
 A: Average
 Accept: Mean; Median; Mode; Measure of central tendency
 Ref: S5
 D: 1
+Id: edexcel-maths-6-040
 
 Q: Which is the only average that can be found for categorical data such as favourite colour?
 A: Mode
 Accept: The mode
 Ref: S5
 D: 1
+Id: edexcel-maths-6-041
 
 Q: In a survey of 80 people, 3/8 prefer rugby. How many people prefer rugby?
 A: 30
 Accept: 30 people
 Ref: S5
 D: 2
+Id: edexcel-maths-6-042
 
 Q: The mean height of 10 plants is 12 cm. What is their total height?
 A: 120 cm
 Accept: 120; 1.2 m
 Ref: S5
 D: 2
+Id: edexcel-maths-6-043
 
 Q: House prices: £200k, £210k, £220k, £230k, £1.2m. Which measure of spread gives a misleading picture here?
 A: Range
@@ -288,6 +331,7 @@ Accept: The range
 Ref: S5
 D: 3
 Note: The one very expensive house makes the range very large.
+Id: edexcel-maths-6-044
 
 Q: Year 7 journeys: mean 25 min, range 40 min. Year 11 journeys: mean 20 min, range 15 min. Which year's times are more consistent?
 A: Year 11
@@ -295,6 +339,7 @@ Accept: 11
 Ref: S5
 D: 3
 Note: The smaller range shows the times are more consistent.
+Id: edexcel-maths-6-045
 
 Q: A team's mean score is 15 after 4 matches and 16 after 5 matches. What did it score in the fifth match?
 A: 20
@@ -303,42 +348,49 @@ D: 3
 Note: Totals are 60 and 80.
 
 # S6 Scatter graphs and correlation
+Id: edexcel-maths-6-046
 
 Q: Name the graph on which pairs of values for two variables are plotted as points.
 A: Scatter graph
 Accept: Scatter diagram; Scatter plot; Scattergram
 Ref: S6
 D: 1
+Id: edexcel-maths-6-047
 
 Q: The longer a phone is used, the lower its remaining battery charge. What type of correlation is this?
 A: Negative
 Accept: Negative correlation
 Ref: S6
 D: 1
+Id: edexcel-maths-6-048
 
 Q: The points on a scatter graph show no pattern at all. What type of correlation is this?
 A: No correlation
 Accept: None; Zero correlation
 Ref: S6
 D: 1
+Id: edexcel-maths-6-049
 
 Q: On a scatter graph the points rise from left to right but are widely scattered. Describe the correlation.
 A: Weak positive
 Accept: Weak positive correlation
 Ref: S6
 D: 2
+Id: edexcel-maths-6-050
 
 Q: A line of best fit is y = 3x + 4. Use it to predict y when x = 6.
 A: 22
 Accept: y = 22
 Ref: S6
 D: 2
+Id: edexcel-maths-6-051
 
 Q: A line of best fit passes through (0, 50) and (10, 30). Use it to estimate y when x = 5.
 A: 40
 Accept: y = 40
 Ref: S6
 D: 2
+Id: edexcel-maths-6-052
 
 Q: Countries with more televisions per person have longer life expectancy. Name what this correlation does not show: that one variable changes the other.
 A: Causation
@@ -346,15 +398,18 @@ Accept: Cause; Cause and effect; That one causes the other
 Ref: S6
 D: 2
 Note: Both are linked to a third factor, such as wealth.
+Id: edexcel-maths-6-053
 
 Q: A line of best fit for children aged 5 to 15 relates age and height. Why is it unreliable for predicting height at age 40?
 A: People stop growing
 Accept: Adults stop growing; Trend does not continue; Extrapolation; Outside the range of the data
 Ref: S6
 D: 3
+Id: edexcel-maths-6-054
 
 Q: A scatter graph has data for ages 20 to 60. Estimating a value for age 35 from the line of best fit is called what?
 A: Interpolation
 Accept: Interpolating
 Ref: S6
 D: 2
+Id: edexcel-maths-6-055
