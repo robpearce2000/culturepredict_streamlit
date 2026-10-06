@@ -1,0 +1,314 @@
+Board: Edexcel
+Spec: 1PH0
+Topic: 12
+
+Q: Two north poles are brought close together. Do the magnets attract or repel?
+A: Repel
+Accept: They repel; Repulsion
+Ref: 12.1
+D: 1
+
+Q: Which poles of two magnets attract each other?
+A: Unlike poles
+Accept: Opposite poles; North and south; A north and a south
+Ref: 12.1
+D: 1
+
+Q: The north pole of a magnet is repelled by the end of another magnet. Which pole is that end?
+A: North pole
+Accept: North; A north pole
+Ref: 12.1
+D: 2
+
+Q: Iron, cobalt and steel are magnetic materials. Name the magnetic metal element that is not iron or cobalt.
+A: Nickel
+Accept: Ni
+Ref: 12.2
+D: 1
+
+Q: Which is used to make permanent magnets, iron or steel?
+A: Steel
+Accept: Steel (an iron alloy)
+Ref: 12.2
+D: 2
+Note: Iron is magnetically soft and loses its magnetism easily; steel keeps it.
+
+Q: Why is iron used for the core of an electromagnet rather than steel?
+A: Easily magnetised and demagnetised
+Accept: It loses its magnetism when current stops; It is a temporary magnet; Easy to switch on and off
+Ref: 12.2
+D: 3
+
+Q: Which type of magnet only shows magnetic properties while it is in a magnetic field?
+A: Induced magnet
+Accept: Induced; Temporary magnet
+Ref: 12.3
+D: 1
+
+Q: Which type of magnet always has its own magnetic field, like a bar magnet?
+A: Permanent magnet
+Accept: Permanent
+Ref: 12.3
+D: 1
+
+Q: An unmagnetised iron nail is attracted to a magnet. What type of magnet is the nail while it is attracted?
+A: Induced magnet
+Accept: Induced; An induced magnet
+Ref: 12.3
+D: 2
+
+Q: Where is the magnetic field of a bar magnet strongest?
+A: At the poles
+Accept: Poles; The ends; Ends of the magnet
+Ref: 12.4
+D: 1
+
+Q: Outside a bar magnet, field lines point from which pole to which pole?
+A: North to south
+Accept: From north to south; N to S
+Ref: 12.4
+D: 1
+
+Q: What word describes a field with the same strength and direction everywhere?
+A: Uniform
+Accept: A uniform field
+Ref: 12.4
+D: 2
+
+Q: What do the field lines look like in a uniform field between two flat opposite poles?
+A: Parallel, straight and equally spaced
+Accept: Parallel and evenly spaced; Straight parallel lines
+Ref: 12.4
+D: 3
+
+Q: Which small device is used to find the direction of a magnetic field at a point?
+A: Plotting compass
+Accept: Compass; A plotting compass
+Ref: 12.5
+D: 1
+
+Q: A plotting compass is placed near a bar magnet. Its needle points towards which pole of the magnet?
+A: South pole
+Accept: South; The south pole
+Ref: 12.5
+D: 2
+Note: The needle is a small magnet; its north end is attracted to the magnet's south pole.
+
+Q: A compass far from any magnet settles pointing north. Which magnetic field is it showing?
+A: The Earth's magnetic field
+Accept: Earth's field; Earth's magnetic field; Earth's
+Ref: 12.5
+D: 2
+
+Q: Why does a compass needle point towards geographic north?
+A: It lines up with the Earth's magnetic field
+Accept: Earth has a magnetic field; Aligns with Earth's field
+Ref: 12.6
+D: 2
+
+Q: Which part of the Earth must be magnetic to explain how a compass behaves?
+A: The core
+Accept: Core; Earth's core; Iron core
+Ref: 12.6
+D: 1
+
+Q: A compass needle points to geographic north. What type of magnetic pole is near the Earth's geographic north?
+A: South pole
+Accept: South; A magnetic south pole
+Ref: 12.6
+D: 3
+Note: Opposite poles attract, and the compass needle's north end points that way.
+
+Q: What shape are the magnetic field lines around a long straight wire carrying a current?
+A: Concentric circles
+Accept: Circles; Rings; Circles around the wire
+Ref: 12.7
+D: 1
+
+Q: Which small device placed near a wire shows that a current produces a magnetic field?
+A: Plotting compass
+Accept: Compass; A compass
+Ref: 12.7
+D: 1
+
+Q: The current in a long straight wire is reversed. What happens to the direction of the field around it?
+A: It reverses
+Accept: Reverses; The direction reverses; Opposite direction
+Ref: 12.7
+D: 2
+
+Q: How does the magnetic field strength change as you move further from a straight current-carrying wire?
+A: It decreases
+Accept: Decreases; Gets weaker; Weaker
+Ref: 12.8
+D: 1
+
+Q: How does a larger current change the field strength around a straight wire?
+A: Field gets stronger
+Accept: Stronger; Increases; Greater
+Ref: 12.8
+D: 1
+
+Q: State the two factors that affect the field strength around a long straight wire.
+A: Current and distance from the wire
+Accept: Size of current and distance
+Ref: 12.8
+D: 2
+
+Q: What name is given to a long coil of wire used as an electromagnet?
+A: Solenoid
+Accept: A solenoid
+Ref: 12.9
+D: 1
+
+Q: Where is the magnetic field of a solenoid strongest?
+A: Along the centre
+Accept: Inside; In the middle; Inside the coil; Centre
+Ref: 12.9
+D: 2
+
+Q: Why is the field inside a solenoid strong?
+A: Fields from each coil add together
+Accept: The coils' fields add up; Fields combine; Fields add
+Ref: 12.9
+D: 3
+
+Q: Why is the magnetic field outside a solenoid weak?
+A: Fields from the coils cancel
+Accept: Coil fields cancel out; They cancel
+Ref: 12.9
+D: 3
+
+Q: What name is given to the force on a current-carrying wire placed in a magnetic field?
+A: Motor effect
+Accept: The motor effect
+Ref: 12.10
+D: 1
+HT: yes
+
+Q: A magnet pushes on a current-carrying wire. What force acts on the magnet?
+A: An equal and opposite force
+Accept: Equal and opposite; Equal force in the opposite direction
+Ref: 12.10
+D: 2
+HT: yes
+
+Q: A magnet pushes a wire upwards. In which direction is the force on the magnet?
+A: Downwards
+Accept: Down; Opposite to the wire's force
+Ref: 12.10
+D: 3
+HT: yes
+
+Q: Magnetic forces are caused by interaction between which two things?
+A: Two magnetic fields
+Accept: Magnetic fields; Fields of the magnet and the wire
+Ref: 12.11
+D: 1
+HT: yes
+
+Q: In the motor effect, the field around the wire interacts with the field of which object?
+A: The magnet
+Accept: Magnet; Permanent magnet
+Ref: 12.11
+D: 2
+HT: yes
+
+Q: Why does a current-carrying wire in a magnet's field experience a force?
+A: Its field interacts with the magnet's field
+Accept: Two magnetic fields interact; The fields interact
+Ref: 12.11
+D: 3
+HT: yes
+
+Q: Name the rule used to find the direction of the force on a current-carrying wire in a field.
+A: Fleming's left-hand rule
+Accept: Left-hand rule; Fleming's rule
+Ref: 12.12
+D: 1
+HT: yes
+
+Q: In Fleming's left-hand rule, the first finger shows the direction of which quantity?
+A: Magnetic field
+Accept: The field; Field
+Ref: 12.12
+D: 2
+HT: yes
+
+Q: In Fleming's left-hand rule, the second finger shows the direction of which quantity?
+A: Current
+Accept: Conventional current; The current
+Ref: 12.12
+D: 2
+HT: yes
+
+Q: The current in a wire in a magnetic field is reversed. What happens to the direction of the force?
+A: It reverses
+Accept: Reverses; Opposite direction
+Ref: 12.12
+D: 2
+HT: yes
+
+Q: A magnetic field points right and the current points into the page. Is the force up or down the page?
+A: Down
+Accept: Downwards; Down the page
+Ref: 12.12
+D: 3
+HT: yes
+Note: First finger right, second finger into the page, thumb points down.
+
+Q: Use F = B × I × l. A 0.5 m wire carries 3 A in a field of 2 T. What is the force?
+A: 3 N
+Accept: 3 newtons
+Ref: 12.13
+D: 2
+HT: yes
+
+Q: What is the unit of magnetic flux density?
+A: Tesla
+Accept: T; N/A m; Newton per ampere metre
+Ref: 12.13
+D: 1
+HT: yes
+
+Q: Use F = B × I × l. A 0.2 m wire carries 5 A in a field of 0.4 T. What is the force?
+A: 0.4 N
+Accept: 0.4 newtons
+Ref: 12.13
+D: 2
+HT: yes
+
+Q: Use F = B × I × l. A force of 6 N acts on a 1.5 m wire in a 2 T field. What is the current?
+A: 2 A
+Accept: 2 amps; 2 amperes
+Ref: 12.13
+D: 3
+HT: yes
+
+Q: What is the energy transfer in an electric motor?
+A: Electrical to kinetic
+Accept: Electrical to movement; Electrical to kinetic and heat; Electrical to kinetic and thermal
+Ref: 12.14P
+D: 1
+HT: yes
+
+Q: In a simple d.c. motor, the forces on the two sides of the coil act in which directions?
+A: Opposite directions
+Accept: Opposite; Equal and opposite; One up, one down
+Ref: 12.14P
+D: 2
+HT: yes
+
+Q: Which part of a d.c. motor reverses the current in the coil every half turn?
+A: Split-ring commutator
+Accept: Commutator
+Ref: 12.14P
+D: 2
+HT: yes
+
+Q: Why do the forces on the two sides of a motor's coil make it rotate?
+A: They act in opposite directions, turning the coil
+Accept: Opposite forces give a turning effect; Forces opposite so coil turns
+Ref: 12.14P
+D: 3
+HT: yes

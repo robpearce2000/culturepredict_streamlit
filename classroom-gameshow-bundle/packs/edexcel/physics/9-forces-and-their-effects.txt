@@ -4,7 +4,7 @@ Topic: 9
 
 Q: Which non-contact force pulls two masses towards each other?
 A: Gravitational force
-Accept: Gravity; gravitational attraction; weight
+Accept: Gravity; gravitational attraction
 Ref: 9.1
 D: 1
 
@@ -232,7 +232,7 @@ Accept: More slowly; slower, in the opposite direction
 Ref: 9.9P
 D: 2
 
-Q: A small gear drives a gear with twice its radius. How does the moment on the larger gear compare?
+Q: A small gear drives a gear with twice its radius. Ignoring friction, how does the moment on the larger gear compare?
 A: Twice as large
 Accept: Doubled; double; two times bigger; 2 times the moment
 Ref: 9.9P
@@ -257,7 +257,7 @@ Accept: Thermal; thermal store; heat; internal energy
 Ref: 9.10
 D: 2
 
-Q: Explain how oiling a bicycle chain reduces unwanted energy transfer.
+Q: Explain how oil in a car engine reduces unwanted energy transfer.
 A: Reduces friction so less energy heats surroundings
 Accept: Less friction so less energy wasted as heat; reduces friction, less thermal energy transferred
 Ref: 9.10

@@ -1,0 +1,253 @@
+Board: AQA
+Spec: 8145
+Topic: 1AD
+
+Q: Which car did Henry Ford mass-produce on moving assembly lines?
+A: Model T
+Accept: Ford Model T; Tin Lizzie
+Ref: 1AD.1.1
+D: 1
+
+Q: What was the name of the system letting consumers pay for goods in instalments?
+A: Hire purchase
+Accept: Buying on credit; credit; instalment plan
+Ref: 1AD.1.1
+D: 1
+
+Q: What was buying shares 'on the margin'?
+A: Buying shares with borrowed money
+Accept: Buying shares on credit; borrowing to buy shares; paying a deposit and borrowing the rest
+Ref: 1AD.1.1
+D: 2
+
+Q: Why did high tariffs on imports help American businesses in the 1920s?
+A: Foreign goods became more expensive
+Accept: Imports cost more; American goods were cheaper; protected industry from foreign competition
+Ref: 1AD.1.1
+D: 3
+
+Q: What name was given to young women of the 1920s with bobbed hair and short skirts?
+A: Flappers
+Accept: Flapper
+Ref: 1AD.1.2
+D: 1
+
+Q: Which 1927 film was the first major 'talkie'?
+A: The Jazz Singer
+Accept: Jazz Singer
+Ref: 1AD.1.2
+D: 1
+
+Q: Which Black trumpeter from New Orleans became a star of 1920s jazz?
+A: Louis Armstrong
+Accept: Armstrong
+Ref: 1AD.1.2
+D: 2
+
+Q: Why did many older Americans disapprove of flappers?
+A: Seen as rejecting traditional values
+Accept: Seen as immoral; challenged traditional roles for women; shocking behaviour
+Ref: 1AD.1.2
+D: 3
+
+Q: Which Chicago gangster built a bootlegging empire during Prohibition?
+A: Al Capone
+Accept: Capone; Alphonse Capone
+Ref: 1AD.1.3
+D: 1
+
+Q: Which amendment of 1933 ended Prohibition?
+A: 21st Amendment
+Accept: Twenty-first Amendment; 21st
+Ref: 1AD.1.3
+D: 2
+
+Q: Which Christian group did the 1920s Ku Klux Klan target, along with Jews and immigrants?
+A: Catholics
+Accept: Roman Catholics
+Ref: 1AD.1.3
+D: 2
+
+Q: Which 1924 Act used national quotas to restrict immigration?
+A: National Origins Act
+Accept: Immigration Act of 1924; Johnson-Reed Act
+Ref: 1AD.1.3
+D: 2
+
+Q: Why do many historians believe Sacco and Vanzetti did not get a fair trial?
+A: Prejudice against immigrants and anarchists
+Accept: They were Italian anarchists; anti-immigrant prejudice; Red Scare fears; weak evidence and prejudice
+Ref: 1AD.1.3
+D: 3
+
+Q: What name was given to shanty towns of the unemployed in the early 1930s?
+A: Hoovervilles
+Accept: Hooverville
+Ref: 1AD.2.1
+D: 1
+
+Q: Which Democrat won the 1932 presidential election, defeating Hoover?
+A: Franklin D. Roosevelt
+Accept: Roosevelt; FDR; Franklin Roosevelt
+Ref: 1AD.2.1
+D: 1
+
+Q: Which group of First World War veterans marched on Washington in 1932 demanding payment?
+A: Bonus Army
+Accept: The Bonus Army; Bonus Marchers; Bonus Expeditionary Force
+Ref: 1AD.2.1
+D: 2
+
+Q: Why was Hoover blamed for the Depression's hardships?
+A: Seen as doing too little to help
+Accept: He believed in limited government help; rugged individualism; he refused direct relief
+Ref: 1AD.2.1
+D: 3
+
+Q: Which New Deal agency employed young men on conservation projects?
+A: Civilian Conservation Corps
+Accept: CCC
+Ref: 1AD.2.2
+D: 1
+
+Q: Which 1935 Act created old-age pensions and unemployment insurance?
+A: Social Security Act
+Accept: The Social Security Act
+Ref: 1AD.2.2
+D: 2
+
+Q: Which Louisiana senator proposed to 'Share Our Wealth' and attacked the New Deal as too weak?
+A: Huey Long
+Accept: Long
+Ref: 1AD.2.2
+D: 2
+
+Q: Why did Roosevelt try to add new justices to the Supreme Court in 1937?
+A: To outvote opponents of the New Deal
+Accept: To get his laws approved; because the Court had struck down New Deal laws; to pack the court
+Ref: 1AD.2.2
+D: 3
+
+Q: Which 1941 programme let the USA supply Britain with war materials without immediate payment?
+A: Lend-Lease
+Accept: Lend Lease
+Ref: 1AD.2.3
+D: 1
+
+Q: What nickname was given to the women war workers shown in American propaganda?
+A: Rosie the Riveter
+Accept: Rosie
+Ref: 1AD.2.3
+D: 1
+
+Q: What did Executive Order 8802 of 1941 forbid in defence industries?
+A: Racial discrimination
+Accept: Discrimination; discrimination in hiring; discrimination against African-Americans
+Ref: 1AD.2.3
+D: 2
+
+Q: Why did wartime production end the Depression in the USA?
+A: Huge demand for weapons created jobs
+Accept: Arms orders created jobs; factories needed workers; war spending created employment
+Ref: 1AD.2.3
+D: 3
+
+Q: Which Wisconsin senator claimed communists had infiltrated the government in 1950?
+A: Joseph McCarthy
+Accept: McCarthy; Senator McCarthy
+Ref: 1AD.3.1
+D: 1
+
+Q: Which singer, famous from 1956, was nicknamed 'the King of Rock and Roll'?
+A: Elvis Presley
+Accept: Elvis
+Ref: 1AD.3.1
+D: 1
+
+Q: Which House committee investigated Hollywood for communist links after 1947?
+A: House Un-American Activities Committee
+Accept: HUAC; Un-American Activities Committee
+Ref: 1AD.3.1
+D: 2
+
+Q: What type of residential area, such as Levittown, grew with post-war car ownership?
+A: Suburbs
+Accept: Suburb; suburban housing
+Ref: 1AD.3.1
+D: 2
+
+Q: Why did McCarthy lose support by 1954?
+A: Televised hearings exposed his bullying
+Accept: He could not prove his claims; the Army-McCarthy hearings; he was shown to be reckless
+Ref: 1AD.3.1
+D: 3
+
+Q: Whose arrest in December 1955 sparked the Montgomery Bus Boycott?
+A: Rosa Parks
+Accept: Parks
+Ref: 1AD.3.2
+D: 1
+
+Q: Which 1954 Supreme Court case ruled segregated schools unconstitutional?
+A: Brown v Board of Education
+Accept: Brown v. Board of Education; Brown v Board; Brown
+Ref: 1AD.3.2
+D: 2
+
+Q: What did the Civil Rights Act of 1964 ban in public places and employment?
+A: Discrimination
+Accept: Racial discrimination; segregation
+Ref: 1AD.3.2
+D: 2
+
+Q: What did the Civil Rights Act of 1968 ban discrimination in?
+A: Housing
+Accept: Selling or renting housing; the Fair Housing Act; renting and selling homes
+Ref: 1AD.3.2
+D: 2
+
+Q: Which Black Power group was founded in Oakland, California in 1966?
+A: Black Panther Party
+Accept: Black Panthers; the Black Panthers
+Ref: 1AD.3.2
+D: 2
+
+Q: Why did Malcolm X criticise Martin Luther King's non-violent protests?
+A: Believed Black Americans should defend themselves
+Accept: Supported self-defence; non-violence did not work; believed in Black Power and self-defence
+Ref: 1AD.3.2
+D: 3
+
+Q: Which president launched the 'Great Society' programme in 1964?
+A: Lyndon B. Johnson
+Accept: Johnson; LBJ; Lyndon Johnson
+Ref: 1AD.3.3
+D: 1
+
+Q: Which author of 'The Feminine Mystique' co-founded the National Organisation for Women?
+A: Betty Friedan
+Accept: Friedan
+Ref: 1AD.3.3
+D: 1
+
+Q: Which 1965 Great Society programme gave health insurance to the elderly?
+A: Medicare
+Ref: 1AD.3.3
+D: 2
+
+Q: Which 1963 Act made it illegal to pay women less for equal work?
+A: Equal Pay Act
+Accept: The Equal Pay Act
+Ref: 1AD.3.3
+D: 2
+
+Q: What did the Supreme Court's 1973 Roe v Wade ruling legalise across the USA?
+A: Abortion
+Ref: 1AD.3.3
+D: 2
+
+Q: Why did the Equal Rights Amendment fail after Congress passed it in 1972?
+A: Too few states ratified it
+Accept: Not enough states approved it; opposition from conservatives; it was not ratified by 38 states
+Ref: 1AD.3.3
+D: 3

@@ -1,0 +1,271 @@
+Board: AQA
+Spec: 8145
+Topic: 2BB
+
+Q: Which baronial leader, killed at the Battle of Evesham in 1265, had rebelled against Henry III?
+A: Simon de Montfort
+Accept: de Montfort; Montfort
+Ref: 2BB.1.1
+D: 1
+
+Q: Edward was returning from which overseas expedition when his father Henry III died in 1272?
+A: Crusade
+Accept: The Ninth Crusade; Crusade to the Holy Land
+Ref: 2BB.1.1
+D: 1
+
+Q: What problem with royal finances did Edward I inherit from his father?
+A: Heavy debts
+Accept: Debt; The crown was in debt
+Ref: 2BB.1.1
+D: 2
+
+Q: Give one reason the barons rebelled against Henry III over his choice of advisers.
+A: He favoured foreigners
+Accept: Favouring foreign relatives; Promoting foreigners; Poitevin and Savoyard favourites
+Ref: 2BB.1.1
+D: 3
+
+Q: Which royal inquiry of 1274-75 gathered evidence on the abuses of local officials and lost royal rights?
+A: Hundred Rolls
+Accept: The Hundred Rolls; Hundred Roll
+Ref: 2BB.1.2
+D: 1
+
+Q: Which bishop served as Edward I's Chancellor and closest adviser?
+A: Robert Burnell
+Accept: Burnell
+Ref: 2BB.1.2
+D: 1
+
+Q: What did the 'Quo Warranto' inquiries ask landowners to prove?
+A: By what right they held their liberties
+Accept: Their right to hold land and privileges; The warrant for their rights; By what authority they held land
+Ref: 2BB.1.2
+D: 2
+
+Q: Why did the 'Quo Warranto' inquiries anger many nobles?
+A: They threatened their lands and privileges
+Accept: They questioned noble rights; Nobles might lose liberties; Challenged their privileges
+Ref: 2BB.1.2
+D: 3
+
+Q: What did the Statutes of Mortmain stop?
+A: Land being given to the Church
+Accept: Gifts of land to the Church; Land passing to the Church
+Ref: 2BB.1.2
+D: 2
+
+Q: Besides lords and clergy, which two groups of commoners attended the Model Parliament?
+A: Knights and burgesses
+Accept: Knights of the shire and townsmen; Knights and townspeople
+Ref: 2BB.1.2
+D: 2
+
+Q: Why did Edward summon the Model Parliament in 1295?
+A: To raise money for war
+Accept: To get taxes for war; To fund wars with France and Scotland; Taxation
+Ref: 2BB.1.2
+D: 3
+
+Q: What was England's most valuable export in Edward I's reign?
+A: Wool
+Ref: 2BB.2.1
+D: 1
+
+Q: Which Italian company of bankers lent heavily to Edward I?
+A: Riccardi
+Accept: Riccardi of Lucca; Ricciardi
+Ref: 2BB.2.1
+D: 1
+
+Q: In which year did Edward I expel the Jews from England?
+A: 1290
+Ref: 2BB.2.1
+D: 1
+
+Q: What was the name of the 1275 tax on wool exports that became a major royal income?
+A: The Great Custom
+Accept: Great Custom; Custom on wool
+Ref: 2BB.2.1
+D: 2
+
+Q: What did the Statute of Merchants of 1285 help merchants to do?
+A: Recover debts
+Accept: Collect debts owed to them; Enforce repayment of debts
+Ref: 2BB.2.1
+D: 2
+
+Q: Which problem with the coinage did the re-coinage of 1279 tackle?
+A: Clipping
+Accept: Coin clipping; Clipped coins; Underweight coins
+Ref: 2BB.2.1
+D: 2
+
+Q: Why was the wool trade so important to Edward I's finances?
+A: Taxing exports raised large royal income
+Accept: Wool tax gave the crown money; Export duties brought revenue; It paid for his wars
+Ref: 2BB.2.1
+D: 3
+
+Q: Which two English towns had medieval universities in Edward I's reign?
+A: Oxford and Cambridge
+Accept: Oxford, Cambridge
+Ref: 2BB.2.2
+D: 1
+
+Q: Which Franciscan friar and Oxford scholar championed experimental science?
+A: Roger Bacon
+Accept: Bacon
+Ref: 2BB.2.2
+D: 1
+
+Q: What method of testing ideas, rather than relying only on ancient authority, did Roger Bacon promote?
+A: Experiment
+Accept: Experimentation; Observation and experiment
+Ref: 2BB.2.2
+D: 2
+
+Q: Why were university students often called 'clerks'?
+A: They were in Church orders
+Accept: They were clergymen; They studied for the Church; Minor orders in the Church
+Ref: 2BB.2.2
+D: 3
+
+Q: Which 1285 statute reorganised policing, including the watch in towns?
+A: Statute of Winchester
+Accept: Winchester; Statutes of Winchester
+Ref: 2BB.2.3
+D: 1
+
+Q: What was the 'hue and cry'?
+A: Chasing a criminal after the alarm was raised
+Accept: Everyone had to pursue a criminal; Villagers chasing suspected criminals
+Ref: 2BB.2.3
+D: 2
+
+Q: What did the Statute of Winchester order to be cleared for 200 feet beside main roads?
+A: Bushes and trees
+Accept: Undergrowth; Bushes; Trees; Cover for robbers
+Ref: 2BB.2.3
+D: 2
+
+Q: Which method of trial using local men replaced trial by ordeal in medieval England?
+A: Trial by jury
+Accept: Jury; Jury trial
+Ref: 2BB.2.3
+D: 2
+
+Q: Why did the Statute of Winchester require men to keep weapons suited to their wealth?
+A: To help keep order
+Accept: To help police the country; To chase criminals; To defend the realm
+Ref: 2BB.2.3
+D: 3
+
+Q: Which siege engine used a counterweight to hurl heavy stones at castle walls?
+A: Trebuchet
+Accept: Trebuchets
+Ref: 2BB.3.1
+D: 1
+
+Q: Which weapon, adopted by Edward's armies from the Welsh, had great range and power?
+A: Longbow
+Accept: Welsh longbow; Longbows
+Ref: 2BB.3.1
+D: 1
+
+Q: What siege tactic involved tunnelling beneath castle walls to make them collapse?
+A: Mining
+Accept: Undermining; Sapping
+Ref: 2BB.3.1
+D: 2
+
+Q: What was the name of the chain-mail shirt worn by knights?
+A: Hauberk
+Accept: Chain mail; Mail
+Ref: 2BB.3.1
+D: 2
+
+Q: Why were mounted knights vulnerable to massed longbowmen?
+A: Arrows could kill them and their horses from a distance
+Accept: Archers shot them from range; Horses were shot down
+Ref: 2BB.3.1
+D: 3
+
+Q: Which Welsh prince was defeated in Edward's first Welsh war of 1277?
+A: Llywelyn ap Gruffudd
+Accept: Llywelyn; Llywelyn the Last; Llywelyn ap Gruffydd
+Ref: 2BB.3.2
+D: 1
+
+Q: Which statute of 1284 imposed English-style government on Wales?
+A: Statute of Rhuddlan
+Accept: Rhuddlan; Statute of Wales
+Ref: 2BB.3.2
+D: 1
+
+Q: In which Welsh castle was Edward's son, the future Edward II, born in 1284?
+A: Caernarfon
+Accept: Caernarfon Castle; Carnarvon
+Ref: 2BB.3.2
+D: 2
+
+Q: Which Welsh leader started the 1294 revolt against Edward's rule?
+A: Madog ap Llywelyn
+Accept: Madog
+Ref: 2BB.3.2
+D: 2
+
+Q: Why were castles such as Conwy and Harlech built on the coast?
+A: They could be supplied by sea
+Accept: Resupply by sea; Relief by ship; Supplies could arrive by sea
+Ref: 2BB.3.2
+D: 3
+
+Q: Why were castles with two rings of walls, such as Beaumaris, harder to capture?
+A: Two lines of defence
+Accept: Inner walls were higher than outer walls; Defenders could shoot over the outer wall
+Ref: 2BB.3.2
+D: 3
+
+Q: Why did Madog ap Llywelyn's revolt break out in 1294?
+A: Heavy taxes and recruitment for war
+Accept: Taxation; Edward's demands for troops and money; Resentment of English rule
+Ref: 2BB.3.2
+D: 3
+
+Q: What name is given to Edward's 1291-92 judgement over the Scottish throne?
+A: The Great Cause
+Accept: Great Cause
+Ref: 2BB.3.3
+D: 1
+
+Q: Which Scottish leader defeated an English army at Stirling Bridge in 1297?
+A: William Wallace
+Accept: Wallace; Andrew Moray; Wallace and Moray
+Ref: 2BB.3.3
+D: 1
+
+Q: At which 1298 battle did Edward defeat Wallace's Scottish army?
+A: Falkirk
+Accept: Battle of Falkirk
+Ref: 2BB.3.3
+D: 2
+
+Q: Which nickname linked to his Scottish wars was later carved on Edward I's tomb?
+A: Hammer of the Scots
+Accept: The Hammer of the Scots; Malleus Scotorum
+Ref: 2BB.3.3
+D: 2
+
+Q: Why did Edward invade Scotland in 1296?
+A: Balliol allied with France
+Accept: Scotland allied with France; Balliol defied him; The Auld Alliance
+Ref: 2BB.3.3
+D: 3
+
+Q: Why did the Scots resent Edward's claim to be their overlord?
+A: It threatened Scottish independence
+Accept: They saw it as loss of independence; He treated Scotland as a subject kingdom
+Ref: 2BB.3.3
+D: 3

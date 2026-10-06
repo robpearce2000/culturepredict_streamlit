@@ -1,0 +1,219 @@
+Board: Edexcel
+Spec: 1PH0
+Topic: 11
+
+Q: Which particles are transferred when an insulator is charged by rubbing?
+A: Electrons
+Accept: Electron
+Ref: 11.1P
+D: 1
+
+Q: Rubbing a polythene rod with a cloth charges the rod. Name this method of charging.
+A: Friction
+Accept: Charging by friction; Rubbing
+Ref: 11.1P
+D: 1
+
+Q: A rod charged by rubbing keeps its charge instead of losing it quickly. Why?
+A: Charge cannot flow through an insulator
+Accept: It is an insulator; Insulators do not conduct
+Ref: 11.1P
+D: 3
+
+Q: A polythene rod gains electrons when rubbed with a cloth. What charge does the rod have?
+A: Negative
+Accept: Negatively charged
+Ref: 11.2P
+D: 1
+
+Q: A cloth loses electrons to a rod when rubbed. What charge is left on the cloth?
+A: Positive
+Accept: Positively charged
+Ref: 11.2P
+D: 1
+
+Q: A rod gains 6 units of negative charge from a cloth. What is the charge on the cloth?
+A: +6 units
+Accept: Positive 6; Equal and opposite; Plus 6
+Ref: 11.2P
+D: 2
+
+Q: Why do a rod and the cloth used to rub it end up with equal and opposite charges?
+A: Electrons move from one to the other
+Accept: Electrons lost by one are gained by the other; Electrons are transferred
+Ref: 11.2P
+D: 3
+
+Q: Two negatively charged balloons are held close together. Do they attract or repel?
+A: Repel
+Accept: They repel; Repulsion
+Ref: 11.3P
+D: 1
+
+Q: What force acts between two objects with opposite charges?
+A: Attraction
+Accept: Attract; They attract; An attractive force
+Ref: 11.3P
+D: 1
+
+Q: A hanging charged ball is repelled by a charged rod. What do the ball and rod have in common?
+A: The same type of charge
+Accept: Same charge; Both positive or both negative; Like charges
+Ref: 11.3P
+D: 2
+
+Q: A positively charged rod is brought near a hanging negatively charged ball. What does the ball do?
+A: Moves towards the rod
+Accept: Is attracted; Attracted to the rod; Moves toward the rod
+Ref: 11.3P
+D: 2
+
+Q: Lightning is caused by a large build-up of which type of charge?
+A: Static charge
+Accept: Static; Static electricity; Electric charge; Charge
+Ref: 11.4P
+D: 1
+
+Q: You slide across a car seat and then feel a shock from the door. Which particles flow?
+A: Electrons
+Accept: Electron; Charge
+Ref: 11.4P
+D: 2
+
+Q: A charged comb picks up small pieces of uncharged paper without touching them. Name this effect.
+A: Induction
+Accept: Electrostatic induction; Charge induction; Induced charge
+Ref: 11.4P
+D: 2
+
+Q: A negatively charged balloon sticks to an uncharged wall. What charge is induced on the wall's surface nearest the balloon?
+A: Positive
+Accept: Positive charge; Positively charged
+Ref: 11.4P
+D: 3
+
+Q: In terms of charge, why does a charged comb attract uncharged paper?
+A: Opposite charge is induced on the near side
+Accept: It induces an opposite charge; Opposite charges attract
+Ref: 11.4P
+D: 3
+
+Q: What is the name for connecting a charged object to the ground so that charge flows away?
+A: Earthing
+Accept: Earth; Grounding; Earthed
+Ref: 11.5P
+D: 1
+
+Q: A negatively charged metal sphere is connected to the ground with a wire. Which way do electrons flow?
+A: Into the ground
+Accept: Out of the sphere; To the Earth; Away from the sphere
+Ref: 11.5P
+D: 2
+
+Q: A positively charged metal sphere is earthed. Do electrons flow into the sphere or out of it?
+A: Into the sphere
+Accept: Into it; From the Earth to the sphere; From the ground
+Ref: 11.5P
+D: 3
+
+Q: Which farm device uses charged droplets so the spray clings to crops?
+A: Insecticide sprayer
+Accept: Pesticide sprayer; Crop sprayer; Electrostatic sprayer
+Ref: 11.6P
+D: 1
+
+Q: In an electrostatic sprayer, why do the charged droplets spread out into a fine cloud?
+A: Like charges repel
+Accept: They repel each other; Same charge repels
+Ref: 11.6P
+D: 2
+
+Q: In an electrostatic sprayer, why are the droplets attracted to the earthed plant?
+A: Plant gains opposite charge by induction
+Accept: Opposite charge is induced on the plant; Induced opposite charge
+Ref: 11.6P
+D: 3
+
+Q: What is the name of the flash caused by a sudden flow of charge through air?
+A: Spark
+Accept: A spark; Sparking
+Ref: 11.7P
+D: 1
+
+Q: Why is a spark dangerous when refuelling a car?
+A: It can ignite the fuel vapour
+Accept: It could cause a fire or explosion; Ignites petrol vapour; Fire
+Ref: 11.7P
+D: 2
+
+Q: What connects a refuelling tanker to the ground to stop dangerous charge building up?
+A: An earthing wire
+Accept: Earth wire; Earthing strap; Metal chain; Conducting cable; Earth cable
+Ref: 11.7P
+D: 2
+
+Q: Fuel flowing through a pipe becomes charged by friction. Why is earthing the pipe essential?
+A: Charge flows away, so no sparks
+Accept: Stops charge building up; Prevents sparks; Charge can leak to Earth
+Ref: 11.7P
+D: 3
+
+Q: What does a charge in an electric field experience?
+A: A force
+Accept: Force; An electric force
+Ref: 11.8P
+D: 1
+
+Q: What name is given to the region around a charged object where other charges feel a force?
+A: Electric field
+Accept: An electric field; Field
+Ref: 11.8P
+D: 1
+
+Q: What does the direction of an electric field line show?
+A: Direction of force on a positive charge
+Accept: Direction a positive charge would move; Force on a positive test charge
+Ref: 11.8P
+D: 2
+
+Q: Around a positive point charge, which way do the electric field lines point?
+A: Radially outwards
+Accept: Away from the charge; Outwards; Out
+Ref: 11.9P
+D: 2
+
+Q: Around a negative point charge, which way do the electric field lines point?
+A: Radially inwards
+Accept: Towards the charge; Inwards; In
+Ref: 11.9P
+D: 2
+
+Q: Between two oppositely charged parallel plates, what do the electric field lines look like?
+A: Parallel and evenly spaced
+Accept: Uniform field; Parallel straight lines; Straight, parallel and equally spaced
+Ref: 11.9P
+D: 2
+
+Q: Electric field lines drawn closer together show what about the field?
+A: Stronger field
+Accept: Stronger; The field is stronger; Greater field strength
+Ref: 11.9P
+D: 1
+
+Q: Which force acts between charged objects without them touching, explained using electric fields?
+A: Electrostatic force
+Accept: Electric force; Force between charges
+Ref: 11.10P
+D: 1
+
+Q: Using fields, why do two like charges repel?
+A: Each feels a force from the other's field
+Accept: Each is in the other's electric field; Their fields exert forces on each other
+Ref: 11.10P
+D: 3
+
+Q: Why is the force on a charge greater closer to a point charge, in terms of field lines?
+A: Field lines are more concentrated
+Accept: Lines are closer together; Stronger field
+Ref: 11.10P
+D: 3

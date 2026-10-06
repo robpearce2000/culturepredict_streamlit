@@ -1,0 +1,242 @@
+Board: AQA
+Spec: 8145
+Topic: 1BD
+
+Q: Along which line of latitude was Korea divided after the Second World War?
+A: 38th Parallel
+Accept: 38th parallel; the 38th; 38 degrees north
+Ref: 1BD.1.1
+D: 1
+
+Q: Who led communist North Korea from its creation in 1948?
+A: Kim Il Sung
+Accept: Kim Il-sung; Kim
+Ref: 1BD.1.1
+D: 1
+
+Q: Who was the first president of the US-backed Republic of Korea (South Korea)?
+A: Syngman Rhee
+Accept: Rhee; Syngman Lee
+Ref: 1BD.1.1
+D: 1
+
+Q: What was the US policy of stopping the spread of communism called?
+A: Containment
+Ref: 1BD.1.1
+D: 2
+
+Q: Why could the USSR not veto the UN Security Council vote to help South Korea in 1950?
+A: It was boycotting the Council
+Accept: Boycott; boycotting the Security Council; absent; walked out over China's seat; boycotting over China's seat
+Ref: 1BD.1.1
+D: 3
+Note: The USSR was protesting that communist China was denied the Chinese seat at the UN.
+
+Q: Which US general commanded the UN forces in Korea until he was sacked in 1951?
+A: Douglas MacArthur
+Accept: MacArthur; General MacArthur
+Ref: 1BD.1.2
+D: 1
+
+Q: At which port did UN forces land in September 1950, leading to the recapture of Seoul?
+A: Inchon
+Accept: Incheon
+Ref: 1BD.1.2
+D: 1
+
+Q: Which river on the Chinese border were UN forces approaching when China entered the war in 1950?
+A: Yalu River
+Accept: Yalu
+Ref: 1BD.1.2
+D: 2
+
+Q: Why did China send troops into the Korean War in October 1950?
+A: Fear of UN forces reaching its border
+Accept: To protect its border; fear of a US-led invasion; to stop UN forces reaching the Yalu; fear of the USA on its border
+Ref: 1BD.1.2
+D: 3
+
+Q: In which year was the Korean War armistice signed?
+A: 1953
+Accept: July 1953
+Ref: 1BD.1.3
+D: 1
+
+Q: What name is given to the buffer zone along the ceasefire line between North and South Korea?
+A: Demilitarised Zone
+Accept: DMZ; demilitarized zone
+Ref: 1BD.1.3
+D: 2
+
+Q: What was never signed after the 1953 armistice, so that the war was never formally ended?
+A: A peace treaty
+Accept: Peace treaty; peace agreement
+Ref: 1BD.1.3
+D: 2
+
+Q: How did the Korean War affect relations between the USA and China?
+A: Made them lasting enemies
+Accept: Deep hostility; lasting hostility; USA and China became enemies; relations were very bad for years
+Ref: 1BD.1.3
+D: 3
+
+Q: In which year did the French lose the battle of Dien Bien Phu?
+A: 1954
+Accept: May 1954
+Ref: 1BD.2.1
+D: 1
+
+Q: What did the 1954 Geneva Agreement do to Vietnam?
+A: Divided it at the 17th Parallel
+Accept: Split it into North and South; divided Vietnam; split at the 17th parallel
+Ref: 1BD.2.1
+D: 2
+
+Q: Who was the Catholic anti-communist leader of South Vietnam from 1955?
+A: Ngo Dinh Diem
+Accept: Diem; Ngô Đình Diệm
+Ref: 1BD.2.1
+D: 1
+
+Q: What name was given to the communist guerrillas fighting the government of South Vietnam?
+A: Vietcong
+Accept: Viet Cong; VC; National Liberation Front; NLF
+Ref: 1BD.2.1
+D: 1
+
+Q: Who led communist North Vietnam and supported the Vietcong?
+A: Ho Chi Minh
+Accept: Ho
+Ref: 1BD.2.1
+D: 1
+
+Q: Why were the nationwide elections promised at Geneva in 1956 never held?
+A: Diem refused to hold them
+Accept: South Vietnam refused; Diem and the USA feared Ho Chi Minh would win; fear of a communist victory
+Ref: 1BD.2.1
+D: 3
+
+Q: Which theory claimed that if one Asian country fell to communism, its neighbours would follow?
+A: Domino Theory
+Accept: Domino Effect; Domino theory
+Ref: 1BD.2.2
+D: 1
+
+Q: Which US president, elected in 1960, greatly increased the number of US military advisers in South Vietnam?
+A: John F. Kennedy
+Accept: Kennedy; JFK; John Kennedy
+Ref: 1BD.2.2
+D: 2
+
+Q: What was the programme called that moved peasants into fortified villages to cut off the Vietcong?
+A: Strategic Hamlets
+Accept: Strategic Hamlet programme; Strategic Hamlets programme
+Ref: 1BD.2.2
+D: 2
+
+Q: Why did the Strategic Hamlets programme help the Vietcong?
+A: Peasants resented being forced from their land
+Accept: Forced relocation angered peasants; peasants hated being moved from ancestral land; it made peasants hostile to the government
+Ref: 1BD.2.2
+D: 3
+
+Q: Which 1964 resolution gave President Johnson power to use force in Vietnam without declaring war?
+A: Gulf of Tonkin Resolution
+Accept: Tonkin Gulf Resolution; Gulf of Tonkin
+Ref: 1BD.2.3
+D: 2
+
+Q: What was the sustained US bombing campaign of North Vietnam, begun in 1965, called?
+A: Rolling Thunder
+Accept: Operation Rolling Thunder
+Ref: 1BD.2.3
+D: 1
+
+Q: In which 1968 massacre did US soldiers kill hundreds of unarmed Vietnamese villagers?
+A: My Lai
+Accept: My Lai massacre; Mai Lai
+Ref: 1BD.2.3
+D: 1
+
+Q: What was the US tactic of sweeping villages to find and kill Vietcong fighters called?
+A: Search and Destroy
+Accept: Search and destroy missions
+Ref: 1BD.2.3
+D: 2
+
+Q: Why was the 1968 Tet Offensive a turning point, even though the communists were defeated militarily?
+A: It turned US opinion against the war
+Accept: Damaged US public confidence; showed the war was not nearly won; American public lost trust in the government
+Ref: 1BD.2.3
+D: 3
+
+Q: What name was given to Nixon's policy of handing the fighting to South Vietnamese troops?
+A: Vietnamisation
+Accept: Vietnamization
+Ref: 1BD.3.1
+D: 1
+
+Q: Which chemical defoliant, sprayed by the US to destroy jungle cover, caused long-term illness and birth defects?
+A: Agent Orange
+Accept: Agent orange
+Ref: 1BD.3.1
+D: 1
+
+Q: Which neighbouring country did US and South Vietnamese troops invade in 1970 to attack communist bases?
+A: Cambodia
+Ref: 1BD.3.1
+D: 2
+
+Q: Why did Nixon's improved relations with China and the USSR help him over Vietnam?
+A: Reduced their support for North Vietnam
+Accept: It pressured North Vietnam to negotiate; they gave less help to Hanoi; less Chinese and Soviet aid
+Ref: 1BD.3.1
+D: 3
+
+Q: At which university did National Guardsmen shoot dead four student protesters in 1970?
+A: Kent State University
+Accept: Kent State
+Ref: 1BD.3.2
+D: 1
+
+Q: Which medium brought graphic footage of the Vietnam War into American homes?
+A: Television
+Accept: TV; the media
+Ref: 1BD.3.2
+D: 2
+
+Q: Which scandal forced Nixon to resign as president in 1974?
+A: Watergate
+Accept: The Watergate affair; Watergate scandal
+Ref: 1BD.3.2
+D: 2
+
+Q: Why did the Kent State shootings increase opposition to the war?
+A: US troops had killed unarmed students
+Accept: Soldiers shot student protesters; students were killed by their own government; unarmed protesters were killed
+Ref: 1BD.3.2
+D: 3
+
+Q: Which US national security adviser negotiated with North Vietnam at the Paris Peace talks?
+A: Henry Kissinger
+Accept: Kissinger
+Ref: 1BD.3.3
+D: 1
+
+Q: What happened to Saigon, the capital of South Vietnam, in April 1975?
+A: It fell to North Vietnamese forces
+Accept: Captured by the communists; fell to the North; captured by North Vietnam; fall of Saigon
+Ref: 1BD.3.3
+D: 2
+
+Q: About how many American soldiers died in the Vietnam War?
+A: About 58,000
+Accept: 58,000; 58,220; between 55,000 and 60,000
+Ref: 1BD.3.3
+D: 2
+
+Q: Why did the USA agree to the 1973 Paris Peace Accords?
+A: To withdraw from an unpopular war
+Accept: To get out of the war; public pressure at home; to bring American troops home; to end the war
+Ref: 1BD.3.3
+D: 3

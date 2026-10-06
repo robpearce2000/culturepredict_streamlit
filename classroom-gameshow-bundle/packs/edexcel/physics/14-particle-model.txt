@@ -1,0 +1,428 @@
+Board: Edexcel
+Spec: 1PH0
+Topic: 14
+
+Q: Which state of matter has particles in a regular pattern, vibrating about fixed positions?
+A: Solid
+Accept: Solids
+Ref: 14.1
+D: 1
+
+Q: Describe the spacing and movement of the particles in a gas.
+A: Far apart and moving randomly
+Accept: Widely spaced, random movement; far apart, fast and random
+Ref: 14.1
+D: 2
+
+Q: Why can a liquid flow and take the shape of its container?
+A: Particles can slide past each other
+Accept: Particles are free to move past one another; particles are not fixed in position
+Ref: 14.1
+D: 3
+
+Q: State the equation that links density, mass and volume.
+A: Density = mass ÷ volume
+Accept: ρ = m/V; density = mass/volume; m ÷ V
+Ref: 14.2
+D: 2
+
+Q: What is the SI unit of density?
+A: kg/m³
+Accept: kilograms per cubic metre; kg m⁻³; kg per m3
+Ref: 14.2
+D: 1
+
+Q: A block has a mass of 6 kg and a volume of 0.002 m³. What is its density?
+A: 3000 kg/m³
+Accept: 3000; 3 × 10³ kg/m³
+Ref: 14.2
+D: 2
+
+Q: A liquid has a density of 800 kg/m³. What volume does 400 kg of it occupy?
+A: 0.5 m³
+Accept: 0.5; half a cubic metre
+Ref: 14.2
+D: 3
+
+Q: In the density practical, name the instrument used to find the mass of a solid block.
+A: Balance
+Accept: Top-pan balance; Electronic balance; Scales
+Ref: 14.3
+D: 1
+RP: 14.3
+
+Q: Describe how to find the volume of an irregular solid in the density practical.
+A: Measure the water it displaces
+Accept: Displacement; eureka can; put it in water and measure the rise
+Ref: 14.3
+D: 2
+RP: 14.3
+
+Q: When finding the density of a liquid, why is the empty measuring cylinder's mass subtracted?
+A: To find the mass of the liquid only
+Accept: Mass of liquid is needed; to remove the container's mass; tare the balance
+Ref: 14.3
+D: 3
+RP: 14.3
+
+Q: Where should your eye be when reading the volume of a liquid in a measuring cylinder?
+A: Level with the meniscus
+Accept: At eye level with the liquid surface; level with the bottom of the meniscus
+Ref: 14.3
+D: 2
+RP: 14.3
+
+Q: Why is a gas far less dense than a solid of the same substance?
+A: Particles are much further apart
+Accept: Particles far apart; much more space between particles; fewer particles per volume
+Ref: 14.4
+D: 2
+
+Q: For most substances, which state of matter has the highest density?
+A: Solid
+Accept: Solids
+Ref: 14.4
+D: 1
+
+Q: A fixed mass of gas is compressed into a smaller volume. Why does its density increase?
+A: Same mass in a smaller volume
+Accept: Mass stays the same but volume decreases; particles are closer together
+Ref: 14.4
+D: 3
+
+Q: What happens to the mass of a substance when it melts?
+A: Stays the same
+Accept: It is conserved; no change; remains constant
+Ref: 14.5
+D: 1
+
+Q: Name the change of state in which a solid turns directly into a gas.
+A: Sublimation
+Accept: Sublimating; subliming; sublimate
+Ref: 14.5
+D: 1
+
+Q: Why is melting a physical change and not a chemical change?
+A: Original properties return when reversed
+Accept: It is reversible; the substance recovers its original properties; no new substance forms
+Ref: 14.5
+D: 3
+
+Q: 200 g of ice melts completely. What is the mass of the water formed?
+A: 200 g
+Accept: 0.2 kg; 200 grams
+Ref: 14.5
+D: 2
+
+Q: A solid is heated and its temperature rises. What happens to the average kinetic energy of its particles?
+A: Increases
+Accept: Gets bigger; goes up; rises
+Ref: 14.6
+D: 1
+
+Q: Water is boiling and still being heated. What happens to its temperature?
+A: Stays constant
+Accept: Stays at 100 °C; no change; remains the same
+Ref: 14.6
+D: 2
+
+Q: During a change of state, the energy supplied does what to the particles?
+A: Breaks bonds between them
+Accept: Overcomes forces between particles; increases their potential energy; separates the particles
+Ref: 14.6
+D: 3
+
+Q: What name is given to the energy needed to raise the temperature of 1 kg of a substance by 1 °C?
+A: Specific heat capacity
+Accept: SHC
+Ref: 14.7
+D: 1
+
+Q: What name is given to the energy needed to change the state of 1 kg of a substance without changing its temperature?
+A: Specific latent heat
+Accept: Latent heat
+Ref: 14.7
+D: 1
+
+Q: What is the unit of specific heat capacity?
+A: J/kg °C
+Accept: J/kg°C; joules per kilogram per degree Celsius; J/(kg °C); J/kg K; J kg⁻¹ °C⁻¹
+Ref: 14.7
+D: 1
+
+Q: Which one, specific heat capacity or specific latent heat, involves a change in temperature?
+A: Specific heat capacity
+Accept: SHC; heat capacity
+Ref: 14.7
+D: 2
+
+Q: Use ΔQ = m × c × Δθ. How much energy heats 2 kg of metal (c = 400 J/kg °C) by 10 °C?
+A: 8000 J
+Accept: 8 kJ; 8000
+Ref: 14.8
+D: 2
+
+Q: Use ΔQ = m × c × Δθ. How much energy heats 0.5 kg of water (c = 4200 J/kg °C) by 20 °C?
+A: 42 000 J
+Accept: 42 kJ; 42000
+Ref: 14.8
+D: 2
+
+Q: Use ΔQ = m × c × Δθ. 2000 J heats 0.5 kg of a material by 10 °C. What is its specific heat capacity?
+A: 400 J/kg °C
+Accept: 400; 400 J/kg°C
+Ref: 14.8
+D: 3
+
+Q: Use ΔQ = m × c × Δθ. A 1 kg block (c = 500 J/kg °C) gains 5000 J. What is its temperature rise?
+A: 10 °C
+Accept: 10; 10 degrees
+Ref: 14.8
+D: 3
+
+Q: Use Q = m × L. How much energy melts 2 kg of a solid with latent heat 300 000 J/kg?
+A: 600 000 J
+Accept: 600 kJ; 6 × 10⁵ J; 600000
+Ref: 14.9
+D: 2
+
+Q: Use Q = m × L. How much energy melts 0.5 kg of ice (L = 330 000 J/kg)?
+A: 165 000 J
+Accept: 165 kJ; 165000
+Ref: 14.9
+D: 2
+
+Q: Use Q = m × L. 100 000 J melts 0.5 kg of a solid. What is its specific latent heat?
+A: 200 000 J/kg
+Accept: 200 kJ/kg; 200000; 2 × 10⁵ J/kg
+Ref: 14.9
+D: 3
+
+Q: Use Q = m × L. 90 000 J boils a liquid with L = 900 000 J/kg. What mass boils?
+A: 0.1 kg
+Accept: 0.1; 100 g
+Ref: 14.9
+D: 3
+
+Q: Should a good thermal insulator have a high or low thermal conductivity?
+A: Low
+Accept: Low conductivity; a low one
+Ref: 14.10
+D: 1
+
+Q: Why do silvered surfaces inside a vacuum flask reduce energy loss?
+A: They reflect thermal radiation
+Accept: Reflect infrared; reflect heat radiation
+Ref: 14.10
+D: 2
+
+Q: Why does trapped air in loft insulation reduce energy transfer?
+A: Air is a poor conductor and cannot circulate
+Accept: Reduces conduction and convection; trapped air stops convection; air is an insulator
+Ref: 14.10
+D: 3
+
+Q: In the specific heat capacity practical, what is used to heat the water?
+A: Immersion heater
+Accept: Electric heater; electric immersion heater
+Ref: 14.11
+D: 1
+RP: 14.11
+
+Q: In the specific heat capacity practical, why is the beaker wrapped in insulation?
+A: To reduce energy lost to the surroundings
+Accept: Reduce heat loss; to stop energy escaping; to reduce energy transfer to the air
+Ref: 14.11
+D: 2
+RP: 14.11
+
+Q: Use ΔQ = m × c × Δθ. A heater supplies 8400 J to 0.2 kg of water, raising its temperature 10 °C. Find c.
+A: 4200 J/kg °C
+Accept: 4200; 4200 J/kg°C
+Ref: 14.11
+D: 3
+RP: 14.11
+
+Q: What does the temperature-time graph show while ice is melting?
+A: A flat section at 0 °C
+Accept: Constant temperature at 0 °C; a horizontal line; temperature stays at 0 °C
+Ref: 14.11
+D: 2
+RP: 14.11
+
+Q: In terms of particles, what causes the pressure of a gas?
+A: Particles colliding with the container walls
+Accept: Collisions with the walls; particles hitting the sides
+Ref: 14.12
+D: 2
+
+Q: Is the motion of gas particles ordered or random?
+A: Random
+Accept: Randomly; random motion
+Ref: 14.12
+D: 1
+
+Q: Why does a gas exert pressure on every wall of its container?
+A: Particles move randomly in all directions
+Accept: Particles hit every wall; random motion in every direction
+Ref: 14.12
+D: 3
+
+Q: A fixed mass of gas in a rigid container is heated. What happens to the average speed of its particles?
+A: Increases
+Accept: Goes up; they speed up; gets faster
+Ref: 14.13
+D: 1
+
+Q: A sealed rigid can of gas is cooled. What happens to the gas pressure?
+A: Decreases
+Accept: Falls; goes down; reduces
+Ref: 14.13
+D: 1
+
+Q: Explain why heating a gas at constant volume raises its pressure.
+A: Particles hit walls harder and more often
+Accept: Faster particles collide more often and with more force
+Ref: 14.13
+D: 3
+
+Q: What is the temperature of absolute zero in °C?
+A: −273 °C
+Accept: -273; minus 273; -273 °C
+Ref: 14.14
+D: 1
+
+Q: What is the name of the temperature, −273 °C, at which particles have no movement?
+A: Absolute zero
+Accept: Absolute 0
+Ref: 14.14
+D: 1
+
+Q: What happens to the movement of particles at absolute zero?
+A: They stop moving
+Accept: No movement; particles are stationary; movement stops
+Ref: 14.14
+D: 2
+
+Q: Convert 27 °C to kelvin.
+A: 300 K
+Accept: 300
+Ref: 14.15
+D: 2
+
+Q: Convert 400 K to degrees Celsius.
+A: 127 °C
+Accept: 127
+Ref: 14.15
+D: 2
+
+Q: What is absolute zero in kelvin?
+A: 0 K
+Accept: 0; zero kelvin; zero
+Ref: 14.15
+D: 1
+
+Q: A temperature rises by 10 °C. By how many kelvin does it rise?
+A: 10 K
+Accept: 10; 10 kelvin
+Ref: 14.15
+D: 3
+
+Q: Why can a gas be compressed easily?
+A: Particles are far apart
+Accept: Lots of space between particles; large gaps between particles
+Ref: 14.16P
+D: 2
+
+Q: At constant temperature, what happens to a gas's volume when the pressure on it increases?
+A: Decreases
+Accept: Gets smaller; it is compressed; reduces
+Ref: 14.16P
+D: 1
+
+Q: At constant temperature, what happens to a gas's volume when the pressure on it falls?
+A: Increases
+Accept: Expands; gets bigger; goes up
+Ref: 14.16P
+D: 1
+
+Q: What is the direction of the net force a gas exerts on a container wall?
+A: At right angles to the wall
+Accept: 90°; perpendicular; normal to the wall
+Ref: 14.17P
+D: 1
+
+Q: What word describes a force acting at right angles to a surface?
+A: Normal
+Accept: Perpendicular
+Ref: 14.17P
+D: 2
+
+Q: A container wall is tilted at 30° to the horizontal. At what angle to the wall does the gas force act?
+A: 90°
+Accept: 90 degrees; right angles; perpendicular
+Ref: 14.17P
+D: 2
+
+Q: A fixed mass of gas at constant temperature has its volume decreased. What happens to the collision rate with the walls?
+A: Increases
+Accept: More frequent; more collisions per second; goes up
+Ref: 14.18P
+D: 1
+
+Q: Explain why the pressure rises when the volume of a fixed mass of gas is reduced at constant temperature.
+A: Particles hit the walls more often
+Accept: More frequent collisions with the walls; more collisions per second
+Ref: 14.18P
+D: 3
+
+Q: At constant temperature, what happens to the pressure of a fixed mass of gas if its volume increases?
+A: Decreases
+Accept: Falls; goes down; reduces
+Ref: 14.18P
+D: 2
+
+Q: Use P₁V₁ = P₂V₂. A gas at 100 kPa is compressed from 6 cm³ to 3 cm³. What is its new pressure?
+A: 200 kPa
+Accept: 200 000 Pa; 200
+Ref: 14.19P
+D: 2
+
+Q: Use P₁V₁ = P₂V₂. A gas at 120 kPa expands from 2 m³ to 6 m³. What is its new pressure?
+A: 40 kPa
+Accept: 40 000 Pa; 40
+Ref: 14.19P
+D: 2
+
+Q: Use P₁V₁ = P₂V₂. A gas at 300 kPa and 2 m³ expands until its pressure is 100 kPa. What is its new volume?
+A: 6 m³
+Accept: 6
+Ref: 14.19P
+D: 3
+
+Q: Besides mass, what must stay fixed for P₁V₁ = P₂V₂ to apply?
+A: Temperature
+Accept: Constant temperature
+Ref: 14.19P
+D: 2
+
+Q: What does the handle of a bicycle pump do on the air as it compresses it?
+A: Work
+Accept: Does work; work done on the air
+Ref: 14.20P
+D: 1
+HT: yes
+
+Q: What happens to the temperature of a gas when it is compressed quickly?
+A: Increases
+Accept: Rises; gets hotter; goes up
+Ref: 14.20P
+D: 1
+HT: yes
+
+Q: In terms of particles, explain why compressing air in a bicycle pump warms it.
+A: Particles rebound faster from the moving piston
+Accept: Work done on the gas increases particles' kinetic energy; piston gives particles energy
+Ref: 14.20P
+D: 3
+HT: yes

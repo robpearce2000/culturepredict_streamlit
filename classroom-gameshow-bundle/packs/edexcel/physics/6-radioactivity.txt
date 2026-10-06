@@ -558,26 +558,19 @@ Q: Give the net decline in activity after 2 half-lives as a ratio of final to in
 A: 1 : 4
 Accept: 1:4; 1/4; a quarter
 Ref: 6.27
-D: 3
+D: 2
 HT: yes
 
 Q: Give the net decline in activity after 4 half-lives as a ratio of final to initial activity.
 A: 1 : 16
 Accept: 1:16; 1/16
 Ref: 6.27
-D: 3
+D: 2
 HT: yes
 
 Q: A source's activity has declined in the ratio 1 : 32 (final : initial). How many half-lives have passed?
 A: 5
 Accept: Five
-Ref: 6.27
-D: 3
-HT: yes
-
-Q: Give the net decline in activity after 3 half-lives as a ratio of final to initial activity.
-A: 1 : 8
-Accept: 1:8; 1/8; an eighth
 Ref: 6.27
 D: 3
 HT: yes
@@ -655,7 +648,7 @@ Accept: Remains dangerous for a long time; activity falls slowly
 Ref: 6.30P
 D: 3
 
-Q: Apart from shielding and time, what should staff increase between themselves and a source?
+Q: Apart from using shielding and limiting exposure time, what should staff increase between themselves and a source?
 A: Distance
 Ref: 6.31
 D: 1
@@ -765,12 +758,6 @@ Accept: Nuclear waste; disposing of radioactive waste
 Ref: 6.36P
 D: 1
 
-Q: Give one advantage of nuclear power other than its low carbon dioxide emissions.
-A: Lots of energy from little fuel
-Accept: Reliable supply; not weather dependent; large energy from small mass of fuel
-Ref: 6.36P
-D: 2
-
 Q: Why do many members of the public oppose new nuclear power stations?
 A: Fear of accidents
 Accept: Fear of radiation leaks; past disasters such as Chernobyl; safety concerns
@@ -878,12 +865,6 @@ Accept: Dynamo; alternator
 Ref: 6.41P
 D: 1
 
-Q: Why is a coolant pumped through the reactor core?
-A: To carry heat to make steam
-Accept: To transfer thermal energy to the heat exchanger; to stop the core overheating
-Ref: 6.41P
-D: 3
-
 Q: Are the daughter nuclei from fission usually stable or radioactive?
 A: Radioactive
 Ref: 6.42P
@@ -894,12 +875,6 @@ A: Fission products are highly radioactive
 Accept: Very radioactive; dangerous radiation from daughter nuclei
 Ref: 6.42P
 D: 3
-
-Q: Which property of fission products means spent fuel needs safe long-term storage?
-A: Radioactive
-Accept: Radioactivity; they are radioactive
-Ref: 6.42P
-D: 2
 
 Q: What is the energy source of stars?
 A: Fusion
@@ -953,11 +928,11 @@ Accept: More collisions between nuclei; nuclei pushed close together
 Ref: 6.45P
 D: 3
 
-Q: Fusion fuel is held at millions of degrees. What is used to keep it away from the reactor walls?
-A: Magnetic field
-Accept: Magnets; strong magnetic fields
+Q: Which two conditions inside a reactor must be extreme for fusion to happen?
+A: Temperature and pressure
+Accept: High temperature and high pressure; heat and pressure
 Ref: 6.46P
-D: 2
+D: 1
 
 Q: Why is it difficult to build a practical fusion power station?
 A: Extreme temperature and pressure are hard to reach

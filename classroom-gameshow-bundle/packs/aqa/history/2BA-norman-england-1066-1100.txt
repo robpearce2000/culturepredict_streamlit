@@ -1,0 +1,222 @@
+Board: AQA
+Spec: 8145
+Topic: 2BA
+
+Q: Which English king died in January 1066 without a son to succeed him?
+A: Edward the Confessor
+Accept: Edward; King Edward
+Ref: 2BA.1.1
+D: 1
+
+Q: Who was chosen as king by the Witan after Edward's death in 1066?
+A: Harold Godwinson
+Accept: Harold; Harold II; Harold Godwin
+Ref: 2BA.1.1
+D: 1
+
+Q: Which Norwegian king also claimed the English throne in 1066?
+A: Harald Hardrada
+Accept: Hardrada; Harald Hardrada; Harald III of Norway
+Ref: 2BA.1.1
+D: 1
+
+Q: Who was the young great-nephew of Edward the Confessor and the Anglo-Saxon claimant to the throne?
+A: Edgar Aetheling
+Accept: Edgar; Edgar Atheling; Edgar the Aetheling
+Ref: 2BA.1.1
+D: 2
+
+Q: Why did William claim Harold had no right to the English throne?
+A: Harold had sworn an oath to support William
+Accept: Harold broke his oath; Harold's oath to William; Harold swore on holy relics
+Ref: 2BA.1.1
+D: 3
+
+Q: At which battle in September 1066 did Harold defeat Harald Hardrada?
+A: Stamford Bridge
+Ref: 2BA.1.2
+D: 1
+
+Q: What name is given to the tight line of overlapping shields used by Anglo-Saxon soldiers at Hastings?
+A: Shield wall
+Accept: Shieldwall
+Ref: 2BA.1.2
+D: 1
+
+Q: Which Norman tactic, used to draw Saxons off Senlac Hill, involved knights pretending to flee?
+A: Feigned retreat
+Accept: Fake retreat; pretend retreat; feigned flight; pretended flight
+Ref: 2BA.1.2
+D: 2
+
+Q: What type of early Norman castle had a wooden tower on a mound inside an enclosed yard?
+A: Motte and bailey
+Accept: Motte-and-bailey
+Ref: 2BA.1.2
+D: 2
+
+Q: Why were the first Norman castles built mainly of wood?
+A: Quick and cheap to build
+Accept: Could be built quickly; speed; fast to build; cheap
+Ref: 2BA.1.2
+D: 3
+
+Q: What name is given to William's brutal campaign of 1069-70 to crush rebellion in northern England?
+A: Harrying of the North
+Accept: The Harrying of the North; Harrying
+Ref: 2BA.1.3
+D: 1
+
+Q: Which 1075 rebellion against William was led by Norman and Breton earls rather than English rebels?
+A: Revolt of the Earls
+Accept: Earls' revolt; Revolt of the Three Earls; Revolt of 1075
+Ref: 2BA.1.3
+D: 2
+
+Q: Which of William the Conqueror's sons became king of England in 1087?
+A: William II
+Accept: William Rufus; Rufus; William the Red
+Ref: 2BA.1.3
+D: 1
+
+Q: Which of William I's sons inherited Normandy in 1087 instead of England?
+A: Robert Curthose
+Accept: Robert; Robert of Normandy
+Ref: 2BA.1.3
+D: 2
+
+Q: Why did William harry the North in 1069-70?
+A: To crush rebellion in the North
+Accept: To stop revolts; to punish the north; to stop rebellions; to end the rebellions
+Ref: 2BA.1.3
+D: 3
+
+Q: In which year was the Domesday survey ordered?
+A: 1085
+Accept: 1086; 1085-86
+Ref: 2BA.2.1
+D: 1
+
+Q: Why was the Domesday survey carried out?
+A: To record land and wealth for taxation
+Accept: To assess taxes; to know who owned what; to raise more tax; to record land ownership
+Ref: 2BA.2.1
+D: 3
+
+Q: Under feudalism, tenants-in-chief received land from the king in return for what?
+A: Military service
+Accept: Knights; loyalty and military service; providing knights; fighting for the king
+Ref: 2BA.2.1
+D: 2
+
+Q: What was the murdrum fine?
+A: Fine if a Norman was found murdered
+Accept: A fine on the local area when a Frenchman was killed; fine for killing a Norman unless the killer was found; a fine for killing a Frenchman
+Ref: 2BA.2.1
+D: 2
+
+Q: What was the Anglo-Saxon king's council of advisers called?
+A: Witan
+Accept: Witenagemot; the Witan
+Ref: 2BA.2.1
+D: 1
+
+Q: Why did William give his barons scattered estates rather than one block of land?
+A: To stop them rebelling
+Accept: To prevent rebellion; so no baron became too powerful; to stop barons building a power base
+Ref: 2BA.2.1
+D: 3
+
+Q: What name was given to the strict laws protecting the king's hunting land and its animals?
+A: Forest Law
+Accept: Forest Laws; forest law
+Ref: 2BA.2.2
+D: 1
+
+Q: Which Hampshire forest did William I create as a royal hunting ground?
+A: New Forest
+Accept: The New Forest
+Ref: 2BA.2.2
+D: 1
+
+Q: What name was given to a lord's estate, including the land and the villagers who worked it?
+A: Manor
+Accept: The manor; manorial estate
+Ref: 2BA.2.2
+D: 2
+
+Q: What word describes peasants tied to a lord's manor who could not leave without permission?
+A: Villeins
+Accept: Villein; serfs
+Ref: 2BA.2.2
+D: 2
+
+Q: Why did Forest Law anger English peasants?
+A: It restricted hunting and use of land
+Accept: Harsh punishments; they lost use of land; could not hunt or gather wood; villages were cleared
+Ref: 2BA.2.2
+D: 3
+
+Q: Who replaced Stigand as Archbishop of Canterbury in 1070?
+A: Lanfranc
+Accept: Archbishop Lanfranc; Lanfranc of Pavia
+Ref: 2BA.3.1
+D: 1
+
+Q: Which Anglo-Saxon Archbishop of Canterbury was removed by the Normans in 1070?
+A: Stigand
+Ref: 2BA.3.1
+D: 2
+
+Q: Which Norman building style, with rounded arches and thick walls, was used for new cathedrals?
+A: Romanesque
+Accept: Norman style; Norman architecture
+Ref: 2BA.3.1
+D: 2
+
+Q: Which pope supported William's invasion of England in 1066?
+A: Alexander II
+Accept: Pope Alexander II
+Ref: 2BA.3.1
+D: 2
+
+Q: What was the dispute between popes and kings over who could appoint bishops called?
+A: Investiture Controversy
+Accept: Investiture Contest; the Investiture Controversy; Investiture dispute
+Ref: 2BA.3.1
+D: 1
+
+Q: Why did William II leave Canterbury without an archbishop after Lanfranc died in 1089?
+A: To keep its revenues for himself
+Accept: To take the Church's income; for the money; to take its wealth
+Ref: 2BA.3.1
+D: 3
+
+Q: In which language did monks write and hold services in Norman England?
+A: Latin
+Ref: 2BA.3.2
+D: 1
+
+Q: Which abbey did William found on the site of the Battle of Hastings?
+A: Battle Abbey
+Accept: Battle
+Ref: 2BA.3.2
+D: 1
+
+Q: Which monastic order, following the Rule of St Benedict, was the main one in Norman England?
+A: Benedictine
+Accept: Benedictines; Benedictine order
+Ref: 2BA.3.2
+D: 2
+
+Q: What was the room called in which monks copied manuscripts by hand?
+A: Scriptorium
+Accept: Scriptoria
+Ref: 2BA.3.2
+D: 2
+
+Q: Why did the Normans replace English abbots with Norman ones?
+A: To tighten Norman control of the Church
+Accept: To reform the Church; to increase Norman control; to control the monasteries
+Ref: 2BA.3.2
+D: 3

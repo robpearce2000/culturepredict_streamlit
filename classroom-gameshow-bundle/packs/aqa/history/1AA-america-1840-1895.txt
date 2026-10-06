@@ -1,0 +1,239 @@
+Board: AQA
+Spec: 8145
+Topic: 1AA
+
+Q: What name did many Americans give to the Great Plains, believing the land was unfit for farming?
+A: Great American Desert
+Accept: Great Desert
+Ref: 1AA.1.1
+D: 1
+
+Q: Which writer coined the phrase 'Manifest Destiny' in 1845?
+A: John O'Sullivan
+Accept: O'Sullivan; John L. O'Sullivan
+Ref: 1AA.1.1
+D: 1
+
+Q: What did supporters of Manifest Destiny believe the United States was destined to do?
+A: Expand across the continent to the Pacific
+Accept: Spread from coast to coast; take over the whole of North America; spread across America
+Ref: 1AA.1.1
+D: 2
+
+Q: Why did early settlers avoid the Great Plains before the 1860s?
+A: Thought it too dry to farm
+Accept: Believed it was infertile; thought it was a desert; thought crops would not grow; no timber or water
+Ref: 1AA.1.1
+D: 3
+
+Q: Which Mormon leader led his followers to the Great Salt Lake valley in 1847?
+A: Brigham Young
+Accept: Young
+Ref: 1AA.1.2
+D: 1
+
+Q: Which trail, starting in Missouri, was the main route west for pioneer farmers heading to Oregon?
+A: Oregon Trail
+Accept: The Oregon Trail
+Ref: 1AA.1.2
+D: 1
+
+Q: Why did the Mormons leave Illinois for the West in the 1840s?
+A: To escape religious persecution
+Accept: Persecution; to escape persecution; they were attacked for their beliefs; to find a place to practise their religion freely
+Ref: 1AA.1.2
+D: 2
+
+Q: Why did many mining boomtowns on the frontier become ghost towns?
+A: The gold or silver ran out
+Accept: Miners left when the minerals ran out; mines were exhausted; the ore ran out
+Ref: 1AA.1.2
+D: 3
+
+Q: Which animal gave Plains Indians food, clothing and covers for their homes?
+A: Buffalo
+Accept: Bison
+Ref: 1AA.1.3
+D: 1
+
+Q: What was the purpose of the 'Permanent Indian Frontier' set up in the 1830s?
+A: To separate Indian land from white settlement
+Accept: To keep white settlers out of Indian land; to give Indians land in the west; to keep Indians and settlers apart
+Ref: 1AA.1.3
+D: 2
+
+Q: Why was the tipi well suited to the Plains Indians' way of life?
+A: Easy to take down and move
+Accept: Portable; could be moved with the buffalo; they were nomadic; easy to carry
+Ref: 1AA.1.3
+D: 2
+
+Q: Why did the Permanent Indian Frontier break down by the 1850s?
+A: Settlers and miners moved onto the Plains
+Accept: Gold rush and Oregon Trail migration; white settlers crossed it; migration west; more settlers wanted land
+Ref: 1AA.1.3
+D: 3
+
+Q: Which 1851 treaty tried to keep Plains tribes within agreed areas?
+A: Fort Laramie Treaty
+Accept: Treaty of Fort Laramie; Fort Laramie
+Ref: 1AA.2.1
+D: 1
+
+Q: Which 1864 massacre saw Colonel Chivington's troops attack a peaceful Cheyenne and Arapaho camp?
+A: Sand Creek
+Accept: Sand Creek Massacre
+Ref: 1AA.2.1
+D: 1
+
+Q: What was the 'policy of concentration' towards Plains tribes after 1851?
+A: Confining each tribe to a defined area
+Accept: Keeping tribes in set areas; restricting tribes to limited areas; confining tribes to reservations
+Ref: 1AA.2.1
+D: 2
+
+Q: Which Sioux leader fought the Bozeman Trail forts, including the 1866 destruction of Fetterman's force?
+A: Red Cloud
+Accept: Chief Red Cloud
+Ref: 1AA.2.1
+D: 2
+
+Q: Why did the policy of concentration fail?
+A: Settlers and tribes ignored the boundaries
+Accept: Settlers crossed the boundaries; tribes kept hunting outside their areas; boundaries not respected; not all chiefs signed
+Ref: 1AA.2.1
+D: 3
+
+Q: Which abolitionist led the 1859 raid on the arsenal at Harpers Ferry?
+A: John Brown
+Accept: Brown
+Ref: 1AA.2.2
+D: 1
+
+Q: Who became president of the Confederate States in 1861?
+A: Jefferson Davis
+Accept: Davis
+Ref: 1AA.2.2
+D: 1
+
+Q: Which 1854 Act, letting settlers vote on slavery, helped to break down the Missouri Compromise?
+A: Kansas-Nebraska Act
+Accept: Kansas Nebraska Act
+Ref: 1AA.2.2
+D: 2
+
+Q: What name is given to General Sherman's destructive 1864 march through Georgia?
+A: March to the Sea
+Accept: Sherman's March to the Sea; Sherman's March
+Ref: 1AA.2.2
+D: 2
+
+Q: Why did Southern states begin to secede after Lincoln's election in 1860?
+A: Feared he would end or limit slavery
+Accept: Feared he would abolish slavery; he opposed the spread of slavery; fear for slavery
+Ref: 1AA.2.2
+D: 3
+
+Q: In which year did the Mountain Meadows Massacre of emigrants in Utah Territory take place?
+A: 1857
+Ref: 1AA.2.3
+D: 1
+
+Q: Which Mormon, convicted for his part in the Mountain Meadows Massacre, was executed in 1877?
+A: John D. Lee
+Accept: John Lee; Lee
+Ref: 1AA.2.3
+D: 2
+
+Q: Which Mormon practice, banned by Congress in 1862 and 1882, caused conflict with the government?
+A: Polygamy
+Accept: Plural marriage; having several wives
+Ref: 1AA.2.3
+D: 2
+
+Q: Why did the Mormon Church's 1890 ban on polygamy matter for Utah?
+A: Utah could become a state
+Accept: It led to Utah becoming a state in 1896; statehood followed; it eased conflict with the government
+Ref: 1AA.2.3
+D: 3
+
+Q: Which constitutional amendment of 1865 abolished slavery in the USA?
+A: 13th Amendment
+Accept: Thirteenth Amendment; 13th
+Ref: 1AA.3.1
+D: 1
+
+Q: What name was given to Northerners who moved South after the Civil War to profit from Reconstruction?
+A: Carpetbaggers
+Accept: Carpetbagger
+Ref: 1AA.3.1
+D: 1
+
+Q: Which 1866 law, passed over President Johnson's veto, made African-Americans citizens?
+A: Civil Rights Act
+Accept: Civil Rights Act of 1866
+Ref: 1AA.3.1
+D: 2
+
+Q: In which year did Reconstruction end as federal troops left the South?
+A: 1877
+Ref: 1AA.3.1
+D: 2
+
+Q: Why did Radical Republicans want strong federal control over the South after the war?
+A: To protect freed slaves' rights
+Accept: To protect African-Americans' rights; to stop former Confederates regaining power; to ensure civil rights
+Ref: 1AA.3.1
+D: 3
+
+Q: Which 1862 Act offered 160 acres of free land to settlers who farmed it?
+A: Homestead Act
+Accept: The Homestead Act
+Ref: 1AA.3.2
+D: 1
+
+Q: Which cheap fencing, patented in 1874, let Plains farmers protect their crops from cattle?
+A: Barbed wire
+Ref: 1AA.3.2
+D: 2
+
+Q: What did Plains homesteaders often build their homes from, because timber was scarce?
+A: Sods of turf
+Accept: Sod; turf; soddies; sod houses; earth
+Ref: 1AA.3.2
+D: 2
+
+Q: Why did the government give land grants to railroad companies?
+A: To encourage them to build lines west
+Accept: To get railroads built; to link east and west; to speed up settlement
+Ref: 1AA.3.2
+D: 3
+
+Q: Which battle of June 1876 saw Custer's 7th Cavalry destroyed by Sioux and Cheyenne warriors?
+A: Little Big Horn
+Accept: Little Bighorn; Battle of the Little Big Horn
+Ref: 1AA.3.3
+D: 1
+
+Q: In which year did the Wounded Knee massacre take place?
+A: 1890
+Ref: 1AA.3.3
+D: 1
+
+Q: What was the aim of the 1887 Dawes Act?
+A: Turn native Americans into small farmers
+Accept: Break up tribal land; give families individual plots of land; make Indians farm like whites; assimilate native Americans
+Ref: 1AA.3.3
+D: 2
+
+Q: Which religious movement, feared by the army, spread among the Sioux before Wounded Knee?
+A: Ghost Dance
+Accept: The Ghost Dance
+Ref: 1AA.3.3
+D: 2
+
+Q: Why did the destruction of the buffalo herds wreck the Plains Indians' way of life?
+A: It removed their food and materials
+Accept: Buffalo gave food, shelter and clothing; they depended on the buffalo; they lost their main resource
+Ref: 1AA.3.3
+D: 3

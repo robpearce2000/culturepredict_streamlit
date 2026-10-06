@@ -32,11 +32,11 @@ Accept: Total energy supplied; energy input arrow; input
 Ref: 8.2
 D: 2
 
-Q: A Sankey diagram for a motor shows 200 J supplied and 150 J useful kinetic energy. How much energy is wasted?
-A: 50 J
-Accept: 50 joules
+Q: A Sankey diagram has an input arrow 8 mm wide and a wasted arrow 2 mm wide. What fraction of the input energy is useful?
+A: Three quarters
+Accept: 3/4; 0.75; 75%
 Ref: 8.2
-D: 2
+D: 3
 
 Q: On a Sankey diagram, an arrow 10 mm wide represents 400 J. How much energy does an arrow 3 mm wide represent?
 A: 120 J
@@ -45,17 +45,17 @@ Ref: 8.2
 D: 3
 Note: Scale is 40 J per mm.
 
-Q: What is the net change in the total energy of a closed system when energy is transferred within it?
-A: Zero
-Accept: No change; none; 0 J
+Q: In a closed system, how does the total energy after a transfer compare with the total energy before it?
+A: Equal
+Accept: The same; unchanged; no change; equal to it
 Ref: 8.3
 D: 1
 
-Q: What name is given to a system that no energy can enter or leave?
-A: Closed system
-Accept: Isolated system
+Q: A closed system's battery loses 90 J from its chemical store. A lamp gives out 30 J as light. How much goes to the thermal store?
+A: 60 J
+Accept: 60 joules
 Ref: 8.3
-D: 1
+D: 2
 
 Q: In a closed system, a swinging pendulum loses 60 J of kinetic energy and its thermal store gains 15 J. How much does its gravitational store gain?
 A: 45 J
@@ -162,9 +162,9 @@ Ref: 8.7
 D: 3
 Note: Work done by the brakes equals the kinetic energy lost, so F = E ÷ d.
 
-Q: State the equation for the change in gravitational potential energy.
-A: ΔGPE = m × g × Δh
-Accept: GPE = mgh; change in GPE = mass × g × change in height
+Q: A diver of mass 60 kg stands on a 5 m board. Taking g = 10 N/kg, how much gravitational potential energy does she have above the water?
+A: 3000 J
+Accept: 3000 joules; 3 kJ
 Ref: 8.8
 D: 2
 
@@ -194,33 +194,27 @@ Ref: 8.9
 D: 2
 Note: Common error: forgetting to square the speed (giving 10 J).
 
-Q: If the speed of an object is tripled, by what factor does its kinetic energy increase?
-A: Nine
-Accept: 9; ×9; nine times
-Ref: 8.9
-D: 3
-
 Q: Kinetic energy depends on mass and which other quantity?
 A: Speed
 Accept: Velocity
 Ref: 8.9
 D: 1
 
-Q: What word describes energy spreading out into the surroundings so that it is stored in less useful ways?
-A: Dissipated
-Accept: Dissipation; wasted
+Q: A mug of tea cools on a desk. Where does its lost thermal energy go?
+A: The surroundings
+Accept: Into the air; to the surroundings; thermal store of the air
 Ref: 8.10
-D: 1
+D: 2
 
-Q: Into which energy store is wasted energy usually dissipated?
-A: Thermal store of the surroundings
-Accept: Thermal store; thermal; thermal energy of surroundings
+Q: Name one way a running electric motor dissipates energy.
+A: Heating the surroundings
+Accept: Heating; heat; sound; noise; thermal energy to the air
 Ref: 8.10
-D: 1
+D: 2
 
-Q: Why is energy that has been dissipated into the surroundings less useful?
-A: Spread out too thinly to use
-Accept: Spread out over a large area; too spread out; surroundings only slightly warmed
+Q: Heat from a lamp warms a whole room slightly. Why can this energy not easily be used again?
+A: Spread out too thinly
+Accept: Spread out over a large area; too spread out; tiny temperature rise
 Ref: 8.10
 D: 3
 
@@ -236,11 +230,11 @@ Accept: Lubrication to reduce friction; reduce friction and heating; reduce fric
 Ref: 8.11
 D: 2
 
-Q: Why does an electric drill that gets hot during use show the process is wasteful?
-A: Energy is dissipated heating the surroundings
-Accept: Energy wasted heating the surroundings; energy transferred to thermal store of surroundings
+Q: Why do your hands warm up when you rub them together quickly?
+A: Work done against friction heats them
+Accept: Friction transfers energy to the thermal store; energy transferred by heating through friction
 Ref: 8.11
-D: 3
+D: 2
 
 Q: Define power.
 A: Rate at which energy is transferred
@@ -304,11 +298,11 @@ Ref: 8.14
 D: 2
 Note: 1 kW = 1000 W = 1000 J/s.
 
-Q: Efficiency equals the useful energy transferred by a device divided by which quantity?
-A: Total energy supplied
-Accept: Total energy input; energy supplied to the device; total energy in
+Q: A device transfers 30 J usefully and wastes 70 J. What is its efficiency as a percentage?
+A: 30%
+Accept: 0.3; 30 percent
 Ref: 8.15
-D: 1
+D: 2
 
 Q: A device is supplied with 200 J and transfers 50 J usefully. What is its efficiency?
 A: 0.25
@@ -322,8 +316,15 @@ Accept: 200 joules
 Ref: 8.15
 D: 3
 
-Q: A lamp is 80% efficient and is supplied with 100 J. How much energy is wasted?
-A: 20 J
-Accept: 20 joules
-Ref: 8.15
-D: 3
+
+Q: What quantity is the rate at which energy is transferred?
+A: Power
+Accept: Power of a device
+Ref: 8.12
+D: 1
+
+Q: What is the unit of power?
+A: Watt
+Accept: W; watts
+Ref: 8.14
+D: 1

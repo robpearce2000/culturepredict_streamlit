@@ -1,0 +1,288 @@
+Board: AQA
+Spec: 8145
+Topic: 2AA
+
+Q: Which ancient Greek physician is linked with the theory of the four humours?
+A: Hippocrates
+Ref: 2AA.1.1
+D: 1
+
+Q: Which Roman doctor's ideas, building on Hippocrates, dominated medieval medical thinking?
+A: Galen
+Ref: 2AA.1.1
+D: 1
+
+Q: In the theory of the four humours, what was believed to cause illness?
+A: An imbalance of the humours
+Accept: Humours out of balance; too much of one humour
+Ref: 2AA.1.1
+D: 2
+
+Q: Which treatment, used to balance the humours, involved cutting a vein to remove blood?
+A: Bloodletting
+Accept: Bleeding; venesection
+Ref: 2AA.1.1
+D: 2
+
+Q: What supernatural explanation did many medieval people give for illness?
+A: Punishment from God for sin
+Accept: God's will; sin; God's punishment
+Ref: 2AA.1.1
+D: 2
+
+Q: Which institution, through its monks and nuns, ran many medieval hospitals in Britain?
+A: The Church
+Accept: Christian Church; monasteries; Catholic Church
+Ref: 2AA.1.2
+D: 1
+
+Q: Which Islamic doctor wrote the Canon of Medicine, later used in European universities?
+A: Ibn Sina
+Accept: Avicenna
+Ref: 2AA.1.2
+D: 2
+
+Q: Why did medieval surgeons in Britain generally avoid deep operations inside the body?
+A: Patients would die from pain, blood loss or infection
+Accept: Danger of infection; no anaesthetics; blood loss
+Ref: 2AA.1.2
+D: 3
+
+Q: In which year did the Black Death reach England?
+A: 1348
+Ref: 2AA.1.3
+D: 1
+
+Q: Which religious group whipped themselves in processions to win God's forgiveness during the Black Death?
+A: Flagellants
+Ref: 2AA.1.3
+D: 2
+
+Q: Which animals' fleas are now thought to have spread the Black Death?
+A: Rats
+Accept: Black rats; rat fleas
+Ref: 2AA.1.3
+D: 2
+
+Q: Why were monasteries often healthier places than medieval towns?
+A: Better water supply and drainage
+Accept: Clean water; drains; waste disposal; better hygiene
+Ref: 2AA.1.3
+D: 3
+
+Q: Which anatomist published On the Fabric of the Human Body in 1543?
+A: Vesalius
+Accept: Andreas Vesalius
+Ref: 2AA.2.1
+D: 1
+
+Q: Which French army surgeon replaced cauterising wounds with tying blood vessels using ligatures?
+A: Ambroise Paré
+Accept: Paré; Pare; Ambroise Pare
+Ref: 2AA.2.1
+D: 1
+
+Q: Which English doctor published his proof of how blood circulates in 1628?
+A: William Harvey
+Accept: Harvey
+Ref: 2AA.2.1
+D: 1
+
+Q: On what did Vesalius base his anatomy, unlike Galen who used animals?
+A: Human dissection
+Accept: Human bodies; dissecting humans
+Ref: 2AA.2.1
+D: 2
+
+Q: Why did Harvey's discovery of blood circulation not quickly change treatment of patients?
+A: It led to no new cures
+Accept: No new treatments; bloodletting continued
+Ref: 2AA.2.1
+D: 3
+
+Q: What word describes people who falsely claimed medical skill and sold useless cures?
+A: Quacks
+Accept: Quack; quackery
+Ref: 2AA.2.2
+D: 1
+
+Q: What was painted on the doors of houses where people had plague in 1665?
+A: A red cross
+Accept: Red cross
+Ref: 2AA.2.2
+D: 2
+
+Q: John Hunter taught that surgeons should rely on what instead of tradition?
+A: Observation and experiment
+Accept: Experiments; scientific method; observation
+Ref: 2AA.2.2
+D: 3
+
+Q: Which disease did Edward Jenner vaccinate against?
+A: Smallpox
+Ref: 2AA.2.3
+D: 1
+
+Q: Which Act of 1853 made smallpox vaccination compulsory for babies?
+A: Vaccination Act
+Accept: The Vaccination Act 1853
+Ref: 2AA.2.3
+D: 2
+
+Q: Jenner could not explain why vaccination worked. Which later theory eventually explained it?
+A: Germ theory
+Accept: Pasteur's germ theory
+Ref: 2AA.2.3
+D: 3
+
+Q: Which French scientist published his germ theory in 1861?
+A: Louis Pasteur
+Accept: Pasteur
+Ref: 2AA.3.1
+D: 1
+
+Q: Which German scientist identified the anthrax bacterium in 1876?
+A: Robert Koch
+Accept: Koch
+Ref: 2AA.3.1
+D: 1
+
+Q: What name did Paul Ehrlich give to chemicals that kill microbes without harming the patient?
+A: Magic bullets
+Accept: Magic bullet
+Ref: 2AA.3.1
+D: 1
+
+Q: Which disease did Ehrlich's drug Salvarsan 606 treat?
+A: Syphilis
+Ref: 2AA.3.1
+D: 2
+
+Q: What wrong idea did Pasteur's experiments disprove, that germs appear from non-living matter?
+A: Spontaneous generation
+Accept: Spontaneous generation of life
+Ref: 2AA.3.1
+D: 3
+
+Q: Which Scottish doctor first used chloroform as an anaesthetic in 1847?
+A: James Simpson
+Accept: Simpson; James Young Simpson
+Ref: 2AA.3.2
+D: 1
+
+Q: Which surgeon introduced carbolic acid spray to kill germs during operations?
+A: Joseph Lister
+Accept: Lister
+Ref: 2AA.3.2
+D: 1
+
+Q: Why did deaths from post-operative infection rise after anaesthetics arrived?
+A: Longer, deeper operations were attempted
+Accept: More operations; deeper cuts; more complex surgery
+Ref: 2AA.3.2
+D: 3
+
+Q: Which waterborne disease arrived in Britain in 1831 and killed thousands?
+A: Cholera
+Ref: 2AA.3.3
+D: 1
+
+Q: Which doctor traced the 1854 Soho cholera outbreak to the Broad Street pump?
+A: John Snow
+Accept: Snow
+Ref: 2AA.3.3
+D: 1
+
+Q: Which reformer wrote the 1842 report on the sanitary condition of the labouring population?
+A: Edwin Chadwick
+Accept: Chadwick
+Ref: 2AA.3.3
+D: 2
+
+Q: Was the 1875 Public Health Act permissive or compulsory?
+A: Compulsory
+Ref: 2AA.3.3
+D: 2
+
+Q: Which belief, that government should not interfere in people's lives, opposed the 1848 Public Health Act?
+A: Laissez-faire
+Accept: Laissez faire
+Ref: 2AA.3.3
+D: 3
+
+Q: Which Scottish scientist discovered penicillin in 1928?
+A: Alexander Fleming
+Accept: Fleming
+Ref: 2AA.4.1
+D: 1
+
+Q: Which war led to the mass production of penicillin?
+A: Second World War
+Accept: WW2; World War Two; World War II
+Ref: 2AA.4.1
+D: 2
+
+Q: Which early antibacterial drugs, starting with Prontosil, were discovered in the 1930s?
+A: Sulphonamides
+Accept: Sulfonamides; sulpha drugs
+Ref: 2AA.4.1
+D: 2
+
+Q: What name is given to bacteria evolving so that antibiotics no longer kill them?
+A: Antibiotic resistance
+Accept: Resistance; antibiotic-resistant bacteria
+Ref: 2AA.4.1
+D: 2
+
+Q: Why are doctors urged not to prescribe antibiotics too often?
+A: Overuse increases antibiotic resistance
+Accept: Resistance; bacteria become resistant
+Ref: 2AA.4.1
+D: 3
+
+Q: Which German scientist discovered X-rays in 1895?
+A: Wilhelm Röntgen
+Accept: Röntgen; Roentgen; Rontgen
+Ref: 2AA.4.2
+D: 1
+
+Q: Which scientist discovered blood groups in 1901, making safer transfusions possible?
+A: Karl Landsteiner
+Accept: Landsteiner
+Ref: 2AA.4.2
+D: 2
+
+Q: What problem does a transplant patient's immune system cause, which doctors must try to prevent?
+A: Rejection
+Accept: Organ rejection; rejects the organ
+Ref: 2AA.4.2
+D: 3
+
+Q: Which social investigator published a poverty survey of York in 1901?
+A: Seebohm Rowntree
+Accept: Rowntree
+Ref: 2AA.4.3
+D: 1
+
+Q: Which social investigator mapped poverty in London in his survey begun in 1886?
+A: Charles Booth
+Accept: Booth
+Ref: 2AA.4.3
+D: 1
+
+Q: In which year was the National Health Service launched?
+A: 1948
+Ref: 2AA.4.3
+D: 1
+
+Q: What did the Boer War reveal about many British army recruits?
+A: They were unfit for service
+Accept: Poor health; unfit; malnourished
+Ref: 2AA.4.3
+D: 3
+
+Q: Which demographic change is a main reason for rising NHS costs in the 21st century?
+A: An ageing population
+Accept: Ageing population; people living longer
+Ref: 2AA.4.3
+D: 3

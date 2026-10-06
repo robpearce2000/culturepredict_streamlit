@@ -1,0 +1,324 @@
+Board: AQA
+Spec: 8145
+Topic: 1BB
+
+Q: Which American president put forward the Fourteen Points?
+A: Woodrow Wilson
+Accept: Wilson
+Ref: 1BB.1.1
+D: 1
+
+Q: Which French leader at the Paris Peace Conference wanted Germany permanently weakened?
+A: Clemenceau
+Accept: Georges Clemenceau
+Ref: 1BB.1.1
+D: 1
+
+Q: Which principle in the Fourteen Points said peoples should rule themselves?
+A: National self-determination
+Accept: Self-determination
+Ref: 1BB.1.1
+D: 2
+
+Q: Which organisation did Wilson's Fourteenth Point propose to keep peace?
+A: League of Nations
+Accept: The League
+Ref: 1BB.1.1
+D: 2
+
+Q: Why did Clemenceau want Germany weakened?
+A: France's security against future invasion
+Accept: To prevent another invasion of France; revenge for invasions; France had been invaded twice
+Ref: 1BB.1.1
+D: 3
+
+Q: Why did Lloyd George want a less harsh treaty than Clemenceau?
+A: To rebuild Germany as a trading partner
+Accept: Britain needed German trade; avoid German revenge; keep Germany as a trade partner
+Ref: 1BB.1.1
+D: 3
+
+Q: In which year was the Treaty of Versailles signed?
+A: 1919
+Ref: 1BB.1.2
+D: 1
+
+Q: What word, meaning "dictated peace", did Germans use for the Treaty of Versailles?
+A: Diktat
+Ref: 1BB.1.2
+D: 1
+
+Q: Which treaty clause made Germany accept blame for causing the war?
+A: War Guilt Clause
+Accept: Article 231; Clause 231; the war guilt clause
+Ref: 1BB.1.2
+D: 2
+
+Q: What was the maximum size of the German army allowed by the treaty?
+A: 100,000 men
+Accept: 100000; 100,000 soldiers
+Ref: 1BB.1.2
+D: 2
+
+Q: Which German border area was demilitarised by the Treaty of Versailles?
+A: The Rhineland
+Accept: Rhineland
+Ref: 1BB.1.2
+D: 1
+
+Q: Which Great Power's Senate refused to ratify the Treaty of Versailles?
+A: The USA
+Accept: United States; America; USA
+Ref: 1BB.1.3
+D: 1
+
+Q: Which new state, created in 1918, contained a large German-speaking minority in the Sudetenland?
+A: Czechoslovakia
+Ref: 1BB.1.3
+D: 2
+
+Q: Which Allied country felt cheated at not receiving all the land it was promised in 1915?
+A: Italy
+Ref: 1BB.1.3
+D: 2
+
+Q: Why did many Germans object to the territorial changes of Versailles?
+A: Millions of Germans placed under foreign rule
+Accept: Germans ruled by Poland and Czechoslovakia; it broke self-determination; German-speakers lost to other countries
+Ref: 1BB.1.3
+D: 3
+
+Q: In which Swiss city was the League of Nations based?
+A: Geneva
+Ref: 1BB.2.1
+D: 1
+
+Q: Which country was awarded the Aaland Islands in 1921?
+A: Finland
+Accept: Finland (with Swedish language protection)
+Ref: 1BB.2.1
+D: 2
+
+Q: How did the League settle the Upper Silesia dispute in 1921?
+A: Divided it between Germany and Poland
+Accept: Split it; partition; shared between Germany and Poland; split between Germany and Poland
+Ref: 1BB.2.1
+D: 3
+
+Q: Why was the League weakened by the Corfu incident of 1923?
+A: Greece, the victim, was made to pay Italy
+Accept: A Great Power bullied a small state; Mussolini got his way; Greece paid compensation; Italy was not punished
+Ref: 1BB.2.1
+D: 3
+
+Q: Which treaties of 1925 guaranteed Germany's western borders with France and Belgium?
+A: Locarno Treaties
+Accept: Locarno; Treaty of Locarno; Locarno Pact
+Ref: 1BB.2.2
+D: 1
+
+Q: In which year did Germany join the League of Nations, after Locarno?
+A: 1926
+Ref: 1BB.2.2
+D: 2
+
+Q: What did countries promise in the Kellogg-Briand Pact of 1928?
+A: Renounce war as national policy
+Accept: Not to use war to settle disputes; to give up war; outlaw war
+Ref: 1BB.2.2
+D: 2
+
+Q: Why was the Kellogg-Briand Pact weak?
+A: No means of enforcement
+Accept: No penalties; no way to punish those who broke it; no enforcement
+Ref: 1BB.2.2
+D: 3
+
+Q: Which Locarno borders did Britain refuse to guarantee, leaving Germany free to challenge them?
+A: Eastern borders
+Accept: Germany's eastern borders; borders with Poland and Czechoslovakia; Poland's border
+Ref: 1BB.2.2
+D: 3
+
+Q: Which country invaded Manchuria in 1931?
+A: Japan
+Ref: 1BB.2.3
+D: 1
+
+Q: How did Japan respond when the League condemned its invasion of Manchuria?
+A: Left the League
+Accept: Withdrew from the League; resigned from the League; quit the League
+Ref: 1BB.2.3
+D: 2
+
+Q: Which Italian leader ordered the invasion of Abyssinia in 1935?
+A: Mussolini
+Accept: Benito Mussolini
+Ref: 1BB.2.3
+D: 1
+
+Q: Which Abyssinian emperor appealed to the League for help in 1936?
+A: Haile Selassie
+Accept: Selassie
+Ref: 1BB.2.3
+D: 2
+
+Q: Which essential resource was left off the League's sanctions against Italy?
+A: Oil
+Ref: 1BB.2.3
+D: 2
+
+Q: Which 1935 British and French plan offered Italy most of Abyssinia?
+A: Hoare-Laval Pact
+Accept: Hoare Laval Pact; Hoare-Laval Plan
+Ref: 1BB.2.3
+D: 3
+
+Q: Which event of 1929 on Wall Street began the worldwide Great Depression?
+A: Wall Street Crash
+Accept: Wall Street crash; the Crash; stock market crash
+Ref: 1BB.2.3
+D: 1
+
+Q: Why did the Depression weaken the League of Nations?
+A: Countries put their own economies first
+Accept: Members turned to protectionism; economic sanctions seemed too costly; aggressive dictators rose
+Ref: 1BB.2.3
+D: 3
+
+Q: Which country was expelled from the League in December 1939 for invading Finland?
+A: USSR
+Accept: Soviet Union; Russia
+Ref: 1BB.2.3
+D: 2
+
+Q: What German term for "living space" described Hitler's aim of expansion in the east?
+A: Lebensraum
+Ref: 1BB.3.1
+D: 1
+
+Q: Which coal-rich region, run by the League, voted in 1935 to return to Germany?
+A: Saar
+Accept: The Saar
+Ref: 1BB.3.1
+D: 1
+
+Q: What did Hitler reintroduce in March 1935 in breach of the Treaty of Versailles?
+A: Conscription
+Accept: Compulsory military service; the draft
+Ref: 1BB.3.1
+D: 2
+
+Q: What proportion of Britain's navy did the 1935 Anglo-German Naval Agreement allow Germany?
+A: 35%
+Accept: 35 per cent; about a third; 35 percent
+Ref: 1BB.3.1
+D: 2
+
+Q: Why did the Anglo-German Naval Agreement weaken the Stresa Front?
+A: Britain acted without consulting France and Italy
+Accept: Britain made a separate deal; Britain broke Versailles by agreeing; it ignored its allies
+Ref: 1BB.3.1
+D: 3
+
+Q: Which area of Germany did Hitler's troops enter in March 1936?
+A: The Rhineland
+Accept: Rhineland
+Ref: 1BB.3.2
+D: 1
+
+Q: Why did Britain not stop the 1936 remilitarisation of the Rhineland?
+A: Many thought Germany was entering its own backyard
+Accept: Seen as Germany's own territory; many felt Versailles was too harsh; Britain not ready for war
+Ref: 1BB.3.2
+D: 3
+
+Q: Which two countries signed the Anti-Comintern Pact in 1936?
+A: Germany and Japan
+Accept: Japan and Germany
+Ref: 1BB.3.2
+D: 2
+
+Q: What German word describes the 1938 union of Austria with Germany?
+A: Anschluss
+Ref: 1BB.3.2
+D: 1
+
+Q: Which British Prime Minister followed the policy of appeasement?
+A: Neville Chamberlain
+Accept: Chamberlain
+Ref: 1BB.3.2
+D: 1
+
+Q: What does appeasement mean?
+A: Giving in to demands to avoid war
+Accept: Making concessions to avoid war; concessions to a dictator
+Ref: 1BB.3.2
+D: 2
+
+Q: Which region of Czechoslovakia, home to many German speakers, did Hitler demand in 1938?
+A: Sudetenland
+Accept: The Sudetenland
+Ref: 1BB.3.2
+D: 1
+
+Q: Why was Czechoslovakia unhappy about the Munich Agreement?
+A: It lost the Sudetenland without being consulted
+Accept: Not invited to Munich; lost its border defences; Czechs were not consulted
+Ref: 1BB.3.2
+D: 3
+
+Q: In March 1939 Hitler occupied the rest of which country?
+A: Czechoslovakia
+Ref: 1BB.3.3
+D: 1
+
+Q: What did the secret part of the Nazi-Soviet Pact plan for Poland?
+A: Dividing it between Germany and the USSR
+Accept: Partition of Poland; split Poland; Poland divided
+Ref: 1BB.3.3
+D: 2
+
+Q: On what date did Germany invade Poland?
+A: 1 September 1939
+Accept: 1st September 1939; 1 Sept 1939
+Ref: 1BB.3.3
+D: 2
+
+Q: What did Britain and France give Poland in March 1939 that later led them to declare war?
+A: A guarantee of its independence
+Accept: A guarantee; a promise of military support; guarantee to defend Poland
+Ref: 1BB.3.3
+D: 2
+
+Q: Why did Stalin sign the Nazi-Soviet Pact?
+A: To buy time and gain Polish land
+Accept: Buy time to prepare; avoid fighting Germany; to avoid war; gain land in Poland
+Ref: 1BB.3.3
+D: 3
+Note: Accept any one sensible reason: avoiding war, delay, gaining land, or distrust of Britain and France.
+
+Q: Why did the occupation of Prague in March 1939 end appeasement?
+A: Hitler had broken the Munich promises
+Accept: Hitler took non-German land; Hitler had lied; Hitler broke the Munich Agreement
+Ref: 1BB.3.3
+D: 3
+
+
+Q: Why did the League's lack of its own army limit its power?
+A: Relied on members to supply troops
+Accept: Members had to provide forces; it could not enforce decisions; no army to back up decisions
+Ref: 1BB.2.1
+D: 3
+
+Q: Why did the Abyssinian crisis destroy the League's reputation?
+A: Sanctions failed and Britain and France sought a deal
+Accept: Italy kept its conquest; sanctions were weak; Hoare-Laval; Britain and France put their own interests first
+Ref: 1BB.2.3
+D: 3
+
+Q: Why did the Abyssinian crisis push Mussolini towards Hitler?
+A: League sanctions had isolated Italy
+Accept: Britain and France condemned him; Hitler supported the invasion; sanctions angered him
+Ref: 1BB.3.2
+D: 3
