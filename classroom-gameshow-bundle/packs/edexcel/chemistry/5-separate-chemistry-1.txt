@@ -13,6 +13,7 @@ A: High melting point and high density
 Accept: High density and high melting point
 Ref: 5.1C
 D: 2
+Note: Hard or strong are also fair physical properties; the spec lists melting point and density.
 
 Q: Iron is used to speed up the Haber process. What property of transition metals does this show?
 A: Catalytic activity
@@ -32,11 +33,11 @@ Accept: Reaction with oxygen; oxidising
 Ref: 5.2C
 D: 1
 
-Q: Which two substances must both be present for iron to rust?
-A: Oxygen and water
-Accept: Air and water; water and oxygen
+Q: What name is given to the corrosion of iron and steel?
+A: Rusting
+Accept: Rust
 Ref: 5.2C
-D: 2
+D: 1
 
 Q: Why is corrosion described as oxidation?
 A: The metal gains oxygen (loses electrons)
@@ -58,7 +59,7 @@ D: 1
 
 Q: Blocks of magnesium are bolted to a steel ship's hull. Name this method of rust prevention.
 A: Sacrificial protection
-Accept: Sacrificial corrosion; sacrificial method
+Accept: Sacrificial corrosion; sacrificial method; sacrificial anode
 Ref: 5.3C
 D: 1
 
@@ -90,7 +91,7 @@ Q: What is an alloy?
 A: A mixture of a metal with other elements
 Accept: Mixture of metals; metal mixed with another element
 Ref: 5.5C
-D: 1
+D: 2
 
 Q: Why can the layers of atoms in a pure metal slide easily?
 A: Atoms are all the same size, in layers
@@ -115,7 +116,7 @@ Q: Which metal is added to iron to make stainless steel resist corrosion?
 A: Chromium
 Accept: Chromium and nickel; Cr
 Ref: 5.6C
-D: 2
+D: 1
 
 Q: Why is iron alloyed with other metals to make alloy steels?
 A: To make it harder, stronger and corrosion resistant
@@ -141,9 +142,9 @@ Ref: 5.7C
 D: 2
 Note: Ductility also helps but is not the main reason.
 
-Q: Why is aluminium used to make aircraft bodies?
-A: Low density and resists corrosion
-Accept: Light; low density; strong for its weight
+Q: Which property of aluminium makes its alloys suitable for aircraft bodies?
+A: Low density
+Accept: Light; lightweight; low density and resists corrosion; strong for its weight
 Ref: 5.7C
 D: 2
 
@@ -222,9 +223,9 @@ Ref: 5.9C
 RP: 5.9C
 D: 3
 
-Q: What name is given to titration results that agree within 0.10 cm³?
-A: Concordant results
-Accept: Concordant
+Q: What word describes repeat titres that agree closely with each other?
+A: Concordant
+Accept: Concordant results; concordant titres
 Ref: 5.9C
 RP: 5.9C
 D: 1
@@ -305,11 +306,10 @@ Accept: Mass of useful product ÷ total mass of reactants × 100
 Ref: 5.13C
 D: 2
 
-Q: What is the atom economy of a reaction that makes only one product?
-A: 100%
-Accept: 100
+Q: What name is given to the percentage of the reactants' mass that ends up in the desired product?
+A: Atom economy
 Ref: 5.13C
-D: 2
+D: 1
 
 Q: Why does industry prefer reactions with a high atom economy?
 A: Less waste and fewer raw materials needed
@@ -440,11 +440,11 @@ Accept: The reaction is reversible; goes both ways
 Ref: 5.19C
 D: 1
 
-Q: Why can the Haber process never convert all the nitrogen and hydrogen into ammonia?
-A: The reaction is reversible
-Accept: Reversible reaction; ammonia breaks back down; reaches equilibrium
+Q: Write the word equation for the Haber process.
+A: Nitrogen + hydrogen ⇌ ammonia
+Accept: N₂ + 3H₂ ⇌ 2NH₃; nitrogen + hydrogen → ammonia (reversible arrow preferred)
 Ref: 5.19C
-D: 3
+D: 2
 
 Q: How does raising the temperature affect the rate at which equilibrium is reached?
 A: Equilibrium is reached faster
@@ -515,9 +515,9 @@ Accept: Helps plants grow; increases crop yield; provides elements for growth
 Ref: 5.22C
 D: 1
 
-Q: Fertilisers containing nitrogen, phosphorus and potassium are given which three-letter name?
-A: NPK
-Accept: NPK fertilisers
+Q: Ammonium phosphate is used in fertilisers. Which two plant-nutrient elements does it supply?
+A: Nitrogen and phosphorus
+Accept: Phosphorus and nitrogen; N and P
 Ref: 5.22C
 D: 2
 
@@ -569,11 +569,11 @@ Accept: A reactant runs out; reactants are used up
 Ref: 5.25C
 D: 1
 
-Q: Why does a non-rechargeable chemical cell eventually stop working?
-A: A reactant is used up
-Accept: Reactants run out; chemicals are used up
+Q: What does a chemical cell produce until one of its reactants is used up?
+A: Voltage
+Accept: Potential difference; electricity; electric current
 Ref: 5.25C
-D: 2
+D: 1
 
 Q: Why does a fuel cell keep producing a voltage while a chemical cell eventually goes flat?
 A: Fuel cell reactants are supplied continuously
@@ -587,11 +587,11 @@ Accept: H₂O; water vapour; steam
 Ref: 5.26C
 D: 1
 
-Q: Which two gases are used in a hydrogen–oxygen fuel cell?
+Q: Which two gases react in a fuel cell whose only product is water?
 A: Hydrogen and oxygen
 Accept: Oxygen and hydrogen; H₂ and O₂
 Ref: 5.26C
-D: 1
+D: 2
 
 Q: What useful output does a hydrogen–oxygen fuel cell produce?
 A: Voltage

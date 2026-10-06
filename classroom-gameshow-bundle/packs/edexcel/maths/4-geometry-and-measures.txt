@@ -1,0 +1,601 @@
+Board: Edexcel
+Spec: 1MA1
+Topic: 4
+
+Q: What is the name of a polygon with twelve sides?
+A: Dodecagon
+Ref: G1
+D: 1
+
+Q: What is the order of rotational symmetry of a regular pentagon?
+A: 5
+Accept: Five; Order 5
+Ref: G1
+D: 2
+
+Q: Using three letters, how do you name the angle at vertex Q of triangle PQR?
+A: Angle PQR
+Accept: PQR; RQP; Angle RQP; ∠PQR; ∠RQP
+Ref: G1
+D: 2
+Note: The middle letter is always the vertex where the angle is.
+
+Q: Triangle ABC has AB = AC and angle BAC = 90°. What type of triangle is it?
+A: Right-angled isosceles
+Accept: Isosceles right-angled; Right isosceles
+Ref: G1
+D: 3
+Note: Both words are needed; a sketch from the description helps.
+
+Q: What is the locus of points that are the same distance from two fixed points A and B?
+A: Perpendicular bisector of AB
+Accept: Perpendicular bisector
+Ref: G2
+D: 2
+
+Q: Describe the locus of points exactly 2 cm from a straight line segment AB.
+A: Two parallel lines joined by semicircular ends
+Accept: Racetrack shape; Stadium shape; Two parallel lines with semicircles at the ends
+Ref: G2
+D: 3
+Note: The semicircles, centred at A and B, are often missed.
+
+Q: What is the shortest distance from the point (3, 7) to the x-axis?
+A: 7 units
+Accept: 7
+Ref: G2
+D: 2
+Note: The shortest distance is the perpendicular distance.
+
+Q: Between two parallel lines, angles on the same side of a transversal add up to 180°. What are these angles called?
+A: Co-interior angles
+Accept: Co-interior; Allied angles; Allied
+Ref: G3
+D: 1
+
+Q: Two parallel lines are crossed by a transversal. What are the equal angles in matching positions at each crossing called?
+A: Corresponding angles
+Accept: Corresponding
+Ref: G3
+D: 1
+Note: Do not accept "F angles".
+
+Q: Two angles on a straight line are 3x and 2x. What is the value of x?
+A: 36
+Accept: x = 36; 36°
+Ref: G3
+D: 2
+
+Q: Each interior angle of a regular polygon is 150°. How many sides does it have?
+A: 12
+Accept: Twelve
+Ref: G3
+D: 3
+Note: Exterior angle 30°, and 360 ÷ 30 = 12.
+
+Q: Name the quadrilateral with four equal sides whose angles are not all right angles.
+A: Rhombus
+Ref: G4
+D: 1
+
+Q: What name is given to a triangle with no equal sides and no equal angles?
+A: Scalene
+Accept: Scalene triangle
+Ref: G4
+D: 1
+
+Q: A kite has angles 110°, 110°, 50° and x. What is x?
+A: 90°
+Accept: 90
+Ref: G4
+D: 2
+
+Q: A quadrilateral's diagonals bisect each other but are not equal and do not cross at right angles. Name it.
+A: Parallelogram
+Ref: G4
+D: 3
+Note: Equal diagonals would make a rectangle; perpendicular ones a rhombus.
+
+Q: Two triangles have two pairs of equal sides and the angles between those sides are equal. Which congruence condition is this?
+A: SAS
+Accept: Side, angle, side
+Ref: G5
+D: 1
+
+Q: In the congruence condition RHS, what does the R stand for?
+A: Right angle
+Accept: Right-angled
+Ref: G5
+D: 1
+
+Q: Why do two sides and a non-included angle not always prove two triangles congruent?
+A: Two different triangles are possible
+Accept: Ambiguous case; Two triangles can fit the facts
+Ref: G5
+D: 3
+
+Q: In an isosceles triangle, which two angles are equal?
+A: Base angles
+Accept: The base angles; Angles opposite the equal sides
+Ref: G6
+D: 1
+
+Q: In triangle ABC, AB = AC and angle ABC is 72°. What is angle BAC?
+A: 36°
+Accept: 36
+Ref: G6
+D: 2
+
+Q: A line through one vertex of a triangle is drawn parallel to the opposite side. Which two angle facts then prove the angle sum is 180°?
+A: Alternate angles and angles on a straight line
+Accept: Alternate angles; angles on a line add to 180°
+Ref: G6
+D: 3
+
+Q: Name the transformation that changes the size of a shape but keeps its angles the same.
+A: Enlargement
+Ref: G7
+D: 1
+
+Q: The point (3, 1) is rotated 90° clockwise about the origin. What are the coordinates of its image?
+A: (1, −3)
+Accept: (1, -3)
+Ref: G7
+D: 3
+
+Q: A 6 cm by 9 cm rectangle is enlarged by scale factor ⅓. What are the dimensions of the image?
+A: 2 cm by 3 cm
+Accept: 3 cm by 2 cm; 2 by 3
+Ref: G7
+D: 2
+
+Q: An enlargement has scale factor −1. What single transformation has the same effect?
+A: Rotation of 180° about the centre of enlargement
+Accept: Half-turn about the centre; Rotation 180°
+Ref: G7
+D: 3
+HT: yes
+
+Q: How many points stay in the same place under a translation by a non-zero vector?
+A: None
+Accept: 0; Zero; No points
+Ref: G8
+D: 2
+HT: yes
+
+Q: A shape is reflected in the line x = 1 and then in the line x = 3. What single transformation is equivalent?
+A: Translation by (4 over 0)
+Accept: Translation 4 units right; (4 over 0); (4, 0)
+Ref: G8
+D: 3
+HT: yes
+Note: Reflection in two parallel lines is a translation of twice the gap between them.
+
+Q: A shape is rotated 90° clockwise about the origin, then reflected in the x-axis. What single transformation is equivalent?
+A: Reflection in the line y = x
+Accept: Reflection in y = x; Reflect in y = x
+Ref: G8
+D: 3
+HT: yes
+Note: (x, y) goes to (y, −x) and then to (y, x).
+
+Q: What is the name of the distance from the centre of a circle to its circumference?
+A: Radius
+Ref: G9
+D: 1
+
+Q: What is the name of the perimeter of a circle?
+A: Circumference
+Ref: G9
+D: 1
+
+Q: Two radii divide a circle into two sectors of different sizes. What is the larger one called?
+A: Major sector
+Ref: G9
+D: 2
+
+Q: A circle has radius 7 cm. How long is its longest possible chord?
+A: 14 cm
+Accept: 14
+Ref: G9
+D: 2
+Note: The longest chord is a diameter.
+
+Q: What is the name of a quadrilateral whose four vertices all lie on one circle?
+A: Cyclic quadrilateral
+Accept: Cyclic
+Ref: G10
+D: 1
+HT: yes
+
+Q: AB is a diameter of a circle and C is any other point on the circumference. What is angle ACB?
+A: 90°
+Accept: 90; Right angle
+Ref: G10
+D: 2
+HT: yes
+
+Q: A circle has radius 10 cm and a chord of length 16 cm. How far is the chord from the centre?
+A: 6 cm
+Accept: 6
+Ref: G10
+D: 3
+HT: yes
+Note: The perpendicular from the centre bisects the chord, giving an 8, 6, 10 triangle.
+
+Q: A tangent from P touches a circle, centre O, radius 5 cm, at T. OP = 13 cm. How long is PT?
+A: 12 cm
+Accept: 12
+Ref: G10
+D: 3
+HT: yes
+Note: The tangent is perpendicular to the radius OT.
+
+Q: What is the midpoint of the line segment joining (−2, 5) and (6, 1)?
+A: (2, 3)
+Ref: G11
+D: 2
+
+Q: What is the distance between the points (0, 0) and (5, 12)?
+A: 13 units
+Accept: 13
+Ref: G11
+D: 3
+
+Q: M (4, 6) is the midpoint of AB, and A is (1, 2). What are the coordinates of B?
+A: (7, 10)
+Ref: G11
+D: 3
+
+Q: A triangle has vertices (0, 0), (4, 0) and (4, 3). What type of triangle is it?
+A: Right-angled
+Accept: Right-angled scalene; Right-angled triangle
+Ref: G11
+D: 2
+
+Q: How many faces does a triangular prism have?
+A: 5
+Accept: Five
+Ref: G12
+D: 1
+
+Q: What is the name of a pyramid made of four triangular faces?
+A: Tetrahedron
+Accept: Triangular-based pyramid; Triangular pyramid
+Ref: G12
+D: 1
+
+Q: Name the solid with two circular flat faces and one curved surface.
+A: Cylinder
+Ref: G12
+D: 1
+
+Q: How many edges does a pentagonal prism have?
+A: 15
+Accept: Fifteen
+Ref: G12
+D: 2
+Note: Five on each end plus five joining them.
+
+Q: What is the name of the view of a 3D shape seen from directly in front?
+A: Front elevation
+Accept: Elevation
+Ref: G13
+D: 1
+
+Q: A solid's plan is a circle with a dot at its centre, and both elevations are triangles. Name the solid.
+A: Cone
+Ref: G13
+D: 2
+
+Q: A solid's plan, front elevation and side elevation are all identical squares. Name the solid.
+A: Cube
+Ref: G13
+D: 2
+
+Q: Which metric unit of capacity is equal to 1000 cm³?
+A: Litre
+Accept: Litres; 1 litre; l
+Ref: G14
+D: 1
+
+Q: How many minutes are there in 3.5 hours?
+A: 210
+Accept: 210 minutes
+Ref: G14
+D: 1
+
+Q: How many litres of water fill a tank with a volume of 1 m³?
+A: 1000 litres
+Accept: 1000
+Ref: G14
+D: 2
+
+Q: Convert 4.2 m² into cm².
+A: 42 000 cm²
+Accept: 42000; 42 000
+Ref: G14
+D: 3
+Note: 1 m² = 10 000 cm², not 100 cm².
+
+Q: In which direction are bearings measured from north?
+A: Clockwise
+Ref: G15
+D: 1
+
+Q: What is the three-figure bearing of north-west?
+A: 315°
+Accept: 315
+Ref: G15
+D: 2
+
+Q: The bearing of Q from P is 130°. What is the bearing of P from Q?
+A: 310°
+Accept: 310
+Ref: G15
+D: 3
+
+Q: A scale drawing uses 1 cm to represent 5 m. A wall is 3.5 cm long on the drawing. How long is the real wall?
+A: 17.5 m
+Accept: 17.5 metres; 1750 cm
+Ref: G15
+D: 2
+
+Q: The area of a triangle is half the base multiplied by which measurement?
+A: Perpendicular height
+Accept: Height; Vertical height
+Ref: G16
+D: 1
+Note: Not the slanting side.
+
+Q: What is the constant shape through the length of a prism called?
+A: Cross-section
+Accept: Cross section; Cross-sectional face
+Ref: G16
+D: 1
+
+Q: A trapezium has parallel sides 3 cm and 9 cm, a perpendicular distance of 5 cm apart. What is its area?
+A: 30 cm²
+Accept: 30
+Ref: G16
+D: 2
+
+Q: A prism is 10 cm long. Its cross-section is a triangle with base 6 cm and height 4 cm. What is its volume?
+A: 120 cm³
+Accept: 120
+Ref: G16
+D: 3
+
+Q: Which solid has volume (4/3)πr³?
+A: Sphere
+Ref: G17
+D: 1
+
+Q: What is the circumference of a circle of radius 4 cm, in terms of π?
+A: 8π cm
+Accept: 8π
+Ref: G17
+D: 2
+
+Q: Use volume of a cone = ⅓πr²h. What is the volume of a cone with radius 3 cm and height 4 cm, in terms of π?
+A: 12π cm³
+Accept: 12π
+Ref: G17
+D: 3
+
+Q: What is the perimeter of a quarter circle of radius 6 cm, in terms of π?
+A: 3π + 12 cm
+Accept: 12 + 3π; (3π + 12) cm
+Ref: G17
+D: 3
+Note: Include the two straight radii, not just the arc.
+
+Q: What fraction of a full circle is a sector with an angle of 45°?
+A: 1/8
+Accept: ⅛; One eighth; 0.125
+Ref: G18
+D: 2
+
+Q: What is the arc length of a sector with radius 9 cm and angle 120°, in terms of π?
+A: 6π cm
+Accept: 6π
+Ref: G18
+D: 3
+
+Q: What is the area of a sector with radius 10 cm and angle 36°, in terms of π?
+A: 10π cm²
+Accept: 10π
+Ref: G18
+D: 3
+
+Q: A 3 cm by 5 cm rectangle is similar to a 9 cm by x cm rectangle. What is x?
+A: 15
+Accept: x = 15; 15 cm
+Ref: G19
+D: 2
+
+Q: The area scale factor between two similar shapes is 9. What is the length scale factor?
+A: 3
+Accept: Three
+Ref: G19
+D: 2
+HT: yes
+
+Q: Two similar cones have heights 2 cm and 6 cm. The smaller has volume 5 cm³. What is the volume of the larger?
+A: 135 cm³
+Accept: 135
+Ref: G19
+D: 3
+HT: yes
+Note: Volume scale factor is 3³ = 27.
+
+Q: Two similar shapes have areas 20 cm² and 80 cm². A side of the smaller is 3 cm. How long is the matching side of the larger?
+A: 6 cm
+Accept: 6
+Ref: G19
+D: 3
+HT: yes
+Note: Area factor 4, so length factor √4 = 2.
+
+Q: Which trigonometric ratio is adjacent divided by hypotenuse?
+A: Cosine
+Accept: cos; cos θ
+Ref: G20
+D: 1
+
+Q: In a right-angled triangle, what is the side next to angle θ that is not the hypotenuse called?
+A: Adjacent
+Accept: Adjacent side
+Ref: G20
+D: 1
+
+Q: A right-angled triangle has hypotenuse 13 cm and one shorter side 5 cm. How long is the third side?
+A: 12 cm
+Accept: 12
+Ref: G20
+D: 2
+
+Q: In a right-angled triangle, the sides opposite and adjacent to angle θ are both 7 cm. What is θ?
+A: 45°
+Accept: 45
+Ref: G20
+D: 3
+Note: tan θ = 1.
+
+Q: What is the exact length of the diagonal from one corner of a cube of edge 2 cm to the opposite corner?
+A: 2√3 cm
+Accept: 2√3; √12; √12 cm
+Ref: G20
+D: 3
+HT: yes
+
+Q: What is the exact value of tan 45°?
+A: 1
+Ref: G21
+D: 1
+
+Q: What is the exact value of cos 60°?
+A: 1/2
+Accept: ½; 0.5
+Ref: G21
+D: 1
+
+Q: What is the exact value of sin 60°?
+A: √3/2
+Accept: √3 ÷ 2; (√3)/2
+Ref: G21
+D: 2
+
+Q: What is the exact value of tan 30°?
+A: 1/√3
+Accept: √3/3; 1 ÷ √3
+Ref: G21
+D: 2
+
+Q: All three sides of a triangle are known. Which rule finds one of its angles?
+A: Cosine rule
+Accept: The cosine rule
+Ref: G22
+D: 2
+HT: yes
+
+Q: In triangle ABC, b = 5, c = 8 and angle A = 60°. What is the length of a?
+A: 7
+Accept: a = 7
+Ref: G22
+D: 3
+HT: yes
+Note: a² = 25 + 64 − 80 × ½ = 49.
+
+Q: In triangle ABC, a = 10 cm, angle A = 30° and angle B = 90°. Use the sine rule to find b.
+A: 20 cm
+Accept: 20
+Ref: G22
+D: 3
+HT: yes
+
+Q: A triangle has sides 5 cm, 7 cm and 8 cm. What is the angle opposite the 7 cm side?
+A: 60°
+Accept: 60
+Ref: G22
+D: 3
+HT: yes
+Note: cos θ = (25 + 64 − 49) ÷ 80 = ½.
+
+Q: In Area = ½ab sin C, what is angle C called in relation to sides a and b?
+A: Included angle
+Accept: The angle between a and b; Angle between them
+Ref: G23
+D: 2
+HT: yes
+
+Q: Use Area = ½ab sin C. Two sides are 12 cm and 5 cm with 30° between them. What is the area?
+A: 15 cm²
+Accept: 15
+Ref: G23
+D: 2
+HT: yes
+
+Q: Use Area = ½ab sin C. What is the exact area of an equilateral triangle of side 6 cm?
+A: 9√3 cm²
+Accept: 9√3
+Ref: G23
+D: 3
+HT: yes
+
+Q: A triangle has area 24 cm². One side is 8 cm and the angle between it and side b is 30°. What is b?
+A: 12 cm
+Accept: 12
+Ref: G23
+D: 3
+HT: yes
+
+Q: In a column vector describing a translation, which movement does the top number give?
+A: Horizontal
+Accept: Horizontal movement; Left or right; x-direction
+Ref: G24
+D: 1
+
+Q: Write a translation of 4 units left and 1 unit up as a column vector.
+A: (−4 over 1)
+Accept: (−4, 1); (-4 over 1); (-4, 1)
+Ref: G24
+D: 2
+Note: Students should write it as a column vector.
+
+Q: A translation maps the point (2, 3) to (−1, 7). What is the column vector of the translation?
+A: (−3 over 4)
+Accept: (−3, 4); (-3 over 4); (-3, 4)
+Ref: G24
+D: 3
+
+Q: What name is given to a number that multiplies a vector?
+A: Scalar
+Ref: G25
+D: 1
+
+Q: What word describes the vectors a and 2a in relation to each other?
+A: Parallel
+Accept: Parallel, same direction
+Ref: G25
+D: 2
+
+Q: Vector a = (3 over 5) and vector b = (1 over 2). What is a − b as a column vector?
+A: (2 over 3)
+Accept: (2, 3)
+Ref: G25
+D: 2
+
+Q: Vector a = (1 over −2) and vector b = (3 over 4). What is 2a + b as a column vector?
+A: (5 over 0)
+Accept: (5, 0)
+Ref: G25
+D: 3
+
+Q: OA = a and OB = b. M is the midpoint of AB. What is OM in terms of a and b?
+A: ½(a + b)
+Accept: ½a + ½b; (a + b)/2; 1/2(a + b)
+Ref: G25
+D: 3
+HT: yes
+Note: OM = a + ½(b − a).
