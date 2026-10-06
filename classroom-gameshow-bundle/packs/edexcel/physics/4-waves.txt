@@ -27,17 +27,11 @@ Accept: Vertically; up and down on the spot
 Ref: 4.2
 D: 2
 
-Q: A duck on a pond is not carried along by ripples passing under it. What does this show travels?
-A: The wave, not the water
-Accept: Only the wave; the wave travels and the water stays
-Ref: 4.2
-D: 3
-
 Q: A candle flame in front of a loudspeaker flickers back and forth but is not blown away. What do the air particles do?
 A: Vibrate back and forth about fixed positions
 Accept: Oscillate; vibrate on the spot; vibrate backwards and forwards
 Ref: 4.2
-D: 3
+D: 2
 Note: The air vibrates but does not travel with the sound.
 
 Q: What is the frequency of a wave?
@@ -54,7 +48,7 @@ D: 1
 
 Q: What is the wavelength of a wave?
 A: Distance between two neighbouring crests
-Accept: Distance from one point to the same point on the next wave; distance between adjacent compressions
+Accept: Distance between neighbouring troughs; distance from one point to the same point on the next wave; distance between adjacent compressions
 Ref: 4.3
 D: 2
 
@@ -111,7 +105,7 @@ Q: Which type of seismic wave is longitudinal: P waves or S waves?
 A: P waves
 Accept: P; primary waves
 Ref: 4.5
-D: 2
+D: 1
 Note: S waves are transverse; electromagnetic and water surface waves are also transverse.
 
 Q: State the equation that links wave speed, frequency and wavelength.
@@ -198,6 +192,12 @@ Accept: Refracted
 Ref: 4.9P
 D: 1
 
+Q: A wave's energy is taken in by a material and it does not pass out the other side. What is this effect called?
+A: Absorption
+Accept: Absorbed
+Ref: 4.9P
+D: 1
+
 Q: A light ray passes at an angle from air into glass and slows down. Does it bend towards or away from the normal?
 A: Towards the normal
 Accept: Towards
@@ -215,7 +215,7 @@ Q: Water waves travel from deep water into shallow water. What happens to their 
 A: Decreases
 Accept: Slows down; goes down
 Ref: 4.10
-D: 3
+D: 2
 HT: yes
 
 Q: Why does a wave change direction when it crosses a boundary at an angle?
@@ -236,14 +236,14 @@ Q: Whether a substance absorbs, transmits, refracts or reflects a wave can depen
 A: Wavelength
 Accept: Frequency
 Ref: 4.11
-D: 3
+D: 1
 HT: yes
 
 Q: Earth's atmosphere lets visible light pass through but stops most X-rays. Which two wave effects are these?
 A: Transmission and absorption
 Accept: Transmits visible, absorbs X-rays; transmitted and absorbed
 Ref: 4.11
-D: 3
+D: 2
 HT: yes
 
 Q: Which part of the ear is first made to vibrate by incoming sound waves?
@@ -253,18 +253,18 @@ Ref: 4.12P
 D: 1
 HT: yes
 
-Q: Name the three tiny bones that pass vibrations from the eardrum to the inner ear.
+Q: What is the group name for the three tiny bones that pass vibrations from the eardrum to the inner ear?
 A: Ossicles
-Accept: Hammer, anvil and stirrup; malleus, incus and stapes; ear bones
+Accept: Hammer, anvil and stirrup; malleus, incus and stapes; middle ear bones
 Ref: 4.12P
-D: 2
+D: 1
 HT: yes
 
 Q: Which coiled part of the inner ear has hair cells that turn vibrations into electrical signals?
 A: Cochlea
 Accept: The cochlea
 Ref: 4.12P
-D: 2
+D: 1
 HT: yes
 
 Q: Why can the human ear only detect sound over a limited frequency range?
@@ -286,7 +286,7 @@ Q: Above what frequency is sound called ultrasound?
 A: 20 000 Hz
 Accept: 20 kHz; 20 000 hertz
 Ref: 4.13P
-D: 2
+D: 1
 HT: yes
 
 Q: A bat emits calls at a frequency of 50 000 Hz. What type of sound is this?
@@ -307,7 +307,7 @@ Q: Below what frequency is sound called infrasound?
 A: 20 Hz
 Accept: 20 hertz
 Ref: 4.14P
-D: 2
+D: 1
 HT: yes
 
 Q: Large volcanic eruptions produce sound waves of a few hertz that humans cannot hear. What type of sound is this?
@@ -328,7 +328,7 @@ Q: In foetal scanning, what happens to some ultrasound at each boundary between 
 A: Partially reflected
 Accept: Reflected; some is reflected back
 Ref: 4.15P
-D: 3
+D: 2
 HT: yes
 Note: The rest is transmitted; the echo times build up the image.
 
@@ -336,7 +336,7 @@ Q: Which type of seismic wave cannot travel through Earth's liquid outer core?
 A: S waves
 Accept: S; secondary waves
 Ref: 4.15P
-D: 3
+D: 2
 HT: yes
 
 Q: S waves are not detected on the far side of the Earth from an earthquake. What does this show about the outer core?
@@ -373,7 +373,7 @@ Ref: 4.17
 RP: 4.17
 D: 2
 
-Q: Why measure the length of ten waves and divide by ten instead of measuring one wavelength?
+Q: In the ripple tank practical, why measure across ten waves and divide by ten rather than measure one wavelength?
 A: To reduce uncertainty
 Accept: More accurate; reduces percentage uncertainty; reduces measurement error
 Ref: 4.17
@@ -388,7 +388,7 @@ RP: 4.17
 D: 3
 Note: Frequency = 12 ÷ 4 = 3 Hz.
 
-Q: A metal rod is struck at one end with a hammer. For the lowest frequency, the wavelength is how many times the rod's length?
+Q: A metal rod held at its middle is struck at one end. For the lowest frequency, the wavelength is how many times the rod's length?
 A: Twice
 Accept: 2; two times; double
 Ref: 4.17

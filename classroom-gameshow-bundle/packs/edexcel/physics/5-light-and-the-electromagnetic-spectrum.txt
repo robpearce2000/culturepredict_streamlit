@@ -23,7 +23,7 @@ Q: Light inside glass meets the glass–air boundary exactly at the critical ang
 A: 90°
 Accept: 90 degrees; along the boundary; along the surface
 Ref: 5.1P
-D: 3
+D: 2
 
 Q: A light ray passes from air into glass at an angle. Does it bend towards or away from the normal?
 A: Towards the normal
@@ -62,11 +62,6 @@ Ref: 5.3P
 D: 3
 Note: The red shirt absorbs the blue light, so no light is reflected.
 
-Q: White light shines through a green filter. What colour of light comes out?
-A: Green
-Ref: 5.3P
-D: 1
-
 Q: Red light shines on a blue filter. What colour is seen beyond the filter?
 A: Black
 Accept: No light; dark; none
@@ -74,15 +69,9 @@ Ref: 5.3P
 D: 3
 Note: A blue filter transmits only blue and absorbs the red.
 
-Q: What does a black surface do to all colours of visible light?
-A: Absorbs them
-Accept: Absorbs; absorbs all colours
-Ref: 5.3P
-D: 1
-
-Q: Two lenses are made of the same glass. One has a shorter focal length. Is it more or less powerful?
-A: More powerful
-Accept: More
+Q: Two converging lenses are made of the same glass: one thick and strongly curved, one thin. Which is more powerful?
+A: Thick, strongly curved lens
+Accept: The thick one; the more curved one
 Ref: 5.4P
 D: 2
 
@@ -96,7 +85,7 @@ Q: Lens A has focal length 10 cm and lens B has focal length 25 cm. Which lens i
 A: Lens A
 Accept: A
 Ref: 5.4P
-D: 3
+D: 2
 Note: Power increases as focal length decreases.
 
 Q: Which type of lens makes parallel rays of light meet at a point?
@@ -116,12 +105,6 @@ A: Principal focus
 Accept: Focal point; focus
 Ref: 5.5P
 D: 1
-
-Q: A lens is thicker in the middle than at its edges. What type of lens is it?
-A: Converging
-Accept: Converging lens; convex
-Ref: 5.5P
-D: 2
 
 Q: Which type of image can be formed on a screen?
 A: Real image
@@ -176,9 +159,9 @@ Accept: IR
 Ref: 5.8
 D: 2
 
-Q: Light travels from a lamp to your eye. Is matter or energy transferred?
-A: Energy
-Accept: Energy only
+Q: Microwaves in an oven heat food. Which energy store of the food increases?
+A: Thermal store
+Accept: Thermal; internal; heat
 Ref: 5.8
 D: 2
 
@@ -196,12 +179,6 @@ RP: 5.9
 D: 1
 
 Q: What is the independent variable in the glass block refraction practical?
-A: Angle of incidence
-Ref: 5.9
-RP: 5.9
-D: 2
-
-Q: Light enters a glass block from air at an angle. Which is larger: the angle of incidence or the angle of refraction?
 A: Angle of incidence
 Ref: 5.9
 RP: 5.9
@@ -236,7 +213,7 @@ D: 1
 Q: Which colour of visible light has the longest wavelength?
 A: Red
 Ref: 5.10
-D: 2
+D: 1
 
 Q: Moving along the electromagnetic spectrum from radio waves to gamma rays, what happens to the frequency?
 A: Increases
@@ -279,14 +256,14 @@ Q: Why can you not see the signal from a television remote control?
 A: Infrared is outside the range eyes detect
 Accept: Infrared is not visible; its frequency is too low for our eyes
 Ref: 5.12
-D: 2
+D: 3
 
 Q: Name the four things a substance may do to an electromagnetic wave that hits it.
 A: Absorb, transmit, refract, reflect
-Accept: Any order
 Ref: 5.13
 HT: yes
-D: 3
+D: 2
+Note: Any order; all four needed.
 
 Q: A glass prism splits white light into colours. Why?
 A: Different wavelengths refract by different amounts
@@ -300,21 +277,21 @@ A: Wavelength
 Accept: Frequency; wavelength of the wave
 Ref: 5.13
 HT: yes
-D: 3
+D: 2
 
 Q: What happens to the speed of light as it passes from air into glass?
 A: Decreases
 Accept: Slows down; goes down
 Ref: 5.14
 HT: yes
-D: 3
+D: 1
 
 Q: Light passes from air into glass. What happens to its frequency?
 A: Stays the same
 Accept: No change; unchanged
 Ref: 5.14
 HT: yes
-D: 3
+D: 2
 
 Q: Why does light change direction when it enters glass at an angle to the normal?
 A: Its speed changes
@@ -343,11 +320,6 @@ Accept: Gets higher; more radiation
 Ref: 5.15P
 D: 2
 
-Q: As an object gets hotter, does the peak wavelength of its emitted radiation get shorter or longer?
-A: Shorter
-Ref: 5.15P
-D: 2
-
 Q: Why does a heated metal bar glow red and then white as its temperature rises?
 A: More shorter-wavelength radiation is emitted
 Accept: Peak wavelength gets shorter; emits more visible wavelengths
@@ -359,14 +331,14 @@ A: Equal
 Accept: The same; equal to it
 Ref: 5.16P
 HT: yes
-D: 3
+D: 2
 
 Q: An object absorbs an average of 50 W of radiation and stays at a constant temperature. What average power does it radiate?
 A: 50 W
 Accept: 50 watts
 Ref: 5.16P
 HT: yes
-D: 3
+D: 2
 
 Q: A mug of water stays at room temperature. What is the net power it gains by radiation?
 A: Zero
@@ -380,14 +352,14 @@ A: Increases
 Accept: Rises; gets hotter
 Ref: 5.17P
 HT: yes
-D: 3
+D: 2
 
 Q: A body radiates more average power than it absorbs. What happens to its temperature?
 A: Decreases
 Accept: Falls; cools down
 Ref: 5.17P
 HT: yes
-D: 3
+D: 2
 
 Q: A body warms up because it absorbs more power than it radiates. Why does it eventually reach a steady temperature?
 A: Radiated power rises until it equals absorbed power
@@ -401,21 +373,21 @@ A: Carbon dioxide
 Accept: CO2; methane; water vapour
 Ref: 5.18P
 HT: yes
-D: 3
+D: 1
 
 Q: What type of radiation does the Earth's surface mainly emit?
 A: Infrared
 Accept: IR
 Ref: 5.18P
 HT: yes
-D: 3
+D: 1
 
 Q: More greenhouse gas in the atmosphere reduces the radiation escaping to space. What happens to the Earth's temperature?
 A: Increases
 Accept: Rises; goes up
 Ref: 5.18P
 HT: yes
-D: 3
+D: 2
 
 Q: Name the hollow metal cube with differently finished faces used to compare thermal radiation from surfaces.
 A: Leslie cube
@@ -431,26 +403,20 @@ Ref: 5.19P
 RP: 5.19P
 D: 1
 
-Q: Which kind of surface is the best absorber of infrared radiation?
-A: Matt black
-Accept: Dull black; black
-Ref: 5.19P
-RP: 5.19P
-D: 1
-
-Q: In the surfaces practical, why is the detector kept the same distance from each face?
-A: To make it a fair test
-Accept: Distance affects the reading; control variable
+Q: In the surfaces practical with a Leslie cube, why is the detector kept the same distance from each face?
+A: Reading depends on distance
+Accept: Distance affects the reading; fair test; control variable
 Ref: 5.19P
 RP: 5.19P
 D: 2
 
-Q: Why is using one hot-water-filled cube better than four separate cans for comparing surfaces?
-A: All faces are at the same temperature
-Accept: Same water temperature for every surface
+Q: Boiling tubes with different surfaces are filled with hot water. Why must every tube start at the same temperature?
+A: Cooling rate depends on temperature
+Accept: Hotter water radiates faster; fair test
 Ref: 5.19P
 RP: 5.19P
 D: 3
+Note: The temperature of each tube is then recorded at regular intervals.
 
 Q: How does the potential danger of an electromagnetic wave change as its frequency increases?
 A: Increases
@@ -464,11 +430,11 @@ Accept: UV
 Ref: 5.20
 D: 2
 
-Q: Radio waves have a lower frequency than x-rays. Which is less dangerous to people?
-A: Radio waves
-Accept: Radio
+Q: Put these in order of danger, most dangerous first: microwaves, gamma rays, visible light.
+A: Gamma rays, visible light, microwaves
+Accept: Gamma, visible, microwaves
 Ref: 5.20
-D: 2
+D: 3
 
 Q: What is the harmful effect of excessive exposure to microwaves?
 A: Internal heating of body cells
@@ -494,12 +460,6 @@ Accept: Mutations; cell damage; damage to DNA; cancer
 Ref: 5.21
 D: 2
 
-Q: Which electromagnetic waves are used to broadcast radio programmes?
-A: Radio waves
-Accept: Radio
-Ref: 5.22
-D: 1
-
 Q: Which electromagnetic waves are used in thermal imaging cameras?
 A: Infrared
 Accept: IR
@@ -518,11 +478,11 @@ Accept: X-ray
 Ref: 5.22
 D: 1
 
-Q: Which electromagnetic waves are used to sterilise medical equipment?
-A: Gamma rays
-Accept: Gamma
+Q: Why are gamma rays used to sterilise medical equipment?
+A: Gamma rays kill bacteria
+Accept: Kill microorganisms; kill microbes; kill germs; pass through packaging and kill bacteria
 Ref: 5.22
-D: 1
+D: 3
 
 Q: Why are x-rays used to produce images of broken bones?
 A: Bone absorbs x-rays; soft tissue transmits them
@@ -535,14 +495,14 @@ A: Electrical circuits
 Accept: Electric circuits; circuits; electrons in an aerial
 Ref: 5.23
 HT: yes
-D: 3
+D: 1
 
 Q: Radio waves are absorbed by a receiving aerial. What do they induce in the circuit?
 A: Alternating current
 Accept: Oscillations; a.c.; an oscillating current
 Ref: 5.23
 HT: yes
-D: 3
+D: 2
 
 Q: A 90 MHz radio wave is absorbed by an aerial. What is the frequency of the current it induces?
 A: 90 MHz
@@ -562,7 +522,7 @@ Q: An electron in an atom absorbs electromagnetic radiation. Where can it move t
 A: Higher energy level
 Accept: A higher shell; further from the nucleus; out of the atom
 Ref: 5.24
-D: 3
+D: 2
 
 Q: An electron drops from a higher to a lower energy level. What does the atom emit?
 A: Electromagnetic radiation

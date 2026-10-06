@@ -53,12 +53,6 @@ Accept: Sankey
 Ref: 3.3
 D: 1
 
-Q: In a Sankey diagram, what does the width of an arrow represent?
-A: Amount of energy transferred
-Accept: Energy transferred; amount of energy; power
-Ref: 3.3
-D: 2
-
 Q: A Sankey diagram for a lamp shows 100 J in and 20 J out as light. How much energy is shown as wasted?
 A: 80 J
 Accept: 80 joules
@@ -84,15 +78,15 @@ Accept: Energy is only transferred between stores; total energy stays the same
 Ref: 3.4
 D: 2
 
+Q: A falling ball loses 40 J from its gravitational potential store. Ignoring air resistance, how much energy does its kinetic store gain?
+A: 40 J
+Accept: 40 joules
+Ref: 3.4
+D: 2
+
 Q: A ball is thrown straight upwards. As it rises, into which store is energy transferred from its kinetic store?
 A: Gravitational potential store
 Accept: Gravitational potential; GPE store; gravitational store
-Ref: 3.5
-D: 2
-
-Q: A ball is thrown straight upwards. What is its kinetic energy at its highest point?
-A: Zero
-Accept: 0 J; none; nothing
 Ref: 3.5
 D: 2
 
@@ -157,12 +151,6 @@ Accept: Dissipation; wasted
 Ref: 3.8
 D: 1
 
-Q: A swinging pendulum eventually stops. In which store does its energy end up?
-A: Thermal store of the surroundings
-Accept: Thermal store; thermal; surroundings heated
-Ref: 3.8
-D: 2
-
 Q: Why does a dropped ball bounce lower each time?
 A: Energy dissipated by heating and sound each bounce
 Accept: Some energy transferred to thermal store and sound; energy wasted on each bounce
@@ -190,7 +178,7 @@ D: 1
 Q: Which gas, trapped in materials such as fibreglass and foam, makes them good thermal insulators?
 A: Air
 Ref: 3.9
-D: 2
+D: 1
 
 Q: Why does double glazing reduce energy transfer from a house?
 A: Gas gap between panes is a poor conductor
@@ -215,12 +203,6 @@ A: Decreases it
 Accept: Lower rate; slower cooling; reduces it; cools more slowly
 Ref: 3.10
 D: 2
-
-Q: House A has thin walls of high thermal conductivity; house B has thick walls of low thermal conductivity. Which cools faster?
-A: House A
-Accept: A
-Ref: 3.10
-D: 3
 
 Q: State the equation for efficiency.
 A: Useful energy transferred ÷ total energy supplied
@@ -250,7 +232,7 @@ Q: How does lubricating the moving parts of a machine increase its efficiency?
 A: Less friction, so less energy wasted heating
 Accept: Reduces friction so less energy dissipated; less wasted thermal energy
 Ref: 3.12
-D: 3
+D: 2
 HT: yes
 
 Q: How does streamlining a car increase its efficiency?
@@ -301,6 +283,7 @@ A: Growing world population
 Accept: Population increase; more industry; more electrical devices; more cars; rising living standards
 Ref: 3.14
 D: 2
+Note: Accept any sensible reason linked to more people or more energy use per person.
 
 Q: Why has the UK greatly reduced its use of coal for generating electricity?
 A: To cut carbon dioxide emissions
@@ -313,10 +296,3 @@ A: Reliable and can meet demand quickly
 Accept: Reliable supply; available on demand; cheap and reliable
 Ref: 3.14
 D: 3
-
-Q: How many joules are equal to one newton-metre?
-A: 1 J
-Accept: 1; one joule
-Ref: 3.14
-D: 3
-HT: yes

@@ -11,17 +11,17 @@ Q: Which party became the largest in the Reichstag in the 1912 election?
 A: Social Democratic Party
 Accept: SPD; Social Democrats
 Ref: 1AB.1.1
-D: 2
+D: 1
 
 Q: Which power of the Reichstag meant the Kaiser needed its support to pay for the Navy Laws?
 A: Approving the budget
-Accept: Control of taxation; voting on spending; passing the budget
+Accept: Control of taxation; voting on spending; passing the budget; approving taxes; voting money for the navy
 Ref: 1AB.1.1
-D: 3
+D: 2
 
 Q: Why did Wilhelm II's government introduce social reforms such as insurance and pensions?
 A: To weaken support for socialism
-Accept: To reduce support for the SPD; to stop workers turning to socialism
+Accept: To reduce support for the SPD; to stop workers turning to socialism; to win workers' loyalty to the Kaiser
 Ref: 1AB.1.1
 D: 3
 
@@ -31,10 +31,11 @@ Accept: Naval blockade; British blockade
 Ref: 1AB.1.2
 D: 1
 
-Q: Sailors mutinied at which German naval port in late October and November 1918?
+Q: In early November 1918, a sailors' mutiny at which German naval port sparked revolution across Germany?
 A: Kiel
 Ref: 1AB.1.2
 D: 1
+Note: Unrest began at Wilhelmshaven in late October; the Kiel mutiny (3 November) spread the revolution.
 
 Q: What total reparations bill was set for Germany in 1921, in British pounds?
 A: £6,600 million
@@ -44,7 +45,7 @@ D: 2
 
 Q: Why did French and Belgian troops occupy the Ruhr in January 1923?
 A: Germany failed to pay reparations
-Accept: Missed reparations payments; to take goods instead of reparations
+Accept: Missed reparations payments; Germany defaulted on reparations; to take goods instead of reparations
 Ref: 1AB.1.2
 D: 3
 
@@ -72,7 +73,7 @@ Accept: A general strike; workers went on strike; general strike
 Ref: 1AB.1.3
 D: 3
 
-Q: Which new currency did Stresemann introduce in November 1923?
+Q: Which new currency did Stresemann's government introduce in November 1923?
 A: Rentenmark
 Accept: Rentenmark (later Reichsmark)
 Ref: 1AB.1.3
@@ -90,8 +91,8 @@ Ref: 1AB.1.3
 D: 2
 
 Q: Why was the recovery of the Stresemann era fragile?
-A: It depended on American loans
-Accept: Reliance on US loans; loans could be recalled
+A: Dependence on American loans
+Accept: It depended on American loans; reliance on US loans; loans could be recalled
 Ref: 1AB.1.3
 D: 3
 
@@ -102,7 +103,7 @@ D: 1
 
 Q: About how many Germans were unemployed at the peak of the Depression in 1932?
 A: About 6 million
-Accept: 5.5 to 6 million; 6 million
+Accept: 5.5 to 6 million; 6 million; 6.1 million
 Ref: 1AB.2.1
 D: 2
 
@@ -120,14 +121,15 @@ D: 2
 
 Q: Why did many wealthy industrialists give money to the Nazis by 1932?
 A: Fear of communism
-Accept: To stop communism; fear of a communist revolution
+Accept: To stop communism; fear of a communist revolution; to weaken trade unions
 Ref: 1AB.2.1
 D: 3
 
 Q: How many seats did the Nazis win in July 1932, making them the largest party?
 A: 230
+Accept: 230 seats
 Ref: 1AB.2.2
-D: 2
+D: 1
 
 Q: On what date was Hitler appointed Chancellor?
 A: 30 January 1933
@@ -151,7 +153,7 @@ Q: The Nazi seat total fell in which election of 1932?
 A: November 1932
 Accept: November
 Ref: 1AB.2.2
-D: 3
+D: 2
 Note: Nazis fell from 230 seats (July) to 196 (November).
 
 Q: Which Dutch communist was arrested for starting the Reichstag Fire in February 1933?
@@ -179,7 +181,7 @@ D: 1
 
 Q: Why did Hitler purge the SA in the Night of the Long Knives?
 A: To win the army's support
-Accept: Army feared the SA; Röhm threatened the army; to remove a rival
+Accept: Army feared the SA; Röhm threatened the army; to remove a rival; Röhm was a threat to Hitler's power
 Ref: 1AB.2.3
 D: 3
 
@@ -202,7 +204,7 @@ D: 1
 
 Q: Why were Nazi unemployment figures called "invisible unemployment"?
 A: Women and Jews were not counted
-Accept: Some groups left out of the figures
+Accept: Some groups left out of the figures; conscripted men not counted; women, Jews and conscripts not counted
 Ref: 1AB.3.1
 D: 3
 
@@ -219,9 +221,10 @@ D: 1
 
 Q: How did Nazi Germany fill wartime labour shortages?
 A: Foreign forced labour
-Accept: Forced workers; prisoners of war; slave labour
+Accept: Forced workers; prisoners of war; slave labour; foreign workers; conscripting women
 Ref: 1AB.3.1
 D: 3
+Note: Foreign and forced workers (about 7 million by 1944) were the main answer; women were mobilised from 1943.
 
 Q: What were the "three Ks" that Nazis said a woman's life should centre on?
 A: Children, kitchen, church

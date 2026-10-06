@@ -1,0 +1,264 @@
+Board: Edexcel
+Spec: 1PH0
+Topic: 9
+
+Q: Which non-contact force pulls two masses towards each other?
+A: Gravitational force
+Accept: Gravity; gravitational attraction; weight
+Ref: 9.1
+D: 1
+
+Q: Two charged balloons repel without touching. What type of non-contact force acts between them?
+A: Electrostatic force
+Accept: Electrostatic; electric force; electrostatic repulsion
+Ref: 9.1
+D: 1
+
+Q: A book rests on a table. What is the upward contact force from the table on the book called?
+A: Normal contact force
+Accept: Normal force; normal reaction; reaction force; contact force
+Ref: 9.1
+D: 1
+
+Q: Which contact force opposes the motion of a box sliding across a floor?
+A: Friction
+Accept: Frictional force
+Ref: 9.1
+D: 1
+
+Q: The Earth pulls a book downwards with a force of 10 N. What force does the book exert on the Earth?
+A: 10 N upwards
+Accept: 10 N; 10 N towards the book; 10 N up
+Ref: 9.1
+D: 2
+Note: The book pulls the Earth up with an equal and opposite force: an interaction pair.
+
+Q: How do the sizes and directions of the two forces in an interaction pair compare?
+A: Equal in size, opposite in direction
+Accept: Equal and opposite; same size, opposite directions
+Ref: 9.1
+D: 2
+
+Q: Why do the two forces in an interaction pair never cancel each other out?
+A: They act on different objects
+Accept: Each force acts on a different object; act on different bodies
+Ref: 9.1
+D: 3
+
+Q: Is force a vector or a scalar quantity?
+A: Vector
+Accept: Vector quantity
+Ref: 9.2
+D: 1
+
+Q: Of mass and weight, which one is a vector quantity?
+A: Weight
+Ref: 9.2
+D: 2
+Note: Weight is a force acting downwards; mass has no direction.
+
+Q: Explain why velocity is a vector quantity but speed is a scalar.
+A: Velocity has direction; speed has magnitude only
+Accept: Velocity has magnitude and direction, speed has no direction; speed has no direction
+Ref: 9.2
+D: 3
+
+Q: What name is given to splitting one force into two perpendicular forces that have the same overall effect?
+A: Resolution
+Accept: Resolving the force; resolving; resolution of forces
+Ref: 9.3
+D: 1
+HT: yes
+
+Q: On a scale drawing, 1 cm represents 2 N. How long should the arrow for a 12 N force be?
+A: 6 cm
+Accept: 6 centimetres; 60 mm
+Ref: 9.3
+D: 2
+HT: yes
+
+Q: Three force arrows drawn tip to tail form a closed triangle. What is the resultant force?
+A: Zero
+Accept: 0 N; no resultant force; zero, in equilibrium
+Ref: 9.3
+D: 2
+HT: yes
+Note: A closed vector diagram shows the object is in equilibrium.
+
+Q: Forces of 3 N east and 4 N north act on an object. What is the size of the resultant force?
+A: 5 N
+Accept: 5 newtons
+Ref: 9.3
+D: 3
+HT: yes
+Note: A scale drawing gives 5 N (a 3-4-5 triangle); the direction is not asked.
+
+Q: What name is given to a diagram showing every force acting on a single object as an arrow?
+A: Free body diagram
+Accept: Free body force diagram; free-body diagram; force diagram
+Ref: 9.4
+D: 1
+HT: yes
+
+Q: On a free body diagram, what does the length of each force arrow show?
+A: Size of the force
+Accept: Magnitude of the force; magnitude; size; how big the force is
+Ref: 9.4
+D: 1
+HT: yes
+
+Q: A free body diagram shows a 20 N force to the right and a 5 N force to the left. What is the resultant force?
+A: 15 N to the right
+Accept: 15 N right; 15 N
+Ref: 9.4
+D: 2
+HT: yes
+
+Q: A box's free body diagram shows 30 N up, 30 N down, 12 N right and 4 N left. What is the resultant force?
+A: 8 N to the right
+Accept: 8 N right; 8 N
+Ref: 9.4
+D: 3
+HT: yes
+Note: The vertical forces cancel; only the horizontal forces leave a resultant.
+
+Q: What word describes the forces on an object when the resultant force on it is zero?
+A: Balanced
+Accept: Balanced forces; in equilibrium; equilibrium
+Ref: 9.5
+D: 1
+HT: yes
+
+Q: An object moves at a constant velocity. What is the resultant force on it?
+A: Zero
+Accept: 0 N; no resultant force; zero newtons
+Ref: 9.5
+D: 2
+HT: yes
+Note: Many students think a moving object must have a forward resultant force.
+
+Q: A rocket has a thrust of 5000 N and a weight of 3000 N. What is the resultant force on it?
+A: 2000 N upwards
+Accept: 2000 N up; 2000 N; 2 kN upwards
+Ref: 9.5
+D: 2
+HT: yes
+
+Q: A box is pushed with a 50 N force but stays still. What is the size of the friction force, and why?
+A: 50 N, it balances the push
+Accept: 50 N because resultant force is zero; 50 N, forces are balanced; 50 N
+Ref: 9.5
+D: 3
+HT: yes
+
+Q: What is the turning effect of a force called?
+A: Moment
+Accept: Moment of a force; torque
+Ref: 9.6P
+D: 1
+
+Q: What name is given to the fixed point that an object turns about?
+A: Pivot
+Accept: Fulcrum; axis of rotation
+Ref: 9.6P
+D: 1
+
+Q: Why is a door easier to open by pushing at the handle than by pushing near the hinge?
+A: Larger distance from pivot gives larger moment
+Accept: Bigger distance from hinge, bigger moment; larger moment for the same force; needs less force for same moment
+Ref: 9.6P
+D: 3
+
+Q: State the equation linking moment, force and distance.
+A: Moment = force × perpendicular distance
+Accept: Moment = force × distance normal to the force; M = F × d; moment = force × distance
+Ref: 9.7P
+D: 2
+
+Q: What is the unit of a moment?
+A: Newton metre
+Accept: N m; Nm; newton metres
+Ref: 9.7P
+D: 1
+Note: Not N/m, which is the unit of spring constant.
+
+Q: A 20 N force acts at right angles 0.5 m from a pivot. What is its moment?
+A: 10 N m
+Accept: 10 Nm; 10 newton metres
+Ref: 9.7P
+D: 2
+
+Q: A 0.25 m spanner must give a moment of 40 N m. What force is needed at right angles at its end?
+A: 160 N
+Accept: 160 newtons
+Ref: 9.7P
+D: 3
+Note: Force = moment ÷ distance = 40 ÷ 0.25.
+
+Q: When an object is balanced, the total anticlockwise moment equals the total of which other moments?
+A: Clockwise moments
+Accept: Clockwise; the clockwise moments
+Ref: 9.8P
+D: 1
+
+Q: State the principle of moments.
+A: Clockwise moments equal anticlockwise moments in equilibrium
+Accept: Sum of clockwise moments = sum of anticlockwise moments; total clockwise moment equals total anticlockwise moment
+Ref: 9.8P
+D: 2
+
+Q: A balanced beam has 10 N acting 0.3 m left of the pivot. What force acting 0.6 m right of the pivot balances it?
+A: 5 N
+Accept: 5 newtons
+Ref: 9.8P
+D: 3
+
+Q: A 300 N child sits 2 m from a seesaw's pivot. How far from the pivot must a 400 N child sit to balance it?
+A: 1.5 m
+Accept: 1.5 metres; 150 cm
+Ref: 9.8P
+D: 3
+Note: 300 × 2 = 400 × d, so d = 600 ÷ 400 on the other side of the pivot.
+
+Q: What name is given to toothed wheels that mesh together to transmit rotation?
+A: Gears
+Accept: Gear; gear wheels; cogs
+Ref: 9.9P
+D: 1
+
+Q: A small gear drives a larger gear. Does the larger gear turn faster or slower than the small gear?
+A: Slower
+Accept: More slowly; slower, in the opposite direction
+Ref: 9.9P
+D: 2
+
+Q: A small gear drives a gear with twice its radius. How does the moment on the larger gear compare?
+A: Twice as large
+Accept: Doubled; double; two times bigger; 2 times the moment
+Ref: 9.9P
+D: 3
+Note: The force at the teeth is the same but acts at twice the distance (ignoring friction).
+
+Q: Why does a crowbar with a longer handle make it easier to lift a heavy load?
+A: Longer distance gives larger moment for same effort
+Accept: Bigger moment for the same force; same moment needs less force; effort is further from the pivot
+Ref: 9.9P
+D: 3
+
+Q: What is put between moving parts of a machine to reduce friction?
+A: Lubricant
+Accept: Oil; grease; lubrication
+Ref: 9.10
+D: 1
+
+Q: Friction between moving parts wastes energy. Into which energy store is this energy mostly transferred?
+A: Thermal energy store
+Accept: Thermal; thermal store; heat; internal energy
+Ref: 9.10
+D: 2
+
+Q: Explain how oiling a bicycle chain reduces unwanted energy transfer.
+A: Reduces friction so less energy heats surroundings
+Accept: Less friction so less energy wasted as heat; reduces friction, less thermal energy transferred
+Ref: 9.10
+D: 3

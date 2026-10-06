@@ -663,9 +663,9 @@
   "2.23": "both and to collision interactions and relate it to the conservation of momentum in collisions",
   "2.31": "and estimate the forces involved in typical situations on a public road",
   "4.10": "and speed",
-  "6.46P": "Calculate the net decline, expressed as a ratio, in a radioactive emission after a given number of half-lives (1c, 3d).",
   "12.12": "Recall and use Fleming’s left-hand rule to represent the relative directions of the force, the current and the magnetic field for cases where they are mutually perpendicular",
-  "13.7P": "Use the turns ratio equation for transformers to calculate either the missing voltage or the missing number of turns: and 13.10"
+  "13.7P": "Use the turns ratio equation for transformers to calculate either the missing voltage or the missing number of turns: and 13.10",
+  "6.27": "Calculate the net decline, expressed as a ratio, in a radioactive emission after a given number of half-lives (1c, 3d)."
  },
  "practicals": [
   {

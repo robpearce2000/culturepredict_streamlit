@@ -35,7 +35,7 @@ Accept: A star
 Ref: 7.2P
 D: 1
 
-Q: Pluto orbits the Sun but is too small to count as a planet. What type of object is it classified as?
+Q: Pluto orbits the Sun but is not one of the eight planets. What type of object is it classified as?
 A: Dwarf planet
 Accept: A dwarf planet
 Ref: 7.2P
@@ -51,7 +51,7 @@ Q: The Moon orbits the Earth. What general name is given to a natural object tha
 A: Natural satellite
 Accept: Moon; satellite
 Ref: 7.2P
-D: 2
+D: 1
 
 Q: Which planet is closest to the Sun?
 A: Mercury
@@ -113,11 +113,11 @@ Q: Where in its orbit is a comet travelling fastest?
 A: Closest to the Sun
 Accept: Nearest the Sun; when near the Sun
 Ref: 7.5P
-D: 3
+D: 2
 
 Q: An artificial satellite orbits once a day, staying above the same point on the Equator. What is this orbit called?
 A: Geostationary orbit
-Accept: Geostationary; geosynchronous
+Accept: Geostationary
 Ref: 7.5P
 D: 2
 
@@ -176,11 +176,12 @@ Accept: Gets less; falls; decreases as it expands
 Ref: 7.8P
 D: 2
 
-Q: In the Steady State theory, how does the density of the expanding Universe stay the same?
-A: Matter is continuously created
-Accept: New matter is created; continuous creation of matter
+Q: According to the Steady State theory, what happens to the density of the Universe over time?
+A: Stays the same
+Accept: Constant; does not change; unchanged
 Ref: 7.8P
-D: 3
+D: 2
+Note: Contrast with the Big Bang theory, where density decreases.
 
 Q: What does CMB stand for?
 A: Cosmic microwave background
@@ -218,11 +219,12 @@ Accept: New evidence; new observations
 Ref: 7.10P
 D: 2
 
-Q: What name is given to the change in observed frequency when a wave source moves relative to an observer?
-A: Doppler effect
-Accept: Doppler shift; Doppler
+Q: A wave source moves relative to an observer. Which two properties of the observed waves change?
+A: Frequency and wavelength
+Accept: Wavelength and frequency
 Ref: 7.11P
-D: 1
+D: 2
+Note: The wave speed does not change.
 
 Q: An ambulance siren moves towards you. What happens to the frequency of the sound you hear?
 A: Increases
@@ -273,8 +275,8 @@ Ref: 7.13P
 D: 3
 
 Q: All galaxies are moving apart. If we imagine time running backwards, what does this suggest about the early Universe?
-A: Started from one small point
-Accept: All matter was together; began at a single point; very small and dense
+A: Began in one small, dense region
+Accept: All matter was close together; began at a single point; very small and dense; started from one small point
 Ref: 7.13P
 D: 3
 
@@ -353,6 +355,7 @@ A: Thermal expansion becomes greater than gravity
 Accept: Outward pressure exceeds gravity; expansion outweighs gravity
 Ref: 7.17P
 D: 3
+Note: GCSE simplification: the core gets hotter as hydrogen runs out, so outward thermal expansion wins.
 
 Q: A red giant's outer layers drift away. Why does the remaining core shrink to a white dwarf?
 A: Fusion stops, so gravity contracts it
@@ -362,8 +365,9 @@ D: 3
 
 Q: What does a star much more massive than the Sun become when it leaves the main sequence?
 A: Red supergiant
+Accept: Supergiant
 Ref: 7.18P
-D: 2
+D: 1
 
 Q: What huge explosion ends the life of a red supergiant?
 A: Supernova
@@ -382,7 +386,7 @@ Accept: With the naked eye; by eye; unaided eye
 Ref: 7.19P
 D: 1
 
-Q: What type of electromagnetic radiation do large ground-based dish telescopes such as Jodrell Bank detect?
+Q: What type of electromagnetic radiation do large ground-based dish telescopes usually detect?
 A: Radio waves
 Accept: Radio
 Ref: 7.19P

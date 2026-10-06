@@ -8,11 +8,12 @@ Accept: Scalar quantity
 Ref: 2.1
 D: 1
 
-Q: Speed is a scalar quantity. What does a scalar quantity have?
-A: Magnitude only
-Accept: Size only; size but no direction; magnitude but no direction
+Q: Is the time taken to run a race a scalar or a vector quantity?
+A: Scalar
+Accept: Scalar quantity
 Ref: 2.1
-D: 1
+D: 2
+Note: Time has magnitude only; it has no direction.
 
 Q: Temperature is a scalar. Explain why, in terms of magnitude and direction.
 A: Has magnitude but no direction
@@ -95,12 +96,12 @@ A: Velocity
 Ref: 2.5
 D: 1
 
-Q: A car goes round a bend at a steady 15 m/s. Which is changing: its speed or its velocity?
+Q: A car drives north at 20 m/s, then turns and drives east at 20 m/s. Has its speed or its velocity changed?
 A: Velocity
-Accept: Its velocity
+Accept: Its velocity; velocity only
 Ref: 2.5
-D: 3
-Note: The speed is constant but the direction changes, so the velocity changes.
+D: 2
+Note: The speed is the same but the direction has changed.
 
 Q: A runner covers 100 m in 20 s. What is her average speed?
 A: 5 m/s
@@ -254,17 +255,17 @@ Q: What is a typical cycling speed?
 A: 6 m/s
 Accept: Any value from 4 to 8 m/s
 Ref: 2.12
-D: 2
+D: 1
 
 Q: What is a typical running speed for a person (not a sprinter)?
 A: 3 m/s
 Accept: Any value from 2 to 5 m/s
 Ref: 2.12
-D: 2
+D: 1
 
 Q: What is the acceleration in free fall near the Earth's surface?
 A: 10 m/s²
-Accept: 10 m/s^2; 9.8 m/s²
+Accept: 10 m/s^2; 9.8 m/s²; 9.81 m/s²
 Ref: 2.13
 D: 1
 
@@ -302,7 +303,7 @@ Q: A skydiver of weight 800 N falls at a constant velocity. What is the air resi
 A: 800 N
 Accept: 800 newtons
 Ref: 2.14
-D: 3
+D: 2
 Note: Constant velocity means the resultant force is zero, so the forces balance.
 
 Q: What is the unit of force?
@@ -364,7 +365,7 @@ Q: A top-pan balance gives a reading in kg. What must you do to that reading to 
 A: Multiply by g
 Accept: Multiply by gravitational field strength; multiply by 10 N/kg; W = m × g
 Ref: 2.17
-D: 3
+D: 2
 
 Q: A 10 kg mass is taken from the Earth to the Moon. What happens to its mass?
 A: Stays the same
@@ -413,7 +414,7 @@ Ref: 2.19
 RP: 2.19
 D: 3
 
-Q: To vary the force but keep total mass constant, where do the extra hanging masses come from?
+Q: In the trolley core practical, to vary the force but keep the total mass constant, where do the extra hanging masses come from?
 A: From the trolley
 Accept: Moved from the trolley to the hanger; taken off the trolley
 Ref: 2.19
@@ -439,7 +440,7 @@ Q: A car goes round a roundabout at a constant speed. Name the quantity, speed o
 A: Speed
 Ref: 2.20
 HT: yes
-D: 3
+D: 2
 
 Q: The velocity of an object moving in a circle at constant speed keeps changing. What must the object therefore have?
 A: Acceleration
@@ -453,45 +454,47 @@ A: Centripetal force
 Accept: Centripetal
 Ref: 2.21
 HT: yes
-D: 3
+D: 1
 
 Q: In which direction does the centripetal force on an object moving in a circle act?
 A: Towards the centre of the circle
 Accept: Towards the centre; inwards
 Ref: 2.21
 HT: yes
-D: 3
+D: 1
 
 Q: What force provides the centripetal force that keeps the Moon in orbit around the Earth?
 A: Gravity
 Accept: Gravitational force; gravitational attraction; weight
 Ref: 2.21
 HT: yes
-D: 3
+D: 2
 
 Q: What does the inertial mass of an object measure?
 A: How hard it is to change its velocity
 Accept: How difficult it is to change its velocity; resistance to change in velocity
 Ref: 2.22
 HT: yes
-D: 3
+D: 2
 
 Q: Inertial mass is defined as the ratio of which two quantities?
 A: Force over acceleration
 Accept: Force ÷ acceleration; F/a; force to acceleration
 Ref: 2.22
 HT: yes
-D: 3
+D: 2
 
-Q: Name the tendency of an object to stay at rest or keep moving at constant velocity.
-A: Inertia
+Q: A 6 N resultant force gives an object an acceleration of 2 m/s². What is its inertial mass?
+A: 3 kg
+Accept: 3 kilograms
 Ref: 2.22
 HT: yes
-D: 3
+D: 2
+Note: Inertial mass = force ÷ acceleration.
 
 Q: State Newton's third law.
-A: Interacting objects exert equal and opposite forces on each other
-Accept: Every action has an equal and opposite reaction; equal and opposite forces on each other
+A: Interacting objects exert equal and opposite forces
+Accept: Interacting objects exert equal and opposite forces on each other; two objects exert equal and opposite forces on each other; every action has an equal and opposite reaction
 Ref: 2.23
 D: 2
 
@@ -507,41 +510,41 @@ A: 20 N in the opposite direction
 Accept: 20 N; −20 N; 20 N backwards
 Ref: 2.23
 HT: yes
-D: 3
+D: 2
 
 Q: Newton's third law applied to collisions explains the conservation of which quantity?
 A: Momentum
 Ref: 2.23
 HT: yes
-D: 3
+D: 2
 
 Q: What is the unit of momentum?
 A: kg m/s
 Accept: Kilogram metres per second; kg m s⁻¹; N s
 Ref: 2.24
 HT: yes
-D: 3
+D: 1
 
 Q: A 2 kg ball moves at 5 m/s. What is its momentum?
 A: 10 kg m/s
 Accept: 10 kilogram metres per second; 10 N s
 Ref: 2.24
 HT: yes
-D: 3
+D: 2
 
 Q: A 0.5 kg ball has a momentum of 4 kg m/s. What is its velocity?
 A: 8 m/s
 Accept: 8 metres per second
 Ref: 2.24
 HT: yes
-D: 3
+D: 2
 
 Q: What happens to the total momentum of two objects when they collide, if no external forces act?
 A: Stays the same
 Accept: Conserved; unchanged; does not change
 Ref: 2.25
 HT: yes
-D: 3
+D: 2
 
 Q: Two ice skaters at rest push apart. What is their total momentum after they separate?
 A: Zero
@@ -563,7 +566,7 @@ Q: In the equation F = (mv − mu) ÷ t, what does (mv − mu) represent?
 A: Change in momentum
 Ref: 2.26
 HT: yes
-D: 3
+D: 1
 
 Q: Use F = (mv − mu) ÷ t. A 0.1 kg ball is hit from rest to 20 m/s in 0.01 s. What is the force?
 A: 200 N
@@ -584,7 +587,7 @@ A: Crumple zone
 Accept: Crumple zones
 Ref: 2.26
 HT: yes
-D: 3
+D: 1
 
 Q: Name the simple method for measuring reaction time in which a ruler is released and caught.
 A: Ruler drop test
@@ -674,7 +677,7 @@ A: 3000 N
 Accept: 3 kN; 3000 newtons
 Ref: 2.31
 HT: yes
-D: 3
+D: 2
 
 Q: A 1000 kg car hits a wall at 20 m/s and stops in 0.1 s. Estimate the force on the car.
 A: 200 000 N
@@ -690,11 +693,12 @@ Accept: 10 metres
 Ref: 2.32P
 D: 2
 
-Q: A car's speed doubles. What happens to its braking distance?
-A: Quadruples
-Accept: ×4; four times as long; increases by a factor of 4
+Q: A driver's thinking distance is 6 m at 10 m/s. Estimate the thinking distance at 30 m/s, with the same reaction time.
+A: 18 m
+Accept: 18 metres
 Ref: 2.32P
 D: 3
+Note: Thinking distance is proportional to speed (braking distance is not).
 
 Q: A car's braking distance is 8 m at 10 m/s. Estimate its braking distance at 20 m/s.
 A: 32 m
