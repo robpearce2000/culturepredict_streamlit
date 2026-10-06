@@ -284,6 +284,8 @@ const round = CGB.createClassRound({
   doneHtml: () => `<button class="btn go" type="button" data-q="next">${boardDone() ? 'See the results' : 'Back to the board'} <span class="kbd">Enter</span></button>`,
   onConfirm: classResult, onUndo: undoClassResult
 });
+// "Back to the board" / "See the results" after marking (Enter does the same)
+$('qBtns').addEventListener('click', e => { if (e.target.closest('button[data-q="next"]')) closeQuestion(); });
 function paintQBoard(earned) { qBoard.set({ teams: S.teams.map(t => ({ name: t.name, score: t.score })), turn: S.picked, earned: earned || [] }); }
 function classResult(res) {
   const t = tileOpen(), base = t.star ? t.value * 2 : t.value;

@@ -19,6 +19,25 @@ test('launcher → Category Clash and Hex Hunt → back to launcher', async ({ p
   expect(log.requests).toEqual([]);
 });
 
+// Every button after marking must work with the mouse too, not only its keyboard shortcut
+for (const [g, tile] of [['category-clash', '#cc-board .cc-tile[data-c]'], ['hex-hunt', '#hh-board .hh-hex']]) {
+  test(`${g}: one question played with the mouse only goes back to the board`, async ({ page }) => {
+    const log = await openBundle(page, '#' + g);
+    const p = g === 'category-clash' ? 'cc' : 'hh';
+    await page.click(`#${p}-startBtn`);
+    await page.locator(tile).first().click();
+    await page.locator(`#game-${g} [data-cm="show"]`).click();
+    await expect.poll(async () => (await state(page, g)).round, { timeout: 10000 }).toBe('mark');
+    if (g === 'category-clash') { await page.locator('#game-category-clash .cm-team').first().click(); await page.locator('#game-category-clash [data-cm="confirm"]').click(); }
+    else await page.locator('#game-hex-hunt .hh-side').first().click();
+    const next = page.locator(`#${p}-qBtns button.go`);
+    await expect(next).toHaveText(/Back to the board|joined their edges/);
+    await next.click();
+    await expect.poll(async () => (await state(page, g)).phase).toBe('board');
+    expect(log.errors).toEqual([]);
+  });
+}
+
 test('a full game of Category Clash with keyboard shortcuts reaches the results', async ({ page }) => {
   const log = await openBundle(page, '#category-clash');
   await page.click(PICK('#cc-segTeams', 3));
