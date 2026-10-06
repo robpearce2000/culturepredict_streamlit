@@ -1306,7 +1306,7 @@ function placeTag(el, obj, dy, show) {
   const w = stageSize.w, h = stageSize.h;
   const half = el._w / 2 + 8;
   const left = band.left || 0, right = Math.min(w, band.right || w);
-  const sx = (tagV.x + 1) / 2 * w - viewShiftX;
+  const sx = (tagV.x + 1) / 2 * w;   // the camera's view offset is already in the projection
   const x = +Math.min(right - half, Math.max(left + half, sx)).toFixed(1);   // sub-pixel, so tags glide with the racers
   // keep tags inside the clear band so they never sit on the HUD panels
   const below = el !== $('tagYou');

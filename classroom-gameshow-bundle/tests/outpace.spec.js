@@ -144,3 +144,20 @@ test('Outpace: the Final Sprint waits on a card that explains it, and only start
   await expect.poll(async () => (await state(page, 'outpace')).timeLeft).toBeLessThan(t0);
   expect(log.errors).toEqual([]);
 });
+
+test('Outpace: the class and Hunter labels sit over their own racers, in the Deal Rounds and in the Final Sprint', async ({ page }) => {
+  await page.setViewportSize({ width: 1366, height: 768 });
+  const log = await openBundle(page, '#outpace');
+  await page.click('#op-startBtn');
+  const gaps = () => page.evaluate(() => {
+    const m = CGB.test.outpace.motion();
+    const c = id => { const b = document.getElementById(id).getBoundingClientRect(); return b.left + b.width / 2; };
+    return [Math.abs(c('op-tagYou') - m.rs[0]), Math.abs(c('op-tagHunter') - m.hs)];
+  });
+  await page.waitForTimeout(2500);
+  (await gaps()).forEach(g => expect(g).toBeLessThan(30));
+  await page.evaluate(() => CGB.test.outpace.toSprint(600));          // the picture slides left of the question column
+  await page.waitForTimeout(3000);
+  (await gaps()).forEach(g => expect(g).toBeLessThan(30));
+  expect(log.errors).toEqual([]);
+});
