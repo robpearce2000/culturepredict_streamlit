@@ -1,0 +1,212 @@
+Board: AQA
+Spec: 8035
+Topic: 3.2.3.1
+
+Q: Which three resources are fundamental to human development in this topic?
+A: Food, water and energy
+Ref: 3.2.3.1.1
+D: 1
+
+Q: What term describes the total distance food travels from where it is produced to where it is eaten?
+A: Food miles
+Ref: 3.2.3.1.1
+D: 1
+
+Q: Name the type of country, based on income, where most of the world's people suffering food shortages live.
+A: Low income country
+Accept: LIC; Low-income country; Developing country
+Ref: 3.2.3.1.1
+D: 1
+
+Q: Name the term for a lack of enough food to meet a person's energy needs over time.
+A: Undernutrition
+Accept: Hunger; Malnutrition; Food insecurity
+Ref: 3.2.3.1.1
+D: 1
+
+Q: Give one way that a reliable water supply improves social well-being.
+A: Better health or fewer water-borne diseases
+Accept: Sanitation; Hygiene; Less disease; Time saved collecting water
+Ref: 3.2.3.1.1
+D: 2
+
+Q: Give one way that a reliable energy supply supports a country's economic well-being.
+A: Powers industry and businesses
+Accept: Industry; Factories; Jobs; Economic growth; Powers transport
+Ref: 3.2.3.1.1
+D: 2
+
+Q: What term describes the unequal supply and use of resources between rich and poor countries?
+A: Global inequality
+Accept: Resource inequality; Inequalities
+Ref: 3.2.3.1.1
+D: 1
+
+Q: Describe how per capita energy consumption in high income countries typically compares with low income countries.
+A: Much higher
+Accept: Higher; Greater; More
+Ref: 3.2.3.1.1
+D: 2
+
+Q: Why do many people in low income countries lack access to clean water despite living near rivers?
+A: No money for treatment or piped supply
+Accept: Poor infrastructure; Pollution; Lack of investment; Lack of treatment
+Ref: 3.2.3.1.1
+D: 3
+
+Q: Why do high income countries use far more energy per person than low income countries?
+A: Greater wealth, industry and appliance use
+Accept: More industry; More cars; More appliances; Higher incomes
+Ref: 3.2.3.1.1
+D: 3
+
+Q: Why can a low income country with a food surplus still have people who go hungry?
+A: Poor distribution or poverty
+Accept: Cannot afford food; Exports food; Poor transport; Unequal distribution
+Ref: 3.2.3.1.1
+D: 3
+
+Q: Name the type of farming business, run on a large scale with machinery, that is a growing trend in the UK.
+A: Agribusiness
+Accept: Agri-business; Industrial farming
+Ref: 3.2.3.1.2
+D: 1
+
+Q: Name the term for food grown and sold close to where it is eaten.
+A: Local food
+Accept: Locally sourced food; Local sourcing
+Ref: 3.2.3.1.2
+D: 1
+
+Q: Name the term for farming that avoids artificial fertilisers and pesticides.
+A: Organic farming
+Accept: Organic
+Ref: 3.2.3.1.2
+D: 1
+
+Q: Why does the UK import fruit and vegetables that are out of season at home?
+A: Demand for all-year-round food
+Accept: Year-round demand; Consumers want food all year
+Ref: 3.2.3.1.2
+D: 2
+
+Q: Why does a rise in food miles increase a food's carbon footprint?
+A: More fuel burned in transport
+Accept: More transport emissions; More fossil fuels burned; Greater CO2
+Ref: 3.2.3.1.2
+D: 2
+
+Q: Give one reason UK shoppers choose locally sourced food to cut their carbon footprint.
+A: Fewer food miles
+Accept: Less transport; Lower emissions
+Ref: 3.2.3.1.2
+D: 2
+
+Q: Describe one effect of agribusiness on the UK countryside.
+A: Larger fields and hedgerow removal
+Accept: Loss of hedgerows; Habitat loss; Larger fields; More machinery; Fertiliser pollution
+Ref: 3.2.3.1.2
+D: 3
+Note: Several valid answers are possible; accept any sensible effect of large-scale, mechanised farming.
+
+Q: Name the region of the UK with a water surplus, generally the wetter north and west.
+A: North and west
+Accept: Wales; Scotland; Lake District; Northern England
+Ref: 3.2.3.1.2
+D: 2
+
+Q: Which part of the UK has the greatest water deficit, because of low rainfall and high population?
+A: South-east England
+Accept: South East; The south east
+Ref: 3.2.3.1.2
+D: 1
+
+Q: What term describes moving water from areas of surplus to areas of deficit?
+A: Water transfer
+Accept: Transfer; Water transfers
+Ref: 3.2.3.1.2
+D: 1
+
+Q: Give one cause of rising UK water demand over the last century.
+A: Population growth
+Accept: More households; Dishwashers; Washing machines; Higher living standards; Industry
+Ref: 3.2.3.1.2
+D: 2
+
+Q: Name one source of water pollution that comes from farming.
+A: Fertiliser run-off
+Accept: Nitrates; Pesticides; Slurry; Manure; Fertilisers
+Ref: 3.2.3.1.2
+D: 2
+
+Q: Why is water transfer needed in the UK?
+A: Demand is highest where supply is lowest
+Accept: Surplus is far from the demand; Population is in the dry south and east
+Ref: 3.2.3.1.2
+D: 3
+
+Q: Why are water transfer schemes sometimes criticised?
+A: High cost and environmental damage
+Accept: Expensive; Reservoirs flood land; Loss of habitats; Disrupts communities
+Ref: 3.2.3.1.2
+D: 3
+
+Q: Name the three fossil fuels used in the UK's energy mix.
+A: Coal, oil and gas
+Accept: Coal, natural gas and oil
+Ref: 3.2.3.1.2
+D: 1
+
+Q: Name the term for the proportions of different energy sources used to meet a country's needs.
+A: Energy mix
+Accept: The energy mix
+Ref: 3.2.3.1.2
+D: 1
+
+Q: Which fossil fuel's use in UK electricity generation has fallen most sharply since 1990?
+A: Coal
+Ref: 3.2.3.1.2
+D: 2
+
+Q: Name one renewable energy source whose share of UK electricity has grown strongly, especially offshore.
+A: Wind
+Accept: Wind power; Offshore wind; Solar; Biomass
+Ref: 3.2.3.1.2
+D: 1
+
+Q: Why has the UK become more reliant on imported energy since the 1990s?
+A: Domestic coal, gas and oil have declined
+Accept: Reserves running out; North Sea reserves declining; Decline in domestic supplies
+Ref: 3.2.3.1.2
+D: 2
+
+Q: Give one environmental issue linked to burning fossil fuels.
+A: Greenhouse gas emissions
+Accept: Climate change; Global warming; Air pollution; Acid rain; Carbon dioxide
+Ref: 3.2.3.1.2
+D: 2
+
+Q: Give one economic issue linked to the exploitation of North Sea oil and gas.
+A: Jobs and revenue, but it is costly to extract
+Accept: Jobs; Tax revenue; High extraction costs; Reserves run out; Price changes
+Ref: 3.2.3.1.2
+D: 3
+Note: Accept any sensible economic point.
+
+Q: Why is the UK's reliance on renewable energy not a complete solution to energy security?
+A: Supply depends on weather
+Accept: Intermittent; Wind and sun are unreliable; Weather dependent
+Ref: 3.2.3.1.2
+D: 3
+
+Q: Why do UK governments encourage a move from fossil fuels to renewables?
+A: Reduce emissions and imports
+Accept: Cut carbon emissions; Energy security; Tackle climate change
+Ref: 3.2.3.1.2
+D: 3
+
+Q: Name the UK's rising renewable source made from burning organic material such as wood pellets.
+A: Biomass
+Ref: 3.2.3.1.2
+D: 1
+

@@ -1,0 +1,258 @@
+Board: Edexcel
+Spec: 1HI0
+Topic: P4
+
+Q: In which Iranian city did Stalin, Roosevelt and Churchill meet in 1943?
+A: Tehran
+Accept: Teheran
+Ref: P4.1.1
+D: 1
+
+Q: Into how many zones of occupation did the Allies agree at Yalta to divide Germany?
+A: Four
+Accept: 4
+Ref: P4.1.1
+D: 2
+
+Q: Which US diplomat in Moscow sent the 1946 Long Telegram warning of Soviet expansion?
+A: George Kennan
+Accept: Kennan
+Ref: P4.1.1
+D: 2
+
+Q: Why did Stalin create satellite states in Eastern Europe after 1945?
+A: As a buffer against attack from the West
+Accept: Security; Buffer zone; To protect the USSR from invasion; Protection against the West
+Ref: P4.1.1
+D: 3
+
+Q: Which two countries did the Truman Doctrine of 1947 first offer US aid to?
+A: Greece and Turkey
+Accept: Turkey and Greece
+Ref: P4.1.2
+D: 2
+
+Q: Which US Secretary of State gave his name to the 1947 plan for aid to Europe?
+A: George Marshall
+Accept: Marshall
+Ref: P4.1.2
+D: 1
+
+Q: Why did Stalin refuse Marshall Aid for Eastern Europe?
+A: To stop US domination of Europe
+Accept: He saw it as a US attempt to dominate Europe; Dollar imperialism; To stop US influence; Fear of US control; He feared US economic control
+Ref: P4.1.2
+D: 3
+
+Q: Which military alliance of the USA, Canada and western European states was formed in 1949?
+A: NATO
+Accept: North Atlantic Treaty Organisation; North Atlantic Treaty Organization
+Ref: P4.1.2
+D: 1
+
+Q: Which new currency, introduced in the western zones in 1948, prompted Stalin to blockade West Berlin?
+A: Deutschmark
+Accept: Deutsche Mark; D-Mark; The new German mark
+Ref: P4.1.2
+D: 2
+
+Q: What name is given to the Western operation that flew supplies into West Berlin in 1948-49?
+A: Berlin Airlift
+Accept: The airlift; Airlift
+Ref: P4.1.2
+D: 1
+
+Q: In which year was the Warsaw Pact formed?
+A: 1955
+Ref: P4.1.3
+D: 1
+
+Q: Which 1955 event prompted the USSR to form the Warsaw Pact?
+A: West Germany joining NATO
+Accept: West Germany's entry into NATO; West German rearmament; West Germany being admitted to NATO
+Ref: P4.1.3
+D: 3
+
+Q: Which more powerful nuclear weapon did the USA test first, in 1952?
+A: Hydrogen bomb
+Accept: H-bomb; Thermonuclear bomb
+Ref: P4.1.3
+D: 2
+
+Q: Which Hungarian leader promised free elections and withdrawal from the Warsaw Pact in 1956?
+A: Imre Nagy
+Accept: Nagy
+Ref: P4.1.3
+D: 1
+
+Q: Why did the USA not send military help to Hungary in 1956?
+A: Fear of nuclear war with the USSR
+Accept: Fear of war with USSR; Risk of nuclear war; Hungary was in the Soviet sphere
+Ref: P4.1.3
+D: 3
+
+Q: About how many East Germans fled to the West, mostly via Berlin, between 1949 and 1961?
+A: About 3 million
+Accept: 3 million; 2.7 million; 3.5 million; 2.5 to 3.5 million
+Ref: P4.2.1
+D: 2
+
+Q: Which US spy plane shot down over the USSR in May 1960 wrecked the Paris summit?
+A: U-2
+Accept: U2
+Ref: P4.2.1
+D: 1
+
+Q: Which Cuban crop did the USA stop buying in 1960, pushing Castro towards the Soviet Union?
+A: Sugar
+Accept: Cuban sugar; Sugar imports
+Ref: P4.2.1
+D: 2
+
+Q: Which US agency trained and equipped the exiles who invaded Cuba at the Bay of Pigs?
+A: CIA
+Accept: Central Intelligence Agency
+Ref: P4.2.1
+D: 1
+
+Q: Which reforming leader of Czechoslovakia launched the Prague Spring in 1968?
+A: Alexander Dubcek
+Accept: Dubcek; Dubček; Alexander Dubček
+Ref: P4.2.1
+D: 1
+
+Q: Why did East Germany build the Berlin Wall in 1961?
+A: To stop East Germans fleeing to the West
+Accept: Stop refugees; To stop people escaping to West Berlin; To prevent defection
+Ref: P4.2.2
+D: 2
+
+Q: What name did Kennedy give to the naval blockade of Cuba in October 1962?
+A: Quarantine
+Accept: A quarantine
+Ref: P4.2.2
+D: 2
+
+Q: In return for removal of Soviet missiles from Cuba, the USA secretly agreed to withdraw its Jupiter missiles from which country bordering the USSR?
+A: Turkey
+Ref: P4.2.2
+D: 3
+
+Q: Which 1968 Soviet policy claimed the right to intervene to defend communism in Eastern Bloc states?
+A: Brezhnev Doctrine
+Accept: The Brezhnev Doctrine
+Ref: P4.2.2
+D: 2
+
+Q: Which US president visited West Berlin in 1963 and declared 'Ich bin ein Berliner'?
+A: John F. Kennedy
+Accept: Kennedy; JFK
+Ref: P4.2.3
+D: 1
+
+Q: What name is given to the direct telephone link set up between Washington and Moscow in 1963?
+A: Hotline
+Accept: The hotline; Moscow-Washington hotline
+Ref: P4.2.3
+D: 1
+
+Q: The Limited Test Ban Treaty of 1963 still allowed nuclear tests in which place?
+A: Underground
+Accept: Underground tests
+Ref: P4.2.3
+D: 2
+
+Q: The 1967 Outer Space Treaty banned placing which weapons in orbit?
+A: Nuclear weapons
+Accept: Weapons of mass destruction; Nuclear weapons or WMD
+Ref: P4.2.3
+D: 2
+
+Q: What did non-nuclear states promise in the 1968 Nuclear Non-Proliferation Treaty?
+A: Not to develop nuclear weapons
+Accept: Not to build nuclear weapons; Not to acquire nuclear weapons
+Ref: P4.2.3
+D: 2
+
+Q: Why did the West not intervene militarily when the USSR crushed the Prague Spring?
+A: Czechoslovakia was in the Soviet sphere
+Accept: Fear of war with the USSR; Fear of nuclear war; It was in the Soviet sphere of influence
+Ref: P4.2.3
+D: 3
+
+Q: What name is given to the easing of Cold War tensions in the 1970s?
+A: Détente
+Accept: Detente
+Ref: P4.3.1
+D: 1
+
+Q: What did SALT 1, signed in 1972, limit?
+A: Numbers of nuclear missiles
+Accept: Nuclear missiles; Missiles and anti-ballistic missile systems; ICBMs and ABMs; Nuclear weapons
+Ref: P4.3.1
+D: 2
+
+Q: In the 1975 Helsinki Accords, the West accepted what in Europe in return for Soviet promises on human rights?
+A: Post-war borders
+Accept: Existing borders; Europe's post-war frontiers; Soviet control of Eastern Europe
+Ref: P4.3.1
+D: 3
+
+Q: In which year did the Soviet Union invade Afghanistan?
+A: 1979
+Accept: December 1979
+Ref: P4.3.2
+D: 1
+
+Q: What did the Carter Doctrine of 1980 say the USA would defend, by force if necessary?
+A: Its interests in the Persian Gulf
+Accept: Persian Gulf region; The Gulf; Oil supplies in the Gulf; US interests in the Gulf
+Ref: P4.3.2
+D: 2
+
+Q: Which Olympic Games did the USA boycott in 1980 over Afghanistan?
+A: Moscow Olympics
+Accept: Moscow; Moscow 1980
+Ref: P4.3.2
+D: 1
+
+Q: Why did Reagan's Strategic Defence Initiative alarm the USSR?
+A: It could make the USA safe from missiles
+Accept: It threatened to make the USA safe from missiles; It could neutralise Soviet missiles; It would upset the balance; Space-based missile defence; It would start an expensive arms race
+Ref: P4.3.2
+D: 3
+
+Q: Which 1987 treaty between Reagan and Gorbachev scrapped a whole class of nuclear missiles?
+A: INF Treaty
+Accept: Intermediate-Range Nuclear Forces Treaty; INF
+Ref: P4.3.2
+D: 2
+
+Q: What Russian word, meaning 'openness', describes Gorbachev's policy of freer speech?
+A: Glasnost
+Ref: P4.3.3
+D: 1
+
+Q: What did Gorbachev tell Eastern European states about their governments, in effect ending the Brezhnev Doctrine?
+A: They could choose their own path
+Accept: Soviet forces would not intervene; They were free to run their own affairs; USSR would not interfere
+Ref: P4.3.3
+D: 3
+
+Q: Which Polish trade union won the partly free elections of 1989?
+A: Solidarity
+Accept: Solidarnosc; Solidarność
+Ref: P4.3.3
+D: 2
+
+Q: In which year did the Berlin Wall fall?
+A: 1989
+Accept: November 1989
+Ref: P4.3.3
+D: 1
+
+Q: In which year was the Warsaw Pact formally dissolved?
+A: 1991
+Accept: July 1991
+Ref: P4.3.3
+D: 2

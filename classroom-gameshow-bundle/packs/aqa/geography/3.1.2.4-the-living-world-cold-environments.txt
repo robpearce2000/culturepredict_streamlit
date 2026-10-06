@@ -1,0 +1,223 @@
+Board: AQA
+Spec: 8035
+Topic: 3.1.2.4
+
+Q: Name the two types of cold environment named in the specification.
+A: Polar and tundra
+Accept: Tundra and polar; polar; tundra
+Ref: 3.1.2.4.1
+D: 1
+
+Q: Name the frozen ground found in cold environments that stays below 0°C for at least two years.
+A: Permafrost
+Accept: Permanently frozen ground
+Ref: 3.1.2.4.1
+D: 1
+
+Q: Which continent is almost entirely covered by a polar ice sheet?
+A: Antarctica
+Ref: 3.1.2.4.1
+D: 1
+
+Q: Name the tundra layer of soil above the permafrost that thaws in summer.
+A: Active layer
+Ref: 3.1.2.4.1
+D: 2
+
+Q: Roughly what is the average temperature in the warmest month of the tundra?
+A: Below 10°C
+Accept: Under 10 degrees; about 5-10°C; cold
+Ref: 3.1.2.4.1
+D: 2
+
+Q: Why is the ground in tundra areas often waterlogged in summer?
+A: Meltwater cannot drain through permafrost
+Accept: Frozen ground is impermeable; permafrost blocks drainage; water cannot soak away
+Ref: 3.1.2.4.1
+D: 3
+
+Q: Why do tundra soils contain little organic matter and few nutrients?
+A: Cold slows decomposition
+Accept: Low temperatures slow decay; slow decomposition; little plant growth
+Ref: 3.1.2.4.1
+D: 3
+
+Q: Name one type of plant found in the tundra, other than trees.
+A: Any one of: moss, lichen, sedge, dwarf shrub
+Accept: Moss; lichens; grasses; sedges; low shrubs; dwarf willow
+Ref: 3.1.2.4.1
+D: 2
+
+Q: Why are plants in the tundra typically small and low-growing?
+A: To shelter from wind and cold
+Accept: Avoid wind; keep warm; thin soil; short growing season; shallow roots
+Ref: 3.1.2.4.1
+D: 3
+
+Q: Name the white-furred Arctic predator that has thick fat and fur to adapt to the cold.
+A: Polar bear
+Ref: 3.1.2.4.1
+D: 1
+
+Q: Why do many tundra animals such as Arctic hares have thick fur and a layer of fat?
+A: Insulation against the cold
+Accept: Keep warm; insulate; reduce heat loss
+Ref: 3.1.2.4.1
+D: 2
+
+Q: Name the cold-environment adaptation in which animals travel long distances to avoid winter.
+A: Migration
+Accept: Migrating
+Ref: 3.1.2.4.1
+D: 1
+
+Q: Why do Arctic foxes and ptarmigan change colour to white in winter?
+A: Camouflage in the snow
+Accept: Camouflage; to blend in; hide from predators
+Ref: 3.1.2.4.1
+D: 2
+
+Q: Why is biodiversity low in cold environments?
+A: Harsh conditions limit what can survive
+Accept: Few species can survive; extreme cold; short growing season; low temperatures
+Ref: 3.1.2.4.1
+D: 3
+
+Q: Climate change is warming cold environments faster than most places. Name one effect on permafrost.
+A: It thaws
+Accept: Melts; thawing permafrost; releases methane; ground collapses
+Ref: 3.1.2.4.1
+D: 2
+
+Q: Name the greenhouse gas released as permafrost thaws and organic matter decays.
+A: Methane
+Accept: CH4; carbon dioxide; CO2
+Ref: 3.1.2.4.1
+D: 2
+
+Q: Name the energy resource extracted from the Alaskan North Slope, a tundra area.
+A: Oil
+Accept: Crude oil; petroleum; oil and gas
+Ref: 3.1.2.4.2
+D: 1
+
+Q: Name the type of development opportunity in cold environments that involves extracting oil, gas or coal.
+A: Energy
+Accept: Energy extraction; mineral extraction; oil and gas
+Ref: 3.1.2.4.2
+D: 1
+
+Q: Name one valuable mineral often mined in cold environments.
+A: Any one of: gold, iron ore, coal, copper
+Accept: Gold; iron ore; coal; copper; zinc; diamonds
+Ref: 3.1.2.4.2
+D: 1
+
+Q: Name the economic activity in cold environments carried out by trawlers in seas such as the Barents Sea.
+A: Fishing
+Accept: Commercial fishing
+Ref: 3.1.2.4.2
+D: 1
+
+Q: Name the tourism type that attracts visitors to cold environments to see wilderness, wildlife and glaciers.
+A: Wilderness tourism
+Accept: Ecotourism; adventure tourism; cruise tourism
+Ref: 3.1.2.4.2
+D: 2
+
+Q: Give one reason that extreme low temperatures make development difficult in cold environments.
+A: Machinery and workers struggle in cold
+Accept: Equipment fails; frozen fuel; frostbite; materials crack; hard to work outside
+Ref: 3.1.2.4.2
+D: 2
+
+Q: Why is it difficult to reach many cold environments?
+A: Remote, with ice and snow blocking transport
+Accept: Inaccessible; far from cities; ice-covered seas; no roads; snow-covered
+Ref: 3.1.2.4.2
+D: 2
+
+Q: Why are roads and railways hard to build in permafrost areas?
+A: Thawing ground becomes unstable
+Accept: Ground subsides; permafrost melts; ground moves; waterlogged
+Ref: 3.1.2.4.2
+D: 3
+
+Q: Why are buildings in permafrost areas often built on stilts?
+A: To stop heat melting the ground
+Accept: Prevent permafrost thawing; keep heat from melting ground; avoid subsidence
+Ref: 3.1.2.4.2
+D: 3
+
+Q: Why are oil and gas pipelines in Alaska often raised above the ground?
+A: To prevent warm oil melting permafrost
+Accept: Stop permafrost thawing; avoid subsidence; let animals pass beneath
+Ref: 3.1.2.4.2
+D: 3
+
+Q: Name the term for ground that stays frozen all year, which pipelines and buildings must not melt.
+A: Permafrost
+Accept: Frozen ground
+Ref: 3.1.2.4.2
+D: 2
+
+Q: What term describes a remote natural area little affected by human activity?
+A: Wilderness
+Accept: Wilderness area
+Ref: 3.1.2.4.3
+D: 1
+
+Q: Why are cold environments described as fragile?
+A: Slow to recover from damage
+Accept: Easily damaged; low growth rates; slow recovery; easily disturbed
+Ref: 3.1.2.4.3
+D: 3
+
+Q: Why does vegetation take a very long time to recover after damage in the tundra?
+A: Short growing season and cold
+Accept: Slow growth; low temperatures; slow decomposition; poor soils
+Ref: 3.1.2.4.3
+D: 3
+
+Q: Name the 1959 international agreement that sets Antarctica aside for peace and science.
+A: Antarctic Treaty
+Accept: The Antarctic Treaty
+Ref: 3.1.2.4.3
+D: 1
+
+Q: Name the international agreement of 1991 that bans mineral extraction in Antarctica.
+A: Madrid Protocol
+Accept: Protocol on Environmental Protection; Antarctic Treaty
+Ref: 3.1.2.4.3
+D: 2
+
+Q: Name one conservation group that campaigns to protect cold environments.
+A: Greenpeace
+Accept: WWF; World Wide Fund for Nature; Friends of the Earth; Arctic Council
+Ref: 3.1.2.4.3
+D: 1
+
+Q: How can governments help to protect cold environments from damage?
+A: Laws, protected areas or limits on development
+Accept: National parks; set regulations; licences; limit visitors; fines; protected areas
+Ref: 3.1.2.4.3
+D: 2
+
+Q: Give one way technology can reduce the environmental impact of oil extraction in cold areas.
+A: Directional drilling or smaller drilling pads
+Accept: Raised pipelines; ice roads; horizontal drilling; leak detection; remote sensing
+Ref: 3.1.2.4.3
+D: 3
+
+Q: Why are ice roads used in some oil fields in the Arctic?
+A: They melt in summer leaving little damage
+Accept: No permanent damage; temporary; protect tundra; avoid building roads
+Ref: 3.1.2.4.3
+D: 3
+
+Q: Name the term for tourism managed to protect the environment and local people, used in Antarctica.
+A: Sustainable tourism
+Accept: Ecotourism; managed tourism; controlled tourism
+Ref: 3.1.2.4.3
+D: 2
+

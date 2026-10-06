@@ -1,0 +1,290 @@
+Board: AQA
+Spec: 8035
+Topic: 3.1.3.3
+
+Q: Name the longest river in the UK.
+A: River Severn
+Accept: Severn
+Ref: 3.1.3.1.1
+D: 1
+
+Q: Name the river that flows through London.
+A: River Thames
+Accept: Thames
+Ref: 3.1.3.1.1
+D: 1
+
+Q: Are the highlands of Scotland, Wales and the Lake District upland or lowland areas?
+A: Upland
+Accept: Uplands; highland
+Ref: 3.1.3.1.1
+D: 2
+
+Q: Why are most UK uplands found in the north and west rather than the south and east?
+A: Older, harder rocks form the north and west
+Accept: Hard resistant rock; older rock; harder rocks
+Ref: 3.1.3.1.1
+D: 3
+
+Q: Why does a large dam and reservoir reduce flood risk downstream?
+A: It stores floodwater and releases it slowly
+Accept: Controls river flow; holds back water
+Ref: 3.1.3.3.3
+D: 3
+
+Q: Why is lateral erosion more important than vertical erosion in the lower course?
+A: Gentle gradient so energy erodes sideways
+Accept: Low gradient; river erodes banks; wider valley
+Ref: 3.1.3.3.1
+D: 3
+
+Q: Name the type of erosion in which a river's rocky load scrapes and wears away the bed and banks.
+A: Abrasion
+Accept: Corrasion
+Ref: 3.1.3.3.1
+D: 1
+
+Q: Name the erosion process where the force of water pushes air into cracks in the bank, breaking the rock apart.
+A: Hydraulic action
+Accept: Hydraulic power
+Ref: 3.1.3.3.1
+D: 1
+
+Q: Name the erosion process in which rocks carried by a river collide and become smaller and rounder.
+A: Attrition
+Ref: 3.1.3.3.1
+D: 1
+
+Q: Name the erosion process in which soluble rock such as limestone is dissolved by river water.
+A: Solution
+Accept: Corrosion
+Ref: 3.1.3.3.1
+D: 1
+
+Q: Name the transport process in which large boulders are rolled along the river bed.
+A: Traction
+Ref: 3.1.3.3.1
+D: 1
+
+Q: Name the transport process in which small pebbles are bounced along the river bed.
+A: Saltation
+Ref: 3.1.3.3.1
+D: 1
+
+Q: Name the transport process in which fine silt and clay are carried within the flowing water.
+A: Suspension
+Ref: 3.1.3.3.1
+D: 1
+
+Q: Which type of erosion deepens a river valley, most common in the upper course?
+A: Vertical erosion
+Accept: Downward erosion; vertical
+Ref: 3.1.3.3.1
+D: 2
+
+Q: Which type of erosion widens a river valley and is most common in the middle and lower courses?
+A: Lateral erosion
+Accept: Sideways erosion; lateral
+Ref: 3.1.3.3.1
+D: 2
+
+Q: Describe the shape of a river's long profile from source to mouth.
+A: Steep upstream, gently sloping downstream; concave
+Accept: Smooth curve, steep to gentle
+Ref: 3.1.3.3.1
+D: 2
+
+Q: What is the typical shape of a river valley's cross profile in the upper course?
+A: V-shaped
+Accept: V shape; narrow and steep-sided
+Ref: 3.1.3.3.1
+D: 2
+
+Q: Why does a river's channel usually get wider and deeper downstream?
+A: More water joins it from tributaries
+Accept: Increased discharge; more water; tributaries add water
+Ref: 3.1.3.3.1
+D: 3
+
+Q: Why does a river deposit its sediment when its velocity falls, for example near its mouth?
+A: Less energy to carry its load
+Accept: Lower energy; not enough energy
+Ref: 3.1.3.3.1
+D: 3
+
+Q: Give one reason why a river deposits sediment.
+A: Shallow water or reduced discharge
+Accept: Slower flow; river meets sea; less water; load too big
+Ref: 3.1.3.3.1
+D: 2
+
+Q: Name the interlocking ridges of land that a river winds around in its upper course.
+A: Interlocking spurs
+Accept: Interlocking spur
+Ref: 3.1.3.3.2
+D: 1
+
+Q: Name the steep-sided rocky valley that forms as a waterfall retreats upstream.
+A: Gorge
+Ref: 3.1.3.3.2
+D: 1
+
+Q: Name the wide bend in a river that forms in the middle and lower course.
+A: Meander
+Ref: 3.1.3.3.2
+D: 1
+
+Q: Name the crescent-shaped lake left when a meander is cut off from the river.
+A: Ox-bow lake
+Accept: Oxbow lake; ox bow lake
+Ref: 3.1.3.3.2
+D: 1
+
+Q: Name the natural raised banks built up along a river's edge by repeated flooding.
+A: Levées
+Accept: Levee; levees; natural levee
+Ref: 3.1.3.3.2
+D: 1
+
+Q: Name the wide, flat area of land either side of a river that is covered by water during floods.
+A: Flood plain
+Accept: Floodplain
+Ref: 3.1.3.3.2
+D: 1
+
+Q: Name the tidal, widening mouth of a river where it meets the sea.
+A: Estuary
+Ref: 3.1.3.3.2
+D: 1
+
+Q: Where on a meander bend is a river cliff formed?
+A: Outside bend
+Accept: Outer bend; where flow is fastest
+Ref: 3.1.3.3.2
+D: 2
+
+Q: Where on a meander bend is a slip-off slope formed?
+A: Inside bend
+Accept: Inner bend; where flow is slowest
+Ref: 3.1.3.3.2
+D: 2
+
+Q: What type of rock lies on top of a softer rock at a waterfall to form a plunge pool below?
+A: Hard rock
+Accept: Resistant rock; harder rock
+Ref: 3.1.3.3.2
+D: 2
+
+Q: Name the deep pool at the base of a waterfall, formed by the force of falling water.
+A: Plunge pool
+Ref: 3.1.3.3.2
+D: 2
+
+Q: Explain how undercutting makes a waterfall retreat upstream.
+A: Undercutting of soft rock makes hard rock collapse
+Accept: Softer rock eroded, overhang collapses
+Ref: 3.1.3.3.2
+D: 3
+
+Q: Explain how an ox-bow lake forms after a meander neck is eroded through.
+A: River floods and takes shortcut; ends sealed by deposition
+Accept: River breaks through neck then deposits seal off loop
+Ref: 3.1.3.3.2
+D: 3
+
+Q: Why do levées form beside a river when it floods?
+A: Heaviest sediment is dropped first, nearest the channel
+Accept: Coarse material deposited at edge; velocity drops
+Ref: 3.1.3.3.2
+D: 3
+
+Q: Which river's upper valley in northern England contains the High Force waterfall?
+A: River Tees
+Accept: Tees; Teesdale
+Ref: 3.1.3.3.2
+D: 2
+
+Q: Name the type of diagram showing river discharge over time after a rainstorm.
+A: Hydrograph
+Accept: Storm hydrograph; flood hydrograph
+Ref: 3.1.3.3.3
+D: 1
+
+Q: Name the point on a hydrograph where river discharge is at its highest.
+A: Peak discharge
+Accept: Peak flow; peak; flood peak
+Ref: 3.1.3.3.3
+D: 1
+
+Q: What name is given to the time between peak rainfall and peak discharge on a hydrograph?
+A: Lag time
+Accept: Lag
+Ref: 3.1.3.3.3
+D: 1
+
+Q: Name the hard engineering structure built across a river valley to store water and control flow.
+A: Dam
+Accept: Dam and reservoir; reservoir
+Ref: 3.1.3.3.3
+D: 1
+
+Q: Name the soft engineering strategy that involves moving homes and businesses away from the flood plain.
+A: Flood plain zoning
+Accept: Floodplain zoning; zoning
+Ref: 3.1.3.3.3
+D: 1
+
+Q: Rock that does not let water soak in is described as what, increasing flood risk?
+A: Impermeable
+Accept: Non-porous; waterproof
+Ref: 3.1.3.3.3
+D: 1
+
+Q: How does urbanisation increase flood risk?
+A: Impermeable surfaces increase surface runoff
+Accept: Tarmac and concrete; drains carry water fast; less infiltration
+Ref: 3.1.3.3.3
+D: 2
+
+Q: Give one cost of building embankments along a river.
+A: Expensive to build and maintain
+Accept: Can increase flood risk downstream; unsightly; harm habitats
+Ref: 3.1.3.3.3
+D: 2
+
+Q: Name the soft engineering strategy in which more trees increase interception and reduce runoff.
+A: Planting trees
+Accept: Afforestation; tree planting; reforestation
+Ref: 3.1.3.3.3
+D: 2
+
+Q: Why does a steep-sided valley with heavy rainfall have a short lag time?
+A: Water runs quickly to the river
+Accept: Fast surface runoff; little infiltration
+Ref: 3.1.3.3.3
+D: 3
+
+Q: Give one cost of building a flood relief channel.
+A: Expensive to build
+Accept: High cost; damages habitats; changes natural landscape
+Ref: 3.1.3.3.3
+D: 2
+
+Q: Name the UK flood scheme, opened in 2002, with a channel of about 11 km bypassing Maidenhead, Windsor and Eton.
+A: Jubilee River
+Accept: Maidenhead, Windsor and Eton flood alleviation scheme
+Ref: 3.1.3.3.3
+D: 2
+
+Q: Give one environmental benefit of river restoration compared with hard engineering.
+A: Creates habitats for wildlife
+Accept: More natural; wetlands; wildlife; improved biodiversity
+Ref: 3.1.3.3.3
+D: 3
+
+Q: Give one benefit of flood warnings as a flood management strategy.
+A: Gives people time to protect property
+Accept: Cheap; saves lives; time to evacuate; time to move belongings
+Ref: 3.1.3.3.3
+D: 2
+

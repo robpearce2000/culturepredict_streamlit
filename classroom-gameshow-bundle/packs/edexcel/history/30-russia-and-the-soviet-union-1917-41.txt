@@ -1,0 +1,369 @@
+Board: Edexcel
+Spec: 1HI0
+Topic: 30
+
+Q: In which year did Tsar Nicholas II take personal command of the Russian army?
+A: 1915
+Ref: 30.1.1
+D: 1
+
+Q: Which Siberian holy man influenced Tsarina Alexandra while Nicholas II was at the front?
+A: Rasputin
+Ref: 30.1.1
+D: 2
+
+Q: Why did Nicholas II taking command of the army damage the Tsar's reputation?
+A: He was blamed for military defeats
+Accept: Defeats were blamed on him; he was held responsible for losses
+Ref: 30.1.1
+D: 3
+
+Q: Which city, renamed in 1914 to sound less German, saw the February Revolution?
+A: Petrograd
+Accept: St Petersburg
+Ref: 30.1.2
+D: 1
+
+Q: Why was the mutiny of troops in Petrograd decisive in February 1917?
+A: The army stopped defending the Tsar
+Accept: Soldiers joined the protesters; troops refused to fire on crowds
+Ref: 30.1.2
+D: 3
+
+Q: Nicholas II abdicated in favour of which relative, who then refused the throne?
+A: His brother Michael
+Accept: Grand Duke Michael; Michael; Michael Alexandrovich
+Ref: 30.1.2
+D: 1
+
+Q: Which politician became head of the Provisional Government in July 1917?
+A: Kerensky
+Accept: Alexander Kerensky
+Ref: 30.1.3
+D: 1
+
+Q: The Provisional Government shared power with which Petrograd body, causing 'Dual Control'?
+A: The Petrograd Soviet
+Accept: Soviet; the Soviet
+Ref: 30.1.3
+D: 2
+
+Q: What did Soviet Order Number 1 tell soldiers to do?
+A: Obey the Soviet and elect soldiers' committees
+Accept: Obey the Soviet; follow Soviet orders; elect committees; take orders from the Soviet, not officers
+Ref: 30.1.3
+D: 2
+
+Q: Why did continuing the war make the Provisional Government unpopular?
+A: Defeats and shortages continued
+Accept: It carried on a costly unpopular war; the war went badly; no peace
+Ref: 30.1.3
+D: 3
+
+Q: Which general led a failed attempt to march on Petrograd in August 1917?
+A: Kornilov
+Accept: General Kornilov; Lavr Kornilov
+Ref: 30.1.3
+D: 1
+
+Q: How did the Kornilov Revolt help the Bolsheviks?
+A: Kerensky armed the Bolshevik Red Guards
+Accept: Bolsheviks armed and seen as defenders of the revolution; Red Guards armed
+Ref: 30.1.3
+D: 3
+
+Q: Which slogan summed up Lenin's April Theses?
+A: Peace, Land and Bread
+Accept: Peace, Bread and Land; Bread, Peace, Land; All power to the Soviets
+Ref: 30.1.4
+D: 2
+
+Q: What name is given to the failed armed protests against the Provisional Government in Petrograd in July 1917?
+A: July Days
+Accept: The July Days
+Ref: 30.1.4
+D: 2
+
+Q: Which building in Petrograd did Bolshevik forces storm to seize power in 1917?
+A: Winter Palace
+Accept: The Winter Palace
+Ref: 30.1.4
+D: 1
+
+Q: Which Bolshevik leader organised the seizure of power through the Military Revolutionary Committee?
+A: Trotsky
+Accept: Leon Trotsky
+Ref: 30.1.4
+D: 3
+
+Q: Which 1917 Bolshevik decree gave land to the peasants?
+A: Decree on Land
+Accept: The Land Decree; Land Decree
+Ref: 30.2.1
+D: 1
+
+Q: Which early Bolshevik decree promised to take Russia out of the First World War?
+A: Decree on Peace
+Accept: The Peace Decree; Peace Decree
+Ref: 30.2.1
+D: 2
+
+Q: Why did Lenin close the Constituent Assembly in January 1918?
+A: Bolsheviks did not have a majority
+Accept: It was dominated by the SRs; it opposed Bolshevik rule; Bolsheviks lost the election
+Ref: 30.2.1
+D: 3
+
+Q: In which town were Tsar Nicholas II and his family executed in July 1918?
+A: Ekaterinburg
+Accept: Yekaterinburg
+Ref: 30.2.1
+D: 1
+
+Q: Which treaty of March 1918 ended Russia's war with Germany?
+A: Treaty of Brest-Litovsk
+Accept: Brest-Litovsk
+Ref: 30.2.1
+D: 1
+
+Q: What colour name was given to the anti-Bolshevik forces in the Civil War?
+A: Whites
+Accept: White; White Army
+Ref: 30.2.2
+D: 1
+
+Q: Which Bolshevik leader, as Commissar for War, built the Red Army?
+A: Trotsky
+Accept: Leon Trotsky
+Ref: 30.2.2
+D: 1
+
+Q: Why was the geography of Bolshevik territory an advantage in the Civil War?
+A: They held the central railways and cities
+Accept: Short, central lines of communication; they held Moscow and Petrograd; control of railways
+Ref: 30.2.2
+D: 3
+
+Q: Why did the Whites fail to defeat the Bolsheviks?
+A: They were divided and lacked unity
+Accept: Disunited; scattered; no common aim; different leaders
+Ref: 30.2.2
+D: 3
+
+Q: What was the name of the Bolshevik secret police set up in December 1917?
+A: Cheka
+Accept: The Cheka
+Ref: 30.2.3
+D: 1
+
+Q: Which Bolshevik policy of terror against opponents began in 1918?
+A: Red Terror
+Accept: The Red Terror
+Ref: 30.2.3
+D: 2
+
+Q: In which year did the Kronstadt Mutiny take place?
+A: 1921
+Ref: 30.2.3
+D: 1
+
+Q: In which year was the USSR formally established?
+A: 1922
+Ref: 30.2.3
+D: 1
+
+Q: Which policy replaced War Communism in 1921?
+A: New Economic Policy
+Accept: NEP; the NEP
+Ref: 30.2.4
+D: 1
+
+Q: Under the NEP, what replaced the requisitioning of grain?
+A: A tax on peasants' produce
+Accept: Tax in kind; a tax; fixed tax
+Ref: 30.2.4
+D: 2
+
+Q: Why did some Bolsheviks criticise the NEP?
+A: It brought back capitalism
+Accept: It allowed private trade; it betrayed communist principles; it let Nepmen get rich
+Ref: 30.2.4
+D: 3
+
+Q: In which year did Lenin die?
+A: 1924
+Ref: 30.3.1
+D: 1
+
+Q: Which post did Stalin hold from 1922 that helped him control the party?
+A: General Secretary
+Accept: General Secretary of the Communist Party; Party General Secretary
+Ref: 30.3.1
+D: 2
+
+Q: Which policy of Stalin's argued Russia could build socialism without world revolution?
+A: Socialism in One Country
+Accept: Socialism in one country
+Ref: 30.3.1
+D: 1
+
+Q: Which Leningrad party leader's murder in December 1934 triggered the Great Terror?
+A: Kirov
+Accept: Sergei Kirov
+Ref: 30.3.2
+D: 1
+
+Q: Which secret police organisation carried out Stalin's purges?
+A: NKVD
+Accept: The NKVD
+Ref: 30.3.2
+D: 1
+
+Q: Which marshal and Red Army leader was executed in the 1937 purge of the armed forces?
+A: Tukhachevsky
+Accept: Marshal Tukhachevsky; Mikhail Tukhachevsky
+Ref: 30.3.2
+D: 2
+
+Q: What name was given to the forced labour camps of the USSR?
+A: Gulag
+Accept: Gulags; the Gulag
+Ref: 30.3.2
+D: 2
+
+Q: What was the name of the official style of art that glorified workers and the Soviet system?
+A: Socialist realism
+Accept: Socialist Realism
+Ref: 30.3.3
+D: 2
+
+Q: In which year was the new Soviet Constitution introduced?
+A: 1936
+Ref: 30.3.3
+D: 2
+
+Q: Why was the 1936 Constitution not truly democratic?
+A: Only one party was allowed
+Accept: The Communist Party had all power; no real opposition; rights ignored in practice; one-party state
+Ref: 30.3.3
+D: 3
+
+Q: What does the term Cult of Stalin mean?
+A: Stalin was presented as a hero leader
+Accept: Stalin worshipped as an all-wise leader; hero worship of Stalin; personality cult
+Ref: 30.3.4
+D: 2
+
+Q: Which city, once Tsaritsyn, was renamed in honour of Stalin in 1925?
+A: Stalingrad
+Accept: Stalingrad (formerly Tsaritsyn)
+Ref: 30.3.4
+D: 2
+
+Q: Which wealthier peasants did Stalin blame for hoarding grain?
+A: Kulaks
+Accept: Kulak
+Ref: 30.4.1
+D: 1
+
+Q: What name was given to the large state-organised farms formed by merging peasant land?
+A: Collective farms
+Accept: Kolkhoz; Kolkhozes; collectives
+Ref: 30.4.1
+D: 2
+
+Q: Why was there a grain shortage in 1927–28?
+A: Peasants held back grain from sale
+Accept: Peasants hoarded grain; low prices; peasants refused to sell
+Ref: 30.4.1
+D: 2
+
+Q: Which famine of 1932–33 killed millions in the Ukraine?
+A: Holodomor
+Accept: The Ukrainian famine; Ukrainian famine
+Ref: 30.4.1
+D: 2
+
+Q: Which state body drew up the Five-Year Plans?
+A: Gosplan
+Accept: State Planning Committee
+Ref: 30.4.2
+D: 1
+
+Q: Which coal miner was celebrated for greatly exceeding his shift target in 1935?
+A: Stakhanov
+Accept: Alexei Stakhanov; Alexey Stakhanov
+Ref: 30.4.2
+D: 1
+
+Q: Why did Stalin say the USSR needed rapid industrialisation?
+A: To catch up with the West
+Accept: To defend against attack; to modernise quickly; to be ready for war
+Ref: 30.4.2
+D: 3
+
+Q: What was a shared family flat in Soviet towns called?
+A: Kommunalka
+Accept: Communal flat; communal apartment; kommunalki
+Ref: 30.4.3
+D: 2
+
+Q: Why did Stalin's government persecute ethnic minorities such as the Volga Germans?
+A: Fear they were disloyal
+Accept: Suspected of siding with enemies; fear of treachery; seen as a threat
+Ref: 30.4.4
+D: 3
+
+Q: How did Lenin travel across Germany to return to Russia in April 1917?
+A: Sealed train
+Accept: A sealed train from Switzerland; train
+Ref: 30.1.4
+D: 2
+
+Q: Why did Stalin stage show trials of old Bolsheviks in 1936–38?
+A: To remove rivals and spread fear
+Accept: To eliminate opposition; to discredit rivals; to blame others for failures
+Ref: 30.3.2
+D: 3
+
+Q: Why did Stalin want a Cult of Stalin?
+A: To strengthen his control and loyalty
+Accept: To present himself as Lenin's heir; to gain loyalty; to boost his authority
+Ref: 30.3.4
+D: 3
+
+Q: Which ethnic group was deported from the Soviet Far East to Central Asia in 1937?
+A: Koreans
+Accept: Korean people
+Ref: 30.4.4
+D: 2
+
+Q: In 1936 the Soviet government banned which medical procedure to raise the birth rate?
+A: Abortion
+Accept: Abortions; termination of pregnancy
+Ref: 30.4.4
+D: 2
+
+Q: Which privileged group of party officials enjoyed better housing and goods?
+A: Nomenklatura
+Accept: The elite; party elite
+Ref: 30.4.3
+D: 2
+
+Q: Which 1932 document, introduced to control movement, did Soviet town dwellers have to carry?
+A: Internal passport
+Accept: Passport; internal passports
+Ref: 30.4.3
+D: 2
+
+Q: Which policy of 1918-21 involved grain requisitioning and the nationalisation of industry?
+A: War Communism
+Accept: War communism
+Ref: 30.2.4
+D: 1
+
+Q: Which rival of Stalin was exiled in 1929 and murdered in Mexico in 1940?
+A: Trotsky
+Accept: Leon Trotsky
+Ref: 30.3.1
+D: 2

@@ -1,0 +1,236 @@
+Board: Edexcel
+Spec: 1GA0
+Topic: 6
+
+Q: What term describes any feature of the environment that people can use to meet their needs?
+A: Natural resource
+Ref: 6.1
+D: 1
+
+Q: What term describes a resource that comes from living things, such as timber or fish?
+A: Biotic
+Accept: Biotic resource
+Ref: 6.1
+D: 1
+
+Q: What term describes a resource made from non-living material, such as minerals or water?
+A: Abiotic
+Accept: Abiotic resource
+Ref: 6.1
+D: 1
+
+Q: What term describes a resource that can be replaced naturally within a human lifetime?
+A: Renewable
+Accept: Renewable resource
+Ref: 6.1
+D: 1
+
+Q: What term describes a resource that cannot be replaced within a human timescale, such as coal?
+A: Non-renewable
+Accept: Non renewable; Finite
+Ref: 6.1
+D: 1
+
+Q: Is wind energy a renewable or non-renewable resource?
+A: Renewable
+Ref: 6.1
+D: 1
+
+Q: Classify iron ore as biotic or abiotic, and renewable or non-renewable.
+A: Abiotic and non-renewable
+Accept: Abiotic, finite
+Ref: 6.1
+D: 2
+
+Q: Classify fish stocks as biotic or abiotic, and renewable or non-renewable.
+A: Biotic and renewable
+Accept: Biotic, renewable if managed
+Ref: 6.1
+D: 2
+
+Q: Name the three types of fossil fuel extracted from the ground for energy.
+A: Coal, oil and natural gas
+Accept: Coal; oil; gas
+Ref: 6.1
+D: 2
+
+Q: What activity removes forests to create farmland or obtain timber?
+A: Deforestation
+Ref: 6.1
+D: 1
+
+Q: What term describes catching wild fish from seas, rivers or lakes for food?
+A: Fishing
+Ref: 6.1
+D: 1
+
+Q: Give one way that deforestation changes an environment.
+A: Reduced biodiversity
+Accept: Soil erosion; loss of habitats; reduced air quality
+Ref: 6.1
+D: 2
+Note: Accept any one environmental change: reduced biodiversity, soil erosion, or reduced air or water quality.
+
+Q: Why does removing tree cover often lead to soil erosion?
+A: Roots no longer bind the soil
+Accept: No roots to hold soil; rain washes soil away
+Ref: 6.1
+D: 3
+
+Q: Why can extracting fossil fuels reduce local water and air quality?
+A: Pollution and spills enter water and air
+Accept: Oil spills; waste; gases released
+Ref: 6.1
+D: 3
+
+Q: Why does exploiting resources such as farmland and forests often reduce biodiversity?
+A: Habitats are destroyed
+Accept: Habitat loss; fewer species
+Ref: 6.1
+D: 3
+
+Q: What term describes the variety of plant and animal life in an environment?
+A: Biodiversity
+Ref: 6.1
+D: 1
+
+Q: Why is overfishing a problem for a fish stock?
+A: Fish are caught faster than they breed
+Accept: Stocks decline; too many fish removed
+Ref: 6.1
+D: 3
+
+Q: What does it mean to say that a resource is exploited?
+A: Used by people for their needs
+Accept: Used and often extracted
+Ref: 6.1
+D: 2
+
+Q: Which type of resource includes coal, oil and natural gas?
+A: Fossil fuels
+Accept: Fossil fuel
+Ref: 6.2
+D: 1
+
+Q: Name the natural resource, shaped by climate and rock, on which agriculture depends.
+A: Soil
+Ref: 6.2
+D: 1
+
+Q: Name the natural resource found in rivers, lakes and aquifers that is used for drinking and farming.
+A: Water
+Accept: Fresh water; Freshwater
+Ref: 6.2
+D: 1
+
+Q: What term describes the use of resources by people, such as the food, energy and water they use?
+A: Consumption
+Accept: Resource consumption
+Ref: 6.2
+D: 1
+
+Q: Does energy consumption per person tend to be higher in high-income countries or low-income countries?
+A: High-income countries
+Accept: Higher-income; HICs; Richer
+Ref: 6.2
+D: 1
+
+Q: Name the group of countries whose people typically consume the most energy per person.
+A: High-income countries
+Accept: HICs; Developed countries; Richer countries
+Ref: 6.2
+D: 2
+
+Q: Why do high-income countries tend to consume more energy per person?
+A: More industry, transport and appliances
+Accept: Wealthier lifestyles; greater use of technology
+Ref: 6.2
+D: 3
+
+Q: Why is food consumption per person usually lower in low-income countries?
+A: Poverty limits food supply and access
+Accept: Less food available; lower incomes
+Ref: 6.2
+D: 3
+
+Q: Which continent has the largest total energy consumption because of its huge population and industry?
+A: Asia
+Ref: 6.2
+D: 2
+Note: Accept Asia; China is the single largest country consumer.
+
+Q: Which country consumes the most energy in total?
+A: China
+Ref: 6.2
+D: 2
+
+Q: What term describes a country where people lack enough water of a suitable quality for their needs?
+A: Water stress
+Accept: Water scarcity
+Ref: 6.2
+D: 2
+
+Q: Which fossil fuel is most widely used to generate electricity in the UK today: coal or natural gas?
+A: Natural gas
+Accept: Gas
+Ref: 6.2
+D: 2
+Note: Coal use has fallen sharply; coal-fired power ended in 2024.
+
+Q: Name a fossil fuel that the UK has historically extracted from the North Sea.
+A: Oil
+Accept: Natural gas; Gas; Oil and gas
+Ref: 6.2
+D: 1
+
+Q: What term describes people having too little food to eat to stay healthy?
+A: Undernourishment
+Accept: Malnutrition; Hunger; Food insecurity
+Ref: 6.2
+D: 2
+
+Q: What term describes the secure access of people to enough safe and nutritious food?
+A: Food security
+Ref: 6.2
+D: 2
+
+Q: What is the term for a layer of underground rock that stores water?
+A: Aquifer
+Ref: 6.2
+D: 1
+
+Q: Why are renewable resources not always sustainable?
+A: Overuse can exceed replacement rate
+Accept: Used faster than they regenerate
+Ref: 6.1
+D: 3
+
+Q: Why can farming on steep slopes with no cover increase soil erosion?
+A: Rain washes away exposed soil
+Accept: Bare soil; runoff
+Ref: 6.1
+D: 3
+
+Q: Why does burning fossil fuels reduce air quality?
+A: Releases pollutant gases and particles
+Accept: Smoke; sulfur dioxide
+Ref: 6.1
+D: 3
+
+Q: Why do countries with large populations and fast industrial growth consume more total energy?
+A: More people and factories need power
+Accept: Greater demand
+Ref: 6.2
+D: 3
+
+Q: Why can a country with plenty of rainfall still suffer water stress?
+A: Water is polluted or poorly supplied
+Accept: Demand too high; no clean supply
+Ref: 6.2
+D: 3
+
+Q: Why is global water supply uneven even though rain falls everywhere?
+A: Rainfall and population distribution differ
+Accept: Climate varies; wet and dry regions
+Ref: 6.2
+D: 3

@@ -1,0 +1,261 @@
+Board: Edexcel
+Spec: 1GB0
+Topic: 5
+
+Q: Which part of the UK, such as a large city centre, has the highest population density and most services?
+A: Urban core
+Accept: Urban area; City; Core
+Ref: 5.1
+D: 1
+
+Q: Rural areas of the UK usually have an older age structure than cities. Which age group is over-represented in many rural areas?
+A: The elderly
+Accept: Elderly; Older people; Over 65s; Pensioners
+Ref: 5.1
+D: 2
+
+Q: Why do many young adults leave remote UK rural areas for cities?
+A: For jobs and education
+Accept: Work; Jobs; University; Employment; Education
+Ref: 5.1
+D: 2
+
+Q: What name is given to a UK area where government offers tax breaks and simpler planning to attract new businesses?
+A: Enterprise zone
+Ref: 5.1
+D: 1
+
+Q: Name one type of investment, such as HS2, that UK governments use to reduce regional differences.
+A: Transport infrastructure
+Accept: Transport; Roads; Railways; Rail; Infrastructure
+Ref: 5.1
+D: 2
+Note: Accept any named transport investment.
+
+Q: Why can improving transport links help a struggling region to attract new businesses?
+A: Easier access to markets and workers
+Accept: Better connectivity; Access to customers; Access to workers; Easier access
+Ref: 5.1
+D: 3
+
+Q: Since 2004, which group of EU countries' citizens moved to the UK in large numbers to work?
+A: Eastern Europeans
+Accept: Eastern Europe; Poland; Poles; A8; Accession countries
+Ref: 5.2
+D: 2
+
+Q: Most international migrants to the UK are of which broad age group?
+A: Young adults
+Accept: Working age; 20s; 20 to 40; Under 40; Young working age
+Ref: 5.2
+D: 2
+
+Q: Why have migration and settlement increased ethnic and cultural diversity in UK cities?
+A: Migrants bring their cultures
+Accept: Different cultures; People from many countries settle; Migrants settle in cities
+Ref: 5.2
+D: 2
+
+Q: What term describes the 2016 UK vote that led to the end of free movement of EU citizens?
+A: Brexit
+Accept: EU referendum
+Ref: 5.2
+D: 1
+
+Q: Which employment sector, including manufacturing, has declined in the UK because of cheaper overseas production?
+A: Secondary sector
+Accept: Secondary
+Ref: 5.2
+D: 1
+
+Q: Which sector, including services such as retail, health and finance, now employs most UK workers?
+A: Tertiary sector
+Accept: Tertiary
+Ref: 5.2
+D: 1
+
+Q: What term describes the process by which the world becomes more connected through trade, travel and communication?
+A: Globalisation
+Accept: Globalization
+Ref: 5.2
+D: 1
+
+Q: What term describes selling state-owned industries to private companies, as happened to British Telecom and British Gas?
+A: Privatisation
+Accept: Privatization
+Ref: 5.2
+D: 2
+
+Q: Why do free-trade policies increase foreign investment in the UK?
+A: They remove trade barriers
+Accept: No tariffs; Easier trade; Fewer trade barriers; Easier access to markets
+Ref: 5.2
+D: 3
+
+Q: What term describes the place where a city is built, such as a river crossing or a defensive hill?
+A: Site
+Ref: 5.3
+D: 1
+
+Q: What term describes a city's position in relation to the surrounding area, such as its location compared with other cities and routes?
+A: Situation
+Ref: 5.3
+D: 1
+
+Q: What term describes how well a place is linked to others by roads, rail, air and digital networks?
+A: Connectivity
+Accept: Connections; Accessibility
+Ref: 5.3
+D: 1
+
+Q: Which zone at the heart of a city has shops, offices and the highest land values?
+A: CBD
+Accept: Central business district; City centre
+Ref: 5.3
+D: 1
+
+Q: Which zone surrounds a UK city centre and typically has older, dense terraced housing?
+A: Inner city
+Accept: Inner-city
+Ref: 5.3
+D: 2
+
+Q: Why do land values fall as you move away from the CBD in a typical UK city?
+A: Accessibility decreases
+Accept: Less accessible; Further from the centre; Less demand; Lower demand
+Ref: 5.3
+D: 3
+
+Q: What term describes differences in wealth, health, education and services between different parts of a city?
+A: Inequality
+Accept: Deprivation
+Ref: 5.4
+D: 1
+
+Q: Why do life expectancy and health often differ between the inner-city and the suburbs?
+A: Differences in income and living conditions
+Accept: Wealth; Poverty; Housing quality; Income; Environment
+Ref: 5.4
+D: 3
+
+Q: What term describes the loss of manufacturing industry from a city, leaving old factories empty?
+A: De-industrialisation
+Accept: Deindustrialisation; Deindustrialization; De-industrialization
+Ref: 5.5
+D: 1
+
+Q: What term describes the movement of shops and businesses from city centres to the edge of a city?
+A: Decentralisation
+Accept: De-centralisation; Decentralization; Out-of-town
+Ref: 5.5
+D: 2
+
+Q: How has online shopping contributed to the decline of many city-centre high streets?
+A: Fewer people shop in stores
+Accept: Fewer shoppers; Shop closures; Stores close; Less footfall; Less demand
+Ref: 5.5
+D: 2
+
+Q: What term describes wealthier people moving into run-down inner-city areas and improving the housing?
+A: Gentrification
+Accept: Gentrification
+Ref: 5.5
+D: 1
+
+Q: What term describes students moving into an area in large numbers and changing its housing and shops?
+A: Studentification
+Accept: Studentisation
+Ref: 5.5
+D: 1
+
+Q: What term describes a city's built-up area spreading outwards into the countryside?
+A: Urban sprawl
+Accept: Sprawl
+Ref: 5.5
+D: 1
+
+Q: What term describes redeveloping a run-down urban area with new housing, businesses and facilities?
+A: Regeneration
+Accept: Urban regeneration
+Ref: 5.6
+D: 1
+
+Q: What term describes changing the image of a place to attract new investment and visitors?
+A: Rebranding
+Accept: Re-branding
+Ref: 5.6
+D: 1
+
+Q: Give one negative impact of regeneration on existing residents of an area.
+A: Rising rents
+Accept: Higher house prices; Displacement; Higher rents; Rising house prices; Losing homes
+Ref: 5.6
+D: 3
+
+Q: Why do green spaces improve quality of life in a city?
+A: Improve health and air quality
+Accept: Recreation; Exercise; Cleaner air; Wellbeing; Cooler; Health
+Ref: 5.6
+D: 2
+
+Q: Why is regeneration sometimes criticised by people already living in the area?
+A: Rents and prices rise
+Accept: Higher rents; Rising house prices; Displacement; People are priced out; Higher costs
+Ref: 5.6
+D: 3
+Note: Gentrification can price out existing residents.
+
+Q: What term describes people moving from cities to live in the surrounding countryside?
+A: Counter-urbanisation
+Accept: Counterurbanisation; Counter-urbanization
+Ref: 5.7
+D: 1
+
+Q: What do city workers who live in nearby villages and travel daily to the city do?
+A: Commute
+Accept: Commuting
+Ref: 5.7
+D: 1
+
+Q: Why do cities depend on nearby rural areas for food and water?
+A: Cities cannot produce enough themselves
+Accept: Little farmland in cities; Reservoirs are in rural areas; Land and space are limited in cities; Rural land produces food and water
+Ref: 5.7
+D: 3
+
+Q: Why can commuters moving into villages cause local shops and bus services to struggle or change?
+A: Commuters shop and work in the city
+Accept: They use city services; Commuters do not use village services; Villages become dormitory settlements
+Ref: 5.7
+D: 3
+
+Q: Give one environmental cost to a rural area of nearby city growth.
+A: Loss of farmland
+Accept: Traffic congestion; Traffic; Pollution; Loss of green space; Housing built on fields; Loss of habitats
+Ref: 5.7
+D: 2
+
+Q: Why is the decline in farm jobs a problem for rural young people?
+A: Fewer local jobs
+Accept: Lack of work; Unemployment; Fewer jobs
+Ref: 5.8
+D: 2
+
+Q: What term describes farmers developing new activities, such as farm shops or campsites, to earn extra income?
+A: Diversification
+Accept: Rural diversification; Diversify
+Ref: 5.8
+D: 1
+
+Q: Give one possible environmental impact of tourism in a rural area.
+A: Traffic congestion
+Accept: Footpath erosion; Litter; Pollution; Damage to habitats; Erosion; Noise
+Ref: 5.8
+D: 3
+Note: Accept any sensible environmental impact.
+
+Q: Why does a fall in primary employment make life harder for some rural families?
+A: Fewer local jobs and lower incomes
+Accept: Unemployment; Fewer jobs; Lower incomes; Less work
+Ref: 5.8
+D: 3

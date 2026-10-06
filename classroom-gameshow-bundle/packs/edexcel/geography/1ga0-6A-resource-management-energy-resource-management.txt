@@ -1,0 +1,230 @@
+Board: Edexcel
+Spec: 1GA0
+Topic: 6A
+
+Q: Name the type of energy resource that cannot be replaced within a human lifetime once used.
+A: Non-renewable
+Accept: Nonrenewable; Finite
+Ref: 6.3
+D: 1
+
+Q: Name the type of energy resource that is naturally replenished and will not run out.
+A: Renewable
+Accept: Sustainable
+Ref: 6.3
+D: 1
+
+Q: Name the fossil fuel formed from ancient plant material in swampy forests and burned in power stations.
+A: Coal
+Ref: 6.3
+D: 1
+
+Q: Name one renewable energy resource that uses moving air to turn turbines.
+A: Wind power
+Accept: Wind; Wind energy
+Ref: 6.3
+D: 1
+
+Q: Give one advantage of burning natural gas rather than coal to generate electricity.
+A: Lower carbon dioxide emissions
+Accept: Cleaner burning; Less pollution; Produces less CO2
+Ref: 6.3
+D: 2
+
+Q: Give one disadvantage of burning coal for electricity.
+A: Releases carbon dioxide
+Accept: Air pollution; Contributes to climate change; Releases greenhouse gases
+Ref: 6.3
+D: 2
+
+Q: Give one advantage of wind power compared with fossil fuels once turbines are built.
+A: No greenhouse gas emissions
+Accept: No carbon emissions; Free fuel; Does not run out; Low running costs
+Ref: 6.3
+D: 2
+
+Q: Why can wind and solar power be unreliable as a main source of electricity?
+A: Depend on weather conditions
+Accept: Wind and sun vary; Intermittent; Not always windy or sunny
+Ref: 6.3
+D: 3
+
+Q: Why do fossil fuels need to be classed as finite, not as sustainable, resources?
+A: Take millions of years to form
+Accept: Used faster than they form; Cannot be replaced quickly
+Ref: 6.3
+D: 3
+
+Q: Name the term for the proportion of different energy sources a country uses.
+A: Energy mix
+Ref: 6.4
+D: 1
+
+Q: Which fossil fuel, once dominant in UK power, has been almost phased out of UK electricity generation?
+A: Coal
+Ref: 6.4
+D: 1
+
+Q: Name the renewable source that the UK generates with large offshore farms in the North Sea.
+A: Wind power
+Accept: Wind; Offshore wind
+Ref: 6.4
+D: 2
+
+Q: Why does a country with large coal reserves often use a lot of coal in its energy mix?
+A: Cheap and available locally
+Accept: Resource availability; Domestic supply; Easy access
+Ref: 6.4
+D: 3
+
+Q: How does greater national wealth often change a country's energy use per person?
+A: Increases it
+Accept: More energy used per person; Higher consumption
+Ref: 6.4
+D: 2
+
+Q: Why might a poor country rely mainly on wood and biomass for energy?
+A: Cannot afford other energy sources
+Accept: Low wealth; Cheap and available; Lack of infrastructure
+Ref: 6.4
+D: 3
+
+Q: Name the process of pumping high-pressure water and chemicals into shale rock to release gas.
+A: Fracking
+Accept: Hydraulic fracturing
+Ref: 6.5
+D: 1
+
+Q: Name the rock type from which fracking extracts gas in places such as the USA and Lancashire.
+A: Shale
+Accept: Shale rock
+Ref: 6.5
+D: 1
+
+Q: Give one environmental concern about fracking.
+A: Earth tremors
+Accept: Water contamination; Earthquakes; Groundwater pollution; Uses large amounts of water
+Ref: 6.5
+D: 2
+
+Q: Give one way fracking has helped the USA with its energy supply.
+A: Reduced need for imported gas
+Accept: Energy security; Cheaper gas; More jobs; Increased supply
+Ref: 6.5
+D: 2
+
+Q: Name the source of renewable electricity that uses the energy of falling water behind a dam.
+A: Hydro-electric power
+Accept: HEP; Hydroelectric; Hydropower
+Ref: 6.5
+D: 1
+
+Q: Give one negative impact of building a large HEP dam on local people.
+A: Villages flooded and people displaced
+Accept: Loss of homes; Displacement; Farmland flooded
+Ref: 6.5
+D: 2
+
+Q: Name the device that converts sunlight directly into electricity.
+A: Solar panel
+Accept: Photovoltaic cell; PV cell; Solar cell
+Ref: 6.5
+D: 1
+
+Q: Why are solar farms well suited to hot desert countries?
+A: High sunshine hours and cloudless skies
+Accept: Lots of sunshine; Reliable sun; Little cloud
+Ref: 6.5
+D: 3
+
+Q: Name the radioactive element that is used as fuel in nuclear power stations.
+A: Uranium
+Ref: 6.5
+D: 1
+
+Q: Give one reason why global energy demand has risen sharply over the past 100 years.
+A: Population growth
+Accept: Increased wealth; Industrialisation; Technological advances; More people
+Ref: 6.5
+D: 2
+
+Q: Why has rising wealth in emerging countries increased their energy demand?
+A: More people buy cars and appliances
+Accept: Higher consumption; Industrial growth; More electrical goods
+Ref: 6.5
+D: 3
+
+Q: Give one risk of nuclear power despite it producing no carbon dioxide while generating electricity.
+A: Radioactive waste
+Accept: Accident risk; Radiation leaks; Waste storage; High cost
+Ref: 6.5
+D: 2
+
+Q: Which interest group might oppose a new wind farm because of its effect on the view?
+A: Local residents
+Accept: Individuals; Local people; Campaign groups
+Ref: 6.6
+D: 2
+
+Q: Name the type of organisation, such as Greenpeace, that campaigns against fossil fuel exploitation.
+A: Environmental pressure group
+Accept: Pressure group; Environmental group; NGO; Charity
+Ref: 6.6
+D: 2
+
+Q: Why might an energy company favour exploiting a new oil field?
+A: To make profit
+Accept: Profit; Money; Higher profits
+Ref: 6.6
+D: 2
+
+Q: Why might a government encourage fracking despite opposition from local people?
+A: To increase energy security
+Accept: Reduce imports; Create jobs; Boost economy; Secure supply
+Ref: 6.6
+D: 3
+
+Q: Name the term for meeting present energy needs without harming the ability of future generations to meet theirs.
+A: Sustainable development
+Accept: Sustainability
+Ref: 6.7
+D: 1
+
+Q: Name the term for the total amount of greenhouse gases produced by a person or activity.
+A: Carbon footprint
+Ref: 6.7
+D: 1
+
+Q: Why do non-renewable energy resources require careful management?
+A: They will run out
+Accept: Finite; Limited supply; Cannot be replaced
+Ref: 6.7
+D: 2
+
+Q: Why do renewable energy resources also need sustainable management?
+A: To limit environmental damage
+Accept: Avoid habitat loss; Avoid wasting resources; Prevent impacts on people; Still have impacts
+Ref: 6.7
+D: 3
+
+Q: Name one way individuals can reduce their energy consumption at home.
+A: Insulating the home
+Accept: Turn off lights; Use LED bulbs; Use less heating; Switch off appliances
+Ref: 6.7
+D: 1
+
+Q: Name the international agreement signed in 2015 aimed at limiting global warming to well below 2 degrees Celsius.
+A: Paris Agreement
+Accept: Paris Accord; Paris Climate Agreement
+Ref: 6.7
+D: 2
+
+Q: Which Scandinavian country, home to the company Vestas, generates over half its electricity from wind?
+A: Denmark
+Ref: 6.7
+D: 2
+
+Q: Name the emerging country that has built vast hydropower, including the Three Gorges Dam, and large wind and solar capacity.
+A: China
+Ref: 6.7
+D: 2

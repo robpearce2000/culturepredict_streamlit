@@ -1,0 +1,266 @@
+Board: AQA
+Spec: 8035
+Topic: 3.1.2
+
+Q: What term describes organisms, such as plants, that make their own food by photosynthesis?
+A: Producers
+Accept: Producer
+Ref: 3.1.2.1.1
+D: 1
+
+Q: What term describes organisms that get their energy by eating other organisms?
+A: Consumers
+Accept: Consumer
+Ref: 3.1.2.1.1
+D: 1
+
+Q: Which group of organisms, including fungi and bacteria, breaks down dead plants and animals?
+A: Decomposers
+Accept: Decomposer
+Ref: 3.1.2.1.1
+D: 1
+
+Q: What term describes the non-living parts of an ecosystem, such as climate, soil and rock?
+A: Abiotic
+Accept: Abiotic components; Abiotic factors
+Ref: 3.1.2.1.1
+D: 1
+
+Q: What term describes the many interlinked food chains within an ecosystem?
+A: Food web
+Accept: A food web
+Ref: 3.1.2.1.1
+D: 1
+
+Q: In a food chain, the arrows show the direction of the transfer of what?
+A: Energy
+Accept: Energy and nutrients; Energy flow
+Ref: 3.1.2.1.1
+D: 2
+
+Q: In a pond food chain of algae, tadpole, newt, which organism is the producer?
+A: Algae
+Accept: The algae
+Ref: 3.1.2.1.1
+D: 2
+
+Q: What name is given to the movement of nutrients from soil to plants, to animals, and back to the soil?
+A: Nutrient cycling
+Accept: Nutrient cycle
+Ref: 3.1.2.1.1
+D: 2
+
+Q: Why are decomposers essential to nutrient cycling in a woodland?
+A: Release nutrients from dead material into the soil
+Accept: Return nutrients to the soil; Break down dead matter and release nutrients
+Ref: 3.1.2.1.1
+D: 3
+
+Q: The main predator in a UK pond dies out. What happens to the numbers of its prey?
+A: They increase
+Accept: Increase; Rise; Go up
+Ref: 3.1.2.1.1
+D: 3
+Note: The balance between components means changing one affects the others.
+
+Q: What term describes a large-scale global ecosystem, such as tropical rainforest or tundra?
+A: Biome
+Accept: Global ecosystem; Large-scale ecosystem
+Ref: 3.1.2.1.1
+D: 1
+
+Q: Which large-scale ecosystem has very cold treeless land with permafrost, mainly north of the Arctic Circle?
+A: Tundra
+Ref: 3.1.2.1.1
+D: 2
+
+Q: Between which two lines of latitude are tropical rainforests mainly found?
+A: Tropics of Cancer and Capricorn
+Accept: 23.5°N and 23.5°S; Either side of the equator
+Ref: 3.1.2.2.1
+D: 2
+
+Q: Roughly what is the average temperature in a tropical rainforest all year round?
+A: About 27°C
+Accept: 25–30°C; 26°C; 28°C; Between 25 and 30°C
+Ref: 3.1.2.2.1
+D: 1
+
+Q: About how much rain falls in a tropical rainforest each year?
+A: Over 2000 mm
+Accept: More than 2000 mm; 2000–3000 mm; Over 2 m
+Ref: 3.1.2.2.1
+D: 1
+
+Q: What name is given to the tallest trees that stick out above the rainforest canopy?
+A: Emergents
+Accept: Emergent layer; Emergent trees
+Ref: 3.1.2.2.1
+D: 1
+
+Q: Which rainforest layer forms a dense, continuous roof of leaves and branches?
+A: Canopy
+Accept: The canopy; Canopy layer
+Ref: 3.1.2.2.1
+D: 2
+
+Q: In a rainforest, most nutrients are stored in what, rather than in the soil?
+A: Vegetation
+Accept: Biomass; Plants; Trees
+Ref: 3.1.2.2.1
+D: 2
+
+Q: Why does fallen leaf litter break down very quickly on the rainforest floor?
+A: Warm, damp conditions speed up decomposition
+Accept: Hot and wet; Warm and wet climate
+Ref: 3.1.2.2.1
+D: 3
+
+Q: What is the purpose of the drip tips on rainforest leaves?
+A: Shed rainwater quickly
+Accept: Let water run off; Drain water; Prevent fungal growth
+Ref: 3.1.2.2.1
+D: 2
+
+Q: Which type of roots help tall rainforest trees stay upright in shallow soil?
+A: Buttress roots
+Accept: Buttress
+Ref: 3.1.2.2.1
+D: 2
+
+Q: What term describes the variety of plant and animal species in an ecosystem?
+A: Biodiversity
+Accept: Biological diversity
+Ref: 3.1.2.2.1
+D: 1
+
+Q: Why do tropical rainforests have very high biodiversity?
+A: Warm, wet climate all year
+Accept: Constant heat and rainfall; Plenty of food and habitats; Ideal growing conditions
+Ref: 3.1.2.2.1
+D: 3
+
+Q: Which country contains the largest area of the Amazon rainforest?
+A: Brazil
+Ref: 3.1.2.2.2
+D: 1
+
+Q: What does subsistence farming mean?
+A: Growing food to feed the farmer's own family
+Accept: Farming for own use; Farming to feed the family
+Ref: 3.1.2.2.2
+D: 2
+
+Q: Which farm animal reared on large ranches is a major cause of Amazon deforestation?
+A: Cattle
+Accept: Cows; Beef cattle
+Ref: 3.1.2.2.2
+D: 1
+
+Q: Which type of power scheme, such as the Belo Monte dam, floods rainforest to produce energy?
+A: Hydroelectric power
+Accept: HEP; Hydroelectricity; Hydropower
+Ref: 3.1.2.2.2
+D: 2
+
+Q: Which highway, begun in the 1970s, was built across the Amazon to encourage settlement?
+A: Trans-Amazonian Highway
+Accept: Transamazonica; Trans-Amazonian
+Ref: 3.1.2.2.2
+D: 2
+
+Q: How does building new roads into the rainforest lead to further deforestation?
+A: Opens up access for loggers, farmers and settlers
+Accept: Makes the forest easier to reach; Allows access
+Ref: 3.1.2.2.2
+D: 3
+
+Q: Why does soil erosion increase when rainforest trees are removed?
+A: Roots no longer bind the soil
+Accept: No roots to hold soil; No canopy to shelter soil from rain
+Ref: 3.1.2.2.2
+D: 3
+
+Q: Which greenhouse gas is released when rainforest is burned to clear land?
+A: Carbon dioxide
+Accept: CO2; CO₂
+Ref: 3.1.2.2.2
+D: 1
+
+Q: Selling timber, beef and minerals from cleared rainforest brings a country what economic benefit?
+A: Income
+Accept: Money; Revenue; Export earnings; Economic growth
+Ref: 3.1.2.2.2
+D: 2
+
+Q: Between 2004 and 2012, did annual deforestation in the Brazilian Amazon rise or fall?
+A: Fall
+Accept: Fell; Decrease; Decreased
+Ref: 3.1.2.2.2
+D: 2
+
+Q: What term describes forests that absorb and store more carbon dioxide than they release?
+A: Carbon sink
+Accept: Carbon store; Sink
+Ref: 3.1.2.2.3
+D: 2
+
+Q: What name is given to valuable rainforest timber such as mahogany?
+A: Hardwood
+Accept: Tropical hardwood; Hardwoods
+Ref: 3.1.2.2.3
+D: 1
+
+Q: What is selective logging?
+A: Only some mature trees are felled
+Accept: Cutting only selected trees; Only cutting certain trees
+Ref: 3.1.2.2.3
+D: 2
+
+Q: In sustainable logging, what must be done after trees are felled?
+A: Replant trees
+Accept: Replanting; Replant
+Ref: 3.1.2.2.3
+D: 1
+
+Q: What term describes low-impact tourism that protects the environment and benefits local people?
+A: Ecotourism
+Accept: Eco-tourism
+Ref: 3.1.2.2.3
+D: 1
+
+Q: Why is ecotourism more sustainable than commercial logging?
+A: Forest stays standing while earning income
+Accept: Trees are not cut down; Protects the forest and gives jobs
+Ref: 3.1.2.2.3
+D: 3
+
+Q: What is a debt-for-nature swap?
+A: Debt reduced in return for protecting rainforest
+Accept: Debt cancelled for conservation; Debt written off if forest is protected
+Ref: 3.1.2.2.3
+D: 3
+
+Q: National parks and reserves that protect rainforest are an example of which management strategy?
+A: Conservation
+Accept: Protected areas
+Ref: 3.1.2.2.3
+D: 2
+
+Q: Governments sign international agreements to control trade in which rainforest product?
+A: Tropical hardwoods
+Accept: Hardwood; Timber; Tropical timber
+Ref: 3.1.2.2.3
+D: 2
+
+Q: Why does cleared rainforest soil quickly lose its fertility once used for crops?
+A: Nutrient cycle broken; nutrients washed away
+Accept: No leaf litter returns nutrients; Nutrients leached by heavy rain; Nutrients not replaced
+Ref: 3.1.2.2.2
+D: 3
+
+Q: Epiphytes, such as orchids, grow on tree branches rather than in soil. Why?
+A: Reach sunlight
+Accept: To reach light; Get more light
+Ref: 3.1.2.2.1
+D: 3

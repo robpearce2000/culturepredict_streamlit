@@ -1,0 +1,202 @@
+Board: AQA
+Spec: 8035
+Topic: 3.2.3.4
+
+Q: What term describes a country having enough reliable, affordable energy to meet its needs?
+A: Energy security
+Ref: 3.2.3.4.1
+D: 1
+
+Q: What term describes a country that cannot reliably get enough energy to meet its needs?
+A: Energy insecurity
+Ref: 3.2.3.4.1
+D: 1
+
+Q: Name the term for an area where energy supply is greater than demand.
+A: Energy surplus
+Accept: Surplus
+Ref: 3.2.3.4.1
+D: 1
+
+Q: What is the term for an area that must import energy because it uses more than it produces?
+A: Energy deficit
+Accept: Deficit
+Ref: 3.2.3.4.1
+D: 1
+
+Q: Which fossil fuel is the most widely consumed energy source globally?
+A: Oil
+Accept: Crude oil; Petroleum
+Ref: 3.2.3.4.1
+D: 1
+
+Q: Name the process of searching for new oil and gas reserves.
+A: Exploration
+Ref: 3.2.3.4.1
+D: 1
+
+Q: Do NEEs or HICs tend to have the highest energy consumption per person?
+A: HICs
+Accept: High income countries; High-income countries
+Ref: 3.2.3.4.1
+D: 2
+
+Q: Give one reason why global energy consumption is rising as countries industrialise.
+A: Economic development
+Accept: Industrialisation; More factories; Rising wealth
+Ref: 3.2.3.4.1
+D: 2
+
+Q: Give one reason, linked to population, why global energy consumption is rising.
+A: Population growth
+Accept: More people; Rising population
+Ref: 3.2.3.4.1
+D: 2
+
+Q: Give one way new technology has increased the amount of energy people consume.
+A: More electrical devices
+Accept: More appliances; More gadgets; Cars; More machines
+Ref: 3.2.3.4.1
+D: 2
+
+Q: Give one physical factor that affects a country's energy supply.
+A: Location of fossil fuel reserves
+Accept: Geology; Climate; Wind; Rivers; Sunshine; Relief
+Ref: 3.2.3.4.1
+D: 2
+
+Q: Name the type of factor, such as conflict between countries or sanctions, that can limit energy supply.
+A: Political
+Accept: Political factors
+Ref: 3.2.3.4.1
+D: 1
+
+Q: Why does a country with limited technology often struggle to supply energy from deep offshore oil?
+A: Cannot extract it
+Accept: Too difficult to reach; Lacks equipment; Lacks technology; Too costly
+Ref: 3.2.3.4.1
+D: 3
+
+Q: Why can high exploitation and production costs reduce a country's energy supply?
+A: Not worth extracting
+Accept: Too expensive to develop; Uneconomic; Not profitable
+Ref: 3.2.3.4.1
+D: 3
+
+Q: Give one environmental cost of exploring for energy in sensitive areas such as the Arctic.
+A: Habitat damage
+Accept: Oil spills; Pollution; Wildlife harm; Habitat loss
+Ref: 3.2.3.4.1
+D: 2
+
+Q: Give one way an energy shortage can reduce a country's industrial output.
+A: Factories cannot operate
+Accept: Factories shut down; Power cuts; Less production; Higher costs
+Ref: 3.2.3.4.1
+D: 3
+
+Q: Why can energy insecurity reduce food production?
+A: Less power for farm machinery
+Accept: Machinery cannot run; Higher fuel and fertiliser costs; Less fertiliser; Costs rise
+Ref: 3.2.3.4.1
+D: 3
+
+Q: Why might demand exceeding supply increase the risk of conflict between countries?
+A: Competition for scarce energy
+Accept: Countries fight over resources; Competing for resources; Disputes over supply
+Ref: 3.2.3.4.1
+D: 3
+
+Q: Name the group of non-renewable energy sources that includes coal, oil and natural gas.
+A: Fossil fuels
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Name the renewable energy source made from plant material or animal waste.
+A: Biomass
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Name the renewable energy source that uses heat from inside the Earth.
+A: Geothermal
+Accept: Geothermal energy
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Name the renewable energy source that uses the rise and fall of the sea each day.
+A: Tidal
+Accept: Tidal power; Tidal energy
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Name the renewable energy source that uses the movement of water down from a dam.
+A: Hydroelectric power
+Accept: HEP; Hydro; Hydroelectricity
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Name the non-renewable energy source that uses uranium.
+A: Nuclear power
+Accept: Nuclear; Nuclear energy
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Name the renewable energy source that uses moving air to turn turbines.
+A: Wind
+Accept: Wind power; Wind energy
+Ref: 3.2.3.4.2
+D: 1
+
+Q: State one advantage of extracting a fossil fuel such as North Sea oil or Alberta tar sands.
+A: Creates jobs
+Accept: Provides energy; Earns export income; Boosts the economy
+Ref: 3.2.3.4.2
+D: 2
+
+Q: State one disadvantage of extracting a fossil fuel such as North Sea oil or Alberta tar sands.
+A: Environmental damage
+Accept: Oil spills; Habitat loss; Pollution; Carbon emissions; Risk to workers
+Ref: 3.2.3.4.2
+D: 2
+
+Q: What is the term for the total greenhouse gases produced by a person's activities?
+A: Carbon footprint
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Name the term for using less energy overall, such as by switching off unused appliances.
+A: Energy conservation
+Accept: Demand reduction; Conservation
+Ref: 3.2.3.4.2
+D: 1
+
+Q: Give one way a home can be designed to be more energy efficient.
+A: Loft insulation
+Accept: Double glazing; Solar panels; Draught proofing; Cavity wall insulation
+Ref: 3.2.3.4.2
+D: 2
+
+Q: Give one way transport can be made more sustainable.
+A: Public transport
+Accept: Electric vehicles; Cycling; Car sharing; Walking; Cycle lanes
+Ref: 3.2.3.4.2
+D: 2
+
+Q: Give one way technology can make fossil fuel use more efficient.
+A: Clean coal technology
+Accept: Carbon capture; Combined cycle power stations; Hybrid engines; More efficient engines
+Ref: 3.2.3.4.2
+D: 3
+
+Q: Why is a small local solar or hydro scheme in an LIC useful for remote villages?
+A: Not connected to national grid
+Accept: Provides local power; Cheap to run; No fuel needed; Avoids grid costs
+Ref: 3.2.3.4.2
+D: 3
+
+Q: Why are renewable energy schemes described as sustainable?
+A: They do not run out
+Accept: Renewable; Can be used without damaging future supplies; Replaced naturally
+Ref: 3.2.3.4.2
+D: 3
+

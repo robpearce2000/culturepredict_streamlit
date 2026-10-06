@@ -242,8 +242,8 @@ Ref: 11.4.3
 D: 2
 
 Q: Why was penicillin not mass-produced until the Second World War?
-A: Government and US funding was needed
-Accept: Wartime demand; Needed money and industry; War created demand; It needed large-scale production
+A: Wartime demand and funding were needed
+Accept: Government and US funding; Wartime demand; Needed money and industry; War created demand; It needed large-scale production
 Ref: 11.4.3
 D: 3
 
@@ -254,14 +254,14 @@ Ref: 11.HE.1
 D: 1
 
 Q: Why did the muddy terrain of Flanders make it difficult to treat wounded soldiers?
-A: Transport and stretcher carrying was slow
-Accept: Hard to move the wounded; Mud slowed evacuation; Wounds infected by soil; Mud made transport hard
+A: Mud slowed the evacuation of the wounded
+Accept: Transport and stretcher carrying was slow; Hard to move the wounded; Mud made transport hard
 Ref: 11.HE.1
 D: 3
 
 Q: Which foot condition, caused by standing for long periods in cold, wet trenches, could lead to amputation?
 A: Trench foot
-Accept: Trench foot
+Accept: Trench-foot
 Ref: 11.HE.1
 D: 1
 

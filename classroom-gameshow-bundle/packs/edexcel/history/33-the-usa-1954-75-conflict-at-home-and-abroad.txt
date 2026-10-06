@@ -1,0 +1,545 @@
+Board: Edexcel
+Spec: 1HI0
+Topic: 33
+
+Q: Which civil rights organisation, founded in 1909, fought segregation mainly through the courts?
+A: NAACP
+Accept: National Association for the Advancement of Colored People; National Association for the Advancement of Coloured People
+Ref: 33.1.1
+D: 1
+
+Q: What name was given to laws in the Southern states that enforced the separation of Black and white Americans?
+A: Jim Crow laws
+Accept: Jim Crow; segregation laws
+Ref: 33.1.1
+D: 2
+
+Q: Which type of test on reading and understanding, used in the early 1950s, was often used to stop Black Southerners registering to vote?
+A: Literacy test
+Accept: Literacy tests; Literacy
+Ref: 33.1.1
+D: 2
+Note: Poll taxes and intimidation were also used.
+
+Q: Which civil rights organisation, founded in 1942, used non-violent direct action such as sit-ins?
+A: CORE
+Accept: Congress of Racial Equality
+Ref: 33.1.1
+D: 2
+
+Q: In which Kansas city was the school at the centre of the 1954 Supreme Court desegregation case?
+A: Topeka
+Ref: 33.1.2
+D: 1
+
+Q: Which 1896 Supreme Court ruling allowing 'separate but equal' facilities did the Brown decision overturn?
+A: Plessy v Ferguson
+Accept: Plessy v. Ferguson; Plessy
+Ref: 33.1.2
+D: 2
+
+Q: Why was the Brown v. Board of Education ruling of 1954 limited in its immediate effect in the South?
+A: Many Southern states resisted and ignored it
+Accept: Southern states refused to desegregate; It had no deadline; Slow enforcement
+Ref: 33.1.2
+D: 3
+Note: The 1955 follow-up ruling only required desegregation 'with all deliberate speed'.
+
+Q: Which Arkansas governor used the National Guard to keep Black students out of Little Rock High School in 1957?
+A: Orval Faubus
+Accept: Faubus
+Ref: 33.1.2
+D: 1
+
+Q: Which President sent the 101st Airborne Division to protect the Little Rock Nine in 1957?
+A: Eisenhower
+Accept: Dwight Eisenhower; Dwight D. Eisenhower
+Ref: 33.1.2
+D: 2
+
+Q: Why were the events at Little Rock High School in 1957 significant for civil rights?
+A: Federal troops enforced desegregation against a state governor
+Accept: Eisenhower used federal power; Showed federal government would enforce court rulings; Federal troops used
+Ref: 33.1.2
+D: 3
+
+Q: Which Black woman was arrested in Montgomery in December 1955 for refusing to give up her bus seat?
+A: Rosa Parks
+Accept: Parks
+Ref: 33.1.3
+D: 1
+
+Q: Roughly how long did the Montgomery Bus Boycott last?
+A: About 381 days (just over a year)
+Accept: Just over a year; About a year; 12 months; 13 months; 381 days
+Ref: 33.1.3
+D: 2
+Note: Accept 12 to 13 months.
+
+Q: Which young minister became the main leader of the Montgomery Bus Boycott?
+A: Martin Luther King
+Accept: Martin Luther King Jr; Martin Luther King Jr.; King; MLK
+Ref: 33.1.3
+D: 1
+
+Q: In 1956 what did the Supreme Court rule about Montgomery's buses?
+A: Bus segregation was unconstitutional
+Accept: Segregation on buses was illegal; Segregated buses banned
+Ref: 33.1.3
+D: 2
+Note: Browder v. Gayle upheld a lower court ruling.
+
+Q: Which organisation did King help set up in 1957 to coordinate Southern church-based protests?
+A: SCLC
+Accept: Southern Christian Leadership Conference
+Ref: 33.1.3
+D: 2
+
+Q: Why was the Civil Rights Act of 1957 seen as a disappointment despite being the first since Reconstruction?
+A: It did little to protect Black voting rights
+Accept: Weak enforcement; Few Black people gained the vote; It was weak
+Ref: 33.1.3
+D: 3
+Note: It set up a Civil Rights Commission but enforcement was weak.
+
+Q: Why did the Montgomery Bus Boycott hurt the bus company financially?
+A: Black people were most of its passengers
+Accept: Most passengers were Black; Black people made up about 75 per cent of riders; Loss of fares
+Ref: 33.1.3
+D: 3
+
+Q: Which white supremacist group used lynching and burning crosses to terrorise Black Americans?
+A: Ku Klux Klan
+Accept: KKK; The Klan; Klan
+Ref: 33.1.4
+D: 1
+
+Q: In which state was the 14-year-old Emmett Till murdered in 1955?
+A: Mississippi
+Ref: 33.1.4
+D: 2
+
+Q: Why did the Emmett Till case help the civil rights movement despite his killers being acquitted?
+A: His mother's open coffin shocked national opinion
+Accept: Open coffin photos shocked America; Publicity and outrage
+Ref: 33.1.4
+D: 3
+Note: His mother Mamie Till chose an open coffin; photographs were widely published.
+
+Q: What name was given to Southern Democrats who left the party in 1948 to defend segregation?
+A: Dixiecrats
+Accept: States' Rights Democrats
+Ref: 33.1.4
+D: 1
+
+Q: What organisations, first formed in Mississippi in 1954, used economic pressure to resist desegregation?
+A: White Citizens' Councils
+Accept: Citizens' Councils; Citizens Councils; White Citizens Councils
+Ref: 33.1.4
+D: 2
+
+Q: In which North Carolina city did students begin a sit-in at a Woolworth's lunch counter in February 1960?
+A: Greensboro
+Ref: 33.2.1
+D: 1
+
+Q: Which student organisation was formed in 1960 after the sit-ins to coordinate young activists?
+A: SNCC
+Accept: Student Nonviolent Coordinating Committee; Student Non-violent Coordinating Committee
+Ref: 33.2.1
+D: 2
+
+Q: In 1961 what name was given to the Black and white activists who rode buses through the South to test desegregation?
+A: Freedom Riders
+Accept: Freedom Rider
+Ref: 33.2.1
+D: 1
+
+Q: In which Alabama town was a Freedom Riders' bus firebombed in May 1961?
+A: Anniston
+Ref: 33.2.1
+D: 2
+
+Q: Why did the Freedom Riders' journey force President Kennedy to act?
+A: Attacks showed government failing to protect them
+Accept: Violence drew national publicity; Kennedy sent marshals and ICC banned segregation
+Ref: 33.2.1
+D: 3
+Note: The ICC later ordered bus station desegregation.
+
+Q: Which Black student's attempt to enrol at the University of Mississippi caused riots in 1962?
+A: James Meredith
+Accept: Meredith
+Ref: 33.2.1
+D: 1
+
+Q: Which Alabama city was the target of King's 1963 campaign, where police chief Bull Connor used dogs and fire hoses?
+A: Birmingham
+Ref: 33.2.2
+D: 1
+
+Q: Roughly how many people joined the 1963 March on Washington?
+A: About 250,000
+Accept: Quarter of a million; 200,000 to 300,000
+Ref: 33.2.2
+D: 2
+Note: Accept anything from 200,000 to 300,000.
+
+Q: What was the famous speech King gave at the 1963 March on Washington called?
+A: I Have a Dream
+Accept: 'I have a dream'
+Ref: 33.2.2
+D: 1
+
+Q: In 1964's Freedom Summer, what was the main aim of volunteers in Mississippi?
+A: Registering Black voters
+Accept: Voter registration; Getting Black people to vote
+Ref: 33.2.2
+D: 2
+
+Q: Which three civil rights workers were murdered in Mississippi in 1964?
+A: Chaney, Goodman and Schwerner
+Accept: Schwerner, Chaney and Goodman
+Ref: 33.2.2
+D: 2
+Note: All three surnames are needed.
+
+Q: Why was President Johnson, not Kennedy, able to get the Civil Rights Act passed in 1964?
+A: Kennedy's assassination and Johnson's political skill
+Accept: Kennedy was killed in 1963; Kennedy's death; Johnson used Congress skills
+Ref: 33.2.2
+D: 3
+Note: Kennedy had proposed the bill in June 1963.
+
+Q: Which Alabama town saw the 1965 marches from which King pressed for the Voting Rights Act?
+A: Selma
+Ref: 33.2.2
+D: 1
+
+Q: What did the Voting Rights Act of 1965 do?
+A: Banned literacy tests and protected Black voting
+Accept: Outlawed barriers to voting; Stopped voter discrimination; Federal registrars sent in
+Ref: 33.2.2
+D: 2
+
+Q: Which religious organisation did Malcolm X join in prison and then speak for?
+A: Nation of Islam
+Accept: Black Muslims; The Black Muslims
+Ref: 33.2.3
+D: 1
+
+Q: After his 1964 pilgrimage to Mecca, how did Malcolm X's attitude change?
+A: Rejected hatred of all whites
+Accept: Became more willing to work with whites; Accepted racial cooperation
+Ref: 33.2.3
+D: 3
+
+Q: In which year was Malcolm X assassinated?
+A: 1965
+Ref: 33.2.3
+D: 2
+
+Q: Which SNCC leader popularised the slogan 'Black Power' in 1966?
+A: Stokely Carmichael
+Accept: Carmichael
+Ref: 33.2.3
+D: 1
+
+Q: What gesture did Tommie Smith and John Carlos make on the podium at the 1968 Olympics?
+A: Black Power salute (raised fists)
+Accept: Raised fists; Black power salute; Raised gloved fists
+Ref: 33.2.3
+D: 2
+
+Q: Which Californian city was the Black Panther Party founded in during 1966?
+A: Oakland
+Ref: 33.2.3
+D: 2
+
+Q: Which free meal programme for schoolchildren did the Black Panthers run in poor Black communities?
+A: Free Breakfast for Children
+Accept: Free breakfast programme; Breakfast programme; Free breakfasts; Free breakfast
+Ref: 33.2.3
+D: 2
+
+Q: Why did Black Power appeal to many young Black Americans in the mid-1960s?
+A: Frustration at slow progress and non-violence
+Accept: Impatience with slow change; Poverty in Northern cities; Anger at continued racism
+Ref: 33.2.3
+D: 3
+
+Q: Which district of Los Angeles saw serious rioting in August 1965?
+A: Watts
+Ref: 33.2.4
+D: 1
+
+Q: Which New Jersey city had major riots in July 1967, shortly before Detroit?
+A: Newark
+Ref: 33.2.4
+D: 2
+
+Q: What did the 1968 Kerner Report blame for the riots?
+A: White racism and inequality
+Accept: Racism; Poverty and discrimination in cities; Segregation and white racism
+Ref: 33.2.4
+D: 3
+
+Q: Which Northern city did King campaign in during 1966 against housing discrimination?
+A: Chicago
+Ref: 33.2.4
+D: 2
+
+Q: In which Tennessee city was King assassinated in April 1968?
+A: Memphis
+Ref: 33.2.4
+D: 1
+
+Q: What term describes segregation that existed in practice in the North, though not required by law?
+A: De facto segregation
+Accept: De facto; Segregation in practice
+Ref: 33.2.4
+D: 2
+
+Q: Which theory said that if one Asian country fell to communism, its neighbours would follow?
+A: Domino theory
+Accept: The domino theory
+Ref: 33.3.1
+D: 1
+
+Q: Which South Vietnamese leader, a Catholic ruling a mostly Buddhist country, was backed by the USA after 1954?
+A: Ngo Dinh Diem
+Accept: Diem
+Ref: 33.3.1
+D: 1
+
+Q: Why was the Diem government a weakness for the USA's policy in South Vietnam?
+A: It was corrupt and unpopular
+Accept: Unpopular with Buddhists and peasants; It persecuted Buddhists; Corrupt and repressive
+Ref: 33.3.1
+D: 3
+
+Q: What happened to Diem in November 1963?
+A: He was overthrown and killed in a coup
+Accept: Assassinated; Overthrown; Killed in a military coup
+Ref: 33.3.1
+D: 2
+Note: The USA had given tacit approval to the generals.
+
+Q: What was the Strategic Hamlet Program under Kennedy?
+A: Moving peasants into fortified villages
+Accept: Peasants moved into guarded villages; Fortified villages to isolate Vietcong
+Ref: 33.3.1
+D: 2
+Note: It was meant to separate peasants from the Vietcong but caused resentment.
+
+Q: What name is given to the communist guerrillas fighting the South Vietnamese government?
+A: Vietcong
+Accept: Viet Cong; VC; National Liberation Front; NLF
+Ref: 33.3.2
+D: 1
+
+Q: In which gulf were US destroyers reportedly attacked by North Vietnamese boats in August 1964?
+A: Gulf of Tonkin
+Accept: Tonkin
+Ref: 33.3.2
+D: 2
+
+Q: What did the Gulf of Tonkin Resolution allow Johnson to do?
+A: Use force in Vietnam without declaring war
+Accept: Escalate the war without Congress declaring war; Send troops without formal declaration
+Ref: 33.3.2
+D: 3
+
+Q: What underground networks, as at Cu Chi, did the Vietcong use for hiding, moving and storing supplies?
+A: Tunnels
+Accept: Tunnel; Tunnel network; Tunnel networks
+Ref: 33.3.3
+D: 2
+
+Q: What name was given to the US tactic of finding Vietcong villages, burning them and clearing them of enemy fighters?
+A: Search and Destroy
+Accept: Search and destroy
+Ref: 33.3.3
+D: 2
+
+Q: What was the name of the sustained US bombing campaign against North Vietnam begun in 1965?
+A: Operation Rolling Thunder
+Accept: Rolling Thunder
+Ref: 33.3.3
+D: 1
+
+Q: Which chemical defoliant sprayed by the USA destroyed forest cover and harmed civilians?
+A: Agent Orange
+Accept: Agent orange
+Ref: 33.3.3
+D: 2
+Note: Napalm was a separate weapon, an incendiary.
+
+Q: Which communist offensive began during the Vietnamese New Year festival in January 1968?
+A: Tet Offensive
+Accept: Tet
+Ref: 33.3.3
+D: 1
+
+Q: Why was the Tet Offensive a turning point despite being a military defeat for the communists?
+A: Americans had been told victory was near
+Accept: Shocked Americans; Turned US public opinion against the war; US public lost confidence
+Ref: 33.3.3
+D: 3
+
+Q: Which President introduced Vietnamisation in 1969?
+A: Nixon
+Accept: Richard Nixon
+Ref: 33.3.4
+D: 1
+
+Q: What did Vietnamisation aim to do?
+A: Hand the fighting to South Vietnamese forces
+Accept: Let the ARVN fight; Train South Vietnam's army to take over; Withdraw US troops
+Ref: 33.3.4
+D: 2
+
+Q: Why did Vietnamisation fail?
+A: ARVN was weak and depended on US help
+Accept: ARVN was corrupt and weak; South Vietnamese forces could not cope
+Ref: 33.3.4
+D: 3
+
+Q: What did the Nixon Doctrine say about US support for Asian allies?
+A: Allies must defend themselves with US aid
+Accept: Asian countries should fight their own wars; US would provide arms and aid not troops
+Ref: 33.3.4
+D: 2
+
+Q: Which country did US and South Vietnamese forces invade in 1970 to attack communist bases?
+A: Cambodia
+Ref: 33.3.4
+D: 2
+
+Q: What was the name of the intense US bombing of Hanoi and Haiphong in December 1972?
+A: Linebacker II
+Accept: Christmas bombing; Christmas bombings; Operation Linebacker II
+Ref: 33.3.4
+D: 2
+
+Q: Which system of compulsory military service in the USA caused widespread anger among young men?
+A: The draft
+Accept: Draft; Conscription
+Ref: 33.4.1
+D: 1
+
+Q: Why did television coverage increase opposition to the war?
+A: Showed graphic fighting in American homes
+Accept: Showed horror of the war; People saw casualties and atrocities
+Ref: 33.4.1
+D: 3
+Note: It was nicknamed the 'living room war'.
+
+Q: What massacre of Vietnamese villagers by US troops in March 1968 became public in late 1969?
+A: My Lai
+Accept: My Lai Massacre
+Ref: 33.4.1
+D: 1
+
+Q: Which Lieutenant was convicted in 1971 for his role in the My Lai Massacre?
+A: William Calley
+Accept: Calley; Lieutenant Calley; Lt. Calley
+Ref: 33.4.1
+D: 2
+
+Q: At which university did the National Guard shoot four protesting students in May 1970?
+A: Kent State University
+Accept: Kent State
+Ref: 33.4.1
+D: 2
+
+Q: Why did the Kent State shootings increase opposition to the war?
+A: Troops killed unarmed students
+Accept: Students were killed; Shocked Americans; National Guard killed protesters
+Ref: 33.4.1
+D: 3
+
+Q: Which ideology did many supporters of the war believe the USA had to stop spreading?
+A: Communism
+Accept: Communist; Communism spreading
+Ref: 33.4.2
+D: 1
+
+Q: What phrase did Nixon use in 1969 for Americans who quietly backed his Vietnam policy?
+A: The silent majority
+Accept: Silent majority
+Ref: 33.4.2
+D: 1
+
+Q: What nickname was given to construction workers who attacked anti-war protesters in New York in 1970?
+A: Hard hats
+Accept: The hard hats; Hardhats
+Ref: 33.4.2
+D: 2
+
+Q: Who was Nixon's National Security Adviser who negotiated with North Vietnam?
+A: Henry Kissinger
+Accept: Kissinger
+Ref: 33.4.3
+D: 1
+
+Q: Which North Vietnamese negotiator did Kissinger meet in the Paris peace talks?
+A: Le Duc Tho
+Accept: Le Duc Tho
+Ref: 33.4.3
+D: 2
+
+Q: In which year was the Paris Peace Agreement signed?
+A: 1973
+Ref: 33.4.3
+D: 2
+
+Q: What was the main US gain in the 1973 Paris Peace Agreement?
+A: US troops withdrew and prisoners of war returned
+Accept: Ceasefire and release of POWs; Peace with honour; Troop withdrawal
+Ref: 33.4.3
+D: 3
+
+Q: About how many American soldiers died in the Vietnam War?
+A: About 58,000
+Accept: 58,000; 58,220; Around 58,000
+Ref: 33.4.3
+D: 2
+Note: Accept 55,000 to 60,000.
+
+Q: Why did the Paris Peace Agreement fail to end the war?
+A: Fighting between North and South continued
+Accept: The ceasefire collapsed; North Vietnam invaded the South; Communists kept troops in the South
+Ref: 33.4.3
+D: 3
+
+Q: Which supply network through Laos and Cambodia carried communist men and supplies to the South?
+A: Ho Chi Minh Trail
+Accept: The Ho Chi Minh Trail
+Ref: 33.4.4
+D: 1
+
+Q: Which two communist powers supplied arms and aid to North Vietnam?
+A: Soviet Union (Russia) and China
+Accept: USSR and China; Russia and China
+Ref: 33.4.4
+D: 2
+
+Q: Why did US tactics such as Search and Destroy fail?
+A: Killed civilians and turned peasants against USA
+Accept: They alienated Vietnamese civilians; Drove peasants to the Vietcong
+Ref: 33.4.4
+D: 3
+
+Q: What was widely low among US conscripts in Vietnam, weakening the army?
+A: Morale
+Accept: Low morale; Poor morale
+Ref: 33.4.4
+D: 2
+Note: Drug use and fragging were symptoms.
+
+Q: In which year did Saigon fall to North Vietnamese forces?
+A: 1975
+Accept: April 1975
+Ref: 33.4.4
+D: 2

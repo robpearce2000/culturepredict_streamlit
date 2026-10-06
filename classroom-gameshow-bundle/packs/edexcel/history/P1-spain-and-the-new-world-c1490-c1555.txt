@@ -1,0 +1,266 @@
+Board: Edexcel
+Spec: 1HI0
+Topic: P1
+
+Q: Which Spanish queen sponsored Columbus's first voyage?
+A: Isabella
+Accept: Queen Isabella; Isabella of Castile
+Ref: P1.1.1
+D: 1
+
+Q: In which year did Columbus make his first voyage across the Atlantic?
+A: 1492
+Ref: P1.1.1
+D: 1
+
+Q: Which Muslim kingdom in southern Spain fell to Isabella and Ferdinand in 1492, boosting Spain's crusading spirit?
+A: Granada
+Accept: Kingdom of Granada
+Ref: P1.1.1
+D: 2
+
+Q: Why did Columbus sail west across the Atlantic in 1492?
+A: To find a route to Asia
+Accept: To reach the Indies; To reach Asia; To find a western route to the East
+Ref: P1.1.1
+D: 2
+
+Q: Give one problem Columbus faced on his first voyage, such as the crew's fear when no land was seen for weeks.
+A: Crew unrest or fear of mutiny
+Accept: Mutiny; Fear; Long time without sight of land; Crew wanted to turn back
+Ref: P1.1.1
+D: 3
+Note: Accept any sensible problem linked to the unknown, very long voyage.
+
+Q: In which island group did Columbus first make landfall in 1492?
+A: The Bahamas
+Accept: Bahamas; San Salvador
+Ref: P1.1.2
+D: 1
+
+Q: What was the name of the first Spanish settlement, built by Columbus on Hispaniola in 1492?
+A: La Navidad
+Accept: Navidad
+Ref: P1.1.2
+D: 1
+
+Q: Which Indigenous people of the Caribbean did Columbus first meet and describe as peaceful?
+A: Tainos
+Accept: Taino; Tainos
+Ref: P1.1.2
+D: 2
+
+Q: What did Columbus hope to find in large amounts that made him want to return to the Caribbean?
+A: Gold
+Ref: P1.1.2
+D: 1
+
+Q: Which treaty of 1494 divided newly found lands between Spain and Portugal?
+A: Treaty of Tordesillas
+Accept: Tordesillas
+Ref: P1.1.2
+D: 1
+
+Q: Why did Spain and Portugal agree the Treaty of Tordesillas in 1494?
+A: To avoid conflict over new lands
+Accept: To settle rivalry over discoveries; To divide the New World between them; To stop a dispute over lands
+Ref: P1.1.2
+D: 3
+
+Q: In what year was Santo Domingo founded as a Spanish colony?
+A: 1496
+Ref: P1.1.3
+D: 1
+
+Q: On which island was Santo Domingo founded?
+A: Hispaniola
+Ref: P1.1.3
+D: 2
+
+Q: Which disease brought by Europeans killed huge numbers of Indigenous people in the Caribbean and, later, the Aztec empire?
+A: Smallpox
+Ref: P1.1.3
+D: 1
+
+Q: Which Spanish city held the monopoly on trade with the Americas through the House of Trade?
+A: Seville
+Accept: Sevilla
+Ref: P1.1.3
+D: 2
+
+Q: Why was the Spanish Crown keen to give itself a monopoly on trade with the Caribbean?
+A: To keep the profits and control
+Accept: To control the wealth; To gain taxes; To collect the royal fifth; To keep the profits
+Ref: P1.1.3
+D: 3
+
+Q: Which explorer led the first Europeans across Panama to see the Pacific Ocean in 1513?
+A: Balboa
+Accept: Vasco Nunez de Balboa; Nunez de Balboa
+Ref: P1.2.1
+D: 1
+
+Q: Which Spanish governor led the conquest of Cuba from 1511?
+A: Diego Velazquez
+Accept: Velazquez
+Ref: P1.2.1
+D: 2
+
+Q: Which explorer, sailing for Spain, led the expedition that began circling the globe in 1519 and was killed in the Philippines?
+A: Magellan
+Accept: Ferdinand Magellan
+Ref: P1.2.1
+D: 1
+
+Q: Why was Balboa's claim of 1513 significant for Spain?
+A: It claimed the Pacific for Spain
+Accept: Spain claimed the Pacific Ocean and its coasts; It opened the way to the west coast
+Ref: P1.2.1
+D: 3
+
+Q: In which year did Cortes land in Mexico with his expedition?
+A: 1519
+Ref: P1.2.2
+D: 1
+
+Q: Who was the Aztec emperor when Cortes arrived in 1519?
+A: Montezuma
+Accept: Moctezuma; Montezuma II; Moctezuma II
+Ref: P1.2.2
+D: 1
+
+Q: Name the Aztec capital city, captured by Cortes in 1521.
+A: Tenochtitlan
+Accept: Tenochtitlán
+Ref: P1.2.2
+D: 1
+
+Q: Which people, enemies of the Aztecs, became Cortes's key allies?
+A: Tlaxcalans
+Accept: Tlaxcalan; Tlaxcala
+Ref: P1.2.2
+D: 2
+
+Q: Give one reason why Cortes could defeat the much larger Aztec empire.
+A: Native allies or disease or weapons
+Accept: Allies; Smallpox; Disease; Horses and guns; Hatred of the Aztecs by subject peoples
+Ref: P1.2.2
+D: 3
+Note: Accept any one of: Indigenous allies, smallpox, superior weapons or Aztec enemies.
+
+Q: Which Spanish king and Holy Roman Emperor made Cortes Governor and Captain-General of New Spain?
+A: Charles V
+Accept: Charles I; Carlos V
+Ref: P1.2.3
+D: 2
+
+Q: What was the new Spanish name for the conquered Aztec lands?
+A: New Spain
+Accept: Nueva Espana
+Ref: P1.2.3
+D: 1
+
+Q: Which city in Central America became a Spanish base from 1519 and later a launch point for expeditions to Peru?
+A: Panama
+Accept: Panama City
+Ref: P1.2.3
+D: 2
+
+Q: Name the Inca emperor whose death from disease about 1527 helped lead to civil war.
+A: Huayna Capac
+Accept: Huayna Cápac
+Ref: P1.3.1
+D: 2
+
+Q: Which two half-brothers fought a civil war for control of the Inca empire?
+A: Huascar and Atahuallpa
+Accept: Atahuallpa and Huascar
+Ref: P1.3.1
+D: 2
+
+Q: Which Spanish conquistador led the conquest of the Incas?
+A: Pizarro
+Accept: Francisco Pizarro
+Ref: P1.3.1
+D: 1
+
+Q: In which town did Pizarro capture Atahuallpa in 1532?
+A: Cajamarca
+Ref: P1.3.1
+D: 1
+
+Q: Which Inca capital was besieged by Manco Inca's forces in 1536-37?
+A: Cuzco
+Accept: Cusco
+Ref: P1.3.1
+D: 1
+
+Q: How did the Inca civil war help Pizarro's conquest?
+A: It had weakened and divided the empire
+Accept: Inca empire was divided; Weakened the Incas; Atahuallpa was tired from war
+Ref: P1.3.1
+D: 3
+
+Q: Which Dominican friar, later Bishop of Chiapas, campaigned for the rights of Indigenous peoples?
+A: Las Casas
+Accept: Bartolome de las Casas; Bartolomé de Las Casas
+Ref: P1.3.2
+D: 1
+
+Q: In which year were the New Laws passed to protect Indigenous peoples?
+A: 1542
+Ref: P1.3.2
+D: 1
+
+Q: What was the encomienda system?
+A: Settlers given Indigenous labour in return for protection
+Accept: Land and workers granted to Spaniards; Indigenous people forced to work for settlers; Settlers given Indigenous people to work for them
+Ref: P1.3.2
+D: 2
+
+Q: Which Bolivian mountain, discovered in 1545, became the world's richest source of silver?
+A: Potosi
+Accept: Cerro Rico; Potosí
+Ref: P1.3.2
+D: 2
+
+Q: Name the body, set up in 1524, that governed Spain's American empire from Spain.
+A: Council of the Indies
+Accept: The Council of the Indies
+Ref: P1.3.3
+D: 2
+
+Q: Name one American food or crop, such as the potato, that was brought to Spain from the Americas.
+A: Potatoes
+Accept: Tomatoes; Maize; Chocolate; Cocoa; Tobacco; Potato; Tomato
+Ref: P1.3.3
+D: 1
+
+Q: Why did the flow of American silver cause problems for Spain's economy?
+A: It caused inflation
+Accept: Rising prices; Prices rose; Price inflation
+Ref: P1.3.3
+D: 3
+
+Q: Which Spanish official rank was created to rule the new territories in the Crown's name, such as in New Spain from 1535?
+A: Viceroy
+Accept: Viceroys
+Ref: P1.3.2
+D: 2
+
+Q: In what year was La Paz founded?
+A: 1548
+Ref: P1.3.2
+D: 1
+
+Q: Why did the Spanish Crown pass the New Laws of 1542?
+A: To protect Indigenous people from abuse
+Accept: To limit the encomienda; To stop mistreatment of Indigenous peoples; To reduce settler power
+Ref: P1.3.2
+D: 3
+
+Q: Why did Spain's discovery of silver at Potosi and in Mexico strengthen its European power?
+A: It paid for armies and wars
+Accept: It funded Charles V's wars; It paid for Spain's army; It funded the empire
+Ref: P1.3.3
+D: 3

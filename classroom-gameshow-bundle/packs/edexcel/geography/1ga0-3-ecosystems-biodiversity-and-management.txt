@@ -1,0 +1,231 @@
+Board: Edexcel
+Spec: 1GA0
+Topic: 3
+
+Q: Name the large-scale ecosystem found in cold, high-latitude areas with permafrost and few trees.
+A: Tundra
+Accept: Arctic tundra
+Ref: 3.1
+D: 1
+
+Q: Name the forest biome of cold northern lands dominated by coniferous trees such as spruce and pine.
+A: Boreal forest
+Accept: Taiga; Boreal
+Ref: 3.1
+D: 1
+
+Q: Which large-scale ecosystem is found in hot, dry areas with less than 250 mm of rain a year?
+A: Desert
+Accept: Hot desert
+Ref: 3.1
+D: 1
+
+Q: Name the tropical grassland ecosystem with scattered trees and distinct wet and dry seasons.
+A: Savanna
+Accept: Savannah
+Ref: 3.1
+D: 2
+
+Q: Why are tropical rainforests found near the equator rather than at high latitudes?
+A: Hot and wet all year
+Accept: High temperatures and rainfall all year; warm and wet climate
+Ref: 3.1
+D: 3
+
+Q: Which local factor means vegetation changes from forest to tundra-like plants as you climb a mountain?
+A: Altitude
+Accept: Height; Height above sea level
+Ref: 3.1
+D: 2
+
+Q: Name a resource from the biosphere used by people to make medicines.
+A: Plants
+Accept: Plant extracts; Rainforest plants; Herbs
+Ref: 3.2
+D: 1
+
+Q: What do we call the global system made up of all living things and the places they live?
+A: The biosphere
+Accept: Biosphere
+Ref: 3.2
+D: 1
+
+Q: Give one fuel resource that people take from the biosphere.
+A: Fuelwood
+Accept: Firewood; Wood; Charcoal; Peat
+Ref: 3.2
+D: 2
+
+Q: Why does commercial exploitation of the biosphere for minerals and energy often damage ecosystems?
+A: Habitats are destroyed or polluted
+Accept: Habitat loss; Pollution; Land is cleared
+Ref: 3.2
+D: 3
+
+Q: Name the UK ecosystem of open, treeless upland with heather and peaty soils.
+A: Moorland
+Accept: Moor; Moors
+Ref: 3.3
+D: 1
+
+Q: Which lowland UK ecosystem with heather, gorse and sandy, acidic soils is known as a heath?
+A: Heathland
+Accept: Heath; Heaths
+Ref: 3.3
+D: 1
+
+Q: Describe how marine ecosystems in UK waters are a resource for people.
+A: They provide fish
+Accept: Fishing; Food; Fish and seafood; Oil and gas; Wind energy
+Ref: 3.3
+D: 2
+
+Q: Name one human activity that is degrading UK marine ecosystems.
+A: Overfishing
+Accept: Pollution; Plastic pollution; Oil spills; Sewage discharge
+Ref: 3.3
+D: 2
+
+Q: Why do peat bogs and moorlands have thin, acidic soils that few plants can tolerate?
+A: Cool, wet climate slows decay
+Accept: Waterlogged and cold; Slow decomposition; Leaching of nutrients
+Ref: 3.3
+D: 3
+
+Q: What term describes the living parts of an ecosystem, such as plants and animals?
+A: Biotic
+Accept: Biotic factors
+Ref: 3.4
+D: 1
+
+Q: What term describes the non-living parts of an ecosystem, such as climate and soil?
+A: Abiotic
+Accept: Abiotic factors
+Ref: 3.4
+D: 1
+
+Q: In the Gersmehl nutrient cycle model for a tropical rainforest, which store is the largest?
+A: Biomass
+Accept: Vegetation; Plants
+Ref: 3.4
+D: 2
+
+Q: In the rainforest nutrient cycle, why is the litter store small?
+A: Rapid decomposition in hot, wet conditions
+Accept: Fast decay; Decomposers work quickly; Hot and humid climate speeds decomposition
+Ref: 3.4
+D: 3
+
+Q: Name the tallest rainforest layer, with trees that poke above the main canopy.
+A: Emergent layer
+Accept: Emergents; Emergent
+Ref: 3.4
+D: 1
+
+Q: What adaptation of rainforest trees helps support their great height in shallow soils?
+A: Buttress roots
+Accept: Buttresses
+Ref: 3.4
+D: 2
+
+Q: Why does the tropical rainforest have very high biodiversity?
+A: Warm, wet, stable climate all year
+Accept: Plenty of sunlight, heat and water; Many habitats and niches
+Ref: 3.4
+D: 3
+
+Q: Name the economic activity that uses rainforest wood for building and furniture.
+A: Timber extraction
+Accept: Logging; Timber; Commercial logging
+Ref: 3.5
+D: 1
+
+Q: Name one rainforest food product eaten around the world.
+A: Cocoa
+Accept: Coffee; Bananas; Brazil nuts; Chocolate; Nuts; Fruit
+Ref: 3.5
+D: 1
+
+Q: Which service do rainforests provide for visitors, bringing money to local economies?
+A: Ecotourism
+Accept: Recreation; Tourism
+Ref: 3.5
+D: 1
+
+Q: Give one economic cause of rainforest deforestation.
+A: Conversion to agriculture
+Accept: Cattle ranching; Soy farming; Palm oil plantations; Logging; Mining; Farming
+Ref: 3.5
+D: 2
+
+Q: How can rising global temperatures and drought threaten rainforest biodiversity?
+A: Species die or are lost
+Accept: Trees die; Forest dieback; Species cannot adapt; Wildfire
+Ref: 3.5
+D: 3
+
+Q: Which term describes forest use that meets present needs without damaging resources for future generations?
+A: Sustainable management
+Accept: Sustainable; Sustainability
+Ref: 3.5
+D: 2
+
+Q: Name the seasonal process in which deciduous trees lose their leaves in autumn.
+A: Leaf fall
+Accept: Shedding leaves; Deciduous; Abscission
+Ref: 3.6
+D: 1
+
+Q: In which season do deciduous trees conserve water by shedding their leaves?
+A: Winter
+Accept: Autumn into winter
+Ref: 3.6
+D: 2
+
+Q: Name the animal adaptation in which some woodland mammals sleep through winter.
+A: Hibernation
+Accept: Hibernate
+Ref: 3.6
+D: 1
+
+Q: Why are deciduous woodlands less biodiverse than rainforests?
+A: Colder winters and a shorter growing season
+Accept: Seasonal climate; Fewer species can survive winter
+Ref: 3.6
+D: 3
+
+Q: Give one good provided by deciduous woodlands.
+A: Timber
+Accept: Fuel; Fuelwood; Firewood; Wood
+Ref: 3.7
+D: 1
+
+Q: Give one social or economic cause of deforestation of UK deciduous woodland.
+A: Urbanisation
+Accept: Housing; Population growth; Timber extraction; Agricultural change; Farming
+Ref: 3.7
+D: 2
+
+Q: How might climate change threaten deciduous woodlands?
+A: Pests, drought and species change
+Accept: Drought; New diseases; Trees flower or leaf earlier; Changing species mix
+Ref: 3.7
+D: 3
+
+Q: Why can planting trees on cleared woodland sites help sustainable management?
+A: Replaces timber and restores habitats
+Accept: Keeps woodland for future generations; Restores biodiversity; Renewable timber supply
+Ref: 3.7
+D: 3
+
+Q: Explain why deciduous woodland soils are usually more fertile than rainforest soils.
+A: Leaf litter decays and nutrients stay in soil
+Accept: Leaf fall adds nutrients; Less leaching; Cooler climate means slower decay and humus builds up
+Ref: 3.6
+D: 3
+
+Q: Explain why logging a rainforest for profit may not be sustainable.
+A: Trees are lost faster than they regrow
+Accept: Biodiversity loss; Soil erosion; Habitats destroyed
+Ref: 3.5
+D: 3

@@ -1,0 +1,281 @@
+Board: Edexcel
+Spec: 1HI0
+Topic: P3
+
+Q: Which animal was the most important means of survival for the Plains Indigenous peoples?
+A: Buffalo
+Accept: Bison; The buffalo
+Ref: P3.1.1
+D: 1
+
+Q: What name is given to the cone-shaped, portable homes of Plains peoples?
+A: Tipi
+Accept: Tepee; Teepee; Tipis
+Ref: P3.1.1
+D: 1
+
+Q: What did Plains peoples believe about owning land?
+A: It could not be owned by individuals
+Accept: Land belonged to everyone; Land was shared; Nobody could own it
+Ref: P3.1.1
+D: 2
+
+Q: Why did Plains peoples live in small mobile bands rather than permanent villages?
+A: To follow the buffalo herds
+Accept: To follow the buffalo; To hunt buffalo; Following the buffalo
+Ref: P3.1.1
+D: 3
+
+Q: What was the name of the trail that ran from Missouri to Oregon, used by settlers from 1836?
+A: Oregon Trail
+Accept: The Oregon Trail
+Ref: P3.1.2
+D: 1
+
+Q: What phrase describes the belief that the USA was destined to spread across the continent to the Pacific?
+A: Manifest Destiny
+Accept: The Manifest Destiny
+Ref: P3.1.2
+D: 1
+
+Q: Which religious group, led by Brigham Young, migrated to the Great Salt Lake in 1846-47?
+A: The Mormons
+Accept: Mormons; Mormon; Latter-day Saints; Church of Jesus Christ of Latter-day Saints
+Ref: P3.1.2
+D: 1
+
+Q: In what mountains did the Donner Party become trapped by snow in 1846-47?
+A: Sierra Nevada
+Accept: The Sierra Nevada; Sierra Nevada mountains
+Ref: P3.1.2
+D: 2
+
+Q: Why did the Mormons migrate west in 1846-47?
+A: To escape religious persecution
+Accept: Persecution; To escape persecution; To find freedom to practise their religion
+Ref: P3.1.2
+D: 3
+
+Q: What name was given to the government policy of 1834 that set aside land west of the Mississippi for Indigenous peoples?
+A: Permanent Indian Frontier
+Accept: The Permanent Indian Frontier; Indian Frontier
+Ref: P3.1.3
+D: 1
+
+Q: In which year was the first Fort Laramie Treaty signed?
+A: 1851
+Ref: P3.1.3
+D: 1
+
+Q: What did the Indian Appropriations Act of 1851 set up for Plains peoples?
+A: Reservations
+Accept: Reservation; Smaller defined areas of land
+Ref: P3.1.3
+D: 2
+
+Q: In the 1851 Fort Laramie Treaty, what did Plains peoples agree to allow settlers to do?
+A: Travel safely through their lands
+Accept: Cross their land safely; Use the trails; Safe passage; Build roads and forts
+Ref: P3.1.3
+D: 2
+
+Q: Why was there little law and order in early western towns and mining settlements?
+A: There were few law officers or courts
+Accept: No courts; No sheriffs; Few lawmen; No official law enforcement
+Ref: P3.1.3
+D: 3
+
+Q: Which two companies built the First Transcontinental Railroad under the 1862 Pacific Railroad Act?
+A: Union Pacific and Central Pacific
+Accept: Central Pacific and Union Pacific
+Ref: P3.2.1
+D: 2
+
+Q: In which year was the First Transcontinental Railroad completed?
+A: 1869
+Ref: P3.2.1
+D: 1
+
+Q: How much land did a settler receive free under the 1862 Homestead Act?
+A: 160 acres
+Accept: 160; A quarter section; 160 acres of land
+Ref: P3.2.1
+D: 1
+
+Q: What did settlers have to plant to gain extra land under the Timber Culture Act of 1873?
+A: Trees
+Accept: Timber; Trees on the land
+Ref: P3.2.1
+D: 2
+
+Q: Name the fencing, patented by Joseph Glidden in 1874, that helped homesteaders protect their crops.
+A: Barbed wire
+Accept: Barbed-wire
+Ref: P3.2.1
+D: 2
+
+Q: Why was a lack of timber a big problem for homesteaders on the Plains?
+A: They had no wood for houses and fuel
+Accept: Little wood for building; No wood for fences; No wood for fuel; Treeless
+Ref: P3.2.1
+D: 3
+
+Q: Which Kansas town did Joseph McCoy develop as a cow town in 1867?
+A: Abilene
+Ref: P3.2.2
+D: 1
+
+Q: Which rancher, with Oliver Loving, drove cattle along a trail from Texas to the north?
+A: Charles Goodnight
+Accept: Goodnight
+Ref: P3.2.2
+D: 1
+
+Q: What type of cattle, bred in Texas, were driven north on the long drives?
+A: Longhorns
+Accept: Texas longhorns; Longhorn
+Ref: P3.2.2
+D: 1
+
+Q: Why did the cattle industry grow rapidly after 1865 as the railroad network spread?
+A: Cattle could be sent east to meet demand
+Accept: Cattle could be shipped to eastern cities; Railroads carried cattle to markets; Beef was in demand in the East
+Ref: P3.2.2
+D: 3
+
+Q: What made some ranchers and homesteaders enemies in the 1870s?
+A: Fences blocking cattle trails and grazing land
+Accept: Barbed wire; Fencing; Fences; Competition for land
+Ref: P3.2.2
+D: 3
+
+Q: Which treaty of 1868 gave the Sioux the Black Hills and closed the Bozeman Trail forts?
+A: Second Fort Laramie Treaty
+Accept: Fort Laramie Treaty of 1868
+Ref: P3.2.3
+D: 2
+
+Q: Which Sioux leader fought Red Cloud's War of 1866-68 against the Bozeman Trail forts?
+A: Red Cloud
+Accept: Chief Red Cloud
+Ref: P3.2.3
+D: 1
+
+Q: Which Colorado militia colonel led the Sand Creek Massacre in 1864?
+A: John Chivington
+Accept: Chivington; Colonel Chivington
+Ref: P3.2.3
+D: 2
+
+Q: In which US state did Little Crow's War begin in 1862?
+A: Minnesota
+Ref: P3.2.3
+D: 2
+
+Q: How did the railroads damage the way of life of Plains peoples?
+A: They split the buffalo herds
+Accept: Scared the buffalo; Brought hunters; Brought more settlers; Disturbed buffalo migration; Divided the buffalo
+Ref: P3.2.3
+D: 3
+
+Q: What type of farming technology, for pumping water, helped settlers on the dry Plains?
+A: Windmills
+Accept: Windmill; Wind pumps; Wind pump
+Ref: P3.3.1
+D: 2
+
+Q: What name is given to the severe winter of 1886-87 that killed huge numbers of cattle?
+A: The Great Die-Up
+Accept: Die-Up; Hard winter; The winter of 1886-87
+Ref: P3.3.1
+D: 2
+Note: Accept any answer showing the severe winter killed cattle.
+
+Q: Which group of African Americans moved from the South to Kansas in 1879?
+A: Exodusters
+Accept: Exoduster; The Exodusters
+Ref: P3.3.1
+D: 1
+
+Q: Why did ranchers move to smaller, fenced ranches with winter feed after 1887?
+A: To stop heavy cattle losses in bad winters
+Accept: To protect cattle; Winter losses; To avoid another disastrous winter; Better care of cattle
+Ref: P3.3.1
+D: 3
+
+Q: In which Arizona town did the 1881 gunfight at the OK Corral take place?
+A: Tombstone
+Accept: Tombstone, Arizona
+Ref: P3.3.2
+D: 1
+
+Q: Which lawman was involved in the OK Corral gunfight with his brothers and Doc Holliday?
+A: Wyatt Earp
+Accept: Earp
+Ref: P3.3.2
+D: 1
+
+Q: What surname did Billy the Kid, killed by Sheriff Pat Garrett in 1881, usually use?
+A: Bonney
+Accept: William Bonney; McCarty; Henry McCarty
+Ref: P3.3.2
+D: 2
+Note: He was born Henry McCarty; accept either name.
+
+Q: In which US state was the Johnson County War of 1892 fought?
+A: Wyoming
+Ref: P3.3.2
+D: 1
+
+Q: Who did big ranchers fight in the Johnson County War of 1892?
+A: Small ranchers and settlers
+Accept: Small ranchers; Homesteaders; Alleged rustlers; Small farmers
+Ref: P3.3.2
+D: 3
+
+Q: Which US cavalry commander was killed at the Battle of the Little Big Horn in 1876?
+A: George Custer
+Accept: Custer; General Custer; Lieutenant Colonel Custer
+Ref: P3.3.2
+D: 1
+
+Q: Which Oglala Sioux war leader fought Custer at the Little Big Horn in 1876?
+A: Crazy Horse
+Accept: Crazy Horse of the Oglala
+Ref: P3.3.2
+D: 2
+
+Q: In which year did the Wounded Knee Massacre take place?
+A: 1890
+Ref: P3.3.2
+D: 1
+
+Q: What region sacred to the Sioux did the US government take from them in 1877 after Little Big Horn?
+A: The Black Hills
+Accept: Black Hills; Paha Sapa
+Ref: P3.3.2
+D: 2
+
+Q: Why did the US government encourage the killing of the buffalo?
+A: To force Plains peoples onto reservations
+Accept: To starve Plains peoples; To destroy their way of life; To control Plains peoples; To remove their food supply
+Ref: P3.3.3
+D: 3
+
+Q: Which 1887 act divided reservation land into individual family plots?
+A: Dawes Act
+Accept: The Dawes Act; Dawes General Allotment Act; General Allotment Act
+Ref: P3.3.3
+D: 1
+
+Q: What did the Dawes Act of 1887 aim to make Indigenous peoples do?
+A: Live like white Americans
+Accept: Assimilate; Become farmers; Adopt white ways; Give up tribal life; Assimilation
+Ref: P3.3.3
+D: 2
+
+Q: What was the main source of food for Plains peoples living on reservations?
+A: Government rations
+Accept: Rations; Government food supplies; Food from the government
+Ref: P3.3.3
+D: 2

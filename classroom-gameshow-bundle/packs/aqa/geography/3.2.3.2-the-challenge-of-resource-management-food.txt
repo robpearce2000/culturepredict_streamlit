@@ -1,0 +1,206 @@
+Board: AQA
+Spec: 8035
+Topic: 3.2.3.2
+
+Q: What term describes having reliable access to enough safe, nutritious food?
+A: Food security
+Accept: Food secure
+Ref: 3.2.3.2.1
+D: 1
+
+Q: What term describes a lack of reliable access to enough food?
+A: Food insecurity
+Ref: 3.2.3.2.1
+D: 1
+
+Q: Name the term for a country having more food than its population needs.
+A: Food surplus
+Accept: Surplus
+Ref: 3.2.3.2.1
+D: 1
+
+Q: Name the term for a severe, widespread shortage of food that causes mass starvation.
+A: Famine
+Ref: 3.2.3.2.1
+D: 1
+
+Q: What term describes a diet that does not provide enough calories or nutrients?
+A: Undernutrition
+Accept: Malnutrition; Undernourishment
+Ref: 3.2.3.2.1
+D: 1
+
+Q: Which continent has the most countries with low daily calorie intake per person?
+A: Africa
+Accept: Sub-Saharan Africa
+Ref: 3.2.3.2.1
+D: 1
+
+Q: Give one reason why global food consumption is rising as countries develop economically.
+A: People can afford more or better food
+Accept: Higher incomes; Wealthier diets; More meat eaten; Rising demand for meat
+Ref: 3.2.3.2.1
+D: 2
+
+Q: Why does a rising global population increase pressure on food supplies?
+A: More people need feeding
+Accept: More mouths to feed; Greater demand for food
+Ref: 3.2.3.2.1
+D: 2
+
+Q: Name one physical factor that can reduce food supply by causing crops to fail.
+A: Drought
+Accept: Flooding; Extreme weather; Climate change; Pests; Disease; Frost
+Ref: 3.2.3.2.1
+D: 1
+
+Q: How can the use of modern technology such as machinery and fertiliser affect food supply?
+A: Increases it
+Accept: Increases yields; Raises food production; Improves it
+Ref: 3.2.3.2.1
+D: 2
+
+Q: Explain how armed conflict can reduce food supply in a region.
+A: Farmers flee or fields are destroyed
+Accept: Farmland damaged; Crops destroyed; Farmers displaced; Supply routes blocked; Disrupts farming
+Ref: 3.2.3.2.1
+D: 3
+
+Q: Explain why poverty makes it harder for a farming family to increase food production.
+A: Cannot afford seeds, fertiliser or equipment
+Accept: Cannot afford inputs; No money for tools; Cannot afford fertiliser
+Ref: 3.2.3.2.1
+D: 3
+
+Q: Name the process by which fertile topsoil is removed by wind or water, reducing farming yields.
+A: Soil erosion
+Accept: Erosion
+Ref: 3.2.3.2.1
+D: 1
+
+Q: State one social impact of rising food prices in poorer countries.
+A: Social unrest
+Accept: Riots; Protests; Unrest; Hunger; Conflict
+Ref: 3.2.3.2.1
+D: 2
+
+Q: How can food shortages and rising prices lead to political problems?
+A: Protests, riots or unrest
+Accept: Social unrest; Conflict; Riots; Political instability
+Ref: 3.2.3.2.1
+D: 3
+
+Q: What general term describes organisms such as locusts and insects that damage crops?
+A: Pests
+Accept: Pest
+Ref: 3.2.3.2.1
+D: 1
+
+Q: Why can water stress lead to lower food supply?
+A: Crops cannot be irrigated or grown
+Accept: Not enough water for crops; Not enough irrigation; Crops fail without water
+Ref: 3.2.3.2.1
+D: 3
+
+Q: Name the method of supplying water to farmland using channels, pipes or sprinklers.
+A: Irrigation
+Ref: 3.2.3.2.2
+D: 1
+
+Q: Name the method of growing plants in nutrient-rich water instead of soil.
+A: Hydroponics
+Ref: 3.2.3.2.2
+D: 1
+
+Q: Name the method of growing plants with roots hanging in air and sprayed with nutrients.
+A: Aeroponics
+Ref: 3.2.3.2.2
+D: 1
+
+Q: What name is given to the introduction of high-yielding crop varieties, fertilisers and irrigation from the 1960s onwards?
+A: Green revolution
+Accept: The green revolution
+Ref: 3.2.3.2.2
+D: 2
+
+Q: Name the use of living organisms, such as genetically modified crops, to improve food production.
+A: Biotechnology
+Accept: Genetic modification; GM crops
+Ref: 3.2.3.2.2
+D: 1
+
+Q: Name the type of low-cost technology that suits local skills, money and resources.
+A: Appropriate technology
+Accept: Intermediate technology
+Ref: 3.2.3.2.2
+D: 1
+
+Q: Give one advantage of hydroponics for food production.
+A: Uses less water or no soil
+Accept: Needs less land; Faster growth; Can be used indoors; Higher yields; Less water
+Ref: 3.2.3.2.2
+D: 2
+
+Q: Name the country in Europe famous for its huge area of plastic greenhouses around Almeria.
+A: Spain
+Ref: 3.2.3.2.2
+D: 1
+
+Q: Give one advantage of the large-scale greenhouse farming at Almeria in Spain.
+A: Jobs and year-round food
+Accept: Employment; Exports; Economic growth; Year-round crops; Higher yields
+Ref: 3.2.3.2.2
+D: 2
+
+Q: Give one disadvantage of the large-scale greenhouse farming at Almeria in Spain.
+A: Water shortage or plastic waste
+Accept: Depletes groundwater; Plastic pollution; Low pay; Poor working conditions; Habitat loss
+Ref: 3.2.3.2.2
+D: 3
+
+Q: Name the type of farming that avoids artificial fertilisers and pesticides.
+A: Organic farming
+Accept: Organic
+Ref: 3.2.3.2.2
+D: 1
+
+Q: Name the approach to farming that designs systems to copy natural ecosystems and need little outside input.
+A: Permaculture
+Ref: 3.2.3.2.2
+D: 1
+
+Q: What term describes growing food in towns and cities, for example on rooftops or in community gardens?
+A: Urban farming
+Accept: Urban agriculture; Urban farming initiatives; Allotments
+Ref: 3.2.3.2.2
+D: 2
+
+Q: Why does eating seasonal food help make food supply more sustainable?
+A: Less transport and energy use
+Accept: Fewer food miles; Lower carbon emissions; Less storage and heating
+Ref: 3.2.3.2.2
+D: 3
+
+Q: What is the benefit of getting fish from sustainably managed sources?
+A: Fish stocks are not depleted
+Accept: Prevents overfishing; Fish stocks recover; Protects fish populations
+Ref: 3.2.3.2.2
+D: 2
+
+Q: Give one way that reducing food waste and losses helps food security.
+A: More food available to eat
+Accept: Less food wasted; More food supply; Reduces demand for more production
+Ref: 3.2.3.2.2
+D: 2
+
+Q: In Bangladesh, what two things are produced together in flooded rice fields in a local sustainable scheme?
+A: Rice and fish
+Accept: Fish and rice; Rice-fish farming
+Ref: 3.2.3.2.2
+D: 2
+
+Q: Explain why a small local scheme using appropriate technology may be more sustainable than a large imported project.
+A: Uses local skills, cheap and easy to maintain
+Accept: Local people can maintain it; Lower cost; Fits local needs; Less environmental damage
+Ref: 3.2.3.2.2
+D: 3

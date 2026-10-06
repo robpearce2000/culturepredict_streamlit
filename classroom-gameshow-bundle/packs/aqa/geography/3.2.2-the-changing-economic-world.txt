@@ -1,0 +1,291 @@
+Board: AQA
+Spec: 8035
+Topic: 3.2.2
+
+Q: What does the abbreviation GNI stand for?
+A: Gross national income
+Ref: 3.2.2.1
+D: 1
+
+Q: What does the abbreviation HDI stand for?
+A: Human Development Index
+Ref: 3.2.2.1
+D: 1
+
+Q: Name the three things that the Human Development Index combines into one score.
+A: Income, life expectancy and education
+Accept: Wealth, health and education; GNI, life expectancy, education
+Ref: 3.2.2.1
+D: 2
+
+Q: What term describes the number of babies who die before their first birthday per 1000 live births?
+A: Infant mortality rate
+Accept: Infant mortality
+Ref: 3.2.2.1
+D: 1
+
+Q: Name the development indicator that is measured as the number of patients for each doctor in a country.
+A: People per doctor
+Accept: Patients per doctor
+Ref: 3.2.2.1
+D: 1
+
+Q: Give one limitation of using GNI per head alone to measure development.
+A: It is an average and hides inequality
+Accept: Average hides differences in wealth; ignores quality of life; does not show how wealth is shared; ignores informal economy
+Ref: 3.2.2.1
+D: 3
+Note: Accept any sensible point that GNI is a single average figure.
+
+Q: Why is the death rate falling but birth rate still high in Stage 2 of the Demographic Transition Model?
+A: Better healthcare and water; no birth control
+Accept: Improved medicine and sanitation; lack of contraception; need for children to work
+Ref: 3.2.2.1
+D: 3
+
+Q: Which stage of the Demographic Transition Model is typical of many LICs, with high birth rate and falling death rate?
+A: Stage 2
+Accept: Two; 2
+Ref: 3.2.2.1
+D: 2
+
+Q: Which two stages of the Demographic Transition Model are typical of most HICs?
+A: Stages 4 and 5
+Accept: 4 and 5; four and five; late stage 3 to 5
+Ref: 3.2.2.1
+D: 2
+
+Q: A country with a cold climate, poor soil and no coastline is at a physical disadvantage. What type of cause of uneven development is this?
+A: Physical
+Accept: Physical cause; physical factors
+Ref: 3.2.2.1
+D: 1
+
+Q: Colonial rule and the trade in enslaved people are examples of which type of cause of uneven development?
+A: Historical
+Accept: Historical cause; history
+Ref: 3.2.2.1
+D: 1
+
+Q: Explain why reliance on exporting primary products can keep an LIC poor.
+A: Low prices and prices fluctuate
+Accept: Low value compared with manufactured goods; unstable prices; little added value
+Ref: 3.2.2.1
+D: 3
+
+Q: Name one consequence of uneven development that causes people to move from poorer to richer countries.
+A: International migration
+Accept: Migration; Wealth and health disparities; seeking jobs
+Ref: 3.2.2.1
+D: 2
+Note: The consequence listed in the specification is international migration.
+
+Q: Which word describes an LIC that is experiencing rapid industrial growth, such as India or Brazil, often shortened to NEE?
+A: Newly emerging economy
+Accept: NEE; Newly emerging economies
+Ref: 3.2.2.1
+D: 1
+
+Q: Explain why fairtrade helps farmers in LICs.
+A: Guaranteed minimum price gives stable income
+Accept: Fair price; secure income; protects from price falls; better wages; community premium
+Ref: 3.2.2.2
+D: 3
+
+Q: Name the term for the difference in wealth and quality of life between the richest and poorest countries.
+A: Development gap
+Accept: The development gap; global development gap
+Ref: 3.2.2.2
+D: 1
+
+Q: What name is given to money, goods or expertise given by one country or organisation to help another?
+A: Aid
+Accept: International aid; foreign aid
+Ref: 3.2.2.2
+D: 1
+
+Q: Under which scheme do farmers in LICs receive a guaranteed minimum price for their products?
+A: Fairtrade
+Accept: Fair trade
+Ref: 3.2.2.2
+D: 1
+
+Q: What happens in debt relief?
+A: Some or all of a country's debt is cancelled
+Accept: Debts are cancelled; debts are reduced; debt written off
+Ref: 3.2.2.2
+D: 2
+
+Q: What are microfinance loans?
+A: Small loans to poor people to start businesses
+Accept: Small loans for poor people; very small loans
+Ref: 3.2.2.2
+D: 2
+
+Q: Name the type of technology that is simple, affordable and suited to the skills and needs of local people.
+A: Intermediate technology
+Accept: Appropriate technology; Intermediate
+Ref: 3.2.2.2
+D: 1
+
+Q: Explain how tourism can reduce the development gap in an LIC or NEE.
+A: Brings in money and creates jobs
+Accept: Provides foreign income; creates employment; multiplier effect; earns foreign currency; tax revenue to build services
+Ref: 3.2.2.2
+D: 3
+Note: Accept any answer linking tourist spending to jobs or income.
+
+Q: Give one problem with tied aid for the receiving country.
+A: Money must be spent on donor's goods
+Accept: Conditions attached; benefits donor country; must buy donor's products or services
+Ref: 3.2.2.3
+D: 3
+
+Q: Name the type of aid in which a government gives help directly to another government.
+A: Bilateral aid
+Accept: Bilateral
+Ref: 3.2.2.3
+D: 1
+
+Q: Name the type of aid given by a group of countries pooled through an organisation such as the World Bank.
+A: Multilateral aid
+Accept: Multilateral
+Ref: 3.2.2.3
+D: 1
+
+Q: Which type of aid is raised by charities and non-governmental organisations from donations?
+A: Voluntary aid
+Accept: NGO aid; charity aid
+Ref: 3.2.2.3
+D: 1
+
+Q: What does the abbreviation TNC stand for?
+A: Transnational corporation
+Accept: Transnational company; Trans-national corporation
+Ref: 3.2.2.3
+D: 1
+
+Q: Give one advantage to a host country of a TNC setting up a factory there.
+A: Creates jobs
+Accept: Brings investment; skills and training; tax revenue; new technology; foreign currency
+Ref: 3.2.2.3
+D: 2
+
+Q: Give one disadvantage to a host country of a TNC operating there.
+A: Profits go back to another country
+Accept: Profits sent abroad; low wages; poor working conditions; can leave easily; pollution; jobs lost if it relocates
+Ref: 3.2.2.3
+D: 2
+
+Q: In which sector of the economy do farming, mining and fishing belong?
+A: Primary
+Accept: Primary sector
+Ref: 3.2.2.3
+D: 1
+
+Q: In which sector of the economy does manufacturing belong?
+A: Secondary
+Accept: Secondary sector
+Ref: 3.2.2.3
+D: 1
+
+Q: As an LIC or NEE develops, which sector of the economy usually shrinks as a share of jobs?
+A: Primary sector
+Accept: Primary; agriculture; farming
+Ref: 3.2.2.3
+D: 2
+
+Q: How can growth of manufacturing industry stimulate wider economic development in an NEE?
+A: Creates jobs and raises incomes
+Accept: Multiplier effect; more tax revenue; more exports; investment in services; jobs and wages
+Ref: 3.2.2.3
+D: 3
+
+Q: Give one negative environmental impact of rapid economic development in an LIC or NEE.
+A: Air pollution
+Accept: Water pollution; deforestation; waste; loss of habitats; land degradation; greenhouse gas emissions
+Ref: 3.2.2.3
+D: 2
+
+Q: Why might rapid industrial growth in an NEE lead to rising urban air pollution?
+A: More factories and traffic burning fossil fuels
+Accept: More factories; more vehicles; burning coal; increased energy use
+Ref: 3.2.2.3
+D: 3
+
+Q: Name the process by which traditional manufacturing industry declined in the UK from the 1970s.
+A: De-industrialisation
+Accept: Deindustrialisation; deindustrialization
+Ref: 3.2.2.4
+D: 1
+
+Q: Why did globalisation cause UK manufacturing jobs to decline?
+A: Cheaper labour overseas
+Accept: Lower wages abroad; cheaper production abroad; companies moved factories overseas
+Ref: 3.2.2.4
+D: 3
+
+Q: Name the term for the worldwide spread of trade, culture and communication, which moved UK manufacturing overseas.
+A: Globalisation
+Accept: Globalization
+Ref: 3.2.2.4
+D: 1
+
+Q: Which sector, providing services such as banking, retail and healthcare, now employs most people in the UK?
+A: Tertiary
+Accept: Tertiary sector; service sector; services
+Ref: 3.2.2.4
+D: 1
+
+Q: Name the type of economy, based on services and information technology rather than manufacturing, that the UK has moved towards.
+A: Post-industrial
+Accept: Post-industrial economy; postindustrial
+Ref: 3.2.2.4
+D: 2
+
+Q: What is a science park?
+A: A site for research and high-tech firms near a university
+Accept: Research and development businesses; high-tech companies linked to universities
+Ref: 3.2.2.4
+D: 2
+
+Q: Why are business parks usually built on the edge of towns?
+A: Cheaper land and good road access
+Accept: Cheap land; more space; good transport links; less congestion; attractive environment
+Ref: 3.2.2.4
+D: 3
+
+Q: Name the type of site, previously used for industry, that can be redeveloped to reduce environmental damage from new building.
+A: Brownfield site
+Accept: Brownfield; brown field
+Ref: 3.2.2.4
+D: 2
+
+Q: Name the term for the economic and social difference between the north and south of England.
+A: North-south divide
+Accept: The north-south divide; North South divide
+Ref: 3.2.2.4
+D: 1
+
+Q: Give one reason why better transport links can help growth in northern England.
+A: Easier access for businesses and workers
+Accept: Attracts investment; reduces travel times; improves connections to markets; boosts jobs
+Ref: 3.2.2.4
+D: 3
+
+Q: Name one UK high-speed rail project intended to improve links between London and northern cities.
+A: HS2
+Accept: High Speed 2; High Speed Two
+Ref: 3.2.2.4
+D: 2
+
+Q: Name the international organisation of mostly former British territories to which the UK belongs.
+A: The Commonwealth
+Accept: Commonwealth; Commonwealth of Nations
+Ref: 3.2.2.4
+D: 1
+
+Q: What does the abbreviation EU stand for?
+A: European Union
+Ref: 3.2.2.4
+D: 1

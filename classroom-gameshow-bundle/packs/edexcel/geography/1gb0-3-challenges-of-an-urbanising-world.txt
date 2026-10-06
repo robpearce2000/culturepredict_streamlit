@@ -1,0 +1,245 @@
+Board: Edexcel
+Spec: 1GB0
+Topic: 3
+
+Q: What name is given to the growing share of a country's people who live in towns and cities?
+A: Urbanisation
+Accept: Urbanization
+Ref: 3.1
+D: 1
+
+Q: Name the term for a city with more than 10 million inhabitants.
+A: Megacity
+Accept: Mega city; Mega-city
+Ref: 3.1
+D: 1
+
+Q: In which two continents are most of the world's newest megacities appearing?
+A: Asia and Africa
+Accept: Asia; Africa; Asia and Africa
+Ref: 3.1
+D: 2
+
+Q: Name the term for a city that is far larger and more influential than any other in its country.
+A: Primate city
+Accept: Urban primacy
+Ref: 3.1
+D: 2
+Note: Also called urban primacy.
+
+Q: Why does urbanisation now happen fastest in developing and emerging countries rather than developed ones?
+A: Developed countries already urbanised earlier
+Accept: Already highly urbanised; They urbanised in the past; Developed countries are already urbanised
+Ref: 3.1
+D: 3
+Note: Developed countries urbanised during the Industrial Revolution.
+
+Q: About what percentage of the world's population has lived in urban areas since 2007: one quarter, one half or three quarters?
+A: One half
+Accept: 50%; Half; About 50%
+Ref: 3.1
+D: 1
+Note: Around 55% today; the world passed 50% in 2007-08.
+
+Q: Name the movement of people from the countryside into towns and cities.
+A: Rural-urban migration
+Accept: Rural to urban migration; Rural-urban
+Ref: 3.2
+D: 1
+
+Q: Name the type of work that is unregulated, untaxed and without contracts.
+A: Informal employment
+Accept: Informal sector; Informal work; Informal job
+Ref: 3.2
+D: 1
+
+Q: Which economic sector, such as farming, employs most people in low-income countries?
+A: Primary
+Accept: Primary sector
+Ref: 3.2
+D: 2
+
+Q: Which type of employment, with contracts, tax and regulation, is more common in developed countries' cities?
+A: Formal employment
+Accept: Formal; Formal sector
+Ref: 3.2
+D: 2
+
+Q: Give one push factor that drives people from rural areas to cities in developing countries.
+A: Lack of jobs or services in rural areas
+Accept: Poverty; Drought; Farming mechanisation; Low rural incomes; Lack of services; Natural disasters
+Ref: 3.2
+D: 3
+Note: Accept any sensible rural push factor.
+
+Q: Why do many migrants to cities in developing countries end up in informal work?
+A: Not enough formal jobs available
+Accept: Too few formal jobs; Lack of formal jobs; Lack of skills or qualifications; Lack of formal jobs for the unskilled
+Ref: 3.2
+D: 3
+
+Q: Name the process of people moving out of city centres to live on the edges of a city.
+A: Suburbanisation
+Accept: Suburbanization; Suburban growth; Urban sprawl
+Ref: 3.3
+D: 1
+
+Q: Name the decline of manufacturing industry in a city.
+A: De-industrialisation
+Accept: Deindustrialisation; Deindustrialization; De-industrialization
+Ref: 3.3
+D: 1
+
+Q: Name the process of people moving from cities to smaller rural settlements.
+A: Counter-urbanisation
+Accept: Counterurbanisation; Counter-urbanization
+Ref: 3.3
+D: 1
+
+Q: What name is given to investment that improves run-down urban areas, often by rebuilding or reusing old sites?
+A: Regeneration
+Accept: Urban regeneration; Redevelopment
+Ref: 3.3
+D: 2
+
+Q: Which land use usually has the highest land values and most competition for space in a city centre?
+A: Commercial
+Accept: Commercial land use; Shops and offices; Retail
+Ref: 3.3
+D: 2
+
+Q: Why have many UK cities seen former docks and factories turned into flats and offices?
+A: De-industrialisation left derelict land for regeneration
+Accept: Regeneration of derelict land; Industry closed and land was redeveloped; Brownfield sites redeveloped
+Ref: 3.3
+D: 3
+
+Q: Give one factor, other than cost, that influences where a business chooses to locate in a city.
+A: Accessibility
+Accept: Planning regulations; Availability of land; Availability; Transport links; Planning rules; Access
+Ref: 3.3
+D: 3
+Note: Cost is excluded; do not accept it.
+
+Q: What term describes the land on which a city is built, such as a river crossing or hill?
+A: Site
+Accept: The site
+Ref: 3.4
+D: 1
+
+Q: Which term describes a city's position in relation to the surrounding region and other places?
+A: Situation
+Accept: The situation
+Ref: 3.4
+D: 1
+
+Q: Which urban zone of a megacity contains the main offices, shops and tallest buildings?
+A: Central Business District
+Accept: CBD; The CBD
+Ref: 3.4
+D: 2
+
+Q: Which zone of a city lies between the CBD and the suburbs, often with older housing?
+A: Inner city
+Accept: The inner city; Inner-city
+Ref: 3.4
+D: 2
+
+Q: Why do the oldest buildings in a megacity tend to be near its centre?
+A: City grew outwards from there over time
+Accept: The city started there; Original settlement was there; City expanded outwards from the centre
+Ref: 3.4
+D: 3
+
+Q: Name the difference between the birth rate and death rate that helps a megacity's population grow.
+A: Natural increase
+Accept: Natural population increase; Rate of natural increase
+Ref: 3.5
+D: 1
+
+Q: Name the process by which a city grows outwards into surrounding countryside.
+A: Urban sprawl
+Accept: Spatial growth; Outward expansion
+Ref: 3.5
+D: 2
+Note: Sprawl may be planned or unplanned.
+
+Q: Name the type of unplanned housing built by migrants on land they do not own.
+A: Squatter settlement
+Accept: Informal settlement; Shanty town; Slum; Favela; Shanty
+Ref: 3.5
+D: 2
+
+Q: Why does migration to a megacity increase its natural increase rate over time?
+A: Migrants are mostly young adults who have children
+Accept: Young migrants have children; Migrants are young and have babies; Migrants are of childbearing age
+Ref: 3.5
+D: 3
+
+Q: Name Mumbai's largest informal settlement, home to hundreds of thousands of people.
+A: Dharavi
+Ref: 3.6
+D: 1
+Note: Dharavi is in central Mumbai; do not confuse with other settlements.
+
+Q: Name one opportunity that megacity life gives to rural migrants.
+A: Access to jobs
+Accept: Education; Healthcare; Health services; Better paid jobs; Schools; Better services
+Ref: 3.6
+D: 2
+Note: Accept any sensible urban opportunity.
+
+Q: What term describes people living on land with no legal right to it?
+A: Insecure property rights
+Accept: Insecure land tenure; No legal tenure; Squatters; No property rights
+Ref: 3.6
+D: 2
+
+Q: Why is traffic congestion a major problem as a megacity grows fast?
+A: Number of vehicles outgrows the road network
+Accept: Too many vehicles for the roads; Roads cannot cope with the vehicles; Roads cannot cope with growth
+Ref: 3.6
+D: 3
+
+Q: Why are poor and rich areas often found right next to each other in a megacity?
+A: Poor migrants settle on spare land nearby
+Accept: Poor people live near jobs in the wealthy areas; Inequality of wealth; Spare land used by poor migrants
+Ref: 3.6
+D: 3
+
+Q: Name the type of strategy planned and run by a city's government.
+A: Top-down
+Accept: Top down
+Ref: 3.7
+D: 1
+
+Q: Which type of strategy is led by local people or NGOs rather than by government?
+A: Bottom-up
+Accept: Bottom up; Community-led
+Ref: 3.7
+D: 1
+
+Q: Name the transport scheme in Lagos launched in 2008 that uses dedicated bus lanes.
+A: Bus Rapid Transit
+Accept: BRT; Lagos BRT
+Ref: 3.7
+D: 2
+
+Q: Give one advantage of bottom-up projects, such as community toilet blocks.
+A: Meet local needs
+Accept: Cheap; Local people involved; Local people help to build them; Low cost; Meets local needs
+Ref: 3.7
+D: 2
+
+Q: Give one disadvantage of top-down projects such as large water supply schemes.
+A: Expensive
+Accept: Cost a lot; Can ignore local people's needs; Takes a long time; Often benefits wealthier areas
+Ref: 3.7
+D: 3
+Note: Accept any sensible disadvantage.
+
+Q: Why can slum clearance be a poor choice for improving quality of life?
+A: People lose homes and jobs
+Accept: Communities broken up; People are made homeless; Residents are forced to move; Residents lose their homes and jobs
+Ref: 3.7
+D: 3

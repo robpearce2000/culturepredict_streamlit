@@ -1,0 +1,286 @@
+Board: Edexcel
+Spec: 1GA0
+Topic: 8
+
+Q: What is the term for using resources in a way that meets present needs without harming future generations?
+A: Sustainability
+Accept: Sustainable development
+Ref: 8.1
+D: 1
+
+Q: Name the term for the amount of land and sea needed to supply a person's resources and absorb their waste.
+A: Ecological footprint
+Accept: Footprint
+Ref: 8.1
+D: 1
+
+Q: Is the UK's population projected to rise or fall over the next 50 years?
+A: Rise
+Accept: Increase; Grow
+Ref: 8.1
+D: 1
+
+Q: Name one UK ageing-population effect that increases demand for health services and housing adaptations.
+A: More elderly people
+Accept: Older population; Ageing population
+Ref: 8.1
+D: 2
+
+Q: How would a growing UK population affect demand for water, energy and food?
+A: Demand increases
+Accept: Rises; Goes up; More demand
+Ref: 8.1
+D: 2
+
+Q: Why does a growing UK population put pressure on ecosystems such as woodland and wetland?
+A: More land built on for housing
+Accept: Habitat loss; Land taken for development; Urban sprawl
+Ref: 8.1
+D: 3
+Note: Accept any answer about land loss to housing or infrastructure.
+
+Q: Name the type of pollution from vehicles and homes that harms UK habitats and air quality when it is released.
+A: Air pollution
+Accept: Emissions
+Ref: 8.1
+D: 2
+
+Q: What term describes the loss of natural habitat as land is converted to housing and roads?
+A: Habitat loss
+Accept: Habitat destruction; Habitat fragmentation
+Ref: 8.1
+D: 1
+
+Q: Name one sustainable national transport option that is electrically powered and runs on tracks.
+A: Electric trains
+Accept: Rail; Electric railway; Trams
+Ref: 8.1
+D: 1
+
+Q: Which planned UK high-speed rail line aims to link London with northern England?
+A: HS2
+Accept: High Speed 2
+Ref: 8.1
+D: 1
+Note: Parts of the planned route were cancelled in 2023; accept HS2 either way.
+
+Q: Which transport scheme makes drivers pay to enter a busy city centre to cut traffic?
+A: Congestion charge
+Accept: Congestion charging; Low emission zone; ULEZ
+Ref: 8.1
+D: 2
+
+Q: Why is switching from cars to rail more sustainable for national transport?
+A: Lower carbon emissions per passenger
+Accept: Less pollution; Fewer emissions; Less CO2 per person
+Ref: 8.1
+D: 3
+
+Q: Which part of the UK has the highest average wages and house prices?
+A: South East England
+Accept: London and the South East; South East; London
+Ref: 8.2
+D: 1
+
+Q: What term describes the economic gap between the prosperous south east and the rest of the UK?
+A: Two-speed economy
+Accept: North-south divide; Regional inequality
+Ref: 8.2
+D: 1
+
+Q: Give one reason London and the South East grow faster than other UK regions.
+A: Many jobs and investment
+Accept: Financial services; Good transport links; Business headquarters; Skilled workforce
+Ref: 8.2
+D: 3
+Note: Accept any sensible economic advantage of the region.
+
+Q: Name the type of investment in transport links, such as HS2 and Northern Powerhouse Rail, aimed at reducing the north-south divide.
+A: Infrastructure
+Accept: Transport investment
+Ref: 8.2
+D: 2
+
+Q: What is a brownfield site?
+A: Previously developed land
+Accept: Land used before; Former industrial land
+Ref: 8.2
+D: 1
+
+Q: What is a greenfield site?
+A: Land not built on before
+Accept: Undeveloped land; Countryside land; Undeveloped countryside
+Ref: 8.2
+D: 1
+
+Q: Give one benefit of building homes on brownfield sites rather than greenfield sites.
+A: Protects countryside
+Accept: Reuses derelict land; Near existing services; Regenerates areas; Less habitat loss
+Ref: 8.2
+D: 2
+
+Q: Give one cost of building on brownfield sites compared with greenfield sites.
+A: Land clean-up is expensive
+Accept: Contamination; Higher cost; Demolition cost; Contaminated land
+Ref: 8.2
+D: 2
+
+Q: Why do developers often prefer greenfield sites despite environmental concerns?
+A: They are cheaper and easier to build on
+Accept: Cheaper; Fewer costs; Easier to build on; No demolition
+Ref: 8.2
+D: 3
+
+Q: What term describes improving a run-down area by investing in new buildings, jobs and services?
+A: Regeneration
+Accept: Urban regeneration; Redevelopment
+Ref: 8.2
+D: 1
+
+Q: What does net migration measure?
+A: Immigration minus emigration
+Accept: People arriving minus people leaving; Difference between immigrants and emigrants
+Ref: 8.2
+D: 2
+
+Q: Why can UK net migration statistics be unreliable?
+A: Estimates based on surveys
+Accept: Illegal migrants not counted; Based on samples; Hard to count; Surveys not full counts
+Ref: 8.2
+D: 3
+
+Q: Name one group likely to support high migration because they need workers to fill vacancies.
+A: Employers
+Accept: Businesses; The NHS; Care sector; Farmers
+Ref: 8.2
+D: 3
+Note: Accept any sensible stakeholder who benefits from migrant labour.
+
+Q: Name the organisations that manage UK national parks and balance conservation with development.
+A: National Park Authorities
+Accept: National Park Authority; NPA
+Ref: 8.3
+D: 1
+
+Q: Which UK national park contains Snowdon, the highest mountain in Wales?
+A: Snowdonia
+Accept: Eryri
+Ref: 8.3
+D: 1
+
+Q: Give one conflict between conservation and development in a UK national park.
+A: Tourism versus protecting habitats
+Accept: Housing versus landscape; Quarrying; Footpath erosion; Traffic and visitors
+Ref: 8.3
+D: 3
+Note: Accept any clear conflict between development and protection.
+
+Q: Name one method used in national parks to protect landscapes from damage caused by visitors.
+A: Footpath repair
+Accept: Park and ride; Zoning; Limiting car parking; Visitor management; Signage
+Ref: 8.3
+D: 2
+
+Q: What term describes protecting and maintaining natural landscapes and wildlife?
+A: Conservation
+Accept: Preservation
+Ref: 8.3
+D: 1
+
+Q: Name the hard engineering structure of concrete or stone built along a coast to absorb wave energy.
+A: Sea wall
+Accept: Seawall
+Ref: 8.3
+D: 1
+
+Q: Which flood management approach uses natural processes, such as planting trees upstream, to slow river flow?
+A: Soft engineering
+Accept: Natural flood management; Catchment management
+Ref: 8.3
+D: 2
+
+Q: Which hard engineering structure holds back river water and stores it behind a dam to reduce flood peaks?
+A: Reservoir
+Accept: Dam
+Ref: 8.3
+D: 2
+
+Q: Why is hard engineering sometimes less sustainable than soft engineering for flood risk?
+A: Expensive and harms the environment
+Accept: High cost; Damages habitats; Costly maintenance; Disrupts natural processes
+Ref: 8.3
+D: 3
+
+Q: Name the term for a rise in the average temperature of the Earth's atmosphere linked to greenhouse gases.
+A: Global warming
+Accept: Climate change
+Ref: 8.4
+D: 1
+
+Q: Why is it uncertain how global climate change will affect the UK's future climate?
+A: Computer models give different predictions
+Accept: Future emissions unknown; Complex climate system; Models differ; Natural variability
+Ref: 8.4
+D: 3
+
+Q: What type of weather are UK summers expected to become under climate change?
+A: Hotter and drier
+Accept: Warmer and drier; Hotter; Drier
+Ref: 8.4
+D: 2
+
+Q: What type of weather are UK winters expected to become under climate change?
+A: Warmer and wetter
+Accept: Milder and wetter; Wetter
+Ref: 8.4
+D: 2
+
+Q: Give one impact of climate change on UK coastal areas.
+A: Rising sea levels
+Accept: Coastal flooding; More erosion; Storm surges; Loss of land
+Ref: 8.4
+D: 2
+
+Q: Give one impact of hotter UK summers on people.
+A: Heat-related illness
+Accept: Heatwave deaths; Health problems; Drought; Water shortages; Wildfires
+Ref: 8.4
+D: 2
+
+Q: Name the process of reducing greenhouse gas emissions to limit climate change.
+A: Mitigation
+Accept: Climate change mitigation
+Ref: 8.4
+D: 1
+
+Q: Name the process of adjusting to the effects of climate change, such as building flood defences.
+A: Adaptation
+Accept: Climate change adaptation
+Ref: 8.4
+D: 1
+
+Q: Name the 2008 UK law that set legally binding carbon reduction targets.
+A: Climate Change Act
+Accept: Climate Change Act 2008
+Ref: 8.4
+D: 2
+
+Q: Give one local response to climate change in the UK.
+A: Planting urban trees
+Accept: Cycle lanes; Recycling schemes; Community energy; Flood defences; Green roofs
+Ref: 8.4
+D: 2
+Note: Accept any sensible local-scale action.
+
+Q: Name one national response to climate change in the UK, such as the end of coal power or offshore wind expansion.
+A: Renewable energy
+Accept: Offshore wind; Ending coal power; Carbon targets; Banning new petrol cars
+Ref: 8.4
+D: 2
+
+Q: Why do flood-prone UK homes cost more to insure as the climate changes?
+A: Flood risk increases
+Accept: More floods; Greater risk of damage; Higher risk
+Ref: 8.4
+D: 3
+

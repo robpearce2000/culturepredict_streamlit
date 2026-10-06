@@ -1,0 +1,231 @@
+Board: Edexcel
+Spec: 1GA0
+Topic: 6B
+
+Q: Name the term for a country with more available water than its people need.
+A: Water surplus
+Accept: Surplus
+Ref: 6.8
+D: 1
+
+Q: Name the term for a place where people need more water than is available.
+A: Water deficit
+Accept: Deficit
+Ref: 6.8
+D: 1
+
+Q: Roughly what percentage of the water on Earth is salt water in the oceans?
+A: About 97%
+Accept: 96-98%; Over 95%
+Ref: 6.8
+D: 1
+
+Q: Which large store holds most of the world's fresh water, in the form of ice?
+A: Ice caps and glaciers
+Accept: Ice sheets; Glaciers; Ice caps
+Ref: 6.8
+D: 1
+
+Q: Give one physical reason why Canada has a water surplus.
+A: High rainfall
+Accept: Lots of rain; Many lakes and rivers; Low population
+Ref: 6.8
+D: 2
+
+Q: Why do hot desert countries such as Saudi Arabia have a water deficit?
+A: Very low rainfall and high evaporation
+Accept: Low rainfall; Little rain and high temperatures
+Ref: 6.8
+D: 2
+
+Q: In the UK, is the water surplus generally found in the north and west or the south and east?
+A: North and west
+Accept: North-west; Wetter uplands in the north and west
+Ref: 6.8
+D: 2
+
+Q: Why can the south-east of England have a water deficit despite being in a wet country?
+A: Low rainfall and high population demand
+Accept: Dry climate and many people; Large population
+Ref: 6.8
+D: 3
+
+Q: How has global demand for water changed over the past 50 years, mainly because of population growth and industry?
+A: It has increased
+Accept: Gone up; Risen; Increased
+Ref: 6.8
+D: 2
+
+Q: Which human activity, using the biggest share of water globally, has increased demand through irrigation?
+A: Agriculture
+Accept: Farming; Irrigation
+Ref: 6.8
+D: 1
+
+Q: Explain why building dams has changed water supply over the past 50 years.
+A: Stores water, increasing supply
+Accept: Reservoirs store water; Increases reliable supply
+Ref: 6.8
+D: 3
+
+Q: Which sector uses the largest share of water in most emerging and developing countries?
+A: Agriculture
+Accept: Farming; Irrigation
+Ref: 6.9
+D: 1
+
+Q: Which water-using sector makes up a larger share in developed countries than in developing ones?
+A: Industry
+Accept: Manufacturing; Industrial use
+Ref: 6.9
+D: 1
+
+Q: Which use of water includes drinking, washing and flushing toilets?
+A: Domestic use
+Accept: Domestic; Household use
+Ref: 6.9
+D: 1
+
+Q: Why do developing countries often use a high share of water for agriculture?
+A: Many people farm and use irrigation
+Accept: Large farming economy; Most workers are farmers; Irrigated crops
+Ref: 6.9
+D: 3
+
+Q: Why do developed countries use more water per person than developing countries?
+A: Higher living standards and more appliances
+Accept: Wealthier lifestyles; More industry and domestic appliances; Higher incomes
+Ref: 6.9
+D: 3
+
+Q: Why does industrialisation raise a country's water demand?
+A: Factories need water
+Accept: Manufacturing and power stations use water; More industry
+Ref: 6.9
+D: 2
+
+Q: Which type of water problem results from an ageing infrastructure of Victorian pipes in the UK?
+A: Leakage
+Accept: Leaking pipes; Water loss
+Ref: 6.10
+D: 2
+
+Q: Why do UK water supply problems occur even though the UK has plenty of rain overall?
+A: Supply and demand are unevenly distributed
+Accept: Rain falls where few people live; Imbalance of supply and demand
+Ref: 6.10
+D: 3
+
+Q: In which UK season is rainfall often lowest while demand for water can be high?
+A: Summer
+Accept: Summertime
+Ref: 6.10
+D: 2
+
+Q: What term describes water that has not been cleaned to make it safe to drink?
+A: Untreated water
+Accept: Untreated; Raw water
+Ref: 6.10
+D: 1
+
+Q: Give one reason many people in developing countries only have access to untreated water.
+A: Lack of money for water treatment
+Accept: Poor infrastructure; Cannot afford treatment plants; No piped supply
+Ref: 6.10
+D: 2
+
+Q: Which type of waterborne disease, causing severe diarrhoea, spreads through polluted water?
+A: Cholera
+Accept: Typhoid; Dysentery
+Ref: 6.10
+D: 2
+
+Q: Name one source of pollution of water courses in emerging countries, such as untreated sewage or industrial waste.
+A: Untreated sewage
+Accept: Industrial waste; Fertiliser run-off; Pesticides; Sewage
+Ref: 6.10
+D: 2
+
+Q: What process turns seawater into fresh water by removing the salt?
+A: Desalination
+Accept: Desalinisation
+Ref: 6.11
+D: 1
+
+Q: Give one disadvantage of desalination.
+A: High energy use and cost
+Accept: Expensive; Uses lots of energy; Brine harms marine life; High carbon emissions
+Ref: 6.11
+D: 2
+
+Q: What is the salty waste called that desalination plants release into the sea?
+A: Brine
+Accept: Concentrated salt water
+Ref: 6.11
+D: 2
+
+Q: Why is desalination mainly used by wealthy, water-scarce countries?
+A: It is expensive and energy-hungry
+Accept: Costs a lot; High cost to build and run
+Ref: 6.11
+D: 3
+
+Q: Which group, such as a water company or an environmental charity, may disagree with a government about reservoir building?
+A: Organisations
+Accept: Stakeholders; Environmental groups
+Ref: 6.11
+D: 2
+
+Q: Why might farmers and conservation groups hold different attitudes to extracting river water?
+A: Farmers need irrigation; conservationists protect habitats
+Accept: Different priorities; Farmers want water, groups want rivers protected
+Ref: 6.11
+D: 3
+
+Q: What term describes using water so that future generations can still meet their needs?
+A: Sustainable use
+Accept: Sustainable water management; Sustainability
+Ref: 6.12
+D: 1
+
+Q: Give one reason water resources need sustainable management.
+A: Demand is rising
+Accept: To prevent shortages; Avoid depleting aquifers; Population growth; Protect ecosystems
+Ref: 6.12
+D: 2
+
+Q: Which water-saving device, fitted to toilets, reduces household water use?
+A: Dual-flush toilet
+Accept: Dual flush; Low-flush toilet; Water-saving cistern
+Ref: 6.12
+D: 1
+
+Q: What do individuals do when they fit a water meter or use a water butt?
+A: Conserve water
+Accept: Save water; Reduce consumption
+Ref: 6.12
+D: 2
+
+Q: Which Chinese scheme moves water from the wet south to the dry north through canals?
+A: South-North Water Transfer Project
+Accept: South-to-North Water Diversion; South North Water Transfer
+Ref: 6.12
+D: 2
+
+Q: Which Australian city built a large desalination plant after the Millennium Drought to secure its supply?
+A: Perth
+Accept: Sydney; Melbourne
+Ref: 6.12
+D: 2
+Note: Perth (2006), Sydney, Melbourne and others all built plants, so accept any.
+
+Q: Which Indian state is known for johads, small earth dams that capture monsoon rain and recharge groundwater?
+A: Rajasthan
+Ref: 6.12
+D: 2
+
+Q: Why do international rivers such as the Nile need cooperation between countries to be managed sustainably?
+A: Upstream use affects downstream countries
+Accept: Water is shared by several countries; Use by one country reduces flow for others
+Ref: 6.12
+D: 3

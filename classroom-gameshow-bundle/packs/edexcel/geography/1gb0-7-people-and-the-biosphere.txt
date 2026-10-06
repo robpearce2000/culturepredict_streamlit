@@ -1,0 +1,211 @@
+Board: Edexcel
+Spec: 1GB0
+Topic: 7
+
+Q: Name the biome found in the Arctic with permanently frozen subsoil and very few trees.
+A: Tundra
+Ref: 7.1
+D: 1
+
+Q: Name the biome that covers the cold, northern high latitudes of Russia and Canada and is dominated by conifers.
+A: Boreal forest
+Accept: Taiga; Coniferous forest
+Ref: 7.1
+D: 1
+
+Q: Name the biome found near the equator with high temperatures and heavy rainfall all year.
+A: Tropical rainforest
+Accept: Tropical forest; Rainforest
+Ref: 7.1
+D: 1
+
+Q: Name the biome that receives less than about 250 mm of rain a year.
+A: Desert
+Accept: Hot desert
+Ref: 7.1
+D: 1
+
+Q: What name is given to the large tropical grassland biome of Africa with a wet and a dry season?
+A: Savanna
+Accept: Savannah; Tropical grassland
+Ref: 7.1
+D: 1
+
+Q: Which climate factor is the main reason tropical rainforests have such fast plant growth?
+A: Warmth and rainfall
+Accept: Heat and rain; High temperature and precipitation; Temperature and precipitation
+Ref: 7.1
+D: 2
+
+Q: Why are tundra plants small and low-growing?
+A: Cold, windy, short growing season
+Accept: Cold; Low temperatures; Short growing season; Strong winds
+Ref: 7.1
+D: 3
+
+Q: Which biome has deciduous trees that lose their leaves in winter, found in mid-latitudes such as the UK?
+A: Temperate forest
+Accept: Temperate deciduous forest; Deciduous forest
+Ref: 7.1
+D: 1
+
+Q: Why are temperate grasslands too dry for forests but wetter than deserts?
+A: Moderate rainfall
+Accept: Medium rainfall; Low to moderate precipitation; Rainfall too low for trees
+Ref: 7.1
+D: 3
+
+Q: Name the term for the living parts of an ecosystem, such as plants and animals.
+A: Biotic
+Accept: Biotic components; Flora and fauna
+Ref: 7.1
+D: 1
+
+Q: Name the term for the non-living parts of an ecosystem, such as soil, rock and water.
+A: Abiotic
+Accept: Abiotic components
+Ref: 7.1
+D: 1
+
+Q: How does increasing altitude on a mountain change the vegetation, compared with the base?
+A: Becomes more like colder biomes
+Accept: Tundra-like; Fewer trees; Smaller plants; Like higher latitudes
+Ref: 7.1
+D: 3
+
+Q: Which local factor describes how quickly water drains through a soil, affecting what plants can grow?
+A: Drainage
+Accept: Soil drainage; Permeability
+Ref: 7.1
+D: 2
+
+Q: Why can biomes change over a short distance in a mountain range even at the same latitude?
+A: Altitude changes temperature
+Accept: Height; Altitude; Temperature falls with height
+Ref: 7.1
+D: 3
+
+Q: How do plants and the soil in a biome interact, as plants die and rot?
+A: Nutrients return to the soil
+Accept: Nutrient cycling; Decomposition adds nutrients; Litter adds nutrients
+Ref: 7.1
+D: 2
+
+Q: What term describes the amount of rain, snow and other water falling on a place?
+A: Precipitation
+Ref: 7.1
+D: 1
+
+Q: Which biome is found mainly around 15 to 30 degrees north and south of the equator, with very high daytime temperatures and little rain?
+A: Hot desert
+Accept: Desert
+Ref: 7.1
+D: 2
+
+Q: Name the term for useful products of the biosphere, such as food, timber and medicines.
+A: Goods
+Accept: Resources
+Ref: 7.2
+D: 1
+
+Q: Name the term for the benefits ecosystems provide, such as regulating the atmosphere and water cycle.
+A: Services
+Accept: Ecosystem services
+Ref: 7.2
+D: 1
+
+Q: Name one natural material from forests used by local people for building, apart from stone or metal.
+A: Timber
+Accept: Wood; Bamboo; Thatch
+Ref: 7.2
+D: 1
+
+Q: Which gas do plants take in from the atmosphere during photosynthesis, helping regulate air composition?
+A: Carbon dioxide
+Accept: CO2
+Ref: 7.2
+D: 1
+
+Q: Which gas do plants release into the atmosphere during photosynthesis?
+A: Oxygen
+Accept: O2
+Ref: 7.2
+D: 1
+
+Q: How do tree roots help to maintain soil health?
+A: Bind soil and prevent erosion
+Accept: Reduce erosion; Hold soil together; Stabilise soil; Stop soil erosion
+Ref: 7.2
+D: 2
+
+Q: Which biosphere process returns water vapour from leaves to the air within the hydrological cycle?
+A: Transpiration
+Ref: 7.2
+D: 2
+
+Q: Name one traditional use of forest plants by Indigenous peoples, apart from food, fuel or building.
+A: Medicine
+Accept: Medicines; Herbal remedies
+Ref: 7.2
+D: 2
+
+Q: Which biosphere resource is increasingly exploited commercially, such as oil and coal, extracted from areas of biomes?
+A: Energy resources
+Accept: Fossil fuels; Energy; Oil; Coal
+Ref: 7.2
+D: 2
+
+Q: Which theorist said population grows faster than food supply, leading to famine, disease and war?
+A: Malthus
+Accept: Thomas Malthus
+Ref: 7.2
+D: 1
+
+Q: Which theorist argued that population growth stimulates technological innovation to increase food production?
+A: Boserup
+Accept: Ester Boserup
+Ref: 7.2
+D: 1
+
+Q: Name the term for rising wealth leading to greater demand for resources such as meat and energy.
+A: Rising affluence
+Accept: Affluence; Increasing wealth
+Ref: 7.2
+D: 2
+
+Q: Malthus predicted that food supply increases arithmetically. How does he say population increases?
+A: Geometrically
+Accept: Exponentially; Faster
+Ref: 7.2
+D: 3
+
+Q: Name one global trend, other than population growth, that is increasing demand for food, energy and water.
+A: Urbanisation
+Accept: Industrialisation; Rising affluence
+Ref: 7.2
+D: 2
+
+Q: According to Boserup, what happens when population growth puts pressure on food supply?
+A: Innovation raises food production
+Accept: Technology; People innovate; Food production increases; Agricultural innovation
+Ref: 7.2
+D: 3
+
+Q: Why does industrialisation in a country increase its demand for energy and water?
+A: Factories and power use them
+Accept: Manufacturing needs energy; Industry uses water and energy; Factories need them
+Ref: 7.2
+D: 3
+
+Q: Why does urbanisation increase demand for water, energy and food from the biosphere?
+A: More people live far from farmland
+Accept: Concentrated demand; More people consume; Cities need supplies; Cities depend on imports
+Ref: 7.2
+D: 3
+
+Q: Why do the forests that regulate the water cycle reduce flooding?
+A: Intercept rain and slow runoff
+Accept: Roots absorb water; Slow runoff; Interception; Uptake of water
+Ref: 7.2
+D: 3
+

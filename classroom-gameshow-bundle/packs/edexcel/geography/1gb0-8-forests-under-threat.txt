@@ -1,0 +1,255 @@
+Board: Edexcel
+Spec: 1GB0
+Topic: 8
+
+Q: Which part of a rainforest tree's leaf is a pointed tip that sheds heavy rain quickly?
+A: Drip tip
+Accept: Drip tips
+Ref: 8.1
+D: 1
+
+Q: Which rainforest layer forms a dense, continuous roof of leaves about 25 to 35 metres up?
+A: Canopy
+Accept: The canopy
+Ref: 8.1
+D: 1
+
+Q: Name the dark, shaded lowest layer of a rainforest, where few plants grow because little light arrives.
+A: Forest floor
+Accept: Floor; ground layer
+Ref: 8.1
+D: 1
+
+Q: Why do many rainforest leaves have waxy, glossy surfaces?
+A: Shed water quickly
+Accept: Rain runs off; stop fungal growth
+Ref: 8.1
+D: 2
+
+Q: Why can rainforest plants grow all year with no distinct growing season?
+A: Warm and wet all year
+Accept: Constant heat and rainfall
+Ref: 8.1
+D: 2
+
+Q: Why do rainforest soils quickly lose fertility if the trees are removed?
+A: Nutrients are held in vegetation, not soil
+Accept: Nutrients in biomass; washed out by rain
+Ref: 8.1
+D: 3
+
+Q: What term describes the rainforest's variety of plant and animal species?
+A: Biodiversity
+Accept: Biological diversity
+Ref: 8.1
+D: 1
+
+Q: Why is nutrient cycling so fast in a tropical rainforest?
+A: Hot, wet conditions speed decomposition
+Accept: Rapid decay; fast decomposition
+Ref: 8.1
+D: 3
+
+Q: In a rainforest, what do decomposers such as fungi break dead leaf litter down into?
+A: Nutrients
+Accept: Minerals
+Ref: 8.1
+D: 1
+
+Q: What is the name for the huge cold northern coniferous forest biome that stretches across Canada, Scandinavia and Russia?
+A: Taiga
+Accept: Boreal forest
+Ref: 8.2
+D: 1
+
+Q: Why are taiga trees such as spruce typically cone-shaped?
+A: Shed snow easily
+Accept: Snow slides off; avoid branch damage
+Ref: 8.2
+D: 3
+
+Q: Why do taiga conifers have thin needles rather than broad leaves?
+A: Reduce water loss
+Accept: Cut water loss in cold; withstand freezing
+Ref: 8.2
+D: 3
+
+Q: Which type of animal adaptation, such as caribou travelling south in winter, helps animals avoid the taiga's harsh cold?
+A: Migration
+Accept: Migratory
+Ref: 8.2
+D: 1
+
+Q: Why is taiga productivity lower than in a rainforest?
+A: Short, cold growing season
+Accept: Cold climate; little sunlight in winter
+Ref: 8.2
+D: 3
+
+Q: Name the clearing of forest by cutting or burning trees, usually to use the land for other purposes.
+A: Deforestation
+Accept: Forest clearance
+Ref: 8.3
+D: 1
+
+Q: Which valuable timber type from rainforest trees such as mahogany is a cause of commercial logging?
+A: Hardwood
+Accept: Hardwoods
+Ref: 8.3
+D: 1
+
+Q: Which crop grown on cleared rainforest in Indonesia and Malaysia is used for cooking oil and biofuel?
+A: Palm oil
+Accept: Oil palm
+Ref: 8.3
+D: 1
+
+Q: Which animal farming, commonly practised on cleared land in the Amazon, is a major cause of deforestation?
+A: Cattle ranching
+Accept: Cattle farming; beef production
+Ref: 8.3
+D: 2
+
+Q: How does the demand for hydroelectric power cause deforestation?
+A: Dams flood forest areas
+Accept: Reservoirs drown trees
+Ref: 8.3
+D: 2
+
+Q: Why does mining for minerals contribute to rainforest loss?
+A: Forest cleared for mines and roads
+Accept: Trees removed for mines; access roads
+Ref: 8.3
+D: 2
+
+Q: What is the main fuel local people take from rainforests for cooking and heating?
+A: Fuel wood
+Accept: Firewood; wood
+Ref: 8.3
+D: 1
+
+Q: Which type of farming, with small plots cleared for family food, causes rainforest loss?
+A: Subsistence farming
+Accept: Subsistence agriculture
+Ref: 8.3
+D: 2
+
+Q: How can climate change indirectly threaten tropical rainforests?
+A: Droughts stress and kill trees
+Accept: More drought; ecosystem stress; forest fires
+Ref: 8.3
+D: 3
+
+Q: Which type of timber, used for pulp and paper, is logged from the taiga?
+A: Softwood
+Accept: Softwoods; conifers
+Ref: 8.4
+D: 1
+
+Q: What type of rain, caused by industrial pollution, damages taiga trees and soils?
+A: Acid rain
+Accept: Acid precipitation
+Ref: 8.4
+D: 1
+
+Q: How can fossil fuel extraction, such as Canadian tar sands, threaten the taiga?
+A: Forest cleared; pollution of land and water
+Accept: Habitat loss; oil pollution
+Ref: 8.4
+D: 3
+
+Q: How do forest fires reduce biodiversity in the taiga?
+A: Destroy habitats and kill species
+Accept: Habitat loss; kill plants and animals
+Ref: 8.4
+D: 3
+
+Q: Why are taiga fires becoming more frequent in a warming world?
+A: Hotter, drier summers
+Accept: Higher temperatures; drought
+Ref: 8.4
+D: 3
+
+Q: Which renewable energy source from rivers in northern Canada and Russia causes flooding of taiga?
+A: Hydroelectric power
+Accept: HEP; hydropower
+Ref: 8.4
+D: 2
+
+Q: What does CITES control the international trade of?
+A: Endangered species
+Accept: Wild animals and plants; threatened species
+Ref: 8.5
+D: 2
+
+Q: What does the global scheme REDD aim to pay countries to do?
+A: Reduce deforestation
+Accept: Keep forests standing; cut emissions from deforestation
+Ref: 8.5
+D: 2
+
+Q: Give one disadvantage of global actions like CITES in protecting rainforest species.
+A: Hard to enforce; illegal trade continues
+Accept: Weak enforcement; corruption; smuggling
+Ref: 8.5
+D: 3
+
+Q: Which form of tourism earns local people money while protecting rainforest?
+A: Ecotourism
+Accept: Eco-tourism
+Ref: 8.5
+D: 1
+
+Q: Which farming method, such as growing crops under tree cover, can protect rainforest?
+A: Agroforestry
+Accept: Sustainable farming; shade-grown crops
+Ref: 8.5
+D: 2
+
+Q: Why can sustainable forest management be difficult to achieve in tropical countries?
+A: Illegal logging and need for income
+Accept: Cost; corruption; weak laws
+Ref: 8.5
+D: 3
+
+Q: Why are rainforest deforestation rates rising in some countries but falling in others?
+A: Differences in laws, wealth and enforcement
+Accept: Different governments; policies
+Ref: 8.5
+D: 3
+
+Q: Name a legally protected area, such as Banff in Canada, that limits development to conserve the taiga.
+A: National park
+Accept: Wilderness area; protected area
+Ref: 8.6
+D: 1
+
+Q: Why is it difficult to protect huge remote areas of taiga from illegal activity?
+A: Too large and remote to monitor
+Accept: Vast size; hard to patrol
+Ref: 8.6
+D: 3
+
+Q: What is forestry called that replants trees and harvests no more than the forest regrows?
+A: Sustainable forestry
+Accept: Sustainable management
+Ref: 8.6
+D: 2
+
+Q: Why might Indigenous communities oppose taiga national parks?
+A: Restrict their traditional land use
+Accept: Limit hunting; land rights
+Ref: 8.6
+D: 3
+
+Q: Why do logging companies often argue against protecting the taiga?
+A: Jobs and profits
+Accept: Economic benefits; timber income
+Ref: 8.6
+D: 3
+
+Q: Why do conservation groups want taiga wilderness protected?
+A: Store carbon and protect wildlife
+Accept: Biodiversity; climate regulation
+Ref: 8.6
+D: 3

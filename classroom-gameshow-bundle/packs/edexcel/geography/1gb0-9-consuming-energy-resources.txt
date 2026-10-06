@@ -1,0 +1,237 @@
+Board: Edexcel
+Spec: 1GB0
+Topic: 9
+
+Q: Which category of energy resource includes coal, oil and gas, existing only as finite stocks?
+A: Non-renewable
+Accept: Fossil fuels; Finite
+Ref: 9.1
+D: 1
+
+Q: Under the Edexcel classification, solar, wind and HEP are examples of which type of energy resource?
+A: Renewable
+Accept: Flow resources
+Ref: 9.1
+D: 1
+
+Q: Under the Edexcel classification, nuclear fuel and biofuels are placed in which energy category?
+A: Recyclable
+Accept: Recycled
+Ref: 9.1
+D: 2
+
+Q: Name the landscape impact caused by opencast coal mining that leaves large holes and spoil heaps.
+A: Landscape scarring
+Accept: Scarring; Visual pollution
+Ref: 9.1
+D: 1
+
+Q: What environmental disaster results when a tanker or pipeline leaks crude oil into the sea?
+A: Oil spill
+Accept: Oil pollution
+Ref: 9.1
+D: 1
+
+Q: Which gas, released when fossil fuels are burned, is the main cause of enhanced global warming?
+A: Carbon dioxide
+Accept: CO2
+Ref: 9.1
+D: 1
+
+Q: How can building a large HEP dam change the landscape of a river valley?
+A: Floods the valley behind it
+Accept: Reservoir floods land; Valley flooded
+Ref: 9.1
+D: 2
+
+Q: Why can large solar farms and wind farms have a negative impact on rural landscapes?
+A: They use large areas of land
+Accept: Land use; Visual impact
+Ref: 9.1
+D: 3
+
+Q: Name the term for the amount of energy used by an average person in a country each year.
+A: Energy consumption per capita
+Accept: Energy use per capita; Per capita energy use
+Ref: 9.2
+D: 1
+
+Q: Why are some countries unable to exploit their coal or oil reserves despite having them?
+A: Lack of technology and money
+Accept: No technology; Lack of investment
+Ref: 9.2
+D: 3
+
+Q: Which physical factor decides how suitable a place is for solar power: mean annual temperature or hours of sunshine?
+A: Hours of sunshine
+Accept: Sunshine; Sunshine hours
+Ref: 9.2
+D: 2
+
+Q: Which physical factor makes Iceland well suited to geothermal energy: geology or climate?
+A: Geology
+Accept: Volcanic geology; Tectonic activity
+Ref: 9.2
+D: 2
+
+Q: Name the traditional fuel burned for cooking and heating by many people in low-income countries.
+A: Wood
+Accept: Fuelwood; Biomass; Charcoal; Dung
+Ref: 9.2
+D: 1
+
+Q: Why is energy use per capita usually higher in newly emerging countries than in the poorest countries?
+A: More industry and wealth
+Accept: Greater industrialisation; Higher incomes
+Ref: 9.2
+D: 3
+
+Q: Which region of the world holds the largest proportion of known oil reserves?
+A: Middle East
+Accept: The Middle East
+Ref: 9.3
+D: 1
+
+Q: Name the organisation of oil-producing countries that tries to control oil supply and prices.
+A: OPEC
+Accept: Organisation of the Petroleum Exporting Countries
+Ref: 9.3
+D: 1
+
+Q: Why has global oil consumption risen as countries such as China and India industrialise?
+A: More transport and manufacturing
+Accept: Greater demand from industry; Rising wealth
+Ref: 9.3
+D: 2
+
+Q: What typically happens to the price of oil when supply is cut because of conflict in a major producing region?
+A: It rises
+Accept: Increases; Goes up
+Ref: 9.3
+D: 2
+
+Q: What typically happens to oil prices during a global recession when demand falls?
+A: They fall
+Accept: Fall; Decrease; Go down
+Ref: 9.3
+D: 2
+
+Q: What effect does oversupply of oil on world markets usually have on its price?
+A: Lowers it
+Accept: Price falls; Decreases it
+Ref: 9.3
+D: 3
+
+Q: Give the term for oil and gas found in rocks that are usually drilled using traditional wells.
+A: Conventional
+Accept: Conventional oil and gas
+Ref: 9.4
+D: 1
+
+Q: Name the unconventional oil source in Canada, a mixture of sand, clay, water and heavy oil.
+A: Tar sands
+Accept: Oil sands
+Ref: 9.4
+D: 1
+
+Q: Name the unconventional gas found trapped in layers of rock and released by fracturing.
+A: Shale gas
+Accept: Shale
+Ref: 9.4
+D: 1
+
+Q: Give one economic benefit of drilling for oil in an isolated area such as the Arctic.
+A: Jobs and income
+Accept: Employment; Export earnings; Revenue
+Ref: 9.4
+D: 2
+
+Q: Why are oil and gas projects in isolated areas costly to develop?
+A: Remote, harsh and hard to reach
+Accept: Harsh conditions; Need new infrastructure
+Ref: 9.4
+D: 3
+
+Q: Which part of the environment is most at risk of contamination from tar sands extraction waste ponds?
+A: Water quality
+Accept: Water; Rivers and groundwater
+Ref: 9.4
+D: 3
+
+Q: Name the practice of using less energy, such as turning off lights, to reduce demand.
+A: Energy conservation
+Accept: Conservation; Saving energy
+Ref: 9.5
+D: 1
+
+Q: Name the measure that makes appliances do the same job while using less energy.
+A: Energy efficiency
+Accept: Efficiency
+Ref: 9.5
+D: 1
+
+Q: Give one way loft insulation helps reduce carbon emissions.
+A: Less fuel burned for heating
+Accept: Reduces heating demand; Saves energy
+Ref: 9.5
+D: 2
+
+Q: Name the fuel, produced from crops such as sugar cane, that can replace petrol in vehicles.
+A: Biofuel
+Accept: Bioethanol; Ethanol
+Ref: 9.5
+D: 1
+
+Q: Name the gas that, used in fuel cells, produces only water when used as a vehicle fuel.
+A: Hydrogen
+Accept: H2
+Ref: 9.5
+D: 1
+
+Q: Why does diversifying the energy mix improve a country's energy security?
+A: Less reliant on one source
+Accept: Less dependent on imports; Spreads risk
+Ref: 9.5
+D: 3
+
+Q: Give one disadvantage of wind power that makes it a challenge as an alternative to fossil fuels.
+A: Intermittent supply
+Accept: Unreliable; Depends on wind; Visual impact
+Ref: 9.5
+D: 2
+
+Q: Name the type of group, such as Friends of the Earth, that campaigns for sustainable energy futures.
+A: Environmental group
+Accept: Pressure group; Environmental pressure group
+Ref: 9.6
+D: 1
+
+Q: Name the kind of energy future that continues current high fossil fuel use without major change.
+A: Business as usual
+Accept: BAU
+Ref: 9.6
+D: 1
+
+Q: Why might transnational corporations (TNCs) in the oil industry resist rapid change to renewable energy?
+A: Threatens their profits
+Accept: Profit loss; Loss of profit
+Ref: 9.6
+D: 3
+
+Q: Which group of scientists warns that carbon emissions from energy use must fall to limit global warming?
+A: Climate scientists
+Accept: Climatologists
+Ref: 9.6
+D: 1
+
+Q: Give one reason people in developed countries now choose to cut their carbon footprint.
+A: Environmental concern
+Accept: Climate change worries; Education; Cost saving
+Ref: 9.6
+D: 2
+
+Q: Name the measure of the total greenhouse gases produced by a person's activities.
+A: Carbon footprint
+Accept: Carbon emissions
+Ref: 9.6
+D: 1

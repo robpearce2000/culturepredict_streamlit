@@ -1,0 +1,275 @@
+Board: Edexcel
+Spec: 1GA0
+Topic: 1B
+
+Q: Which type of rock is chalk?
+A: Sedimentary
+Ref: 1.1
+D: 1
+
+Q: Granite and basalt are examples of which rock type?
+A: Igneous
+Accept: Igneous rocks
+Ref: 1.1
+D: 1
+
+Q: Schist and slate are examples of which rock type?
+A: Metamorphic
+Ref: 1.1
+D: 1
+
+Q: Which UK rock type is formed from compressed layers of sediment and often makes lowland landscapes?
+A: Sedimentary
+Accept: Sedimentary rock
+Ref: 1.1
+D: 2
+
+Q: Why are upland areas of the UK mostly made of igneous and metamorphic rocks?
+A: Hard, resistant rocks erode slowly
+Accept: Resistant to erosion; harder rocks
+Ref: 1.1
+D: 3
+
+Q: Name the rock type formed when magma cools and solidifies.
+A: Igneous
+Ref: 1.1
+D: 2
+
+Q: Which human activity of clearing woodland for crops and livestock has shaped many UK lowland landscapes?
+A: Agriculture
+Accept: Farming
+Ref: 1.2
+D: 1
+
+Q: Name one glacial process that has shaped many UK upland landscapes.
+A: Erosion or deposition by ice
+Accept: Glacial erosion; glacial deposition; glaciation; ice erosion
+Ref: 1.2
+D: 2
+Note: Accept either glacial erosion or glacial deposition.
+
+Q: What name is given to the time since the last ice age, when rivers and slopes have reshaped the landscape?
+A: Post-glacial
+Accept: Postglacial; after the ice age
+Ref: 1.2
+D: 2
+
+Q: How does human settlement change a landscape over time?
+A: Replaces natural land with buildings and roads
+Accept: Urbanisation; builds on land; land use change
+Ref: 1.2
+D: 3
+
+Q: Which human activity involves planting and harvesting trees, changing the look of many UK uplands?
+A: Forestry
+Ref: 1.2
+D: 1
+
+Q: Which erosion process is the wearing away of the bed and banks by rock fragments carried by the river?
+A: Abrasion
+Accept: Corrasion
+Ref: 1.7
+D: 1
+
+Q: Which erosion process involves rock particles knocking against each other and becoming smaller and rounder?
+A: Attrition
+Ref: 1.7
+D: 1
+
+Q: Which erosion process is the force of water pushing into cracks in the bank and bed?
+A: Hydraulic action
+Accept: Hydraulic power
+Ref: 1.7
+D: 1
+
+Q: Which river process is the dissolving of rocks such as limestone by slightly acidic water?
+A: Solution
+Accept: Corrosion
+Ref: 1.7
+D: 1
+
+Q: Name the transport process in which large boulders are rolled along the river bed.
+A: Traction
+Ref: 1.7
+D: 2
+
+Q: Name the transport process in which small stones bounce along the river bed.
+A: Saltation
+Ref: 1.7
+D: 2
+
+Q: Which transport process carries fine silt and clay within the flowing water?
+A: Suspension
+Ref: 1.7
+D: 2
+
+Q: In which course of a river is the channel narrowest and shallowest: upper, middle or lower?
+A: Upper course
+Accept: Upper; upper course
+Ref: 1.7
+D: 2
+
+Q: Why is sediment in the upper course of a river typically larger and more angular than in the lower course?
+A: Less attrition so far; fewer transport miles
+Accept: Not yet worn down by attrition; has travelled less far
+Ref: 1.7
+D: 3
+
+Q: Name the mass movement process in which a section of a river bank collapses by slumping.
+A: Slumping
+Accept: Slump; sliding
+Ref: 1.7
+D: 2
+
+Q: Why does a river's discharge increase downstream?
+A: More tributaries add water
+Accept: More water from tributaries and surface runoff; larger catchment
+Ref: 1.7
+D: 3
+
+Q: What name is given to the amount of water passing a point in a river each second?
+A: Discharge
+Ref: 1.7
+D: 2
+
+Q: How does a long period of drought affect river processes?
+A: Lower discharge, so less erosion and transport
+Accept: Reduced erosion; less energy; river carries less
+Ref: 1.7
+D: 3
+
+Q: Name the landform where a river drops over a band of hard rock.
+A: Waterfall
+Ref: 1.8
+D: 1
+
+Q: Which steep-sided, narrow valley forms as a waterfall retreats upstream?
+A: Gorge
+Ref: 1.8
+D: 1
+
+Q: Name the ridges of land that alternate along a V-shaped valley as the river winds around them.
+A: Interlocking spurs
+Accept: Spurs; interlocking spur
+Ref: 1.8
+D: 1
+
+Q: Which erosion process mostly undercuts the softer rock beneath a waterfall to form a plunge pool?
+A: Hydraulic action and abrasion
+Accept: Abrasion; hydraulic action
+Ref: 1.8
+D: 2
+
+Q: Name the raised natural banks formed along a river's edge when it floods repeatedly.
+A: Levees
+Accept: Levee
+Ref: 1.8
+D: 1
+
+Q: What is the name of the wide, flat area of land either side of a river that floods?
+A: Flood plain
+Accept: Floodplain
+Ref: 1.8
+D: 1
+
+Q: On which side of a meander bend is a river cliff formed: inside or outside?
+A: Outside
+Accept: Outer bank; outside bend
+Ref: 1.8
+D: 2
+
+Q: Name the depositional feature that forms on the inside of a meander bend.
+A: Point bar
+Accept: Slip-off slope
+Ref: 1.8
+D: 2
+
+Q: How does an oxbow lake form after a meander neck is breached?
+A: Neck breached, then deposition seals loop
+Accept: Erosion breaks the neck; deposition cuts off meander
+Ref: 1.8
+D: 3
+
+Q: Which landform is a curved lake left when a meander is cut off from the river?
+A: Oxbow lake
+Accept: Ox-bow lake
+Ref: 1.8
+D: 1
+
+Q: Which type of river defence involves building a wall across a valley to store water?
+A: Dam
+Accept: Dams; reservoir
+Ref: 1.9
+D: 1
+
+Q: Name the hard-engineering method that straightens or deepens a river channel to carry more water.
+A: Channelisation
+Accept: Channel straightening; dredging
+Ref: 1.9
+D: 1
+
+Q: Which soft-engineering approach limits building on land that is at risk of flooding?
+A: Flood plain zoning
+Accept: Floodplain zoning
+Ref: 1.9
+D: 2
+
+Q: Name the soft-engineering strategy that deliberately floods an area of land to store water.
+A: Washlands
+Accept: Wash lands; washland
+Ref: 1.9
+D: 2
+
+Q: Why does urbanisation increase the risk of river flooding?
+A: Impermeable surfaces cause faster runoff
+Accept: More surface runoff; drains; less infiltration
+Ref: 1.9
+D: 3
+
+Q: Give one disadvantage of channelisation for places downstream.
+A: Floods are moved downstream faster
+Accept: Increased flood risk downstream
+Ref: 1.9
+D: 3
+
+Q: Name one physical cause of river flooding.
+A: Prolonged or heavy rainfall
+Accept: Heavy rainfall; saturated soil; steep slopes; snowmelt
+Ref: 1.9
+D: 2
+
+Q: High Force waterfall is on which upland UK river?
+A: River Tees
+Accept: Tees
+Ref: 1.10
+D: 1
+
+Q: High Force waterfall on the River Tees falls over which resistant igneous rock?
+A: Whin Sill
+Accept: Dolerite; quartz-dolerite
+Ref: 1.10
+D: 2
+
+Q: Which large reservoir in the upper Tees valley is used to regulate river flow?
+A: Cow Green
+Accept: Cow Green Reservoir
+Ref: 1.10
+D: 2
+
+Q: What rock arrangement explains the formation of High Force waterfall?
+A: Hard rock lying over softer rock
+Accept: Resistant rock over less resistant rock
+Ref: 1.10
+D: 3
+
+Q: Name the waterfall on the Tees formed where the river drops over a steep dolerite step downstream of Cow Green.
+A: Cauldron Snout
+Ref: 1.10
+D: 2
+
+Q: What kind of landscape does the lower River Tees flow through near its mouth?
+A: Wide, flat flood plain
+Accept: Lowland; estuary; meanders
+Ref: 1.10
+D: 3
+

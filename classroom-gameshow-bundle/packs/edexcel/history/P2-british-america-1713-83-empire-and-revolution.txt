@@ -1,0 +1,230 @@
+Board: Edexcel
+Spec: 1HI0
+Topic: P2
+
+Q: Which pirate, known as 'Black Sam', was lost with his ship the Whydah off Cape Cod in 1717?
+A: Samuel Bellamy
+Accept: Sam Bellamy; Black Sam Bellamy
+Ref: P2.1.1
+D: 1
+
+Q: Which cash crop was the main export of Virginia and Maryland to Britain?
+A: Tobacco
+Ref: P2.1.1
+D: 1
+
+Q: Which Governor of Virginia sent a naval force that killed Blackbeard in 1718?
+A: Alexander Spotswood
+Accept: Spotswood
+Ref: P2.1.1
+D: 2
+
+Q: Why did piracy damage the colonial economy and trade with Britain?
+A: It attacked ships and stole cargoes
+Accept: Stole cargoes; Disrupted shipping; Raised insurance costs
+Ref: P2.1.1
+D: 3
+
+Q: What name is given to the voyage carrying enslaved Africans across the Atlantic?
+A: Middle Passage
+Accept: The Middle Passage
+Ref: P2.1.2
+D: 1
+
+Q: In the Atlantic trade triangle, who were shipped from Africa to the Americas?
+A: Enslaved Africans
+Accept: Slaves; Enslaved people
+Ref: P2.1.2
+D: 1
+
+Q: What name was given to colonial laws that controlled the lives of enslaved people?
+A: Slave codes
+Accept: Slave laws; Slave code
+Ref: P2.1.2
+D: 2
+
+Q: Why did Chesapeake tobacco planters increasingly buy enslaved Africans instead of using indentured servants?
+A: Lifelong, cheaper labour
+Accept: Permanent labour; Servants were freed after a few years; Cheaper in the long run
+Ref: P2.1.2
+D: 3
+
+Q: In which year did the Stono Rebellion take place?
+A: 1739
+Ref: P2.1.3
+D: 1
+
+Q: Which colony saw the Stono Rebellion?
+A: South Carolina
+Accept: Carolina; The Carolinas
+Ref: P2.1.3
+D: 1
+
+Q: Which Spanish town in Florida were the Stono rebels trying to reach?
+A: St Augustine
+Accept: Saint Augustine
+Ref: P2.1.3
+D: 2
+
+Q: How did colonial authorities respond to the Stono Rebellion?
+A: Harsher slave laws
+Accept: Tougher slave codes; Stricter controls on enslaved people; Negro Act 1740
+Ref: P2.1.3
+D: 3
+
+Q: What name is given to the wave of religious revivals in the colonies from the 1730s?
+A: The Great Awakening
+Accept: Great Awakening
+Ref: P2.2.1
+D: 1
+
+Q: Which English-born preacher drew huge crowds across the colonies from 1739?
+A: George Whitefield
+Accept: Whitefield
+Ref: P2.2.1
+D: 1
+
+Q: Which Massachusetts minister preached 'Sinners in the Hands of an Angry God' in 1741?
+A: Jonathan Edwards
+Accept: Edwards
+Ref: P2.2.1
+D: 2
+
+Q: Why did the Great Awakening challenge the authority of established churches?
+A: Stressed personal faith over ministers
+Accept: Preachers appealed directly to ordinary people; Personal faith not clergy
+Ref: P2.2.1
+D: 3
+
+Q: Which British general captured Quebec in 1759?
+A: James Wolfe
+Accept: Wolfe; General Wolfe
+Ref: P2.2.2
+D: 1
+
+Q: Which 1763 treaty ended the French and Indian War?
+A: Treaty of Paris
+Accept: Peace of Paris 1763; Treaty of Paris 1763
+Ref: P2.2.2
+D: 1
+
+Q: Which fortress, captured by New Englanders in 1745, was returned to France in 1748?
+A: Louisbourg
+Accept: Louisburg
+Ref: P2.2.2
+D: 2
+
+Q: Why did Britain issue the Proclamation of 1763?
+A: To avoid wars with Indigenous peoples
+Accept: Prevent conflict with Native Americans; Keep settlers away from Indigenous land
+Ref: P2.2.2
+D: 3
+
+Q: In which year was the Sugar Act passed?
+A: 1764
+Ref: P2.2.3
+D: 1
+
+Q: Which Ottawa leader led the 1763 rebellion against British forts and settlers?
+A: Pontiac
+Ref: P2.2.3
+D: 1
+
+Q: Which fort did Pontiac besiege in 1763?
+A: Fort Detroit
+Accept: Detroit
+Ref: P2.2.3
+D: 2
+
+Q: Why did Britain begin taxing the colonists after 1763?
+A: To pay war debts and army costs
+Accept: War debt; Pay for troops in America; Raise revenue after the French and Indian War
+Ref: P2.2.3
+D: 3
+
+Q: In which year was the Stamp Act passed?
+A: 1765
+Ref: P2.3.1
+D: 1
+
+Q: Which group, formed in 1765, organised protests against the Stamp Act?
+A: Sons of Liberty
+Accept: The Sons of Liberty
+Ref: P2.3.1
+D: 1
+
+Q: What did the Stamp Act tax?
+A: Printed paper goods
+Accept: Newspapers and legal documents; Paper; Printed materials
+Ref: P2.3.1
+D: 2
+
+Q: What did the First Continental Congress agree to do to pressure Britain?
+A: Boycott British goods
+Accept: Trade boycott; Continental Association
+Ref: P2.3.1
+D: 3
+
+Q: Who wrote the pamphlet 'Common Sense' in 1776?
+A: Thomas Paine
+Accept: Paine
+Ref: P2.3.2
+D: 1
+
+Q: Who was the main author of the Declaration of Independence?
+A: Thomas Jefferson
+Accept: Jefferson
+Ref: P2.3.2
+D: 1
+
+Q: What did Thomas Paine's 'Common Sense' urge the colonists to seek?
+A: Independence
+Accept: Independence from Britain; Break from the monarchy
+Ref: P2.3.2
+D: 2
+
+Q: Which British general took Philadelphia in 1777 instead of supporting Burgoyne?
+A: William Howe
+Accept: General Howe; Howe
+Ref: P2.3.2
+D: 3
+
+Q: What name was given to colonists who stayed loyal to Britain?
+A: Loyalists
+Accept: Tories
+Ref: P2.3.3
+D: 1
+
+Q: Which British Governor of Virginia promised freedom to enslaved people who joined the British in 1775?
+A: Lord Dunmore
+Accept: Dunmore
+Ref: P2.3.3
+D: 2
+
+Q: Which northern colony resettled by many Loyalists lies on Canada's Atlantic coast?
+A: Nova Scotia
+Ref: P2.3.3
+D: 2
+
+Q: Why did independence not end slavery in the southern states?
+A: The economy depended on it
+Accept: Plantation economy relied on enslaved labour; Slavery was too profitable
+Ref: P2.3.3
+D: 3
+
+Q: In which year did the Boston Tea Party take place?
+A: 1773
+Ref: P2.3.1
+D: 1
+
+Q: At which 1777 battle did General Burgoyne's British army surrender to the Americans?
+A: Saratoga
+Accept: Battle of Saratoga
+Ref: P2.3.2
+D: 1
+
+Q: Which American diplomat in Paris helped negotiate the 1783 peace treaty?
+A: Benjamin Franklin
+Accept: Franklin
+Ref: P2.3.2
+D: 2

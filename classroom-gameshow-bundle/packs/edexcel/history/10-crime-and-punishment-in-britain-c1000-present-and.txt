@@ -20,12 +20,6 @@ Accept: Ordinary people saw it as acceptable; Not seen as a real crime; Done to 
 Ref: 10.1.1
 D: 3
 
-Q: Treason, such as plotting against the king, is a crime against which of person, property or authority?
-A: Authority
-Accept: Against authority; The authorities
-Ref: 10.1.1
-D: 2
-
 Q: In the Anglo-Saxon system of tithings, about how many men were grouped together to keep each other law-abiding?
 A: Ten
 Accept: 10; About ten
@@ -56,12 +50,6 @@ Accept: Normans; Norman kings
 Ref: 10.1.2
 D: 3
 
-Q: Which two aims of punishment were most important in medieval England, putting off others and making the criminal suffer?
-A: Deterrence and retribution
-Accept: Deterrence and punishment; Deterrent and revenge
-Ref: 10.1.2
-D: 2
-
 Q: For how many days could a criminal claim sanctuary in a medieval church before having to face trial or leave the country?
 A: 40 days
 Accept: 40; Forty days; Forty
@@ -86,12 +74,6 @@ Accept: They sank; Sinking in the water; Sank
 Ref: 10.1.3
 D: 2
 
-Q: Name the system that gradually replaced trial by ordeal after 1215.
-A: Trial by jury
-Accept: Jury trial; Juries; Jury
-Ref: 10.1.3
-D: 1
-
 Q: What was the crime of holding religious beliefs that went against the official teaching of the Church?
 A: Heresy
 Accept: Heretic
@@ -112,15 +94,9 @@ D: 1
 
 Q: Which Henry VIII policy removed monastery charity for the poor and helped increase vagrancy?
 A: Dissolution of the Monasteries
-Accept: Closing the monasteries; Dissolution; Break with Rome
+Accept: Closing the monasteries; Dissolution; Dissolution of the monasteries
 Ref: 10.2.1
 D: 3
-
-Q: Which king, author of the book Daemonologie, made witchcraft laws harsher in 1604?
-A: James I
-Accept: James VI and I; James VI; King James
-Ref: 10.2.1
-D: 2
 
 Q: In early modern towns, which men patrolled the streets at night to watch for trouble?
 A: Watchmen
@@ -140,12 +116,6 @@ Accept: The Bloody Code
 Ref: 10.2.2
 D: 1
 
-Q: Which wooden frame, holding the feet, was used to publicly humiliate minor offenders in early modern towns?
-A: Stocks
-Accept: The stocks
-Ref: 10.2.2
-D: 2
-
 Q: In which year was the Gunpowder Plot discovered?
 A: 1605
 Accept: 5 November 1605
@@ -157,12 +127,6 @@ A: Guy Fawkes
 Accept: Fawkes; Guido Fawkes
 Ref: 10.2.3
 D: 1
-
-Q: Who was the leader of the Gunpowder Plotters?
-A: Robert Catesby
-Accept: Catesby
-Ref: 10.2.3
-D: 2
 
 Q: What was the punishment given to the captured Gunpowder Plotters for the crime of high treason?
 A: Hanged, drawn and quartered
@@ -182,18 +146,6 @@ Accept: Civil War; English Civil War
 Ref: 10.2.3
 D: 2
 
-Q: How were most people convicted of witchcraft in England in 1645-47 executed?
-A: Hanging
-Accept: Hanged; By hanging
-Ref: 10.2.3
-D: 2
-
-Q: Which robbers, such as Dick Turpin, held up travellers on the roads in the eighteenth century?
-A: Highwaymen
-Accept: Highwayman
-Ref: 10.3.1
-D: 1
-
 Q: Which 1784 Act cut the tax on tea and so reduced smuggling?
 A: Commutation Act
 Accept: The Commutation Act; Commutation Act 1784
@@ -202,10 +154,9 @@ D: 2
 
 Q: In which year was the Witchcraft Act that ended prosecutions for witchcraft passed?
 A: 1735
-Accept: 1736 (Scotland)
+Accept: 1735
 Ref: 10.3.1
 D: 3
-Note: The Act made it illegal to claim to have magical powers instead, so people could be punished for pretending to be witches.
 
 Q: Which group of Dorset farm labourers were transported in 1834 for forming a trade union?
 A: Tolpuddle Martyrs
@@ -237,18 +188,6 @@ Accept: Howard
 Ref: 10.3.2
 D: 1
 
-Q: Which Quaker reformer campaigned for better conditions for women prisoners in Newgate?
-A: Elizabeth Fry
-Accept: Fry
-Ref: 10.3.2
-D: 1
-
-Q: In which year was public execution ended in Britain?
-A: 1868
-Accept: About 1868
-Ref: 10.3.2
-D: 2
-
 Q: In which year did the last convict ship carrying transported prisoners reach Australia?
 A: 1868
 Accept: 1868
@@ -261,12 +200,6 @@ Accept: The separate system
 Ref: 10.3.3
 D: 1
 
-Q: What did Pentonville prisoners wear over their faces when out of their cells so they could not recognise each other?
-A: Masks
-Accept: Hoods; Mask; Caps with a face covering
-Ref: 10.3.3
-D: 2
-
 Q: Name one serious weakness of the separate system at Pentonville.
 A: Prisoners suffered mental illness
 Accept: Mental illness; Madness; Isolation made prisoners ill; It was very expensive; Insanity
@@ -278,12 +211,6 @@ A: Robert Peel
 Accept: Peel; Sir Robert Peel
 Ref: 10.3.3
 D: 1
-
-Q: What nicknames were given to London's first police officers, taken from the first name and surname of their founder?
-A: Bobbies and Peelers
-Accept: Bobbies; Peelers; Bobby; Peeler
-Ref: 10.3.3
-D: 2
 
 Q: In his penal reforms of the 1820s, what did Peel greatly reduce the number of?
 A: Crimes punishable by death
@@ -315,12 +242,6 @@ Accept: Race Relations Act 1965; The Race Relations Act
 Ref: 10.4.1
 D: 2
 
-Q: What word describes crimes such as hacking and online fraud, a new form of theft in the late twentieth century?
-A: Cybercrime
-Accept: Cyber crime; Computer crime; Internet crime
-Ref: 10.4.1
-D: 1
-
 Q: In which decade did Neighbourhood Watch first begin in Britain?
 A: 1980s
 Accept: 1982; The 1980s; Eighties
@@ -339,18 +260,6 @@ Accept: 1964
 Ref: 10.4.2
 D: 2
 
-Q: Which 1908 institutions for young offenders were named after a village in Kent?
-A: Borstals
-Accept: Borstal
-Ref: 10.4.2
-D: 2
-
-Q: What type of prison, with little security, trusts low-risk prisoners not to escape?
-A: Open prison
-Accept: Open prisons
-Ref: 10.4.2
-D: 1
-
 Q: Which non-custodial punishment requires an offender to do unpaid work in the community?
 A: Community service
 Accept: Community payback; Unpaid work
@@ -363,21 +272,9 @@ Accept: Military Service Act 1916; The Military Service Act
 Ref: 10.4.3
 D: 2
 
-Q: What name was given to the panels that heard First World War conscientious objectors' claims?
-A: Tribunals
-Accept: Military Service Tribunals; Local tribunals; Tribunal
-Ref: 10.4.3
-D: 1
-
 Q: What name was given to First World War objectors who refused to do any war-related work at all?
 A: Absolutists
 Accept: Absolutist
-Ref: 10.4.3
-D: 2
-
-Q: Which Quaker-run unit let First World War conscientious objectors serve as ambulance drivers?
-A: Friends' Ambulance Unit
-Accept: Friends Ambulance Unit; FAU
 Ref: 10.4.3
 D: 2
 
@@ -405,12 +302,6 @@ Accept: Peabody
 Ref: 10.HE.1
 D: 1
 
-Q: Which cheap places, where people paid by the night for a bed, were common in Whitechapel?
-A: Lodging houses
-Accept: Common lodging houses; Doss houses; Lodging house
-Ref: 10.HE.1
-D: 1
-
 Q: Why did lodging houses and pubs help make Whitechapel's population hard to police?
 A: People moved often, with no community ties
 Accept: Fluctuating population; Transient population; People came and went
@@ -429,18 +320,6 @@ Accept: His beat; The beat
 Ref: 10.HE.1
 D: 1
 
-Q: Which letter was the name of the police division that covered Whitechapel?
-A: H
-Accept: H Division; H division
-Ref: 10.HE.1
-D: 1
-
-Q: What name was given to the overcrowded slum areas of alleys and courts that were hard for police to patrol?
-A: Rookeries
-Accept: Rookery; Slums
-Ref: 10.HE.1
-D: 2
-
 Q: Which victim of Jack the Ripper was killed in the City of London Police's area, in Mitre Square?
 A: Catherine Eddowes
 Accept: Eddowes; Kate Eddowes
@@ -453,17 +332,11 @@ Accept: Lusk
 Ref: 10.HE.1
 D: 3
 
-Q: Which Metropolitan Police Commissioner resigned in November 1888 after criticism of the Ripper investigation?
+Q: Which Metropolitan Police Commissioner resigned in November 1888, during the Ripper investigation?
 A: Sir Charles Warren
 Accept: Charles Warren; Warren
 Ref: 10.HE.1
 D: 2
-
-Q: Which government minister was in charge of the Metropolitan Police in 1888?
-A: Home Secretary
-Accept: The Home Secretary
-Ref: 10.HE.1
-D: 1
 
 Q: Why did the press reporting of the Ripper murders create extra work for police?
 A: Hoax letters and false leads
@@ -488,12 +361,6 @@ A: Punch
 Accept: Punch magazine
 Ref: 10.HE.2
 D: 1
-
-Q: Which official produces an inquest report that is a useful local source on a suspicious death?
-A: Coroner
-Accept: The coroner; Coroners
-Ref: 10.HE.2
-D: 2
 
 Q: What is a key weakness of a Punch cartoon as evidence of police efficiency?
 A: Shows opinion, not fact
