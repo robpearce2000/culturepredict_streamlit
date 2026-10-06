@@ -1,0 +1,237 @@
+{
+  "board": "AQA",
+  "subject": "Geography",
+  "specCode": "8035",
+  "title": "GCSE Geography",
+  "version": "1.1",
+  "date": "12 September 2023",
+  "source": "https://filestore.aqa.org.uk/resources/geography/specifications/AQA-8035-SP-2016.PDF",
+  "sourceNote": "AQA GCSE Geography (8035) specification, Version 1.1, 12 September 2023 (for teaching from September 2016, exams from June 2018), downloaded from AQA's filestore.",
+  "numbering": "^3\\.[12]\\.\\d(\\.\\d+){1,2}$",
+  "notes": [
+    "Numbering: AQA numbers its sections (3.1.1, 3.1.1.2, 3.2.1 ...) but not the key ideas inside them. Each key idea is numbered here by appending its printed position within its lowest numbered section: 3.1.1.2.2 is the second key idea of 3.1.1.2 Tectonic hazards; 3.2.1.3 is the third key idea of 3.2.1 Urban issues and challenges (a section with no numbered subsections). Key ideas are the leaf points; the bullets of 'Specification content' are not numbered.",
+    "One topic = one pack. Optional units are topics of their own, marked '(option)': 3.1.2.3 Hot deserts or 3.1.2.4 Cold environments; two of 3.1.3.2 Coastal, 3.1.3.3 River and 3.1.3.4 Glacial landscapes; one of 3.2.3.2 Food, 3.2.3.3 Water and 3.2.3.4 Energy. The compulsory parts are 3.1.1, 3.1.2 (3.1.2.1 Ecosystems and 3.1.2.2 Tropical rainforests), 3.2.1, 3.2.2 and 3.2.3.1 Resource management.",
+    "3.1.3.1 UK physical landscapes is compulsory but has a single key idea (3.1.3.1.1), so it is a subtopic of each of the three landscape option topics rather than a pack of its own.",
+    "Subtopics are AQA's numbered sections where a topic has several; in a topic that is one section, each key idea is its own subtopic, with a short title written for the registry (the full key idea is in refs). parents maps each key idea to its subtopic.",
+    "Skipped (school-dependent or skills-only): 3.3 Geographical applications (3.3.1 Issue evaluation, based on the pre-release resource booklet; 3.3.2 Fieldwork) and 3.4 Geographical skills (assessed throughout rather than as content).",
+    "Geography is untiered: no htRefs."
+  ],
+  "topics": [
+    {
+      "ref": "3.1.1",
+      "title": "The challenge of natural hazards",
+      "subtopics": [
+        { "ref": "3.1.1.1", "title": "Natural hazards" },
+        { "ref": "3.1.1.2", "title": "Tectonic hazards" },
+        { "ref": "3.1.1.3", "title": "Weather hazards" },
+        { "ref": "3.1.1.4", "title": "Climate change" }
+      ]
+    },
+    {
+      "ref": "3.1.2",
+      "title": "The living world: Ecosystems and tropical rainforests",
+      "subtopics": [
+        { "ref": "3.1.2.1", "title": "Ecosystems" },
+        { "ref": "3.1.2.2", "title": "Tropical rainforests" }
+      ]
+    },
+    {
+      "ref": "3.1.2.3",
+      "title": "The living world: Hot deserts (option)",
+      "subtopics": [
+        { "ref": "3.1.2.3.1", "title": "Hot desert characteristics" },
+        { "ref": "3.1.2.3.2", "title": "Hot desert opportunities and challenges" },
+        { "ref": "3.1.2.3.3", "title": "Desertification" }
+      ]
+    },
+    {
+      "ref": "3.1.2.4",
+      "title": "The living world: Cold environments (option)",
+      "subtopics": [
+        { "ref": "3.1.2.4.1", "title": "Cold environment characteristics" },
+        { "ref": "3.1.2.4.2", "title": "Cold environment opportunities and challenges" },
+        { "ref": "3.1.2.4.3", "title": "Risks from economic development" }
+      ]
+    },
+    {
+      "ref": "3.1.3.2",
+      "title": "Physical landscapes in the UK: Coastal landscapes (option)",
+      "subtopics": [
+        { "ref": "3.1.3.1", "title": "UK physical landscapes" },
+        { "ref": "3.1.3.2.1", "title": "Coastal processes" },
+        { "ref": "3.1.3.2.2", "title": "Coastal landforms" },
+        { "ref": "3.1.3.2.3", "title": "Coastal management" }
+      ]
+    },
+    {
+      "ref": "3.1.3.3",
+      "title": "Physical landscapes in the UK: River landscapes (option)",
+      "subtopics": [
+        { "ref": "3.1.3.1", "title": "UK physical landscapes" },
+        { "ref": "3.1.3.3.1", "title": "River valleys and processes" },
+        { "ref": "3.1.3.3.2", "title": "Fluvial landforms" },
+        { "ref": "3.1.3.3.3", "title": "River management" }
+      ]
+    },
+    {
+      "ref": "3.1.3.4",
+      "title": "Physical landscapes in the UK: Glacial landscapes (option)",
+      "subtopics": [
+        { "ref": "3.1.3.1", "title": "UK physical landscapes" },
+        { "ref": "3.1.3.4.1", "title": "Glacial processes" },
+        { "ref": "3.1.3.4.2", "title": "Glacial landforms" },
+        { "ref": "3.1.3.4.3", "title": "Glaciated upland use and management" }
+      ]
+    },
+    {
+      "ref": "3.2.1",
+      "title": "Urban issues and challenges",
+      "subtopics": [
+        { "ref": "3.2.1.1", "title": "Global urbanisation" },
+        { "ref": "3.2.1.2", "title": "Cities in LICs and NEEs" },
+        { "ref": "3.2.1.3", "title": "Urban change in the UK" },
+        { "ref": "3.2.1.4", "title": "Urban sustainability" }
+      ]
+    },
+    {
+      "ref": "3.2.2",
+      "title": "The changing economic world",
+      "subtopics": [
+        { "ref": "3.2.2.1", "title": "Global variations in development" },
+        { "ref": "3.2.2.2", "title": "Reducing the development gap" },
+        { "ref": "3.2.2.3", "title": "Rapid development in an LIC or NEE" },
+        { "ref": "3.2.2.4", "title": "Economic change in the UK" }
+      ]
+    },
+    {
+      "ref": "3.2.3.1",
+      "title": "The challenge of resource management: Resource management",
+      "subtopics": [
+        { "ref": "3.2.3.1.1", "title": "Resources and human development" },
+        { "ref": "3.2.3.1.2", "title": "Resources in the UK" }
+      ]
+    },
+    {
+      "ref": "3.2.3.2",
+      "title": "The challenge of resource management: Food (option)",
+      "subtopics": [
+        { "ref": "3.2.3.2.1", "title": "Food security and insecurity" },
+        { "ref": "3.2.3.2.2", "title": "Increasing food supply" }
+      ]
+    },
+    {
+      "ref": "3.2.3.3",
+      "title": "The challenge of resource management: Water (option)",
+      "subtopics": [
+        { "ref": "3.2.3.3.1", "title": "Water security and insecurity" },
+        { "ref": "3.2.3.3.2", "title": "Increasing water supply" }
+      ]
+    },
+    {
+      "ref": "3.2.3.4",
+      "title": "The challenge of resource management: Energy (option)",
+      "subtopics": [
+        { "ref": "3.2.3.4.1", "title": "Energy security and insecurity" },
+        { "ref": "3.2.3.4.2", "title": "Increasing energy supply" }
+      ]
+    }
+  ],
+  "refs": {
+    "3.1.1.1.1": "Natural hazards pose major risks to people and property.",
+    "3.1.1.2.1": "Earthquakes and volcanic eruptions are the result of physical processes.",
+    "3.1.1.2.2": "The effects of, and responses to, a tectonic hazard vary between areas of contrasting levels of wealth.",
+    "3.1.1.2.3": "Management can reduce the effects of a tectonic hazard.",
+    "3.1.1.3.1": "Global atmospheric circulation helps to determine patterns of weather and climate.",
+    "3.1.1.3.2": "Tropical storms (hurricanes, cyclones, typhoons) develop as a result of particular physical conditions.",
+    "3.1.1.3.3": "Tropical storms have significant effects on people and the environment.",
+    "3.1.1.3.4": "The UK is affected by a number of weather hazards.",
+    "3.1.1.3.5": "Extreme weather events in the UK have impacts on human activity.",
+    "3.1.1.4.1": "Climate change is the result of natural and human factors, and has a range of effects.",
+    "3.1.1.4.2": "Managing climate change involves both mitigation (reducing causes) and adaptation (responding to change).",
+    "3.1.2.1.1": "Ecosystems exist at a range of scales and involve the interaction between biotic and abiotic components.",
+    "3.1.2.2.1": "Tropical rainforest ecosystems have a range of distinctive characteristics.",
+    "3.1.2.2.2": "Deforestation has economic and environmental impacts.",
+    "3.1.2.2.3": "Tropical rainforests need to be managed to be sustainable.",
+    "3.1.2.3.1": "Hot desert ecosystems have a range of distinctive characteristics.",
+    "3.1.2.3.2": "Development of hot desert environments creates opportunities and challenges.",
+    "3.1.2.3.3": "Areas on the fringe of hot deserts are at risk of desertification.",
+    "3.1.2.4.1": "Cold environments (polar and tundra) have a range of distinctive characteristics.",
+    "3.1.2.4.2": "Development of cold environments creates opportunities and challenges.",
+    "3.1.2.4.3": "Cold environments are at risk from economic development.",
+    "3.1.3.1.1": "The UK has a range of diverse landscapes.",
+    "3.1.3.2.1": "The coast is shaped by a number of physical processes.",
+    "3.1.3.2.2": "Distinctive coastal landforms are the result of rock type, structure and physical processes.",
+    "3.1.3.2.3": "Different management strategies can be used to protect coastlines from the effects of physical processes.",
+    "3.1.3.3.1": "The shape of river valleys changes as rivers flow downstream.",
+    "3.1.3.3.2": "Distinctive fluvial landforms result from different physical processes.",
+    "3.1.3.3.3": "Different management strategies can be used to protect river landscapes from the effects of flooding.",
+    "3.1.3.4.1": "Ice was a powerful force in shaping the physical landscape of the UK.",
+    "3.1.3.4.2": "Distinctive glacial landforms result from different physical processes.",
+    "3.1.3.4.3": "Glaciated upland areas provide opportunities for different economic activities, and management strategies can be used to reduce land use conflicts.",
+    "3.2.1.1": "A growing percentage of the world’s population lives in urban areas.",
+    "3.2.1.2": "Urban growth creates opportunities and challenges for cities in LICs and NEEs.",
+    "3.2.1.3": "Urban change in cities in the UK leads to a variety of social, economic and environmental opportunities and challenges.",
+    "3.2.1.4": "Urban sustainability requires management of resources and transport.",
+    "3.2.2.1": "There are global variations in economic development and quality of life.",
+    "3.2.2.2": "Various strategies exist for reducing the global development gap.",
+    "3.2.2.3": "Some LICs and NEEs are experiencing rapid economic development which leads to significant social, environmental and cultural change.",
+    "3.2.2.4": "Major changes in the economy of the UK have affected, and will continue to affect, employment patterns and regional growth.",
+    "3.2.3.1.1": "Food, water and energy are fundamental to human development.",
+    "3.2.3.1.2": "The changing demand and provision of resources in the UK create opportunities and challenges.",
+    "3.2.3.2.1": "Demand for food resources is rising globally but supply can be insecure, which may lead to conflict.",
+    "3.2.3.2.2": "Different strategies can be used to increase food supply.",
+    "3.2.3.3.1": "Demand for water resources is rising globally but supply can be insecure, which may lead to conflict.",
+    "3.2.3.3.2": "Different strategies can be used to increase water supply.",
+    "3.2.3.4.1": "Demand for energy resources is rising globally but supply can be insecure, which may lead to conflict.",
+    "3.2.3.4.2": "Different strategies can be used to increase energy supply."
+  },
+  "parents": {
+    "3.1.1.1.1": "3.1.1.1",
+    "3.1.1.2.1": "3.1.1.2",
+    "3.1.1.2.2": "3.1.1.2",
+    "3.1.1.2.3": "3.1.1.2",
+    "3.1.1.3.1": "3.1.1.3",
+    "3.1.1.3.2": "3.1.1.3",
+    "3.1.1.3.3": "3.1.1.3",
+    "3.1.1.3.4": "3.1.1.3",
+    "3.1.1.3.5": "3.1.1.3",
+    "3.1.1.4.1": "3.1.1.4",
+    "3.1.1.4.2": "3.1.1.4",
+    "3.1.2.1.1": "3.1.2.1",
+    "3.1.2.2.1": "3.1.2.2",
+    "3.1.2.2.2": "3.1.2.2",
+    "3.1.2.2.3": "3.1.2.2",
+    "3.1.2.3.1": "3.1.2.3.1",
+    "3.1.2.3.2": "3.1.2.3.2",
+    "3.1.2.3.3": "3.1.2.3.3",
+    "3.1.2.4.1": "3.1.2.4.1",
+    "3.1.2.4.2": "3.1.2.4.2",
+    "3.1.2.4.3": "3.1.2.4.3",
+    "3.1.3.1.1": "3.1.3.1",
+    "3.1.3.2.1": "3.1.3.2.1",
+    "3.1.3.2.2": "3.1.3.2.2",
+    "3.1.3.2.3": "3.1.3.2.3",
+    "3.1.3.3.1": "3.1.3.3.1",
+    "3.1.3.3.2": "3.1.3.3.2",
+    "3.1.3.3.3": "3.1.3.3.3",
+    "3.1.3.4.1": "3.1.3.4.1",
+    "3.1.3.4.2": "3.1.3.4.2",
+    "3.1.3.4.3": "3.1.3.4.3",
+    "3.2.1.1": "3.2.1.1",
+    "3.2.1.2": "3.2.1.2",
+    "3.2.1.3": "3.2.1.3",
+    "3.2.1.4": "3.2.1.4",
+    "3.2.2.1": "3.2.2.1",
+    "3.2.2.2": "3.2.2.2",
+    "3.2.2.3": "3.2.2.3",
+    "3.2.2.4": "3.2.2.4",
+    "3.2.3.1.1": "3.2.3.1.1",
+    "3.2.3.1.2": "3.2.3.1.2",
+    "3.2.3.2.1": "3.2.3.2.1",
+    "3.2.3.2.2": "3.2.3.2.2",
+    "3.2.3.3.1": "3.2.3.3.1",
+    "3.2.3.3.2": "3.2.3.3.2",
+    "3.2.3.4.1": "3.2.3.4.1",
+    "3.2.3.4.2": "3.2.3.4.2"
+  }
+}

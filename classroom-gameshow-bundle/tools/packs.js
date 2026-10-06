@@ -59,6 +59,9 @@ const displayName = t => String(t).replace(/\s*\((?:[a-z]+ only|HT only|common c
 const refKey = r => r.split('.').map(Number);
 const cmpRef = (a, b) => { const x = refKey(a), y = refKey(b); for (let i = 0; i < Math.max(x.length, y.length); i++) { const d = (x[i] === undefined ? -1 : x[i]) - (y[i] === undefined ? -1 : y[i]); if (d) return d; } return 0; };
 
+// packs follow the specification's own topic order (refs such as 1AA or B1 are not numbers)
+const topicIndex = p => loadSpec(p.board, p.specCode).topics.findIndex(t => t.ref === p.topicRef);
+
 const specCache = {};
 function loadSpec(board, code) {
   const k = board.toLowerCase() + '-' + code;
@@ -220,7 +223,7 @@ function loadAll() {
     if (seen.has(k) && seen.get(k) !== p.id) errors.push(`${p.id}: "${q.q.slice(0, 60)}" is also in ${seen.get(k)}`);
     seen.set(k, p.id);
   }));
-  packs.sort((a, b) => a.board.localeCompare(b.board) || a.subject.localeCompare(b.subject) || a.specCode.localeCompare(b.specCode) || cmpRef(a.topicRef, b.topicRef));
+  packs.sort((a, b) => a.board.localeCompare(b.board) || a.subject.localeCompare(b.subject) || a.specCode.localeCompare(b.specCode) || topicIndex(a) - topicIndex(b));
   return { packs, errors, warnings };
 }
 

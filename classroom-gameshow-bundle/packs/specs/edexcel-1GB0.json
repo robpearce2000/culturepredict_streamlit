@@ -1,0 +1,207 @@
+{
+  "board": "Edexcel",
+  "subject": "Geography B",
+  "specCode": "1GB0",
+  "title": "GCSE (9-1) Geography B",
+  "version": "Issue 4",
+  "date": "September 2025",
+  "source": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Geography-B/2016/specification-and-sample-assessments/gcse-2016-l12-geography-b-spec.pdf",
+  "sourceNote": "Pearson Edexcel Level 1/Level 2 GCSE (9-1) Geography B specification, Issue 4, September 2025: the copy of Pearson's published PDF captured by the Internet Archive on 2026-05-13 (qualifications.pearson.com could not be reached directly from the build environment).",
+  "numbering": "^[12345789]\\.\\d+$",
+  "notes": [
+    "Numbering: Pearson numbers each key idea within its topic (1.1 ... 9.6) and letters the detailed content beneath it (1.1a, 1.1b). Enquiry questions are printed but not numbered. Key ideas are the leaf points (refs); the lettered detail and the numbered integrated skills are not separate refs.",
+    "One topic = one pack. Geography B has no optional units: Topic 4's sub-topics 4A Coastal change and conflict and 4B River processes and pressures are both compulsory, so they are subtopics of Topic 4.",
+    "Subtopics have registry refs (<topic>.g<n>): one per enquiry question, split where an enquiry question covers very different key ideas, with short titles written for the registry (the enquiry question is in the text file). parents maps each key idea to its subtopic.",
+    "Topics 7–9 (Component 3, People and environment issues) are kept as content; the decision-making exam (Paper 3) uses a resource booklet given out in the exam, not a pre-release.",
+    "Skipped: Topic 6 Geographical investigations (fieldwork and research, school-dependent), and the separate Geographical skills section (skills are listed with each key idea in the text files but are not refs).",
+    "Geography is untiered: no htRefs."
+  ],
+  "topics": [
+    {
+      "ref": "1",
+      "title": "Hazardous Earth",
+      "subtopics": [
+        { "ref": "1.g1", "title": "Global climate system and climate change" },
+        { "ref": "1.g2", "title": "Tropical cyclones" },
+        { "ref": "1.g3", "title": "Tectonic hazards" }
+      ]
+    },
+    {
+      "ref": "2",
+      "title": "Development dynamics",
+      "subtopics": [
+        { "ref": "2.g1", "title": "Defining and measuring development" },
+        { "ref": "2.g2", "title": "Global inequality and development theories" },
+        { "ref": "2.g3", "title": "Approaches to development" },
+        { "ref": "2.g4", "title": "An emerging country’s development" }
+      ]
+    },
+    {
+      "ref": "3",
+      "title": "Challenges of an urbanising world",
+      "subtopics": [
+        { "ref": "3.g1", "title": "Global urbanisation" },
+        { "ref": "3.g2", "title": "Changing urban land use" },
+        { "ref": "3.g3", "title": "Quality of life in a megacity" }
+      ]
+    },
+    {
+      "ref": "4",
+      "title": "The UK’s evolving physical landscape",
+      "subtopics": [
+        { "ref": "4.g1", "title": "Overview of the UK’s physical landscape" },
+        { "ref": "4.g2", "title": "4A Coastal landscapes and processes" },
+        { "ref": "4.g3", "title": "4A Coastal challenges and management" },
+        { "ref": "4.g4", "title": "4B River landscapes and processes" },
+        { "ref": "4.g5", "title": "4B River flooding and management" }
+      ]
+    },
+    {
+      "ref": "5",
+      "title": "The UK’s evolving human landscape",
+      "subtopics": [
+        { "ref": "5.g1", "title": "Overview of the UK’s human landscape" },
+        { "ref": "5.g2", "title": "Case study: a major UK city" },
+        { "ref": "5.g3", "title": "Case study: the city’s rural area" }
+      ]
+    },
+    {
+      "ref": "7",
+      "title": "People and the biosphere",
+      "subtopics": [
+        { "ref": "7.g1", "title": "Global biomes" },
+        { "ref": "7.g2", "title": "The biosphere as a life-support system" }
+      ]
+    },
+    {
+      "ref": "8",
+      "title": "Forests under threat",
+      "subtopics": [
+        { "ref": "8.g1", "title": "Forest structure and adaptations" },
+        { "ref": "8.g2", "title": "Threats to forests" },
+        { "ref": "8.g3", "title": "Protecting forests" }
+      ]
+    },
+    {
+      "ref": "9",
+      "title": "Consuming energy resources",
+      "subtopics": [
+        { "ref": "9.g1", "title": "Energy resources and their impacts" },
+        { "ref": "9.g2", "title": "Access to energy" },
+        { "ref": "9.g3", "title": "Oil supply and demand" },
+        { "ref": "9.g4", "title": "Fossil fuels and alternatives" },
+        { "ref": "9.g5", "title": "Attitudes to energy" }
+      ]
+    }
+  ],
+  "refs": {
+    "1.1": "The atmosphere operates as a global system which transfers heat around the Earth",
+    "1.2": "Climate has changed in the past through natural causes on timescales ranging from hundreds to millions of years",
+    "1.3": "Global climate is now changing as a result of human activity, and there is uncertainty about future climates",
+    "1.4": "Tropical cyclones are caused by particular meteorological conditions",
+    "1.5": "Tropical cyclones present major natural hazards to people and places",
+    "1.6": "The impacts of tropical cyclones are linked to a country’s ability to prepare and respond to them",
+    "1.7": "Earth’s layered structure, and physical properties is key to plate tectonics",
+    "1.8": "There are different plate boundaries, each with characteristic volcanic and earthquake hazards",
+    "1.9": "Tectonic hazards affect people, and are managed, differently at contrasting locations",
+    "2.1": "There are different ways of defining and measuring development",
+    "2.2": "There is global inequality in development and different theories in how it can be reduced",
+    "2.3": "Approaches to development vary in type and success",
+    "2.4": "Development of the emerging country is influenced by its location and context in the world",
+    "2.5": "Globalisation causes rapid economic change in the emerging country",
+    "2.6": "Rapid economic growth results in significant positive and negative impacts on people and environment in the emerging country",
+    "2.7": "Rapid economic development has changed the international role of the emerging country",
+    "3.1": "The world is becoming increasingly urbanised",
+    "3.2": "Urbanisation is a result of socio-economic processes and change",
+    "3.3": "Cities change over time and this is reflected in changing land use",
+    "3.4": "The location and context of the chosen megacity influences its growth, function and structure",
+    "3.5": "The megacity in the chosen country is growing rapidly",
+    "3.6": "Rapid population growth creates opportunities and challenges for people living in the chosen megacity",
+    "3.7": "Quality of life in the chosen megacity can be improved by different strategies for achieving sustainability",
+    "4.1": "Geology and past processes have influenced the physical landscape of the UK",
+    "4.2": "A number of physical and human processes work together to create distinct UK landscapes",
+    "4.3": "Distinctive coastal landscapes are influenced by geology interacting with physical processes",
+    "4.4": "Distinctive coastal landscapes are modified by human activity interacting with physical processes",
+    "4.5": "The interaction of human and physical processes present challenges along coastlines and there are a variety of management options",
+    "4.6": "Distinctive river landscapes have different characteristics formed by interacting physical processes",
+    "4.7": "River landscapes are influenced by human activity interacting with physical processes",
+    "4.8": "Some rivers are more prone to flood than others and there is a variety of river management options",
+    "5.1": "Population, economic activities and settlements are key elements of the human landscape",
+    "5.2": "The UK economy and society is increasingly linked and shaped by the wider world",
+    "5.3": "The context of the city influences its functions and structure",
+    "5.4": "The city changes through employment, services and the movement of people",
+    "5.5": "The changing city creates challenges and opportunities",
+    "5.6": "Ways of life in the city can be improved by different strategies",
+    "5.7": "The city is interdependent with rural areas, leading to changes in rural areas",
+    "5.8": "The changing rural area creates challenges and opportunities",
+    "7.1": "The Earth is home to a number of very large ecosystems (biomes) the distribution of which is affected by climate and other factors",
+    "7.2": "The biosphere is a vital life-support system for people as it provides both goods and services",
+    "8.1": "The structure, functioning and adaptations of the tropical rainforest* reflect the equatorial climate",
+    "8.2": "The taiga shows different characteristics, reflecting the more extreme and highly seasonal climate",
+    "8.3": "Tropical rainforests are threatened directly by deforestation and indirectly by climate change",
+    "8.4": "The taiga is increasingly threatened by commercial development",
+    "8.5": "Conservation and sustainable management of tropical rain forests is vital if goods and services are not to be lost for future generations",
+    "8.6": "The taiga wilderness areas need to be protected from over-exploitation",
+    "9.1": "Energy resources can be classified in different ways and their extraction and use has environmental consequences",
+    "9.2": "Access to energy resources is not evenly distributed which has implications for people",
+    "9.3": "The global demand for oil is increasing, but supplies are unevenly available",
+    "9.4": "The world’s continuing reliance of fossil fuels increases pressure to exploit new areas",
+    "9.5": "Reducing reliance on fossil fuels presents major technical challenges",
+    "9.6": "Attitudes to energy and environmental issues are changing"
+  },
+  "parents": {
+    "1.1": "1.g1",
+    "1.2": "1.g1",
+    "1.3": "1.g1",
+    "1.4": "1.g2",
+    "1.5": "1.g2",
+    "1.6": "1.g2",
+    "1.7": "1.g3",
+    "1.8": "1.g3",
+    "1.9": "1.g3",
+    "2.1": "2.g1",
+    "2.2": "2.g2",
+    "2.3": "2.g3",
+    "2.4": "2.g4",
+    "2.5": "2.g4",
+    "2.6": "2.g4",
+    "2.7": "2.g4",
+    "3.1": "3.g1",
+    "3.2": "3.g1",
+    "3.3": "3.g2",
+    "3.4": "3.g3",
+    "3.5": "3.g3",
+    "3.6": "3.g3",
+    "3.7": "3.g3",
+    "4.1": "4.g1",
+    "4.2": "4.g1",
+    "4.3": "4.g2",
+    "4.4": "4.g2",
+    "4.5": "4.g3",
+    "4.6": "4.g4",
+    "4.7": "4.g4",
+    "4.8": "4.g5",
+    "5.1": "5.g1",
+    "5.2": "5.g1",
+    "5.3": "5.g2",
+    "5.4": "5.g2",
+    "5.5": "5.g2",
+    "5.6": "5.g2",
+    "5.7": "5.g3",
+    "5.8": "5.g3",
+    "7.1": "7.g1",
+    "7.2": "7.g2",
+    "8.1": "8.g1",
+    "8.2": "8.g1",
+    "8.3": "8.g2",
+    "8.4": "8.g2",
+    "8.5": "8.g3",
+    "8.6": "8.g3",
+    "9.1": "9.g1",
+    "9.2": "9.g2",
+    "9.3": "9.g3",
+    "9.4": "9.g4",
+    "9.5": "9.g4",
+    "9.6": "9.g5"
+  }
+}

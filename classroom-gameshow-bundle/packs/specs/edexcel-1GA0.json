@@ -1,0 +1,260 @@
+{
+  "board": "Edexcel",
+  "subject": "Geography A",
+  "specCode": "1GA0",
+  "title": "GCSE (9-1) Geography A",
+  "version": "Issue 5",
+  "date": "September 2025",
+  "source": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Geography-A/2016/specification-and-sample-assessments/gcse-2016-l12-geography-a-spec.pdf",
+  "sourceNote": "Pearson Edexcel Level 1/Level 2 GCSE (9-1) Geography A specification, Issue 5, September 2025: the copy of Pearson's published PDF captured by the Internet Archive on 2026-08-03 (qualifications.pearson.com could not be reached directly from the build environment).",
+  "numbering": "^[1234568]\\.\\d+$",
+  "notes": [
+    "Numbering: Pearson numbers each key idea within its topic (1.1, 1.2 ... 8.4) and letters the detailed content beneath it (1.1a, 1.1b). Key ideas are the leaf points (refs); the lettered detail and the numbered integrated skills are not separate refs.",
+    "One topic = one pack. Optional sub-topics are topics of their own, marked '(option)': two of 1A Coastal, 1B River and 1C Glaciated upland landscapes; one of 6A Energy and 6B Water resource management. Their topic refs are Pearson's sub-topic labels (1A, 1B, 1C, 6A, 6B).",
+    "The compulsory overview of Topic 1 (1.1–1.2, Overview of the UK’s physical landscape) is short, so it is a subtopic (1.g0) shared by 1A, 1B and 1C rather than a pack of its own. The Topic 6 overview (6.1–6.2) is its own pack, Topic 6.",
+    "Subtopics have registry refs (<topic>.g<n>): Pearson's printed headings where there are any (Tropical cyclones, Drought, case studies), otherwise short groupings of key ideas titled for the registry. parents maps each key idea to its subtopic.",
+    "Topic 8 (UK challenges) is kept: it is examined content drawing on Components 1 and 2 (its 'Related topics' column is copied into the text file), not fieldwork or pre-release.",
+    "Skipped: Topic 7 Geographical investigations − fieldwork (school-dependent), and the separate Geographical skills section (skills are listed with each key idea in the text files but are not refs).",
+    "Geography is untiered: no htRefs."
+  ],
+  "topics": [
+    {
+      "ref": "1A",
+      "title": "The changing landscapes of the UK: Coastal landscapes and processes (option)",
+      "subtopics": [
+        { "ref": "1.g0", "title": "Overview of the UK’s physical landscape" },
+        { "ref": "1A.g1", "title": "Coastal processes" },
+        { "ref": "1A.g2", "title": "Coastal landforms" },
+        { "ref": "1A.g3", "title": "Human activity and coastal change" },
+        { "ref": "1A.g4", "title": "A distinctive coastal landscape" }
+      ]
+    },
+    {
+      "ref": "1B",
+      "title": "The changing landscapes of the UK: River landscapes and processes (option)",
+      "subtopics": [
+        { "ref": "1.g0", "title": "Overview of the UK’s physical landscape" },
+        { "ref": "1B.g1", "title": "River processes" },
+        { "ref": "1B.g2", "title": "River landforms" },
+        { "ref": "1B.g3", "title": "Human activity and river change" },
+        { "ref": "1B.g4", "title": "A distinctive river landscape" }
+      ]
+    },
+    {
+      "ref": "1C",
+      "title": "The changing landscapes of the UK: Glaciated upland landscapes and processes (option)",
+      "subtopics": [
+        { "ref": "1.g0", "title": "Overview of the UK’s physical landscape" },
+        { "ref": "1C.g1", "title": "Glacial processes" },
+        { "ref": "1C.g2", "title": "Glacial landforms" },
+        { "ref": "1C.g3", "title": "Human activity in glaciated uplands" },
+        { "ref": "1C.g4", "title": "A distinctive glaciated upland landscape" }
+      ]
+    },
+    {
+      "ref": "2",
+      "title": "Weather hazards and climate change",
+      "subtopics": [
+        { "ref": "2.g1", "title": "Global atmospheric circulation" },
+        { "ref": "2.g2", "title": "Natural and human climate change" },
+        { "ref": "2.g3", "title": "The UK’s climate" },
+        { "ref": "2.g4", "title": "Tropical cyclones" },
+        { "ref": "2.g5", "title": "Drought" }
+      ]
+    },
+    {
+      "ref": "3",
+      "title": "Ecosystems, biodiversity and management",
+      "subtopics": [
+        { "ref": "3.g1", "title": "Global ecosystems and the biosphere" },
+        { "ref": "3.g2", "title": "UK ecosystems" },
+        { "ref": "3.g3", "title": "Tropical rainforests" },
+        { "ref": "3.g4", "title": "Deciduous woodlands" }
+      ]
+    },
+    {
+      "ref": "4",
+      "title": "Changing cities",
+      "subtopics": [
+        { "ref": "4.g1", "title": "Overview of urban patterns and processes" },
+        { "ref": "4.g2", "title": "Case study: a major UK city" },
+        { "ref": "4.g3", "title": "Case study: a major city in a developing or emerging country" }
+      ]
+    },
+    {
+      "ref": "5",
+      "title": "Global development",
+      "subtopics": [
+        { "ref": "5.g1", "title": "Defining and measuring development" },
+        { "ref": "5.g2", "title": "Uneven development and its consequences" },
+        { "ref": "5.g3", "title": "Strategies for uneven development" },
+        { "ref": "5.g4", "title": "Case study: development in a developing or emerging country" }
+      ]
+    },
+    {
+      "ref": "6",
+      "title": "Resource management: Overview of the global and UK distribution of food, energy and water",
+      "subtopics": [
+        { "ref": "6.g1", "title": "Natural resources" },
+        { "ref": "6.g2", "title": "Distribution and consumption of resources" }
+      ]
+    },
+    {
+      "ref": "6A",
+      "title": "Resource management: Energy resource management (option)",
+      "subtopics": [
+        { "ref": "6A.g1", "title": "Renewable and non-renewable energy" },
+        { "ref": "6A.g2", "title": "Energy mix" },
+        { "ref": "6A.g3", "title": "Meeting energy demand" },
+        { "ref": "6A.g4", "title": "Sustainable energy management" }
+      ]
+    },
+    {
+      "ref": "6B",
+      "title": "Resource management: Water resource management (option)",
+      "subtopics": [
+        { "ref": "6B.g1", "title": "Global water supply" },
+        { "ref": "6B.g2", "title": "Water consumption" },
+        { "ref": "6B.g3", "title": "Water supply problems" },
+        { "ref": "6B.g4", "title": "Meeting water demand" },
+        { "ref": "6B.g5", "title": "Sustainable water management" }
+      ]
+    },
+    {
+      "ref": "8",
+      "title": "Geographical investigations − UK challenges",
+      "subtopics": [
+        { "ref": "8.g1", "title": "Resource consumption and environmental sustainability" },
+        { "ref": "8.g2", "title": "Settlement, population and economic challenges" },
+        { "ref": "8.g3", "title": "Landscape challenges" },
+        { "ref": "8.g4", "title": "Climate change challenges" }
+      ]
+    }
+  ],
+  "refs": {
+    "1.1": "There are geological variations within the UK",
+    "1.2": "A number of physical and human processes work together to create distinct UK landscapes",
+    "1.3": "A variety of physical processes interact to shape coastal landscapes",
+    "1.4": "Coastal erosion and deposition create distinctive landforms within the coastal landscape",
+    "1.5": "Human activities can lead to changes in coastal landscapes which affect people and the environment",
+    "1.6": "Distinctive coastal landscapes are the outcome of the interaction between physical and human processes",
+    "1.7": "A variety of physical processes interact to shape river landscapes",
+    "1.8": "Erosion and deposition interacting with geology create distinctive landforms in river landscapes",
+    "1.9": "Human activities can lead to changes in river landscapes which affect people and the environment",
+    "1.10": "Distinctive river landscapes are the outcome of the interaction between physical and human processes",
+    "1.11": "A variety of physical processes interact to shape glaciated upland landscapes",
+    "1.12": "Glacial erosion and deposition create distinctive landforms within glaciated upland landscapes",
+    "1.13": "Human activities can lead to changes in glaciated upland landscapes",
+    "1.14": "Distinctive glaciated upland landscapes are the outcome of the interaction between physical and human processes",
+    "2.1": "The atmosphere operates as a global system transferring heat and energy",
+    "2.2": "The global climate was different in the past and continues to change due to natural causes",
+    "2.3": "Global climate is now changing as a result of human activity",
+    "2.4": "The UK has a distinct climate which has changed over time",
+    "2.5": "Tropical cyclones are extreme weather events that develop under specific conditions and in certain locations",
+    "2.6": "There are various impacts of and responses to natural hazards caused by tropical cyclones depending on a country’s level of development",
+    "2.7": "The causes of drought are complex with some locations more vulnerable than others",
+    "2.8": "The impacts of, and responses to drought vary depending on a country’s level of development",
+    "3.1": "Large-scale ecosystems are found in different parts of the world and are important",
+    "3.2": "The biosphere is a vital system",
+    "3.3": "The UK has its own variety of distinctive ecosystems that it relies on",
+    "3.4": "Tropical rainforests show a range of distinguishing features",
+    "3.5": "Tropical rainforest ecosystems provide a range of goods and services, some of which are under threat",
+    "3.6": "Deciduous woodlands show a range of distinguishing features",
+    "3.7": "Deciduous woodland ecosystems provide a range of goods and services, some of which are under threat",
+    "4.1": "Urbanisation is a global process",
+    "4.2": "The degree of urbanisation varies across the UK",
+    "4.3": "The context of the chosen UK city influences its functions and structure",
+    "4.4": "The chosen UK city is being changed by movements of people, employment and services",
+    "4.5": "Globalisation and economic change create challenges for the chosen UK city that require long-term solutions",
+    "4.6": "The context of the chosen developing country or emerging country city influences its functions and structure",
+    "4.7": "The character of the chosen developing country or emerging country city is influenced by its fast rate of growth",
+    "4.8": "Rapid growth, within the chosen developing country or emerging country city, results in a number of challenges that need to be managed",
+    "5.1": "Definitions of development vary as do attempts to measure it",
+    "5.2": "The level of development varies globally",
+    "5.3": "Uneven global development has had a range of consequences",
+    "5.4": "A range of strategies has been used to try to address uneven development",
+    "5.5": "The level of development of the chosen developing or emerging country is influenced by its location and context in the world",
+    "5.6": "The interactions of economic, social and demographic processes influence the development of the chosen developing or emerging country",
+    "5.7": "Changing geopolitics and technology impact on the chosen developing or emerging country",
+    "5.8": "There are positive and negative impacts of rapid development for the people and environment of the chosen developing or emerging country",
+    "6.1": "A natural resource is any feature or part of the environment that can be used to meet human needs",
+    "6.2": "The patterns of the distribution and consumption of natural resources varies on a global and a national scale",
+    "6.3": "Renewable and non-renewable energy resources can be developed",
+    "6.4": "To meet demand, countries use energy resources in different proportions. This is called the energy mix",
+    "6.5": "There is increasing demand for energy that is being met by renewable and non-renewable resources",
+    "6.6": "Meeting the demands for energy resources can involve interventions by different interest groups",
+    "6.7": "Management and sustainable use of energy resources are required at a range of spatial scales from local to international",
+    "6.8": "The supply of fresh water supply varies globally",
+    "6.9": "There are differences between the water consumption patterns of developing countries and developed countries",
+    "6.10": "Countries at different levels of development have water supply problems",
+    "6.11": "Meeting the demands for water resources could involve technology and interventions by different interest groups",
+    "6.12": "Management and sustainable use of water resources are required at a range of spatial scales from local to international",
+    "8.1": "The UK’s resource consumption and environmental sustainability challenge",
+    "8.2": "The UK settlement, population and economic challenges",
+    "8.3": "The UK’s landscape challenges",
+    "8.4": "The UK’s climate change challenges"
+  },
+  "parents": {
+    "1.1": "1.g0",
+    "1.2": "1.g0",
+    "1.3": "1A.g1",
+    "1.4": "1A.g2",
+    "1.5": "1A.g3",
+    "1.6": "1A.g4",
+    "1.7": "1B.g1",
+    "1.8": "1B.g2",
+    "1.9": "1B.g3",
+    "1.10": "1B.g4",
+    "1.11": "1C.g1",
+    "1.12": "1C.g2",
+    "1.13": "1C.g3",
+    "1.14": "1C.g4",
+    "2.1": "2.g1",
+    "2.2": "2.g2",
+    "2.3": "2.g2",
+    "2.4": "2.g3",
+    "2.5": "2.g4",
+    "2.6": "2.g4",
+    "2.7": "2.g5",
+    "2.8": "2.g5",
+    "3.1": "3.g1",
+    "3.2": "3.g1",
+    "3.3": "3.g2",
+    "3.4": "3.g3",
+    "3.5": "3.g3",
+    "3.6": "3.g4",
+    "3.7": "3.g4",
+    "4.1": "4.g1",
+    "4.2": "4.g1",
+    "4.3": "4.g2",
+    "4.4": "4.g2",
+    "4.5": "4.g2",
+    "4.6": "4.g3",
+    "4.7": "4.g3",
+    "4.8": "4.g3",
+    "5.1": "5.g1",
+    "5.2": "5.g2",
+    "5.3": "5.g2",
+    "5.4": "5.g3",
+    "5.5": "5.g4",
+    "5.6": "5.g4",
+    "5.7": "5.g4",
+    "5.8": "5.g4",
+    "6.1": "6.g1",
+    "6.2": "6.g2",
+    "6.3": "6A.g1",
+    "6.4": "6A.g2",
+    "6.5": "6A.g3",
+    "6.6": "6A.g3",
+    "6.7": "6A.g4",
+    "6.8": "6B.g1",
+    "6.9": "6B.g2",
+    "6.10": "6B.g3",
+    "6.11": "6B.g4",
+    "6.12": "6B.g5",
+    "8.1": "8.g1",
+    "8.2": "8.g2",
+    "8.3": "8.g3",
+    "8.4": "8.g4"
+  }
+}

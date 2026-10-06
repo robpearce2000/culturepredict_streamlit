@@ -2,23 +2,13 @@ Board: Edexcel
 Spec: 1MA1
 Topic: 2
 
-Q: Write k + k + k + k in its simplest algebraic form.
-A: 4k
-Ref: A1
-D: 1
-
-Q: Write m × n × 4 in its simplest algebraic form.
-A: 4mn
-Ref: A1
-D: 1
-
 Q: Write p ÷ 5 using algebraic notation.
 A: p/5
 Accept: ⅕p; (1/5)p
 Ref: A1
 D: 1
 
-Q: Write 2 × x × y × x × 5 in its simplest algebraic form.
+Q: Simplify 2 × x × y × x × 5.
 A: 10x²y
 Ref: A1
 D: 2
@@ -29,32 +19,22 @@ Accept: x/4; (1/4)x
 Ref: A1
 D: 2
 
-Q: Find the value of 5p − 2q when p = 3 and q = 4.
+Q: Work out the value of 5p − 2q if p = 3 and q = 4.
 A: 7
 Ref: A2
 D: 1
 
-Q: Find the value of x³ when x = −2.
+Q: What is the value of x³ if x = −2?
 A: −8
 Ref: A2
 D: 2
 Note: Watch for 8 or −6.
 
-Q: Use F = ma to find F when m = 6 and a = 5.
-A: 30
-Ref: A2
-D: 1
-
 Q: Use E = ½mv² to find E when m = 4 and v = 3.
 A: 18
 Ref: A2
-D: 3
-Note: Square v first: ½ × 4 × 9.
-
-Q: Find the value of (a + b)² when a = 7 and b = −3.
-A: 16
-Ref: A2
 D: 2
+Note: Square v first: ½ × 4 × 9.
 
 Q: What name is given to each part of an expression separated by + or − signs?
 A: Term
@@ -77,35 +57,8 @@ A: Coefficient
 Ref: A3
 D: 1
 
-Q: x(x + 2) is the product of x and (x + 2). What are x and (x + 2) called?
-A: Factors
-Accept: Factor
-Ref: A3
-D: 2
-
-Q: Simplify 4a − 3b − a + 5b.
-A: 3a + 2b
-Ref: A4
-D: 1
-
-Q: Expand 3(2x − 5).
-A: 6x − 15
-Ref: A4
-D: 1
-
-Q: Factorise 12y + 18 fully.
-A: 6(2y + 3)
-Ref: A4
-D: 2
-
 Q: Expand and simplify (x + 5)(x − 2).
 A: x² + 3x − 10
-Ref: A4
-D: 2
-
-Q: Factorise x² − 49.
-A: (x + 7)(x − 7)
-Accept: (x − 7)(x + 7)
 Ref: A4
 D: 2
 
@@ -115,17 +68,6 @@ Accept: (x + 3)(x − 4)
 Ref: A4
 D: 2
 
-Q: Simplify a⁵ × a³ ÷ a².
-A: a⁶
-Ref: A4
-D: 2
-
-Q: Simplify (2x³y)².
-A: 4x⁶y²
-Ref: A4
-D: 2
-Note: Square the 2 as well as the powers.
-
 Q: Simplify 3√2 + 5√2.
 A: 8√2
 Ref: A4
@@ -134,12 +76,6 @@ D: 1
 Q: Factorise 3x² − 5x − 2.
 A: (3x + 1)(x − 2)
 Accept: (x − 2)(3x + 1)
-Ref: A4
-D: 3
-HT: yes
-
-Q: Expand and simplify (x + 1)³.
-A: x³ + 3x² + 3x + 1
 Ref: A4
 D: 3
 HT: yes
@@ -162,38 +98,15 @@ A: h = 2A/b
 Ref: A5
 D: 2
 
-Q: Make m the subject of E = mc².
-A: m = E/c²
-Ref: A5
-D: 2
-
 Q: Make a the subject of v² = u² + 2as.
 A: a = (v² − u²)/(2s)
 Ref: A5
 D: 3
 
-Q: Making s the subject of P = 4s, which operation is done to both sides?
-A: Division by 4
-Accept: Divide by 4; Divide both sides by 4
-Ref: A5
-D: 1
-
-Q: Find the value of a in the identity 4(x + a) ≡ 4x + 12.
-A: 3
-Accept: a = 3
-Ref: A6
-D: 2
-
 Q: x² = 4 is true only for x = 2 and x = −2. Is it an equation or an identity?
 A: Equation
 Ref: A6
-D: 2
-
-Q: For any integer n, 2n is even. Write an expression for any odd number.
-A: 2n + 1
-Accept: 2n − 1
-Ref: A6
-D: 2
+D: 1
 
 Q: Simplify n + (n + 1) + (n + 2), the sum of three consecutive integers.
 A: 3n + 3
@@ -208,28 +121,17 @@ Ref: A6
 D: 3
 HT: yes
 
-Q: A function machine adds 5 and then multiplies by 2. What is the output for an input of 3?
-A: 16
-Ref: A7
-D: 1
-
 Q: A function machine subtracts 4 and then divides by 3. The output is 5. What was the input?
 A: 19
 Ref: A7
 D: 2
 Note: Work backwards: 5 × 3 + 4.
 
-Q: f(x) = x² − 4. Find f(−3).
-A: 5
-Ref: A7
-D: 2
-HT: yes
-
-Q: f(x) = 4x + 1. Find f⁻¹(x).
+Q: Find the inverse function f⁻¹(x) when f(x) = 4x + 1.
 A: (x − 1)/4
 Accept: f⁻¹(x) = (x − 1)/4
 Ref: A7
-D: 3
+D: 2
 HT: yes
 
 Q: f(x) = x² and g(x) = x + 1. Find gf(3).
@@ -251,7 +153,7 @@ A: Origin
 Ref: A8
 D: 1
 
-Q: On which axis does every point with coordinates (x, 0) lie?
+Q: The points (3, 0), (−1, 0) and (7, 0) all lie on which axis?
 A: x-axis
 Ref: A8
 D: 1
@@ -261,19 +163,8 @@ A: (2, −3)
 Ref: A8
 D: 2
 
-Q: What shape is the graph of y = 2x − 1?
-A: Straight line
-Accept: Line
-Ref: A9
-D: 1
-
 Q: What is the gradient of any line parallel to y = 4x − 7?
 A: 4
-Ref: A9
-D: 2
-
-Q: What is the equation of the horizontal line through (5, −2)?
-A: y = −2
 Ref: A9
 D: 2
 
@@ -282,22 +173,11 @@ A: y = 3x − 5
 Ref: A9
 D: 3
 
-Q: Find the equation of the line through (0, 2) and (4, 10).
-A: y = 2x + 2
-Ref: A9
-D: 3
-
-Q: What is the gradient of a line perpendicular to y = −⅓x + 2?
-A: 3
-Ref: A9
-D: 3
-HT: yes
-
 Q: At what angle do the lines y = 2x + 1 and y = −½x + 3 meet?
 A: Right angle
 Accept: 90°; 90 degrees
 Ref: A9
-D: 3
+D: 2
 HT: yes
 Note: The product of the gradients is −1.
 
@@ -306,11 +186,6 @@ A: y-intercept
 Accept: Intercept
 Ref: A10
 D: 1
-
-Q: What is the gradient of y = 7 − 3x?
-A: −3
-Ref: A10
-D: 2
 
 Q: Find the gradient of the line through (1, 2) and (4, 14).
 A: 4
@@ -322,12 +197,6 @@ A: £30
 Accept: 30
 Ref: A10
 D: 2
-
-Q: Where does the line 3x + 2y = 12 cross the y-axis?
-A: (0, 6)
-Accept: y = 6; 6
-Ref: A10
-D: 3
 
 Q: What name is given to the highest or lowest point on a quadratic graph?
 A: Turning point
@@ -341,12 +210,6 @@ Accept: Axis of symmetry
 Ref: A11
 D: 1
 
-Q: Where does y = x² − 3x − 10 cross the y-axis?
-A: (0, −10)
-Accept: y = −10; −10
-Ref: A11
-D: 2
-
 Q: What are the roots of y = (x − 2)(x + 5)?
 A: 2 and −5
 Accept: x = 2 or x = −5
@@ -354,28 +217,11 @@ Ref: A11
 D: 2
 Note: Watch for −2 and 5.
 
-Q: x² − 8x + 3 = (x − 4)² − 13. What are the coordinates of the turning point of y = x² − 8x + 3?
-A: (4, −13)
-Ref: A11
-D: 3
-HT: yes
-
 Q: Write x² + 10x + 30 in the form (x + p)² + q.
 A: (x + 5)² + 5
 Ref: A11
 D: 3
 HT: yes
-
-Q: What name is given to the U-shaped curve of y = x²?
-A: Parabola
-Accept: Quadratic curve
-Ref: A12
-D: 1
-
-Q: What type of function is y = 4 − x²?
-A: Quadratic
-Ref: A12
-D: 1
 
 Q: Does the graph of y = −x² open upwards or downwards?
 A: Downwards
@@ -386,7 +232,7 @@ D: 2
 Q: What name is given to a line that the graph of y = 1/x approaches but never meets?
 A: Asymptote
 Ref: A12
-D: 2
+D: 1
 
 Q: What type of function is y = 3ˣ?
 A: Exponential
@@ -394,23 +240,10 @@ Ref: A12
 D: 1
 HT: yes
 
-Q: What is the maximum value of y = sin x?
-A: 1
-Ref: A12
-D: 2
-HT: yes
-
 Q: After how many degrees does the graph of y = cos x start to repeat?
 A: 360°
 Accept: 360; 360 degrees
 Ref: A12
-D: 2
-HT: yes
-
-Q: Name the transformation that maps y = f(x) onto y = −f(x).
-A: Reflection
-Accept: Reflection in the x-axis
-Ref: A13
 D: 1
 HT: yes
 
@@ -426,19 +259,13 @@ Ref: A13
 D: 2
 HT: yes
 
-Q: y = f(x) is mapped onto y = f(x + 4). By what column vector is the graph translated?
-A: (−4, 0)
-Accept: −4 in x, 0 in y; 4 units left
+Q: The graph of y = f(x) becomes the graph of y = f(x + 4). Describe this transformation.
+A: Translation 4 units left
+Accept: Translation by vector (−4, 0); Translation (−4, 0); 4 units left
 Ref: A13
 D: 3
 HT: yes
 Note: + inside the bracket moves the graph left.
-
-Q: (2, 5) lies on y = f(x). Which point lies on y = f(x) − 1?
-A: (2, 4)
-Ref: A13
-D: 3
-HT: yes
 
 Q: On a distance-time graph, what does the gradient represent?
 A: Speed
@@ -452,12 +279,6 @@ Accept: Constant speed; Steady speed; Zero acceleration
 Ref: A14
 D: 2
 Note: Not "stationary" (that is a horizontal distance-time graph).
-
-Q: A distance-time graph is a straight line from (0 s, 0 m) to (40 s, 200 m). What is the speed?
-A: 5 m/s
-Accept: 5
-Ref: A14
-D: 2
 
 Q: The time for a job is t = 24/n hours when n people work on it. How long do 6 people take?
 A: 4 hours
@@ -479,25 +300,11 @@ Ref: A15
 D: 1
 HT: yes
 
-Q: A velocity-time graph is a straight line from 4 m/s to 16 m/s over 6 s. What is the acceleration?
-A: 2 m/s²
-Accept: 2
-Ref: A15
-D: 2
-HT: yes
-
-Q: An object moves at a constant 8 m/s for 10 s. Use the area under its velocity-time graph to find the distance.
-A: 80 m
-Accept: 80
-Ref: A15
-D: 2
-HT: yes
-
 Q: To estimate the area under a curve, what shapes is the area usually split into?
 A: Trapezia
 Accept: Trapeziums; Trapezium; Strips
 Ref: A15
-D: 2
+D: 1
 HT: yes
 
 Q: Velocity rises steadily from 2 m/s to 10 m/s in 4 s. What distance is travelled?
@@ -512,7 +319,7 @@ Q: A savings graph in pounds against months is a straight line rising £300 ever
 A: £50 per month
 Accept: Saves £50 a month; 50
 Ref: A15
-D: 3
+D: 2
 HT: yes
 
 Q: Where is the centre of the circle x² + y² = 36?
@@ -522,24 +329,10 @@ Ref: A16
 D: 1
 HT: yes
 
-Q: A tangent to a circle meets the radius at what angle?
-A: Right angle
-Accept: 90°; 90 degrees
-Ref: A16
-D: 1
-HT: yes
-
 Q: The point (6, 8) lies on a circle with centre the origin. What is the equation of the circle?
 A: x² + y² = 100
 Ref: A16
-D: 3
-HT: yes
-
-Q: Give the radius of the circle x² + y² = 20 as a surd in its simplest form.
-A: 2√5
-Accept: √20
-Ref: A16
-D: 3
+D: 2
 HT: yes
 
 Q: Find the equation of the tangent to x² + y² = 20 at the point (2, 4).
@@ -550,27 +343,9 @@ D: 3
 HT: yes
 Note: The radius has gradient 2, so the tangent has gradient −½.
 
-Q: Solve 6x − 4 = 20.
-A: 4
-Accept: x = 4
-Ref: A17
-D: 1
-
 Q: Solve 5 − 2x = 11.
 A: −3
 Accept: x = −3
-Ref: A17
-D: 2
-
-Q: Solve 7x + 3 = 3x + 23.
-A: 5
-Accept: x = 5
-Ref: A17
-D: 2
-
-Q: Solve (x + 4)/3 = 6.
-A: 14
-Accept: x = 14
 Ref: A17
 D: 2
 
@@ -580,16 +355,10 @@ Accept: x = 5
 Ref: A17
 D: 3
 
-Q: The graph of y = 2x − 1 is drawn. At what x-value on it is y = 7?
+Q: On the graph of y = 2x − 1, what is x when y = 7?
 A: 4
 Accept: x = 4
 Ref: A17
-D: 2
-
-Q: Solve x(x + 4) = 0.
-A: 0 or −4
-Accept: x = 0 or x = −4
-Ref: A18
 D: 1
 
 Q: Solve x² + 2x − 15 = 0.
@@ -598,19 +367,11 @@ Accept: x = 3 or x = −5
 Ref: A18
 D: 2
 
-Q: How are the solutions of x² − 3x + 1 = 0 found from the graph of y = x² − 3x + 1?
-A: Read where the curve crosses the x-axis
-Accept: x-axis crossings; Where y = 0
+Q: How can the solutions of x² − 3x + 1 = 0 be read from the graph of y = x² − 3x + 1?
+A: x-axis crossings
+Accept: Where the curve crosses the x-axis; Where y = 0; x-intercepts
 Ref: A18
 D: 2
-
-Q: Solve x² = 2x + 8.
-A: 4 or −2
-Accept: x = 4 or x = −2
-Ref: A18
-D: 3
-HT: yes
-Note: Rearrange to x² − 2x − 8 = 0 first.
 
 Q: Solve 2x² − 7x + 3 = 0.
 A: ½ or 3
@@ -619,7 +380,7 @@ Ref: A18
 D: 3
 HT: yes
 
-Q: Solve x² − 10x + 18 = 0 by completing the square, giving exact answers.
+Q: By completing the square, find the exact solutions of x² − 10x + 18 = 0.
 A: 5 ± √7
 Accept: x = 5 + √7 or x = 5 − √7
 Ref: A18
@@ -632,31 +393,15 @@ Ref: A18
 D: 1
 HT: yes
 
-Q: Name the formula x = (−b ± √(b² − 4ac))/2a.
-A: Quadratic formula
-Ref: A18
-D: 1
-HT: yes
-
 Q: Name the method that adds or subtracts simultaneous equations to remove one unknown.
 A: Elimination
 Ref: A19
 D: 1
 
-Q: Name the method that replaces y in one equation with an expression for y from the other.
-A: Substitution
-Ref: A19
-D: 1
-
-Q: Solve the simultaneous equations 2x + y = 11 and x − y = 1.
+Q: Find x and y if 2x + y = 11 and x − y = 1.
 A: x = 4, y = 3
 Ref: A19
 D: 2
-
-Q: Solve the simultaneous equations 3x + 2y = 16 and x + 2y = 8.
-A: x = 4, y = 2
-Ref: A19
-D: 3
 
 Q: Find the points where y = x² + 1 meets y = 2x + 4.
 A: (3, 10) and (−1, 2)
@@ -676,14 +421,14 @@ Q: Use xₙ₊₁ = 3 − 1/xₙ with x₁ = 1 to find x₃.
 A: 2.5
 Accept: 5/2; 2½
 Ref: A20
-D: 3
+D: 2
 HT: yes
 
 Q: An iteration gives x₄ = 2.531 and x₅ = 2.531. What word describes what the iteration has done?
 A: Converged
 Accept: Converges; Convergence
 Ref: A20
-D: 2
+D: 1
 HT: yes
 
 Q: Find the value of x³ + 2x − 5 when x = 1 and when x = 2.
@@ -699,18 +444,8 @@ Ref: A20
 D: 3
 HT: yes
 
-Q: Pens cost p pence each. Write an expression for the cost of 6 pens and a 50p ruler.
-A: 6p + 50
-Ref: A21
-D: 1
-
 Q: Sam has £x. Kim has £5 more than twice Sam's amount. Write an expression for Kim's amount.
 A: 2x + 5
-Ref: A21
-D: 2
-
-Q: I think of a number, multiply it by 4 and subtract 7. The answer is 29. What was my number?
-A: 9
 Ref: A21
 D: 2
 
@@ -726,9 +461,9 @@ Accept: 11
 Ref: A21
 D: 3
 
-Q: On a number line, what type of circle marks the 5 in x < 5?
-A: Open circle
-Accept: Hollow circle; Empty circle; Unfilled circle
+Q: When x < 5 is shown on a number line, should the circle at 5 be open or filled?
+A: Open
+Accept: Open circle; Hollow; Empty; Unfilled
 Ref: A22
 D: 1
 
@@ -736,11 +471,6 @@ Q: Solve 3x − 2 < 10.
 A: x < 4
 Ref: A22
 D: 2
-
-Q: List the integers n that satisfy 3 ≤ 2n < 9.
-A: 2, 3, 4
-Ref: A22
-D: 3
 
 Q: Write x > 3 in set notation.
 A: {x : x > 3}
@@ -755,52 +485,31 @@ Ref: A22
 D: 2
 HT: yes
 
-Q: Solve x² ≥ 16.
-A: x ≤ −4 or x ≥ 4
-Ref: A22
-D: 3
-HT: yes
-
 Q: Solve x² − 5x + 4 < 0.
 A: 1 < x < 4
 Ref: A22
 D: 3
 HT: yes
 
-Q: What is the next term of the sequence 7, 11, 15, 19, ...?
-A: 23
-Ref: A23
-D: 1
-
 Q: A sequence has nth term 5n − 2. What is its 10th term?
 A: 48
 Ref: A23
 D: 1
 
-Q: What name is given to a rule such as "nth term = 3n + 1" that gives a term from its position?
+Q: "nth term = 3n + 1" finds any term without the one before it. What kind of rule is this?
 A: Position-to-term rule
 Accept: Position-to-term; nth term rule
 Ref: A23
 D: 1
 
-Q: A sequence starts at 2. The rule is "multiply by 3, then add 1". What is the 4th term?
+Q: The first term of a sequence is 2. Each term is 3 times the term before plus 1. Find the 4th term.
 A: 67
 Ref: A23
 D: 2
+Note: 2, 7, 22, 67.
 
-Q: Which term of the sequence with nth term 6n − 4 is equal to 50?
-A: 9th
-Accept: 9; n = 9
-Ref: A23
-D: 2
-
-Q: What name is given to the sequence 1, 4, 9, 16, 25, ...?
+Q: The sequence 1, 4, 9, 16, 25, ... is made of which special numbers?
 A: Square numbers
-Ref: A24
-D: 1
-
-Q: What is the next cube number after 64?
-A: 125
 Ref: A24
 D: 1
 
@@ -810,18 +519,9 @@ Accept: Linear; Arithmetic progression
 Ref: A24
 D: 1
 
-Q: What is the 6th triangular number?
-A: 21
-Ref: A24
-D: 2
-
-Q: Each term is the sum of the two before it: 3, 4, 7, 11, ... What are the next two terms?
+Q: In the Fibonacci-type sequence 3, 4, 7, 11, ..., what are the next two terms?
 A: 18, 29
-Ref: A24
-D: 2
-
-Q: What is the next term of the geometric sequence 81, 27, 9, 3, ...?
-A: 1
+Accept: 18 and 29
 Ref: A24
 D: 2
 
@@ -833,7 +533,7 @@ D: 2
 Q: What is the common ratio of the geometric sequence 3, 3√3, 9, 9√3, ...?
 A: √3
 Ref: A24
-D: 3
+D: 2
 HT: yes
 
 Q: Find the nth term of the sequence 9, 13, 17, 21, ...
@@ -853,13 +553,7 @@ Accept: −3n + 5
 Ref: A25
 D: 3
 
-Q: Find the nth term of the sequence 2, 8, 18, 32, ...
-A: 2n²
-Ref: A25
-D: 3
-HT: yes
-
-Q: Find the nth term of the quadratic sequence 0, 5, 12, 21, 32, ...
+Q: Find the nth term of 0, 5, 12, 21, 32, ...
 A: n² + 2n − 3
 Accept: (n + 3)(n − 1)
 Ref: A25
