@@ -1,0 +1,402 @@
+Board: Edexcel
+Spec: 1MA1
+Topic: 3
+
+Q: Which metric unit of length is one thousandth of a metre?
+A: Millimetre
+Accept: mm; Millimetres; Millimeter
+Ref: R1
+D: 1
+
+Q: Which metric unit of mass is equal to 1000 kilograms?
+A: Tonne
+Accept: Tonnes; t; Metric ton
+Ref: R1
+D: 1
+
+Q: Which metric unit of area is equal to 10 000 m²?
+A: Hectare
+Accept: Hectares; ha
+Ref: R1
+D: 2
+
+Q: Convert 72 km/h into metres per second.
+A: 20 m/s
+Accept: 20; 20 metres per second
+Ref: R1
+D: 3
+Note: 72 000 m in 3600 s; dividing by 3.6 is the shortcut.
+
+Q: A model boat is built to a scale of 1 : 40. The model is 10 cm long. How long is the real boat in metres?
+A: 4 m
+Accept: 4; 4 metres; 400 cm
+Ref: R2
+D: 2
+
+Q: On a map with scale 1 : 25 000, a path is 8 cm long. What is its real length in kilometres?
+A: 2 km
+Accept: 2; 2 kilometres; 2000 m
+Ref: R2
+D: 3
+Note: 8 × 25 000 = 200 000 cm, then divide by 100 000 for km.
+
+Q: A drawing of an object with every length reduced in the same ratio is called what?
+A: Scale drawing
+Accept: Scale diagram; Scale drawings
+Ref: R2
+D: 1
+
+Q: What fraction of 20 is 5? Give it in its simplest form.
+A: 1/4
+Accept: One quarter; 0.25
+Ref: R3
+D: 1
+
+Q: Write 30 as a fraction of 18, in its simplest form.
+A: 5/3
+Accept: 1 2/3
+Ref: R3
+D: 2
+Note: The fraction is greater than 1 because 30 is bigger than 18.
+
+Q: Write 45 minutes as a fraction of 2 hours, in its simplest form.
+A: 3/8
+Accept: 0.375
+Ref: R3
+D: 3
+Note: Change 2 hours to 120 minutes first.
+
+Q: Simplify the ratio 15 : 25.
+A: 3 : 5
+Accept: 3:5
+Ref: R4
+D: 1
+
+Q: To simplify a ratio in one step, you divide every part by their what?
+A: Highest common factor
+Accept: HCF; Greatest common factor; Greatest common divisor
+Ref: R4
+D: 2
+
+Q: Write the ratio 400 g : 2 kg in its simplest form.
+A: 1 : 5
+Accept: 1:5
+Ref: R4
+D: 2
+Note: Use the same units first: 400 g : 2000 g.
+
+Q: Write the ratio 4 : 10 in the form 1 : n.
+A: 1 : 2.5
+Accept: 1:2.5; 1 : 5/2
+Ref: R4
+D: 3
+
+Q: Share £35 in the ratio 2 : 5.
+A: £10 and £25
+Accept: £10 : £25; 10 and 25
+Ref: R5
+D: 2
+
+Q: A drink is made from squash and water in the ratio 1 : 4. How much squash is in 500 ml of drink?
+A: 100 ml
+Accept: 100
+Ref: R5
+D: 2
+Note: There are 5 parts in total, so one part is 100 ml.
+
+Q: Cats and dogs at a rescue centre are in the ratio 5 : 3. There are 10 more cats than dogs. How many dogs are there?
+A: 15
+Accept: 15 dogs
+Ref: R5
+D: 3
+Note: The difference of 2 parts is 10, so one part is 5.
+
+Q: A is four times as large as B. Write B as a fraction of A.
+A: 1/4
+Accept: One quarter; 0.25
+Ref: R6
+D: 2
+
+Q: Tom's age is 3/5 of Sam's age. Write the ratio of Tom's age to Sam's age.
+A: 3 : 5
+Accept: 3:5
+Ref: R6
+D: 2
+
+Q: The ratio x : y is 2 : 7. How many times larger than x is y?
+A: 3.5
+Accept: 7/2; 3½; 3.5 times
+Ref: R6
+D: 3
+
+Q: Two quantities whose ratio stays the same as they both change are said to be in what?
+A: Proportion
+Accept: Direct proportion; Directly proportional
+Ref: R7
+D: 1
+
+Q: Find n if 5 : 2 = 20 : n.
+A: 8
+Accept: n = 8
+Ref: R7
+D: 2
+
+Q: a : b = 3 : 4 and b : c = 2 : 5. Find a : c in its simplest form.
+A: 3 : 10
+Accept: 3:10
+Ref: R7
+D: 3
+Note: Make b the same: 3 : 4 and 4 : 10.
+
+Q: Red and blue beads are in the ratio 4 : 5. What fraction of the beads are blue?
+A: 5/9
+Ref: R8
+D: 2
+
+Q: 2/5 of the sweets in a bag are mints and the rest are toffees. Write the ratio of mints to toffees.
+A: 2 : 3
+Accept: 2:3
+Ref: R8
+D: 2
+
+Q: A straight line through the origin has equation y = 0.75x. Write the ratio x : y in its simplest form.
+A: 4 : 3
+Accept: 4:3
+Ref: R8
+D: 3
+
+Q: What do we call the number you multiply by to change an amount by a percentage, such as 1.2 for a 20% increase?
+A: Multiplier
+Accept: Decimal multiplier; Percentage multiplier
+Ref: R9
+D: 1
+
+Q: Express 18 as a percentage of 24.
+A: 75%
+Accept: 75
+Ref: R9
+D: 2
+
+Q: What is 250% of 40?
+A: 100
+Ref: R9
+D: 2
+
+Q: A price falls from £50 to £35. What is the percentage decrease?
+A: 30%
+Accept: 30
+Ref: R9
+D: 2
+
+Q: £500 is invested at 2% simple interest per year. How much interest is earned in 3 years?
+A: £30
+Accept: 30
+Ref: R9
+D: 2
+
+Q: After a 25% increase, a bike costs £150. What was its price before the increase?
+A: £120
+Accept: 120
+Ref: R9
+D: 3
+Note: Divide by 1.25; finding 25% of £150 and subtracting is the common error.
+
+Q: Find the cost of one item first, then scale up. What is this method of solving proportion problems called?
+A: Unitary method
+Accept: Unitary; Unit method
+Ref: R10
+D: 2
+
+Q: For a fixed distance, speed and journey time are in what type of proportion?
+A: Inverse
+Accept: Inverse proportion; Inversely proportional; Indirect proportion
+Ref: R10
+D: 2
+
+Q: At a fixed hourly rate, pay and the number of hours worked are in what type of proportion?
+A: Direct
+Accept: Direct proportion; Directly proportional
+Ref: R10
+D: 1
+
+Q: y is inversely proportional to x, and y = 10 when x = 3. Find y when x = 5.
+A: 6
+Accept: y = 6
+Ref: R10
+D: 3
+Note: xy stays constant at 30.
+
+Q: Mass divided by volume gives which compound measure?
+A: Density
+Ref: R11
+D: 1
+
+Q: Distance divided by time gives which compound measure?
+A: Speed
+Accept: Average speed
+Ref: R11
+D: 1
+
+Q: A metal block has mass 240 g and volume 30 cm³. What is its density?
+A: 8 g/cm³
+Accept: 8; 8 grams per cm³
+Ref: R11
+D: 2
+
+Q: Use pressure = force ÷ area. A force of 600 N acts on an area of 3 m². What is the pressure?
+A: 200 N/m²
+Accept: 200; 200 Pa; 200 pascals
+Ref: R11
+D: 2
+
+Q: A car travels at 48 miles per hour for 15 minutes. How far does it travel?
+A: 12 miles
+Accept: 12
+Ref: R11
+D: 3
+Note: 15 minutes is a quarter of an hour.
+
+Q: In a right-angled triangle, which trigonometric ratio is opposite ÷ adjacent?
+A: Tangent
+Accept: Tan
+Ref: R12
+D: 1
+
+Q: In a right-angled triangle, which trigonometric ratio is opposite ÷ hypotenuse?
+A: Sine
+Accept: Sin
+Ref: R12
+D: 1
+
+Q: Two similar solids have lengths in the ratio 1 : 3. What is the ratio of their volumes?
+A: 1 : 27
+Accept: 1:27
+Ref: R12
+D: 2
+
+Q: A rectangle of area 5 cm² is enlarged by scale factor 4. What is the area of the enlarged rectangle?
+A: 80 cm²
+Accept: 80
+Ref: R12
+D: 3
+Note: Areas scale by 4² = 16, not 4.
+
+Q: In the equation y = kx, what is the number k called?
+A: Constant of proportionality
+Accept: Constant; Proportionality constant
+Ref: R13
+D: 1
+
+Q: P ∝ 1/Q is the same as saying P is what kind of proportional to Q?
+A: Inversely
+Accept: Inversely proportional; Inverse
+Ref: R13
+D: 2
+
+Q: y is directly proportional to x², and y = 12 when x = 2. Find y when x = 5.
+A: 75
+Accept: y = 75
+Ref: R13
+D: 3
+HT: yes
+Note: y = 3x².
+
+Q: y is inversely proportional to x², and y = 9 when x = 2. Write an equation for y in terms of x.
+A: y = 36/x²
+Accept: y = 36 ÷ x²; y = 36x⁻²
+Ref: R13
+D: 3
+HT: yes
+
+Q: A section of a distance–time graph is a horizontal straight line. What does this show about the object?
+A: Stationary
+Accept: At rest; Not moving; Stopped; Speed is zero
+Ref: R14
+D: 2
+
+Q: Two straight lines are drawn on the same distance–time graph. Is the object on the steeper line faster or slower?
+A: Faster
+Accept: Faster object; Quicker
+Ref: R14
+D: 2
+
+Q: A straight-line graph of cost (£) against fuel (litres) passes through (0, 0) and (20, 30). What is the gradient?
+A: 1.5
+Accept: £1.50 per litre; 3/2; £1.50
+Ref: R14
+D: 2
+Note: The gradient is the price per litre.
+
+Q: A tank empties at a steady rate from 600 litres to 0 litres in 20 minutes. What is the gradient of its volume–time graph?
+A: −30 litres per minute
+Accept: −30; -30; -30 litres per minute
+Ref: R14
+D: 3
+Note: The gradient is negative because the volume is falling.
+
+Q: To estimate the instantaneous rate of change on a curve, you draw what kind of line at that point?
+A: Tangent
+Accept: A tangent; Tangent line
+Ref: R15
+D: 3
+HT: yes
+
+Q: A straight line joining two points on a curve, used to find an average rate of change, is called what?
+A: Chord
+Accept: A chord
+Ref: R15
+D: 3
+HT: yes
+
+Q: A curved distance–time graph passes through (1, 4) and (3, 16), in seconds and metres. What is the average speed between t = 1 and t = 3?
+A: 6 m/s
+Accept: 6; 6 metres per second
+Ref: R15
+D: 3
+HT: yes
+
+Q: A tangent to a curve passes through (0, 2) and (4, 10). Estimate the gradient of the curve at that point.
+A: 2
+Ref: R15
+D: 3
+HT: yes
+
+Q: An amount that is multiplied by 0.9 each year is showing growth or decay?
+A: Decay
+Accept: Exponential decay
+Ref: R16
+D: 2
+
+Q: A quantity that increases by the same percentage every year shows what type of growth?
+A: Exponential
+Accept: Exponential growth; Compound growth
+Ref: R16
+D: 2
+
+Q: £2000 is invested at 5% compound interest per year. What is it worth after 2 years?
+A: £2205
+Accept: 2205; £2205.00
+Ref: R16
+D: 3
+
+Q: A car worth £10 000 loses 20% of its value each year. What is it worth after 2 years?
+A: £6400
+Accept: 6400; £6 400
+Ref: R16
+D: 3
+Note: Multiply by 0.8 twice; it is not 40% off.
+
+Q: Repeatedly substituting each output of a formula back in to find the next value is called what?
+A: Iteration
+Accept: Iterating; Iterative process; Iterative method
+Ref: R16
+D: 3
+HT: yes
+
+Q: Use xₙ₊₁ = 3 + 2/xₙ with x₁ = 2. Find x₃.
+A: 3.5
+Accept: 7/2; 3½; x₃ = 3.5
+Ref: R16
+D: 3
+HT: yes
+Note: x₂ = 4, then x₃ = 3 + 0.5.

@@ -14,9 +14,9 @@ Accept: OH⁻; OH-; hydroxide ions
 Ref: 3.1
 D: 1
 
-Q: Hydrogen chloride gas dissolves in water to make hydrochloric acid. What is the formula of the ion that makes the solution acidic?
-A: H⁺
-Accept: H+; hydrogen ion
+Q: A solution contains many hydroxide ions and almost no hydrogen ions. Is it acidic or alkaline?
+A: Alkaline
+Accept: Alkali; an alkali
 Ref: 3.1
 D: 2
 
@@ -53,41 +53,41 @@ Q: What colour is phenolphthalein in an acidic solution?
 A: Colourless
 Accept: Colorless
 Ref: 3.3
-D: 2
+D: 1
 Note: Not "clear": clear means see-through, and coloured solutions can be clear.
 
 Q: What colour is methyl orange in an alkaline solution?
 A: Yellow
 Ref: 3.3
-D: 2
+D: 1
 Note: Methyl orange is red in acid and yellow in alkali.
 
 Q: Solution A has a higher concentration of hydrogen ions than solution B. Which solution has the lower pH?
 A: A
 Accept: Solution A
 Ref: 3.4
-D: 3
+D: 2
 HT: yes
 
 Q: What happens to the pH of an alkaline solution as its hydroxide ion concentration increases?
 A: pH increases
 Accept: Rises; goes up; increases
 Ref: 3.4
-D: 3
+D: 1
 HT: yes
 
-Q: An acid is made more acidic by raising its hydrogen ion concentration. What happens to its pH?
-A: pH decreases
-Accept: Falls; goes down; decreases
+Q: Solution C has pH 1 and solution D has pH 4. Which has the higher hydrogen ion concentration?
+A: C
+Accept: Solution C; the pH 1 solution
 Ref: 3.4
-D: 3
+D: 2
 HT: yes
 
 Q: The hydrogen ion concentration of a solution increases by a factor of 10. How does its pH change?
 A: Decreases by 1
 Accept: Falls by 1; goes down by one; −1
 Ref: 3.5
-D: 3
+D: 2
 HT: yes
 
 Q: An acid at pH 4 is changed to pH 2. By what factor has its hydrogen ion concentration increased?
@@ -132,6 +132,7 @@ Accept: Increases then stays constant; rises from acidic to alkaline then levels
 Ref: 3.6
 RP: 3.6
 D: 2
+Note: pH starts low, rises (steeply near 7), then levels off at about 12 once the solid is in excess.
 
 Q: Why is the mixture stirred and left briefly after each addition, before the pH is read?
 A: So the solid reacts and pH settles
@@ -144,35 +145,35 @@ Q: What does "concentrated" mean for a solution?
 A: Large amount of solute per unit volume
 Accept: Lots of solute in a given volume; high amount of substance per dm³
 Ref: 3.7
-D: 3
+D: 2
 HT: yes
 
 Q: Solution P has 0.5 mol of acid in 1 dm³; solution Q has 0.1 mol in 1 dm³. Which is more dilute?
 A: Q
 Accept: Solution Q
 Ref: 3.7
-D: 3
+D: 2
 HT: yes
 
 Q: Water is added to a solution of an acid. What happens to its concentration?
 A: Decreases
 Accept: Becomes more dilute; goes down; falls
 Ref: 3.7
-D: 3
+D: 1
 HT: yes
 
 Q: What is a strong acid, in terms of ions?
 A: Acid fully dissociated into ions in solution
 Accept: Completely ionised in water; fully dissociates
 Ref: 3.8
-D: 3
+D: 2
 HT: yes
 
 Q: What is a weak acid, in terms of ions?
 A: Acid only partially dissociated into ions
 Accept: Partly ionised in water; partially dissociates
 Ref: 3.8
-D: 3
+D: 2
 HT: yes
 
 Q: Ethanoic acid and hydrochloric acid have the same concentration. Which has the higher pH?
@@ -240,7 +241,7 @@ Q: Which acid would you react with potassium hydroxide to make potassium sulfate
 A: Sulfuric acid
 Accept: H₂SO₄
 Ref: 3.11
-D: 3
+D: 2
 
 Q: Describe the test for hydrogen and its positive result.
 A: Lighted splint gives a squeaky pop
@@ -538,6 +539,7 @@ A: 2:1
 Accept: 2 to 1; twice as much hydrogen
 Ref: 3.25
 D: 3
+Note: 2:1 is the theoretical ratio; measured oxygen is often a little low because some dissolves.
 
 Q: Molten lead bromide is electrolysed. What forms at the cathode?
 A: Lead
@@ -561,13 +563,13 @@ Q: Molten sodium chloride is electrolysed. Name the products at the cathode and 
 A: Sodium at cathode, chlorine at anode
 Accept: Sodium and chlorine
 Ref: 3.26
-D: 3
+D: 2
 
 Q: Complete the cathode half equation: Cu²⁺ + 2e⁻ → ?
 A: Cu
 Accept: Copper
 Ref: 3.27
-D: 3
+D: 2
 HT: yes
 
 Q: Write the half equation for chloride ions forming chlorine at the anode.
@@ -588,34 +590,34 @@ Q: What is reduction in terms of electrons?
 A: Gain of electrons
 Accept: Gaining electrons
 Ref: 3.28
-D: 3
+D: 2
 HT: yes
 
 Q: What is oxidation in terms of electrons?
 A: Loss of electrons
 Accept: Losing electrons
 Ref: 3.28
-D: 3
+D: 2
 HT: yes
 Note: OIL RIG: oxidation is loss, reduction is gain.
 
 Q: Bromide ions lose electrons to form bromine at the anode. Is this oxidation or reduction?
 A: Oxidation
 Ref: 3.28
-D: 3
+D: 2
 HT: yes
 
 Q: At which electrode does reduction take place during electrolysis?
 A: Cathode
 Accept: Negative electrode
 Ref: 3.29
-D: 3
+D: 1
 HT: yes
 
 Q: Which process, oxidation or reduction, happens at the anode in electrolysis?
 A: Oxidation
 Ref: 3.29
-D: 3
+D: 1
 HT: yes
 
 Q: Why does reduction happen at the cathode in electrolysis?
@@ -635,7 +637,7 @@ Q: In the purification of copper by electrolysis, which electrode is made of imp
 A: Anode
 Accept: Positive electrode
 Ref: 3.30
-D: 2
+D: 1
 
 Q: What happens to the impurities from the impure copper anode during purification?
 A: Fall to the bottom as sludge
@@ -671,8 +673,8 @@ RP: 3.31
 D: 2
 
 Q: Why are the copper electrodes washed and dried before they are reweighed?
-A: Water left on would add to the mass
-Accept: So only the mass of copper is measured; remove solution
+A: Leftover solution or water would add mass
+Accept: So only the mass of copper is measured; remove solution; water left on adds mass
 Ref: 3.31
 RP: 3.31
 D: 3

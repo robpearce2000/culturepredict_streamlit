@@ -16,7 +16,7 @@ Accept: A census
 Ref: S1
 D: 1
 
-Q: In a sample of 25 pupils, 4 own a rabbit. Estimate how many of the school's 500 pupils own a rabbit.
+Q: Of 25 pupils sampled, 4 own a rabbit. Use this to estimate the number of rabbit owners among 500 pupils.
 A: 80
 Accept: 80 pupils
 Ref: S1
@@ -28,12 +28,11 @@ Accept: One fifth; 0.2; 20%
 Ref: S1
 D: 2
 
-Q: In a sample of 30 apples, 3 are bruised. Estimate how many apples are bruised in a crate of 450.
-A: 45
-Accept: 45 apples
+Q: What name is given to the smaller group chosen from a population so that data can be collected from it?
+A: Sample
+Accept: A sample
 Ref: S1
-D: 2
-Note: 3 out of 30 is one tenth, and one tenth of 450 is 45.
+D: 1
 
 Q: Why is asking only 5 people unlikely to give a good estimate for a whole town?
 A: Sample is too small
@@ -41,9 +40,9 @@ Accept: Too small a sample; Sample size too small; Not enough people asked
 Ref: S1
 D: 3
 
-Q: A sample of 50 voters gives 30% for a party; a sample of 500 voters gives 26%. Which estimate is more reliable?
-A: 26%
-Accept: 26; The sample of 500; The larger sample
+Q: A sample of 50 voters gives 30% for a party; a sample of 500 voters gives 26%. Which sample gives the more reliable estimate?
+A: Larger sample
+Accept: The sample of 500; 500 voters; 26%
 Ref: S1
 D: 3
 Note: The larger sample gives the more reliable estimate.
@@ -53,6 +52,18 @@ Note: The larger sample gives the more reliable estimate.
 Q: Name the chart that shows data using symbols, where each symbol stands for a fixed number of items.
 A: Pictogram
 Accept: Pictograph
+Ref: S2
+D: 1
+
+Q: Name the chart for categorical data that uses separate bars of equal width, with heights showing frequency.
+A: Bar chart
+Accept: Bar graph; Bar diagram
+Ref: S2
+D: 1
+
+Q: What name is given to a set of data values recorded at regular intervals over time, such as monthly sales?
+A: Time series
+Accept: Time series data
 Ref: S2
 D: 1
 
@@ -114,6 +125,13 @@ Ref: S3
 D: 2
 HT: yes
 
+Q: Name the graph that plots running totals of frequency against the upper class boundaries.
+A: Cumulative frequency graph
+Accept: Cumulative frequency curve; Cumulative frequency diagram; Cumulative frequency polygon
+Ref: S3
+D: 1
+HT: yes
+
 Q: A cumulative frequency graph shows 80 values. At what cumulative frequency do you read off the median?
 A: 40
 Accept: 40.5
@@ -149,8 +167,8 @@ HT: yes
 Note: 10 × 2 = 20 and 20 × 1.5 = 30.
 
 Q: Why does a histogram with unequal class widths use frequency density rather than frequency on the vertical axis?
-A: So bar area represents frequency
-Accept: Wide classes would look too big; Area must be proportional to frequency
+A: Area represents frequency
+Accept: So bar area represents frequency; Area must be proportional to frequency; Wide classes would look too big
 Ref: S3
 D: 3
 HT: yes
@@ -184,7 +202,7 @@ Q: When comparing two distributions, you compare an average and what other featu
 A: Spread
 Accept: Range; Consistency; Interquartile range
 Ref: S4
-D: 2
+D: 1
 
 Q: The mean of 4 numbers is 6. The number 11 is added to the list. What is the new mean?
 A: 7
@@ -225,10 +243,10 @@ D: 2
 HT: yes
 
 Q: What fraction of a data set lies between the lower quartile and the upper quartile?
-A: 1/2
-Accept: Half; 0.5; 50%
+A: Half
+Accept: 1/2; 0.5; 50%
 Ref: S4
-D: 2
+D: 1
 HT: yes
 
 Q: Why is the interquartile range a better measure of spread than the range when there is an outlier?
@@ -250,7 +268,7 @@ Q: Which is the only average that can be found for categorical data such as favo
 A: Mode
 Accept: The mode
 Ref: S5
-D: 2
+D: 1
 
 Q: In a survey of 80 people, 3/8 prefer rugby. How many people prefer rugby?
 A: 30
@@ -292,6 +310,12 @@ Accept: Scatter diagram; Scatter plot; Scattergram
 Ref: S6
 D: 1
 
+Q: The longer a phone is used, the lower its remaining battery charge. What type of correlation is this?
+A: Negative
+Accept: Negative correlation
+Ref: S6
+D: 1
+
 Q: The points on a scatter graph show no pattern at all. What type of correlation is this?
 A: No correlation
 Accept: None; Zero correlation
@@ -316,15 +340,21 @@ Accept: y = 40
 Ref: S6
 D: 2
 
-Q: Countries with more televisions per person have longer life expectancy. Does buying more televisions make people live longer? State what correlation does not show.
+Q: Countries with more televisions per person have longer life expectancy. Name what this correlation does not show: that one variable changes the other.
 A: Causation
-Accept: Cause; That one causes the other
+Accept: Cause; Cause and effect; That one causes the other
 Ref: S6
-D: 3
+D: 2
 Note: Both are linked to a third factor, such as wealth.
 
 Q: A line of best fit for children aged 5 to 15 relates age and height. Why is it unreliable for predicting height at age 40?
-A: Growth stops; trend does not continue
-Accept: Extrapolation; Outside the range of the data; Adults stop growing
+A: People stop growing
+Accept: Adults stop growing; Trend does not continue; Extrapolation; Outside the range of the data
 Ref: S6
 D: 3
+
+Q: A scatter graph has data for ages 20 to 60. Estimating a value for age 35 from the line of best fit is called what?
+A: Interpolation
+Accept: Interpolating
+Ref: S6
+D: 2

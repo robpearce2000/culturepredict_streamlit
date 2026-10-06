@@ -2,18 +2,17 @@ Board: Edexcel
 Spec: 1CH0
 Topic: 5
 
-Q: Most metals belong to which group of metals in the periodic table?
+Q: Iron, copper and most other metals are what type of metal?
 A: Transition metals
 Accept: Transition elements; d-block metals
 Ref: 5.1C
 D: 1
 
-Q: Give two typical physical properties of transition metals such as iron.
-A: High melting point and high density
-Accept: High density and high melting point
+Q: Iron has a high melting point. Which other typical transition metal property describes its large mass per cm³?
+A: High density
+Accept: Dense; density
 Ref: 5.1C
-D: 2
-Note: Hard or strong are also fair physical properties; the spec lists melting point and density.
+D: 1
 
 Q: Iron is used to speed up the Haber process. What property of transition metals does this show?
 A: Catalytic activity
@@ -120,7 +119,7 @@ D: 1
 
 Q: Why is iron alloyed with other metals to make alloy steels?
 A: To make it harder, stronger and corrosion resistant
-Accept: Stronger; harder; resists rusting; properties for specific uses
+Accept: Stronger; harder; resists rusting; pure iron is too soft; properties for specific uses
 Ref: 5.6C
 D: 3
 
@@ -230,7 +229,7 @@ Ref: 5.9C
 RP: 5.9C
 D: 1
 
-Q: How many moles of HCl are in 20.0 cm³ of 0.10 mol dm⁻³ hydrochloric acid?
+Q: A titre is 20.0 cm³ of 0.10 mol dm⁻³ hydrochloric acid. How many moles of HCl were added?
 A: 0.0020 mol
 Accept: 0.002 mol; 0.002; 2 × 10⁻³ mol
 Ref: 5.10C
@@ -302,7 +301,8 @@ D: 3
 
 Q: What is the formula for atom economy?
 A: Desired product Mr ÷ total reactant Mr × 100
-Accept: Mass of useful product ÷ total mass of reactants × 100
+Accept: Mass of useful product ÷ total mass of reactants × 100; desired product Mr ÷ total product Mr × 100
+Note: Each Mr is multiplied by its number in the balanced equation.
 Ref: 5.13C
 D: 2
 
@@ -371,10 +371,18 @@ Ref: 5.16C
 D: 1
 HT: yes
 
+Q: Why do 1 mol of hydrogen and 1 mol of carbon dioxide occupy the same volume at room temperature and pressure?
+A: Same number of molecules
+Accept: Both contain the same number of molecules; equal numbers of molecules; molar volume is the same for any gas
+Ref: 5.16C
+D: 3
+HT: yes
+Note: Molar volume does not depend on which gas it is, only on temperature and pressure.
+
 Q: What volume does 0.5 mol of carbon dioxide occupy at room temperature and pressure? (Molar volume 24 dm³)
 A: 12 dm³
 Accept: 12000 cm³; 12 litres
-Ref: 5.16C
+Ref: 5.17C
 D: 2
 HT: yes
 
@@ -414,14 +422,14 @@ Ref: 5.18C
 D: 1
 HT: yes
 
-Q: Use N₂ + 3H₂ → 2NH₃. What volume of ammonia forms from 30 cm³ of hydrogen?
+Q: Use N₂ + 3H₂ → 2NH₃. If 30 cm³ of hydrogen reacts completely, what volume of ammonia forms at the same conditions?
 A: 20 cm³
 Accept: 20
 Ref: 5.18C
 D: 3
 HT: yes
 
-Q: Use CH₄ + 2O₂ → CO₂ + 2H₂O. What volume of oxygen burns 10 cm³ of methane?
+Q: Use CH₄ + 2O₂ → CO₂ + 2H₂O. What volume of oxygen is needed to burn 10 cm³ of methane completely (same conditions)?
 A: 20 cm³
 Accept: 20
 Ref: 5.18C
@@ -535,7 +543,7 @@ D: 2
 
 Q: Why is ammonium nitrate a particularly good nitrogen fertiliser?
 A: Both its ions contain nitrogen
-Accept: Ammonium and nitrate both contain nitrogen; high nitrogen content
+Accept: Ammonium and nitrate both contain nitrogen; high nitrogen content; high percentage of nitrogen
 Ref: 5.23C
 D: 3
 
@@ -557,11 +565,12 @@ Accept: Crystallization; evaporate then crystallise
 Ref: 5.24C
 D: 2
 
-Q: Industrial production of ammonium sulfate is a continuous process. What type of process is the lab preparation?
-A: Batch process
-Accept: Batch
+Q: Why does industrial production of ammonium sulfate need several stages but the lab method does not?
+A: Ammonia and sulfuric acid must first be made
+Accept: Reactants are made from raw materials first; lab buys ready-made ammonia and acid
 Ref: 5.24C
 D: 3
+Note: Industry is also much larger scale and usually continuous; the lab is small-scale batch.
 
 Q: A chemical cell produces a voltage until what happens?
 A: One of the reactants is used up
@@ -569,11 +578,11 @@ Accept: A reactant runs out; reactants are used up
 Ref: 5.25C
 D: 1
 
-Q: What does a chemical cell produce until one of its reactants is used up?
-A: Voltage
-Accept: Potential difference; electricity; electric current
+Q: Two chemical cells are identical except one holds twice as much of each reactant. Which keeps producing a voltage for longer?
+A: The cell with more reactants
+Accept: The one with twice the reactants; the bigger cell
 Ref: 5.25C
-D: 1
+D: 3
 
 Q: Why does a fuel cell keep producing a voltage while a chemical cell eventually goes flat?
 A: Fuel cell reactants are supplied continuously

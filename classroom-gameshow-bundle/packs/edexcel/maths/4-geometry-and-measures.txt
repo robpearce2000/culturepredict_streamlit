@@ -24,7 +24,7 @@ Q: Triangle ABC has AB = AC and angle BAC = 90°. What type of triangle is it?
 A: Right-angled isosceles
 Accept: Isosceles right-angled; Right isosceles
 Ref: G1
-D: 3
+D: 2
 Note: Both words are needed; a sketch from the description helps.
 
 Q: What is the locus of points that are the same distance from two fixed points A and B?
@@ -66,12 +66,12 @@ Accept: x = 36; 36°
 Ref: G3
 D: 2
 
-Q: Each interior angle of a regular polygon is 150°. How many sides does it have?
-A: 12
-Accept: Twelve
+Q: Each interior angle of a regular polygon is 108°. Name the polygon.
+A: Pentagon
+Accept: Regular pentagon; 5-sided polygon
 Ref: G3
 D: 3
-Note: Exterior angle 30°, and 360 ÷ 30 = 12.
+Note: Exterior angle 72°, and 360 ÷ 72 = 5.
 
 Q: Name the quadrilateral with four equal sides whose angles are not all right angles.
 A: Rhombus
@@ -128,7 +128,7 @@ D: 2
 
 Q: A line through one vertex of a triangle is drawn parallel to the opposite side. Which two angle facts then prove the angle sum is 180°?
 A: Alternate angles and angles on a straight line
-Accept: Alternate angles; angles on a line add to 180°
+Accept: Alternate angles and angles on a line; Alternate angles and angles on a straight line add to 180°
 Ref: G6
 D: 3
 
@@ -247,9 +247,9 @@ A: (7, 10)
 Ref: G11
 D: 3
 
-Q: A triangle has vertices (0, 0), (4, 0) and (4, 3). What type of triangle is it?
+Q: A triangle has vertices (0, 0), (4, 0) and (4, 3). Classified by its angles, what type of triangle is it?
 A: Right-angled
-Accept: Right-angled scalene; Right-angled triangle
+Accept: Right-angled scalene; Right-angled triangle; Right
 Ref: G11
 D: 2
 
@@ -303,7 +303,7 @@ Q: How many minutes are there in 3.5 hours?
 A: 210
 Accept: 210 minutes
 Ref: G14
-D: 1
+D: 2
 
 Q: How many litres of water fill a tank with a volume of 1 m³?
 A: 1000 litres
@@ -381,7 +381,7 @@ Q: Use volume of a cone = ⅓πr²h. What is the volume of a cone with radius 3 
 A: 12π cm³
 Accept: 12π
 Ref: G17
-D: 3
+D: 2
 
 Q: What is the perimeter of a quarter circle of radius 6 cm, in terms of π?
 A: 3π + 12 cm
@@ -526,7 +526,7 @@ Q: In Area = ½ab sin C, what is angle C called in relation to sides a and b?
 A: Included angle
 Accept: The angle between a and b; Angle between them
 Ref: G23
-D: 2
+D: 1
 HT: yes
 
 Q: Use Area = ½ab sin C. Two sides are 12 cm and 5 cm with 30° between them. What is the area?
@@ -567,7 +567,7 @@ Q: A translation maps the point (2, 3) to (−1, 7). What is the column vector o
 A: (−3 over 4)
 Accept: (−3, 4); (-3 over 4); (-3, 4)
 Ref: G24
-D: 3
+D: 2
 
 Q: What name is given to a number that multiplies a vector?
 A: Scalar
@@ -576,7 +576,7 @@ D: 1
 
 Q: What word describes the vectors a and 2a in relation to each other?
 A: Parallel
-Accept: Parallel, same direction
+Accept: Parallel, same direction; Scalar multiples; Multiples
 Ref: G25
 D: 2
 
