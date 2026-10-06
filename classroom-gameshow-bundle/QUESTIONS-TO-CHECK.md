@@ -30,6 +30,11 @@ Specification issue: the Edexcel specifications were read from the Internet Arch
 Pearson's PDFs (Pearson's site could not be reached from the build environment). Please confirm on
 qualifications.pearson.com that Biology, Chemistry and Physics are still Issue 4 (March 2024).
 
+## Pearson Edexcel Chemistry (1CH0)
+
+None: the checkers settled every one of the writers' doubts across the nine packs. Bond energies in
+the 7.14 questions are rounded values given in each question, for mental arithmetic, not data-book values.
+
 ## AQA Maths (8300)
 
 - 3.5 Probability, aqa-maths-3.5-024 and the A ∩ B / A ∪ B listing questions next to it: "In set

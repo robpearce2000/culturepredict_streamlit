@@ -8,6 +8,7 @@ Accept: CO2
 Ref: 7.1
 RP: 7.1
 D: 1
+Id: edexcel-chem-7-001
 
 Q: Name the piece of apparatus used to collect and measure the volume of gas given off by marble chips and acid.
 A: Gas syringe
@@ -15,6 +16,7 @@ Accept: Upturned measuring cylinder; inverted burette; measuring cylinder over w
 Ref: 7.1
 RP: 7.1
 D: 1
+Id: edexcel-chem-7-002
 
 Q: Marble chips and acid give off 60 cm³ of gas in 30 s. What is the mean rate of gas production?
 A: 2 cm³/s
@@ -22,6 +24,7 @@ Accept: 2 cm³ s⁻¹; 2 cm3/s
 Ref: 7.1
 RP: 7.1
 D: 2
+Id: edexcel-chem-7-003
 
 Q: Which solid forms when sodium thiosulfate reacts with hydrochloric acid, making the solution go cloudy?
 A: Sulfur
@@ -29,6 +32,7 @@ Accept: S; sulfur precipitate
 Ref: 7.1
 RP: 7.1
 D: 1
+Id: edexcel-chem-7-004
 
 Q: In the sodium thiosulfate and acid reaction, the timer is stopped when what happens?
 A: The cross can no longer be seen
@@ -36,6 +40,7 @@ Accept: Cross disappears; cross is hidden; cross vanishes
 Ref: 7.1
 RP: 7.1
 D: 2
+Id: edexcel-chem-7-005
 
 Q: In the disappearing cross experiment the cross vanishes after 50 s. What is the relative rate, 1/time?
 A: 0.02 s⁻¹
@@ -43,6 +48,7 @@ Accept: 0.02 /s; 0.02; 1/50 s⁻¹
 Ref: 7.1
 RP: 7.1
 D: 2
+Id: edexcel-chem-7-006
 
 Q: Which toxic gas given off by sodium thiosulfate and hydrochloric acid means the room must be well ventilated?
 A: Sulfur dioxide
@@ -51,60 +57,70 @@ Ref: 7.1
 RP: 7.1
 D: 2
 Note: Asthmatic students are especially at risk.
+Id: edexcel-chem-7-007
 
 Q: Marble chips react with acid in an open flask on a balance. Why does the reading fall?
 A: Carbon dioxide gas escapes
 Accept: Gas is lost to the air; CO2 leaves the flask
 Ref: 7.2
 D: 2
+Id: edexcel-chem-7-008
 
 Q: Suggest a method for following the rate of magnesium reacting with acid to give hydrogen.
 A: Measure gas volume with a gas syringe
 Accept: Collect hydrogen in a gas syringe over time; measure volume of gas over time; upturned measuring cylinder over water; time how long the magnesium takes to disappear
 Ref: 7.2
 D: 2
+Id: edexcel-chem-7-009
 
 Q: Why is a mass-loss method poor for following a reaction that gives off hydrogen?
 A: Mass change is too small
 Accept: Hydrogen is very light; hydrogen has a very low mass; mass change too small to measure
 Ref: 7.2
 D: 3
+Id: edexcel-chem-7-010
 
 Q: What must reacting particles do before they can react?
 A: Collide
 Accept: Collide with enough energy; bump into each other
 Ref: 7.3
 D: 1
+Id: edexcel-chem-7-011
 
 Q: State the two features of collisions which, if increased, raise the rate of reaction.
 A: Frequency and energy of collisions
 Accept: How often and how hard particles collide; frequency and energy
 Ref: 7.3
 D: 2
+Id: edexcel-chem-7-012
 
 Q: Why do most collisions between reactant particles not lead to a reaction?
 A: Not enough energy
 Accept: Energy less than the activation energy; too little energy
 Ref: 7.3
 D: 3
+Id: edexcel-chem-7-013
 
 Q: Which change in conditions raises both the frequency and the energy of collisions?
 A: Increasing temperature
 Accept: Temperature; heating; higher temperature
 Ref: 7.4
 D: 2
+Id: edexcel-chem-7-014
 
 Q: Why does powdered marble react faster than large chips of the same mass?
 A: Larger surface area to volume ratio
 Accept: Bigger surface area; more surface exposed so more frequent collisions
 Ref: 7.4
 D: 2
+Id: edexcel-chem-7-015
 
 Q: Explain, in terms of particles, why a more concentrated acid reacts faster.
 A: More particles in same volume, more frequent collisions
 Accept: More frequent collisions; particles closer together so collide more often
 Ref: 7.4
 D: 3
+Id: edexcel-chem-7-016
 
 Q: Explain why raising the temperature increases the rate of reaction.
 A: More frequent collisions and more with enough energy
@@ -112,36 +128,42 @@ Accept: Particles move faster, collide more often and more energetically
 Ref: 7.4
 D: 3
 Note: Both frequency and energy are needed for full credit.
+Id: edexcel-chem-7-017
 
 Q: For a reaction between gases, which change in conditions puts more particles into the same volume?
 A: Increasing pressure
 Accept: Higher pressure; pressure
 Ref: 7.4
 D: 2
+Id: edexcel-chem-7-018
 
 Q: What does the gradient of a graph of volume of gas against time show?
 A: Rate of reaction
 Accept: Rate; reaction rate
 Ref: 7.5
 D: 1
+Id: edexcel-chem-7-019
 
 Q: On a graph of volume of gas against time, when is the rate of reaction fastest?
 A: At the start
 Accept: Beginning; where the line is steepest; time zero
 Ref: 7.5
 D: 2
+Id: edexcel-chem-7-020
 
 Q: Why does a graph of volume of gas against time eventually become horizontal?
 A: A reactant has been used up
 Accept: Reaction has stopped; limiting reactant used up
 Ref: 7.5
 D: 2
+Id: edexcel-chem-7-021
 
 Q: A tangent to a volume–time curve rises 30 cm³ over 10 s. What is the rate at that point?
 A: 3 cm³/s
 Accept: 3 cm³ s⁻¹; 3 cm3/s
 Ref: 7.5
 D: 2
+Id: edexcel-chem-7-022
 
 Q: A gas-producing reaction is repeated at a higher temperature with the same amounts of reactants. How does the final volume of gas compare?
 A: The same
@@ -149,41 +171,48 @@ Accept: Same volume; no change; unchanged
 Ref: 7.5
 D: 3
 Note: The line is steeper but levels off at the same height.
+Id: edexcel-chem-7-023
 
 Q: What term describes a substance that speeds up a reaction without being used up?
 A: Catalyst
 Ref: 7.6
 D: 1
+Id: edexcel-chem-7-024
 
 Q: How does the mass of a catalyst at the end of a reaction compare with its mass at the start?
 A: The same
 Accept: Unchanged; equal; no change
 Ref: 7.6
 D: 1
+Id: edexcel-chem-7-025
 
 Q: Name the black powder commonly used to catalyse the decomposition of hydrogen peroxide.
 A: Manganese(IV) oxide
 Accept: Manganese dioxide; MnO2
 Ref: 7.6
 D: 2
+Id: edexcel-chem-7-026
 
 Q: How do the products of a catalysed reaction compare with those of the same uncatalysed reaction?
 A: The same products
 Accept: Same; unchanged; identical
 Ref: 7.6
 D: 2
+Id: edexcel-chem-7-027
 
 Q: What effect does a catalyst have on the activation energy of a reaction?
 A: Decreases it
 Accept: Lowers it; reduces it
 Ref: 7.7
 D: 1
+Id: edexcel-chem-7-028
 
 Q: How does a catalyst increase the rate of a reaction?
 A: Alternative pathway with lower activation energy
 Accept: Provides a route with lower activation energy; lowers the activation energy
 Ref: 7.7
 D: 2
+Id: edexcel-chem-7-029
 
 Q: Explain why lowering the activation energy increases the rate of reaction.
 A: More collisions have enough energy to react
@@ -191,126 +220,148 @@ Accept: More successful collisions; more particles have at least the activation 
 Ref: 7.7
 D: 3
 Note: The collision frequency itself is unchanged by a catalyst.
+Id: edexcel-chem-7-030
 
 Q: What name is given to biological catalysts?
 A: Enzymes
 Accept: Enzyme
 Ref: 7.8
 D: 1
+Id: edexcel-chem-7-031
 
 Q: Enzymes ferment sugars into ethanol in the production of which type of drinks?
 A: Alcoholic drinks
 Accept: Alcohol; beer; wine
 Ref: 7.8
 D: 1
+Id: edexcel-chem-7-032
 
 Q: Enzymes from which single-celled fungus are used to make alcoholic drinks?
 A: Yeast
 Ref: 7.8
 D: 2
+Id: edexcel-chem-7-033
 
 Q: Name the instrument used to measure the temperature change when a salt dissolves in water.
 A: Thermometer
 Accept: Temperature probe; temperature sensor
 Ref: 7.9
 D: 1
+Id: edexcel-chem-7-034
 
 Q: Why is a polystyrene cup used when measuring the temperature change of a reaction in solution?
 A: Insulates to reduce heat loss
 Accept: Reduces heat transfer to surroundings; good insulator
 Ref: 7.9
 D: 2
+Id: edexcel-chem-7-035
 
 Q: What happens to the temperature when hydrochloric acid neutralises sodium hydroxide solution?
 A: Increases
 Accept: Rises; goes up
 Ref: 7.9
 D: 1
+Id: edexcel-chem-7-036
 
 Q: What happens to the temperature of the water when ammonium nitrate dissolves in it?
 A: Decreases
 Accept: Falls; goes down
 Ref: 7.9
 D: 2
+Id: edexcel-chem-7-037
 
 Q: Zinc is added to copper sulfate solution and copper metal forms. What type of reaction is this?
 A: Displacement
 Accept: Displacement reaction; redox
 Ref: 7.9
 D: 2
+Id: edexcel-chem-7-038
 
 Q: What is an exothermic reaction?
 A: Heat energy is given out
 Accept: Releases heat energy to surroundings; gives out heat
 Ref: 7.10
 D: 2
+Id: edexcel-chem-7-039
 
 Q: Is combustion exothermic or endothermic?
 A: Exothermic
 Ref: 7.10
 D: 1
+Id: edexcel-chem-7-040
 
 Q: What happens to the temperature of the surroundings during an exothermic reaction?
 A: Increases
 Accept: Rises; goes up; gets hotter
 Ref: 7.10
 D: 2
+Id: edexcel-chem-7-041
 
 Q: What is an endothermic reaction?
 A: Heat energy is taken in
 Accept: Absorbs heat energy from surroundings; takes in heat
 Ref: 7.11
 D: 2
+Id: edexcel-chem-7-042
 
 Q: The temperature of a solution falls during a reaction. Is the reaction exothermic or endothermic?
 A: Endothermic
 Ref: 7.11
 D: 2
+Id: edexcel-chem-7-043
 
 Q: Is the thermal decomposition of calcium carbonate exothermic or endothermic?
 A: Endothermic
 Ref: 7.11
 D: 2
 Note: Continuous heating is needed to keep it going.
+Id: edexcel-chem-7-044
 
 Q: Why do instant cold packs for sports injuries use an endothermic change?
 A: Takes in heat from the surroundings
 Accept: Absorbs heat from the injury; heat taken in so skin cools
 Ref: 7.11
 D: 3
+Id: edexcel-chem-7-045
 
 Q: Is breaking chemical bonds exothermic or endothermic?
 A: Endothermic
 Ref: 7.12
 D: 1
+Id: edexcel-chem-7-046
 
 Q: Is making chemical bonds exothermic or endothermic?
 A: Exothermic
 Ref: 7.12
 D: 1
+Id: edexcel-chem-7-047
 
 Q: Why is bond breaking endothermic?
 A: Energy is needed to overcome the attraction
 Accept: Energy must be supplied to separate atoms; needs energy
 Ref: 7.12
 D: 3
+Id: edexcel-chem-7-048
 
 Q: In a reaction, more energy is released forming bonds than is needed to break bonds. What type is it?
 A: Exothermic
 Ref: 7.13
 D: 2
+Id: edexcel-chem-7-049
 
 Q: Explain, in terms of bonds, why a reaction is endothermic.
 A: Breaking bonds needs more energy than making releases
 Accept: Less energy released forming bonds than needed breaking bonds
 Ref: 7.13
 D: 3
+Id: edexcel-chem-7-050
 
 Q: A reaction has an energy change of +120 kJ mol⁻¹. Is it exothermic or endothermic?
 A: Endothermic
 Ref: 7.13
 D: 2
 Note: A positive sign means energy is taken in overall.
+Id: edexcel-chem-7-051
 
 Q: Breaking bonds needs 2000 kJ mol⁻¹ and making bonds releases 2500 kJ mol⁻¹. What is the energy change?
 A: −500 kJ mol⁻¹
@@ -318,6 +369,7 @@ Accept: -500 kJ/mol; −500 kJ mol-1; 500 kJ/mol released
 Ref: 7.14
 HT: yes
 D: 2
+Id: edexcel-chem-7-052
 
 Q: Breaking bonds needs 800 kJ mol⁻¹ and making bonds releases 600 kJ mol⁻¹. What is the energy change?
 A: +200 kJ mol⁻¹
@@ -325,6 +377,7 @@ Accept: +200 kJ/mol; 200 kJ/mol; 200 kJ/mol taken in
 Ref: 7.14
 HT: yes
 D: 2
+Id: edexcel-chem-7-053
 
 Q: H₂ + Cl₂ → 2HCl. Bond energies: H–H 440, Cl–Cl 240, H–Cl 430 kJ mol⁻¹. What is the energy change?
 A: −180 kJ mol⁻¹
@@ -333,6 +386,7 @@ Ref: 7.14
 HT: yes
 D: 3
 Note: Two H–Cl bonds are made: 680 broken − 860 made.
+Id: edexcel-chem-7-054
 
 Q: H₂ + Br₂ → 2HBr. Bond energies: H–H 440, Br–Br 190, H–Br 370 kJ mol⁻¹. What is the energy change?
 A: −110 kJ mol⁻¹
@@ -340,18 +394,21 @@ Accept: -110 kJ/mol; −110 kJ mol-1; 110 kJ/mol released
 Ref: 7.14
 HT: yes
 D: 3
+Id: edexcel-chem-7-055
 
 Q: What is the minimum energy colliding particles need in order to react?
 A: Activation energy
 Accept: Ea
 Ref: 7.15
 D: 1
+Id: edexcel-chem-7-056
 
 Q: A methane and air mixture does not burn until a spark is applied. What does the spark provide?
 A: Activation energy
 Accept: Energy to break bonds and start the reaction
 Ref: 7.15
 D: 3
+Id: edexcel-chem-7-057
 
 Q: Reaction X has a much higher activation energy than reaction Y. Under the same conditions, how does the rate of X compare?
 A: Slower
@@ -359,24 +416,28 @@ Accept: X is slower; lower rate; slower than Y
 Ref: 7.15
 D: 3
 Note: Fewer collisions have at least the activation energy.
+Id: edexcel-chem-7-058
 
 Q: On a reaction profile for an exothermic reaction, are the products higher or lower than the reactants?
 A: Lower
 Accept: Below the reactants; lower energy
 Ref: 7.16
 D: 1
+Id: edexcel-chem-7-059
 
 Q: What label goes on the horizontal axis of a reaction profile?
 A: Progress of reaction
 Accept: Reaction progress; course of reaction; reaction pathway
 Ref: 7.16
 D: 1
+Id: edexcel-chem-7-060
 
 Q: On a reaction profile, activation energy is measured from the reactants up to which point?
 A: Peak of the curve
 Accept: Top of the hump; highest point; maximum
 Ref: 7.16
 D: 2
+Id: edexcel-chem-7-061
 
 Q: A profile has reactants at 100, peak at 250 and products at 40 kJ mol⁻¹. What is the activation energy?
 A: 150 kJ mol⁻¹
@@ -384,3 +445,4 @@ Accept: 150 kJ/mol; 150
 Ref: 7.16
 D: 3
 Note: Measure from reactants to peak, not from products.
+Id: edexcel-chem-7-062

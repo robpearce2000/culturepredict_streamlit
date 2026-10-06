@@ -7,54 +7,63 @@ A: Group 1
 Accept: 1; Group one
 Ref: 6.1
 D: 1
+Id: edexcel-chem-6-001
 
 Q: What is the family name for the elements in group 7?
 A: Halogens
 Accept: The halogens
 Ref: 6.1
 D: 1
+Id: edexcel-chem-6-002
 
 Q: In terms of electrons, why are lithium, sodium and potassium all placed in group 1?
 A: One electron in their outer shell
 Accept: One outer electron; one electron in the outer shell
 Ref: 6.1
 D: 2
+Id: edexcel-chem-6-003
 
 Q: Alkali metals can be cut with a knife. Which physical property does this show?
 A: Soft
 Accept: Softness; they are soft
 Ref: 6.2
 D: 1
+Id: edexcel-chem-6-004
 
 Q: Compared with most other metals, are the melting points of the alkali metals high or low?
 A: Low
 Accept: Relatively low
 Ref: 6.2
 D: 1
+Id: edexcel-chem-6-005
 
 Q: Name the family of soft metals with relatively low melting points that react with water to give hydrogen.
 A: Alkali metals
 Accept: Group 1 metals; group 1
 Ref: 6.2
 D: 2
+Id: edexcel-chem-6-006
 
 Q: Name the gas given off when sodium reacts with water.
 A: Hydrogen
 Accept: H₂; H2
 Ref: 6.3
 D: 1
+Id: edexcel-chem-6-007
 
 Q: Name the compound left in solution after potassium reacts with water.
 A: Potassium hydroxide
 Accept: KOH
 Ref: 6.3
 D: 1
+Id: edexcel-chem-6-008
 
 Q: What colour flame is seen when potassium reacts with water?
 A: Lilac
 Accept: Purple; lilac-purple
 Ref: 6.3
 D: 1
+Id: edexcel-chem-6-009
 
 Q: Describe what a small piece of sodium does on the surface of water.
 A: Melts into a ball, fizzes and moves around
@@ -62,65 +71,76 @@ Accept: Fizzes and darts around; floats, melts and fizzes
 Ref: 6.3
 D: 2
 Note: Accept any two of: floats, melts into a ball, fizzes, moves around.
+Id: edexcel-chem-6-010
 
 Q: Write the word equation for the reaction of lithium with water.
 A: Lithium + water → lithium hydroxide + hydrogen
 Ref: 6.3
 D: 2
+Id: edexcel-chem-6-011
 
 Q: Of lithium, sodium and potassium, which reacts most vigorously with water?
 A: Potassium
 Accept: K
 Ref: 6.4
 D: 1
+Id: edexcel-chem-6-012
 
 Q: How does the reactivity of the alkali metals with water change going down group 1?
 A: Increases
 Accept: It increases; more reactive
 Ref: 6.4
 D: 1
+Id: edexcel-chem-6-013
 
 Q: Rubidium is below potassium in group 1. Predict how its reaction with water compares with potassium's.
 A: More vigorous
 Accept: More reactive; faster; more violent
 Ref: 6.4
 D: 2
+Id: edexcel-chem-6-014
 
 Q: Put caesium, lithium and sodium in order of reactivity with water, least reactive first.
 A: Lithium, sodium, caesium
 Accept: Li, Na, Cs
 Ref: 6.4
 D: 2
+Id: edexcel-chem-6-015
 
 Q: In terms of electrons, why does potassium react more vigorously than sodium?
 A: Outer electron further from nucleus, more easily lost
 Accept: Outer electron less strongly attracted, so lost more easily; outer electron further from nucleus so lost more easily
 Ref: 6.5
 D: 3
+Id: edexcel-chem-6-016
 
 Q: Going down group 1, does the attraction between the nucleus and the outer electron increase or decrease?
 A: Decreases
 Accept: Decrease; gets weaker
 Ref: 6.5
 D: 2
+Id: edexcel-chem-6-017
 
 Q: When an alkali metal atom reacts, which of its electrons does it lose?
 A: Outer electron
 Accept: The outer-shell electron; the single outer electron; one outer electron
 Ref: 6.5
 D: 1
+Id: edexcel-chem-6-018
 
 Q: Describe the colour and physical state of chlorine at room temperature.
 A: Pale green gas
 Accept: Green gas; yellow-green gas
 Ref: 6.6
 D: 1
+Id: edexcel-chem-6-019
 
 Q: Which halogen is a red-brown liquid at room temperature?
 A: Bromine
 Accept: Br₂; Br2
 Ref: 6.6
 D: 1
+Id: edexcel-chem-6-020
 
 Q: Describe the colour and physical state of iodine at room temperature.
 A: Dark grey solid
@@ -128,35 +148,41 @@ Accept: Grey-black solid; black solid; grey solid; purple-black solid
 Ref: 6.6
 D: 1
 Note: Iodine vapour is purple, but the solid is dark grey.
+Id: edexcel-chem-6-021
 
 Q: How do the melting points of the halogens change going down group 7?
 A: Increase
 Accept: They increase; get higher
 Ref: 6.7
 D: 1
+Id: edexcel-chem-6-022
 
 Q: How does the colour of the halogens change going down group 7?
 A: Gets darker
 Accept: Darker
 Ref: 6.7
 D: 2
+Id: edexcel-chem-6-023
 
 Q: Astatine is below iodine in group 7. Predict its physical state at room temperature.
 A: Solid
 Ref: 6.7
 D: 3
+Id: edexcel-chem-6-024
 
 Q: Describe the chemical test for chlorine.
 A: Damp litmus paper is bleached
 Accept: Damp litmus paper turns white; damp blue litmus turns red then white
 Ref: 6.8
 D: 2
+Id: edexcel-chem-6-025
 
 Q: What must be done to the litmus paper before testing a gas for chlorine?
 A: Dampen it
 Accept: Moisten it; wet it; make it damp
 Ref: 6.8
 D: 1
+Id: edexcel-chem-6-026
 
 Q: Damp blue litmus paper is held in chlorine. Before it is bleached, what colour does it briefly turn?
 A: Red
@@ -164,66 +190,77 @@ Accept: Pink
 Ref: 6.8
 D: 2
 Note: Chlorine is acidic in water, then bleaches the paper white.
+Id: edexcel-chem-6-027
 
 Q: Name the product when sodium burns in chlorine.
 A: Sodium chloride
 Accept: NaCl
 Ref: 6.9
 D: 1
+Id: edexcel-chem-6-028
 
 Q: What is the general name for the compounds formed when halogens react with metals?
 A: Metal halides
 Accept: Halides
 Ref: 6.9
 D: 1
+Id: edexcel-chem-6-029
 
 Q: How does the vigour of the reaction between hot iron and a halogen change going down group 7?
 A: Decreases
 Accept: Less vigorous; less reactive; decrease
 Ref: 6.9
 D: 2
+Id: edexcel-chem-6-030
 
 Q: Fluorine is above chlorine in group 7. Predict the product when sodium reacts with fluorine.
 A: Sodium fluoride
 Accept: NaF
 Ref: 6.9
 D: 2
+Id: edexcel-chem-6-031
 
 Q: Name the compound formed when hydrogen reacts with chlorine.
 A: Hydrogen chloride
 Accept: HCl
 Ref: 6.10
 D: 1
+Id: edexcel-chem-6-032
 
 Q: Hydrogen chloride gas dissolves in water. Name the solution formed.
 A: Hydrochloric acid
 Accept: HCl(aq)
 Ref: 6.10
 D: 1
+Id: edexcel-chem-6-033
 
 Q: Hydrogen bromide dissolves in water. Is the solution acidic, neutral or alkaline?
 A: Acidic
 Accept: Acid
 Ref: 6.10
 D: 2
+Id: edexcel-chem-6-034
 
 Q: Write the balanced symbol equation for hydrogen reacting with chlorine.
 A: H₂ + Cl₂ → 2HCl
 Accept: H2 + Cl2 → 2HCl
 Ref: 6.10
 D: 3
+Id: edexcel-chem-6-035
 
 Q: Of chlorine, bromine and iodine, which is the most reactive?
 A: Chlorine
 Accept: Cl₂; Cl2
 Ref: 6.11
 D: 1
+Id: edexcel-chem-6-036
 
 Q: Chlorine water is added to potassium bromide solution. Name the halogen that is formed.
 A: Bromine
 Accept: Br₂; Br2
 Ref: 6.11
 D: 2
+Id: edexcel-chem-6-037
 
 Q: Chlorine water is added to colourless potassium iodide solution. What colour does the solution turn?
 A: Brown
@@ -231,18 +268,21 @@ Accept: Orange-brown; yellow-brown; red-brown
 Ref: 6.11
 D: 2
 Note: The colour is iodine released by displacement.
+Id: edexcel-chem-6-038
 
 Q: Iodine solution is added to sodium chloride solution. Why is there no reaction?
 A: Iodine is less reactive than chlorine
 Accept: Chlorine is more reactive than iodine
 Ref: 6.11
 D: 3
+Id: edexcel-chem-6-039
 
 Q: Astatine is below iodine in group 7. Which of chloride, bromide and iodide ions could astatine displace?
 A: None
 Accept: None of them
 Ref: 6.11
 D: 3
+Id: edexcel-chem-6-040
 
 Q: In a halogen displacement reaction, the halide ion is oxidised. What does it lose?
 A: Electrons
@@ -250,6 +290,7 @@ Accept: An electron; one electron each
 Ref: 6.12
 D: 2
 HT: yes
+Id: edexcel-chem-6-041
 
 Q: In the reaction Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂, which substance is oxidised?
 A: Bromide ions
@@ -258,6 +299,7 @@ Ref: 6.12
 D: 3
 HT: yes
 Note: Bromide ions lose electrons; not "bromine".
+Id: edexcel-chem-6-042
 
 Q: In the reaction Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂, which substance is reduced?
 A: Chlorine
@@ -265,6 +307,7 @@ Accept: Cl₂; Cl2; chlorine molecules
 Ref: 6.12
 D: 3
 HT: yes
+Id: edexcel-chem-6-043
 
 Q: Why is a halogen displacement reaction described as a redox reaction?
 A: Oxidation and reduction happen at the same time
@@ -272,72 +315,84 @@ Accept: One substance gains electrons and another loses them
 Ref: 6.12
 D: 3
 HT: yes
+Id: edexcel-chem-6-044
 
 Q: How many electrons does a halogen atom gain when it forms a halide ion?
 A: One
 Accept: 1
 Ref: 6.13
 D: 2
+Id: edexcel-chem-6-045
 
 Q: Going down group 7, does it become easier or harder for a halogen atom to gain an electron?
 A: Harder
 Accept: More difficult
 Ref: 6.13
 D: 2
+Id: edexcel-chem-6-046
 
 Q: In terms of electronic configuration, why is chlorine more reactive than bromine?
 A: Outer shell nearer nucleus, gains electron more easily
 Accept: Fewer shells, so stronger attraction for an extra electron; outer shell nearer nucleus so gains an electron more easily
 Ref: 6.13
 D: 3
+Id: edexcel-chem-6-047
 
 Q: Why are the noble gases chemically inert?
 A: Full outer shell of electrons
 Accept: Stable outer shell; complete outer shell
 Ref: 6.14
 D: 2
+Id: edexcel-chem-6-048
 
 Q: What word describes the noble gases, meaning they are chemically unreactive?
 A: Inert
 Accept: Chemically inert
 Ref: 6.14
 D: 1
+Id: edexcel-chem-6-049
 
 Q: Helium has only two outer electrons. Why is it still inert?
 A: First shell is full with two electrons
 Accept: Its only shell is full; outer shell full
 Ref: 6.14
 D: 3
+Id: edexcel-chem-6-050
 
 Q: Which property of helium makes helium-filled balloons rise?
 A: Low density
 Accept: Less dense than air
 Ref: 6.15
 D: 2
+Id: edexcel-chem-6-051
 
 Q: Why is helium safer than hydrogen for filling airships?
 A: Non-flammable
 Accept: Not flammable; does not burn; inert
 Ref: 6.15
 D: 3
+Id: edexcel-chem-6-052
 
 Q: Why is argon used to fill filament lamps?
 A: Inert, so the hot filament does not react
 Accept: Unreactive, so filament does not burn
 Ref: 6.15
 D: 3
+Id: edexcel-chem-6-053
 
 Q: How do the boiling points of the noble gases change going down group 0?
 A: Increase
 Accept: They increase; get higher
 Ref: 6.16
 D: 1
+Id: edexcel-chem-6-054
 
 Q: How does the density of the noble gases change going down group 0?
 A: Increases
 Accept: Increase; gets higher
 Ref: 6.16
 D: 2
+Id: edexcel-chem-6-055
 
 Q: Krypton boils at −153 °C and radon at −62 °C. Xenon lies midway between them. Estimate its boiling point.
 A: About −110 °C
@@ -345,3 +400,4 @@ Accept: Any value from −100 °C to −120 °C; −108 °C
 Ref: 6.16
 D: 3
 Note: The actual value is −108 °C.
+Id: edexcel-chem-6-056

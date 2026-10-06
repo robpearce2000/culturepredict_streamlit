@@ -7,96 +7,112 @@ A: Transition metals
 Accept: Transition elements; d-block metals
 Ref: 5.1C
 D: 1
+Id: edexcel-chem-5-001
 
 Q: Iron has a high melting point. Which other typical transition metal property describes its large mass per cm³?
 A: High density
 Accept: Dense; density
 Ref: 5.1C
 D: 1
+Id: edexcel-chem-5-002
 
 Q: Iron is used to speed up the Haber process. What property of transition metals does this show?
 A: Catalytic activity
 Accept: Catalyst; acts as a catalyst
 Ref: 5.1C
 D: 1
+Id: edexcel-chem-5-003
 
 Q: Compounds of iron are green or orange-brown. What typical transition metal property does this show?
 A: Coloured compounds
 Accept: Forms coloured compounds; formation of coloured compounds
 Ref: 5.1C
 D: 2
+Id: edexcel-chem-5-004
 
 Q: What type of chemical change of a metal causes corrosion?
 A: Oxidation
 Accept: Reaction with oxygen; oxidising
 Ref: 5.2C
 D: 1
+Id: edexcel-chem-5-005
 
 Q: What name is given to the corrosion of iron and steel?
 A: Rusting
 Accept: Rust
 Ref: 5.2C
 D: 1
+Id: edexcel-chem-5-006
 
 Q: Why is corrosion described as oxidation?
 A: The metal gains oxygen (loses electrons)
 Accept: Metal combines with oxygen; metal atoms lose electrons
 Ref: 5.2C
 D: 3
+Id: edexcel-chem-5-007
 
 Q: Painting an iron gate stops it rusting. Which two substances does the paint keep out?
 A: Oxygen and water
 Accept: Air and water; water and oxygen
 Ref: 5.3C
 D: 2
+Id: edexcel-chem-5-008
 
 Q: Coating iron with zinc to protect it from rusting has what name?
 A: Galvanising
 Accept: Galvanizing; galvanisation
 Ref: 5.3C
 D: 1
+Id: edexcel-chem-5-009
 
 Q: Blocks of magnesium are bolted to a steel ship's hull. Name this method of rust prevention.
 A: Sacrificial protection
 Accept: Sacrificial corrosion; sacrificial method; sacrificial anode
 Ref: 5.3C
 D: 1
+Id: edexcel-chem-5-010
 
 Q: Why does zinc still protect galvanised iron after the coating is scratched?
 A: Zinc is more reactive so oxidises instead
 Accept: Zinc corrodes instead of iron; zinc is oxidised first
 Ref: 5.3C
 D: 3
+Id: edexcel-chem-5-011
 
 Q: In electroplating, which electrode is the object to be plated?
 A: Cathode
 Accept: Negative electrode
 Ref: 5.4C
 D: 1
+Id: edexcel-chem-5-012
 
 Q: When silver-plating a spoon, what must the electrolyte contain?
 A: Silver ions
 Accept: A silver salt; silver nitrate; Ag+ ions
 Ref: 5.4C
 D: 2
+Id: edexcel-chem-5-013
 
 Q: Why is a steel tap plated with chromium rather than painted?
 A: Chromium is shiny and resists corrosion and wear
 Accept: Better appearance and corrosion resistance; paint would wear off
 Ref: 5.4C
 D: 3
+Id: edexcel-chem-5-014
 
 Q: What is an alloy?
 A: A mixture of a metal with other elements
 Accept: Mixture of metals; metal mixed with another element
 Ref: 5.5C
 D: 2
+Id: edexcel-chem-5-015
 
 Q: Why can the layers of atoms in a pure metal slide easily?
 A: Atoms are all the same size, in layers
 Accept: Atoms are identical and arranged in layers
 Ref: 5.5C
 D: 2
+Id: edexcel-chem-5-016
 
 Q: Explain why an alloy is usually stronger than the pure metal.
 A: Different-sized atoms distort layers so they cannot slide
@@ -104,35 +120,41 @@ Accept: Layers cannot slide over each other as easily
 Ref: 5.5C
 D: 3
 Note: Look for the idea of different-sized atoms disrupting the layers.
+Id: edexcel-chem-5-017
 
 Q: Iron is alloyed with carbon and other metals. What general name is given to these alloys?
 A: Steels
 Accept: Steel; alloy steels
 Ref: 5.6C
 D: 1
+Id: edexcel-chem-5-018
 
 Q: Which metal is added to iron to make stainless steel resist corrosion?
 A: Chromium
 Accept: Chromium and nickel; Cr
 Ref: 5.6C
 D: 1
+Id: edexcel-chem-5-019
 
 Q: Why is iron alloyed with other metals to make alloy steels?
 A: To make it harder, stronger and corrosion resistant
 Accept: Stronger; harder; resists rusting; pure iron is too soft; properties for specific uses
 Ref: 5.6C
 D: 3
+Id: edexcel-chem-5-020
 
 Q: Name the alloy of copper and zinc.
 A: Brass
 Ref: 5.7C
 D: 1
+Id: edexcel-chem-5-021
 
 Q: Magnalium is an alloy of aluminium and which other metal?
 A: Magnesium
 Accept: Mg
 Ref: 5.7C
 D: 1
+Id: edexcel-chem-5-022
 
 Q: Which property of copper makes it suitable for electrical wiring?
 A: Good electrical conductor
@@ -140,24 +162,28 @@ Accept: Conducts electricity well; high electrical conductivity
 Ref: 5.7C
 D: 2
 Note: Ductility also helps but is not the main reason.
+Id: edexcel-chem-5-023
 
 Q: Which property of aluminium makes its alloys suitable for aircraft bodies?
 A: Low density
 Accept: Light; lightweight; low density and resists corrosion; strong for its weight
 Ref: 5.7C
 D: 2
+Id: edexcel-chem-5-024
 
 Q: Why is gold for jewellery usually alloyed with copper or silver?
 A: Pure gold is too soft
 Accept: To make it harder; harder and more hard-wearing
 Ref: 5.7C
 D: 3
+Id: edexcel-chem-5-025
 
 Q: Why is magnalium used for aircraft parts instead of pure aluminium?
 A: Stronger but still low density
 Accept: Stronger and light; harder but light
 Ref: 5.7C
 D: 3
+Id: edexcel-chem-5-026
 
 Q: 0.5 mol of solute is dissolved to make 250 cm³ of solution. What is the concentration in mol dm⁻³?
 A: 2 mol dm⁻³
@@ -166,6 +192,7 @@ Ref: 5.8C
 D: 3
 HT: yes
 Note: Convert 250 cm³ to 0.25 dm³ first.
+Id: edexcel-chem-5-027
 
 Q: A sodium hydroxide solution is 20 g dm⁻³. What is its concentration in mol dm⁻³? (Mr NaOH = 40)
 A: 0.5 mol dm⁻³
@@ -173,6 +200,7 @@ Accept: 0.50 mol dm⁻³; 0.5 mol/dm³; 0.5 M
 Ref: 5.8C
 D: 2
 HT: yes
+Id: edexcel-chem-5-028
 
 Q: Hydrochloric acid is 0.2 mol dm⁻³. What is its concentration in g dm⁻³? (Mr HCl = 36.5)
 A: 7.3 g dm⁻³
@@ -180,6 +208,7 @@ Accept: 7.3 g/dm³
 Ref: 5.8C
 D: 2
 HT: yes
+Id: edexcel-chem-5-029
 
 Q: How many moles of solute are in 50 cm³ of a 0.4 mol dm⁻³ solution?
 A: 0.02 mol
@@ -187,6 +216,7 @@ Accept: 0.020 mol; 0.02
 Ref: 5.8C
 D: 3
 HT: yes
+Id: edexcel-chem-5-030
 
 Q: In a titration, which piece of apparatus measures exactly 25.0 cm³ of alkali into the flask?
 A: Pipette
@@ -194,12 +224,14 @@ Accept: Volumetric pipette; pipette and filler
 Ref: 5.9C
 RP: 5.9C
 D: 1
+Id: edexcel-chem-5-031
 
 Q: In a titration, which piece of apparatus is used to add the acid gradually?
 A: Burette
 Ref: 5.9C
 RP: 5.9C
 D: 1
+Id: edexcel-chem-5-032
 
 Q: What colour change shows the end point when acid is added to alkali containing phenolphthalein?
 A: Pink to colourless
@@ -207,6 +239,7 @@ Accept: Pink then colourless
 Ref: 5.9C
 RP: 5.9C
 D: 2
+Id: edexcel-chem-5-033
 
 Q: Methyl orange is added to sodium hydroxide solution. What colour is it before any acid is added?
 A: Yellow
@@ -214,6 +247,7 @@ Ref: 5.9C
 RP: 5.9C
 D: 2
 Note: Methyl orange is red in acid and yellow in alkali.
+Id: edexcel-chem-5-034
 
 Q: Why is the acid added drop by drop near the end point of a titration?
 A: So the end point is not overshot
@@ -221,6 +255,7 @@ Accept: To find the exact end point; to avoid adding too much
 Ref: 5.9C
 RP: 5.9C
 D: 3
+Id: edexcel-chem-5-035
 
 Q: What word describes repeat titres that agree closely with each other?
 A: Concordant
@@ -228,6 +263,7 @@ Accept: Concordant results; concordant titres
 Ref: 5.9C
 RP: 5.9C
 D: 1
+Id: edexcel-chem-5-036
 
 Q: A titre is 20.0 cm³ of 0.10 mol dm⁻³ hydrochloric acid. How many moles of HCl were added?
 A: 0.0020 mol
@@ -235,6 +271,7 @@ Accept: 0.002 mol; 0.002; 2 × 10⁻³ mol
 Ref: 5.10C
 D: 2
 HT: yes
+Id: edexcel-chem-5-037
 
 Q: 25.0 cm³ of NaOH is neutralised by 20.0 cm³ of 0.10 mol dm⁻³ HCl. What is the NaOH concentration?
 A: 0.080 mol dm⁻³
@@ -243,6 +280,7 @@ Ref: 5.10C
 D: 3
 HT: yes
 Note: HCl and NaOH react 1:1.
+Id: edexcel-chem-5-038
 
 Q: What volume of 0.20 mol dm⁻³ HCl exactly neutralises 0.0050 mol of NaOH?
 A: 25 cm³
@@ -250,6 +288,7 @@ Accept: 25.0 cm³; 0.025 dm³
 Ref: 5.10C
 D: 3
 HT: yes
+Id: edexcel-chem-5-039
 
 Q: Use H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O. How many moles of NaOH react with 0.002 mol of H₂SO₄?
 A: 0.004 mol
@@ -257,47 +296,55 @@ Accept: 0.0040 mol; 0.004
 Ref: 5.10C
 D: 3
 HT: yes
+Id: edexcel-chem-5-040
 
 Q: What is the formula for percentage yield?
 A: Actual yield ÷ theoretical yield × 100
 Accept: (actual ÷ theoretical) × 100
 Ref: 5.11C
 D: 2
+Id: edexcel-chem-5-041
 
 Q: A reaction should make 8 g of product but only 6 g is collected. What is the percentage yield?
 A: 75%
 Accept: 75
 Ref: 5.11C
 D: 2
+Id: edexcel-chem-5-042
 
 Q: The theoretical yield is 20 g and the percentage yield is 80%. What mass of product is made?
 A: 16 g
 Accept: 16
 Ref: 5.11C
 D: 3
+Id: edexcel-chem-5-043
 
 Q: What name is given to the maximum mass of product calculated from the balanced equation?
 A: Theoretical yield
 Ref: 5.11C
 D: 1
+Id: edexcel-chem-5-044
 
 Q: Some product is left behind on the filter paper. Which cause of a low yield is this?
 A: Practical losses
 Accept: Losses during the experiment; loss when transferring
 Ref: 5.12C
 D: 2
+Id: edexcel-chem-5-045
 
 Q: What name is given to unwanted reactions that make other products and lower the yield?
 A: Side reactions
 Accept: Competing reactions; competing, unwanted reactions
 Ref: 5.12C
 D: 1
+Id: edexcel-chem-5-046
 
 Q: Why can a reversible reaction never give a 100% yield?
 A: Incomplete reaction: products turn back into reactants
 Accept: Incomplete reaction; does not go to completion; reaches equilibrium
 Ref: 5.12C
 D: 3
+Id: edexcel-chem-5-047
 
 Q: What is the formula for atom economy?
 A: Desired product Mr ÷ total reactant Mr × 100
@@ -305,29 +352,34 @@ Accept: Mass of useful product ÷ total mass of reactants × 100; desired produc
 Note: Each Mr is multiplied by its number in the balanced equation.
 Ref: 5.13C
 D: 2
+Id: edexcel-chem-5-048
 
 Q: What name is given to the percentage of the reactants' mass that ends up in the desired product?
 A: Atom economy
 Ref: 5.13C
 D: 1
+Id: edexcel-chem-5-049
 
 Q: Why does industry prefer reactions with a high atom economy?
 A: Less waste and fewer raw materials needed
 Accept: Less waste; more sustainable; cheaper
 Ref: 5.13C
 D: 3
+Id: edexcel-chem-5-050
 
 Q: Use CaCO₃ → CaO + CO₂. What is the atom economy for CaO? (Mr: CaCO₃ = 100, CaO = 56)
 A: 56%
 Accept: 56
 Ref: 5.14C
 D: 2
+Id: edexcel-chem-5-051
 
 Q: Reactants total 120 g; 30 g of this ends up as the desired product. What is the atom economy?
 A: 25%
 Accept: 25
 Ref: 5.14C
 D: 2
+Id: edexcel-chem-5-052
 
 Q: What is the atom economy for ammonia in N₂ + 3H₂ → 2NH₃?
 A: 100%
@@ -335,6 +387,7 @@ Accept: 100
 Ref: 5.14C
 D: 3
 Note: Ammonia is the only product.
+Id: edexcel-chem-5-053
 
 Q: Two routes have equal yield and rate. Route A has 100% atom economy and Route B has 60%. Which is chosen?
 A: Route A
@@ -342,6 +395,7 @@ Accept: A
 Ref: 5.15C
 D: 2
 HT: yes
+Id: edexcel-chem-5-054
 
 Q: Why might a route with a low atom economy still be chosen?
 A: Its by-products can be sold or used
@@ -349,6 +403,7 @@ Accept: Useful by-products; by-products are valuable
 Ref: 5.15C
 D: 3
 HT: yes
+Id: edexcel-chem-5-055
 
 Q: A route has a very high equilibrium yield but takes weeks. Why might it be rejected?
 A: Rate is too slow
@@ -356,6 +411,7 @@ Accept: Too slow; slow rate makes it uneconomic
 Ref: 5.15C
 D: 3
 HT: yes
+Id: edexcel-chem-5-056
 
 Q: What is the volume of one mole of any gas at room temperature and pressure?
 A: 24 dm³
@@ -363,6 +419,7 @@ Accept: 24000 cm³; 24 litres
 Ref: 5.16C
 D: 1
 HT: yes
+Id: edexcel-chem-5-057
 
 Q: What name is given to the volume occupied by one mole of any gas at a stated temperature and pressure?
 A: Molar volume
@@ -370,6 +427,7 @@ Accept: Molar gas volume
 Ref: 5.16C
 D: 1
 HT: yes
+Id: edexcel-chem-5-058
 
 Q: Why do 1 mol of hydrogen and 1 mol of carbon dioxide occupy the same volume at room temperature and pressure?
 A: Same number of molecules
@@ -378,6 +436,7 @@ Ref: 5.16C
 D: 3
 HT: yes
 Note: Molar volume does not depend on which gas it is, only on temperature and pressure.
+Id: edexcel-chem-5-059
 
 Q: What volume does 0.5 mol of carbon dioxide occupy at room temperature and pressure? (Molar volume 24 dm³)
 A: 12 dm³
@@ -385,6 +444,7 @@ Accept: 12000 cm³; 12 litres
 Ref: 5.17C
 D: 2
 HT: yes
+Id: edexcel-chem-5-060
 
 Q: How many moles of gas are in 4.8 dm³ at room temperature and pressure? (Molar volume 24 dm³)
 A: 0.2 mol
@@ -392,6 +452,7 @@ Accept: 0.20 mol; 0.2
 Ref: 5.17C
 D: 2
 HT: yes
+Id: edexcel-chem-5-061
 
 Q: Use Mg + 2HCl → MgCl₂ + H₂. What volume of hydrogen does 2.4 g of magnesium make at RTP? (Ar Mg = 24)
 A: 2.4 dm³
@@ -400,6 +461,7 @@ Ref: 5.17C
 D: 3
 HT: yes
 Note: 0.1 mol Mg gives 0.1 mol H₂; molar volume 24 dm³.
+Id: edexcel-chem-5-062
 
 Q: Use CaCO₃ → CaO + CO₂. What volume of CO₂ forms from 10 g of CaCO₃ at RTP? (Mr CaCO₃ = 100)
 A: 2.4 dm³
@@ -407,6 +469,7 @@ Accept: 2400 cm³; 2.4 litres
 Ref: 5.17C
 D: 3
 HT: yes
+Id: edexcel-chem-5-063
 
 Q: What is the mass of 12 dm³ of oxygen gas at room temperature and pressure? (Mr O₂ = 32, molar volume 24 dm³)
 A: 16 g
@@ -414,6 +477,7 @@ Accept: 16
 Ref: 5.17C
 D: 3
 HT: yes
+Id: edexcel-chem-5-064
 
 Q: Whose law states that equal volumes of gases at the same temperature and pressure contain equal numbers of molecules?
 A: Avogadro
@@ -421,6 +485,7 @@ Accept: Avogadro's law
 Ref: 5.18C
 D: 1
 HT: yes
+Id: edexcel-chem-5-065
 
 Q: Use N₂ + 3H₂ → 2NH₃. If 30 cm³ of hydrogen reacts completely, what volume of ammonia forms at the same conditions?
 A: 20 cm³
@@ -428,6 +493,7 @@ Accept: 20
 Ref: 5.18C
 D: 3
 HT: yes
+Id: edexcel-chem-5-066
 
 Q: Use CH₄ + 2O₂ → CO₂ + 2H₂O. What volume of oxygen is needed to burn 10 cm³ of methane completely (same conditions)?
 A: 20 cm³
@@ -435,24 +501,28 @@ Accept: 20
 Ref: 5.18C
 D: 3
 HT: yes
+Id: edexcel-chem-5-067
 
 Q: Name the two reactants in the Haber process.
 A: Nitrogen and hydrogen
 Accept: Hydrogen and nitrogen; N₂ and H₂
 Ref: 5.19C
 D: 1
+Id: edexcel-chem-5-068
 
 Q: What does the ⇌ symbol in the Haber process equation show?
 A: Reversible reaction
 Accept: The reaction is reversible; goes both ways
 Ref: 5.19C
 D: 1
+Id: edexcel-chem-5-069
 
 Q: Write the word equation for the Haber process.
 A: Nitrogen + hydrogen ⇌ ammonia
 Accept: N₂ + 3H₂ ⇌ 2NH₃; nitrogen + hydrogen → ammonia (reversible arrow preferred)
 Ref: 5.19C
 D: 2
+Id: edexcel-chem-5-070
 
 Q: How does raising the temperature affect the rate at which equilibrium is reached?
 A: Equilibrium is reached faster
@@ -460,6 +530,7 @@ Accept: Faster; increases the rate; less time
 Ref: 5.20C
 D: 2
 HT: yes
+Id: edexcel-chem-5-071
 
 Q: How does raising the pressure of reacting gases affect the time taken to reach equilibrium?
 A: Shorter time
@@ -467,6 +538,7 @@ Accept: Reached faster; less time; quicker
 Ref: 5.20C
 D: 3
 HT: yes
+Id: edexcel-chem-5-072
 
 Q: How does adding a catalyst affect the rate at which equilibrium is reached?
 A: Equilibrium is reached faster
@@ -475,6 +547,7 @@ Ref: 5.20C
 D: 2
 HT: yes
 Note: A catalyst does not change the position of equilibrium.
+Id: edexcel-chem-5-073
 
 Q: Why are unreacted nitrogen and hydrogen recycled in the Haber process?
 A: To avoid wasting raw materials
@@ -482,6 +555,7 @@ Accept: Saves raw materials; reduces cost; less waste
 Ref: 5.21C
 D: 2
 HT: yes
+Id: edexcel-chem-5-074
 
 Q: How does using an iron catalyst reduce the energy costs of the Haber process?
 A: Acceptable rate at a lower temperature
@@ -489,6 +563,7 @@ Accept: Speeds up reaction so less heating needed; faster without higher tempera
 Ref: 5.21C
 D: 3
 HT: yes
+Id: edexcel-chem-5-075
 
 Q: Why is a much lower temperature than 450 °C not used in the Haber process?
 A: Rate would be too slow
@@ -496,6 +571,7 @@ Accept: Too slow; reaction too slow
 Ref: 5.21C
 D: 3
 HT: yes
+Id: edexcel-chem-5-076
 
 Q: Why is a pressure much higher than 200 atmospheres not used in the Haber process?
 A: Too expensive and dangerous
@@ -503,6 +579,7 @@ Accept: Too costly; high energy cost; unsafe; expensive equipment
 Ref: 5.21C
 D: 3
 HT: yes
+Id: edexcel-chem-5-077
 
 Q: How do industrial conditions balance yield and time in the Haber process?
 A: Compromise conditions give acceptable yield quickly
@@ -510,60 +587,70 @@ Accept: Compromise; acceptable yield in an acceptable time
 Ref: 5.21C
 D: 3
 HT: yes
+Id: edexcel-chem-5-078
 
 Q: Name the three elements whose compounds are often found in fertilisers.
 A: Nitrogen, phosphorus and potassium
 Accept: N, P and K; NPK
 Ref: 5.22C
 D: 1
+Id: edexcel-chem-5-079
 
 Q: What is the purpose of a fertiliser?
 A: To promote plant growth
 Accept: Helps plants grow; increases crop yield; provides elements for growth
 Ref: 5.22C
 D: 1
+Id: edexcel-chem-5-080
 
 Q: Ammonium phosphate is used in fertilisers. Which two plant-nutrient elements does it supply?
 A: Nitrogen and phosphorus
 Accept: Phosphorus and nitrogen; N and P
 Ref: 5.22C
 D: 2
+Id: edexcel-chem-5-081
 
 Q: Name the salt made when ammonia reacts with nitric acid.
 A: Ammonium nitrate
 Accept: NH₄NO₃
 Ref: 5.23C
 D: 1
+Id: edexcel-chem-5-082
 
 Q: What type of reaction happens between ammonia and nitric acid?
 A: Neutralisation
 Accept: Neutralization; acid-base reaction
 Ref: 5.23C
 D: 2
+Id: edexcel-chem-5-083
 
 Q: Why is ammonium nitrate a particularly good nitrogen fertiliser?
 A: Both its ions contain nitrogen
 Accept: Ammonium and nitrate both contain nitrogen; high nitrogen content; high percentage of nitrogen
 Ref: 5.23C
 D: 3
+Id: edexcel-chem-5-084
 
 Q: Which two substances are reacted to make ammonium sulfate in the laboratory?
 A: Ammonia solution and dilute sulfuric acid
 Accept: Ammonia and sulfuric acid
 Ref: 5.24C
 D: 1
+Id: edexcel-chem-5-085
 
 Q: What is the formula of ammonium sulfate?
 A: (NH₄)₂SO₄
 Accept: (NH4)2SO4
 Ref: 5.24C
 D: 2
+Id: edexcel-chem-5-086
 
 Q: After neutralisation in the lab, which process turns ammonium sulfate solution into solid crystals?
 A: Crystallisation
 Accept: Crystallization; evaporate then crystallise
 Ref: 5.24C
 D: 2
+Id: edexcel-chem-5-087
 
 Q: Why does industrial production of ammonium sulfate need several stages but the lab method does not?
 A: Ammonia and sulfuric acid must first be made
@@ -571,57 +658,67 @@ Accept: Reactants are made from raw materials first; lab buys ready-made ammonia
 Ref: 5.24C
 D: 3
 Note: Industry is also much larger scale and usually continuous; the lab is small-scale batch.
+Id: edexcel-chem-5-088
 
 Q: A chemical cell produces a voltage until what happens?
 A: One of the reactants is used up
 Accept: A reactant runs out; reactants are used up
 Ref: 5.25C
 D: 1
+Id: edexcel-chem-5-089
 
 Q: Two chemical cells are identical except one holds twice as much of each reactant. Which keeps producing a voltage for longer?
 A: The cell with more reactants
 Accept: The one with twice the reactants; the bigger cell
 Ref: 5.25C
 D: 3
+Id: edexcel-chem-5-090
 
 Q: Why does a fuel cell keep producing a voltage while a chemical cell eventually goes flat?
 A: Fuel cell reactants are supplied continuously
 Accept: Fuel is constantly supplied; reactants keep being added
 Ref: 5.25C
 D: 3
+Id: edexcel-chem-5-091
 
 Q: What is the only product of a hydrogen–oxygen fuel cell?
 A: Water
 Accept: H₂O; water vapour; steam
 Ref: 5.26C
 D: 1
+Id: edexcel-chem-5-092
 
 Q: Which two gases react in a fuel cell whose only product is water?
 A: Hydrogen and oxygen
 Accept: Oxygen and hydrogen; H₂ and O₂
 Ref: 5.26C
 D: 2
+Id: edexcel-chem-5-093
 
 Q: What useful output does a hydrogen–oxygen fuel cell produce?
 A: Voltage
 Accept: Electricity; electrical energy; electric current
 Ref: 5.26C
 D: 2
+Id: edexcel-chem-5-094
 
 Q: Give one strength of hydrogen fuel cells for powering cars.
 A: Water is the only product
 Accept: No carbon dioxide; no pollutants; quick to refuel; efficient
 Ref: 5.27C
 D: 2
+Id: edexcel-chem-5-095
 
 Q: Give one weakness of hydrogen fuel cells for powering cars.
 A: Hydrogen is difficult to store safely
 Accept: Hydrogen is flammable; needs high-pressure tanks; few refuelling stations; expensive
 Ref: 5.27C
 D: 2
+Id: edexcel-chem-5-096
 
 Q: Why might a hydrogen fuel cell car still be responsible for carbon dioxide emissions?
 A: Hydrogen is often made using fossil fuels
 Accept: Hydrogen made from natural gas; energy to make hydrogen from fossil fuels
 Ref: 5.27C
 D: 3
+Id: edexcel-chem-5-097

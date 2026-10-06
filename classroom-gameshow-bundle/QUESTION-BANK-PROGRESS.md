@@ -85,14 +85,23 @@ Removed / Rewritten / Added = changes made in checking; Flagged = items in QUEST
 | AQA Maths 3.4 Geometry and measures | 75 | 93 | 94 | 0 | 6 | 1 | 0 | Done |
 | AQA Maths 3.5 Probability | 30 | 46 | 46 | 0 | 2 | 0 | 1 | Done |
 | AQA Maths 3.6 Statistics | 30 | 52 | 53 | 0 | 2 | 1 | 0 | Done |
+| Edexcel Chemistry 1 Key concepts in chemistry | 159 | 184 | 184 | 0 | 26 | 0 | 0 | Done |
+| Edexcel Chemistry 2 States of matter and mixtures | 36 | 43 | 43 | 2 | 6 | 2 | 0 | Done |
+| Edexcel Chemistry 3 Chemical changes | 93 | 108 | 108 | 0 | 3 | 0 | 0 | Done |
+| Edexcel Chemistry 4 Extracting metals and equilibria | 51 | 59 | 59 | 0 | 3 | 0 | 0 | Done |
+| Edexcel Chemistry 5 Separate chemistry 1 | 81 | 96 | 97 | 2 | 6 | 3 | 0 | Done |
+| Edexcel Chemistry 6 Groups in the periodic table | 48 | 56 | 56 | 1 | 6 | 1 | 0 | Done |
+| Edexcel Chemistry 7 Rates of reaction and energy changes | 48 | 61 | 62 | 0 | 7 | 1 | 0 | Done |
+| Edexcel Chemistry 8 Fuels and Earth science | 78 | 97 | 97 | 3 | 9 | 3 | 0 | Done |
+| Edexcel Chemistry 9 Separate chemistry 2 | 117 | 139 | 139 | 0 | 13 | 0 | 0 | Done |
 
 Topic 4.8 "Key ideas" in the AQA science specifications is a list of cross-cutting ideas examined
 through the other topics, not a topic of its own, so it has no pack (see DECISIONS.md).
 
 Totals so far: AQA sciences, 25 packs, 1,425 questions; Edexcel Biology, 9 packs, 597 questions;
-AQA Maths, 6 packs, 402 questions.
+AQA Maths, 6 packs, 402 questions; Edexcel Chemistry, 9 packs, 845 questions.
 
 ## Next
 
-Edexcel Chemistry and Physics (being written), Edexcel Maths, then Geography (AQA, Edexcel A,
+Edexcel Physics and Edexcel Maths (being written and checked), then Geography (AQA, Edexcel A,
 Edexcel B) and History (AQA, Edexcel), in the brief's order.
