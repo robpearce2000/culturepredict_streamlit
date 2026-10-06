@@ -149,9 +149,9 @@ Accept: The universal set
 Ref: P6
 D: 1
 
-Q: In set notation, what is the name of the symbol ∈?
+Q: The statement 3 ∈ A tells you that 3 is what of set A?
 A: Element
-Accept: Is an element of; Member; Is a member of
+Accept: An element; Member; A member
 Ref: P6
 D: 1
 

@@ -80,9 +80,9 @@ A: 17
 Ref: 1.4
 D: 2
 
-Q: Why do the charges of the protons and electrons in an atom cancel out exactly?
-A: Equal and opposite charges, equal numbers
-Accept: Proton +1 and electron −1, same number of each
+Q: An atom loses one electron. Why is the particle no longer neutral?
+A: More protons than electrons
+Accept: Protons outnumber electrons; one more proton than electrons
 Ref: 1.4
 D: 3
 
@@ -135,7 +135,7 @@ Accept: Nucleon number
 Ref: 1.7
 D: 1
 
-Q: In an atomic symbol such as ²³Na, is the mass number the top or the bottom number?
+Q: In an atomic symbol such as ²³₁₁Na, is the mass number the top or the bottom number?
 A: Top
 Accept: The top number; the larger number; upper
 Ref: 1.7
@@ -202,8 +202,8 @@ Ref: 1.11
 D: 2
 
 Q: Why is the relative atomic mass of chlorine not a whole number?
-A: Mean mass of its isotopes
-Accept: It has isotopes of different masses; average of chlorine-35 and chlorine-37
+A: Weighted mean of its isotopes' masses
+Accept: Has isotopes of different masses; average of chlorine-35 and chlorine-37
 Ref: 1.11
 D: 3
 
@@ -229,7 +229,7 @@ Q: What is the first step when calculating relative atomic mass from isotope dat
 A: Multiply each isotope's mass by its abundance
 Accept: Mass × percentage abundance for each isotope
 Ref: 1.12
-D: 3
+D: 2
 HT: yes
 Note: Then add the results and divide by 100 (the total abundance).
 
@@ -281,17 +281,17 @@ Accept: K
 Ref: 1.15
 D: 2
 
-Q: Mendeleev thought he had ordered elements by relative atomic mass. What does the modern table actually order them by?
-A: Atomic number
-Accept: Proton number; number of protons
+Q: Ordering by relative atomic mass puts tellurium and iodine the wrong way round. What causes this?
+A: Relative abundance of their isotopes
+Accept: Isotopes; tellurium has a high proportion of heavy isotopes
 Ref: 1.15
-D: 2
+D: 3
 
-Q: What does the atomic number of an element tell you about its atoms?
-A: Number of protons
-Accept: Number of protons in the nucleus
+Q: How many protons are in the nucleus of the sixth element in the periodic table?
+A: 6
+Accept: Six
 Ref: 1.16
-D: 1
+D: 2
 
 Q: Which element has atomic number 1?
 A: Hydrogen
@@ -299,11 +299,11 @@ Accept: H
 Ref: 1.16
 D: 1
 
-Q: Element X comes directly after element Y in the periodic table. How do their nuclei differ?
-A: X has one more proton
-Accept: One more proton
+Q: Element X comes directly after element Y in the periodic table. How does X's number of protons compare with Y's?
+A: One more
+Accept: X has one more proton; one more proton
 Ref: 1.16
-D: 3
+D: 2
 
 Q: What are the horizontal rows of the periodic table called?
 A: Periods
@@ -374,7 +374,7 @@ Q: Which element has the electronic configuration 2.8.3?
 A: Aluminium
 Accept: Al
 Ref: 1.19
-D: 3
+D: 2
 
 Q: An element has the electronic configuration 2.8.6. Which group is it in?
 A: Group 6
@@ -389,8 +389,8 @@ Ref: 1.20
 D: 3
 
 Q: What does the number of occupied electron shells tell you about an element's position?
-A: Its period
-Accept: Period number; which row it is in
+A: Period number
+Accept: Its period; which row it is in
 Ref: 1.20
 D: 2
 
@@ -451,7 +451,7 @@ Q: An ion has 20 protons and 18 electrons. What is its charge?
 A: 2+
 Accept: +2
 Ref: 1.23
-D: 3
+D: 2
 
 Q: What is the charge on the ion formed by a group 1 metal?
 A: 1+
@@ -566,11 +566,11 @@ A: Molecules
 Ref: 1.29
 D: 2
 
-Q: Which type of bonding results in the formation of molecules?
-A: Covalent
-Accept: Covalent bonding
+Q: Why does solid sodium chloride not contain molecules?
+A: Ionic bonding, not covalent
+Accept: Made of ions; a lattice of ions; bonding is ionic
 Ref: 1.29
-D: 2
+D: 3
 
 Q: What is the typical order of magnitude of the radius of an atom, in metres?
 A: 10⁻¹⁰ m
@@ -616,11 +616,11 @@ Accept: Double covalent bond; double
 Ref: 1.31
 D: 2
 
-Q: What type of substance is diamond?
+Q: What type of substance is silicon dioxide (silica)?
 A: Giant covalent
 Accept: Giant covalent structure; macromolecular
 Ref: 1.32
-D: 1
+D: 2
 
 Q: What type of substance is copper?
 A: Metallic
@@ -711,7 +711,7 @@ Q: What holds the layers of graphite together?
 A: Weak forces between layers
 Accept: Weak intermolecular forces
 Ref: 1.36
-D: 3
+D: 2
 
 Q: Which form of carbon is used in cutting tools?
 A: Diamond
@@ -765,7 +765,7 @@ Accept: Polyethene; polythene; polyethylene
 Ref: 1.39
 D: 1
 
-Q: Simple polymers such as poly(ethene) consist of large molecules containing chains of which atoms?
+Q: The long molecules in poly(ethene) have a backbone made of atoms of which element?
 A: Carbon
 Accept: Carbon atoms
 Ref: 1.39
@@ -953,9 +953,9 @@ Accept: Closed; sealed system
 Ref: 1.47
 D: 1
 
-Q: In 2Mg + O₂ → 2MgO, what is the mole ratio of Mg to MgO?
-A: 1:1
-Accept: 2:2; one to one
+Q: In 2Mg + O₂ → 2MgO, how many O₂ molecules react with every two magnesium atoms?
+A: 1
+Accept: One
 Ref: 1.48
 D: 2
 
@@ -1006,14 +1006,14 @@ Q: What is the value of the Avogadro constant?
 A: 6.02 × 10²³
 Accept: 6.02 × 10²³ per mole
 Ref: 1.50
-D: 3
+D: 1
 HT: yes
 
 Q: What name is given to the amount of a substance that contains 6.02 × 10²³ particles?
 A: Mole
 Accept: One mole; 1 mol
 Ref: 1.50
-D: 3
+D: 1
 HT: yes
 
 Q: One mole of a substance has a mass in grams equal to what?
@@ -1021,32 +1021,34 @@ A: Its relative formula mass
 Accept: Mr; relative particle mass; relative atomic mass
 Ref: 1.50
 D: 2
+HT: yes
 
 Q: What is the mass of one mole of carbon atoms? (C = 12)
 A: 12 g
 Accept: 12
 Ref: 1.50
 D: 1
+HT: yes
 
 Q: How many moles are in 88 g of carbon dioxide? (Mr = 44)
 A: 2 mol
 Accept: 2; 2 moles
 Ref: 1.51
-D: 3
+D: 2
 HT: yes
 
 Q: What is the mass of 0.5 mol of sodium hydroxide? (Mr = 40)
 A: 20 g
 Accept: 20
 Ref: 1.51
-D: 3
+D: 2
 HT: yes
 
 Q: How many particles are in 2 mol of a substance? (Avogadro constant = 6.02 × 10²³)
 A: 1.204 × 10²⁴
 Accept: 12.04 × 10²³; 1.2 × 10²⁴
 Ref: 1.51
-D: 3
+D: 2
 HT: yes
 
 Q: How many atoms are in 12 g of carbon? (C = 12)
@@ -1060,21 +1062,21 @@ Q: State the equation linking number of moles, mass and relative formula mass.
 A: Moles = mass ÷ Mr
 Accept: n = m ÷ Mr; mass = moles × Mr
 Ref: 1.51
-D: 3
+D: 2
 HT: yes
 
 Q: What name is given to the reactant that is completely used up and stops the reaction?
 A: Limiting reactant
 Accept: Limiting reagent
 Ref: 1.52
-D: 3
+D: 1
 HT: yes
 
 Q: What term describes a reactant that is left over when the reaction stops?
 A: Excess
 Accept: In excess
 Ref: 1.52
-D: 3
+D: 1
 HT: yes
 
 Q: Why does the mass of product depend on the reactant that is not in excess?
@@ -1095,7 +1097,7 @@ Q: To deduce a balanced equation from reacting masses, what do you first convert
 A: Moles
 Accept: Number of moles; amount in moles
 Ref: 1.53
-D: 3
+D: 2
 HT: yes
 
 Q: 24 g of magnesium reacts with 73 g of HCl. How many moles of HCl react per mole of Mg? (Mg = 24, HCl = 36.5)

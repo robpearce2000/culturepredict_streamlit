@@ -182,12 +182,6 @@ A: 100
 Ref: R9
 D: 2
 
-Q: A price falls from £50 to £35. What is the percentage decrease?
-A: 30%
-Accept: 30
-Ref: R9
-D: 2
-
 Q: £500 is invested at 2% simple interest per year. How much interest is earned in 3 years?
 A: £30
 Accept: 30
@@ -240,12 +234,6 @@ D: 1
 Q: A metal block has mass 240 g and volume 30 cm³. What is its density?
 A: 8 g/cm³
 Accept: 8; 8 grams per cm³
-Ref: R11
-D: 2
-
-Q: Use pressure = force ÷ area. A force of 600 N acts on an area of 3 m². What is the pressure?
-A: 200 N/m²
-Accept: 200; 200 Pa; 200 pascals
 Ref: R11
 D: 2
 
@@ -320,13 +308,6 @@ Accept: Faster object; Quicker
 Ref: R14
 D: 2
 
-Q: A straight-line graph of cost (£) against fuel (litres) passes through (0, 0) and (20, 30). What is the gradient?
-A: 1.5
-Accept: £1.50 per litre; 3/2; £1.50
-Ref: R14
-D: 2
-Note: The gradient is the price per litre.
-
 Q: A tank empties at a steady rate from 600 litres to 0 litres in 20 minutes. What is the gradient of its volume–time graph?
 A: −30 litres per minute
 Accept: −30; -30; -30 litres per minute
@@ -351,12 +332,6 @@ HT: yes
 Q: A curved distance–time graph passes through (1, 4) and (3, 16), in seconds and metres. What is the average speed between t = 1 and t = 3?
 A: 6 m/s
 Accept: 6; 6 metres per second
-Ref: R15
-D: 3
-HT: yes
-
-Q: A tangent to a curve passes through (0, 2) and (4, 10). Estimate the gradient of the curve at that point.
-A: 2
 Ref: R15
 D: 3
 HT: yes
