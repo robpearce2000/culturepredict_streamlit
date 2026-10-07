@@ -65,7 +65,8 @@ test('answers are short enough for a mini whiteboard, and no question repeats or
 
 test('the built file carries every pack, with the same questions, and the games read them', async ({ page }) => {
   await openBundle(page);
-  const built = await page.evaluate(() => CGB.bank.all().filter(s => s.builtin).map(s => ({ id: s.id, n: s.questions.length, ids: s.questions.map(q => q.id), hex: s.questions.map(q => q.hexOk === !!CGB.hexLetter(q.a)) })));
+  // the Combined Science packs are views of these (tests/courses.spec.js)
+  const built = await page.evaluate(() => CGB.bank.all().filter(s => s.builtin && !s.combined).map(s => ({ id: s.id, n: s.questions.length, ids: s.questions.map(q => q.id), hex: s.questions.map(q => q.hexOk === !!CGB.hexLetter(q.a)) })));
   expect(built.map(b => b.id).sort()).toEqual(all.packs.map(p => p.id).sort());
   built.forEach(b => {
     const src = all.packs.find(p => p.id === b.id);
