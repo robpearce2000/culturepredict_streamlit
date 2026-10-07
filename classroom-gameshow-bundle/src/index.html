@@ -27,6 +27,7 @@
         <div class="l-row">
           <label class="lab" for="subjectSelect">Subject</label>
           <select class="cgb-select l-pick" id="subjectSelect"></select>
+          <span class="l-fixed" id="subjectFixed" hidden></span><button class="btn plain sm l-own" type="button" id="subjectOwn" hidden></button>
         </div>
         <div class="l-row">
           <label class="lab" for="boardSelect">Exam board</label>
@@ -186,9 +187,11 @@ Note: Not "covalent": a common mistake</div>
   <div class="cgb-panel">
     <div class="modal-head"><h2 id="aboutTitle">About</h2><button class="btn plain sm" type="button" data-close="aboutModal">Close <span class="kbd">Esc</span></button></div>
     <div class="modal-body about">
-      <p><strong>Showtime: Classroom Gameshows</strong>, first edition, version <span id="aboutVersion"></span>.</p>
+      <p><strong>Showtime: Classroom Gameshows</strong>, <span id="aboutEdition"></span>, version <span id="aboutVersion"></span>.</p>
+      <p id="aboutTaster" hidden>This free version includes one topic per subject. Full subject packs are available on Tes.</p>
       <p>Four revision games for the classroom, inspired by classic TV quiz formats: Over the Edge, Outpace, Category Clash and Hex Hunt. Game design and question packs by Rob Pearce.</p>
       <p>The built-in question packs are AQA-style and Edexcel-style GCSE practice questions, one pack for each topic of the exam board's specification (the specification code and version are shown in the Question bank). They were written for Showtime and are not produced or endorsed by AQA or Pearson.</p>
+      <p id="aboutMore" hidden>Other subjects, and the mega bundle with every subject, are available on Tes.</p>
       <h3>Privacy</h3>
       <p>Showtime makes no network connections. Question sets, team names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a team's history there at any time.</p>
       <h3>Third-party software and fonts</h3>

@@ -15,7 +15,8 @@ const SEED = process.env.SEED ? Number(process.env.SEED) : 20261004;
 
 /* Open Showtime and record anything that should never happen: network requests and console errors.
    opts.product  open the shipped file instead of the test build (no shortcuts, no seeding)
-   opts.quality  'low' (default for gameplay tests: rules don't depend on shadows or glow) or 'high' */
+   opts.quality  'low' (default for gameplay tests: rules don't depend on shadows or glow) or 'high'
+   opts.file     another file to open (an edition from dist/editions or test-build/editions) */
 async function openBundle(page, hash, opts) {
   opts = opts || {};
   const log = { requests: [], errors: [] };
@@ -34,7 +35,7 @@ async function openBundle(page, hash, opts) {
       }
     } catch (e) { /* storage blocked: the game falls back to its defaults */ }
   }, [SEED, opts.quality || 'low', !!opts.gate]);
-  await page.goto('file://' + (opts.product ? DIST : TEST_BUILD) + (hash || ''));
+  await page.goto('file://' + (opts.file || (opts.product ? DIST : TEST_BUILD)) + (hash || ''));
   await page.waitForFunction(() => window.CGB && CGB.app);
   return log;
 }

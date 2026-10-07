@@ -343,6 +343,15 @@ CGB.app = (() => {
     const B = CGB.bank, esc = CGB.escapeHtml, sj = B.subject(), bd = B.board();
     // compact dropdowns: native selects work with mouse, touch and keyboard everywhere
     $('subjectSelect').innerHTML = B.SUBJECTS.map(x => `<option value="${x.id}"${x.id === sj ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
+    // a one-subject edition: the subject as a label, with a button for the teacher's own sets (Other)
+    const one = B.edition().subjects.length === 1 ? B.edition().subjects[0] : null;
+    $('subjectSelect').hidden = !!one;
+    $('subjectFixed').hidden = $('subjectOwn').hidden = !one;
+    if (one) {
+      $('subjectFixed').textContent = sj === 'other' ? 'Your own sets' : B.subjectLabel(one);
+      $('subjectOwn').textContent = sj === 'other' ? B.subjectLabel(one) : 'Own sets';
+      $('subjectOwn').title = sj === 'other' ? `Back to the ${B.subjectLabel(one)} packs` : 'Your own question sets (Other)';
+    }
     $('boardSelect').innerHTML = B.BOARDS.map(x => `<option value="${x.id}"${x.id === bd ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
     // Biology, Chemistry and Physics: separate science or Combined Science, next to the board
     const cs = $('courseSelect'), co = B.course();
@@ -416,7 +425,12 @@ CGB.app = (() => {
   }
 
   function init() {
-    $('wordmark').innerHTML = CGB.brand.wordmark();
+    // the edition's name under the wordmark (and in About); the taster says what it includes
+    const ed = CGB.bank.edition();
+    $('wordmark').innerHTML = CGB.brand.wordmark() + `<span class="l-edition">${CGB.escapeHtml(ed.name)}</span>` + (ed.taster ? '<span class="l-taster">This free version includes one topic per subject. Full subject packs are available on Tes.</span>' : '');
+    $('aboutEdition').textContent = ed.all ? ed.name + ' (every subject)' : ed.name;
+    $('aboutTaster').hidden = !ed.taster;
+    $('aboutMore').hidden = !!ed.all;
     $('artOTE').innerHTML = CGB.brand.oteArt();
     $('artOP').innerHTML = CGB.brand.opArt();
     $('artCC').innerHTML = CGB.brand.ccArt();
@@ -431,6 +445,7 @@ CGB.app = (() => {
     document.querySelectorAll('[data-play]').forEach(b => b.addEventListener('click', () => show(b.dataset.play)));
     $('openBank').addEventListener('click', () => CGB.bankUI.open());
     $('subjectSelect').addEventListener('change', e => CGB.bank.setSubject(e.target.value));
+    $('subjectOwn').addEventListener('click', () => { const B = CGB.bank; B.setSubject(B.subject() === 'other' ? B.edition().subjects[0] : 'other'); });
     $('boardSelect').addEventListener('change', e => CGB.bank.setBoard(e.target.value));
     $('courseSelect').addEventListener('change', e => CGB.bank.setCourse(e.target.value));
     wirePacks();
@@ -452,7 +467,7 @@ CGB.app = (() => {
   /* "Change" on a setup card: back to the main screen with the subject panel in focus */
   function chooseSubject() {
     show('launcher');
-    $('subjectSelect').focus();
+    ($('subjectSelect').hidden ? $('subjectOwn') : $('subjectSelect')).focus();
   }
   return { init, show, requestLauncher, chooseSubject, endGame, inGame, get current() { return current; } };
 })();

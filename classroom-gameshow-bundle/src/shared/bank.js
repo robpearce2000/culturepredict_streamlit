@@ -94,11 +94,15 @@ CGB.bank = (() => {
 
   /* Subjects and exam boards. Built-in packs are one per specification topic (CGB.PACKDATA, made
      by tools/packs.js from packs/); teachers' own sets can be filed under any subject, or Other. */
-  const SUBJECTS = [
+  const ALL_SUBJECTS = [
     { id: 'biology', label: 'Biology' }, { id: 'chemistry', label: 'Chemistry' }, { id: 'physics', label: 'Physics' },
     { id: 'maths', label: 'Maths' }, { id: 'history', label: 'History' }, { id: 'geography', label: 'Geography' },
     { id: 'other', label: 'Other' }
   ];
+  /* The edition (tools/editions.js, set by the build) decides which subjects are listed; Other,
+     for the teacher's own sets, is in every edition */
+  const EDITION = CGB.EDITION || { id: 'mega-bundle', name: 'Mega bundle', subjects: ALL_SUBJECTS.map(x => x.id).filter(k => k !== 'other'), all: true };
+  const SUBJECTS = ALL_SUBJECTS.filter(x => x.id === 'other' || EDITION.subjects.includes(x.id));
   const BOARDS = [{ id: 'aqa', label: 'AQA' }, { id: 'edexcel', label: 'Edexcel' }];
   const isSubject = k => SUBJECTS.some(x => x.id === k);
   const isBoard = k => BOARDS.some(x => x.id === k);
@@ -157,7 +161,7 @@ CGB.bank = (() => {
   });
 
   let custom = [];
-  let subject = 'biology', board = 'aqa';
+  let subject = EDITION.subjects[0], board = 'aqa';
   let selections = {};   // "subject|board" -> { mixed: specCode } or { ids: [pack and set ids] }
   let higher = true;     // include Higher tier only questions
   let course = 'separate';   // Biology, Chemistry and Physics: separate science or Combined Science
@@ -193,7 +197,10 @@ CGB.bank = (() => {
     custom = Array.isArray(c) ? c.map(cleanSet).filter(Boolean) : [];
     const h = store.getJSON('history', {});
     history = h && typeof h === 'object' && !Array.isArray(h) ? h : {};
-    const sj = store.get('subject'); if (isSubject(sj)) subject = sj; else if (sj === 'combined') subject = 'biology'; else if (sj) subject = 'other';
+    // a subject saved by another edition on this computer: start on this edition's first subject,
+    // without saving over it (the other edition still opens where it was)
+    const sj = store.get('subject'), known = sj === 'combined' || ALL_SUBJECTS.some(x => x.id === sj);
+    if (isSubject(sj)) subject = sj; else if (known) subject = EDITION.subjects[0]; else if (sj) subject = 'other';
     const bd = store.get('board'); if (isBoard(bd)) board = bd;
     const sel = store.getJSON('packSelections', {});
     selections = sel && typeof sel === 'object' && !Array.isArray(sel) ? sel : {};
@@ -300,7 +307,7 @@ CGB.bank = (() => {
     const short = sel.mixed ? `Mixed: all ${course ? course + ' ' : ''}topics` : one ? one.short || one.name : `${chosen.length} ${chosen.every(s => s.builtin) ? 'topics' : 'sets'}: ${chosen.map(s => s.builtin ? s.topic : s.name).join(', ')}`;
     cached = {
       id: 'sel:' + selKey() + ':' + (sel.mixed ? 'mixed-' + sel.mixed : sel.ids.join('+')) + (leaveOut ? ':f' : ''),
-      name: sel.mixed ? `${short} (${label(BOARDS, board)}-style GCSE ${label(SUBJECTS, subject)})` : one ? one.name : short,
+      name: sel.mixed ? `${short} (${label(BOARDS, board)}-style GCSE ${label(ALL_SUBJECTS, subject)})` : one ? one.name : short,
       short, questions, parts: chosen, builtin: chosen.every(s => s.builtin), withoutHigher: dropped,
       groupBy: one && one.builtin && one.subtopics.length > 1 ? 'subtopic' : 'topic'
     };
@@ -311,7 +318,7 @@ CGB.bank = (() => {
   const label = (list, k) => (list.find(x => x.id === k) || {}).label || '';
   /* What the main screen and the setup cards say about the chosen subject */
   function subjectNote() {
-    const sj = label(SUBJECTS, subject), bd = label(BOARDS, board);
+    const sj = label(ALL_SUBJECTS, subject), bd = label(BOARDS, board);
     if (subject === 'other') return ownSets().length ? '' : 'Add your own questions for any subject in the Question bank.';
     if (!packs().length) return `Built-in ${bd}-style ${sj} packs are coming soon. For now, add your own ${sj} questions in the Question bank.`;
     if (!higher && tiered()) return `Foundation tier: questions on Higher tier only content${combinedNow() ? ' in Combined Science' : ''} are left out.`;
@@ -466,8 +473,8 @@ CGB.bank = (() => {
     parse, toText, TIERS, difficultyOf, tierOf: difficultyOf, estimateTier, all, get, active, available, packs, courses, ownSets, summary, addSet, updateSet, deleteSet, setSubjectOf,
     selection, setSelection, toggle, higher: () => higher, setHigher, tiered,
     COURSES, course: () => course, setCourse, hasCourses, combined: combinedNow, specs: () => Object.assign({}, DATA.specs),
-    SUBJECTS, BOARDS, subject: () => subject, board: () => board, setSubject, setBoard, subjectNote,
-    subjectLabel: k => label(SUBJECTS, k || subject), boardLabel: k => label(BOARDS, k || board),
+    SUBJECTS, BOARDS, edition: () => EDITION, subject: () => subject, board: () => board, setSubject, setBoard, subjectNote,
+    subjectLabel: k => label(ALL_SUBJECTS, k || subject), boardLabel: k => label(BOARDS, k || board),
     logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker,
     exportData, importData, onChange(fn) { listeners.push(fn); },
     builtinIds: BUILTIN.map(s => s.id), subjectOfSet

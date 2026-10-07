@@ -298,8 +298,9 @@ function assignIds(only) {
 /* ---------- For the build: compact data for the single HTML file ---------- */
 /* A pack with any error is left out of the build (with a warning) rather than shipped; the test
    suite (tests/packs.spec.js) fails on any error, so nothing is left out of a release unnoticed. */
-function bundleData() {
+function bundleData(keep) {
   const all = loadAll();
+  if (keep) all.packs = all.packs.filter(keep);   // an edition: only its packs (tools/editions.js)
   const bad = new Set(all.errors.map(e => (all.packs.find(p => e.includes(p.id) || e.includes(p.file)) || {}).id).filter(Boolean));
   const packs = all.packs.filter(p => !bad.has(p.id) && p.questions.every(q => q.id));
   const left = all.packs.length - packs.length;
