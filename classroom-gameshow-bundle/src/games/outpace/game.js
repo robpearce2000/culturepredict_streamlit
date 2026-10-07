@@ -1221,7 +1221,12 @@ function animate(ts) {
       tetherMat.opacity = 0.4 + tetherPulse * 0.5;
       tether.scale.set(1 + tetherPulse * 2, dist, 1 + tetherPulse * 2);
 
-      camera.position.lerp(V3.set((from.x + to.x) / 2 * 0.3, 1.8, 4.4), ease(0.03));
+      // frame both racers while the tether strains (the camera used to drift towards the middle without
+      // turning, so the runner was pulled out of the picture)
+      const midX = to.x + (from.x - to.x) * 0.3;   // nearer the runner than the hunter: the runner is what to watch
+      camera.position.lerp(V3.set(midX, 1.8, Math.max(4.6, dist * 0.75 + 3)), ease(0.07));
+      lookX += (midX - lookX) * ease(0.1);
+      camera.lookAt(lookX, 0.7, 0);
       if (shakeAmt > 0.001) shakeAmt *= Math.pow(0.85, f);
 
     } else if (elapsed < ESCAPE_BREAKFREE_DURATION + 0.18) {
@@ -1243,14 +1248,22 @@ function animate(ts) {
       tether.visible = false;
       const launchElapsed = elapsed - ESCAPE_BREAKFREE_DURATION - 0.18;
       if (launchElapsed >= 0.1) {
-        const progress = Math.min(1, (launchElapsed - 0.1) / 0.6);
-        runnerGroup.position.x = escapeBaseX - progress * 6;
+        // the dash home takes about a second and a quarter (it used to be over in 0.6 s, with the camera
+        // still on its way: the runner was gone before it could be seen); the camera follows the runner
+        const progress = Math.min(1, (launchElapsed - 0.1) / 1.25);
+        runnerGroup.position.x = escapeBaseX - progress * progress * (3 - 2 * progress) * 6;
         escapeStreak.position.set(runnerGroup.position.x + 1, 0.6, 0);
         escapeStreakMat.opacity = 0.5 * (1 - progress);
         const archX = sprintArch.position.x;
         if (!escapeConfetti && runnerGroup.position.x < archX) { escapeConfetti = true; burstConfetti(archX); lightShow = reduced() ? 0 : 2.4; setMood('gold'); }
-        if (!reduced()) { camera.position.lerp(V3.set(archX + 2.6, 1.7, 4.4), ease(0.05)); lookX += (archX + 0.8 - lookX) * ease(0.06); camera.lookAt(lookX, 0.9, 0); }
-        if (progress >= 1 && launchElapsed > (reduced() ? 0.85 : 1.9) && onSequenceComplete) {
+        if (!reduced()) {
+          camera.position.x += (runnerGroup.position.x + 2.4 - camera.position.x) * ease(0.14);
+          camera.position.y += (1.7 - camera.position.y) * ease(0.08);
+          camera.position.z += (4.4 - camera.position.z) * ease(0.08);
+          lookX += (Math.min(runnerGroup.position.x - 0.4, runnerGroup.position.x) - lookX) * ease(0.22);
+          camera.lookAt(lookX, 0.9, 0);
+        }
+        if (progress >= 1 && launchElapsed > (reduced() ? 1.5 : 2.9) && onSequenceComplete) {
           runnerGroup.visible = false;
           escapeStreakMat.opacity = 0;
           finishSequence();
@@ -1650,13 +1663,17 @@ function finishDealRound(escaped) {
   state.dealOutcomes.push({ label: `Deal Round ${state.dealRound + 1}`, escaped, reward });
   $('dealStatus').textContent = '';
   hostSay('hostDeal', escaped ? `Home safe! ${reward} points banked.` : `Caught! Still, ${reward} points go in the pot.`, escaped ? 'cheer' : 'groan', 2000);
-  showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.className} bank ${reward} points. Class pot: ${state.pot}`, () => {
+  const last = state.dealRound + 1 >= state.dealRounds;
+  // a lost Deal Round never ends the game: the class can still play the Final Sprint (or stop here)
+  showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.className} bank ${reward} points. Class pot: ${state.pot}${!escaped && last ? '. You can still play the Final Sprint.' : ''}`, () => {
     state.dealRound++;
     if (state.dealRound < state.dealRounds) startDealRound(); else startSprint();
-  });
+  }, !escaped && last ? 'Play the Final Sprint' : '');
 }
 let roundEndNext = null;
-function showRoundEnd(verdict, good, detail, next) {
+function showRoundEnd(verdict, good, detail, next, label) {
+  $('roundEndContinue').innerHTML = `${escapeHtml(label || 'Continue')} <span class="kbd">Enter</span>`;
+  $('roundEndStop').hidden = !label;
   $('roundEndVerdict').textContent = verdict;
   $('roundEndVerdict').className = 'op-verdict ' + (good ? 'escaped' : 'caught');
   $('roundEndDetail').textContent = detail;
@@ -1671,6 +1688,8 @@ function continueRoundEnd() {
   next();
 }
 $('roundEndContinue').addEventListener('click', continueRoundEnd);
+// after a lost Deal Round: stop here with the points banked so far
+$('roundEndStop').addEventListener('click', () => { if (roundEndNext) endNow(); });
 
 /* ============ FINAL SPRINT ============ */
 function startSprint() {

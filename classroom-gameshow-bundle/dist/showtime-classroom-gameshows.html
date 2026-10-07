@@ -457,6 +457,9 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
 .l-subject .l-fixed { flex: 1 1 auto; min-width: 0; font-weight: 900; color: #fff; font-size: 1.05rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .l-subject .l-own { flex: none; padding: 4px 10px; min-height: 0; font-size: 0.8rem; }
 
+/* The topic dropdown opened from a game's setup card ("Change"): fixed under the button */
+.pk-menu.pk-game { position: fixed; top: auto; left: auto; z-index: 80; width: 380px; max-width: calc(100vw - 16px); }
+
 </style>
 <style>
 /* =========================================================
@@ -942,7 +945,7 @@ html[data-quality="low"] .cc-play { background: none; }
 /* Board */
 .hh-play { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px 16px; }
 .hh-play[hidden] { display: none; }
-.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding-left: 38.5rem;   /* clear of the top bar: Menu, Sound, Pause, Full screen, Settings and End game */ }
+.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; }
 .hh-turn { font-family: var(--display); font-size: 1.5rem; }
 .hh-turn b { font-weight: 400; color: var(--tc); }
 .hh-round { font-weight: 900; color: var(--hh-muted); white-space: nowrap; }
@@ -1021,9 +1024,11 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
 
 .hh-sum-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
 
-@media (max-width: 900px) {
-  .hh-head { padding-left: 0; padding-top: 52px; }
-}
+/* While playing, the top bar's buttons (Menu, Sound, Pause, Full screen, Settings, End game) stack down the
+   left side, so the whole top of the screen is free for the turn and round lines */
+#game-hex-hunt:has(.hh-play:not([hidden])) .topbar { flex-direction: column; flex-wrap: nowrap; width: 10rem; }
+#game-hex-hunt:has(.hh-play:not([hidden])) .topbar .btn { text-align: left; }
+.hh-play { padding-left: 11.5rem; }
 @media (max-width: 560px) { .hh-names { grid-template-columns: 1fr; } }
 
 .hh-qcard:focus { outline: none; }
@@ -1182,7 +1187,7 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
     </div>
     <div class="ote-actions" id="ote-cmActions" hidden></div>
     <div class="ote-actions" id="ote-actions"></div>
-    <div class="keys" id="ote-keys"><span class="kbd">Space</span> show me · <span class="kbd">1</span>–<span class="kbd">6</span> mark · <span class="kbd">Enter</span> confirm · <span class="kbd">U</span> undo · <span class="kbd">1</span>–<span class="kbd">4</span> lane · <span class="kbd">R</span> random lanes · <span class="kbd">Esc</span> menu</div>
+    <div class="keys" id="ote-keys"><span class="kbd">Space</span> show me · <span class="kbd">1</span>–<span class="kbd">6</span> mark · <span class="kbd">Space</span> confirm · <span class="kbd">U</span> undo · <span class="kbd">1</span>–<span class="kbd">4</span> lane · <span class="kbd">R</span> random lanes · <span class="kbd">Esc</span> menu</div>
   </aside>
 </div>
 
@@ -1312,6 +1317,7 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
     <div class="op-verdict" id="op-roundEndVerdict"></div>
     <div class="op-detail" id="op-roundEndDetail"></div>
     <button class="btn go" type="button" id="op-roundEndContinue">Continue <span class="kbd">Enter</span></button>
+    <button class="btn plain" type="button" id="op-roundEndStop" hidden>End the game here</button>
   </div>
   <div class="cgb-nogl" id="op-nogl" hidden></div>
 </section>
@@ -1501,10 +1507,12 @@ Note: Not "covalent": a common mistake</div>
   </div>
 </div>
 
+<div class="pk-menu pk-game" id="gamePackMenu" hidden role="group" aria-label="Question packs: tick one or more"></div>
+
 <div class="modal small" id="leaveModal" role="dialog" aria-modal="true" aria-labelledby="leaveTitle" hidden>
   <div class="cgb-panel">
     <div class="modal-head"><h2 id="leaveTitle">Leave this game?</h2></div>
-    <div class="modal-body"><p class="hint" style="margin:0;font-size:1rem">The game is paused. End game and show results keeps the scores as they stand; Back to menu loses them (wrong answers already logged are kept).</p></div>
+    <div class="modal-body"><p class="hint" style="margin:0;font-size:1rem">The game is paused. End game and show results keeps the scores as they stand; Back to menu loses them (wrong answers already logged are kept). Press <strong>Esc</strong> again to go back to the menu.</p></div>
     <div class="modal-foot"><button class="btn plain" type="button" data-close="leaveModal" data-autofocus>Keep playing</button><button class="btn go" type="button" id="leaveEnd">End game and show results</button><button class="btn no" type="button" id="leaveConfirm">Back to menu</button></div>
   </div>
 </div>
@@ -2677,7 +2685,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
    blocked, full or unavailable.
    ========================================================= */
 window.CGB = window.CGB || {};
-CGB.VERSION = '1.5.0';
+CGB.VERSION = '1.5.1';
 /* Every random choice that affects play (question order, boards, counters, physics
    nudges) goes through CGB.random, so tests can make runs repeatable. Purely visual
    randomness (sparkles, camera shake) uses Math.random. */
@@ -3518,7 +3526,7 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
      1. the question shows, with a 20-second countdown;
      2. Space brings up "3, 2, 1, show me!" (at zero the countdown waits: "Time's up! Press Space when ready"; T adds 10 s);
      3. the teacher marks each team: keys 1 to 6 toggle a team, C marks
-        every team correct, W every team wrong, Enter confirms;
+        every team correct, W every team wrong, Space or Enter confirms;
      4. the game shows the answer and applies the result;
      5. U undoes the marking until the next question starts.
    This file holds the pieces the games share: the team panels, the
@@ -3662,9 +3670,9 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
       const k = (key, label, cls, act) => `<button class="btn ${cls}" type="button" data-cm="${act}">${label} <span class="kbd">${key}</span></button>`;
       if (phase === 'think') o.btnEl.innerHTML = `<div class="cm-hint">${timeUp ? "Time's up! Press Space when every board is ready." : 'Everyone writes an answer on their whiteboard.'}</div><div class="cm-btns">${k('Space', '3, 2, 1, show me!', 'go', 'show')}${total > 0 ? k('T', '+10 s', 'plain', 'more') : ''}</div>`;
       else if (phase === 'show') o.btnEl.innerHTML = '<div class="cm-hint">Boards up!</div>';
-      else if (phase === 'mark' && o.marker) o.btnEl.innerHTML = `<div class="cm-hint">${o.marker.hint}</div>${o.marker.instant ? '' : `<div class="cm-btns">${k('Enter', 'Confirm', 'go', 'confirm')}</div>`}`;
+      else if (phase === 'mark' && o.marker) o.btnEl.innerHTML = `<div class="cm-hint">${o.marker.hint}</div>${o.marker.instant ? '' : `<div class="cm-btns">${k('Space', 'Confirm', 'go', 'confirm')}</div>`}`;
       else if (phase === 'mark') o.btnEl.innerHTML = `<div class="cm-hint">Mark each team: tap its panel or press its number, 1 to ${marks.length}.</div>
-        <div class="cm-btns">${k('C', '✓ All correct', 'plain', 'all')}${k('W', '✗ All wrong', 'plain', 'none')}${k('Enter', 'Confirm', 'go', 'confirm')}</div>`;
+        <div class="cm-btns">${k('C', '✓ All correct', 'plain', 'all')}${k('W', '✗ All wrong', 'plain', 'none')}${k('Space', 'Confirm', 'go', 'confirm')}</div>`;
       else if (phase === 'done') o.btnEl.innerHTML = `<div class="cm-btns">${o.doneHtml ? o.doneHtml() : ''}${undoable ? k('U', 'Undo marking', 'plain', 'undo') : ''}</div>`;
       else o.btnEl.innerHTML = '';
     }
@@ -3754,21 +3762,21 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
     function handleKey(k) {
       // a second Space within half a second is a repeat: it can't skip the countdown and the "3, 2, 1" in one go
       // (the half second counts from the last Space that did something, so holding Space down can't block it)
-      if (k === ' ' && (phase === 'show' || phase === 'think')) { const t = performance.now(); if (t - lastSpace < 500) return true; lastSpace = t; }
+      if (k === ' ' && (phase === 'show' || phase === 'think' || phase === 'mark')) { const t = performance.now(); if (t - lastSpace < 500) return true; lastSpace = t; }
       if (phase === 'think' && k === 't') { addTime(10); return true; }
       if ((phase === 'show' || phase === 'mark') && k === 'a' && o.reveal) { o.reveal(); return true; }
       if (phase === 'think' && (k === ' ' || k === 'enter')) { showMe(); return true; }
       if (phase === 'show' && (k === ' ' || k === 'enter')) { startMarking(); return true; }
       if (phase === 'mark' && o.marker) {
-        if (k === 'enter' && !o.marker.instant) { confirm(); return true; }
+        if ((k === 'enter' || k === ' ') && !o.marker.instant) { confirm(); return true; }
         return o.marker.key(k) || k === ' ' || k === 'enter';
       }
       if (phase === 'mark') {
         if (/^[1-6]$/.test(k)) { toggle(+k - 1); return true; }
         if (k === 'c') { setAll(true); return true; }
         if (k === 'w') { setAll(false); return true; }
-        if (k === 'enter') { confirm(); return true; }
-        return k === ' ';
+        if (k === 'enter' || k === ' ') { confirm(); return true; }
+        return false;
       }
       if (phase === 'done' && k === 'u' && undoable) { undo(); return true; }
       return false;
@@ -4377,7 +4385,12 @@ CGB.modal = (() => {
   function top() { return stack.length ? stack[stack.length - 1].m : null; }
   document.addEventListener('keydown', e => {
     const t = top(); if (!t) return;
-    if (e.key === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); close(t.id); return; }
+    if (e.key === 'Escape') {
+      e.preventDefault(); e.stopImmediatePropagation();
+      // "Leave this game?": Esc again leaves (a held key does not repeat into it); every other prompt closes
+      if (t.id === 'leaveModal') { if (!e.repeat) t.querySelector('#leaveConfirm').click(); return; }
+      close(t.id); return;
+    }
     if (e.key === 'Tab') {      // keep focus inside the open modal
       const f = Array.from(t.querySelectorAll('button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])')).filter(el => !el.disabled && el.offsetParent !== null);
       if (!f.length) return;
@@ -4607,7 +4620,8 @@ CGB.renderPackLine = function (el) {
     : `<span class="lab">Questions</span><span class="pk"><b>No ${esc(B.subjectLabel())} questions yet</b> <span class="n">Add your own in the Question bank, or choose another subject.</span></span><button class="linkish" type="button" data-pack="change">Change</button>`;
   el.classList.toggle('empty', !a);
   if (CGB.answerTimeField) CGB.answerTimeField(el);
-  if (!el.dataset.wired) { el.dataset.wired = '1'; el.addEventListener('click', e => { if (e.target.closest('[data-pack]')) CGB.app.chooseSubject(); }); }
+  // "Change" opens the topic dropdown right here; with no questions at all the subject must change on the main screen
+  if (!el.dataset.wired) { el.dataset.wired = '1'; el.addEventListener('click', e => { const b = e.target.closest('[data-pack]'); if (b) { if (CGB.bank.active()) CGB.app.openGamePacks(b); else CGB.app.chooseSubject(); } }); }
   return !!a;
 };
 
@@ -4621,6 +4635,7 @@ CGB.app = (() => {
   function show(id) {
     if (id === current) return;
     const prev = current;
+    closeGamePacks();
     if (prev !== 'launcher' && CGB.games[prev]) { CGB.games[prev].exit(); $('game-' + prev).hidden = true; }
     current = id;
     if (id === 'launcher') {
@@ -4689,9 +4704,14 @@ CGB.app = (() => {
      then the teacher's own sets, ticked one or more at a time; and the Higher tier switch */
   function renderPacks() {
     const B = CGB.bank, esc = CGB.escapeHtml, a = B.active(), sel = B.selection();
-    const packs = B.packs(), own = B.ownSets(), courses = B.courses();
     $('packBtn').textContent = a ? `${a.short} (${a.questions.length})` : 'No questions yet';
     $('packBtn').title = a ? a.name : '';
+    $('packMenu').innerHTML = packMenuHtml();
+    if (!$('gamePackMenu').hidden) $('gamePackMenu').innerHTML = packMenuHtml();   // the setup card's dropdown follows too
+  }
+  function packMenuHtml() {
+    const B = CGB.bank, esc = CGB.escapeHtml, sel = B.selection();
+    const packs = B.packs(), own = B.ownSets(), courses = B.courses();
     const opt = (attrs, on, body, n) => `<label class="pk-opt"><input type="checkbox" ${attrs}${on ? ' checked' : ''}><span>${body}</span><small>${n}</small></label>`;
     let html = courses.map(c => opt(`data-mixed="${esc(c.specCode)}"`, sel.mixed === c.specCode, `Mixed: all ${c.name ? esc(c.name) + ' ' : ''}topics`, c.count).replace('pk-opt', 'pk-opt mixed')).join('');
     courses.forEach(c => {
@@ -4702,7 +4722,28 @@ CGB.app = (() => {
     if (!courses.length && !own.length) html += `<p class="pk-empty">${esc(B.subjectNote())}</p>`;
     // History and Geography are not tiered: no Higher tier switch
     html += `<div class="pk-foot">${B.tiered() ? `<label><input type="checkbox" id="pkHigher"${B.higher() ? ' checked' : ''}>Include Higher tier only questions</label>` : '<span></span>'}<button class="btn go sm" type="button" data-done>Done</button></div>`;
-    $('packMenu').innerHTML = html;
+    return html;
+  }
+  /* The same dropdown on a game's setup card ("Change" on the Questions line): it opens in place,
+     under the button, so the teacher never leaves the game to change topic */
+  function openGamePacks(btn) {
+    const menu = $('gamePackMenu');
+    menu.innerHTML = packMenuHtml();
+    menu.hidden = false;
+    const r = btn.getBoundingClientRect(), w = Math.min(menu.offsetWidth || 380, window.innerWidth - 16);
+    menu.style.left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8)) + 'px';
+    const room = window.innerHeight - r.bottom - 12;
+    // under the button if it fits (or there is more room below), otherwise above it
+    if (room > 260 || room > r.top) { menu.style.top = (r.bottom + 6) + 'px'; menu.style.bottom = 'auto'; menu.style.maxHeight = Math.max(200, room) + 'px'; }
+    else { menu.style.bottom = (window.innerHeight - r.top + 6) + 'px'; menu.style.top = 'auto'; menu.style.maxHeight = Math.max(200, r.top - 12) + 'px'; }
+    menu._for = btn;
+    const first = menu.querySelector('input:checked') || menu.querySelector('input');
+    if (first) first.focus({ preventScroll: true });
+  }
+  function closeGamePacks() {
+    const menu = $('gamePackMenu'); if (menu.hidden) return;
+    menu.hidden = true; menu.innerHTML = '';
+    if (menu._for && menu._for.isConnected) menu._for.focus();
   }
   function openPacks(open) {
     const menu = $('packMenu'), btn = $('packBtn');
@@ -4719,20 +4760,24 @@ CGB.app = (() => {
     }
   }
   function wirePacks() {
-    const menu = $('packMenu'), B = CGB.bank;
+    const menu = $('packMenu'), gmenu = $('gamePackMenu'), B = CGB.bank;
     $('packBtn').addEventListener('click', () => openPacks());
-    menu.addEventListener('change', e => {
+    const onChange = (m, e) => {
       const t = e.target, keep = t.id || t.dataset.id || t.dataset.mixed;
       if (t.id === 'pkHigher') B.setHigher(t.checked);
       else if (t.dataset.mixed) B.setSelection(t.checked ? { mixed: t.dataset.mixed } : { ids: [] });
       else if (t.dataset.id) B.toggle(t.dataset.id);
       // the menu is drawn again: keep the keyboard on the box just changed
-      const again = t.id ? document.getElementById(t.id) : menu.querySelector(t.dataset.id ? `[data-id="${CSS.escape(keep)}"]` : `[data-mixed="${CSS.escape(keep)}"]`);
+      const again = t.id ? m.querySelector('#' + t.id) : m.querySelector(t.dataset.id ? `[data-id="${CSS.escape(keep)}"]` : `[data-mixed="${CSS.escape(keep)}"]`);
       if (again) again.focus();
-    });
+    };
+    menu.addEventListener('change', e => onChange(menu, e));
     menu.addEventListener('click', e => { if (e.target.closest('[data-done]')) { openPacks(false); $('packBtn').focus(); } });
     menu.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); openPacks(false); $('packBtn').focus(); } });
-    document.addEventListener('pointerdown', e => { if (!menu.hidden && !e.target.closest('#packDrop')) openPacks(false); });
+    gmenu.addEventListener('change', e => onChange(gmenu, e));
+    gmenu.addEventListener('click', e => { if (e.target.closest('[data-done]')) closeGamePacks(); });
+    gmenu.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeGamePacks(); } });
+    document.addEventListener('pointerdown', e => { if (!menu.hidden && !e.target.closest('#packDrop')) openPacks(false); if (!gmenu.hidden && !e.target.closest('#gamePackMenu, [data-pack]')) closeGamePacks(); });
   }
   /* The mascot on the launcher: the host waves hello now and then */
   function createMascot() {
@@ -4792,7 +4837,7 @@ CGB.app = (() => {
     show('launcher');
     ($('subjectSelect').hidden ? $('subjectOwn') : $('subjectSelect')).focus();
   }
-  return { init, show, requestLauncher, chooseSubject, endGame, inGame, get current() { return current; } };
+  return { init, show, requestLauncher, chooseSubject, openGamePacks, closeGamePacks, endGame, inGame, get current() { return current; } };
 })();
 
 /* ---------- Full screen: a button on the launcher and in every game's top bar, and the F key ----------
@@ -4803,12 +4848,17 @@ CGB.fullscreen = (() => {
   const can = !!(doc.fullscreenEnabled || doc.webkitFullscreenEnabled);
   const on = () => !!(doc.fullscreenElement || doc.webkitFullscreenElement);
   let leftAt = -1e9;   // when Esc last left full screen: a held or doubled Esc straight after is part of leaving
+  let locked = false;  // the Esc key is ours while in full screen (Keyboard Lock), so only F leaves full screen
+  const kb = () => navigator.keyboard && navigator.keyboard.lock ? navigator.keyboard : null;
+  function lockEsc() { try { const k = kb(); if (k) { const p = k.lock(['Escape']); locked = true; if (p && p.catch) p.catch(() => { locked = false; }); } } catch (e) { locked = false; } }
+  function unlockEsc() { try { const k = kb(); if (k) k.unlock(); } catch (e) { /* nothing to unlock */ } locked = false; }
   function toggle() {
     try {
-      if (on()) { const p = (doc.exitFullscreen || doc.webkitExitFullscreen).call(doc); if (p && p.catch) p.catch(() => { /* already leaving */ }); }
+      if (on()) { unlockEsc(); const p = (doc.exitFullscreen || doc.webkitExitFullscreen).call(doc); if (p && p.catch) p.catch(() => { /* already leaving */ }); }
       else {
         const p = (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
-        if (p && p.catch) p.catch(() => { /* refused (for example inside a frame): stay as we are */ });
+        if (p && p.then) p.then(lockEsc, () => { /* refused (for example inside a frame): stay as we are */ });
+        else lockEsc();
       }
     } catch (e) { /* no full-screen support */ }
   }
@@ -4825,10 +4875,12 @@ CGB.fullscreen = (() => {
     // the main screen's button sits next to Question bank, in the markup
     paint();
   }
-  ['fullscreenchange', 'webkitfullscreenchange'].forEach(ev => doc.addEventListener(ev, paint));
+  ['fullscreenchange', 'webkitfullscreenchange'].forEach(ev => doc.addEventListener(ev, () => { if (!on()) unlockEsc(); paint(); }));
   doc.addEventListener('click', e => { if (e.target.closest && e.target.closest('[data-fullscreen]')) toggle(); });
   doc.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && (on() || performance.now() - leftAt < 250)) {
+    // Esc with the key locked is the game's own Esc (Menu); where the browser can't lock it (Firefox, Safari),
+    // Esc leaves full screen as the browser insists, and that Esc is not also the game's Menu key
+    if (e.key === 'Escape' && !(on() && locked) && (on() || performance.now() - leftAt < 250)) {
       e.preventDefault(); e.stopImmediatePropagation();
       if (on()) { leftAt = performance.now(); toggle(); }
       return;
@@ -7713,7 +7765,12 @@ function animate(ts) {
       tetherMat.opacity = 0.4 + tetherPulse * 0.5;
       tether.scale.set(1 + tetherPulse * 2, dist, 1 + tetherPulse * 2);
 
-      camera.position.lerp(V3.set((from.x + to.x) / 2 * 0.3, 1.8, 4.4), ease(0.03));
+      // frame both racers while the tether strains (the camera used to drift towards the middle without
+      // turning, so the runner was pulled out of the picture)
+      const midX = to.x + (from.x - to.x) * 0.3;   // nearer the runner than the hunter: the runner is what to watch
+      camera.position.lerp(V3.set(midX, 1.8, Math.max(4.6, dist * 0.75 + 3)), ease(0.07));
+      lookX += (midX - lookX) * ease(0.1);
+      camera.lookAt(lookX, 0.7, 0);
       if (shakeAmt > 0.001) shakeAmt *= Math.pow(0.85, f);
 
     } else if (elapsed < ESCAPE_BREAKFREE_DURATION + 0.18) {
@@ -7735,14 +7792,22 @@ function animate(ts) {
       tether.visible = false;
       const launchElapsed = elapsed - ESCAPE_BREAKFREE_DURATION - 0.18;
       if (launchElapsed >= 0.1) {
-        const progress = Math.min(1, (launchElapsed - 0.1) / 0.6);
-        runnerGroup.position.x = escapeBaseX - progress * 6;
+        // the dash home takes about a second and a quarter (it used to be over in 0.6 s, with the camera
+        // still on its way: the runner was gone before it could be seen); the camera follows the runner
+        const progress = Math.min(1, (launchElapsed - 0.1) / 1.25);
+        runnerGroup.position.x = escapeBaseX - progress * progress * (3 - 2 * progress) * 6;
         escapeStreak.position.set(runnerGroup.position.x + 1, 0.6, 0);
         escapeStreakMat.opacity = 0.5 * (1 - progress);
         const archX = sprintArch.position.x;
         if (!escapeConfetti && runnerGroup.position.x < archX) { escapeConfetti = true; burstConfetti(archX); lightShow = reduced() ? 0 : 2.4; setMood('gold'); }
-        if (!reduced()) { camera.position.lerp(V3.set(archX + 2.6, 1.7, 4.4), ease(0.05)); lookX += (archX + 0.8 - lookX) * ease(0.06); camera.lookAt(lookX, 0.9, 0); }
-        if (progress >= 1 && launchElapsed > (reduced() ? 0.85 : 1.9) && onSequenceComplete) {
+        if (!reduced()) {
+          camera.position.x += (runnerGroup.position.x + 2.4 - camera.position.x) * ease(0.14);
+          camera.position.y += (1.7 - camera.position.y) * ease(0.08);
+          camera.position.z += (4.4 - camera.position.z) * ease(0.08);
+          lookX += (Math.min(runnerGroup.position.x - 0.4, runnerGroup.position.x) - lookX) * ease(0.22);
+          camera.lookAt(lookX, 0.9, 0);
+        }
+        if (progress >= 1 && launchElapsed > (reduced() ? 1.5 : 2.9) && onSequenceComplete) {
           runnerGroup.visible = false;
           escapeStreakMat.opacity = 0;
           finishSequence();
@@ -8140,13 +8205,17 @@ function finishDealRound(escaped) {
   state.dealOutcomes.push({ label: `Deal Round ${state.dealRound + 1}`, escaped, reward });
   $('dealStatus').textContent = '';
   hostSay('hostDeal', escaped ? `Home safe! ${reward} points banked.` : `Caught! Still, ${reward} points go in the pot.`, escaped ? 'cheer' : 'groan', 2000);
-  showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.className} bank ${reward} points. Class pot: ${state.pot}`, () => {
+  const last = state.dealRound + 1 >= state.dealRounds;
+  // a lost Deal Round never ends the game: the class can still play the Final Sprint (or stop here)
+  showRoundEnd(escaped ? 'Escaped!' : 'Caught!', escaped, `${state.className} bank ${reward} points. Class pot: ${state.pot}${!escaped && last ? '. You can still play the Final Sprint.' : ''}`, () => {
     state.dealRound++;
     if (state.dealRound < state.dealRounds) startDealRound(); else startSprint();
-  });
+  }, !escaped && last ? 'Play the Final Sprint' : '');
 }
 let roundEndNext = null;
-function showRoundEnd(verdict, good, detail, next) {
+function showRoundEnd(verdict, good, detail, next, label) {
+  $('roundEndContinue').innerHTML = `${escapeHtml(label || 'Continue')} <span class="kbd">Enter</span>`;
+  $('roundEndStop').hidden = !label;
   $('roundEndVerdict').textContent = verdict;
   $('roundEndVerdict').className = 'op-verdict ' + (good ? 'escaped' : 'caught');
   $('roundEndDetail').textContent = detail;
@@ -8161,6 +8230,8 @@ function continueRoundEnd() {
   next();
 }
 $('roundEndContinue').addEventListener('click', continueRoundEnd);
+// after a lost Deal Round: stop here with the points banked so far
+$('roundEndStop').addEventListener('click', () => { if (roundEndNext) endNow(); });
 
 /* ============ FINAL SPRINT ============ */
 function startSprint() {

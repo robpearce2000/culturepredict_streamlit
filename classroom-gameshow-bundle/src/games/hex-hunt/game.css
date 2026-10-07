@@ -19,7 +19,7 @@
 /* Board */
 .hh-play { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px 16px; }
 .hh-play[hidden] { display: none; }
-.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding-left: 38.5rem;   /* clear of the top bar: Menu, Sound, Pause, Full screen, Settings and End game */ }
+.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; }
 .hh-turn { font-family: var(--display); font-size: 1.5rem; }
 .hh-turn b { font-weight: 400; color: var(--tc); }
 .hh-round { font-weight: 900; color: var(--hh-muted); white-space: nowrap; }
@@ -98,9 +98,11 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
 
 .hh-sum-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
 
-@media (max-width: 900px) {
-  .hh-head { padding-left: 0; padding-top: 52px; }
-}
+/* While playing, the top bar's buttons (Menu, Sound, Pause, Full screen, Settings, End game) stack down the
+   left side, so the whole top of the screen is free for the turn and round lines */
+#game-hex-hunt:has(.hh-play:not([hidden])) .topbar { flex-direction: column; flex-wrap: nowrap; width: 10rem; }
+#game-hex-hunt:has(.hh-play:not([hidden])) .topbar .btn { text-align: left; }
+.hh-play { padding-left: 11.5rem; }
 @media (max-width: 560px) { .hh-names { grid-template-columns: 1fr; } }
 
 .hh-qcard:focus { outline: none; }

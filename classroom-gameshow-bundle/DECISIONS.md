@@ -555,3 +555,13 @@ Whole topics that are separate science only: AQA 8463 4.8 Space physics (44); Ed
 - **Listing images:** every edition gets its own cover (edition name, its question count). Game and question bank pictures are made in the edition's subject for each one-subject edition and the taster; the Science mega pack reuses Chemistry's and the Mega bundle Biology's (tools/make-listing.js --reuse).
 
 - **Free taster images:** the cover and game screenshots for the taster are left to Rob (screenshots taken by hand); `dist/listings/free-taster/` has the listing text and the images that were made automatically.
+
+## Fixes from classroom use (1.5.1)
+
+- **Space confirms marking:** Space now does what Enter does in the marking step; the half-second Space guard now covers it, so the Space that skips "3, 2, 1" cannot also confirm an empty marking.
+- **Lost Deal Round:** in testing the Final Sprint already followed a lost Deal Round, but nothing said so and a class could not choose. The "Caught!" card now says the class can still play the Final Sprint, with that as the default button and "End the game here" as the other choice. If the game still ends on its own, please tell me exactly what was on screen.
+- **Escape camera:** two causes: while the tether strained the camera moved without turning, and the dash home (0.6 s) left the picture before the camera arrived. The camera now frames the racers, weighted toward the runner, and follows the dash, which takes about 1.25 s.
+- **Esc and full screen:** the browser's Keyboard Lock API (Chrome and Edge) hands Esc to the page in full screen, so Esc is the game's Menu key and only F leaves full screen. Browsers without it (Firefox, Safari) always leave full screen on Esc: that cannot be prevented, so there that Esc is not also passed to the game.
+- **Leave prompt:** Esc again confirms leaving; key repeat from a held Esc is ignored. "Keep playing" still closes it.
+- **Hex Hunt top bar:** a vertical stack down the left while playing (setup and results keep the horizontal bar).
+- **Change topic:** the same dropdown as the main screen, anchored under "Change". With no questions at all (a subject with no packs) it still goes to the main screen, since the subject must change there.

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.1 – Fixes from classroom use (October 2026)
+
+- **Space confirms the marking**, as Enter does, in every game (the Confirm button now shows Space). A second Space within half a second is still ignored, so the Space that skips "3, 2, 1" can't also confirm an empty marking.
+- **Outpace:** after a lost Deal Round the card says "Caught!" with **Play the Final Sprint** (Enter) and **End the game here** (the points banked so far). A lost Deal Round never ends the game by itself.
+- **Outpace Final Sprint escape:** the camera now frames both racers while the tether strains and follows the runner on the dash home (about 1.25 s, it was 0.6 s), so the escape can be seen; it used to leave the picture.
+- **Full screen:** in Chrome and Edge the Esc key is kept for the game while in full screen (Keyboard Lock), so only **F** leaves full screen. Other browsers still leave full screen on Esc, and that Esc is not also the game's Menu key.
+- **Leave this game?** Esc opens it and **Esc again leaves** to the main menu.
+- **Hex Hunt:** while playing, Menu, Sound, Pause, Full screen, Settings and End game stack down the left side, so the top of the screen is free for the turn and round lines.
+- **Change topic in place:** "Change" on a game's Questions line opens the topic dropdown on that screen (Mixed, topics, your own sets, Higher tier) instead of going back to the main screen.
+
 ## 1.5.0 – Editions for sale (October 2026)
 
 - **Nine editions from one source:** `node build.js --editions` builds the Free taster, Biology, Chemistry, Physics, Maths, History and Geography editions, the Science mega pack and the Mega bundle into `dist/editions/`, with SHA256SUMS.txt. Every edition has all four games, the question bank and "write your own"; only the built-in packs differ (tools/editions.js). The main product file is the Mega bundle.

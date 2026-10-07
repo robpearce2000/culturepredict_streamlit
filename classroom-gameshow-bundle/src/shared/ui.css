@@ -437,3 +437,6 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
 .l-wordmark .l-taster { display: block; text-align: center; font-family: var(--body); font-weight: 800; font-size: 0.95rem; color: #fff; margin-top: 2px; }
 .l-subject .l-fixed { flex: 1 1 auto; min-width: 0; font-weight: 900; color: #fff; font-size: 1.05rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .l-subject .l-own { flex: none; padding: 4px 10px; min-height: 0; font-size: 0.8rem; }
+
+/* The topic dropdown opened from a game's setup card ("Change"): fixed under the button */
+.pk-menu.pk-game { position: fixed; top: auto; left: auto; z-index: 80; width: 380px; max-width: calc(100vw - 16px); }

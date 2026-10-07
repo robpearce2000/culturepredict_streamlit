@@ -80,7 +80,7 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
      1. the question shows, with a 20-second countdown;
      2. Space brings up "3, 2, 1, show me!" (at zero the countdown waits: "Time's up! Press Space when ready"; T adds 10 s);
      3. the teacher marks each team: keys 1 to 6 toggle a team, C marks
-        every team correct, W every team wrong, Enter confirms;
+        every team correct, W every team wrong, Space or Enter confirms;
      4. the game shows the answer and applies the result;
      5. U undoes the marking until the next question starts.
    This file holds the pieces the games share: the team panels, the
@@ -224,9 +224,9 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
       const k = (key, label, cls, act) => `<button class="btn ${cls}" type="button" data-cm="${act}">${label} <span class="kbd">${key}</span></button>`;
       if (phase === 'think') o.btnEl.innerHTML = `<div class="cm-hint">${timeUp ? "Time's up! Press Space when every board is ready." : 'Everyone writes an answer on their whiteboard.'}</div><div class="cm-btns">${k('Space', '3, 2, 1, show me!', 'go', 'show')}${total > 0 ? k('T', '+10 s', 'plain', 'more') : ''}</div>`;
       else if (phase === 'show') o.btnEl.innerHTML = '<div class="cm-hint">Boards up!</div>';
-      else if (phase === 'mark' && o.marker) o.btnEl.innerHTML = `<div class="cm-hint">${o.marker.hint}</div>${o.marker.instant ? '' : `<div class="cm-btns">${k('Enter', 'Confirm', 'go', 'confirm')}</div>`}`;
+      else if (phase === 'mark' && o.marker) o.btnEl.innerHTML = `<div class="cm-hint">${o.marker.hint}</div>${o.marker.instant ? '' : `<div class="cm-btns">${k('Space', 'Confirm', 'go', 'confirm')}</div>`}`;
       else if (phase === 'mark') o.btnEl.innerHTML = `<div class="cm-hint">Mark each team: tap its panel or press its number, 1 to ${marks.length}.</div>
-        <div class="cm-btns">${k('C', '✓ All correct', 'plain', 'all')}${k('W', '✗ All wrong', 'plain', 'none')}${k('Enter', 'Confirm', 'go', 'confirm')}</div>`;
+        <div class="cm-btns">${k('C', '✓ All correct', 'plain', 'all')}${k('W', '✗ All wrong', 'plain', 'none')}${k('Space', 'Confirm', 'go', 'confirm')}</div>`;
       else if (phase === 'done') o.btnEl.innerHTML = `<div class="cm-btns">${o.doneHtml ? o.doneHtml() : ''}${undoable ? k('U', 'Undo marking', 'plain', 'undo') : ''}</div>`;
       else o.btnEl.innerHTML = '';
     }
@@ -316,21 +316,21 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
     function handleKey(k) {
       // a second Space within half a second is a repeat: it can't skip the countdown and the "3, 2, 1" in one go
       // (the half second counts from the last Space that did something, so holding Space down can't block it)
-      if (k === ' ' && (phase === 'show' || phase === 'think')) { const t = performance.now(); if (t - lastSpace < 500) return true; lastSpace = t; }
+      if (k === ' ' && (phase === 'show' || phase === 'think' || phase === 'mark')) { const t = performance.now(); if (t - lastSpace < 500) return true; lastSpace = t; }
       if (phase === 'think' && k === 't') { addTime(10); return true; }
       if ((phase === 'show' || phase === 'mark') && k === 'a' && o.reveal) { o.reveal(); return true; }
       if (phase === 'think' && (k === ' ' || k === 'enter')) { showMe(); return true; }
       if (phase === 'show' && (k === ' ' || k === 'enter')) { startMarking(); return true; }
       if (phase === 'mark' && o.marker) {
-        if (k === 'enter' && !o.marker.instant) { confirm(); return true; }
+        if ((k === 'enter' || k === ' ') && !o.marker.instant) { confirm(); return true; }
         return o.marker.key(k) || k === ' ' || k === 'enter';
       }
       if (phase === 'mark') {
         if (/^[1-6]$/.test(k)) { toggle(+k - 1); return true; }
         if (k === 'c') { setAll(true); return true; }
         if (k === 'w') { setAll(false); return true; }
-        if (k === 'enter') { confirm(); return true; }
-        return k === ' ';
+        if (k === 'enter' || k === ' ') { confirm(); return true; }
+        return false;
       }
       if (phase === 'done' && k === 'u' && undoable) { undo(); return true; }
       return false;

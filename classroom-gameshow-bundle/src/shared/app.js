@@ -54,7 +54,12 @@ CGB.modal = (() => {
   function top() { return stack.length ? stack[stack.length - 1].m : null; }
   document.addEventListener('keydown', e => {
     const t = top(); if (!t) return;
-    if (e.key === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); close(t.id); return; }
+    if (e.key === 'Escape') {
+      e.preventDefault(); e.stopImmediatePropagation();
+      // "Leave this game?": Esc again leaves (a held key does not repeat into it); every other prompt closes
+      if (t.id === 'leaveModal') { if (!e.repeat) t.querySelector('#leaveConfirm').click(); return; }
+      close(t.id); return;
+    }
     if (e.key === 'Tab') {      // keep focus inside the open modal
       const f = Array.from(t.querySelectorAll('button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])')).filter(el => !el.disabled && el.offsetParent !== null);
       if (!f.length) return;
@@ -284,7 +289,8 @@ CGB.renderPackLine = function (el) {
     : `<span class="lab">Questions</span><span class="pk"><b>No ${esc(B.subjectLabel())} questions yet</b> <span class="n">Add your own in the Question bank, or choose another subject.</span></span><button class="linkish" type="button" data-pack="change">Change</button>`;
   el.classList.toggle('empty', !a);
   if (CGB.answerTimeField) CGB.answerTimeField(el);
-  if (!el.dataset.wired) { el.dataset.wired = '1'; el.addEventListener('click', e => { if (e.target.closest('[data-pack]')) CGB.app.chooseSubject(); }); }
+  // "Change" opens the topic dropdown right here; with no questions at all the subject must change on the main screen
+  if (!el.dataset.wired) { el.dataset.wired = '1'; el.addEventListener('click', e => { const b = e.target.closest('[data-pack]'); if (b) { if (CGB.bank.active()) CGB.app.openGamePacks(b); else CGB.app.chooseSubject(); } }); }
   return !!a;
 };
 
@@ -298,6 +304,7 @@ CGB.app = (() => {
   function show(id) {
     if (id === current) return;
     const prev = current;
+    closeGamePacks();
     if (prev !== 'launcher' && CGB.games[prev]) { CGB.games[prev].exit(); $('game-' + prev).hidden = true; }
     current = id;
     if (id === 'launcher') {
@@ -366,9 +373,14 @@ CGB.app = (() => {
      then the teacher's own sets, ticked one or more at a time; and the Higher tier switch */
   function renderPacks() {
     const B = CGB.bank, esc = CGB.escapeHtml, a = B.active(), sel = B.selection();
-    const packs = B.packs(), own = B.ownSets(), courses = B.courses();
     $('packBtn').textContent = a ? `${a.short} (${a.questions.length})` : 'No questions yet';
     $('packBtn').title = a ? a.name : '';
+    $('packMenu').innerHTML = packMenuHtml();
+    if (!$('gamePackMenu').hidden) $('gamePackMenu').innerHTML = packMenuHtml();   // the setup card's dropdown follows too
+  }
+  function packMenuHtml() {
+    const B = CGB.bank, esc = CGB.escapeHtml, sel = B.selection();
+    const packs = B.packs(), own = B.ownSets(), courses = B.courses();
     const opt = (attrs, on, body, n) => `<label class="pk-opt"><input type="checkbox" ${attrs}${on ? ' checked' : ''}><span>${body}</span><small>${n}</small></label>`;
     let html = courses.map(c => opt(`data-mixed="${esc(c.specCode)}"`, sel.mixed === c.specCode, `Mixed: all ${c.name ? esc(c.name) + ' ' : ''}topics`, c.count).replace('pk-opt', 'pk-opt mixed')).join('');
     courses.forEach(c => {
@@ -379,7 +391,28 @@ CGB.app = (() => {
     if (!courses.length && !own.length) html += `<p class="pk-empty">${esc(B.subjectNote())}</p>`;
     // History and Geography are not tiered: no Higher tier switch
     html += `<div class="pk-foot">${B.tiered() ? `<label><input type="checkbox" id="pkHigher"${B.higher() ? ' checked' : ''}>Include Higher tier only questions</label>` : '<span></span>'}<button class="btn go sm" type="button" data-done>Done</button></div>`;
-    $('packMenu').innerHTML = html;
+    return html;
+  }
+  /* The same dropdown on a game's setup card ("Change" on the Questions line): it opens in place,
+     under the button, so the teacher never leaves the game to change topic */
+  function openGamePacks(btn) {
+    const menu = $('gamePackMenu');
+    menu.innerHTML = packMenuHtml();
+    menu.hidden = false;
+    const r = btn.getBoundingClientRect(), w = Math.min(menu.offsetWidth || 380, window.innerWidth - 16);
+    menu.style.left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8)) + 'px';
+    const room = window.innerHeight - r.bottom - 12;
+    // under the button if it fits (or there is more room below), otherwise above it
+    if (room > 260 || room > r.top) { menu.style.top = (r.bottom + 6) + 'px'; menu.style.bottom = 'auto'; menu.style.maxHeight = Math.max(200, room) + 'px'; }
+    else { menu.style.bottom = (window.innerHeight - r.top + 6) + 'px'; menu.style.top = 'auto'; menu.style.maxHeight = Math.max(200, r.top - 12) + 'px'; }
+    menu._for = btn;
+    const first = menu.querySelector('input:checked') || menu.querySelector('input');
+    if (first) first.focus({ preventScroll: true });
+  }
+  function closeGamePacks() {
+    const menu = $('gamePackMenu'); if (menu.hidden) return;
+    menu.hidden = true; menu.innerHTML = '';
+    if (menu._for && menu._for.isConnected) menu._for.focus();
   }
   function openPacks(open) {
     const menu = $('packMenu'), btn = $('packBtn');
@@ -396,20 +429,24 @@ CGB.app = (() => {
     }
   }
   function wirePacks() {
-    const menu = $('packMenu'), B = CGB.bank;
+    const menu = $('packMenu'), gmenu = $('gamePackMenu'), B = CGB.bank;
     $('packBtn').addEventListener('click', () => openPacks());
-    menu.addEventListener('change', e => {
+    const onChange = (m, e) => {
       const t = e.target, keep = t.id || t.dataset.id || t.dataset.mixed;
       if (t.id === 'pkHigher') B.setHigher(t.checked);
       else if (t.dataset.mixed) B.setSelection(t.checked ? { mixed: t.dataset.mixed } : { ids: [] });
       else if (t.dataset.id) B.toggle(t.dataset.id);
       // the menu is drawn again: keep the keyboard on the box just changed
-      const again = t.id ? document.getElementById(t.id) : menu.querySelector(t.dataset.id ? `[data-id="${CSS.escape(keep)}"]` : `[data-mixed="${CSS.escape(keep)}"]`);
+      const again = t.id ? m.querySelector('#' + t.id) : m.querySelector(t.dataset.id ? `[data-id="${CSS.escape(keep)}"]` : `[data-mixed="${CSS.escape(keep)}"]`);
       if (again) again.focus();
-    });
+    };
+    menu.addEventListener('change', e => onChange(menu, e));
     menu.addEventListener('click', e => { if (e.target.closest('[data-done]')) { openPacks(false); $('packBtn').focus(); } });
     menu.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); openPacks(false); $('packBtn').focus(); } });
-    document.addEventListener('pointerdown', e => { if (!menu.hidden && !e.target.closest('#packDrop')) openPacks(false); });
+    gmenu.addEventListener('change', e => onChange(gmenu, e));
+    gmenu.addEventListener('click', e => { if (e.target.closest('[data-done]')) closeGamePacks(); });
+    gmenu.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeGamePacks(); } });
+    document.addEventListener('pointerdown', e => { if (!menu.hidden && !e.target.closest('#packDrop')) openPacks(false); if (!gmenu.hidden && !e.target.closest('#gamePackMenu, [data-pack]')) closeGamePacks(); });
   }
   /* The mascot on the launcher: the host waves hello now and then */
   function createMascot() {
@@ -469,7 +506,7 @@ CGB.app = (() => {
     show('launcher');
     ($('subjectSelect').hidden ? $('subjectOwn') : $('subjectSelect')).focus();
   }
-  return { init, show, requestLauncher, chooseSubject, endGame, inGame, get current() { return current; } };
+  return { init, show, requestLauncher, chooseSubject, openGamePacks, closeGamePacks, endGame, inGame, get current() { return current; } };
 })();
 
 /* ---------- Full screen: a button on the launcher and in every game's top bar, and the F key ----------
@@ -480,12 +517,17 @@ CGB.fullscreen = (() => {
   const can = !!(doc.fullscreenEnabled || doc.webkitFullscreenEnabled);
   const on = () => !!(doc.fullscreenElement || doc.webkitFullscreenElement);
   let leftAt = -1e9;   // when Esc last left full screen: a held or doubled Esc straight after is part of leaving
+  let locked = false;  // the Esc key is ours while in full screen (Keyboard Lock), so only F leaves full screen
+  const kb = () => navigator.keyboard && navigator.keyboard.lock ? navigator.keyboard : null;
+  function lockEsc() { try { const k = kb(); if (k) { const p = k.lock(['Escape']); locked = true; if (p && p.catch) p.catch(() => { locked = false; }); } } catch (e) { locked = false; } }
+  function unlockEsc() { try { const k = kb(); if (k) k.unlock(); } catch (e) { /* nothing to unlock */ } locked = false; }
   function toggle() {
     try {
-      if (on()) { const p = (doc.exitFullscreen || doc.webkitExitFullscreen).call(doc); if (p && p.catch) p.catch(() => { /* already leaving */ }); }
+      if (on()) { unlockEsc(); const p = (doc.exitFullscreen || doc.webkitExitFullscreen).call(doc); if (p && p.catch) p.catch(() => { /* already leaving */ }); }
       else {
         const p = (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
-        if (p && p.catch) p.catch(() => { /* refused (for example inside a frame): stay as we are */ });
+        if (p && p.then) p.then(lockEsc, () => { /* refused (for example inside a frame): stay as we are */ });
+        else lockEsc();
       }
     } catch (e) { /* no full-screen support */ }
   }
@@ -502,10 +544,12 @@ CGB.fullscreen = (() => {
     // the main screen's button sits next to Question bank, in the markup
     paint();
   }
-  ['fullscreenchange', 'webkitfullscreenchange'].forEach(ev => doc.addEventListener(ev, paint));
+  ['fullscreenchange', 'webkitfullscreenchange'].forEach(ev => doc.addEventListener(ev, () => { if (!on()) unlockEsc(); paint(); }));
   doc.addEventListener('click', e => { if (e.target.closest && e.target.closest('[data-fullscreen]')) toggle(); });
   doc.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && (on() || performance.now() - leftAt < 250)) {
+    // Esc with the key locked is the game's own Esc (Menu); where the browser can't lock it (Firefox, Safari),
+    // Esc leaves full screen as the browser insists, and that Esc is not also the game's Menu key
+    if (e.key === 'Escape' && !(on() && locked) && (on() || performance.now() - leftAt < 250)) {
       e.preventDefault(); e.stopImmediatePropagation();
       if (on()) { leftAt = performance.now(); toggle(); }
       return;
