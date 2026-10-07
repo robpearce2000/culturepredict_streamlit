@@ -783,6 +783,7 @@ Q: In a closed system, total momentum before an event equals total momentum afte
 A: Conservation of momentum
 Accept: Law of conservation of momentum; Principle of conservation of momentum
 Ref: 4.5.7.2
+Sep: no
 HT: yes
 D: 2
 Id: aqa-phys-4.5-097
@@ -791,6 +792,7 @@ Q: A stationary firework explodes into pieces. What is the total momentum of the
 A: Zero
 Accept: 0; 0 kg m/s
 Ref: 4.5.7.2
+Sep: no
 HT: yes
 D: 3
 Note: Pieces move in opposite directions, so their momenta cancel.
@@ -800,6 +802,7 @@ Q: A 2 kg trolley at 3 m/s hits a stationary 1 kg trolley and they stick togethe
 A: 2 m/s
 Accept: 2 metres per second
 Ref: 4.5.7.2
+Sep: yes
 HT: yes
 D: 3
 Note: Momentum 6 kg m/s shared by a total mass of 3 kg.

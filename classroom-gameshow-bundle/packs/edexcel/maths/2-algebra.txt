@@ -84,6 +84,7 @@ Q: Simplify 3√2 + 5√2.
 A: 8√2
 Ref: A4
 D: 1
+HT: yes
 Id: edexcel-maths-2-013
 
 Q: Factorise 3x² − 5x − 2.

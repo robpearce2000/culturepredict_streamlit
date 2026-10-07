@@ -131,10 +131,36 @@ CGB.bank = (() => {
     return pack;
   });
 
+  /* Combined Science: the same topic packs seen through the Combined Science specification (AQA
+     Trilogy 8464, Edexcel 1SC0). Questions on separate-science-only content are left out, and the
+     rest carry their Combined Science reference and tier (tools/spec-map, applied by tools/packs.js). */
+  const SCIENCES = ['biology', 'chemistry', 'physics'];
+  const COURSES = [{ id: 'separate', label: 'Separate science' }, { id: 'combined', label: 'Combined Science' }];
+  const COMBINED = BUILTIN.filter(p => DATA.packs.find(d => d.id === p.id).comb).map(base => {
+    const c = DATA.packs.find(d => d.id === base.id).comb, style = `${base.board === 'aqa' ? 'AQA' : 'Edexcel'}-style`;
+    const pack = {
+      id: base.id + '~comb', builtin: true, combined: true, board: base.board, subject: base.subject, specCode: c.specCode, specVersion: c.version,
+      topic: c.topic, ref: c.ref, order: c.order, course: 'Combined Science', separateId: base.id,
+      name: `${c.topic} (${style} GCSE ${c.name} ${c.specCode}, ${c.ref})`, short: c.topic, count: DATA.packs.find(d => d.id === base.id).nc
+    };
+    let qs = null;
+    Object.defineProperty(pack, 'questions', {
+      enumerable: true,
+      get() {
+        if (!qs) qs = base.questions.filter(q => !q.sepOnly).map(q => Object.assign({}, q, { specCode: c.specCode, specRef: q.combRef || q.specRef, separateRef: q.specRef, tier: q.combTier || q.tier }));
+        return qs;
+      }
+    });
+    // Category Clash columns: only the subtopics with questions left in Combined Science
+    Object.defineProperty(pack, 'subtopics', { enumerable: true, get() { return base.subtopics.filter(t => pack.questions.some(q => q.subtopic === t)); } });
+    return pack;
+  });
+
   let custom = [];
   let subject = 'biology', board = 'aqa';
   let selections = {};   // "subject|board" -> { mixed: specCode } or { ids: [pack and set ids] }
   let higher = true;     // include Higher tier only questions
+  let course = 'separate';   // Biology, Chemistry and Physics: separate science or Combined Science
   let history = {};      // key (lower-case name) -> { name, entries: [ {subject, topic, q, a, date, game} ] }
   const listeners = [];
   let cached = null;
@@ -172,6 +198,7 @@ CGB.bank = (() => {
     const sel = store.getJSON('packSelections', {});
     selections = sel && typeof sel === 'object' && !Array.isArray(sel) ? sel : {};
     higher = store.get('higherTier') !== '0';
+    if (COURSES.some(c => c.id === store.get('course'))) course = store.get('course');
     // a teacher's own set chosen before version 1.1 stays chosen
     const ids = store.getJSON('activeSets', {});
     if (ids && typeof ids === 'object') Object.keys(ids).forEach(k => {
@@ -208,12 +235,16 @@ CGB.bank = (() => {
     store.set('migrated', '1');
   }
 
-  function all() { return BUILTIN.concat(custom); }
+  function all() { return BUILTIN.concat(COMBINED, custom); }
+  const hasCourses = sj => SCIENCES.includes(sj || subject);
+  const combinedNow = sj => hasCourses(sj) && course === 'combined';
+  /* History and Geography GCSEs are not tiered: no Higher tier switch, nothing left out */
+  const tiered = sj => !['history', 'geography'].includes(sj || subject);
   function get(id) { return all().find(s => s.id === id) || null; }
   /* The built-in topic packs for a subject and board, in specification order */
   function packs(sj, bd) {
     sj = sj || subject; bd = bd || board;
-    return BUILTIN.filter(p => p.subject === sj && p.board === bd).sort((a, b) => a.specCode.localeCompare(b.specCode) || a.order - b.order);
+    return (combinedNow(sj) ? COMBINED : BUILTIN).filter(p => p.subject === sj && p.board === bd).sort((a, b) => a.specCode.localeCompare(b.specCode) || a.order - b.order);
   }
   /* The specifications those packs come from (two for Edexcel Geography) */
   function courses(sj, bd) {
@@ -227,7 +258,7 @@ CGB.bank = (() => {
   function available(sj) { return packs(sj).concat(ownSets(sj)); }
 
   /* ---------- What is chosen ---------- */
-  const selKey = () => subject + '|' + board;
+  const selKey = () => subject + '|' + board + (combinedNow() ? '|combined' : '');
   function selection() {
     const s = selections[selKey()], cs = courses();
     if (s && s.mixed && cs.some(c => c.specCode === s.mixed)) return { mixed: s.mixed };
@@ -249,6 +280,7 @@ CGB.bank = (() => {
     ids = ids.includes(id) ? ids.filter(x => x !== id) : ids.concat(id);
     return setSelection(ids.length ? { ids } : { mixed: (courses()[0] || {}).specCode });
   }
+  function setCourse(k) { if (!COURSES.some(c => c.id === k) || k === course) return false; course = k; store.set('course', k); emit(); return true; }
   function setHigher(on) { higher = !!on; store.set('higherTier', higher ? '1' : '0'); emit(); }
 
   /* The question set every game uses: what is chosen, as one set. With one topic chosen,
@@ -259,14 +291,15 @@ CGB.bank = (() => {
     const chosen = sel.mixed ? packs().filter(p => p.specCode === sel.mixed) : sel.ids.map(get).filter(Boolean);
     if (!chosen.length) return null;
     let questions = [].concat(...chosen.map(s => s.questions));
-    const dropped = higher ? 0 : questions.filter(q => q.tier === 'Higher').length;
-    if (!higher) questions = questions.filter(q => q.tier !== 'Higher');
+    const leaveOut = !higher && tiered();
+    const dropped = leaveOut ? questions.filter(q => q.tier === 'Higher').length : 0;
+    if (leaveOut) questions = questions.filter(q => q.tier !== 'Higher');
     if (!questions.length) return null;
     const one = chosen.length === 1 ? chosen[0] : null;
     const course = sel.mixed ? (courses().find(c => c.specCode === sel.mixed) || {}).name : '';
     const short = sel.mixed ? `Mixed: all ${course ? course + ' ' : ''}topics` : one ? one.short || one.name : `${chosen.length} ${chosen.every(s => s.builtin) ? 'topics' : 'sets'}: ${chosen.map(s => s.builtin ? s.topic : s.name).join(', ')}`;
     cached = {
-      id: 'sel:' + selKey() + ':' + (sel.mixed ? 'mixed-' + sel.mixed : sel.ids.join('+')) + (higher ? '' : ':f'),
+      id: 'sel:' + selKey() + ':' + (sel.mixed ? 'mixed-' + sel.mixed : sel.ids.join('+')) + (leaveOut ? ':f' : ''),
       name: sel.mixed ? `${short} (${label(BOARDS, board)}-style GCSE ${label(SUBJECTS, subject)})` : one ? one.name : short,
       short, questions, parts: chosen, builtin: chosen.every(s => s.builtin), withoutHigher: dropped,
       groupBy: one && one.builtin && one.subtopics.length > 1 ? 'subtopic' : 'topic'
@@ -281,7 +314,7 @@ CGB.bank = (() => {
     const sj = label(SUBJECTS, subject), bd = label(BOARDS, board);
     if (subject === 'other') return ownSets().length ? '' : 'Add your own questions for any subject in the Question bank.';
     if (!packs().length) return `Built-in ${bd}-style ${sj} packs are coming soon. For now, add your own ${sj} questions in the Question bank.`;
-    if (!higher) return 'Foundation tier: Higher tier only questions are left out.';
+    if (!higher && tiered()) return `Foundation tier: questions on Higher tier only content${combinedNow() ? ' in Combined Science' : ''} are left out.`;
     return '';
   }
   /* Custom sets can be moved to another subject from the Question bank */
@@ -390,7 +423,7 @@ CGB.bank = (() => {
     return {
       format: 'classroom-gameshow-bundle-backup', formatVersion: 1, appVersion: CGB.VERSION,
       exported: new Date().toISOString(),
-      subject, board, packSelections: JSON.parse(JSON.stringify(selections)), higherTier: higher,
+      subject, board, packSelections: JSON.parse(JSON.stringify(selections)), higherTier: higher, course,
       sets: JSON.parse(JSON.stringify(custom)),
       history: JSON.parse(JSON.stringify(history))
     };
@@ -431,7 +464,8 @@ CGB.bank = (() => {
   migrateLegacy();
   return {
     parse, toText, TIERS, difficultyOf, tierOf: difficultyOf, estimateTier, all, get, active, available, packs, courses, ownSets, summary, addSet, updateSet, deleteSet, setSubjectOf,
-    selection, setSelection, toggle, higher: () => higher, setHigher, specs: () => Object.assign({}, DATA.specs),
+    selection, setSelection, toggle, higher: () => higher, setHigher, tiered,
+    COURSES, course: () => course, setCourse, hasCourses, combined: combinedNow, specs: () => Object.assign({}, DATA.specs),
     SUBJECTS, BOARDS, subject: () => subject, board: () => board, setSubject, setBoard, subjectNote,
     subjectLabel: k => label(SUBJECTS, k || subject), boardLabel: k => label(BOARDS, k || board),
     logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker,

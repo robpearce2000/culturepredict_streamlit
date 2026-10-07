@@ -8,7 +8,7 @@ Showtime: Classroom Gameshows (4 offline revision quiz games)
 
 ## Summary line
 
-Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE packs for Biology, Chemistry, Physics, Maths, History and Geography, one for every specification topic and option (7,700+ questions). One file, works offline.
+Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE packs for Biology, Chemistry, Physics, Maths, History and Geography, one for every specification topic and option (7,800+ questions), for separate sciences and Combined Science. One file, works offline.
 
 ## Description
 
@@ -38,10 +38,10 @@ A board of four topics from your subject and points values from 100 to 300, for 
 A tactical race across a board of lettered hexagons. Each letter is the first letter of the answer. Both halves of the class answer every question; you press the half with more right answers (or Neither) and it claims the hexagon and picks the next one. The first half to link its two edges wins the round.
 
 **One question bank for every game**
-- Choose your subject (Biology, Chemistry, Physics, Maths, History, Geography or Other) and exam board (AQA or Edexcel) on the menu, then tick the topic you are teaching, several topics, or "Mixed: all topics" for revision; every game uses them
-- AQA-style (8461, 8462, 8463, 8300, 8145, 8035) and Edexcel-style (1BI0, 1CH0, 1PH0, 1MA1, 1HI0, 1GA0, 1GB0) GCSE packs: every specification topic, every History and Geography option, separate-science content and every required or core practical, with over 7,700 questions. Every question is tied to a specification point, tagged by difficulty, and marked if it is Higher tier only, so a Foundation class can leave those out
+- Choose your subject (Biology, Chemistry, Physics, Maths, History, Geography or Other) and exam board (AQA or Edexcel) on the menu (for the sciences, also Separate science or Combined Science), then tick the topic you are teaching, several topics, or "Mixed: all topics" for revision; every game uses them
+- AQA-style (8461, 8462, 8463, 8464 Combined Science: Trilogy, 8300, 8145, 8035) and Edexcel-style (1BI0, 1CH0, 1PH0, 1SC0 Combined Science, 1MA1, 1HI0, 1GA0, 1GB0) GCSE packs: every specification topic, every History and Geography option, separate-science content and every required or core practical, with over 7,800 questions. Every question is tied to a specification point (and its Combined Science point), tagged by difficulty, and marked if it is Higher tier only in each course, so a Foundation class can leave those out. Combined Science classes only see Combined Science content
 - Short, markable answers with the accepted alternatives shown, made for mini whiteboards and a 20-second countdown
-- Edexcel science, Maths, History and Geography packs are on the way; meanwhile add your own sets for any subject in seconds by pasting simple text (Subject, Topic, Q, A, with optional Accept, Note and Difficulty lines)
+- Add your own sets for any subject in seconds by pasting simple text (Subject, Topic, Q, A, with optional Accept, Note and Difficulty lines)
 - Wrong answers are saved for each team, and questions from their weak topics come round again more often in every game
 - Save a backup file to move your sets and history to another computer
 

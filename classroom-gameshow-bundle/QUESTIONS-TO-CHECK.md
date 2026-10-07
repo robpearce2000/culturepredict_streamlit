@@ -93,3 +93,16 @@ A spot check of 45 of the 276 questions that came up in the simulated lessons fo
 - aqa-geog-3.1.3.2-042 "At Mappleton in East Yorkshire, which hard engineering was installed in 1991 to protect the
   village?" Answer: Rock armour. The 1991 scheme was rock armour **and two rock groynes**, so a class answering
   "rock groynes" is also right. Suggest adding Accept: Rock groynes; Groynes.
+
+## Course and tier tags (version 1.4.0)
+
+Changed by the checking pass, please confirm:
+- edexcel-phys-13-032, -033, -034 (13.10, VpIp = VsIs): now Foundation and Higher. 13.10 is not in bold in 1PH0 or 1SC0.
+- edexcel-phys-6-087, -088, -091 (6.27, fraction left after n half-lives): now Higher only, from the bold "Calculate the net decline, expressed as a ratio" line in both specifications. -089 and -090 (activity after whole half-lives) stay Foundation.
+- aqa-maths-3.2-015 ((√3 + 1)(√3 − 1)) and edexcel-maths-2-013 (3√2 + 5√2): now Higher only (surds).
+
+Left as they are, but unsure:
+- aqa-maths-3.2-025 and edexcel-maths-2-022: working backwards through a function machine. Left Foundation; the "inverse function" itself is Higher only.
+- aqa-phys-4.5-098 (a firework's total momentum is zero): kept in Combined Science as describing momentum in an event; aqa-phys-4.5-099 (trolley collision calculation) is separate science only.
+- AQA 4.1.2.1: the thermal conductivity questions are kept in Combined Science (Trilogy 6.1.2.1 includes them); the five required practical 2 questions are separate science only.
+

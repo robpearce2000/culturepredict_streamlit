@@ -490,7 +490,9 @@ function renderPack() {
   const ok = CGB.renderPackLine($('pack'));
   $('startBtn').disabled = !ok;
   const usable = ok ? bank.active().questions.filter(q => firstLetter(q)).length : 0;
-  $('setHint').textContent = ok ? `${usable} of these questions have answers that start with a letter, so they can go on the board.` : '';
+  // fewer than the board's hexagons: say so, since some questions then come round twice
+  const cells = S.size * S.size, few = ok && usable < cells ? ` That is fewer than the ${cells} hexagons, so some come up twice: add another topic for more.` : '';
+  $('setHint').textContent = ok ? `${usable} of these questions have answers that start with a letter, so they can go on the board.${few}` : '';
 }
 bank.onChange(() => { if (S.phase === 'home') renderPack(); });
 renderPack();

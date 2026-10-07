@@ -1,0 +1,1486 @@
+{
+ "board": "Edexcel",
+ "subject": "physics",
+ "separate": {
+  "specCode": "1PH0",
+  "version": "Issue 4, March 2024"
+ },
+ "combined": {
+  "specCode": "1SC0",
+  "name": "Combined Science",
+  "version": "Issue 6, March 2024",
+  "source": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Science/2016/Specification/gcse-combinedscience-spec.pdf"
+ },
+ "method": "Pearson numbers Combined Science statements exactly as in the separate sciences; statements with a B, C or P suffix (and whole topics such as Chemistry 5 and 9, Physics 7 and 11) are separate only. Every unsuffixed statement was found in 1SC0. Higher tier: statements in bold, compared between the two PDFs (same in both).",
+ "topics": [
+  {
+   "sep": "1",
+   "comb": "1",
+   "title": "Key concepts of physics",
+   "combTitle": "Key concepts of physics"
+  },
+  {
+   "sep": "2",
+   "comb": "2",
+   "title": "Motion and forces",
+   "combTitle": "Motion and forces"
+  },
+  {
+   "sep": "3",
+   "comb": "3",
+   "title": "Conservation of energy",
+   "combTitle": "Conservation of energy"
+  },
+  {
+   "sep": "4",
+   "comb": "4",
+   "title": "Waves",
+   "combTitle": "Waves"
+  },
+  {
+   "sep": "5",
+   "comb": "5",
+   "title": "Light and the electromagnetic spectrum",
+   "combTitle": "Light and the electromagnetic spectrum"
+  },
+  {
+   "sep": "6",
+   "comb": "6",
+   "title": "Radioactivity",
+   "combTitle": "Radioactivity"
+  },
+  {
+   "sep": "8",
+   "comb": "8",
+   "title": "Energy – forces doing work",
+   "combTitle": "Energy – forces doing work"
+  },
+  {
+   "sep": "9",
+   "comb": "9",
+   "title": "Forces and their effects",
+   "combTitle": "Forces and their effects"
+  },
+  {
+   "sep": "10",
+   "comb": "10",
+   "title": "Electricity and circuits",
+   "combTitle": "Electricity and circuits"
+  },
+  {
+   "sep": "12",
+   "comb": "12",
+   "title": "Magnetism and the motor effect",
+   "combTitle": "Magnetism and the motor effect"
+  },
+  {
+   "sep": "13",
+   "comb": "13",
+   "title": "Electromagnetic induction",
+   "combTitle": "Electromagnetic induction"
+  },
+  {
+   "sep": "14",
+   "comb": "14",
+   "title": "Particle model",
+   "combTitle": "Particle model"
+  },
+  {
+   "sep": "15",
+   "comb": "15",
+   "title": "Forces and matter",
+   "combTitle": "Forces and matter"
+  }
+ ],
+ "points": {
+  "1.1": {
+   "comb": "1.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "1.2": {
+   "comb": "1.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "1.3": {
+   "comb": "1.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "1.4": {
+   "comb": "1.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.1": {
+   "comb": "2.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.2": {
+   "comb": "2.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.3": {
+   "comb": "2.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.4": {
+   "comb": "2.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.5": {
+   "comb": "2.5",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.6": {
+   "comb": "2.6",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.7": {
+   "comb": "2.7",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.8": {
+   "comb": "2.8",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.9": {
+   "comb": "2.9",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.10": {
+   "comb": "2.10",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.11": {
+   "comb": "2.11",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.12": {
+   "comb": "2.12",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.13": {
+   "comb": "2.13",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.14": {
+   "comb": "2.14",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.15": {
+   "comb": "2.15",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.16": {
+   "comb": "2.16",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.17": {
+   "comb": "2.17",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.18": {
+   "comb": "2.18",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.19": {
+   "comb": "2.19",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.20": {
+   "comb": "2.20",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "2.21": {
+   "comb": "2.21",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "2.22": {
+   "comb": "2.22",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "2.23": {
+   "comb": "2.23",
+   "tier": "Mixed",
+   "combTier": "Mixed"
+  },
+  "2.24": {
+   "comb": "2.24",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "2.25": {
+   "comb": "2.25",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "2.26": {
+   "comb": "2.26",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "2.27": {
+   "comb": "2.27",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.28": {
+   "comb": "2.28",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.29": {
+   "comb": "2.29",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.30": {
+   "comb": "2.30",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "2.31": {
+   "comb": "2.31",
+   "tier": "Mixed",
+   "combTier": "Mixed"
+  },
+  "2.32P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "2.33P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "3.1": {
+   "comb": "3.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.2": {
+   "comb": "3.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.3": {
+   "comb": "3.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.4": {
+   "comb": "3.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.5": {
+   "comb": "3.5",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.6": {
+   "comb": "3.6",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.7": {
+   "comb": "3.7",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.8": {
+   "comb": "3.8",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.9": {
+   "comb": "3.9",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.10": {
+   "comb": "3.10",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.11": {
+   "comb": "3.11",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.12": {
+   "comb": "3.12",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "3.13": {
+   "comb": "3.13",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "3.14": {
+   "comb": "3.14",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "4.1": {
+   "comb": "4.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "4.2": {
+   "comb": "4.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "4.3": {
+   "comb": "4.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "4.4": {
+   "comb": "4.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "4.5": {
+   "comb": "4.5",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "4.6": {
+   "comb": "4.6",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "4.7": {
+   "comb": "4.7",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "4.8P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "4.9P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "4.10": {
+   "comb": "4.10",
+   "tier": "Mixed",
+   "combTier": "Mixed"
+  },
+  "4.11": {
+   "comb": "4.11",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "4.12P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "4.13P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "4.14P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "4.15P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "4.16P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "4.17": {
+   "comb": "4.17",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.1P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "5.2P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "5.3P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "5.4P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "5.5P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "5.6P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "5.7": {
+   "comb": "5.7",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.8": {
+   "comb": "5.8",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.9": {
+   "comb": "5.9",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.10": {
+   "comb": "5.10",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.11": {
+   "comb": "5.11",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.12": {
+   "comb": "5.12",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.13": {
+   "comb": "5.13",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "5.14": {
+   "comb": "5.14",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "5.15P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "5.16P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "5.17P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "5.18P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "5.19P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "5.20": {
+   "comb": "5.20",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.21": {
+   "comb": "5.21",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.22": {
+   "comb": "5.22",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "5.23": {
+   "comb": "5.23",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "5.24": {
+   "comb": "5.24",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.1": {
+   "comb": "6.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.2": {
+   "comb": "6.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.3": {
+   "comb": "6.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.4": {
+   "comb": "6.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.5": {
+   "comb": "6.5",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.6": {
+   "comb": "6.6",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.7": {
+   "comb": "6.7",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.8": {
+   "comb": "6.8",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.9": {
+   "comb": "6.9",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.10": {
+   "comb": "6.10",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.11": {
+   "comb": "6.11",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.12": {
+   "comb": "6.12",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.13": {
+   "comb": "6.13",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.14": {
+   "comb": "6.14",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.15": {
+   "comb": "6.15",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.16": {
+   "comb": "6.16",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.17": {
+   "comb": "6.17",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.18": {
+   "comb": "6.18",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.19": {
+   "comb": "6.19",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.20": {
+   "comb": "6.20",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.21": {
+   "comb": "6.21",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.22": {
+   "comb": "6.22",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.23": {
+   "comb": "6.23",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.24": {
+   "comb": "6.24",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.25": {
+   "comb": "6.25",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.26": {
+   "comb": "6.26",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.27": {
+   "comb": "6.27",
+   "tier": "Mixed",
+   "combTier": "Mixed"
+  },
+  "6.28P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.29": {
+   "comb": "6.29",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.30P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.31": {
+   "comb": "6.31",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.32": {
+   "comb": "6.32",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "6.33P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.34P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.35P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.36P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.37P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.38P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.39P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.40P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.41P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.42P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.43P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.44P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.45P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "6.46P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.1P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.2P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.3P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.4P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.5P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.6P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.7P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.8P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.9P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.10P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.11P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.12P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.13P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.14P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.15P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.16P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.17P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.18P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "7.19P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "8.1": {
+   "comb": "8.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.2": {
+   "comb": "8.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.3": {
+   "comb": "8.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.4": {
+   "comb": "8.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.5": {
+   "comb": "8.5",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.6": {
+   "comb": "8.6",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.7": {
+   "comb": "8.7",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.8": {
+   "comb": "8.8",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.9": {
+   "comb": "8.9",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.10": {
+   "comb": "8.10",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.11": {
+   "comb": "8.11",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.12": {
+   "comb": "8.12",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.13": {
+   "comb": "8.13",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.14": {
+   "comb": "8.14",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "8.15": {
+   "comb": "8.15",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "9.1": {
+   "comb": "9.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "9.2": {
+   "comb": "9.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "9.3": {
+   "comb": "9.3",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "9.4": {
+   "comb": "9.4",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "9.5": {
+   "comb": "9.5",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "9.6P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "9.7P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "9.8P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "9.9P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "9.10": {
+   "comb": "9.10",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.1": {
+   "comb": "10.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.2": {
+   "comb": "10.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.3": {
+   "comb": "10.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.4": {
+   "comb": "10.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.5": {
+   "comb": "10.5",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.6": {
+   "comb": "10.6",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.7": {
+   "comb": "10.7",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.8": {
+   "comb": "10.8",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.9": {
+   "comb": "10.9",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.10": {
+   "comb": "10.10",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.11": {
+   "comb": "10.11",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.12": {
+   "comb": "10.12",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.13": {
+   "comb": "10.13",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.14": {
+   "comb": "10.14",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.15": {
+   "comb": "10.15",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.16": {
+   "comb": "10.16",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.17": {
+   "comb": "10.17",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.18": {
+   "comb": "10.18",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.19": {
+   "comb": "10.19",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.20": {
+   "comb": "10.20",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.21": {
+   "comb": "10.21",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.22": {
+   "comb": "10.22",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.23": {
+   "comb": "10.23",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.24": {
+   "comb": "10.24",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.25": {
+   "comb": "10.25",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "10.26": {
+   "comb": "10.26",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.27": {
+   "comb": "10.27",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.28": {
+   "comb": "10.28",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.29": {
+   "comb": "10.29",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.30": {
+   "comb": "10.30",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.31": {
+   "comb": "10.31",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.32": {
+   "comb": "10.32",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.33": {
+   "comb": "10.33",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.34": {
+   "comb": "10.34",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.35": {
+   "comb": "10.35",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.36": {
+   "comb": "10.36",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.37": {
+   "comb": "10.37",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.38": {
+   "comb": "10.38",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.39": {
+   "comb": "10.39",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.40": {
+   "comb": "10.40",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.41": {
+   "comb": "10.41",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "10.42": {
+   "comb": "10.42",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "11.1P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "11.2P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "11.3P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "11.4P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "11.5P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "11.6P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "11.7P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "11.8P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "11.9P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "11.10P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "12.1": {
+   "comb": "12.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "12.2": {
+   "comb": "12.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "12.3": {
+   "comb": "12.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "12.4": {
+   "comb": "12.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "12.5": {
+   "comb": "12.5",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "12.6": {
+   "comb": "12.6",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "12.7": {
+   "comb": "12.7",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "12.8": {
+   "comb": "12.8",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "12.9": {
+   "comb": "12.9",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "12.10": {
+   "comb": "12.10",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "12.11": {
+   "comb": "12.11",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "12.12": {
+   "comb": "12.12",
+   "tier": "Mixed",
+   "combTier": "Mixed"
+  },
+  "12.13": {
+   "comb": "12.13",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "12.14P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "13.1P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "13.2": {
+   "comb": "13.2",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "13.3P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "13.4P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "13.5": {
+   "comb": "13.5",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "13.6": {
+   "comb": "13.6",
+   "tier": "Higher",
+   "combTier": "Higher"
+  },
+  "13.7P": {
+   "comb": null,
+   "tier": "Mixed"
+  },
+  "13.8": {
+   "comb": "13.8",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "13.9": {
+   "comb": "13.9",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "13.10": {
+   "comb": "13.10",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "13.11P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "14.1": {
+   "comb": "14.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.2": {
+   "comb": "14.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.3": {
+   "comb": "14.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.4": {
+   "comb": "14.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.5": {
+   "comb": "14.5",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.6": {
+   "comb": "14.6",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.7": {
+   "comb": "14.7",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.8": {
+   "comb": "14.8",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.9": {
+   "comb": "14.9",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.10": {
+   "comb": "14.10",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.11": {
+   "comb": "14.11",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.12": {
+   "comb": "14.12",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.13": {
+   "comb": "14.13",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.14": {
+   "comb": "14.14",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.15": {
+   "comb": "14.15",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "14.16P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "14.17P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "14.18P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "14.19P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "14.20P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "15.1": {
+   "comb": "15.1",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "15.2": {
+   "comb": "15.2",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "15.3": {
+   "comb": "15.3",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "15.4": {
+   "comb": "15.4",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "15.5": {
+   "comb": "15.5",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "15.6": {
+   "comb": "15.6",
+   "tier": "Foundation and Higher",
+   "combTier": "Foundation and Higher"
+  },
+  "15.7P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "15.8P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "15.9P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "15.10P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "15.11P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "15.12P": {
+   "comb": null,
+   "tier": "Foundation and Higher"
+  },
+  "15.13P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "15.14P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "15.15P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "15.16P": {
+   "comb": null,
+   "tier": "Higher"
+  },
+  "15.17P": {
+   "comb": null,
+   "tier": "Higher"
+  }
+ }
+}

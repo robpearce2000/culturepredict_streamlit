@@ -21,12 +21,17 @@
  *   HT: yes                         Higher tier only                            (optional)
  *   RP: 1                           a required practical's number               (optional)
  *   Calc: yes                       the question needs a calculation: 45 s to answer outside Maths (optional)
+ *   Sep: yes                        separate science only, on a point that is otherwise in Combined Science;
+ *                                   "Sep: no" keeps it in Combined Science (needed on the points the course
+ *                                   map in tools/spec-map lists as "partial")
  *   Note: Not "mitochondrion's"     a note for the teacher, e.g. a misconception (optional)
  *   Id: aqa-bio-4.1-001             stable id, added by "node tools/packs.js ids"
  *
  * The subtopic is the specification heading three levels down from the Ref (e.g. 4.1.1 Cell
  * structure), and hexOk comes from the shared Hex Hunt letter rule (src/shared/hexletter.js),
- * so neither is typed by hand.
+ * so neither is typed by hand. Science questions also take their course tags from their Ref:
+ * tools/spec-map/<board>-<subject>.json says, point by point, whether it is in Combined Science,
+ * its Combined Science reference and its tier in each course.
  *
  * The same module is used by build.js (to put the packs into the single HTML file) and by
  * tests/packs.spec.js (the automated checks).
@@ -62,6 +67,24 @@ const cmpRef = (a, b) => { const x = refKey(a), y = refKey(b); for (let i = 0; i
 // packs follow the specification's own topic order (refs such as 1AA or B1 are not numbers)
 const topicIndex = p => loadSpec(p.board, p.specCode).topics.findIndex(t => t.ref === p.topicRef);
 
+/* The course map for a separate science (tools/spec-map), or null for other subjects */
+const MAP_DIR = path.join(__dirname, 'spec-map');
+const mapCache = {};
+function loadMap(board, subject) {
+  const k = board.toLowerCase() + '-' + subject;
+  if (!(k in mapCache)) { const f = path.join(MAP_DIR, k + '.json'); mapCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null; }
+  return mapCache[k];
+}
+/* A Ref's entry in the course map: the point itself or its nearest heading, with the
+   Combined Science reference carried down (AQA renumbers 4.x as 4.x, 5.x or 6.x) */
+function mapPoint(map, ref) {
+  for (let r = ref; r; r = r.includes('.') ? r.slice(0, r.lastIndexOf('.')) : '') {
+    const e = map.points[r];
+    if (e) return Object.assign({}, e, { at: r, combRef: e.comb ? e.comb + ref.slice(r.length) : null });
+  }
+  return null;
+}
+
 const specCache = {};
 function loadSpec(board, code) {
   const k = board.toLowerCase() + '-' + code;
@@ -95,7 +118,7 @@ function parseFile(file) {
       else errors.push(`line ${i + 1}: "${m[1]}:" before the first Q:`);
       return;
     }
-    const known = { a: 'a', accept: 'accept', ref: 'ref', d: 'd', ht: 'ht', rp: 'rp', calc: 'calc', note: 'note', id: 'id' };
+    const known = { a: 'a', accept: 'accept', ref: 'ref', d: 'd', ht: 'ht', rp: 'rp', calc: 'calc', sep: 'sep', note: 'note', id: 'id' };
     if (!known[key]) { errors.push(`line ${i + 1}: unknown key "${m[1]}:"`); return; }
     if (cur[key] !== undefined) errors.push(`line ${i + 1}: "${m[1]}:" given twice for one question`);
     cur[key] = val;
@@ -132,6 +155,7 @@ function buildPack(p) {
   const inTopic = ref => spec.parents ? topic.subtopics.some(t => t.ref === parentOf(ref)) : (ref + '.').startsWith(topic.ref + '.');
   const subRef = ref => { const parts = ref.split('.'); const depth = spec.subtopicDepth || 3; return parts.slice(0, depth).join('.'); };
   const topicName = displayName(topic.title);
+  const map = loadMap(board, subject);
   const questions = p.questions.map(q => {
     ['a', 'ref', 'd'].forEach(k => { if (!q[k]) err(q, `missing ${k === 'd' ? 'D' : k[0].toUpperCase() + k.slice(1)}: for "${q.q.slice(0, 50)}"`); });
     const out = { id: q.id || '', board, subject, specCode: spec.specCode, specRef: q.ref || '', topic: topicName, subtopic: '', tier: yes(q.ht) ? 'Higher' : 'Foundation and Higher', difficulty: +q.d, q: q.q, a: q.a || '', accept: q.accept ? q.accept.split(';').map(s => s.trim()).filter(Boolean) : [], hexOk: false, notes: q.note || '', line: q.line };
@@ -147,7 +171,21 @@ function buildPack(p) {
         if (!s) err(q, `Ref ${q.ref} must be at least three levels deep (a subtopic)`);
         else out.subtopic = displayName(s.title);
         if (isHtOnly(q.ref) && out.tier !== 'Higher') err(q, `Ref ${q.ref} is Higher tier only in the specification: add "HT: yes"`);
+        if (map) {
+          // course tags: in Combined Science or not, its Combined Science reference, its tier there
+          const e = mapPoint(map, q.ref);
+          if (!e) err(q, `Ref ${q.ref} has no entry in tools/spec-map/${map.board.toLowerCase()}-${subject}.json`);
+          else {
+            if (e.partial && q.sep === undefined) err(q, `Ref ${q.ref} is only partly in Combined Science (${e.partial}): add "Sep: yes" or "Sep: no"`);
+            if (!e.comb && q.sep !== undefined && !yes(q.sep)) err(q, `Ref ${q.ref} is not in Combined Science, so "Sep: no" is wrong`);
+            if (e.tier === 'Higher' && out.tier !== 'Higher') err(q, `Ref ${q.ref} is Higher tier only: add "HT: yes"`);
+            if (!e.comb || yes(q.sep)) out.sepOnly = true;
+            else { out.combRef = e.combRef; out.combTier = e.combTier === 'Higher' ? 'Higher' : out.tier; }
+          }
+        }
       }
+    } else if (q.sep !== undefined && !map) err(q, `"Sep:" is only for Biology, Chemistry and Physics`);
+    if (map && !q.ref) { /* reported above as a missing Ref */
     }
     if (q.d && ![1, 2, 3].includes(out.difficulty)) err(q, `D: must be 1, 2 or 3`);
     if (q.id && !new RegExp(`^${p.head.board.toLowerCase()}-${SHORT[subject]}-[0-9A-Za-z.-]+-\\d{3}$`).test(q.id)) err(q, `Id ${q.id} has the wrong form`);
@@ -188,9 +226,18 @@ function buildPack(p) {
     id: `${p.head.board.toLowerCase()}-${subject}-${spec.specCode}-${topic.ref}`, file: rel(p.file), board, subject, specCode: spec.specCode, specVersion: `${spec.version}, ${spec.date}`,
     specTitle: spec.title || '', topic: topicName, topicRef: topic.ref, order: spec.topics.indexOf(topic),
     subtopics: topic.subtopics.map(s => displayName(s.title)), questions,
-    stats: { n, target, byD, hex, ht: questions.filter(q => q.tier === 'Higher').length, leaves: leaves.length }
+    comb: combOf(map, topic.ref),
+    stats: { comb: questions.filter(q => !q.sepOnly && map).length, combHt: questions.filter(q => map && !q.sepOnly && q.combTier === 'Higher').length, n, target, byD, hex, ht: questions.filter(q => q.tier === 'Higher').length, leaves: leaves.length }
   };
   return { errors, warnings, pack };
+}
+
+/* The topic in Combined Science: its specification, reference, name and place in the order (null if
+   the whole topic is separate science only, or the subject has no Combined Science course) */
+function combOf(map, ref) {
+  if (!map) return null;
+  const i = map.topics.findIndex(t => t.sep === ref);
+  return i < 0 ? null : { specCode: map.combined.specCode, name: map.combined.name, version: map.combined.version, ref: map.topics[i].comb, topic: map.topics[i].combTitle, order: i };
 }
 
 const rel = f => path.relative(path.join(__dirname, '..'), f);
@@ -263,19 +310,22 @@ function bundleData() {
     specs,
     packs: packs.map(p => ({
       id: p.id, board: p.board, subject: p.subject, specCode: p.specCode, topic: p.topic, ref: p.topicRef, order: p.order, subtopics: p.subtopics,
+      comb: p.comb || undefined, nc: p.comb ? p.stats.comb : undefined,
       // [id, specRef, subtopic index, difficulty, Higher only, question, answer, accepted answers, hexOk, note, extras]
       n: p.questions.length,
       // the rows, DEFLATE-compressed and base64 (src/shared/inflate.js unpacks a pack when first used)
       z: zlib.deflateRawSync(Buffer.from(JSON.stringify(p.questions.map(q => {
         const row = [q.id, q.specRef, p.subtopics.indexOf(q.subtopic), q.difficulty, q.tier === 'Higher' ? 1 : 0, q.q, q.a, q.accept.join(';'), q.hexOk ? 1 : 0, q.notes];
-        if (q.rp || q.calc) row.push({ rp: q.rp, calc: q.calc });
+        // extras: required practical, calculation, and the course tags of the sciences
+        const x = { rp: q.rp, calc: q.calc, sepOnly: q.sepOnly, combRef: q.combRef, combTier: q.combTier && q.combTier !== q.tier ? q.combTier : undefined };
+        if (Object.values(x).some(v => v !== undefined)) row.push(x);
         return row;
       })), 'utf8'), { level: 9 }).toString('base64')
     }))
   };
 }
 
-module.exports = { parseFile, buildPack, loadAll, assignIds, bundleData, allSpecs, loadSpec, LIMITS, packFiles, norm, tokens, jaccard };
+module.exports = { loadMap, mapPoint, parseFile, buildPack, loadAll, assignIds, bundleData, allSpecs, loadSpec, LIMITS, packFiles, norm, tokens, jaccard };
 
 /* ---------- Command line ---------- */
 if (require.main === module) {

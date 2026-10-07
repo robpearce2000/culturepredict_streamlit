@@ -441,3 +441,75 @@ Ref: 15.17P
 D: 1
 HT: yes
 Id: edexcel-phys-15-058
+
+# Combined Science top-up (version 1.4): more questions on the points in Combined Science
+
+Q: Stretching, bending and compressing an object all change its what?
+A: Shape
+Accept: Shape and size; Size
+Ref: 15.1
+D: 1
+Id: edexcel-phys-15-059
+
+Q: Give an example of an object that distorts elastically.
+A: Rubber band
+Accept: Spring; Elastic band; Trampoline
+Ref: 15.2
+D: 1
+Id: edexcel-phys-15-060
+
+Q: What name is given to the point beyond which a spring no longer returns to its original length?
+A: Elastic limit
+Accept: Limit of proportionality
+Ref: 15.2
+D: 2
+Id: edexcel-phys-15-061
+
+Q: A spring with a spring constant of 50 N/m is stretched by 0.2 m. What force is acting?
+A: 10 N
+Ref: 15.3
+D: 2
+Calc: yes
+Id: edexcel-phys-15-062
+
+Q: Which spring is stiffer: one with k = 20 N/m or one with k = 80 N/m?
+A: 80 N/m
+Accept: The 80 N/m spring
+Ref: 15.3
+D: 2
+Id: edexcel-phys-15-063
+
+Q: Use E = ½ × k × x². A spring with k = 40 N/m is stretched by 0.5 m. How much energy is stored?
+A: 5 J
+Ref: 15.4
+D: 2
+Calc: yes
+Id: edexcel-phys-15-064
+
+Q: On a force–extension graph, what does a straight line through the origin show?
+A: Linear relationship
+Accept: Directly proportional; Proportional
+Ref: 15.5
+D: 2
+Id: edexcel-phys-15-065
+
+Q: What happens to a spring's force–extension graph beyond its limit of proportionality?
+A: It curves
+Accept: Becomes non-linear; Line bends
+Ref: 15.5
+D: 3
+Id: edexcel-phys-15-066
+
+Q: In the spring practical, what is hung on the spring to apply the force?
+A: Masses
+Accept: Weights; Slotted masses
+Ref: 15.6
+D: 1
+Id: edexcel-phys-15-067
+
+Q: In the spring practical, a 200 g mass is added. What extra force acts on the spring? (g = 10 N/kg)
+A: 2 N
+Ref: 15.6
+D: 3
+Calc: yes
+Id: edexcel-phys-15-068

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.0 – Combined Science and separate sciences (October 2026)
+
+- **Course choice:** for Biology, Chemistry and Physics the main screen has a **Course** choice under the exam board: **Separate science** (every question) or **Combined Science** (AQA Combined Science: Trilogy 8464, Edexcel Combined Science 1SC0). Remembered between sessions.
+- **Combined Science** shows only questions on Combined Science content, with the Combined Science topic names, numbers and order in the Questions dropdown; every game, Category Clash's columns and "Mixed: all topics" follow it.
+- **Every science question is tagged by course** (in both courses, or separate science only), with its Combined Science reference and its tier in each course. The tags come from a point-by-point map of the specifications (tools/spec-map), checked by tools/packs.js.
+- **Include Higher tier questions** uses the tier for the chosen course, works for Maths, and is hidden for History and Geography (not tiered).
+- **80 new questions** for the Combined Science topics that had fewer than 30, or too few Foundation answers for a Hex Hunt board.
+- **Tier fixes:** 3 Edexcel transformer-equation questions are Foundation, not Higher; 3 Edexcel half-life ratio questions and 2 Maths surd questions are Higher only.
+- Category Clash fills a short column from the neighbouring subtopics of the same topic; Hex Hunt says when a set has fewer letter answers than hexagons.
+
 ## 1.3.0 – Playtest fixes (October 2026)
 
 Fixes for what the simulated classroom playtest found (PLAYTEST-REPORT.md).

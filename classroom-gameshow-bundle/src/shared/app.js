@@ -344,6 +344,10 @@ CGB.app = (() => {
     // compact dropdowns: native selects work with mouse, touch and keyboard everywhere
     $('subjectSelect').innerHTML = B.SUBJECTS.map(x => `<option value="${x.id}"${x.id === sj ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
     $('boardSelect').innerHTML = B.BOARDS.map(x => `<option value="${x.id}"${x.id === bd ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
+    // Biology, Chemistry and Physics: separate science or Combined Science, next to the board
+    const cs = $('courseSelect'), co = B.course();
+    $('courseRow').hidden = !B.hasCourses();
+    cs.innerHTML = B.COURSES.map(x => `<option value="${x.id}"${x.id === co ? ' selected' : ''}>${esc(x.label)}</option>`).join('');
     renderPacks();
     const note = B.subjectNote();
     $('subjectNote').textContent = note;
@@ -364,7 +368,8 @@ CGB.app = (() => {
     });
     if (own.length) html += `<div class="pk-head">Your own sets</div>` + own.map(s => opt(`data-id="${esc(s.id)}"`, !sel.mixed && sel.ids.includes(s.id), esc(s.name), s.questions.length)).join('');
     if (!courses.length && !own.length) html += `<p class="pk-empty">${esc(B.subjectNote())}</p>`;
-    html += `<div class="pk-foot"><label><input type="checkbox" id="pkHigher"${B.higher() ? ' checked' : ''}>Include Higher tier only questions</label><button class="btn go sm" type="button" data-done>Done</button></div>`;
+    // History and Geography are not tiered: no Higher tier switch
+    html += `<div class="pk-foot">${B.tiered() ? `<label><input type="checkbox" id="pkHigher"${B.higher() ? ' checked' : ''}>Include Higher tier only questions</label>` : '<span></span>'}<button class="btn go sm" type="button" data-done>Done</button></div>`;
     $('packMenu').innerHTML = html;
   }
   function openPacks(open) {
@@ -427,6 +432,7 @@ CGB.app = (() => {
     $('openBank').addEventListener('click', () => CGB.bankUI.open());
     $('subjectSelect').addEventListener('change', e => CGB.bank.setSubject(e.target.value));
     $('boardSelect').addEventListener('change', e => CGB.bank.setBoard(e.target.value));
+    $('courseSelect').addEventListener('change', e => CGB.bank.setCourse(e.target.value));
     wirePacks();
     $('openHost').addEventListener('click', () => CGB.hostEditor.open());
     $('openAbout').addEventListener('click', () => CGB.modal.open('aboutModal'));

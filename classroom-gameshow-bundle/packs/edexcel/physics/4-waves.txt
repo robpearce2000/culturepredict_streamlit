@@ -478,3 +478,26 @@ Ref: 4.17
 RP: 4.17
 D: 1
 Id: edexcel-phys-4-061
+
+# More Foundation questions with letter answers, so a Foundation Hex Hunt board needs no repeats
+
+Q: What do waves transfer from place to place?
+A: Energy
+Accept: Energy and information
+Ref: 4.1
+D: 1
+Id: edexcel-phys-4-062
+
+Q: What name is given to the regions in a sound wave where the air particles are spread out?
+A: Rarefactions
+Accept: Rarefaction
+Ref: 4.5
+D: 2
+Id: edexcel-phys-4-063
+
+Q: What is the unit of wavelength?
+A: Metre
+Accept: m; Metres
+Ref: 4.3
+D: 1
+Id: edexcel-phys-4-064

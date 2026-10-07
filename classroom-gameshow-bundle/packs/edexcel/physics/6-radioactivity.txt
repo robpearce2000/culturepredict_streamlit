@@ -622,6 +622,7 @@ Accept: A quarter; 0.25; 25%
 Ref: 6.27
 D: 2
 Calc: yes
+HT: yes
 Id: edexcel-phys-6-087
 
 Q: How many half-lives pass while a source's activity falls to one-eighth of its starting value?
@@ -629,6 +630,7 @@ A: 3
 Accept: Three
 Ref: 6.27
 D: 2
+HT: yes
 Id: edexcel-phys-6-088
 
 Q: A source has an activity of 800 Bq and a half-life of 2 days. What is its activity after 6 days?
@@ -653,6 +655,7 @@ Accept: 80 s; 80
 Ref: 6.27
 D: 3
 Calc: yes
+HT: yes
 Id: edexcel-phys-6-091
 
 Q: Give the net decline in activity after 2 half-lives as a ratio of final to initial activity.

@@ -467,3 +467,79 @@ physics may also take up to 15 steps a frame in light mode, so it keeps real tim
 
 **Top bar.** Menu, Sound, Pause, Full screen, Settings and End game; the buttons are a little more compact, and
 Category Clash's and Hex Hunt's headings start further right to clear it.
+
+## Combined Science and separate sciences (1.4.0)
+
+**Specifications used** (fetched October 2026): AQA Combined Science: Trilogy 8464 version 1.1 (4 October 2019); Pearson Edexcel Combined Science 1SC0 Issue 6 (March 2024); compared with AQA 8461 1.0, 8462 1.1, 8463 1.1 and Pearson Edexcel 1BI0, 1CH0, 1PH0 Issue 4 (March 2024). Synergy (8465) is not included.
+
+- **Edexcel:** Pearson uses the same statement numbers in 1SC0 as in the separate sciences, and marks separate-only statements with a B, C or P suffix (whole topics: Chemistry 5 and 9, Physics 7 and 11). Every unsuffixed statement was found in the 1SC0 PDF, and no suffixed one. Higher tier (bold) was compared between the PDFs statement by statement: the same in both. So the Combined Science reference of an Edexcel question is its own reference.
+- **AQA:** Trilogy renumbers (Biology 4.x, Chemistry 5.x, Physics 6.x), so each separate-science heading was matched to its Trilogy heading by title, not by number. Points under a "(biology/chemistry/physics only)" heading are separate only. Three needed a hand match: 8461 4.5.2.1 → 4.5.2 (no subheading in Trilogy), 4.5.3.7 Negative feedback → 4.5.3.6 Feedback systems, 8463 4.5.6.3.4 → 6.5.4.3.4. "(HT only)" content inside each shared point was counted in both specifications: identical, so no point's tier differs between the courses.
+- **Partly separate-only points (AQA Physics):** 4.1.2.1 (required practical 2, thermal insulation, is physics only) and 4.5.7.2 (momentum calculations on events are physics only). The 14 questions on them were read and tagged one by one with "Sep: yes/no" (6 separate only). The pack checker now requires that tag on such points.
+- **Tags live in code, not in every question:** tools/spec-map/*.json holds the point-by-point map; tools/packs.js gives each question sepOnly, combRef and combTier from its Ref. The Combined Science packs in the app are views of the same packs.
+- **Checking pass on tiers:** every question on a point that mixes Foundation and Higher content (163 in the sciences, 140 in Maths) was read against the Higher-only text. Changes: Edexcel 13.10 (transformer power equation) is not bold in either specification, so its 3 questions lost "Higher"; Edexcel 6.27 "net decline as a ratio" is bold in both, so 3 questions became Higher; 2 Maths questions using surds became Higher. "Limiting factor" (one factor) and "creates an oxygen debt" stay Foundation: both are in AQA's Foundation text.
+- **Too few questions after filtering:** below 30 in Combined Science were AQA 5.7 (22), 5.8 (28), 5.10 (27), 6.7 (28) and Edexcel Physics 9 (25), 13 (20), 15 (23); with Higher left out, AQA Chemistry 5.3/4.3, Edexcel Physics 4, 9 and 13 had fewer than 16 letter answers for a Hex Hunt board. 80 new questions fix all of these. The test now requires, for every topic and "Mixed", both boards, both courses, with and without Higher: at least 20 questions and 16 letter answers, and a full Category Clash board.
+- **Category Clash:** with one topic chosen, a subtopic with fewer than three questions borrows from the nearest subtopics of the same topic, so no tile is empty.
+- **Course control:** its own row under the exam board (two selects on one row were too narrow at 1366 × 768). Selections are remembered separately for each course.
+- **Higher tier checkbox:** hidden for History and Geography, which are not tiered; an unticked box carried over from another subject leaves nothing out there.
+
+### Question counts for Combined Science
+
+| Board | Combined Science topic | Questions | Without Higher | Separate-science pack |
+|---|---|---|---|---|
+| AQA 8464 | 4.1 Cell biology | 40 | 40 | 4.1 (47) |
+| AQA 8464 | 4.2 Organisation | 42 | 42 | 4.2 (42) |
+| AQA 8464 | 4.3 Infection and response | 34 | 34 | 4.3 (50) |
+| AQA 8464 | 4.4 Bioenergetics | 39 | 32 | 4.4 (39) |
+| AQA 8464 | 4.5 Homeostasis and response | 36 | 27 | 4.5 (68) |
+| AQA 8464 | 4.6 Inheritance, variation and evolution | 60 | 56 | 4.6 (84) |
+| AQA 8464 | 4.7 Ecology | 44 | 44 | 4.7 (80) |
+| AQA 8464 | 5.1 Atomic structure and the periodic table | 49 | 48 | 4.1 (56) |
+| AQA 8464 | 5.2 Bonding, structure, and the properties of matter | 78 | 76 | 4.2 (89) |
+| AQA 8464 | 5.3 Quantitative chemistry | 44 | 29 | 4.3 (60) |
+| AQA 8464 | 5.4 Chemical changes | 51 | 40 | 4.4 (55) |
+| AQA 8464 | 5.5 Energy changes | 32 | 25 | 4.5 (46) |
+| AQA 8464 | 5.6 The rate and extent of chemical change | 46 | 32 | 4.6 (46) |
+| AQA 8464 | 5.7 Organic chemistry | 36 | 36 | 4.7 (74) |
+| AQA 8464 | 5.8 Chemical analysis | 34 | 34 | 4.8 (67) |
+| AQA 8464 | 5.9 Chemistry of the atmosphere | 46 | 46 | 4.9 (46) |
+| AQA 8464 | 5.10 Using resources | 33 | 29 | 4.10 (53) |
+| AQA 8464 | 6.1 Energy | 58 | 56 | 4.1 (63) |
+| AQA 8464 | 6.2 Electricity | 44 | 44 | 4.2 (51) |
+| AQA 8464 | 6.3 Particle model of matter | 33 | 33 | 4.3 (42) |
+| AQA 8464 | 6.4 Atomic structure | 31 | 30 | 4.4 (49) |
+| AQA 8464 | 6.5 Forces | 83 | 70 | 4.5 (102) |
+| AQA 8464 | 6.6 Waves | 32 | 28 | 4.6 (58) |
+| AQA 8464 | 6.7 Magnetism and electromagnetism | 34 | 26 | 4.7 (54) |
+| Edexcel 1SC0 | 1 Key concepts in biology | 55 | 53 | 1 (64) |
+| Edexcel 1SC0 | 2 Cells and control | 37 | 37 | 2 (62) |
+| Edexcel 1SC0 | 3 Genetics | 50 | 50 | 3 (83) |
+| Edexcel 1SC0 | 4 Natural selection and genetic modification | 34 | 29 | 4 (52) |
+| Edexcel 1SC0 | 5 Health, disease and the development of medicines | 58 | 58 | 5 (90) |
+| Edexcel 1SC0 | 6 Plant structures and their functions | 40 | 34 | 6 (55) |
+| Edexcel 1SC0 | 7 Animal coordination, control and homeostasis | 46 | 29 | 7 (76) |
+| Edexcel 1SC0 | 8 Exchange and transport in animals | 40 | 40 | 8 (47) |
+| Edexcel 1SC0 | 9 Ecosystems and material cycles | 44 | 44 | 9 (68) |
+| Edexcel 1SC0 | 1 Key concepts in chemistry | 184 | 164 | 1 (184) |
+| Edexcel 1SC0 | 2 States of matter and mixtures | 43 | 43 | 2 (43) |
+| Edexcel 1SC0 | 3 Chemical changes | 108 | 87 | 3 (108) |
+| Edexcel 1SC0 | 4 Extracting metals and equilibria | 59 | 48 | 4 (59) |
+| Edexcel 1SC0 | 6 Groups in the periodic table | 56 | 52 | 6 (56) |
+| Edexcel 1SC0 | 7 Rates of reaction and energy changes | 62 | 58 | 7 (62) |
+| Edexcel 1SC0 | 8 Fuels and Earth science | 97 | 97 | 8 (97) |
+| Edexcel 1SC0 | 1 Key concepts of physics | 38 | 38 | 1 (38) |
+| Edexcel 1SC0 | 2 Motion and forces | 108 | 85 | 2 (115) |
+| Edexcel 1SC0 | 3 Conservation of energy | 48 | 45 | 3 (48) |
+| Edexcel 1SC0 | 4 Waves | 40 | 35 | 4 (64) |
+| Edexcel 1SC0 | 5 Light and the electromagnetic spectrum | 46 | 36 | 5 (83) |
+| Edexcel 1SC0 | 6 Radioactivity | 104 | 98 | 6 (157) |
+| Edexcel 1SC0 | 8 Energy – forces doing work | 53 | 53 | 8 (53) |
+| Edexcel 1SC0 | 9 Forces and their effects | 35 | 20 | 9 (50) |
+| Edexcel 1SC0 | 10 Electricity and circuits | 143 | 139 | 10 (143) |
+| Edexcel 1SC0 | 12 Magnetism and the motor effect | 44 | 29 | 12 (48) |
+| Edexcel 1SC0 | 13 Electromagnetic induction | 37 | 22 | 13 (55) |
+| Edexcel 1SC0 | 14 Particle model | 53 | 53 | 14 (69) |
+| Edexcel 1SC0 | 15 Forces and matter | 33 | 33 | 15 (68) |
+
+Totals (Combined Science / without Higher / separate science): AQA biology 295 / 275 / 410; AQA chemistry 449 / 395 / 592; AQA physics 315 / 287 / 419; Edexcel biology 404 / 374 / 597; Edexcel chemistry 609 / 549 / 609; Edexcel physics 782 / 686 / 991.
+
+Whole topics that are separate science only: AQA 8463 4.8 Space physics (44); Edexcel 1CH0 5 Separate chemistry 1 (97); Edexcel 1CH0 9 Separate chemistry 2 (139); Edexcel 1PH0 7 Astronomy (67); Edexcel 1PH0 11 Static electricity (34).

@@ -448,3 +448,59 @@ D: 2
 Note: Gas volumes react in the same ratio as moles, so 3 : 2.
 Calc: yes
 Id: aqa-chem-4.3-052
+
+# More Foundation questions with letter answers, so a Foundation Hex Hunt board needs no repeats
+
+Q: Which law says that no atoms are lost or made during a chemical reaction?
+A: Conservation of mass
+Accept: Law of conservation of mass
+Ref: 4.3.1.1
+D: 1
+Id: aqa-chem-4.3-053
+
+Q: What is the symbol for relative formula mass?
+A: Mr
+Accept: M subscript r
+Ref: 4.3.1.2
+D: 1
+Id: aqa-chem-4.3-054
+
+Q: Magnesium is heated in air and its mass goes up. Which gas has it reacted with?
+A: Oxygen
+Accept: O₂
+Ref: 4.3.1.3
+D: 1
+Id: aqa-chem-4.3-055
+
+Q: Calcium carbonate is heated in an open tube and its mass goes down. Which gas escapes?
+A: Carbon dioxide
+Accept: CO₂
+Ref: 4.3.1.3
+D: 2
+Id: aqa-chem-4.3-056
+
+Q: Repeat measurements spread around the mean. What word describes how unsure the result is?
+A: Uncertainty
+Ref: 4.3.1.4
+D: 2
+Id: aqa-chem-4.3-057
+
+Q: In a solution, what is the liquid that the solute dissolves in called?
+A: Solvent
+Ref: 4.3.2.5
+D: 1
+Id: aqa-chem-4.3-058
+
+Q: What quantity is measured in g/dm³?
+A: Concentration
+Accept: Mass concentration
+Ref: 4.3.2.5
+D: 1
+Id: aqa-chem-4.3-059
+
+Q: When balancing an equation, may you change the small numbers in formulae or the big numbers in front?
+A: Big numbers in front
+Accept: Numbers in front; Coefficients
+Ref: 4.3.1.1
+D: 2
+Id: aqa-chem-4.3-060

@@ -311,3 +311,79 @@ Accept: Less friction so less energy wasted as heat; reduces friction, less ther
 Ref: 9.10
 D: 3
 Id: edexcel-phys-9-040
+
+# Combined Science top-up (version 1.4): more questions on the points in Combined Science
+
+Q: Name the field that causes the force between two magnets.
+A: Magnetic field
+Ref: 9.1
+D: 1
+Id: edexcel-phys-9-041
+
+Q: Give one example of a scalar quantity.
+A: Speed
+Accept: Mass; Distance; Energy; Time; Temperature
+Ref: 9.2
+D: 1
+Id: edexcel-phys-9-042
+
+Q: Is displacement a vector or a scalar?
+A: Vector
+Ref: 9.2
+D: 1
+Id: edexcel-phys-9-043
+
+Q: Give one example of a lubricant used on a bicycle chain.
+A: Oil
+Accept: Grease
+Ref: 9.10
+D: 1
+Id: edexcel-phys-9-044
+
+Q: A 6 N force acts east and an 8 N force acts west on an object. What is the resultant force?
+A: 2 N west
+Ref: 9.5
+D: 2
+HT: yes
+Calc: yes
+Id: edexcel-phys-9-045
+
+Q: A 10 N force acts at 30° above the horizontal. About how large is its horizontal component?
+A: About 8.7 N
+Accept: 8.7 N; 9 N; 8.66 N
+Ref: 9.3
+D: 3
+HT: yes
+Calc: yes
+Note: From a scale drawing, or 10 × cos 30°.
+Id: edexcel-phys-9-046
+
+Q: On a free body diagram, the forces are equal and opposite in pairs. What is the object doing?
+A: At rest or moving at constant velocity
+Accept: Stationary; Constant velocity; Balanced forces
+Ref: 9.4
+D: 2
+HT: yes
+Id: edexcel-phys-9-047
+
+# More Foundation questions with letter answers, so a Foundation Hex Hunt board needs no repeats
+
+Q: A magnet attracts a paperclip without touching it. What type of force is this?
+A: Non-contact force
+Accept: Magnetic force; Non-contact
+Ref: 9.1
+D: 1
+Id: edexcel-phys-9-048
+
+Q: What does a vector quantity have that a scalar quantity does not?
+A: Direction
+Ref: 9.2
+D: 1
+Id: edexcel-phys-9-049
+
+Q: Which contact force from the air acts on a falling skydiver?
+A: Air resistance
+Accept: Drag
+Ref: 9.1
+D: 1
+Id: edexcel-phys-9-050

@@ -400,3 +400,47 @@ D: 3
 HT: yes
 Note: For the same power, P = VI means a higher V needs a lower I.
 Id: aqa-phys-4.7-048
+
+# Combined Science top-up (version 1.4): more questions on the points in Combined Science
+
+Q: What happens when a north pole is brought near a south pole?
+A: They attract
+Accept: Attract; Attraction
+Ref: 4.7.1.1
+D: 1
+Id: aqa-phys-4.7-049
+
+Q: Is a bar magnet a permanent magnet or an induced magnet?
+A: Permanent magnet
+Accept: Permanent
+Ref: 4.7.1.1
+D: 1
+Id: aqa-phys-4.7-050
+
+Q: Where is the magnetic field of a bar magnet strongest?
+A: At the poles
+Accept: Poles; Near the poles
+Ref: 4.7.1.2
+D: 1
+Id: aqa-phys-4.7-051
+
+Q: Apart from adding an iron core, give one way to make an electromagnet stronger.
+A: Increase the current
+Accept: More turns; More coils; Larger current
+Ref: 4.7.2.1
+D: 2
+Id: aqa-phys-4.7-052
+
+Q: What name is given to a long coil of wire that carries a current?
+A: Solenoid
+Accept: Coil
+Ref: 4.7.2.1
+D: 1
+Id: aqa-phys-4.7-053
+
+Q: Why is the core of an electromagnet made of iron rather than steel?
+A: Iron loses its magnetism quickly
+Accept: Iron is an induced magnet; Iron demagnetises when switched off
+Ref: 4.7.2.1
+D: 3
+Id: aqa-phys-4.7-054

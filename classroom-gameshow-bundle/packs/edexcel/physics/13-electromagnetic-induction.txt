@@ -254,7 +254,6 @@ A: The input power
 Accept: Input power; Power input
 Ref: 13.10
 D: 1
-HT: yes
 Id: edexcel-phys-13-032
 
 Q: Use VpIp = VsIs. A 100% efficient transformer has Vp = 10 V, Ip = 4 A and Vs = 40 V. What is Is?
@@ -262,7 +261,6 @@ A: 1 A
 Accept: 1 amp; 1 ampere
 Ref: 13.10
 D: 2
-HT: yes
 Calc: yes
 Id: edexcel-phys-13-033
 
@@ -271,7 +269,6 @@ A: 400 V
 Accept: 400 volts
 Ref: 13.10
 D: 3
-HT: yes
 Calc: yes
 Id: edexcel-phys-13-034
 
@@ -308,3 +305,125 @@ Ref: 13.11P
 D: 3
 HT: yes
 Id: edexcel-phys-13-038
+
+# Combined Science top-up (version 1.4): more questions on the points in Combined Science
+
+Q: What name is given to the network of cables and transformers that carries electricity around the country?
+A: National Grid
+Ref: 13.8
+D: 1
+Id: edexcel-phys-13-039
+
+Q: Transmitting electricity at a high voltage means a smaller what in the cables?
+A: Current
+Ref: 13.8
+D: 2
+Id: edexcel-phys-13-040
+
+Q: Why is the voltage lowered before electricity is supplied to homes?
+A: Safer for use in homes
+Accept: For safety; High voltage is dangerous
+Ref: 13.8
+D: 2
+Id: edexcel-phys-13-041
+
+Q: A transformer raises the voltage from 25 000 V to 400 000 V. Is it step-up or step-down?
+A: Step-up
+Ref: 13.9
+D: 2
+Id: edexcel-phys-13-042
+
+Q: Electricity leaves a power station through a step-up transformer. Where does it go next?
+A: Transmission cables
+Accept: Overhead cables; Pylons; Power lines
+Ref: 13.9
+D: 1
+Id: edexcel-phys-13-043
+
+Q: Use VpIp = VsIs. Vp = 230 V, Ip = 1 A and Vs = 23 V. What is Is?
+A: 10 A
+Ref: 13.10
+D: 2
+Calc: yes
+Id: edexcel-phys-13-044
+
+Q: Use VpIp = VsIs. Vp = 12 V, Vs = 6 V and Is = 4 A. What is Ip?
+A: 2 A
+Ref: 13.10
+D: 3
+Calc: yes
+Id: edexcel-phys-13-045
+
+Q: Give one way to increase the potential difference induced when a magnet moves into a coil.
+A: Move the magnet faster
+Accept: Stronger magnet; More turns
+Ref: 13.2
+D: 1
+HT: yes
+Id: edexcel-phys-13-046
+
+Q: A magnet is held still inside a coil. What potential difference is induced?
+A: Zero
+Accept: None; 0 V
+Ref: 13.2
+D: 2
+HT: yes
+Id: edexcel-phys-13-047
+
+Q: In a transformer, what does the alternating current in the primary coil produce in the iron core?
+A: Changing magnetic field
+Accept: Alternating magnetic field
+Ref: 13.5
+D: 2
+HT: yes
+Id: edexcel-phys-13-048
+
+Q: A transformer changes 230 V to 12 V for a phone charger. Which type is it?
+A: Step-down
+Ref: 13.6
+D: 1
+HT: yes
+Id: edexcel-phys-13-049
+
+# More Foundation questions with letter answers, so a Foundation Hex Hunt board needs no repeats
+
+Q: Why do power cables get hot when a current flows through them?
+A: Resistance of the wires
+Accept: The wires have resistance
+Ref: 13.8
+D: 2
+Id: edexcel-phys-13-050
+
+Q: Is the voltage in national grid transmission cables high or low compared with homes?
+A: High
+Accept: Much higher
+Ref: 13.8
+D: 1
+Id: edexcel-phys-13-051
+
+Q: Transmitting electricity at high voltage cuts energy losses. Which property of the national grid does this improve?
+A: Efficiency
+Ref: 13.8
+D: 2
+Id: edexcel-phys-13-052
+
+Q: Which device connects high-voltage transmission cables to the lower-voltage local supply?
+A: Step-down transformer
+Accept: Transformer
+Ref: 13.9
+D: 1
+Id: edexcel-phys-13-053
+
+Q: In the transformer equation VpIp = VsIs, what quantity does each side give?
+A: Power
+Accept: Electrical power
+Ref: 13.10
+D: 2
+Id: edexcel-phys-13-054
+
+Q: A step-up transformer increases the voltage. What happens to the current?
+A: Decreases
+Accept: It goes down; Smaller current
+Ref: 13.10
+D: 3
+Id: edexcel-phys-13-055

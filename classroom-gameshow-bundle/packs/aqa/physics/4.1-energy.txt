@@ -269,6 +269,7 @@ Q: What word describes energy spreading out into the surroundings in less useful
 A: Dissipated
 Accept: Dissipation; Wasted
 Ref: 4.1.2.1
+Sep: no
 D: 1
 Id: aqa-phys-4.1-034
 
@@ -276,6 +277,7 @@ Q: What method reduces unwanted energy transfers caused by friction between movi
 A: Lubrication
 Accept: Lubricating; Oiling; Using oil
 Ref: 4.1.2.1
+Sep: no
 D: 1
 Id: aqa-phys-4.1-035
 
@@ -283,6 +285,7 @@ Q: What does the principle of conservation of energy state?
 A: Energy cannot be created or destroyed
 Accept: Energy is neither created nor destroyed
 Ref: 4.1.2.1
+Sep: no
 D: 2
 Id: aqa-phys-4.1-036
 
@@ -290,6 +293,7 @@ Q: What is the net change in the total energy of a closed system?
 A: No change
 Accept: Zero; Nothing; It stays the same
 Ref: 4.1.2.1
+Sep: no
 D: 2
 Id: aqa-phys-4.1-037
 
@@ -297,6 +301,7 @@ Q: What happens to the rate of energy transfer by conduction through a material 
 A: Higher rate
 Accept: Increases; Faster; Higher
 Ref: 4.1.2.1
+Sep: no
 D: 2
 Id: aqa-phys-4.1-038
 
@@ -304,6 +309,7 @@ Q: How do thicker walls with a lower thermal conductivity affect the rate of coo
 A: Slower rate of cooling
 Accept: Slower; Decreases; Lower; Reduces it
 Ref: 4.1.2.1
+Sep: no
 D: 3
 Id: aqa-phys-4.1-039
 
@@ -311,6 +317,7 @@ Q: In the thermal insulation practical, what is measured at regular intervals to
 A: Temperature of the water
 Accept: Temperature; Water temperature
 Ref: 4.1.2.1
+Sep: yes
 RP: 2
 D: 1
 Id: aqa-phys-4.1-040
@@ -319,6 +326,7 @@ Q: In the thermal insulation practical, apart from starting temperature, which p
 A: Volume of water
 Accept: Volume; Mass of water; Mass; Amount of water
 Ref: 4.1.2.1
+Sep: yes
 RP: 2
 D: 2
 Id: aqa-phys-4.1-041
@@ -327,6 +335,7 @@ Q: In the thermal insulation practical, apart from the type of material, which p
 A: Thickness
 Accept: Number of layers; Thickness of insulation
 Ref: 4.1.2.1
+Sep: yes
 RP: 2
 D: 2
 Id: aqa-phys-4.1-042
@@ -335,6 +344,7 @@ Q: In the thermal insulation practical, the best insulator shows the smallest wh
 A: Temperature drop
 Accept: Temperature change; Fall in temperature; Decrease in temperature
 Ref: 4.1.2.1
+Sep: yes
 RP: 2
 D: 2
 Id: aqa-phys-4.1-043
@@ -343,6 +353,7 @@ Q: In the thermal insulation practical, why is a lid placed on each beaker of ho
 A: Reduce energy lost from the top
 Accept: Reduce evaporation; Reduce energy lost by evaporation; Reduce convection losses; Reduce heat loss; Reduce energy lost to surroundings
 Ref: 4.1.2.1
+Sep: yes
 RP: 2
 D: 3
 

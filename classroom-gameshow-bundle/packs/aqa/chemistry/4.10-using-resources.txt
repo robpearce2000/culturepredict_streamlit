@@ -363,3 +363,46 @@ Ref: 4.10.4.2
 D: 1
 Note: With nitric acid the products are phosphoric acid and calcium nitrate.
 Id: aqa-chem-4.10-047
+
+# Combined Science top-up (version 1.4): more questions on the points in Combined Science
+
+Q: What are the two main steps used to treat fresh water to make it potable?
+A: Filtration and sterilisation
+Accept: Filtering and sterilising
+Ref: 4.10.1.2
+D: 1
+Id: aqa-chem-4.10-048
+
+Q: Which process desalinates sea water by boiling it and condensing the steam?
+A: Distillation
+Ref: 4.10.1.2
+D: 1
+Id: aqa-chem-4.10-049
+
+Q: Which stage of a life cycle assessment includes putting a product in landfill?
+A: Disposal
+Accept: End of life
+Ref: 4.10.2.1
+D: 1
+Id: aqa-chem-4.10-050
+
+Q: Why does reusing a glass bottle use less energy than recycling it?
+A: It is only washed, not melted
+Accept: No melting needed; Only washed and sterilised
+Ref: 4.10.2.2
+D: 3
+Id: aqa-chem-4.10-051
+
+Q: Sewage sludge is treated by anaerobic digestion. What does anaerobic mean?
+A: Without oxygen
+Accept: No oxygen; Without air
+Ref: 4.10.1.3
+D: 2
+Id: aqa-chem-4.10-052
+
+Q: Why may industrial waste water need more treatment than sewage from homes?
+A: Contains harmful chemicals
+Accept: Harmful chemicals must be removed
+Ref: 4.10.1.3
+D: 2
+Id: aqa-chem-4.10-053

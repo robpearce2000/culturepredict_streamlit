@@ -64,9 +64,13 @@ function topicsOf(set) {
   // one built-in topic chosen: its specification subtopics are the columns, so a one-topic lesson still has a board
   const by = set.groupBy === 'subtopic' ? 'subtopic' : 'topic';
   set.questions.forEach(q => { const k = q[by] || q.topic; if (!m.has(k)) m.set(k, { topic: k, subject: q.subject, qs: [] }); m.get(k).qs.push(q); });
-  return Array.from(m.values()).map(t => {
+  const list = Array.from(m.values());
+  return list.map((t, i) => {
     t.tiers = [1, 2, 3].map(n => t.qs.filter(q => bank.difficultyOf(q) === n).length);
     t.full = t.tiers.every(n => n > 0);
+    // a subtopic with too few questions for a column (Combined Science leaves some short) borrows
+    // from its neighbours in the specification, nearest first
+    t.spare = by === 'subtopic' ? list.filter(n => n !== t).sort((a, b) => Math.abs(list.indexOf(a) - i) - Math.abs(list.indexOf(b) - i)).flatMap(n => n.qs) : [];
     return t;
   });
 }
@@ -160,7 +164,20 @@ function buildBoard() {
     // exact levels first, so a short row never uses up another row's question
     const picks = values.map((v, k) => take(k, true));
     values.forEach((v, k) => { if (!picks[k]) picks[k] = take(k, false); });
-    return { topic: t.topic, subject: t.subject, tiles: picks.map((q, k) => ({ value: values[k], q, used: !q, wonBy: -1, star: false, empty: !q, right: 0 })) };
+    return { topic: t.topic, subject: t.subject, spare: t.spare, picks };
+  }).map((c, i, all) => {
+    // still short: fill from the neighbouring subtopics, with questions not already on the board
+    c.picks.forEach((q, k) => {
+      if (q) return;
+      const onBoard = new Set(all.flatMap(x => x.picks).filter(Boolean));
+      const pool = c.spare.filter(x => !onBoard.has(x));
+      if (!pool.length) return;
+      const gap = Math.min(...pool.map(x => Math.abs(bank.difficultyOf(x) - (k + 1))));
+      const near = pool.filter(x => Math.abs(bank.difficultyOf(x) - (k + 1)) === gap);
+      c.picks[k] = near[Math.floor(CGB.random() * near.length)];
+    });
+    const values = VALUES.slice(0, ROWS);
+    return { topic: c.topic, subject: c.subject, tiles: c.picks.map((q, k) => ({ value: values[k], q, used: !q, wonBy: -1, star: false, empty: !q, right: 0 })) };
   });
   const live = S.cats.flatMap(c => c.tiles.filter(t => !t.empty && t.value >= 200));
   if (live.length) live[Math.floor(CGB.random() * live.length)].star = true;

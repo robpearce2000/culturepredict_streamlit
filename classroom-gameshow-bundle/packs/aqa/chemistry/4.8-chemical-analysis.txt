@@ -487,3 +487,45 @@ Accept: Lithium and sodium; Li+ and Na+
 Ref: 4.8.3.7
 D: 3
 Id: aqa-chem-4.8-061
+
+# Combined Science top-up (version 1.4): more questions on the points in Combined Science
+
+Q: How many spots does a pure substance give on a chromatogram?
+A: One
+Accept: 1; One spot
+Ref: 4.8.1.3
+D: 1
+Id: aqa-chem-4.8-062
+
+Q: In chromatography, why must the start line be above the level of the solvent?
+A: Spots would dissolve in the solvent
+Accept: So the spots do not dissolve; Spots would wash away
+Ref: 4.8.1.3
+D: 2
+Id: aqa-chem-4.8-063
+
+Q: Give one example of a formulation.
+A: Paint
+Accept: Fuel; Cleaning agent; Alloy; Fertiliser; Food; Medicine
+Ref: 4.8.1.2
+D: 1
+Id: aqa-chem-4.8-064
+
+Q: Which gas is tested for with a burning splint held at the mouth of a test tube?
+A: Hydrogen
+Ref: 4.8.2.1
+D: 1
+Id: aqa-chem-4.8-065
+
+Q: A gas is bubbled through limewater and the limewater stays clear. What does this show?
+A: Not carbon dioxide
+Accept: No carbon dioxide; The gas is not carbon dioxide
+Ref: 4.8.2.3
+D: 2
+Id: aqa-chem-4.8-066
+
+Q: A solid melts sharply at exactly 80 °C. Is it likely to be pure or impure?
+A: Pure
+Ref: 4.8.1.1
+D: 2
+Id: aqa-chem-4.8-067
