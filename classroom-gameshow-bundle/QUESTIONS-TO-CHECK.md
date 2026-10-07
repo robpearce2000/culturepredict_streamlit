@@ -86,3 +86,10 @@ ones; please check they match yours, or skip those questions:
 - AQA 3.2.3.3 Water: the Lesotho Highlands Water Project ("Gauteng" and "Lesotho" answers).
 - Edexcel A 1B River landscapes: the River Tees (High Force, Whin Sill, Cow Green, Cauldron Snout).
 - Edexcel A 1C Glaciated uplands: the Lake District (Windermere, Borrowdale Volcanic rocks, sheep farming).
+
+## Found in the classroom playtest (October 2026)
+
+A spot check of 45 of the 276 questions that came up in the simulated lessons found no factual errors. One to look at:
+- aqa-geog-3.1.3.2-042 "At Mappleton in East Yorkshire, which hard engineering was installed in 1991 to protect the
+  village?" Answer: Rock armour. The 1991 scheme was rock armour **and two rock groynes**, so a class answering
+  "rock groynes" is also right. Suggest adding Accept: Rock groynes; Groynes.
