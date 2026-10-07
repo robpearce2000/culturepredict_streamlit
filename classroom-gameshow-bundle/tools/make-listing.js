@@ -41,7 +41,8 @@ const ARGS = ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignor
 async function until(page, fn, ms, arg) {
   const end = Date.now() + (ms || 60000);
   while (Date.now() < end) { if (await page.evaluate(fn, arg)) return; await page.waitForTimeout(150); }
-  throw new Error('timed out waiting');
+  const st = await page.evaluate(() => { const g = CGB.app.current, s = g && CGB.games[g] && CGB.games[g].state(); return JSON.stringify(s && { phase: s.phase, step: s.step, round: s.round }); });
+  throw new Error('timed out waiting: ' + fn.toString().slice(0, 80) + ' state ' + st);
 }
 
 (async () => {
@@ -91,7 +92,8 @@ async function until(page, fn, ms, arg) {
   // Every game with six teams (two halves in Hex Hunt): what schools buy it for
   await page.evaluate(() => CGB.store.setJSON('teams', ['Owls', 'Foxes', 'Hawks', 'Otters', 'Badgers', 'Wolves']));
   const markRound = async (id, keys) => {
-    await page.keyboard.press('Space');
+    // Space skips the countdown and the "3, 2, 1"; pressed again (spaced like a teacher) if a slow machine missed it
+    for (let k = 0; k < 6 && await page.evaluate(id => CGB.games[id].state().round !== 'mark', id); k++) { await page.keyboard.press('Space'); await page.waitForTimeout(700); }
     await until(page, id => CGB.games[id].state().round === 'mark', 15000, id);
     for (const k of keys) await page.keyboard.press(k);
     await page.keyboard.press('Enter');
@@ -136,7 +138,8 @@ async function until(page, fn, ms, arg) {
   for (const [c, r, keys] of ccMarks) {
     await page.locator(`#cc-board .cc-tile[data-c="${c}"][data-r="${r}"]`).click();
     await markRound('category-clash', keys);
-    await page.keyboard.press('Enter');
+    // back to the board: Enter again if a reveal (the star tile) was still showing
+    for (let k = 0; k < 10 && await page.evaluate(() => CGB.games['category-clash'].state().phase !== 'board'); k++) { await page.keyboard.press('Enter'); await page.waitForTimeout(1500); }
     await until(page, () => CGB.games['category-clash'].state().phase === 'board', 5000);
   }
   await page.locator('#cc-board .cc-tile[data-c="1"][data-r="2"]').click();
