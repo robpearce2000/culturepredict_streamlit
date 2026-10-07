@@ -70,6 +70,7 @@ A: 20 N/m
 Accept: 20
 Ref: 15.3
 D: 2
+Calc: yes
 Id: edexcel-phys-15-010
 
 Q: A spring has a spring constant of 200 N/m. A force of 10 N stretches it. What is its extension in centimetres?
@@ -77,6 +78,7 @@ A: 5 cm
 Accept: 0.05 m; 5
 Ref: 15.3
 D: 3
+Calc: yes
 Id: edexcel-phys-15-011
 
 Q: What name is given to the energy store of a stretched spring?
@@ -91,6 +93,7 @@ A: 2 J
 Accept: 2; 2 joules
 Ref: 15.4
 D: 2
+Calc: yes
 Id: edexcel-phys-15-013
 
 Q: Use E = ½ × k × x². A spring stores 4 J when stretched 0.2 m. What is its spring constant?
@@ -98,6 +101,7 @@ A: 200 N/m
 Accept: 200
 Ref: 15.4
 D: 3
+Calc: yes
 Id: edexcel-phys-15-014
 
 Q: A spring is stretched twice as far within its elastic limit. By what factor does the stored energy increase?
@@ -208,6 +212,7 @@ A: 120 000 Pa
 Accept: 120 kPa; 120000
 Ref: 15.8P
 D: 2
+Calc: yes
 Id: edexcel-phys-15-029
 
 Q: What is the angle between the force caused by fluid pressure and the surface it acts on?
@@ -264,6 +269,7 @@ A: 50 Pa
 Accept: 50; 50 N/m²
 Ref: 15.11P
 D: 2
+Calc: yes
 Id: edexcel-phys-15-037
 
 Q: A pressure of 500 Pa acts on an area of 0.4 m². What is the force?
@@ -271,6 +277,7 @@ A: 200 N
 Accept: 200
 Ref: 15.11P
 D: 3
+Calc: yes
 Id: edexcel-phys-15-038
 
 Q: How does pressure in a liquid change with depth?
@@ -331,6 +338,7 @@ Accept: 20 kPa; 20000
 Ref: 15.14P
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-15-046
 
 Q: Use P = h × ρ × g with g = 10 N/kg. What is the pressure at 5 m depth in oil of density 800 kg/m³?
@@ -339,6 +347,7 @@ Accept: 40 kPa; 40000
 Ref: 15.14P
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-15-047
 
 Q: Use P = h × ρ × g with g = 10 N/kg. What is the pressure difference between 3 m and 8 m depth in water (1000 kg/m³)?
@@ -347,6 +356,7 @@ Accept: 50 kPa; 50000
 Ref: 15.14P
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-phys-15-048
 
 Q: Use P = h × ρ × g with g = 10 N/kg. A liquid exerts 32 000 Pa at 4 m depth. What is its density?
@@ -355,6 +365,7 @@ Accept: 800
 Ref: 15.14P
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-phys-15-049
 
 Q: Why does a fully submerged object experience an upward force?
@@ -395,6 +406,7 @@ Accept: 30
 Ref: 15.16P
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-15-054
 
 Q: A fully submerged 8 N block displaces water weighing 5 N. What is the upthrust?

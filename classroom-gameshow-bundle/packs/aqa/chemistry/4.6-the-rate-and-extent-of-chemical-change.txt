@@ -10,6 +10,7 @@ Accept: 3 cm3/s; 3 cm³ per second
 Ref: 4.6.1.1
 D: 2
 Note: Mean rate = quantity of product formed ÷ time taken.
+Calc: yes
 Id: aqa-chem-4.6-001
 
 Q: The mass of a reactant is measured in grams and time in seconds. What is the unit of rate of reaction?
@@ -41,6 +42,7 @@ Ref: 4.6.1.1
 HT: yes
 D: 3
 Note: Rate in mol/s is Higher tier only.
+Calc: yes
 Id: aqa-chem-4.6-005
 
 Q: A tangent drawn at 20 s on a gas volume–time graph rises 40 cm³ over 10 s. What is the rate at 20 s?
@@ -52,6 +54,7 @@ D: 3
 Note: Gradient of the tangent = change in volume ÷ change in time.
 
 # 4.6.1.2 Factors which affect the rates of chemical reactions
+Calc: yes
 Id: aqa-chem-4.6-006
 
 Q: Grinding a solid reactant into a powder changes which factor that affects the rate of reaction?

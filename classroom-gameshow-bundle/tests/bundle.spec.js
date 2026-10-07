@@ -139,7 +139,7 @@ test('@hq a full-length game of Over the Edge at High graphics, on the shipped f
   expect(log.requests).toEqual([]);
 });
 
-test('@hq a full game of Outpace at High graphics, with the full 60-second sprint, on the shipped file', async ({ page }) => {
+test('@hq a full game of Outpace at High graphics, with the full 90-second sprint, on the shipped file', async ({ page }) => {
   test.setTimeout(600000);
   await page.setViewportSize({ width: 1366, height: 768 });
   const log = await openBundle(page, '#outpace', { product: true, quality: 'high' });
@@ -203,14 +203,21 @@ test('Over the Edge physics is the same every run with the same seed', async ({ 
   expect(b).toBe(a);
 });
 
-test('Outpace: the Final Sprint ends when time runs out and shows the result', async ({ page }) => {
+test('Outpace: when the sprint clock runs out the question on screen still finishes and counts, then the result shows', async ({ page }) => {
   const log = await openBundle(page, '#outpace');
   await page.click('#op-startBtn');
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
   await expect(page.locator('#op-hud-sprint')).toBeVisible();
   await mark(page, 'outpace', () => true);
   expect((await state(page, 'outpace')).net).toBe(4);       // one step for each correct team
+  // the clock runs out during the next question: that question is still answered, marked and counted
+  await expect.poll(async () => (await state(page, 'outpace')).round, { timeout: 5000 }).toBe('think');
   await page.evaluate(() => CGB.test.outpace.setTime(1));
+  await expect(page.locator('#op-sprintFinal')).toContainText("Time's up! Finish this question.");
+  await page.waitForTimeout(1200);
+  expect((await state(page, 'outpace')).phase).toBe('sprint');
+  await mark(page, 'outpace', i => i === 0);
+  expect((await state(page, 'outpace')).net).toBe(5);
   await expect.poll(async () => (await state(page, 'outpace')).phase, { timeout: 20000 }).toBe('summary');
   await expect(page.locator('#op-finalVerdict')).not.toBeEmpty();
   expect(log.errors).toEqual([]);

@@ -270,6 +270,7 @@ Accept: 3 metres
 Ref: 5.11
 D: 3
 Note: wavelength = wave speed ÷ frequency; 100 MHz = 1 × 10^8 Hz.
+Calc: yes
 Id: edexcel-phys-5-038
 
 Q: A microwave has a wavelength of 0.1 m and travels at 3 × 10^8 m/s. What is its frequency?
@@ -277,6 +278,7 @@ A: 3 × 10^9 Hz
 Accept: 3 GHz; 3 000 000 000 Hz
 Ref: 5.11
 D: 3
+Calc: yes
 Id: edexcel-phys-5-039
 
 Q: Which is the only part of the electromagnetic spectrum that human eyes can detect?
@@ -355,6 +357,7 @@ Ref: 5.14
 HT: yes
 D: 3
 Note: Frequency is unchanged, so wavelength falls in proportion to speed.
+Calc: yes
 Id: edexcel-phys-5-049
 
 Q: Which objects emit electromagnetic radiation?

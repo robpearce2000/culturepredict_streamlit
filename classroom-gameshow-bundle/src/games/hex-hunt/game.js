@@ -24,9 +24,13 @@ const SFX = {
   win() { [392, 523, 659, 784, 1047, 1319].forEach((f, i) => CGB.sfx.tone(f, 0.22, 'triangle', 0.09, i * 0.09)); }
 };
 
-/* Fixed settings: one round on a 4 × 4 board (under 10 minutes with a class) */
+/* A match on a 4 × 4 board: best of three rounds (the first half to win two rounds wins), or a single
+   round with Maths, whose longer answer times already make one round about 10 minutes. A round ends
+   when a half joins its edges, or after 12 questions in a row with no hexagon won: then the half with
+   more hexagons takes the round (neither, if level). */
+const DRY_LIMIT = 12;
 const S = {
-  phase: 'home', size: 4,
+  phase: 'home', size: 4, rounds: [0, 0], roundNo: 1, roundLog: [], dry: 0,
   teams: [], cells: [], picker: 0, cursor: { c: 0, r: 0 }, open: null, step: null, path: null
 };
 
@@ -142,18 +146,24 @@ function renderBoard() {
     else out += `<text class="lt" x="${x}" y="${y + 17}" font-size="48">${cell.letter}</text>`;
     out += '</g>';
   });
+  // each half's mark on its edges, not only its colour
+  const mk = (x, y, t) => `<text class="hh-edgemk" x="${x}" y="${y}" font-size="20" fill="#fff">${TEAM[t].mark}</text>`;
+  out += mk(15, h / 2 + 7, 0) + mk(w - 15, h / 2 + 7, 0) + mk(w / 2, 22, 1) + mk(w / 2, h - 8, 1);
   svg.innerHTML = out;
   $('curHint').hidden = !(S.keyboard && S.phase === 'board');
   renderTeams();
 }
 function renderTeams() {
   const owned = t => S.cells.filter(c => c.owner === t).length;
-  $('teams').innerHTML = S.teams.map((t, i) => `<div class="hh-team${i === S.picker && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)} <small>${TEAM[i].goal} · ${owned(i)} hexagons</small></span></div>`).join('');
+  const match = S.toWin > 1;
+  $('teams').innerHTML = S.teams.map((t, i) => `<div class="hh-team${i === S.picker && S.phase === 'board' ? ' turn' : ''}" style="--tc:${TEAM[i].css}"><span class="nm">${TEAM[i].mark} ${esc(t.name)} <small>${TEAM[i].goal} · ${owned(i)} hexagons</small></span>${match ? `<span class="hh-rounds" aria-label="${S.rounds[i]} rounds won"><small>rounds</small> ${S.rounds[i]}</span>` : ''}</div>`).join('');
   const p = S.teams[S.picker];
-  $('turn').innerHTML = p ? `<b style="--tc:${TEAM[S.picker].light}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon<small>Captain: swap to the next person</small>` : '';
+  const head = match ? `<span class="hh-roundno">Round ${S.roundNo} · best of three · ${TEAM[0].mark} ${S.rounds[0]}–${S.rounds[1]} ${TEAM[1].mark}</span>` : '';
+  $('turn').innerHTML = p ? `${head}<b style="--tc:${TEAM[S.picker].light}">${TEAM[S.picker].mark} ${esc(p.name)}</b>, pick a hexagon<small>Captain: swap to the next person</small>` : '';
 }
 $('board').addEventListener('click', e => {
   const g = e.target.closest('.hh-hex'); if (!g) return;
+  if (e.detail === 0 && (S.boardAt && performance.now() - S.boardAt < 500)) return;   // a key press just after returning to the board
   S.cursor = { c: +g.dataset.c, r: +g.dataset.r };
   S.keyboard = false;
   openHex(S.cursor.c, S.cursor.r);
@@ -208,6 +218,7 @@ $('qBtns').addEventListener('click', e => {
   else if (a === 'again') newQuestionHere();
   else if (a === 'leave') backToBoard();
   else if (a === 'win' && S.step === 'winning') roundWon(S.picker);
+  else if (a === 'stall' && S.step === 'stalled') endStalledRound();
 });
 /* ---------- Whole class: which half had more right answers ----------
    The teacher compares the whiteboards and presses the half that had more correct answers (on a
@@ -231,7 +242,8 @@ $('share').addEventListener('click', e => {
 });
 const round = CGB.createClassRound({
   root: document.getElementById('game-hex-hunt'), board: null, countEl: $('count'), btnEl: $('qBtns'),
-  seconds: CGB.answerSeconds, teams: () => 2,
+  seconds: q => CGB.answerSeconds(q), teams: () => 2,
+  question: () => S.open ? S.open.q : null, reveal: () => $('qAnswer').classList.add('shown'),
   marker: {
     instant: true,
     hint: 'Compare the whiteboards. Which half had more right answers? If it\'s level, press the half that chose this hexagon.',
@@ -243,7 +255,8 @@ const round = CGB.createClassRound({
     },
     values: () => choice
   },
-  doneHtml: () => S.step === 'winning' ? `<button class="btn go" type="button" data-q="win">They've joined their edges! <span class="kbd">Enter</span></button>`
+  doneHtml: () => S.step === 'stalled' ? `<button class="btn go" type="button" data-q="stall">End the round <span class="kbd">Enter</span></button>`
+    : S.step === 'winning' ? `<button class="btn go" type="button" data-q="win">They've joined their edges! <span class="kbd">Enter</span></button>`
     : S.step === 'nobody' ? `<button class="btn go" type="button" data-q="again">New question for this hexagon <span class="kbd">Enter</span></button><button class="btn plain" type="button" data-q="leave">Leave it and pick again</button>`
     : `<button class="btn go" type="button" data-q="next">Back to the board <span class="kbd">Enter</span></button>`,
   onConfirm: classResult, onUndo: undoClassResult
@@ -256,16 +269,19 @@ function classResult(c) {
   S.teams.forEach((t, h) => { if (h !== w) { t.wrong.push(cell.q); bank.logWrong(t.name, cell.q, GAME_NAME); } });
   $('qAnswer').classList.add('shown');
   $('share').hidden = true;
+  undoSnap.dry = S.dry;
   if (w < 0) {
     misc.add(cell.q, 1, 'nobody got it');
     SFX.wrong();
-    S.step = 'nobody';
-    $('qMsg').textContent = 'Nobody got it, so nobody wins this hexagon.';
+    S.step = ++S.dry >= DRY_LIMIT ? 'stalled' : 'nobody';
+    $('qMsg').textContent = S.step === 'stalled'
+      ? `Nobody has won a hexagon for ${DRY_LIMIT} questions, so this round ends here.`
+      : 'Nobody got it, so nobody wins this hexagon.';
     hostC.say("Nobody got that one. Here's the answer.", 'shrug', 1500);
     return;
   }
   SFX.claim();
-  cell.owner = w; S.teams[w].won++; S.picker = w;
+  cell.owner = w; S.teams[w].won++; S.picker = w; S.dry = 0;
   $('qMsg').textContent = `The hexagon goes to ${S.teams[w].name}.`;
   hostC.say(`${S.teams[w].name} take it!`, 'clap', 1500);
   const path = winningPath(w);
@@ -275,7 +291,7 @@ function classResult(c) {
 }
 function undoClassResult() {
   const u = undoSnap, cell = S.open; if (!u) return;
-  cell.owner = -1; S.picker = u.picker; S.path = u.path;
+  cell.owner = -1; S.picker = u.picker; S.path = u.path; S.dry = u.dry;
   S.teams.forEach((t, i) => { t.won = u.won[i]; while (t.wrong.length > u.wrong[i]) { t.wrong.pop(); bank.unlogWrong(t.name, cell.q); } });
   misc.remove(cell.q);
   $('qAnswer').classList.remove('shown');
@@ -311,7 +327,7 @@ function backToBoard() {
     if (q) { S.open.q = q; S.open.letter = firstLetter(q); }
   }
   $('q').hidden = true;
-  S.phase = 'board'; S.open = null; S.step = null;
+  S.phase = 'board'; S.open = null; S.step = null; S.boardAt = performance.now();
   if (cellAt(S.cursor.c, S.cursor.r).owner >= 0) {
     const free = S.cells.find(c => c.owner < 0); if (free) S.cursor = { c: free.c, r: free.r };
   }
@@ -339,11 +355,11 @@ function roundWon(i) {
   const a = at(0), b = at(chain.length - 1);
   svg.style.transition = 'none'; svg.style.transformOrigin = `${a.x}% ${a.y}%`; svg.style.transform = 'scale(1.18)';
   svg.getBoundingClientRect();
-  setTimeout(() => {
+  celebT = CGB.pause.after(lead, () => {
     svg.style.transition = `transform-origin ${(chain.length * step) / 1000}s linear, transform 0.5s ease`;
     svg.style.transformOrigin = `${b.x}% ${b.y}%`;
-  }, lead);
-  celebT = setTimeout(() => { svg.style.transform = ''; burstCelebration(i); celebT = setTimeout(() => showWin(i), 800); }, lead + chain.length * step + 100);
+    celebT = CGB.pause.after(chain.length * step + 100, () => { svg.style.transform = ''; burstCelebration(i); celebT = CGB.pause.after(800, () => showWin(i)); });
+  });
 }
 function burstCelebration(i) {
   const wrap = $('board').parentElement, box = document.createElement('div');
@@ -353,22 +369,59 @@ function burstCelebration(i) {
   wrap.appendChild(box);
   setTimeout(() => box.remove(), 2600);
 }
-function skipCelebration() { if (S.phase !== 'celebrate') return; clearTimeout(celebT); showWin(S.winner); }
+function skipCelebration() { if (S.phase !== 'celebrate') return; CGB.pause.cancel(celebT); showWin(S.winner); }
 function showWin(i) {
-  clearTimeout(celebT);
+  CGB.pause.cancel(celebT);
   const svg = $('board'); svg.style.transition = 'none'; svg.style.transform = ''; svg.style.transformOrigin = '';
-  S.phase = 'won';
+  endRound(i, `${TEAM[i].mark} Joined ${TEAM[i].goal} in ${S.path.length} hexagons`);
+}
+const owned = t => S.cells.filter(c => c.owner === t).length;
+const matchOver = () => S.rounds.some(r => r >= S.toWin) || S.roundLog.length >= S.maxRounds;
+/* A round is over: i is the half that takes it (-1: neither) */
+function endRound(i, detail) {
+  round.stop();
+  $('q').hidden = true; $('share').hidden = true;
+  if (i >= 0) S.rounds[i]++;
+  S.roundLog.push({ winner: i, hexes: [owned(0), owned(1)] });
+  S.phase = 'won'; S.open = null;
   renderBoard();
-  $('winTitle').textContent = `${S.teams[i].name} win!`;
-  $('winDetail').textContent = `${TEAM[i].mark} Joined ${TEAM[i].goal} in ${S.path.length} hexagons`;
-  $('winBtn').innerHTML = 'See the results <span class="kbd">Enter</span>';
+  const over = matchOver();
+  const single = S.toWin === 1;
+  $('winTitle').textContent = i < 0 ? `Round ${S.roundNo}: nobody takes it` : single || (over && S.rounds[i] >= S.toWin) ? `${S.teams[i].name} win${single ? '' : ' the match'}!` : `${S.teams[i].name} take round ${S.roundNo}!`;
+  $('winDetail').textContent = detail + (single ? '' : ` · Rounds: ${TEAM[0].mark} ${S.rounds[0]}–${S.rounds[1]} ${TEAM[1].mark}`);
+  $('winBtn').innerHTML = `${over ? 'See the results' : 'Next round'} <span class="kbd">Enter</span>`;
   $('win').hidden = false;
-  hostC.say(`${S.teams[i].name} link their edges and win!`, 'cheer', 2200);
+  hostC.say(i < 0 ? 'A level round! Nobody takes it.' : over ? `${S.teams[i].name} win${single ? '' : ' the match'}!` : `${S.teams[i].name} take the round!`, i < 0 ? 'shrug' : 'cheer', 2200);
   $('winBtn').focus({ preventScroll: true });
+}
+// 12 questions without a hexagon: the half with more hexagons takes the round (neither, if level)
+function endStalledRound() {
+  const h = [owned(0), owned(1)], i = h[0] > h[1] ? 0 : h[1] > h[0] ? 1 : -1;
+  endRound(i, `No hexagon won for ${DRY_LIMIT} questions · hexagons ${TEAM[0].mark} ${h[0]}–${h[1]} ${TEAM[1].mark}`);
+}
+function matchWinner() {
+  if (S.rounds[0] !== S.rounds[1]) return S.rounds[0] > S.rounds[1] ? 0 : 1;
+  const h = [owned(0), owned(1)];            // level on rounds (ended early): the round in play decides
+  return h[0] > h[1] ? 0 : h[1] > h[0] ? 1 : -1;
 }
 function continueAfterWin() {
   if (S.phase !== 'won') return;
   $('win').hidden = true;
+  if (matchOver()) { S.winner = matchWinner(); showSummary(); return; }
+  // the next round: a fresh board, and the half that didn't take the last round picks first
+  const last = S.roundLog[S.roundLog.length - 1];
+  S.roundNo++; S.dry = 0; S.path = null;
+  S.picker = last.winner >= 0 ? 1 - last.winner : 1 - S.picker;
+  newBoard();
+  S.phase = 'board'; S.boardAt = performance.now();
+  renderBoard();
+  hostC.say(`Round ${S.roundNo}! ${S.teams[S.picker].name}, you pick first.`, 'wave', 2200);
+}
+// End game and show results: the rounds so far, then the round in play decides a tie
+function endNow() {
+  round.stop(); CGB.pause.cancel(celebT);
+  const svg = $('board'); svg.style.transition = 'none'; svg.style.transform = ''; svg.style.transformOrigin = '';
+  S.winner = matchWinner();
   showSummary();
 }
 $('winBtn').addEventListener('click', continueAfterWin);
@@ -380,6 +433,8 @@ function startGame() {
   CGB.saveTeamNames(names);
   S.teams = names.map(name => ({ name, won: 0, wrong: [] }));
   S.picker = 0; S.winner = -1;
+  S.toWin = bank.subject() === 'maths' ? 1 : 2; S.maxRounds = S.toWin === 1 ? 1 : 3;
+  S.rounds = [0, 0]; S.roundNo = 1; S.roundLog = []; S.dry = 0;
   misc.reset(); round.stop();
   newBoard();
   if (!S.cells.some(c => c.q)) { $('setHint').textContent = 'This set has no answers that start with a letter. Choose another set.'; return; }
@@ -401,13 +456,15 @@ function showSummary() {
   S.phase = 'summary';
   $('play').hidden = true; $('q').hidden = true; $('win').hidden = true;
   const w = S.teams[S.winner];
-  const title = w ? w.name + ' win!' : 'Game over';
-  $('sumCard').innerHTML = `<h2>${esc(title)}</h2>${misc.html(5)}
+  const title = w ? w.name + ' win!' : "It's a draw!";
+  const rounds = S.toWin > 1 ? `<p class="hh-sum-rounds">Rounds won: ${TEAM[0].mark} ${esc(S.teams[0].name)} <b>${S.rounds[0]}</b> · ${TEAM[1].mark} ${esc(S.teams[1].name)} <b>${S.rounds[1]}</b></p>` : '';
+  $('sumCard').innerHTML = `<h2>${esc(title)}</h2>${rounds}${misc.html(5)}
     <div class="hh-sum-btns"><button class="btn go" type="button" id="hh-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="hh-change">Change team names</button><button class="btn plain" type="button" id="hh-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('sumCard').prepend(sumHost.el);
   sumHost.say(w ? `${title} Fantastic hunting, everyone!` : 'Brilliant hunting, everyone!', 'cheer', 2200);
   hostC.quiet();
   $('summary').classList.add('active');
+  CGB.resultsShown();
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;
   $('change').onclick = goHome;
@@ -416,7 +473,7 @@ function showSummary() {
 }
 function goHome() {
   gate.hide();
-  clearTimeout(celebT);
+  CGB.pause.cancel(celebT);
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home';
@@ -460,6 +517,8 @@ document.addEventListener('keydown', e => {
   if (S.phase === 'board') {
     const mv = { arrowleft: [-1, 0], arrowright: [1, 0], arrowup: [0, -1], arrowdown: [0, 1] }[k];
     if (mv) { e.preventDefault(); moveCursor(mv[0], mv[1]); return; }
+    // a double press on "Back to the board" can't open a hexagon before the captain chooses
+    if ((k === 'enter' || k === ' ') && (S.boardAt && performance.now() - S.boardAt < 500)) { e.preventDefault(); return; }
     if ((k === 'enter' || k === ' ') && !isButton && S.keyboard) { e.preventDefault(); openHex(S.cursor.c, S.cursor.r); }
     else if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); S.keyboard = true; renderBoard(); }   // shows the outline first
     return;
@@ -469,6 +528,7 @@ document.addEventListener('keydown', e => {
     if ((k === 'enter' || k === ' ') && !isButton) {
       e.preventDefault();
       if (S.step === 'claimed') backToBoard();
+      else if (S.step === 'stalled') endStalledRound();
       else if (S.step === 'nobody') newQuestionHere();
       else if (S.step === 'winning') roundWon(S.picker);
     }
@@ -479,8 +539,9 @@ document.addEventListener('keydown', e => {
 return {
   enter() { active = true; if (S.phase === 'home') { fillNames(); renderPack(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
-  inProgress: () => ['board', 'question', 'won'].includes(S.phase),
-  _state: () => ({ keyboard: !!S.keyboard, round: round.phase, undoable: round.undoable, times: round.times(), choice, misconceptions: misc.top(5).map(x => x.q.q), phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, winner: S.winner, owners: S.cells.map(c => c.owner), letters: S.cells.map(c => [c.letter, c.q ? c.q.a : null]) })
+  inProgress: () => ['board', 'question', 'won', 'celebrate'].includes(S.phase),
+  endNow,
+  _state: () => ({ countdown: round.left, timeUp: round.timeUp, rounds: S.rounds.slice(), roundNo: S.roundNo, toWin: S.toWin, dry: S.dry, keyboard: !!S.keyboard, round: round.phase, undoable: round.undoable, times: round.times(), choice, misconceptions: misc.top(5).map(x => x.q.q), phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, winner: S.winner, owners: S.cells.map(c => c.owner), letters: S.cells.map(c => [c.letter, c.q ? c.q.a : null]) })
 };
 }
 
@@ -490,6 +551,7 @@ CGB.registerGame('hex-hunt', {
   enter() { if (game) game.enter(); },
   exit() { if (game) game.exit(); },
   inProgress() { return !!(game && game.inProgress()); },
+  endNow() { if (game) game.endNow(); },
   state() { return game && game._state(); }
 });
 })();

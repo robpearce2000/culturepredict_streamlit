@@ -45,6 +45,7 @@ Accept: 5 000 000; 5 × 10⁶; 5 x 10^6; about 5 million
 Ref: 6.2
 D: 3
 Note: Atom diameter is 2 × 10⁻¹⁰ m, so 10⁻³ ÷ (2 × 10⁻¹⁰) = 5 × 10⁶; accept 10⁷ if students used the radius.
+Calc: yes
 Id: edexcel-phys-6-006
 
 Q: What name is given to the number of protons in a nucleus?
@@ -66,6 +67,7 @@ A: 7
 Accept: Seven
 Ref: 6.3
 D: 2
+Calc: yes
 Id: edexcel-phys-6-009
 
 Q: What name is given to atoms of the same element with different numbers of neutrons?
@@ -144,6 +146,7 @@ Accept: Fourteen
 Ref: 6.6
 D: 3
 Note: 13 electrons means 13 protons, so 27 − 13 = 14 neutrons.
+Calc: yes
 Id: edexcel-phys-6-020
 
 Q: Which particles orbit the nucleus at set distances from it?
@@ -263,6 +266,7 @@ A: 60 counts per minute
 Accept: 60; 60 cpm; 60 counts/min
 Ref: 6.12
 D: 2
+Calc: yes
 Id: edexcel-phys-6-037
 
 Q: Why must background radiation be measured before measuring a source's count rate?
@@ -524,6 +528,7 @@ A: Mass 222, atomic 86
 Accept: 222 and 86; ²²²₈₆Rn
 Ref: 6.22
 D: 3
+Calc: yes
 Id: edexcel-phys-6-074
 
 Q: What happens to the activity of a radioactive source over time?
@@ -566,6 +571,7 @@ A: 20 000
 Accept: 20000; 2 × 10⁴
 Ref: 6.24
 D: 3
+Calc: yes
 Id: edexcel-phys-6-080
 
 Q: What name is given to the time taken for the activity of a source to halve?
@@ -615,6 +621,7 @@ A: 1/4
 Accept: A quarter; 0.25; 25%
 Ref: 6.27
 D: 2
+Calc: yes
 Id: edexcel-phys-6-087
 
 Q: How many half-lives pass while a source's activity falls to one-eighth of its starting value?
@@ -629,6 +636,7 @@ A: 100 Bq
 Accept: 100; 100 becquerels
 Ref: 6.27
 D: 3
+Calc: yes
 Id: edexcel-phys-6-089
 
 Q: A source's activity falls from 400 Bq to 100 Bq in 10 hours. What is its half-life?
@@ -636,6 +644,7 @@ A: 5 hours
 Accept: 5 h; 5
 Ref: 6.27
 D: 3
+Calc: yes
 Id: edexcel-phys-6-090
 
 Q: An isotope has a half-life of 20 seconds. How long until only 1/16 of it remains undecayed?
@@ -643,6 +652,7 @@ A: 80 seconds
 Accept: 80 s; 80
 Ref: 6.27
 D: 3
+Calc: yes
 Id: edexcel-phys-6-091
 
 Q: Give the net decline in activity after 2 half-lives as a ratio of final to initial activity.
@@ -651,6 +661,7 @@ Accept: 1:4; 1/4; a quarter
 Ref: 6.27
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-6-092
 
 Q: Give the net decline in activity after 4 half-lives as a ratio of final to initial activity.
@@ -659,6 +670,7 @@ Accept: 1:16; 1/16
 Ref: 6.27
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-6-093
 
 Q: A source's activity has declined in the ratio 1 : 32 (final : initial). How many half-lives have passed?
@@ -667,6 +679,7 @@ Accept: Five
 Ref: 6.27
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-phys-6-094
 
 Q: Which type of radiation is used in household smoke alarms?

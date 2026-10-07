@@ -22,8 +22,10 @@ test('Outpace: the set is built, the Final Sprint has no track or set clock, the
   await expect(page.locator('#op-sprintTarget')).toContainText('of'); expect(s3.mood).toBe('normal');
   await page.evaluate(() => CGB.test.outpace.setTime(8));
   await expect.poll(async () => (await page.evaluate(() => CGB.test.outpace.scene3d())).mood).toBe('red');
-  // time runs out: the catch plays, and Enter skips straight to the result
+  // time runs out: the question on screen is still answered and marked, then the catch plays, and Enter skips straight to the result
   await page.evaluate(() => CGB.test.outpace.setTime(0.15));
+  await expect(page.locator('#op-sprintFinal')).toContainText("Time's up");
+  await mark(page, 'outpace', () => false);
   await expect.poll(async () => (await page.evaluate(() => CGB.test.outpace.scene3d())).mode).toMatch(/buildup|explode/);
   const t0 = Date.now();
   await page.keyboard.press('Enter');
@@ -39,7 +41,7 @@ test('Outpace: an escape bursts through the arch with confetti, and Space skips 
   for (let i = 0; i < 80; i++) {
     const s = await state(page, 'outpace');
     if (s.frozen || s.phase !== 'sprint') break;
-    if (s.round === 'think' || s.round === 'show') await page.keyboard.press('Space');
+    if (s.round === 'think' || s.round === 'show') { await page.keyboard.press('Space'); await page.waitForTimeout(550); }
     else if (s.round === 'mark') { await page.keyboard.press('c'); await page.keyboard.press('Enter'); }
     else await page.waitForTimeout(100);
   }

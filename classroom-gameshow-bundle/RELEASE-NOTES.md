@@ -1,4 +1,4 @@
-# Showtime: Classroom Gameshows 1.2.1: release notes
+# Showtime: Classroom Gameshows 1.3.0: release notes
 
 ## What's in the bundle
 
@@ -16,6 +16,18 @@
 - **Hex Hunt** (two halves of the class): lettered hexagons, each letter the first letter of the answer; the first half to link its edges wins.
 
 **Questions:** AQA-style and Edexcel-style GCSE packs for Biology, Chemistry, Physics, Maths, History and Geography (AQA 8461, 8462, 8463, 8300, 8145, 8035; Edexcel 1BI0, 1CH0, 1PH0, 1MA1, 1HI0, 1GA0, 1GB0), one per specification topic or option: 135 packs, 7,792 questions, plus the teacher's own sets. They are practice questions written for Showtime and are not produced or endorsed by AQA or Pearson.
+
+## What changed in 1.3.0
+
+Fixes from the simulated classroom playtest (PLAYTEST-REPORT.md, including an "After the fixes" section):
+- The countdown waits at zero for Space; **T** adds 10 seconds; **A** shows the answer before marking.
+- **Pause** (P) in every game, and every prompt pauses the game while open.
+- **End game and show results** in every game.
+- Guards against double presses, a 2-second lock on results screens, and a "Leave this page?" warning mid-game.
+- Outpace: a 90-second sprint with realistic targets, the last question always finishes, and "more than half" in the Deal Round.
+- Hex Hunt: best of three (one round with Maths), an ending when nobody can answer, and ● ■ marks on the edges.
+- Calculations get 45 seconds (347 Physics and Chemistry questions tagged).
+- Over the Edge: an automatic light mode without graphics acceleration, and the question shown large while the class writes.
 
 ## What changed in 1.2.1
 

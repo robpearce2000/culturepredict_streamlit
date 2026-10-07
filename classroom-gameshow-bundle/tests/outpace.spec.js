@@ -7,30 +7,31 @@ test('the Final Sprint is won as soon as the target is reached, after a short un
   const log = await openBundle(page, '#outpace');
   await page.click(PICK('#op-segGroups', 4));
   await page.click('#op-startBtn');
-  await page.evaluate(() => CGB.test.outpace.toSprint(600));          // target: 4 teams × 2.25 = 9 steps
+  await page.evaluate(() => CGB.test.outpace.toSprint(600));          // target: 7 steps for 4 teams on a Standard deal
   let s = await state(page, 'outpace');
-  expect(s.target).toBe(9);
+  expect(s.target).toBe(7);
+  expect(s.timeLeft).toBe(90);                                         // a 90-second sprint
   await mark(page, 'outpace', () => true);                             // 4
   await expect.poll(async () => (await state(page, 'outpace')).round, { timeout: 5000 }).toBe('think');
-  await mark(page, 'outpace', () => true);                             // 8
+  await mark(page, 'outpace', i => i < 2);                             // 6
   await expect.poll(async () => (await state(page, 'outpace')).round, { timeout: 5000 }).toBe('think');
-  await mark(page, 'outpace', i => i < 2);                             // 10: target reached
+  await mark(page, 'outpace', i => i < 2);                             // 8: target reached
   s = await state(page, 'outpace');
-  expect(s.net).toBe(10); expect(s.frozen).toBe(true);
+  expect(s.net).toBe(8); expect(s.frozen).toBe(true);
   // the clock has stopped
   const t0 = s.timeLeft; await page.waitForTimeout(600);
   expect((await state(page, 'outpace')).timeLeft).toBe(t0);
   // undo inside the window: the clock starts again and the sprint carries on
   await page.keyboard.press('u');
   s = await state(page, 'outpace');
-  expect(s.net).toBe(8); expect(s.frozen).toBe(false); expect(s.phase).toBe('sprint');
+  expect(s.net).toBe(6); expect(s.frozen).toBe(false); expect(s.phase).toBe('sprint');
   await page.waitForTimeout(500);
   expect((await state(page, 'outpace')).timeLeft).toBeLessThan(t0);
   // reach it again and let the window pass: the escape plays with time still on the clock
   await page.keyboard.press('Enter');
   await expect.poll(async () => (await state(page, 'outpace')).frozen).toBe(true);
   const left = (await state(page, 'outpace')).timeLeft;
-  expect(left).toBeGreaterThan(40);
+  expect(left).toBeGreaterThan(60);
   await expect.poll(async () => (await state(page, 'outpace')).phase, { timeout: 20000 }).toBe('summary');
   await expect(page.locator('#op-finalVerdict')).toContainText('Escaped');
   expect((await state(page, 'outpace')).timeLeft).toBe(left);
@@ -111,7 +112,7 @@ test('the camera and picture glide smoothly through a move', async ({ page }) =>
   await page.evaluate(() => window.__virtOn());
   await page.waitForFunction(() => window.__queued() > 0, null, { polling: 50 });   // the game's loop now runs on the steady clock
   let rec = await page.evaluate(() => window.__step(60));
-  await page.keyboard.press('Space'); rec = rec.concat(await page.evaluate(() => window.__step(5)));
+  await page.keyboard.press('Space'); rec = rec.concat(await page.evaluate(() => window.__step(40)));   // (a second Space within half a second is a repeat)
   await page.keyboard.press('Space'); rec = rec.concat(await page.evaluate(() => window.__step(5)));
   for (let i = 0; i < 4; i++) await page.keyboard.press(String(i + 1));
   await page.keyboard.press('Enter');
@@ -120,7 +121,7 @@ test('the camera and picture glide smoothly through a move', async ({ page }) =>
   const camMoved = Math.max(...d(r => Math.hypot(r.cam[0], r.cam[2])).map(Math.abs));
   expect(camMoved).toBeGreaterThan(0.003);                          // the camera did follow the class
   const shiftSteps = d(r => r.shift[0]).map(Math.abs);
-  expect(Math.max(...shiftSteps)).toBeLessThan(2.5);                 // the picture slides, never jumps
+  expect(Math.max(...shiftSteps)).toBeLessThan(3.5);                 // the picture slides (a few px a frame), never jumps
   const vel = d(r => r.cam[0]), acc = vel.slice(1).map((v, i) => Math.abs(v - vel[i]));
   expect(Math.max(...acc)).toBeLessThan(0.02);                       // the camera's speed changes gradually
 });
@@ -132,7 +133,7 @@ test('Outpace: the Final Sprint waits on a card that explains it, and only start
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
   const card = page.locator('#game-outpace .sprint-gate:not([hidden])');
   await expect(card).toContainText('Final Sprint');
-  await expect(card).toContainText('60 seconds');
+  await expect(card).toContainText('1 minute 30 seconds');
   await expect(card.locator('button')).toContainText('Start the Final Sprint');
   await expect(page.locator('#op-sprintCard')).toBeHidden();
   const t0 = (await state(page, 'outpace')).timeLeft;

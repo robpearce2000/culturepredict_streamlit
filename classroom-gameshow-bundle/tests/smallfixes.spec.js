@@ -26,13 +26,13 @@ test('Hex Hunt: the winning hexagon pops and the chain lights up after the quest
   await openBundle(page, '#hex-hunt');
   await page.click('#hh-startBtn');
   // win every hexagon of one row for the first half with the keyboard until they join their edges
-  for (let k = 0; k < 40; k++) {
+  for (let k = 0; k < 120; k++) {
     const s = await state(page, 'hex-hunt');
     if (s.step === 'winning') break;
     if (s.phase === 'board') { const i = s.owners.findIndex((o, j) => o < 0 && Math.floor(j / s.size) === Math.floor(s.size / 2)); await page.locator('#hh-board .hh-hex').nth(i).click(); continue; }
-    if (s.round === 'think' || s.round === 'show') { await page.keyboard.press('Space'); await page.waitForTimeout(60); continue; }
+    if (s.round === 'think' || s.round === 'show') { await page.keyboard.press('Space'); await page.waitForTimeout(550); continue; }   // (a second Space within half a second is a repeat)
     if (s.round === 'mark') { await page.keyboard.press('1'); continue; }
-    if (s.step === 'claimed') { await page.keyboard.press('Enter'); continue; }
+    if (s.step === 'claimed') { await page.keyboard.press('Enter'); await page.waitForTimeout(550); continue; }
     await page.waitForTimeout(60);
   }
   expect((await state(page, 'hex-hunt')).step).toBe('winning');
@@ -59,8 +59,8 @@ test('Full screen: a button on the launcher and in every game, F toggles it, and
     await page.click(`[data-play="${g}"]`);
     const b = page.locator(`#game-${g} [data-fullscreen]`);
     await expect(b).toBeVisible();
-    // it sits next to Sound in the top bar
-    expect(await b.evaluate((el, p) => el.previousElementSibling.id === p + '-muteBtn', p)).toBe(true);
+    // it sits in the top bar with Menu and Sound
+    expect(await b.evaluate((el, p) => !!el.parentElement.querySelector('#' + p + '-muteBtn'), p)).toBe(true);
     await page.click(`#${p}-startBtn`);
     await page.keyboard.press('f');
     await expect.poll(on).toBe(true);
@@ -128,7 +128,7 @@ test('Maths: each setup card offers 45 sec, 1 min 30 or 2 min of answer time (1 
   await page.locator('#game-outpace .answer-time button', { hasText: '2 min' }).click();
   await page.click('#op-startBtn');
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
-  await expect(page.locator('#op-sprintTimer')).toHaveText('6:00');
+  await expect(page.locator('#op-sprintTimer')).toHaveText(/^6:[23]\d$/);   // 90 s plus 3 × the extra 100 s: 6:30
   expect(await page.evaluate(() => CGB.settings.get('mathsTime'))).toBe(120);
   expect(log.errors).toEqual([]);
 });

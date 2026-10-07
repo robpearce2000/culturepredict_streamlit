@@ -515,12 +515,12 @@ function coinMats(kind, owner) {
   const face = new THREE.MeshStandardMaterial({ map: faceTexture(kind, owner), metalness: 0.45, roughness: 0.38, envMapIntensity: 0.55 });
   if (kind === 'wildcard') { side.emissive = new THREE.Color(0x064442); face.emissive = new THREE.Color(0x05302e); }
   if (kind === 'jackpot') { side.emissive = new THREE.Color(0x4a3200); face.emissive = new THREE.Color(0x2a1c00); }
-  MAT[k] = [side, face, face];
+  MAT[k] = light === true ? [side, face, face].map(toLight) : [side, face, face];
   return MAT[k];
 }
 function makeCoinMesh(kind, owner) {
   const m = new THREE.Mesh(kind === 'jackpot' ? jackGeo : coinGeo, coinMats(kind, owner));
-  m.castShadow = true; m.receiveShadow = true;
+  m.castShadow = m.receiveShadow = !light;
   scene.add(m);
   return m;
 }
@@ -989,10 +989,50 @@ function resize() {
 }
 window.addEventListener('resize', resize);
 if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
+/* The light mode, for computers drawing 3D without a graphics chip (software rendering) or that
+   can't keep up: half resolution, simple matte materials, no shadows and no glow. Measured on a
+   machine with no graphics chip: 3.8 frames a second before, about 15 to 18 after. The physics
+   keeps real time either way (it takes more steps per frame when the frame rate is low). */
+let light = false;
+const lightMats = new Map();
+function toLight(m) {
+  if (!m || m.isMeshBasicMaterial || m.isMeshLambertMaterial || m.isShaderMaterial || m.isPointsMaterial || m.isLineBasicMaterial || m.isSpriteMaterial) return m;
+  if (lightMats.has(m)) return lightMats.get(m);
+  const l = new THREE.MeshLambertMaterial({ color: m.color ? m.color.clone() : 0xffffff, map: m.map || null, emissive: m.emissive ? m.emissive.clone() : 0x000000, emissiveMap: m.emissiveMap || null, transparent: m.transparent, opacity: m.opacity, side: m.side, depthWrite: m.depthWrite });
+  lightMats.set(m, l);
+  return l;
+}
+function lighten(o) { if (o.isMesh && o.material) { o.material = Array.isArray(o.material) ? o.material.map(toLight) : toLight(o.material); o.castShadow = o.receiveShadow = false; } }
+function goLight(why) {
+  if (light === true) return;
+  light = true;
+  scene.traverse(lighten);
+  Object.keys(MAT).forEach(k => { MAT[k] = MAT[k].map(toLight); });
+  applyQuality();
+  const n = $('lightNote');
+  if (n) { n.textContent = why; n.hidden = false; setTimeout(() => { n.hidden = true; }, 12000); }
+}
+// software drawing is known at once; otherwise a frame rate under 20 for 4 seconds of play switches over
+(() => {
+  try {
+    const gl = renderer.getContext(), ext = gl.getExtension('WEBGL_debug_renderer_info');
+    const name = String(ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+    if (/swiftshader|llvmpipe|softpipe|software|basic render/i.test(name)) light = 'pending';
+  } catch (e) { /* no renderer information */ }
+})();
+let slowSince = 0, frames = 0, frameWindow = 0;
+function watchFrames(now) {
+  if (light === true || G.phase === 'home' || CGB.pause.on()) { frameWindow = now; frames = 0; return; }
+  frames++;
+  if (now - frameWindow < 1000) return;
+  const fps = frames * 1000 / (now - frameWindow); frames = 0; frameWindow = now;
+  if (fps < 20) { if (!slowSince) slowSince = now; if (now - slowSince > 4000) goLight('Lighter graphics: this computer was struggling to draw the machine smoothly, so the game has switched to a simpler look. The game plays exactly the same.'); }
+  else slowSince = 0;
+}
 function applyQuality() {
-  const low = CGB.settings.get('quality') === 'low';
+  const low = CGB.settings.get('quality') === 'low' || light === true;
   useBloom = !low;
-  renderer.setPixelRatio(CGB.settings.pixelRatio());
+  renderer.setPixelRatio(light === true ? 0.5 : CGB.settings.pixelRatio());
   if (renderer.shadowMap.enabled === low) {
     renderer.shadowMap.enabled = !low;
     scene.traverse(o => { if (o.material) [].concat(o.material).forEach(m => { m.needsUpdate = true; }); });
@@ -1152,7 +1192,15 @@ const board = CGB.createTeamBoard($('board'), { className: 'cols-2' });
 let undoSnap = null;
 const round = CGB.createClassRound({
   root: document.getElementById('game-over-the-edge'), board, countEl: $('count'), btnEl: $('cmActions'),
-  seconds: CGB.answerSeconds, teams: () => G.players.length,
+  seconds: q => CGB.answerSeconds(q), teams: () => G.players.length,
+  question: () => G.q,
+  reveal: () => { G.answerShown = true; renderQuestion(); },
+  // while the class writes, the question is shown large over the machine
+  onPhase: ph => {
+    const big = ph === 'think' && !!G.q;
+    if (big) { $('bigTag').textContent = `${G.q.subject}: ${G.q.topic}`; $('bigText').textContent = G.q.q; }
+    $('bigq').hidden = !big;
+  },
   onConfirm: classResult, onUndo: undoClassResult
 });
 function classResult(res) {
@@ -1300,6 +1348,14 @@ function nextQuestion(quiet) {
 function logWrong(i) { const p = G.players[i]; p.wrong.push(G.q); bank.logWrong(p.name, G.q, GAME_NAME); }
 let dropTimers = [];
 function edgeTeeter() { return tray.lower.some(b => !b.base && b.y > PHY.D - b.r * 0.35); }
+// End game and show results: the money and the class pot as they stand
+function endNow() {
+  round.stop(); dropTimers = []; G.laneQueue = []; G.queuedLane = null; gate.hide();
+  if (G.phase === 'r1') G.team = G.players.reduce((a, p) => a + p.money, 0);
+  G.phase = 'summary'; G.step = null;
+  $('bigq').hidden = true;
+  showSummary();
+}
 function endRound() {
   if (G.phase === 'r1') {
     G.phase = 'final';
@@ -1365,6 +1421,7 @@ CGB.test.ote = {
     tray.lower = tray.lower.filter(b => b !== J); clearSpace(J.x, y); tray.lower.push(J); J.y = y; J.vx = J.vy = 0;
   },
   simTime: () => simT,
+  renderer: () => renderer, scene: () => scene,
   jackpot(gap, heavy) { jackpotOverride = [gap, heavy]; },   // for tuning
   fillFront(k) { FILL_FRONT = k; },                            // for tuning
   // pairs of fixed set pieces with faces on the same plane that overlap (they would flicker)
@@ -1405,12 +1462,15 @@ function showSummary() {
   const head = G.jackpotWon
     ? `<div class="big">Jackpot won: ${fmt(total)}</div><div class="small">Round 1 ${fmt(G.players.reduce((a, p) => a + p.money, 0))}, final ${fmt(G.finalWinnings)} including the £5,000 jackpot</div>`
     : `<div class="big">Class total: ${fmt(total)}</div><div class="small">The jackpot counter finished ${Math.round(jackpotProgress() * 100)}% of the way to the edge. Final winnings ${fmt(G.finalWinnings)}.</div>`;
+  // teams with the same money share a place
+  let place = 0;
   const ranks = G.players.map((p, i) => ({ p, i })).sort((a, b) => b.p.money - a.p.money)
-    .map(({ p, i }, k) => `<div class="sum-rank" style="--pc:${COLORS.css[i]}"><span class="pos">${k + 1}</span><span class="nm">${COLORS.mark[i]} ${escapeHtml(p.name)}<small>${p.correct} correct · ${p.won} counters over the edge</small></span><span class="sc">${fmt(p.money)}</span></div>`).join('');
+    .map(({ p, i }, k, all) => (k && p.money < all[k - 1].p.money ? (place = k) : place, `<div class="sum-rank" style="--pc:${COLORS.css[i]}"><span class="pos">${place + 1}</span><span class="nm">${COLORS.mark[i]} ${escapeHtml(p.name)}<small>${p.correct} correct · ${p.won} counters over the edge</small></span><span class="sc">${fmt(p.money)}</span></div>`)).join('');
   const body = `<div class="sum-ranks"><h3>Round 1</h3>${ranks}</div>${misc.html(5)}`;
   $('sumCard').innerHTML = `<div class="sum-head">${head}</div>${body}
     <div class="sum-btns"><button class="btn go" type="button" id="ote-againBtn">Play again <kbd>Enter</kbd></button><button class="btn plain" type="button" id="ote-homeBtn">Change teams</button><button class="btn plain" type="button" id="ote-menuBtn2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('summary').classList.remove('hidden');
+  CGB.resultsShown();
   clearLabels();
   updateHost(true);
   $('againBtn').onclick = () => startGame();
@@ -1502,6 +1562,8 @@ let lastT = performance.now(), rafId = 0;
 /* The game advances in fixed 1/60 s steps of simulation time (up to 4 per frame), so
    the physics gives the same result whatever the frame rate. */
 const STEP = 1 / 60, MAX_STEPS = 4;
+// in the light mode the physics may take more steps per frame, so it keeps real time at low frame rates
+const maxSteps = () => light === true ? 15 : MAX_STEPS;
 let simT = 0, simAcc = 0, manualClock = false;
 /* @test-only */ if (window.__SHOWTIME_MANUAL__) manualClock = true; /* @end-test-only */
 function simulate(h) {
@@ -1516,18 +1578,21 @@ function simulate(h) {
 function loop(now) {
   if (!active) return;
   rafId = requestAnimationFrame(loop);
-  const raw = Math.max(0, (now - lastT) / 1000), dt = Math.min(0.033, raw);
+  const paused = CGB.pause.on();          // while paused nothing moves: no physics, no camera, no drops
+  const raw = paused ? 0 : Math.max(0, (now - lastT) / 1000), dt = Math.min(0.033, raw);
   lastT = now;
   if (!manualClock) {
-    simAcc = Math.min(simAcc + raw, STEP * MAX_STEPS);
+    const most = maxSteps();
+    simAcc = Math.min(simAcc + raw, STEP * most);
     let n = 0;
-    while (simAcc >= STEP && n < MAX_STEPS) { simulate(STEP); simAcc -= STEP; n++; }
+    while (simAcc >= STEP && n < most) { simulate(STEP); simAcc -= STEP; n++; }
   }
   updateFalling(dt);
   syncTray(dt);
   pusher.position.z = TZ(tray.pf);
   updateChuteGlow(now);
   updateCamera(dt, now);
+  watchFrames(now);
   updateHost();
   updateLabels(dt);
   placeBubble();
@@ -1540,6 +1605,7 @@ function loop(now) {
 return {
   enter() {
     active = true;
+    if (light === 'pending') goLight('Lighter graphics: this computer is drawing 3D without its graphics chip (hardware acceleration is off), so the game uses a simpler look. It plays exactly the same.');
     applyQuality();
     lastT = performance.now();
     rafId = requestAnimationFrame(loop);
@@ -1557,12 +1623,13 @@ return {
     if (G.phase !== 'home') goHome();
   },
   inProgress: () => G.phase === 'r1' || G.phase === 'final',
+  endNow,
   /* used by the automated tests */
   _layout: () => {
     const sr = wrap.getBoundingClientRect(), hr = hostRect();
     return { stage: { w: sr.width, h: sr.height }, machine: machineRect(), machineRight: hostFit.machineRight, hidden: hostFit.hidden, host: { left: hr.left - sr.left, right: hr.right - sr.left, top: hr.top - sr.top, bottom: hr.bottom - sr.top }, away: $('host').classList.contains('away') };
   },
-  _state: () => ({ camera: camera.position.toArray().map(v => +v.toFixed(4)), dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
+  _state: () => ({ countdown: round.left, timeUp: round.timeUp, camera: camera.position.toArray().map(v => +v.toFixed(4)), dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
 };
 }
 
@@ -1572,6 +1639,7 @@ CGB.registerGame('over-the-edge', {
   enter() { if (game) game.enter(); },
   exit() { if (game) game.exit(); },
   inProgress() { return !!(game && game.inProgress()); },
+  endNow() { if (game) game.endNow(); },
   state() { return game && game._state(); },
   layout() { return game && game._layout(); }
 });

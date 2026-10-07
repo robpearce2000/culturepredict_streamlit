@@ -140,6 +140,7 @@ A: 20 J
 Accept: 20 joules
 Ref: 10.6
 D: 2
+Calc: yes
 Id: edexcel-phys-10-020
 
 Q: A 12 V battery transfers 60 J of energy to the charge passing through it. How much charge has moved?
@@ -147,6 +148,7 @@ A: 5 C
 Accept: 5 coulombs
 Ref: 10.6
 D: 3
+Calc: yes
 Id: edexcel-phys-10-021
 
 Q: Which meter is connected in series with a component to measure the current in it?
@@ -203,6 +205,7 @@ A: 30 C
 Accept: 30 coulombs
 Ref: 10.9
 D: 2
+Calc: yes
 Id: edexcel-phys-10-029
 
 Q: A current of 2 A flows for 5 minutes. How much charge flows?
@@ -211,6 +214,7 @@ Accept: 600 coulombs
 Ref: 10.9
 D: 3
 Note: Convert 5 minutes to 300 s first.
+Calc: yes
 Id: edexcel-phys-10-030
 
 Q: A closed circuit contains a cell. What must happen to the charge in the circuit as a result?
@@ -246,6 +250,7 @@ A: 4 A
 Accept: 4 amps
 Ref: 10.11
 D: 2
+Calc: yes
 Id: edexcel-phys-10-035
 
 Q: A current of 3 A flows into a junction and splits into two branches. One branch carries 1 A. What does the other carry?
@@ -253,6 +258,7 @@ A: 2 A
 Accept: 2 amps
 Ref: 10.11
 D: 2
+Calc: yes
 Id: edexcel-phys-10-036
 
 Q: What happens to the current in a circuit if the resistance is increased but the p.d. stays the same?
@@ -295,6 +301,7 @@ A: 12 V
 Accept: 12 volts
 Ref: 10.13
 D: 2
+Calc: yes
 Id: edexcel-phys-10-042
 
 Q: A p.d. of 12 V across a resistor gives a current of 3 A. What is its resistance?
@@ -302,6 +309,7 @@ A: 4 Ω
 Accept: 4 ohms
 Ref: 10.13
 D: 3
+Calc: yes
 Id: edexcel-phys-10-043
 
 Q: What happens to the net resistance when a second resistor is added in series?
@@ -337,6 +345,7 @@ A: 10 Ω
 Accept: 10 ohms
 Ref: 10.15
 D: 2
+Calc: yes
 Id: edexcel-phys-10-048
 
 Q: A 6 V battery is connected in series to two identical lamps. What is the p.d. across each lamp?
@@ -344,6 +353,7 @@ A: 3 V
 Accept: 3 volts
 Ref: 10.15
 D: 2
+Calc: yes
 Id: edexcel-phys-10-049
 
 Q: A 12 V supply is connected in series to resistors of 4 Ω and 2 Ω. What is the current?
@@ -351,6 +361,7 @@ A: 2 A
 Accept: 2 amps
 Ref: 10.15
 D: 3
+Calc: yes
 Id: edexcel-phys-10-050
 
 Q: A 6 V supply drives 1 A through a 2 Ω resistor in series with resistor X. What is the resistance of X?
@@ -358,6 +369,7 @@ A: 4 Ω
 Accept: 4 ohms
 Ref: 10.15
 D: 3
+Calc: yes
 Id: edexcel-phys-10-051
 
 Q: In a series test circuit, which component lets the current and p.d. be altered to give several readings?
@@ -616,6 +628,7 @@ A: 100 J
 Accept: 100 joules
 Ref: 10.27
 D: 2
+Calc: yes
 Id: edexcel-phys-10-087
 
 Q: Use E = I × V × t. A current of 0.5 A at 6 V flows for 20 s. What energy is transferred?
@@ -623,6 +636,7 @@ A: 60 J
 Accept: 60 joules
 Ref: 10.27
 D: 2
+Calc: yes
 Id: edexcel-phys-10-088
 
 Q: Use E = I × V × t. A current of 1 A at 12 V flows for one minute. What energy is transferred?
@@ -630,6 +644,7 @@ A: 720 J
 Accept: 720 joules
 Ref: 10.27
 D: 3
+Calc: yes
 Id: edexcel-phys-10-089
 
 Q: Use E = I × V × t. A 3 A current transfers 90 J in 5 s. What is the p.d.?
@@ -637,6 +652,7 @@ A: 6 V
 Accept: 6 volts
 Ref: 10.27
 D: 3
+Calc: yes
 Id: edexcel-phys-10-090
 
 Q: Power is the energy transferred per what?
@@ -672,6 +688,7 @@ A: 300 W
 Accept: 300 watts
 Ref: 10.29
 D: 2
+Calc: yes
 Id: edexcel-phys-10-095
 
 Q: A 60 W lamp is switched on for 10 s. How much energy does it transfer?
@@ -679,6 +696,7 @@ A: 600 J
 Accept: 600 joules
 Ref: 10.29
 D: 2
+Calc: yes
 Id: edexcel-phys-10-096
 
 Q: A 2 kW kettle transfers 60 000 J of energy. How long does this take?
@@ -686,6 +704,7 @@ A: 30 s
 Accept: 30 seconds
 Ref: 10.29
 D: 3
+Calc: yes
 Id: edexcel-phys-10-097
 
 Q: The p.d. across a device is doubled and the current stays the same. What happens to its power?
@@ -721,6 +740,7 @@ A: 12 W
 Accept: 12 watts
 Ref: 10.31
 D: 2
+Calc: yes
 Id: edexcel-phys-10-102
 
 Q: Write the equation for electrical power in terms of current and resistance.
@@ -735,6 +755,7 @@ A: 20 W
 Accept: 20 watts
 Ref: 10.31
 D: 2
+Calc: yes
 Id: edexcel-phys-10-104
 
 Q: A 6 Ω resistor dissipates 24 W. What is the current in it?
@@ -742,6 +763,7 @@ A: 2 A
 Accept: 2 amps
 Ref: 10.31
 D: 3
+Calc: yes
 Id: edexcel-phys-10-105
 
 Q: A motor turns a fan blade. Which energy store of the blade does the motor increase?
@@ -980,6 +1002,7 @@ A: 4 times
 Accept: 4; four; four times
 Ref: 10.42
 D: 3
+Calc: yes
 Id: edexcel-phys-10-139
 
 Q: How much energy does a 100 W lamp transfer from the supply in 10 s?
@@ -987,6 +1010,7 @@ A: 1000 J
 Accept: 1000 joules; 1 kJ
 Ref: 10.42
 D: 2
+Calc: yes
 Id: edexcel-phys-10-140
 
 Q: A wire carries a fixed current. Its resistance is doubled. What happens to the power wasted in the wire?

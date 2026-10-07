@@ -269,6 +269,7 @@ D: 2
 HT: yes
 
 # 4.4.2.6 Strong and weak acids (HT only)
+Calc: yes
 Id: aqa-chem-4.4-033
 
 Q: What is meant by a strong acid?

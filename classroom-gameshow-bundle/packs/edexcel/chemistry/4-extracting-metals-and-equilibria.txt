@@ -281,6 +281,7 @@ A: 100 kg
 Accept: 100 kg CO₂; 100
 Ref: 4.12
 D: 2
+Calc: yes
 Id: edexcel-chem-4-039
 
 Q: Making a paper bag uses 3 MJ of energy and a plastic bag 2 MJ. How many times more energy does the paper bag use?
@@ -288,6 +289,7 @@ A: 1.5
 Accept: 1.5 times; one and a half times
 Ref: 4.12
 D: 3
+Calc: yes
 Id: edexcel-chem-4-040
 
 Q: Why can two life-cycle assessments of the same product reach different conclusions?

@@ -2,6 +2,7 @@
 // the class misconceptions summary, and the time marking and Over the Edge's drop take.
 const { test } = require('@playwright/test');
 const { openBundle, state, mark, PICK, expect } = require('./helpers');
+const { playHexHunt } = require('./helpers');
 
 const note = (name, value) => test.info().annotations.push({ type: name, description: String(value) });
 
@@ -36,7 +37,7 @@ for (const n of [2, 4, 6]) {
     for (let guard = 0; guard < 200; guard++) {
       s = await state(page, 'category-clash');
       if (s.phase === 'summary') break;
-      if (s.phase === 'board') { await page.keyboard.press('Enter'); continue; }
+      if (s.phase === 'board') { await page.waitForTimeout(550); await page.keyboard.press('Enter'); continue; }   // the board ignores Enter for half a second
       if (s.round === 'done') { await page.keyboard.press('Enter'); continue; }
       await mark(page, 'category-clash', i => (i + q) % 3 === 0); q++;
     }
@@ -58,6 +59,7 @@ test('Category Clash: a team far behind gets a catch-up pick at the start of the
     await page.evaluate(k => { const s = CGB.games['category-clash'].state(); }, k);
     await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowDown');
     if (k) await page.keyboard.press('ArrowRight');
+    await page.waitForTimeout(550);                      // a new board ignores Enter for half a second
     await page.keyboard.press('Enter');
     await mark(page, 'category-clash', i => i === 0);
     await page.keyboard.press('Enter');
@@ -69,7 +71,7 @@ test('Category Clash: a team far behind gets a catch-up pick at the start of the
   await expect(page.locator('.cc-catch')).toBeVisible();
 });
 
-test('Hex Hunt, whole class: one press for the half with more right, Neither, undo, full round and misconceptions', async ({ page }) => {
+test('Hex Hunt, whole class: one press for the half with more right, Neither, undo, a full match and misconceptions', async ({ page }) => {
   const log = await openBundle(page, '#hex-hunt');
   await page.click('#hh-startBtn');
   const id = 'hex-hunt';
@@ -82,7 +84,7 @@ test('Hex Hunt, whole class: one press for the half with more right, Neither, un
   await expect(page.locator('#hh-curHint')).toBeVisible();
   // hexagon 1: half 2 had more right answers
   await page.keyboard.press('Enter');
-  await page.keyboard.press('Space'); await page.keyboard.press('Space');
+  await page.keyboard.press('Space'); await page.waitForTimeout(550); await page.keyboard.press('Space');   // (a second Space within half a second is a repeat)
   await expect.poll(async () => (await state(page, id)).round).toBe('mark');
   // two big side buttons and Neither; no percentages and no Confirm step
   await expect(page.locator('#hh-share .hh-side')).toHaveCount(3);
@@ -115,14 +117,7 @@ test('Hex Hunt, whole class: one press for the half with more right, Neither, un
   // clicking a hexagon hides the outline again
   await page.locator('#hh-board .hh-hex:not(.own-0):not(.own-1)').first().click();
   expect((await state(page, id)).keyboard).toBe(false);
-  for (let guard = 0, k = 0; guard < 400; guard++) {
-    s = await state(page, id);
-    if (s.phase === 'summary') break;
-    if (s.phase === 'board' || s.phase === 'won' || s.round === 'done') { await page.keyboard.press('Enter'); continue; }
-    if (s.round === 'think' || s.round === 'show') { await page.keyboard.press('Space'); continue; }
-    if (s.round === 'mark') { await page.keyboard.press(['1', '2', 'n'][k++ % 3]); continue; }
-    await page.waitForTimeout(50);
-  }
+  await playHexHunt(page, { picks: ['1', '2', 'n'] });                 // the rest of the match (best of three)
   expect((await state(page, id)).phase).toBe('summary');
   await expect(page.locator('#hh-sumCard .cm-miscon')).toContainText('Reteach these');
   expect(log.errors).toEqual([]);
@@ -190,7 +185,7 @@ test('Over the Edge, whole class: six correct teams drop within 10 seconds, and 
 });
 
 for (const n of [2, 4, 6]) {
-  test(`Outpace, whole class with ${n} teams: half-the-teams rule, undo, sprint and misconceptions`, async ({ page }) => {
+  test(`Outpace, whole class with ${n} teams: more-than-half rule, undo, sprint and misconceptions`, async ({ page }) => {
     const log = await openBundle(page, '#outpace');
     await page.click(PICK('#op-segGroups', n));
     await page.click('#op-startBtn');
@@ -198,19 +193,20 @@ for (const n of [2, 4, 6]) {
     await page.keyboard.press('2');                       // the class voted Standard
     let s = await state(page, id);
     const r0 = s.runner, h0 = s.hunter;
-    // exactly half correct: the runner moves
-    await mark(page, id, i => i < n / 2);
+    // more than half correct (with 2 teams, both): the runner moves
+    await mark(page, id, i => i < n / 2 + 1);
     s = await state(page, id);
     expect(s.runner).toBe(r0 - 1); expect(s.hunter).toBe(h0);
     await page.keyboard.press('u');
     s = await state(page, id);
     expect(s.runner).toBe(r0);
-    // fewer than half: the Hunter gains
-    for (let i = 0; i < n; i++) if (i < n / 2) await page.keyboard.press(String(i + 1));   // untoggle back to none
-    await page.keyboard.press('w'); if (n > 2) await page.keyboard.press('1');
+    // exactly half correct is not enough: the Hunter gains, and the panel says why
+    await page.keyboard.press('w');
+    for (let i = 0; i < n / 2; i++) await page.keyboard.press(String(i + 1));
     await page.keyboard.press('Enter');
     s = await state(page, id);
     expect(s.hunter).toBe(h0 - 1); expect(s.runner).toBe(r0);
+    await expect(page.locator('#op-dealVerdict')).toContainText(n === 2 ? 'Not both teams' : 'Half or fewer');
     await page.keyboard.press('Enter');
     let sprintSeen = false, dealsVoted = 1;
     for (let guard = 0, k = 0; guard < 600; guard++) {
@@ -219,7 +215,7 @@ for (const n of [2, 4, 6]) {
       if (s.roundEnd) { await page.keyboard.press('Enter'); continue; }
       if (s.phase === 'deal' && !s.dealReward) { dealsVoted++; await page.keyboard.press('2'); continue; }   // the second Deal Round
       if (s.phase === 'sprint') {
-        if (!sprintSeen) { sprintSeen = true; expect(s.target).toBeGreaterThanOrEqual(3); note('sprint target', s.target); }
+        if (!sprintSeen) { sprintSeen = true; expect(s.target).toBeGreaterThanOrEqual(2); note('sprint target', s.target); }
         if (s.timeLeft > 5 && k > 3) await page.evaluate(() => CGB.test.outpace.setTime(2));
       }
       if (s.round === 'think' || s.round === 'show' || s.round === 'mark') { if (s.phase === 'deal' || s.phase === 'sprint') { await mark(page, id, i => (i + k) % 3 !== 0); k++; continue; } }

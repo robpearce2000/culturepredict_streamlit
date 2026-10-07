@@ -196,6 +196,7 @@ function renderTeams() {
 }
 $('board').addEventListener('click', e => {
   const b = e.target.closest('.cc-tile[data-c]'); if (!b) return;
+  if (e.detail === 0 && (S.boardAt && performance.now() - S.boardAt < 500)) return;   // Enter on a focused tile just after returning to the board
   S.cursor = { c: +b.dataset.c, r: +b.dataset.r };
   openTile(S.cursor.c, S.cursor.r);
 });
@@ -259,12 +260,12 @@ function starReveal(tileEl) {
   revealTile = tileEl;
   playEl.classList.add('dim', 'pushed');
   tileEl.classList.add('star-spin');
-  revealT = setTimeout(endStarReveal, 1500);
+  revealT = CGB.pause.after(1500, endStarReveal);
 }
 // Space or Enter skips the ★ moment
 function endStarReveal() {
   if (S.step !== 'reveal') return;
-  clearTimeout(revealT);
+  CGB.pause.cancel(revealT);
   playEl.classList.remove('dim');
   if (revealTile) revealTile.classList.remove('star-spin');
   showQuestionCard(revealTile);
@@ -280,9 +281,10 @@ let undoSnap = null;
 const round = CGB.createClassRound({
   root: document.getElementById('game-category-clash'),
   board: qBoard, countEl: $('count'), btnEl: $('qBtns'),
-  seconds: CGB.answerSeconds, teams: () => S.teams.length,
+  seconds: q => CGB.answerSeconds(q), teams: () => S.teams.length,
   doneHtml: () => `<button class="btn go" type="button" data-q="next">${boardDone() ? 'See the results' : 'Back to the board'} <span class="kbd">Enter</span></button>`,
-  onConfirm: classResult, onUndo: undoClassResult
+  onConfirm: classResult, onUndo: undoClassResult,
+  question: () => S.open ? tileOpen().q : null, reveal: () => showAnswer()
 });
 // "Back to the board" / "See the results" after marking (Enter does the same)
 $('qBtns').addEventListener('click', e => { if (e.target.closest('button[data-q="next"]')) closeQuestion(); });
@@ -348,7 +350,7 @@ function closeQuestion() {
   const justC = S.open.c, justR = S.open.r, winners = S.teams.map((x, i) => (undoSnap && x.score > undoSnap.scores[i]) ? i : -1).filter(i => i >= 0);
   $('q').hidden = true;
   playEl.classList.remove('pushed');
-  S.phase = 'board'; S.open = null;
+  S.phase = 'board'; S.open = null; S.boardAt = performance.now();
   round.stop(); nextClassTurn();
   if (S.cats.every(c => c.tiles.every(t => t.used))) { showSummary(); return; }
   // move the cursor to the next free tile
@@ -387,7 +389,12 @@ function startGame() {
 }
 const gate = CGB.createStartGate(document.getElementById('game-category-clash'), 'Teams take turns to pick a tile, and every team answers on a whiteboard. Nothing starts until you press Start.');
 $('startBtn').addEventListener('click', startGame);
-$('endBtn').addEventListener('click', () => CGB.armButton($('endBtn'), 'Tap again to end', () => { round.stop(); $('q').hidden = true; showSummary(); }));
+// End game and show results (the top bar's End game, or the Menu prompt): the scores as they stand
+function endNow() {
+  round.stop(); CGB.pause.cancel(revealT); revealTile = null;
+  $('q').hidden = true; playEl.classList.remove('dim', 'pushed');
+  showSummary();
+}
 
 function showSummary() {
   S.phase = 'summary';
@@ -402,13 +409,14 @@ function showSummary() {
     if (k && o.t.score < order[k - 1].t.score) place = k;
     return `<div class="cc-rank" style="--tc:${TEAM[o.i].css}"><span class="pos">${pos[place]}</span><span class="nm">${TEAM[o.i].mark} ${esc(o.t.name)}<small>${o.t.correct} won · ${o.t.wrong.length} missed</small></span><span class="sc">${o.t.score}</span></div>`;
   }).join('');
-  $('sumCard').innerHTML = `<h2>${winners.length > 1 ? "It's a draw!" : esc(winners[0].t.name) + ' win!'}</h2>
+  $('sumCard').innerHTML = `<h2>${winners.length > 1 ? "It's a draw!" : esc(winners[0].t.name) + ' wins!'}</h2>
     <div class="cc-podium">${podium}</div>${misc.html(5)}
     <div class="cc-sum-btns"><button class="btn go" type="button" id="cc-again">Play again <span class="kbd">Enter</span></button><button class="btn plain" type="button" id="cc-change">Change teams</button><button class="btn plain" type="button" id="cc-menu2">Back to menu</button></div>${CGB.REVIEW_NOTE}`;
   $('sumCard').prepend(sumHost.el);
-  sumHost.say(winners.length > 1 ? "A draw! What a close game. Well done, everyone." : `${winners[0].t.name} win with ${top} points. Great game, everyone!`, 'cheer', 2200);
+  sumHost.say(winners.length > 1 ? "A draw! What a close game. Well done, everyone." : `${winners[0].t.name} wins with ${top} points. Great game, everyone!`, 'cheer', 2200);
   hostC.quiet();
   $('summary').classList.add('active');
+  CGB.resultsShown();
   $('summary').scrollTop = 0;
   $('again').onclick = startGame;
   $('change').onclick = goHome;
@@ -417,7 +425,7 @@ function showSummary() {
 }
 function goHome() {
   gate.hide();
-  clearTimeout(revealT); playEl.classList.remove('dim', 'pushed');
+  CGB.pause.cancel(revealT); playEl.classList.remove('dim', 'pushed');
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
   S.phase = 'home'; S.open = null;
@@ -447,7 +455,8 @@ document.addEventListener('keydown', e => {
   if (S.phase === 'board') {
     const mv = { arrowleft: [-1, 0], arrowright: [1, 0], arrowup: [0, -1], arrowdown: [0, 1] }[k];
     if (mv) { e.preventDefault(); moveCursor(mv[0], mv[1]); return; }
-    if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); openTile(S.cursor.c, S.cursor.r); }
+    // a double press on "Back to the board" can't open a tile before the captain chooses
+    if ((k === 'enter' || k === ' ') && !isButton) { e.preventDefault(); if (!(S.boardAt && performance.now() - S.boardAt < 500)) openTile(S.cursor.c, S.cursor.r); }
     return;
   }
   if (S.phase === 'question') {
@@ -461,7 +470,8 @@ return {
   enter() { active = true; if (S.phase === 'home') { $('names').innerHTML = ''; renderNames(); renderPack(); $('startBtn').focus({ preventScroll: true }); } },
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => S.phase === 'board' || S.phase === 'question',
-  _state: () => ({ round: round.phase, undoable: round.undoable, times: round.times(), turn: S.turn, catchUp: catchUpTurn(), misconceptions: misc.top(5).map(x => x.q.q), rows: ROWS, phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score, correct: t.correct })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
+  endNow,
+  _state: () => ({ countdown: round.left, timeUp: round.timeUp, round: round.phase, undoable: round.undoable, times: round.times(), turn: S.turn, catchUp: catchUpTurn(), misconceptions: misc.top(5).map(x => x.q.q), rows: ROWS, phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score, correct: t.correct })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
   _board: () => S.cats
 };
 }
@@ -472,6 +482,7 @@ CGB.registerGame('category-clash', {
   enter() { if (game) game.enter(); },
   exit() { if (game) game.exit(); },
   inProgress() { return !!(game && game.inProgress()); },
+  endNow() { if (game) game.endNow(); },
   state() { return game && game._state(); },
   board() { return game && game._board(); }
 });

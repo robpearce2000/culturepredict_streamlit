@@ -35,7 +35,10 @@ CGB.modal = (() => {
   function open(id) {
     const m = document.getElementById(id);
     if (!m || !m.hidden) return;
-    stack.push({ m, back: document.activeElement });
+    // any prompt or dialog holds a game in progress paused while it is open
+    const held = !!(CGB.app && CGB.app.inGame && CGB.app.inGame());
+    if (held) CGB.pause.hold();
+    stack.push({ m, back: document.activeElement, held });
     m.hidden = false;
     const f = m.querySelector('[data-autofocus]') || m.querySelector('button, input, select, textarea');
     if (f) setTimeout(() => f.focus(), 0);
@@ -45,6 +48,7 @@ CGB.modal = (() => {
     if (i < 0) return;
     const s = stack.splice(i, 1)[0];
     s.m.hidden = true;
+    if (s.held) CGB.pause.release();
     if (s.back && s.back.focus && s.back.isConnected) s.back.focus();
   }
   function top() { return stack.length ? stack[stack.length - 1].m : null; }
@@ -297,6 +301,7 @@ CGB.app = (() => {
     if (prev !== 'launcher' && CGB.games[prev]) { CGB.games[prev].exit(); $('game-' + prev).hidden = true; }
     current = id;
     if (id === 'launcher') {
+      CGB.pause.reset();
       $('launcher').hidden = false;
       document.title = 'Showtime: Classroom Gameshows';
       if (mascot) mascot.resume();
@@ -325,6 +330,14 @@ CGB.app = (() => {
     if (g && g.inProgress && g.inProgress()) { CGB.modal.open('leaveModal'); return; }
     show('launcher');
   }
+  /* End game and show results: the game's normal results screen, with the scores as they stand */
+  function endGame() {
+    const g = CGB.games[current];
+    if (!g || !g.inProgress || !g.inProgress()) return;
+    CGB.pause.reset();
+    g.endNow();
+  }
+  const inGame = () => { const g = CGB.games[current]; return !!(g && g.inProgress && g.inProgress()); };
   /* The subject panel: subject, exam board and the question set in use */
   function renderSubject() {
     const B = CGB.bank, esc = CGB.escapeHtml, sj = B.subject(), bd = B.board();
@@ -418,6 +431,7 @@ CGB.app = (() => {
     $('openHost').addEventListener('click', () => CGB.hostEditor.open());
     $('openAbout').addEventListener('click', () => CGB.modal.open('aboutModal'));
     $('leaveConfirm').addEventListener('click', () => { CGB.modal.close('leaveModal'); show('launcher'); });
+    $('leaveEnd').addEventListener('click', () => { CGB.modal.close('leaveModal'); endGame(); });
     $('aboutVersion').textContent = CGB.VERSION;
     $('storageNote').hidden = CGB.store.available;
     CGB.bank.onChange(renderSubject);
@@ -434,7 +448,7 @@ CGB.app = (() => {
     show('launcher');
     $('subjectSelect').focus();
   }
-  return { init, show, requestLauncher, chooseSubject, get current() { return current; } };
+  return { init, show, requestLauncher, chooseSubject, endGame, inGame, get current() { return current; } };
 })();
 
 /* ---------- Full screen: a button on the launcher and in every game's top bar, and the F key ----------
@@ -482,4 +496,47 @@ CGB.fullscreen = (() => {
   }, true);   // capture: before the modals' and the games' own keys
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', addButtons); else addButtons();
   return { toggle, on, can };
+})();
+
+/* ---------- The 2-second lock on results screens ---------- */
+let resultsUntil = 0;
+CGB.resultsShown = () => { resultsUntil = performance.now() + 2000; };
+CGB.resultsLocked = () => performance.now() < resultsUntil;
+
+/* ---------- In every game's top bar: Pause (P) and End game; and protection from closing the page ---------- */
+(() => {
+  const doc = document;
+  const typing = t => t && t.matches && t.matches('input, textarea, select, [contenteditable]');
+  function addButtons() {
+    doc.querySelectorAll('[id$="-muteBtn"]').forEach(m => {
+      const p = doc.createElement('button'); p.type = 'button'; p.className = 'btn'; p.dataset.pause = '';
+      const e = doc.createElement('button'); e.type = 'button'; e.className = 'btn'; e.dataset.endgame = ''; e.textContent = 'End game';
+      e.title = 'End the game now and show the results';
+      m.after(p); m.parentElement.appendChild(e);   // Menu, Sound, Pause, Full screen, Settings, End game
+    });
+    CGB.pause.paint();
+  }
+  doc.addEventListener('click', e => {
+    if (!e.target.closest) return;
+    if (e.target.closest('[data-pause]')) { if (CGB.app.inGame()) CGB.pause.toggle(); }
+    else if (e.target.closest('[data-endgame]')) {
+      const b = e.target.closest('[data-endgame]');
+      if (CGB.app.inGame()) CGB.armButton(b, 'Tap again to end', () => CGB.app.endGame());
+    }
+  });
+  // results screens ignore every key for 2 seconds after they appear, so a key meant for the last
+  // question (Enter to confirm, say) can't start a new game before anyone has seen the results
+  const swallow = e => { if (CGB.resultsLocked()) { e.preventDefault(); e.stopImmediatePropagation(); } };
+  doc.addEventListener('keyup', swallow, true);
+  // capture: P toggles the pause; while paused, only P, F and Esc do anything
+  doc.addEventListener('keydown', e => {
+    if (CGB.resultsLocked()) { swallow(e); return; }
+    if (e.ctrlKey || e.metaKey || e.altKey || typing(e.target)) return;
+    const k = e.key.toLowerCase();
+    if (k === 'p' && !e.repeat && CGB.app.inGame() && !CGB.modal.isOpen()) { e.preventDefault(); e.stopImmediatePropagation(); CGB.pause.toggle(); return; }
+    if (CGB.pause.manual && k !== 'escape' && k !== 'f' && k !== 'tab') { e.preventDefault(); e.stopImmediatePropagation(); }
+  }, true);
+  // a refresh or close mid-game asks first (the browser shows its own "Leave this page?")
+  window.addEventListener('beforeunload', e => { if (CGB.app && CGB.app.inGame()) { e.preventDefault(); e.returnValue = ''; } });
+  if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', addButtons); else addButtons();
 })();

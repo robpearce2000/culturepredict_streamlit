@@ -20,7 +20,7 @@
 /* Board */
 .cc-play { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px; padding: 12px 16px 12px; }
 .cc-play[hidden] { display: none; }
-.cc-head { display: flex; justify-content: flex-end; align-items: center; gap: 12px; min-height: 44px; padding-left: 29rem;   /* clear of the top bar: Menu, Sound, Full screen and Settings */ }
+.cc-head { display: flex; justify-content: flex-end; align-items: center; gap: 12px; min-height: 44px; padding-left: 38.5rem;   /* clear of the top bar: Menu, Sound, Pause, Full screen, Settings and End game */ }
 .cc-turn { margin-right: auto; font-family: var(--display); font-size: 1.5rem; color: var(--cc-text); }
 .cc-turn b { font-weight: 400; color: var(--turn, var(--sun)); }
 .cc-board { flex: 1; min-height: 0; display: grid; gap: 8px; grid-template-rows: minmax(56px, auto) repeat(5, minmax(0, 1fr)); }

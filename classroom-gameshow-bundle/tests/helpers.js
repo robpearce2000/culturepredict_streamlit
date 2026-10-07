@@ -44,7 +44,8 @@ const state = (page, id) => page.evaluate(g => CGB.games[g].state(), id);
    teams whose index passes ok() and confirm with Enter. Returns the marking time in ms. */
 async function mark(page, id, ok) {
   await expect.poll(async () => (await state(page, id)).round, { timeout: 15000 }).toMatch(/think|show|mark/);
-  if ((await state(page, id)).round === 'think') await page.keyboard.press('Space');
+  // a second Space within half a second counts as a repeat, so presses are spaced like a teacher's
+  for (let k = 0; k < 4 && (await state(page, id)).round === 'think'; k++) { await page.keyboard.press('Space'); await page.waitForTimeout(550); }
   if ((await state(page, id)).round === 'show') await page.keyboard.press('Space');   // skip the 3, 2, 1
   await expect.poll(async () => (await state(page, id)).round).toBe('mark');
   const s = await state(page, id);
@@ -86,6 +87,7 @@ async function playOutpace(page, opts) {
     const s = await state(page, 'outpace');
     if (s.phase === 'summary') return s;
     if (s.roundEnd) await page.keyboard.press('Enter');
+    else if (s.phase === 'sprint' && s.round === 'idle' && await page.locator('#game-outpace .sprint-gate:not([hidden])').count()) await page.keyboard.press('Enter');   // Start the Final Sprint
     else if (s.phase === 'deal' && !s.dealReward) await page.keyboard.press('3');
     else if (s.phase === 'deal' && s.round === 'done') await page.keyboard.press('Enter');
     else if ((s.phase === 'deal' || s.phase === 'sprint') && /think|show|mark/.test(s.round)) {
@@ -126,8 +128,8 @@ async function playHexHunt(page, opts) {
   while (Date.now() < end) {
     const s = await state(page, 'hex-hunt');
     if (s.phase === 'summary') return s;
-    if (s.phase === 'board' || s.phase === 'won' || s.round === 'done') await page.keyboard.press('Enter');
-    else if (s.round === 'think' || s.round === 'show') await page.keyboard.press('Space');
+    if (s.phase === 'board' || s.phase === 'won' || s.round === 'done') { await page.keyboard.press('Enter'); if (s.phase === 'won') await page.waitForTimeout(550); }   // a new board ignores Enter for half a second
+    else if (s.round === 'think' || s.round === 'show') { await page.keyboard.press('Space'); await page.waitForTimeout(550); }
     else if (s.round === 'mark') { await page.keyboard.press(picks[q++ % picks.length]); continue; }
     await page.waitForTimeout(60);
   }
@@ -144,4 +146,7 @@ async function setNames(page, game, names) {
 }
 const PICK = (seg, v) => `${seg} button[data-v="${v}"]`;
 
-module.exports = { URL, DIST, TEST_BUILD, SEED, openBundle, state, mark, playOverTheEdge, playOutpace, playCategoryClash, playHexHunt, setNames, PICK, expect };
+/* Results screens ignore keys for 2 seconds after they appear */
+const afterResults = page => page.waitForTimeout(2100);
+
+module.exports = { afterResults, URL, DIST, TEST_BUILD, SEED, openBundle, state, mark, playOverTheEdge, playOutpace, playCategoryClash, playHexHunt, setNames, PICK, expect };

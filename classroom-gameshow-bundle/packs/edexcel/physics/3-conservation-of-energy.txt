@@ -21,6 +21,7 @@ A: 100 J
 Accept: 100 joules
 Ref: 3.1
 D: 2
+Calc: yes
 Id: edexcel-phys-3-003
 
 Q: A 0.5 kg ball gains 20 J of gravitational potential energy. Taking g = 10 N/kg, how high was it raised?
@@ -29,6 +30,7 @@ Accept: 4 metres
 Ref: 3.1
 D: 3
 Note: Rearrange: Δh = ΔGPE ÷ (m × g).
+Calc: yes
 Id: edexcel-phys-3-004
 
 Q: What is the kinetic energy of a 2 kg mass moving at 3 m/s?
@@ -37,6 +39,7 @@ Accept: 9 joules
 Ref: 3.2
 D: 2
 Note: Common error: forgetting to square the speed (giving 3 J).
+Calc: yes
 Id: edexcel-phys-3-005
 
 Q: A 4 kg object has 200 J of kinetic energy. What is its speed?
@@ -45,6 +48,7 @@ Accept: 10 metres per second
 Ref: 3.2
 D: 3
 Note: v² = 2 × KE ÷ m = 100, so v = 10 m/s.
+Calc: yes
 Id: edexcel-phys-3-006
 
 Q: If the speed of a car doubles, by what factor does its kinetic energy increase?
@@ -66,6 +70,7 @@ A: 80 J
 Accept: 80 joules
 Ref: 3.3
 D: 2
+Calc: yes
 Id: edexcel-phys-3-009
 
 Q: On a Sankey diagram, a 500 J input arrow is 50 mm wide. How wide should an arrow for 200 J be?
@@ -74,6 +79,7 @@ Accept: 2 cm
 Ref: 3.3
 D: 3
 Note: Scale is 10 J per mm.
+Calc: yes
 Id: edexcel-phys-3-010
 
 Q: What principle states that energy cannot be created or destroyed?
@@ -110,6 +116,7 @@ Accept: 5 metres
 Ref: 3.5
 D: 3
 Note: KE = 10 J becomes GPE, so Δh = 10 ÷ (0.2 × 10).
+Calc: yes
 Id: edexcel-phys-3-015
 
 Q: A car brakes to a stop. Into which store of the brakes is most of its kinetic energy transferred?
@@ -249,6 +256,7 @@ A: 90%
 Accept: 0.9; 90 percent
 Ref: 3.11
 D: 2
+Calc: yes
 Id: edexcel-phys-3-035
 
 Q: A lamp is 20% efficient and is supplied with 500 J. How much energy is transferred usefully?
@@ -256,6 +264,7 @@ A: 100 J
 Accept: 100 joules
 Ref: 3.11
 D: 3
+Calc: yes
 Id: edexcel-phys-3-036
 
 Q: Why can no device have an efficiency greater than 100%?

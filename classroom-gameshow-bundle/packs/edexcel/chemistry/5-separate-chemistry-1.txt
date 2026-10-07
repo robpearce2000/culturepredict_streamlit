@@ -192,6 +192,7 @@ Ref: 5.8C
 D: 3
 HT: yes
 Note: Convert 250 cm³ to 0.25 dm³ first.
+Calc: yes
 Id: edexcel-chem-5-027
 
 Q: A sodium hydroxide solution is 20 g dm⁻³. What is its concentration in mol dm⁻³? (Mr NaOH = 40)
@@ -200,6 +201,7 @@ Accept: 0.50 mol dm⁻³; 0.5 mol/dm³; 0.5 M
 Ref: 5.8C
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-028
 
 Q: Hydrochloric acid is 0.2 mol dm⁻³. What is its concentration in g dm⁻³? (Mr HCl = 36.5)
@@ -208,6 +210,7 @@ Accept: 7.3 g/dm³
 Ref: 5.8C
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-029
 
 Q: How many moles of solute are in 50 cm³ of a 0.4 mol dm⁻³ solution?
@@ -216,6 +219,7 @@ Accept: 0.020 mol; 0.02
 Ref: 5.8C
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-030
 
 Q: In a titration, which piece of apparatus measures exactly 25.0 cm³ of alkali into the flask?
@@ -271,6 +275,7 @@ Accept: 0.002 mol; 0.002; 2 × 10⁻³ mol
 Ref: 5.10C
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-037
 
 Q: 25.0 cm³ of NaOH is neutralised by 20.0 cm³ of 0.10 mol dm⁻³ HCl. What is the NaOH concentration?
@@ -280,6 +285,7 @@ Ref: 5.10C
 D: 3
 HT: yes
 Note: HCl and NaOH react 1:1.
+Calc: yes
 Id: edexcel-chem-5-038
 
 Q: What volume of 0.20 mol dm⁻³ HCl exactly neutralises 0.0050 mol of NaOH?
@@ -288,6 +294,7 @@ Accept: 25.0 cm³; 0.025 dm³
 Ref: 5.10C
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-039
 
 Q: Use H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O. How many moles of NaOH react with 0.002 mol of H₂SO₄?
@@ -296,6 +303,7 @@ Accept: 0.0040 mol; 0.004
 Ref: 5.10C
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-040
 
 Q: What is the formula for percentage yield?
@@ -310,6 +318,7 @@ A: 75%
 Accept: 75
 Ref: 5.11C
 D: 2
+Calc: yes
 Id: edexcel-chem-5-042
 
 Q: The theoretical yield is 20 g and the percentage yield is 80%. What mass of product is made?
@@ -317,6 +326,7 @@ A: 16 g
 Accept: 16
 Ref: 5.11C
 D: 3
+Calc: yes
 Id: edexcel-chem-5-043
 
 Q: What name is given to the maximum mass of product calculated from the balanced equation?
@@ -372,6 +382,7 @@ A: 56%
 Accept: 56
 Ref: 5.14C
 D: 2
+Calc: yes
 Id: edexcel-chem-5-051
 
 Q: Reactants total 120 g; 30 g of this ends up as the desired product. What is the atom economy?
@@ -379,6 +390,7 @@ A: 25%
 Accept: 25
 Ref: 5.14C
 D: 2
+Calc: yes
 Id: edexcel-chem-5-052
 
 Q: What is the atom economy for ammonia in N₂ + 3H₂ → 2NH₃?
@@ -444,6 +456,7 @@ Accept: 12000 cm³; 12 litres
 Ref: 5.17C
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-060
 
 Q: How many moles of gas are in 4.8 dm³ at room temperature and pressure? (Molar volume 24 dm³)
@@ -452,6 +465,7 @@ Accept: 0.20 mol; 0.2
 Ref: 5.17C
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-061
 
 Q: Use Mg + 2HCl → MgCl₂ + H₂. What volume of hydrogen does 2.4 g of magnesium make at RTP? (Ar Mg = 24)
@@ -461,6 +475,7 @@ Ref: 5.17C
 D: 3
 HT: yes
 Note: 0.1 mol Mg gives 0.1 mol H₂; molar volume 24 dm³.
+Calc: yes
 Id: edexcel-chem-5-062
 
 Q: Use CaCO₃ → CaO + CO₂. What volume of CO₂ forms from 10 g of CaCO₃ at RTP? (Mr CaCO₃ = 100)
@@ -469,6 +484,7 @@ Accept: 2400 cm³; 2.4 litres
 Ref: 5.17C
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-063
 
 Q: What is the mass of 12 dm³ of oxygen gas at room temperature and pressure? (Mr O₂ = 32, molar volume 24 dm³)
@@ -477,6 +493,7 @@ Accept: 16
 Ref: 5.17C
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-064
 
 Q: Whose law states that equal volumes of gases at the same temperature and pressure contain equal numbers of molecules?
@@ -493,6 +510,7 @@ Accept: 20
 Ref: 5.18C
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-066
 
 Q: Use CH₄ + 2O₂ → CO₂ + 2H₂O. What volume of oxygen is needed to burn 10 cm³ of methane completely (same conditions)?
@@ -501,6 +519,7 @@ Accept: 20
 Ref: 5.18C
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-chem-5-067
 
 Q: Name the two reactants in the Haber process.

@@ -137,3 +137,7 @@
 }
 
 /* The gap meter: home, the class, the Hunter and the steps between them */
+
+/* the sprint's last question: "Final question!" (and "Time's up! Finish this question.") */
+.op-final { font-family: var(--display); font-size: 1.5rem; color: #FF6B6B; text-align: center; letter-spacing: 0.4px; }
+.op-final[hidden] { display: none; }

@@ -24,6 +24,7 @@ Accept: 2 cm³ s⁻¹; 2 cm3/s
 Ref: 7.1
 RP: 7.1
 D: 2
+Calc: yes
 Id: edexcel-chem-7-003
 
 Q: Which solid forms when sodium thiosulfate reacts with hydrochloric acid, making the solution go cloudy?
@@ -48,6 +49,7 @@ Accept: 0.02 /s; 0.02; 1/50 s⁻¹
 Ref: 7.1
 RP: 7.1
 D: 2
+Calc: yes
 Id: edexcel-chem-7-006
 
 Q: Which toxic gas given off by sodium thiosulfate and hydrochloric acid means the room must be well ventilated?
@@ -163,6 +165,7 @@ A: 3 cm³/s
 Accept: 3 cm³ s⁻¹; 3 cm3/s
 Ref: 7.5
 D: 2
+Calc: yes
 Id: edexcel-chem-7-022
 
 Q: A gas-producing reaction is repeated at a higher temperature with the same amounts of reactants. How does the final volume of gas compare?
@@ -369,6 +372,7 @@ Accept: -500 kJ/mol; −500 kJ mol-1; 500 kJ/mol released
 Ref: 7.14
 HT: yes
 D: 2
+Calc: yes
 Id: edexcel-chem-7-052
 
 Q: Breaking bonds needs 800 kJ mol⁻¹ and making bonds releases 600 kJ mol⁻¹. What is the energy change?
@@ -377,6 +381,7 @@ Accept: +200 kJ/mol; 200 kJ/mol; 200 kJ/mol taken in
 Ref: 7.14
 HT: yes
 D: 2
+Calc: yes
 Id: edexcel-chem-7-053
 
 Q: H₂ + Cl₂ → 2HCl. Bond energies: H–H 440, Cl–Cl 240, H–Cl 430 kJ mol⁻¹. What is the energy change?
@@ -386,6 +391,7 @@ Ref: 7.14
 HT: yes
 D: 3
 Note: Two H–Cl bonds are made: 680 broken − 860 made.
+Calc: yes
 Id: edexcel-chem-7-054
 
 Q: H₂ + Br₂ → 2HBr. Bond energies: H–H 440, Br–Br 190, H–Br 370 kJ mol⁻¹. What is the energy change?
@@ -394,6 +400,7 @@ Accept: -110 kJ/mol; −110 kJ mol-1; 110 kJ/mol released
 Ref: 7.14
 HT: yes
 D: 3
+Calc: yes
 Id: edexcel-chem-7-055
 
 Q: What is the minimum energy colliding particles need in order to react?
@@ -445,4 +452,5 @@ Accept: 150 kJ/mol; 150
 Ref: 7.16
 D: 3
 Note: Measure from reactants to peak, not from products.
+Calc: yes
 Id: edexcel-chem-7-062

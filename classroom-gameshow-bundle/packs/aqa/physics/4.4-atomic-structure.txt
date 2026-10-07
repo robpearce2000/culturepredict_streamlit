@@ -34,6 +34,7 @@ D: 3
 Note: Dividing by 10 000 (10⁴) subtracts 4 from the power.
 
 # 4.4.1.2 Mass number, atomic number and isotopes
+Calc: yes
 Id: aqa-phys-4.4-004
 
 Q: What name is given to the number of protons in an atom?
@@ -56,6 +57,7 @@ Accept: 12 neutrons
 Ref: 4.4.1.2
 D: 2
 Note: Neutrons = mass number − atomic number.
+Calc: yes
 Id: aqa-phys-4.4-007
 
 Q: One atom has mass number 35, another has mass number 37; both have atomic number 17. Why are they the same element?
@@ -198,6 +200,7 @@ Accept: 3 h
 Ref: 4.4.2.3
 D: 3
 Note: 800 → 400 → 200 is two half-lives.
+Calc: yes
 Id: aqa-phys-4.4-025
 
 Q: After three half-lives, what is the ratio of the final count rate to the initial count rate?
@@ -217,6 +220,7 @@ D: 2
 Note: 640 → 320 → 160 → 80 → 40.
 
 # 4.4.2.4 Radioactive contamination
+Calc: yes
 Id: aqa-phys-4.4-027
 
 Q: What is the process of exposing an object to nuclear radiation called?
@@ -264,6 +268,7 @@ Accept: 2000 millisieverts; 2000
 Ref: 4.4.3.1
 D: 2
 Note: 1000 mSv = 1 Sv.
+Calc: yes
 Id: aqa-phys-4.4-033
 
 Q: Why does an airline pilot usually receive a higher radiation dose than an office worker?
@@ -281,6 +286,7 @@ A: 1 000 000 times
 Accept: 10⁶; A million; One million times
 Ref: 4.4.3.2
 D: 2
+Calc: yes
 Id: aqa-phys-4.4-035
 
 Q: Why is an isotope with a very short half-life usually less of a long-term hazard?

@@ -217,11 +217,14 @@ async function questionStep(page, id, p, s, R, qi, M) {
     if (M.pauseAt === qi) {
       ev('pause', { secs: M.pauseSecs || 120 });
       await sleep(3000);
+      const usesP = await page.locator(`#game-${id} [data-pause]`).count();
+      if (usesP) await key(page, 'p', 'pause for the interruption');
       const before = await st(page, id);
       await sleep((M.pauseSecs || 120) * 1000);
       const after = await st(page, id);
-      R.moments.push({ what: `interruption: ${M.pauseSecs || 120} s pause while the class is writing`, q: qi, roundBefore: before.round, roundAfter: after.round });
-      await shot(page, `${L.name}-after-pause`);
+      if (usesP) { await shot(page, `${L.name}-paused`); await key(page, 'p', 'carry on'); }
+      R.moments.push({ what: `interruption: ${M.pauseSecs || 120} s ${usesP ? 'paused with P' : 'pause'} while the class is writing`, q: qi, roundBefore: before.round, roundAfter: after.round, countdownBefore: before.countdown, countdownAfter: after.countdown });
+      if (!usesP) await shot(page, `${L.name}-after-pause`);
     }
     // wait for writing, then Space (or the countdown runs out)
     const wEnd = Date.now() + writeFor * 1000;
@@ -281,7 +284,7 @@ async function questionStep(page, id, p, s, R, qi, M) {
     await sleep(4000);
     return 'asked';
   }
-  if (s.round === 'done' || (id !== 'over-the-edge' && (s.step === 'done' || s.step === 'claimed' || s.step === 'nobody' || s.step === 'winning'))) {
+  if (s.round === 'done' || (id !== 'over-the-edge' && (s.step === 'done' || s.step === 'claimed' || s.step === 'nobody' || s.step === 'winning' || s.step === 'stalled'))) {
     return waitAndNext(page, id, R, s);
   }
   if (s.round === 'show') { await sleep(300); return 'acted'; }
@@ -328,12 +331,13 @@ function hexChoice(s) {
 
 async function endEarly(page, id, p) {
   const t = now();
-  if (id === 'category-clash') {
-    await page.click('#cc-endBtn'); await sleep(900); await page.click('#cc-endBtn');
+  const end = page.locator(`#game-${id} [data-endgame]`);
+  if (await end.count()) {
+    await end.click(); await sleep(900); await end.click();
     await sleep(2500);
     const s = await st(page, id);
     await shot(page, `${L.name}-ended-early`);
-    return { what: 'time short: teacher ends the game early', how: 'End game (tap twice)', took: +(now() - t).toFixed(1), reachedResults: s.phase === 'summary' };
+    return { what: 'time short: teacher ends the game early', how: 'End game in the top bar (tap twice)', took: +(now() - t).toFixed(1), reachedResults: s.phase === 'summary' };
   }
   await key(page, 'Escape', 'end early via Menu'); await sleep(1500);
   const modal = await page.locator('#leaveModal:not([hidden])').count();

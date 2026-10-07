@@ -58,6 +58,7 @@ A: 6 km
 Accept: 6000 m
 Ref: 2.3
 D: 2
+Calc: yes
 Id: edexcel-phys-2-008
 
 Q: A car travels 3 km north and then 3 km south. What is its displacement from the start?
@@ -125,6 +126,7 @@ A: 5 m/s
 Accept: 5 metres per second
 Ref: 2.6
 D: 2
+Calc: yes
 Id: edexcel-phys-2-018
 
 Q: A train travels at an average speed of 40 m/s for 30 s. How far does it travel?
@@ -132,6 +134,7 @@ A: 1200 m
 Accept: 1.2 km
 Ref: 2.6
 D: 2
+Calc: yes
 Id: edexcel-phys-2-019
 
 Q: A cyclist rides at 5 m/s for 2 minutes. How far does she travel?
@@ -140,6 +143,7 @@ Accept: 0.6 km
 Ref: 2.6
 D: 3
 Note: Convert 2 minutes to 120 s first.
+Calc: yes
 Id: edexcel-phys-2-020
 
 Q: What does the gradient of a distance/time graph represent?
@@ -161,6 +165,7 @@ A: 5 m/s
 Accept: 5 metres per second
 Ref: 2.7
 D: 2
+Calc: yes
 Id: edexcel-phys-2-023
 
 Q: A line on a distance/time graph gets steeper and steeper. What is the object doing?
@@ -175,6 +180,7 @@ A: 4 m/s²
 Accept: 4 m/s^2; 4 metres per second squared
 Ref: 2.8
 D: 2
+Calc: yes
 Id: edexcel-phys-2-025
 
 Q: What is the unit of acceleration?
@@ -190,6 +196,7 @@ Accept: -2 m/s^2; deceleration of 2 m/s²
 Ref: 2.8
 D: 3
 Note: The minus sign shows slowing down.
+Calc: yes
 Id: edexcel-phys-2-027
 
 Q: What name is given to the acceleration of an object that is slowing down?
@@ -212,6 +219,7 @@ Accept: 10 metres per second
 Ref: 2.9
 D: 3
 Note: v² = 2 × 2 × 25 = 100, so v = 10 m/s.
+Calc: yes
 Id: edexcel-phys-2-030
 
 Q: Use v² − u² = 2 × a × x. An object accelerates from rest at 3 m/s² until it reaches 6 m/s. How far does it travel?
@@ -219,6 +227,7 @@ A: 6 m
 Accept: 6 metres
 Ref: 2.9
 D: 3
+Calc: yes
 Id: edexcel-phys-2-031
 
 Q: What does the gradient of a velocity/time graph represent?
@@ -239,6 +248,7 @@ A: 2 m/s²
 Accept: 2 m/s^2
 Ref: 2.10
 D: 2
+Calc: yes
 Id: edexcel-phys-2-034
 
 Q: A velocity/time graph rises in a straight line from 0 to 10 m/s in 5 s. How far does the object travel?
@@ -247,6 +257,7 @@ Accept: 25 metres
 Ref: 2.10
 D: 3
 Note: Area of the triangle = ½ × 5 × 10.
+Calc: yes
 Id: edexcel-phys-2-035
 
 Q: Name the device that times an object automatically as it breaks a beam of light.
@@ -269,6 +280,7 @@ Accept: 50 cm/s
 Ref: 2.11
 D: 3
 Note: Convert 10 cm to 0.1 m first.
+Calc: yes
 Id: edexcel-phys-2-038
 
 Q: Why are light gates more accurate than a hand-held stopwatch for timing a fast trolley?
@@ -325,6 +337,7 @@ A: 20 m/s
 Accept: 20 metres per second
 Ref: 2.13
 D: 2
+Calc: yes
 Id: edexcel-phys-2-046
 
 Q: State Newton's first law for an object with no resultant force on it.
@@ -368,6 +381,7 @@ A: 6 N
 Accept: 6 newtons
 Ref: 2.15
 D: 2
+Calc: yes
 Id: edexcel-phys-2-052
 
 Q: A 1000 kg car has a resultant force of 2000 N on it. What is its acceleration?
@@ -375,6 +389,7 @@ A: 2 m/s²
 Accept: 2 m/s^2
 Ref: 2.15
 D: 2
+Calc: yes
 Id: edexcel-phys-2-053
 
 Q: A 100 kg go-kart has a 500 N driving force and 200 N of friction. What is its acceleration?
@@ -383,6 +398,7 @@ Accept: 3 m/s^2
 Ref: 2.15
 D: 3
 Note: Find the resultant force (300 N) first.
+Calc: yes
 Id: edexcel-phys-2-054
 
 Q: Define weight.
@@ -404,6 +420,7 @@ A: 50 N
 Accept: 50 newtons
 Ref: 2.16
 D: 2
+Calc: yes
 Id: edexcel-phys-2-057
 
 Q: Name the instrument used to measure weight directly.
@@ -463,6 +480,7 @@ Accept: 2 newtons
 Ref: 2.19
 RP: 2.19
 D: 2
+Calc: yes
 Id: edexcel-phys-2-065
 
 Q: In the trolley core practical, masses are added to the trolley but the pulling force stays the same. What happens to the acceleration?
@@ -568,6 +586,7 @@ Ref: 2.22
 HT: yes
 D: 2
 Note: Inertial mass = force ÷ acceleration.
+Calc: yes
 Id: edexcel-phys-2-078
 
 Q: State Newton's third law.
@@ -614,6 +633,7 @@ Accept: 10 kilogram metres per second; 10 N s
 Ref: 2.24
 HT: yes
 D: 2
+Calc: yes
 Id: edexcel-phys-2-084
 
 Q: A 0.5 kg ball has a momentum of 4 kg m/s. What is its velocity?
@@ -622,6 +642,7 @@ Accept: 8 metres per second
 Ref: 2.24
 HT: yes
 D: 2
+Calc: yes
 Id: edexcel-phys-2-085
 
 Q: What happens to the total momentum of two objects when they collide, if no external forces act?
@@ -648,6 +669,7 @@ Ref: 2.25
 HT: yes
 D: 3
 Note: Momentum before = 6 kg m/s; total mass after = 3 kg.
+Calc: yes
 Id: edexcel-phys-2-088
 
 Q: In the equation F = (mv − mu) ÷ t, what does (mv − mu) represent?
@@ -663,6 +685,7 @@ Accept: 200 newtons
 Ref: 2.26
 HT: yes
 D: 3
+Calc: yes
 Id: edexcel-phys-2-090
 
 Q: Why do crumple zones reduce the force on passengers in a crash?
@@ -714,6 +737,7 @@ A: 36 m
 Accept: 36 metres
 Ref: 2.28
 D: 2
+Calc: yes
 Id: edexcel-phys-2-097
 
 Q: What is meant by thinking distance?
@@ -784,6 +808,7 @@ Accept: 3 kN; 3000 newtons
 Ref: 2.31
 HT: yes
 D: 2
+Calc: yes
 Id: edexcel-phys-2-107
 
 Q: A 1000 kg car hits a wall at 20 m/s and stops in 0.1 s. Estimate the force on the car.
@@ -793,6 +818,7 @@ Ref: 2.31
 HT: yes
 D: 3
 Note: Deceleration = 20 ÷ 0.1 = 200 m/s², then F = m × a.
+Calc: yes
 Id: edexcel-phys-2-108
 
 Q: A driver's reaction time is 0.5 s. What is the thinking distance at 20 m/s?
@@ -800,6 +826,7 @@ A: 10 m
 Accept: 10 metres
 Ref: 2.32P
 D: 2
+Calc: yes
 Id: edexcel-phys-2-109
 
 Q: A driver's thinking distance is 6 m at 10 m/s. Estimate the thinking distance at 30 m/s, with the same reaction time.
@@ -808,6 +835,7 @@ Accept: 18 metres
 Ref: 2.32P
 D: 3
 Note: Thinking distance is proportional to speed (braking distance is not).
+Calc: yes
 Id: edexcel-phys-2-110
 
 Q: A car's braking distance is 8 m at 10 m/s. Estimate its braking distance at 20 m/s.
@@ -815,6 +843,7 @@ A: 32 m
 Accept: 32 metres
 Ref: 2.32P
 D: 3
+Calc: yes
 Id: edexcel-phys-2-111
 
 Q: The work done by the brakes to stop a vehicle is equal to which energy of the vehicle?
@@ -837,6 +866,7 @@ Accept: 20 metres
 Ref: 2.33P
 D: 3
 Note: KE = ½ × 1000 × 20² = 200 000 J; distance = 200 000 ÷ 10 000.
+Calc: yes
 Id: edexcel-phys-2-114
 
 Q: A car's initial speed is tripled. By what factor does its braking distance increase?

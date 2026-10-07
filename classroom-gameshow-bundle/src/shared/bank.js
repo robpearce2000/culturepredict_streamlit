@@ -45,6 +45,7 @@ CGB.bank = (() => {
       }
       else if (/^accept:/i.test(t) && last) last.accept = val(/^accept:/i).split(';').map(x => x.trim()).filter(Boolean);
       else if (/^note:/i.test(t) && last) last.notes = val(/^note:/i);
+      else if (/^calc:/i.test(t) && last) { if (/^(yes|y|true|1)$/i.test(val(/^calc:/i))) last.calc = true; }   // a calculation: 45 s to answer outside Maths
     });
     return out;
   }
@@ -65,6 +66,7 @@ CGB.bank = (() => {
       lines.push('Q: ' + q.q, 'A: ' + q.a);
       if (q.accept && q.accept.length) lines.push('Accept: ' + q.accept.join('; '));
       if (q.notes) lines.push('Note: ' + q.notes);
+      if (q.calc) lines.push('Calc: yes');
     });
     return lines.join('\n');
   }
@@ -147,6 +149,7 @@ CGB.bank = (() => {
     if (q.tier === 'Higher') c.tier = 'Higher';
     if (Array.isArray(q.accept)) { const a = q.accept.map(x => String(x).trim().slice(0, 120)).filter(Boolean).slice(0, 12); if (a.length) c.accept = a; }
     if (q.notes) c.notes = String(q.notes).slice(0, 300);
+    if (q.calc) c.calc = true;
     return c;
   }
   function cleanSet(s) {

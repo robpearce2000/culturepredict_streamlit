@@ -400,4 +400,5 @@ Accept: Any value from −100 °C to −120 °C; −108 °C
 Ref: 6.16
 D: 3
 Note: The actual value is −108 °C.
+Calc: yes
 Id: edexcel-chem-6-056

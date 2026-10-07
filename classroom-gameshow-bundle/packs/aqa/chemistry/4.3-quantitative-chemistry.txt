@@ -53,6 +53,7 @@ Q: What is the relative formula mass of carbon dioxide, CO₂? (C = 12, O = 16)
 A: 44
 Ref: 4.3.1.2
 D: 2
+Calc: yes
 Id: aqa-chem-4.3-007
 
 Q: In 2H₂ + O₂ → 2H₂O, what is the total relative formula mass of the products shown? (H = 1, O = 16)
@@ -60,6 +61,7 @@ A: 36
 Ref: 4.3.1.2
 D: 2
 Note: 2 × 18 = 36, which equals the reactants' total of 4 + 32.
+Calc: yes
 Id: aqa-chem-4.3-008
 
 Q: What is the percentage by mass of oxygen in magnesium oxide, MgO? (Mg = 24, O = 16)
@@ -70,6 +72,7 @@ D: 3
 Note: Mr = 40, so 16 ÷ 40 × 100 = 40%.
 
 # 4.3.1.3 Mass changes when a reactant or product is a gas
+Calc: yes
 Id: aqa-chem-4.3-009
 
 Q: A metal carbonate is heated strongly in an open tube. What happens to the mass of the solid?
@@ -91,6 +94,7 @@ A: 4.4 g
 Accept: 4.4 grams
 Ref: 4.3.1.3
 D: 2
+Calc: yes
 Id: aqa-chem-4.3-012
 
 Q: Magnesium is heated in an open crucible. Why is the mass of solid product greater than the mass of magnesium?
@@ -120,6 +124,7 @@ A: 0.6 cm³
 Accept: 24.2 to 24.8 cm³; 0.6
 Ref: 4.3.1.4
 D: 2
+Calc: yes
 Id: aqa-chem-4.3-016
 
 Q: Repeat masses are 2.4 g, 2.6 g and 2.5 g. What is the uncertainty, taken as half the range about the mean?
@@ -129,6 +134,7 @@ Ref: 4.3.1.4
 D: 3
 
 # 4.3.2.1 Moles (HT only)
+Calc: yes
 Id: aqa-chem-4.3-017
 
 Q: What is the name of the unit used to measure amounts of chemical substances?
@@ -162,6 +168,7 @@ Ref: 4.3.2.1
 HT: yes
 D: 2
 Note: Moles = mass ÷ Mr.
+Calc: yes
 Id: aqa-chem-4.3-021
 
 Q: What is the mass of 0.5 mol of sodium hydroxide? (Mr of NaOH = 40)
@@ -172,6 +179,7 @@ HT: yes
 D: 2
 
 # 4.3.2.2 Amounts of substances in equations (HT only)
+Calc: yes
 Id: aqa-chem-4.3-022
 
 Q: Reading Mg + 2HCl → MgCl₂ + H₂ in terms of moles, what does the 2 in front of HCl show?
@@ -190,6 +198,7 @@ Ref: 4.3.2.2
 HT: yes
 D: 3
 Note: 4 g of H₂ is 2 mol, which makes 2 mol of water (2 × 18 g).
+Calc: yes
 Id: aqa-chem-4.3-024
 
 Q: CaCO₃ → CaO + CO₂. What mass of calcium oxide forms from 50 g of calcium carbonate? (Mr: CaCO₃ = 100, CaO = 56)
@@ -201,6 +210,7 @@ D: 3
 Note: 50 g is 0.5 mol, giving 0.5 × 56 = 28 g.
 
 # 4.3.2.3 Using moles to balance equations (HT only)
+Calc: yes
 Id: aqa-chem-4.3-025
 
 Q: To work out balancing numbers from reacting masses, what are the masses first converted into?
@@ -227,6 +237,7 @@ HT: yes
 D: 3
 
 # 4.3.2.4 Limiting reactants (HT only)
+Calc: yes
 Id: aqa-chem-4.3-028
 
 Q: What is the reactant that is completely used up, and so limits the amount of product, called?
@@ -276,6 +287,7 @@ A: 40 g/dm³
 Accept: 40
 Ref: 4.3.2.5
 D: 2
+Calc: yes
 Id: aqa-chem-4.3-034
 
 Q: What mass of solute is in 2 dm³ of a solution with a concentration of 15 g/dm³?
@@ -283,6 +295,7 @@ A: 30 g
 Accept: 30 grams
 Ref: 4.3.2.5
 D: 2
+Calc: yes
 Id: aqa-chem-4.3-035
 
 Q: The mass of solute is doubled but the volume of solution stays the same. What happens to the concentration?
@@ -307,6 +320,7 @@ Accept: 75 percent; 75
 Ref: 4.3.3.1
 D: 2
 Note: Percentage yield = actual mass ÷ maximum theoretical mass × 100.
+Calc: yes
 Id: aqa-chem-4.3-038
 
 Q: What type of reaction may not go to completion, giving a lower yield than calculated?
@@ -325,6 +339,7 @@ D: 3
 Note: 12 g is 0.5 mol of Mg, giving 0.5 mol of MgO, so 0.5 × 40 = 20 g.
 
 # 4.3.3.2 Atom economy
+Calc: yes
 Id: aqa-chem-4.3-040
 
 Q: Which percentage compares the Mr of the desired product with the total Mr of all reactants in the equation?
@@ -347,6 +362,7 @@ Accept: 56 percent; 56
 Ref: 4.3.3.2
 D: 2
 Note: Atom economy = Mr of desired product ÷ total Mr of reactants × 100.
+Calc: yes
 Id: aqa-chem-4.3-043
 
 Q: A reaction has only one product, which is the desired product. What is its percentage atom economy?
@@ -381,6 +397,7 @@ Accept: 1; 1 mole
 Ref: 4.3.4
 HT: yes
 D: 2
+Calc: yes
 Id: aqa-chem-4.3-047
 
 Q: Concentration in mol/dm³ equals the amount of solute in moles divided by what?
@@ -400,6 +417,7 @@ D: 3
 Note: 0.005 mol of HCl reacts with 0.005 mol of NaOH in 0.025 dm³.
 
 # 4.3.5 Use of amount of substance in relation to volumes of gases (chemistry only) (HT only)
+Calc: yes
 Id: aqa-chem-4.3-049
 
 Q: What volume does one mole of any gas occupy at room temperature and pressure?
@@ -418,6 +436,7 @@ Ref: 4.3.5
 HT: yes
 D: 3
 Note: 8 g is 0.5 mol, and 0.5 × 24 = 12 dm³.
+Calc: yes
 Id: aqa-chem-4.3-051
 
 Q: N₂ + 3H₂ → 2NH₃. What volume of ammonia forms from 30 dm³ of hydrogen, all gases at the same conditions?
@@ -427,4 +446,5 @@ Ref: 4.3.5
 HT: yes
 D: 2
 Note: Gas volumes react in the same ratio as moles, so 3 : 2.
+Calc: yes
 Id: aqa-chem-4.3-052

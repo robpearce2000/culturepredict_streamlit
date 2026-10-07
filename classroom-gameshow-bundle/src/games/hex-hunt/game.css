@@ -19,7 +19,7 @@
 /* Board */
 .hh-play { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px 16px; }
 .hh-play[hidden] { display: none; }
-.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding-left: 29rem;   /* clear of the top bar: Menu, Sound, Full screen and Settings */ }
+.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding-left: 38.5rem;   /* clear of the top bar: Menu, Sound, Pause, Full screen, Settings and End game */ }
 .hh-turn { font-family: var(--display); font-size: 1.5rem; }
 .hh-turn b { font-weight: 400; color: var(--tc); }
 .hh-round { font-weight: 900; color: var(--hh-muted); white-space: nowrap; }
@@ -63,8 +63,8 @@ html[data-motion="reduced"] .hh-hex .burst, html[data-motion="reduced"] .hh-conf
 html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filter: none; }
 .hh-teams { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .hh-team { background: #fff; color: var(--ink); border: 3px solid var(--ink); border-bottom: 8px solid var(--tc); border-radius: 14px; padding: 6px 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; min-width: 0; }
-.hh-team .nm { font-weight: 900; font-size: 1.05rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
-.hh-team .nm small { font-weight: 800; color: var(--ink-soft); font-size: 0.78rem; }
+.hh-team .nm { font-weight: 900; font-size: 1.3rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.hh-team .nm small { font-weight: 800; color: var(--ink-soft); font-size: 1.05rem; }   /* "left to right": readable from the back */
 .hh-team .sc { font-family: var(--display); font-size: 1.6rem; white-space: nowrap; }
 .hh-team.turn { box-shadow: 0 0 0 4px var(--sun); }
 .hh-keys { color: var(--hh-muted); text-align: center; }
@@ -125,3 +125,11 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
 .hh-boardwrap { position: relative; }
 .hh-curhint { position: absolute; top: 4px; right: 4px; background: rgba(255,255,255,0.92); border: 2px solid var(--sun); border-radius: 999px; padding: 2px 10px; font-weight: 800; font-size: 0.78rem; color: var(--ink); pointer-events: none; }
 .hh-curhint[hidden] { display: none; }
+
+/* best of three: rounds won, and each half's mark on its edges (not colour alone) */
+.hh-team .hh-rounds { font-family: var(--display); font-size: 1.6rem; min-width: 2ch; text-align: right; white-space: nowrap; }
+.hh-team .hh-rounds small { font-family: var(--body); font-weight: 800; font-size: 0.9rem; color: var(--ink-soft); }
+.hh-roundno { display: block; font-family: var(--body); font-weight: 900; font-size: 0.95rem; color: var(--sun, #FFC93C); letter-spacing: 0.3px; }
+.hh-edgemk { text-anchor: middle; font-weight: 900; pointer-events: none; }
+.hh-sum-rounds { font-weight: 800; font-size: 1.15rem; margin: 0 0 8px; }
+.hh-sum-rounds b { font-family: var(--display); font-weight: 400; font-size: 1.5rem; }

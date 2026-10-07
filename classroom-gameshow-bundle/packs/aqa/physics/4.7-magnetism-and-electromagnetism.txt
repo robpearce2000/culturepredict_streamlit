@@ -184,6 +184,7 @@ Ref: 4.7.2.2
 D: 2
 HT: yes
 Note: 0.2 × 4 × 0.5 = 0.4 N.
+Calc: yes
 Id: aqa-phys-4.7-024
 
 Q: Use F = BIl. A 0.2 m wire carrying 3 A at right angles to a field feels 0.3 N. What is the magnetic flux density?
@@ -195,6 +196,7 @@ HT: yes
 Note: B = F ÷ (I × l) = 0.3 ÷ 0.6 = 0.5 T.
 
 # 4.7.2.3 Electric motors (HT only)
+Calc: yes
 Id: aqa-phys-4.7-025
 
 Q: What tends to happen to a current-carrying coil of wire placed in a magnetic field?
@@ -369,6 +371,7 @@ Ref: 4.7.3.4
 D: 2
 HT: yes
 Note: Ten times fewer turns gives ten times smaller pd: 230 ÷ 10 = 23 V.
+Calc: yes
 Id: aqa-phys-4.7-045
 
 Q: Use Vp × Ip = Vs × Is. A 100% efficient transformer gives 12 V at 2 A from a 240 V supply. What is Ip?
@@ -378,6 +381,7 @@ Ref: 4.7.3.4
 D: 3
 HT: yes
 Note: Power out = 12 × 2 = 24 W, so Ip = 24 ÷ 240 = 0.1 A.
+Calc: yes
 Id: aqa-phys-4.7-046
 
 Q: Why must the primary coil of a transformer be supplied with alternating current?

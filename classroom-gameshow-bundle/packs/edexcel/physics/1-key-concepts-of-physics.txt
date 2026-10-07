@@ -150,6 +150,7 @@ A: 5000 V
 Accept: 5 × 10³ V; 5000 volts
 Ref: 1.2
 D: 2
+Calc: yes
 Id: edexcel-phys-1-021
 
 Q: Write 2.5 GHz in hertz, in standard form.
@@ -157,6 +158,7 @@ A: 2.5 × 10⁹ Hz
 Accept: 2.5 × 10^9 Hz; 2 500 000 000 Hz; 2500000000 Hz
 Ref: 1.2
 D: 2
+Calc: yes
 Id: edexcel-phys-1-022
 
 Q: Write 30 μA in amps, in standard form.
@@ -165,6 +167,7 @@ Accept: 3 × 10^-5 A; 0.00003 A; 3.0 × 10⁻⁵ A
 Ref: 1.2
 D: 3
 Note: Watch for 3 × 10⁻⁶ A; the 30 must be written as 3 × 10¹ first.
+Calc: yes
 Id: edexcel-phys-1-023
 
 Q: Write a wavelength of 450 nm in metres, in standard form.
@@ -172,6 +175,7 @@ A: 4.5 × 10⁻⁷ m
 Accept: 4.5 × 10^-7 m; 0.00000045 m
 Ref: 1.2
 D: 3
+Calc: yes
 Id: edexcel-phys-1-024
 
 Q: Write 3 MJ in kilojoules.
@@ -180,6 +184,7 @@ Accept: 3 × 10³ kJ; 3000 kilojoules
 Ref: 1.2
 D: 3
 Note: Mega to kilo is a factor of 1000.
+Calc: yes
 Id: edexcel-phys-1-025
 
 Q: How many seconds are there in one hour?
@@ -194,6 +199,7 @@ A: 900 s
 Accept: 900 seconds
 Ref: 1.3
 D: 2
+Calc: yes
 Id: edexcel-phys-1-027
 
 Q: Convert 500 g into kilograms.
@@ -201,6 +207,7 @@ A: 0.5 kg
 Accept: 0.50 kg; 1/2 kg
 Ref: 1.3
 D: 2
+Calc: yes
 Id: edexcel-phys-1-028
 
 Q: Convert a speed of 36 km/h into metres per second.
@@ -209,6 +216,7 @@ Accept: 10 metres per second; 10 m s⁻¹
 Ref: 1.3
 D: 3
 Note: 36 000 m ÷ 3600 s; dividing km/h by 3.6 gives m/s.
+Calc: yes
 Id: edexcel-phys-1-029
 
 Q: Convert an area of 1 cm² into square metres.
@@ -217,6 +225,7 @@ Accept: 1 × 10⁻⁴ m²; 10⁻⁴ m²; 1 × 10^-4 m²
 Ref: 1.3
 D: 3
 Note: 1 cm² = 0.01 m × 0.01 m, not 0.01 m².
+Calc: yes
 Id: edexcel-phys-1-030
 
 Q: What is the name for writing a number as A × 10ⁿ, where A is at least 1 but less than 10?
@@ -231,6 +240,7 @@ A: 3.4 × 10⁶
 Accept: 3.4 × 10^6
 Ref: 1.4
 D: 2
+Calc: yes
 Id: edexcel-phys-1-032
 
 Q: Write 0.00052 in standard form.
@@ -238,6 +248,7 @@ A: 5.2 × 10⁻⁴
 Accept: 5.2 × 10^-4
 Ref: 1.4
 D: 2
+Calc: yes
 Id: edexcel-phys-1-033
 
 Q: Write 6 × 10³ as an ordinary number.
@@ -245,6 +256,7 @@ A: 6000
 Accept: 6 000
 Ref: 1.4
 D: 2
+Calc: yes
 Id: edexcel-phys-1-034
 
 Q: Round 0.04567 to 2 significant figures.
@@ -274,4 +286,5 @@ A: 6 × 10⁷
 Accept: 6 × 10^7; 60 000 000
 Ref: 1.4
 D: 3
+Calc: yes
 Id: edexcel-phys-1-038

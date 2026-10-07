@@ -69,6 +69,7 @@ A: 49 N
 Accept: 49 newtons
 Ref: 4.5.1.3
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-009
 
 Q: Why does an astronaut weigh less on the Moon than on Earth, although their mass is unchanged?
@@ -99,6 +100,7 @@ A: 18 N to the right
 Accept: 18 N; 18 newtons right
 Ref: 4.5.1.4
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-013
 
 Q: What is the resultant force on an object in equilibrium shown on a free body diagram?
@@ -138,6 +140,7 @@ A: 60 J
 Accept: 60 joules; 60 Nm
 Ref: 4.5.2
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-018
 
 Q: A force of 50 N does 200 J of work moving a crate. How far does the crate move?
@@ -148,6 +151,7 @@ D: 3
 Note: Distance = work done ÷ force.
 
 # 4.5.3 Forces and elasticity
+Calc: yes
 Id: aqa-phys-4.5-019
 
 Q: What name is given to a change of shape where the object returns to its original shape when the forces are removed?
@@ -177,6 +181,7 @@ Accept: 20 newtons per metre
 Ref: 4.5.3
 D: 3
 Note: Spring constant = force ÷ extension.
+Calc: yes
 Id: aqa-phys-4.5-023
 
 Q: Use Ee = 0.5 × k × e². A spring with k = 100 N/m is stretched by 0.2 m. How much elastic potential energy is stored?
@@ -185,6 +190,7 @@ Accept: 2 joules
 Ref: 4.5.3
 D: 3
 Note: 0.2² = 0.04; 0.5 × 100 × 0.04 = 2.
+Calc: yes
 Id: aqa-phys-4.5-024
 
 Q: In the spring practical, how is the extension worked out from the ruler readings?
@@ -225,6 +231,7 @@ A: 5 Nm
 Accept: 5 newton-metres; 5 N m
 Ref: 4.5.4
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-029
 
 Q: When an object is balanced, the total clockwise moment about a pivot equals what?
@@ -240,6 +247,7 @@ Accept: 1.5 metres; 150 cm
 Ref: 4.5.4
 D: 3
 Note: 300 × 2 = 600 Nm; 600 ÷ 400 = 1.5 m.
+Calc: yes
 Id: aqa-phys-4.5-031
 
 Q: A small gear drives a larger gear. How does the moment on the larger gear compare with the moment on the small gear?
@@ -271,6 +279,7 @@ A: 300 Pa
 Accept: 300 pascals; 300 N/m²
 Ref: 4.5.5.1.1
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-035
 
 Q: A pressure of 50 Pa acts on a surface of area 4 m². What force acts on the surface?
@@ -281,6 +290,7 @@ D: 3
 Note: Force = pressure × area.
 
 # 4.5.5.1.2 Pressure in a fluid 2 (HT only)
+Calc: yes
 Id: aqa-phys-4.5-036
 
 Q: Use p = hρg. What is the pressure due to a 2 m column of water? (density 1000 kg/m³, g = 10 N/kg)
@@ -289,6 +299,7 @@ Accept: 20000 Pa; 20 kPa; 20 000 pascals
 Ref: 4.5.5.1.2
 HT: yes
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-037
 
 Q: Name the resultant upward force on an object submerged in a liquid.
@@ -344,6 +355,7 @@ Accept: 30 m to the east; 30 metres east
 Ref: 4.5.6.1.1
 D: 2
 Note: A displacement needs a direction; "30 m" alone is incomplete.
+Calc: yes
 Id: aqa-phys-4.5-044
 
 Q: A runner completes exactly one lap of a 400 m track. What is the runner's displacement?
@@ -378,6 +390,7 @@ D: 3
 Note: 3000 m ÷ 120 s.
 
 # 4.5.6.1.3 Velocity
+Calc: yes
 Id: aqa-phys-4.5-048
 
 Q: What name is given to speed in a given direction?
@@ -423,6 +436,7 @@ A: 5 m/s
 Accept: 5 metres per second
 Ref: 4.5.6.1.4
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-054
 
 Q: How is the speed found at one instant from the curved distance–time graph of an accelerating object?
@@ -460,6 +474,7 @@ A: 4 m/s²
 Accept: 4 metres per second squared
 Ref: 4.5.6.1.5
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-059
 
 Q: Why does the acceleration of a falling skydiver decrease as the skydiver speeds up?
@@ -475,6 +490,7 @@ Accept: 10 metres per second
 Ref: 4.5.6.1.5
 D: 3
 Note: v² = 2 × 2 × 25 = 100.
+Calc: yes
 Id: aqa-phys-4.5-061
 
 Q: What does the area under a velocity–time graph represent?
@@ -515,6 +531,7 @@ A: 2000 N
 Accept: 2000 newtons; 2 kN
 Ref: 4.5.6.2.2
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-066
 
 Q: The acceleration of an object is inversely proportional to which quantity?
@@ -530,6 +547,7 @@ Accept: 4 metres per second squared
 Ref: 4.5.6.2.2
 D: 3
 Note: Acceleration = force ÷ mass.
+Calc: yes
 Id: aqa-phys-4.5-068
 
 Q: What is inertial mass a measure of?
@@ -625,6 +643,7 @@ A: 36 m
 Accept: 36 metres
 Ref: 4.5.6.3.1
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-080
 
 Q: For a given braking force, how does stopping distance change as the speed of a vehicle increases?
@@ -665,6 +684,7 @@ D: 3
 Note: Distance = speed × reaction time.
 
 # 4.5.6.3.3 Factors affecting braking distance 1
+Calc: yes
 Id: aqa-phys-4.5-085
 
 Q: Apart from wet roads, name one adverse road condition that increases a car's braking distance.
@@ -727,6 +747,7 @@ HT: yes
 D: 2
 
 # 4.5.7.1 Momentum is a property of moving objects
+Calc: yes
 Id: aqa-phys-4.5-093
 
 Q: What is the unit of momentum?
@@ -743,6 +764,7 @@ Accept: 6 kilogram metres per second; 6 kgm/s
 Ref: 4.5.7.1
 HT: yes
 D: 2
+Calc: yes
 Id: aqa-phys-4.5-095
 
 Q: A 50 kg runner has a momentum of 300 kg m/s. What is the runner's velocity?
@@ -754,6 +776,7 @@ D: 3
 Note: Velocity = momentum ÷ mass.
 
 # 4.5.7.2 Conservation of momentum
+Calc: yes
 Id: aqa-phys-4.5-096
 
 Q: In a closed system, total momentum before an event equals total momentum after. What is this called?
@@ -782,6 +805,7 @@ D: 3
 Note: Momentum 6 kg m/s shared by a total mass of 3 kg.
 
 # 4.5.7.3 Changes in momentum
+Calc: yes
 Id: aqa-phys-4.5-099
 
 Q: Force is equal to the rate of change of which quantity?
@@ -797,6 +821,7 @@ Accept: 50 newtons
 Ref: 4.5.7.3
 HT: yes
 D: 3
+Calc: yes
 Id: aqa-phys-4.5-101
 
 Q: How does an air bag reduce the force on a passenger in a crash?

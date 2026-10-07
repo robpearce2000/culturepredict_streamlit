@@ -33,6 +33,7 @@ D: 2
 Note: 390 cm³ comes from using 78%; accept either.
 
 # 4.9.1.2 The Earth's early atmosphere
+Calc: yes
 Id: aqa-chem-4.9-004
 
 Q: According to the main theory, what released the gases that formed the Earth's early atmosphere?

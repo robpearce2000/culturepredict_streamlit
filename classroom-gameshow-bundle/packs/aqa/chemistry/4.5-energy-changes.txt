@@ -102,6 +102,7 @@ Accept: 7; +7 °C; 7 degrees; Increase of 7 °C
 Ref: 4.5.1.1
 RP: 4
 D: 2
+Calc: yes
 Id: aqa-chem-4.5-014
 
 Q: A student varies the concentration of acid added to sodium hydroxide. What is the dependent variable?
@@ -186,6 +187,7 @@ D: 3
 Note: Peak minus reactants (90 − 50); the overall energy change would be 30 kJ released.
 
 # 4.5.1.3 The energy change of reactions (HT only)
+Calc: yes
 Id: aqa-chem-4.5-025
 
 Q: Is breaking chemical bonds exothermic or endothermic?
@@ -219,6 +221,7 @@ Ref: 4.5.1.3
 HT: yes
 D: 3
 Note: Energy change = bonds broken − bonds made; positive means endothermic.
+Calc: yes
 Id: aqa-chem-4.5-029
 
 Q: Breaking bonds needs 600 kJ/mol; making bonds releases 800 kJ/mol. Is the reaction exothermic or endothermic?
@@ -236,6 +239,7 @@ Ref: 4.5.1.3
 HT: yes
 D: 3
 Note: Friendly value used; the data-book value is 436 kJ/mol.
+Calc: yes
 Id: aqa-chem-4.5-031
 
 Q: For H₂ + Cl₂ → 2HCl, bond energies are H–H 400, Cl–Cl 200, H–Cl 400 kJ/mol. What is the overall energy change?
@@ -247,6 +251,7 @@ D: 3
 Note: Broken 400 + 200 = 600; made 2 × 400 = 800; 600 − 800 = −200. Friendly, not data-book, values.
 
 # 4.5.2.1 Cells and batteries
+Calc: yes
 Id: aqa-chem-4.5-032
 
 Q: What is made when two or more cells are connected together in series?

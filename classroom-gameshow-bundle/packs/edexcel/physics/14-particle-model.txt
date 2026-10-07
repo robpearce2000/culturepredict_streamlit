@@ -42,6 +42,7 @@ A: 3000 kg/m³
 Accept: 3000; 3 × 10³ kg/m³
 Ref: 14.2
 D: 2
+Calc: yes
 Id: edexcel-phys-14-006
 
 Q: A liquid has a density of 800 kg/m³. What volume does 400 kg of it occupy?
@@ -49,6 +50,7 @@ A: 0.5 m³
 Accept: 0.5; half a cubic metre
 Ref: 14.2
 D: 3
+Calc: yes
 Id: edexcel-phys-14-007
 
 Q: In the density practical, name the instrument used to find the mass of a solid block.
@@ -186,6 +188,7 @@ A: 8000 J
 Accept: 8 kJ; 8000
 Ref: 14.8
 D: 2
+Calc: yes
 Id: edexcel-phys-14-026
 
 Q: Use ΔQ = m × c × Δθ. How much energy heats 0.5 kg of water (c = 4200 J/kg °C) by 20 °C?
@@ -193,6 +196,7 @@ A: 42 000 J
 Accept: 42 kJ; 42000
 Ref: 14.8
 D: 2
+Calc: yes
 Id: edexcel-phys-14-027
 
 Q: Use ΔQ = m × c × Δθ. 2000 J heats 0.5 kg of a material by 10 °C. What is its specific heat capacity?
@@ -200,6 +204,7 @@ A: 400 J/kg °C
 Accept: 400; 400 J/kg°C
 Ref: 14.8
 D: 3
+Calc: yes
 Id: edexcel-phys-14-028
 
 Q: Use ΔQ = m × c × Δθ. A 1 kg block (c = 500 J/kg °C) gains 5000 J. What is its temperature rise?
@@ -207,6 +212,7 @@ A: 10 °C
 Accept: 10; 10 degrees
 Ref: 14.8
 D: 3
+Calc: yes
 Id: edexcel-phys-14-029
 
 Q: Use Q = m × L. How much energy melts 2 kg of a solid with latent heat 300 000 J/kg?
@@ -214,6 +220,7 @@ A: 600 000 J
 Accept: 600 kJ; 6 × 10⁵ J; 600000
 Ref: 14.9
 D: 2
+Calc: yes
 Id: edexcel-phys-14-030
 
 Q: Use Q = m × L. How much energy melts 0.5 kg of ice (L = 330 000 J/kg)?
@@ -221,6 +228,7 @@ A: 165 000 J
 Accept: 165 kJ; 165000
 Ref: 14.9
 D: 2
+Calc: yes
 Id: edexcel-phys-14-031
 
 Q: Use Q = m × L. 100 000 J melts 0.5 kg of a solid. What is its specific latent heat?
@@ -228,6 +236,7 @@ A: 200 000 J/kg
 Accept: 200 kJ/kg; 200000; 2 × 10⁵ J/kg
 Ref: 14.9
 D: 3
+Calc: yes
 Id: edexcel-phys-14-032
 
 Q: Use Q = m × L. 90 000 J boils a liquid with L = 900 000 J/kg. What mass boils?
@@ -235,6 +244,7 @@ A: 0.1 kg
 Accept: 0.1; 100 g
 Ref: 14.9
 D: 3
+Calc: yes
 Id: edexcel-phys-14-033
 
 Q: Should a good thermal insulator conduct energy well or poorly?
@@ -280,6 +290,7 @@ Accept: 4200; 4200 J/kg°C
 Ref: 14.11
 D: 3
 RP: 14.11
+Calc: yes
 Id: edexcel-phys-14-039
 
 Q: What does the temperature-time graph show while ice is melting?
@@ -358,6 +369,7 @@ A: 300 K
 Accept: 300
 Ref: 14.15
 D: 2
+Calc: yes
 Id: edexcel-phys-14-050
 
 Q: Convert 400 K to degrees Celsius.
@@ -365,6 +377,7 @@ A: 127 °C
 Accept: 127
 Ref: 14.15
 D: 2
+Calc: yes
 Id: edexcel-phys-14-051
 
 Q: What is absolute zero in kelvin?
@@ -449,6 +462,7 @@ A: 200 kPa
 Accept: 200 000 Pa; 200
 Ref: 14.19P
 D: 2
+Calc: yes
 Id: edexcel-phys-14-063
 
 Q: Use P₁V₁ = P₂V₂. A gas at 120 kPa expands from 2 m³ to 6 m³. What is its new pressure?
@@ -456,6 +470,7 @@ A: 40 kPa
 Accept: 40 000 Pa; 40
 Ref: 14.19P
 D: 2
+Calc: yes
 Id: edexcel-phys-14-064
 
 Q: Use P₁V₁ = P₂V₂. A gas at 300 kPa and 2 m³ expands until its pressure is 100 kPa. What is its new volume?
@@ -463,6 +478,7 @@ A: 6 m³
 Accept: 6
 Ref: 14.19P
 D: 3
+Calc: yes
 Id: edexcel-phys-14-065
 
 Q: Besides mass, what must stay fixed for P₁V₁ = P₂V₂ to apply?

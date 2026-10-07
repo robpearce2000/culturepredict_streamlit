@@ -65,6 +65,7 @@ A: 3 Hz
 Accept: 3 hertz
 Ref: 4.3
 D: 2
+Calc: yes
 Id: edexcel-phys-4-009
 
 Q: What is the amplitude of a wave?
@@ -137,6 +138,7 @@ A: 100 m/s
 Accept: 100 metres per second
 Ref: 4.6
 D: 2
+Calc: yes
 Id: edexcel-phys-4-019
 
 Q: A sound wave travels at 340 m/s and has a wavelength of 2 m. What is its frequency?
@@ -144,6 +146,7 @@ A: 170 Hz
 Accept: 170 hertz
 Ref: 4.6
 D: 3
+Calc: yes
 Id: edexcel-phys-4-020
 
 Q: A water wave travels at 3 m/s with a frequency of 6 Hz. What is its wavelength?
@@ -151,6 +154,7 @@ A: 0.5 m
 Accept: 50 cm; half a metre
 Ref: 4.6
 D: 3
+Calc: yes
 Id: edexcel-phys-4-021
 
 Q: To measure the speed of sound in air, one person bangs two cymbals together far away. When should the timer start the stopwatch?
@@ -167,6 +171,7 @@ Accept: 340 metres per second
 Ref: 4.7
 D: 3
 Note: The sound travels 170 m, there and back.
+Calc: yes
 Id: edexcel-phys-4-023
 
 Q: How can you find the frequency of ripples in a ripple tank?
@@ -183,6 +188,7 @@ Ref: 4.8P
 D: 3
 HT: yes
 Note: The pulse travels 3000 m in total, there and back.
+Calc: yes
 Id: edexcel-phys-4-025
 
 Q: When calculating a depth from an echo, why is the total distance travelled halved?
@@ -199,6 +205,7 @@ Accept: 1.02 km; about 1 km
 Ref: 4.8P
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-phys-4-027
 
 Q: What name is given to a wave bouncing back off a surface?
@@ -444,6 +451,7 @@ Ref: 4.17
 RP: 4.17
 D: 3
 Note: Frequency = 12 ÷ 4 = 3 Hz.
+Calc: yes
 Id: edexcel-phys-4-058
 
 Q: A metal rod held at its middle is struck at one end. For the lowest frequency, the wavelength is how many times the rod's length?
@@ -460,6 +468,7 @@ Accept: 5 km/s; 5000 metres per second
 Ref: 4.17
 RP: 4.17
 D: 2
+Calc: yes
 Id: edexcel-phys-4-060
 
 Q: Water has spilled near the ripple tank's mains-powered lamp. What hazard does this cause?

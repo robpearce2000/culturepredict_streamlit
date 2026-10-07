@@ -53,6 +53,7 @@ A: 200 m/s
 Accept: 200 metres per second
 Ref: 4.6.1.2
 D: 2
+Calc: yes
 Id: aqa-phys-4.6-007
 
 Q: Using period = 1 ÷ frequency, what is the period of a wave with a frequency of 4 Hz?
@@ -60,6 +61,7 @@ A: 0.25 s
 Accept: 1/4 s; 0.25 seconds
 Ref: 4.6.1.2
 D: 2
+Calc: yes
 Id: aqa-phys-4.6-008
 
 Q: A sound wave travels at 340 m/s and has a wavelength of 2 m. What is its frequency?
@@ -68,6 +70,7 @@ Accept: 170 hertz
 Ref: 4.6.1.2
 D: 3
 Note: Rearrange: frequency = wave speed ÷ wavelength.
+Calc: yes
 Id: aqa-phys-4.6-009
 
 Q: Sound passes from air into water, where it travels faster. What happens to its wavelength?
@@ -111,6 +114,7 @@ D: 3
 Note: 4 half wavelengths = 2 whole wavelengths in 1 m.
 
 # 4.6.1.3 Reflection of waves (physics only)
+Calc: yes
 Id: aqa-phys-4.6-014
 
 Q: Apart from being reflected, what two things can happen to a wave at the boundary between two materials?
@@ -208,6 +212,7 @@ Ref: 4.6.1.5
 HT: yes
 D: 3
 Note: 1500 × 0.4 = 600 m there and back, so halve it.
+Calc: yes
 Id: aqa-phys-4.6-026
 
 Q: S-waves from an earthquake are not detected on the opposite side of the Earth. What does this show about the outer core?
@@ -241,6 +246,7 @@ Ref: 4.6.2.1
 D: 3
 
 # 4.6.2.2 Properties of electromagnetic waves 1
+Calc: yes
 Id: aqa-phys-4.6-030
 
 Q: What is the change in direction of light as it passes at an angle from air into glass called?
@@ -381,6 +387,7 @@ Ref: 4.6.2.5
 D: 2
 
 # 4.6.2.6 Visible light (physics only)
+Calc: yes
 Id: aqa-phys-4.6-048
 
 Q: What is reflection from a rough surface, which scatters the light, called?

@@ -186,6 +186,7 @@ Accept: 6 volts
 Ref: 13.7P
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-13-023
 
 Q: Use Vp/Vs = Np/Ns. A transformer has Vp = 100 V, Np = 200 and Ns = 40. What is Vs?
@@ -194,6 +195,7 @@ Accept: 20 volts
 Ref: 13.7P
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-13-024
 
 Q: Use Vp/Vs = Np/Ns. Vp = 10 V, Vs = 40 V and Np = 50. How many turns are on the secondary?
@@ -202,6 +204,7 @@ Accept: 200 turns
 Ref: 13.7P
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-phys-13-025
 
 Q: In what form is energy wasted in the cables of the national grid?
@@ -260,6 +263,7 @@ Accept: 1 amp; 1 ampere
 Ref: 13.10
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-13-033
 
 Q: Use VpIp = VsIs. Vp = 100 V, Ip = 2 A and Is = 0.5 A for a 100% efficient transformer. What is Vs?
@@ -268,6 +272,7 @@ Accept: 400 volts
 Ref: 13.10
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-phys-13-034
 
 Q: Use P = I × V. A 100 kW supply is transmitted at 10 000 V. What is the current?
@@ -276,6 +281,7 @@ Accept: 10 amps; 10 amperes
 Ref: 13.11P
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-13-035
 
 Q: Use P = I²R. A cable of resistance 2 ohms carries 10 A. What power is wasted as heat?
@@ -284,6 +290,7 @@ Accept: 200 watts
 Ref: 13.11P
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-13-036
 
 Q: The voltage is raised 10 times for the same transmitted power. By what factor does the cable current change?

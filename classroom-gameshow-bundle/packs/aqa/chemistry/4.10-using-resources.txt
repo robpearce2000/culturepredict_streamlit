@@ -22,6 +22,7 @@ A: 100 years
 Accept: 100
 Ref: 4.10.1.1
 D: 2
+Calc: yes
 Id: aqa-chem-4.10-003
 
 Q: Why is timber classed as a renewable resource but coal is not?
@@ -82,6 +83,7 @@ Ref: 4.10.1.2
 RP: 8
 D: 3
 Note: 50 cm³ is 0.05 dm³, and 0.10 ÷ 0.05 = 2.
+Calc: yes
 Id: aqa-chem-4.10-011
 
 Q: When distilling salty water, what is the job of the condenser?
@@ -175,6 +177,7 @@ A: 4 times
 Accept: 4; Four
 Ref: 4.10.2.1
 D: 2
+Calc: yes
 Id: aqa-chem-4.10-023
 
 Q: Why is a life cycle assessment not a purely objective process?
@@ -250,6 +253,7 @@ A: 75%
 Accept: 75
 Ref: 4.10.3.2
 D: 2
+Calc: yes
 Id: aqa-chem-4.10-033
 
 Q: Stainless steel contains iron and which two other metals?

@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.3.0 – Playtest fixes (October 2026)
+
+Fixes for what the simulated classroom playtest found (PLAYTEST-REPORT.md).
+
+- **The teacher stays in control of the countdown:** at zero it waits ("Time's up! Press Space when ready") instead of starting "show me" by itself. **T** adds 10 seconds; **A** shows the answer before marking.
+- **Pause, in every game:** **P** or the Pause button; a large Paused banner; every countdown, Outpace's sprint clock, the "3, 2, 1", the 3D machine and every big moment stop. Any prompt or dialog (such as "Leave this game?") pauses the game while it is open.
+- **End game and show results, in every game:** in each top bar (tap twice) and in the Menu prompt; the normal results screen, with the scores as they stand and the Reteach these list. In Category Clash it works while a question is open.
+- **Protection from slips:** a second Enter just after "Back to the board" can't open a tile or hexagon before the captain chooses; a second Space within half a second can't skip the countdown and the "3, 2, 1" in one go; results screens ignore keys for 2 seconds; the browser asks "Leave this page?" if the page is closed or refreshed mid-game.
+- **Outpace:** a 90-second Final Sprint with targets tuned to a real classroom pace (an average class wins about half the time); the question on screen always finishes and counts, and under 10 seconds it is the "Final question!". In the Deal Round more than half the teams must be right (with 2 teams, both).
+- **Hex Hunt:** best of three rounds (one round with Maths), with the round score on screen; a round with no hexagon won for 12 questions ends and goes to the half with more hexagons; each half's mark (● ■) on its edges; bigger "left to right / top to bottom" labels.
+- **Calculations:** 347 Physics and Chemistry questions that need a calculation are tagged, and get 45 seconds ("Calculation: 45 s"); teachers can add **Calc: yes** to their own questions.
+- **Maths:** the setup card says roughly how long a game takes at the chosen answer time.
+- **Over the Edge:** a light mode for computers without graphics acceleration (3.7 → about 17 frames a second on a machine with no graphics chip), switched on automatically with a note; the question shows large while the class writes; teams with equal money share a place.
+- Smaller: "Team 1 wins with 100 points"; a larger "Also accept" line; the guide's Start button wording, version number and full-screen Esc note corrected.
+
 ## 1.2.1 – Small fixes (October 2026)
 
 - **Full screen:** a Full screen button on the main screen and in every game's top bar (next to Menu and Sound), and the **F** key. It reads Exit full screen while on; Esc leaves full screen as usual without also going back to the menu. Works when the file is opened by double-clicking it.

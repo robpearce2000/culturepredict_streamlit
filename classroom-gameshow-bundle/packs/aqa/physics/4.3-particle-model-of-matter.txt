@@ -25,6 +25,7 @@ Accept: 3000 kilograms per metre cubed; 3 000 kg/m³
 Ref: 4.3.1.1
 D: 2
 Note: 6 ÷ 0.002 = 3000; students must recall the density equation.
+Calc: yes
 Id: aqa-phys-4.3-003
 
 Q: A liquid has a density of 800 kg/m³. What is the mass of 2 m³ of the liquid?
@@ -33,6 +34,7 @@ Accept: 1600 kilograms; 1 600 kg
 Ref: 4.3.1.1
 D: 3
 Note: Rearrange to mass = density × volume.
+Calc: yes
 Id: aqa-phys-4.3-004
 
 Q: Describe how the particles are arranged in a liquid.
@@ -73,6 +75,7 @@ Accept: 20 cubic centimetres; 20 ml; 20 mL
 Ref: 4.3.1.1
 RP: 5
 D: 2
+Calc: yes
 Id: aqa-phys-4.3-009
 
 Q: A stone of mass 60 g makes the water in a measuring cylinder rise by 20 cm³. What is its density in g/cm³?
@@ -84,6 +87,7 @@ D: 3
 Note: The volume of water displaced equals the stone's volume; 3 g/cm³ = 3000 kg/m³.
 
 # 4.3.1.2 Changes of state
+Calc: yes
 Id: aqa-phys-4.3-010
 
 Q: What is the change of state from gas to liquid called?
@@ -160,6 +164,7 @@ A: 84 000 J
 Accept: 84000 J; 84 kJ; 84 000 joules
 Ref: 4.3.2.2
 D: 2
+Calc: yes
 Id: aqa-phys-4.3-020
 
 Q: Use ΔE = m c Δθ. 5000 J raises the temperature of 1 kg of a metal by 10 °C. What is its specific heat capacity?
@@ -167,6 +172,7 @@ A: 500 J/kg °C
 Accept: 500 joules per kilogram per degree Celsius; 500 J/kg°C
 Ref: 4.3.2.2
 D: 3
+Calc: yes
 Id: aqa-phys-4.3-021
 
 Q: Equal masses of water and oil get the same energy, but the water warms up less. Why?
@@ -212,6 +218,7 @@ A: 668 000 J
 Accept: 668000 J; 668 kJ; 668 000 joules
 Ref: 4.3.2.3
 D: 2
+Calc: yes
 Id: aqa-phys-4.3-027
 
 Q: Use E = m L. It takes 4 600 000 J to boil away 2 kg of water. What is the specific latent heat of vaporisation?
@@ -219,6 +226,7 @@ A: 2 300 000 J/kg
 Accept: 2300000 J/kg; 2.3 MJ/kg; 2300 kJ/kg; 2 300 000 joules per kilogram
 Ref: 4.3.2.3
 D: 3
+Calc: yes
 Id: aqa-phys-4.3-028
 
 Q: On a heating graph of temperature against time, what does a flat horizontal section show?
@@ -279,6 +287,7 @@ A: 200 000 Pa
 Accept: 200000 Pa; 200 kPa; 200 000 pascals
 Ref: 4.3.3.2
 D: 2
+Calc: yes
 Id: aqa-phys-4.3-036
 
 Q: Use pV = constant. A gas at 150 kPa fills 4 m³. At constant temperature its pressure rises to 300 kPa. What is its new volume?
@@ -286,6 +295,7 @@ A: 2 m³
 Accept: 2 metres cubed; 2 cubic metres; 2 m3
 Ref: 4.3.3.2
 D: 3
+Calc: yes
 Id: aqa-phys-4.3-037
 
 Q: A gas expands into a bigger volume at constant temperature. Using particles, explain why its pressure falls.

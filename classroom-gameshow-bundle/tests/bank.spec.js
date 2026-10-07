@@ -2,6 +2,7 @@
 const fs = require('fs');
 const { test } = require('@playwright/test');
 const { openBundle, state, mark, playOutpace, setNames, PICK, expect } = require('./helpers');
+const { afterResults } = require('./helpers');
 
 const PASTE = `Subject: Chemistry
 Topic: Test topic alpha
@@ -110,6 +111,7 @@ test('wrong answers logged in one game are shared with the others for the same t
   expect(games).toContain('Over the Edge');
   expect(games).toContain('Outpace');
   expect(await page.evaluate(() => CGB.bank.weakTopics('gina', 50).map(t => t[0]))).toContain(missedTopic);
+  await afterResults(page);                              // results screens ignore keys for 2 seconds
   await page.keyboard.press('Escape');
   await page.click('#openBank');
   await expect(page.locator('#bankPlayers')).toContainText('Gina');

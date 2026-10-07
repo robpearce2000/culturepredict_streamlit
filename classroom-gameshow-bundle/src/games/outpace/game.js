@@ -55,8 +55,8 @@ const state = {
   sprintTimerHandle: null
 };
 const timers = [];
-const later = (fn, ms) => { const t = setTimeout(fn, ms); timers.push(t); return t; };
-function clearTimers() { timers.forEach(clearTimeout); timers.length = 0; clearInterval(state.sprintTimerHandle); }
+const later = (fn, ms) => { const t = CGB.pause.after(ms, fn); timers.push(t); return t; };   // on the game clock: waits while paused
+function clearTimers() { timers.forEach(CGB.pause.cancel); timers.length = 0; clearInterval(state.sprintTimerHandle); }
 
 /* ============ THREE.JS SCENE ============ */
 const COL = { bg: 0x0B1026, runner: 0xFFC93C, runnerLight: 0xFFF1C2, runnerNeutron: 0xFFE08A, hunter: 0xE879F9, hunterLight: 0xF9D2FF, hunterNeutron: 0xC084FC, tether: 0x8C93C8, spark: 0xFFF4D6 };
@@ -855,7 +855,7 @@ function pulseWrong() {
 
 function triggerExplosionAt(collideX) {
   sceneMode = 'explode';
-  sequenceStart = performance.now();
+  sequenceStart = CGB.pause.now();
   runnerGroup.visible = false;
   hunterGroup.visible = false;
   auraMesh.visible = false;
@@ -888,7 +888,7 @@ function triggerExplosionAt(collideX) {
 }
 
 function triggerCaughtSequence(callback) {
-  sequenceStart = performance.now();
+  sequenceStart = CGB.pause.now();
   onSequenceComplete = callback;
   SFX.caught();
   if (currentRoundType === 'deal') {
@@ -902,7 +902,7 @@ function triggerCaughtSequence(callback) {
   }
 }
 function triggerEscapeSequence(callback) {
-  sequenceStart = performance.now();
+  sequenceStart = CGB.pause.now();
   onSequenceComplete = callback;
   snapFlashDone = false;
   SFX.escaped();
@@ -971,7 +971,7 @@ function animate(ts) {
   // so the camera and racers glide at the same speed on 60, 120 and 144 Hz screens and an
   // uneven frame does not make them jump
   const nowMs = performance.now(), frameMs = typeof ts === 'number' ? ts : nowMs;
-  const dt = Math.min(0.05, Math.max(0, (frameMs - lastFrame) / 1000));
+  const dt = CGB.pause.on() ? 0 : Math.min(0.05, Math.max(0, (frameMs - lastFrame) / 1000));   // nothing moves while paused
   lastFrame = frameMs; frameT += dt;
   const t = frameT, f = dt * 60;
   ease = k => 1 - Math.pow(1 - k, f);
@@ -1076,7 +1076,7 @@ function animate(ts) {
   }
 
   if (sceneMode === 'deal-caught') {
-    const elapsed = (performance.now() - sequenceStart) / 1000;
+    const elapsed = (CGB.pause.now() - sequenceStart) / 1000;
     const HOP_DURATION = 0.4;
     const progress = Math.min(1, elapsed / HOP_DURATION);
     hunterGroup.position.x += (hunterGroup.userData.targetX - hunterGroup.position.x) * ease(0.25);
@@ -1095,7 +1095,7 @@ function animate(ts) {
   }
 
   if (sceneMode === 'buildup') {
-    const elapsed = (performance.now() - sequenceStart) / 1000;
+    const elapsed = (CGB.pause.now() - sequenceStart) / 1000;
     const progress = Math.min(1, elapsed / BUILDUP_DURATION);
     const easedProgress = progress * progress;
     const midX = (buildupBaseX + HUNTER_X) / 2;
@@ -1127,7 +1127,7 @@ function animate(ts) {
   }
 
   if (sceneMode === 'explode') {
-    const elapsed = (performance.now() - sequenceStart) / 1000;
+    const elapsed = (CGB.pause.now() - sequenceStart) / 1000;
     // slow motion for the first moments, easing back to full speed
     const sm = reduced() ? 1 : Math.min(1, slowMo + elapsed * 0.75);
     const simT = reduced() ? elapsed : Math.max(0, elapsed - (1 - slowMo) * Math.min(elapsed, 0.95) * 0.6);
@@ -1153,7 +1153,7 @@ function animate(ts) {
   }
 
   if (sceneMode === 'deal-escape') {
-    const elapsed = (performance.now() - sequenceStart) / 1000;
+    const elapsed = (CGB.pause.now() - sequenceStart) / 1000;
     const ZOOM_DURATION = 0.6;
     const BURST_AT = 0.55;
     const TOTAL_DURATION = 1.3;
@@ -1197,7 +1197,7 @@ function animate(ts) {
   }
 
   if (sceneMode === 'escape') {
-    const elapsed = (performance.now() - sequenceStart) / 1000;
+    const elapsed = (CGB.pause.now() - sequenceStart) / 1000;
     if (elapsed < ESCAPE_BREAKFREE_DURATION) {
       while (escapeYankIndex < escapeYankTimes.length && elapsed >= escapeYankTimes[escapeYankIndex]) {
         const strength = 0.16 + escapeYankIndex * 0.07;
@@ -1455,18 +1455,19 @@ function unlogClassWrongs(res) {
   res.forEach((ok, i) => { if (!ok) { state.wrongAnswers[i].pop(); bank.unlogWrong(state.players[i].name, q); } });
   misc.remove(q);
 }
-/* Deal Round: at least half the teams right moves the runner; otherwise the Hunter gains.
+/* Deal Round: more than half the teams right moves the runner (with 2 teams, both); otherwise the Hunter gains.
    The step shows at once; a step that ends the round waits for Enter, so it can still be undone. */
 const roundDeal = CGB.createClassRound({
   root: root, board: dealBoard, countEl: $('dealCount'), btnEl: $('dealBtnRow'),
-  seconds: CGB.answerSeconds, teams: () => state.players.length,
+  seconds: q => CGB.answerSeconds(q), teams: () => state.players.length,
+  question: () => state.currentQuestion, reveal: () => $('dealQAnswer').classList.add('shown'),
   doneHtml: () => `<button class="btn go" type="button" data-op="next">${runnerCellIndex <= 0 ? 'Home!' : hunterCellIndex <= runnerCellIndex ? 'Caught!' : 'Next question'} <span class="kbd">Enter</span></button>`,
   onConfirm(res) {
-    const c = res.filter(Boolean).length, n = res.length, ok = c * 2 >= n;
+    const c = res.filter(Boolean).length, n = res.length, ok = c * 2 > n;
     dealSnap = { res, runner: runnerCellIndex, hunter: hunterCellIndex };
     logClassWrongs(res);
     $('dealQAnswer').classList.add('shown');
-    $('dealVerdict').innerHTML = `<b>${c} of ${n} teams correct.</b> ${ok ? 'One step closer to home!' : 'Fewer than half, so the Hunter gains a step.'}`;
+    $('dealVerdict').innerHTML = `<b>${c} of ${n} teams correct.</b> ${ok ? 'One step closer to home!' : (n === 2 ? 'Not both teams, so the Hunter gains a step.' : 'Half or fewer, so the Hunter gains a step.')}`;
     $('dealVerdict').className = 'op-cmline ' + (ok ? 'ok' : 'no');
     if (ok) { SFX.correct(); runnerCellIndex--; runnerGroup.userData.targetX = cellX(runnerCellIndex); pulseCorrect(); }
     else { SFX.wrong(); hunterCellIndex--; hunterGroup.userData.targetX = cellX(hunterCellIndex); pulseWrong(); }
@@ -1491,22 +1492,27 @@ function classDealNext() {
   else if (hunterCellIndex <= runnerCellIndex) { state.phase = 'dealEnd'; $('qcard').hidden = true; later(() => triggerCaughtSequence(() => finishDealRound(false)), 300); }
   else askDealQuestion();
 }
-/* Final Sprint: every correct team is one step. In 60 seconds a class that thinks, talks and
-   writes gets through 3 or 4 questions; with about 60% of boards right that is about 2 steps
-   per team. The target per team is 2, 2.25 or 2.5 for a pot of up to 300, up to 600 or more
-   (a bolder deal makes the sprint harder), which a class makes about 60%, 45% and 35% of the
-   time in simulation: about half the time overall. */
-// with Maths' longer answer time the sprint lasts longer in step, so a class still gets through 3 or 4 questions
-function sprintSeconds() { return Math.round(60 * CGB.answerSeconds() / CGB.COUNTDOWN); }
+/* Final Sprint: 90 seconds; every correct team is one step. At classroom pace (reading,
+   writing, "show me" and marking) a sprint question takes about 30 to 33 seconds, so 90 seconds
+   fits about 3 questions; the question on screen always finishes, and once under 10 seconds it
+   is the final question. Targets (Standard deal) for 2 to 6 teams: 4, 6, 7, 9, 11 steps. In
+   simulation an average class (about 60% of boards right) wins about half the time (48 to 65%)
+   and a class getting most answers right (85%) 92 to 98%. A Cautious deal takes a step off and a
+   Bold deal adds one, so a bolder deal makes the sprint harder (see DECISIONS.md). */
+const SPRINT_SECONDS = 90, FINAL_Q_SECONDS = 10;
+const SPRINT_TARGET = { 2: 4, 3: 6, 4: 7, 5: 9, 6: 11 };
+// with Maths' longer answer time the sprint lasts longer in step, so a class still gets through about 3 questions
+function sprintSeconds() { return SPRINT_SECONDS + 3 * Math.max(0, CGB.answerSeconds() - CGB.COUNTDOWN); }   // Maths: 2 min 45, 5 min, 6 min 30
 function classTarget() {
   const pot = state.pot / Math.max(1, state.dealRounds);
-  const per = pot <= 300 ? 2 : pot <= 600 ? 2.25 : 2.5;
-  return Math.max(3, Math.ceil(state.players.length * per));
+  const shift = pot <= 300 ? -1 : pot <= 600 ? 0 : 1;
+  return Math.max(2, (SPRINT_TARGET[state.players.length] || SPRINT_TARGET[4]) + shift);
 }
 const WIN_UNDO_MS = 1600;   // after the target is reached: time to undo a marking slip before the escape plays
 const roundSprint = CGB.createClassRound({
   root: root, board: sprintBoard, btnEl: $('sprintBtnRow'), fast: true,
   seconds: () => 0, teams: () => state.players.length,
+  question: () => state.currentQuestion, reveal: () => $('sprintQAnswer').classList.add('shown'),
   onConfirm(res) {
     const c = res.filter(Boolean).length, n = res.length;
     sprintSnap = { res, net: state.sprintNetScore };
@@ -1520,7 +1526,7 @@ const roundSprint = CGB.createClassRound({
     paintBoards(res.map(ok => ok ? '+1' : ''));
     sprintBoard.set({ marks: res });
     if (c) { SFX.correct(); pulseCorrect(); } else { SFX.wrong(); pulseWrong(); }
-    clearTimeout(sprintNextT);
+    CGB.pause.cancel(sprintNextT);
     if (state.sprintNetScore >= state.sprintTarget) {
       // target reached: the clock stops now and the escape plays after a short pause, in which
       // the marking can still be undone
@@ -1530,11 +1536,13 @@ const roundSprint = CGB.createClassRound({
       return;
     }
     hostSay('hostSprint', CGB.classLine(c, n), CGB.classGesture(c, n), 1200);
-    sprintNextT = later(() => { roundSprint.stop(); if (state.phase === 'sprint' && state.sprintTimeLeft > 0) askSprintQuestion(); }, 1400);
+    // that was the final question (the clock ran out, or under 10 seconds were left): the sprint ends
+    if (state.sprintTimeLeft <= FINAL_Q_SECONDS) { state.sprintFrozen = true; sprintNextT = later(() => { roundSprint.stop(); if (state.phase === 'sprint') resolveSprint(); }, WIN_UNDO_MS); return; }
+    sprintNextT = later(() => { roundSprint.stop(); if (state.phase === 'sprint' && state.sprintTimeLeft > FINAL_Q_SECONDS) askSprintQuestion(); }, 1400);
   },
   onUndo() {
     const u = sprintSnap; if (!u) return;
-    clearTimeout(sprintNextT);
+    CGB.pause.cancel(sprintNextT);
     state.sprintFrozen = false;          // undoing the winning answer starts the clock again
     unlogClassWrongs(u.res);
     state.sprintNetScore = u.net;
@@ -1673,7 +1681,7 @@ function startSprint() {
   setTagText('tagYou', '▲ ' + state.className);
   state.sprintNetScore = 0;
   state.sprintTarget = classTarget();
-  state.sprintTotal = sprintSeconds();
+  state.sprintTotal = sprintSeconds(); state.finalQ = false; $('sprintFinal').hidden = true;
   state.sprintTimeLeft = state.sprintTotal;
   buildSprintTrack(state.sprintTarget); warmUp();
   paintSprintTarget();
@@ -1688,17 +1696,21 @@ const sprintGate = CGB.createStartGate(document.getElementById('game-outpace'), 
 function beginSprint() {
   if (state.phase !== 'sprint' || !state.sprintReady) return;
   state.sprintReady = false;
-  hostSay('hostSprint', `Final Sprint! ${state.sprintTotal === 60 ? 'Sixty seconds' : CGB.timeLabel(state.sprintTotal).replace(/^./, c => c.toUpperCase())}. Every correct team is a step. You need ${state.sprintTarget}!`, 'point', 1800);
+  hostSay('hostSprint', `Final Sprint! ${state.sprintTotal === 90 ? 'Ninety seconds' : CGB.timeLabel(state.sprintTotal).replace(/^./, c => c.toUpperCase())}. Every correct team is a step. You need ${state.sprintTarget}!`, 'point', 1800);
   $('sprintCard').hidden = false;
   clearInterval(state.sprintTimerHandle);
   state.sprintFrozen = false;
+  let last = CGB.pause.now();
   state.sprintTimerHandle = setInterval(() => {
-    if (state.sprintFrozen) return;      // target reached: the clock stops
-    state.sprintTimeLeft -= 0.1;
+    const t = CGB.pause.now(), d = (t - last) / 1000; last = t;   // the game clock: it stops while paused
+    if (state.sprintFrozen) return;      // target reached (or the final question marked): the clock stops
+    state.sprintTimeLeft = Math.max(0, state.sprintTimeLeft - d);
+    // under 10 seconds: the question on screen is the final question, and it always finishes
+    if (!state.finalQ && state.sprintTimeLeft <= FINAL_Q_SECONDS) markFinalQuestion();
     if (state.sprintTimeLeft <= 0) {
-      state.sprintTimeLeft = 0;
       clearInterval(state.sprintTimerHandle);
-      resolveSprint();
+      if (roundSprint.phase === 'idle') resolveSprint();   // between questions: over at once
+      else $('sprintFinal').textContent = "Time's up! Finish this question.";
     }
     updateSprintTimer();
   }, 100);
@@ -1721,8 +1733,15 @@ function updateSprintTimer() {
   fill.style.width = Math.max(0, state.sprintTimeLeft / (state.sprintTotal || 60) * 100) + '%';
   fill.classList.toggle('low', state.sprintTimeLeft <= 10);
 }
+function markFinalQuestion() {
+  state.finalQ = true;
+  $('sprintFinal').textContent = 'Final question!';
+  $('sprintFinal').hidden = false;
+  hostSay('hostSprint', 'Final question!', 'point', 1200);
+}
 function askSprintQuestion() {
-  if (state.sprintTimeLeft <= 0) return;
+  if (state.sprintTimeLeft <= FINAL_Q_SECONDS) { resolveSprint(); return; }
+  $('sprintFinal').hidden = true;
   const q = pickQuestion();
   state.currentQuestion = q;
   $('sprintQTag').textContent = q.subject + ' · every team answers';
@@ -1737,7 +1756,7 @@ function resolveSprint(early) {
   if (state.phase !== 'sprint') return;
   state.phase = 'finish';
   clearInterval(state.sprintTimerHandle);
-  roundSprint.stop(); clearTimeout(sprintNextT);
+  roundSprint.stop(); CGB.pause.cancel(sprintNextT);
   if (!early) SFX.timeUp();
   $('sprintCard').hidden = true;
   const won = state.sprintNetScore >= state.sprintTarget;
@@ -1746,14 +1765,23 @@ function resolveSprint(early) {
 }
 
 /* ============ SUMMARY ============ */
+// End game and show results: the points banked so far
+function endNow() {
+  clearTimers(); roundDeal.stop(); roundSprint.stop(); CGB.pause.cancel(sprintNextT);
+  gate.hide(); sprintGate.hide(); state.sprintReady = false;
+  roundEndNext = null; $('roundEnd').classList.remove('show');
+  onSequenceComplete = () => {}; skipSequence(); onSequenceComplete = null;   // stop any big moment without its ending
+  showSummary(null);
+}
 function showSummary(escaped) {
   state.phase = 'summary';
-  $('finalVerdict').textContent = escaped ? `Escaped! The class keeps all ${state.pot} points.` : 'Caught! The pot is wiped.';
+  $('finalVerdict').textContent = escaped == null ? `Game ended early. The class had banked ${state.pot} points.` : escaped ? `Escaped! The class keeps all ${state.pot} points.` : 'Caught! The pot is wiped.';
   $('finalVerdict').className = 'op-verdict ' + (escaped ? 'escaped' : 'caught');
-  hostSay('hostSum', escaped ? `${state.className} outpaced the Hunter! Brilliant teamwork.` : 'The Hunter got you this time. Great effort, everyone!', escaped ? 'cheer' : 'shrug', 2200);
+  hostSay('hostSum', escaped == null ? 'A good game, everyone! Here is how you did.' : escaped ? `${state.className} outpaced the Hunter! Brilliant teamwork.` : 'The Hunter got you this time. Great effort, everyone!', escaped ? 'cheer' : 'shrug', 2200);
   const deals = state.dealOutcomes;
   $('summaryPlayers').innerHTML = `<div class="op-sum-p op-sum-class"><h3>${escapeHtml(state.className)}</h3>${deals.map(d => `<div class="hint">${escapeHtml(d.label)}: ${d.escaped ? 'escaped' : 'caught'}, banked ${d.reward} points.</div>`).join('')}<div class="hint">Final Sprint: ${state.sprintNetScore} of ${state.sprintTarget} steps.</div></div>${misc.html(5)}`;
   showScreen('summary');
+  CGB.resultsShown();
   $('playAgainBtn').focus({ preventScroll: true });
 }
 $('playAgainBtn').addEventListener('click', startGame);
@@ -1762,7 +1790,7 @@ $('menuBtn2').addEventListener('click', () => CGB.app.requestLauncher());
 
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  clearTimers(); roundDeal.stop(); roundSprint.stop(); clearTimeout(sprintNextT); gate.hide(); sprintGate.hide(); state.sprintReady = false;
+  clearTimers(); roundDeal.stop(); roundSprint.stop(); CGB.pause.cancel(sprintNextT); gate.hide(); sprintGate.hide(); state.sprintReady = false;
   state.phase = 'home';
   roundEndNext = null;
   $('roundEnd').classList.remove('show');
@@ -1843,7 +1871,8 @@ return {
     if (state.phase !== 'home') goHome();
   },
   inProgress: () => ['deal', 'dealEnd', 'sprint', 'finish'].includes(state.phase),
-  _state: () => ({ round: state.phase === 'sprint' ? roundSprint.phase : roundDeal.phase, undoable: (state.phase === 'sprint' ? roundSprint : roundDeal).undoable, times: (state.phase === 'sprint' ? roundSprint : roundDeal).times(), runner: runnerCellIndex, hunter: hunterCellIndex, net: state.sprintNetScore, target: state.sprintTarget, dealRound: state.dealRound, misconceptions: misc.top(5).map(x => x.q.q), look: currentTheme, perfLevel: perf.level, phase: state.phase, teams: state.players.map(p => ({ name: p.name })), pot: state.pot, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, frozen: state.sprintFrozen, q: state.currentQuestion, dealReward: state.dealReward })
+  endNow,
+  _state: () => ({ countdown: roundDeal.left, timeUp: roundDeal.timeUp, finalQ: !!state.finalQ, round: state.phase === 'sprint' ? roundSprint.phase : roundDeal.phase, undoable: (state.phase === 'sprint' ? roundSprint : roundDeal).undoable, times: (state.phase === 'sprint' ? roundSprint : roundDeal).times(), runner: runnerCellIndex, hunter: hunterCellIndex, net: state.sprintNetScore, target: state.sprintTarget, dealRound: state.dealRound, misconceptions: misc.top(5).map(x => x.q.q), look: currentTheme, perfLevel: perf.level, phase: state.phase, teams: state.players.map(p => ({ name: p.name })), pot: state.pot, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, frozen: state.sprintFrozen, q: state.currentQuestion, dealReward: state.dealReward })
 };
 }
 
@@ -1853,6 +1882,7 @@ CGB.registerGame('outpace', {
   enter() { if (game) game.enter(); },
   exit() { if (game) game.exit(); },
   inProgress() { return !!(game && game.inProgress()); },
+  endNow() { if (game) game.endNow(); },
   state() { return game && game._state(); }
 });
 })();

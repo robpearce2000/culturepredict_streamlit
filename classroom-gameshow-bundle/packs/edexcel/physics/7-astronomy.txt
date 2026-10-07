@@ -15,6 +15,7 @@ A: 80 N
 Accept: 80 newtons
 Ref: 7.1P
 D: 2
+Calc: yes
 Id: edexcel-phys-7-002
 
 Q: A rock weighs 40 N on Earth, where g = 10 N/kg. What would it weigh on a planet where g = 4 N/kg?
@@ -23,6 +24,7 @@ Accept: 16 newtons
 Ref: 7.1P
 D: 3
 Note: First find the mass (4 kg), then multiply by the new g.
+Calc: yes
 Id: edexcel-phys-7-003
 
 Q: Why is the gravitational field strength at the Moon's surface much smaller than at the Earth's surface?

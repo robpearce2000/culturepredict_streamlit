@@ -87,6 +87,7 @@ Accept: 6 centimetres; 60 mm
 Ref: 9.3
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-9-012
 
 Q: Three force arrows drawn tip to tail form a closed triangle. What is the resultant force?
@@ -105,6 +106,7 @@ Ref: 9.3
 D: 3
 HT: yes
 Note: A scale drawing gives 5 N (a 3-4-5 triangle); the direction is not asked.
+Calc: yes
 Id: edexcel-phys-9-014
 
 Q: What name is given to a diagram showing every force acting on a single object as an arrow?
@@ -129,6 +131,7 @@ Accept: 15 N right; 15 N
 Ref: 9.4
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-9-017
 
 Q: A box's free body diagram shows 30 N up, 30 N down, 12 N right and 4 N left. What is the resultant force?
@@ -138,6 +141,7 @@ Ref: 9.4
 D: 3
 HT: yes
 Note: The vertical forces cancel; only the horizontal forces leave a resultant.
+Calc: yes
 Id: edexcel-phys-9-018
 
 Q: What word describes the forces on an object when the resultant force on it is zero?
@@ -163,6 +167,7 @@ Accept: 2000 N up; 2000 N; 2 kN upwards
 Ref: 9.5
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-9-021
 
 Q: A box is pushed with a 50 N force but stays still. What is the size of the friction force, and why?
@@ -214,6 +219,7 @@ A: 10 N m
 Accept: 10 Nm; 10 newton metres
 Ref: 9.7P
 D: 2
+Calc: yes
 Id: edexcel-phys-9-028
 
 Q: A 0.25 m spanner must give a moment of 40 N m. What force is needed at right angles at its end?
@@ -222,6 +228,7 @@ Accept: 160 newtons
 Ref: 9.7P
 D: 3
 Note: Force = moment ÷ distance = 40 ÷ 0.25.
+Calc: yes
 Id: edexcel-phys-9-029
 
 Q: When an object is balanced, the total anticlockwise moment equals the total of which other moments?
@@ -243,6 +250,7 @@ A: 5 N
 Accept: 5 newtons
 Ref: 9.8P
 D: 3
+Calc: yes
 Id: edexcel-phys-9-032
 
 Q: A 300 N child sits 2 m from a seesaw's pivot. How far from the pivot must a 400 N child sit to balance it?
@@ -251,6 +259,7 @@ Accept: 1.5 metres; 150 cm
 Ref: 9.8P
 D: 3
 Note: 300 × 2 = 400 × d, so d = 600 ÷ 400 on the other side of the pivot.
+Calc: yes
 Id: edexcel-phys-9-033
 
 Q: What name is given to toothed wheels that mesh together to transmit rotation?

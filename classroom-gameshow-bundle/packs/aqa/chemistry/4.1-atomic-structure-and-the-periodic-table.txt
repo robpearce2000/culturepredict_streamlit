@@ -136,6 +136,7 @@ Q: An atom has 11 protons and a mass number of 23. How many neutrons does it hav
 A: 12
 Ref: 4.1.1.5
 D: 2
+Calc: yes
 Id: aqa-chem-4.1-018
 
 Q: A magnesium ion, Mg²⁺, has atomic number 12 and mass number 24. How many electrons does it have?
@@ -146,6 +147,7 @@ D: 3
 Note: The 2+ charge means two electrons have been lost from the 12 in the atom.
 
 # 4.1.1.6 Relative atomic mass
+Calc: yes
 Id: aqa-chem-4.1-019
 
 Q: Relative atomic mass is an average. Besides the masses of the isotopes, what else does it take into account?
@@ -160,6 +162,7 @@ A: 35.5
 Ref: 4.1.1.6
 D: 3
 Note: (35 × 75 + 37 × 25) ÷ 100 = 35.5
+Calc: yes
 Id: aqa-chem-4.1-021
 
 Q: Boron is 20% boron-10 and 80% boron-11. What is its relative atomic mass?
@@ -169,6 +172,7 @@ D: 3
 Note: (10 × 20 + 11 × 80) ÷ 100 = 10.8
 
 # 4.1.1.7 Electronic structure
+Calc: yes
 Id: aqa-chem-4.1-022
 
 Q: What is the electronic structure of chlorine, atomic number 17?

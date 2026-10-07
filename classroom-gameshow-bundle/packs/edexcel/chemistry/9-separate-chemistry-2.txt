@@ -286,6 +286,7 @@ A: 3 mg/dm³
 Accept: 3
 Ref: 9.9C
 D: 3
+Calc: yes
 Id: edexcel-chem-9-040
 
 Q: What is the molecular formula of methane?
@@ -737,6 +738,7 @@ Accept: 15 °C/g; 15
 Ref: 9.28C
 RP: 9.28C
 D: 3
+Calc: yes
 Id: edexcel-chem-9-103
 
 Q: In the alcohol combustion practical, why is the measured temperature rise lower than expected?
@@ -905,6 +907,7 @@ A: 1000 times
 Accept: 1000; 10³
 Ref: 9.35C
 D: 3
+Calc: yes
 Id: edexcel-chem-9-127
 
 Q: Why are nanoparticles good catalysts?
@@ -920,6 +923,7 @@ Accept: 3; 3 per nm; 3 nm⁻¹
 Ref: 9.36C
 D: 3
 Note: Surface area 24 nm², volume 8 nm³.
+Calc: yes
 Id: edexcel-chem-9-129
 
 Q: Why are nanoparticles of titanium dioxide used in sunscreens?

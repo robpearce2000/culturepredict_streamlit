@@ -48,6 +48,7 @@ Accept: 60 coulombs
 Ref: 4.2.1.2
 D: 2
 Note: Charge flow = current × time.
+Calc: yes
 Id: aqa-phys-4.2-006
 
 Q: A charge of 120 C flows past a point in 1 minute. What is the current?
@@ -58,6 +59,7 @@ D: 3
 Note: Convert 1 minute to 60 s first; 120 ÷ 60 = 2.
 
 # 4.2.1.3 Current, resistance and potential difference
+Calc: yes
 Id: aqa-phys-4.2-007
 
 Q: What is the unit of resistance?
@@ -72,6 +74,7 @@ A: 12 V
 Accept: 12 volts
 Ref: 4.2.1.3
 D: 2
+Calc: yes
 Id: aqa-phys-4.2-009
 
 Q: A potential difference of 12 V across a component drives a current of 0.5 A. What is its resistance?
@@ -80,6 +83,7 @@ Accept: 24 ohms
 Ref: 4.2.1.3
 D: 3
 Note: Resistance = potential difference ÷ current.
+Calc: yes
 Id: aqa-phys-4.2-010
 
 Q: In the practical investigating the resistance of a wire, which independent variable is changed?
@@ -178,6 +182,7 @@ A: 10 Ω
 Accept: 10 ohms
 Ref: 4.2.2
 D: 2
+Calc: yes
 Id: aqa-phys-4.2-022
 
 Q: Two parallel branches carry currents of 0.2 A and 0.3 A. What is the current through the cell?
@@ -193,6 +198,7 @@ Accept: 4.5 volts
 Ref: 4.2.2
 D: 3
 Note: Total resistance 12 Ω, so current = 0.5 A; then 0.5 × 9 = 4.5 V.
+Calc: yes
 Id: aqa-phys-4.2-024
 
 Q: Why does adding a resistor in parallel decrease the total resistance of a circuit?
@@ -279,6 +285,7 @@ Accept: 90 watts
 Ref: 4.2.4.1
 D: 2
 Note: Power = current² × resistance = 9 × 10.
+Calc: yes
 Id: aqa-phys-4.2-035
 
 Q: A heater transfers 80 W when a current of 4 A flows through it. What is its resistance?
@@ -287,6 +294,7 @@ Accept: 5 ohms
 Ref: 4.2.4.1
 D: 3
 Note: R = P ÷ I² = 80 ÷ 16.
+Calc: yes
 Id: aqa-phys-4.2-036
 
 Q: A 230 V appliance draws a current of 2 A. What is its power?
@@ -296,6 +304,7 @@ Ref: 4.2.4.1
 D: 2
 
 # 4.2.4.2 Energy transfers in everyday appliances
+Calc: yes
 Id: aqa-phys-4.2-037
 
 Q: An electric kettle is switched on. Which energy store of the water increases?
@@ -319,6 +328,7 @@ Accept: 60 joules
 Ref: 4.2.4.2
 D: 2
 Note: Energy transferred = charge flow × potential difference.
+Calc: yes
 Id: aqa-phys-4.2-040
 
 Q: A 500 W microwave oven runs for 2 minutes. How much energy does it transfer?
@@ -329,6 +339,7 @@ D: 3
 Note: Convert 2 minutes to 120 s; 500 × 120 = 60 000.
 
 # 4.2.4.3 The National Grid
+Calc: yes
 Id: aqa-phys-4.2-041
 
 Q: Which type of transformer increases the potential difference from a power station to the transmission cables?

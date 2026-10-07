@@ -303,6 +303,7 @@ Accept: 3 newtons
 Ref: 12.13
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-12-041
 
 Q: What is the unit of magnetic flux density?
@@ -319,6 +320,7 @@ Accept: 0.4 newtons
 Ref: 12.13
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-12-043
 
 Q: Use F = B × I × l. A force of 6 N acts on a 1.5 m wire in a 2 T field. What is the current?
@@ -327,6 +329,7 @@ Accept: 2 amps; 2 amperes
 Ref: 12.13
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-phys-12-044
 
 Q: What is the energy transfer in an electric motor?

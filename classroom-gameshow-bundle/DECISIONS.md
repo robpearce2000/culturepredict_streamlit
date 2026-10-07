@@ -406,3 +406,64 @@ so it never also opens the Menu. The F key does nothing while typing in a text b
 **Hex Hunt claim timing.** While the question card is open, the hexagon being played is drawn as it was;
 its new colour, pop and burst appear when the teacher goes back to the board. When that hexagon joins a
 half's edges it pops first, and the winning chain lights up just after (0.6 s later).
+
+## Playtest fixes (1.3.0)
+
+**Countdown at zero waits for the teacher.** Instead of starting "show me" by itself, the countdown stops at
+zero with "Time's up! Press Space when ready". The +10 s key (T) works while counting and after time is up.
+
+**Pause** is one shared module (CGB.pause): a game clock that stops while paused, a pausable timeout for game
+events, and a hold that prompts and dialogs take while open (so "Leave this game?" and Settings pause a game
+in progress without the banner). While paused by the teacher every game key waits except P, F and Esc, and
+on-screen CSS animations are frozen. Over the Edge's physics, Outpace's sequences and sprint clock, the "3, 2, 1"
+and Hex Hunt's and Category Clash's big moments all run on the game clock.
+
+**End game and show results** sits at the end of every game's top bar (tap twice, like Delete) and in the
+Menu prompt. Category Clash's own End game button is replaced by it; the top bar is above the question panel,
+so it works while a question is open. Hex Hunt ended early: the half with more rounds wins, then more
+hexagons in the round in play; otherwise a draw. Outpace ended early shows the points banked so far.
+
+**Double presses.** Category Clash and Hex Hunt ignore Enter (and a keyboard "click" on a focused tile) for half a
+second after returning to the board. A Space within half a second of the last one is a repeat while the
+countdown or the "3, 2, 1" is running. Results screens ignore all keys for 2 seconds. The browser's own "Leave
+this page?" shows when the page is closed or refreshed while a game is in progress.
+
+**Outpace Final Sprint: 90 seconds and new targets.** At classroom pace a sprint question takes about 30 to 33
+seconds (playtest), so 90 seconds fits about 3 questions. Targets were tuned by simulation (question time 26 to
+38 seconds, teams spread around the class mean, a shared "tricky question" factor, no new question in the last
+10 seconds, the question on screen always counted): for 2 to 6 teams on a Standard deal, 4, 6, 7, 9 and 11 steps.
+An average class (about 60% of boards right) then wins 48 to 65% of the time, and a class getting most answers
+right (85%) 92 to 98%. Cautious takes a step off and Bold adds one. With Maths the sprint is 90 seconds plus 3 times
+the extra answer time (2 min 45, 5 min, 6 min 30), so it still fits about 3 questions.
+
+**Outpace final question.** When the clock passes 10 seconds the question on screen becomes the "Final question!":
+it is answered, marked and counted even if the clock reaches zero meanwhile, and then the sprint ends; no new
+question starts in the last 10 seconds.
+
+**Deal Round: more than half.** The runner steps forward only when more than half the teams are right (with 2
+teams, both); half or fewer and the Hunter gains a step.
+
+**Hex Hunt best of three.** Same 4 × 4 board and rules each round; the half that did not take the last round picks
+first in the next. With Maths, one round. "No hexagon won after about 12 questions" is read as 12 questions in a
+row with no hexagon won (so a round can't run on for ever even after some hexagons are taken): the round then
+goes to the half with more hexagons, or to neither if level. A match has at most three rounds; level rounds at
+the end make a draw.
+
+**Calculations: 45 seconds.** The existing Calc field now means "needs a calculation". Every Physics and Chemistry
+question was screened (419 candidates with numbers in the question and the answer, or "calculate"), and each
+candidate was read: 347 were tagged (one-step recall such as "a 40 W lamp transfers how much energy each second",
+rounding, significant figures, balancing equations and electron counts by rule were not). Maths keeps its own
+answer time.
+
+**Maths game lengths** are estimates from the playtest timings (per question: the answer time plus about 15 to 25
+seconds for reading, show me, marking and moving on), shown on the Answer time choice and in the guide.
+
+**Over the Edge light mode.** On a machine with no graphics chip (software drawing) the game ran at 3.7 frames a
+second at 1366 × 768, whatever the Graphics setting: 557 draw calls in standard materials at full resolution.
+Measured there: half resolution alone 8.5 fps; simple materials alone 11.9; both 17.8. The light mode uses half
+resolution, matte (Lambert) materials, no shadows and no glow: 16.9 fps. It switches on at once when the browser
+reports software drawing, or after 4 seconds of play under 20 frames a second, with a short note on screen. The
+physics may also take up to 15 steps a frame in light mode, so it keeps real time even at low frame rates.
+
+**Top bar.** Menu, Sound, Pause, Full screen, Settings and End game; the buttons are a little more compact, and
+Category Clash's and Hex Hunt's headings start further right to clear it.

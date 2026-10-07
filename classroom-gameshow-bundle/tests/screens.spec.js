@@ -25,7 +25,7 @@ const WATCH = [
   '.op-roundend.show .op-verdict', '.op-roundend.show .op-detail', '.op-roundend.show .btn',
   '.op-screen.active .op-panel',
   '#launcher .l-hero > *', '#launcher .gcard', '#launcher .l-bar', '#launcher .l-mascot .hello', '#launcher .l-host .btn',
-  '.cc-head .cc-turn', '.cc-head .cc-end', '.cc-q:not([hidden]) .cc-qcard', '.cc-screen.active .cgb-panel',
+  '.cc-head .cc-turn', '.cc-q:not([hidden]) .cc-qcard', '.cc-screen.active .cgb-panel',
   '.hh-head > *', '.hh-q:not([hidden]) .hh-qcard', '.hh-win:not([hidden]) > *', '.hh-screen.active .cgb-panel', '.ote-host .host-head', '.ote-host .host-body',
   '.host-foot .hc-bust', '.host-foot .hc-bubble.show', '.op-hostrow .hc-bust', '.op-hostrow .hc-bubble.show',
   '.cm-team', '.hh-side',

@@ -70,8 +70,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .keys .kbd { margin-right: 3px; }
 
 /* ---------- Game top bar (back to launcher, sound, settings) ---------- */
-.topbar { position: absolute; top: 12px; left: 12px; z-index: 40; display: flex; gap: 8px; flex-wrap: wrap; }
-.topbar .btn { min-height: 40px; padding: 6px 12px; font-size: 0.86rem; background: rgba(255,255,255,0.95); color: var(--ink); border: 2px solid var(--ink); box-shadow: 0 3px 0 var(--ink); }
+.topbar { position: absolute; top: 12px; left: 12px; z-index: 40; display: flex; gap: 6px; flex-wrap: wrap; }
+.topbar .btn { min-height: 40px; padding: 6px 10px; font-size: 0.84rem; background: rgba(255,255,255,0.95); color: var(--ink); border: 2px solid var(--ink); box-shadow: 0 3px 0 var(--ink); }
 
 /* ---------- Modals ---------- */
 .modal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(14,16,38,0.72); }
@@ -414,4 +414,19 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
 
 /* The answer line in every game: accepted alternatives and the teacher's note in smaller type */
 .ans-also, .ans-note { display: block; font-size: 0.7em; font-weight: 700; opacity: 0.85; margin-top: 2px; letter-spacing: 0; }
+.ans-also { font-size: 0.85em; opacity: 1; }   /* "Also accept": readable from the back */
 .ans-note { font-style: italic; }
+
+/* ---------- Pause ---------- */
+.cgb-paused *, .cgb-paused *::before, .cgb-paused *::after { animation-play-state: paused !important; }
+.cgb-paused .cgb-pausebar *, .cgb-paused .cgb-pausebar { animation-play-state: running !important; }
+.cgb-pausebar { position: fixed; inset: 0; z-index: 900; display: grid; place-items: center; background: rgba(8, 10, 24, 0.72); padding: 16px; }
+.cgb-pausebar[hidden] { display: none; }
+.cgb-pausecard { background: var(--paper, #FFF7EC); color: var(--ink, #1B1F3B); border: 5px solid var(--ink, #1B1F3B); border-radius: 26px; box-shadow: 0 14px 40px rgba(0,0,0,0.45); padding: 26px 40px 28px; display: grid; gap: 12px; text-align: center; max-width: 560px; width: 100%; }
+.cgb-pausecard b { font-family: var(--display); font-weight: 400; font-size: clamp(3rem, 9vw, 6rem); line-height: 1; }
+.cgb-pausecard span { font-weight: 800; font-size: 1.1rem; }
+.cgb-pausecard .btn { font-size: 1.4rem; padding: 14px 26px; }
+/* the countdown: "Time's up!" waits for the teacher; a calculation's longer time is labelled */
+.cm-count.up b.cm-up { font-family: var(--body); font-weight: 900; font-size: 1.05rem; min-width: 0; white-space: nowrap; color: var(--no); }
+.cm-count .cm-calc { font-weight: 900; font-size: 0.85rem; background: var(--sun, #FFC93C); color: var(--ink, #1B1F3B); border: 2px solid var(--ink, #1B1F3B); border-radius: 999px; padding: 2px 10px; white-space: nowrap; }
+.answer-time-note { margin: 4px 0 0; font-size: 0.82rem; font-weight: 700; color: var(--ink-soft, #4A4F6A); }

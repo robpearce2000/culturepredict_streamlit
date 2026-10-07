@@ -1,0 +1,147 @@
+[
+ {
+  "name": "after-ote-4t",
+  "subject": "physics",
+  "board": "edexcel",
+  "seed": 112,
+  "games": [
+   {
+    "id": "over-the-edge",
+    "teams": 4,
+    "moments": {
+     "pauseAt": 2,
+     "pauseSecs": 60,
+     "mismarkAt": 1
+    }
+   }
+  ]
+ },
+ {
+  "name": "after-ote-6t",
+  "subject": "biology",
+  "board": "aqa",
+  "seed": 113,
+  "games": [
+   {
+    "id": "over-the-edge",
+    "teams": 6,
+    "moments": {
+     "escAt": 3
+    }
+   }
+  ]
+ },
+ {
+  "name": "after-op-4t",
+  "subject": "history",
+  "board": "edexcel",
+  "seed": 122,
+  "games": [
+   {
+    "id": "outpace",
+    "teams": 4,
+    "moments": {
+     "mismarkAt": 1,
+     "escAt": 3
+    }
+   }
+  ]
+ },
+ {
+  "name": "after-op-6t",
+  "subject": "chemistry",
+  "board": "aqa",
+  "seed": 123,
+  "games": [
+   {
+    "id": "outpace",
+    "teams": 6,
+    "moments": {
+     "pauseAt": 2,
+     "pauseSecs": 60
+    }
+   }
+  ]
+ },
+ {
+  "name": "after-cc-4t",
+  "subject": "biology",
+  "board": "edexcel",
+  "seed": 132,
+  "games": [
+   {
+    "id": "category-clash",
+    "teams": 4,
+    "moments": {
+     "escAt": 1,
+     "rapidAt": 4
+    }
+   }
+  ]
+ },
+ {
+  "name": "after-cc-6t",
+  "subject": "physics",
+  "board": "aqa",
+  "seed": 133,
+  "games": [
+   {
+    "id": "category-clash",
+    "teams": 6,
+    "moments": {
+     "pauseAt": 3,
+     "pauseSecs": 60
+    }
+   }
+  ]
+ },
+ {
+  "name": "after-hh-chem",
+  "subject": "chemistry",
+  "board": "edexcel",
+  "seed": 141,
+  "abilities": [
+   0.65,
+   0.55
+  ],
+  "games": [
+   {
+    "id": "hex-hunt",
+    "moments": {
+     "rapidAt": 2
+    }
+   }
+  ]
+ },
+ {
+  "name": "after-hh-hist",
+  "subject": "history",
+  "board": "aqa",
+  "seed": 142,
+  "abilities": [
+   0.62,
+   0.6
+  ],
+  "games": [
+   {
+    "id": "hex-hunt",
+    "moments": {
+     "escAt": 2
+    }
+   }
+  ]
+ },
+ {
+  "name": "after-end-early-ote",
+  "subject": "geography",
+  "board": "aqa",
+  "seed": 181,
+  "games": [
+   {
+    "id": "over-the-edge",
+    "teams": 4,
+    "endEarlyAt": 4
+   }
+  ]
+ }
+]

@@ -234,6 +234,7 @@ Accept: 0.50; 1/2
 Ref: 2.10
 D: 2
 Note: Rf = distance moved by substance ÷ distance moved by solvent.
+Calc: yes
 Id: edexcel-chem-2-033
 
 Q: A spot has Rf 0.4 and the solvent front moved 10 cm. How far did the spot move?
@@ -241,6 +242,7 @@ A: 4 cm
 Accept: 4; 40 mm
 Ref: 2.10
 D: 3
+Calc: yes
 Id: edexcel-chem-2-034
 
 Q: On one chromatogram, an unknown spot is level with the spot from known dye X. What is the unknown substance likely to be?

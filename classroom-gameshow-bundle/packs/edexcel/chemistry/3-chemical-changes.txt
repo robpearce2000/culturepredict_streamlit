@@ -119,6 +119,7 @@ Accept: pH 2
 Ref: 3.5
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-chem-3-016
 
 Q: In the core practical on pH change, which solid is added in small portions to dilute hydrochloric acid?
@@ -451,6 +452,7 @@ A: 22.80 cm³
 Accept: 22.8 cm³; 22.80
 Ref: 3.18
 D: 2
+Calc: yes
 Id: edexcel-chem-3-061
 
 Q: After a titration, why is it repeated without indicator before the salt is crystallised?
@@ -776,6 +778,7 @@ Accept: 0.36 g; gained 0.36 g
 Ref: 3.31
 RP: 3.31
 D: 2
+Calc: yes
 Id: edexcel-chem-3-106
 
 Q: Why are the copper electrodes washed and dried before they are reweighed?

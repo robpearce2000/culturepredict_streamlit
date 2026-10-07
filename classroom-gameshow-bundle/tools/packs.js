@@ -20,7 +20,7 @@
  *   D: 1                            difficulty 1, 2 or 3 (see TIERS in src/shared/bank.js)
  *   HT: yes                         Higher tier only                            (optional)
  *   RP: 1                           a required practical's number               (optional)
- *   Calc: yes                       a calculator is allowed (maths)             (optional)
+ *   Calc: yes                       the question needs a calculation: 45 s to answer outside Maths (optional)
  *   Note: Not "mitochondrion's"     a note for the teacher, e.g. a misconception (optional)
  *   Id: aqa-bio-4.1-001             stable id, added by "node tools/packs.js ids"
  *
