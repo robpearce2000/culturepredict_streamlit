@@ -43,7 +43,7 @@ test('Hex Hunt: the winning hexagon pops and the chain lights up after the quest
   expect(await page.locator('#hh-board .hh-hex.chain').count()).toBeGreaterThan(2);
 });
 
-test('Full screen: a button on the launcher and in every game, F toggles it, and Esc leaves it without going to the menu', async ({ page }) => {
+test('Full screen: a button on the launcher and in every game, F toggles it', async ({ page }) => {
   const log = await openBundle(page);
   const on = () => page.evaluate(() => !!document.fullscreenElement);
   const lb = page.locator('#launcher [data-fullscreen]');
@@ -65,9 +65,9 @@ test('Full screen: a button on the launcher and in every game, F toggles it, and
     await page.keyboard.press('f');
     await expect.poll(on).toBe(true);
     await expect(b).toHaveText(/^Exit full screen/);
-    await page.keyboard.press('Escape');                                     // leaves full screen only
+    await page.keyboard.press('f');                                          // F leaves full screen (Esc is the game's own key there: tests/uifixes.spec.js)
     await expect.poll(on).toBe(false);
-    await page.waitForTimeout(600);                                          // (an Esc straight after is still part of leaving)
+    await page.waitForTimeout(600);
     await expect(page.locator('#leaveModal')).toBeHidden();
     await expect(page.locator(`#game-${g}`)).toBeVisible();
     await page.keyboard.press('Escape');                                     // now Esc is the Menu key again
