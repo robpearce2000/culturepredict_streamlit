@@ -259,3 +259,72 @@ be much faster; these figures show the worst case, a PC with acceleration off.
 **What to watch for in your own lessons:** how long the Over the Edge drops feel with 6 teams; whether the Outpace
 sprint feels winnable; how evenly Hex Hunt halves are matched; whether the back row can read the Over the Edge
 question; and any moment you want to pause.
+
+## After the fixes (version 1.3.0)
+
+The fixes from the playtest-fixes brief were made, and 9 lessons were then played again with the same
+simulator and classroom (`tools/playtest/plan-after.json`): every game with 4 and 6 teams (Hex Hunt with two
+evenly matched halves), a 60-second interruption with **P**, an accidental Esc, a mis-mark and undo, double
+presses, and ending a game early.
+
+**What changed in play**
+
+| Before | After |
+|---|---|
+| A 2-minute interruption let the countdown run out and "show me" fire by itself (3 of 4 games) | **P** held the countdown in all 3 games where it was tried (17.0 s before the 60-second interruption, 16.95 s after), with a large Paused banner |
+| The countdown kept running behind "Leave this game?" (18 s to 13 s) | Any prompt pauses the game while it is open (covered by the tests) |
+| The countdown fired "show me" at zero | It waits at zero: "Time's up! Press Space when ready"; **T** adds 10 seconds |
+| A double Enter on "Back to the board" opened a tile or hexagon before the captain chose | It stays on the board (seen in Category Clash and Hex Hunt) |
+| Outpace: the sprint clock ran out mid-question and the next Enter started a new game (4 of 5 games) | The question on screen always finishes and counts ("Final question!" under 10 s); results ignore keys for 2 seconds. Both Outpace games reached their results normally |
+| Ending early (Over the Edge, Outpace, Hex Hunt) lost the results | **End game** in the top bar reached the results in 5.5 s, with the scores as they stood and Reteach these |
+| Over the Edge drew 3 to 4 frames a second without a graphics chip | Automatic light mode: 16.9 fps alone, about 9 fps with two 3D games running at once here; the physics now keeps real time |
+| Hex Hunt: a 4 × 4 single round of 3 to 6 minutes, one-sided whenever the halves differed | Best of three: with evenly matched halves the matches went to 2 and 3 rounds and stayed close, but took **15 and 20 minutes** (27 and 36 questions) |
+
+**Timing after the fixes** (Start game to results, at real speed; Over the Edge now runs at real speed here)
+
+| Lesson | Game | Teams | Questions | Total | Per question | Writing | Marking | Longest wait |
+|---|---|---|---|---|---|---|---|---|
+| after-ote-4t | Over the Edge | 4 | 10 | 8:54 (includes a 60 s pause) | 53 s | 23.1 s | 8.0 s | marking to counters settled 25 s |
+| after-ote-6t | Over the Edge | 6 | 10 | 9:07 | 55 s | 20.3 s | 9.8 s | marking to counters settled 29 s |
+| after-op-4t | Outpace | 4 | 15 | 8:57 | 36 s | 17.9 s | 7.3 s | 1.6 s |
+| after-op-6t | Outpace | 6 | 14 | 10:05 (includes a 60 s pause) | 43 s | 23.5 s | 9.5 s | 1.6 s |
+| after-cc-4t | Category Clash | 4 | 12 | 7:34 | 38 s | 19.3 s | 6.7 s | none over 2 s |
+| after-cc-6t | Category Clash | 6 | 12 | 8:56 (includes a 60 s pause) | 45 s | 23.8 s | 9.2 s | none over 2 s |
+| after-hh-hist | Hex Hunt | 2 halves (62% / 60%) | 27 | 15:14 | 34 s | | 4.0 s | winning chain about 2 s |
+| after-hh-chem | Hex Hunt | 2 halves (65% / 55%) | 36 | 20:05 | 33 s | | 4.0 s | winning chain about 2 s |
+| after-end-early-ote | Over the Edge | 4 | 6 (ended at 4 min) | 4:33 | | | | |
+
+**Fairness after the fixes**
+
+| Lesson | Result |
+|---|---|
+| Over the Edge, 4 teams | £300 / £200 / £100 / £0, class pot £1,750 (jackpot not won); lead last changed at question 6 of 10 |
+| Over the Edge, 6 teams | £0 / £0 / £500 / £0 / £0 / £900, class pot £2,950; lead last changed at question 6 of 10 |
+| Outpace, 4 teams | escaped: 7 of 7 steps, 600 points |
+| Outpace, 6 teams | escaped: 11 of 11 steps, 600 points |
+| Category Clash, 4 teams | 1,500 / 300 / 950 / 1,200 (decided after question 1) |
+| Category Clash, 6 teams | 1,400 / 700 / 600 / 600 / 1,300 / 1,200 (decided after question 1, but close at the top: 1,400 against 1,300) |
+| Hex Hunt, 62% / 60% halves | 2–0 in rounds after two close rounds |
+| Hex Hunt, 65% / 55% halves | 2–1 in rounds: the weaker half won round 1 |
+
+**Frame rates after the fixes** (this container has no graphics chip)
+
+| Game | Before | After |
+|---|---|---|
+| Over the Edge | 3.4 to 3.6 fps, physics about 4 times slow | 16.9 fps alone (light mode, switched on automatically with a note); 9 fps with two 3D lessons running at once; physics at real speed |
+| Outpace | 28 to 29 fps | 17 to 21 fps with two 3D lessons running at once (unchanged code path) |
+| Category Clash, Hex Hunt | 60 fps | 59 to 60 fps |
+
+**Still open, for Rob to decide**
+
+- **Hex Hunt best of three runs long.** With evenly matched halves a match took 15 and 20 minutes, against the
+  10-minute target. Options: best of three only when there is time (a setting), first to win two rounds on a smaller
+  3 × 3 board, or keep a single round as the default and offer "best of three" as a choice.
+- **Category Clash still repeats questions across a week** (it prefers questions a playing team got wrong before).
+  This was not in the fixes brief; the suggested fix in the Category Clash section above still applies.
+- **Category Clash is often decided after the first question** when one team is much stronger. Rob chose to keep
+  its scoring and turn order.
+- **Over the Edge drops still take 25 to 30 seconds** with 4 to 6 correct teams (captains choosing plus the drop),
+  as Rob chose to keep one-at-a-time drops.
+- Outpace was won in both lessons after the fixes; two games are too few to confirm the "about half the time"
+  tuning, which rests on the simulation in DECISIONS.md. Worth watching in real lessons.
