@@ -7,6 +7,10 @@
  *   dist/listing/category-clash.png       1920×1080  whole-class game, six teams
  *   dist/listing/hex-hunt.png             1920×1080  whole-class game, two halves
  *   dist/listing/question-bank.png        1920×1080  the shared question bank
+ *
+ *   node tools/make-listing.js --edition <id>   the same images for one edition (tools/editions.js),
+ *     from dist/editions/<file> into dist/listings/<id>/, showing that edition's subject in every
+ *     game and its name on the cover (run `node build.js --editions` first)
  */
 'use strict';
 const path = require('path');
@@ -14,8 +18,21 @@ const fs = require('fs');
 const { chromium } = require('@playwright/test');
 
 const ROOT = path.join(__dirname, '..');
-const URL = 'file://' + path.join(ROOT, 'dist', 'showtime-classroom-gameshows.html');
-const OUT = path.join(ROOT, 'dist', 'listing');
+const ED = (() => { const i = process.argv.indexOf('--edition'); return i > 0 ? require('./editions.js').byId(process.argv[i + 1]) : null; })();
+if (process.argv.includes('--edition') && !ED) { console.error('Unknown edition'); process.exit(1); }
+const URL = 'file://' + (ED ? path.join(ROOT, 'dist', 'editions', ED.file) : path.join(ROOT, 'dist', 'showtime-classroom-gameshows.html'));
+const OUT = ED ? path.join(ROOT, 'dist', 'listings', ED.id) : path.join(ROOT, 'dist', 'listing');
+// the subject the screenshots show: the edition's own (Chemistry for the science pack)
+const SHOW = ED ? (ED.id === 'science' ? 'chemistry' : ED.subjects[0]) : 'chemistry';
+// a teacher's own set for the question bank picture, in that subject
+const OWN = {
+  biology: ['Year 10 cells quiz', 'Subject: Biology\nTopic: Cells\nQ: Which organelle controls the cell?\nA: Nucleus\nQ: Where does aerobic respiration happen?\nA: Mitochondria'],
+  chemistry: ['Year 10 bonding quiz', 'Subject: Chemistry\nTopic: Bonding\nQ: What type of bonding is in sodium chloride?\nA: Ionic\nQ: What type of bonding is in methane?\nA: Covalent'],
+  physics: ['Year 10 energy quiz', 'Subject: Physics\nTopic: Energy\nQ: What is the unit of energy?\nA: Joule\nQ: What is the unit of power?\nA: Watt'],
+  maths: ['Year 10 number quiz', 'Subject: Maths\nTopic: Number\nQ: What is 15% of 60?\nA: 9\nQ: What is the square root of 144?\nA: 12'],
+  history: ['Year 10 Germany quiz', 'Subject: History\nTopic: Germany\nQ: In which year did Hitler become Chancellor?\nA: 1933\nQ: What was the Nazi secret police called?\nA: Gestapo'],
+  geography: ['Year 10 hazards quiz', 'Subject: Geography\nTopic: Hazards\nQ: Which scale measures earthquake magnitude?\nA: Moment magnitude scale\nQ: What is the centre of a tropical storm called?\nA: The eye']
+};
 const ARGS = ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'];
 
 async function until(page, fn, ms, arg) {
@@ -43,7 +60,7 @@ async function until(page, fn, ms, arg) {
   });
   await page.waitForTimeout(2500);
   const mascot = await page.locator('#mascot').screenshot({ omitBackground: true });
-  fs.writeFileSync(path.join(ROOT, 'docs', 'mascot.png'), mascot);   // used by the teacher guide
+  if (!ED) fs.writeFileSync(path.join(ROOT, 'docs', 'mascot.png'), mascot);   // used by the teacher guide
   await page.evaluate(() => {
     document.getElementById('mascotHello').style.display = '';
     document.getElementById('launcher').style.background = '';
@@ -52,10 +69,10 @@ async function until(page, fn, ms, arg) {
   });
 
   // Question bank, with one of the teacher's own sets added
-  await page.evaluate(() => {
-    CGB.bank.addSet('Year 10 bonding quiz', 'Subject: Chemistry\nTopic: Bonding\nQ: What type of bonding is in sodium chloride?\nA: Ionic\nQ: What type of bonding is in methane?\nA: Covalent\nQ: Why can metals conduct electricity?\nA: They have delocalised electrons');
-    CGB.bank.setSubject('chemistry'); CGB.bank.setBoard('aqa'); CGB.bank.setSelection({ mixed: '8462' });
-  });
+  await page.evaluate(([sj, own]) => {
+    CGB.bank.addSet(own[0], own[1], sj);
+    CGB.bank.setSubject(sj); CGB.bank.setBoard('aqa'); CGB.bank.setSelection({ mixed: CGB.bank.courses()[0].specCode });
+  }, [SHOW, OWN[SHOW]]);
   await page.click('#openBank');
   await page.waitForTimeout(500);
   await page.screenshot({ path: path.join(OUT, 'question-bank.png') });
@@ -143,7 +160,9 @@ async function until(page, fn, ms, arg) {
   // Cover: built in the same page so it uses the bundle's own fonts and artwork
   await page.setViewportSize({ width: 1600, height: 1000 });
   const b64 = buf => 'data:image/' + (buf[0] === 0x89 ? 'png' : 'jpeg') + ';base64,' + buf.toString('base64');
-  await page.evaluate(({ ote, op, cc, hh, mascot }) => {
+  const nQ = await page.evaluate(() => CGB.bank.all().filter(s => s.builtin && !s.combined).reduce((n, s) => n + s.questions.length, 0));
+  const qChip = ED && ED.taster ? 'Free: one topic per subject' : `${(Math.floor(nQ / 100) * 100).toLocaleString('en-GB')}+ AQA and Edexcel-style GCSE questions`;
+  await page.evaluate(({ ote, op, cc, hh, mascot, edName, qChip }) => {
     document.body.innerHTML = `
       <div id="cover">
         <svg class="rays" viewBox="0 0 100 100" preserveAspectRatio="none"><g fill="rgba(255,255,255,0.05)"><path d="M50 -10 L30 110 L40 110 Z"/><path d="M50 -10 L55 110 L68 110 Z"/><path d="M50 -10 L80 110 L95 110 Z"/><path d="M50 -10 L5 110 L15 110 Z"/></g></svg>
@@ -155,7 +174,8 @@ async function until(page, fn, ms, arg) {
           <figure class="s3"><img src="${cc}" alt=""><figcaption>${CGB.brand.ccLogo()}</figcaption></figure>
           <figure class="s4"><img src="${hh}" alt=""><figcaption>${CGB.brand.hhLogo()}</figcaption></figure>
         </div>
-        <div class="chips"><span>Whole class: every team answers</span><span>4 games</span><span>7,800+ AQA and Edexcel-style GCSE questions</span><span>Works offline</span></div>
+        ${edName ? `<div class="edname">${edName}</div>` : ''}
+        <div class="chips"><span>Whole class: every team answers</span><span>4 games</span><span>${qChip}</span><span>Works offline</span></div>
       </div>`;
     const st = document.createElement('style');
     st.textContent = `
@@ -171,12 +191,13 @@ async function until(page, fn, ms, arg) {
       #cover .s1, #cover .s3 { transform: rotate(-2.5deg); } #cover .s2, #cover .s4 { transform: rotate(2.5deg); }
       #cover figcaption { position: absolute; left: 50%; bottom: -96px; transform: translateX(-50%); width: 250px; }
       #cover figcaption svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 6px 0 rgba(0,0,0,0.35)); }
+      #cover .edname { position: absolute; left: 50%; top: 372px; transform: translateX(-50%) rotate(-1.5deg); background: #FFC93C; color: #1B1F3B; border: 5px solid #1B1F3B; border-radius: 16px; padding: 4px 30px; font-family: var(--display); font-size: 44px; white-space: nowrap; box-shadow: 0 8px 0 rgba(0,0,0,0.35); z-index: 2; }
       #cover .chips { position: absolute; left: 0; right: 0; bottom: 26px; display: flex; justify-content: center; gap: 14px; }
       #cover .chips span { background: #FFF9F0; color: #1B1F3B; border: 4px solid #1B1F3B; border-radius: 999px; padding: 8px 18px; font-weight: 900; font-size: 22px; white-space: nowrap; }`;
     document.head.appendChild(st);
-  }, { ote: b64(oteShot), op: b64(opShot), cc: b64(ccShot), hh: b64(hhShot), mascot: b64(mascot) });
+  }, { ote: b64(oteShot), op: b64(opShot), cc: b64(ccShot), hh: b64(hhShot), mascot: b64(mascot), edName: ED ? ED.name : '', qChip });
   await page.waitForTimeout(800);
   await page.screenshot({ path: path.join(OUT, 'cover.png') });
   await browser.close();
-  console.log('Listing images written to dist/listing/');
+  console.log(`Listing images written to ${path.relative(ROOT, OUT)}/`);
 })().catch(e => { console.error(e); process.exit(1); });

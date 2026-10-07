@@ -37,8 +37,13 @@ const targets = [
   ['dist/teacher-guide.pdf', 'pdf'],
   ['dist/listing/description.md', 'text'],
   ['docs/teacher-guide.html', 'text'],
-  ['README.md', 'text'], ['CHANGELOG.md', 'text'], ['DECISIONS.md', 'text'], ['LICENSES.md', 'text']
+  ['README.md', 'text'], ['CHANGELOG.md', 'text'], ['DECISIONS.md', 'text'], ['LICENSES.md', 'text'],
+  ['dist/editions/README.md', 'text']
 ];
+// every edition for sale, and its listing text
+require('./editions.js').EDITIONS.forEach(e => {
+  targets.push([`dist/editions/${e.file}`, 'text'], [`dist/listings/${e.id}/description.md`, 'text']);
+});
 let bad = 0, checked = 0;
 targets.forEach(([rel, kind]) => {
   const file = path.join(ROOT, rel);
@@ -52,7 +57,7 @@ targets.forEach(([rel, kind]) => {
     if (m) { bad += m.length; console.log(`FOUND in ${rel}: "${m[0]}" ×${m.length}`); }
   });
 });
-['dist', 'dist/listing'].forEach(d => {
+['dist', 'dist/listing', 'dist/editions', 'dist/downloads', 'dist/listings'].concat(require('./editions.js').EDITIONS.map(e => 'dist/listings/' + e.id)).forEach(d => {
   const dir = path.join(ROOT, d);
   if (!fs.existsSync(dir)) return;
   fs.readdirSync(dir).forEach(f => PATTERNS.forEach(re => { if (re.test(f.replace(/[-_.]/g, ' '))) { bad++; console.log(`FOUND in file name: ${d}/${f}`); } }));
