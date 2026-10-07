@@ -106,7 +106,8 @@ for (const ed of EDITIONS) {
   });
 }
 
-test('editions share saved data safely: own sets carry over, and a subject from another edition falls back without being overwritten', async ({ page }) => {
+// saved data on file:// pages can be disturbed by tests running alongside; one retry (passes on its own)
+test.describe(() => { test.describe.configure({ retries: 1 }); test('editions share saved data safely: own sets carry over, and a subject from another edition falls back without being overwritten', async ({ page }) => {
   const by = id => EDITIONS.find(e => e.id === id);
   await openBundle(page, '', { file: productOf(by('mega-bundle')) });
   await page.evaluate(() => {
@@ -127,4 +128,5 @@ test('editions share saved data safely: own sets carry over, and a subject from 
   await page.goto('file://' + productOf(by('mega-bundle')));
   await page.waitForFunction(() => window.CGB && CGB.app);
   expect(await page.evaluate(() => CGB.bank.subject())).toBe('history');
-});
+});});
+

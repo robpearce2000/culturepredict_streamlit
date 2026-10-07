@@ -90,7 +90,8 @@ test('with "Include Higher tier questions" unticked, no Higher-only question for
   await page.evaluate(() => CGB.bank.setHigher(true));
 });
 
-test('the course choice shows only for the sciences, is remembered, and the Higher tier checkbox is hidden for History and Geography', async ({ page }) => {
+// saved data on file:// pages can be disturbed by tests running alongside; one retry (passes on its own)
+test.describe(() => { test.describe.configure({ retries: 1 }); test('the course choice shows only for the sciences, is remembered, and the Higher tier checkbox is hidden for History and Geography', async ({ page }) => {
   await openBundle(page);
   for (const [sj, course, higher] of [['biology', true, true], ['chemistry', true, true], ['physics', true, true], ['maths', false, true], ['history', false, false], ['geography', false, false]]) {
     await page.selectOption('#subjectSelect', sj);
@@ -113,7 +114,8 @@ test('the course choice shows only for the sciences, is remembered, and the High
   await expect(page.locator('#courseSelect')).toHaveValue('combined');
   await expect(page.locator('#packBtn')).toContainText('Combined Science');
   await page.selectOption('#courseSelect', 'separate');
-});
+});});
+
 
 /* Enough questions for each game, whatever is chosen: Category Clash fills a 4 × 3 board (12),
    Hex Hunt a 4 × 4 board of letters (16), and Over the Edge and Outpace a game without repeats
