@@ -11,6 +11,8 @@
  *   node tools/make-listing.js --edition <id>   the same images for one edition (tools/editions.js),
  *     from dist/editions/<file> into dist/listings/<id>/, showing that edition's subject in every
  *     game and its name on the cover (run `node build.js --editions` first)
+ *   ... --edition <id> --reuse <other id>       only the cover is new; the game and question bank
+ *     pictures are copied from another edition's listing (e.g. the science pack uses Chemistry's)
  */
 'use strict';
 const path = require('path');
@@ -20,6 +22,7 @@ const { chromium } = require('@playwright/test');
 const ROOT = path.join(__dirname, '..');
 const ED = (() => { const i = process.argv.indexOf('--edition'); return i > 0 ? require('./editions.js').byId(process.argv[i + 1]) : null; })();
 if (process.argv.includes('--edition') && !ED) { console.error('Unknown edition'); process.exit(1); }
+const REUSE = (() => { const i = process.argv.indexOf('--reuse'); return i > 0 ? process.argv[i + 1] : null; })();
 const URL = 'file://' + (ED ? path.join(ROOT, 'dist', 'editions', ED.file) : path.join(ROOT, 'dist', 'showtime-classroom-gameshows.html'));
 const OUT = ED ? path.join(ROOT, 'dist', 'listings', ED.id) : path.join(ROOT, 'dist', 'listing');
 // the subject the screenshots show: the edition's own (Chemistry for the science pack)
@@ -68,6 +71,13 @@ async function until(page, fn, ms, arg) {
     document.documentElement.style.background = document.body.style.background = '';
   });
 
+  const SHOTS = ['question-bank', 'over-the-edge', 'outpace', 'category-clash', 'hex-hunt'];
+  let oteShot, opShot, ccShot, hhShot;
+  if (REUSE) {
+    const from = path.join(ROOT, 'dist', 'listings', REUSE);
+    SHOTS.forEach(n => fs.copyFileSync(path.join(from, n + '.png'), path.join(OUT, n + '.png')));
+    [oteShot, opShot, ccShot, hhShot] = SHOTS.slice(1).map(n => fs.readFileSync(path.join(OUT, n + '.png')));
+  } else {
   // Question bank, with one of the teacher's own sets added
   await page.evaluate(([sj, own]) => {
     CGB.bank.addSet(own[0], own[1], sj);
@@ -99,7 +109,7 @@ async function until(page, fn, ms, arg) {
   for (const k of ['2', '3', '1', '4', '2']) { await page.keyboard.press(k); await page.waitForTimeout(150); }
   await page.waitForTimeout(1600);
   await page.screenshot({ path: path.join(OUT, 'over-the-edge.png') });
-  const oteShot = await page.screenshot({ type: 'jpeg', quality: 88 });
+  oteShot = await page.screenshot({ type: 'jpeg', quality: 88 });
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
 
   // Outpace: the whole class as one runner, four of six groups right
@@ -113,7 +123,7 @@ async function until(page, fn, ms, arg) {
   await markRound('outpace', ['1', '2', '4', '5']);
   await page.waitForTimeout(1800);
   await page.screenshot({ path: path.join(OUT, 'outpace.png') });
-  const opShot = await page.screenshot({ type: 'jpeg', quality: 88 });
+  opShot = await page.screenshot({ type: 'jpeg', quality: 88 });
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
 
   // Category Clash: six teams part-way through a board, a question just marked
@@ -133,7 +143,7 @@ async function until(page, fn, ms, arg) {
   await markRound('category-clash', ['1', '2', '4', '6']);
   await page.waitForTimeout(700);
   await page.screenshot({ path: path.join(OUT, 'category-clash.png') });
-  const ccShot = await page.screenshot({ type: 'jpeg', quality: 88 });
+  ccShot = await page.screenshot({ type: 'jpeg', quality: 88 });
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
 
   // Hex Hunt: two halves of the class part-way across the board
@@ -154,8 +164,10 @@ async function until(page, fn, ms, arg) {
   await until(page, () => CGB.games['hex-hunt'].state().round === 'mark', 15000);
   await page.waitForTimeout(400);
   await page.screenshot({ path: path.join(OUT, 'hex-hunt.png') });
-  const hhShot = await page.screenshot({ type: 'jpeg', quality: 88 });
+  hhShot = await page.screenshot({ type: 'jpeg', quality: 88 });
   await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+
+  }
 
   // Cover: built in the same page so it uses the bundle's own fonts and artwork
   await page.setViewportSize({ width: 1600, height: 1000 });

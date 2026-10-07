@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.0 – Editions for sale (October 2026)
+
+- **Nine editions from one source:** `node build.js --editions` builds the Free taster, Biology, Chemistry, Physics, Maths, History and Geography editions, the Science mega pack and the Mega bundle into `dist/editions/`, with SHA256SUMS.txt. Every edition has all four games, the question bank and "write your own"; only the built-in packs differ (tools/editions.js). The main product file is the Mega bundle.
+- **Edition-aware menu:** the subject picker lists only the edition's subjects (plus Other for your own sets); a one-subject edition shows its subject as a label with an "Own sets" button. The edition's name is under the Showtime sign and in About, with the version.
+- **Free taster:** one widely taught topic per subject on both boards, all four games fully working, and one friendly line on the menu and in About: "This free version includes one topic per subject. Full subject packs are available on Tes."
+- **Shared saved data:** editions on one computer share your own sets and history. A subject saved by another edition is not overwritten: the edition opens on its own subject instead.
+- **For Tes:** listing text and images for each edition (`dist/listings/<edition>/`), a zip per edition with its file and the teacher guide (`dist/downloads/`), and `dist/editions/README.md` with sizes, counts and load times. The teacher guide has a "Which edition do I have?" section.
+- Tests for every edition (`tests/editions.spec.js`); the banned-term search covers every edition file and listing.
+
 ## 1.4.0 – Combined Science and separate sciences (October 2026)
 
 - **Course choice:** for Biology, Chemistry and Physics the main screen has a **Course** choice under the exam board: **Separate science** (every question) or **Combined Science** (AQA Combined Science: Trilogy 8464, Edexcel Combined Science 1SC0). Remembered between sessions.

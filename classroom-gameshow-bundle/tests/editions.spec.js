@@ -65,7 +65,9 @@ for (const ed of EDITIONS) {
     test.info().annotations.push({ type: 'load', description: `${ms} ms` });
   });
 
-  test(`${ed.name}: one full game of each game plays through with the edition's questions`, async ({ page }) => {
+  // Every edition runs the same game code with different packs, so full games are played in the
+  // smallest (the free taster) and the largest (the mega bundle); the test above checks every edition's packs
+  if (['free-taster', 'mega-bundle'].includes(ed.id)) test(`${ed.name}: one full game of each game plays through with the edition's questions`, async ({ page }) => {
     test.setTimeout(900000);
     const mine = new Set(packs.filter(p => includes(ed, p)).flatMap(p => p.questions.map(q => q.q)));
     const log = await openBundle(page, '', { file: testOf(ed) });

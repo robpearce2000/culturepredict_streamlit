@@ -29,13 +29,13 @@ Two teams play exactly the same way, so it works for a pair or a tutoring sessio
 Every team that answers correctly wins a counter. Teams take turns, in a random order shown on screen: the captain chooses one of four lanes and the counter bounces down the peg board onto a moving 3D shelf. Whatever comes over the edge on a team's drop is theirs to keep, and star wildcard counters bring bonuses and steals. In the final, the whole class teams up to push the gold jackpot counter over the edge.
 
 **Outpace** (the whole class as one runner, 2 to 6 teams)
-The class votes on a deal with one, two or three fingers, then answers its way home before the Hunter catches it. If at least half the teams are right, the class moves a step; if not, the Hunter gains. Bigger deals give the Hunter a shorter gap. After one Deal Round, everyone faces a 60-second Final Sprint, with every correct team adding a step.
+The class votes on a deal with one, two or three fingers, then answers its way home before the Hunter catches it. If at least half the teams are right, the class moves a step; if not, the Hunter gains. Bigger deals give the Hunter a shorter gap. After one Deal Round, everyone faces a 90-second Final Sprint, with every correct team adding a step.
 
 **Category Clash** (2 to 6 teams)
 A board of four topics from your subject and points values from 100 to 300, for revision across several topics at once. Choose the topics or let the game mix them. Every built-in question is tagged by tier (recall, describe and apply, explain and extend), so the 100, 200 and 300 rows really do get harder. Teams take turns to pick a tile and every team answers: the choosing team wins full points, every other correct team wins half, and wrong answers lose nothing. Harder questions are worth more and one hidden star tile is worth double.
 
 **Hex Hunt** (two halves of the class)
-A tactical race across a board of lettered hexagons. Each letter is the first letter of the answer. Both halves of the class answer every question; you press the half with more right answers (or Neither) and it claims the hexagon and picks the next one. The first half to link its two edges wins the round.
+A tactical race across a board of lettered hexagons. Each letter is the first letter of the answer. Both halves of the class answer every question; you press the half with more right answers (or Neither) and it claims the hexagon and picks the next one. The first half to link its two edges wins the round; matches are best of three.
 
 **One question bank for every game**
 - Choose your subject (Biology, Chemistry, Physics, Maths, History, Geography or Other) and exam board (AQA or Edexcel) on the menu (for the sciences, also Separate science or Combined Science), then tick the topic you are teaching, several topics, or "Mixed: all topics" for revision; every game uses them
