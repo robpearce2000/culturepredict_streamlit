@@ -112,7 +112,9 @@ function renderBoard() {
   const w = PAD * 2 + HW * n + HW / 2, h = PAD * 2 + R * 2 + (n - 1) * 1.5 * R;
   const svg = $('board');
   svg.setAttribute('viewBox', `0 0 ${w.toFixed(0)} ${h.toFixed(0)}`);
-  const pathSet = new Set(S.path || []);
+  // while the question is open its hexagon still looks unclaimed: the class sees it change on the board
+  const asking = S.phase === 'question', held = asking ? S.open : null;
+  const pathSet = new Set(asking ? [] : S.path || []);
   const chain = S.phase === 'celebrate' && S.path ? S.path.slice().reverse() : null;
   // each team's two edges glow more strongly as its longest chain reaches further across
   const glow = [0, 1].map(progressOf);
@@ -122,8 +124,9 @@ function renderBoard() {
   out += `<rect class="hh-edge-1" x="${PAD}" y="6" width="${w - PAD * 2}" height="18" rx="9"/><rect class="hh-edge-1" x="${PAD}" y="${h - 24}" width="${w - PAD * 2}" height="18" rx="9"/></g>`;
   S.cells.forEach(cell => {
     const { x, y } = centre(cell.c, cell.r);
+    const owner = cell === held ? -1 : cell.owner;
     const cls = ['hh-hex'];
-    if (cell.owner >= 0) cls.push('own-' + cell.owner);
+    if (owner >= 0) cls.push('own-' + owner);
     // the gold outline is the keyboard cursor, so it only shows once the arrow keys are used
     if (S.keyboard && S.cursor.c === cell.c && S.cursor.r === cell.r && S.phase === 'board') cls.push('cursor');
     const key = cell.c + ',' + cell.r;
@@ -131,11 +134,11 @@ function renderBoard() {
     if (key === S.justClaimed) cls.push('claim');
     const ci = chain ? chain.indexOf(key) : -1;
     if (ci >= 0) cls.push('chain');
-    const label = cell.owner >= 0 ? `${cell.letter}, won by ${S.teams[cell.owner].name}` : `Letter ${cell.letter}`;
+    const label = owner >= 0 ? `${cell.letter}, won by ${S.teams[owner].name}` : `Letter ${cell.letter}`;
     // a raised tile: the side (drawn lower and darker), the face, and a bevel highlight on the face
     out += `<g class="${cls.join(' ')}" data-c="${cell.c}" data-r="${cell.r}" role="gridcell" aria-label="${esc(label)}"${ci >= 0 ? ` style="--i:${ci}"` : ''}><path class="side" d="${CGB.brand.hexPath(x, y + 7, R - 3)}"/><path class="face" d="${CGB.brand.hexPath(x, y, R - 3)}"/><path class="bev" d="${CGB.brand.hexPath(x, y - 1.5, R - 11)}"/>`;
     if (key === S.justClaimed) out += `<circle class="burst" cx="${x}" cy="${y}" r="${R - 8}"/>`;
-    if (cell.owner >= 0) out += `<text class="lt" x="${x}" y="${y + 2}" font-size="38">${cell.letter}</text><text class="mk" x="${x}" y="${y + 30}" font-size="22">${TEAM[cell.owner].mark}</text>`;
+    if (owner >= 0) out += `<text class="lt" x="${x}" y="${y + 2}" font-size="38">${cell.letter}</text><text class="mk" x="${x}" y="${y + 30}" font-size="22">${TEAM[owner].mark}</text>`;
     else out += `<text class="lt" x="${x}" y="${y + 17}" font-size="48">${cell.letter}</text>`;
     out += '</g>';
   });
@@ -228,7 +231,7 @@ $('share').addEventListener('click', e => {
 });
 const round = CGB.createClassRound({
   root: document.getElementById('game-hex-hunt'), board: null, countEl: $('count'), btnEl: $('qBtns'),
-  seconds: () => CGB.COUNTDOWN, teams: () => 2,
+  seconds: CGB.answerSeconds, teams: () => 2,
   marker: {
     instant: true,
     hint: 'Compare the whiteboards. Which half had more right answers? If it\'s level, press the half that chose this hexagon.',
@@ -263,8 +266,6 @@ function classResult(c) {
   }
   SFX.claim();
   cell.owner = w; S.teams[w].won++; S.picker = w;
-  S.justClaimed = cell.c + ',' + cell.r;          // it pops up with a burst of light when the board is next drawn
-  setTimeout(() => { if (S.justClaimed === cell.c + ',' + cell.r) S.justClaimed = null; }, 1200);
   $('qMsg').textContent = `The hexagon goes to ${S.teams[w].name}.`;
   hostC.say(`${S.teams[w].name} take it!`, 'clap', 1500);
   const path = winningPath(w);
@@ -294,9 +295,16 @@ function newQuestionHere() {
   S.step = 'ask';
   showQuestion();
 }
+// a newly won hexagon pops up with a burst of light the next time the board is drawn
+function popClaim(cell) {
+  const key = cell.c + ',' + cell.r;
+  S.justClaimed = key;
+  setTimeout(() => { if (S.justClaimed === key) S.justClaimed = null; }, 1200);
+}
 function backToBoard() {
   if (S.step !== 'claimed' && S.step !== 'nobody') return;
   round.stop();
+  if (S.step === 'claimed') popClaim(S.open);   // back on the board, so the whole class sees it change colour
   if (S.step === 'nobody') {
     // swap in a fresh question so the hexagon is not stuck on the one nobody knew
     const q = drawQuestion(new Set(S.cells.map(c => c.q && c.q.q)));
@@ -321,17 +329,21 @@ function roundWon(i) {
   SFX.win();
   if (CGB.settings.reduced() || !S.path || !S.path.length) { showWin(i); return; }
   S.phase = 'celebrate';
+  if (S.open) popClaim(S.open);                    // the last hexagon pops first, then the chain lights up
+  S.open = null;
   renderBoard();
   hostC.say(`${S.teams[i].name} link their edges!`, 'cheer', 2200);
-  const step = 140, total = S.path.length * step + 900;
+  const step = 140, lead = 600, total = lead + S.path.length * step + 900;
   const svg = $('board'), chain = S.path.slice().reverse();
   const at = k => { const [c, r] = chain[k].split(',').map(Number), p = centre(c, r), vb = svg.viewBox.baseVal; return { x: p.x / vb.width * 100, y: p.y / vb.height * 100 }; };
   const a = at(0), b = at(chain.length - 1);
   svg.style.transition = 'none'; svg.style.transformOrigin = `${a.x}% ${a.y}%`; svg.style.transform = 'scale(1.18)';
   svg.getBoundingClientRect();
-  svg.style.transition = `transform-origin ${(chain.length * step) / 1000}s linear, transform 0.5s ease`;
-  svg.style.transformOrigin = `${b.x}% ${b.y}%`;
-  celebT = setTimeout(() => { svg.style.transform = ''; burstCelebration(i); celebT = setTimeout(() => showWin(i), 800); }, chain.length * step + 100);
+  setTimeout(() => {
+    svg.style.transition = `transform-origin ${(chain.length * step) / 1000}s linear, transform 0.5s ease`;
+    svg.style.transformOrigin = `${b.x}% ${b.y}%`;
+  }, lead);
+  celebT = setTimeout(() => { svg.style.transform = ''; burstCelebration(i); celebT = setTimeout(() => showWin(i), 800); }, lead + chain.length * step + 100);
 }
 function burstCelebration(i) {
   const wrap = $('board').parentElement, box = document.createElement('div');

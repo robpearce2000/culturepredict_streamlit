@@ -279,6 +279,7 @@ CGB.renderPackLine = function (el) {
     ? `<span class="lab">Questions</span><span class="pk"><b title="${esc(a.name)}">${esc(a.short || a.name)}</b> <span class="n">${where} · ${a.questions.length} questions</span></span><button class="linkish" type="button" data-pack="change">Change</button>`
     : `<span class="lab">Questions</span><span class="pk"><b>No ${esc(B.subjectLabel())} questions yet</b> <span class="n">Add your own in the Question bank, or choose another subject.</span></span><button class="linkish" type="button" data-pack="change">Change</button>`;
   el.classList.toggle('empty', !a);
+  if (CGB.answerTimeField) CGB.answerTimeField(el);
   if (!el.dataset.wired) { el.dataset.wired = '1'; el.addEventListener('click', e => { if (e.target.closest('[data-pack]')) CGB.app.chooseSubject(); }); }
   return !!a;
 };
@@ -434,4 +435,51 @@ CGB.app = (() => {
     $('subjectSelect').focus();
   }
   return { init, show, requestLauncher, chooseSubject, get current() { return current; } };
+})();
+
+/* ---------- Full screen: a button on the launcher and in every game's top bar, and the F key ----------
+   Uses the browser's own full-screen mode (it works from a double-clicked file too). Esc still
+   leaves full screen as usual; that Esc is caught first so it never also acts as the game's Menu key. */
+CGB.fullscreen = (() => {
+  const doc = document, el = doc.documentElement;
+  const can = !!(doc.fullscreenEnabled || doc.webkitFullscreenEnabled);
+  const on = () => !!(doc.fullscreenElement || doc.webkitFullscreenElement);
+  let leftAt = -1e9;   // when Esc last left full screen: a held or doubled Esc straight after is part of leaving
+  function toggle() {
+    try {
+      if (on()) { const p = (doc.exitFullscreen || doc.webkitExitFullscreen).call(doc); if (p && p.catch) p.catch(() => { /* already leaving */ }); }
+      else {
+        const p = (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+        if (p && p.catch) p.catch(() => { /* refused (for example inside a frame): stay as we are */ });
+      }
+    } catch (e) { /* no full-screen support */ }
+  }
+  function paint() {
+    doc.querySelectorAll('[data-fullscreen]').forEach(b => {
+      b.innerHTML = `${on() ? 'Exit full screen' : 'Full screen'} <span class="kbd">F</span>`;
+      b.setAttribute('aria-pressed', String(on()));
+      b.hidden = !can;
+    });
+  }
+  function addButtons() {
+    const make = () => { const b = doc.createElement('button'); b.type = 'button'; b.className = 'btn'; b.dataset.fullscreen = ''; return b; };
+    doc.querySelectorAll('[id$="-muteBtn"]').forEach(m => m.after(make()));   // next to Menu and Sound in each game
+    // the main screen's button sits next to Question bank, in the markup
+    paint();
+  }
+  ['fullscreenchange', 'webkitfullscreenchange'].forEach(ev => doc.addEventListener(ev, paint));
+  doc.addEventListener('click', e => { if (e.target.closest && e.target.closest('[data-fullscreen]')) toggle(); });
+  doc.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && (on() || performance.now() - leftAt < 250)) {
+      e.preventDefault(); e.stopImmediatePropagation();
+      if (on()) { leftAt = performance.now(); toggle(); }
+      return;
+    }
+    if ((e.key === 'f' || e.key === 'F') && can && !e.ctrlKey && !e.metaKey && !e.altKey && !e.repeat
+        && !(e.target.matches && e.target.matches('input, textarea, select, [contenteditable]'))) {
+      e.preventDefault(); e.stopImmediatePropagation(); toggle();
+    }
+  }, true);   // capture: before the modals' and the games' own keys
+  if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', addButtons); else addButtons();
+  return { toggle, on, can };
 })();

@@ -29,7 +29,7 @@ const WATCH = [
   '.hh-head > *', '.hh-q:not([hidden]) .hh-qcard', '.hh-win:not([hidden]) > *', '.hh-screen.active .cgb-panel', '.ote-host .host-head', '.ote-host .host-body',
   '.host-foot .hc-bust', '.host-foot .hc-bubble.show', '.op-hostrow .hc-bust', '.op-hostrow .hc-bubble.show',
   '.cm-team', '.hh-side',
-  '.hh-curhint:not([hidden])', '.op-hud.active .op-gap'
+  '.hh-curhint:not([hidden])'
 ];
 
 async function findProblems(page) {

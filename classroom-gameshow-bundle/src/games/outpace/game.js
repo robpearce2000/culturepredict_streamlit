@@ -768,21 +768,6 @@ function updateTrails(dt) {
 }
 function streak(m, dir) { if (reduced()) return; m.userData.life = 0.5; m.userData.dir = dir; m.rotation.z = dir > 0 ? Math.PI / 2 : -Math.PI / 2; }
 
-/* The gap meter in the panel: home, the class, the Hunter and the steps between them */
-function paintGap() {
-  if (currentRoundType === 'deal') {
-    const n = TRACK_STEPS + MAX_GAP + 1, gap = Math.max(0, hunterCellIndex - runnerCellIndex);
-    let cells = '';
-    for (let i = 0; i < n; i++) {
-      const cls = i === 0 ? 'home' : i === runnerCellIndex ? 'you' : i === hunterCellIndex ? 'hunter' : i > runnerCellIndex && i < hunterCellIndex ? 'gap' : '';
-      cells += `<i class="${cls}"></i>`;
-    }
-    $('dealGap').innerHTML = `<span class="op-gapnum"><b>${gap}</b> step${gap === 1 ? '' : 's'} ahead of the Hunter</span><span class="op-gapbar" aria-hidden="true">${cells}</span><span class="op-gapnum"><b>${runnerCellIndex}</b> to home</span>`;
-  } else {
-    const left = Math.max(0, state.sprintTarget - state.sprintNetScore);
-    $('sprintGap').innerHTML = `<span class="op-gapnum"><b>${left}</b> step${left === 1 ? '' : 's'} to home</span>`;
-  }
-}
 let currentRoundType = 'deal'; // 'deal' | 'sprint'
 let runnerCellIndex = 0;
 let hunterCellIndex = 0;
@@ -1474,7 +1459,7 @@ function unlogClassWrongs(res) {
    The step shows at once; a step that ends the round waits for Enter, so it can still be undone. */
 const roundDeal = CGB.createClassRound({
   root: root, board: dealBoard, countEl: $('dealCount'), btnEl: $('dealBtnRow'),
-  seconds: () => CGB.COUNTDOWN, teams: () => state.players.length,
+  seconds: CGB.answerSeconds, teams: () => state.players.length,
   doneHtml: () => `<button class="btn go" type="button" data-op="next">${runnerCellIndex <= 0 ? 'Home!' : hunterCellIndex <= runnerCellIndex ? 'Caught!' : 'Next question'} <span class="kbd">Enter</span></button>`,
   onConfirm(res) {
     const c = res.filter(Boolean).length, n = res.length, ok = c * 2 >= n;
@@ -1511,6 +1496,8 @@ function classDealNext() {
    per team. The target per team is 2, 2.25 or 2.5 for a pot of up to 300, up to 600 or more
    (a bolder deal makes the sprint harder), which a class makes about 60%, 45% and 35% of the
    time in simulation: about half the time overall. */
+// with Maths' longer answer time the sprint lasts longer in step, so a class still gets through 3 or 4 questions
+function sprintSeconds() { return Math.round(60 * CGB.answerSeconds() / CGB.COUNTDOWN); }
 function classTarget() {
   const pot = state.pot / Math.max(1, state.dealRounds);
   const per = pot <= 300 ? 2 : pot <= 600 ? 2.25 : 2.5;
@@ -1637,7 +1624,6 @@ $('dealRow').addEventListener('click', e => {
 function dealStatus() {
   const gap = hunterCellIndex - runnerCellIndex;
   $('dealStatus').textContent = `${runnerCellIndex} step${runnerCellIndex === 1 ? '' : 's'} to home · Hunter ${gap} step${gap === 1 ? '' : 's'} behind`;
-  paintGap();
 }
 
 function askDealQuestion() {
@@ -1687,7 +1673,8 @@ function startSprint() {
   setTagText('tagYou', '▲ ' + state.className);
   state.sprintNetScore = 0;
   state.sprintTarget = classTarget();
-  state.sprintTimeLeft = 60;
+  state.sprintTotal = sprintSeconds();
+  state.sprintTimeLeft = state.sprintTotal;
   buildSprintTrack(state.sprintTarget); warmUp();
   paintSprintTarget();
   showHud('sprint');
@@ -1695,13 +1682,13 @@ function startSprint() {
   $('sprintCard').hidden = true;
   // nothing ticks until the teacher presses Start: a short explanation first
   state.sprintReady = true;
-  sprintGate.show(beginSprint, `You have <b>60 seconds</b>. Every team answers each question on its whiteboard, and each correct team moves the class <b>one step</b> towards home. Reach <b>${state.sprintTarget} steps</b> before the clock runs out to bank the pot of ${state.pot} points. If time runs out first, the Hunter catches you.`);
+  sprintGate.show(beginSprint, `You have <b>${CGB.timeLabel(state.sprintTotal)}</b>. Every team answers each question on its whiteboard, and each correct team moves the class <b>one step</b> towards home. Reach <b>${state.sprintTarget} steps</b> before the clock runs out to bank the pot of ${state.pot} points. If time runs out first, the Hunter catches you.`);
 }
 const sprintGate = CGB.createStartGate(document.getElementById('game-outpace'), '', { title: 'Final Sprint', label: 'Start the Final Sprint', className: 'sprint-gate' });
 function beginSprint() {
   if (state.phase !== 'sprint' || !state.sprintReady) return;
   state.sprintReady = false;
-  hostSay('hostSprint', `Final Sprint! Sixty seconds. Every correct team is a step. You need ${state.sprintTarget}!`, 'point', 1800);
+  hostSay('hostSprint', `Final Sprint! ${state.sprintTotal === 60 ? 'Sixty seconds' : CGB.timeLabel(state.sprintTotal).replace(/^./, c => c.toUpperCase())}. Every correct team is a step. You need ${state.sprintTarget}!`, 'point', 1800);
   $('sprintCard').hidden = false;
   clearInterval(state.sprintTimerHandle);
   state.sprintFrozen = false;
@@ -1721,7 +1708,6 @@ function beginSprint() {
 
 function paintSprintTarget() {
   $('sprintTarget').textContent = `${state.sprintNetScore} of ${state.sprintTarget} steps · one for each correct team (pot ${state.pot} points)`;
-  paintGap();
 }
 function updateSprintTimer() {
   const secs = Math.max(0, Math.ceil(state.sprintTimeLeft));
@@ -1732,7 +1718,7 @@ function updateSprintTimer() {
   paintSetClock(secs, state.sprintTimeLeft <= 10);
   if (state.phase === 'sprint') setMood(state.sprintTimeLeft <= 10 ? 'red' : 'normal');
   const fill = $('sprintFill');
-  fill.style.width = Math.max(0, state.sprintTimeLeft / 60 * 100) + '%';
+  fill.style.width = Math.max(0, state.sprintTimeLeft / (state.sprintTotal || 60) * 100) + '%';
   fill.classList.toggle('low', state.sprintTimeLeft <= 10);
 }
 function askSprintQuestion() {

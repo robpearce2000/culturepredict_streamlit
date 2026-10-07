@@ -280,7 +280,7 @@ let undoSnap = null;
 const round = CGB.createClassRound({
   root: document.getElementById('game-category-clash'),
   board: qBoard, countEl: $('count'), btnEl: $('qBtns'),
-  seconds: () => CGB.COUNTDOWN, teams: () => S.teams.length,
+  seconds: CGB.answerSeconds, teams: () => S.teams.length,
   doneHtml: () => `<button class="btn go" type="button" data-q="next">${boardDone() ? 'See the results' : 'Back to the board'} <span class="kbd">Enter</span></button>`,
   onConfirm: classResult, onUndo: undoClassResult
 });

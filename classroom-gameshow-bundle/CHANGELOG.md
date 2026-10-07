@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.1 – Small fixes (October 2026)
+
+- **Full screen:** a Full screen button on the main screen and in every game's top bar (next to Menu and Sound), and the **F** key. It reads Exit full screen while on; Esc leaves full screen as usual without also going back to the menu. Works when the file is opened by double-clicking it.
+- **Maths answer time:** with Maths as the subject, each setup card offers an Answer time of 45 sec, 1 min 30 (the default) or 2 min instead of the 20-second countdown; Space still ends it early. Outpace's Final Sprint lasts longer in step (4 min 30 at 1 min 30). Every other subject keeps 20 seconds.
+- **Hex Hunt:** a won hexagon changes to the team's colour, with its pop and burst of light, once the teacher goes back to the board, so the class sees it; the winning hexagon pops and the winning chain lights up after the question closes.
+- **Outpace:** the step-counter strip ("N steps ahead of the Hunter", its row of squares and "N to home") is gone; the track shows the gap, and the status line under the deal still says it in words.
+- Outpace Final Sprint: a card explains it before it starts; no track and one timer; the class and Hunter labels sit on their racers.
+- Fix: Category Clash's Back to the board and See the results buttons work with a click.
+
 ## 1.2.0 – Every board and subject (October 2026)
 
 - **Built-in packs for every GCSE specification in scope:** AQA and Pearson Edexcel Biology, Chemistry, Physics, Maths, History and Geography (Edexcel Geography A and B). 135 topic packs, 7,792 questions, one pack per specification topic; in History and Geography every option is its own pack, so you tick the options you teach. Fieldwork, pre-release material and AQA's annually changing historic environment site are left out because they depend on the school.

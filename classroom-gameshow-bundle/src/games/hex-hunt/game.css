@@ -19,7 +19,7 @@
 /* Board */
 .hh-play { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px 16px; }
 .hh-play[hidden] { display: none; }
-.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding-left: 25rem; }
+.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding-left: 29rem;   /* clear of the top bar: Menu, Sound, Full screen and Settings */ }
 .hh-turn { font-family: var(--display); font-size: 1.5rem; }
 .hh-turn b { font-weight: 400; color: var(--tc); }
 .hh-round { font-weight: 900; color: var(--hh-muted); white-space: nowrap; }
@@ -51,7 +51,7 @@
 .hh-hex .burst { fill: none; stroke: #fff; stroke-width: 6; transform-box: fill-box; transform-origin: 50% 50%; animation: hhBurst 0.7s ease-out forwards; pointer-events: none; }
 @keyframes hhBurst { from { opacity: 0.9; transform: scale(0.6); } to { opacity: 0; transform: scale(1.6); } }
 /* the winning chain lights up hex by hex */
-.hh-hex.chain .face { animation: hhChain 0.5s ease-out both; animation-delay: calc(var(--i) * 0.14s); stroke: #fff; stroke-width: 8; }
+.hh-hex.chain .face { animation: hhChain 0.5s ease-out both; animation-delay: calc(0.6s + var(--i) * 0.14s); stroke: #fff; stroke-width: 8; }
 @keyframes hhChain { from { filter: brightness(0.6); } 50% { filter: brightness(2.1); } to { filter: brightness(1.35); } }
 .hh-board { transition: transform 0.5s ease; }
 .hh-boardwrap { overflow: hidden; }

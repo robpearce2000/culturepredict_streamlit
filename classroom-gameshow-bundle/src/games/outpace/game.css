@@ -137,13 +137,3 @@
 }
 
 /* The gap meter: home, the class, the Hunter and the steps between them */
-.op-gap { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; font-weight: 800; font-size: 0.92rem; color: #E3E6FF; }
-.op-gap:empty { display: none; }
-.op-gapnum b { font-family: var(--display); font-weight: 400; font-size: 1.35rem; color: var(--sun, #FFC93C); margin-right: 3px; }
-.op-gapbar { display: inline-flex; gap: 3px; }
-.op-gapbar i { width: 16px; height: 16px; border-radius: 4px; background: rgba(255,255,255,0.14); border: 2px solid rgba(255,255,255,0.25); transition: background 0.25s; }
-.op-gapbar i.gap { background: rgba(255,201,60,0.35); border-color: rgba(255,201,60,0.6); }
-.op-gapbar i.home { background: #12A4A0; border-color: #9FFCF0; }
-.op-gapbar i.you { background: #FFC93C; border-color: #fff; border-radius: 50%; }
-.op-gapbar i.hunter { background: #E879F9; border-color: #fff; border-radius: 50%; }
-.op.deal-view .op-gapbar i { width: 13px; height: 13px; }

@@ -379,3 +379,30 @@ teach different ones.
 
 **Geography A and B ids.** Edexcel Geography A and B share topic numbers, so their question ids include the
 specification code (edexcel-geog-1ga0-8-001), keeping every id unique.
+
+## Small fixes (1.2.1)
+
+**Maths answer times: 45 sec, 1 min 30, 2 min (default 1 min 30), not 1, 2 and 3 minutes.** The Maths
+packs are short single-answer questions: about a third are recall (difficulty 1, a few seconds), and the
+hardest (difficulty 3, about a quarter) take two or three lines of working on a mini whiteboard, which
+fits comfortably in 2 minutes. Three minutes would leave most of the class waiting on most questions and
+push a 10-minute game past half an hour; 45 seconds suits a quick-fire recap. Space still ends any
+countdown as soon as the boards are ready. The choice is one shared setting (remembered) shown on every
+setup card only when Maths is the subject.
+
+**Outpace's Final Sprint with Maths** keeps the same rules and target but lasts longer in step with the
+answer time (60 seconds for each 20 seconds of answer time: 2 min 15, 4 min 30 or 6 min), so a class still
+gets through the 3 or 4 questions the target is tuned for.
+
+**Outpace step-counter strip removed.** Everything it showed is still on screen: the gap and the distance
+home are on the 3D track in the Deal Rounds and in words in the status line under the deal ("N steps to
+home · Hunter N steps behind"); in the Final Sprint the target line ("N of M steps") shows progress.
+
+**Full screen** uses the browser's own full-screen mode on the whole page (it works from a double-clicked
+file). Browsers normally keep the Esc that leaves full screen to themselves; where one passes it on to the
+page, Showtime takes that Esc (and a second one within a quarter of a second) as leaving full screen only,
+so it never also opens the Menu. The F key does nothing while typing in a text box.
+
+**Hex Hunt claim timing.** While the question card is open, the hexagon being played is drawn as it was;
+its new colour, pop and burst appear when the teacher goes back to the board. When that hexagon joins a
+half's edges it pops first, and the winning chain lights up just after (0.6 s later).

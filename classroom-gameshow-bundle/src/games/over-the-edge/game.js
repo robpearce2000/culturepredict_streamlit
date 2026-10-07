@@ -221,7 +221,7 @@ const WILDCARDS = [
 /* Fixed settings: 6 questions in Round 1 and 4 in the final (under 10 minutes with a class),
    a 20-second countdown before "show me", and the jackpot counter set at Normal difficulty */
 const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
-const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The 20-second countdown for the first question starts when you press Start.');
+const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The countdown for the first question starts when you press Start.');
 const G = {
   nTeams: +CGB.store.get('ote.nTeams') || 4,
   laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, autoLanes: false, nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
@@ -1152,7 +1152,7 @@ const board = CGB.createTeamBoard($('board'), { className: 'cols-2' });
 let undoSnap = null;
 const round = CGB.createClassRound({
   root: document.getElementById('game-over-the-edge'), board, countEl: $('count'), btnEl: $('cmActions'),
-  seconds: () => CGB.COUNTDOWN, teams: () => G.players.length,
+  seconds: CGB.answerSeconds, teams: () => G.players.length,
   onConfirm: classResult, onUndo: undoClassResult
 });
 function classResult(res) {

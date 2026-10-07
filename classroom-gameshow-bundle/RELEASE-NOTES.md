@@ -1,4 +1,4 @@
-# Showtime: Classroom Gameshows 1.2.0: release notes
+# Showtime: Classroom Gameshows 1.2.1: release notes
 
 ## What's in the bundle
 
@@ -16,6 +16,14 @@
 - **Hex Hunt** (two halves of the class): lettered hexagons, each letter the first letter of the answer; the first half to link its edges wins.
 
 **Questions:** AQA-style and Edexcel-style GCSE packs for Biology, Chemistry, Physics, Maths, History and Geography (AQA 8461, 8462, 8463, 8300, 8145, 8035; Edexcel 1BI0, 1CH0, 1PH0, 1MA1, 1HI0, 1GA0, 1GB0), one per specification topic or option: 135 packs, 7,792 questions, plus the teacher's own sets. They are practice questions written for Showtime and are not produced or endorsed by AQA or Pearson.
+
+## What changed in 1.2.1
+
+- **Full screen** button (and the F key) on the main screen and in every game; Esc leaves full screen without going to the menu.
+- **Maths answer time:** with Maths, the setup card offers 45 sec, 1 min 30 (default) or 2 min per question; other subjects keep 20 seconds. Outpace's Final Sprint lasts longer to match.
+- **Hex Hunt:** a won hexagon changes colour once you are back on the board, so the class sees it; the winning chain lights up after the question closes.
+- **Outpace:** no step-counter strip; the Final Sprint has a start card explaining it, no track, one timer, and labels that sit on the racers.
+- Category Clash's Back to the board button works with a click.
 
 ## What changed in 1.2.0
 

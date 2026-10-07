@@ -30,6 +30,27 @@ CGB.answerHTML = q => {
   const pick = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
 
   CGB.COUNTDOWN = 20;    // seconds to think before "3, 2, 1, show me!" (Space skips it)
+  /* Maths needs working time on the whiteboard: with Maths as the subject the setup card offers
+     three answer times (CGB.answerTimeField); every other subject keeps the fixed 20 seconds */
+  CGB.MATHS_TIMES = [45, 90, 120];
+  CGB.mathsTime = () => { const t = +CGB.settings.get('mathsTime'); return CGB.MATHS_TIMES.includes(t) ? t : 90; };
+  CGB.answerSeconds = () => CGB.bank && CGB.bank.subject() === 'maths' ? CGB.mathsTime() : CGB.COUNTDOWN;
+  CGB.timeLabel = t => t <= 60 ? `${t} seconds` : t % 60 ? `${Math.floor(t / 60)} minute${t >= 120 ? 's' : ''} ${t % 60} seconds` : `${t / 60} minute${t === 60 ? '' : 's'}`;
+  // the Answer time choice, after a setup card's Questions line; shown only when Maths is the subject
+  CGB.answerTimeField = function (after) {
+    let f = after.parentElement.querySelector(':scope > .answer-time');
+    if (!CGB.bank || CGB.bank.subject() !== 'maths') { if (f) f.hidden = true; return; }
+    if (!f) {
+      const id = (after.id || 'x') + '-labTime';
+      f = document.createElement('div');
+      f.className = 'field answer-time';
+      f.innerHTML = `<span class="lab" id="${id}">Answer time</span><div class="seg" role="group" aria-labelledby="${id}">${CGB.MATHS_TIMES.map(t => `<button type="button" data-time="${t}">${t < 60 ? t + ' sec' : t % 60 ? Math.floor(t / 60) + ' min ' + t % 60 : t / 60 + ' min'}</button>`).join('')}</div>`;
+      f.addEventListener('click', e => { const b = e.target.closest('[data-time]'); if (b) { CGB.settings.set('mathsTime', +b.dataset.time); CGB.answerTimeField(after); } });
+      after.after(f);
+    }
+    f.hidden = false;
+    f.querySelectorAll('[data-time]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.time === CGB.mathsTime())));
+  };
   CGB.TEAM_RULE = 'A team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.';
 
   /* The host's reaction to a marked question: "Five out of six teams! Brilliant!" */
@@ -118,7 +139,8 @@ CGB.answerHTML = q => {
       const on = phase === 'think' && s > 0;
       o.countEl.hidden = !on;
       if (!on) return;
-      o.countEl.innerHTML = `<div class="cm-cbar"><i style="width:${(left / s * 100).toFixed(1)}%"></i></div><b>${Math.ceil(left)} s</b>`;
+      const c = Math.ceil(left);
+      o.countEl.innerHTML = `<div class="cm-cbar"><i style="width:${(left / s * 100).toFixed(1)}%"></i></div><b>${c >= 60 ? Math.floor(c / 60) + ':' + String(c % 60).padStart(2, '0') : c + ' s'}</b>`;
       o.countEl.classList.toggle('low', left <= 5);
     }
     function buttons() {

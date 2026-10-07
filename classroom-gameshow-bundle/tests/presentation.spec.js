@@ -10,15 +10,16 @@ test('Outpace: the set is built, the Final Sprint has no track or set clock, the
   await page.click('#op-startBtn', { timeout: 60000 });
   let s3 = await page.evaluate(() => CGB.test.outpace.scene3d());
   expect(s3.arch).toBe(true);
-  // a gap meter in the Deal Round
+  // no step-counter strip in the Deal Round: the track shows the gap, and the status line says it in words
   await page.keyboard.press('2');
-  await expect(page.locator('#op-dealGap .op-gapbar i.you')).toHaveCount(1);
-  await expect(page.locator('#op-dealGap .op-gapbar i.hunter')).toHaveCount(1);
-  await expect(page.locator('#op-dealGap')).toContainText('3 steps ahead of the Hunter');
+  await expect(page.locator('#game-outpace .op-gap, #game-outpace .op-gapbar')).toHaveCount(0);
+  await expect(page.locator('#op-dealStatus')).toContainText('Hunter 3 steps behind');
   // the Final Sprint: no track and no clock in the set, just the racers (the timer is on screen)
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
   s3 = await page.evaluate(() => CGB.test.outpace.scene3d());
-  expect(s3.sprintTrack).toBe(false); expect(s3.clock).toBe(false); expect(s3.mood).toBe('normal');
+  expect(s3.sprintTrack).toBe(false); expect(s3.clock).toBe(false);
+  await expect(page.locator('#game-outpace .op-gap')).toHaveCount(0);
+  await expect(page.locator('#op-sprintTarget')).toContainText('of'); expect(s3.mood).toBe('normal');
   await page.evaluate(() => CGB.test.outpace.setTime(8));
   await expect.poll(async () => (await page.evaluate(() => CGB.test.outpace.scene3d())).mood).toBe('red');
   // time runs out: the catch plays, and Enter skips straight to the result
