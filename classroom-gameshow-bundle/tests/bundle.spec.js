@@ -100,7 +100,7 @@ test('a full game of Outpace with keyboard shortcuts reaches the summary', async
   expect(log.requests).toEqual([]);
 });
 
-test('every game counts down 20 seconds before "show me", and Space skips it', async ({ page }) => {
+test('no game has a countdown: the question waits, and Space brings up "show me"', async ({ page }) => {
   await openBundle(page);
   const games = [
     ['over-the-edge', '#ote-count', null, null],
@@ -113,8 +113,9 @@ test('every game counts down 20 seconds before "show me", and Space skips it', a
     await page.click(`#game-${id} .setup-go .btn`);
     if (ready) { await expect.poll(async () => (await state(page, id)).phase).toBe(ready); for (const k of key.split(' ')) await page.keyboard.press(k); }
     await expect.poll(async () => (await state(page, id)).round).toBe('think');
-    await expect(page.locator(count)).toBeVisible();
-    await expect(page.locator(count)).toContainText(/^(20|19)/);
+    await expect(page.locator(count)).toBeHidden();
+    await page.waitForTimeout(1500);
+    expect((await state(page, id)).round).toBe('think');                    // nothing happens by itself
     await page.keyboard.press('Space');
     await expect.poll(async () => (await state(page, id)).round).toMatch(/show|mark/);
     await page.keyboard.press('Escape'); await page.click('#leaveConfirm');

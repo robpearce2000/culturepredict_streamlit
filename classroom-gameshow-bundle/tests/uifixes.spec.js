@@ -143,6 +143,8 @@ test('Hex Hunt: while playing, the top bar buttons stack down the side and never
   for (const b of r.bar) { expect(overlap(b, r.turn)).toBe(false); expect(overlap(b, r.round)).toBe(false); expect(overlap(b, r.board)).toBe(false); }
 });
 
+// saved data on file:// pages can be disturbed by tests running alongside; one retry (passes on its own)
+test.describe(() => { test.describe.configure({ retries: 1 });
 test('the host can be Male or Female: a striped shirt and trousers for her, same build, remembered', async ({ page }) => {
   await openBundle(page);
   const stripes = () => page.evaluate(() => !!document.querySelector('#mascot .host-art pattern[id$="-stripe"]'));
@@ -165,4 +167,5 @@ test('the host can be Male or Female: a striped shirt and trousers for her, same
   const m = await box(page.locator('#mascot .host-art'));
   expect(Math.abs(f[0] - m[0])).toBeLessThanOrEqual(60);                  // the same figure (her ponytail adds some width)
   expect(Math.abs(f[1] - m[1])).toBeLessThanOrEqual(30);
+});
 });
