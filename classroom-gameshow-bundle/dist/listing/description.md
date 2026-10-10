@@ -49,7 +49,7 @@ A tactical race across a board of lettered hexagons. Each letter is the first le
 - Opens by double-clicking in Chrome, Edge, Firefox or Safari, even with no internet connection
 - Full keyboard shortcuts, plus mouse and touch for interactive whiteboards
 - Large text option for the back of the room, reduced motion option, and a low-graphics mode for older PCs
-- A cartoon host you can name (your own name works well) and restyle from the menu
+- A cartoon host, male or female, that you can name (your own name works well) and restyle from the menu
 - Colours meet WCAG AA contrast, and nothing relies on colour alone
 - Short teacher guide (PDF) with set-up steps, a "Running it with a class" page, shortcuts, classroom tips and troubleshooting
 

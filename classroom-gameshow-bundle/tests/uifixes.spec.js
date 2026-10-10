@@ -142,3 +142,27 @@ test('Hex Hunt: while playing, the top bar buttons stack down the side and never
   const overlap = (a, b) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
   for (const b of r.bar) { expect(overlap(b, r.turn)).toBe(false); expect(overlap(b, r.round)).toBe(false); expect(overlap(b, r.board)).toBe(false); }
 });
+
+test('the host can be Male or Female: a striped shirt and trousers for her, same build, remembered', async ({ page }) => {
+  await openBundle(page);
+  const stripes = () => page.evaluate(() => !!document.querySelector('#mascot .host-art pattern[id$="-stripe"]'));
+  expect(await stripes()).toBe(false);                                   // the man's suit
+  await page.click('#openHost');
+  await expect(page.locator('#segGender button[aria-pressed="true"]')).toHaveText('Male');
+  await expect(page.locator('#rowBeard')).toBeVisible();
+  await page.click('#segGender button[data-v="female"]');
+  await expect(page.locator('#rowBeard')).toBeHidden();                  // no facial hair for her
+  await expect(page.locator('#lblSuit')).toHaveText('Shirt stripes');
+  await expect(page.locator('#segStyle button[aria-pressed="true"]')).toHaveText('Ponytail');
+  expect(await stripes()).toBe(true);
+  const box = svg => svg.evaluate(el => { const b = el.querySelector('.host-body').getBBox(); return [Math.round(b.width), Math.round(b.height)]; });
+  const f = await box(page.locator('#mascot .host-art'));
+  await page.reload(); await page.waitForFunction(() => window.CGB && CGB.app);
+  expect(await stripes()).toBe(true);                                    // remembered
+  await page.click('#openHost');
+  await page.click('#segGender button[data-v="male"]');
+  expect(await stripes()).toBe(false);
+  const m = await box(page.locator('#mascot .host-art'));
+  expect(Math.abs(f[0] - m[0])).toBeLessThanOrEqual(60);                  // the same figure (her ponytail adds some width)
+  expect(Math.abs(f[1] - m[1])).toBeLessThanOrEqual(30);
+});

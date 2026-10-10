@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.2 – Female host (October 2026)
+
+- **Male or Female host:** a Male/Female button in Customise the host. She has the same build as him, in a striped long-sleeved shirt (stripes in the chosen colour) and plain trousers, with a ponytail by default; two new hairstyles for any host (Bob, Ponytail). Facial hair is hidden for her. Her look is saved and shows in every game.
+
 ## 1.5.1 – Fixes from classroom use (October 2026)
 
 - **Space confirms the marking**, as Enter does, in every game (the Confirm button now shows Space). A second Space within half a second is still ignored, so the Space that skips "3, 2, 1" can't also confirm an empty marking.

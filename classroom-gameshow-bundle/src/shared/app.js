@@ -257,7 +257,28 @@ CGB.hostEditor = (() => {
     el.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; CGB.hostCfg[key] = b.dataset.v; paint(); save(); });
     paint();
   }
+  /* Male or Female: a different outfit and a default hairstyle for each; the rest of the look is kept */
+  function genderRow() {
+    const el = $('segGender');
+    el.innerHTML = CGB.hostOpts.gender.map(([v, label]) => `<button type="button" data-v="${v}">${label}</button>`).join('');
+    el.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b || b.dataset.v === CGB.hostCfg.gender) return;
+      CGB.hostCfg.gender = b.dataset.v;
+      if (b.dataset.v === 'female') { CGB.hostCfg.beard = 'none'; if (!['bob', 'ponytail'].includes(CGB.hostCfg.style)) CGB.hostCfg.style = 'ponytail'; }
+      else if (['bob', 'ponytail'].includes(CGB.hostCfg.style)) CGB.hostCfg.style = 'curly';
+      paintGender(); save();
+    });
+    paintGender();
+  }
+  function paintGender() {
+    const f = CGB.hostCfg.gender === 'female';
+    $('segGender').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === CGB.hostCfg.gender)));
+    $('rowBeard').hidden = f;
+    $('lblSuit').textContent = f ? 'Shirt stripes' : 'Suit';
+    [['segStyle', 'style'], ['segBeard', 'beard']].forEach(([id, key]) => $(id).querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === CGB.hostCfg[key]))));
+  }
   function init() {
+    genderRow();
     swatchRow('swSkin', CGB.hostOpts.skin, 'skin', 'Skin');
     swatchRow('swHair', CGB.hostOpts.hair, 'hair', 'Hair colour');
     swatchRow('swSuit', CGB.hostOpts.suit, 'suit', 'Suit colour');
