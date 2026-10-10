@@ -242,7 +242,7 @@ $('share').addEventListener('click', e => {
 });
 const round = CGB.createClassRound({
   root: document.getElementById('game-hex-hunt'), board: null, countEl: $('count'), btnEl: $('qBtns'),
-  seconds: q => CGB.answerSeconds(q), teams: () => 2,
+  teams: () => 2,
   question: () => S.open ? S.open.q : null, reveal: () => $('qAnswer').classList.add('shown'),
   marker: {
     instant: true,
@@ -543,7 +543,7 @@ return {
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => ['board', 'question', 'won', 'celebrate'].includes(S.phase),
   endNow,
-  _state: () => ({ countdown: round.left, timeUp: round.timeUp, rounds: S.rounds.slice(), roundNo: S.roundNo, toWin: S.toWin, dry: S.dry, keyboard: !!S.keyboard, round: round.phase, undoable: round.undoable, times: round.times(), choice, misconceptions: misc.top(5).map(x => x.q.q), phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, winner: S.winner, owners: S.cells.map(c => c.owner), letters: S.cells.map(c => [c.letter, c.q ? c.q.a : null]) })
+  _state: () => ({ rounds: S.rounds.slice(), roundNo: S.roundNo, toWin: S.toWin, dry: S.dry, keyboard: !!S.keyboard, round: round.phase, undoable: round.undoable, times: round.times(), choice, misconceptions: misc.top(5).map(x => x.q.q), phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), picker: S.picker, size: S.size, q: S.open ? S.open.q : null, letter: S.open ? S.open.letter : null, winner: S.winner, owners: S.cells.map(c => c.owner), letters: S.cells.map(c => [c.letter, c.q ? c.q.a : null]) })
 };
 }
 

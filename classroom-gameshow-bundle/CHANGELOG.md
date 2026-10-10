@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.3 – No answer countdown (October 2026)
+
+- **The answer countdown is gone, in every game and every edition.** A question stays up while the teams write, and **Space** brings up "3, 2, 1, show me!" when every board is ready. Removed with it: "Time's up!", the +10 s button and **T**, the "Calculation: 45 s" label, and the Maths Answer time choice on the setup cards.
+- Outpace's Final Sprint clock (a game rule, not an answer timer) stays: 90 seconds, or 5 minutes with Maths, which needs working time. The Deal Round, Category Clash, Hex Hunt and Over the Edge questions wait for the teacher.
+
 ## 1.5.2 – Female host (October 2026)
 
 - **Male or Female host:** a Male/Female button in Customise the host. She has the same build as him, in a striped long-sleeved shirt (stripes in the chosen colour) and plain trousers, with a ponytail by default; two new hairstyles for any host (Bob, Ponytail). Facial hair is hidden for her. Her look is saved and shows in every game.

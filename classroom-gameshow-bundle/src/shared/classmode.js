@@ -68,23 +68,20 @@ CGB.pause = (() => {
   };
 })();
 
-/* Answer time: 20 seconds; Maths uses the Answer time chosen on the setup card; elsewhere a
-   question that needs a calculation (Calc: yes in its pack) gets 45 seconds */
-CGB.CALC_SECONDS = 45;
-CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths');
+/* There is no answer countdown: the question stays up until the teacher presses Space for "3, 2, 1, show me!" */
 
 /* =========================================================
    THE CLASS ROUND (shared by all four games)
    A whole class of about 30 plays in 2 to 6 teams with mini whiteboards.
    Every team answers every question:
-     1. the question shows, with a 20-second countdown;
-     2. Space brings up "3, 2, 1, show me!" (at zero the countdown waits: "Time's up! Press Space when ready"; T adds 10 s);
+     1. the question shows and the teams write on their whiteboards, as long as they need;
+     2. Space brings up "3, 2, 1, show me!";
      3. the teacher marks each team: keys 1 to 6 toggle a team, C marks
         every team correct, W every team wrong, Space or Enter confirms;
      4. the game shows the answer and applies the result;
      5. U undoes the marking until the next question starts.
    This file holds the pieces the games share: the team panels, the
-   question round (countdown, show me, marking, undo), the class
+   question round (show me, marking, undo), the class
    misconceptions summary and the host's reactions.
    ========================================================= */
 (function () {
@@ -92,34 +89,9 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
   const esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const pick = a => a[Math.floor(Math.random() * a.length)];   // caption variety only
 
-  CGB.COUNTDOWN = 20;    // seconds to think before "3, 2, 1, show me!" (Space skips it)
-  /* Maths needs working time on the whiteboard: with Maths as the subject the setup card offers
-     three answer times (CGB.answerTimeField); every other subject keeps the fixed 20 seconds */
-  CGB.MATHS_TIMES = [45, 90, 120];
-  const GAME_MINUTES = { 'over-the-edge': { 45: 12, 90: 19, 120: 24 }, outpace: { 45: 10, 90: 16, 120: 20 }, 'category-clash': { 45: 12, 90: 22, 120: 28 }, 'hex-hunt': { 45: 8, 90: 12, 120: 15 } };
-  CGB.mathsTime = () => { const t = +CGB.settings.get('mathsTime'); return CGB.MATHS_TIMES.includes(t) ? t : 90; };
-  CGB.answerSeconds = q => CGB.bank && CGB.bank.subject() === 'maths' ? CGB.mathsTime() : CGB.isCalc(q) ? CGB.CALC_SECONDS : CGB.COUNTDOWN;
+  CGB.answerSeconds = () => 0;   // no countdown
   CGB.timeLabel = t => t <= 60 ? `${t} seconds` : t % 60 ? `${Math.floor(t / 60)} minute${t >= 120 ? 's' : ''} ${t % 60} seconds` : `${t / 60} minute${t === 60 ? '' : 's'}`;
-  // the Answer time choice, after a setup card's Questions line; shown only when Maths is the subject
-  CGB.answerTimeField = function (after) {
-    let f = after.parentElement.querySelector(':scope > .answer-time');
-    if (!CGB.bank || CGB.bank.subject() !== 'maths') { if (f) f.hidden = true; return; }
-    if (!f) {
-      const id = (after.id || 'x') + '-labTime';
-      f = document.createElement('div');
-      f.className = 'field answer-time';
-      f.innerHTML = `<span class="lab" id="${id}">Answer time</span><div class="seg" role="group" aria-labelledby="${id}">${CGB.MATHS_TIMES.map(t => `<button type="button" data-time="${t}">${t < 60 ? t + ' sec' : t % 60 ? Math.floor(t / 60) + ' min ' + t % 60 : t / 60 + ' min'}</button>`).join('')}</div>`;
-      f.addEventListener('click', e => { const b = e.target.closest('[data-time]'); if (b) { CGB.settings.set('mathsTime', +b.dataset.time); CGB.answerTimeField(after); } });
-      f.insertAdjacentHTML('beforeend', '<p class="answer-time-note"></p>');
-      after.after(f);
-    }
-    f.hidden = false;
-    f.querySelectorAll('[data-time]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.time === CGB.mathsTime())));
-    // roughly how long a whole game takes at each time (measured in the playtest, see the guide)
-    const game = (after.closest('.game') || {}).id || '', t = CGB.mathsTime();
-    const mins = (GAME_MINUTES[game.replace('game-', '')] || GAME_MINUTES['category-clash'])[t];
-    f.querySelector('.answer-time-note').textContent = `About ${mins} minutes a game at this time. ${t === 45 ? 'The shortest time keeps a game to about 10 to 12 minutes.' : 'Longer times suit a full lesson.'}`;
-  };
+  CGB.answerTimeField = after => { const f = after.parentElement.querySelector(':scope > .answer-time'); if (f) f.remove(); };   // no Answer time choice any more
   CGB.TEAM_RULE = 'A team is correct only if its whiteboards agree on a correct answer, or if you judge it correct.';
 
   /* The host's reaction to a marked question: "Five out of six teams! Brilliant!" */
@@ -181,7 +153,6 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
      o.board     a team board (marking happens on it)
      o.countEl   where the countdown bar goes
      o.btnEl     where the round's buttons go (the game adds its own after marking)
-     o.seconds() countdown length (0 = off)
      o.teams()   number of teams
      o.onMark()  marking has started (optional)
      o.onConfirm(results)  results[i] is true for each correct team
@@ -192,7 +163,7 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
                  instant } used instead of the team board's ✓ and ✗. With instant, the marker's own
                  buttons confirm straight away (it calls confirm()), so there is no Confirm button */
   CGB.createClassRound = function (o) {
-    let phase = 'idle', marks = [], timer = null, left = 0, total = 0, timeUp = false, lastSpace = -1e9, steps = [], times = {}, undoable = false;
+    let phase = 'idle', marks = [], timer = null, lastSpace = -1e9, steps = [], times = {}, undoable = false;
     const question = () => o.question ? o.question() : null;
     const prompt = document.createElement('div');
     prompt.className = 'cm-showme';
@@ -203,26 +174,13 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
     live.setAttribute('aria-live', 'polite');
     o.root.appendChild(live);
     function clear() { clearInterval(timer); timer = null; steps.forEach(CGB.pause.cancel); steps = []; prompt.classList.remove('on', 'go'); }
-    function paintCount() {
-      if (!o.countEl) return;
-      const on = phase === 'think' && total > 0;
-      o.countEl.hidden = !on;
-      if (!on) return;
-      const c = Math.ceil(left);
-      // the countdown stops at zero: nothing happens until the teacher presses Space
-      const calc = CGB.isCalc(question()) ? `<span class="cm-calc">Calculation: ${CGB.CALC_SECONDS} s</span>` : '';
-      o.countEl.innerHTML = timeUp
-        ? `<div class="cm-cbar"><i style="width:0%"></i></div><b class="cm-up">Time's up! Press Space when ready</b>`
-        : `${calc}<div class="cm-cbar"><i style="width:${(left / total * 100).toFixed(1)}%"></i></div><b>${c >= 60 ? Math.floor(c / 60) + ':' + String(c % 60).padStart(2, '0') : c + ' s'}</b>`;
-      o.countEl.classList.toggle('low', left <= 5);
-      o.countEl.classList.toggle('up', timeUp);
-    }
+    function paintCount() { if (o.countEl) o.countEl.hidden = true; }
     let lastPhase = null;
     function buttons() {
       if (o.onPhase && phase !== lastPhase) { lastPhase = phase; o.onPhase(phase); }
       if (!o.btnEl) return;
       const k = (key, label, cls, act) => `<button class="btn ${cls}" type="button" data-cm="${act}">${label} <span class="kbd">${key}</span></button>`;
-      if (phase === 'think') o.btnEl.innerHTML = `<div class="cm-hint">${timeUp ? "Time's up! Press Space when every board is ready." : 'Everyone writes an answer on their whiteboard.'}</div><div class="cm-btns">${k('Space', '3, 2, 1, show me!', 'go', 'show')}${total > 0 ? k('T', '+10 s', 'plain', 'more') : ''}</div>`;
+      if (phase === 'think') o.btnEl.innerHTML = `<div class="cm-hint">Everyone writes an answer on their whiteboard. Press Space when every board is ready.</div><div class="cm-btns">${k('Space', '3, 2, 1, show me!', 'go', 'show')}</div>`;
       else if (phase === 'show') o.btnEl.innerHTML = '<div class="cm-hint">Boards up!</div>';
       else if (phase === 'mark' && o.marker) o.btnEl.innerHTML = `<div class="cm-hint">${o.marker.hint}</div>${o.marker.instant ? '' : `<div class="cm-btns">${k('Space', 'Confirm', 'go', 'confirm')}</div>`}`;
       else if (phase === 'mark') o.btnEl.innerHTML = `<div class="cm-hint">Mark each team: tap its panel or press its number, 1 to ${marks.length}.</div>
@@ -233,37 +191,16 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
     if (o.btnEl) o.btnEl.addEventListener('click', e => {
       const b = e.target.closest('button[data-cm]'); if (!b) return;
       const a = b.dataset.cm;
-      if (a === 'show') showMe(); else if (a === 'more') addTime(10); else if (a === 'all') setAll(true); else if (a === 'none') setAll(false);
+      if (a === 'show') showMe(); else if (a === 'all') setAll(true); else if (a === 'none') setAll(false);
       else if (a === 'confirm') confirm(); else if (a === 'undo') undo();
     });
     function think() {
       clear();
-      phase = 'think'; undoable = false; timeUp = false;
+      phase = 'think'; undoable = false;
       marks = new Array(o.teams()).fill(null);
       times = { think: performance.now() };
       if (o.board) o.board.set({ marks: [], marking: false, earned: [] });
-      left = total = o.seconds(question());
       paintCount(); buttons();
-      run();
-    }
-    // the countdown: frozen while paused; at zero it waits for the teacher ("Time's up!")
-    function run() {
-      clearInterval(timer); timer = null;
-      if (left <= 0) return;
-      let last = CGB.pause.now();
-      timer = setInterval(() => {
-        const t = CGB.pause.now(); left = Math.max(0, left - (t - last) / 1000); last = t;
-        paintCount();
-        if (left <= 0) { clearInterval(timer); timer = null; timeUp = true; times.timeUp = performance.now(); live.textContent = "Time's up! Press Space when ready."; paintCount(); buttons(); }
-      }, 100);
-    }
-    // T: ten more seconds (a team asked to hear the question again)
-    function addTime(s) {
-      if (phase !== 'think' || total <= 0) return;
-      const was = timeUp;
-      left += s; total = Math.max(total, left); timeUp = false;
-      paintCount(); if (was) buttons();
-      if (!timer) run();
     }
     function showMe() {
       if (phase !== 'think') return;
@@ -317,7 +254,6 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
       // a second Space within half a second is a repeat: it can't skip the countdown and the "3, 2, 1" in one go
       // (the half second counts from the last Space that did something, so holding Space down can't block it)
       if (k === ' ' && (phase === 'show' || phase === 'think' || phase === 'mark')) { const t = performance.now(); if (t - lastSpace < 500) return true; lastSpace = t; }
-      if (phase === 'think' && k === 't') { addTime(10); return true; }
       if ((phase === 'show' || phase === 'mark') && k === 'a' && o.reveal) { o.reveal(); return true; }
       if (phase === 'think' && (k === ' ' || k === 'enter')) { showMe(); return true; }
       if (phase === 'show' && (k === ' ' || k === 'enter')) { startMarking(); return true; }
@@ -337,9 +273,7 @@ CGB.isCalc = q => !!(q && q.calc) && !(CGB.bank && CGB.bank.subject() === 'maths
     }
     if (o.board) o.board.onToggle(toggle);
     return {
-      think, showMe, confirm, undo, toggle, setAll, handleKey, addTime,
-      get timeUp() { return phase === 'think' && timeUp; },
-      get left() { return left; },
+      think, showMe, confirm, undo, toggle, setAll, handleKey,
       lock() { undoable = false; if (phase === 'done') buttons(); },
       refresh: buttons,
       stop() { clear(); phase = 'idle'; undoable = false; paintCount(); buttons(); },

@@ -298,7 +298,7 @@ let undoSnap = null;
 const round = CGB.createClassRound({
   root: document.getElementById('game-category-clash'),
   board: qBoard, countEl: $('count'), btnEl: $('qBtns'),
-  seconds: q => CGB.answerSeconds(q), teams: () => S.teams.length,
+  teams: () => S.teams.length,
   doneHtml: () => `<button class="btn go" type="button" data-q="next">${boardDone() ? 'See the results' : 'Back to the board'} <span class="kbd">Enter</span></button>`,
   onConfirm: classResult, onUndo: undoClassResult,
   question: () => S.open ? tileOpen().q : null, reveal: () => showAnswer()
@@ -488,7 +488,7 @@ return {
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => S.phase === 'board' || S.phase === 'question',
   endNow,
-  _state: () => ({ countdown: round.left, timeUp: round.timeUp, round: round.phase, undoable: round.undoable, times: round.times(), turn: S.turn, catchUp: catchUpTurn(), misconceptions: misc.top(5).map(x => x.q.q), rows: ROWS, phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score, correct: t.correct })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
+  _state: () => ({ round: round.phase, undoable: round.undoable, times: round.times(), turn: S.turn, catchUp: catchUpTurn(), misconceptions: misc.top(5).map(x => x.q.q), rows: ROWS, phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score, correct: t.correct })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
   _board: () => S.cats
 };
 }

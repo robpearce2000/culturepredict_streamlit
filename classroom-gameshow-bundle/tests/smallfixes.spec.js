@@ -87,48 +87,21 @@ test('Full screen: a button on the launcher and in every game, F toggles it', as
   expect(log.errors).toEqual([]);
 });
 
-test('Maths: each setup card offers 45 sec, 1 min 30 or 2 min of answer time (1 min 30 first), other subjects keep 20 seconds', async ({ page }) => {
+test('there is no answer countdown and no Answer time choice, in any subject; the Maths Final Sprint is 5 minutes', async ({ page }) => {
   await page.setViewportSize({ width: 1366, height: 768 });
   const log = await openBundle(page);
-  for (const g of Object.keys(GAMES)) {                                    // Biology: no choice, 20 seconds
-    await page.click(`[data-play="${g}"]`);
-    await expect(page.locator(`#game-${g} .answer-time:visible`)).toHaveCount(0);
-    expect(await page.evaluate(() => CGB.answerSeconds())).toBe(20);
-    await page.keyboard.press('Escape'); await expect(page.locator('#launcher')).toBeVisible();
-  }
-  await page.selectOption('#subjectSelect', 'maths');
-  for (const g of Object.keys(GAMES)) {
-    await page.click(`[data-play="${g}"]`);
-    const f = page.locator(`#game-${g} .answer-time`);
-    await expect(f).toBeVisible();
-    await expect(f.locator('button')).toHaveText(['45 sec', '1 min 30', '2 min']);
-    await expect(f.locator('button[aria-pressed="true"]')).toHaveText('1 min 30');
-    // the setup card still fits on the screen at the usual sizes
-    for (const [w, h] of [[1920, 1080], [1366, 768], [768, 1024]]) {
-      await page.setViewportSize({ width: w, height: h }); await page.waitForTimeout(150);
-      const card = await page.locator(`#game-${g} .setup`).boundingBox();
-      expect(card.y).toBeGreaterThanOrEqual(0); expect(card.y + card.height).toBeLessThanOrEqual(h);
-      expect(card.x).toBeGreaterThanOrEqual(0); expect(card.x + card.width).toBeLessThanOrEqual(w);
+  for (const sj of ['biology', 'maths']) {
+    await page.selectOption('#subjectSelect', sj);
+    for (const g of Object.keys(GAMES)) {
+      await page.click(`[data-play="${g}"]`);
+      await expect(page.locator(`#game-${g} .answer-time`)).toHaveCount(0);
+      expect(await page.evaluate(() => CGB.answerSeconds())).toBe(0);
+      await page.keyboard.press('Escape'); await expect(page.locator('#launcher')).toBeVisible();
     }
-    await page.setViewportSize({ width: 1366, height: 768 });
-    await page.keyboard.press('Escape'); await expect(page.locator('#launcher')).toBeVisible();
   }
-  // choosing 45 sec: the countdown in the game starts from 45, and Space still ends it early
-  await page.click('[data-play="category-clash"]');
-  await page.locator('#game-category-clash .answer-time button', { hasText: '45 sec' }).click();
-  await expect(page.locator('#game-category-clash .answer-time button[aria-pressed="true"]')).toHaveText('45 sec');
-  await page.click('#cc-startBtn');
-  await page.locator('#cc-board .cc-tile[data-c]').first().click();
-  await expect(page.locator('#cc-count')).toContainText(/4[45] s/);
-  await page.keyboard.press('Space');
-  await expect.poll(async () => (await state(page, 'category-clash')).round).toMatch(/show|mark/);
-  await page.keyboard.press('Escape'); await page.locator('#leaveConfirm').click();
-  // 2 min shows as minutes and seconds; Outpace's Final Sprint is longer in step (60 s for 20 s answers)
   await page.click('[data-play="outpace"]');
-  await page.locator('#game-outpace .answer-time button', { hasText: '2 min' }).click();
   await page.click('#op-startBtn');
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
-  await expect(page.locator('#op-sprintTimer')).toHaveText(/^6:[23]\d$/);   // 90 s plus 3 × the extra 100 s: 6:30
-  expect(await page.evaluate(() => CGB.settings.get('mathsTime'))).toBe(120);
+  await expect(page.locator('#op-sprintTimer')).toHaveText('5:00');
   expect(log.errors).toEqual([]);
 });

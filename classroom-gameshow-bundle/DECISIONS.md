@@ -565,3 +565,11 @@ Whole topics that are separate science only: AQA 8463 4.8 Space physics (44); Ed
 - **Leave prompt:** Esc again confirms leaving; key repeat from a held Esc is ignored. "Keep playing" still closes it.
 - **Hex Hunt top bar:** a vertical stack down the left while playing (setup and results keep the horizontal bar).
 - **Change topic:** the same dropdown as the main screen, anchored under "Change". With no questions at all (a subject with no packs) it still goes to the main screen, since the subject must change there.
+
+
+## No answer countdown (1.5.3)
+
+- Rob found the countdown did not work well in real games, so the think phase has no timer: the question waits for Space. Everything that existed only for the timer was removed (Time's up, +10 s and T, the calculation 45 s label, the Maths Answer time choice). `Calc: yes` in a question set is still accepted and ignored, so existing packs and teachers' own sets keep loading.
+- The Final Sprint is a game clock, not an answer timer, so it stays. Its length used to grow with the Maths answer time (5 minutes at the default); Maths now has a fixed 5-minute sprint and every other subject 90 seconds.
+- Pause now only stops the game clock, the sprint clock and the big moments; the pause test checks the game clock instead of a countdown.
+

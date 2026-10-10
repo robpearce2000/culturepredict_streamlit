@@ -27,7 +27,7 @@ src/
     ui.css                   shared UI kit: tokens, buttons, panels, score cards, banners, modals, launcher
     app.js                   launcher (subject panel, host editor), routing, bank manager, settings, about, setup-card fitting
     teams.js                 the team palette (six teams) and shared team names
-    classmode.js             the class round: countdown, "show me", team marking board, undo, misconceptions
+    classmode.js             the class round: "show me", team marking board, undo, misconceptions
   games/
     over-the-edge/           game.html, game.css, game.js
     outpace/                 game.html, game.css, game.js

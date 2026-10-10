@@ -17,7 +17,7 @@ Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** cont
 **Built for a whole class of 30**
 Split the class into 2 to 6 teams with mini whiteboards. No pupil devices are needed. In every game, every team answers every question:
 - Choose your subject and question set once on the menu; each game then asks only how many teams are playing, and waits on a Start game button so nothing ticks until the class is ready
-- Show the question with a 20-second countdown, then press Space for a big "3, 2, 1, show me!" and every team holds up its board
+- Show the question, let the teams write as long as they need, then press Space for a big "3, 2, 1, show me!" and every team holds up its board
 - Tap 1 to 6 to mark each team right or wrong (under 10 seconds for six teams), then Enter to reveal the answer and play on. Made a mistake? Undo it.
 - Team captains change every question, so everyone takes a turn
 - Each game takes 10 minutes at most, with time for teams to think, talk and write: ideal as a starter or a plenary, or play two in a lesson
@@ -40,7 +40,7 @@ A tactical race across a board of lettered hexagons. Each letter is the first le
 **One question bank for every game**
 - Choose your subject (Biology, Chemistry, Physics, Maths, History, Geography or Other) and exam board (AQA or Edexcel) on the menu (for the sciences, also Separate science or Combined Science), then tick the topic you are teaching, several topics, or "Mixed: all topics" for revision; every game uses them
 - AQA-style (8461, 8462, 8463, 8464 Combined Science: Trilogy, 8300, 8145, 8035) and Edexcel-style (1BI0, 1CH0, 1PH0, 1SC0 Combined Science, 1MA1, 1HI0, 1GA0, 1GB0) GCSE packs: every specification topic, every History and Geography option, separate-science content and every required or core practical, with over 7,800 questions. Every question is tied to a specification point (and its Combined Science point), tagged by difficulty, and marked if it is Higher tier only in each course, so a Foundation class can leave those out. Combined Science classes only see Combined Science content
-- Short, markable answers with the accepted alternatives shown, made for mini whiteboards and a 20-second countdown
+- Short, markable answers with the accepted alternatives shown, made for mini whiteboards
 - Add your own sets for any subject in seconds by pasting simple text (Subject, Topic, Q, A, with optional Accept, Note and Difficulty lines)
 - Wrong answers are saved for each team, and questions from their weak topics come round again more often in every game
 - Save a backup file to move your sets and history to another computer

@@ -1472,7 +1472,7 @@ function unlogClassWrongs(res) {
    The step shows at once; a step that ends the round waits for Enter, so it can still be undone. */
 const roundDeal = CGB.createClassRound({
   root: root, board: dealBoard, countEl: $('dealCount'), btnEl: $('dealBtnRow'),
-  seconds: q => CGB.answerSeconds(q), teams: () => state.players.length,
+  teams: () => state.players.length,
   question: () => state.currentQuestion, reveal: () => $('dealQAnswer').classList.add('shown'),
   doneHtml: () => `<button class="btn go" type="button" data-op="next">${runnerCellIndex <= 0 ? 'Home!' : hunterCellIndex <= runnerCellIndex ? 'Caught!' : 'Next question'} <span class="kbd">Enter</span></button>`,
   onConfirm(res) {
@@ -1512,10 +1512,10 @@ function classDealNext() {
    simulation an average class (about 60% of boards right) wins about half the time (48 to 65%)
    and a class getting most answers right (85%) 92 to 98%. A Cautious deal takes a step off and a
    Bold deal adds one, so a bolder deal makes the sprint harder (see DECISIONS.md). */
-const SPRINT_SECONDS = 90, FINAL_Q_SECONDS = 10;
+const SPRINT_SECONDS = 90, MATHS_SPRINT_SECONDS = 300, FINAL_Q_SECONDS = 10;
 const SPRINT_TARGET = { 2: 4, 3: 6, 4: 7, 5: 9, 6: 11 };
 // with Maths' longer answer time the sprint lasts longer in step, so a class still gets through about 3 questions
-function sprintSeconds() { return SPRINT_SECONDS + 3 * Math.max(0, CGB.answerSeconds() - CGB.COUNTDOWN); }   // Maths: 2 min 45, 5 min, 6 min 30
+function sprintSeconds() { return CGB.bank && CGB.bank.subject() === 'maths' ? MATHS_SPRINT_SECONDS : SPRINT_SECONDS; }   // Maths needs working time: 5 minutes
 function classTarget() {
   const pot = state.pot / Math.max(1, state.dealRounds);
   const shift = pot <= 300 ? -1 : pot <= 600 ? 0 : 1;
@@ -1524,7 +1524,7 @@ function classTarget() {
 const WIN_UNDO_MS = 1600;   // after the target is reached: time to undo a marking slip before the escape plays
 const roundSprint = CGB.createClassRound({
   root: root, board: sprintBoard, btnEl: $('sprintBtnRow'), fast: true,
-  seconds: () => 0, teams: () => state.players.length,
+  teams: () => state.players.length,
   question: () => state.currentQuestion, reveal: () => $('sprintQAnswer').classList.add('shown'),
   onConfirm(res) {
     const c = res.filter(Boolean).length, n = res.length;
@@ -1891,7 +1891,7 @@ return {
   },
   inProgress: () => ['deal', 'dealEnd', 'sprint', 'finish'].includes(state.phase),
   endNow,
-  _state: () => ({ countdown: roundDeal.left, timeUp: roundDeal.timeUp, finalQ: !!state.finalQ, round: state.phase === 'sprint' ? roundSprint.phase : roundDeal.phase, undoable: (state.phase === 'sprint' ? roundSprint : roundDeal).undoable, times: (state.phase === 'sprint' ? roundSprint : roundDeal).times(), runner: runnerCellIndex, hunter: hunterCellIndex, net: state.sprintNetScore, target: state.sprintTarget, dealRound: state.dealRound, misconceptions: misc.top(5).map(x => x.q.q), look: currentTheme, perfLevel: perf.level, phase: state.phase, teams: state.players.map(p => ({ name: p.name })), pot: state.pot, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, frozen: state.sprintFrozen, q: state.currentQuestion, dealReward: state.dealReward })
+  _state: () => ({ finalQ: !!state.finalQ, round: state.phase === 'sprint' ? roundSprint.phase : roundDeal.phase, undoable: (state.phase === 'sprint' ? roundSprint : roundDeal).undoable, times: (state.phase === 'sprint' ? roundSprint : roundDeal).times(), runner: runnerCellIndex, hunter: hunterCellIndex, net: state.sprintNetScore, target: state.sprintTarget, dealRound: state.dealRound, misconceptions: misc.top(5).map(x => x.q.q), look: currentTheme, perfLevel: perf.level, phase: state.phase, teams: state.players.map(p => ({ name: p.name })), pot: state.pot, roundEnd: !!roundEndNext, timeLeft: state.sprintTimeLeft, frozen: state.sprintFrozen, q: state.currentQuestion, dealReward: state.dealReward })
 };
 }
 

@@ -221,7 +221,7 @@ const WILDCARDS = [
 /* Fixed settings: 6 questions in Round 1 and 4 in the final (under 10 minutes with a class),
    a 20-second countdown before "show me", and the jackpot counter set at Normal difficulty */
 const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
-const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The countdown for the first question starts when you press Start.');
+const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The first question appears when you press Start.');
 const G = {
   nTeams: +CGB.store.get('ote.nTeams') || 4,
   laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, autoLanes: false, nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
@@ -1192,7 +1192,7 @@ const board = CGB.createTeamBoard($('board'), { className: 'cols-2' });
 let undoSnap = null;
 const round = CGB.createClassRound({
   root: document.getElementById('game-over-the-edge'), board, countEl: $('count'), btnEl: $('cmActions'),
-  seconds: q => CGB.answerSeconds(q), teams: () => G.players.length,
+  teams: () => G.players.length,
   question: () => G.q,
   reveal: () => { G.answerShown = true; renderQuestion(); },
   // while the class writes, the question is shown large over the machine
@@ -1629,7 +1629,7 @@ return {
     const sr = wrap.getBoundingClientRect(), hr = hostRect();
     return { stage: { w: sr.width, h: sr.height }, machine: machineRect(), machineRight: hostFit.machineRight, hidden: hostFit.hidden, host: { left: hr.left - sr.left, right: hr.right - sr.left, top: hr.top - sr.top, bottom: hr.bottom - sr.top }, away: $('host').classList.contains('away') };
   },
-  _state: () => ({ countdown: round.left, timeUp: round.timeUp, camera: camera.position.toArray().map(v => +v.toFixed(4)), dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
+  _state: () => ({ camera: camera.position.toArray().map(v => +v.toFixed(4)), dropOrder: G.dropOrder.slice(), dropLog: G.dropLog.slice(), round: round.phase, undoable: round.undoable, times: round.times(), laneQueue: G.laneQueue.slice(), markAt: G.markAt, dropDoneAt: G.dropDoneAt, markReal: G.markReal, dropDoneReal: G.dropDoneReal, money: G.players.map(p => p.money), correct: G.players.map(p => p.correct), catchUp: G.catchUp, team: G.team, misconceptions: misc.top(5).map(x => x.q.q), phase: G.phase, step: G.step, qIndex: G.qIndex, qTotal: G.qTotal, q: G.q, players: G.players })
 };
 }
 

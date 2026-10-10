@@ -5,29 +5,24 @@ const { test } = require('@playwright/test');
 const { openBundle, state, mark, playHexHunt, PICK, expect, afterResults } = require('./helpers');
 
 const count = (page, g) => page.evaluate(id => { const e = document.querySelector(`#game-${id} .cm-count:not([hidden])`); return e ? e.textContent : ''; }, g);
-const left = (page, g) => page.evaluate(id => CGB.games[id].state().countdown, g);
+const left = (page) => page.evaluate(() => CGB.pause.now() / 1000);   // the game clock: it stops while paused
 async function ccQuestion(page) {
   await page.click('#cc-startBtn');
   await page.locator('#cc-board .cc-tile[data-c]').first().click();
   await expect.poll(async () => (await state(page, 'category-clash')).round).toBe('think');
 }
 
-test('the countdown waits at zero: "Time\'s up! Press Space when ready", T adds 10 seconds, Space goes on', async ({ page }) => {
+test('there is no countdown: the question waits until the teacher presses Space for "3, 2, 1, show me!"', async ({ page }) => {
   test.setTimeout(90000);
   const log = await openBundle(page, '#category-clash');
   await ccQuestion(page);
-  await page.waitForTimeout(21500);                                       // the 20 seconds run out...
-  let s = await state(page, 'category-clash');
-  expect(s.round).toBe('think');                                          // ...and nothing happens by itself
-  expect(await count(page, 'category-clash')).toContain("Time's up! Press Space when ready");
-  await expect(page.locator('#cc-qBtns')).toContainText("Time's up");
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(3000);
+  expect((await state(page, 'category-clash')).round).toBe('think');      // nothing happens by itself
+  await expect(page.locator('#game-category-clash .cm-count:not([hidden])')).toHaveCount(0);
+  await expect(page.locator('#cc-qBtns')).not.toContainText("Time's up");
+  await expect(page.locator('#cc-qBtns')).not.toContainText('+10 s');
+  await page.keyboard.press('t');                                          // T no longer does anything
   expect((await state(page, 'category-clash')).round).toBe('think');
-  // T: ten more seconds (a team asked to hear the question again)
-  await page.keyboard.press('t');
-  await expect.poll(() => count(page, 'category-clash')).toMatch(/^(10|9) s$/);
-  await page.keyboard.press('t');
-  expect(await left(page, 'category-clash')).toBeGreaterThan(18);
   await page.keyboard.press('Space');
   await expect.poll(async () => (await state(page, 'category-clash')).round).toMatch(/show|mark/);
   expect(log.errors).toEqual([]);
@@ -41,29 +36,29 @@ test('P pauses everything with a big banner; any prompt pauses the game while it
   await expect(page.locator('.cgb-pausebar')).toContainText('Paused');
   await expect(page.locator('#game-category-clash [data-pause]')).toContainText('Carry on');
   await page.waitForTimeout(200);
-  const l0 = await left(page, 'category-clash');
+  const l0 = await left(page);
   await page.waitForTimeout(1500);
-  expect(Math.abs(await left(page, 'category-clash') - l0)).toBeLessThan(0.15);                    // the countdown is frozen
+  expect(Math.abs(await left(page) - l0)).toBeLessThan(0.15);                    // the game clock is frozen
   await page.keyboard.press('Space');                                     // and the game's keys wait too
   expect((await state(page, 'category-clash')).round).toBe('think');
   await page.keyboard.press('p');
   await expect(page.locator('.cgb-pausebar')).toBeHidden();
   await page.waitForTimeout(1200);
-  expect(await left(page, 'category-clash')).toBeLessThan(l0 - 0.8);
+  expect(await left(page)).toBeGreaterThan(l0 + 0.8);
   // the Leave prompt (Esc) holds the game paused while it is open
   await page.keyboard.press('Escape');
   await expect(page.locator('#leaveModal')).toBeVisible();
-  const l1 = await left(page, 'category-clash');
+  const l1 = await left(page);
   await page.waitForTimeout(1500);
-  expect(Math.abs(await left(page, 'category-clash') - l1)).toBeLessThan(0.15);
+  expect(Math.abs(await left(page) - l1)).toBeLessThan(0.15);
   await page.click('#leaveModal [data-close="leaveModal"]');             // Keep playing
   await page.waitForTimeout(1000);
-  expect(await left(page, 'category-clash')).toBeLessThan(l1 - 0.6);
+  expect(await left(page)).toBeGreaterThan(l1 + 0.6);
   // so does the Settings dialog
   await page.click('#cc-settingsBtn');
-  const l2 = await left(page, 'category-clash');
+  const l2 = await left(page);
   await page.waitForTimeout(1000);
-  expect(Math.abs(await left(page, 'category-clash') - l2)).toBeLessThan(0.15);
+  expect(Math.abs(await left(page) - l2)).toBeLessThan(0.15);
   expect(log.errors).toEqual([]);
 });
 
@@ -227,7 +222,6 @@ test('Hex Hunt: Maths is a single round; 12 questions with no hexagon won end th
   const log = await openBundle(page);
   await page.selectOption('#subjectSelect', 'maths');
   await page.click('[data-play="hex-hunt"]');
-  await page.locator('#game-hex-hunt .answer-time button', { hasText: '45 sec' }).click();
   await page.click('#hh-startBtn');
   expect((await state(page, 'hex-hunt')).toWin).toBe(1);
   await expect(page.locator('#hh-turn')).not.toContainText('best of three');
@@ -252,29 +246,6 @@ test('Hex Hunt: Maths is a single round; 12 questions with no hexagon won end th
   await page.keyboard.press('Enter');
   await expect.poll(async () => (await state(page, 'hex-hunt')).phase).toBe('summary');
   await expect(page.locator('#hh-sumCard')).toContainText("It's a draw!");
-  expect(log.errors).toEqual([]);
-});
-
-test('a calculation gets 45 seconds outside Maths, shown on screen ("Calculation: 45 s")', async ({ page }) => {
-  const log = await openBundle(page);
-  await page.selectOption('#subjectSelect', 'physics');
-  await page.evaluate(() => CGB.bank.addSet('Calc test', 'Subject: Physics\nTopic: Energy\nQ: A 2 kg mass moves at 3 m/s. What is its kinetic energy?\nA: 9 J\nCalc: yes\nQ: What is the unit of energy?\nA: Joule', 'physics'));
-  expect(await page.evaluate(() => CGB.answerSeconds({ calc: true }))).toBe(45);
-  expect(await page.evaluate(() => CGB.answerSeconds({}))).toBe(20);
-  await page.click('[data-play="over-the-edge"]');
-  await page.click('#ote-startBtn');
-  for (let k = 0; k < 6; k++) {
-    const s = await state(page, 'over-the-edge');
-    if (s.q && s.q.calc) break;
-    await mark(page, 'over-the-edge', () => false);
-    await expect.poll(async () => (await state(page, 'over-the-edge')).step, { timeout: 15000 }).toBe('next');
-    await page.keyboard.press('Space');
-    await expect.poll(async () => (await state(page, 'over-the-edge')).round).toBe('think');
-  }
-  const s = await state(page, 'over-the-edge');
-  expect(s.q.calc).toBe(true);
-  expect(await count(page, 'over-the-edge')).toContain('Calculation: 45 s');
-  expect(await left(page, 'over-the-edge')).toBeGreaterThan(40);
   expect(log.errors).toEqual([]);
 });
 
