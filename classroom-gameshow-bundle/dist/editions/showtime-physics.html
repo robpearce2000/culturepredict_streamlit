@@ -1495,11 +1495,12 @@ Note: Not "covalent": a common mistake</div>
       <div class="host-preview" id="hostPreview" aria-hidden="true"></div>
       <div class="host-grid">
         <div class="full"><label class="lab" for="hostName">Host name</label><input class="cgb-input" type="text" id="hostName" maxlength="20" placeholder="No name (optional)"></div>
+        <div class="full"><span class="lab">Host</span><div class="seg" id="segGender"></div></div>
         <div><span class="lab">Skin</span><div class="swatches" id="swSkin"></div></div>
         <div><span class="lab">Hair colour</span><div class="swatches" id="swHair"></div></div>
         <div><span class="lab">Hair style</span><div class="seg" id="segStyle"></div></div>
-        <div><span class="lab">Facial hair</span><div class="seg" id="segBeard"></div></div>
-        <div><span class="lab">Suit</span><div class="swatches" id="swSuit"></div></div>
+        <div id="rowBeard"><span class="lab">Facial hair</span><div class="seg" id="segBeard"></div></div>
+        <div><span class="lab" id="lblSuit">Suit</span><div class="swatches" id="swSuit"></div></div>
         <div><span class="lab">Glasses</span><div class="seg" id="segGlasses"></div></div>
         <p class="hint full">Changes apply in every game.</p>
       </div>
@@ -2685,7 +2686,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
    blocked, full or unavailable.
    ========================================================= */
 window.CGB = window.CGB || {};
-CGB.VERSION = '1.5.1';
+CGB.VERSION = '1.5.2';
 /* Every random choice that affects play (question order, boards, counters, physics
    nudges) goes through CGB.random, so tests can make runs repeatable. Purely visual
    randomness (sparkles, camera shake) uses Math.random. */
@@ -3908,12 +3909,13 @@ CGB.hostOpts = {
   skin: ['#F6D3B8', '#EBBE9B', '#D29A6E', '#A06A45', '#6E4429'],
   hair: ['#1d1a18', '#3b2a1e', '#6b4a2b', '#9a7448', '#d8b46a', '#c4622d', '#8f8f94'],
   suit: ['#1f3b73', '#3a3d46', '#0f7c80', '#7a2e8c', '#6e2233'],
-  style: [['short', 'Short'], ['swept', 'Swept up'], ['curly', 'Curly'], ['buzz', 'Buzz'], ['bald', 'None']],
+  style: [['short', 'Short'], ['swept', 'Swept up'], ['curly', 'Curly'], ['bob', 'Bob'], ['ponytail', 'Ponytail'], ['buzz', 'Buzz'], ['bald', 'None']],
+  gender: [['male', 'Male'], ['female', 'Female']],
   beard: [['none', 'None'], ['stubble', 'Stubble'], ['beard', 'Beard']],
   glasses: [['no', 'No'], ['yes', 'Yes']]
 };
 CGB.hostCfg = (() => {
-  const defaults = { name: '', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
+  const defaults = { name: '', gender: 'male', skin: 1, hair: 5, suit: 2, style: 'curly', beard: 'none', glasses: 'yes' };
   const saved = CGB.store.getJSON('host', {});
   const cfg = Object.assign({}, defaults, saved && typeof saved === 'object' ? saved : {});
   // guard against out-of-range values from older saves
@@ -3922,7 +3924,7 @@ CGB.hostCfg = (() => {
   // (the old defaults are kept reversed, so no default name appears anywhere in the shipped file)
   if (['pip rosseforp', 'eeuqram ytram', 'tsoh'].includes(cfg.name.toLowerCase().split('').reverse().join(''))) cfg.name = '';
   ['skin', 'hair', 'suit'].forEach(k => { if (!(cfg[k] >= 0 && cfg[k] < CGB.hostOpts[k].length)) cfg[k] = defaults[k]; });
-  ['style', 'beard', 'glasses'].forEach(k => { if (!CGB.hostOpts[k].some(o => o[0] === cfg[k])) cfg[k] = defaults[k]; });
+  ['style', 'beard', 'glasses', 'gender'].forEach(k => { if (!CGB.hostOpts[k].some(o => o[0] === cfg[k])) cfg[k] = defaults[k]; });
   return cfg;
 })();
 CGB.hostListeners = [];
@@ -3947,20 +3949,25 @@ CGB.HOST_POSES = {
   gasp:    { A: [36, -132], B: [-36, 132], face: 'gasp' }
 };
 
+let hostSvgId = 0;
 CGB.hostSVG = function (cfg) {
-  const O = CGB.hostOpts, INK = '#1B1F3B', W = 5;
+  const O = CGB.hostOpts, INK = '#1B1F3B', W = 5, female = cfg.gender === 'female', uid = 'hs' + (++hostSvgId);
   const skin = O.skin[cfg.skin], hair = O.hair[cfg.hair], suit = O.suit[cfg.suit];
   const shade = (hex, k) => { const n = parseInt(hex.slice(1), 16); const c = [16, 8, 0].map(s => Math.round(((n >> s) & 255) * k)); return '#' + c.map(v => Math.min(255, v).toString(16).padStart(2, '0')).join(''); };
   const suitDark = shade(suit, 0.72), skinDark = shade(skin, 0.88);
+  // the woman wears a striped long-sleeved shirt (stripes in the chosen colour on white) and plain trousers;
+  // her build is the man's, so the two hosts are the same figure in different clothes
+  const top = female ? `url(#${uid}-stripe)` : suit, trousers = female ? shade(suit, 0.55) : suitDark;
+  const stripes = female ? `<defs><pattern id="${uid}-stripe" patternUnits="userSpaceOnUse" width="30" height="30"><rect width="30" height="15" fill="#fff"/><rect y="15" width="30" height="15" fill="${suit}"/></pattern></defs>` : '';
   const st = `stroke="${INK}" stroke-width="${W}" stroke-linejoin="round" stroke-linecap="round"`;
   // one arm, drawn hanging down from its shoulder at (0,0); the forearm bends at the elbow (0,64)
   const arm = side => `
     <g class="host-arm host-arm-${side}">
-      <circle cx="0" cy="2" r="18" fill="${suit}" ${st}/>
-      <path d="M-17 0 Q-19 34 -16 66 L16 66 Q19 34 17 0 Z" fill="${suit}" ${st}/>
+      <circle cx="0" cy="2" r="18" fill="${top}" ${st}/>
+      <path d="M-17 0 Q-19 34 -16 66 L16 66 Q19 34 17 0 Z" fill="${top}" ${st}/>
       <g transform="translate(0 64)"><g class="host-fore">
-        <circle cx="0" cy="0" r="15.5" fill="${suit}" ${st}/>
-        <path d="M-15 -2 L-14 56 L14 56 L15 -2 Z" fill="${suit}" ${st}/>
+        <circle cx="0" cy="0" r="15.5" fill="${top}" ${st}/>
+        <path d="M-15 -2 L-14 56 L14 56 L15 -2 Z" fill="${top}" ${st}/>
         <rect x="-15" y="50" width="30" height="11" rx="4" fill="#fff" ${st}/>
         <ellipse cx="0" cy="72" rx="15" ry="16" fill="${skin}" ${st}/>
         <ellipse cx="${side === 'a' ? 12 : -12}" cy="66" rx="6" ry="9" fill="${skin}" ${st} transform="rotate(${side === 'a' ? -25 : 25} ${side === 'a' ? 12 : -12} 66)"/>
@@ -3978,12 +3985,24 @@ CGB.hostSVG = function (cfg) {
   } else if (cfg.style === 'swept') {
     hairFront = `<path d="M92 112 Q86 56 132 40 Q150 22 184 30 Q214 44 208 112 Q200 82 182 74 Q150 80 120 70 Q100 86 92 112 Z" fill="${hair}" ${st}/>
       <path d="M134 44 Q154 30 182 36" fill="none" stroke="${shade(hair, 1.35)}" stroke-width="4" stroke-linecap="round" opacity="0.7"/>`;
+  } else if (cfg.style === 'bob') {
+    // chin-length hair framing the face, with a side fringe
+    hairBack = `<path d="M90 106 Q82 176 116 182 L184 182 Q218 176 210 106 Q212 48 150 42 Q88 48 90 106 Z" fill="${hair}" ${st}/>`;
+    hairFront = `<path d="M94 110 Q90 52 150 46 Q210 52 206 110 Q200 80 176 74 Q146 90 112 80 Q98 90 94 110 Z" fill="${hair}" ${st}/>
+      <path d="M118 58 Q142 48 170 54" fill="none" stroke="${shade(hair, 1.35)}" stroke-width="4" stroke-linecap="round" opacity="0.7"/>`;
+  } else if (cfg.style === 'ponytail') {
+    // hair pulled back and tied at the side, the tail swinging out behind
+    hairBack = `<path d="M198 66 Q250 62 252 118 Q254 162 232 190 Q238 146 214 112 Z" fill="${hair}" ${st}/>`;
+    hairFront = `<path d="M92 112 Q86 56 132 40 Q150 22 184 30 Q214 44 208 112 Q200 82 182 74 Q150 80 120 70 Q100 86 92 112 Z" fill="${hair}" ${st}/>
+      <path d="M134 44 Q154 30 182 36" fill="none" stroke="${shade(hair, 1.35)}" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+      <rect x="196" y="64" width="16" height="12" rx="5" fill="#FF7A1A" ${st} transform="rotate(24 204 70)"/>`;
   } else if (cfg.style === 'buzz') {
     hairFront = `<path d="M94 100 Q92 50 150 46 Q208 50 206 100 Q196 70 150 66 Q104 70 94 100 Z" fill="${hair}" opacity="0.85" ${st}/>`;
   } else {
     hairFront = `<path d="M118 62 Q134 52 152 54" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity="0.55"/>`;
   }
   let beard = '';
+  if (female) cfg = Object.assign({}, cfg, { beard: 'none' });
   if (cfg.beard === 'stubble') beard = `<path d="M100 118 Q104 170 150 172 Q196 170 200 118 Q186 150 150 152 Q114 150 100 118 Z" fill="${hair}" opacity="0.28"/>`;
   if (cfg.beard === 'beard') beard = `<path d="M96 112 Q96 182 150 186 Q204 182 204 112 Q194 140 176 146 Q150 136 124 146 Q106 140 96 112 Z" fill="${hair}" ${st}/>`;
   const glasses = cfg.glasses === 'yes' ? `
@@ -4002,13 +4021,16 @@ CGB.hostSVG = function (cfg) {
   return `<svg class="host-art" viewBox="0 0 300 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${CGB.escapeHtml(cfg.name || 'The host')}, the Showtime host">
   <g class="host-body">
     <ellipse cx="150" cy="430" rx="78" ry="9" fill="rgba(0,0,0,0.22)"/>
-    <path d="M114 300 L110 404 L146 404 L150 320 L154 404 L190 404 L186 300 Z" fill="${suitDark}" ${st}/>
+    ${stripes}
+    <path d="M114 300 L110 404 L146 404 L150 320 L154 404 L190 404 L186 300 Z" fill="${trousers}" ${st}/>
     <ellipse cx="124" cy="412" rx="26" ry="12" fill="#6b4632" ${st}/>
     <ellipse cx="176" cy="412" rx="26" ry="12" fill="#6b4632" ${st}/>
-    <path d="M96 182 Q150 160 204 182 Q218 236 210 312 Q150 326 90 312 Q82 236 96 182 Z" fill="${suit}" ${st}/>
-    <path d="M132 172 L150 236 L168 172 Z" fill="#fff" ${st}/>
+    <path d="M96 182 Q150 160 204 182 Q218 236 210 312 Q150 326 90 312 Q82 236 96 182 Z" fill="${top}" ${st}/>
+    ${female ? `<path d="M126 170 Q150 196 174 170 Q150 178 126 170 Z" fill="#fff" ${st}/>
+    <path d="M150 196 L150 312" stroke="${INK}" stroke-width="3" opacity="0.35"/>
+    <circle cx="150" cy="226" r="4" fill="${INK}"/><circle cx="150" cy="252" r="4" fill="${INK}"/><circle cx="150" cy="278" r="4" fill="${INK}"/>` : `<path d="M132 172 L150 236 L168 172 Z" fill="#fff" ${st}/>
     <path d="M128 172 L116 200 L132 214 L124 230 L150 270 L138 214 Z M172 172 L184 200 L168 214 L176 230 L150 270 L162 214 Z" fill="${suitDark}" ${st}/>
-    <circle cx="150" cy="276" r="4.5" fill="${INK}"/><circle cx="150" cy="298" r="4.5" fill="${INK}"/>
+    <circle cx="150" cy="276" r="4.5" fill="${INK}"/><circle cx="150" cy="298" r="4.5" fill="${INK}"/>`}
     <path d="M102 222 L124 216 L126 226 L104 232 Z" fill="#FF7A1A" ${st}/>
     <path d="M150 184 L130 172 L130 196 Z M150 184 L170 172 L170 196 Z" fill="#FF7A1A" ${st}/>
     <circle cx="150" cy="184" r="6" fill="#FF7A1A" ${st}/>
@@ -4588,7 +4610,28 @@ CGB.hostEditor = (() => {
     el.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; CGB.hostCfg[key] = b.dataset.v; paint(); save(); });
     paint();
   }
+  /* Male or Female: a different outfit and a default hairstyle for each; the rest of the look is kept */
+  function genderRow() {
+    const el = $('segGender');
+    el.innerHTML = CGB.hostOpts.gender.map(([v, label]) => `<button type="button" data-v="${v}">${label}</button>`).join('');
+    el.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b || b.dataset.v === CGB.hostCfg.gender) return;
+      CGB.hostCfg.gender = b.dataset.v;
+      if (b.dataset.v === 'female') { CGB.hostCfg.beard = 'none'; if (!['bob', 'ponytail'].includes(CGB.hostCfg.style)) CGB.hostCfg.style = 'ponytail'; }
+      else if (['bob', 'ponytail'].includes(CGB.hostCfg.style)) CGB.hostCfg.style = 'curly';
+      paintGender(); save();
+    });
+    paintGender();
+  }
+  function paintGender() {
+    const f = CGB.hostCfg.gender === 'female';
+    $('segGender').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === CGB.hostCfg.gender)));
+    $('rowBeard').hidden = f;
+    $('lblSuit').textContent = f ? 'Shirt stripes' : 'Suit';
+    [['segStyle', 'style'], ['segBeard', 'beard']].forEach(([id, key]) => $(id).querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === CGB.hostCfg[key]))));
+  }
   function init() {
+    genderRow();
     swatchRow('swSkin', CGB.hostOpts.skin, 'skin', 'Skin');
     swatchRow('swHair', CGB.hostOpts.hair, 'hair', 'Hair colour');
     swatchRow('swSuit', CGB.hostOpts.suit, 'suit', 'Suit colour');
