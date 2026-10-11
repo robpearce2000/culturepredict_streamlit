@@ -1,0 +1,217 @@
+{
+ "pack": "packs/edexcel/chemistry/5-separate-chemistry-1.txt",
+ "reviewed": 97,
+ "flags": [
+  {
+   "id": "edexcel-chem-5-002",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Dense' / 'Density' (accepted) start with D, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-004",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Forms coloured compounds' / 'Formation of...' (accepted) start with F, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-005",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Reaction with oxygen' (accepted) starts with R, not O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-007",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanation-type answer; 'Metal combines with oxygen', 'Metal atoms lose electrons' start with M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-008",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Air and water' / 'Water and oxygen' (accepted) start with A/W, not O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-012",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Negative electrode' (accepted) starts with N, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-023",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Conducts electricity well' / 'High electrical conductivity' (accepted) start with C/H, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-025",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'To make it harder' (accepted) starts with T; stored answer starts 'Pure'.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-026",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanation-type answer; 'Harder but light' (accepted) starts with H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-031",
+   "grade": "Minor",
+   "reason": "Duplicate of edexcel-chem-3-059 ('Which apparatus measures out exactly 25.0 cm³ of alkali into the flask for a titration?' => Pipette).",
+   "fix": "Remove one, or reword this one (e.g. what is used to fill the pipette safely)."
+  },
+  {
+   "id": "edexcel-chem-5-032",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-chem-3-060 ('Which apparatus is used to add acid a little at a time during a titration?' => Burette).",
+   "fix": "Remove one, or replace with another 5.9C detail (e.g. why the burette is read at eye level / from the bottom of the meniscus)."
+  },
+  {
+   "id": "edexcel-chem-5-045",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Losses during the experiment' (accepted) starts with L, not P.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-046",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Competing reactions' (accepted) starts with C, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-047",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Reaches equilibrium' / 'Does not go to completion' (accepted) start with R/D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-053",
+   "grade": "Minor",
+   "reason": "A 5.14C atom economy calculation (2 x 17 / (28 + 6) x 100 = 100%) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-chem-5-054",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the natural answer 'A' (accepted) is a one-letter answer that the game may treat as the article; letter R vs A is unclear.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-056",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Too slow' (accepted) starts with T, not R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-068",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the reactants can be given in either order ('Hydrogen and nitrogen' is accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-069",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-chem-4-042 ('What does the symbol ⇌ mean in a chemical equation?' => Reversible reaction).",
+   "fix": "Remove, or replace with another 5.19C question."
+  },
+  {
+   "id": "edexcel-chem-5-071",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Faster' / 'Increases the rate' (accepted) start with F/I, not E.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-072",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Reached faster', 'Less time', 'Quicker' (accepted) start with R/L/Q, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-073",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Faster' / 'Increases rate' (accepted) start with F/I, not E.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-076",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Too slow' (accepted) starts with T, not R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-077",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Unsafe', 'Expensive equipment', 'High energy cost' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-081",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the elements can be given in either order ('Phosphorus and nitrogen' is accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-090",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'The one with twice the reactants' / 'The bigger cell' (accepted) start with O/B, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-093",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the gases can be given in either order ('Oxygen and hydrogen' is accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-094",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Electricity' / 'Electrical energy' (accepted) start with E, not V.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-5-095",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different strengths are accepted ('No carbon dioxide', 'Quick to refuel', 'Efficient').",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-chem-5-027": "0.5/0.250",
+  "edexcel-chem-5-028": "20/40",
+  "edexcel-chem-5-029": "0.2*36.5",
+  "edexcel-chem-5-030": "0.4*50/1000",
+  "edexcel-chem-5-037": "20.0/1000*0.10",
+  "edexcel-chem-5-038": "(20.0/1000*0.10)/(25.0/1000)",
+  "edexcel-chem-5-039": "0.0050/0.20*1000",
+  "edexcel-chem-5-040": "0.002*2",
+  "edexcel-chem-5-042": "6/8*100",
+  "edexcel-chem-5-043": "0.80*20",
+  "edexcel-chem-5-051": "56/100*100",
+  "edexcel-chem-5-052": "30/120*100",
+  "edexcel-chem-5-053": "2*17/(28+3*2)*100",
+  "edexcel-chem-5-060": "0.5*24",
+  "edexcel-chem-5-061": "4.8/24",
+  "edexcel-chem-5-062": "2.4/24*24",
+  "edexcel-chem-5-063": "10/100*24",
+  "edexcel-chem-5-064": "12/24*32",
+  "edexcel-chem-5-066": "30*2/3",
+  "edexcel-chem-5-067": "10*2"
+ },
+ "notcalc": {
+  "edexcel-chem-5-057": "recalled/stated molar volume",
+  "edexcel-chem-5-041": "formula",
+  "edexcel-chem-5-048": "formula",
+  "edexcel-chem-5-054": "choice between routes",
+  "edexcel-chem-5-070": "equation",
+  "edexcel-chem-5-079": "no number",
+  "edexcel-chem-5-086": "formula",
+  "edexcel-chem-5-059": "no worked number",
+  "edexcel-chem-5-076": "stated condition",
+  "edexcel-chem-5-077": "stated condition",
+  "edexcel-chem-5-092": "formula",
+  "edexcel-chem-5-097": "no number"
+ },
+ "mismatchFlagged": []
+}
