@@ -45,6 +45,12 @@
    "fix": "Set hexOk false."
   },
   {
+   "id": "aqa-bio-4.4-018",
+   "grade": "Minor",
+   "reason": "Near-duplicate of aqa-bio-4.1-049 ('Which substance in plant cell walls strengthens the cell?' - Cellulose) in the same subject.",
+   "fix": "Remove, or reword to a different use of glucose (e.g. 'Plants convert glucose into which substances for storage in seeds?' - Fats or oils)."
+  },
+  {
    "id": "aqa-bio-4.4-020",
    "grade": "Minor",
    "reason": "hexOk is true but accepted 'Insoluble, so...' and 'Does not affect water movement' start with I and D.",

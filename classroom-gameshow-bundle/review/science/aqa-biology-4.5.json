@@ -63,6 +63,12 @@
    "fix": "Set hexOk false, or make the answer 'Blood'."
   },
   {
+   "id": "aqa-bio-4.5-034",
+   "grade": "Minor",
+   "reason": "Near-duplicate of aqa-bio-4.4-037 ('Animals convert excess glucose into which storage carbohydrate?' - Glycogen) in the same subject.",
+   "fix": "Remove one of the pair, or reword this one (e.g. 'Which hormone causes glucose to move from the blood into cells?' is already covered; consider asking where glycogen is stored - Liver and muscles)."
+  },
+  {
    "id": "aqa-bio-4.5-036",
    "grade": "Minor",
    "reason": "hexOk is true but accepted 'Not enough insulin produced' and 'No insulin made' start with N.",
