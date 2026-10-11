@@ -1,0 +1,27 @@
+{"pack": "packs/aqa/chemistry/4.4-chemical-changes.txt", "reviewed": 55,
+"flags": [
+{"id": "aqa-chem-4.4-009", "grade": "Minor", "reason": "'Name an unreactive metal' accepts gold, platinum and silver but Hex Hunt shows the letter G, so it only works if the class thinks of gold.", "fix": "Set hexOk false, or reword to the spec example ('Which unreactive yellow metal is found as the metal itself?')."},
+{"id": "aqa-chem-4.4-024", "grade": "Minor", "reason": "Hex letter B ('Black solid stays undissolved') while the natural answers ('some solid is left', 'excess solid', 'no more dissolves') start with S, E or N.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.4-031", "grade": "Minor", "reason": "Explanation answer on Hex Hunt (letter G); accepted answers start with C and N.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.4-036", "grade": "Minor", "reason": "Numerical answer ('Increases 100 times') is on Hex Hunt with letter I; most students will simply write '100' or '100 times'.", "fix": "Set hexOk false (consider calcTag true: 10 to the power of the pH change)."},
+{"id": "aqa-chem-4.4-047", "grade": "Minor", "reason": "Explanation answer on Hex Hunt (letter C); accepted answers start with A and O ('the anode burns away' is the commonest).", "fix": "Set hexOk false."}
+],
+"calcs": {
+"aqa-chem-4.4-032": "(20.0/1000*0.10)/(25.0/1000)",
+"aqa-chem-4.4-033": "0.50*40",
+"aqa-chem-4.4-036": "10**(4-2)"
+},
+"notcalc": {
+"aqa-chem-4.4-011": "equation coefficients",
+"aqa-chem-4.4-013": "ionic equation",
+"aqa-chem-4.4-014": "equation",
+"aqa-chem-4.4-016": "formula",
+"aqa-chem-4.4-017": "equation",
+"aqa-chem-4.4-020": "formula",
+"aqa-chem-4.4-021": "formula",
+"aqa-chem-4.4-026": "recalled pH",
+"aqa-chem-4.4-029": "ionic equation",
+"aqa-chem-4.4-054": "half equation",
+"aqa-chem-4.4-055": "balancing a half equation (electrons count)"
+},
+"mismatchFlagged": []}
