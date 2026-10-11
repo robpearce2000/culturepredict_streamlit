@@ -131,7 +131,7 @@ test('every topic has enough questions for each game after filtering', async ({ 
         for (const s of sels) {
           B.setSelection(s);
           const qs = B.active().questions;
-          out.push({ at: `${bd} ${sj} ${co} ${hi ? 'with' : 'without'} Higher ${s.ids ? s.ids[0] : 'mixed'}`, n: qs.length, letters: qs.filter(q => q.hexOk !== false && CGB.hexLetter(q.a)).length });
+          out.push({ at: `${bd} ${sj} ${co} ${hi ? 'with' : 'without'} Higher ${s.ids ? s.ids[0] : 'mixed'}`, n: qs.length, letters: qs.filter(q => q.hexOk !== false && CGB.hexLetter(q.a, q.subject)).length });
         }
       }
     B.setHigher(true); B.setCourse('separate'); B.setSubject('biology'); B.setBoard('aqa');

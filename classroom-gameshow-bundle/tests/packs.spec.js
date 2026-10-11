@@ -34,9 +34,11 @@ test('every specification reference is a real point of that specification, in it
 test('Hex Hunt: every hexOk answer starts with its letter after ignoring the/a/an, and at least a third of each topic can go on the board', () => {
   all.packs.forEach(p => {
     p.questions.forEach(q => {
-      const L = hexLetter(q.a);
+      const L = hexLetter(q.a, q.subject);
       expect(q.hexOk, q.id).toBe(!!L);
-      if (L) {
+      // a number answer takes the first letter of the number said in words (Maths and sciences only)
+      if (L && hexLetter.spoken(q.a, q.subject)) expect(hexLetter.spoken(q.a, q.subject)[0].toUpperCase(), `${q.id}: ${q.a}`).toBe(L);
+      else if (L) {
         const first = q.a.trim().replace(/^((in|into|on|at|from)\s+)?((the|a|an)\s+)?/i, '')[0].toUpperCase();
         expect(first, `${q.id}: ${q.a}`).toBe(L);
       }
@@ -66,7 +68,7 @@ test('answers are short enough for a mini whiteboard, and no question repeats or
 test('the built file carries every pack, with the same questions, and the games read them', async ({ page }) => {
   await openBundle(page);
   // the Combined Science packs are views of these (tests/courses.spec.js)
-  const built = await page.evaluate(() => CGB.bank.all().filter(s => s.builtin && !s.combined).map(s => ({ id: s.id, n: s.questions.length, ids: s.questions.map(q => q.id), hex: s.questions.map(q => q.hexOk === !!CGB.hexLetter(q.a)) })));
+  const built = await page.evaluate(() => CGB.bank.all().filter(s => s.builtin && !s.combined).map(s => ({ id: s.id, n: s.questions.length, ids: s.questions.map(q => q.id), hex: s.questions.map(q => q.hexOk === !!CGB.hexLetter(q.a, q.subject)) })));
   expect(built.map(b => b.id).sort()).toEqual(all.packs.map(p => p.id).sort());
   built.forEach(b => {
     const src = all.packs.find(p => p.id === b.id);
@@ -84,4 +86,12 @@ test('the packs are a reasonable size inside the single file', async () => {
   const size = fs.statSync(path.join(__dirname, '..', 'dist', 'showtime-classroom-gameshows.html')).size;
   // the whole product, with every pack, stays small enough to open quickly from a school drive
   expect(size).toBeLessThan(6 * 1024 * 1024);
+});
+
+test('Hex Hunt: a number answer takes the first letter of the number said in words (not in History or Geography)', () => {
+  const cases = { '1236': 'O', '1,236': 'O', '−5': 'M', '0.4': 'Z', '3/4': 'T', '6 × 10⁷': 'S', '20 cm': 'T', '£15': 'F', '75%': 'S', '40°': 'F', '100': 'O', '12 000 J': 'T', '45': 'F' };
+  for (const [a, L] of Object.entries(cases)) expect(hexLetter(a, 'maths'), a).toBe(L);
+  for (const a of ['1 : 27', '(3, −1)', '£15 and £25', '2x', '3n + 2', 'x = 4']) expect(hexLetter(a, 'maths'), a).toBeNull();
+  expect(hexLetter('1066', 'history')).toBeNull();
+  expect(hexLetter('1918', 'Geography')).toBeNull();
 });

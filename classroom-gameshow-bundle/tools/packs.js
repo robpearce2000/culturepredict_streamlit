@@ -198,7 +198,7 @@ function buildPack(p) {
     if (out.q.length > LIMITS.questionChars) err(q, `question is ${out.q.length} characters (at most ${LIMITS.questionChars})`);
     if (!/[?.:]$|\)$/.test(out.q)) err(q, `question should end with "?", "." or ":"`);
     out.accept.forEach(x => { if (words(x) > LIMITS.acceptWords) err(q, `accepted answer too long: ${x}`); });
-    out.hexOk = !!hexLetter(out.a);
+    out.hexOk = !!hexLetter(out.a, subject);
     return out;
   });
   // within the pack: duplicates and near-duplicates

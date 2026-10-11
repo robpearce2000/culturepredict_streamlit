@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.8.0 – Number answers in Hex Hunt (October 2026)
+
+- **Hex Hunt now uses number answers** in Maths and the sciences: the hexagon's letter is the first letter of the number said in words (1236 is "one thousand…", so O; −5 "minus five", M; 0.4 "zero point four", Z; ¾ "three quarters", T; 6 × 10⁷ "six…", S). The question card says "The answer, said in words, begins with O". Answers with more than one number (ratios, coordinates), algebra, and History and Geography years stay off the board.
+- About 850 more questions can go on a Hex Hunt board (5,525 to 6,377); Maths topics roughly double (for example AQA Number 32 to 62, Geometry 40 to 81).
+
 ## 1.7.2 – Science question review (October 2026)
 
 - **Full independent review of every Biology, Chemistry and Physics question** (4,050, AQA and Edexcel, separate and Combined Science) against the current specifications, with every numerical answer recalculated by script. No wrong science answers or wrong calculations were found. Flags and reasons: `review/science-review.xlsx`.

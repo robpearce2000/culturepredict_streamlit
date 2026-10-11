@@ -600,3 +600,6 @@ Rob asked for every flag to be settled by judgement, and for Hex Hunt letter fla
 - Doubtful: ethene (AQA 4.7-071), Combined homeostasis (Edexcel 7-029) and iron v steel cores (AQA 4.7-054) tagged Separate only; the filament-lamp reasoning rewritten as the resistor practical; the 10 N at 30° components question removed; gas particles moving in straight lines (AQA 4.3-051) kept (sound kinetic theory a teacher would accept).
 - Minor: duplicates removed (the later copy kept the earlier one); calc tags added; accepted answers tidied; Edexcel 9.4/9.5 Higher-only tags kept, since they follow the bold statements their references point to.
 - Removing duplicates left eight packs just under 30 Hex Hunt-ready questions, so 17 short-answer questions were added (on-spec, checked by tools/packs.js).
+
+## Hex Hunt number answers (1.8.0)
+- Rob's idea: a number answer's letter is the first letter of the number said in words. "Zero", not "nought", for 0 (and 0.x), as the default; one word table in `src/shared/hexletter.js` if Rob prefers "nought". Fractions are said "one half", "three quarters"; standard form by its first number; money and units do not change the letter (£15 "fifteen"). Not for History or Geography, where a number is usually a year and years are said differently ("ten sixty-six").

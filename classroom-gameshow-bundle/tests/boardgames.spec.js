@@ -78,8 +78,9 @@ test('Hex Hunt letters really are where each answer starts, for every question t
     CGB.bank.all().filter(s => s.builtin).forEach(s => {
       let n = 0;
       s.questions.forEach(q => {
-        const L = CGB.hexLetter(q.a); if (!L) return;
+        const L = CGB.hexLetter(q.a, q.subject); if (!L) return;
         n++;
+        if (CGB.hexLetter.spoken(q.a, q.subject)) return;   // a number, said in words (checked in packs.spec)
         // the first significant word: skip "the", "a", "an", and "in"/"on"/"at"/"from" before a place
         const words = q.a.split(/[.,;:(]/)[0].trim().split(/\s+/);
         while (words.length > 1 && /^(in|into|on|at|from|the|a|an)$/i.test(words[0])) words.shift();

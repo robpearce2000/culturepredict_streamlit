@@ -42,7 +42,7 @@ const S = {
    start with a number, symbol or formula, list options ("Any two: ..."), are yes/no/true/false,
    are explanations (over ten words) or whose main part is over five words are left out. CGB.hexLetter is shared with the tests. */
 // the letter rule is shared with the question-pack checker (src/shared/hexletter.js)
-const firstLetter = q => q && q.hexOk === false ? null : CGB.hexLetter(q && q.a !== undefined ? q.a : q);
+const firstLetter = q => q && q.hexOk === false ? null : CGB.hexLetter(q && q.a !== undefined ? q.a : q, q && q.subject);
 /* Which questions come up. Every board is dealt from a ranking, not a fresh shuffle:
      1. questions of the chosen topic(s) that have not been asked yet,
      2. questions from the other topics of the same subject, board and course, if the chosen ones are too few
@@ -231,7 +231,7 @@ function showQuestion() {
   if (S.open) markAsked(S.open.q);
   const cell = S.open;
   $('qLetter').textContent = cell.letter;
-  $('qClue').textContent = `The answer begins with ${cell.letter}`;
+  $('qClue').textContent = CGB.hexLetter.spoken(cell.q.a, cell.q.subject) ? `The answer, said in words, begins with ${cell.letter}` : `The answer begins with ${cell.letter}`;
   $('qTag').textContent = `${cell.q.subject} · ${cell.q.topic} · picked by ${S.teams[S.picker].name}`;
   $('qText').textContent = cell.q.q;
   $('qAnswer').innerHTML = CGB.answerHTML(cell.q);
