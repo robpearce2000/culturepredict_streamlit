@@ -1,0 +1,65 @@
+{
+ "pack": "packs/edexcel/physics/4-waves.txt",
+ "reviewed": 64,
+ "flags": [
+  {
+   "id": "edexcel-phys-4-007",
+   "grade": "Minor",
+   "reason": "Duplicate of edexcel-phys-1-010 ('What is the SI unit of frequency?' answer Hertz) in the Key concepts pack.",
+   "fix": "Remove one of the two."
+  },
+  {
+   "id": "edexcel-phys-4-037",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Frequency' (accepted, equally correct) starts with F, not W.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-4-050",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Reflected' (accepted, the most likely student answer) starts with R, not P.",
+   "fix": "Set hexOk false, or make the answer 'Reflected'."
+  },
+  {
+   "id": "edexcel-phys-4-053",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Unchanged' and 'No change' (accepted, common) start with U and N, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-4-054",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Speeds up' and 'Goes up' (accepted, very common) start with S and G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-4-055",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Gets longer' (accepted, very common) starts with G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-4-059",
+   "grade": "Minor",
+   "reason": "hexOk is true but many students will write '2' or '2 times' (no letter) or 'Double' (D), not 'Twice'.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-phys-4-009": "30/10",
+  "edexcel-phys-4-012": "4",
+  "edexcel-phys-4-019": "50*2",
+  "edexcel-phys-4-020": "340/2",
+  "edexcel-phys-4-021": "3/6",
+  "edexcel-phys-4-023": "2*85/0.5",
+  "edexcel-phys-4-025": "1500*2/2",
+  "edexcel-phys-4-027": "340*3",
+  "edexcel-phys-4-058": "(12/4)*2",
+  "edexcel-phys-4-060": "2*2500"
+ },
+ "notcalc": {
+  "edexcel-phys-4-044": "recalled threshold of ultrasound (20 000 Hz)",
+  "edexcel-phys-4-047": "recalled threshold of infrasound (20 Hz)"
+ },
+ "mismatchFlagged": []
+}
