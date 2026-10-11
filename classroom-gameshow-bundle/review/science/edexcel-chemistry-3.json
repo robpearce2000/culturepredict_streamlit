@@ -1,0 +1,209 @@
+{
+ "pack": "packs/edexcel/chemistry/3-chemical-changes.txt",
+ "reviewed": 108,
+ "flags": [
+  {
+   "id": "edexcel-chem-3-002",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'OH⁻' (accepted, and a very common answer) starts with O, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-012",
+   "grade": "Minor",
+   "reason": "hexOk should be false: first word of stored answer is 'pH' (P) but 'Increases', 'Rises', 'Goes up' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-014",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Falls by 1', 'Goes down by one' (accepted) start with F/G, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-015",
+   "grade": "Minor",
+   "reason": "A calculation (10^(4-2) = 100) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-chem-3-019",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Concentration' (accepted) starts with C; answers can come in either order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-020",
+   "grade": "Minor",
+   "reason": "hexOk should be false: stored answer starts with 'pH' (P); 'Increases then...' (accepted) and 'Rises...' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-024",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Becomes more dilute', 'Goes down', 'Falls' (accepted) start with B/G/F.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-028",
+   "grade": "Minor",
+   "reason": "hexOk should be false: definition-type answer; 'Reacts with an acid...' (accepted) starts with R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-030",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Metal oxide' (accepted) starts with M, not B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-036",
+   "grade": "Minor",
+   "reason": "hexOk should be false: products can be listed in any order (accepted 'any order'), so the first letter varies.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-040",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Turns cloudy' / 'White precipitate' (accepted) start with T/W, not L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-043",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Base plus acid...' (accepted) starts with B; explanation-type answer.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-051",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Volume of acid needed...' (accepted) starts with V.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-055",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Solid stops disappearing' / 'Unreacted copper oxide left' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-056",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanation-type answer; 'Safer...', 'Heats evenly...' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-057",
+   "grade": "Minor",
+   "reason": "hexOk should be false: method-type answer; 'Heat to concentrate...' (accepted) starts with H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-062",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'So the salt is pure' / 'To keep indicator out' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-065",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the two chlorides can be given in either order (lead chloride first gives L).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-066",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the three sulfates can be given in any order (accepted 'any order').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-072",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Pat dry...', 'Desiccator' (accepted) start differently from L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-073",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Molten or dissolved ionic substance' (accepted) starts with M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-074",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-chem-1-109 ('Why does a solid ionic compound not conduct electricity?' => Ions are fixed and cannot move).",
+   "fix": "Remove, or reword to the electrolysis context (e.g. why it must be melted or dissolved before electrolysis)."
+  },
+  {
+   "id": "edexcel-chem-3-075",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Heat until molten' (accepted) starts with H, not M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-076",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Breaking down an ionic compound...' (accepted) starts with B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-080",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-chem-1-067 ('What is a positively charged ion called?' => Cation).",
+   "fix": "Remove, or replace with a 3.24 question (e.g. which electrode cations move to)."
+  },
+  {
+   "id": "edexcel-chem-3-081",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Positive electrode' (accepted) starts with P, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-097",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Negative electrode' (accepted) starts with N, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-099",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Cations gain electrons' (accepted) starts with C, not P.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-100",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Loses mass', 'Goes down' (accepted) start with L/G, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-3-101",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Positive electrode' (accepted) starts with P, not A.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-chem-3-015": "10**(4-2)",
+  "edexcel-chem-3-016": "5-log10(1000)",
+  "edexcel-chem-3-061": "23.30-0.50",
+  "edexcel-chem-3-106": "2.81-2.45"
+ },
+ "notcalc": {
+  "edexcel-chem-3-004": "recalled pH 7",
+  "edexcel-chem-3-005": "pH classification",
+  "edexcel-chem-3-006": "compare pH values",
+  "edexcel-chem-3-011": "no number",
+  "edexcel-chem-3-013": "compare pH values",
+  "edexcel-chem-3-014": "recalled rule (factor 10 = 1 pH unit)",
+  "edexcel-chem-3-023": "compare concentrations",
+  "edexcel-chem-3-042": "recalled pH 7",
+  "edexcel-chem-3-086": "ratio from equation 2H2O -> 2H2 + O2",
+  "edexcel-chem-3-104": "no number",
+  "edexcel-chem-3-059": "apparatus",
+  "edexcel-chem-3-044": "equation",
+  "edexcel-chem-3-092": "half equation",
+  "edexcel-chem-3-093": "half equation"
+ },
+ "mismatchFlagged": []
+}
