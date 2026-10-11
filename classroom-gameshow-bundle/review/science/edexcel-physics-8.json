@@ -58,8 +58,8 @@
   },
   {
    "id": "edexcel-phys-8-058",
-   "grade": "Minor",
-   "reason": "Ref 8.5 is measuring work done; 'what force opposes motion between surfaces' is 9.1b (contact forces including friction).",
+   "grade": "Wrong",
+   "reason": "Ref 8.5 is measuring work done; 'what force opposes motion between surfaces' is 9.1b (contact forces including friction). (Graded Wrong: a wrong specification reference is a wrong tag.)",
    "fix": "Change Ref to 9.1 (or remove, as it is generic)."
   },
   {
@@ -70,14 +70,14 @@
   },
   {
    "id": "edexcel-phys-8-060",
-   "grade": "Minor",
-   "reason": "Ref 8.9 is the kinetic energy equation; GPE belongs to 8.8 (or 8.1). Near-duplicate of edexcel-phys-8-001 and edexcel-phys-3-050.",
+   "grade": "Wrong",
+   "reason": "Ref 8.9 is the kinetic energy equation; GPE belongs to 8.8 (or 8.1). Near-duplicate of edexcel-phys-8-001 and edexcel-phys-3-050. (Graded Wrong: a wrong specification reference is a wrong tag.)",
    "fix": "Change Ref to 8.8, or remove as a duplicate."
   },
   {
    "id": "edexcel-phys-8-061",
-   "grade": "Minor",
-   "reason": "Ref 8.8 is the GPE equation; kinetic energy belongs to 8.9. Near-duplicate of edexcel-phys-8-065 and edexcel-phys-3-051.",
+   "grade": "Wrong",
+   "reason": "Ref 8.8 is the GPE equation; kinetic energy belongs to 8.9. Near-duplicate of edexcel-phys-8-065 and edexcel-phys-3-051. (Graded Wrong: a wrong specification reference is a wrong tag.)",
    "fix": "Change Ref to 8.9, or remove as a duplicate."
   },
   {
@@ -94,14 +94,14 @@
   },
   {
    "id": "edexcel-phys-8-065",
-   "grade": "Minor",
-   "reason": "Ref 8.4 is about ways energy is transferred (work, electrically, heating), not stores; a moving car's kinetic store fits 8.1.",
+   "grade": "Wrong",
+   "reason": "Ref 8.4 is about ways energy is transferred (work, electrically, heating), not stores; a moving car's kinetic store fits 8.1. (Graded Wrong: a wrong specification reference is a wrong tag.)",
    "fix": "Change Ref to 8.1."
   },
   {
    "id": "edexcel-phys-8-066",
-   "grade": "Minor",
-   "reason": "Ref 8.4 is about ways energy is transferred, not stores; fuel's chemical store fits 8.1. Near-duplicate of edexcel-phys-8-002.",
+   "grade": "Wrong",
+   "reason": "Ref 8.4 is about ways energy is transferred, not stores; fuel's chemical store fits 8.1. Near-duplicate of edexcel-phys-8-002. (Graded Wrong: a wrong specification reference is a wrong tag.)",
    "fix": "Change Ref to 8.1."
   }
  ],

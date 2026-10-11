@@ -64,14 +64,14 @@
   },
   {
    "id": "edexcel-phys-3-050",
-   "grade": "Minor",
-   "reason": "Ref 3.2 is the kinetic energy equation; a raised object's GPE store belongs to 3.1. Also near-duplicate of edexcel-phys-8-060.",
+   "grade": "Wrong",
+   "reason": "Ref 3.2 is the kinetic energy equation; a raised object's GPE store belongs to 3.1. Also near-duplicate of edexcel-phys-8-060. (Graded Wrong: a wrong specification reference is a wrong tag.)",
    "fix": "Change Ref to 3.1 (or 3.5); consider removing as a duplicate."
   },
   {
    "id": "edexcel-phys-3-051",
-   "grade": "Minor",
-   "reason": "Ref 3.1 is the GPE equation; the kinetic store belongs to 3.2. Also near-duplicate of edexcel-phys-8-061.",
+   "grade": "Wrong",
+   "reason": "Ref 3.1 is the GPE equation; the kinetic store belongs to 3.2. Also near-duplicate of edexcel-phys-8-061. (Graded Wrong: a wrong specification reference is a wrong tag.)",
    "fix": "Change Ref to 3.2; consider removing as a duplicate."
   },
   {
