@@ -1,0 +1,24 @@
+{"pack": "packs/aqa/chemistry/4.6-the-rate-and-extent-of-chemical-change.txt", "reviewed": 46,
+"flags": [
+{"id": "aqa-chem-4.6-013", "grade": "Minor", "reason": "Explanation answer with five varied accepted answers is on Hex Hunt with letter R.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.6-014", "grade": "Minor", "reason": "Duplicate across packs: aqa-chem-4.5-019 asks the same question ('minimum energy that colliding particles must have to react', answer Activation energy).", "fix": "Remove one of the pair, or change this one to a different collision-theory question."},
+{"id": "aqa-chem-4.6-015", "grade": "Minor", "reason": "Near-duplicate across packs of aqa-chem-4.5-021 (conditions for particles to react: collide with sufficient energy).", "fix": "Remove one of the pair, or reword this one (e.g. 'Why do most collisions not lead to a reaction?')."},
+{"id": "aqa-chem-4.6-030", "grade": "Minor", "reason": "Explanation answer on Hex Hunt (letter R); accepted answers start with H and A.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.6-036", "grade": "Minor", "reason": "Hex letter C ('Counteracts'), but 'opposes the change' is the more common correct answer and is accepted.", "fix": "Set hexOk false, or accept the C clue knowingly (it matches the spec wording)."},
+{"id": "aqa-chem-4.6-037", "grade": "Minor", "reason": "List answer: only the order concentration, temperature, pressure is accepted; any order should be.", "fix": "Add '(any order)' to the accepted answer, as in aqa-chem-4.2-001."}
+],
+"calcs": {
+"aqa-chem-4.6-001": "60/20",
+"aqa-chem-4.6-005": "0.6/30",
+"aqa-chem-4.6-006": "40/10"
+},
+"notcalc": {
+"aqa-chem-4.6-024": "symbol",
+"aqa-chem-4.6-029": "recalled: same energy transferred each way (50 kJ)",
+"aqa-chem-4.6-026": "formulae",
+"aqa-chem-4.6-040": "ion formulae",
+"aqa-chem-4.6-043": "formulae",
+"aqa-chem-4.6-045": "formulae",
+"aqa-chem-4.6-046": "formulae"
+},
+"mismatchFlagged": []}
