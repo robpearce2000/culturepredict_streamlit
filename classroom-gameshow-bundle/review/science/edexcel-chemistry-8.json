@@ -1,0 +1,260 @@
+{
+ "pack": "packs/edexcel/chemistry/8-fuels-and-earth-science.txt",
+ "reviewed": 97,
+ "flags": [
+  {
+   "id": "edexcel-chem-8-001",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the elements can be given in either order ('Hydrogen and carbon' is accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-003",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Has oxygen atoms', 'It also contains oxygen' (accepted) start with H/I, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-020",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Higher boiling point' (accepted) starts with H, not L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-023",
+   "grade": "Minor",
+   "reason": "Formula written without subscripts (CnH2n+2), which is hard to read; other packs use subscripts.",
+   "fix": "Write CₙH₂ₙ₊₂ (keep CnH2n+2 as an accepted typed form)."
+  },
+  {
+   "id": "edexcel-chem-8-027",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the products can be given in either order ('Water and carbon dioxide').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-030",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Not enough oxygen', 'Limited oxygen', 'Too little air' (accepted) start with N/L/T, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-031",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the products can be given in either order; 'Soot and carbon monoxide' (accepted) starts with S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-035",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'No colour or smell' (accepted) starts with N, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-037",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-038",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Produces carbon monoxide' / 'Makes CO' (accepted) start with P/M, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-043",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (wears, erodes, dissolves, damages, weathering, corrodes).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-044",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (kills, makes lakes acidic, harms).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-045",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Corrodes metal' (accepted) starts with C, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-046",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Nitrogen oxides' / 'NOx' (accepted) start with N, not O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-047",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'High temperatures' / 'Engines are very hot' (accepted) start with H/E, not V.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-048",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (acid rain, breathing problems, smog).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-051",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (difficult, explosive, few filling stations, large tank).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-052",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-chem-5-097 ('Why might a hydrogen fuel cell car still be responsible for carbon dioxide emissions?' => Hydrogen is often made using fossil fuels). Also hexOk: 'Making hydrogen uses...' / 'Electricity for electrolysis...' (accepted) start with M/E.",
+   "fix": "Keep one of the pair (this one suits Combined students, 5-097 is separate only); set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-059",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Has a C=C double bond' (accepted) starts with H, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-061",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (polymers, plastics, feedstock, ethanol).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-062",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Make good fuels' / 'Ignite easily' (accepted) start with M/I, not U.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-064",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Today's volcanoes release...' (accepted) starts with T, not V.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-067",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Very little' / 'None' (accepted) start with V/N, not L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-069",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'No oxygen' / 'Very little oxygen' (accepted) start with N/V, not L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-074",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the processes can be given in either order ('Photosynthesis and dissolving...' is accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-079",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Relights a glowing splint' (accepted) starts with R, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-080",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Goes out', 'Does not relight', 'Extinguished' (accepted) start with G/D/E, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-083",
+   "grade": "Minor",
+   "reason": "hexOk should be false: any two of several gases, in any order, are accepted.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-084",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanation-type answer; 'Trap heat...' (accepted) starts with T.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-085",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Positive correlation' (accepted) starts with P, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-086",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Correlation does not show cause', 'Other factors...' (accepted) start with C/O, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-087",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (fewer, less accurate instruments).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-093",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Cattle farming', 'Rearing cattle', 'Cows' (accepted) start with C/R, not L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-094",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (global warming, melting ice caps, rising sea levels).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-095",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (carbon capture, plant trees, burn less fossil fuel).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-096",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (countries must agree, economic costs).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-8-097",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'It could leak' (accepted) starts with I, not L.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {},
+ "notcalc": {
+  "edexcel-chem-8-002": "formula in question",
+  "edexcel-chem-8-003": "formula in question",
+  "edexcel-chem-8-022": "formula",
+  "edexcel-chem-8-023": "general formula",
+  "edexcel-chem-8-025": "formula C5H12 (2 x 5 + 2 = 12 checked)",
+  "edexcel-chem-8-026": "prediction from data, not calculated",
+  "edexcel-chem-8-029": "balancing coefficient",
+  "edexcel-chem-8-058": "formula C2H4 (10 - 8 = 2, 22 - 18 = 4 checked)",
+  "edexcel-chem-8-089": "recalled composition",
+  "edexcel-chem-8-090": "recalled composition",
+  "edexcel-chem-8-092": "recalled composition",
+  "edexcel-chem-8-091": "recalled composition",
+  "edexcel-chem-8-027": "formulae in accept list",
+  "edexcel-chem-8-041": "formulae in accept list",
+  "edexcel-chem-8-042": "formula",
+  "edexcel-chem-8-049": "formula",
+  "edexcel-chem-8-050": "formula",
+  "edexcel-chem-8-065": "formula",
+  "edexcel-chem-8-066": "formula",
+  "edexcel-chem-8-073": "formula",
+  "edexcel-chem-8-075": "formula",
+  "edexcel-chem-8-077": "formulae",
+  "edexcel-chem-8-081": "formula",
+  "edexcel-chem-8-083": "formulae",
+  "edexcel-chem-8-072": "recalled boiling point",
+  "edexcel-chem-8-085": "year",
+  "edexcel-chem-8-059": "no number",
+  "edexcel-chem-8-039": "no number"
+ },
+ "mismatchFlagged": []
+}
