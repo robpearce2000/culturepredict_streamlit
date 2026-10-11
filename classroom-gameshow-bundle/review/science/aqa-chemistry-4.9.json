@@ -1,0 +1,23 @@
+{"pack": "packs/aqa/chemistry/4.9-chemistry-of-the-atmosphere.txt", "reviewed": 46,
+"flags": [
+{"id": "aqa-chem-4.9-008", "grade": "Minor", "reason": "Explanation answer on Hex Hunt (letter V from 'Very long time scale'); accepted answers start with I and S, so the clue does not fit.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.9-009", "grade": "Minor", "reason": "Two-step explanation on Hex Hunt (letter D); accepted answers start with C.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.9-016", "grade": "Minor", "reason": "Near-duplicate across packs of aqa-chem-4.7-002 (crude oil formed from plankton).", "fix": "Remove one of the pair, or change this one to ask about limestone or coal formation."},
+{"id": "aqa-chem-4.9-018", "grade": "Minor", "reason": "Two-item answer: 'Methane and carbon dioxide' (other order) is not accepted.", "fix": "Add 'Methane and carbon dioxide' and 'CH4 and CO2' to accepted answers."},
+{"id": "aqa-chem-4.9-035", "grade": "Minor", "reason": "'Give one reason' with six varied accepted answers is on Hex Hunt with letter C.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.9-040", "grade": "Minor", "reason": "Duplicate across packs of aqa-chem-4.7-013 (complete combustion of a hydrocarbon gives carbon dioxide and water).", "fix": "Remove, or replace with a pollutant question (e.g. what forms when the fuel also contains sulfur)."}
+],
+"calcs": {
+"aqa-chem-4.9-004": "0.8*500"
+},
+"notcalc": {
+"aqa-chem-4.9-002": "recalled percentage",
+"aqa-chem-4.9-008": "recalled time scale",
+"aqa-chem-4.9-012": "recalled date",
+"aqa-chem-4.9-013": "coefficient in recalled photosynthesis equation",
+"aqa-chem-4.9-003": "group number",
+"aqa-chem-4.9-018": "formulae",
+"aqa-chem-4.9-040": "formulae",
+"aqa-chem-4.9-044": "formulae"
+},
+"mismatchFlagged": []}
