@@ -1,0 +1,234 @@
+{
+ "pack": "packs/aqa/biology/4.7-ecology.txt",
+ "reviewed": 80,
+ "flags": [
+  {
+   "id": "aqa-bio-4.7-004",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Interdependence' starts with I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-010",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Falls', 'Decreases', 'Fewer prey' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-011",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Numbers too low...' and 'Not enough...' start with N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-013",
+   "grade": "Minor",
+   "reason": "hexOk is true but a correct answer can start with S, B or F. The items can be given in any order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-015",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Green plant or alga' starts with G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-016",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Time lag...' and 'More prey...' start with T and M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-018",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Line transect' starts with L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-023",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Aerobic respiration' starts with A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-024",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Decomposers', 'Bacteria and fungi', 'Microbes' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-025",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Supplies fresh water' and 'Gives them fresh water' start with S and G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-026",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Supplies carbon dioxide...' starts with S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-028",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Moisture' starts with M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-029",
+   "grade": "Minor",
+   "reason": "Rate calculation ((100 - 60) / 10) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.7-030",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Less enzyme activity', 'Slow enzyme reactions', 'Microorganisms less active' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-031",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Adds air' and 'More oxygen...' start with A and M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-033",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Falls', 'Goes down', 'Becomes more acidic' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-035",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Atmospheric gases' and 'Gases in the air' start with A and G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-040",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Decreasing it' and 'Lowering biodiversity' start with D and L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-044",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Species die' starts with S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-045",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Compost' starts with C, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-049",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Rice fields and cattle' is equally correct. The items can be given in any order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-050",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Less photosynthesis', 'Less carbon dioxide absorbed', 'Decay of felled trees...' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-051",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Methane and carbon dioxide' is equally correct. The items can be given in any order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-052",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Mosquitoes can live in new areas' and 'Range of mosquitoes spreads' start with M and R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-053",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Habitats flooded' and 'Loss of coastal habitats' start with H and L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-054",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Captive breeding' starts with C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-055",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Carbon dioxide emissions and deforestation' is equally correct. The items can be given in any order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-056",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'More habitats' and 'Food and shelter...' start with M and F.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-058",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Release enzymes onto it' starts with R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-059",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Photosynthesise' and 'Producers' start with P.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-060",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Trophic level 1', 'Level 1', 'Plants' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-061",
+   "grade": "Minor",
+   "reason": "Scale calculation (100/1000 x 10 cm) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.7-070",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Food production falls' starts with F.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-071",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Protein' starts with P, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.7-078",
+   "grade": "Minor",
+   "reason": "Near-duplicate of aqa-bio-4.6-048 ('Which hormone do genetically engineered bacteria produce to treat diabetes?' - Insulin) in the same subject; hexOk also clashes with accepted 'Human insulin' (H).",
+   "fix": "Remove, or reword (e.g. 'Which GM crop has improved nutritional value?' - Golden rice)."
+  },
+  {
+   "id": "aqa-bio-4.7-080",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Comes from a fungus' and 'No animal products' start with C and N.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-bio-4.7-019": "(3+5+6+8+8)/5",
+  "aqa-bio-4.7-021": "4*(100/0.25)",
+  "aqa-bio-4.7-029": "(100-60)/10",
+  "aqa-bio-4.7-061": "100/1000*10",
+  "aqa-bio-4.7-066": "25/500*100"
+ },
+ "notcalc": {
+  "aqa-bio-4.7-063": "Recalled value: about 10% of biomass is transferred.",
+  "aqa-bio-4.7-064": "Recalled value: about 1% of incident light energy."
+ },
+ "mismatchFlagged": []
+}
