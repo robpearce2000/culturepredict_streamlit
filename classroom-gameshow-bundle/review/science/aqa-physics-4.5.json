@@ -1,0 +1,222 @@
+{
+ "pack": "packs/aqa/physics/4.5-forces.txt",
+ "reviewed": 102,
+ "flags": [
+  {
+   "id": "aqa-phys-4.5-003",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Size' is accepted and very common), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-005",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Reaction force', 'Contact force' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-011",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Spring balance' and 'Force meter' are accepted; the spec itself says 'calibrated spring-balance'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-014",
+   "grade": "Minor",
+   "reason": "hexOk is true on a numerical answer ('0 N' is as common as 'Zero'); also very close to 4.5-063 (resultant force at constant velocity: zero).",
+   "fix": "Set hexOk false; consider replacing with a different free-body-diagram question."
+  },
+  {
+   "id": "aqa-phys-4.5-015",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('90°', 'Perpendicular' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-021",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Plastic deformation' is accepted and widely taught), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-026",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Goggles', 'Keep feet clear of masses', 'Safety glasses'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-030",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Anticlockwise moment' without 'total' is accepted and likely), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-032",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Bigger', 'Greater' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-033",
+   "grade": "Minor",
+   "reason": "Duplicate of aqa-phys-4.3-046 ('What is the SI unit of pressure?' Pascal) in the same subject. hexOk is otherwise fine.",
+   "fix": "Remove one of the pair, or replace with a different 4.5.5.1.1 question."
+  },
+  {
+   "id": "aqa-phys-4.5-034",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('90°', 'Perpendicular', 'Normal' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-039",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('More liquid above', 'Taller column' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-041",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Collisions of air molecules', 'Air particles hitting...'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-042",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Less air above', 'Smaller weight of air'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-045",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('0 m' or '0' is as common as 'Zero'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-051",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Velocity is changing', 'Changing direction'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-053",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('At rest', 'Not moving', 'Stopped'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-060",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Drag increases', 'Resultant force decreases'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-063",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('0 N' or '0' is as common as 'Zero'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-064",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Balanced', 'The same'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-070",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Ticker timer', 'Data logger' are equally correct answers to 'name one'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-073",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Cancel out friction', 'To balance friction', 'Reduce effect of friction'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-075",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (most students write 'Newton's third law' or '3rd law'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-077",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Gravitational force of book on Earth', 'The book's pull on the Earth'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-078",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (the order is free: 'Braking and thinking distance' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-084",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Longer reaction time' is accepted and as common as 'Slower'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-087",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (the order is free: 'Tyres and brakes' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-089",
+   "grade": "Minor",
+   "reason": "Proportional-reasoning calculation (2² = 4) with calcTag false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-phys-4.5-092",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Skidding', 'Injury to passengers' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.5-098",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('0' or '0 kg m/s' is as common as 'Zero'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-phys-4.5-009": "5*9.8",
+  "aqa-phys-4.5-013": "30-12",
+  "aqa-phys-4.5-018": "20*3",
+  "aqa-phys-4.5-019": "200/50",
+  "aqa-phys-4.5-023": "2/0.1",
+  "aqa-phys-4.5-024": "0.5*100*0.2**2",
+  "aqa-phys-4.5-029": "10*0.5",
+  "aqa-phys-4.5-031": "300*2/400",
+  "aqa-phys-4.5-035": "600/2",
+  "aqa-phys-4.5-036": "50*4",
+  "aqa-phys-4.5-037": "2*1000*10",
+  "aqa-phys-4.5-044": "40-10",
+  "aqa-phys-4.5-048": "3000/120",
+  "aqa-phys-4.5-054": "100/20",
+  "aqa-phys-4.5-059": "20/5",
+  "aqa-phys-4.5-061": "sqrt(2*2*25)",
+  "aqa-phys-4.5-066": "1000*2",
+  "aqa-phys-4.5-068": "12/3",
+  "aqa-phys-4.5-080": "12+24",
+  "aqa-phys-4.5-085": "0.7*20",
+  "aqa-phys-4.5-089": "2**2",
+  "aqa-phys-4.5-093": "1000*5",
+  "aqa-phys-4.5-095": "2*3",
+  "aqa-phys-4.5-096": "300/50",
+  "aqa-phys-4.5-099": "2*3/(2+1)",
+  "aqa-phys-4.5-101": "0.5*10/0.1"
+ },
+ "notcalc": {
+  "aqa-phys-4.5-046": "Recalled typical value: walking about 1.5 m/s",
+  "aqa-phys-4.5-047": "Recalled value: speed of sound about 330 m/s",
+  "aqa-phys-4.5-056": "Recalled value: free-fall acceleration about 9.8 m/s²",
+  "aqa-phys-4.5-076": "Newton's third law: equal force, no calculation",
+  "aqa-phys-4.5-082": "Recalled range of reaction times 0.2–0.9 s"
+ },
+ "mismatchFlagged": []
+}
