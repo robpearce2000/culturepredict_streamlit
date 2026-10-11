@@ -1,0 +1,10 @@
+{"pack": "packs/edexcel/physics/7-astronomy.txt", "reviewed": 67,
+"flags": [
+{"id": "edexcel-phys-7-001", "grade": "Minor", "reason": "Near-duplicate of the 2-motion-and-forces question 'A 10 kg mass is taken from the Earth to the Moon. What happens to its mass?' (same answer).", "fix": "Remove, or replace with a different 7.1P question (e.g. why g differs between planets of different mass and radius)."}
+],
+"calcs": {
+"edexcel-phys-7-002": "50*1.6",
+"edexcel-phys-7-003": "40/10*4"
+},
+"notcalc": {},
+"mismatchFlagged": []}
