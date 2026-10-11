@@ -1,0 +1,191 @@
+{
+ "pack": "packs/aqa/biology/4.6-inheritance-variation-and-evolution.txt",
+ "reviewed": 84,
+ "flags": [
+  {
+   "id": "aqa-bio-4.6-008",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Each gamete has half...' and 'Sperm and egg each give...' start with E and S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-016",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Migration' and 'How humans migrated' start with M and H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-020",
+   "grade": "Minor",
+   "reason": "Near-duplicate of aqa-bio-4.1-048 ('Which organelles are the site of protein synthesis in a cell?' - Ribosomes) in the same subject.",
+   "fix": "Remove one of the pair, or reword this one to test the HT protein-synthesis detail (e.g. what carrier molecules bring to the ribosome)."
+  },
+  {
+   "id": "aqa-bio-4.6-027",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Many genes', 'Several genes', 'More than one gene' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-028",
+   "grade": "Minor",
+   "reason": "Probability from a genetic cross (Tt x Tt gives 1/4) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.6-029",
+   "grade": "Minor",
+   "reason": "Probability from a Punnett square (0.5) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.6-032",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Heterozygous' and 'Ff' start with H and F.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-034",
+   "grade": "Minor",
+   "reason": "Near-duplicate of aqa-bio-4.1-028 (46 chromosomes: how many pairs? - 23 pairs) in the same subject.",
+   "fix": "Remove, or reword (e.g. 'How many of the 23 pairs carry the genes that determine sex?' - One)."
+  },
+  {
+   "id": "aqa-bio-4.6-035",
+   "grade": "Minor",
+   "reason": "Probability from a genetic cross (XX x XY gives 0.5) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.6-036",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Half of sperm carry Y' and 'All eggs carry X' start with H and A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-039",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Both genes and environment' and 'Genes and environment together' start with B and G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-043",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Natural selection of thick fur alleles' starts with N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-046",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Reduced variation', 'Small gene pool', 'Inbreeding' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-048",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Human insulin' starts with H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-051",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Restriction enzymes' starts with R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-052",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Plasmid' starts with P, not B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-056",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'A' is ignored as an article, and 'The skin cell donor' starts with S only by chance; a bare 'A' gives no letter.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-058",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Jean-Baptiste Lamarck' starts with J.",
+   "fix": "Set hexOk false, or remove the full-name form from accepted answers."
+  },
+  {
+   "id": "aqa-bio-4.6-060",
+   "grade": "Minor",
+   "reason": "hexOk is true but most students will write just 'Wallace', which is accepted, while the hex letter comes from 'Alfred Russel Wallace'.",
+   "fix": "Set hexOk false, or make the stored answer 'Wallace'."
+  },
+  {
+   "id": "aqa-bio-4.6-062",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Geographical isolation', 'Populations become separated', 'Separation of populations' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-064",
+   "grade": "Minor",
+   "reason": "hexOk is true but most students will write just 'Mendel', which is accepted, while the hex letter comes from 'Gregor Mendel'.",
+   "fix": "Set hexOk false, or make the stored answer 'Mendel'."
+  },
+  {
+   "id": "aqa-bio-4.6-069",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Resistance to antibiotics' starts with R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-073",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted answers start with S, F, T ('Soft-bodied...', 'Fossil record incomplete', 'Traces destroyed...').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-075",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Predation', 'Predators', 'Rats as predators' start with P and R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-076",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Cannot evolve fast enough', 'Not adapted...', 'Too little time...' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-080",
+   "grade": "Minor",
+   "reason": "hexOk is true but most students will write just 'Linnaeus', which is accepted, while the hex letter comes from 'Carl Linnaeus'.",
+   "fix": "Set hexOk false, or make the stored answer 'Linnaeus'."
+  },
+  {
+   "id": "aqa-bio-4.6-081",
+   "grade": "Minor",
+   "reason": "hexOk is true but a correct answer can start with A, B or E. The items can be given in any order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-083",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Biochemical evidence/analysis' starts with B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.6-084",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Phylogenetic tree' starts with P.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-bio-4.6-029": "2/4",
+  "aqa-bio-4.6-035": "1/2"
+ },
+ "notcalc": {
+  "aqa-bio-4.6-007": "Recalled chromosome number (23), not worked out.",
+  "aqa-bio-4.6-034": "Recalled number of chromosome pairs (23).",
+  "aqa-bio-4.6-066": "Century (20th) is a recalled date.",
+  "aqa-bio-4.6-028": "Answer written as '1 in 4', which the checker reads as 1; checked by hand: Tt x Tt gives tt with probability 1/4, correct."
+ },
+ "mismatchFlagged": []
+}
