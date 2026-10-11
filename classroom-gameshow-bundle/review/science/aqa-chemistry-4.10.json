@@ -1,0 +1,19 @@
+{"pack": "packs/aqa/chemistry/4.10-using-resources.txt", "reviewed": 53,
+"flags": [
+{"id": "aqa-chem-4.10-007", "grade": "Minor", "reason": "Two correct answers (ozone, ultraviolet light) but Hex Hunt shows only O, so a class answering 'UV light' is right but does not match the clue.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.10-020", "grade": "Minor", "reason": "Explanation answer on Hex Hunt (letter C); accepted answers start with H, T and A.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.10-024", "grade": "Minor", "reason": "Hex letter P ('Pollutant effects...') while the key idea, and the accepted answer, is 'value judgements' (V).", "fix": "Make the answer 'Value judgements needed' (accept the current answer), or set hexOk false."},
+{"id": "aqa-chem-4.10-028", "grade": "Minor", "reason": "Two-item answer: other orders ('Water and air', 'Water and oxygen') are not accepted, and the common answer 'water and oxygen' does not match the A clue.", "fix": "Accept either order; set hexOk false."},
+{"id": "aqa-chem-4.10-034", "grade": "Minor", "reason": "Two-item answer: 'Nickel and chromium' is not accepted.", "fix": "Add 'Nickel and chromium' to accepted answers."}
+],
+"calcs": {
+"aqa-chem-4.10-003": "2000000/20000",
+"aqa-chem-4.10-011": "0.10/(50/1000)",
+"aqa-chem-4.10-023": "1.6/0.4",
+"aqa-chem-4.10-033": "18/24*100"
+},
+"notcalc": {
+"aqa-chem-4.10-041": "recalled Haber conditions",
+"aqa-chem-4.10-042": "recalled temperature"
+},
+"mismatchFlagged": []}
