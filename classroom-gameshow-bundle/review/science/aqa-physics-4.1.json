@@ -1,0 +1,68 @@
+{
+ "pack": "packs/aqa/physics/4.1-energy.txt",
+ "reviewed": 63,
+ "flags": [
+  {
+   "id": "aqa-phys-4.1-018",
+   "grade": "Minor",
+   "reason": "hexOk is true but the answer is a number; most students will write '4' or 'x4' (or 'quadruples'), so the letter F does not match common correct answers. It is also a proportional-reasoning calculation without a calc tag.",
+   "fix": "Set hexOk false; consider calcTag true."
+  },
+  {
+   "id": "aqa-phys-4.1-032",
+   "grade": "Minor",
+   "reason": "hexOk is true but the answer is a number; students will write '2', 'double' or 'twice', which start with different letters.",
+   "fix": "Set hexOk false; consider calcTag true."
+  },
+  {
+   "id": "aqa-phys-4.1-038",
+   "grade": "Minor",
+   "reason": "hexOk is true but the natural answer to 'what happens to the rate' is 'it increases', not 'Higher rate', so the letter H does not match common correct answers.",
+   "fix": "Set hexOk false (or reword to 'Is the rate higher or lower?')."
+  },
+  {
+   "id": "aqa-phys-4.1-039",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start 'Decreases', 'Lower', 'Reduces' or 'Slower', so the letter S is not reliable.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.1-052",
+   "grade": "Minor",
+   "reason": "hexOk is true on a three-item list whose order is free ('oil, coal and gas' is equally right), so the first letter is arbitrary.",
+   "fix": "Set hexOk false; add accepted orderings such as 'Oil, coal and gas' / 'Gas, coal and oil' if the marker is order-sensitive."
+  },
+  {
+   "id": "aqa-phys-4.1-061",
+   "grade": "Minor",
+   "reason": "hexOk is true on a free-text reason; correct answers ('Not always windy', 'It depends on the weather', 'Wind speed varies') start with many different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.1-063",
+   "grade": "Minor",
+   "reason": "hexOk is true but the specification lists four equally correct reasons (political, social, ethical, economic); only 'economic' fits the letter E.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-phys-4.1-006": "20",
+  "aqa-phys-4.1-013": "0.5*4*5**2",
+  "aqa-phys-4.1-014": "0.5*200*0.1**2",
+  "aqa-phys-4.1-016": "0.5*2*3**2",
+  "aqa-phys-4.1-017": "2*9.8*5",
+  "aqa-phys-4.1-021": "2*4200*10",
+  "aqa-phys-4.1-022": "21000/(0.5*4200)",
+  "aqa-phys-4.1-025": "9000/(1*10)",
+  "aqa-phys-4.1-031": "600/20",
+  "aqa-phys-4.1-033": "2000*10",
+  "aqa-phys-4.1-047": "40/100",
+  "aqa-phys-4.1-048": "0.25*200"
+ },
+ "notcalc": {
+  "aqa-phys-4.1-011": "Recalled equation; 0.5 and the square are constants of the formula",
+  "aqa-phys-4.1-020": "Definition; 1 kg and 1 °C are the defining quantities",
+  "aqa-phys-4.1-032": "Answer stored in words ('Twice'); checked 10 s / 5 s = 2, correct"
+ },
+ "mismatchFlagged": []
+}
