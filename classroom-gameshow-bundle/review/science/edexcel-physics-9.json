@@ -1,0 +1,137 @@
+{
+ "pack": "packs/edexcel/physics/9-forces-and-their-effects.txt",
+ "reviewed": 50,
+ "flags": [
+  {
+   "id": "edexcel-phys-9-003",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Reaction force' and 'Contact force' (accepted, common) start with R and C, not N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-006",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Same size, opposite directions' (accepted, common) starts with S, not E.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-010",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; equally correct answers (including accepted ones) start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-016",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Magnitude' (accepted, common) starts with M, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-017",
+   "grade": "Minor",
+   "reason": "Tagged Higher only via bold 9.5/9.4, but adding forces along a line and 'zero resultant at constant velocity/at rest' are Foundation content in 2.14 and 2.15 (compare edexcel-phys-2-048 and 2-054, tagged Both).",
+   "fix": "Retag to Ref 2.14 (Foundation and Higher), or accept the Higher-only tag as deliberate."
+  },
+  {
+   "id": "edexcel-phys-9-018",
+   "grade": "Minor",
+   "reason": "Tagged Higher only via bold 9.5/9.4, but adding forces along a line and 'zero resultant at constant velocity/at rest' are Foundation content in 2.14 and 2.15 (compare edexcel-phys-2-048 and 2-054, tagged Both).",
+   "fix": "Retag to Ref 2.14 (Foundation and Higher), or accept the Higher-only tag as deliberate."
+  },
+  {
+   "id": "edexcel-phys-9-019",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Equilibrium' / 'In equilibrium' (accepted) start with E or I, not B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-020",
+   "grade": "Minor",
+   "reason": "Tagged Higher only via bold 9.5/9.4, but adding forces along a line and 'zero resultant at constant velocity/at rest' are Foundation content in 2.14 and 2.15 (compare edexcel-phys-2-048 and 2-054, tagged Both). Also near-duplicate of edexcel-phys-2-048.",
+   "fix": "Retag to Ref 2.14 (Foundation and Higher), or remove as a duplicate."
+  },
+  {
+   "id": "edexcel-phys-9-021",
+   "grade": "Minor",
+   "reason": "Tagged Higher only via bold 9.5/9.4, but adding forces along a line and 'zero resultant at constant velocity/at rest' are Foundation content in 2.14 and 2.15 (compare edexcel-phys-2-048 and 2-054, tagged Both).",
+   "fix": "Retag to Ref 2.14/2.15 (Foundation and Higher)."
+  },
+  {
+   "id": "edexcel-phys-9-024",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Fulcrum' (accepted, common) starts with F, not P.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-034",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Cogs' (accepted, common) starts with C, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-036",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Doubled' / 'Double' / '2 times' (accepted, common) start with D or a digit, not T.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-038",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Oil' and 'Grease' (accepted, the commonest answers) start with O and G, not L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-042",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Give one example' has many correct answers (mass, distance, energy, time...) with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-044",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Give one example' has two accepted answers (Oil, Grease) with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-9-045",
+   "grade": "Minor",
+   "reason": "Tagged Higher only via bold 9.5/9.4, but adding forces along a line and 'zero resultant at constant velocity/at rest' are Foundation content in 2.14 and 2.15 (compare edexcel-phys-2-048 and 2-054, tagged Both). Also no accepted alternatives ('2 N to the west', '2 N').",
+   "fix": "Retag to Ref 2.14 (Foundation and Higher); add Accept: 2 N to the west; 2 N towards the west."
+  },
+  {
+   "id": "edexcel-phys-9-046",
+   "grade": "Doubtful",
+   "reason": "9.3 limits resolution to scale drawings only; finding 10 cos 30° in a quick-fire round needs trigonometry, which is beyond the GCSE physics statement, and is not practical as a scale drawing on a whiteboard.",
+   "fix": "Remove, or reword as a scale-drawing estimate with a wider tolerance (e.g. 'about 9 N'), or use a 3-4-5 style case."
+  },
+  {
+   "id": "edexcel-phys-9-047",
+   "grade": "Minor",
+   "reason": "Tagged Higher only via 9.4, but 'balanced forces means at rest or constant velocity' is Newton's first law, 2.14a (Foundation and Higher).",
+   "fix": "Retag to Ref 2.14 (Foundation and Higher)."
+  },
+  {
+   "id": "edexcel-phys-9-048",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Magnetic force' (accepted, very likely here) starts with M, not N.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-phys-9-005": "10",
+  "edexcel-phys-9-012": "12/2",
+  "edexcel-phys-9-014": "sqrt(3**2+4**2)",
+  "edexcel-phys-9-017": "20-5",
+  "edexcel-phys-9-018": "12-4",
+  "edexcel-phys-9-021": "5000-3000",
+  "edexcel-phys-9-022": "50",
+  "edexcel-phys-9-028": "20*0.5",
+  "edexcel-phys-9-029": "40/0.25",
+  "edexcel-phys-9-032": "10*0.3/0.6",
+  "edexcel-phys-9-033": "300*2/400",
+  "edexcel-phys-9-045": "8-6",
+  "edexcel-phys-9-046": "10*cos(radians(30))"
+ },
+ "notcalc": {},
+ "mismatchFlagged": []
+}
