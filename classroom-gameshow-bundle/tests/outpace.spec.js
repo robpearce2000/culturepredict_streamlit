@@ -8,6 +8,7 @@ test('the Final Sprint is won as soon as the target is reached, after a short un
   await page.click(PICK('#op-segGroups', 4));
   await page.click('#op-startBtn');
   await page.evaluate(() => CGB.test.outpace.toSprint(600));          // target: 7 steps for 4 teams on a Standard deal
+  await page.keyboard.press('Enter');                                  // Start the Final Sprint
   let s = await state(page, 'outpace');
   expect(s.target).toBe(7);
   expect(s.timeLeft).toBe(90);                                         // a 90-second sprint

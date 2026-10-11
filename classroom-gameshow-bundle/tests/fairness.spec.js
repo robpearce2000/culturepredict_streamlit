@@ -32,11 +32,11 @@ async function playRound1(browser, seed) {
   return log.map((d, q) => Object.assign(d, { q }));
 }
 
-test('@slow Over the Edge: dropping first is no advantage, on the first question or after (54 questions)', async ({ browser }) => {
+test('@slow Over the Edge: dropping first is no advantage, on the first question or after (about 140 questions)', async ({ browser }) => {
   test.setTimeout(900000);
-  const GAMES = 9, logs = []; let next = 1;
+  const GAMES = +(process.env.FGAMES || 24), logs = []; let next = 1;
   await Promise.all([0, 1, 2].map(async () => { while (next <= GAMES) { const sd = next++; logs.push(...await playRound1(browser, sd)); } }));
-  expect(logs.length).toBeGreaterThanOrEqual(50);
+  expect(logs.length).toBeGreaterThanOrEqual(120);
   const team = [0, 0, 0, 0, 0, 0], pos = [0, 0, 0, 0, 0, 0];
   let total = 0, q1First = 0, q1All = 0, q1n = 0;
   logs.forEach(d => {

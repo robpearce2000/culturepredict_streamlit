@@ -66,6 +66,7 @@ test('pause freezes Outpace\'s sprint clock and Over the Edge\'s physics', async
   const log = await openBundle(page, '#outpace');
   await page.click('#op-startBtn');
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
+  await page.keyboard.press('Enter');                                  // Start the Final Sprint
   await page.waitForTimeout(800);
   await page.click('#game-outpace [data-pause]');                          // the top bar button
   await page.waitForTimeout(200);
@@ -179,6 +180,7 @@ test('Outpace: under 10 seconds the question on screen is the final question, an
   expect((await state(page, 'outpace')).hunter).toBe(h0 - 1);
   await expect(page.locator('#op-dealVerdict')).toContainText('Not both teams');
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
+  await page.keyboard.press('Enter');                                  // Start the Final Sprint
   s = await state(page, 'outpace');
   expect(s.target).toBe(4); expect(s.timeLeft).toBe(90);
   await page.evaluate(() => CGB.test.outpace.setTime(9.5));

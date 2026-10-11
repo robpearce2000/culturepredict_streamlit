@@ -991,7 +991,7 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
 .hh-keys { color: var(--hh-muted); text-align: center; }
 
 /* Question */
-.hh-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 56px) + 8px) 16px 92px; background: rgba(6, 14, 26, 0.8); }
+.hh-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 56px) + 84px) 16px 92px; background: rgba(6, 14, 26, 0.8); }
 .hh-q[hidden] { display: none; }
 .hh-qcard { width: 100%; max-width: 980px; max-height: 100%; overflow-y: auto; background: var(--paper); color: var(--ink); border: 5px solid var(--ink); border-radius: 22px; box-shadow: 0 10px 0 rgba(0,0,0,0.35); padding: 18px 26px 22px; display: flex; flex-direction: column; gap: 10px; }
 .hh-qtop { display: flex; align-items: center; gap: 16px; }
@@ -9112,7 +9112,7 @@ function renderBoard() {
   const mk = (x, y, t) => `<text class="hh-edgemk" x="${x}" y="${y}" font-size="20" fill="#fff">${TEAM[t].mark}</text>`;
   out += mk(15, h / 2 + 7, 0) + mk(w - 15, h / 2 + 7, 0) + mk(w / 2, 22, 1) + mk(w / 2, h - 8, 1);
   svg.innerHTML = out;
-  $('curHint').hidden = !(S.keyboard && S.phase === 'board');
+  $('curHint').hidden = !(S.keyboard && S.phase === 'board') || !$('q').hidden;
   renderTeams();
 }
 function renderTeams() {
@@ -9169,7 +9169,7 @@ function showQuestion() {
   $('qAnswer').innerHTML = CGB.answerHTML(cell.q);
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = 'Everyone answers on their whiteboard.';
-  $('q').hidden = false;
+  $('q').hidden = false; $('curHint').hidden = true;
   $('share').hidden = true;
   round.think();
   $('qcard').focus({ preventScroll: true });

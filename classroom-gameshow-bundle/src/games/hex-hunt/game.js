@@ -180,7 +180,7 @@ function renderBoard() {
   const mk = (x, y, t) => `<text class="hh-edgemk" x="${x}" y="${y}" font-size="20" fill="#fff">${TEAM[t].mark}</text>`;
   out += mk(15, h / 2 + 7, 0) + mk(w - 15, h / 2 + 7, 0) + mk(w / 2, 22, 1) + mk(w / 2, h - 8, 1);
   svg.innerHTML = out;
-  $('curHint').hidden = !(S.keyboard && S.phase === 'board');
+  $('curHint').hidden = !(S.keyboard && S.phase === 'board') || !$('q').hidden;
   renderTeams();
 }
 function renderTeams() {
@@ -237,7 +237,7 @@ function showQuestion() {
   $('qAnswer').innerHTML = CGB.answerHTML(cell.q);
   $('qAnswer').classList.remove('shown');
   $('qMsg').textContent = 'Everyone answers on their whiteboard.';
-  $('q').hidden = false;
+  $('q').hidden = false; $('curHint').hidden = true;
   $('share').hidden = true;
   round.think();
   $('qcard').focus({ preventScroll: true });

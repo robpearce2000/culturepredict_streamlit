@@ -16,6 +16,7 @@ test('Outpace: the set is built, the Final Sprint has no track or set clock, the
   await expect(page.locator('#op-dealStatus')).toContainText('Hunter 3 steps behind');
   // the Final Sprint: no track and no clock in the set, just the racers (the timer is on screen)
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
+  await page.keyboard.press('Enter');                                  // Start the Final Sprint
   s3 = await page.evaluate(() => CGB.test.outpace.scene3d());
   expect(s3.sprintTrack).toBe(false); expect(s3.clock).toBe(false);
   await expect(page.locator('#game-outpace .op-gap')).toHaveCount(0);
@@ -38,6 +39,7 @@ test('Outpace: an escape bursts through the arch with confetti, and Space skips 
   await openBundle(page, '#outpace');
   await page.click('#op-startBtn', { timeout: 60000 });
   await page.evaluate(() => CGB.test.outpace.toSprint(300));
+  await page.keyboard.press('Enter');                                  // Start the Final Sprint
   for (let i = 0; i < 80; i++) {
     const s = await state(page, 'outpace');
     if (s.frozen || s.phase !== 'sprint') break;

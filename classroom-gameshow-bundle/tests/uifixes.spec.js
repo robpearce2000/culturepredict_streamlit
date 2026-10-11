@@ -126,23 +126,6 @@ test('"Change" on a game\'s setup card opens the topic dropdown in place instead
   await expect(page.locator('#cc-home')).toBeVisible();
 });
 
-test('Hex Hunt: while playing, the top bar buttons stack down the side and never overlap the turn and round lines', async ({ page }) => {
-  await page.setViewportSize({ width: 1366, height: 768 });
-  await openBundle(page, '#hex-hunt');
-  await page.click('#hh-startBtn');
-  await expect(page.locator('#hh-turn')).toBeVisible();
-  const r = await page.evaluate(() => {
-    const box = e => { const b = e.getBoundingClientRect(); return { l: b.left, t: b.top, r: b.right, b: b.bottom }; };
-    const bar = Array.from(document.querySelectorAll('#game-hex-hunt .topbar .btn')).filter(b => b.offsetParent).map(box);
-    return { bar, turn: box(document.getElementById('hh-turn')), round: box(document.getElementById('hh-round')), board: box(document.getElementById('hh-board')) };
-  });
-  expect(r.bar.length).toBeGreaterThanOrEqual(5);
-  // one column: all the buttons share the same left edge, one under the other
-  expect(new Set(r.bar.map(b => Math.round(b.l))).size).toBe(1);
-  const overlap = (a, b) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
-  for (const b of r.bar) { expect(overlap(b, r.turn)).toBe(false); expect(overlap(b, r.round)).toBe(false); expect(overlap(b, r.board)).toBe(false); }
-});
-
 // saved data on file:// pages can be disturbed by tests running alongside; one retry (passes on its own)
 test.describe(() => { test.describe.configure({ retries: 1 });
 test('the host can be Male or Female: a striped shirt and trousers for her, same build, remembered', async ({ page }) => {

@@ -198,6 +198,7 @@ const SECTIONS = {
     }, 90000);
     await shot('35-op-round-end', 1200);
     await page.evaluate(() => CGB.test.outpace.toSprint(600));
+  await page.keyboard.press('Enter');                                  // Start the Final Sprint
     await shot('36-op-sprint', 1500);
     await page.keyboard.press('Space');
     await until(async () => (await state(page, 'outpace')).round === 'mark', 10000);
