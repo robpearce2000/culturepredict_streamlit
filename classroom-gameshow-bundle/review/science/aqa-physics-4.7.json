@@ -1,0 +1,152 @@
+{
+ "pack": "packs/aqa/physics/4.7-magnetism-and-electromagnetism.txt",
+ "reviewed": 54,
+ "flags": [
+  {
+   "id": "aqa-phys-4.7-020",
+   "grade": "Wrong",
+   "reason": "Tagged Separate and Combined, but explaining how electromagnetic devices such as bells and relays work is the '(Physics only)' statement in 8463 4.7.2.1; Trilogy 6.7.2.1 has no device content.",
+   "fix": "Tag Separate only (add 'Sep: yes'); the answer itself is fine."
+  },
+  {
+   "id": "aqa-phys-4.7-054",
+   "grade": "Doubtful",
+   "reason": "Iron versus steel cores (soft versus hard magnetic materials) is not in 4.7.2.1 or Trilogy 6.7.2.1, which only say an electromagnet has an iron core; steel is listed as a magnetic material without this distinction. Combined students may not have met it.",
+   "fix": "Rob to decide; either tag Separate only (link to 4.7.3.4 'iron is used as it is easily magnetised') or remove."
+  },
+  {
+   "id": "aqa-phys-4.7-006",
+   "grade": "Minor",
+   "reason": "'in any order' is stored as an accepted answer (a marking note, not an answer); and hexOk is true on a four-item list whose order is free, so the letter I is arbitrary.",
+   "fix": "Remove 'in any order' from Accept; set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-048",
+   "grade": "Minor",
+   "reason": "Near-duplicate of aqa-phys-4.2-044 (why high-pd transmission is efficient: smaller current, less heating); hexOk is also unreliable ('Smaller current', 'Current is lower' are accepted).",
+   "fix": "Reword to a transformer-specific question (e.g. 'Which type of transformer is used to reduce the current in transmission cables?' A: Step-up) or remove; set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-051",
+   "grade": "Minor",
+   "reason": "Near-duplicate of aqa-phys-4.7-001 (where magnetic forces are strongest: poles); hexOk on 'At the poles' gives A, but most students write 'Poles' or 'Near the poles'.",
+   "fix": "Remove, or set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-004",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Loses most or all of it quickly', 'Disappears quickly'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-005",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('It could be unmagnetised iron', 'Only repulsion proves it'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-009",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Where the lines are closest', 'Field lines most concentrated'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-011",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Where the needle points', 'Needle direction'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-012",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('The Earth's core is magnetic', 'Magnetic core'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-016",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (the order is free: 'Uniform and strong' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-018",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (the order is free ('Distance and current'), and 'Size of current' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-019",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Iron becomes an induced magnet', 'The core's field adds...'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-022",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Motion' and 'Thrust' are accepted; 'thuMb = Motion' is a common mnemonic), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-023",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (any order of the three factors is correct; 'Field strength...' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-027",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('give one way' has several correct answers (larger current, stronger magnet, more turns)), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-032",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Electromagnetic induction' and 'Induction' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-033",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Closed circuit' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-039",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Commutator' alone is accepted and common), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-041",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Electromagnetic induction' and 'Induction' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-042",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Potential difference', 'Voltage' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-047",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('To make a changing field...', 'Direct current gives no changing field'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.7-052",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('More turns' is an equally correct answer to 'give one way'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-phys-4.7-024": "0.2*4*0.5",
+  "aqa-phys-4.7-025": "0.3/(3*0.2)",
+  "aqa-phys-4.7-045": "230*20/200",
+  "aqa-phys-4.7-046": "12*2/240"
+ },
+ "notcalc": {},
+ "mismatchFlagged": []
+}
