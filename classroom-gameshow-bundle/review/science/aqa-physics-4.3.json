@@ -1,0 +1,120 @@
+{
+ "pack": "packs/aqa/physics/4.3-particle-model-of-matter.txt",
+ "reviewed": 54,
+ "flags": [
+  {
+   "id": "aqa-phys-4.3-048",
+   "grade": "Wrong",
+   "reason": "Off the specification: neither 8463 nor 8464 mentions the kelvin scale or absolute zero (the Kelvin scale was in the legacy specification, not this one); 4.3.3.1 only relates temperature to average kinetic energy.",
+   "fix": "Remove, or replace with an on-spec 4.3.3.1 question, e.g. 'The temperature of a gas is related to the average of which energy of its molecules?' (but see 4.3-032, which already asks this)."
+  },
+  {
+   "id": "aqa-phys-4.3-051",
+   "grade": "Doubtful",
+   "reason": "Straight-line motion between collisions is sound kinetic theory but is not in the 4.3.3.1 statement, which says only 'constant random motion'; students taught to the specification may not have met it.",
+   "fix": "Rob to decide; keep only if happy to go beyond the spec wording, otherwise remove."
+  },
+  {
+   "id": "aqa-phys-4.3-044",
+   "grade": "Minor",
+   "reason": "Duplicate of aqa-phys-4.3-012 in the same pack ('change of state directly from solid to gas' / 'solid straight to gas', both Sublimation).",
+   "fix": "Remove one of the two."
+  },
+  {
+   "id": "aqa-phys-4.3-020",
+   "grade": "Minor",
+   "reason": "Identical question and numbers to aqa-phys-4.1-021 (2 kg of water heated by 10 °C, c = 4200, 84 000 J). The spec repeats ΔE = mcΔθ in both topics, but the same question should not appear twice.",
+   "fix": "Change the numbers, e.g. 0.5 kg of water heated by 20 °C: 42 000 J."
+  },
+  {
+   "id": "aqa-phys-4.3-018",
+   "grade": "Minor",
+   "reason": "Same question as aqa-phys-4.1-019 (unit of specific heat capacity).",
+   "fix": "Remove, or keep only one of the pair across the two packs."
+  },
+  {
+   "id": "aqa-phys-4.3-019",
+   "grade": "Minor",
+   "reason": "Same question and answer as aqa-phys-4.1-020 (definition of specific heat capacity).",
+   "fix": "Remove, or replace with a 4.3.2.2 question, e.g. what the temperature rise depends on (mass, material, energy input)."
+  },
+  {
+   "id": "aqa-phys-4.3-005",
+   "grade": "Minor",
+   "reason": "hexOk is true on a description; correct answers start with many different letters ('Touching', 'Randomly arranged', 'Close together').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.3-008",
+   "grade": "Minor",
+   "reason": "hexOk is true but the specification names both micrometer and Vernier callipers, so 'Micrometer' is an equally correct answer starting with M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.3-014",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation; 'No new substance is made' (accepted, and very common) starts with N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.3-016",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers are 'Melting' or 'Boiling', not starting with C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.3-024",
+   "grade": "Minor",
+   "reason": "hexOk is true but students commonly write 'Latent heat of fusion' or 'Fusion' (both accepted), which start with L or F, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.3-025",
+   "grade": "Minor",
+   "reason": "hexOk is true but students commonly write 'Latent heat of vaporisation' or 'Vaporisation' (both accepted), which start with L or V, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.3-029",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers are 'Melting' or 'Boiling', not starting with C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.3-031",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Random' / 'Moving randomly' (accepted) are the most common answers and do not start with C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.3-033",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation; answers start 'Molecules move faster', 'More collisions', 'Particles...', etc.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.3-039",
+   "grade": "Minor",
+   "reason": "hexOk is true but the specification's own wording 'Transfer of energy by a force' (accepted) starts with T, not E.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-phys-4.3-003": "6/0.002",
+  "aqa-phys-4.3-004": "800*2",
+  "aqa-phys-4.3-009": "70-50",
+  "aqa-phys-4.3-010": "60/20",
+  "aqa-phys-4.3-013": "50",
+  "aqa-phys-4.3-020": "2*4200*10",
+  "aqa-phys-4.3-021": "5000/(1*10)",
+  "aqa-phys-4.3-027": "2*334000",
+  "aqa-phys-4.3-028": "4600000/2",
+  "aqa-phys-4.3-036": "100000*2/1",
+  "aqa-phys-4.3-037": "150*4/300"
+ },
+ "notcalc": {
+  "aqa-phys-4.3-017": "Temperatures given as context (0 °C); answer is a word",
+  "aqa-phys-4.3-019": "Definition; 1 kg and 1 °C are defining quantities"
+ },
+ "mismatchFlagged": []
+}
