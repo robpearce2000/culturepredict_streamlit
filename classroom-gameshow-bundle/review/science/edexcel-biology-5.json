@@ -1,0 +1,233 @@
+{
+ "pack": "packs/edexcel/biology/5-health-disease-and-the-development-of-medicines.txt",
+ "reviewed": 90,
+ "flags": [
+  {
+   "id": "edexcel-bio-5-002",
+   "grade": "Minor",
+   "reason": "hexOk is true but the three types can be listed in any order (accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-003",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; correct answers start with many different words.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-007",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter L) but 'white blood cells' (the spec's own wording, accepted) and 'T cells' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-008",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter W) but accepted answers start with F and I ('fewer white blood cells', 'immune system damaged').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-009",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter W) but 'immune system less effective' (accepted) and similar start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-010",
+   "grade": "Minor",
+   "reason": "hexOk is true; the stored answer's letter is D ('disease-causing') but the accepted 'organism/microorganism that causes disease' start with O and M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-011",
+   "grade": "Minor",
+   "reason": "hexOk is true but the four types can be listed in any order (writer note).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-014",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter C) but 'ash dieback' (accepted) is the name most students use.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-016",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'liver and blood' (accepted) is equally correct.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-018",
+   "grade": "Wrong",
+   "reason": "Helicobacter and stomach ulcers is spec point 5.5fB, which is separate science only; it is not in 1SC0 5.5, but the question is tagged Separate and Combined (combRef 5.5).",
+   "fix": "Change course to Separate only (ref 5.5fB / 5.5, combRef blank)."
+  },
+  {
+   "id": "edexcel-bio-5-019",
+   "grade": "Wrong",
+   "reason": "Ebola is spec point 5.5gB, which is separate science only and not in 1SC0, but the question is tagged Separate and Combined (combRef 5.5).",
+   "fix": "Change course to Separate only (combRef blank)."
+  },
+  {
+   "id": "edexcel-bio-5-020",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter C) but 'water' / 'dirty water' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-021",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter A) but accepted answers 'through the air', 'coughs and sneezes' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-023",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-024",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; correct answers start with many different words.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-025",
+   "grade": "Wrong",
+   "reason": "Ebola spread by body fluids is spec point 5.6fB, separate science only and absent from 1SC0, but the question is tagged Separate and Combined (combRef 5.6). Also hexOk is true on an explanation question.",
+   "fix": "Change course to Separate only (combRef blank); set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-028",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter B) but 'lysis', 'lyses', 'splits open' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-029",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; correct answers start with many different words.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-031",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-035",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; correct answers start with many different words.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-038",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter D) but accepted answers 'stop animals eating them', 'defence against pests' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-040",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-041",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-045",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter C) but answers like 'smoke damages cilia' or 'mucus not removed' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-049",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter I) but 'dead or weakened pathogen' and 'antigens' (accepted) are common.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-053",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-059",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter H) but accepted answers 'pass through a flame', 'flame until red hot' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-061",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter I) but 'zone of inhibition' and 'clear zone' (accepted) start with Z and C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-062",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter T) but 'antiseptic used' / 'different antiseptics' (accepted) start with A and D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-063",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter D) but 'area' / 'size' / 'radius' of the clear zone are accepted.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-071",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter P) but 'removes bias' / 'to avoid bias' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-072",
+   "grade": "Minor",
+   "reason": "hexOk is true but the two cells can be given in either order, and 'B cell' / 'white blood cell' are accepted.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-079",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-082",
+   "grade": "Minor",
+   "reason": "Ratio calculation (80 ÷ 100) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-5-086",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter E) but 'more energy taken in than used' (accepted) starts with M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-5-089",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter C) but 'bypass' / 'heart bypass' (accepted) start with B and H.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-bio-5-066": "3*4**2",
+  "edexcel-bio-5-067": "3*(10/2)**2",
+  "edexcel-bio-5-081": "72/1.5**2",
+  "edexcel-bio-5-082": "80/100"
+ },
+ "notcalc": {
+  "edexcel-bio-5-065": "formula only (r²)",
+  "edexcel-bio-5-053": "'100%' in an accepted answer only"
+ },
+ "mismatchFlagged": []
+}
