@@ -1,0 +1,93 @@
+{
+ "pack": "packs/aqa/biology/4.3-infection-and-response.txt",
+ "reviewed": 50,
+ "flags": [
+  {
+   "id": "aqa-bio-4.3-002",
+   "grade": "Minor",
+   "reason": "hexOk is true but a correct answer can start with any of V, B, P or F. The items can be given in any order, so the first letter is not fixed.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-003",
+   "grade": "Minor",
+   "reason": "hexOk is true but a correct answer can start with C/D, W or A. The items can be given in any order, so the first letter is not fixed.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-014",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Removing affected leaves and fungicides' is equally correct. The items can be given in any order, so the first letter is not fixed.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-021",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Cilia waft mucus away' starts with C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-022",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Stomach acid' and 'Acid' start with S and A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-023",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Small amounts...', 'Inactive pathogen', 'Weakened pathogen' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-027",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Colds and flu are caused by viruses' starts with C; 'They are viruses' is also common.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-028",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Relieve symptoms' starts with R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-031",
+   "grade": "Minor",
+   "reason": "hexOk is true but most students will write 'Fleming' (F), which is accepted, while the hex letter is A from 'Alexander'.",
+   "fix": "Set hexOk false, or make the answer 'Fleming'."
+  },
+  {
+   "id": "aqa-bio-4.3-032",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Safety, effectiveness and dose' starts with S. The items can be given in any order, so the first letter is not fixed.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-035",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'White blood cells' starts with W.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-037",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Reproduce and make antibodies' starts with R; 'Make antibodies and divide' is equally correct.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-048",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Poisons and antibacterial chemicals' is equally correct. The items can be given in any order, so the first letter is not fixed.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.3-050",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Barrier of dead cells' starts with B.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {},
+ "notcalc": {},
+ "mismatchFlagged": []
+}
