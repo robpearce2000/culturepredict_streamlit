@@ -1,0 +1,168 @@
+{
+ "pack": "packs/edexcel/chemistry/6-groups-in-the-periodic-table.txt",
+ "reviewed": 56,
+ "flags": [
+  {
+   "id": "edexcel-chem-6-006",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Group 1 metals' / 'Group 1' (accepted) start with G, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-009",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Purple' (accepted, and commonly written) starts with P, not L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-010",
+   "grade": "Minor",
+   "reason": "hexOk should be false: descriptions vary ('Fizzes and darts around', 'Floats, melts...').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-013",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'More reactive' (accepted) starts with M, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-016",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanation-type answer; 'Outer electron less strongly attracted...' etc.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-017",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Gets weaker' (accepted) starts with G, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-018",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'The single outer electron' / 'One outer electron' (accepted) start with S/O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-019",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Green gas' / 'Yellow-green gas' (accepted) start with G/Y, not P.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-021",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Grey-black', 'Black', 'Grey', 'Purple-black' solid (accepted) start with G/B/P, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-022",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Get higher' (accepted) starts with G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-023",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Darker' (accepted) starts with D, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-026",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Moisten it', 'Wet it', 'Make it damp' (accepted) start with M/W.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-027",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Pink' (accepted) starts with P, not R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-029",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Halides' (accepted) starts with H, not M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-030",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Less vigorous' / 'Less reactive' (accepted) start with L, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-038",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Orange-brown', 'Yellow-brown', 'Red-brown' (accepted) start with O/Y/R, not B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-046",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'More difficult' (accepted) starts with M, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-047",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanation-type answer; 'Fewer shells...' (accepted) starts with F.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-048",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Stable outer shell' / 'Complete outer shell' (accepted) start with S/C, not F.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-052",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Does not burn' / 'Inert' (accepted) start with D/I, not N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-053",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Unreactive...' (accepted) starts with U, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-054",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Get higher' (accepted) starts with G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-055",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Gets higher' (accepted) starts with G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-6-056",
+   "grade": "Minor",
+   "reason": "Midway between −153 °C and −62 °C is −107.5 °C, so the stored 'About −110 °C' is a rounded value rather than the worked answer (accepted range covers it).",
+   "fix": "Store 'About −108 °C' (accept −100 °C to −120 °C)."
+  }
+ ],
+ "calcs": {
+  "edexcel-chem-6-056": [
+   "(-153+(-62))/2",
+   0.03
+  ]
+ },
+ "notcalc": {
+  "edexcel-chem-6-001": "group number",
+  "edexcel-chem-6-003": "recalled count",
+  "edexcel-chem-6-035": "equation",
+  "edexcel-chem-6-045": "recalled count",
+  "edexcel-chem-6-050": "recalled count",
+  "edexcel-chem-6-011": "no number",
+  "edexcel-chem-6-015": "no number",
+  "edexcel-chem-6-042": "equation coefficients only",
+  "edexcel-chem-6-043": "equation coefficients only"
+ },
+ "mismatchFlagged": []
+}
