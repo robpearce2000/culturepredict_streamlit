@@ -1,0 +1,28 @@
+{"pack": "packs/edexcel/physics/13-electromagnetic-induction.txt", "reviewed": 55,
+"flags": [
+{"id": "edexcel-phys-13-037", "grade": "Minor", "reason": "A proportional-reasoning calculation (I = P/V) without the calc tag; hexOk gives the letter D from 'Divided by 10', a poor clue for an answer most students give as 'one tenth' or '1/10'.", "fix": "Add Calc: yes; make the main answer '1/10' (keep 'Divided by 10' as accepted) so it leaves Hex Hunt."},
+{"id": "edexcel-phys-13-038", "grade": "Minor", "reason": "A calculation (power loss ∝ I², so 1/10² = 1/100) without the calc tag; hexOk gives the letter D from 'Divided by 100', a poor clue for '1/100'.", "fix": "Add Calc: yes; make the main answer '1/100' (keep 'Divided by 100' as accepted) so it leaves Hex Hunt."},
+{"id": "edexcel-phys-13-047", "grade": "Minor", "reason": "Same scenario as 13-003 (a magnet held still inside a coil); the two can come up together and give each other away.", "fix": "Remove, or change the scenario (e.g. 'A wire is held still between the poles of a magnet. What p.d. is induced?')."}
+],
+"calcs": {
+"edexcel-phys-13-023": "12*50/100",
+"edexcel-phys-13-024": "100*40/200",
+"edexcel-phys-13-025": "50*40/10",
+"edexcel-phys-13-033": "10*4/40",
+"edexcel-phys-13-034": "100*2/0.5",
+"edexcel-phys-13-035": "100000/10000",
+"edexcel-phys-13-036": "10**2*2",
+"edexcel-phys-13-037": "1/(1/10)",
+"edexcel-phys-13-038": "1/(1/10)**2",
+"edexcel-phys-13-044": "230*1/23",
+"edexcel-phys-13-045": "6*4/12"
+},
+"notcalc": {
+"edexcel-phys-13-005": "qualitative answer (increases)",
+"edexcel-phys-13-042": "classify step-up from the given voltages",
+"edexcel-phys-13-049": "classify step-down from the given voltages",
+"edexcel-phys-13-047": "zero p.d., not worked out",
+"edexcel-phys-13-032": "qualitative (100% efficient)",
+"edexcel-phys-13-022": "qualitative comparison of turns"
+},
+"mismatchFlagged": []}
