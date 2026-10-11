@@ -75,9 +75,10 @@ Id: edexcel-bio-5-010
 
 Q: Name the four types of pathogen.
 A: Viruses, bacteria, fungi, protists
-Accept: Any order; virus, bacterium, fungus, protist
+Accept: virus, bacterium, fungus, protist
 Ref: 5.4
 D: 2
+Note: Accept in any order.
 Id: edexcel-bio-5-011
 
 Q: Which type of pathogen can only reproduce inside a host cell?
@@ -469,6 +470,7 @@ A: 48 mm²
 Accept: 48 square millimetres; 48
 Ref: 5.19B
 D: 2
+Calc: yes
 Id: edexcel-bio-5-066
 
 Q: Using π = 3, what is the area of a clear zone with diameter 10 mm?
@@ -477,6 +479,7 @@ Accept: 75 square millimetres; 75
 Ref: 5.19B
 D: 3
 Note: Halve the diameter to get the radius (5 mm) first.
+Calc: yes
 Id: edexcel-bio-5-067
 
 Q: In which stage of drug testing is a new drug first tested on cells, tissues and live animals?
@@ -582,6 +585,7 @@ Accept: 32 kg/m²
 Ref: 5.24
 D: 3
 Note: 1.5² = 2.25 and 72 ÷ 2.25 = 32.
+Calc: yes
 Id: edexcel-bio-5-081
 
 Q: What is the waist : hip ratio for a waist of 80 cm and hips of 100 cm?

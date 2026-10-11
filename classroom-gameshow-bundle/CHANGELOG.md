@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.1 – Question check (October 2026)
+
+- A quick independent check of every pack: all 8,009 questions scanned automatically and 524 sampled by hand (every pack, every difficulty), with every sampled calculation worked out independently. No wrong answers were found. Details: `review/question-check.xlsx`.
+- **Six questions no longer give away their answer** (the Compiègne armistice, the Lesotho water project, boiling, Red Cloud's War, the Jews as the king's property, the Marcher earldoms), and one AQA History question now names the Treaty of Versailles.
+- **Accepted answers tidied:** an offshore-wind question no longer accepts solar or biomass; "ITCZ" is no longer accepted as a type of pressure; "Any order" moved from the accepted answers into the marking note.
+- **29 Biology calculations** (magnification, percentage change, BMI, quadrat estimates, transfer efficiency) are now tagged as calculations.
+
 ## 1.7.0 – Launcher music (October 2026)
 
 - **Original game-show music on the main screen:** a 51-second instrumental loop (24 bars, 112 bpm: flute-led hook, warm brass answer, bouncy bass and a light groove), composed in code and rendered with an open soundfont, so there is nothing to license and nothing to download. It repeats with no gap (Web Audio, exact loop length) and is embedded in the one file (about 0.8 MB).

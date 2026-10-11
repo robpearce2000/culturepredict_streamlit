@@ -121,7 +121,7 @@ Ref: B2.1.4
 D: 2
 Id: edexcel-hist-B2-017
 
-Q: Who held England's Jews and their debts as the king's own property?
+Q: Under Richard I and John, England's Jews and the debts owed to them legally belonged to whom?
 A: The king
 Accept: King; Crown
 Ref: B2.1.4

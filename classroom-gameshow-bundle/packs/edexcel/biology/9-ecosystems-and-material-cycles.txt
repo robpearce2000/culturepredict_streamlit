@@ -143,6 +143,7 @@ A: 150
 Accept: 150 plants
 Ref: 9.6
 D: 2
+Calc: yes
 Id: edexcel-bio-9-021
 
 Q: A 0.25 m² quadrat has a mean of 2 buttercups. Estimate the number in a 100 m² field.
@@ -151,6 +152,7 @@ Accept: 800 buttercups
 Ref: 9.6
 D: 3
 Note: Mean per m² is 8, then multiply by 100.
+Calc: yes
 Id: edexcel-bio-9-022
 
 Q: Why must a quadrat count be an estimate rather than an exact population size?
@@ -185,12 +187,14 @@ A: 10%
 Accept: 10 percent
 Ref: 9.8B
 D: 2
+Calc: yes
 Id: edexcel-bio-9-027
 
 Q: A level has 2000 kJ and 5% passes to the next level. How much energy is transferred?
 A: 100 kJ
 Ref: 9.8B
 D: 2
+Calc: yes
 Id: edexcel-bio-9-028
 
 Q: Producers have 1000 g of biomass and primary consumers 150 g. What percentage of the biomass is transferred?
@@ -198,6 +202,7 @@ A: 15%
 Accept: 15 percent
 Ref: 9.8B
 D: 2
+Calc: yes
 Id: edexcel-bio-9-029
 
 Q: Primary consumers have 400 kJ and secondary consumers 20 kJ. What percentage of energy is lost?
@@ -206,6 +211,7 @@ Accept: 95 percent
 Ref: 9.8B
 D: 3
 Note: Efficiency is 5%, so 95% is not transferred.
+Calc: yes
 Id: edexcel-bio-9-030
 
 Q: What is the name for excess nutrients in water causing algal growth and the death of aquatic life?

@@ -146,6 +146,7 @@ Accept: Six; 6 buttercups
 Ref: 4.7.2.1
 RP: 9
 D: 2
+Calc: yes
 Id: aqa-bio-4.7-019
 
 Q: Why should quadrats be placed at random when estimating the population size of a plant?
@@ -165,6 +166,7 @@ D: 3
 Note: 4 per 0.25 m² is 16 per m²; then multiply by 100 m².
 
 # 4.7.2.2 How materials are cycled
+Calc: yes
 Id: aqa-bio-4.7-021
 
 Q: Which process in the carbon cycle removes carbon dioxide from the atmosphere?
@@ -504,6 +506,7 @@ A: 5%
 Accept: 5; 5 per cent
 Ref: 4.7.4.3
 D: 3
+Calc: yes
 Id: aqa-bio-4.7-066
 
 Q: Why are there usually fewer organisms at higher trophic levels?

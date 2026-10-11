@@ -400,6 +400,7 @@ A: 20 kg/m²
 Accept: 20
 Ref: 7.17
 D: 2
+Calc: yes
 Id: edexcel-bio-7-056
 
 Q: Calculate BMI for a person of mass 64 kg and height 1.6 m. BMI = mass ÷ height².
@@ -407,6 +408,7 @@ A: 25 kg/m²
 Accept: 25
 Ref: 7.17
 D: 3
+Calc: yes
 Id: edexcel-bio-7-057
 
 Q: A person's waist is 90 cm and hips are 100 cm. What is their waist:hip ratio?

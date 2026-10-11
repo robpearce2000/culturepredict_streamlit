@@ -115,6 +115,7 @@ Ref: 4.2.2.1
 RP: 5
 D: 2
 Note: The 1000 is arbitrary, so the bare number 20 (or 20 per second) is fine.
+Calc: yes
 Id: aqa-bio-4.2-014
 
 Q: Why does amylase take longer to digest starch at pH 11 than at its optimum pH?
@@ -163,6 +164,7 @@ D: 2
 Note: Rate = volume ÷ time.
 
 # 4.2.2.3 Blood
+Calc: yes
 Id: aqa-bio-4.2-020
 
 Q: Which component of the blood helps blood to clot at a wound?

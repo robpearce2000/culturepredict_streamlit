@@ -149,6 +149,7 @@ Ref: 1.6
 RP: 1.6
 D: 3
 Note: 6 ÷ 300 = 0.02 mm, then × 1000 to give µm.
+Calc: yes
 Id: edexcel-bio-1-020
 
 Q: Which objective lens should you select first when focusing on a specimen?
@@ -291,6 +292,7 @@ Accept: 0.5 cm³ per second; 0.5 cm³ s⁻¹
 Ref: 1.11
 D: 3
 Note: Convert 2 minutes to 120 seconds first.
+Calc: yes
 Id: edexcel-bio-1-039
 
 Q: Which group of enzymes breaks carbohydrates down into simple sugars?
@@ -384,6 +386,7 @@ Accept: 420 J per gram; 420
 Ref: 1.14B
 D: 3
 Note: 840 J in total, then divide by the 2 g of food.
+Calc: yes
 Id: edexcel-bio-1-051
 
 Q: Why does simple calorimetry give a lower energy value than the true value?
@@ -461,6 +464,7 @@ A: 25%
 Accept: 25; +25%
 Ref: 1.17
 D: 2
+Calc: yes
 Id: edexcel-bio-1-062
 
 Q: A potato cylinder's mass falls from 4.0 g to 3.6 g. What is the percentage change?
@@ -468,6 +472,7 @@ A: −10%
 Accept: 10% loss; -10
 Ref: 1.17
 D: 2
+Calc: yes
 Id: edexcel-bio-1-063
 
 Q: A potato cylinder's mass falls from 2.50 g to 2.20 g. What is the percentage change?
@@ -476,4 +481,5 @@ Accept: 12% loss; -12
 Ref: 1.17
 D: 3
 Note: The change is 0.30 g; 0.30 ÷ 2.50 × 100.
+Calc: yes
 Id: edexcel-bio-1-064

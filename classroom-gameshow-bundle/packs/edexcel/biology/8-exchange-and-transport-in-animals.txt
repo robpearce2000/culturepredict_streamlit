@@ -336,4 +336,5 @@ A: 100 cm³
 Accept: 100 cm³ per beat; 100 ml; 0.1 dm³
 Ref: 8.12
 D: 3
+Calc: yes
 Id: edexcel-bio-8-047

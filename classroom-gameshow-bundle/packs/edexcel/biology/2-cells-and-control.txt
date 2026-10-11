@@ -159,6 +159,7 @@ Accept: 25 per cent
 Ref: 2.7
 D: 3
 Note: Percentage gain = increase ÷ starting mass × 100.
+Calc: yes
 Id: edexcel-bio-2-023
 
 Q: What is the name of the region of unspecialised, dividing cells at a plant's root and shoot tips?
@@ -320,6 +321,7 @@ Accept: 60 metres per second; 60 m s⁻¹
 Ref: 2.13
 D: 2
 Note: 1.2 ÷ 0.02 = 60; watch for answers of 0.6 or 6 from decimal slips.
+Calc: yes
 Id: edexcel-bio-2-045
 
 Q: Name the type of neurone in a reflex arc that carries impulses to the effector.

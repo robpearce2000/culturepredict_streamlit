@@ -142,7 +142,7 @@ Ref: B1.2.1
 D: 2
 Id: edexcel-hist-B1-020
 
-Q: Against which people were the Marcher earldoms on the Welsh border mainly meant to defend England?
+Q: Which people beyond England's western border were the Marcher earldoms mainly meant to defend against?
 A: The Welsh
 Accept: Welsh
 Ref: B1.2.1

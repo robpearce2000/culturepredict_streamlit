@@ -264,7 +264,7 @@ Ref: 1BA.3.3
 D: 2
 Id: aqa-hist-1BA-038
 
-Q: In which forest near Compiègne was the armistice of November 1918 signed?
+Q: In which French forest was the armistice of 11 November 1918 signed, in a railway carriage?
 A: Compiègne
 Accept: Compiegne; Compiègne Forest
 Ref: 1BA.3.3

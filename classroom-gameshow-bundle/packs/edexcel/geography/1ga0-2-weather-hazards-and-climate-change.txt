@@ -18,7 +18,7 @@ Id: edexcel-geog-1ga0-2-002
 
 Q: What kind of pressure belt forms where air rises at the equator, bringing heavy rainfall?
 A: Low pressure
-Accept: Low pressure belt; ITCZ
+Accept: Low pressure belt
 Ref: 2.1
 D: 1
 Id: edexcel-geog-1ga0-2-003

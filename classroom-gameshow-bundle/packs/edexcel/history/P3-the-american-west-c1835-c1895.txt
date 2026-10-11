@@ -174,7 +174,7 @@ Ref: P3.2.3
 D: 2
 Id: edexcel-hist-P3-025
 
-Q: Which Sioux leader fought Red Cloud's War of 1866-68 against the Bozeman Trail forts?
+Q: Which Oglala Sioux leader forced the US Army to abandon the Bozeman Trail forts in 1868?
 A: Red Cloud
 Accept: Chief Red Cloud
 Ref: P3.2.3

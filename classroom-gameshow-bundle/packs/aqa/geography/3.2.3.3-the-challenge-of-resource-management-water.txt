@@ -167,7 +167,7 @@ Ref: 3.2.3.3.2
 D: 1
 Id: aqa-geog-3.2.3.3-024
 
-Q: Which country receives money for water sold through the Lesotho Highlands Water Project?
+Q: The Highlands Water Project sells water to South Africa from dams in which country?
 A: Lesotho
 Ref: 3.2.3.3.2
 D: 1

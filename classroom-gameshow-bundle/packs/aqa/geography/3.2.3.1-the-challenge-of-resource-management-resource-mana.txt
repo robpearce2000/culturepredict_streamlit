@@ -198,7 +198,7 @@ Id: aqa-geog-3.2.3.1-028
 
 Q: Name one renewable energy source whose share of UK electricity has grown strongly, especially offshore.
 A: Wind
-Accept: Wind power; Offshore wind; Solar; Biomass
+Accept: Wind power; Offshore wind
 Ref: 3.2.3.1.2
 D: 1
 Id: aqa-geog-3.2.3.1-029

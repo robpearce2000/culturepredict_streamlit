@@ -63,7 +63,7 @@ Ref: 1BB.1.2
 D: 2
 Id: aqa-hist-1BB-009
 
-Q: What was the maximum size of the German army allowed by the treaty?
+Q: What was the maximum size of the German army allowed by the Treaty of Versailles?
 A: 100,000 men
 Accept: 100000; 100,000 soldiers
 Ref: 1BB.1.2

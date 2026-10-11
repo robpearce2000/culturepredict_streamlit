@@ -344,7 +344,7 @@ Id: aqa-phys-4.3-042
 
 # More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
 
-Q: What is the change of state from liquid to gas at the boiling point called?
+Q: Water turns to steam at 100 °C, with bubbles of gas forming throughout the liquid. What is this change of state called?
 A: Boiling
 Ref: 4.3.1.2
 D: 1
