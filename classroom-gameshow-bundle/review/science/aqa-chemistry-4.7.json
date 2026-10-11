@@ -1,0 +1,39 @@
+{"pack": "packs/aqa/chemistry/4.7-organic-chemistry.txt", "reviewed": 74,
+"flags": [
+{"id": "aqa-chem-4.7-071", "grade": "Doubtful", "reason": "Tagged Separate and Combined, but it asks students to NAME an individual alkene (ethene); the spec (4.7.1.4 / 5.7.1.4) says Combined Science students do not need to know the formulae or names of individual alkenes. C2H4 is accepted, so a Combined student could still score by deducing the formula.", "fix": "Reword to 'Give its formula' (answer C2H4, accept ethene), or tag Separate only."},
+{"id": "aqa-chem-4.7-005", "grade": "Minor", "reason": "This is a calculation (2n + 2 with n = 12) but calcTag is false.", "fix": "Set calcTag true."},
+{"id": "aqa-chem-4.7-023", "grade": "Minor", "reason": "Hex letter C ('Carbon-carbon double bond'), but most students will write 'double bond' or 'C=C' (accepted).", "fix": "Set hexOk false, or accept the C clue knowingly."},
+{"id": "aqa-chem-4.7-066", "grade": "Minor", "reason": "'Name one useful material' with four other accepted answers (polymers, solvents, lubricants, detergents) is on Hex Hunt with letter P.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.7-070", "grade": "Minor", "reason": "Hex letter S (from 'A shorter alkane'), but the expected answer is 'alkane' (A); the S clue will mislead.", "fix": "Make the answer 'Alkane' (accept 'A shorter alkane', 'Smaller alkane')."}
+],
+"calcs": {
+"aqa-chem-4.7-005": "2*12+2"
+},
+"notcalc": {
+"aqa-chem-4.7-003": "general formula",
+"aqa-chem-4.7-004": "formula given",
+"aqa-chem-4.7-015": "balancing coefficient (3 CO2 + 4 H2O needs 5 O2)",
+"aqa-chem-4.7-017": "recalled condition",
+"aqa-chem-4.7-020": "formula by atom balance (C10H22 - C8H18 = C2H4)",
+"aqa-chem-4.7-024": "general formula",
+"aqa-chem-4.7-026": "formula given",
+"aqa-chem-4.7-032": "name and formula",
+"aqa-chem-4.7-036": "formula given",
+"aqa-chem-4.7-038": "recalled pH",
+"aqa-chem-4.7-039": "formula",
+"aqa-chem-4.7-041": "formula given",
+"aqa-chem-4.7-049": "formula given",
+"aqa-chem-4.7-050": "count of functional groups",
+"aqa-chem-4.7-053": "formulae",
+"aqa-chem-4.7-054": "formula given",
+"aqa-chem-4.7-061": "formula given",
+"aqa-chem-4.7-062": "formula",
+"aqa-chem-4.7-063": "formula",
+"aqa-chem-4.7-068": "formulae given",
+"aqa-chem-4.7-071": "formulae given",
+"aqa-chem-4.7-074": "count of carbon atoms (4 CO2)",
+"aqa-chem-4.7-051": "formula",
+"aqa-chem-4.7-022": "name",
+"aqa-chem-4.7-013": "formulae"
+},
+"mismatchFlagged": []}
