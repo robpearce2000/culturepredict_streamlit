@@ -2,6 +2,7 @@
 /* =========================================================
    GLOBAL SETTINGS (shared by the launcher and every game)
    sound:         true | false
+   music:         true | false   (the launcher music; Sound off silences it too)
    textSize:      'normal' | 'large'
    reducedMotion: true | false   (defaults to the operating system setting)
    quality:       'high' | 'low' (low = no shadows, no bloom, pixel ratio 1)
@@ -10,7 +11,7 @@
 CGB.settings = (() => {
   const osReduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const lowEnd = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) || (navigator.deviceMemory && navigator.deviceMemory <= 2);
-  const defaults = { sound: true, textSize: 'normal', reducedMotion: osReduce, quality: lowEnd ? 'low' : 'high', mathsTime: 90 };
+  const defaults = { sound: true, music: true, textSize: 'normal', reducedMotion: osReduce, quality: lowEnd ? 'low' : 'high', mathsTime: 90 };
   const saved = CGB.store.getJSON('settings', {});
   const s = Object.assign({}, defaults, saved && typeof saved === 'object' ? saved : {});
   const listeners = [];

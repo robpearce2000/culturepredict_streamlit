@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.0 – Launcher music (October 2026)
+
+- **Original game-show music on the main screen:** a 51-second instrumental loop (24 bars, 112 bpm: flute-led hook, warm brass answer, bouncy bass and a light groove), composed in code and rendered with an open soundfont, so there is nothing to license and nothing to download. It repeats with no gap (Web Audio, exact loop length) and is embedded in the one file (about 0.8 MB).
+- **Behaviour:** starts on the teacher's first click or key press (never a pop-up or error), fades in gently and sits well under the sound effects. Choosing a game plays a short fanfare and fades the music out over a second; returning to the main screen fades it back in. It pauses while the tab is hidden.
+- **Music On/Off** next to Sound on the main screen (and in Settings), remembered between sessions. Sound Off silences the music too; Music Off keeps the effects. Muting is immediate.
+- Source: `tools/music/` (script and MIDI); rebuild the embedded audio with `python3 tools/music/make-assets.py`.
+
 ## 1.6.0 – Classroom feedback (October 2026)
 
 - **No second "Start game" step:** pressing Start on a game's setup card goes straight into the game (all four games).

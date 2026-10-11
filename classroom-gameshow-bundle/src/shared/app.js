@@ -79,7 +79,8 @@ CGB.modal = (() => {
 CGB.renderSettings = function (el, compact) {
   const S = CGB.settings;
   const rows = [
-    { key: 'sound', label: 'Sound', opts: [[true, 'On'], [false, 'Off']], hint: 'All sounds are made by the browser. There is no music.' },
+    { key: 'sound', label: 'Sound', opts: [[true, 'On'], [false, 'Off']], hint: 'Sound effects are made by the browser. Off silences the music too.' },
+    { key: 'music', label: 'Music', opts: [[true, 'On'], [false, 'Off']], hint: 'A short tune plays on the main screen only. Off keeps the sound effects.' },
     { key: 'textSize', label: 'Text size', opts: [['normal', 'Normal'], ['large', 'Large']], hint: 'Large makes every panel and question easier to read from the back.' },
     { key: 'reducedMotion', label: 'Reduced motion', opts: [[false, 'Off'], [true, 'On']], hint: 'Stops camera sway, screen shake and flashes.' },
     { key: 'quality', label: 'Graphics', opts: [['high', 'High'], ['low', 'Low']], hint: 'Low turns off shadows and glow for older classroom PCs.' }
@@ -328,6 +329,7 @@ CGB.app = (() => {
     closeGamePacks();
     if (prev !== 'launcher' && CGB.games[prev]) { CGB.games[prev].exit(); $('game-' + prev).hidden = true; }
     current = id;
+    if (CGB.music) CGB.music.screen(id === 'launcher', id !== 'launcher' && prev === 'launcher');
     if (id === 'launcher') {
       CGB.pause.reset();
       $('launcher').hidden = false;
@@ -522,6 +524,7 @@ CGB.app = (() => {
     const start = routes[location.hash.slice(1)];
     if (start) show(start);
     else if (mascot) mascot.resume();
+    if (CGB.music) CGB.music.init();
   }
   /* "Change" on a setup card: back to the main screen with the subject panel in focus */
   function chooseSubject() {
