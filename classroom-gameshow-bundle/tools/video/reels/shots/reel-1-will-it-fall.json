@@ -1,0 +1,65 @@
+{
+ "name": "reel-1-will-it-fall",
+ "about": "A counter hangs over the front edge while the shelf pushes; slow push-in; it tips and sets off a cascade; half a beat of freeze; loops back to the teeter.",
+ "seed": 11,
+ "questions": 6,
+ "from": 3450,
+ "to": 3930,
+ "slow": 1,
+ "freeze": 0.5,
+ "stage": "high",
+ "cam": [
+  {
+   "at": 0,
+   "pos": [
+    1.75,
+    1.5,
+    9.4
+   ],
+   "look": [
+    0.25,
+    0.1,
+    5.3
+   ],
+   "fov": 40
+  },
+  {
+   "at": 5.4,
+   "pos": [
+    0.85,
+    0.72,
+    7.3
+   ],
+   "look": [
+    0.25,
+    0.05,
+    5.45
+   ],
+   "fov": 40,
+   "ease": "linear"
+  },
+  {
+   "at": 7.6,
+   "pos": [
+    1.45,
+    1.55,
+    8.9
+   ],
+   "look": [
+    0.04999999999999999,
+    -0.9,
+    5.7
+   ],
+   "fov": 46
+  }
+ ],
+ "captions": [
+  {
+   "at": 0,
+   "until": 5.6,
+   "text": "Will it fall?",
+   "size": 130,
+   "top": 330
+  }
+ ]
+}
