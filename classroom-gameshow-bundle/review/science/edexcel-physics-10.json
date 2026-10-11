@@ -1,0 +1,57 @@
+{
+ "pack": "packs/edexcel/physics/10-electricity-and-circuits.txt",
+ "reviewed": 143,
+ "flags": [
+  {
+   "id": "edexcel-phys-10-058",
+   "grade": "Doubtful",
+   "reason": "In the filament lamp investigation the filament is meant to heat up (that is why its resistance rises), so 'to stop the filament heating up' is a muddled reason; switching off between readings is to keep a fixed resistor (and the wires) from warming and changing resistance.",
+   "fix": "Reword to 'In the resistor practical, why should the circuit be switched off between readings?' Answer: To stop the resistor heating up. Accept: Keep its temperature constant; so its resistance stays the same."
+  }
+ ],
+ "calcs": {
+  "edexcel-phys-10-018": "6*1",
+  "edexcel-phys-10-020": "4*5",
+  "edexcel-phys-10-021": "60/12",
+  "edexcel-phys-10-029": "3*10",
+  "edexcel-phys-10-030": "2*5*60",
+  "edexcel-phys-10-035": "0.5+1.5+2",
+  "edexcel-phys-10-036": "3-1",
+  "edexcel-phys-10-042": "2*6",
+  "edexcel-phys-10-043": "12/3",
+  "edexcel-phys-10-048": "4+6",
+  "edexcel-phys-10-049": "6/2",
+  "edexcel-phys-10-050": "12/(4+2)",
+  "edexcel-phys-10-051": "6/1-2",
+  "edexcel-phys-10-057": "6",
+  "edexcel-phys-10-087": "2*5*10",
+  "edexcel-phys-10-088": "0.5*6*20",
+  "edexcel-phys-10-089": "1*12*60",
+  "edexcel-phys-10-090": "90/(3*5)",
+  "edexcel-phys-10-093": "200/1",
+  "edexcel-phys-10-095": "3000/10",
+  "edexcel-phys-10-096": "60*10",
+  "edexcel-phys-10-097": "60000/2000",
+  "edexcel-phys-10-102": "3*4",
+  "edexcel-phys-10-104": "2**2*5",
+  "edexcel-phys-10-105": "sqrt(24/6)",
+  "edexcel-phys-10-137": "2*1000",
+  "edexcel-phys-10-139": "2000/500",
+  "edexcel-phys-10-140": "100*10"
+ },
+ "notcalc": {
+  "edexcel-phys-10-003": "recalled relative charge",
+  "edexcel-phys-10-117": "recalled mains frequency",
+  "edexcel-phys-10-119": "recalled mains voltage",
+  "edexcel-phys-10-120": "recalled mains frequency and voltage",
+  "edexcel-phys-10-131": "recalled mains p.d.",
+  "edexcel-phys-10-132": "recalled p.d. (zero)",
+  "edexcel-phys-10-133": "recalled mains p.d.",
+  "edexcel-phys-10-113": "count of directions (one)",
+  "edexcel-phys-10-138": "power rating restated as J per second",
+  "edexcel-phys-10-032": "zero current, not worked out",
+  "edexcel-phys-10-100": "answer is a label (Lamp A), not a number",
+  "edexcel-phys-10-027": "restates 3 A as 3 C per second, a definition"
+ },
+ "mismatchFlagged": []
+}
