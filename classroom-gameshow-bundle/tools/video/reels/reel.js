@@ -100,7 +100,7 @@ const CSS = `
 .topbar, .l-tools, #mascot, .host-bar, .pause-chip, .toast, .gpu-note, #storageNote { display: none !important; }
 #reel-cap { position: fixed; left: 60px; right: 60px; z-index: 99999; text-align: center; pointer-events: none; opacity: 0; }
 #reel-cap.on { opacity: 1; }
-#reel-cap .rc { display: inline-block; font-family: var(--display, 'Lilita One'), sans-serif; color: #fff; line-height: 1.05; padding: 14px 40px 20px; background: rgba(20,24,52,0.9); border: 7px solid #FFC93C; border-radius: 34px; box-shadow: 0 12px 0 rgba(0,0,0,0.35); text-shadow: 0 5px 0 rgba(0,0,0,0.35); }
+#reel-cap .rc { display: inline-block; white-space: pre-line; font-family: var(--display, 'Lilita One'), sans-serif; color: #fff; line-height: 1.05; padding: 14px 40px 20px; background: rgba(20,24,52,0.9); border: 7px solid #FFC93C; border-radius: 34px; box-shadow: 0 12px 0 rgba(0,0,0,0.35); text-shadow: 0 5px 0 rgba(0,0,0,0.35); }
 #reel-cap.small .rc { font-family: var(--body, 'Nunito'), sans-serif; font-weight: 800; background: rgba(0,0,0,0.35); border: 0; box-shadow: none; text-shadow: 0 2px 6px rgba(0,0,0,0.6); letter-spacing: 0.04em; }
 #reel-mark { position: fixed; right: 40px; z-index: 99999; font-family: var(--display, 'Lilita One'), sans-serif; font-size: 44px; color: #FFC93C; text-shadow: 0 4px 0 rgba(0,0,0,0.45); opacity: 0; pointer-events: none; }
 #reel-mark.on { opacity: 0.95; }
