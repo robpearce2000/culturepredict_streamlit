@@ -1,0 +1,87 @@
+{
+ "pack": "packs/aqa/biology/4.1-cell-biology.txt",
+ "reviewed": 51,
+ "flags": [
+  {
+   "id": "aqa-bio-4.1-006",
+   "grade": "Minor",
+   "reason": "Multiplication calculation (10 x 40) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.1-008",
+   "grade": "Minor",
+   "reason": "hexOk is true with letter M, but a common correct answer is 'scale bar' (S), which is also in the accepted list.",
+   "fix": "Set hexOk false, or keep answer as 'Scale' family consistently."
+  },
+  {
+   "id": "aqa-bio-4.1-009",
+   "grade": "Minor",
+   "reason": "Open 'why' question with hexOk true: correct answers start variously ('So light...', 'Thin enough...', 'Cells don't overlap').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.1-015",
+   "grade": "Minor",
+   "reason": "hexOk true (P), but students will often answer 'Throughout life' or 'They keep the ability...' or start with 'Animal cells...'.",
+   "fix": "Set hexOk false; accept 'Plants can differentiate throughout life'."
+  },
+  {
+   "id": "aqa-bio-4.1-017",
+   "grade": "Minor",
+   "reason": "Magnification calculation (50 / 0.5) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.1-020",
+   "grade": "Minor",
+   "reason": "hexOk true (R for 'Reduces'), but common correct answers start differently ('Less likely pathogens grow', 'Pathogens...', 'Safety').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.1-022",
+   "grade": "Minor",
+   "reason": "Calculation (5 x 10^6 x 4) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.1-034",
+   "grade": "Minor",
+   "reason": "hexOk true (T for 'Transfer'), but the accepted 'Viral infection' starts with V; students may also give 'tumours/cancer', a valid risk not accepted.",
+   "fix": "Set hexOk false; consider accepting 'Infection'."
+  },
+  {
+   "id": "aqa-bio-4.1-042",
+   "grade": "Minor",
+   "reason": "Percentage change calculation but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.1-043",
+   "grade": "Minor",
+   "reason": "hexOk true (C), but common correct answers start 'Different starting masses', 'Fair comparison', 'Starting masses...'.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.1-047",
+   "grade": "Minor",
+   "reason": "hexOk true (S), but correct answers often start 'Lower concentration in soil', 'Against concentration gradient', 'Ions more concentrated in cell'.",
+   "fix": "Set hexOk false; accept 'Against the concentration gradient'."
+  }
+ ],
+ "calcs": {
+  "aqa-bio-4.1-006": "10*40",
+  "aqa-bio-4.1-017": "50/0.5",
+  "aqa-bio-4.1-018": "4/400*1000",
+  "aqa-bio-4.1-021": "2**(120/20)",
+  "aqa-bio-4.1-022": "5e6*2*2",
+  "aqa-bio-4.1-024": "3*2**2",
+  "aqa-bio-4.1-028": "46/2",
+  "aqa-bio-4.1-038": "(6*2**2)/(2**3)",
+  "aqa-bio-4.1-042": "(5.0-4.0)/4.0*100"
+ },
+ "notcalc": {
+  "aqa-bio-4.1-003": "Answer written in words ('One'); checked by hand: 0.02 mm = 20 um vs 2 um, ratio 10 = one order of magnitude, correct."
+ },
+ "mismatchFlagged": []
+}
