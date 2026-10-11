@@ -1,0 +1,84 @@
+{
+ "pack": "packs/aqa/chemistry/4.2-bonding-structure-and-the-properties-of-matter.txt",
+ "reviewed": 89,
+ "flags": [
+  {
+   "id": "aqa-chem-4.2-006",
+   "grade": "Minor",
+   "reason": "Hex letter T ('Transferred'), but 'they are lost (to the non-metal)' is an equally common correct answer and is already accepted (L).",
+   "fix": "Set hexOk false, or accept the T clue knowingly."
+  },
+  {
+   "id": "aqa-chem-4.2-017",
+   "grade": "Minor",
+   "reason": "Open 'give one limitation' question with five different accepted answers is on Hex Hunt with letter S; most correct answers do not start with S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-chem-4.2-034",
+   "grade": "Minor",
+   "reason": "Open 'give one limitation' question on Hex Hunt (letter P); accepted answers vary. The accepted answer 'Spheres are inelastic but real particles are not' is confused (the spec calls the model's spheres inelastic; it is not a clear limitation in that form).",
+   "fix": "Set hexOk false; replace that accepted answer with 'Particles are not solid inelastic spheres'."
+  },
+  {
+   "id": "aqa-chem-4.2-052",
+   "grade": "Minor",
+   "reason": "Hex letter R from 'Relatively'; students will write 'strong intermolecular forces' (S), which is accepted.",
+   "fix": "Make the answer 'Strong intermolecular forces' (accept 'Relatively strong intermolecular forces')."
+  },
+  {
+   "id": "aqa-chem-4.2-072",
+   "grade": "Minor",
+   "reason": "Two-part explanation answer on Hex Hunt (letter L); accepted answers start with N and W.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-chem-4.2-087",
+   "grade": "Minor",
+   "reason": "'Name one product' with several accepted answers (deodorant, cosmetics, make-up) is on Hex Hunt with letter S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-chem-4.2-088",
+   "grade": "Minor",
+   "reason": "'Give one advantage' with varied accepted answers is on Hex Hunt with letter S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-chem-4.2-089",
+   "grade": "Minor",
+   "reason": "'Give one possible risk' with varied accepted answers is on Hex Hunt with letter L.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-chem-4.2-084": "6*2**2/2**3",
+  "aqa-chem-4.2-085": "10/0.1"
+ },
+ "notcalc": {
+  "aqa-chem-4.2-007": "ion charge from group",
+  "aqa-chem-4.2-008": "ion charge from group",
+  "aqa-chem-4.2-009": "ion charge from group",
+  "aqa-chem-4.2-010": "group numbers in question",
+  "aqa-chem-4.2-012": "formula ratio count",
+  "aqa-chem-4.2-016": "formula subscripts",
+  "aqa-chem-4.2-019": "count of bonds",
+  "aqa-chem-4.2-020": "count of bonds",
+  "aqa-chem-4.2-021": "count of bonds",
+  "aqa-chem-4.2-022": "formula",
+  "aqa-chem-4.2-030": "state prediction from melting/boiling points",
+  "aqa-chem-4.2-048": "no calculation",
+  "aqa-chem-4.2-053": "formula",
+  "aqa-chem-4.2-065": "count of bonds",
+  "aqa-chem-4.2-068": "count of bonds",
+  "aqa-chem-4.2-074": "formula",
+  "aqa-chem-4.2-076": "recalled ring sizes",
+  "aqa-chem-4.2-079": "recalled size range",
+  "aqa-chem-4.2-080": "recalled name",
+  "aqa-chem-4.2-081": "recalled size range",
+  "aqa-chem-4.2-082": "recalled unit conversion",
+  "aqa-chem-4.2-083": "recalled spec statement (factor of 10)",
+  "aqa-chem-4.2-024": "3D in text, not a number"
+ },
+ "mismatchFlagged": []
+}
