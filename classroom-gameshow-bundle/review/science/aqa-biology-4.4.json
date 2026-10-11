@@ -1,0 +1,85 @@
+{
+ "pack": "packs/aqa/biology/4.4-bioenergetics.txt",
+ "reviewed": 39,
+ "flags": [
+  {
+   "id": "aqa-bio-4.4-002",
+   "grade": "Minor",
+   "reason": "A word equation is asked for, yet an unbalanced symbol equation (CO2 + H2O -> C6H12O6 + O2) is accepted; an unbalanced equation should not be credited.",
+   "fix": "Remove the unbalanced symbol equation from the accepted answers (keep the balanced one if symbol equations are to be allowed)."
+  },
+  {
+   "id": "aqa-bio-4.4-007",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Less light absorbed' and 'Less chlorophyll...' start with L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.4-008",
+   "grade": "Minor",
+   "reason": "Inverse-square calculation (1/2^2) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.4-011",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Distance of lamp...' starts with D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.4-013",
+   "grade": "Minor",
+   "reason": "Rate calculation (30 / 5) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-bio-4.4-014",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Slows down', 'Falls', 'Fewer bubbles' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.4-015",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted answers start with A, S, T ('Absorbs heat...', 'Stops the water heating up', 'Temperature...').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.4-020",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Insoluble, so...' and 'Does not affect water movement' start with I and D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.4-022",
+   "grade": "Minor",
+   "reason": "A word equation is asked for, yet an unbalanced symbol equation (C6H12O6 + O2 -> CO2 + H2O) is accepted.",
+   "fix": "Remove the unbalanced symbol equation from the accepted answers."
+  },
+  {
+   "id": "aqa-bio-4.4-026",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Glucose is not fully oxidised' starts with G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.4-028",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Bigger molecules' and 'New molecules' start with B and N.",
+   "fix": "Set hexOk false, or drop those accepted forms."
+  },
+  {
+   "id": "aqa-bio-4.4-029",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Depth of breathing', 'Volume of each breath', 'Tidal volume', 'Deeper breaths' start with other letters.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-bio-4.4-013": "30/5"
+ },
+ "notcalc": {
+  "aqa-bio-4.4-008": "Answer in words ('One quarter'), which the checker cannot read; checked by hand: 1/2^2 = 1/4, correct."
+ },
+ "mismatchFlagged": []
+}
