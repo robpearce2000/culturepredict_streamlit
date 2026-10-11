@@ -1,0 +1,150 @@
+{
+ "pack": "packs/edexcel/physics/2-motion-and-forces.txt",
+ "reviewed": 115,
+ "flags": [
+  {
+   "id": "edexcel-phys-2-003",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; common correct answers start 'No direction' or 'Only magnitude', not with H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-005",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Size and direction' (accepted, and very common) starts with S, not M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-006",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; students commonly write 'It is a vector' or 'It has direction', not starting with D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-007",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; 'A scalar has no direction' or 'Vector has magnitude and direction' are equally correct and start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-022",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Not moving' and 'At rest' (both accepted and very common) start with N and A, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-024",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Speeding up' (accepted, very common) starts with S, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-037",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Tape measure' (accepted, and a natural choice for 2 m) starts with T, not M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-051",
+   "grade": "Minor",
+   "reason": "Duplicate of edexcel-phys-1-007 ('What is the SI unit of force?' answer Newton) in the Key concepts pack.",
+   "fix": "Remove one of the two."
+  },
+  {
+   "id": "edexcel-phys-2-059",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Extends more' / 'Extension increases' (accepted) start with E, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-061",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Unchanged', 'Does not change' and 'No change' are equally common and start with other letters. Also near-duplicate of edexcel-phys-7-001.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-068",
+   "grade": "Minor",
+   "reason": "hexOk is true but the answer's first word is 'From', so the letter is F; students will write 'The trolley' (T).",
+   "fix": "Change answer to 'Trolley' (accept 'from the trolley'), or set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-070",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; 'Its direction changes' or 'Changing direction' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-072",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Resultant force' (accepted) and 'Centripetal force' are common correct answers starting with R/C, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-086",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Conserved' (accepted, and the standard answer) starts with C, not S.",
+   "fix": "Set hexOk false, or make 'Conserved' the main answer."
+  },
+  {
+   "id": "edexcel-phys-2-096",
+   "grade": "Minor",
+   "reason": "hexOk is true but the two parts can be given in either order; 'Braking distance and thinking distance' (accepted) starts with B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-2-104",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Longer reaction time' / 'Slower reactions' (accepted, common) start with L/S, not I.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-phys-2-008": "3+3",
+  "edexcel-phys-2-009": "3-3",
+  "edexcel-phys-2-018": "100/20",
+  "edexcel-phys-2-019": "40*30",
+  "edexcel-phys-2-020": "5*2*60",
+  "edexcel-phys-2-023": "60/12",
+  "edexcel-phys-2-025": "20/5",
+  "edexcel-phys-2-027": "(4-12)/4",
+  "edexcel-phys-2-030": "sqrt(2*2*25)",
+  "edexcel-phys-2-031": "6**2/(2*3)",
+  "edexcel-phys-2-034": "10/5",
+  "edexcel-phys-2-035": "0.5*10*5",
+  "edexcel-phys-2-038": "0.10/0.2",
+  "edexcel-phys-2-046": "10*2",
+  "edexcel-phys-2-050": "800",
+  "edexcel-phys-2-052": "2*3",
+  "edexcel-phys-2-053": "2000/1000",
+  "edexcel-phys-2-054": "(500-200)/100",
+  "edexcel-phys-2-057": "5*10",
+  "edexcel-phys-2-065": "0.2*10",
+  "edexcel-phys-2-078": "6/2",
+  "edexcel-phys-2-081": "20",
+  "edexcel-phys-2-084": "2*5",
+  "edexcel-phys-2-085": "4/0.5",
+  "edexcel-phys-2-088": "2*3/(2+1)",
+  "edexcel-phys-2-090": "0.1*20/0.01",
+  "edexcel-phys-2-097": "12+24",
+  "edexcel-phys-2-107": "60*50",
+  "edexcel-phys-2-108": "1000*20/0.1",
+  "edexcel-phys-2-109": "0.5*20",
+  "edexcel-phys-2-110": "6*30/10",
+  "edexcel-phys-2-111": "8*(20/10)**2",
+  "edexcel-phys-2-114": "0.5*1000*20**2/10000",
+  "edexcel-phys-2-115": "3**2"
+ },
+ "notcalc": {
+  "edexcel-phys-2-040": "recalled typical walking speed",
+  "edexcel-phys-2-041": "recalled speed of sound",
+  "edexcel-phys-2-042": "recalled typical cycling speed",
+  "edexcel-phys-2-043": "recalled typical running speed",
+  "edexcel-phys-2-044": "recalled value of g",
+  "edexcel-phys-2-094": "recalled typical reaction time",
+  "edexcel-phys-2-016": "numbers are context only; answer is a word",
+  "edexcel-phys-2-017": "numbers are context only; answer is a word",
+  "edexcel-phys-2-037": "numbers are context only; answer is a word"
+ },
+ "mismatchFlagged": []
+}
