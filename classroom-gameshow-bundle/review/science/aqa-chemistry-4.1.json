@@ -1,0 +1,34 @@
+{"pack": "packs/aqa/chemistry/4.1-atomic-structure-and-the-periodic-table.txt", "reviewed": 56,
+"flags": [
+{"id": "aqa-chem-4.1-009", "grade": "Minor", "reason": "Hex letter is N (from 'Niels'), but nearly every student will answer 'Bohr', so the clue 'begins with N' is misleading.", "fix": "Make the answer 'Bohr' and accept 'Niels Bohr'."},
+{"id": "aqa-chem-4.1-011", "grade": "Minor", "reason": "Hex letter A, but 'Rutherford's (gold foil) experiment' and 'gold foil experiment' are very common correct answers that start with R or G.", "fix": "Set hexOk false, or keep the A clue and note the accepted alternatives are only for other games."},
+{"id": "aqa-chem-4.1-012", "grade": "Minor", "reason": "An explanation answer is used for Hex Hunt with letter R ('Repelled'); the accepted answers themselves start with H and B, so the letter clue does not fit the question.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.1-025", "grade": "Minor", "reason": "Hex letter I ('Innermost'), but the natural answers 'lowest energy levels' and 'the ones closest to the nucleus' (spec wording 'lowest available energy levels') start with L or C.", "fix": "Set hexOk false, or reword the answer to 'Lowest energy levels (innermost shells)'."},
+{"id": "aqa-chem-4.1-029", "grade": "Minor", "reason": "Hex letter D (from 'Dmitri'); students will answer 'Mendeleev'.", "fix": "Make the answer 'Mendeleev' and accept 'Dmitri Mendeleev'."},
+{"id": "aqa-chem-4.1-034", "grade": "Minor", "reason": "Hex letter R from the unnatural order 'Right and top'; the usual answer is 'top right' (T).", "fix": "Make the answer 'Top right' (accept 'Towards the right and top', 'Right-hand side')."},
+{"id": "aqa-chem-4.1-039", "grade": "Minor", "reason": "Hex letter S, but the most common correct answer is 'full outer shell' (F).", "fix": "Set hexOk false, or accept the letter mismatch knowingly."},
+{"id": "aqa-chem-4.1-044", "grade": "Minor", "reason": "Two-clause explanation answer used on Hex Hunt with letter O; too long for the letter clue to be fair ('It has more shells...', 'Less attraction...' are equally right).", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.1-054", "grade": "Minor", "reason": "Hex letter I, but the accepted answers start with F and V and 'variable charges/oxidation states' is a common correct answer.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.1-055", "grade": "Minor", "reason": "Hex letter T, but the natural answer is 'they form coloured compounds' / 'coloured compounds' (C).", "fix": "Make the answer 'Coloured compounds' (accept 'Transition metal compounds are coloured')."}
+],
+"calcs": {
+"aqa-chem-4.1-018": "23-11",
+"aqa-chem-4.1-019": "12-2",
+"aqa-chem-4.1-021": "(75*35+25*37)/100",
+"aqa-chem-4.1-022": "(20*10+80*11)/100"
+},
+"notcalc": {
+"aqa-chem-4.1-016": "recalled size of atom",
+"aqa-chem-4.1-023": "electronic structure",
+"aqa-chem-4.1-024": "electronic structure given",
+"aqa-chem-4.1-013": "recalled charge",
+"aqa-chem-4.1-037": "recalled count of outer electrons",
+"aqa-chem-4.1-003": "equation coefficients",
+"aqa-chem-4.1-042": "equation coefficients",
+"aqa-chem-4.1-040": "group number",
+"aqa-chem-4.1-045": "group number",
+"aqa-chem-4.1-050": "group number",
+"aqa-chem-4.1-051": "group number",
+"aqa-chem-4.1-056": "ion charge"
+},
+"mismatchFlagged": []}
