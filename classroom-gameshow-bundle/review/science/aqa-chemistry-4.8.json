@@ -1,0 +1,39 @@
+{"pack": "packs/aqa/chemistry/4.8-chemical-analysis.txt", "reviewed": 67,
+"flags": [
+{"id": "aqa-chem-4.8-018", "grade": "Minor", "reason": "Two-part test description on Hex Hunt (letter B); 'lit splint...' (accepted) starts with L.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.8-025", "grade": "Minor", "reason": "Two-part test description on Hex Hunt (letter B); accepted answers start with L and S.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.8-028", "grade": "Minor", "reason": "Hex letter D ('Dampen it'), but 'wet it' and 'moisten it' (accepted) are the more natural answers.", "fix": "Set hexOk false, or accept the D clue knowingly."},
+{"id": "aqa-chem-4.8-039", "grade": "Minor", "reason": "Formula answer is on Hex Hunt (letter F from 'Fe'); the stored answer also uses a plain 3 rather than a subscript (Fe(OH)₃), unlike the other packs.", "fix": "Set hexOk false; write the answer as Fe(OH)₃ (keep Fe(OH)3 accepted)."},
+{"id": "aqa-chem-4.8-040", "grade": "Minor", "reason": "Formulae in the question are written with plain digits (CuSO4, Cu(OH)2, Na2SO4) rather than subscripts, unlike the rest of the chemistry packs.", "fix": "Write CuSO₄ + __ NaOH → Cu(OH)₂ + Na₂SO₄."},
+{"id": "aqa-chem-4.8-055", "grade": "Minor", "reason": "Three-item list answer: only one order is accepted, and it is on Hex Hunt with letter A although students may list 'rapid/fast' or 'sensitive' first.", "fix": "Accept the three in any order (e.g. add 'Accurate, sensitive, rapid (any order)'); set hexOk false."},
+{"id": "aqa-chem-4.8-064", "grade": "Minor", "reason": "'Give one example' with seven accepted answers is on Hex Hunt with letter P.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.8-065", "grade": "Minor", "reason": "Near-duplicate of aqa-chem-4.8-017 (burning splint at the mouth of the tube, answer Hydrogen).", "fix": "Remove, or replace with a different gas-test question."}
+],
+"calcs": {
+"aqa-chem-4.8-010": "3/6",
+"aqa-chem-4.8-011": "10*0.3"
+},
+"notcalc": {
+"aqa-chem-4.8-002": "comparison with boiling point of pure water",
+"aqa-chem-4.8-014": "Rf comparison, no calculation",
+"aqa-chem-4.8-017": "formula",
+"aqa-chem-4.8-020": "formula",
+"aqa-chem-4.8-023": "formula",
+"aqa-chem-4.8-024": "formula",
+"aqa-chem-4.8-026": "formula",
+"aqa-chem-4.8-032": "ion formula",
+"aqa-chem-4.8-037": "ion formula / oxidation state",
+"aqa-chem-4.8-038": "formula",
+"aqa-chem-4.8-039": "formula",
+"aqa-chem-4.8-040": "balancing coefficient",
+"aqa-chem-4.8-041": "ion formula",
+"aqa-chem-4.8-042": "formula",
+"aqa-chem-4.8-043": "ion formula",
+"aqa-chem-4.8-052": "formula",
+"aqa-chem-4.8-053": "formula / oxidation state",
+"aqa-chem-4.8-062": "count of spots",
+"aqa-chem-4.8-067": "melting point given, judgement of purity",
+"aqa-chem-4.8-044": "formula",
+"aqa-chem-4.8-049": "formula"
+},
+"mismatchFlagged": []}
