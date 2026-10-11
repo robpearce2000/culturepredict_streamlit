@@ -1,0 +1,12 @@
+{"pack": "packs/edexcel/physics/11-static-electricity.txt", "reviewed": 40,
+"flags": [
+{"id": "edexcel-phys-11-035", "grade": "Minor", "reason": "Duplicate of 11-001 ('charged by rubbing' vs 'charged by friction', same answer Electrons).", "fix": "Remove."},
+{"id": "edexcel-phys-11-037", "grade": "Minor", "reason": "Near-duplicate of 11-009 (force between opposite charges: attraction).", "fix": "Remove, or replace with a different 11.3P item (e.g. a charged rod and a ball with the opposite charge: what happens?)."},
+{"id": "edexcel-phys-11-038", "grade": "Minor", "reason": "Near-duplicate of 11-015 (name for connecting a charged object to the ground: Earthing).", "fix": "Remove."},
+{"id": "edexcel-phys-11-040", "grade": "Minor", "reason": "Duplicate of 11-026 (region where a charge feels a force: Electric field).", "fix": "Remove."}
+],
+"calcs": {
+"edexcel-phys-11-006": "6"
+},
+"notcalc": {},
+"mismatchFlagged": []}
