@@ -1,0 +1,33 @@
+{"pack": "packs/edexcel/physics/15-forces-and-matter.txt", "reviewed": 68,
+"flags": [
+{"id": "edexcel-phys-15-012", "grade": "Minor", "reason": "Near-duplicate of the 3-conservation-of-energy question 'What energy store does a stretched spring have?'.", "fix": "Remove, or replace with another 15.4 item."},
+{"id": "edexcel-phys-15-015", "grade": "Minor", "reason": "A proportional-reasoning calculation (E ∝ x², 2² = 4) without the calc tag.", "fix": "Add Calc: yes."},
+{"id": "edexcel-phys-15-043", "grade": "Minor", "reason": "Near-duplicate of 15-041 (why pressure increases with depth: more liquid above, so more weight).", "fix": "Remove, or refocus on density as well as depth (e.g. 'Why does pressure at a given depth depend on the liquid's density?')."},
+{"id": "edexcel-phys-15-060", "grade": "Minor", "reason": "Open 'give an example' question with hexOk on: the Hex Hunt letter R fixes 'rubber band', but 'spring', the commonest answer, starts with S.", "fix": "Turn hexOk off (e.g. make the answer 'Any elastic object, e.g. rubber band'), or reword to 'Name a stretchy loop of rubber that distorts elastically'."},
+{"id": "edexcel-phys-15-061", "grade": "Minor", "reason": "'Limit of proportionality' is accepted, but it is a different point from the elastic limit (beyond it the spring may still return to its original length).", "fix": "Remove 'Limit of proportionality' from the accepted answers."}
+],
+"calcs": {
+"edexcel-phys-15-010": "10/0.5",
+"edexcel-phys-15-011": "10/200*100",
+"edexcel-phys-15-013": "0.5*100*0.2**2",
+"edexcel-phys-15-014": "2*4/0.2**2",
+"edexcel-phys-15-029": "100000+20000",
+"edexcel-phys-15-037": "100/2",
+"edexcel-phys-15-038": "500*0.4",
+"edexcel-phys-15-046": "2*1000*10",
+"edexcel-phys-15-047": "5*800*10",
+"edexcel-phys-15-048": "(8-3)*1000*10",
+"edexcel-phys-15-049": "32000/(4*10)",
+"edexcel-phys-15-054": "3*10",
+"edexcel-phys-15-055": "5",
+"edexcel-phys-15-062": "50*0.2",
+"edexcel-phys-15-064": "0.5*40*0.5**2",
+"edexcel-phys-15-068": "0.2*10"
+},
+"notcalc": {
+"edexcel-phys-15-001": "count of forces (two)",
+"edexcel-phys-15-030": "recalled right angle",
+"edexcel-phys-15-031": "recalled right angle",
+"edexcel-phys-15-063": "comparison of two given values, no working"
+},
+"mismatchFlagged": []}
