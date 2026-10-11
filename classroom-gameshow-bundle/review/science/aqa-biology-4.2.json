@@ -1,0 +1,96 @@
+{
+ "pack": "packs/aqa/biology/4.2-organisation.txt",
+ "reviewed": 42,
+ "flags": [
+  {
+   "id": "aqa-bio-4.2-003",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Made of different tissues', 'Different tissues...').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-005",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Fatty acids and glycerol' (accepted) starts with F, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-008",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted answers 'Brown to blue-black' and 'Blue-black' start with B, not O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-009",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Lilac', 'Mauve' and 'Violet' start with other letters.",
+   "fix": "Set hexOk false, or keep only 'Purple' for hex rounds."
+  },
+  {
+   "id": "aqa-bio-4.2-012",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Electric heater' (named in the spec and accepted) starts with E, not W.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-013",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Brown' and 'Yellow-brown' start with other letters; students often just say 'brown'.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-018",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Prevent backflow' (accepted, very common) starts with P, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-022",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted answers start with F, D, P, E (Fight, Destroy, Protect, Engulf); first letter is not reliable.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-026",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Mechanical and biological' starts with M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-031",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Brain and liver' starts with B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-032",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Mechanism' and 'How it causes...' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-035",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Travel in the bloodstream' and 'Carried in blood' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-041",
+   "grade": "Minor",
+   "reason": "hexOk is true but answers start variously ('Steeper gradient', 'Wind removes water vapour', 'Higher concentration gradient').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.2-042",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Increase surface area' and 'Absorb more...' start differently.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-bio-4.2-014": "1000/50",
+  "aqa-bio-4.2-020": "1500/5"
+ },
+ "notcalc": {},
+ "mismatchFlagged": []
+}
