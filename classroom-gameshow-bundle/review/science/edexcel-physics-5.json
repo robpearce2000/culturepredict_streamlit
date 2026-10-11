@@ -1,0 +1,193 @@
+{
+ "pack": "packs/edexcel/physics/5-light-and-the-electromagnetic-spectrum.txt",
+ "reviewed": 83,
+ "flags": [
+  {
+   "id": "edexcel-phys-5-005",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-4-032 (light from air into glass at an angle bends towards the normal).",
+   "fix": "Remove one of the two."
+  },
+  {
+   "id": "edexcel-phys-5-008",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; equally correct answers (including accepted ones) start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-009",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; equally correct answers (including accepted ones) start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-013",
+   "grade": "Minor",
+   "reason": "hexOk is true but most students write 'Shorter' or 'Decreases' (accepted), not starting with F.",
+   "fix": "Set hexOk false, or make the answer 'Shorter'."
+  },
+  {
+   "id": "edexcel-phys-5-014",
+   "grade": "Minor",
+   "reason": "hexOk is true but the game takes the letter from 'Lens' (L), while students will write just 'A'.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-016",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Concave' (accepted, very common) starts with C, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-017",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Focal point' and 'Focus' (accepted, very common) start with F, not P.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-024",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'They arrive together' / 'Same time' (accepted) start with other letters than N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-037",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Gets shorter' (accepted, very common for wavelength) starts with G, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-043",
+   "grade": "Minor",
+   "reason": "hexOk is true but the four processes can be listed in any order, so the first letter is not fixed.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-044",
+   "grade": "Minor",
+   "reason": "Duplicate of edexcel-phys-4-036 (prism splits white light: different wavelengths refract by different amounts).",
+   "fix": "Remove one of the two."
+  },
+  {
+   "id": "edexcel-phys-5-045",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-4-037 (effect depends on wavelength); also hexOk is true but 'Frequency' (accepted) starts with F.",
+   "fix": "Remove, or set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-046",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Slows down' (accepted, the most common answer) starts with S, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-047",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'No change' and 'Unchanged' (accepted) start with N and U, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-053",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'The same' (accepted, common) scores S, not E.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-056",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Rises' and 'Gets hotter' (accepted, common) start with R and G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-057",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Falls' and 'Cools down' (accepted, common) start with F and C, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-059",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Name a greenhouse gas' has several correct answers (methane, water vapour) with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-063",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Black' (accepted, common) starts with B, not M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-064",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; equally correct answers (including accepted ones) start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-065",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; equally correct answers (including accepted ones) start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-066",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'More dangerous' (accepted, common) starts with M, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-070",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Burns' (accepted, common) starts with B, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-071",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Cancer' (accepted, common) starts with C, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-072",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Cell damage', 'Cancer' and 'Damage to DNA' (accepted) start with other letters than M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-076",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; equally correct answers (including accepted ones) start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-077",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; equally correct answers (including accepted ones) start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-079",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Oscillations' / 'An oscillating current' (accepted) start with O, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-5-083",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Light' and 'A photon' (accepted, common) start with L and P, not E.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-phys-5-038": "3e8/100e6",
+  "edexcel-phys-5-039": "3e8/0.1",
+  "edexcel-phys-5-049": "600*2e8/3e8",
+  "edexcel-phys-5-054": "50",
+  "edexcel-phys-5-080": "90"
+ },
+ "notcalc": {
+  "edexcel-phys-5-004": "recalled: refracted ray at 90° at the critical angle",
+  "edexcel-phys-5-014": "comparison only: shorter focal length is more powerful",
+  "edexcel-phys-5-023": "recalled speed of light"
+ },
+ "mismatchFlagged": []
+}
