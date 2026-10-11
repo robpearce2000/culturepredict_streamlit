@@ -398,3 +398,80 @@ Accept: W; watts
 Ref: 8.14
 D: 1
 Id: edexcel-phys-8-053
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: What name is given to the rate of doing work?
+A: Power
+Ref: 8.12
+D: 1
+Id: edexcel-phys-8-056
+
+Q: Which force do you do work against when lifting an object?
+A: Gravity
+Accept: Weight
+Ref: 8.5
+D: 1
+Id: edexcel-phys-8-057
+
+Q: What force opposes motion between two surfaces in contact?
+A: Friction
+Ref: 8.5
+D: 1
+Id: edexcel-phys-8-058
+
+Q: Which energy store increases when a car brakes and its brakes get hot?
+A: Thermal energy store
+Accept: Thermal
+Ref: 8.7
+D: 2
+Id: edexcel-phys-8-059
+
+Q: What energy store does an object gain when it is lifted?
+A: Gravitational potential energy
+Accept: Gravitational potential
+Ref: 8.9
+D: 1
+Id: edexcel-phys-8-060
+
+Q: What name is given to the energy of a moving object?
+A: Kinetic energy
+Accept: Kinetic
+Ref: 8.8
+D: 1
+Id: edexcel-phys-8-061
+
+Q: What does one watt equal in joules per second?
+A: One joule per second
+Accept: 1 J/s
+Ref: 8.14
+D: 3
+Id: edexcel-phys-8-062
+
+Q: What quantity is force multiplied by distance moved in the direction of the force?
+A: Work done
+Accept: Work
+Ref: 8.6
+D: 3
+Id: edexcel-phys-8-063
+
+Q: How much work is done when a force of one newton moves an object one metre?
+A: One joule
+Accept: 1 J; 1 joule
+Ref: 8.6
+D: 2
+Id: edexcel-phys-8-064
+
+Q: What type of energy store does a moving car have?
+A: Kinetic energy store
+Accept: Kinetic
+Ref: 8.4
+D: 1
+Id: edexcel-phys-8-065
+
+Q: What type of energy store is released when fuel is burned in an engine?
+A: Chemical energy store
+Accept: Chemical
+Ref: 8.4
+D: 1
+Id: edexcel-phys-8-066

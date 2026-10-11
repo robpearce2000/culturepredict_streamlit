@@ -329,3 +329,92 @@ Ref: P9
 D: 2
 HT: yes
 Id: aqa-maths-3.5-046
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: What is the probability of an impossible event?
+A: Zero
+Accept: 0
+Ref: P4
+D: 1
+Id: aqa-maths-3.5-047
+
+Q: What is the probability of a certain event?
+A: One
+Accept: 1
+Ref: P4
+D: 1
+Id: aqa-maths-3.5-048
+
+Q: What do the probabilities of all possible outcomes add up to?
+A: One
+Accept: 1
+Ref: P4
+D: 1
+Id: aqa-maths-3.5-049
+
+Q: What name is given to a diagram with branches showing outcomes and their probabilities?
+A: Tree diagram
+Ref: P8
+D: 1
+Id: aqa-maths-3.5-050
+
+Q: What name is given to events where one outcome does not affect the other?
+A: Independent events
+Accept: Independent
+Ref: P8
+D: 1
+Id: aqa-maths-3.5-051
+
+Q: What name is given to a list or table of every possible outcome?
+A: Sample space
+Accept: Possibility space
+Ref: P7
+D: 1
+Id: aqa-maths-3.5-053
+
+Q: What name is given to a probability estimated from an experiment?
+A: Experimental probability
+Accept: Relative frequency
+Ref: P1
+D: 2
+Id: aqa-maths-3.5-054
+
+Q: What name is given to a diagram of overlapping circles used to show sets?
+A: Venn diagram
+Ref: P6
+D: 1
+Id: aqa-maths-3.5-055
+
+Q: What word describes a dice where every outcome is equally likely?
+A: Fair
+Accept: Unbiased
+Ref: P2
+D: 1
+Id: aqa-maths-3.5-056
+
+Q: What name is given to the probability found by dividing favourable outcomes by all outcomes?
+A: Theoretical probability
+Ref: P3
+D: 2
+Id: aqa-maths-3.5-057
+
+Q: What word describes a sample where every member has an equal chance of being chosen?
+A: Random
+Accept: Unbiased
+Ref: P5
+D: 2
+Id: aqa-maths-3.5-058
+
+Q: What name is given to a table showing the outcomes of two events together?
+A: Two-way table
+Accept: Possibility space
+Ref: P7
+D: 1
+Id: aqa-maths-3.5-059
+
+Q: What word is used for the chance of an event happening, measured from 0 to 1?
+A: Probability
+Ref: P2
+D: 1
+Id: aqa-maths-3.5-060

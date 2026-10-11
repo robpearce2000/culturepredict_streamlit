@@ -1580,12 +1580,10 @@ function startGame() {
   state.wrongAnswers = state.players.map(() => []);
   picker.reset();
   $('roundEnd').classList.remove('show');
-  // the track is shown with nothing ticking until the teacher presses Start game
   state.phase = 'ready';
   hideAll();
-  gate.show(startDealRound);
+  startDealRound();
 }
-const gate = CGB.createStartGate(document.getElementById('game-outpace'), 'The class votes for a deal, then every team answers each question on a whiteboard. Nothing starts until you press Start.');
 const pickQuestion = () => picker.pick(state.players.map(p => p.name));
 
 /* ============ DEAL ROUND ============ */
@@ -1787,7 +1785,7 @@ function resolveSprint(early) {
 // End game and show results: the points banked so far
 function endNow() {
   clearTimers(); roundDeal.stop(); roundSprint.stop(); CGB.pause.cancel(sprintNextT);
-  gate.hide(); sprintGate.hide(); state.sprintReady = false;
+  sprintGate.hide(); state.sprintReady = false;
   roundEndNext = null; $('roundEnd').classList.remove('show');
   onSequenceComplete = () => {}; skipSequence(); onSequenceComplete = null;   // stop any big moment without its ending
   showSummary(null);
@@ -1809,7 +1807,7 @@ $('menuBtn2').addEventListener('click', () => CGB.app.requestLauncher());
 
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  clearTimers(); roundDeal.stop(); roundSprint.stop(); CGB.pause.cancel(sprintNextT); gate.hide(); sprintGate.hide(); state.sprintReady = false;
+  clearTimers(); roundDeal.stop(); roundSprint.stop(); CGB.pause.cancel(sprintNextT); sprintGate.hide(); state.sprintReady = false;
   state.phase = 'home';
   roundEndNext = null;
   $('roundEnd').classList.remove('show');

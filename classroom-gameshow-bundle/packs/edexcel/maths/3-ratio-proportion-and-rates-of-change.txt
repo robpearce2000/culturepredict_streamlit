@@ -456,3 +456,44 @@ D: 3
 HT: yes
 Note: x₂ = 4, then x₃ = 3 + 0.5.
 Id: edexcel-maths-3-062
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: A quantity is shared in the ratio 2 : 3. How many equal parts is it divided into?
+A: Five
+Accept: 5
+Ref: R5
+D: 1
+Id: edexcel-maths-3-063
+
+Q: In the ratio 1 : 4, what fraction of the whole is the first part?
+A: One fifth
+Accept: A fifth; 1/5
+Ref: R8
+D: 2
+Id: edexcel-maths-3-064
+
+Q: What name is given to a change written as a percentage of the original amount?
+A: Percentage change
+Ref: R9
+D: 2
+Id: edexcel-maths-3-065
+
+Q: What name is given to the rate paid on money held in a bank account?
+A: Interest rate
+Ref: R16
+D: 1
+Id: edexcel-maths-3-066
+
+Q: Speed is distance divided by what?
+A: Time
+Ref: R11
+D: 1
+Id: edexcel-maths-3-067
+
+Q: What name is given to the ratio of a length on a drawing to the real length?
+A: Scale
+Accept: Scale factor
+Ref: R2
+D: 1
+Id: edexcel-maths-3-068

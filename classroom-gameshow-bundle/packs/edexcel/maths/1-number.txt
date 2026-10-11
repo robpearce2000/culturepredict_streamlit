@@ -431,3 +431,58 @@ D: 3
 HT: yes
 Note: Largest distance ÷ smallest time: 25 ÷ 2.5.
 Id: edexcel-maths-1-058
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: What do we call the result of multiplying a number by an integer?
+A: Multiple
+Ref: N4
+D: 1
+Id: edexcel-maths-1-059
+
+Q: What number multiplied by 5 gives 1?
+A: Reciprocal
+Accept: One fifth; A fifth
+Ref: N3
+D: 2
+Id: edexcel-maths-1-060
+
+Q: What is the inverse of squaring a number?
+A: Square root
+Ref: N6
+D: 1
+Id: edexcel-maths-1-061
+
+Q: What name is given to whole numbers, including negatives and zero?
+A: Integers
+Accept: Integer
+Ref: N1
+D: 1
+Id: edexcel-maths-1-062
+
+Q: What do we call the digits in a number, counted from the first non-zero digit, that are kept after rounding?
+A: Significant figures
+Accept: Significant figure
+Ref: N15
+D: 1
+Id: edexcel-maths-1-063
+
+Q: What does the symbol ≈ mean?
+A: Approximately equal to
+Accept: Approximately equals
+Ref: N14
+D: 1
+Id: edexcel-maths-1-064
+
+Q: What name is given to the number below the line in a fraction?
+A: Denominator
+Ref: N8
+D: 1
+Id: edexcel-maths-1-065
+
+Q: What name is given to the numbers 2, 3, 5, 7, 11 and 13?
+A: Prime numbers
+Accept: Primes
+Ref: N4
+D: 1
+Id: edexcel-maths-1-066

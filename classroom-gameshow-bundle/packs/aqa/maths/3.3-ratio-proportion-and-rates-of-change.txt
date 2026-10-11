@@ -414,3 +414,55 @@ D: 3
 HT: yes
 Note: x₂ = 4, then x₃ = 5.
 Id: aqa-maths-3.3-056
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: What is the constant k called in y = kx?
+A: Constant of proportionality
+Ref: R10
+D: 1
+Id: aqa-maths-3.3-057
+
+Q: Speed is distance divided by what?
+A: Time
+Ref: R11
+D: 1
+Id: aqa-maths-3.3-058
+
+Q: Which compound unit measures mass for each unit of volume?
+A: Density
+Ref: R11
+D: 1
+Id: aqa-maths-3.3-059
+
+Q: What name is given to the original amount of money invested or borrowed?
+A: Principal
+Ref: R16
+D: 2
+Id: aqa-maths-3.3-060
+
+Q: Two quantities that increase at the same rate are in what kind of proportion?
+A: Direct proportion
+Accept: Directly proportional
+Ref: R10
+D: 1
+Id: aqa-maths-3.3-061
+
+Q: When one quantity doubles as the other halves, how are they related?
+A: Inversely proportional
+Accept: Inverse proportion
+Ref: R10
+D: 2
+Id: aqa-maths-3.3-062
+
+Q: What name is given to the number that multiplies all lengths in an enlargement?
+A: Scale factor
+Ref: R2
+D: 1
+Id: aqa-maths-3.3-063
+
+Q: What name is given to interest paid only on the original amount?
+A: Simple interest
+Ref: R16
+D: 1
+Id: aqa-maths-3.3-064

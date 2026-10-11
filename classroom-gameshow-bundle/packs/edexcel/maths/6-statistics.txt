@@ -413,3 +413,30 @@ Accept: Interpolating
 Ref: S6
 D: 2
 Id: edexcel-maths-6-055
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: What name is given to the middle value when data are put in order?
+A: Median
+Ref: S4
+D: 1
+Id: edexcel-maths-6-056
+
+Q: What name is given to the difference between the largest and smallest values?
+A: Range
+Ref: S4
+D: 1
+Id: edexcel-maths-6-057
+
+Q: Which graph shows the relationship between two sets of data using plotted points?
+A: Scatter graph
+Accept: Scatter diagram
+Ref: S6
+D: 1
+Id: edexcel-maths-6-058
+
+Q: What word describes the relationship shown by the points on a scatter graph?
+A: Correlation
+Ref: S6
+D: 1
+Id: edexcel-maths-6-059

@@ -450,3 +450,43 @@ D: 3
 HT: yes
 Note: Lower bound of a minus upper bound of b: 8.5 − 3.5.
 Id: aqa-maths-3.1-062
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: What name is given to numbers such as 2, 3, 5, 7 and 11?
+A: Prime numbers
+Accept: Primes
+Ref: N4
+D: 1
+Id: aqa-maths-3.1-063
+
+Q: What do we call a number that divides exactly into another number?
+A: Factor
+Ref: N4
+D: 1
+Id: aqa-maths-3.1-064
+
+Q: What does HCF stand for?
+A: Highest common factor
+Ref: N4
+D: 1
+Id: aqa-maths-3.1-065
+
+Q: What name is given to the number below the line in a fraction?
+A: Denominator
+Ref: N8
+D: 1
+Id: aqa-maths-3.1-066
+
+Q: What name is given to numbers, such as pi, that cannot be written as fractions?
+A: Irrational numbers
+Accept: Irrational
+Ref: N8
+D: 2
+Id: aqa-maths-3.1-067
+
+Q: What name is given to a number written as A × 10ⁿ with A between 1 and 10?
+A: Standard form
+Ref: N9
+D: 1
+Id: aqa-maths-3.1-068

@@ -255,3 +255,32 @@ Accept: Opposition to the US occupation; anger at the invasion; anger at the USA
 Ref: 1BE.3.3
 D: 3
 Id: aqa-hist-1BE-037
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: Which country's invasion of Kuwait began the Gulf War?
+A: Iraq
+Ref: 1BE.1.2
+D: 1
+Id: aqa-hist-1BE-038
+
+Q: Which US President ordered the invasion of Afghanistan in 2001?
+A: George W. Bush
+Accept: Bush; George Bush
+Ref: 1BE.2.3
+D: 1
+Id: aqa-hist-1BE-039
+
+Q: What was the name of the political party that ruled Iraq under Saddam Hussein?
+A: Ba'ath Party
+Accept: Baath Party; Ba'ath
+Ref: 1BE.3.1
+D: 3
+Id: aqa-hist-1BE-040
+
+Q: Which UN body passed resolutions demanding weapons inspections in Iraq?
+A: Security Council
+Accept: UN Security Council
+Ref: 1BE.3.2
+D: 2
+Id: aqa-hist-1BE-041

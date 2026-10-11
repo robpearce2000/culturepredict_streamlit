@@ -288,3 +288,79 @@ Ref: 1.4
 D: 3
 Calc: yes
 Id: edexcel-phys-1-038
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: What prefix means one thousand?
+A: Kilo
+Ref: 1.2
+D: 1
+Id: edexcel-phys-1-042
+
+Q: What prefix means one millionth?
+A: Micro
+Ref: 1.2
+D: 1
+Id: edexcel-phys-1-043
+
+Q: What prefix means one thousandth?
+A: Milli
+Ref: 1.2
+D: 1
+Id: edexcel-phys-1-044
+
+Q: What prefix means one billionth?
+A: Nano
+Ref: 1.2
+D: 1
+Id: edexcel-phys-1-045
+
+Q: What prefix means one million?
+A: Mega
+Ref: 1.2
+D: 1
+Id: edexcel-phys-1-046
+
+Q: What prefix means one billion?
+A: Giga
+Ref: 1.2
+D: 1
+Id: edexcel-phys-1-047
+
+Q: How many significant figures does 0.0405 have?
+A: Three
+Accept: 3
+Ref: 1.4
+D: 3
+Id: edexcel-phys-1-048
+
+Q: What name is given to numbers written as A × 10ⁿ?
+A: Standard form
+Ref: 1.4
+D: 3
+Id: edexcel-phys-1-049
+
+Q: What prefix means one hundredth?
+A: Centi
+Ref: 1.2
+D: 1
+Id: edexcel-phys-1-050
+
+Q: What prefix means one trillionth?
+A: Pico
+Ref: 1.2
+D: 2
+Id: edexcel-phys-1-051
+
+Q: What prefix means one tenth?
+A: Deci
+Ref: 1.2
+D: 1
+Id: edexcel-phys-1-052
+
+Q: What name is given to the digits of a measurement that are reliable?
+A: Significant figures
+Accept: Significant figure
+Ref: 1.4
+D: 2
+Id: edexcel-phys-1-053

@@ -127,9 +127,8 @@ test('the camera and picture glide smoothly through a move', async ({ page }) =>
 });
 
 test('Outpace: the Final Sprint waits on a card that explains it, and only starts the clock when Start is pressed', async ({ page }) => {
-  const log = await openBundle(page, '#outpace', { gate: true });
+  const log = await openBundle(page, '#outpace');
   await page.click('#op-startBtn');
-  await page.click('#game-outpace .start-gate:not(.sprint-gate) .start-gate-btn');   // the Start game card
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
   const card = page.locator('#game-outpace .sprint-gate:not([hidden])');
   await expect(card).toContainText('Final Sprint');

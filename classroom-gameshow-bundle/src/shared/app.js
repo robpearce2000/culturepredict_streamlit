@@ -345,6 +345,7 @@ CGB.app = (() => {
       document.title = g.title + ' | Showtime: Classroom Gameshows';
       g.enter();
       CGB.fitSetups();
+      if (CGB.fitTopbars) CGB.fitTopbars();
     }
     const want = id === 'launcher' ? '' : '#' + id;
     if (location.hash !== want) {
@@ -625,4 +626,27 @@ CGB.resultsLocked = () => performance.now() < resultsUntil;
   // a refresh or close mid-game asks first (the browser shows its own "Leave this page?")
   window.addEventListener('beforeunload', e => { if (CGB.app && CGB.app.inGame()) { e.preventDefault(); e.returnValue = ''; } });
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', addButtons); else addButtons();
+})();
+
+/* ---------- Keep every game's cards below the top bar ----------
+   The top bar (Menu, Sound, Pause, Full screen, Settings, End game) can wrap onto a second row on a narrow
+   screen. Each game gets --topbar-h, the space the bar takes from the top, and its question cards, setup
+   screens and results start below it, so a card never covers a button at any screen size. */
+(() => {
+  const set = tb => {
+    const game = tb.closest('.game, [id^="game-"]'); if (!game) return;
+    const g = game.getBoundingClientRect(), b = tb.getBoundingClientRect();
+    if (!b.height) return;   // a hidden game
+    game.style.setProperty('--topbar-h', Math.ceil(b.bottom - g.top + 8) + 'px');
+  };
+  const start = () => {
+    const bars = Array.from(document.querySelectorAll('.topbar'));
+    const ro = window.ResizeObserver ? new ResizeObserver(es => es.forEach(e => set(e.target))) : null;
+    bars.forEach(tb => { if (ro) ro.observe(tb); set(tb); });
+    window.addEventListener('resize', () => bars.forEach(set));
+    // a game's bar gets its size when the game is shown
+    document.addEventListener('visibilitychange', () => bars.forEach(set));
+    CGB.fitTopbars = () => bars.forEach(set);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => setTimeout(start, 0)); else setTimeout(start, 0);
 })();

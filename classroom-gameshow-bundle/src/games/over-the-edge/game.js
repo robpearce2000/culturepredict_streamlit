@@ -109,21 +109,22 @@ function stepTray(tray, dt, onFall) {
     }
   }
 }
+/* Where a counter leaving the peg board lands on the top shelf. No chance is involved: it lands flat in the
+   nearest free gap to where it left the pegs, and only if there is genuinely no room within a few counter
+   widths does it come down on top of the nearest counter. */
 function upperLanding(tray, x) {
   const r = PHY.R; x = Math.min(PHY.W - r, Math.max(r, x));
-  if (CGB.random() < 0.25) {
-    let best = null, bd = 1e9;
-    for (const b of tray.upper) {
-      if (b.base || b.rider || Math.abs(b.x - x) > r * 2) continue;
-      const d = Math.abs(b.x - x) + Math.abs(b.y - (PHY.WALL + 40)) * 0.5;
-      if (d < bd) { bd = d; best = b; }
-    }
-    if (best) return { x: best.x, y: best.y, onto: best };
-  }
-  for (let y = PHY.WALL + r + 2; y < tray.pf - r; y += 5) for (const off of [0, -9, 9, -18, 18]) {
+  for (let d = 0; d <= r * 4; d += 3) for (const off of d ? [-d, d] : [0]) {
     const xx = Math.min(PHY.W - r, Math.max(r, x + off));
-    if (overlapInfo(tray.upper, xx, y, r).worst < r * 0.25) return { x: xx, y };
+    for (let y = PHY.WALL + r + 2; y < tray.pf - r; y += 5) if (overlapInfo(tray.upper, xx, y, r).worst < r * 0.25) return { x: xx, y };
   }
+  let best = null, bd = 1e9;
+  for (const b of tray.upper) {
+    if (b.base || b.rider || Math.abs(b.x - x) > r * 2) continue;
+    const d = Math.abs(b.x - x) + Math.abs(b.y - (PHY.WALL + 40)) * 0.5;
+    if (d < bd) { bd = d; best = b; }
+  }
+  if (best) return { x: best.x, y: best.y, onto: best };
   return { x, y: PHY.WALL + r + 2 };
 }
 /* How close to the front edge the bottom shelf starts filled, in counter radii. Filled right to
@@ -221,7 +222,6 @@ const WILDCARDS = [
 /* Fixed settings: 6 questions in Round 1 and 4 in the final (under 10 minutes with a class),
    a 20-second countdown before "show me", and the jackpot counter set at Normal difficulty */
 const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
-const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The first question appears when you press Start.');
 const G = {
   nTeams: +CGB.store.get('ote.nTeams') || 4,
   laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, autoLanes: false, nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
@@ -794,7 +794,7 @@ function updateDrops(dt) {
       drops.splice(i, 1);
       const L = upperLanding(tray, c.x);
       const onto = L.onto && tray.upper.includes(L.onto) && !L.onto.rider ? L.onto : null;
-      transits.push({ mesh: c.mesh, from: c.mesh.position.clone(), to: new THREE.Vector3(TX(L.x), UH + COIN_T / 2 + (onto ? COIN_T : 0), TZ(L.y)), L, onto, t: 0, dur: 0.38, owner: c.owner, ang: c.ang, onLand: c.onLand });
+      transits.push({ x0: c.x, mesh: c.mesh, from: c.mesh.position.clone(), to: new THREE.Vector3(TX(L.x), UH + COIN_T / 2 + (onto ? COIN_T : 0), TZ(L.y)), L, onto, t: 0, dur: 0.38, owner: c.owner, ang: c.ang, onLand: c.onLand });
     }
   }
   PEGS.forEach((p, i) => {
@@ -805,8 +805,12 @@ function updateTransits(dt) {
   for (let i = transits.length - 1; i >= 0; i--) {
     const T = transits[i]; T.t += dt;
     const k = Math.min(1, T.t / T.dur);
-    // the target may have moved with the shelf while we were in the air
-    const L = T.onto && tray.upper.includes(T.onto) ? { x: T.onto.x, y: T.onto.y } : T.L;
+    // the shelf moves while the counter is in the air: the landing is worked out again from where it
+    // left the pegs, so it always arrives in the nearest free gap (or on top only if there is no room)
+    const P = upperLanding(tray, T.x0);
+    T.L = P; T.onto = P.onto && tray.upper.includes(P.onto) && !P.onto.rider ? P.onto : null;
+    T.to.y = UH + COIN_T / 2 + (T.onto ? COIN_T : 0);
+    const L = T.onto ? { x: T.onto.x, y: T.onto.y } : T.L;
     T.to.x = TX(L.x); T.to.z = TZ(L.y);
     T.mesh.position.lerpVectors(T.from, T.to, k);
     T.mesh.position.y = T.from.y + (T.to.y - T.from.y) * k * k;
@@ -1195,12 +1199,6 @@ const round = CGB.createClassRound({
   teams: () => G.players.length,
   question: () => G.q,
   reveal: () => { G.answerShown = true; renderQuestion(); },
-  // while the class writes, the question is shown large over the machine
-  onPhase: ph => {
-    const big = ph === 'think' && !!G.q;
-    if (big) { $('bigTag').textContent = `${G.q.subject}: ${G.q.topic}`; $('bigText').textContent = G.q.q; }
-    $('bigq').hidden = !big;
-  },
   onConfirm: classResult, onUndo: undoClassResult
 });
 function classResult(res) {
@@ -1322,14 +1320,13 @@ function startGame() {
   $('roundName').textContent = 'Round 1: Counter Drop';
   $('qCount').textContent = `${G.qTotal} questions, then the final`;
   G.step = 'ready'; G.q = null;
-  hideBubble();                                   // the setup greeting goes before the Start game card
+  hideBubble();                                   // the setup greeting goes before the first question
   render();
-  // nothing ticks until the teacher presses Start game
-  gate.show(() => {
+  (() => {
     showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
     hostSay(`Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!`, 'cheer', 2200);
     nextQuestion(true);
-  });
+  })();
 }
 function nextQuestion(quiet) {
   resetChuteGlow();
@@ -1350,10 +1347,9 @@ let dropTimers = [];
 function edgeTeeter() { return tray.lower.some(b => !b.base && b.y > PHY.D - b.r * 0.35); }
 // End game and show results: the money and the class pot as they stand
 function endNow() {
-  round.stop(); dropTimers = []; G.laneQueue = []; G.queuedLane = null; gate.hide();
+  round.stop(); dropTimers = []; G.laneQueue = []; G.queuedLane = null;
   if (G.phase === 'r1') G.team = G.players.reduce((a, p) => a + p.money, 0);
   G.phase = 'summary'; G.step = null;
-  $('bigq').hidden = true;
   showSummary();
 }
 function endRound() {
@@ -1421,6 +1417,17 @@ CGB.test.ote = {
     tray.lower = tray.lower.filter(b => b !== J); clearSpace(J.x, y); tray.lower.push(J); J.y = y; J.vx = J.vy = 0;
   },
   simTime: () => simT,
+  // landing checks: where a counter leaving the pegs at x would land now, and whether a free gap exists there
+  landing(x) { const L = upperLanding(tray, x); return { x: L.x, y: L.y, onto: !!L.onto }; },
+  gapFree(x) {
+    const r = PHY.R; x = Math.min(PHY.W - r, Math.max(r, x));
+    for (let d = 0; d <= r * 4; d += 3) for (const off of d ? [-d, d] : [0]) {
+      const xx = Math.min(PHY.W - r, Math.max(r, x + off));
+      for (let y = PHY.WALL + r + 2; y < tray.pf - r; y += 5) if (overlapInfo(tray.upper, xx, y, r).worst < r * 0.25) return true;
+    }
+    return false;
+  },
+  stacked() { return tray.upper.filter(b => b.base).length; },
   renderer: () => renderer, scene: () => scene,
   jackpot(gap, heavy) { jackpotOverride = [gap, heavy]; },   // for tuning
   fillFront(k) { FILL_FRONT = k; },                            // for tuning
@@ -1482,7 +1489,7 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  dropTimers = []; round.stop(); G.laneQueue = []; gate.hide();
+  dropTimers = []; round.stop(); G.laneQueue = [];
   $('summary').classList.add('hidden');
   $('home').classList.remove('hidden');
   updateHost(true);

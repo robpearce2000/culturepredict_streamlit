@@ -341,3 +341,83 @@ HT: yes
 D: 3
 Note: Temperature rises because the average kinetic energy of the particles rises.
 Id: aqa-phys-4.3-042
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: What is the change of state from liquid to gas at the boiling point called?
+A: Boiling
+Ref: 4.3.1.2
+D: 1
+Id: aqa-phys-4.3-043
+
+Q: What is the change of state from solid straight to gas called?
+A: Sublimation
+Ref: 4.3.1.2
+D: 2
+Id: aqa-phys-4.3-044
+
+Q: What is the SI unit of pressure?
+A: Pascal
+Accept: Pa
+Ref: 4.3.3.2
+D: 1
+Id: aqa-phys-4.3-046
+
+Q: What happens to the pressure of a gas in a sealed container when it is heated?
+A: It increases
+Accept: Increases; Goes up
+Ref: 4.3.3.1
+D: 1
+Id: aqa-phys-4.3-047
+
+Q: What is the name of the temperature scale that starts at absolute zero?
+A: Kelvin
+Ref: 4.3.3.1
+D: 1
+Id: aqa-phys-4.3-048
+
+Q: What is the change of state from liquid to solid called?
+A: Freezing
+Accept: Solidifying
+Ref: 4.3.1.2
+D: 1
+Id: aqa-phys-4.3-049
+
+Q: What name is given to the mass of a material in each unit of volume?
+A: Density
+Ref: 4.3.1.1
+D: 1
+Id: aqa-phys-4.3-050
+
+Q: How do gas particles move between collisions?
+A: In straight lines
+Accept: Straight lines
+Ref: 4.3.3.1
+D: 2
+Id: aqa-phys-4.3-051
+
+Q: What is the energy needed to change the state of 1 kg of a substance called?
+A: Specific latent heat
+Ref: 4.3.2.3
+D: 2
+Id: aqa-phys-4.3-052
+
+Q: What happens to the particles of a solid when it is heated?
+A: They vibrate more
+Accept: They vibrate faster; Vibrate more
+Ref: 4.3.2.1
+D: 1
+Id: aqa-phys-4.3-053
+
+Q: What name is given to the temperature at which a solid changes into a liquid?
+A: Melting point
+Ref: 4.3.1.2
+D: 1
+Id: aqa-phys-4.3-055
+
+Q: What happens to the particles of a liquid when it boils?
+A: They gain enough energy to escape
+Accept: They escape as a gas; They break free
+Ref: 4.3.1.2
+D: 2
+Id: aqa-phys-4.3-056

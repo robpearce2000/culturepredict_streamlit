@@ -332,3 +332,98 @@ D: 3
 HT: yes
 Note: 27 people test positive and 18 of them have the condition.
 Id: edexcel-maths-5-042
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: What is the probability of an impossible event?
+A: Zero
+Accept: 0
+Ref: P4
+D: 1
+Id: edexcel-maths-5-043
+
+Q: What is the probability of an event that is certain to happen?
+A: One
+Accept: 1
+Ref: P4
+D: 1
+Id: edexcel-maths-5-044
+
+Q: What do the probabilities of all possible outcomes add up to?
+A: One
+Accept: 1
+Ref: P4
+D: 1
+Id: edexcel-maths-5-045
+
+Q: What name is given to a diagram with branches showing outcomes and their probabilities?
+A: Tree diagram
+Ref: P8
+D: 1
+Id: edexcel-maths-5-046
+
+Q: What name is given to events where one outcome does not affect the other?
+A: Independent events
+Accept: Independent
+Ref: P8
+D: 1
+Id: edexcel-maths-5-047
+
+Q: What name is given to events that cannot happen at the same time?
+A: Mutually exclusive
+Ref: P4
+D: 1
+Id: edexcel-maths-5-048
+
+Q: What name is given to a list or table of every possible outcome?
+A: Sample space
+Accept: Possibility space
+Ref: P7
+D: 1
+Id: edexcel-maths-5-049
+
+Q: What name is given to the number of times an event happens divided by the number of trials?
+A: Relative frequency
+Ref: P1
+D: 2
+Id: edexcel-maths-5-050
+
+Q: What name is given to a diagram of overlapping circles used to show sets?
+A: Venn diagram
+Ref: P6
+D: 1
+Id: edexcel-maths-5-051
+
+Q: What word describes a dice where every outcome is equally likely?
+A: Fair
+Accept: Unbiased
+Ref: P2
+D: 1
+Id: edexcel-maths-5-052
+
+Q: What word describes a dice that favours one outcome?
+A: Biased
+Accept: Unfair
+Ref: P2
+D: 1
+Id: edexcel-maths-5-053
+
+Q: What word describes one possible result of an experiment?
+A: Outcome
+Ref: P7
+D: 1
+Id: edexcel-maths-5-054
+
+Q: What name is given to the probability of an event multiplied by the number of trials?
+A: Expected frequency
+Accept: Expected number
+Ref: P3
+D: 2
+Id: edexcel-maths-5-055
+
+Q: What name is given to the probability of an event happening given that another has already happened?
+A: Conditional probability
+Ref: P9
+D: 3
+HT: yes
+Id: edexcel-maths-5-056

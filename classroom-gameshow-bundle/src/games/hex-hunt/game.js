@@ -43,15 +43,45 @@ const S = {
    are explanations (over ten words) or whose main part is over five words are left out. CGB.hexLetter is shared with the tests. */
 // the letter rule is shared with the question-pack checker (src/shared/hexletter.js)
 const firstLetter = q => q && q.hexOk === false ? null : CGB.hexLetter(q && q.a !== undefined ? q.a : q);
+/* Which questions come up. Every board is dealt from a ranking, not a fresh shuffle:
+     1. questions of the chosen topic(s) that have not been asked yet,
+     2. questions from the other topics of the same subject, board and course, if the chosen ones are too few
+        for a match (a best-of-three needs about 48 hexagons),
+     3. then everything already asked, the longest ago first.
+   What has been asked is remembered across rounds, games and lessons (in this browser), so a second
+   match on the same topic starts with questions the class has not seen. */
+const RECENT_KEY = 'hh.recent', RECENT_MAX = 1500, MATCH_NEEDS = 48;
+const qKey = q => q.id || (q.subject + '|' + q.q);
+const recentScope = () => `${bank.subject()}|${bank.board()}|${bank.course ? bank.course() : ''}`;
+function recentLoad() { const all = CGB.store.getJSON(RECENT_KEY, {}), m = all && all[recentScope()]; return m && typeof m === 'object' && m.q ? m : { seq: 0, q: {} }; }
+function markAsked(q) {
+  if (!q) return;
+  const all = CGB.store.getJSON(RECENT_KEY, {}) || {}, m = all[recentScope()] && all[recentScope()].q ? all[recentScope()] : { seq: 0, q: {} };
+  m.q[qKey(q)] = ++m.seq;
+  const keys = Object.keys(m.q);
+  if (keys.length > RECENT_MAX) keys.sort((a, b) => m.q[a] - m.q[b]).slice(0, keys.length - RECENT_MAX).forEach(k => delete m.q[k]);
+  all[recentScope()] = m; CGB.store.setJSON(RECENT_KEY, all);
+}
+/* the questions of the other topics, used only when the chosen ones are too few */
+function widenedPool(set) {
+  if (!set.builtin) return [];
+  const have = new Set(set.questions.map(q => qKey(q)));
+  const tierOk = q => !(bank.tiered() && !bank.higher() && q.tier === 'Higher');
+  return bank.packs().flatMap(p => p.questions).filter(q => !have.has(qKey(q)) && firstLetter(q) && tierOk(q));
+}
 let deck = [];
 function buildDeck() {
   const set = bank.active();
-  const eligible = set.questions.filter(q => firstLetter(q));
+  const main = set.questions.filter(q => firstLetter(q));
+  const extra = main.length < MATCH_NEEDS ? widenedPool(set) : [];
+  const recent = recentLoad().q;
   // topics either half got wrong before come up a little more often
   const weak = new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.topic)));
-  const shuffled = eligible.map(q => [CGB.random() - (weak.has(q.topic) ? 0.3 : 0), q]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
-  deck = shuffled;
-  return eligible.length;
+  const shuffle = list => list.map(q => [CGB.random() - (weak.has(q.topic) ? 0.3 : 0), q]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
+  const fresh = q => !recent[qKey(q)];
+  const asked = main.concat(extra).filter(q => !fresh(q)).sort((a, b) => recent[qKey(a)] - recent[qKey(b)]);
+  deck = shuffle(main.filter(fresh)).concat(shuffle(extra.filter(fresh)), asked);
+  return main.length;
 }
 function drawQuestion(avoid) {
   if (!deck.length) buildDeck();
@@ -198,6 +228,7 @@ function openHex(c, r) {
   showQuestion();
 }
 function showQuestion() {
+  if (S.open) markAsked(S.open.q);
   const cell = S.open;
   $('qLetter').textContent = cell.letter;
   $('qClue').textContent = `The answer begins with ${cell.letter}`;
@@ -442,14 +473,12 @@ function startGame() {
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('win').hidden = true; $('q').hidden = true; $('play').hidden = false;
   renderBoard();
-  // the board is on show, with nothing to pick until the teacher presses Start game
-  gate.show(() => {
+  (() => {
     S.phase = 'board';
     renderBoard();
     hostC.say(`Welcome to Hex Hunt! ${S.teams[0].name} go left to right, ${S.teams[1].name} top to bottom.`, 'wave', 2200);
-  });
+  })();
 }
-const gate = CGB.createStartGate(document.getElementById('game-hex-hunt'), 'Two halves of the class race to link their edges, answering on whiteboards. Nothing starts until you press Start.');
 $('startBtn').addEventListener('click', startGame);
 
 function showSummary() {
@@ -472,7 +501,6 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
-  gate.hide();
   CGB.pause.cancel(celebT);
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
@@ -491,7 +519,8 @@ function renderPack() {
   $('startBtn').disabled = !ok;
   const usable = ok ? bank.active().questions.filter(q => firstLetter(q)).length : 0;
   // fewer than the board's hexagons: say so, since some questions then come round twice
-  const cells = S.size * S.size, few = ok && usable < cells ? ` That is fewer than the ${cells} hexagons, so some come up twice: add another topic for more.` : '';
+  // a built-in topic with too few board-ready questions for a match borrows from the subject's other topics
+  const cells = S.size * S.size, few = ok && usable < MATCH_NEEDS ? (bank.active().builtin ? ' Questions from the subject\'s other topics are mixed in so a match does not repeat.' : usable < cells ? ` That is fewer than the ${cells} hexagons, so some come up twice: add more questions.` : '') : '';
   $('setHint').textContent = ok ? `${usable} of these questions have answers that start with a letter, so they can go on the board.${few}` : '';
 }
 bank.onChange(() => { if (S.phase === 'home') renderPack(); });

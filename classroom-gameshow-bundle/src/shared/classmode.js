@@ -284,10 +284,10 @@ CGB.pause = (() => {
     };
   };
 
-  /* ---------- "Start game": shown after setup, before anything starts ----------
-     Every game shows the same large button over its game screen when the teacher finishes
-     setup. Nothing ticks until it is pressed (Enter, Space, click or tap), which gives the
-     teacher a moment to explain the rules and get the whiteboards out. Esc still leaves. */
+  /* ---------- A large Start button over a game screen ----------
+     Games start straight from their setup card. The one timed part, Outpace's Final Sprint,
+     waits on this button (Enter, Space, click or tap) so the teacher can explain the rules
+     and get the class ready before its clock runs. Esc still leaves. */
   // opts.title  a heading above the note; opts.label  the button text (default "Start game"); opts.className  an extra class
   CGB.createStartGate = function (root, note, opts) {
     opts = opts || {};
@@ -310,9 +310,6 @@ CGB.pause = (() => {
       // show the button; onStart runs once when it is pressed (note, if given, replaces the text)
       show(onStart, note) {
         if (note) el.querySelector('.start-gate-note').innerHTML = note;
-        /* @test-only */
-        if (window.__SHOWTIME_NOGATE__) { onStart(); return; }
-        /* @end-test-only */
         go = onStart; el.hidden = false;
         el.querySelector('button').focus({ preventScroll: true });
       },

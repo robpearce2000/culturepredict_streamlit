@@ -273,19 +273,18 @@ const SECTIONS = {
     await page.keyboard.press('Enter');
     await shot('67-hh-results', 700);
   },
-  // the Start game button that waits after setup, in every game
+  // the one button that waits: Outpace's Final Sprint
   'start-gate': async ({ page, shot }) => {
-    for (const [id, n] of [['over-the-edge', '70-ote'], ['outpace', '71-op'], ['category-clash', '72-cc'], ['hex-hunt', '73-hh']]) {
-      await page.click(`[data-play="${id}"]`, { timeout: 60000 });
-      await page.click(`#game-${id} .setup-go .btn`);
-      await shot(`${n}-start-game`, 1200);
-      // the Start game card sits over the dimmed game on purpose: it must be whole, on screen and below the top bar
-      const g = await page.evaluate(i => { const c = document.querySelector(`#game-${i} .start-gate-card`).getBoundingClientRect(), bar = document.querySelector(`#game-${i} .topbar`).getBoundingClientRect(); return { top: c.top, bottom: c.bottom, left: c.left, right: c.right, bar: bar.bottom, w: innerWidth, h: innerHeight }; }, id);
-      expect(g.top >= g.bar && g.bottom <= g.h && g.left >= 0 && g.right <= g.w, `${n} Start game card on screen`).toBe(true);
-      await page.click(`#game-${id} .start-gate-btn`);
-      await page.waitForTimeout(400);
-      await page.keyboard.press('Escape'); const leave = page.locator('#leaveConfirm'); if (await leave.isVisible()) await leave.click();
-    }
+    await page.click('[data-play="outpace"]', { timeout: 60000 });
+    await page.click('#game-outpace .setup-go .btn');
+    await page.evaluate(() => CGB.test.outpace.toSprint(600));
+    await shot('71-op-start-final-sprint', 1200);
+    // the card sits over the dimmed game on purpose: it must be whole, on screen and below the top bar
+    const g = await page.evaluate(() => { const c = document.querySelector('#game-outpace .sprint-gate .start-gate-card').getBoundingClientRect(), bar = document.querySelector('#game-outpace .topbar').getBoundingClientRect(); return { top: c.top, bar: bar.bottom, bottom: c.bottom, h: innerHeight, left: c.left, right: c.right, w: innerWidth }; });
+    expect(g.top >= g.bar && g.bottom <= g.h && g.left >= 0 && g.right <= g.w, 'Start the Final Sprint card on screen').toBe(true);
+    await page.click('#game-outpace .sprint-gate .start-gate-btn');
+    await page.waitForTimeout(400);
+    await page.keyboard.press('Escape'); const leave = page.locator('#leaveConfirm'); if (await leave.isVisible()) await leave.click();
   }
 };
 
@@ -299,7 +298,7 @@ for (const size of SIZES) {
       // building Over the Edge's 3D machine on a software renderer shared with other tests can take far longer than a click normally waits
       if (section.startsWith('over-the-edge')) page.setDefaultTimeout(60000);
       if (VARIANT === 'reduced') await page.addInitScript(() => { try { localStorage.setItem('cgb.settings', JSON.stringify({ reducedMotion: true })); } catch (e) { /* no storage */ } });
-      const log = await openBundle(page, '', { quality: VARIANT === 'low' ? 'low' : 'high', gate: section === 'start-gate' });
+      const log = await openBundle(page, '', { quality: VARIANT === 'low' ? 'low' : 'high' });
       const problems = [];
       async function shot(name, settle) {
         await page.waitForTimeout(settle == null ? 600 : settle);

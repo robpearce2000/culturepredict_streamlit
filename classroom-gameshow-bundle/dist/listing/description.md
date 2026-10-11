@@ -16,7 +16,7 @@ Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** cont
 
 **Built for a whole class of 30**
 Split the class into 2 to 6 teams with mini whiteboards. No pupil devices are needed. In every game, every team answers every question:
-- Choose your subject and question set once on the menu; each game then asks only how many teams are playing, and waits on a Start game button so nothing ticks until the class is ready
+- Choose your subject and question set once on the menu; each game then asks only how many teams are playing and starts straight away (only Outpace's timed Final Sprint waits for a Start button)
 - Show the question, let the teams write as long as they need, then press Space for a big "3, 2, 1, show me!" and every team holds up its board
 - Tap 1 to 6 to mark each team right or wrong (under 10 seconds for six teams), then Enter to reveal the answer and play on. Made a mistake? Undo it.
 - Team captains change every question, so everyone takes a turn

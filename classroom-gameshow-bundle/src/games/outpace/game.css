@@ -21,7 +21,7 @@
 .op-kicker { font-weight: 900; font-size: 0.86rem; letter-spacing: 1.2px; text-transform: uppercase; color: var(--op-gold); }
 
 /* Setup and summary screens */
-.op-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; background: rgba(11,16,38,0.82); }
+.op-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 62px) + 6px) 16px 16px; overflow-y: auto; background: rgba(11,16,38,0.82); }
 .op-screen.active { display: flex; }
 .op-home-card { width: 100%; max-width: 600px; padding: 20px 24px 22px; margin: auto; }
 .op-logo svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; }
@@ -42,7 +42,7 @@
 .op-sum-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
 
 /* In-game HUDs: a top area and a bottom dock, stacked so nothing overlaps */
-.op-hud { position: absolute; inset: 0; z-index: 5; display: none; flex-direction: column; justify-content: space-between; align-items: center; padding: 64px 16px 16px; pointer-events: none; gap: 12px; }
+.op-hud { position: absolute; inset: 0; z-index: 5; display: none; flex-direction: column; justify-content: space-between; align-items: center; padding: calc(var(--topbar-h, 56px) + 8px) 16px 16px; pointer-events: none; gap: 12px; }
 .op-hud.active { display: flex; }
 .op-hud > * { pointer-events: auto; }
 .op-top { text-align: center; max-width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; }

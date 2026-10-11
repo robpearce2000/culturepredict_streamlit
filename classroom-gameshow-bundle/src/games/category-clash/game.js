@@ -396,15 +396,13 @@ function startGame() {
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('play').hidden = false; $('q').hidden = true;
   renderBoard();
-  // the board is on show, with nothing to pick until the teacher presses Start game
-  gate.show(() => {
+  (() => {
     S.phase = 'board';
     renderBoard();
     hostC.say(`Welcome to Category Clash! ${S.teams[0].name}, you pick first.`, 'wave', 2000);
     const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
-  });
+  })();
 }
-const gate = CGB.createStartGate(document.getElementById('game-category-clash'), 'Teams take turns to pick a tile, and every team answers on a whiteboard. Nothing starts until you press Start.');
 $('startBtn').addEventListener('click', startGame);
 // End game and show results (the top bar's End game, or the Menu prompt): the scores as they stand
 function endNow() {
@@ -441,7 +439,6 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
-  gate.hide();
   CGB.pause.cancel(revealT); playEl.classList.remove('dim', 'pushed');
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();

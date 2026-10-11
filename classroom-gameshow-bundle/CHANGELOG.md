@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.0 – Classroom feedback (October 2026)
+
+- **No second "Start game" step:** pressing Start on a game's setup card goes straight into the game (all four games).
+- **Outpace's Final Sprint keeps its own button:** the one timed part waits on **Start the Final Sprint** (Enter) in every subject, Maths included; the sprint clock does not run until it is pressed.
+- **Over the Edge:** a counter landing on the top shelf where there is space always lands flat in the nearest free gap under where it left the pegs and settles; it lands on top of another counter only when there is genuinely no room. The old 25% chance of landing on a nearby counter is gone, and the target is worked out again while the counter is in the air, as the shelf moves. The bounce through the pegs, and how the pile shifts and falls, are as random as before. The question is shown once, in the right-hand panel; the big box over the machine is removed.
+- **Hex Hunt repeats fixed:** every board used to be dealt from a fresh shuffle with no memory, so a second match asked many of the same questions. Questions asked are now remembered across rounds, games and lessons (in this browser) and boards are dealt from questions not asked recently; a topic with too few board-ready questions for a match borrows from the subject's other topics. **145 new questions** with answers that work on the board bring every topic pack to at least 30.
+- **Hex Hunt layout:** "Team …, pick a hexagon" is much bigger; the top bar stays across the top and the question card sits below it. Every game now keeps its cards, setup screens and results below the top bar at any screen size.
+
 ## 1.5.3 – No answer countdown (October 2026)
 
 - **The answer countdown is gone, in every game and every edition.** A question stays up while the teams write, and **Space** brings up "3, 2, 1, show me!" when every board is ready. Removed with it: "Time's up!", the +10 s button and **T**, the "Calculation: 45 s" label, and the Maths Answer time choice on the setup cards.

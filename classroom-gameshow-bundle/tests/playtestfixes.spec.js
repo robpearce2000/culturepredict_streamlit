@@ -249,19 +249,12 @@ test('Hex Hunt: Maths is a single round; 12 questions with no hexagon won end th
   expect(log.errors).toEqual([]);
 });
 
-test('Over the Edge: the question is big while the class writes; equal money shares a place', async ({ page }) => {
+test('Over the Edge: equal money shares a place', async ({ page }) => {
   const log = await openBundle(page, '#over-the-edge');
   await page.click('#ote-startBtn');
   await expect.poll(async () => (await state(page, 'over-the-edge')).round).toBe('think');
-  const q = (await state(page, 'over-the-edge')).q.q;
-  await expect(page.locator('#ote-bigq')).toBeVisible();
-  await expect(page.locator('#ote-bigText')).toHaveText(q);
-  const fs = await page.locator('#ote-bigText').evaluate(e => parseFloat(getComputedStyle(e).fontSize));
-  const side = await page.locator('#ote-qText').evaluate(e => parseFloat(getComputedStyle(e).fontSize));
-  expect(fs).toBeGreaterThan(side * 1.3);
-  await page.keyboard.press('Space');
-  await expect(page.locator('#ote-bigq')).toBeHidden();                  // back to the side panel for marking and the drop
   // end at once: every team on £0 shares first place
+  await page.keyboard.press('Space');
   await expect.poll(async () => (await state(page, 'over-the-edge')).round).toMatch(/mark|show/);
   await page.keyboard.press('Escape'); await page.click('#leaveEnd');
   await expect(page.locator('#ote-sumCard .sum-rank .pos')).toHaveText(['1', '1', '1', '1']);

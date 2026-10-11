@@ -280,3 +280,37 @@ Accept: To get out of the war; public pressure at home; to bring American troops
 Ref: 1BD.3.3
 D: 3
 Id: aqa-hist-1BD-040
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: Which country sent troops to help North Korea in the Korean War?
+A: China
+Ref: 1BD.1.2
+D: 1
+Id: aqa-hist-1BD-041
+
+Q: Which US President sent the first large numbers of combat troops to Vietnam?
+A: Lyndon B. Johnson
+Accept: Johnson; LBJ
+Ref: 1BD.2.3
+D: 1
+Id: aqa-hist-1BD-042
+
+Q: What was the name of the supply network North Vietnam used to reach the south?
+A: Ho Chi Minh Trail
+Ref: 1BD.2.2
+D: 1
+Id: aqa-hist-1BD-043
+
+Q: What sticky burning chemical did the USA drop on villages and jungle in Vietnam?
+A: Napalm
+Ref: 1BD.2.3
+D: 1
+Id: aqa-hist-1BD-044
+
+Q: Which 1968 attack on cities across South Vietnam shocked American opinion?
+A: Tet Offensive
+Accept: The Tet Offensive; Tet
+Ref: 1BD.2.3
+D: 2
+Id: aqa-hist-1BD-045

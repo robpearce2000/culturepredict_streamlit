@@ -279,24 +279,15 @@ test('the host is customised from the main screen and changes everywhere', async
   expect(log.errors).toEqual([]);
 });
 
-test('every game waits on a Start game button after setup, with no countdown until it is pressed', async ({ page }) => {
-  const log = await openBundle(page, '', { gate: true });
-  const after = { 'over-the-edge': s => s.round === 'think', outpace: s => s.phase === 'deal', 'category-clash': s => s.phase === 'board', 'hex-hunt': s => s.phase === 'board' };
+test('every game starts straight from its setup card: no second Start game button, the first question or board is up at once', async ({ page }) => {
+  const log = await openBundle(page);
+  const up = { 'over-the-edge': s => s.round === 'think', outpace: s => s.phase === 'deal', 'category-clash': s => s.phase === 'board', 'hex-hunt': s => s.phase === 'board' };
   for (const id of GAMES) {
     await openGame(page, id);
-    await page.keyboard.press('Enter');                           // Enter on the setup card starts the game...
-    const gate = page.locator(`#game-${id} .start-gate:not(.sprint-gate)`);
-    await expect(gate).toBeVisible();                             // ...and the same Start game button appears in every game
-    await expect(gate.locator('.start-gate-btn')).toHaveText(/^Start game\s*Enter$/);
+    await page.keyboard.press('Enter');                           // Enter on the setup card goes straight into the game
     await expect(card(page, id)).toBeHidden();
-    await page.waitForTimeout(1500);
-    const s = await state(page, id);
-    expect(after[id](s)).toBe(false);                             // nothing has started, so nothing is ticking
-    expect(s.round === 'think').toBe(false);
-    await expect(page.locator(`#game-${id} .cm-count:visible, #game-${id} [id$="count"]:visible`)).toHaveCount(0);
-    if (id === 'hex-hunt') await gate.locator('.start-gate-btn').click(); else await page.keyboard.press('Enter');
-    await expect(gate).toBeHidden();
-    await expect.poll(async () => after[id](await state(page, id))).toBe(true);
+    await expect.poll(async () => up[id](await state(page, id))).toBe(true);
+    await expect(page.locator(`#game-${id} .start-gate:not([hidden])`)).toHaveCount(0);   // nothing to press first
     await page.keyboard.press('Escape'); const leave = page.locator('#leaveConfirm'); if (await leave.isVisible()) await leave.click();
     await expect(page.locator('#launcher')).toBeVisible();
   }

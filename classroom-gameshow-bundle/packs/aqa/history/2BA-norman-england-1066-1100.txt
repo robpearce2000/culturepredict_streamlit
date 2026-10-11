@@ -256,3 +256,33 @@ Accept: To reform the Church; to increase Norman control; to control the monaste
 Ref: 2BA.3.2
 D: 3
 Id: aqa-hist-2BA-037
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: Which type of castle replaced the wooden motte and bailey in many places?
+A: Stone keep
+Accept: Stone castle
+Ref: 2BA.1.3
+D: 3
+Id: aqa-hist-2BA-038
+
+Q: Which famous embroidery shows the events leading to the Battle of Hastings?
+A: Bayeux Tapestry
+Accept: The Bayeux Tapestry
+Ref: 2BA.1.1
+D: 1
+Id: aqa-hist-2BA-039
+
+Q: What name was given to Norman soldiers who fought on horseback?
+A: Knights
+Accept: Knight
+Ref: 2BA.1.2
+D: 1
+Id: aqa-hist-2BA-040
+
+Q: What term describes a landholder who held land directly from the king?
+A: Tenant-in-chief
+Accept: Tenants-in-chief
+Ref: 2BA.2.1
+D: 2
+Id: aqa-hist-2BA-041

@@ -277,3 +277,68 @@ Accept: Buffalo gave food, shelter and clothing; they depended on the buffalo; t
 Ref: 1AA.3.3
 D: 3
 Id: aqa-hist-1AA-040
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: Which city did the Mormons found beside the Great Salt Lake?
+A: Salt Lake City
+Ref: 1AA.2.3
+D: 1
+Id: aqa-hist-1AA-041
+
+Q: Which 1862 Act helped to build a railroad linking the east and west of the USA?
+A: Pacific Railroad Act
+Ref: 1AA.3.2
+D: 3
+Id: aqa-hist-1AA-042
+
+Q: Which Sioux leader, a Lakota, refused to give up the Black Hills?
+A: Sitting Bull
+Ref: 1AA.3.3
+D: 2
+Id: aqa-hist-1AA-043
+
+Q: Who was President of the United States for most of the Civil War?
+A: Abraham Lincoln
+Ref: 1AA.2.2
+D: 1
+Id: aqa-hist-1AA-044
+
+Q: Which amendment gave African American men the right to vote?
+A: Fifteenth Amendment
+Ref: 1AA.3.1
+D: 2
+Id: aqa-hist-1AA-045
+
+Q: What name was given to southern state laws that limited the freedom of former slaves?
+A: Black Codes
+Ref: 1AA.3.1
+D: 3
+Id: aqa-hist-1AA-046
+
+Q: Which secret group, founded in 1865, terrorised freed slaves?
+A: Ku Klux Klan
+Ref: 1AA.3.1
+D: 1
+Id: aqa-hist-1AA-047
+
+Q: What were groups of covered wagons travelling west together called?
+A: Wagon trains
+Accept: Wagon train
+Ref: 1AA.1.2
+D: 1
+Id: aqa-hist-1AA-048
+
+Q: Which mountain range did settlers on the Oregon Trail have to cross?
+A: Rocky Mountains
+Accept: Rockies; The Rockies
+Ref: 1AA.1.2
+D: 1
+Id: aqa-hist-1AA-049
+
+Q: Which ceremonial object completed the first transcontinental railroad in 1869?
+A: The golden spike
+Accept: Golden spike
+Ref: 1AA.3.2
+D: 2
+Id: aqa-hist-1AA-050

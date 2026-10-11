@@ -246,3 +246,30 @@ Accept: Local people can maintain it; Lower cost; Fits local needs; Less environ
 Ref: 3.2.3.2.2
 D: 3
 Id: aqa-geog-3.2.3.2-036
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: Which natural hazard can wash away crops and soil?
+A: Flooding
+Accept: Floods; Flood
+Ref: 3.2.3.2.1
+D: 1
+Id: aqa-geog-3.2.3.2-037
+
+Q: What word describes eating more calories than the body needs?
+A: Overnutrition
+Ref: 3.2.3.2.1
+D: 2
+Id: aqa-geog-3.2.3.2-038
+
+Q: What term describes a diet that lacks essential nutrients such as vitamins and minerals?
+A: Malnutrition
+Ref: 3.2.3.2.1
+D: 1
+Id: aqa-geog-3.2.3.2-039
+
+Q: What name describes large-scale commercial farming run like a business?
+A: Agribusiness
+Ref: 3.2.3.2.2
+D: 2
+Id: aqa-geog-3.2.3.2-040

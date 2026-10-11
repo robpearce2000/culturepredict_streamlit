@@ -527,7 +527,7 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
 .ote .keys { border-top: 3px solid var(--line); padding-top: 6px; }
 
 /* Overlays (setup and summary) */
-.ote-overlay { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: flex-start; padding: 70px 20px 20px 4vw; overflow-y: auto; background: linear-gradient(90deg, rgba(8,20,30,0.7), rgba(8,20,30,0.15) 70%); }
+.ote-overlay { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: flex-start; padding: calc(var(--topbar-h, 62px) + 6px) 20px 20px 4vw; overflow-y: auto; background: linear-gradient(90deg, rgba(8,20,30,0.7), rgba(8,20,30,0.15) 70%); }
 .ote-overlay.hidden { display: none; }
 .ote-card { padding: 20px 24px 22px; width: 100%; max-width: 600px; max-height: 100%; overflow-y: auto; }
 .ote-logo svg { display: block; width: 100%; max-width: 380px; height: auto; margin: 0 auto 6px; }
@@ -609,12 +609,7 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
 
 /* while the class writes, the question is shown large across the machine (readable from the back),
    then it goes back to the side panel for marking and the drop */
-.ote-bigq { position: absolute; left: 50%; bottom: 5%; transform: translateX(-50%); z-index: 31; width: min(88%, 980px); background: var(--paper); color: var(--ink); border: 5px solid var(--ink); border-radius: 22px; box-shadow: 0 12px 0 rgba(0,0,0,0.35); padding: 20px 28px; text-align: center; }
-.ote-bigq[hidden] { display: none; }
-.ote-bigq .tag { font-weight: 900; font-size: 0.95rem; letter-spacing: 0.4px; text-transform: uppercase; color: #0A6663; margin-bottom: 6px; }
-.ote-bigq .txt { font-weight: 900; font-size: clamp(1.6rem, 3.1vw, 2.9rem); line-height: 1.2; }
-@media (max-width: 900px), (max-aspect-ratio: 1/1) { .ote-bigq .txt { font-size: clamp(1.3rem, 4.5vw, 2rem); } }
-.ote-lightnote { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 35; max-width: 640px; background: rgba(255,255,255,0.95); color: var(--ink); border: 2px solid var(--ink); border-radius: 12px; padding: 8px 12px; font-weight: 800; font-size: 0.9rem; }
+@media (max-width: 900px), (max-aspect-ratio: 1/1) { .ote-lightnote { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 35; max-width: 640px; background: rgba(255,255,255,0.95); color: var(--ink); border: 2px solid var(--ink); border-radius: 12px; padding: 8px 12px; font-weight: 800; font-size: 0.9rem; }
 .ote-lightnote[hidden] { display: none; }
 
 </style>
@@ -642,7 +637,7 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
 .op-kicker { font-weight: 900; font-size: 0.86rem; letter-spacing: 1.2px; text-transform: uppercase; color: var(--op-gold); }
 
 /* Setup and summary screens */
-.op-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; background: rgba(11,16,38,0.82); }
+.op-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 62px) + 6px) 16px 16px; overflow-y: auto; background: rgba(11,16,38,0.82); }
 .op-screen.active { display: flex; }
 .op-home-card { width: 100%; max-width: 600px; padding: 20px 24px 22px; margin: auto; }
 .op-logo svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; }
@@ -663,7 +658,7 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
 .op-sum-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
 
 /* In-game HUDs: a top area and a bottom dock, stacked so nothing overlaps */
-.op-hud { position: absolute; inset: 0; z-index: 5; display: none; flex-direction: column; justify-content: space-between; align-items: center; padding: 64px 16px 16px; pointer-events: none; gap: 12px; }
+.op-hud { position: absolute; inset: 0; z-index: 5; display: none; flex-direction: column; justify-content: space-between; align-items: center; padding: calc(var(--topbar-h, 56px) + 8px) 16px 16px; pointer-events: none; gap: 12px; }
 .op-hud.active { display: flex; }
 .op-hud > * { pointer-events: auto; }
 .op-top { text-align: center; max-width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; }
@@ -772,7 +767,7 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
    ========================================================= */
 .cc { --cc-bg: #1A0F2E; --cc-bg2: #3A1650; --cc-tile: #F06A12; --cc-tile2: #FF8C3A; --cc-used: #2B2045; --cc-text: #FFF6EC; --cc-muted: #D9CBEA;
   background: radial-gradient(ellipse at 50% -20%, var(--cc-bg2) 0%, var(--cc-bg) 70%); color: var(--cc-text); }
-.cc-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; }
+.cc-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 62px) + 6px) 16px 16px; overflow-y: auto; }
 .cc-screen.active { display: flex; }
 .cc-card { width: 100%; max-width: 640px; padding: 20px 24px 22px; margin: auto; }
 .cc-logo svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto 8px; }
@@ -811,7 +806,7 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
 .cc-keys .kbd { margin: 0 1px; }
 
 /* Question */
-.cc-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 92px; background: rgba(16, 8, 30, 0.82); }
+.cc-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 56px) + 8px) 16px 92px; background: rgba(16, 8, 30, 0.82); }
 .cc-q[hidden] { display: none; }
 .cc-qcard { width: 100%; max-width: 980px; max-height: 100%; overflow-y: auto; background: var(--paper); color: var(--ink); border: 5px solid var(--ink); border-radius: 22px; box-shadow: 0 10px 0 rgba(0,0,0,0.35); padding: 18px 26px 22px; display: flex; flex-direction: column; gap: 10px; }
 .cc-qtop { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
@@ -931,7 +926,7 @@ html[data-quality="low"] .cc-play { background: none; }
    ========================================================= */
 .hh { --hh-bg: #0A1A2C; --hh-bg2: #14425A; --hh-hex: #262C66; --hh-text: #F4F8FF; --hh-muted: #C7D6E6; --ha: var(--team0); --hb: var(--team1);
   background: radial-gradient(ellipse at 50% 20%, var(--hh-bg2) 0%, var(--hh-bg) 75%); color: var(--hh-text); }
-.hh-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; }
+.hh-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 62px) + 6px) 16px 16px; overflow-y: auto; }
 .hh-screen.active { display: flex; }
 .hh-card { width: 100%; max-width: 620px; padding: 20px 24px 22px; margin: auto; }
 .hh-logo svg { display: block; width: 100%; max-width: 400px; height: auto; margin: 0 auto 8px; }
@@ -943,12 +938,12 @@ html[data-quality="low"] .cc-play { background: none; }
 .hh-names input { width: 100%; background: transparent; border: none; color: var(--ink); font-weight: 900; font-size: 1.2rem; padding: 2px 0; font-family: var(--body); }
 
 /* Board */
-.hh-play { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px 16px; }
+.hh-play { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 6px; padding: var(--topbar-h, 56px) 16px 10px; }   /* below the top bar's buttons */
 .hh-play[hidden] { display: none; }
-.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; }
-.hh-turn { font-family: var(--display); font-size: 1.5rem; }
+.hh-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; }
+.hh-turn { font-family: var(--display); font-size: clamp(2.3rem, 4.6vw, 4.2rem); line-height: 1.05; }   /* readable from the back of the room */
 .hh-turn b { font-weight: 400; color: var(--tc); }
-.hh-round { font-weight: 900; color: var(--hh-muted); white-space: nowrap; }
+.hh-round { font-weight: 900; font-size: clamp(1rem, 1.6vw, 1.5rem); color: var(--hh-muted); white-space: nowrap; }
 .hh-boardwrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
 .hh-board { width: 100%; height: 100%; display: block; }
 .hh-hex { cursor: pointer; }
@@ -996,7 +991,7 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
 .hh-keys { color: var(--hh-muted); text-align: center; }
 
 /* Question */
-.hh-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 92px; background: rgba(6, 14, 26, 0.8); }
+.hh-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 56px) + 8px) 16px 92px; background: rgba(6, 14, 26, 0.8); }
 .hh-q[hidden] { display: none; }
 .hh-qcard { width: 100%; max-width: 980px; max-height: 100%; overflow-y: auto; background: var(--paper); color: var(--ink); border: 5px solid var(--ink); border-radius: 22px; box-shadow: 0 10px 0 rgba(0,0,0,0.35); padding: 18px 26px 22px; display: flex; flex-direction: column; gap: 10px; }
 .hh-qtop { display: flex; align-items: center; gap: 16px; }
@@ -1024,11 +1019,6 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
 
 .hh-sum-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
 
-/* While playing, the top bar's buttons (Menu, Sound, Pause, Full screen, Settings, End game) stack down the
-   left side, so the whole top of the screen is free for the turn and round lines */
-#game-hex-hunt:has(.hh-play:not([hidden])) .topbar { flex-direction: column; flex-wrap: nowrap; width: 10rem; }
-#game-hex-hunt:has(.hh-play:not([hidden])) .topbar .btn { text-align: left; }
-.hh-play { padding-left: 11.5rem; }
 @media (max-width: 560px) { .hh-names { grid-template-columns: 1fr; } }
 
 .hh-qcard:focus { outline: none; }
@@ -1165,7 +1155,6 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
       <button class="btn" type="button" id="ote-settingsBtn">Settings</button>
     </nav>
     <div class="ote-lightnote" id="ote-lightNote" role="status" hidden></div>
-    <div class="ote-bigq" id="ote-bigq" hidden aria-hidden="true"><div class="tag" id="ote-bigTag"></div><div class="txt" id="ote-bigText"></div></div>
     <div class="cgb-banner ote-banner" id="ote-banner" role="status"><div class="verdict"></div><div class="detail"></div></div>
   </div>
   <aside class="ote-panel" id="ote-panel" aria-live="polite">
@@ -2686,7 +2675,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
    blocked, full or unavailable.
    ========================================================= */
 window.CGB = window.CGB || {};
-CGB.VERSION = '1.5.3';
+CGB.VERSION = '1.6.0';
 /* Every random choice that affects play (question order, boards, counters, physics
    nudges) goes through CGB.random, so tests can make runs repeatable. Purely visual
    randomness (sparkles, camera shake) uses Math.random. */
@@ -3731,10 +3720,10 @@ CGB.pause = (() => {
     };
   };
 
-  /* ---------- "Start game": shown after setup, before anything starts ----------
-     Every game shows the same large button over its game screen when the teacher finishes
-     setup. Nothing ticks until it is pressed (Enter, Space, click or tap), which gives the
-     teacher a moment to explain the rules and get the whiteboards out. Esc still leaves. */
+  /* ---------- A large Start button over a game screen ----------
+     Games start straight from their setup card. The one timed part, Outpace's Final Sprint,
+     waits on this button (Enter, Space, click or tap) so the teacher can explain the rules
+     and get the class ready before its clock runs. Esc still leaves. */
   // opts.title  a heading above the note; opts.label  the button text (default "Start game"); opts.className  an extra class
   CGB.createStartGate = function (root, note, opts) {
     opts = opts || {};
@@ -4632,6 +4621,7 @@ CGB.app = (() => {
       document.title = g.title + ' | Showtime: Classroom Gameshows';
       g.enter();
       CGB.fitSetups();
+      if (CGB.fitTopbars) CGB.fitTopbars();
     }
     const want = id === 'launcher' ? '' : '#' + id;
     if (location.hash !== want) {
@@ -4914,6 +4904,29 @@ CGB.resultsLocked = () => performance.now() < resultsUntil;
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', addButtons); else addButtons();
 })();
 
+/* ---------- Keep every game's cards below the top bar ----------
+   The top bar (Menu, Sound, Pause, Full screen, Settings, End game) can wrap onto a second row on a narrow
+   screen. Each game gets --topbar-h, the space the bar takes from the top, and its question cards, setup
+   screens and results start below it, so a card never covers a button at any screen size. */
+(() => {
+  const set = tb => {
+    const game = tb.closest('.game, [id^="game-"]'); if (!game) return;
+    const g = game.getBoundingClientRect(), b = tb.getBoundingClientRect();
+    if (!b.height) return;   // a hidden game
+    game.style.setProperty('--topbar-h', Math.ceil(b.bottom - g.top + 8) + 'px');
+  };
+  const start = () => {
+    const bars = Array.from(document.querySelectorAll('.topbar'));
+    const ro = window.ResizeObserver ? new ResizeObserver(es => es.forEach(e => set(e.target))) : null;
+    bars.forEach(tb => { if (ro) ro.observe(tb); set(tb); });
+    window.addEventListener('resize', () => bars.forEach(set));
+    // a game's bar gets its size when the game is shown
+    document.addEventListener('visibilitychange', () => bars.forEach(set));
+    CGB.fitTopbars = () => bars.forEach(set);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => setTimeout(start, 0)); else setTimeout(start, 0);
+})();
+
 </script>
 <script>
 'use strict';
@@ -5027,21 +5040,22 @@ function stepTray(tray, dt, onFall) {
     }
   }
 }
+/* Where a counter leaving the peg board lands on the top shelf. No chance is involved: it lands flat in the
+   nearest free gap to where it left the pegs, and only if there is genuinely no room within a few counter
+   widths does it come down on top of the nearest counter. */
 function upperLanding(tray, x) {
   const r = PHY.R; x = Math.min(PHY.W - r, Math.max(r, x));
-  if (CGB.random() < 0.25) {
-    let best = null, bd = 1e9;
-    for (const b of tray.upper) {
-      if (b.base || b.rider || Math.abs(b.x - x) > r * 2) continue;
-      const d = Math.abs(b.x - x) + Math.abs(b.y - (PHY.WALL + 40)) * 0.5;
-      if (d < bd) { bd = d; best = b; }
-    }
-    if (best) return { x: best.x, y: best.y, onto: best };
-  }
-  for (let y = PHY.WALL + r + 2; y < tray.pf - r; y += 5) for (const off of [0, -9, 9, -18, 18]) {
+  for (let d = 0; d <= r * 4; d += 3) for (const off of d ? [-d, d] : [0]) {
     const xx = Math.min(PHY.W - r, Math.max(r, x + off));
-    if (overlapInfo(tray.upper, xx, y, r).worst < r * 0.25) return { x: xx, y };
+    for (let y = PHY.WALL + r + 2; y < tray.pf - r; y += 5) if (overlapInfo(tray.upper, xx, y, r).worst < r * 0.25) return { x: xx, y };
   }
+  let best = null, bd = 1e9;
+  for (const b of tray.upper) {
+    if (b.base || b.rider || Math.abs(b.x - x) > r * 2) continue;
+    const d = Math.abs(b.x - x) + Math.abs(b.y - (PHY.WALL + 40)) * 0.5;
+    if (d < bd) { bd = d; best = b; }
+  }
+  if (best) return { x: best.x, y: best.y, onto: best };
   return { x, y: PHY.WALL + r + 2 };
 }
 /* How close to the front edge the bottom shelf starts filled, in counter radii. Filled right to
@@ -5139,7 +5153,6 @@ const WILDCARDS = [
 /* Fixed settings: 6 questions in Round 1 and 4 in the final (under 10 minutes with a class),
    a 20-second countdown before "show me", and the jackpot counter set at Normal difficulty */
 const R1_QUESTIONS = 6, FINAL_QUESTIONS = 4;
-const gate = CGB.createStartGate(document.getElementById('game-over-the-edge'), 'Every team answers each question on a whiteboard. The first question appears when you press Start.');
 const G = {
   nTeams: +CGB.store.get('ote.nTeams') || 4,
   laneQueue: [], dropOrder: [], dropLog: [], dropSerial: 0, autoLanes: false, nextRelease: 0, dropByTeam: [], markAt: 0, dropDoneAt: 0, released: 0, catchUp: -1,
@@ -5712,7 +5725,7 @@ function updateDrops(dt) {
       drops.splice(i, 1);
       const L = upperLanding(tray, c.x);
       const onto = L.onto && tray.upper.includes(L.onto) && !L.onto.rider ? L.onto : null;
-      transits.push({ mesh: c.mesh, from: c.mesh.position.clone(), to: new THREE.Vector3(TX(L.x), UH + COIN_T / 2 + (onto ? COIN_T : 0), TZ(L.y)), L, onto, t: 0, dur: 0.38, owner: c.owner, ang: c.ang, onLand: c.onLand });
+      transits.push({ x0: c.x, mesh: c.mesh, from: c.mesh.position.clone(), to: new THREE.Vector3(TX(L.x), UH + COIN_T / 2 + (onto ? COIN_T : 0), TZ(L.y)), L, onto, t: 0, dur: 0.38, owner: c.owner, ang: c.ang, onLand: c.onLand });
     }
   }
   PEGS.forEach((p, i) => {
@@ -5723,8 +5736,12 @@ function updateTransits(dt) {
   for (let i = transits.length - 1; i >= 0; i--) {
     const T = transits[i]; T.t += dt;
     const k = Math.min(1, T.t / T.dur);
-    // the target may have moved with the shelf while we were in the air
-    const L = T.onto && tray.upper.includes(T.onto) ? { x: T.onto.x, y: T.onto.y } : T.L;
+    // the shelf moves while the counter is in the air: the landing is worked out again from where it
+    // left the pegs, so it always arrives in the nearest free gap (or on top only if there is no room)
+    const P = upperLanding(tray, T.x0);
+    T.L = P; T.onto = P.onto && tray.upper.includes(P.onto) && !P.onto.rider ? P.onto : null;
+    T.to.y = UH + COIN_T / 2 + (T.onto ? COIN_T : 0);
+    const L = T.onto ? { x: T.onto.x, y: T.onto.y } : T.L;
     T.to.x = TX(L.x); T.to.z = TZ(L.y);
     T.mesh.position.lerpVectors(T.from, T.to, k);
     T.mesh.position.y = T.from.y + (T.to.y - T.from.y) * k * k;
@@ -6113,12 +6130,6 @@ const round = CGB.createClassRound({
   teams: () => G.players.length,
   question: () => G.q,
   reveal: () => { G.answerShown = true; renderQuestion(); },
-  // while the class writes, the question is shown large over the machine
-  onPhase: ph => {
-    const big = ph === 'think' && !!G.q;
-    if (big) { $('bigTag').textContent = `${G.q.subject}: ${G.q.topic}`; $('bigText').textContent = G.q.q; }
-    $('bigq').hidden = !big;
-  },
   onConfirm: classResult, onUndo: undoClassResult
 });
 function classResult(res) {
@@ -6240,14 +6251,13 @@ function startGame() {
   $('roundName').textContent = 'Round 1: Counter Drop';
   $('qCount').textContent = `${G.qTotal} questions, then the final`;
   G.step = 'ready'; G.q = null;
-  hideBubble();                                   // the setup greeting goes before the Start game card
+  hideBubble();                                   // the setup greeting goes before the first question
   render();
-  // nothing ticks until the teacher presses Start game
-  gate.show(() => {
+  (() => {
     showBanner('Round 1', 'Answer right to win counters. Look out for the star wildcard counters.', 2800);
     hostSay(`Welcome to Over the Edge! ${G.players.length} teams, one machine. Every correct team wins a counter!`, 'cheer', 2200);
     nextQuestion(true);
-  });
+  })();
 }
 function nextQuestion(quiet) {
   resetChuteGlow();
@@ -6268,10 +6278,9 @@ let dropTimers = [];
 function edgeTeeter() { return tray.lower.some(b => !b.base && b.y > PHY.D - b.r * 0.35); }
 // End game and show results: the money and the class pot as they stand
 function endNow() {
-  round.stop(); dropTimers = []; G.laneQueue = []; G.queuedLane = null; gate.hide();
+  round.stop(); dropTimers = []; G.laneQueue = []; G.queuedLane = null;
   if (G.phase === 'r1') G.team = G.players.reduce((a, p) => a + p.money, 0);
   G.phase = 'summary'; G.step = null;
-  $('bigq').hidden = true;
   showSummary();
 }
 function endRound() {
@@ -6355,7 +6364,7 @@ function showSummary() {
 }
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  dropTimers = []; round.stop(); G.laneQueue = []; gate.hide();
+  dropTimers = []; round.stop(); G.laneQueue = [];
   $('summary').classList.add('hidden');
   $('home').classList.remove('hidden');
   updateHost(true);
@@ -8099,12 +8108,10 @@ function startGame() {
   state.wrongAnswers = state.players.map(() => []);
   picker.reset();
   $('roundEnd').classList.remove('show');
-  // the track is shown with nothing ticking until the teacher presses Start game
   state.phase = 'ready';
   hideAll();
-  gate.show(startDealRound);
+  startDealRound();
 }
-const gate = CGB.createStartGate(document.getElementById('game-outpace'), 'The class votes for a deal, then every team answers each question on a whiteboard. Nothing starts until you press Start.');
 const pickQuestion = () => picker.pick(state.players.map(p => p.name));
 
 /* ============ DEAL ROUND ============ */
@@ -8306,7 +8313,7 @@ function resolveSprint(early) {
 // End game and show results: the points banked so far
 function endNow() {
   clearTimers(); roundDeal.stop(); roundSprint.stop(); CGB.pause.cancel(sprintNextT);
-  gate.hide(); sprintGate.hide(); state.sprintReady = false;
+  sprintGate.hide(); state.sprintReady = false;
   roundEndNext = null; $('roundEnd').classList.remove('show');
   onSequenceComplete = () => {}; skipSequence(); onSequenceComplete = null;   // stop any big moment without its ending
   showSummary(null);
@@ -8328,7 +8335,7 @@ $('menuBtn2').addEventListener('click', () => CGB.app.requestLauncher());
 
 function goHome() {
   if (CGB.fitSetups) CGB.fitSetups();
-  clearTimers(); roundDeal.stop(); roundSprint.stop(); CGB.pause.cancel(sprintNextT); gate.hide(); sprintGate.hide(); state.sprintReady = false;
+  clearTimers(); roundDeal.stop(); roundSprint.stop(); CGB.pause.cancel(sprintNextT); sprintGate.hide(); state.sprintReady = false;
   state.phase = 'home';
   roundEndNext = null;
   $('roundEnd').classList.remove('show');
@@ -8815,15 +8822,13 @@ function startGame() {
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('play').hidden = false; $('q').hidden = true;
   renderBoard();
-  // the board is on show, with nothing to pick until the teacher presses Start game
-  gate.show(() => {
+  (() => {
     S.phase = 'board';
     renderBoard();
     hostC.say(`Welcome to Category Clash! ${S.teams[0].name}, you pick first.`, 'wave', 2000);
     const el = $('board').querySelector('.cursor'); if (el) el.focus({ preventScroll: true });
-  });
+  })();
 }
-const gate = CGB.createStartGate(document.getElementById('game-category-clash'), 'Teams take turns to pick a tile, and every team answers on a whiteboard. Nothing starts until you press Start.');
 $('startBtn').addEventListener('click', startGame);
 // End game and show results (the top bar's End game, or the Menu prompt): the scores as they stand
 function endNow() {
@@ -8860,7 +8865,6 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
-  gate.hide();
   CGB.pause.cancel(revealT); playEl.classList.remove('dim', 'pushed');
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
@@ -8971,15 +8975,45 @@ const S = {
    are explanations (over ten words) or whose main part is over five words are left out. CGB.hexLetter is shared with the tests. */
 // the letter rule is shared with the question-pack checker (src/shared/hexletter.js)
 const firstLetter = q => q && q.hexOk === false ? null : CGB.hexLetter(q && q.a !== undefined ? q.a : q);
+/* Which questions come up. Every board is dealt from a ranking, not a fresh shuffle:
+     1. questions of the chosen topic(s) that have not been asked yet,
+     2. questions from the other topics of the same subject, board and course, if the chosen ones are too few
+        for a match (a best-of-three needs about 48 hexagons),
+     3. then everything already asked, the longest ago first.
+   What has been asked is remembered across rounds, games and lessons (in this browser), so a second
+   match on the same topic starts with questions the class has not seen. */
+const RECENT_KEY = 'hh.recent', RECENT_MAX = 1500, MATCH_NEEDS = 48;
+const qKey = q => q.id || (q.subject + '|' + q.q);
+const recentScope = () => `${bank.subject()}|${bank.board()}|${bank.course ? bank.course() : ''}`;
+function recentLoad() { const all = CGB.store.getJSON(RECENT_KEY, {}), m = all && all[recentScope()]; return m && typeof m === 'object' && m.q ? m : { seq: 0, q: {} }; }
+function markAsked(q) {
+  if (!q) return;
+  const all = CGB.store.getJSON(RECENT_KEY, {}) || {}, m = all[recentScope()] && all[recentScope()].q ? all[recentScope()] : { seq: 0, q: {} };
+  m.q[qKey(q)] = ++m.seq;
+  const keys = Object.keys(m.q);
+  if (keys.length > RECENT_MAX) keys.sort((a, b) => m.q[a] - m.q[b]).slice(0, keys.length - RECENT_MAX).forEach(k => delete m.q[k]);
+  all[recentScope()] = m; CGB.store.setJSON(RECENT_KEY, all);
+}
+/* the questions of the other topics, used only when the chosen ones are too few */
+function widenedPool(set) {
+  if (!set.builtin) return [];
+  const have = new Set(set.questions.map(q => qKey(q)));
+  const tierOk = q => !(bank.tiered() && !bank.higher() && q.tier === 'Higher');
+  return bank.packs().flatMap(p => p.questions).filter(q => !have.has(qKey(q)) && firstLetter(q) && tierOk(q));
+}
 let deck = [];
 function buildDeck() {
   const set = bank.active();
-  const eligible = set.questions.filter(q => firstLetter(q));
+  const main = set.questions.filter(q => firstLetter(q));
+  const extra = main.length < MATCH_NEEDS ? widenedPool(set) : [];
+  const recent = recentLoad().q;
   // topics either half got wrong before come up a little more often
   const weak = new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.topic)));
-  const shuffled = eligible.map(q => [CGB.random() - (weak.has(q.topic) ? 0.3 : 0), q]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
-  deck = shuffled;
-  return eligible.length;
+  const shuffle = list => list.map(q => [CGB.random() - (weak.has(q.topic) ? 0.3 : 0), q]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
+  const fresh = q => !recent[qKey(q)];
+  const asked = main.concat(extra).filter(q => !fresh(q)).sort((a, b) => recent[qKey(a)] - recent[qKey(b)]);
+  deck = shuffle(main.filter(fresh)).concat(shuffle(extra.filter(fresh)), asked);
+  return main.length;
 }
 function drawQuestion(avoid) {
   if (!deck.length) buildDeck();
@@ -9126,6 +9160,7 @@ function openHex(c, r) {
   showQuestion();
 }
 function showQuestion() {
+  if (S.open) markAsked(S.open.q);
   const cell = S.open;
   $('qLetter').textContent = cell.letter;
   $('qClue').textContent = `The answer begins with ${cell.letter}`;
@@ -9370,14 +9405,12 @@ function startGame() {
   $('home').classList.remove('active'); $('summary').classList.remove('active');
   $('win').hidden = true; $('q').hidden = true; $('play').hidden = false;
   renderBoard();
-  // the board is on show, with nothing to pick until the teacher presses Start game
-  gate.show(() => {
+  (() => {
     S.phase = 'board';
     renderBoard();
     hostC.say(`Welcome to Hex Hunt! ${S.teams[0].name} go left to right, ${S.teams[1].name} top to bottom.`, 'wave', 2200);
-  });
+  })();
 }
-const gate = CGB.createStartGate(document.getElementById('game-hex-hunt'), 'Two halves of the class race to link their edges, answering on whiteboards. Nothing starts until you press Start.');
 $('startBtn').addEventListener('click', startGame);
 
 function showSummary() {
@@ -9400,7 +9433,6 @@ function showSummary() {
   $('again').focus({ preventScroll: true });
 }
 function goHome() {
-  gate.hide();
   CGB.pause.cancel(celebT);
   if (CGB.fitSetups) CGB.fitSetups();
   round.stop();
@@ -9419,7 +9451,8 @@ function renderPack() {
   $('startBtn').disabled = !ok;
   const usable = ok ? bank.active().questions.filter(q => firstLetter(q)).length : 0;
   // fewer than the board's hexagons: say so, since some questions then come round twice
-  const cells = S.size * S.size, few = ok && usable < cells ? ` That is fewer than the ${cells} hexagons, so some come up twice: add another topic for more.` : '';
+  // a built-in topic with too few board-ready questions for a match borrows from the subject's other topics
+  const cells = S.size * S.size, few = ok && usable < MATCH_NEEDS ? (bank.active().builtin ? ' Questions from the subject\'s other topics are mixed in so a match does not repeat.' : usable < cells ? ` That is fewer than the ${cells} hexagons, so some come up twice: add more questions.` : '') : '';
   $('setHint').textContent = ok ? `${usable} of these questions have answers that start with a letter, so they can go on the board.${few}` : '';
 }
 bank.onChange(() => { if (S.phase === 'home') renderPack(); });

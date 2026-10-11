@@ -370,3 +370,31 @@ Accept: Lower ion concentration in soil than in cell
 Ref: 4.1.3.3
 D: 3
 Id: aqa-bio-4.1-047
+
+# More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
+
+Q: Which organelles are the site of protein synthesis in a cell?
+A: Ribosomes
+Accept: Ribosome
+Ref: 4.1.1.2
+D: 1
+Id: aqa-bio-4.1-048
+
+Q: Which substance in plant cell walls strengthens the cell?
+A: Cellulose
+Ref: 4.1.1.2
+D: 2
+Id: aqa-bio-4.1-049
+
+Q: What name is given to the movement of substances against a concentration gradient using energy?
+A: Active transport
+Ref: 4.1.3.3
+D: 1
+Id: aqa-bio-4.1-050
+
+Q: In which part of a plant cell does photosynthesis take place?
+A: Chloroplasts
+Accept: Chloroplast
+Ref: 4.1.1.2
+D: 1
+Id: aqa-bio-4.1-051

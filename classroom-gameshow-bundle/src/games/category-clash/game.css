@@ -5,7 +5,7 @@
    ========================================================= */
 .cc { --cc-bg: #1A0F2E; --cc-bg2: #3A1650; --cc-tile: #F06A12; --cc-tile2: #FF8C3A; --cc-used: #2B2045; --cc-text: #FFF6EC; --cc-muted: #D9CBEA;
   background: radial-gradient(ellipse at 50% -20%, var(--cc-bg2) 0%, var(--cc-bg) 70%); color: var(--cc-text); }
-.cc-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: 70px 16px 16px; overflow-y: auto; }
+.cc-screen { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 62px) + 6px) 16px 16px; overflow-y: auto; }
 .cc-screen.active { display: flex; }
 .cc-card { width: 100%; max-width: 640px; padding: 20px 24px 22px; margin: auto; }
 .cc-logo svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto 8px; }
@@ -44,7 +44,7 @@
 .cc-keys .kbd { margin: 0 1px; }
 
 /* Question */
-.cc-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 64px 16px 92px; background: rgba(16, 8, 30, 0.82); }
+.cc-q { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: calc(var(--topbar-h, 56px) + 8px) 16px 92px; background: rgba(16, 8, 30, 0.82); }
 .cc-q[hidden] { display: none; }
 .cc-qcard { width: 100%; max-width: 980px; max-height: 100%; overflow-y: auto; background: var(--paper); color: var(--ink); border: 5px solid var(--ink); border-radius: 22px; box-shadow: 0 10px 0 rgba(0,0,0,0.35); padding: 18px 26px 22px; display: flex; flex-direction: column; gap: 10px; }
 .cc-qtop { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
