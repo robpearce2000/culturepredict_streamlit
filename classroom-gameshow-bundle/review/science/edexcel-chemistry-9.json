@@ -1,0 +1,257 @@
+{
+ "pack": "packs/edexcel/chemistry/9-separate-chemistry-2.txt",
+ "reviewed": 139,
+ "flags": [
+  {
+   "id": "edexcel-chem-9-002",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'It would give a false positive' (accepted) starts with I; explanation-type answer.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-004",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Crimson' (accepted, widely taught) starts with C, not R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-007",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Brick red' (accepted) starts with B, not O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-008",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Green-blue' (accepted) starts with G, not B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-012",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Orange-brown', 'Red-brown', 'Rust brown' (accepted) start with O/R, not B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-015",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Heat with NaOH and test the gas...' (accepted) starts with H, not W.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-020",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Effervescence' / 'Bubbles' (accepted) start with E/B, not F.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-027",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'HCl contains chloride ions' / 'It would give a false positive' (accepted) start with H/I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-031",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Nichrome wire', 'Platinum wire', 'Flame test wire' (accepted) start with N/P/F, not W.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-037",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Quicker', 'Rapid', 'Can be automated' (accepted) start with Q/R/C, not M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-057",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Stays orange', 'No change' (accepted) start with S/N, not O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-059",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-chem-8-027 ('Name the two products of the complete combustion of a hydrocarbon.' => Carbon dioxide and water). Also hexOk: products can be given in either order.",
+   "fix": "Remove, or reword towards 9.16C (e.g. what type of reaction happens to the alkane: oxidation); set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-064",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Its molecules are not all the same length' (accepted) starts with I, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-065",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-chem-1-127 ('Which polymer is made from ethene?' => Poly(ethene)).",
+   "fix": "Remove one, or replace this with another 9.18C question (e.g. what the monomer of poly(ethene) is called, or draw/describe its repeat unit)."
+  },
+  {
+   "id": "edexcel-chem-9-067",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Breaks and becomes a C–C single bond' (accepted) starts with B, not O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-074",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'C–C single bond' (accepted) starts with C, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-075",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Very slippery' / 'Low friction' (accepted) start with V/L, not N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-076",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (window frames, water pipes, drainpipes, cable insulation).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-077",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (strong, tough, hard-wearing, flexible).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-082",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Oil' / 'Petroleum' (accepted) start with O/P, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-084",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (carbon monoxide, hydrogen chloride, carbon dioxide, hydrogen cyanide).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-088",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Quality is lower', 'Properties get worse' (accepted) start with Q/P, not L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-090",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Glucose' (accepted, and a common answer) starts with G, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-099",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Type of alcohol' (accepted) starts with T; stored answer gives A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-102",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (mass of water, volume of water, distance of flame...).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-104",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Energy lost to the air' / 'Incomplete combustion' (accepted) start with E/I, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-105",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Stops the alcohol evaporating' (accepted) starts with S, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-121",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Enzymes in yeast would be denatured' (accepted) starts with E, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-124",
+   "grade": "Minor",
+   "reason": "Recalling the boiling point of ethanol (78 °C) is not required by 9.34C, so this tests a fact outside the specification.",
+   "fix": "Give the boiling point in the question, or reword: 'the thermometer reads the boiling point of which substance?' => Ethanol."
+  },
+  {
+   "id": "edexcel-chem-9-131",
+   "grade": "Minor",
+   "reason": "hexOk should be false: many different correct answers are accepted, starting with different letters (absorbed into the body, enter cells, unknown long-term effects, toxic).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-132",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Larger surface area...' / 'Can pass into the body' (accepted) start with L/C, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-134",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Glass' (accepted) starts with G, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-136",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the natural answer 'A' (accepted) is a one-letter answer the game may treat as the article; letter M vs A is unclear.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-9-139",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Lets light through' / 'See-through' (accepted) start with L/S, not T.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-chem-9-040": "60/20*1",
+  "edexcel-chem-9-103": "30/2",
+  "edexcel-chem-9-127": "100/0.1",
+  "edexcel-chem-9-129": "(6*2**2)/(2**3)"
+ },
+ "notcalc": {
+  "edexcel-chem-9-041": "formula",
+  "edexcel-chem-9-042": "formula",
+  "edexcel-chem-9-043": "formula",
+  "edexcel-chem-9-047": "formula",
+  "edexcel-chem-9-048": "formula",
+  "edexcel-chem-9-053": "name with locants",
+  "edexcel-chem-9-055": "name with locants",
+  "edexcel-chem-9-061": "balancing coefficient (CH4 + 2O2)",
+  "edexcel-chem-9-073": "count of chain carbons",
+  "edexcel-chem-9-092": "formula",
+  "edexcel-chem-9-093": "formula in question",
+  "edexcel-chem-9-094": "formula",
+  "edexcel-chem-9-095": "formula",
+  "edexcel-chem-9-106": "formula",
+  "edexcel-chem-9-107": "formula",
+  "edexcel-chem-9-108": "formula in question",
+  "edexcel-chem-9-109": "formula",
+  "edexcel-chem-9-117": "name with locants",
+  "edexcel-chem-9-118": "formula in accept list",
+  "edexcel-chem-9-124": "recalled boiling point",
+  "edexcel-chem-9-125": "recalled size range",
+  "edexcel-chem-9-126": "recalled unit conversion",
+  "edexcel-chem-9-136": "comparison of given densities, not calculated",
+  "edexcel-chem-9-121": "no worked number",
+  "edexcel-chem-9-049": "names with locants",
+  "edexcel-chem-9-110": "formula",
+  "edexcel-chem-9-096": "no number",
+  "edexcel-chem-9-098": "formula",
+  "edexcel-chem-9-112": "formula",
+  "edexcel-chem-9-111": "formula",
+  "edexcel-chem-9-016": "formula",
+  "edexcel-chem-9-022": "formula",
+  "edexcel-chem-9-033": "formula",
+  "edexcel-chem-9-034": "formula",
+  "edexcel-chem-9-028": "formula",
+  "edexcel-chem-9-014": "charge",
+  "edexcel-chem-9-079": "formula",
+  "edexcel-chem-9-059": "formulae"
+ },
+ "mismatchFlagged": []
+}
