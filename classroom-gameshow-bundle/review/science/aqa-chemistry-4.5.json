@@ -1,0 +1,22 @@
+{"pack": "packs/aqa/chemistry/4.5-energy-changes.txt", "reviewed": 46,
+"flags": [
+{"id": "aqa-chem-4.5-006", "grade": "Minor", "reason": "'Name one everyday product' with two spec answers (hand warmer, self-heating can) is on Hex Hunt with letter H.", "fix": "Set hexOk false, or reword to point at hand warmers only."},
+{"id": "aqa-chem-4.5-012", "grade": "Minor", "reason": "Long explanation answer on Hex Hunt (letter E); accepted answers start with T and H.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.5-018", "grade": "Minor", "reason": "Explanation answer on Hex Hunt (letter E); accepted answers start with M and S, and 'so the temperature is the same throughout' is the common answer.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.5-024", "grade": "Minor", "reason": "Hex letter P ('Peak') while 'top of the curve' and 'highest point' are equally common and accepted.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.5-038", "grade": "Minor", "reason": "Explanation answer on Hex Hunt (letter S, 'Supply...'); accepted answers start with C and P.", "fix": "Set hexOk false."},
+{"id": "aqa-chem-4.5-042", "grade": "Minor", "reason": "Hex letter P ('Potential difference'), but 'electricity' and 'voltage' are common correct answers and are accepted.", "fix": "Set hexOk false, or accept the P clue knowingly (it matches the spec wording)."}
+],
+"calcs": {
+"aqa-chem-4.5-014": "26-19",
+"aqa-chem-4.5-025": "90-50",
+"aqa-chem-4.5-029": "500-300",
+"aqa-chem-4.5-031": "3*400",
+"aqa-chem-4.5-032": "(400+200)-2*400"
+},
+"notcalc": {
+"aqa-chem-4.5-030": "compare two values: exothermic",
+"aqa-chem-4.5-045": "half equation",
+"aqa-chem-4.5-046": "half equation"
+},
+"mismatchFlagged": []}
