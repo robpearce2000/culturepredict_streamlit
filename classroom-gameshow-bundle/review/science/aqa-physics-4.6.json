@@ -1,0 +1,123 @@
+{
+ "pack": "packs/aqa/physics/4.6-waves.txt",
+ "reviewed": 58,
+ "flags": [
+  {
+   "id": "aqa-phys-4.6-010",
+   "grade": "Wrong",
+   "reason": "Tagged Separate and Combined, but how velocity, frequency and wavelength are inter-related when sound passes from one medium to another is a '(Physics only)' statement in 8463 4.6.1.2 and is absent from Trilogy 6.6.1.2.",
+   "fix": "Tag Separate only (add 'Sep: yes'). The physics and answer are correct."
+  },
+  {
+   "id": "aqa-phys-4.6-003",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Same direction' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-004",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Water does not travel...', 'Only the wave moves'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-011",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Longer time to measure', 'Smaller percentage error'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-012",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('More accurate', 'Smaller percentage error'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-015",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (the order is free: 'Transmitted or absorbed' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-019",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Does not change', 'Goes straight through', 'Not bent'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-029",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Velocity' is accepted and is the spec's own word), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-032",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Slows down' is accepted and very common), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-033",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Frequency' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-040",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Skin ageing', 'Ages skin early'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-044",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (the order is free: 'Infrared and microwaves' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-045",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Bone absorbs them...', 'Pass through flesh...'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-050",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Absorbs some colours and lets others through' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-051",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Blue reflected most strongly...' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-053",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Black body' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.6-055",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Best absorber so best emitter' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-phys-4.6-007": "50*4",
+  "aqa-phys-4.6-008": "1/4",
+  "aqa-phys-4.6-009": "340/2",
+  "aqa-phys-4.6-014": "2*1/4",
+  "aqa-phys-4.6-026": "1500*0.4/2",
+  "aqa-phys-4.6-030": "3e8/1e8",
+  "aqa-phys-4.6-048": "3*4"
+ },
+ "notcalc": {
+  "aqa-phys-4.6-017": "Law of reflection: angle given is the answer",
+  "aqa-phys-4.6-021": "Recalled range of human hearing",
+  "aqa-phys-4.6-041": "Same frequency as the radio wave; no calculation"
+ },
+ "mismatchFlagged": []
+}
