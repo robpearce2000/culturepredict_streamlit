@@ -1,0 +1,228 @@
+{
+ "pack": "packs/edexcel/chemistry/1-key-concepts-in-chemistry.txt",
+ "reviewed": 184,
+ "flags": [
+  {
+   "id": "edexcel-chem-1-004",
+   "grade": "Minor",
+   "reason": "hexOk should be false: common correct answers start 'Repelled...', 'Positive nucleus...' or 'They hit...', not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-006",
+   "grade": "Minor",
+   "reason": "hexOk should be false: students commonly write 'In shells', 'Energy levels' or 'Orbiting the nucleus'.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-017",
+   "grade": "Minor",
+   "reason": "hexOk should be false: answers such as 'Most of the atom is empty space' or 'Nucleus is tiny' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-040",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Atomic mass'/'Atomic weight' (accepted) start with A, not R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-043",
+   "grade": "Minor",
+   "reason": "Three accepted answers (germanium, gallium, scandium) start with different letters, so the hex letter G is unfair; eka-silicon/eka-aluminium also correct.",
+   "fix": "Set hexOk false; add accept Eka-silicon; Eka-aluminium."
+  },
+  {
+   "id": "edexcel-chem-1-045",
+   "grade": "Minor",
+   "reason": "hexOk should be false: a sentence-length explanation; many correct phrasings (e.g. 'Similar properties to chlorine/bromine', 'To fit group 7').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-047",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Isotopes' (accepted) and 'Tellurium has heavier isotopes' start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-058",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanations vary ('They have 1-3 outer electrons', 'Easier to lose...').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-073",
+   "grade": "Minor",
+   "reason": "A calculation (11 - 1 = 10, spec 1.23 'Calculate') but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-chem-1-080",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanation-type answer; 'Two elements only' / 'No oxygen' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-081",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Contains oxygen' (accepted) starts with C, stored answer gives N (after 'The').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-095",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Made of ions' / 'It is ionic' / 'A lattice of ions' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-108",
+   "grade": "Minor",
+   "reason": "hexOk should be false: order can be reversed ('In solution and molten', 'Liquid...', 'Dissolved...').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-124",
+   "grade": "Minor",
+   "reason": "hexOk should be false: first significant word is 'single'; 'One layer...' (accepted) starts with O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-129",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Stronger intermolecular forces...' is an equally correct answer starting with S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-145",
+   "grade": "Minor",
+   "reason": "Empirical formula from reacting masses is a calculation (0.1 : 0.1) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-chem-1-146",
+   "grade": "Minor",
+   "reason": "Empirical formula from percentages is a calculation (6.25 : 25 = 1 : 4) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-chem-1-150",
+   "grade": "Minor",
+   "reason": "Molecular formula from Mr is a calculation (42 / 14 = 3) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-chem-1-151",
+   "grade": "Minor",
+   "reason": "Molecular formula from Mr is a calculation (92 / 46 = 2) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-chem-1-154",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Prevents...' (accepted) and 'Product would escape' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-157",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'No change' and 'Unchanged' (both accepted) start with N and U.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-158",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'A gas is given off' (accepted, G after 'a') and 'Gas escapes' start differently from C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-1-175",
+   "grade": "Minor",
+   "reason": "A particle calculation (12/12 x 6.02e23) but calcTag is false.",
+   "fix": "Set calcTag true."
+  }
+ ],
+ "calcs": {
+  "edexcel-chem-1-030": "27-13",
+  "edexcel-chem-1-031": "37-17",
+  "edexcel-chem-1-036": "0.75*35+0.25*37",
+  "edexcel-chem-1-037": "0.2*10+0.8*11",
+  "edexcel-chem-1-073": "11-1",
+  "edexcel-chem-1-074": "24-12",
+  "edexcel-chem-1-075": "20-18",
+  "edexcel-chem-1-139": "2*1+16",
+  "edexcel-chem-1-140": "12+2*16",
+  "edexcel-chem-1-141": "40+12+3*16",
+  "edexcel-chem-1-142": "40/(40+12+48)*100",
+  "edexcel-chem-1-143": "4/(12+4)*100",
+  "edexcel-chem-1-155": "0.40-0.24",
+  "edexcel-chem-1-161": "48/24*(24+16)",
+  "edexcel-chem-1-162": "100/100*(40+16)",
+  "edexcel-chem-1-163": "4/2*(2+16)",
+  "edexcel-chem-1-166": "20/0.5",
+  "edexcel-chem-1-167": "4/0.250",
+  "edexcel-chem-1-171": "12*1",
+  "edexcel-chem-1-172": "88/44",
+  "edexcel-chem-1-173": "0.5*40",
+  "edexcel-chem-1-174": "2*6.02e23",
+  "edexcel-chem-1-175": "12/12*6.02e23",
+  "edexcel-chem-1-182": "(73/36.5)/(24/24)",
+  "edexcel-chem-1-183": "(46/23)/(71/71)",
+  "edexcel-chem-1-184": "(4/2)/(32/32)"
+ },
+ "notcalc": {
+  "edexcel-chem-1-008": "recalled charge",
+  "edexcel-chem-1-009": "recalled charge",
+  "edexcel-chem-1-010": "recalled relative mass 1/1836",
+  "edexcel-chem-1-013": "recall: protons = electrons in an atom",
+  "edexcel-chem-1-016": "recalled order of magnitude",
+  "edexcel-chem-1-023": "symbol position, not a calculation",
+  "edexcel-chem-1-026": "answer is an element; 8 protons recalled",
+  "edexcel-chem-1-032": "answer is an element name (40 - 20 = 20, calcium)",
+  "edexcel-chem-1-035": "isotope named, deduced from Ar",
+  "edexcel-chem-1-038": "no number",
+  "edexcel-chem-1-048": "recall: atomic number = 6",
+  "edexcel-chem-1-059": "electron configuration",
+  "edexcel-chem-1-060": "electron configuration",
+  "edexcel-chem-1-061": "recalled shell capacity",
+  "edexcel-chem-1-062": "element from configuration",
+  "edexcel-chem-1-063": "group from configuration",
+  "edexcel-chem-1-069": "recalled charge Mg2+",
+  "edexcel-chem-1-072": "charge",
+  "edexcel-chem-1-076": "charge",
+  "edexcel-chem-1-077": "charge",
+  "edexcel-chem-1-078": "charge",
+  "edexcel-chem-1-084": "formula",
+  "edexcel-chem-1-085": "formula",
+  "edexcel-chem-1-086": "formula",
+  "edexcel-chem-1-092": "recalled count",
+  "edexcel-chem-1-096": "recalled order of magnitude",
+  "edexcel-chem-1-097": "recalled order of magnitude",
+  "edexcel-chem-1-099": "bond count",
+  "edexcel-chem-1-100": "bond count",
+  "edexcel-chem-1-101": "lone pair count",
+  "edexcel-chem-1-105": "answer is a substance type",
+  "edexcel-chem-1-116": "bond count",
+  "edexcel-chem-1-123": "formula C60",
+  "edexcel-chem-1-145": "answer is a formula (2.4/24 = 0.1 : 1.6/16 = 0.1)",
+  "edexcel-chem-1-146": "answer is a formula (75/12 : 25/1 = 1 : 4)",
+  "edexcel-chem-1-148": "formula",
+  "edexcel-chem-1-149": "formula",
+  "edexcel-chem-1-150": "formula (42/14 = 3)",
+  "edexcel-chem-1-151": "formula (92/46 = 2)",
+  "edexcel-chem-1-160": "coefficient read from equation",
+  "edexcel-chem-1-164": "unit",
+  "edexcel-chem-1-165": "recalled conversion",
+  "edexcel-chem-1-168": "recalled constant",
+  "edexcel-chem-1-169": "no worked number",
+  "edexcel-chem-1-170": "no number",
+  "edexcel-chem-1-176": "equation",
+  "edexcel-chem-1-180": "answer is a substance (2 mol H2 needs 1 mol O2)",
+  "edexcel-chem-1-098": "checked by hand: 1e-3/1e-10 = 1e7, matches stored 10⁷ (checker cannot read a bare power of ten)",
+  "edexcel-chem-1-028": "mass numbers in names",
+  "edexcel-chem-1-029": "mass numbers in names",
+  "edexcel-chem-1-057": "electron configuration",
+  "edexcel-chem-1-079": "charge",
+  "edexcel-chem-1-134": "'3D' is not a number"
+ },
+ "mismatchFlagged": []
+}
