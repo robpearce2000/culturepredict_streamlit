@@ -1,0 +1,91 @@
+{
+ "pack": "packs/edexcel/chemistry/2-states-of-matter-and-mixtures.txt",
+ "reviewed": 43,
+ "flags": [
+  {
+   "id": "edexcel-chem-2-003",
+   "grade": "Minor",
+   "reason": "hexOk should be false: descriptions vary ('Touching...', 'Randomly arranged and close').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-004",
+   "grade": "Minor",
+   "reason": "hexOk should be false: descriptions vary ('Fast and random', 'Randomly...').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-009",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'They gain energy' / 'Particles gain energy' (accepted) start with T/P/G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-015",
+   "grade": "Minor",
+   "reason": "hexOk should be false: first significant word is 'single'; 'Only one...' / 'One substance' (accepted) start with O.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-016",
+   "grade": "Minor",
+   "reason": "hexOk should be false: accepted 'Untreated', 'Unadulterated' start with U; 'Nothing added' with N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-017",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Mixture...' (accepted) starts with M; stored answer starts with C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-025",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Evaporation' is accepted and correct but starts with E, not C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-030",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Different rates' / 'Different solubilities' (accepted) start with D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-035",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the natural answer 'X' (accepted) starts with X, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-038",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Distillation' (accepted) starts with D, stored answer with S.",
+   "fix": "Set hexOk false, or accept only one form."
+  },
+  {
+   "id": "edexcel-chem-2-042",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Simple distillation' (accepted) starts with S, stored answer with D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-2-043",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanation-type answer; 'Dissolved ions/salts would interfere' starts with D.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-chem-2-033": "3/6",
+  "edexcel-chem-2-034": "0.4*10"
+ },
+ "notcalc": {
+  "edexcel-chem-2-012": "state read from data",
+  "edexcel-chem-2-013": "state read from data",
+  "edexcel-chem-2-014": "state read from data",
+  "edexcel-chem-2-020": "identify mixture from data",
+  "edexcel-chem-2-032": "count of spots",
+  "edexcel-chem-2-039": "recalled boiling point of water"
+ },
+ "mismatchFlagged": []
+}
