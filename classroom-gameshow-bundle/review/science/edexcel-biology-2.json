@@ -1,0 +1,25 @@
+{"pack": "packs/edexcel/biology/2-cells-and-control.txt", "reviewed": 62,
+"flags": [
+{"id": "edexcel-bio-2-004", "grade": "Minor", "reason": "hexOk is true on a two-part describe answer; students may equally start with the nuclear membrane (N) or 'nucleus breaks down'.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-006", "grade": "Minor", "reason": "hexOk is true but the three reasons can be given in any order (accepted), so the first word could be growth, repair or asexual.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-008", "grade": "Minor", "reason": "hexOk is true on an explanation question; correct answers start 'only one parent', 'mitosis', 'no fertilisation', 'made by mitosis' etc.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-012", "grade": "Minor", "reason": "hexOk is true (letter C) but 'mitosis' is an equally common correct answer and is accepted.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-014", "grade": "Minor", "reason": "hexOk is true on an explanation question; correct answers begin with many different words.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-016", "grade": "Minor", "reason": "hexOk is true but 'mitosis and differentiation' (accepted) or 'differentiation and cell division' start with other letters.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-022", "grade": "Minor", "reason": "Requires a calculation (100 − 90) but calcTag is false.", "fix": "Set calcTag true."},
+{"id": "edexcel-bio-2-036", "grade": "Minor", "reason": "hexOk is true on an explanation; accepted answers start with P, A and C.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-037", "grade": "Minor", "reason": "hexOk is true on an explanation; correct answers start 'the brain is inside the skull', 'sampling would damage', 'hard to reach' etc.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-047", "grade": "Minor", "reason": "hexOk is true (letter I) but accepted answers start with D and F, and 'it does not involve the brain' is typical.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-053", "grade": "Minor", "reason": "hexOk is true (letter S) but 'constricts' / 'gets smaller' / 'it gets smaller' are accepted and common.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-2-054", "grade": "Minor", "reason": "hexOk is true (letter F) but 'refracts light' (accepted) is equally correct.", "fix": "Set hexOk false."}
+],
+"calcs": {
+"edexcel-bio-2-021": "25",
+"edexcel-bio-2-022": "100-90",
+"edexcel-bio-2-023": "(5-4)/4*100",
+"edexcel-bio-2-045": "1.2/0.02"
+},
+"notcalc": {
+"edexcel-bio-2-009": "chromosome number is unchanged by mitosis (recall, not worked out)"
+},
+"mismatchFlagged": []}
