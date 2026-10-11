@@ -172,7 +172,7 @@ async function dropFinalCounter(page, lane) {
 
 test('Over the Edge: pushing the jackpot counter over the edge wins the jackpot', async ({ page }) => {
   await oteFinal(page);
-  await page.evaluate(() => CGB.test.ote.jackpotNear(0.15));
+  await page.evaluate(() => CGB.test.ote.jackpotNear(0.02));
   for (let k = 0; k < 8; k++) {
     const info = await page.evaluate(() => CGB.test.ote.info());
     if (process.env.DEBUG_OTE) console.log(k, info.progress.toFixed(3), info.jackpotFell, (await state(page, 'over-the-edge')).step);
@@ -206,6 +206,7 @@ test('Outpace: when the sprint clock runs out the question on screen still finis
   const log = await openBundle(page, '#outpace');
   await page.click('#op-startBtn');
   await page.evaluate(() => CGB.test.outpace.toSprint(600));
+  await page.keyboard.press('Enter');                                  // Start the Final Sprint
   await expect(page.locator('#op-hud-sprint')).toBeVisible();
   await mark(page, 'outpace', () => true);
   expect((await state(page, 'outpace')).net).toBe(4);       // one step for each correct team

@@ -6,14 +6,14 @@ Showtime: Classroom Gameshows, History edition (4 revision games)
 
 ## Summary line
 
-Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE History packs, one for every specification topic (1,675 questions). One file, works offline.
+Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE History packs, one for every specification topic (1,698 questions). One file, works offline.
 
 ## Description
 
 Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains four original quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
 
 **What's in the History edition**
-- **History:** 33 topic packs, 1,675 questions (AQA-style 8145, Edexcel-style 1HI0)
+- **History:** 33 topic packs, 1,698 questions (AQA-style 8145, Edexcel-style 1HI0)
 
 Every built-in question is tied to a specification point, tagged by difficulty, and marked if it is Higher tier only where the subject is tiered, so a Foundation class can leave those out.
 

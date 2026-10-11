@@ -214,6 +214,7 @@ for (const n of [2, 4, 6]) {
       if (s.phase === 'summary') break;
       if (s.roundEnd) { await page.keyboard.press('Enter'); continue; }
       if (s.phase === 'deal' && !s.dealReward) { dealsVoted++; await page.keyboard.press('2'); continue; }   // the second Deal Round
+      if (s.phase === 'sprint' && s.round === 'idle' && await page.locator('#game-outpace .sprint-gate:not([hidden])').count()) { await page.keyboard.press('Enter'); continue; }
       if (s.phase === 'sprint') {
         if (!sprintSeen) { sprintSeen = true; expect(s.target).toBeGreaterThanOrEqual(2); note('sprint target', s.target); }
         if (s.timeLeft > 5 && k > 3) await page.evaluate(() => CGB.test.outpace.setTime(2));

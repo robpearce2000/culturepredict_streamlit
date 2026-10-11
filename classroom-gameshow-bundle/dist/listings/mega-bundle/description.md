@@ -6,19 +6,19 @@ Showtime: Classroom Gameshows, Mega bundle (4 revision games)
 
 ## Summary line
 
-Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE Biology, Chemistry, Physics, Maths, History and Geography packs, one for every specification topic, for separate sciences and Combined Science (7,872 questions). One file, works offline.
+Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE Biology, Chemistry, Physics, Maths, History and Geography packs, one for every specification topic, for separate sciences and Combined Science (8,009 questions). One file, works offline.
 
 ## Description
 
 Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains four original quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
 
 **What's in the Mega bundle**
-- **Biology:** 16 topic packs, 1,007 questions (AQA-style 8461, Edexcel-style 1BI0); Combined Science: 16 topics, 699 questions (AQA-style 8464, Edexcel-style 1SC0)
+- **Biology:** 16 topic packs, 1,011 questions (AQA-style 8461, Edexcel-style 1BI0); Combined Science: 16 topics, 703 questions (AQA-style 8464, Edexcel-style 1SC0)
 - **Chemistry:** 19 topic packs, 1,437 questions (AQA-style 8462, Edexcel-style 1CH0); Combined Science: 17 topics, 1,058 questions (AQA-style 8464, Edexcel-style 1SC0)
-- **Physics:** 23 topic packs, 1,555 questions (AQA-style 8463, Edexcel-style 1PH0); Combined Science: 20 topics, 1,097 questions (AQA-style 8464, Edexcel-style 1SC0)
-- **Maths:** 12 topic packs, 809 questions (AQA-style 8300, Edexcel-style 1MA1)
-- **History:** 33 topic packs, 1,675 questions (AQA-style 8145, Edexcel-style 1HI0)
-- **Geography:** 32 topic packs, 1,389 questions (AQA-style 8035, Edexcel-style 1GA0, Edexcel-style 1GB0)
+- **Physics:** 23 topic packs, 1,602 questions (AQA-style 8463, Edexcel-style 1PH0); Combined Science: 20 topics, 1,137 questions (AQA-style 8464, Edexcel-style 1SC0)
+- **Maths:** 12 topic packs, 868 questions (AQA-style 8300, Edexcel-style 1MA1)
+- **History:** 33 topic packs, 1,698 questions (AQA-style 8145, Edexcel-style 1HI0)
+- **Geography:** 32 topic packs, 1,393 questions (AQA-style 8035, Edexcel-style 1GA0, Edexcel-style 1GB0)
 
 Every built-in question is tied to a specification point, tagged by difficulty, and marked if it is Higher tier only, so a Foundation class can leave those out. Choose Separate science or Combined Science on the menu: a Combined Science class only sees Combined Science content.
 

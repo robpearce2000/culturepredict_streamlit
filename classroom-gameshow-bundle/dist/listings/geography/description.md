@@ -6,14 +6,14 @@ Showtime: Classroom Gameshows, Geography edition (4 revision games)
 
 ## Summary line
 
-Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE Geography packs, one for every specification topic (1,389 questions). One file, works offline.
+Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE Geography packs, one for every specification topic (1,393 questions). One file, works offline.
 
 ## Description
 
 Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains four original quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
 
 **What's in the Geography edition**
-- **Geography:** 32 topic packs, 1,389 questions (AQA-style 8035, Edexcel-style 1GA0, Edexcel-style 1GB0)
+- **Geography:** 32 topic packs, 1,393 questions (AQA-style 8035, Edexcel-style 1GA0, Edexcel-style 1GB0)
 
 Every built-in question is tied to a specification point, tagged by difficulty, and marked if it is Higher tier only where the subject is tiered, so a Foundation class can leave those out.
 
