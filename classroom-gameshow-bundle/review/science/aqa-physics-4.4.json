@@ -1,0 +1,94 @@
+{
+ "pack": "packs/aqa/physics/4.4-atomic-structure.txt",
+ "reviewed": 49,
+ "flags": [
+  {
+   "id": "aqa-phys-4.4-003",
+   "grade": "Minor",
+   "reason": "hexOk is true on a description; 'Moves further from the nucleus' (accepted, and the spec's own wording) starts with M, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.4-011",
+   "grade": "Minor",
+   "reason": "hexOk is true but most students will write just 'Chadwick' (accepted), which starts with C, not J.",
+   "fix": "Set hexOk false, or make the stored answer 'Chadwick' with 'James Chadwick' accepted."
+  },
+  {
+   "id": "aqa-phys-4.4-017",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start 'Fast electron', 'An electron' or 'Electron from the nucleus', not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.4-021",
+   "grade": "Minor",
+   "reason": "hexOk is true on a numerical answer (students will write '222 and 86'), and the arithmetic (226 - 4, 88 - 2) is a calculation without a calc tag.",
+   "fix": "Set hexOk false and calcTag true."
+  },
+  {
+   "id": "aqa-phys-4.4-022",
+   "grade": "Minor",
+   "reason": "hexOk is true on a numerical answer (students will write '14 and 7'), and the balancing is a calculation without a calc tag.",
+   "fix": "Set hexOk false and calcTag true."
+  },
+  {
+   "id": "aqa-phys-4.4-026",
+   "grade": "Minor",
+   "reason": "Calculating the ratio after three half-lives ((1/2)^3) is a calculation, but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-phys-4.4-029",
+   "grade": "Minor",
+   "reason": "'Peer review' does not grammatically answer 'Why...?'; the natural answer 'So other scientists can check them' (accepted) starts with S, so hexOk is unreliable.",
+   "fix": "Set hexOk false, or reword to 'Findings on radiation and humans are shared so they can be checked by what process?' A: Peer review."
+  },
+  {
+   "id": "aqa-phys-4.4-040",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Could cause cancer' (accepted) and 'Mutations' start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.4-042",
+   "grade": "Minor",
+   "reason": "hexOk is true but many students will write just 'Fission' (accepted), which starts with F, not N.",
+   "fix": "Set hexOk false, or store 'Fission' with 'Nuclear fission' accepted."
+  },
+  {
+   "id": "aqa-phys-4.4-043",
+   "grade": "Minor",
+   "reason": "hexOk is true but uranium and plutonium are both correct (the spec names both), so the letter U is only right for one.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.4-046",
+   "grade": "Minor",
+   "reason": "hexOk is true on a comparison; answers start 'Controlled...', 'Uncontrolled...', 'In a reactor...', not reliably R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.4-047",
+   "grade": "Minor",
+   "reason": "hexOk is true but many students will write just 'Fusion' (accepted), which starts with F, not N.",
+   "fix": "Set hexOk false, or store 'Fusion' with 'Nuclear fusion' accepted."
+  }
+ ],
+ "calcs": {
+  "aqa-phys-4.4-004": "1e-10/10000",
+  "aqa-phys-4.4-007": "23-11",
+  "aqa-phys-4.4-021": "226-4",
+  "aqa-phys-4.4-022": "14",
+  "aqa-phys-4.4-025": "6/log2(800/200)",
+  "aqa-phys-4.4-026": "1/2**3",
+  "aqa-phys-4.4-027": "log2(640/40)",
+  "aqa-phys-4.4-033": "2*1000",
+  "aqa-phys-4.4-035": "1e9/1e3"
+ },
+ "notcalc": {
+  "aqa-phys-4.4-001": "Recalled value: atomic radius about 1 x 10^-10 m",
+  "aqa-phys-4.4-008": "Mass and atomic numbers given as data; answer is a reason in words"
+ },
+ "mismatchFlagged": []
+}
