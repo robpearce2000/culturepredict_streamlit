@@ -1,0 +1,107 @@
+{
+ "pack": "packs/edexcel/physics/3-conservation-of-energy.txt",
+ "reviewed": 54,
+ "flags": [
+  {
+   "id": "edexcel-phys-3-002",
+   "grade": "Minor",
+   "reason": "Duplicate of edexcel-phys-2-056 (unit of gravitational field strength) in the Motion and forces pack.",
+   "fix": "Remove one of the two."
+  },
+  {
+   "id": "edexcel-phys-3-007",
+   "grade": "Minor",
+   "reason": "hexOk is true but most students will write '4' or '×4' (no letter) or 'Quadruples' (Q), not 'Four times'.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-3-019",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'No change' (accepted, very common) starts with N, not Z.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-3-024",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Wasted' (accepted) starts with W, not D.",
+   "fix": "Set hexOk false, or drop 'wasted' from Accept so only the target word counts."
+  },
+  {
+   "id": "edexcel-phys-3-026",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; equally good answers ('Too spread out', 'Only a tiny temperature rise') start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-3-032",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted answers 'Lower rate', 'Slower cooling', 'Reduces it' start with L, S, R, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-3-033",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted answers 'Lower rate', 'Slower cooling', 'Reduces it' start with L, S, R, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-3-037",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; 'Conservation of energy' and 'Output cannot exceed input' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-3-040",
+   "grade": "Minor",
+   "reason": "hexOk is true but this is an explanation; equally good answers such as 'More energy transferred as light' or 'They are more efficient' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-3-046",
+   "grade": "Minor",
+   "reason": "hexOk is true but this asks for 'one reason' and the accepted reasons start with many different letters (Population, More industry...).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-3-050",
+   "grade": "Minor",
+   "reason": "Ref 3.2 is the kinetic energy equation; a raised object's GPE store belongs to 3.1. Also near-duplicate of edexcel-phys-8-060.",
+   "fix": "Change Ref to 3.1 (or 3.5); consider removing as a duplicate."
+  },
+  {
+   "id": "edexcel-phys-3-051",
+   "grade": "Minor",
+   "reason": "Ref 3.1 is the GPE equation; the kinetic store belongs to 3.2. Also near-duplicate of edexcel-phys-8-061.",
+   "fix": "Change Ref to 3.2; consider removing as a duplicate."
+  },
+  {
+   "id": "edexcel-phys-3-052",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-3-024 (energy spread to surroundings); 'Dissipated energy' is equally correct but not accepted; the ref fits 3.8 better than 3.6.",
+   "fix": "Accept 'Dissipated energy; dissipated'; change Ref to 3.8; or remove."
+  },
+  {
+   "id": "edexcel-phys-3-053",
+   "grade": "Minor",
+   "reason": "Duplicate of edexcel-phys-3-043 (renewable resource using the rise and fall of the sea, answer Tidal).",
+   "fix": "Remove."
+  }
+ ],
+ "calcs": {
+  "edexcel-phys-3-003": "2*10*5",
+  "edexcel-phys-3-004": "20/(0.5*10)",
+  "edexcel-phys-3-005": "0.5*2*3**2",
+  "edexcel-phys-3-006": "sqrt(2*200/4)",
+  "edexcel-phys-3-009": "100-20",
+  "edexcel-phys-3-010": "50*200/500",
+  "edexcel-phys-3-013": "40",
+  "edexcel-phys-3-015": "10**2/(2*10)",
+  "edexcel-phys-3-020": "30",
+  "edexcel-phys-3-035": "1800/2000*100",
+  "edexcel-phys-3-036": "0.20*500"
+ },
+ "notcalc": {
+  "edexcel-phys-3-054": "recalled: no energy wasted means 100% efficiency"
+ },
+ "mismatchFlagged": []
+}
