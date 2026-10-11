@@ -1,0 +1,138 @@
+{
+ "pack": "packs/edexcel/physics/8-energy-forces-doing-work.txt",
+ "reviewed": 64,
+ "flags": [
+  {
+   "id": "edexcel-phys-8-006",
+   "grade": "Minor",
+   "reason": "Correct ((8 − 2) ÷ 8 = 3/4), but it is a calculation with calcTag false, and hexOk is true although most students will write '3/4', '0.75' or '75%' (no letter).",
+   "fix": "Set calcTag true and hexOk false."
+  },
+  {
+   "id": "edexcel-phys-8-008",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'The same', 'Unchanged' and 'No change' (accepted) start with S, U and N, not E.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-8-011",
+   "grade": "Minor",
+   "reason": "hexOk is true but the three ways can be given in any order, so the first letter is not fixed.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-8-033",
+   "grade": "Minor",
+   "reason": "hexOk is true but students will often write 'The air' (A) or 'Into the air' (I), both accepted.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-8-034",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Name one way' has several correct answers (heating, sound/noise) with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-8-035",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-3-026 (dissipated energy too spread out to use); also hexOk is true on an explanation answer ('Tiny temperature rise' starts with T).",
+   "fix": "Remove, or set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-8-040",
+   "grade": "Minor",
+   "reason": "hexOk is true but the game takes the letter from 'Kettle' (K) while students will write just 'A'.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-8-056",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-8-052 and -039 (rate of energy transfer / doing work, answer Power).",
+   "fix": "Remove, or keep only one 'what is power' recall question."
+  },
+  {
+   "id": "edexcel-phys-8-057",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'Weight' (accepted, and the better physics answer) starts with W, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-phys-8-058",
+   "grade": "Minor",
+   "reason": "Ref 8.5 is measuring work done; 'what force opposes motion between surfaces' is 9.1b (contact forces including friction).",
+   "fix": "Change Ref to 9.1 (or remove, as it is generic)."
+  },
+  {
+   "id": "edexcel-phys-8-059",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-3-016 (car brakes: kinetic energy goes to the thermal store of the brakes).",
+   "fix": "Remove one of the two."
+  },
+  {
+   "id": "edexcel-phys-8-060",
+   "grade": "Minor",
+   "reason": "Ref 8.9 is the kinetic energy equation; GPE belongs to 8.8 (or 8.1). Near-duplicate of edexcel-phys-8-001 and edexcel-phys-3-050.",
+   "fix": "Change Ref to 8.8, or remove as a duplicate."
+  },
+  {
+   "id": "edexcel-phys-8-061",
+   "grade": "Minor",
+   "reason": "Ref 8.8 is the GPE equation; kinetic energy belongs to 8.9. Near-duplicate of edexcel-phys-8-065 and edexcel-phys-3-051.",
+   "fix": "Change Ref to 8.9, or remove as a duplicate."
+  },
+  {
+   "id": "edexcel-phys-8-062",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-8-046 (one watt = one joule per second).",
+   "fix": "Remove one of the two."
+  },
+  {
+   "id": "edexcel-phys-8-064",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-8-022 (one newton-metre = one joule).",
+   "fix": "Remove one of the two."
+  },
+  {
+   "id": "edexcel-phys-8-065",
+   "grade": "Minor",
+   "reason": "Ref 8.4 is about ways energy is transferred (work, electrically, heating), not stores; a moving car's kinetic store fits 8.1.",
+   "fix": "Change Ref to 8.1."
+  },
+  {
+   "id": "edexcel-phys-8-066",
+   "grade": "Minor",
+   "reason": "Ref 8.4 is about ways energy is transferred, not stores; fuel's chemical store fits 8.1. Near-duplicate of edexcel-phys-8-002.",
+   "fix": "Change Ref to 8.1."
+  }
+ ],
+ "calcs": {
+  "edexcel-phys-8-007": "400*3/10",
+  "edexcel-phys-8-009": "90-30",
+  "edexcel-phys-8-010": "60-15",
+  "edexcel-phys-8-020": "20*5",
+  "edexcel-phys-8-021": "600/3",
+  "edexcel-phys-8-024": "5000",
+  "edexcel-phys-8-025": "10*4",
+  "edexcel-phys-8-026": "40000/20",
+  "edexcel-phys-8-027": "60*10*5",
+  "edexcel-phys-8-028": "3*10*2",
+  "edexcel-phys-8-029": "10000/(50*10)",
+  "edexcel-phys-8-031": "0.5*4*5**2",
+  "edexcel-phys-8-043": "600/30",
+  "edexcel-phys-8-044": "1000/50",
+  "edexcel-phys-8-045": "60*10*3/6",
+  "edexcel-phys-8-047": "40*1",
+  "edexcel-phys-8-048": "2*1000",
+  "edexcel-phys-8-049": "30/(30+70)*100",
+  "edexcel-phys-8-050": "50/200",
+  "edexcel-phys-8-051": "0.4*500"
+ },
+ "notcalc": {
+  "edexcel-phys-8-006": "answer in words ('Three quarters'); checked: (8 − 2) ÷ 8 = 3/4",
+  "edexcel-phys-8-022": "recalled: 1 N m = 1 J",
+  "edexcel-phys-8-040": "comparison only, no number in answer",
+  "edexcel-phys-8-064": "recalled: 1 N × 1 m = 1 J",
+  "edexcel-phys-8-030": "equation, not a calculation"
+ },
+ "mismatchFlagged": []
+}
