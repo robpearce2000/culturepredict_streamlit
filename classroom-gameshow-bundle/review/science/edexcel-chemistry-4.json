@@ -1,0 +1,121 @@
+{
+ "pack": "packs/edexcel/chemistry/4-extracting-metals-and-equilibria.txt",
+ "reviewed": 59,
+ "flags": [
+  {
+   "id": "edexcel-chem-4-002",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Competition reaction' (accepted) starts with C, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-005",
+   "grade": "Minor",
+   "reason": "Duplicate of edexcel-chem-3-095 ('What is oxidation in terms of electrons?' => Loss of electrons).",
+   "fix": "Remove, or replace with a displacement-context question (e.g. which species is oxidised when zinc displaces copper)."
+  },
+  {
+   "id": "edexcel-chem-4-014",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Very unreactive' (accepted) starts with V, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-016",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Adding oxygen' (accepted) starts with A, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-022",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Reduction with carbon', 'Smelting...' (accepted) start with R/S, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-027",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Burned' (accepted) starts with B, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-028",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Slow' / 'Takes a long time' (accepted) start with S/T, not V.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-034",
+   "grade": "Minor",
+   "reason": "hexOk should be false: several correct costs ('Transport', 'Sorting', 'Energy') start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-035",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Less electricity needed' (accepted) starts with L, not U.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-038",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Obtaining raw materials...' (accepted) starts with O; four-item list.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-041",
+   "grade": "Minor",
+   "reason": "hexOk should be false: explanation-type answer; accepted answers start with S/M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-044",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the two gases can be given in either order (HCl first gives H).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-046",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'The same' (accepted, S after 'the') is as natural as 'Equal'.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-047",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Stay the same', 'Do not change', 'Constant' (accepted) start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-056",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Forward' / 'Towards fewer gas molecules' (accepted) start with F/T, not R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-057",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Backward' / 'To the reactants' / 'Endothermic direction' (accepted) start differently from L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-4-058",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Right' / 'Forward' (accepted) start with R/F, not T.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-chem-4-039": "40+30+20+10",
+  "edexcel-chem-4-040": "3/2"
+ },
+ "notcalc": {
+  "edexcel-chem-4-007": "half equation",
+  "edexcel-chem-4-052": "equation",
+  "edexcel-chem-4-053": "recalled condition",
+  "edexcel-chem-4-054": "recalled condition",
+  "edexcel-chem-4-006": "ion charge",
+  "edexcel-chem-4-056": "equation coefficients, direction answer"
+ },
+ "mismatchFlagged": []
+}
