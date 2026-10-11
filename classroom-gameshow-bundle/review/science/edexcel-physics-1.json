@@ -1,0 +1,72 @@
+{
+ "pack": "packs/edexcel/physics/1-key-concepts-of-physics.txt",
+ "reviewed": 50,
+ "flags": [
+  {
+   "id": "edexcel-phys-1-043",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-1-017 (prefix for 10⁻⁶ / one millionth, answer Micro).",
+   "fix": "Remove, or keep one of the two."
+  },
+  {
+   "id": "edexcel-phys-1-045",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-1-018 (10⁻⁹ = one billionth, answer Nano).",
+   "fix": "Remove, or keep one of the two."
+  },
+  {
+   "id": "edexcel-phys-1-047",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-phys-1-016 (10⁹ = one billion, answer Giga).",
+   "fix": "Remove, or keep one of the two."
+  },
+  {
+   "id": "edexcel-phys-1-049",
+   "grade": "Minor",
+   "reason": "Duplicate of edexcel-phys-1-031 (name for A × 10ⁿ, answer Standard form).",
+   "fix": "Remove."
+  },
+  {
+   "id": "edexcel-phys-1-051",
+   "grade": "Minor",
+   "reason": "Pico is not one of the prefixes listed in 1.2 (G, M, k, c, m, μ, n); beyond what Edexcel examines.",
+   "fix": "Remove, or replace with a listed prefix question."
+  },
+  {
+   "id": "edexcel-phys-1-052",
+   "grade": "Minor",
+   "reason": "Deci is not one of the prefixes listed in 1.2 (G, M, k, c, m, μ, n); beyond what Edexcel examines.",
+   "fix": "Remove, or replace with a listed prefix question."
+  }
+ ],
+ "calcs": {
+  "edexcel-phys-1-021": "5*1000",
+  "edexcel-phys-1-022": "2.5e9",
+  "edexcel-phys-1-023": "30e-6",
+  "edexcel-phys-1-024": "450e-9",
+  "edexcel-phys-1-025": "3*1000",
+  "edexcel-phys-1-026": "60*60",
+  "edexcel-phys-1-027": "15*60",
+  "edexcel-phys-1-028": "500/1000",
+  "edexcel-phys-1-029": "36*1000/3600",
+  "edexcel-phys-1-030": "0.01**2",
+  "edexcel-phys-1-032": "3400000",
+  "edexcel-phys-1-033": "0.00052",
+  "edexcel-phys-1-034": "6*10**3",
+  "edexcel-phys-1-035": [
+   "0.046",
+   0.001
+  ],
+  "edexcel-phys-1-036": [
+   "35000",
+   0.001
+  ],
+  "edexcel-phys-1-038": "2e3*3e4"
+ },
+ "notcalc": {
+  "edexcel-phys-1-020": "recalled power of ten for the prefix mega",
+  "edexcel-phys-1-037": "count of significant figures in 0.00340 (3)",
+  "edexcel-phys-1-031": "numbers 1 and 10 define standard form; no calculation"
+ },
+ "mismatchFlagged": []
+}
