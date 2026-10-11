@@ -1,0 +1,147 @@
+{
+ "pack": "packs/edexcel/biology/4-natural-selection-and-genetic-modification.txt",
+ "reviewed": 52,
+ "flags": [
+  {
+   "id": "edexcel-bio-4-001",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter C from 'Charles') but most students will write just 'Darwin' (accepted), starting with D.",
+   "fix": "Set hexOk false, or store the answer as 'Darwin'."
+  },
+  {
+   "id": "edexcel-bio-4-002",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter A from 'Alfred') but most students will write just 'Wallace' (accepted), starting with W.",
+   "fix": "Set hexOk false, or store the answer as 'Wallace'."
+  },
+  {
+   "id": "edexcel-bio-4-004",
+   "grade": "Minor",
+   "reason": "hexOk is true on a 'give one way' question with several accepted answers starting with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-006",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter A) but 'genes' (accepted) is an equally common correct answer.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-007",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter L) but answers such as 'resources are limited' or 'not enough food' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-008",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with D and P.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-010",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with R and N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-011",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with E and B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-012",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with K, P and R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-016",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter B) but accepted answers 'gets bigger', 'larger over time' and 'increases' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-017",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter B from 'Became') but 'more complex' (accepted) is the usual answer, starting with M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-019",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with A, R and I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-024",
+   "grade": "Minor",
+   "reason": "hexOk is true but the three domains may be listed in any order (writer note says accept any order).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-028",
+   "grade": "Minor",
+   "reason": "hexOk is true on a describe-the-steps question; answers start 'choose', 'select', 'breed' etc.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-029",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter R) but accepted answers start with L, I and S ('less variation', 'inbreeding', 'small gene pool').",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-031",
+   "grade": "Minor",
+   "reason": "hexOk is true on a 'give one advantage' question with several accepted answers starting with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-040",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with G, S and C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-042",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter T) but accepted answers 'insecticidal toxin', 'Bt toxin', 'poison' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-046",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter E) but 'algal bloom' (accepted) is a very common correct answer.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-049",
+   "grade": "Minor",
+   "reason": "hexOk is true on a 'give one' question; accepted answers start with I, U, P and A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-050",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open question; accepted answers start with U, P and L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-4-052",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open question; accepted answers start with G, M and H.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {},
+ "notcalc": {
+  "edexcel-bio-4-013": "recalled fossil age given in question",
+  "edexcel-bio-4-014": "recalled fossil age (3.2 million years)",
+  "edexcel-bio-4-015": "recalled fossil age (1.6 million years)",
+  "edexcel-bio-4-023": "recalled count of kingdoms",
+  "edexcel-bio-4-016": "recalled fossil facts, no numbers worked out"
+ },
+ "mismatchFlagged": []
+}
