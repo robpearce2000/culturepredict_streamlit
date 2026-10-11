@@ -1,0 +1,74 @@
+{
+ "pack": "packs/aqa/physics/4.2-electricity.txt",
+ "reviewed": 51,
+ "flags": [
+  {
+   "id": "aqa-phys-4.2-012",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation; equally correct answers ('Keep the temperature constant', 'So the resistance does not change') start with different letters from S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.2-018",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation; many students will start with 'Resistance increases...' or 'Temperature rises...' rather than 'Filament'.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.2-019",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'No current' (equally common, and accepted) starts with N, not Z; '0 A' has no letter at all.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.2-023",
+   "grade": "Minor",
+   "reason": "This is an addition calculation (0.2 A + 0.3 A) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "aqa-phys-4.2-028",
+   "grade": "Minor",
+   "reason": "hexOk is true on a free-text comparison; correct answers ('ac changes direction', 'It keeps reversing', 'dc is one direction only') start with many different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.2-038",
+   "grade": "Minor",
+   "reason": "Near-duplicate of aqa-phys-4.1-002 (kettle: which energy store of the water increases? Thermal) in the same subject's 4.1 pack.",
+   "fix": "Remove, or reword to test 4.2.4.2 content, e.g. 'An electric kettle heats water. Energy is transferred from the mains by what?' A: Electrical work / an electric current."
+  },
+  {
+   "id": "aqa-phys-4.2-044",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation; correct answers start 'Lower current', 'Less current', 'Reduces the current' or 'Less energy lost', not reliably with S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.2-050",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers ('Near the sphere', 'At the surface', 'Nearest the sphere') start with letters other than C.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "aqa-phys-4.2-006": "3*20",
+  "aqa-phys-4.2-007": "120/60",
+  "aqa-phys-4.2-009": "2*6",
+  "aqa-phys-4.2-010": "12/0.5",
+  "aqa-phys-4.2-022": "4+6",
+  "aqa-phys-4.2-023": "0.2+0.3",
+  "aqa-phys-4.2-024": "6*9/(3+9)",
+  "aqa-phys-4.2-035": "3**2*10",
+  "aqa-phys-4.2-036": "80/4**2",
+  "aqa-phys-4.2-037": "230*2",
+  "aqa-phys-4.2-040": "5*12",
+  "aqa-phys-4.2-041": "500*2*60"
+ },
+ "notcalc": {
+  "aqa-phys-4.2-026": "Recalled value: UK mains frequency 50 Hz",
+  "aqa-phys-4.2-027": "Recalled value: UK mains about 230 V",
+  "aqa-phys-4.2-032": "Recalled value: live wire about 230 V"
+ },
+ "mismatchFlagged": []
+}
