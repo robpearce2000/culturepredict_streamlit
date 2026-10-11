@@ -1,0 +1,154 @@
+{
+ "pack": "packs/edexcel/chemistry/7-rates-of-reaction-and-energy-changes.txt",
+ "reviewed": 62,
+ "flags": [
+  {
+   "id": "edexcel-chem-7-001",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-chem-3-035 ('Which gas is produced when calcium carbonate reacts with hydrochloric acid?' => Carbon dioxide); marble chips are calcium carbonate.",
+   "fix": "Remove, or replace with another 7.1 core practical question (e.g. how the volume of gas is measured at intervals)."
+  },
+  {
+   "id": "edexcel-chem-7-002",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Upturned measuring cylinder', 'Inverted burette' (accepted) start with U/I/M, not G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-008",
+   "grade": "Minor",
+   "reason": "Near-duplicate of edexcel-chem-1-158 ('Marble chips react with acid in an open flask. Why does the mass of the flask decrease?' => Carbon dioxide gas escapes). Also hexOk: 'Gas is lost to the air' (accepted) starts with G.",
+   "fix": "Remove one of the pair, or reword this one towards 7.2 (e.g. what the falling balance reading lets you measure); set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-010",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Hydrogen is very light' (accepted) starts with H, not M.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-012",
+   "grade": "Minor",
+   "reason": "hexOk should be false: the two features can be given in either order; 'How often and how hard' (accepted) starts with H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-013",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Energy less than the activation energy', 'Too little energy' (accepted) start with E/T, not N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-014",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Temperature', 'Heating', 'Higher temperature' (accepted) start with T/H, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-018",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Higher pressure' / 'Pressure' (accepted) start with H/P, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-020",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Beginning', 'Where the line is steepest', 'Time zero' (accepted) start with B/W/T, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-028",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Lowers it' / 'Reduces it' (accepted) start with L/R, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-032",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Beer' / 'Wine' (accepted) start with B/W, not A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-035",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Reduces heat transfer', 'Good insulator' (accepted) start with R/G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-036",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Rises' / 'Goes up' (accepted) start with R/G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-037",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Falls' / 'Goes down' (accepted) start with F/G, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-038",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Redox' (accepted) starts with R, not D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-039",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Releases heat energy...', 'Gives out heat' (accepted) start with R/G, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-041",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Rises', 'Goes up', 'Gets hotter' (accepted) start with R/G, not I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-042",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Absorbs heat energy...', 'Takes in heat' (accepted) start with A/T, not H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-058",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'X is slower', 'Lower rate' (accepted) start with X/L, not S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-059",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Below the reactants' (accepted) starts with B, not L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-060",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Reaction progress', 'Course of reaction', 'Reaction pathway' (accepted) start with R/C, not P.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-chem-7-061",
+   "grade": "Minor",
+   "reason": "hexOk should be false: 'Top of the hump', 'Highest point', 'Maximum' (accepted) start with T/H/M, not P.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-chem-7-003": "60/30",
+  "edexcel-chem-7-006": "1/50",
+  "edexcel-chem-7-022": "30/10",
+  "edexcel-chem-7-052": "2000-2500",
+  "edexcel-chem-7-053": "800-600",
+  "edexcel-chem-7-054": "(440+240)-2*430",
+  "edexcel-chem-7-055": "(440+190)-2*370",
+  "edexcel-chem-7-062": "250-100"
+ },
+ "notcalc": {
+  "edexcel-chem-7-051": "sign of a given value",
+  "edexcel-chem-7-011": "no number",
+  "edexcel-chem-7-001": "formula in accept list"
+ },
+ "mismatchFlagged": []
+}
