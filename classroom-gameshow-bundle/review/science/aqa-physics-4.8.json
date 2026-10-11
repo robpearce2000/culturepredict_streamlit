@@ -1,0 +1,83 @@
+{
+ "pack": "packs/aqa/physics/4.8-space-physics.txt",
+ "reviewed": 44,
+ "flags": [
+  {
+   "id": "aqa-phys-4.8-009",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Contracts', 'Collapses', 'Gets smaller'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-010",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Mass of the star' / 'Mass' is accepted and very common), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-017",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (the order is free: 'Black hole or neutron star' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-019",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Nuclear fusion' is accepted and common), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-024",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Too small', 'Too little mass'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-028",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Moon orbits a planet' is accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-033",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Smaller radius', 'Orbit gets smaller'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-037",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Greater distance, greater red-shift', 'Bigger red-shift further away'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-038",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently (most students will write just 'X' (accepted), which gives letter X, not G), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-040",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Universe is expanding', 'Space is expanding'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-041",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Universe expanding so was once smaller', 'Expansion means...'), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-phys-4.8-044",
+   "grade": "Minor",
+   "reason": "hexOk is true but common correct answers start differently ('Evidence', 'Data' are accepted), so the game letter does not match many right answers.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {},
+ "notcalc": {
+  "aqa-phys-4.8-002": "Recalled count: eight planets"
+ },
+ "mismatchFlagged": []
+}
