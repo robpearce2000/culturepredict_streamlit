@@ -29,3 +29,6 @@ The fonts are embedded unmodified (as published by Fontsource, which subsets the
 |---|---|
 | Playwright (`@playwright/test`) | Apache 2.0 |
 | Node.js | MIT |
+
+## Music rendering (not shipped as code)
+The launcher music is original, composed in code (`tools/music/loop.py`) and rendered with FluidSynth (LGPL-2.1+, used as a tool only) and the **FluidR3_GM** soundfont by Frank Wen (MIT licence). Rendered audio contains no samples of any existing recording.
