@@ -1,0 +1,113 @@
+{
+ "pack": "packs/edexcel/biology/6-plant-structures-and-their-functions.txt",
+ "reviewed": 55,
+ "flags": [
+  {
+   "id": "edexcel-bio-6-003",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter B) but 'food', 'glucose' and 'sugars' are accepted and probably more common answers.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-008",
+   "grade": "Minor",
+   "reason": "hexOk is true but the two factors can be given in either order ('CO2 concentration and temperature' is accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-013",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter L) but 'distance from the lamp' (accepted) is a common answer in this practical.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-014",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter S) but 'provides CO2' (accepted) starts with P.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-015",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter K) but accepted answers 'absorbs heat', 'stops the lamp warming' start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-019",
+   "grade": "Minor",
+   "reason": "Inverse-square calculation (10/20)² but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-6-020",
+   "grade": "Minor",
+   "reason": "Rate/ratio calculation (1/5²) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-6-023",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-032",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter U) but 'both directions' and 'two-way' (accepted) start with B and T.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-040",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-041",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-042",
+   "grade": "Minor",
+   "reason": "Rate/ratio calculation (30 ÷ 5) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-6-043",
+   "grade": "Minor",
+   "reason": "Rate/ratio calculation ((40 + 20) ÷ 4) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-6-044",
+   "grade": "Minor",
+   "reason": "Rate/ratio calculation (3 ÷ 0.5 h) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-6-046",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter S) but accepted answers 'reduces surface area', 'less surface area' start with R and L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-6-051",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter I) but accepted answers 'slows growth', 'reduces cell elongation' start with S and R.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-bio-6-020": "1/5**2",
+  "edexcel-bio-6-042": "30/5",
+  "edexcel-bio-6-043": "(40+20)/(2+2)",
+  "edexcel-bio-6-044": "3/(30/60)"
+ },
+ "notcalc": {
+  "edexcel-bio-6-004": "chemical formulae in accepted answer only",
+  "edexcel-bio-6-019": "stored answer is in words ('One quarter'), which the checker cannot read; checked by hand: (10/20)**2 = 0.25, correct"
+ },
+ "mismatchFlagged": []
+}
