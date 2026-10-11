@@ -2,14 +2,6 @@ Board: Edexcel
 Spec: 1PH0
 Topic: 7
 
-Q: When an astronaut travels from the Earth to the Moon, what happens to her mass?
-A: Stays the same
-Accept: Unchanged; does not change; no change
-Ref: 7.1P
-D: 1
-Note: Weight changes, mass does not.
-Id: edexcel-phys-7-001
-
 Q: A 50 kg astronaut stands on the Moon, where g = 1.6 N/kg. What is her weight?
 A: 80 N
 Accept: 80 newtons

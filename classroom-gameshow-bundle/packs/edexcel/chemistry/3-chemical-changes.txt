@@ -111,6 +111,7 @@ Ref: 3.5
 D: 3
 HT: yes
 Note: Each pH unit is a factor of 10, so two units is 10 × 10.
+Calc: yes
 Id: edexcel-chem-3-015
 
 Q: An acid of pH 5 has its hydrogen ion concentration made 1000 times greater. What is its new pH?
@@ -538,13 +539,6 @@ Ref: 3.22
 D: 2
 Id: edexcel-chem-3-073
 
-Q: Why does solid sodium chloride not conduct electricity?
-A: Ions cannot move
-Accept: Ions fixed in the lattice; ions not free to move
-Ref: 3.22
-D: 3
-Id: edexcel-chem-3-074
-
 Q: Lead bromide is a solid at room temperature. What must be done to it before it can be electrolysed?
 A: Melt it
 Accept: Heat until molten; make it molten
@@ -578,13 +572,6 @@ A: Cathode
 Ref: 3.24
 D: 1
 Id: edexcel-chem-3-079
-
-Q: What name is given to positively charged ions?
-A: Cations
-Accept: Cation
-Ref: 3.24
-D: 1
-Id: edexcel-chem-3-080
 
 Q: During the electrolysis of molten lead bromide, towards which electrode do the bromide ions move?
 A: Anode

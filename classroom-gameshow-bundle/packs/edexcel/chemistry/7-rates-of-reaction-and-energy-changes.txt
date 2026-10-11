@@ -2,14 +2,6 @@ Board: Edexcel
 Spec: 1CH0
 Topic: 7
 
-Q: Which gas is produced when marble chips react with hydrochloric acid?
-A: Carbon dioxide
-Accept: CO2
-Ref: 7.1
-RP: 7.1
-D: 1
-Id: edexcel-chem-7-001
-
 Q: Name the piece of apparatus used to collect and measure the volume of gas given off by marble chips and acid.
 A: Gas syringe
 Accept: Upturned measuring cylinder; inverted burette; measuring cylinder over water
@@ -60,13 +52,6 @@ RP: 7.1
 D: 2
 Note: Asthmatic students are especially at risk.
 Id: edexcel-chem-7-007
-
-Q: Marble chips react with acid in an open flask on a balance. Why does the reading fall?
-A: Carbon dioxide gas escapes
-Accept: Gas is lost to the air; CO2 leaves the flask
-Ref: 7.2
-D: 2
-Id: edexcel-chem-7-008
 
 Q: Suggest a method for following the rate of magnesium reacting with acid to give hydrogen.
 A: Measure gas volume with a gas syringe

@@ -147,14 +147,6 @@ D: 1
 HT: yes
 Id: aqa-bio-4.6-019
 
-Q: On which sub-cellular structures are proteins synthesised?
-A: Ribosomes
-Accept: Ribosome
-Ref: 4.6.1.5
-D: 1
-HT: yes
-Id: aqa-bio-4.6-020
-
 Q: Explain how a mutation could stop an enzyme from working.
 A: Changes its shape so substrate no longer fits
 Accept: Active site changes shape; Enzyme shape changes; Substrate cannot bind
@@ -211,6 +203,7 @@ A: 1 in 4
 Accept: 25%; 1/4; 0.25; One quarter
 Ref: 4.6.1.6
 D: 3
+Calc: yes
 Id: aqa-bio-4.6-028
 
 Q: Construct a Punnett square for the cross Bb × bb. What is the probability that an offspring is bb?
@@ -221,6 +214,7 @@ D: 3
 HT: yes
 
 # 4.6.1.7 Inherited disorders
+Calc: yes
 Id: aqa-bio-4.6-029
 
 Q: Which inherited disorder causes extra fingers or toes?
@@ -251,18 +245,12 @@ Ref: 4.6.1.8
 D: 1
 Id: aqa-bio-4.6-033
 
-Q: How many pairs of chromosomes are there in an ordinary human body cell?
-A: 23 pairs
-Accept: 23; Twenty-three
-Ref: 4.6.1.8
-D: 1
-Id: aqa-bio-4.6-034
-
 Q: Use a genetic cross of XX and XY. What is the probability that a baby is female?
 A: 0.5
 Accept: 1/2; 50%; 1 in 2; Half
 Ref: 4.6.1.8
 D: 2
+Calc: yes
 Id: aqa-bio-4.6-035
 
 Q: Why is it the father's gamete, not the mother's, that decides a baby's sex?

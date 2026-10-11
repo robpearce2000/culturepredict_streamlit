@@ -214,7 +214,7 @@ Id: aqa-chem-4.10-027
 
 Q: Which two substances must both be present for iron to rust?
 A: Air and water
-Accept: Oxygen and water
+Accept: Water and air; Oxygen and water; Water and oxygen
 Ref: 4.10.3.1
 D: 1
 Id: aqa-chem-4.10-028
@@ -260,6 +260,7 @@ Q: Stainless steel contains iron and which two other metals?
 A: Chromium and nickel
 Ref: 4.10.3.2
 D: 2
+Accept: Nickel and chromium; Cr and Ni
 Id: aqa-chem-4.10-034
 
 Q: How do the properties of high carbon steel differ from low carbon steel?

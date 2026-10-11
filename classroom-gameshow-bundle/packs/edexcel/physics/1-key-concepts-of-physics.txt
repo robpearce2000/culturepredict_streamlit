@@ -297,35 +297,17 @@ Ref: 1.2
 D: 1
 Id: edexcel-phys-1-042
 
-Q: What prefix means one millionth?
-A: Micro
-Ref: 1.2
-D: 1
-Id: edexcel-phys-1-043
-
 Q: What prefix means one thousandth?
 A: Milli
 Ref: 1.2
 D: 1
 Id: edexcel-phys-1-044
 
-Q: What prefix means one billionth?
-A: Nano
-Ref: 1.2
-D: 1
-Id: edexcel-phys-1-045
-
 Q: What prefix means one million?
 A: Mega
 Ref: 1.2
 D: 1
 Id: edexcel-phys-1-046
-
-Q: What prefix means one billion?
-A: Giga
-Ref: 1.2
-D: 1
-Id: edexcel-phys-1-047
 
 Q: How many significant figures does 0.0405 have?
 A: Three
@@ -334,29 +316,11 @@ Ref: 1.4
 D: 3
 Id: edexcel-phys-1-048
 
-Q: What name is given to numbers written as A × 10ⁿ?
-A: Standard form
-Ref: 1.4
-D: 3
-Id: edexcel-phys-1-049
-
 Q: What prefix means one hundredth?
 A: Centi
 Ref: 1.2
 D: 1
 Id: edexcel-phys-1-050
-
-Q: What prefix means one trillionth?
-A: Pico
-Ref: 1.2
-D: 2
-Id: edexcel-phys-1-051
-
-Q: What prefix means one tenth?
-A: Deci
-Ref: 1.2
-D: 1
-Id: edexcel-phys-1-052
 
 Q: What name is given to the digits of a measurement that are reliable?
 A: Significant figures
@@ -364,3 +328,31 @@ Accept: Significant figure
 Ref: 1.4
 D: 2
 Id: edexcel-phys-1-053
+
+Q: What is the SI unit of electrical resistance?
+A: Ohm
+Accept: Ohms; Ω
+Ref: 1.1
+D: 1
+Id: edexcel-phys-1-054
+
+Q: What is the SI unit of pressure?
+A: Pascal
+Accept: Pascals; Pa
+Ref: 1.1
+D: 1
+Id: edexcel-phys-1-055
+
+Q: What is the SI unit of magnetic flux density?
+A: Tesla
+Accept: T
+Ref: 1.1
+D: 2
+Id: edexcel-phys-1-056
+
+Q: What is the SI unit of speed?
+A: Metre per second
+Accept: Metres per second; m/s
+Ref: 1.1
+D: 1
+Id: edexcel-phys-1-057

@@ -136,6 +136,7 @@ Q: Five quadrats contain 2, 4, 3, 5 and 6 daisies. What is the mean number per q
 A: 4
 Ref: 9.6
 D: 2
+Calc: yes
 Id: edexcel-bio-9-020
 
 Q: A mean of 3 plants per 1 m² quadrat is found in a 50 m² lawn. Estimate the total population.
@@ -462,6 +463,7 @@ A: 5 g per day
 Accept: 5 g/day
 Ref: 9.19B
 D: 2
+Calc: yes
 Id: edexcel-bio-9-066
 
 Q: Bread decays from 80 g to 50 g in 10 days. What is the rate of mass loss?
@@ -469,6 +471,7 @@ A: 3 g per day
 Accept: 3 g/day
 Ref: 9.19B
 D: 3
+Calc: yes
 Id: edexcel-bio-9-067
 
 Q: State the equation for the rate of decay.

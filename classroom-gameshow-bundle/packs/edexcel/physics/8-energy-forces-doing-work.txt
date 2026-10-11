@@ -42,6 +42,7 @@ A: Three quarters
 Accept: 3/4; 0.75; 75%
 Ref: 8.2
 D: 3
+Calc: yes
 Id: edexcel-phys-8-006
 
 Q: On a Sankey diagram, an arrow 10 mm wide represents 400 J. How much energy does an arrow 3 mm wide represent?
@@ -257,13 +258,6 @@ Ref: 8.10
 D: 2
 Id: edexcel-phys-8-034
 
-Q: Heat from a lamp warms a whole room slightly. Why can this energy not easily be used again?
-A: Spread out too thinly
-Accept: Spread out over a large area; too spread out; tiny temperature rise
-Ref: 8.10
-D: 3
-Id: edexcel-phys-8-035
-
 Q: Mechanical processes become wasteful when they cause a rise in which quantity?
 A: Temperature
 Accept: Temperature of the surroundings
@@ -401,12 +395,6 @@ Id: edexcel-phys-8-053
 
 # More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
 
-Q: What name is given to the rate of doing work?
-A: Power
-Ref: 8.12
-D: 1
-Id: edexcel-phys-8-056
-
 Q: Which force do you do work against when lifting an object?
 A: Gravity
 Accept: Weight
@@ -414,39 +402,19 @@ Ref: 8.5
 D: 1
 Id: edexcel-phys-8-057
 
-Q: What force opposes motion between two surfaces in contact?
-A: Friction
-Ref: 8.5
-D: 1
-Id: edexcel-phys-8-058
-
-Q: Which energy store increases when a car brakes and its brakes get hot?
-A: Thermal energy store
-Accept: Thermal
-Ref: 8.7
-D: 2
-Id: edexcel-phys-8-059
-
 Q: What energy store does an object gain when it is lifted?
 A: Gravitational potential energy
 Accept: Gravitational potential
-Ref: 8.9
+Ref: 8.8
 D: 1
 Id: edexcel-phys-8-060
 
 Q: What name is given to the energy of a moving object?
 A: Kinetic energy
 Accept: Kinetic
-Ref: 8.8
+Ref: 8.9
 D: 1
 Id: edexcel-phys-8-061
-
-Q: What does one watt equal in joules per second?
-A: One joule per second
-Accept: 1 J/s
-Ref: 8.14
-D: 3
-Id: edexcel-phys-8-062
 
 Q: What quantity is force multiplied by distance moved in the direction of the force?
 A: Work done
@@ -455,23 +423,37 @@ Ref: 8.6
 D: 3
 Id: edexcel-phys-8-063
 
-Q: How much work is done when a force of one newton moves an object one metre?
-A: One joule
-Accept: 1 J; 1 joule
-Ref: 8.6
-D: 2
-Id: edexcel-phys-8-064
-
 Q: What type of energy store does a moving car have?
 A: Kinetic energy store
 Accept: Kinetic
-Ref: 8.4
+Ref: 8.1
 D: 1
 Id: edexcel-phys-8-065
 
 Q: What type of energy store is released when fuel is burned in an engine?
 A: Chemical energy store
 Accept: Chemical
-Ref: 8.4
+Ref: 8.1
 D: 1
 Id: edexcel-phys-8-066
+
+Q: What type of diagram shows energy transfers as arrows whose widths are drawn to scale?
+A: Sankey diagram
+Accept: Sankey
+Ref: 8.2
+D: 1
+Id: edexcel-phys-8-067
+
+Q: Describe how to find the work done when a box is pulled along the floor.
+A: Multiply force by distance moved
+Accept: Measure the force and distance moved, then multiply; Force × distance moved; Measure force with a newtonmeter and distance with a ruler, then multiply
+Ref: 8.5
+D: 3
+Id: edexcel-phys-8-068
+
+Q: One watt is equal to one joule per what?
+A: Second
+Accept: Per second; s
+Ref: 8.14
+D: 1
+Id: edexcel-phys-8-069

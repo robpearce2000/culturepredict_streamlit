@@ -50,6 +50,7 @@ Ref: 4.1.1.2
 RP: 1
 D: 2
 Note: Multiply the eyepiece and objective magnifications.
+Calc: yes
 Id: aqa-bio-4.1-006
 
 Q: Which stain is commonly added to cheek cells to make the nuclei show up under a light microscope?
@@ -136,6 +137,7 @@ A: ×100
 Accept: 100; 100 times
 Ref: 4.1.1.5
 D: 2
+Calc: yes
 Id: aqa-bio-4.1-017
 
 Q: A cell image is 4 mm wide at ×400 magnification. What is the real width in micrometres?
@@ -178,6 +180,7 @@ Ref: 4.1.1.6
 HT: yes
 D: 3
 Note: 5 × 10⁶ × 4 = 20 × 10⁶, which is 2 × 10⁷ in standard form.
+Calc: yes
 Id: aqa-bio-4.1-022
 
 Q: What is the clear area around an antibiotic disc on an agar plate of bacteria called?
@@ -335,6 +338,7 @@ Accept: +25%; 25%
 Ref: 4.1.3.2
 RP: 3
 D: 2
+Calc: yes
 Id: aqa-bio-4.1-042
 
 Q: Why is percentage change in mass used rather than change in mass?

@@ -366,30 +366,23 @@ Id: edexcel-phys-3-049
 Q: What energy store does an object raised above the ground have?
 A: Gravitational potential energy
 Accept: Gravitational potential
-Ref: 3.2
+Ref: 3.1
 D: 1
 Id: edexcel-phys-3-050
 
 Q: What energy store do moving objects have?
 A: Kinetic energy
 Accept: Kinetic
-Ref: 3.1
+Ref: 3.2
 D: 1
 Id: edexcel-phys-3-051
 
 Q: What name is given to energy that is not useful and spreads to the surroundings?
 A: Wasted energy
-Accept: Wasted
-Ref: 3.6
+Accept: Wasted; Dissipated energy; Dissipated
+Ref: 3.8
 D: 1
 Id: edexcel-phys-3-052
-
-Q: Which renewable source uses the rise and fall of the sea?
-A: Tidal power
-Accept: Tidal
-Ref: 3.13
-D: 1
-Id: edexcel-phys-3-053
 
 Q: What is the efficiency of a device that wastes no energy?
 A: One hundred percent

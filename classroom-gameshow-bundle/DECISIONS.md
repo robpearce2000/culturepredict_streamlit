@@ -592,3 +592,11 @@ Whole topics that are separate science only: AQA 8463 4.8 Space physics (44); Ed
 - The fanfare belongs to the music: it plays only if Sound and Music are both on. Music level 0.2 (fade-in 1.6 s, fade-out 1 s); the fanfare 0.42. A game opened directly from its link never plays music. Hidden tab: muted at once and the audio context suspended.
 - The Music setting lives with the others (`music`, default on), so it also appears in the in-game Settings; the Sound hint now says Off silences the music too.
 - Listing screenshots of the launcher were not regenerated: you said you would take those yourself.
+
+## Science question review decisions (1.7.2)
+Rob asked for every flag to be settled by judgement, and for Hex Hunt letter flags to be left alone (the letter is a hint for one correct answer; other correct answers are fine). So:
+- Hex Hunt letter flags (about 720): no change.
+- Wrong: course tags set to Separate only (Sep: yes); wrong Edexcel references corrected; the kelvin question removed; one 8.5 friction question removed (its content belongs to topic 9).
+- Doubtful: ethene (AQA 4.7-071), Combined homeostasis (Edexcel 7-029) and iron v steel cores (AQA 4.7-054) tagged Separate only; the filament-lamp reasoning rewritten as the resistor practical; the 10 N at 30° components question removed; gas particles moving in straight lines (AQA 4.3-051) kept (sound kinetic theory a teacher would accept).
+- Minor: duplicates removed (the later copy kept the earlier one); calc tags added; accepted answers tidied; Edexcel 9.4/9.5 Higher-only tags kept, since they follow the bold statements their references point to.
+- Removing duplicates left eight packs just under 30 Hex Hunt-ready questions, so 17 short-answer questions were added (on-spec, checked by tools/packs.js).

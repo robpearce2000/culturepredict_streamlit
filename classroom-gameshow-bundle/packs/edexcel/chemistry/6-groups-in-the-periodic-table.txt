@@ -395,7 +395,7 @@ D: 2
 Id: edexcel-chem-6-055
 
 Q: Krypton boils at −153 °C and radon at −62 °C. Xenon lies midway between them. Estimate its boiling point.
-A: About −110 °C
+A: About −108 °C
 Accept: Any value from −100 °C to −120 °C; −108 °C
 Ref: 6.16
 D: 3

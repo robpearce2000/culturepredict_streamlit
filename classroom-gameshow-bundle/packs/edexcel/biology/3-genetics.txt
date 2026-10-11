@@ -104,6 +104,7 @@ Accept: 30
 Ref: 3.4
 D: 3
 Note: A = T = 20%, leaving 60% shared equally between C and G.
+Calc: yes
 Id: edexcel-bio-3-015
 
 Q: What type of bond holds the complementary base pairs together between the two DNA strands?
@@ -229,6 +230,7 @@ Ref: 3.8B
 D: 3
 HT: yes
 Note: Three bases (one codon) per amino acid; ignore stop codons.
+Calc: yes
 Id: edexcel-bio-3-032
 
 Q: A variant changes how well RNA polymerase binds, but not the protein's amino acids. Is it in coding or non-coding DNA?
@@ -404,6 +406,7 @@ A: 0.25
 Accept: 25%; 1/4; 1 in 4
 Ref: 3.16
 D: 2
+Calc: yes
 Id: edexcel-bio-3-057
 
 Q: A heterozygous parent (Bb) is crossed with a homozygous recessive parent (bb). What percentage of offspring are expected to be bb?
@@ -411,12 +414,14 @@ A: 50%
 Accept: 0.5; 1/2; 1 in 2
 Ref: 3.16
 D: 2
+Calc: yes
 Id: edexcel-bio-3-058
 
 Q: A cross gives 120 offspring in a 3 : 1 ratio of dominant to recessive phenotype. How many show the recessive phenotype?
 A: 30
 Ref: 3.16
 D: 2
+Calc: yes
 Id: edexcel-bio-3-059
 
 Q: Two heterozygous parents (Tt × Tt) have a child with the dominant phenotype. What is the probability it is heterozygous?
@@ -425,6 +430,7 @@ Accept: 2 in 3; 67%; 66.7%; 0.67
 Ref: 3.16
 D: 3
 Note: Of the three dominant-phenotype outcomes (TT, Tt, Tt), two are heterozygous.
+Calc: yes
 Id: edexcel-bio-3-060
 
 Q: What term describes alleles that are both expressed in the phenotype, as with A and B blood group alleles?
@@ -453,6 +459,7 @@ Accept: 50%; 1/2; 1 in 2
 Ref: 3.17B
 D: 3
 Note: IAIB × IOIO gives IAIO and IBIO in equal numbers.
+Calc: yes
 Id: edexcel-bio-3-064
 
 Q: On which sex chromosome are the alleles for most sex-linked disorders carried?
@@ -485,6 +492,7 @@ Accept: 50%; 1/2; 1 in 2
 Ref: 3.18B
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-bio-3-068
 
 Q: Are most phenotypic features controlled by a single gene or by multiple genes?

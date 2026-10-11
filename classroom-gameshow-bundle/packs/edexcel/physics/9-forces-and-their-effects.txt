@@ -346,17 +346,8 @@ Ref: 9.5
 D: 2
 HT: yes
 Calc: yes
+Accept: 2 N to the west; 2 N towards the west
 Id: edexcel-phys-9-045
-
-Q: A 10 N force acts at 30° above the horizontal. About how large is its horizontal component?
-A: About 8.7 N
-Accept: 8.7 N; 9 N; 8.66 N
-Ref: 9.3
-D: 3
-HT: yes
-Calc: yes
-Note: From a scale drawing, or 10 × cos 30°.
-Id: edexcel-phys-9-046
 
 Q: On a free body diagram, the forces are equal and opposite in pairs. What is the object doing?
 A: At rest or moving at constant velocity

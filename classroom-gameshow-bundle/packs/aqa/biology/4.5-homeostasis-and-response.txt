@@ -262,13 +262,6 @@ Ref: 4.5.3.2
 D: 1
 Id: aqa-bio-4.5-033
 
-Q: In liver and muscle cells, what is excess glucose converted to for storage?
-A: Glycogen
-Ref: 4.5.3.2
-D: 1
-Note: Do not accept glucagon, which is a hormone.
-Id: aqa-bio-4.5-034
-
 Q: In which type of diabetes do the body cells no longer respond to insulin?
 A: Type 2
 Accept: Type 2 diabetes; Type two

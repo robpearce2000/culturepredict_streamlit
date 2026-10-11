@@ -414,13 +414,6 @@ Ref: 9.15C
 D: 3
 Id: edexcel-chem-9-058
 
-Q: What are the two products of the complete combustion of an alkane?
-A: Carbon dioxide and water
-Accept: CO₂ and H₂O
-Ref: 9.16C
-D: 1
-Id: edexcel-chem-9-059
-
 Q: In complete combustion, what happens to the carbon and hydrogen in a hydrocarbon?
 A: Oxidised
 Accept: Oxidation; they combine with oxygen
@@ -456,13 +449,6 @@ Accept: Its molecules are not all the same length
 Ref: 9.17C
 D: 3
 Id: edexcel-chem-9-064
-
-Q: Name the polymer made from ethene.
-A: Poly(ethene)
-Accept: Polyethene; polythene; polyethylene
-Ref: 9.18C
-D: 1
-Id: edexcel-chem-9-065
 
 Q: What type of polymerisation joins ethene molecules together?
 A: Addition
@@ -881,9 +867,9 @@ Ref: 9.34C
 D: 2
 Id: edexcel-chem-9-123
 
-Q: During fractional distillation of a fermentation mixture, what does the thermometer read while ethanol collects?
-A: 78 °C
-Accept: About 78 °C; 78
+Q: During fractional distillation of a fermentation mixture, the thermometer reads 78 °C. Which substance is collecting?
+A: Ethanol
+Accept: Alcohol
 Ref: 9.34C
 D: 3
 Id: edexcel-chem-9-124

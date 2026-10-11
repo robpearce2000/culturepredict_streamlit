@@ -168,6 +168,7 @@ Accept: 222 and 86
 Ref: 4.4.2.2
 D: 3
 Note: An alpha particle has mass number 4 and atomic number 2.
+Calc: yes
 Id: aqa-phys-4.4-021
 
 Q: A nucleus with mass number 14 and atomic number 6 emits a beta particle. What are the new mass number and atomic number?
@@ -178,6 +179,7 @@ D: 3
 Note: A beta particle has mass number 0 and atomic number −1.
 
 # 4.4.2.3 Half-lives and the random nature of radioactive decay
+Calc: yes
 Id: aqa-phys-4.4-022
 
 Q: Define the half-life of a radioactive isotope.
@@ -210,6 +212,7 @@ Ref: 4.4.2.3
 HT: yes
 D: 3
 Note: ½ × ½ × ½ = 1/8.
+Calc: yes
 Id: aqa-phys-4.4-026
 
 Q: A count rate falls from 640 counts per second to 40 counts per second. How many half-lives have passed?

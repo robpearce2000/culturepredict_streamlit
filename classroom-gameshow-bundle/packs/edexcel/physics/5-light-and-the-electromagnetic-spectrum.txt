@@ -29,13 +29,6 @@ Ref: 5.1P
 D: 2
 Id: edexcel-phys-5-004
 
-Q: A light ray passes from air into glass at an angle. Does it bend towards or away from the normal?
-A: Towards the normal
-Accept: Towards
-Ref: 5.1P
-D: 2
-Id: edexcel-phys-5-005
-
 Q: What type of reflection happens at a smooth, flat surface such as a mirror?
 A: Specular reflection
 Accept: Specular
@@ -310,20 +303,12 @@ D: 2
 Note: Any order; all four needed.
 Id: edexcel-phys-5-043
 
-Q: A glass prism splits white light into colours. Why?
-A: Different wavelengths refract by different amounts
-Accept: Each colour refracts by a different amount
+Q: Apart from absorbing it, name one thing a substance can do to an electromagnetic wave that hits it.
+A: Transmit it
+Accept: Transmit; Reflect it; Reflect; Refract it; Refract
 Ref: 5.13
 HT: yes
-D: 3
-Id: edexcel-phys-5-044
-
-Q: Glass transmits visible light but absorbs much ultraviolet. What does the effect of a substance on EM waves depend on?
-A: Wavelength
-Accept: Frequency; wavelength of the wave
-Ref: 5.13
-HT: yes
-D: 2
+D: 1
 Id: edexcel-phys-5-045
 
 Q: What happens to the speed of light as it passes from air into glass?

@@ -417,9 +417,9 @@ D: 2
 RP: 10.17
 Id: edexcel-phys-10-057
 
-Q: In the filament lamp practical, why should the circuit be switched off between readings?
-A: To stop the filament heating up
-Accept: Keep the temperature constant; resistance changes with temperature; to avoid overheating
+Q: In the resistor practical, why should the circuit be switched off between readings?
+A: To stop the resistor heating up
+Accept: Keep its temperature constant; So its resistance stays constant; To avoid heating
 Ref: 10.17
 D: 3
 RP: 10.17

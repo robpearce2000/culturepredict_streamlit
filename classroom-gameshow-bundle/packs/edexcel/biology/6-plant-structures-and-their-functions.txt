@@ -141,6 +141,7 @@ Accept: 1/4; 0.25; Quarter; 25%
 Ref: 6.6
 HT: yes
 D: 3
+Calc: yes
 Id: edexcel-bio-6-019
 
 Q: Using light intensity = 1/d², what is the relative light intensity at 5 cm from the lamp?
@@ -149,6 +150,7 @@ Accept: 1/25; 0.04 arbitrary units
 Ref: 6.6
 HT: yes
 D: 2
+Calc: yes
 Id: edexcel-bio-6-020
 
 Q: By what process does water move from the soil into root hair cells?
@@ -295,6 +297,7 @@ A: 6 mm per minute
 Accept: 6 mm/min
 Ref: 6.13
 D: 2
+Calc: yes
 Id: edexcel-bio-6-042
 
 Q: A potometer bubble moves 40 mm in 2 minutes, then 20 mm in the next 2 minutes. What is the mean rate?
@@ -302,6 +305,7 @@ A: 15 mm per minute
 Accept: 15 mm/min
 Ref: 6.13
 D: 3
+Calc: yes
 Id: edexcel-bio-6-043
 
 Q: A plant loses 3 g of mass in 30 minutes. What is its rate of water loss in g per hour?
@@ -309,6 +313,7 @@ A: 6 g per hour
 Accept: 6 g/h; 6 g/hr
 Ref: 6.13
 D: 3
+Calc: yes
 Id: edexcel-bio-6-044
 
 Q: What waxy layer on a leaf surface reduces water loss?

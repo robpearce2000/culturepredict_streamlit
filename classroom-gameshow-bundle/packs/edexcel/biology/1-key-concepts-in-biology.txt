@@ -95,6 +95,7 @@ Accept: 50 cells
 Ref: 1.4
 D: 3
 Note: 1 mm = 1000 µm, then 1000 ÷ 20.
+Calc: yes
 Id: edexcel-bio-1-013
 
 Q: Why might a scientist count cells in a few grid squares and multiply up, rather than count all of them?
@@ -132,6 +133,7 @@ Accept: 20 micrometres; 20
 Ref: 1.5
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-bio-1-018
 
 Q: State the equation that links magnification, image size and real size.
@@ -277,6 +279,7 @@ A: 20 s⁻¹
 Accept: 20; 20 per second
 Ref: 1.11
 D: 2
+Calc: yes
 Id: edexcel-bio-1-037
 
 Q: An enzyme reaction produces 30 cm³ of oxygen in 10 seconds. What is the rate?
@@ -284,6 +287,7 @@ A: 3 cm³/s
 Accept: 3 cm³ per second; 3 cm³ s⁻¹
 Ref: 1.11
 D: 2
+Calc: yes
 Id: edexcel-bio-1-038
 
 Q: An enzyme reaction produces 60 cm³ of gas in 2 minutes. What is the rate in cm³ per second?

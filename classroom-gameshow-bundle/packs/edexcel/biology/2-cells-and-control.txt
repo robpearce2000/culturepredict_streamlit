@@ -151,6 +151,7 @@ A: 10%
 Accept: 10 per cent
 Ref: 2.7
 D: 3
+Calc: yes
 Id: edexcel-bio-2-022
 
 Q: A baby's mass rises from 4 kg to 5 kg. What is the percentage gain in mass?

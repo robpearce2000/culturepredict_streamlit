@@ -369,13 +369,6 @@ D: 2
 Note: Constant velocity means the resultant force is zero, so the forces balance.
 Id: edexcel-phys-2-050
 
-Q: What is the unit of force?
-A: Newton
-Accept: N; newtons
-Ref: 2.15
-D: 1
-Id: edexcel-phys-2-051
-
 Q: A resultant force acts on a 2 kg trolley and gives it an acceleration of 3 m/s². What is the force?
 A: 6 N
 Accept: 6 newtons

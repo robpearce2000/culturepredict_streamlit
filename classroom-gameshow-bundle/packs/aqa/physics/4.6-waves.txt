@@ -79,6 +79,7 @@ Accept: Gets longer; Longer
 Ref: 4.6.1.2
 D: 3
 Note: Frequency is unchanged, so wavelength = speed ÷ frequency must increase.
+Sep: yes
 Id: aqa-phys-4.6-010
 
 Q: When measuring the speed of sound with a clap and a stopwatch, why should the distance be hundreds of metres?

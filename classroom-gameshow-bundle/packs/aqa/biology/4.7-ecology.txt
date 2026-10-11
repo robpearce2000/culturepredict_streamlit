@@ -224,6 +224,7 @@ A: 4 g per day
 Accept: 4 g/day; 4 grams per day
 Ref: 4.7.2.3
 D: 2
+Calc: yes
 Id: aqa-bio-4.7-029
 
 Q: Why is decay very slow at low temperatures?
@@ -470,6 +471,7 @@ A: 1 cm
 Accept: 10 mm
 Ref: 4.7.4.2
 D: 2
+Calc: yes
 Id: aqa-bio-4.7-061
 
 Q: Why is each bar in a pyramid of biomass narrower than the one below it?
@@ -591,13 +593,6 @@ A: Fusarium
 Ref: 4.7.5.4
 D: 1
 Id: aqa-bio-4.7-077
-
-Q: Which hormone, used to treat diabetes, is made by genetically modified bacteria?
-A: Insulin
-Accept: Human insulin
-Ref: 4.7.5.4
-D: 1
-Id: aqa-bio-4.7-078
 
 Q: What is Fusarium grown on, and in what conditions, to make mycoprotein?
 A: Glucose syrup, aerobic conditions

@@ -296,6 +296,7 @@ Ref: 4.4.2.6
 D: 3
 HT: yes
 Note: Each fall of one pH unit is a tenfold increase.
+Calc: yes
 Id: aqa-chem-4.4-036
 
 Q: What does "dilute" mean when describing an acid?

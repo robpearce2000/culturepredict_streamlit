@@ -6,14 +6,14 @@ Showtime: Classroom Gameshows, Chemistry edition (4 revision games)
 
 ## Summary line
 
-Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE Chemistry packs, one for every specification topic, for separate sciences and Combined Science (1,437 questions). One file, works offline.
+Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE Chemistry packs, one for every specification topic, for separate sciences and Combined Science (1,424 questions). One file, works offline.
 
 ## Description
 
 Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains four original quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
 
 **What's in the Chemistry edition**
-- **Chemistry:** 19 topic packs, 1,437 questions (AQA-style 8462, Edexcel-style 1CH0); Combined Science: 17 topics, 1,058 questions (AQA-style 8464, Edexcel-style 1SC0)
+- **Chemistry:** 19 topic packs, 1,424 questions (AQA-style 8462, Edexcel-style 1CH0); Combined Science: 17 topics, 1,048 questions (AQA-style 8464, Edexcel-style 1SC0)
 
 Every built-in question is tied to a specification point, tagged by difficulty, and marked if it is Higher tier only, so a Foundation class can leave those out. Choose Separate science or Combined Science on the menu: a Combined Science class only sees Combined Science content.
 

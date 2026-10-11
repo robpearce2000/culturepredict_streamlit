@@ -18,7 +18,7 @@ Id: edexcel-phys-6-002
 
 Q: Roughly how many times larger is the radius of an atom than the radius of its nucleus?
 A: About 100 000 times
-Accept: 100 000; 10^5; 10⁵; 10 000 to 100 000 times
+Accept: 100 000; 10^5; 10⁵; 10 000; 10⁴; 10 000 to 100 000 times
 Ref: 6.1
 D: 3
 Note: Most textbooks quote about 1/100 000; accept 10 000 to 100 000.
@@ -40,8 +40,8 @@ Note: A water molecule is about 3 × 10⁻¹⁰ m across, so both orders of magn
 Id: edexcel-phys-6-005
 
 Q: An atom has a radius of 1 × 10⁻¹⁰ m. Roughly how many atoms side by side would span 1 mm?
-A: 5 million
-Accept: 5 000 000; 5 × 10⁶; 5 x 10^6; about 5 million
+A: 5 × 10⁶
+Accept: 5 million; 5 000 000; 5 x 10^6; about 5 million
 Ref: 6.2
 D: 3
 Note: Atom diameter is 2 × 10⁻¹⁰ m, so 10⁻³ ÷ (2 × 10⁻¹⁰) = 5 × 10⁶; accept 10⁷ if students used the radius.
@@ -450,6 +450,7 @@ A: 5
 Accept: Five
 Ref: 6.19
 D: 3
+Calc: yes
 Id: edexcel-phys-6-063
 
 Q: How does the mass number change when a nucleus emits an alpha particle?
@@ -954,6 +955,7 @@ Accept: Three
 Ref: 6.38P
 D: 3
 Note: 235 + 1 = 236 = 141 + 92 + 3.
+Calc: yes
 Id: edexcel-phys-6-133
 
 Q: What name is given to a process where neutrons from one fission cause further fissions?

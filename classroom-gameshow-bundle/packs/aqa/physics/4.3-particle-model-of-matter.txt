@@ -144,24 +144,9 @@ Note: Temperature is unchanged, but the potential energy of the particles increa
 # 4.3.2.2 Temperature changes in a system and specific heat capacity
 Id: aqa-phys-4.3-017
 
-Q: What is the unit of specific heat capacity?
-A: J/kg °C
-Accept: Joules per kilogram per degree Celsius; J/kg°C; J kg⁻¹ °C⁻¹
-Ref: 4.3.2.2
-D: 1
-Id: aqa-phys-4.3-018
-
-Q: Define specific heat capacity.
-A: Energy to raise 1 kg by 1 °C
-Accept: Energy to raise one kilogram by one degree Celsius
-Ref: 4.3.2.2
-D: 2
-Note: Answers must mention 1 kg and 1 °C.
-Id: aqa-phys-4.3-019
-
-Q: Use ΔE = m c Δθ. How much energy heats 2 kg of water by 10 °C? (c = 4200 J/kg °C)
-A: 84 000 J
-Accept: 84000 J; 84 kJ; 84 000 joules
+Q: Use ΔE = m c Δθ. How much energy heats 0.5 kg of water by 20 °C? (c = 4200 J/kg °C)
+A: 42 000 J
+Accept: 42000 J; 42 kJ; 42 000 joules
 Ref: 4.3.2.2
 D: 2
 Calc: yes
@@ -350,12 +335,6 @@ Ref: 4.3.1.2
 D: 1
 Id: aqa-phys-4.3-043
 
-Q: What is the change of state from solid straight to gas called?
-A: Sublimation
-Ref: 4.3.1.2
-D: 2
-Id: aqa-phys-4.3-044
-
 Q: What is the SI unit of pressure?
 A: Pascal
 Accept: Pa
@@ -369,12 +348,6 @@ Accept: Increases; Goes up
 Ref: 4.3.3.1
 D: 1
 Id: aqa-phys-4.3-047
-
-Q: What is the name of the temperature scale that starts at absolute zero?
-A: Kelvin
-Ref: 4.3.3.1
-D: 1
-Id: aqa-phys-4.3-048
 
 Q: What is the change of state from liquid to solid called?
 A: Freezing
@@ -421,3 +394,17 @@ Accept: They escape as a gas; They break free
 Ref: 4.3.1.2
 D: 2
 Id: aqa-phys-4.3-056
+
+Q: In which state of matter do the particles vibrate about fixed positions?
+A: Solid
+Accept: A solid
+Ref: 4.3.1.1
+D: 1
+Id: aqa-phys-4.3-057
+
+Q: In which state of matter do the particles move randomly at high speed and spread out to fill their container?
+A: Gas
+Accept: A gas
+Ref: 4.3.1.1
+D: 1
+Id: aqa-phys-4.3-058

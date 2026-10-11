@@ -260,13 +260,6 @@ Note: The larger gear turns more slowly but with a bigger moment.
 # 4.5.5.1.1 Pressure in a fluid 1
 Id: aqa-phys-4.5-032
 
-Q: What is the unit of pressure?
-A: Pascal
-Accept: Pa; Pascals; N/m²; Newtons per metre squared
-Ref: 4.5.5.1.1
-D: 1
-Id: aqa-phys-4.5-033
-
 Q: At what angle to a surface does the force caused by pressure in a fluid act?
 A: Right angles
 Accept: 90°; 90 degrees; Normal; Perpendicular
@@ -716,6 +709,7 @@ Ref: 4.5.6.3.3
 D: 3
 
 # 4.5.6.3.4 Factors affecting braking distance 2
+Calc: yes
 Id: aqa-phys-4.5-089
 
 Q: When a driver brakes, work done by which force reduces the kinetic energy of the vehicle?

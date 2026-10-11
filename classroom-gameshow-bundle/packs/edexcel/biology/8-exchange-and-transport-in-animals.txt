@@ -28,6 +28,7 @@ Accept: 6:1; 6
 Ref: 8.2
 D: 2
 Note: Surface area 6 cm², volume 1 cm³.
+Calc: yes
 Id: edexcel-bio-8-004
 
 Q: What is the surface area : volume ratio of a cube with 3 cm sides?
@@ -36,6 +37,7 @@ Accept: 2:1; 2; 54 : 27
 Ref: 8.2
 D: 3
 Note: Surface area 6 × 9 = 54 cm², volume 27 cm³.
+Calc: yes
 Id: edexcel-bio-8-005
 
 Q: As an organism gets larger, what happens to its surface area : volume ratio?
@@ -109,6 +111,7 @@ Accept: 30 arbitrary units; 30 au
 Ref: 8.5B
 D: 2
 Note: Fick's law is a proportionality, so the answer is a relative rate with no unit.
+Calc: yes
 Id: edexcel-bio-8-015
 
 Q: Using Fick's law, what happens to the rate of diffusion if membrane thickness doubles and nothing else changes?
@@ -299,6 +302,7 @@ Accept: 3 mm/min; 0.3 cm/min
 Ref: 8.11
 RP: 8.11
 D: 2
+Calc: yes
 Id: edexcel-bio-8-042
 
 Q: When investigating the effect of temperature on respiration, what equipment keeps each temperature constant?
@@ -329,6 +333,7 @@ A: 4800 cm³ per minute
 Accept: 4800 cm³/min; 4800 ml/min; 4.8 dm³/min; 4.8 litres per minute
 Ref: 8.12
 D: 2
+Calc: yes
 Id: edexcel-bio-8-046
 
 Q: Cardiac output is 5000 cm³ per minute and heart rate is 50 beats per minute. What is the stroke volume?

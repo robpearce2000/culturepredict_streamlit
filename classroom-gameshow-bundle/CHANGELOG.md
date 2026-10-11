@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.2 – Science question review (October 2026)
+
+- **Full independent review of every Biology, Chemistry and Physics question** (4,050, AQA and Edexcel, separate and Combined Science) against the current specifications, with every numerical answer recalculated by script. No wrong science answers or wrong calculations were found. Flags and reasons: `review/science-review.xlsx`.
+- **Course tags corrected:** 8 questions on separate-science-only content (Helicobacter, Ebola ×2, homeostasis's three conditions, naming ethene, sound changing medium, electromagnet devices, iron versus steel cores) no longer appear in Combined Science.
+- **Specification references corrected** on 6 Edexcel Physics energy questions; one off-specification question (the kelvin scale) removed.
+- **53 duplicate or near-duplicate questions removed**, plus two prefixes (pico, deci) Edexcel does not list, a force-components question that needs trigonometry, and one with a mismatched reference; 17 new questions keep every science pack at 30 or more Hex Hunt-ready questions.
+- **Reworded or tidied:** the filament-lamp practical question (now the resistor practical), the ethanol boiling point question, a specific heat capacity calculation that repeated another pack, accepted answers (unbalanced equations removed, list answers in either order, extra standard-form answers), subscripts in formulae, and about 60 calculations newly tagged Calc.
+
 ## 1.7.1 – Question check (October 2026)
 
 - A quick independent check of every pack: all 8,009 questions scanned automatically and 524 sampled by hand (every pack, every difficulty), with every sampled calculation worked out independently. No wrong answers were found. Details: `review/question-check.xlsx`.

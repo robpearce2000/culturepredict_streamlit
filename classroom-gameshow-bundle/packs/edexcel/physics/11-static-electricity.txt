@@ -242,31 +242,11 @@ Id: edexcel-phys-11-034
 
 # More questions with word answers, so every topic has plenty for Hex Hunt boards (version 1.6)
 
-Q: Which particles are transferred when an insulator is charged by friction?
-A: Electrons
-Accept: Electron
-Ref: 11.1P
-D: 1
-Id: edexcel-phys-11-035
-
 Q: What do two like charges do to each other?
 A: Repel
 Ref: 11.3P
 D: 1
 Id: edexcel-phys-11-036
-
-Q: What do unlike charges do to each other?
-A: Attract
-Ref: 11.3P
-D: 1
-Id: edexcel-phys-11-037
-
-Q: What word describes connecting a charged object to the ground to remove its charge?
-A: Earthing
-Accept: Grounding; Earthed
-Ref: 11.5P
-D: 1
-Id: edexcel-phys-11-038
 
 Q: Which device uses charged droplets to give an even coat of paint?
 A: Paint sprayer
@@ -275,8 +255,16 @@ Ref: 11.6P
 D: 2
 Id: edexcel-phys-11-039
 
-Q: What name is given to the region where a charged object feels a force?
-A: Electric field
-Ref: 11.8P
-D: 2
+Q: Which type of material can be charged by rubbing, because the charge cannot flow away through it?
+A: Insulator
+Accept: An insulator; Electrical insulator
+Ref: 11.1P
+D: 1
 Id: edexcel-phys-11-040
+
+Q: When an object is earthed, through which type of material does the excess charge flow away?
+A: Conductor
+Accept: A conductor; Metal; Electrical conductor
+Ref: 11.5P
+D: 2
+Id: edexcel-phys-11-041

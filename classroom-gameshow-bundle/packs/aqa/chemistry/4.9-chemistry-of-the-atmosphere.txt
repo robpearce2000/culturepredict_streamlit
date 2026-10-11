@@ -119,13 +119,6 @@ Ref: 4.9.1.4
 D: 1
 Id: aqa-chem-4.9-015
 
-Q: Crude oil and natural gas formed from the buried remains of which organisms?
-A: Plankton
-Accept: Tiny sea organisms; Marine organisms; Plankton in mud
-Ref: 4.9.1.4
-D: 1
-Id: aqa-chem-4.9-016
-
 Q: Explain why the formation of fossil fuels decreased the carbon dioxide in the atmosphere.
 A: Carbon locked away underground in them
 Accept: Carbon stored in fossil fuels; Carbon removed from the air and buried
@@ -138,7 +131,7 @@ Id: aqa-chem-4.9-017
 
 Q: Apart from water vapour, name the two main greenhouse gases.
 A: Carbon dioxide and methane
-Accept: CO2 and CH4
+Accept: Methane and carbon dioxide; CO₂ and CH₄; CH₄ and CO₂
 Note: Nitrous oxide and ozone are also greenhouse gases but are not required; do not penalise them as extras.
 Ref: 4.9.2.1
 D: 2
@@ -300,13 +293,6 @@ Ref: 4.9.3.1
 D: 2
 Id: aqa-chem-4.9-039
 
-Q: A fuel contains only carbon and hydrogen. Name the two products when it burns completely.
-A: Carbon dioxide and water
-Accept: CO2 and H2O; Carbon dioxide and water vapour
-Ref: 4.9.3.1
-D: 2
-Id: aqa-chem-4.9-040
-
 Q: Explain how oxides of nitrogen form when fuels burn in car engines.
 A: Nitrogen and oxygen react at high temperature
 Accept: Nitrogen from air oxidised at high temperatures; Nitrogen and oxygen react in the hot engine
@@ -352,3 +338,10 @@ Ref: 4.9.3.2
 D: 3
 Note: The spec only says CO is toxic; accept any answer about less oxygen carried in the blood.
 Id: aqa-chem-4.9-046
+
+Q: Which gas did algae and plants add to the early atmosphere by photosynthesis?
+A: Oxygen
+Accept: O₂
+Ref: 4.9.1.3
+D: 1
+Id: aqa-chem-4.9-047

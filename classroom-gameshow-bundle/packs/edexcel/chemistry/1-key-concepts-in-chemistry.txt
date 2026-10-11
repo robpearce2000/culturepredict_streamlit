@@ -516,6 +516,7 @@ Q: Sodium has atomic number 11. How many electrons are in a sodium ion, Na⁺?
 A: 10
 Ref: 1.23
 D: 2
+Calc: yes
 Id: edexcel-chem-1-073
 
 Q: A magnesium ion, Mg²⁺, has atomic number 12 and mass number 24. Give its protons, neutrons and electrons.
@@ -1024,6 +1025,7 @@ Q: 2.4 g of magnesium combines with 1.6 g of oxygen. What is the empirical formu
 A: MgO
 Ref: 1.44
 D: 3
+Calc: yes
 Id: edexcel-chem-1-145
 
 Q: A compound is 75% carbon and 25% hydrogen by mass. What is its empirical formula? (C = 12, H = 1)
@@ -1031,6 +1033,7 @@ A: CH₄
 Accept: CH4
 Ref: 1.44
 D: 3
+Calc: yes
 Id: edexcel-chem-1-146
 
 Q: Working out an empirical formula from reacting masses, what do you first divide each mass by?
@@ -1059,6 +1062,7 @@ A: C₃H₆
 Accept: C3H6
 Ref: 1.45
 D: 3
+Calc: yes
 Id: edexcel-chem-1-150
 
 Q: A compound has empirical formula NO₂ and relative molecular mass 92. What is its molecular formula? (N = 14, O = 16)
@@ -1066,6 +1070,7 @@ A: N₂O₄
 Accept: N2O4
 Ref: 1.45
 D: 3
+Calc: yes
 Id: edexcel-chem-1-151
 
 Q: In the magnesium oxide experiment, what container is the magnesium heated in?
@@ -1252,6 +1257,7 @@ Accept: 6 × 10²³
 Ref: 1.51
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-chem-1-175
 
 Q: State the equation linking number of moles, mass and relative formula mass.

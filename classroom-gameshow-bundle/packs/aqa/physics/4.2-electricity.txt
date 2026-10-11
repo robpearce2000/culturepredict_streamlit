@@ -190,6 +190,7 @@ A: 0.5 A
 Accept: 0.5 amps; 0.5 amperes
 Ref: 4.2.2
 D: 2
+Calc: yes
 Id: aqa-phys-4.2-023
 
 Q: A 3 Ω and a 9 Ω resistor are in series with a 6 V supply. What is the potential difference across the 9 Ω resistor?
@@ -307,14 +308,6 @@ D: 2
 Calc: yes
 Id: aqa-phys-4.2-037
 
-Q: An electric kettle is switched on. Which energy store of the water increases?
-A: Thermal
-Accept: Thermal energy store; Internal; Internal energy
-Note: Do not credit "heat energy"; the spec names the thermal store.
-Ref: 4.2.4.2
-D: 1
-Id: aqa-phys-4.2-038
-
 Q: A battery-powered toy car's motor runs. Name the energy store the energy comes from and the store it goes to.
 A: Chemical to kinetic
 Accept: Chemical store to kinetic store
@@ -419,3 +412,9 @@ Ref: 4.2.5.2
 D: 3
 Note: The field is strongest close to the dome, so sparks happen when objects are brought near.
 Id: aqa-phys-4.2-051
+
+Q: Which component's resistance decreases as its temperature increases?
+A: Thermistor
+Ref: 4.2.1.4
+D: 1
+Id: aqa-phys-4.2-052

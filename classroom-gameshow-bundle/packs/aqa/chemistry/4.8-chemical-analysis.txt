@@ -308,13 +308,13 @@ RP: 7
 Id: aqa-chem-4.8-038
 
 Q: What is the formula of the precipitate formed when sodium hydroxide solution is added to iron(III) ions?
-A: Fe(OH)3
-Accept: Iron(III) hydroxide
+A: Fe(OH)₃
+Accept: Fe(OH)3; Iron(III) hydroxide
 Ref: 4.8.3.2
 D: 3
 Id: aqa-chem-4.8-039
 
-Q: Balance: CuSO4 + __ NaOH → Cu(OH)2 + Na2SO4. What number goes in the gap?
+Q: Balance: CuSO₄ + __ NaOH → Cu(OH)₂ + Na₂SO₄. What number goes in the gap?
 A: 2
 Accept: Two
 Ref: 4.8.3.2
@@ -442,6 +442,7 @@ A: Accurate, sensitive and rapid
 Accept: More accurate, more sensitive, faster
 Ref: 4.8.3.6
 D: 2
+Note: Accept the three in any order.
 Id: aqa-chem-4.8-055
 
 Q: An instrumental method can detect a tiny amount of a substance in a sample. Which advantage does this show?
@@ -510,12 +511,6 @@ Accept: Fuel; Cleaning agent; Alloy; Fertiliser; Food; Medicine
 Ref: 4.8.1.2
 D: 1
 Id: aqa-chem-4.8-064
-
-Q: Which gas is tested for with a burning splint held at the mouth of a test tube?
-A: Hydrogen
-Ref: 4.8.2.1
-D: 1
-Id: aqa-chem-4.8-065
 
 Q: A gas is bubbled through limewater and the limewater stays clear. What does this show?
 A: Not carbon dioxide

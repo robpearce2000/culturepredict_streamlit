@@ -291,19 +291,21 @@ Calc: yes
 Id: edexcel-phys-13-036
 
 Q: The voltage is raised 10 times for the same transmitted power. By what factor does the cable current change?
-A: Divided by 10
-Accept: One tenth; 1/10; Falls to a tenth; 0.1
+A: 1/10
+Accept: Divided by 10; One tenth; Falls to a tenth; 0.1
 Ref: 13.11P
 D: 2
 HT: yes
+Calc: yes
 Id: edexcel-phys-13-037
 
 Q: Voltage is raised 10 times for the same power. By what factor is the cable's wasted power reduced?
-A: Divided by 100
-Accept: One hundredth; 1/100; 100 times smaller; 0.01
+A: 1/100
+Accept: Divided by 100; One hundredth; 100 times smaller; 0.01
 Ref: 13.11P
 D: 3
 HT: yes
+Calc: yes
 Id: edexcel-phys-13-038
 
 # Combined Science top-up (version 1.4): more questions on the points in Combined Science
@@ -361,14 +363,6 @@ Ref: 13.2
 D: 1
 HT: yes
 Id: edexcel-phys-13-046
-
-Q: A magnet is held still inside a coil. What potential difference is induced?
-A: Zero
-Accept: None; 0 V
-Ref: 13.2
-D: 2
-HT: yes
-Id: edexcel-phys-13-047
 
 Q: In a transformer, what does the alternating current in the primary coil produce in the iron core?
 A: Changing magnetic field

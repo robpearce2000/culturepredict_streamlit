@@ -46,13 +46,6 @@ Ref: 4.3
 D: 2
 Id: edexcel-phys-4-006
 
-Q: What is the unit of frequency?
-A: Hertz
-Accept: Hz
-Ref: 4.3
-D: 1
-Id: edexcel-phys-4-007
-
 Q: What is the wavelength of a wave?
 A: Distance between two neighbouring crests
 Accept: Distance between neighbouring troughs; distance from one point to the same point on the next wave; distance between adjacent compressions

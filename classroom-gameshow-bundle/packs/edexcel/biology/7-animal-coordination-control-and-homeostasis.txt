@@ -213,6 +213,7 @@ A: Body temperature, blood glucose, water content
 Accept: Temperature, blood sugar and water levels; Temperature, blood glucose concentration and water
 Ref: 7.9
 D: 2
+Sep: yes
 Id: edexcel-bio-7-029
 
 Q: Why must internal conditions be kept constant even when exercise changes them?
@@ -416,6 +417,7 @@ A: 0.9
 Accept: 9:10; 0.90
 Ref: 7.17
 D: 2
+Calc: yes
 Id: edexcel-bio-7-058
 
 Q: Why can a waist:hip ratio show diabetes risk better than BMI?

@@ -157,8 +157,8 @@ D: 1
 Id: edexcel-chem-8-022
 
 Q: What is the general formula of the alkanes?
-A: CnH2n+2
-Accept: C(n)H(2n+2)
+A: CₙH₂ₙ₊₂
+Accept: CnH2n+2; C(n)H(2n+2)
 Ref: 8.6
 D: 2
 Id: edexcel-chem-8-023

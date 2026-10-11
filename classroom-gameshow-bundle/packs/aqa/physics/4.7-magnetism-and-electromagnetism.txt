@@ -151,6 +151,7 @@ Ref: 4.7.2.1
 D: 3
 
 # 4.7.2.2 Fleming's left-hand rule (HT only)
+Sep: yes
 Id: aqa-phys-4.7-020
 
 Q: What name is given to the force on a current-carrying conductor in a magnetic field?
@@ -392,15 +393,6 @@ D: 3
 HT: yes
 Id: aqa-phys-4.7-047
 
-Q: Why does transmitting electrical power at a high potential difference reduce energy losses?
-A: Lower current, so less heating
-Accept: Smaller current means less heating in cables; Current is lower so less power lost
-Ref: 4.7.3.4
-D: 3
-HT: yes
-Note: For the same power, P = VI means a higher V needs a lower I.
-Id: aqa-phys-4.7-048
-
 # Combined Science top-up (version 1.4): more questions on the points in Combined Science
 
 Q: What happens when a north pole is brought near a south pole?
@@ -416,13 +408,6 @@ Accept: Permanent
 Ref: 4.7.1.1
 D: 1
 Id: aqa-phys-4.7-050
-
-Q: Where is the magnetic field of a bar magnet strongest?
-A: At the poles
-Accept: Poles; Near the poles
-Ref: 4.7.1.2
-D: 1
-Id: aqa-phys-4.7-051
 
 Q: Apart from adding an iron core, give one way to make an electromagnet stronger.
 A: Increase the current
@@ -443,4 +428,5 @@ A: Iron loses its magnetism quickly
 Accept: Iron is an induced magnet; Iron demagnetises when switched off
 Ref: 4.7.2.1
 D: 3
+Sep: yes
 Id: aqa-phys-4.7-054

@@ -222,21 +222,6 @@ HT: yes
 Calc: yes
 Id: edexcel-chem-5-030
 
-Q: In a titration, which piece of apparatus measures exactly 25.0 cm³ of alkali into the flask?
-A: Pipette
-Accept: Volumetric pipette; pipette and filler
-Ref: 5.9C
-RP: 5.9C
-D: 1
-Id: edexcel-chem-5-031
-
-Q: In a titration, which piece of apparatus is used to add the acid gradually?
-A: Burette
-Ref: 5.9C
-RP: 5.9C
-D: 1
-Id: edexcel-chem-5-032
-
 Q: What colour change shows the end point when acid is added to alkali containing phenolphthalein?
 A: Pink to colourless
 Accept: Pink then colourless
@@ -399,6 +384,7 @@ Accept: 100
 Ref: 5.14C
 D: 3
 Note: Ammonia is the only product.
+Calc: yes
 Id: edexcel-chem-5-053
 
 Q: Two routes have equal yield and rate. Route A has 100% atom economy and Route B has 60%. Which is chosen?
@@ -528,13 +514,6 @@ Accept: Hydrogen and nitrogen; N₂ and H₂
 Ref: 5.19C
 D: 1
 Id: edexcel-chem-5-068
-
-Q: What does the ⇌ symbol in the Haber process equation show?
-A: Reversible reaction
-Accept: The reaction is reversible; goes both ways
-Ref: 5.19C
-D: 1
-Id: edexcel-chem-5-069
 
 Q: Write the word equation for the Haber process.
 A: Nitrogen + hydrogen ⇌ ammonia

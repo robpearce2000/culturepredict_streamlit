@@ -38,6 +38,7 @@ D: 3
 Note: Use CₙH₂ₙ₊₂: (2 × 12) + 2 = 26.
 
 # 4.7.1.2 Fractional distillation and petrochemicals
+Calc: yes
 Id: aqa-chem-4.7-005
 
 Q: Which process separates crude oil into fractions?
@@ -526,6 +527,7 @@ A: Ethene
 Accept: C₂H₄
 Ref: 4.7.1.4
 D: 3
+Sep: yes
 Id: aqa-chem-4.7-071
 
 Q: Which family of hydrocarbons turns orange bromine water colourless?

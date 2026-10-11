@@ -31,15 +31,6 @@ D: 2
 Note: Copper is less reactive than zinc, so it cannot displace it.
 Id: edexcel-chem-4-004
 
-Q: In terms of electrons, what is oxidation?
-A: Loss of electrons
-Accept: Losing electrons
-Ref: 4.2
-D: 2
-HT: yes
-Note: OIL RIG: oxidation is loss, reduction is gain.
-Id: edexcel-chem-4-005
-
 Q: Zinc displaces copper from copper sulfate solution. Which species is reduced?
 A: Copper ions
 Accept: Cu²⁺; copper(II) ions; Cu²⁺ ions

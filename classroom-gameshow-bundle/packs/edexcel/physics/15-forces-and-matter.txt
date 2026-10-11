@@ -81,13 +81,6 @@ D: 3
 Calc: yes
 Id: edexcel-phys-15-011
 
-Q: What name is given to the energy store of a stretched spring?
-A: Elastic potential energy
-Accept: Elastic energy; elastic store; elastic potential store; strain energy
-Ref: 15.4
-D: 1
-Id: edexcel-phys-15-012
-
 Q: Use E = ½ × k × x². A spring (k = 100 N/m) is stretched 0.2 m. How much energy is stored?
 A: 2 J
 Accept: 2; 2 joules
@@ -109,6 +102,7 @@ A: Four
 Accept: 4; ×4; four times
 Ref: 15.4
 D: 3
+Calc: yes
 Id: edexcel-phys-15-015
 
 Q: What shape is a force-extension graph for a spring that obeys F = kx?
@@ -308,14 +302,6 @@ Ref: 15.12P
 D: 2
 Id: edexcel-phys-15-042
 
-Q: Explain why the pressure in a liquid increases with depth.
-A: More liquid above, so greater weight
-Accept: Weight of liquid above increases; taller column of liquid above
-Ref: 15.13P
-D: 3
-HT: yes
-Id: edexcel-phys-15-043
-
 Q: Why does a denser liquid cause more pressure at the same depth?
 A: Heavier column of liquid above
 Accept: More mass of liquid above; greater weight above; more particles in the same volume
@@ -460,7 +446,6 @@ Id: edexcel-phys-15-060
 
 Q: What name is given to the point beyond which a spring no longer returns to its original length?
 A: Elastic limit
-Accept: Limit of proportionality
 Ref: 15.2
 D: 2
 Id: edexcel-phys-15-061
