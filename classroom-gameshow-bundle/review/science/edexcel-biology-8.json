@@ -1,0 +1,100 @@
+{
+ "pack": "packs/edexcel/biology/8-exchange-and-transport-in-animals.txt",
+ "reviewed": 47,
+ "flags": [
+  {
+   "id": "edexcel-bio-8-004",
+   "grade": "Minor",
+   "reason": "Calculation (SA 6 cm², volume 1 cm³) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-8-005",
+   "grade": "Minor",
+   "reason": "Calculation (SA 54 cm², volume 27 cm³) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-8-006",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter D) but 'gets smaller' / 'goes down' (accepted) start with G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-8-007",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-8-010",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter M) but accepted answers 'keeps a high gradient', 'carries oxygen away' start with K and C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-8-011",
+   "grade": "Minor",
+   "reason": "hexOk is true but the three factors can be given in any order (and alternatives such as concentration difference, membrane thickness, temperature are accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-8-012",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter I) but 'gets faster' / 'goes up' (accepted) start with G.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-8-013",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter L) but 'further for molecules to travel' (accepted) starts with F.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-8-015",
+   "grade": "Minor",
+   "reason": "Calculation (20 × 3 ÷ 2) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-8-017",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter Q) but most students will write 'four times' or 'increases fourfold' (accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-8-027",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter P) but 'stop blood flowing backwards' (accepted) starts with S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-8-040",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter A) but 'removes carbon dioxide' (accepted) starts with R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-8-042",
+   "grade": "Minor",
+   "reason": "Calculation (30 ÷ 10) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-8-046",
+   "grade": "Minor",
+   "reason": "Calculation (80 × 60) but calcTag is false.",
+   "fix": "Set calcTag true."
+  }
+ ],
+ "calcs": {
+  "edexcel-bio-8-004": "(6*1**2)/(1**3)",
+  "edexcel-bio-8-005": "(6*3**2)/(3**3)",
+  "edexcel-bio-8-015": "20*3/2",
+  "edexcel-bio-8-042": "30/10",
+  "edexcel-bio-8-046": "80*60",
+  "edexcel-bio-8-047": "5000/50"
+ },
+ "notcalc": {},
+ "mismatchFlagged": []
+}
