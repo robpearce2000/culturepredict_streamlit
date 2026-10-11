@@ -1,0 +1,137 @@
+{
+ "pack": "packs/aqa/biology/4.5-homeostasis-and-response.txt",
+ "reviewed": 68,
+ "flags": [
+  {
+   "id": "aqa-bio-4.5-003",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Glands and muscles' starts with G. The items can be given in any order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-004",
+   "grade": "Minor",
+   "reason": "hexOk is true but a correct answer can start with B/G, T or W. The items can be given in any order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-006",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Enzymes work best...' and 'Enzymes would denature...' start with E.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-009",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Diffusion of a chemical' and 'Neurotransmitter diffuses across' start with D and N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-012",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Amount of caffeine' starts with A.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-021",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Lens changes shape to focus' starts with L.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-022",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'They contract' starts with T (first significant word 'They').",
+   "fix": "Set hexOk false, or remove 'They contract' from accepted answers."
+  },
+  {
+   "id": "aqa-bio-4.5-024",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Ligaments are slack' and 'Ciliary muscles contract so...' start with L and C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-026",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Hypothalamus' starts with H.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-030",
+   "grade": "Minor",
+   "reason": "hexOk is true but the stored answer starts 'In' (letter I) while accepted 'Blood' / 'By the blood' start with B.",
+   "fix": "Set hexOk false, or make the answer 'Blood'."
+  },
+  {
+   "id": "aqa-bio-4.5-036",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Not enough insulin produced' and 'No insulin made' start with N.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-039",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Reabsorption' starts with R.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-040",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Kidney dialysis' starts with K.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-050",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Stops embryo implanting' and 'Kills or disables sperm' start with S and K.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-051",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'LH and FSH' starts with L. The items can be given in any order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-052",
+   "grade": "Minor",
+   "reason": "hexOk is true but stored answer 'In the laboratory' gives letter I, while accepted 'Laboratory', 'Outside the body' start with L and O.",
+   "fix": "Set hexOk false, or make the answer 'Laboratory'."
+  },
+  {
+   "id": "aqa-bio-4.5-053",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'To avoid multiple births', 'Reduce the risk...', 'Twins or triplets...' start with other letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-055",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Metabolic rate' and 'Metabolism' start with M, not B.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-063",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Biological drawings' and 'Drawings' start with B and D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-064",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'So only light affects growth' starts with S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "aqa-bio-4.5-065",
+   "grade": "Minor",
+   "reason": "hexOk is true but accepted 'Towards gravity' and 'In the direction of gravity' start with T and I.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {},
+ "notcalc": {
+  "aqa-bio-4.5-035": "'Type 2' is a name of a diabetes type, not a calculated number."
+ },
+ "mismatchFlagged": []
+}
