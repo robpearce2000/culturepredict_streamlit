@@ -1,0 +1,112 @@
+{
+ "pack": "packs/edexcel/biology/7-animal-coordination-control-and-homeostasis.txt",
+ "reviewed": 76,
+ "flags": [
+  {
+   "id": "edexcel-bio-7-001",
+   "grade": "Minor",
+   "reason": "hexOk is true; the stored answer 'In the blood' gives the letter I, but students will write 'blood' or 'bloodstream' (B) or 'plasma' (P).",
+   "fix": "Set hexOk false, or store the answer as 'Blood'."
+  },
+  {
+   "id": "edexcel-bio-7-004",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'testes and ovaries' (accepted) is equally correct.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-007",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter R) but the two effects can be given in either order and 'increased blood pressure' (accepted) starts with I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-018",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter S) but 'increases LH release' (accepted) starts with I.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-019",
+   "grade": "Minor",
+   "reason": "hexOk is true but the two hormones can be given in either order.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-027",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-029",
+   "grade": "Doubtful",
+   "reason": "Combined Science (1SC0) does not include thermoregulation or osmoregulation (7.10B–7.12B, 7.18B–7.22B are separate only; 1SC0 says so after 7.9), so asking Combined students for 'the three conditions controlled at GCSE' goes beyond their course. Also hexOk is true but the three can be listed in any order.",
+   "fix": "Tag Separate only, or reword for Combined (e.g. ask for one condition kept constant) and set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-040",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-054",
+   "grade": "Minor",
+   "reason": "hexOk is true on a 'give one' question with accepted answers starting with L, H, E, M and D.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-055",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-058",
+   "grade": "Minor",
+   "reason": "Ratio calculation (90 ÷ 100) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-7-059",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-064",
+   "grade": "Minor",
+   "reason": "hexOk is true but the two components can be given in either order ('red blood cells and proteins' is accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-065",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter A) but 'selective reabsorption' (accepted) starts with S.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-7-068",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter I) but 'makes it more permeable' / 'more permeable' (accepted) start with M.",
+   "fix": "Set hexOk false."
+  }
+ ],
+ "calcs": {
+  "edexcel-bio-7-056": "80/2**2",
+  "edexcel-bio-7-057": "64/1.6**2",
+  "edexcel-bio-7-058": "90/100"
+ },
+ "notcalc": {
+  "edexcel-bio-7-031": "recalled body temperature",
+  "edexcel-bio-7-033": "37 °C given in the question",
+  "edexcel-bio-7-050": "'type 1' label",
+  "edexcel-bio-7-051": "'type 1' label",
+  "edexcel-bio-7-052": "'type 1' label",
+  "edexcel-bio-7-053": "'type 2' label",
+  "edexcel-bio-7-054": "'type 2' label",
+  "edexcel-bio-7-055": "'type 2' label"
+ },
+ "mismatchFlagged": []
+}
