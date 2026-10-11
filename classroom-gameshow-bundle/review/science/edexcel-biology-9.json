@@ -1,0 +1,163 @@
+{
+ "pack": "packs/edexcel/biology/9-ecosystems-and-material-cycles.txt",
+ "reviewed": 68,
+ "flags": [
+  {
+   "id": "edexcel-bio-9-010",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-013",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter S) but 'glucose' and 'carbohydrates' (accepted) start with G and C.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-015",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter B) but many students will write just 'transect' (accepted).",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-018",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-019",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-020",
+   "grade": "Minor",
+   "reason": "Calculation ((2+4+3+5+6) ÷ 5) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-9-024",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter H) but 'thermal energy' (accepted) starts with T.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-034",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-039",
+   "grade": "Minor",
+   "reason": "hexOk is true on an open 'name/give one' question whose accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-046",
+   "grade": "Minor",
+   "reason": "hexOk is true but 'fungi and bacteria' is equally correct.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-047",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter C) but 'burning' (accepted) is a very common answer.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-054",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-055",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter B) on a 'name a species' question where sludgeworm (S) is equally correct.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-056",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter S) but freshwater shrimp (F) is equally correct.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-057",
+   "grade": "Minor",
+   "reason": "hexOk is true (letter L) but 'clean air' / 'little air pollution' (accepted) start differently.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-058",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-060",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-061",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-062",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-063",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-064",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-065",
+   "grade": "Minor",
+   "reason": "hexOk is true on an explanation question; accepted answers start with different letters.",
+   "fix": "Set hexOk false."
+  },
+  {
+   "id": "edexcel-bio-9-066",
+   "grade": "Minor",
+   "reason": "Calculation (20 ÷ 4) but calcTag is false.",
+   "fix": "Set calcTag true."
+  },
+  {
+   "id": "edexcel-bio-9-067",
+   "grade": "Minor",
+   "reason": "Calculation ((80 − 50) ÷ 10) but calcTag is false.",
+   "fix": "Set calcTag true."
+  }
+ ],
+ "calcs": {
+  "edexcel-bio-9-020": "(2+4+3+5+6)/5",
+  "edexcel-bio-9-021": "3*50",
+  "edexcel-bio-9-022": "2/0.25*100",
+  "edexcel-bio-9-027": "1000/10000*100",
+  "edexcel-bio-9-028": "2000*0.05",
+  "edexcel-bio-9-029": "150/1000*100",
+  "edexcel-bio-9-030": "(400-20)/400*100",
+  "edexcel-bio-9-066": "20/4",
+  "edexcel-bio-9-067": "(80-50)/10"
+ },
+ "notcalc": {},
+ "mismatchFlagged": []
+}
