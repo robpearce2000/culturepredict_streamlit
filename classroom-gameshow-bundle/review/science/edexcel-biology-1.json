@@ -1,0 +1,37 @@
+{"pack": "packs/edexcel/biology/1-key-concepts-in-biology.txt", "reviewed": 64,
+"flags": [
+{"id": "edexcel-bio-1-007", "grade": "Minor", "reason": "hexOk is true but correct answers to 'how does the membrane change' start with many different words (changes, blocks, hardens, stops, becomes).", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-1-013", "grade": "Minor", "reason": "Numerical calculation (1000 ÷ 20) but calcTag is false.", "fix": "Set calcTag true."},
+{"id": "edexcel-bio-1-018", "grade": "Minor", "reason": "Unit conversion calculation from standard form but calcTag is false.", "fix": "Set calcTag true."},
+{"id": "edexcel-bio-1-022", "grade": "Minor", "reason": "hexOk is true (letter I from 'Increases') but the most common correct answer is 'to make the nucleus / cell parts visible' or 'to see the cells more clearly'.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-1-023", "grade": "Minor", "reason": "hexOk is true (letter S) but 'colour' is an equally common correct answer (and is accepted).", "fix": "Set hexOk false, or reword to ask specifically about shading."},
+{"id": "edexcel-bio-1-028", "grade": "Minor", "reason": "hexOk is true (letter E from 'Extreme') but most students will write 'pH' or 'change in pH', starting with P.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-1-035", "grade": "Minor", "reason": "hexOk is true (letter K from 'Keeps') but correct answers start 'to keep', 'control', 'constant temperature' etc.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-1-037", "grade": "Minor", "reason": "Numerical calculation (1000 ÷ 50) but calcTag is false.", "fix": "Set calcTag true."},
+{"id": "edexcel-bio-1-038", "grade": "Minor", "reason": "Numerical calculation (30 ÷ 10) but calcTag is false.", "fix": "Set calcTag true."},
+{"id": "edexcel-bio-1-041", "grade": "Minor", "reason": "hexOk is true (letter F) but 'glycerol and fatty acids' (accepted) is an equally common order and starts with G.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-1-045", "grade": "Minor", "reason": "hexOk is true (letter B from 'Brick') but 'red' and 'orange-red' are accepted and commonly given.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-1-047", "grade": "Minor", "reason": "hexOk is true (letter B from 'Blue to purple') but the usual answer is simply 'purple' (or lilac/mauve).", "fix": "Set hexOk false, or change the answer to 'Purple' (letter P)."},
+{"id": "edexcel-bio-1-048", "grade": "Minor", "reason": "hexOk is true (letter L) but 'fats' is an equally common correct answer.", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-1-059", "grade": "Minor", "reason": "hexOk is true on an explanation question; correct answers start with many different words (to remove, so that, surface water...).", "fix": "Set hexOk false."},
+{"id": "edexcel-bio-1-060", "grade": "Minor", "reason": "hexOk is true on an explanation question; correct answers start 'different starting masses', 'fair comparison', 'cylinders differ' etc.", "fix": "Set hexOk false."}
+],
+"calcs": {
+"edexcel-bio-1-013": "1000/20",
+"edexcel-bio-1-017": "2e-6",
+"edexcel-bio-1-018": "2e-5*1e6",
+"edexcel-bio-1-020": "6/300*1000",
+"edexcel-bio-1-037": "1000/50",
+"edexcel-bio-1-038": "30/10",
+"edexcel-bio-1-039": "60/(2*60)",
+"edexcel-bio-1-051": "20*4.2*10/2",
+"edexcel-bio-1-062": "(2.5-2.0)/2.0*100",
+"edexcel-bio-1-063": "(3.6-4.0)/4.0*100",
+"edexcel-bio-1-064": "(2.20-2.50)/2.50*100"
+},
+"notcalc": {
+"edexcel-bio-1-012": "recalled typical size of a bacterium",
+"edexcel-bio-1-015": "recalled unit conversion",
+"edexcel-bio-1-016": "recalled prefix; numbers are the power in the question"
+},
+"mismatchFlagged": []}
