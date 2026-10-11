@@ -1,0 +1,9 @@
+{"pack": "packs/edexcel/physics/12-magnetism-and-the-motor-effect.txt", "reviewed": 48,
+"flags": [],
+"calcs": {
+"edexcel-phys-12-041": "2*3*0.5",
+"edexcel-phys-12-043": "0.4*5*0.2",
+"edexcel-phys-12-044": "6/(2*1.5)"
+},
+"notcalc": {},
+"mismatchFlagged": []}
