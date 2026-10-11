@@ -1,0 +1,82 @@
+{
+ "pack": "packs/edexcel/physics/6-radioactivity.txt",
+ "reviewed": 157,
+ "flags": [
+  {
+   "id": "edexcel-phys-6-006",
+   "grade": "Minor",
+   "reason": "Answer 5 million is right (1 mm / 2 × 10⁻¹⁰ m), but it is written in words, so the number checker reads it as 5; standard form suits the topic better.",
+   "fix": "Make the main answer '5 × 10⁶' and keep '5 million' as accepted."
+  },
+  {
+   "id": "edexcel-phys-6-003",
+   "grade": "Minor",
+   "reason": "Textbooks quote the atom as 10 000 to 100 000 times the nuclear radius; '10 000' alone (a common taught value) is not accepted.",
+   "fix": "Add accepted answers: 10 000; 10^4; 10⁴; About 10 000 times."
+  },
+  {
+   "id": "edexcel-phys-6-063",
+   "grade": "Minor",
+   "reason": "Works out 6 - 1 = 5 like 6-009 (13 - 6), which is calc-tagged, but this one is not.",
+   "fix": "Add Calc: yes."
+  },
+  {
+   "id": "edexcel-phys-6-073",
+   "grade": "Minor",
+   "reason": "hexOk gives the letter M from 'Mass 0, atomic −1'; students answer '0 and −1', so the letter clue is meaningless.",
+   "fix": "Reword the answer to '0 and −1 (mass, atomic)' or otherwise exclude it from Hex Hunt."
+  },
+  {
+   "id": "edexcel-phys-6-074",
+   "grade": "Minor",
+   "reason": "hexOk gives the letter M from 'Mass 222, atomic 86'; the real answer is a pair of numbers, so the letter clue is meaningless.",
+   "fix": "Reword the answer to '222 and 86' so it is excluded from Hex Hunt."
+  },
+  {
+   "id": "edexcel-phys-6-133",
+   "grade": "Minor",
+   "reason": "A balancing calculation (235 + 1 − 141 − 92 = 3) without the calc tag.",
+   "fix": "Add Calc: yes."
+  }
+ ],
+ "calcs": {
+  "edexcel-phys-6-006": "1e-3/(2*1e-10)",
+  "edexcel-phys-6-009": "13-6",
+  "edexcel-phys-6-020": "27-13",
+  "edexcel-phys-6-037": "85-25",
+  "edexcel-phys-6-063": "6-1",
+  "edexcel-phys-6-074": "226-4",
+  "edexcel-phys-6-080": "2000*10",
+  "edexcel-phys-6-087": "0.5**(12/6)",
+  "edexcel-phys-6-088": "log2(8)",
+  "edexcel-phys-6-089": "800*0.5**(6/2)",
+  "edexcel-phys-6-090": "10/log2(400/100)",
+  "edexcel-phys-6-091": "20*log2(16)",
+  "edexcel-phys-6-092": "0.5**2",
+  "edexcel-phys-6-093": "0.5**4",
+  "edexcel-phys-6-094": "log2(32)",
+  "edexcel-phys-6-133": "235+1-141-92"
+ },
+ "notcalc": {
+  "edexcel-phys-6-003": "recalled order of magnitude",
+  "edexcel-phys-6-004": "recalled order of magnitude",
+  "edexcel-phys-6-005": "recalled order of magnitude",
+  "edexcel-phys-6-014": "recalled relative charge",
+  "edexcel-phys-6-015": "recalled relative charge",
+  "edexcel-phys-6-016": "recalled relative charge",
+  "edexcel-phys-6-017": "recalled relative mass",
+  "edexcel-phys-6-019": "count equal to proton number",
+  "edexcel-phys-6-064": "recalled change (4)",
+  "edexcel-phys-6-065": "recalled change (1)",
+  "edexcel-phys-6-073": "recalled mass and atomic numbers of beta particle",
+  "edexcel-phys-6-071": "identifying the particle",
+  "edexcel-phys-6-072": "identifying the particle",
+  "edexcel-phys-6-132": "recalled number of neutrons",
+  "edexcel-phys-6-084": "half-life given only as context",
+  "edexcel-phys-6-136": "recalled count (one)",
+  "edexcel-phys-6-140": "isotope name U-235, not a calculation"
+ },
+ "mismatchFlagged": [
+  "edexcel-phys-6-006"
+ ]
+}
