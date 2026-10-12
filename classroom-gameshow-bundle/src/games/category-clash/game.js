@@ -140,12 +140,12 @@ function pickTopics(all) {
 
 /* ---------- Building the board ---------- */
 function buildBoard() {
-  const weak = new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.q)));
+  const names = S.teams.map(t => t.name);
   S.cats = pickTopics(topicsOf(bank.active())).map(t => {
     // Row k (100, 200, 300 points) takes a question at tier 1, 2 or 3 (see TIERS in bank.js;
     // questions without a Tier line get one from their wording). If a row has no question at its
     // tier, the nearest tier is used, then any question left. Among the questions that fit a
-    // row, one a playing team got wrong before is preferred, so weak spots come round again.
+    // row, a question a playing team got wrong last time or that no game has asked yet is preferred.
     const levelOf = q => bank.difficultyOf(q);
     const values = VALUES.slice(0, ROWS);
     const want = k => k + 1;
@@ -156,8 +156,8 @@ function buildBoard() {
       const gap = exact ? 0 : Math.min(...left.map(q => Math.abs(levelOf(q) - want(k))));
       const pool = left.filter(q => Math.abs(levelOf(q) - want(k)) === gap);
       if (!pool.length) return null;
-      const missed = pool.filter(q => weak.has(q.q));
-      const q = rnd(missed.length ? missed : pool);
+      // questions a team got wrong last time and questions no game has asked yet come first (bank.preferred)
+      const q = rnd(bank.preferred(pool, names));
       left.splice(left.indexOf(q), 1);
       return q;
     };
@@ -173,7 +173,7 @@ function buildBoard() {
       const pool = c.spare.filter(x => !onBoard.has(x));
       if (!pool.length) return;
       const gap = Math.min(...pool.map(x => Math.abs(bank.difficultyOf(x) - (k + 1))));
-      const near = pool.filter(x => Math.abs(bank.difficultyOf(x) - (k + 1)) === gap);
+      const near = bank.preferred(pool.filter(x => Math.abs(bank.difficultyOf(x) - (k + 1)) === gap), names);
       c.picks[k] = near[Math.floor(CGB.random() * near.length)];
     });
     const values = VALUES.slice(0, ROWS);
@@ -230,6 +230,7 @@ function openTile(c, r) {
   const t = S.cats[c] && S.cats[c].tiles[r];
   if (!t || t.used || S.phase !== 'board') return;
   S.phase = 'question'; S.open = { c, r }; S.step = 'ask'; S.picked = S.turn;
+  bank.markAsked(t.q);   // from now on every game counts this question as asked
   const cat = S.cats[c];
   $('qCat').textContent = cat.subject + ' · ' + cat.topic;
   $('qVal').textContent = (t.star ? t.value * 2 : t.value) + ' points';
@@ -485,7 +486,7 @@ return {
   exit() { active = false; if (S.phase !== 'home') goHome(); },
   inProgress: () => S.phase === 'board' || S.phase === 'question',
   endNow,
-  _state: () => ({ round: round.phase, undoable: round.undoable, times: round.times(), turn: S.turn, catchUp: catchUpTurn(), misconceptions: misc.top(5).map(x => x.q.q), rows: ROWS, phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score, correct: t.correct })), open: S.open, q: S.open ? tileOpen().q : null, left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
+  _state: () => ({ round: round.phase, undoable: round.undoable, times: round.times(), turn: S.turn, catchUp: catchUpTurn(), misconceptions: misc.top(5).map(x => x.q.q), rows: ROWS, phase: S.phase, step: S.step, cursor: Object.assign({}, S.cursor), teams: S.teams.map(t => ({ name: t.name, score: t.score, correct: t.correct })), open: S.open, q: S.open ? tileOpen().q : null, board: S.cats.flatMap(c => c.tiles.map(t => t.q ? t.q.q : null)), left: S.cats.reduce((n, c) => n + c.tiles.filter(t => !t.used).length, 0) }),
   _board: () => S.cats
 };
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.3 – Every game asks new questions first and brings back the ones you got wrong (October 2026)
+
+- **One record of what has been asked, shared by all four games.** It is kept in this browser for each subject, exam board and course. Before, only Hex Hunt remembered; Over the Edge, Outpace and Category Clash started every game from scratch, so a class moving between games on one topic could meet the same questions again. Now whichever game you play next puts first the questions no game has asked yet, and once everything has been asked it goes back to the one asked longest ago. Hex Hunt's old record is carried over.
+- **Questions a team got wrong come back.** If a team that is playing got a question wrong the last time it was asked, it is put first: about half the time the next question is one of those (when new questions are also available), and every time when no new ones are left. It settles once the question is asked again and nobody gets it wrong. Topics a team has found hard are still favoured among new questions, as before.
+- Over the Edge and Outpace use this for every question they ask; Category Clash uses it for every tile on the board (a question counts as asked when its tile is opened); Hex Hunt for every hexagon.
+
 ## 1.8.2 – Free taster has no way to add your own questions (October 2026)
 
 - **The free taster no longer has a Question bank or any way to write, paste, import or keep your own questions.** The button, the editor, the backup and the "Other" subject are not in the file at all (the build leaves their markup out), the bank code refuses every add, edit, delete, move and import, and nothing in the taster ever writes to saved question sets, so sets another edition saved in the same browser are neither shown nor touched. Nothing opens an editor by keyboard (Tab or any key) or by address (#bank, #question-bank and every other hash or query). Every other edition keeps the Question bank.

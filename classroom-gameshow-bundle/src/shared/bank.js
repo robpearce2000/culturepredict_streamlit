@@ -386,7 +386,8 @@ CGB.bank = (() => {
   }
   function logWrong(name, q, game) {
     if (!q) return;
-    addHistoryEntry(name, { subject: q.subject, topic: q.topic, q: q.q, a: q.a, date: new Date().toISOString().slice(0, 10), game: game || '' });
+    const at = (askedLoad()[askedScope()] || {}).seq || 0;   // when, among the questions asked: see retryTest
+    addHistoryEntry(name, { subject: q.subject, topic: q.topic, q: q.q, a: q.a, date: new Date().toISOString().slice(0, 10), game: game || '', at });
     saveHistory();
   }
   /* Take back the most recent wrong answer logged for this question (class-mode undo) */
@@ -405,6 +406,63 @@ CGB.bank = (() => {
   function clearHistory(name) { delete history[key(name)]; saveHistory(); emit(); }
   function players() { return Object.values(history).map(h => ({ name: h.name, count: h.entries.length })).sort((a, b) => a.name.localeCompare(b.name)); }
 
+  /* ---------- What has been asked ----------
+     One record for all four games, kept in this browser for each subject, board and course: every question that has
+     been put to a class, with a counter for when. Every game prefers questions from the chosen topics that have
+     not been asked yet, whichever game asked them (a class that plays Over the Edge and then Hex Hunt on the same
+     topic does not meet the same questions again), and once everything has been asked it goes back to the one
+     asked longest ago. Without the browser's storage it still works for the length of the visit. */
+  const ASKED_KEY = 'asked', ASKED_MAX = 1500;
+  const qKey = q => q.id || (q.subject + '|' + q.q);
+  const askedScope = () => `${subject}|${board}|${course}`;
+  let askedAll = null;
+  function askedLoad() {
+    if (askedAll) return askedAll;
+    // Hex Hunt kept its own record (hh.recent) before every game shared one: the same shape, so it carries straight over
+    let all = store.getJSON(ASKED_KEY, null) || store.getJSON('hh.recent', null);
+    askedAll = all && typeof all === 'object' && !Array.isArray(all) ? all : {};
+    return askedAll;
+  }
+  /* question key -> counter of when it was asked (a bigger number is more recent), for the current subject, board and course */
+  function asked() { const m = askedLoad()[askedScope()]; return m && m.q ? m.q : {}; }
+  function markAsked(q) {
+    if (!q) return;
+    const all = askedLoad(), sc = askedScope(), m = all[sc] && all[sc].q ? all[sc] : (all[sc] = { seq: 0, q: {} });
+    m.q[qKey(q)] = ++m.seq;
+    const keys = Object.keys(m.q);
+    if (keys.length > ASKED_MAX) keys.sort((x, y) => m.q[x] - m.q[y]).slice(0, keys.length - ASKED_MAX).forEach(k => delete m.q[k]);
+    store.setJSON(ASKED_KEY, all);
+  }
+  function clearAsked() { askedAll = {}; store.setJSON(ASKED_KEY, askedAll); }
+  /* A question is "to come back to" when a playing team answered it wrongly the last time it was asked. The wrong
+     answer is logged with the counter of the moment (at); asking the question again, without a new wrong answer,
+     settles it, so a question stops coming back once the team has got it right. */
+  function retryTest(names) {
+    const seen = asked(), last = new Map();
+    [].concat(names || []).forEach(n => wrongLog(n).forEach(e => {
+      const at = typeof e.at === 'number' ? e.at : null, prev = last.get(e.q);
+      if (prev === undefined || (at !== null && (prev === null || at > prev))) last.set(e.q, at);
+    }));
+    return q => {
+      if (!last.has(q.q)) return false;
+      const at = last.get(q.q), s = seen[qKey(q)];
+      return at === null ? s === undefined : s === undefined || at >= s;   // (a wrong answer from before the counter existed counts until the question is asked again)
+    };
+  }
+  const RETRY_SHARE = 0.5;   // with both on offer, how often the next question is one to come back to rather than a new one
+  /* From questions of equal standing, the ones to ask next: those a playing team got wrong last time and those no game has
+     asked yet (half the time each when both exist), and only when neither is left, the one asked longest ago */
+  function preferred(list, names) {
+    if (!list.length) return [];
+    const seen = asked(), retry = retryTest(names);
+    const wrong = list.filter(retry), fresh = list.filter(q => !seen[qKey(q)] && !retry(q));
+    if (wrong.length && (!fresh.length || CGB.random() < RETRY_SHARE)) return wrong;
+    if (fresh.length) return fresh;
+    let best = list[0]; list.forEach(q => { if (seen[qKey(q)] < seen[qKey(best)]) best = q; });
+    return [best];
+  }
+
+
   /* ---------- Question picking (each game session gets its own picker) ---------- */
   const WEAK_SHARE = 0.35;
   function createPicker() {
@@ -413,22 +471,26 @@ CGB.bank = (() => {
     return {
       reset() { used.clear(); },
       /* names: the playing teams. Now and then a question comes from a topic one of them got
-         wrong before, so weak topics come round again without the teacher having to ask. */
+         wrong before, so weak topics come round again without the teacher having to ask. A question a playing
+         team got wrong last time, and a question no game has asked yet, come first (preferred, above). */
       pick(names) {
         const set = active();
         if (!set) return null;
         if (set.id !== setId) { used.clear(); setId = set.id; }
         const bank = set.questions;
+        // not twice in one game; then what to come back to and what no game has asked yet (see preferred)
         let pool = bank.map((q, i) => i).filter(i => !used.has(i));
         if (!pool.length) { used.clear(); pool = bank.map((q, i) => i); }
+        let pref = preferred(pool.map(i => bank[i]), names);
         const weak = new Set();
         [].concat(names || []).forEach(n => wrongLog(n).forEach(e => weak.add(e.topic)));
         if (weak.size) {
-          const weakPool = pool.filter(i => weak.has(bank[i].topic));
-          if (weakPool.length && weakPool.length < pool.length && CGB.random() < WEAK_SHARE) pool = weakPool;
+          const weakPool = pref.filter(q => weak.has(q.topic));
+          if (weakPool.length && weakPool.length < pref.length && CGB.random() < WEAK_SHARE) pref = weakPool;
         }
-        const i = pool[Math.floor(CGB.random() * pool.length)];
+        const i = bank.indexOf(pref[Math.floor(CGB.random() * pref.length)]);
         used.add(i);
+        markAsked(bank[i]);
         return bank[i];
       }
     };
@@ -485,7 +547,7 @@ CGB.bank = (() => {
     COURSES, course: () => course, setCourse, hasCourses, combined: combinedNow, specs: () => Object.assign({}, DATA.specs),
     SUBJECTS, BOARDS, edition: () => EDITION, ownAllowed: OWN, subject: () => subject, board: () => board, setSubject, setBoard, subjectNote,
     subjectLabel: k => label(ALL_SUBJECTS, k || subject), boardLabel: k => label(BOARDS, k || board),
-    logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker,
+    logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker, asked, markAsked, clearAsked, preferred, retryTest, qKey,
     exportData, importData, onChange(fn) { listeners.push(fn); },
     builtinIds: BUILTIN.map(s => s.id), subjectOfSet
   };

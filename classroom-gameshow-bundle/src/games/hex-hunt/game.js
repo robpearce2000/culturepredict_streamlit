@@ -44,24 +44,14 @@ const S = {
 // the letter rule is shared with the question-pack checker (src/shared/hexletter.js)
 const firstLetter = q => q && q.hexOk === false ? null : CGB.hexLetter(q && q.a !== undefined ? q.a : q, q && q.subject);
 /* Which questions come up. Every board is dealt from a ranking, not a fresh shuffle:
-     1. questions of the chosen topic(s) that have not been asked yet,
+     1. questions of the chosen topic(s) that a half got wrong last time, and ones that have not been asked yet, taking turns,
      2. questions from the other topics of the same subject, board and course, if the chosen ones are too few
         for a match (a best-of-three needs about 48 hexagons),
      3. then everything already asked, the longest ago first.
-   What has been asked is remembered across rounds, games and lessons (in this browser), so a second
-   match on the same topic starts with questions the class has not seen. */
-const RECENT_KEY = 'hh.recent', RECENT_MAX = 1500, MATCH_NEEDS = 48;
-const qKey = q => q.id || (q.subject + '|' + q.q);
-const recentScope = () => `${bank.subject()}|${bank.board()}|${bank.course ? bank.course() : ''}`;
-function recentLoad() { const all = CGB.store.getJSON(RECENT_KEY, {}), m = all && all[recentScope()]; return m && typeof m === 'object' && m.q ? m : { seq: 0, q: {} }; }
-function markAsked(q) {
-  if (!q) return;
-  const all = CGB.store.getJSON(RECENT_KEY, {}) || {}, m = all[recentScope()] && all[recentScope()].q ? all[recentScope()] : { seq: 0, q: {} };
-  m.q[qKey(q)] = ++m.seq;
-  const keys = Object.keys(m.q);
-  if (keys.length > RECENT_MAX) keys.sort((a, b) => m.q[a] - m.q[b]).slice(0, keys.length - RECENT_MAX).forEach(k => delete m.q[k]);
-  all[recentScope()] = m; CGB.store.setJSON(RECENT_KEY, all);
-}
+   What has been asked is remembered across rounds, games and lessons, and across all four games (bank.js asked()),
+   so a second match on the same topic starts with questions the class has not seen. */
+const MATCH_NEEDS = 48;
+const qKey = q => bank.qKey(q);
 /* the questions of the other topics, used only when the chosen ones are too few */
 function widenedPool(set) {
   if (!set.builtin) return [];
@@ -74,13 +64,17 @@ function buildDeck() {
   const set = bank.active();
   const main = set.questions.filter(q => firstLetter(q));
   const extra = main.length < MATCH_NEEDS ? widenedPool(set) : [];
-  const recent = recentLoad().q;
+  const recent = bank.asked();
   // topics either half got wrong before come up a little more often
-  const weak = new Set(S.teams.flatMap(t => bank.wrongLog(t.name).map(e => e.topic)));
+  const names = S.teams.map(t => t.name);
+  const weak = new Set(names.flatMap(n => bank.wrongLog(n).map(e => e.topic)));
   const shuffle = list => list.map(q => [CGB.random() - (weak.has(q.topic) ? 0.3 : 0), q]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
-  const fresh = q => !recent[qKey(q)];
-  const asked = main.concat(extra).filter(q => !fresh(q)).sort((a, b) => recent[qKey(a)] - recent[qKey(b)]);
-  deck = shuffle(main.filter(fresh)).concat(shuffle(extra.filter(fresh)), asked);
+  const retry = bank.retryTest(names), fresh = q => !recent[qKey(q)];
+  // questions a half got wrong last time and questions nobody has asked yet, taking turns; then everything already asked, the longest ago first
+  const back = shuffle(main.filter(retry)), news = shuffle(main.filter(q => fresh(q) && !retry(q))), mixed = [];
+  while (back.length || news.length) { if (back.length) mixed.push(back.shift()); if (news.length) mixed.push(news.shift()); }
+  const asked = main.concat(extra).filter(q => !fresh(q) && !retry(q)).sort((a, b) => recent[qKey(a)] - recent[qKey(b)]);
+  deck = mixed.concat(shuffle(extra.filter(q => fresh(q) && !retry(q))), asked);
   return main.length;
 }
 function drawQuestion(avoid) {
@@ -228,7 +222,7 @@ function openHex(c, r) {
   showQuestion();
 }
 function showQuestion() {
-  if (S.open) markAsked(S.open.q);
+  if (S.open) bank.markAsked(S.open.q);
   const cell = S.open;
   $('qLetter').textContent = cell.letter;
   $('qClue').textContent = CGB.hexLetter.spoken(cell.q.a, cell.q.subject) ? `The answer, said in words, begins with ${cell.letter}` : `The answer begins with ${cell.letter}`;

@@ -63,7 +63,7 @@ test('Hex Hunt: a second match on the same topic mostly asks questions the class
   test.setTimeout(480000);
   await openBundle(page, '#hex-hunt');
   await page.evaluate(() => { CGB.bank.setSubject('biology'); CGB.bank.setBoard('aqa'); CGB.bank.setCourse('separate'); CGB.bank.setSelection({ ids: ['aqa-biology-8461-4.1'] }); });
-  const asked = () => page.evaluate(() => { const m = (CGB.store.getJSON('hh.recent', {}) || {})['biology|aqa|separate']; return m ? m.q : {}; });
+  const asked = () => page.evaluate(() => CGB.bank.asked());   // the record every game shares
   async function match() {
     await page.click('#hh-startBtn');
     const s = await playHexHunt(page, { picks: ['1'] });
