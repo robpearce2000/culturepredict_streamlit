@@ -25,7 +25,7 @@
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .card { background: var(--paper); border: 2px solid var(--line); border-radius: 12px; padding: 8px 11px; }
   .card h3 { margin-top: 0; }
-  img.shot { width: 100%; height: 108px; object-fit: cover; object-position: top left; border: 2px solid var(--ink); border-radius: 8px; display: block; margin: 3px 0 5px; }
+  img.shot { width: 100%; height: 84px; object-fit: cover; object-position: top left; border: 2px solid var(--ink); border-radius: 8px; display: block; margin: 3px 0 5px; }
   table { width: 100%; border-collapse: collapse; font-size: 8.6pt; break-inside: avoid; margin-bottom: 6px; }
   th, td { text-align: left; padding: 2px 5px; border-bottom: 1px solid var(--line); vertical-align: top; }
   th { background: var(--raised); font-weight: 900; }
@@ -44,71 +44,48 @@
   <div class="hero">
     <div>
       <div id="wm"></div>
-      <div class="sub">Teacher guide · version 1.6.0</div>
-      <p>Four revision games for the front of the classroom, inspired by classic TV quiz formats. They share one question bank and run from a single file, with no internet connection, logins or installs.</p>
+      <div class="sub">Teacher guide · version 1.8.0</div>
+      <p>Four whole-class revision games, inspired by classic TV quiz formats. One file, no internet, no logins, no installs.</p>
     </div>
     <img id="mascot" src="mascot.png" alt="" style="width:100%">
   </div>
 
-  <h2>What's in Showtime</h2>
+  <h2>The games</h2>
   <div class="two">
-    <div class="card"><h3>Over the Edge · 2 to 6 teams</h3><p>Every team that answers right wins a counter to drop down a lane onto a moving shelf. Counters pushed over the front edge win £100. In the final, the whole class plays together to push the gold jackpot counter over the edge for £5,000.</p></div>
-    <div class="card"><h3>Outpace · 2 to 6 teams, one runner</h3><p>The whole class is one runner. Vote for a deal, then answer your way home before the Hunter catches you. One Deal Round, then a 90-second Final Sprint against a target set by the deal.</p></div>
-    <div class="card"><h3>Category Clash · 2 to 6 teams</h3><p>A board of four categories and points values from 100 to 300. Teams take turns to choose and every team answers; harder questions are worth more, and one hidden ★ tile is worth double.</p></div>
-    <div class="card"><h3>Hex Hunt · two halves of the class</h3><p>A board of lettered hexagons. Each letter is the first letter of the answer. Win a hexagon to claim it and pick the next; link your two edges to take the round. Best of three rounds (one round with Maths).</p></div>
+    <div class="card"><h3>Over the Edge</h3><p>Each correct team drops a counter down a lane; whatever it pushes over the edge is theirs. In the final the whole class plays for the £5,000 jackpot.</p></div>
+    <div class="card"><h3>Outpace</h3><p>The class is one runner. Pick a deal, answer your way home before the Hunter catches you, then beat the 90-second Final Sprint.</p></div>
+    <div class="card"><h3>Category Clash</h3><p>Teams take turns to pick a category and points value; everyone answers. Harder questions are worth more, and one hidden ★ tile is worth double.</p></div>
+    <div class="card"><h3>Hex Hunt</h3><p>Two halves of the class race to link their edges across a board of lettered hexagons. Each letter is the first letter of the answer (for a number, of the number said in words: 1236 is "one thousand", so O).</p></div>
   </div>
-  <ul>
-    <li><strong>Everyone answers every question</strong> on mini whiteboards (or paper). No pupil devices are needed. Two teams work just as well for a pair or a tutoring session.</li>
-    <li><strong>One shared question bank.</strong> Choose your subject and question set once on the menu and every game uses it. Add your own sets by pasting plain text.</li>
-    <li><strong>Built-in packs, one per specification topic.</strong> AQA- and Edexcel-style GCSE sciences, Maths, History and Geography: every topic and option (7,800+ questions), each tied to a specification point, and Combined Science (not AQA Synergy 8465). Not endorsed by AQA or Pearson.</li>
-    <li><strong>Weak topics come round again.</strong> Wrong answers are saved against each team's name, and questions from topics a team got wrong before come up a little more often in every game.</li>
-    <li><strong>A friendly host.</strong> A cartoon host presents Over the Edge, greets you on the menu and adds short captions in the other games. The host has no name until you give one: use <strong>Customise the host</strong> on the menu to choose <strong>Male</strong> or <strong>Female</strong>, name the host (your own name works well) and restyle. Clear the name to remove it.</li>
-  </ul>
+  <p class="small" style="margin-top:6px">Teams answer on mini whiteboards: no pupil devices needed. Topics a team gets wrong come round more often.</p>
 
   <h2>Getting started</h2>
   <ol>
-    <li>Save <strong>showtime-classroom-gameshows.html</strong> somewhere on your computer, such as your Documents folder or a memory stick. Keep the same copy each lesson, because your question sets are saved for that browser.</li>
-    <li>Double-click it. It opens in your web browser (Chrome, Edge, Firefox or Safari). No internet connection is needed. Press <strong>Full screen</strong> (or <kbd>F</kbd>) to fill the board; press <kbd>F</kbd> again to leave it.</li>
-    <li><strong>Choose your subject</strong> from the dropdown on the left of the menu, and your exam board. Sciences: also choose the <strong>Course</strong>, <strong>Separate science</strong> or <strong>Combined Science</strong> (AQA Trilogy 8464, Edexcel 1SC0: only Combined Science content). Open <strong>Questions</strong>, tick your topic(s) or <strong>Mixed: all topics</strong>. For a Foundation class untick <strong>Include Higher tier only questions</strong> (it follows the chosen course; not shown for History and Geography). Showtime remembers it all.</li>
-    <li>Choose a game. Its setup card asks only for the <strong>number of teams</strong>. <strong>Edit team names</strong> opens the names (they carry over to every game); the card also shows the questions in use, with <strong>Change</strong> to go back to the menu. Press the big <strong>Start</strong> button on the card (or <kbd>Enter</kbd>) and the game begins at once, so explain the rules and hand out whiteboards first. The only part that waits for you is Outpace's <strong>Final Sprint</strong>, the one timed part: its clock does not start until you press <strong>Start the Final Sprint</strong> (<kbd>Enter</kbd>).</li>
+    <li>Save <strong>showtime-classroom-gameshows.html</strong> on your computer and keep using that copy and browser (your own sets are saved there).</li>
+    <li>Double-click it. Choose your <strong>subject</strong>, <strong>exam board</strong> and, for sciences, <strong>Separate</strong> or <strong>Combined Science</strong>. Under <strong>Questions</strong> tick your topics, or leave <strong>Mixed</strong>. Untick <strong>Higher tier only</strong> for a Foundation class.</li>
+    <li>Pick a game, choose the number of teams (2 to 6) and press <strong>Start</strong>. The game starts at once, so hand out whiteboards first.</li>
   </ol>
-  </section>
+
+  <h2>Every question</h2>
+  <ol>
+    <li>The question stays up while teams write an answer. There is no countdown.</li>
+    <li>Press <kbd>Space</kbd> for "3, 2, 1, show me!".</li>
+    <li>Mark each team: tap its panel (or press its number) to toggle ✓/✗. <kbd>C</kbd> marks all correct. Confirm with <kbd>Space</kbd>.</li>
+    <li>The answer appears and the game moves on. <kbd>U</kbd> undoes a slip.</li>
+  </ol>
+  <div class="note"><strong>Team rule:</strong> a team is correct only if its whiteboards agree on a correct answer, or if you judge it correct. You are the judge, so accept good alternatives.</div>
+  <p>Each game takes about 10 minutes (Maths longer). <kbd>P</kbd> pauses, <kbd>F</kbd> is full screen. <strong>End game</strong> goes straight to the results. Every game ends with <strong>Reteach these</strong>: the questions most teams got wrong, with answers and topics, to plan your next starter. Nothing is recorded about individual students.</p>
+
+  <h2>Game notes</h2>
+  <ul>
+        <li><strong>Outpace:</strong> the class holds up 1, 2 or 3 fingers for <strong>Cautious</strong>, <strong>Standard</strong> or <strong>Bold</strong> and you press the majority. If more than half the teams are correct the runner steps forward; otherwise the Hunter gains. The Final Sprint clock starts only when you press Start.</li>
+    <li><strong>Category Clash:</strong> the choosing team wins full points, other correct teams half, and wrong answers lose nothing.</li>
+    <li><strong>Hex Hunt:</strong> after "show me", press the half with more right answers (<kbd>1</kbd> or <kbd>2</kbd>, or <kbd>N</kbd> for neither). It wins the hexagon and picks next. Split the class into two evenly matched halves.</li>
+  </ul>
+</section>
 
 <!-- PAGE 2 -->
 <section class="page" style="break-before: page">
-  <h2>Running it with a class</h2>
-  <p>Split about 30 students into 2 to 6 teams with mini whiteboards. Every game works the same way:</p>
-  <div class="two">
-    <div>
-      <h3>The loop for every question</h3>
-      <ol>
-        <li>The question appears and stays up. Everyone writes an answer on their whiteboard, for as long as they need. There is no countdown.</li>
-        <li>When every board is ready press <kbd>Space</kbd> for <strong>"3, 2, 1, show me!"</strong>, and boards go up.</li>
-        <li>Mark each team: tap its panel or press its number <kbd>1</kbd>–<kbd>6</kbd> to toggle ✓/✗, or <kbd>C</kbd> for all correct, <kbd>W</kbd> for all wrong. <kbd>Space</kbd> or <kbd>Enter</kbd> confirms. Six teams take a few seconds.</li>
-        <li>The answer appears for the whole class, and each correct team's panel shows what it earned. (To show the answer before you mark, press <kbd>A</kbd>.)</li>
-        <li>Made a slip? <kbd>U</kbd> undoes the marking until the next question starts (in Over the Edge, until the first counter drops).</li>
-      </ol>
-      <div class="note"><strong>Team rule</strong> (shown on the setup card): a team is correct only if its whiteboards agree on a correct answer, or if you judge it correct. It gets teams explaining answers to each other, which is the point.</div>
-      <p><strong>Captains rotate.</strong> When a team makes a choice (a lane, a tile, a hexagon), the screen names the team and says <em>Captain: swap to the next person</em>, so everyone gets a turn at the exciting part.</p>
-      <p><strong>10 minutes at most each</strong>, with time for teams to think, talk and write. Over the Edge: 6 questions then a 4-question final. Outpace: one Deal Round and the Final Sprint. Category Clash: 4 categories of 3 questions. Hex Hunt: one round on a 4 × 4 board. Each is tuned to be close, and the class wins the jackpot or the sprint about half the time. Short of time? <strong>End game</strong> in the top bar (tap twice), or <strong>◀ Menu</strong> then <strong>End game and show results</strong>, goes straight to the results with the scores as they stand. Interrupted? Press <kbd>P</kbd> or <strong>Pause</strong>: everything stops (the sprint clock, the 3D machine) until you carry on; any prompt or dialog pauses the game too.</p>
-      <p><strong>Maths takes longer</strong>, because teams need working time: the question waits for you, so press <kbd>Space</kbd> only when every board is ready. Hex Hunt with Maths is a single round, and the Outpace Final Sprint is 5 minutes.</p>
-      <h3>Reteach these</h3>
-      <p>Every game ends with the questions most teams got wrong, with the answers and topics, so you know what to go over next lesson. It never records anything about individual students.</p>
-    </div>
-    <div>
-      <h3>Over the Edge</h3>
-      <p>Every correct team wins a counter. The correct teams <strong>take turns to drop</strong>, in a random order shown on screen. Each captain picks a lane (<kbd>1</kbd>–<kbd>4</kbd>, tap the machine, or <kbd>R</kbd> for random lanes for the rest); the counter drops, the shelf finishes its push, and <strong>whatever comes over the edge during that team's drop is theirs</strong> (its £100 label flashes in that team's colour). Then the next team drops. Six teams take about eight seconds. Watch for <strong>★ wildcard counters</strong>: a bonus drop, £250, or a steal from the leading team. In the final the whole class plays together for the jackpot, two counters per correct team; a team with no more than half the leader's money drops a catch-up counter as the final starts.</p>
-      <h3>Outpace</h3>
-      <p>The class votes on the deal by holding up 1, 2 or 3 fingers and you press the majority: <strong>Cautious</strong> (300 points, Hunter 5 steps back), <strong>Standard</strong> (600, 3 back) or <strong>Bold</strong> (1,000, 1 back). If <strong>more than half the teams</strong> are correct the runner steps forward (with 2 teams, both must be right); otherwise the Hunter gains ("4 of 6 teams correct"). Reach home to bank the deal; if caught, bank half. The <strong>Final Sprint</strong> starts on a card that explains it. It lasts 90 seconds (longer with Maths); every correct team is one step towards the target, and the class escapes as soon as it gets there. The question on screen always finishes, even if the clock runs out, and counts; under 10 seconds it shows <strong>Final question!</strong> and no new question starts. Targets are set so an average class wins about half the time. The racers change with the subject (atoms for science, maths symbols, books, hourglasses, globes); the class is always the gold one and the Hunter the magenta one. The status line under the deal says how far ahead of the Hunter the class is and how far it is to home; in the sprint, the timer above the question turns red for the last ten seconds.</p>
-      <h3>Category Clash</h3>
-      <p>The columns are the topics you ticked on the menu (open <strong>Topics</strong> on the setup screen to choose up to four, or leave it to pick a different mix each game). With just one topic ticked, the columns are that topic's subtopics from the specification, so a one-topic lesson still has a full board. The rows follow difficulty: 100 is recall, 200 describe and apply, 300 explain and extend. The choosing team picks a tile; every team answers. The choosing team wins full points if correct, every other correct team wins half, and wrong answers lose nothing. The ★ tile doubles everything. Each team chooses once per round; a team at least 300 points behind gets the first pick of the next round.</p>
-      <h3>Hex Hunt</h3>
-      <p>Each half can be several table groups. Team 1 links left to right, Team 2 top to bottom. After "show me", compare the whiteboards and press the half that had more right answers (<kbd>1</kbd> or <kbd>2</kbd>, or tap its big button). It wins the hexagon and picks next. If it's level, press the half that chose the hexagon; if nobody got it, press <strong>Neither</strong> (<kbd>N</kbd>). <kbd>U</kbd> undoes it. A match is <strong>best of three rounds</strong> (the round score shows above the board; the half that lost a round picks first in the next), or a single round with Maths. If no hexagon is won for 12 questions in a row, the round ends and goes to the half with more hexagons (to neither if level). The edges carry each half's mark (● left and right, ■ top and bottom) as well as its colour. <strong>Tip:</strong> split the class into two evenly matched halves; the half with more right answers takes each hexagon, so even a small difference in strength makes a one-sided game. Each letter is the first letter of the answer (ignoring "the", "a" or "an"). A number answer takes the first letter of the number said in words (1236 is "one thousand…", so O); in History and Geography, and for explanations, lists and answers with more than one number, the question stays off the board. The gold outline is the keyboard cursor: it appears when you use the arrow keys.</p>
-    </div>
-  </div>
-</section>
-
-<section class="page">
   <h2>In play</h2>
   <div class="two">
     <div><img class="shot" src="../dist/listing/over-the-edge.png" alt="Over the Edge with six teams"></div>
@@ -117,111 +94,41 @@
     <div><img class="shot" src="../dist/listing/hex-hunt.png" alt="Hex Hunt with two halves of the class"></div>
   </div>
 
-  <h2>Keyboard shortcuts</h2>
-  <p>Everything also works by mouse or touch. Keys are shown on the buttons. <kbd>Enter</kbd> starts or replays from the setup and results screens (results ignore keys for their first 2 seconds, so a stray press can't start a new game), and <kbd>Esc</kbd> returns to the menu (you are asked first mid-game, and the game pauses while you decide). In full screen the first <kbd>Esc</kbd> only leaves full screen; press it again for the menu.</p>
-  <div class="two">
-    <table>
-      <tr><th colspan="2">Every game</th></tr>
-      <tr><td><kbd>Space</kbd></td><td>"3, 2, 1, show me!" (again, after a moment, to skip the 3, 2, 1)</td></tr>
-      <tr><td><kbd>T</kbd> / <kbd>A</kbd></td><td>10 more seconds / show the answer before marking</td></tr>
-      <tr><td><kbd>P</kbd></td><td>Pause or carry on</td></tr>
-      <tr><td><kbd>1</kbd>–<kbd>6</kbd></td><td>Mark that team ✓ or ✗</td></tr>
-      <tr><td><kbd>C</kbd> / <kbd>W</kbd></td><td>Every team correct / every team wrong</td></tr>
-      <tr><td><kbd>Space</kbd> / <kbd>Enter</kbd></td><td>Confirm the marking (Enter also carries on afterwards)</td></tr>
-      <tr><td><kbd>U</kbd></td><td>Undo the marking</td></tr>
-      <tr><td><kbd>Enter</kbd> / <kbd>Space</kbd></td><td>Start the Final Sprint; skip a big moment (a catch, an escape, the ★ tile, a winning chain)</td></tr>
-      <tr><td><kbd>F</kbd></td><td>Full screen on or off (<kbd>Esc</kbd> twice leaves the game)</td></tr>
-    </table>
-    <table>
-      <tr><th colspan="2">Each game</th></tr>
-      <tr><td><kbd>1</kbd>–<kbd>4</kbd> / <kbd>R</kbd></td><td>Over the Edge: that lane / random lanes for the rest</td></tr>
-      <tr><td><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></td><td>Outpace: Cautious, Standard or Bold deal</td></tr>
-      <tr><td><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> <kbd>Enter</kbd></td><td>Category Clash and Hex Hunt: move around the board and pick</td></tr>
-      <tr><td><kbd>1</kbd> / <kbd>2</kbd> / <kbd>N</kbd></td><td>Hex Hunt: the half with more right answers, or Neither</td></tr>
-    </table>
-  </div>
-
-  <h2>Classroom tips</h2>
-  <ul>
-    <li><strong>Seat teams together</strong> with one whiteboard per pupil, or one per pair. Five or six in a team works well.</li>
-    <li><strong>Use "Any two" answers generously.</strong> Many answers list several acceptable points. You are the judge, so accept good alternatives.</li>
-    <li><strong>Need more thinking time?</strong> The question stays up until you press <kbd>Space</kbd>: "show me" only comes when you say.</li>
-    <li><strong>Revisit weak topics.</strong> Use <strong>Reteach these</strong> on the results screen to plan a starter for next lesson.</li>
-  </ul>
-</section>
-
-<!-- PAGE 3 -->
-<section class="page">
   <h2>Adding your own questions</h2>
-  <p>Open <strong>Question bank</strong> on the menu. Type a name for the set, check its <strong>Subject</strong> (it starts as the subject chosen on the menu), paste your questions in this format, and press <strong>Save as new set</strong>:</p>
+  <p>Open <strong>Question bank</strong>, name the set, paste your questions in this format and press <strong>Save as new set</strong>:</p>
   <pre>Subject: Chemistry
 Topic: Bonding
 Q: What type of bonding is in sodium chloride?
 A: Ionic
-Q: Why can metals conduct electricity?
-A: They have delocalised electrons that can move through the structure
-
-Topic: Rates of reaction
+Accept: Ionic bonding
 Q: Give two ways to increase the rate of a reaction.
-A: Any two: increase temperature, increase concentration, increase surface area, add a catalyst</pre>
+A: Any two: increase temperature, concentration or surface area, add a catalyst
+Note: Not "heat it up" on its own</pre>
   <ul>
-    <li>The <strong>Subject</strong> and <strong>Topic</strong> lines apply to every question below them until the next one. Topics drive the weak-topic tracking, so keep topic names consistent between sets.</li>
-    <li>Every <strong>Q:</strong> line needs an <strong>A:</strong> line straight after it. Blank lines are ignored. Question sets from earlier versions of these games use the same format and paste straight in.</li>
-    <li>Optional, after an <strong>A:</strong> line: <strong>Accept:</strong> other answers to accept, separated by <strong>;</strong>, and <strong>Note:</strong> a note for you (a common mistake, say). Both appear with the answer in every game.</li>
-    <li>Optional: a line such as <strong>Difficulty: 2</strong> applies to the questions below it. Tag a question by the most demanding thing it asks: <strong>1, Recall</strong> (one fact, name or term: Name, State, Which…?); <strong>2, Describe and apply</strong> (a definition, a process or test and its result, an equation to recall, several facts, or a one-step use of a rule); <strong>3, Explain and extend</strong> (a reason, a comparison, a calculation where the equation isn't given, or a new context). Category Clash puts difficulty 1 on the 100 row, 2 on the 200 row and 3 on the 300 row, borrowing the nearest if a topic runs short. Without the line, it reads a difficulty from the question's wording. A <strong>Tier: Higher</strong> line marks Higher-tier-only questions (left out when you untick them on the menu). Sets from earlier versions still work: their <strong>Tier: 1</strong>–<strong>3</strong> lines are read as difficulty.</li>
-    <li>A new set is ticked for every game straight away. Change what is ticked from <strong>Questions</strong> on the menu, or with the tick boxes in the Question bank, which also shows each built-in pack's specification code and version.</li>
-    <li>The Question bank lists the sets for the chosen subject. Move one of your sets to another subject with its <strong>Subject</strong> list. Sets made before version 1.1 have no subject, so they show under every subject until you give them one; sets you filed under Combined Science or English before version 1.1 show under <strong>Other</strong>.</li>
-    <li><strong>Rename</strong>, <strong>Edit questions</strong> or <strong>Delete</strong> your own sets from the list. Deleting asks you to tap twice.</li>
-    <li>The built-in packs cannot be changed, but <strong>Copy to edit</strong> makes your own copy that you can trim or add to.</li>
-  </ul>
-  <img class="shot" src="../dist/listing/question-bank.png" alt="The question bank" style="width:60%;height:170px;margin:4px auto">
+    <li><strong>Subject</strong> and <strong>Topic</strong> lines apply to every question below them. Keep topic names consistent: they drive the weak-topic tracking.</li>
+    <li>Optional: <strong>Accept:</strong> (other answers, separated by <strong>;</strong>), <strong>Note:</strong> (for you), <strong>Difficulty: 1–3</strong> (recall, describe and apply, explain and extend: Category Clash uses it for its rows) and <strong>Tier: Higher</strong>.</li>
+    <li>Built-in packs cannot be changed, but <strong>Copy to edit</strong> makes your own copy.</li>
+    <li><strong>Save backup file</strong> keeps your sets and team history (saved by team name) in one file; <strong>Load backup file</strong> adds them on another computer without deleting anything.</li>
+      </ul>
 
-  <h3>Moving to another computer: backups</h3>
-  <p>Press <strong>Save backup file</strong> to download one file containing all your own sets and every team's wrong-answer history. On the other computer, open Showtime, choose <strong>Question bank → Load backup file</strong> and pick that file. Loading a backup only adds; it never deletes anything already there, and loading the same file twice adds nothing new.</p>
+  <h2>Settings</h2>
+  <p><strong>Large</strong> text suits the back of the room. <strong>Reduced motion</strong> turns off camera moves, shake, confetti and flashes. <strong>Graphics: Low</strong> suits older PCs. <strong>Music</strong> plays on the main screen only.</p>
 
-  <h3>Teams' wrong answers</h3>
-  <p>History is saved by team name, so use the same spelling each time (capital letters do not matter). The question bank lists every saved team; <strong>Clear</strong> removes one team's history.</p>
-
-  <h2>Settings and accessibility</h2>
-  <table>
-    <tr><th>Setting</th><th>What it does</th></tr>
-    <tr><td>Sound, Music</td><td>Sound effects are made by the browser. A short tune plays on the main screen only; Music Off keeps the effects, Sound Off silences both.</td></tr>
-    <tr><td>Text size</td><td><strong>Large</strong> makes every panel, question and button bigger for the back of the room.</td></tr>
-    <tr><td>Reduced motion</td><td>Stops camera moves, sway, screen shake, slow motion, confetti, tile flips and spins and the flash when the Hunter catches someone; the big moments become simple changes, and the host's words show at once. It starts switched on if your computer asks for reduced motion.</td></tr>
-    <tr><td>Graphics</td><td><strong>Low</strong> turns off shadows, glow, light beams and the heavier effects and draws at standard resolution, for older PCs. Outpace also steps its own quality down if a computer can't keep up.</td></tr>
-  </table>
-  <p>Colours meet the WCAG AA contrast guidelines. Nothing relies on colour alone: teams are also marked ● ■ ▲ ◆ ⬢ ✚ (Team 1 is always blue ●, Team 2 orange ■, Team 3 purple ▲, Team 4 teal ◆, Team 5 pink ⬢, Team 6 green ✚), wildcard counters carry a ★, the Hunter and the runner are labelled, and buttons show ✓ and ✗ as well as green and red.</p>
-</section>
-
-<!-- PAGE 4 -->
-<section class="page">
-  <h2>Privacy and data protection</h2>
+  <h2>Privacy</h2>
   <div class="note">
-    <p><strong>No data leaves the computer.</strong> Showtime makes no network connections at all: no analytics, no tracking, no accounts and no adverts. It even includes a browser security rule that blocks connections.</p>
-    <p>Question sets, team names, wrong-answer history, the host's look and your settings are saved only in the web browser on the computer you are using (in its local storage). They are not sent to us or anyone else.</p>
-    <p>For UK GDPR, this means the school stays in control: data stays on the school's device, you can delete a team's history at any time from the question bank, and a backup file is only created when you choose to save one. If you use pupils' names, treat backup files like any other file containing pupil data. You can also use first names, initials or team names instead.</p>
+    <p><strong>No data leaves the computer.</strong> Showtime makes no network connections: no analytics, tracking, accounts or adverts. Question sets, team names, history and settings stay in this browser only, and the school stays in control under UK GDPR. If you use pupils' names, treat backup files like any file containing pupil data, or use team names or initials.</p>
   </div>
 
   <h2>Troubleshooting</h2>
   <table>
-    <tr><th style="width:36%">Problem</th><th>What to try</th></tr>
-    <tr><td>The file opens as text, or in a preview pane</td><td>Download or copy it to your computer first, then double-click it. Previews in email, Teams or OneDrive cannot run it.</td></tr>
-    <tr><td>"3D graphics are switched off"</td><td>Try another browser (Chrome, Edge, Firefox or Safari). If it still appears, ask IT to turn on hardware acceleration in the browser settings.</td></tr>
-    <tr><td>The game is jerky or slow</td><td>Set <strong>Graphics</strong> to <strong>Low</strong>. Close other tabs and video calls.</td></tr>
-    <tr><td>No sound</td><td>Check <strong>Sound</strong> is on, the board's speakers are on, and the volume is up. Browsers only play sound after the first click or key press.</td></tr>
-    <tr><td>My question sets have gone</td><td>Sets are saved in one browser on one computer. Open the same file in the same browser you used before. Private or guest windows forget everything when closed, and some school setups clear browser data at log-off: keep a backup file and load it when needed.</td></tr>
-    <tr><td>"This browser is blocking storage" message</td><td>The games still work, but nothing is kept after you close the page. Use a normal (not private) window, or keep a backup file.</td></tr>
-    <tr><td>"No Q: and A: pairs found"</td><td>Check each question line starts with <strong>Q:</strong> and is followed by a line starting with <strong>A:</strong>.</td></tr>
-    <tr><td>Text is hard to read from the back</td><td>Turn on <strong>Large</strong> text size and use <strong>Full screen</strong> (<kbd>F</kbd>).</td></tr>
-    <tr><td>I pressed a key and nothing happened</td><td>Click once on the game area first, so the browser knows the keys are for the game. Keys are ignored while you type in a box.</td></tr>
+    <tr><th style="width:36%">Problem</th><th>Try</th></tr>
+    <tr><td>The file opens as text or in a preview</td><td>Copy it to your computer, then double-click it. Email, Teams and OneDrive previews cannot run it.</td></tr>
+    <tr><td>"3D graphics are switched off", or it is jerky</td><td>Set <strong>Graphics</strong> to <strong>Low</strong>, close other tabs, or try another browser. Ask IT to turn on hardware acceleration.</td></tr>
+    <tr><td>My question sets have gone</td><td>Sets live in one browser on one computer. Private windows and some school log-offs clear them: keep a backup file.</td></tr>
+    <tr><td>Keys do nothing</td><td>Click the game area once first. Keys are ignored while you type in a box.</td></tr>
   </table>
 
-  <h2>Which edition do I have?</h2>
-  <p>Its name is under the Showtime sign and in <strong>About</strong>. All editions have the four games, the Question bank and your own sets; only the built-in packs differ: one subject (Biology, Chemistry, Physics, Maths, History or Geography), the <strong>Science mega pack</strong>, the <strong>Mega bundle</strong> (every subject) or the <strong>Free taster</strong> (one topic per subject). Editions share your own sets and history.</p>
-
-  <h2>About</h2>
-  <p>Showtime: Classroom Gameshows, version 1.6.0. Game design and question packs by Rob Pearce. The games are original works inspired by classic TV quiz formats and are not connected with any television programme or broadcaster. AQA is a registered trade mark of AQA Education and Edexcel of Pearson Education; the built-in packs are AQA-style and Edexcel-style practice questions written for Showtime and are not endorsed by AQA or Pearson. Built with three.js (MIT); fonts Lilita One and Nunito (OFL 1.1): licences in About.</p>
-  
+  <p class="foot">Showtime: Classroom Gameshows, version 1.8.0. Every edition has the four games and your own sets; only the built-in packs differ (its name is in <strong>About</strong>). Game design and question packs by Rob Pearce. The games are original works inspired by classic TV quiz formats and are not connected with any television programme or broadcaster. AQA is a registered trade mark of AQA Education and Edexcel of Pearson Education; the built-in packs are AQA-style and Edexcel-style practice questions written for Showtime and are not endorsed by AQA or Pearson. Built with three.js (MIT); fonts Lilita One and Nunito (OFL 1.1): licences in About.</p>
 </section>
 
 <script src="../src/vendor/three.min.js"></script>

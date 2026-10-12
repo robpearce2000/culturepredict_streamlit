@@ -4,14 +4,14 @@ Built from the same source by `node build.js --editions` (tools/editions.js). Ev
 
 | Edition | File | Size | Subjects | Topic packs | Questions | Load time |
 |---|---|---|---|---|---|---|
-| Free taster | `showtime-free-taster.html` | 2.09 MB (zip 2.29 MB) | Biology, Chemistry, Physics, Maths, History, Geography | 13 | 842 | 246 ms |
-| Biology edition | `showtime-biology.html` | 2.11 MB (zip 2.31 MB) | Biology | 16 | 1,006 | 248 ms |
-| Chemistry edition | `showtime-chemistry.html` | 2.13 MB (zip 2.32 MB) | Chemistry | 19 | 1,424 | 264 ms |
-| Physics edition | `showtime-physics.html` | 2.15 MB (zip 2.33 MB) | Physics | 23 | 1,580 | 250 ms |
-| Maths edition | `showtime-maths.html` | 2.08 MB (zip 2.29 MB) | Maths | 12 | 868 | 232 ms |
-| History edition | `showtime-history.html` | 2.17 MB (zip 2.35 MB) | History | 33 | 1,698 | 258 ms |
-| Geography edition | `showtime-geography.html` | 2.15 MB (zip 2.33 MB) | Geography | 32 | 1,393 | 263 ms |
-| Science mega pack | `showtime-science.html` | 2.35 MB (zip 2.48 MB) | Biology, Chemistry, Physics | 58 | 4,010 | 239 ms |
-| Mega bundle | `showtime-mega-bundle.html` | 2.69 MB (zip 2.73 MB) | Biology, Chemistry, Physics, Maths, History, Geography | 135 | 7,969 | 249 ms |
+| Free taster | `showtime-free-taster.html` | 2.09 MB (zip 1.80 MB) | Biology, Chemistry, Physics, Maths, History, Geography | 13 | 842 | 397 ms |
+| Biology edition | `showtime-biology.html` | 2.11 MB (zip 1.82 MB) | Biology | 16 | 1,006 | 289 ms |
+| Chemistry edition | `showtime-chemistry.html` | 2.13 MB (zip 1.84 MB) | Chemistry | 19 | 1,424 | 262 ms |
+| Physics edition | `showtime-physics.html` | 2.15 MB (zip 1.85 MB) | Physics | 23 | 1,580 | 259 ms |
+| Maths edition | `showtime-maths.html` | 2.08 MB (zip 1.80 MB) | Maths | 12 | 868 | 230 ms |
+| History edition | `showtime-history.html` | 2.17 MB (zip 1.86 MB) | History | 33 | 1,698 | 265 ms |
+| Geography edition | `showtime-geography.html` | 2.15 MB (zip 1.85 MB) | Geography | 32 | 1,393 | 255 ms |
+| Science mega pack | `showtime-science.html` | 2.35 MB (zip 2.00 MB) | Biology, Chemistry, Physics | 58 | 4,010 | 298 ms |
+| Mega bundle | `showtime-mega-bundle.html` | 2.69 MB (zip 2.24 MB) | Biology, Chemistry, Physics, Maths, History, Geography | 135 | 7,969 | 302 ms |
 
 Topic packs and questions count each separate-science or other specification topic once; the Combined Science views of the science packs use the same questions. Load time: from opening the file to the launcher showing, in headless Chromium on the build machine (median of three); every edition is well under the 3-second target.
