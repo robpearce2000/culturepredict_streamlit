@@ -14,7 +14,7 @@ const LAYOUT = `
 #game-category-clash .cc-teams, #game-category-clash .host-foot, #game-category-clash .keys, #game-category-clash .cc-head,
 #game-hex-hunt .hh-teams, #game-hex-hunt .host-foot, #game-hex-hunt .keys, #game-hex-hunt .hh-head, #game-hex-hunt #hh-curHint { display: none !important; }
 #game-category-clash #cc-play { padding: 400px 40px 470px !important; box-sizing: border-box; height: 100vh; display: flex; flex-direction: column; }
-#game-category-clash #cc-board { flex: 1 1 auto; height: auto !important; min-height: 1000px; }
+#game-category-clash #cc-board { grid-template-rows: minmax(56px, auto) repeat(3, minmax(0, 1fr)) !important; }
 #game-hex-hunt #hh-play { padding-top: 380px !important; padding-bottom: 470px !important; }
 #game-hex-hunt #hh-board { scale: 1.16; }
 `;
