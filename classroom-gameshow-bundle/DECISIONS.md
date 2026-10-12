@@ -609,3 +609,16 @@ Rob asked for every flag to be settled by judgement, and for Hex Hunt letter fla
 - Takes replay exactly: Math.random and the game's random source are seeded, the page clock is Playwright's fake clock (paused, moved only by the script) and Over the Edge's physics steps once per frame through its test-only manual clock. Search and render share the same code path; renders log where counters fall so a replay can be checked against its search.
 - Music: the Showtime theme is the launcher loop Rob chose (draft B), so the reels and the app sound the same. Reel 3 has no music by design (brief), so its two files are identical.
 - Rendered on software 3D (about 2–3 s a frame at 1080×1920); the whole set takes about 2 hours with `build.sh`. Videos are plain git files (each under 9 MB), so Git LFS was not needed.
+
+## Demo videos for the Tes listing (marketing/video)
+- Recorded from the Science mega pack's test build (the shipped edition plus the test-only hooks the takes need: the manual physics clock and the sprint and final shortcuts); nothing else differs on screen. Game code is unchanged; the recorder hides only the top bar's buttons, as in full screen.
+- The 16:9 recorder reuses the reels' one (`tools/video/reels/reel.js`): seeded randomness, Playwright's paused clock moved 1/60 s per frame, the renderer trap for camera moves, and recorded sounds rebuilt offline. CSS animations and transitions run on the browser's own clock, so the recorder steps them by hand each frame as well (without this the ✓ marks and "3, 2, 1" appeared at full size in one frame).
+- The games no longer have an answer countdown (removed in the class-mode feedback round), so the "every student answers" shot shows the question and then "3, 2, 1, show me!".
+- Team names are Electrons, Neutrons, Protons, Photons, Ions and Atoms (the brief's "Team Electrons" style is cut off on Over the Edge's panels).
+- Category Clash: the ★ tile is placed when the board is made, so a first pass finds it and the take picks it first on a fresh board.
+- The board games and the launcher look best whole, so Category Clash and Hex Hunt are framed on the brand background with their logo above, rather than covered by a caption.
+- Native dropdown lists never appear in a screen capture, so the launcher shot uses an on-screen pointer and real select changes.
+- Music: the demo keeps its own 120 bpm score (`tools/video/music.py`, written for this edit's cues); the 15 s and 18 s cuts reuse its intro, hook and fanfare. Fixed: sections that were not whole bars ended early, leaving three short silences (36, 43 and 52 s).
+- Sound levels: a cascade starts a dozen oscillators on one frame, and normalising to that single peak left everything else very quiet. The effects are now levelled by their loud passages, the music by its average level, with a soft limiter. The same fix was applied to the reels, which were remixed (their pictures are unchanged).
+- No `assets/music/` track was supplied; if one is added, `edit.py main` also writes `showtime-demo-60s-1080p-own-music.mp4` to compare.
+- Videos are plain git files (the largest is 28.6 MB), so Git LFS was not needed.

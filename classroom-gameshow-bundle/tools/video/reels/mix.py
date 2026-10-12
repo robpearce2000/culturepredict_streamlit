@@ -83,13 +83,19 @@ def main():
     d = os.path.join(WORK, a.name)
     rec = json.load(open(os.path.join(d, 'sounds.json')))
     fps = rec['fps']; length = rec['frames'] / fps
-    sfx = render_sfx(rec, length, a.speed)[:int(length * SR)] * a.sfx_gain
-    mix = sfx.copy()
+    sfx = render_sfx(rec, length, a.speed)[:int(length * SR)]
+    # levels: a cascade starts a dozen oscillators on one frame, so the effects are set by their loud passages
+    # (not their single highest peak, which would turn everything else down) and a soft limiter keeps the sum
+    # under full scale. --sfx-gain is relative (1.6 = the usual level).
+    nz = np.abs(sfx) > 1e-4
+    loud = np.percentile(np.abs(sfx[nz]), 99.5) if nz.any() else 1.0
+    mix = sfx * (0.42 * a.sfx_gain / 1.6 / max(loud, 1e-6))
     if a.music:
         m = theme(length + a.music_offset)[int(a.music_offset * SR):][:len(mix)]
+        m = m * (0.14 / max(1e-6, np.sqrt((m ** 2).mean())))
         fade = int(0.15 * SR); m[:fade] *= np.linspace(0, 1, fade) if rec.get('fadeIn') else 1; m[-fade:] *= np.linspace(1, 0, fade) if rec.get('fadeOut', True) else 1
-        mix = mix + 0.55 * m
-    peak = max(1e-6, np.abs(mix).max()); mix = mix * min(1.0, 0.89 / peak)
+        mix = mix + m
+    mix = np.tanh(mix * 1.1) / np.tanh(1.1) * 0.8
     wav = os.path.join(d, 'mix.wav')
     pcm = (np.clip(mix, -1, 1) * 32767).astype('<i2')
     import wave as wv

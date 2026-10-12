@@ -4,5 +4,5 @@ playwright-report/
 screenshots/
 test-build/
 marketing/video/work/
-marketing/video/*.wav
 marketing/reels/work/
+__pycache__/

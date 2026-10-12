@@ -45,7 +45,7 @@ const CARDS = {
   'v-outpace': [1080, 1920, B => `<div class="logo" style="position:absolute;left:240px;top:290px;width:600px">${B.opLogo()}</div>`],
   'v-cc': [1080, 1920, B => `<div class="logo" style="position:absolute;left:260px;top:280px;width:560px">${B.ccLogo()}</div>`],
   'v-hh': [1080, 1920, B => `<div class="logo" style="position:absolute;left:260px;top:280px;width:560px">${B.hhLogo()}</div>`],
-  'v-free': [1080, 1920, B => `<div class="vig"></div><div class="logo" style="position:absolute;left:120px;top:420px;width:840px">${B.wordmark()}</div>
+  'v-free': [1080, 1920, B => `<div style="position:absolute;inset:0;background:rgba(14,16,44,0.72)"></div><div class="logo" style="position:absolute;left:120px;top:420px;width:840px">${B.wordmark()}</div>
     <div style="position:absolute;left:0;right:0;top:960px;text-align:center"><div class="box" style="position:relative;font-size:110px">Free on Tes</div><br>
     <span class="pill" style="font-size:46px;margin-top:34px">No logins · Works offline</span></div>`],
   // the end of each 15-second game clip

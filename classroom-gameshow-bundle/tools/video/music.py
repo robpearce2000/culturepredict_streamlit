@@ -34,6 +34,7 @@ def compose(length=None):
     BRASS, BASS, KEYS, LEAD, DR = track(0, 61, 'Brass'), track(1, 34, 'Bass'), track(2, 4, 'Keys'), track(3, 56, 'Trumpet'), track(9, 0, 'Drums')
     def note(tr, beat, dur, pitch, vel=96):
         tr['ev'].append((round(beat * TPB), 1, pitch, vel)); tr['ev'].append((round((beat + dur) * TPB), 0, pitch, 0))
+    note_ = note
     def flush(tr):
         last = 0
         for tick, on, pitch, vel in sorted(tr['ev'], key=lambda e: (e[0], e[1])):
@@ -43,7 +44,10 @@ def compose(length=None):
     def chord_at(bar): return CHORDS[bar % 4]
 
     def groove(b0, b1, bass=True, keys=True, drums='full', brass_hits=True):
-        for bar in range((b1 - b0) // 4):
+        # a section that is not a whole number of bars keeps playing to its last beat (the bar is cut short)
+        def note(tr, beat, dur, pitch, vel=96):
+            if beat < b1: note_(tr, beat, min(dur, b1 - beat), pitch, vel)
+        for bar in range(-(-(b1 - b0) // 4)):
             b = b0 + bar * 4; root, tri = chord_at((b - 6) // 4 if b >= 6 else bar)
             if bass:
                 for i, p in enumerate([0, 0, 12, 0, 0, 7, 12, 7]): note(BASS, b + i * 0.5, 0.42, root + p, 92 if i % 2 == 0 else 80)

@@ -49,8 +49,8 @@ MAIN = {
         ('outpace', ('escape', 0), S(30.0) - S(22.0) - 336, {}),   # HOME: the burst through the arch
         ('cc', ('pick', -36), S(3.6), {'layout': 'inset', 'punch': True}),     # Category Clash: the star tile
         ('cc', ('mark', -6), S(37.0) - S(30.0) - S(3.6), {'layout': 'inset'}),  # marked, the scores jump
-        ('hh', ('pick', 0), S(2.6), {'layout': 'inset', 'punch': True, 'zoom': (1.15, 1.15, 960, 520)}),       # Hex Hunt: a hexagon changes colour
-        ('hh', ('win', -66), S(44.0) - S(37.0) - S(2.6), {'layout': 'inset', 'zoom': (1.15, 1.15, 960, 520)}),  # the winning path lights up
+        ('hh', ('pick', 0), S(2.6), {'layout': 'inset', 'punch': True}),       # Hex Hunt: a hexagon changes colour
+        ('hh', ('win', -66), S(44.0) - S(37.0) - S(2.6), {'layout': 'inset'}),  # the winning path lights up
         ('launcher', ('subject', -20), S(6.0), {}),                # the launcher: subject, board, course, topics, play
         ('results', ('results', 30), S(5.0), {'zoom': (1.0, 1.08, 960, 650)}),  # the results: reteach these
         ('endcard', 0, S(5.0), {}),                                # the end card
@@ -81,11 +81,11 @@ REEL = {
     'segments': [
         ('R:reel-1-will-it-fall', ('fall', -90), S(3.0), {}),                    # the teeter, the cascade
         ('v-ote', ('mark', 0), S(3.4), {}),                                      # every team marked
-        ('R:reel-5-jackpot', ('fall', -40), S(2.6), {'punch': True}),             # Over the Edge: the jackpot
-        ('R:reel-4-hunter', ('escape', -40), S(2.2), {'punch': True}),            # Outpace: HOME
+        ('R:reel-5-jackpot', ('fall', -2), S(2.6), {'punch': True}),              # Over the Edge: the jackpot (after its own caption)
+        ('R:reel-4-hunter', ('escape', 24), S(2.2), {'punch': True}),             # Outpace: HOME (after its own caption)
         ('R:board-cc-star', 20, S(2.0), {'punch': True}),                         # Category Clash: the star tile
         ('R:board-hh-path', 20, S(2.0), {'punch': True}),                         # Hex Hunt: the winning path
-        ('R:reel-5-jackpot', ('fall', 90), S(18.0) - S(15.2), {}),                # Free on Tes, over the confetti
+        ('R:reel-4-hunter', ('escape', 60), S(18.0) - S(15.2), {}),              # Free on Tes, over the class at HOME
     ],
     'captions': [
         ('v-answers', 3.05, 6.35), ('v-ote', 6.45, 8.95), ('v-outpace', 9.05, 11.15), ('v-cc', 11.25, 13.15), ('v-hh', 13.25, 15.15), ('v-free', 15.2, 18.0),
@@ -113,8 +113,8 @@ CLIPS = {
         ('cc', ('board', 0), ('end', 0), {'layout': 'inset'}),
     ], [('cc', 0.1, 12.4)]),
     'clip-hex-hunt': clip('Hex Hunt', [
-        ('hh', ('pick', 0), ('lastpick', 0), {'layout': 'inset', 'zoom': (1.15, 1.15, 960, 520)}),
-        ('hh', ('lastpick', 0), ('end', 0), {'layout': 'inset', 'zoom': (1.15, 1.15, 960, 520)}),
+        ('hh', ('pick', 0), ('lastpick', 0), {'layout': 'inset'}),
+        ('hh', ('lastpick', 0), ('end', 0), {'layout': 'inset'}),
     ], [('hh', 0.1, 12.4)]),
 }
 
@@ -242,20 +242,25 @@ def sounds(frames):
 
 def audio(edit, frames, path, music=True):
     length = len(frames) / FPS
-    sfx = render_sfx({'t0': 0, 'sounds': sounds(frames)}, length)[:int(length * SR)] * 1.6
-    mix = sfx.copy()
+    sfx = render_sfx({'t0': 0, 'sounds': sounds(frames)}, length)[:int(length * SR)]
+    # levels: many game sounds can start on one frame (a cascade is a dozen oscillators at once), so the sound
+    # effects are set by their loud passages rather than their single highest peak, and a soft limiter keeps
+    # the sum under full scale
+    loud = np.percentile(np.abs(sfx[np.abs(sfx) > 1e-4]), 99.5) if np.any(np.abs(sfx) > 1e-4) else 1.0
+    mix = sfx * (0.42 / max(loud, 1e-6))
     if music and edit.get('music'):
         data = subprocess.run(['ffmpeg', '-v', 'error', '-i', edit['music'], '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'], capture_output=True, check=True).stdout
         m = np.frombuffer(data, dtype=np.float32).astype(np.float64)
         m = np.pad(m, (0, max(0, len(mix) - len(m))))[:len(mix)]
+        m = m * (0.14 / max(1e-6, np.sqrt((m ** 2).mean())))   # the theme at a steady level under the effects
         env = np.ones(len(mix))
         for a, b in edit.get('duck', []):                           # the music dips under the key sound effects
             ia, ib = int(a * SR), int(b * SR); r = int(0.15 * SR)
             env[ia:ib] = np.minimum(env[ia:ib], 0.55)
             env[max(0, ia - r):ia] = np.minimum(env[max(0, ia - r):ia], np.linspace(1, 0.55, ia - max(0, ia - r)))
             env[ib:ib + r] = np.minimum(env[ib:ib + r], np.linspace(0.55, 1, len(env[ib:ib + r])))
-        mix = mix + 0.6 * m * env
-    peak = max(1e-6, np.abs(mix).max()); mix = mix * min(1.0, 0.89 / peak)
+        mix = mix + m * env
+    mix = np.tanh(mix * 1.1) / np.tanh(1.1) * 0.8                  # soft limiter: peaks round off below full scale
     import wave
     with wave.open(path, 'wb') as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(mix, -1, 1) * 32767).astype('<i2').tobytes())
@@ -266,9 +271,13 @@ def build(key, edit, outs):
     want = int(round(edit['length'] * FPS))
     if len(frames) != want: print(f'{key}: {len(frames)} frames, expected {want}')
     d = os.path.join(WORK, 'edit-' + key); os.makedirs(d, exist_ok=True)
-    for f in os.listdir(d):
-        if f.endswith('.jpg'): os.remove(os.path.join(d, f))
-    jobs = [(k, fr, edit['captions'], edit['size'], os.path.join(d, '%05d.jpg' % k)) for k, fr in enumerate(frames)]
+    if os.environ.get('AUDIO_ONLY'):        # the pictures are already composed: only mix and encode again
+        jobs = []
+    else:
+        for f in os.listdir(d):
+            if f.endswith('.jpg'): os.remove(os.path.join(d, f))
+        jobs = None
+    if jobs is None: jobs = [(k, fr, edit['captions'], edit['size'], os.path.join(d, '%05d.jpg' % k)) for k, fr in enumerate(frames)]
     with ProcessPoolExecutor(max_workers=int(os.environ.get('JOBS', 3))) as ex:
         for _ in ex.map(compose, jobs, chunksize=24): pass
     for out, music, silent in outs:
@@ -291,6 +300,11 @@ if __name__ == '__main__':
     if what in ('main', 'all'):
         build('main', MAIN, [('showtime-demo-60s-1080p.mp4', True, False), ('showtime-demo-60s-1080p-silent.mp4', False, True)])
         srt(MAIN, os.path.join(OUT, 'captions.srt'))
+        # Rob's own royalty-free track, if he adds one to assets/music/: an extra version to compare
+        own = sorted(f for f in (os.listdir(os.path.join(ROOT, 'assets', 'music')) if os.path.isdir(os.path.join(ROOT, 'assets', 'music')) else []) if f.lower().endswith(('.mp3', '.wav', '.m4a', '.ogg', '.flac')))
+        if own:
+            os.environ['AUDIO_ONLY'] = '1'
+            build('main', dict(MAIN, music=os.path.join(ROOT, 'assets', 'music', own[0])), [('showtime-demo-60s-1080p-own-music.mp4', True, False)])
     if what in ('reel', 'all'):
         build('reel', REEL, [('showtime-reel-9x16.mp4', True, False)])
     if what in ('clips', 'all'):

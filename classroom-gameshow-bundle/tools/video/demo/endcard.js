@@ -15,8 +15,8 @@ const cue = (shot, k, off) => { const r = JSON.parse(fs.readFileSync(path.join(W
 const frame = (shot, n) => path.join(W, shot, String(n).padStart(5, '0') + '.jpg');
 const STILLS = () => [
   ['Over the Edge', frame('jackpot', cue('jackpot', 'fall', -30))],
-  ['Outpace', frame('outpace', cue('outpace', 'escape', 30))],
-  ['Category Clash', frame('cc', cue('cc', 'pick', 110))],
+  ['Outpace', frame('outpace', cue('outpace', 'move1', 60))],
+  ['Category Clash', frame('cc', cue('cc', 'pick', -10))],
   ['Hex Hunt', frame('hh', cue('hh', 'win', 120))]
 ];
 const data = f => 'data:image/jpeg;base64,' + fs.readFileSync(f).toString('base64');
@@ -85,7 +85,7 @@ const CSS = `
       <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(14,16,44,0.9) 0%, rgba(14,16,44,0.65) 45%, rgba(14,16,44,0) 70%)"></div>
       <div style="position:absolute;left:44px;top:40px;width:760px;font-family:var(--display,'Lilita One'),sans-serif;color:#fff;font-size:150px;line-height:0.92;text-shadow:0 8px 0 rgba(0,0,0,0.5);-webkit-text-stroke:6px #1B1F3B;paint-order:stroke fill">4 GAME<br><span style="color:#FFC93C">SHOWS</span></div>
       <div style="position:absolute;left:52px;top:388px"><span class="box" style="font-size:84px;padding:10px 36px 16px">GCSE Science</span></div>
-      <div style="position:absolute;left:52px;top:560px;width:520px"><div class="wm" style="position:static;width:420px">${CGB.brand.wordmark()}</div></div>
+      <div style="position:absolute;left:52px;top:536px;width:520px"><div class="wm" style="position:static;width:330px">${CGB.brand.wordmark()}</div></div>
       <div id="pip2" style="position:absolute;left:930px;top:150px;width:330px;height:600px"></div>`;
     document.body.appendChild(e);
     const h = CGB.createHost2D(document.getElementById('pip2'), { className: 'host-launcher' }); h.gesture('wave', 60000);
