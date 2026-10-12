@@ -6,7 +6,7 @@ Showtime: Classroom Gameshows, Free taster (4 revision games)
 
 ## Summary line
 
-Try all four whole-class revision games free: up to six teams answer every question on mini whiteboards. This free version includes one topic per subject (Biology, Chemistry, Physics, Maths, History and Geography), AQA-style and Edexcel-style, 842 questions. Full subject packs are available on Tes. One file, works offline.
+Try all four whole-class revision games free: up to six teams answer every question on mini whiteboards. This free version includes one topic per subject (Biology, Chemistry, Physics, Maths, History and Geography), AQA-style and Edexcel-style, 861 questions. Full subject packs are available on Tes. One file, works offline.
 
 ## Description
 
@@ -16,7 +16,7 @@ Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** cont
 - **Biology:** AQA Cell biology and Edexcel Key concepts in biology (115 questions, with the Combined Science version of the same topic)
 - **Chemistry:** AQA Atomic structure and the periodic table and Edexcel Key concepts in chemistry (240 questions, with the Combined Science version of the same topic)
 - **Physics:** AQA Energy and Edexcel Conservation of energy (116 questions, with the Combined Science version of the same topic)
-- **Maths:** AQA Probability and Edexcel Probability (115 questions)
+- **Maths:** AQA Number and Edexcel Number (134 questions)
 - **History:** AQA Germany, 1890–1945: Democracy and dictatorship and Edexcel Weimar and Nazi Germany, 1918–39 (114 questions)
 - **Geography:** AQA The challenge of natural hazards, Edexcel Weather hazards and climate change and Edexcel Hazardous Earth (142 questions)
 

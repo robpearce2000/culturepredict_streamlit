@@ -73,6 +73,17 @@
 .cc-rank .sc { font-family: var(--display); font-size: 2rem; font-variant-numeric: tabular-nums; }
 
 .cc-sum-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+/* short screens (a 1366×768 laptop): a tighter results card, so the buttons and the thank-you lines stay in view */
+@media (max-height: 820px) {
+  .cc-sum h2 { font-size: 2.1rem; margin-bottom: 0; }
+  .cc-podium { gap: 5px; margin: 8px 0 10px; }
+  .cc-rank { padding: 3px 12px; gap: 10px; }
+  .cc-rank .pos { font-size: 1.5rem; }
+  .cc-rank .nm { font-size: 1.1rem; }
+  .cc-rank .nm small { font-size: 0.78rem; }
+  .cc-rank .sc { font-size: 1.7rem; }
+  .cc-sum-btns { margin-top: 10px; }
+}
 
 @media (max-width: 900px) {
   .cc-head { padding-left: 0; padding-top: 52px; }

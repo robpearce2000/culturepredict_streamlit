@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.8.1 – Free taster improvements (October 2026)
+
+- **Taster Maths is now Number** (AQA and Edexcel) instead of Probability: the most widely taught Maths topic, and with number letters it gives Hex Hunt 62 and 58 questions. The taster has 861 questions (was 842).
+- **Every taster topic checked for a full session of every game**, in every way a teacher can use it (all questions, Foundation only, Combined Science, Combined and Foundation): at least 35 questions, 31 or more Hex Hunt questions and 4 or more at each difficulty. `node tools/audit-taster.js` prints the table; a test fails if a topic becomes too thin.
+- **One calm line under the taster's results** (never mid-game, never a link): "Want more topics? Full subject packs, with over 800 questions each, are on Tes." The number is worked out from the real packs when the taster is built, and a test checks it. No other edition shows it.
+- **Licence line** in every edition's About panel and in the teacher guide: "Showtime: Classroom Gameshows © Rob Pearce. Licensed for use in one teacher's classroom. A School Licence covers up to 25 colleagues. Please don't share or resell."
+- Category Clash's results card is tighter on short screens (1366×768), so the buttons and the review lines stay in view with four teams.
+- New Tes listing text for the taster: `marketing/listings/free-taster.md`.
+
 ## 1.8.0 – Number answers in Hex Hunt (October 2026)
 
 - **Hex Hunt now uses number answers** in Maths and the sciences: the hexagon's letter is the first letter of the number said in words (1236 is "one thousand…", so O; −5 "minus five", M; 0.4 "zero point four", Z; ¾ "three quarters", T; 6 × 10⁷ "six…", S). The question card says "The answer, said in words, begins with O". Answers with more than one number (ratios, coordinates), algebra, and History and Geography years stay off the board.

@@ -240,6 +240,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 /* Thank-you line on end screens */
 .cgb-review { margin: 12px 0 0; text-align: center; font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); }
 .op .cgb-review { color: var(--op-muted); }
+.cgb-review.cgb-upgrade { margin-top: 4px; }
 
 /* ---------- Setup cards (all four games) ----------
    One column on narrow screens, two on wide ones; the Start button stays in

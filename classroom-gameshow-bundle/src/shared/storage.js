@@ -6,7 +6,7 @@
    blocked, full or unavailable.
    ========================================================= */
 window.CGB = window.CGB || {};
-CGB.VERSION = '1.8.0';
+CGB.VERSION = '1.8.1';
 /* Every random choice that affects play (question order, boards, counters, physics
    nudges) goes through CGB.random, so tests can make runs repeatable. Purely visual
    randomness (sparkles, camera shake) uses Math.random. */
@@ -22,7 +22,11 @@ CGB.test = {
 if (window.__SHOWTIME_SEED__ != null) CGB.test.seed(window.__SHOWTIME_SEED__);
 /* @end-test-only */
 /* A quiet thank-you line at the bottom of every end screen (text only, no link) */
-CGB.REVIEW_NOTE = '<p class="cgb-review">Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!</p>';
+CGB.REVIEW_TEXT = 'Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!';
+/* The free taster, and only the taster, adds one calm line under its results (never mid-game, never a link).
+   The number is worked out from the real packs when the taster is built (tools/editions.js). */
+CGB.upgradeText = () => { const e = CGB.EDITION; return e && e.taster && e.moreOver ? `Want more topics? Full subject packs, with over ${e.moreOver.toLocaleString('en-GB')} questions each, are on Tes.` : ''; };
+Object.defineProperty(CGB, 'REVIEW_NOTE', { get() { const u = CGB.upgradeText(); return `<p class="cgb-review">${CGB.REVIEW_TEXT}</p>` + (u ? `<p class="cgb-review cgb-upgrade">${u}</p>` : ''); } });
 CGB.store = (() => {
   const PREFIX = 'cgb.';
   let ok = true;

@@ -38,7 +38,7 @@ const targets = [
   ['dist/listing/description.md', 'text'],
   ['docs/teacher-guide.html', 'text'],
   ['README.md', 'text'], ['CHANGELOG.md', 'text'], ['DECISIONS.md', 'text'], ['LICENSES.md', 'text'],
-  ['dist/editions/README.md', 'text']
+  ['dist/editions/README.md', 'text'], ['marketing/listings/free-taster.md', 'text']
 ];
 // every edition for sale, and its listing text
 require('./editions.js').EDITIONS.forEach(e => {

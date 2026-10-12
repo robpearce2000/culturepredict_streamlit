@@ -259,6 +259,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 /* Thank-you line on end screens */
 .cgb-review { margin: 12px 0 0; text-align: center; font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); }
 .op .cgb-review { color: var(--op-muted); }
+.cgb-review.cgb-upgrade { margin-top: 4px; }
 
 /* ---------- Setup cards (all four games) ----------
    One column on narrow screens, two on wide ones; the Start button stays in
@@ -835,6 +836,17 @@ html[data-motion="reduced"] .l-wordmark .bulb, html[data-motion="reduced"] .l-wo
 .cc-rank .sc { font-family: var(--display); font-size: 2rem; font-variant-numeric: tabular-nums; }
 
 .cc-sum-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+/* short screens (a 1366×768 laptop): a tighter results card, so the buttons and the thank-you lines stay in view */
+@media (max-height: 820px) {
+  .cc-sum h2 { font-size: 2.1rem; margin-bottom: 0; }
+  .cc-podium { gap: 5px; margin: 8px 0 10px; }
+  .cc-rank { padding: 3px 12px; gap: 10px; }
+  .cc-rank .pos { font-size: 1.5rem; }
+  .cc-rank .nm { font-size: 1.1rem; }
+  .cc-rank .nm small { font-size: 0.78rem; }
+  .cc-rank .sc { font-size: 1.7rem; }
+  .cc-sum-btns { margin-top: 10px; }
+}
 
 @media (max-width: 900px) {
   .cc-head { padding-left: 0; padding-top: 52px; }
@@ -1252,6 +1264,7 @@ html[data-quality="low"] .hh-edge-0, html[data-quality="low"] .hh-edge-1 { filte
         <button class="btn plain" id="op-menuBtn2" type="button">Back to menu</button>
       </div>
       <p class="cgb-review">Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!</p>
+      <p class="cgb-review cgb-upgrade" id="op-upgrade" hidden></p>
     </div>
   </div>
 
@@ -1515,6 +1528,7 @@ Note: Not "covalent": a common mistake</div>
       <p id="aboutTaster" hidden>This free version includes one topic per subject. Full subject packs are available on Tes.</p>
       <p>Four revision games for the classroom, inspired by classic TV quiz formats: Over the Edge, Outpace, Category Clash and Hex Hunt. Game design and question packs by Rob Pearce.</p>
       <p>The built-in question packs are AQA-style and Edexcel-style GCSE practice questions, one pack for each topic of the exam board's specification (the specification code and version are shown in the Question bank). They were written for Showtime and are not produced or endorsed by AQA or Pearson.</p>
+      <p>Showtime: Classroom Gameshows &copy; Rob Pearce. Licensed for use in one teacher's classroom. A School Licence covers up to 25 colleagues. Please don't share or resell.</p>
       <p id="aboutMore" hidden>Other subjects, and the mega bundle with every subject, are available on Tes.</p>
       <h3>Privacy</h3>
       <p>Showtime makes no network connections. Question sets, team names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a team's history there at any time.</p>
@@ -2675,13 +2689,17 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
    blocked, full or unavailable.
    ========================================================= */
 window.CGB = window.CGB || {};
-CGB.VERSION = '1.8.0';
+CGB.VERSION = '1.8.1';
 /* Every random choice that affects play (question order, boards, counters, physics
    nudges) goes through CGB.random, so tests can make runs repeatable. Purely visual
    randomness (sparkles, camera shake) uses Math.random. */
 CGB.random = Math.random;
 /* A quiet thank-you line at the bottom of every end screen (text only, no link) */
-CGB.REVIEW_NOTE = '<p class="cgb-review">Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!</p>';
+CGB.REVIEW_TEXT = 'Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!';
+/* The free taster, and only the taster, adds one calm line under its results (never mid-game, never a link).
+   The number is worked out from the real packs when the taster is built (tools/editions.js). */
+CGB.upgradeText = () => { const e = CGB.EDITION; return e && e.taster && e.moreOver ? `Want more topics? Full subject packs, with over ${e.moreOver.toLocaleString('en-GB')} questions each, are on Tes.` : ''; };
+Object.defineProperty(CGB, 'REVIEW_NOTE', { get() { const u = CGB.upgradeText(); return `<p class="cgb-review">${CGB.REVIEW_TEXT}</p>` + (u ? `<p class="cgb-review cgb-upgrade">${u}</p>` : ''); } });
 CGB.store = (() => {
   const PREFIX = 'cgb.';
   let ok = true;
@@ -4892,6 +4910,8 @@ CGB.app = (() => {
     $('wordmark').innerHTML = CGB.brand.wordmark() + `<span class="l-edition">${CGB.escapeHtml(ed.name)}</span>` + (ed.taster ? '<span class="l-taster">This free version includes one topic per subject. Full subject packs are available on Tes.</span>' : '');
     $('aboutEdition').textContent = ed.all ? ed.name + ' (every subject)' : ed.name;
     $('aboutTaster').hidden = !ed.taster;
+    // the taster's one calm line under Outpace's results (the other games draw theirs with CGB.REVIEW_NOTE)
+    const up = document.getElementById('op-upgrade'); if (up && CGB.upgradeText()) { up.textContent = CGB.upgradeText(); up.hidden = false; }
     $('aboutMore').hidden = !!ed.all;
     $('artOTE').innerHTML = CGB.brand.oteArt();
     $('artOP').innerHTML = CGB.brand.opArt();

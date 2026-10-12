@@ -491,6 +491,8 @@ CGB.app = (() => {
     $('wordmark').innerHTML = CGB.brand.wordmark() + `<span class="l-edition">${CGB.escapeHtml(ed.name)}</span>` + (ed.taster ? '<span class="l-taster">This free version includes one topic per subject. Full subject packs are available on Tes.</span>' : '');
     $('aboutEdition').textContent = ed.all ? ed.name + ' (every subject)' : ed.name;
     $('aboutTaster').hidden = !ed.taster;
+    // the taster's one calm line under Outpace's results (the other games draw theirs with CGB.REVIEW_NOTE)
+    const up = document.getElementById('op-upgrade'); if (up && CGB.upgradeText()) { up.textContent = CGB.upgradeText(); up.hidden = false; }
     $('aboutMore').hidden = !!ed.all;
     $('artOTE').innerHTML = CGB.brand.oteArt();
     $('artOP').innerHTML = CGB.brand.opArt();

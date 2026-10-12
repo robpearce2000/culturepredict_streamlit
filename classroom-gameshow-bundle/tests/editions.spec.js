@@ -6,6 +6,7 @@ const { test } = require('@playwright/test');
 const { openBundle, state, playOverTheEdge, playOutpace, playCategoryClash, playHexHunt, afterResults, expect } = require('./helpers');
 const { EDITIONS, TASTER, includes } = require('../tools/editions.js');
 const { loadAll } = require('../tools/packs.js');
+const { rows: AUDIT, MIN } = require('../tools/audit-taster.js');
 
 const ROOT = path.join(__dirname, '..');
 const productOf = ed => path.join(ROOT, 'dist', 'editions', ed.file);
@@ -75,27 +76,47 @@ for (const ed of EDITIONS) {
     const watch = id => page.evaluate(id => { const s = CGB.games[id].state(); return s.q ? s.q.q : null; }, id).then(q => { if (q) seen.add(q); });
     const back = async () => { await afterResults(page); await page.evaluate(() => CGB.app.show('launcher')); };
 
+    // the taster's one calm upgrade line: under the results only (never on the launcher or mid-game), beside the review line
+    const UP = ed.taster ? await page.evaluate(() => CGB.upgradeText()) : '';
+    const noUpgrade = async () => expect(await page.locator('.cgb-upgrade:visible').count(), 'no upgrade line outside the results').toBe(0);
+    const upgrade = async id => {
+      if (!ed.taster) return noUpgrade();
+      const line = page.locator(`#game-${id} .cgb-upgrade:visible`);
+      await expect(line).toHaveCount(1);
+      await expect(line).toHaveText(UP);
+      await expect(page.locator(`#game-${id} .cgb-review:visible`).first()).toHaveText('Enjoying Showtime? A short review on Tes helps other teachers find it. Thank you!');
+      expect((await line.boundingBox()).height, 'one line of text, not a banner').toBeLessThan(60);
+    };
+    await noUpgrade();
     await page.click('[data-play="over-the-edge"]');
     await page.click('#ote-startBtn');
     await page.evaluate(() => CGB.test.ote.manual(true));
+    await noUpgrade();
     expect((await playOverTheEdge(page, { manual: true })).phase).toBe('summary');
+    await upgrade('over-the-edge');
     await back();
 
     await page.click('[data-play="outpace"]');
     await page.click('#op-startBtn');
+    await noUpgrade();
     expect((await playOutpace(page, { shortSprint: true })).phase).toBe('summary');
+    await upgrade('outpace');
     await back();
 
     await page.click('[data-play="category-clash"]');
     await page.click('#cc-startBtn');
+    await noUpgrade();
     const cc = await playCategoryClash(page);
     expect(cc.phase).toBe('summary');
+    await upgrade('category-clash');
     await back();
 
     await page.click('[data-play="hex-hunt"]');
     await page.click('#hh-startBtn');
     await watch('hex-hunt');
+    await noUpgrade();
     expect((await playHexHunt(page)).phase).toBe('summary');
+    await upgrade('hex-hunt');
 
     // every question the games used came from this edition's packs
     const used = await page.evaluate(() => CGB.bank.active().questions.map(q => q.q));
@@ -130,3 +151,50 @@ test.describe(() => { test.describe.configure({ retries: 1 }); test('editions sh
   expect(await page.evaluate(() => CGB.bank.subject())).toBe('history');
 });});
 
+
+// ---- the free taster: its topics, its pools and its one upgrade line ----
+const taster = EDITIONS.find(e => e.id === 'free-taster');
+test('the free taster has one popular topic per subject on both boards, Biology, Chemistry and Physics included', () => {
+  const mine = packs.filter(p => includes(taster, p));
+  expect(mine.map(p => p.id).sort()).toEqual(TASTER.slice().sort());
+  for (const sj of Object.keys(LABEL)) for (const b of ['AQA', 'Edexcel']) expect(mine.filter(p => p.subject === sj && p.board === b).length, `${b} ${sj}`).toBeGreaterThan(0);
+  expect(mine.filter(p => ['biology', 'chemistry', 'physics'].includes(p.subject)).every(p => p.comb), 'every science topic is also in Combined Science').toBe(true);
+  expect(mine.map(p => p.topic).sort()).toEqual(['Atomic structure and the periodic table', 'Cell biology', 'Conservation of energy', 'Energy', 'Germany, 1890–1945: Democracy and dictatorship', 'Hazardous Earth', 'Key concepts in biology', 'Key concepts in chemistry', 'Number', 'Number', 'The challenge of natural hazards', 'Weather hazards and climate change', 'Weimar and Nazi Germany, 1918–39']);
+});
+
+test('every taster topic is deep enough for a full session of every game, in every way a teacher can use it', async () => {
+  expect(AUDIT.length).toBe(TASTER.length);
+  for (const r of AUDIT) for (const v of r.views) {
+    const where = `${r.label} (${v.name})`;
+    expect(v.n, `${where}: questions for Over the Edge, Outpace and Category Clash`).toBeGreaterThanOrEqual(MIN.all);
+    expect(v.hex, `${where}: Hex Hunt questions (hexOk)`).toBeGreaterThanOrEqual(MIN.hex);
+    v.d.forEach((x, i) => expect(x, `${where}: difficulty ${i + 1} (a Category Clash row each)`).toBeGreaterThanOrEqual(MIN.perDiff));
+    expect(r.sub, `${r.label}: subtopics for Category Clash columns`).toBeGreaterThanOrEqual(2);
+  }
+});
+
+test('the taster file holds the same Hex Hunt pool the audit counts, and nothing else', async ({ page }) => {
+  await openBundle(page, '', { file: productOf(taster) });
+  const got = await page.evaluate(() => CGB.bank.all().filter(s => s.builtin && !s.combined).map(s => ({ id: s.id, n: s.questions.length, hex: s.questions.filter(q => q.hexOk).length })));
+  for (const r of AUDIT) {
+    const g = got.find(x => x.id === r.id), all = r.views.find(v => v.name === 'all');
+    expect(g, r.id).toBeTruthy();
+    expect([g.n, g.hex], r.label).toEqual([all.n, all.hex]);
+  }
+});
+
+test('the upgrade line is true, and only the taster says it', async ({ page }) => {
+  const per = {}; packs.forEach(p => { per[p.subject] = (per[p.subject] || 0) + p.questions.length; });
+  const over = Math.floor(Math.min(...Object.values(per)) / 100) * 100;
+  await openBundle(page, '', { file: productOf(taster) });
+  expect(await page.evaluate(() => CGB.upgradeText())).toBe(`Want more topics? Full subject packs, with over ${over.toLocaleString('en-GB')} questions each, are on Tes.`);
+  for (const [sj, n] of Object.entries(per)) expect(n, `the ${sj} pack really has over ${over} questions`).toBeGreaterThan(over);
+  const html = fs.readFileSync(productOf(taster), 'utf8');
+  expect(html).toContain('Licensed for use in one teacher');
+  expect(html).not.toMatch(/https?:\/\/[^"'\s<]*tes\.com|tes\.com/i);
+  for (const ed of EDITIONS.filter(e => !e.taster)) {
+    await page.goto('file://' + productOf(ed));
+    await page.waitForFunction(() => window.CGB && CGB.app);
+    expect(await page.evaluate(() => [CGB.upgradeText(), CGB.REVIEW_NOTE.includes('cgb-upgrade')]), ed.name).toEqual(['', false]);
+  }
+});
