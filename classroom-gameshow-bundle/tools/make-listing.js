@@ -75,8 +75,9 @@ async function until(page, fn, ms, arg) {
   const SHOTS = ['question-bank', 'over-the-edge', 'outpace', 'category-clash', 'hex-hunt'];
   let oteShot, opShot, ccShot, hhShot;
   if (REUSE) {
+    if (ED && ED.own === false) fs.rmSync(path.join(OUT, 'question-bank.png'), { force: true });
     const from = path.join(ROOT, 'dist', 'listings', REUSE);
-    SHOTS.forEach(n => fs.copyFileSync(path.join(from, n + '.png'), path.join(OUT, n + '.png')));
+    SHOTS.forEach(n => { if (n === 'question-bank' && ED && ED.own === false) return; fs.copyFileSync(path.join(from, n + '.png'), path.join(OUT, n + '.png')); });   // the taster has no Question bank to show
     [oteShot, opShot, ccShot, hhShot] = SHOTS.slice(1).map(n => fs.readFileSync(path.join(OUT, n + '.png')));
   } else {
   // Question bank, with one of the teacher's own sets added

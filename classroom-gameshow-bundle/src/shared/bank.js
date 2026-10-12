@@ -102,7 +102,11 @@ CGB.bank = (() => {
   /* The edition (tools/editions.js, set by the build) decides which subjects are listed; Other,
      for the teacher's own sets, is in every edition */
   const EDITION = CGB.EDITION || { id: 'mega-bundle', name: 'Mega bundle', subjects: ALL_SUBJECTS.map(x => x.id).filter(k => k !== 'other'), all: true };
-  const SUBJECTS = ALL_SUBJECTS.filter(x => x.id === 'other' || EDITION.subjects.includes(x.id));
+  // The free taster has no way to write, import or keep the teacher's own questions: no Other subject, no own sets
+  // (even ones another edition saved on this computer are neither shown nor touched), and nothing below can add one
+  const OWN = EDITION.own !== false;
+  const NO_OWN = { ok: false, error: 'Your own question sets are not part of this edition.' };
+  const SUBJECTS = ALL_SUBJECTS.filter(x => (x.id === 'other' && OWN) || EDITION.subjects.includes(x.id));
   const BOARDS = [{ id: 'aqa', label: 'AQA' }, { id: 'edexcel', label: 'Edexcel' }];
   const isSubject = k => SUBJECTS.some(x => x.id === k);
   const isBoard = k => BOARDS.some(x => x.id === k);
@@ -194,13 +198,13 @@ CGB.bank = (() => {
 
   function load() {
     const c = store.getJSON('sets', []);
-    custom = Array.isArray(c) ? c.map(cleanSet).filter(Boolean) : [];
+    custom = OWN && Array.isArray(c) ? c.map(cleanSet).filter(Boolean) : [];
     const h = store.getJSON('history', {});
     history = h && typeof h === 'object' && !Array.isArray(h) ? h : {};
     // a subject saved by another edition on this computer: start on this edition's first subject,
     // without saving over it (the other edition still opens where it was)
     const sj = store.get('subject'), known = sj === 'combined' || ALL_SUBJECTS.some(x => x.id === sj);
-    if (isSubject(sj)) subject = sj; else if (known) subject = EDITION.subjects[0]; else if (sj) subject = 'other';
+    if (isSubject(sj)) subject = sj; else if (known || !OWN) subject = EDITION.subjects[0]; else if (sj) subject = 'other';
     const bd = store.get('board'); if (isBoard(bd)) board = bd;
     const sel = store.getJSON('packSelections', {});
     selections = sel && typeof sel === 'object' && !Array.isArray(sel) ? sel : {};
@@ -215,7 +219,7 @@ CGB.bank = (() => {
     const one = store.get('activeSet');   // the single set in use before subjects existed (version 1.0 beta)
     if (one && custom.some(x => x.id === one) && !selections[subject + '|' + board]) selections[subject + '|' + board] = { ids: [one] };
   }
-  function saveSets() { return store.setJSON('sets', custom); }
+  function saveSets() { return !OWN || store.setJSON('sets', custom); }   // without own sets this never writes: sets another edition saved stay as they are
   function saveHistory() { return store.setJSON('history', history); }
   function saveSelections() { store.setJSON('packSelections', selections); }
 
@@ -227,7 +231,7 @@ CGB.bank = (() => {
     [['tp_sets'], ['questionSets']].forEach(([k]) => {
       try { const v = JSON.parse(store.rawGet(k)); if (Array.isArray(v)) v.forEach(s => legacySets.push(s)); } catch (e) { /* skip */ }
     });
-    legacySets.forEach(s => { const c = cleanSet(s); if (c && !custom.some(x => x.id === c.id)) custom.push(c); });
+    if (OWN) legacySets.forEach(s => { const c = cleanSet(s); if (c && !custom.some(x => x.id === c.id)) custom.push(c); });
     keys.forEach(k => {
       const m = /^(?:tp_)?wronglog:(.+)$/.exec(k);
       if (!m) return;
@@ -260,7 +264,7 @@ CGB.bank = (() => {
     return Array.from(m.values());
   }
   /* The teacher's own sets for a subject (sets saved before subjects existed show under every subject) */
-  function ownSets(sj) { sj = sj || subject; return custom.filter(s => { const k = subjectOfSet(s); return !k || k === sj; }); }
+  function ownSets(sj) { if (!OWN) return []; sj = sj || subject; return custom.filter(s => { const k = subjectOfSet(s); return !k || k === sj; }); }
   /* Everything that can be chosen for the subject and board: topic packs, then the teacher's sets */
   function available(sj) { return packs(sj).concat(ownSets(sj)); }
 
@@ -320,12 +324,14 @@ CGB.bank = (() => {
   function subjectNote() {
     const sj = label(ALL_SUBJECTS, subject), bd = label(BOARDS, board);
     if (subject === 'other') return ownSets().length ? '' : 'Add your own questions for any subject in the Question bank.';
+    if (!packs().length && !OWN) return `Built-in ${bd}-style ${sj} packs are coming soon.`;
     if (!packs().length) return `Built-in ${bd}-style ${sj} packs are coming soon. For now, add your own ${sj} questions in the Question bank.`;
     if (!higher && tiered()) return `Foundation tier: questions on Higher tier only content${combinedNow() ? ' in Combined Science' : ''} are left out.`;
     return '';
   }
   /* Custom sets can be moved to another subject from the Question bank */
   function setSubjectOf(id, k) {
+    if (!OWN) return false;
     const s = custom.find(x => x.id === id); if (!s) return false;
     if (isSubject(k)) s.subject = k; else delete s.subject;
     saveSets(); emit(); return true;
@@ -336,6 +342,7 @@ CGB.bank = (() => {
     return { subjects: Object.keys(subjects), topics: Object.keys(topics), count: set.questions.length };
   }
   function addSet(name, text, sj) {
+    if (!OWN) return NO_OWN;
     const qs = parse(text);
     if (!qs.length) return { ok: false, error: 'No Q: and A: pairs found. Check the format.' };
     const set = cleanSet({ id: newId(), name: (name || '').trim() || 'My questions', questions: qs, subject: sj || subject });
@@ -347,6 +354,7 @@ CGB.bank = (() => {
     return { ok: true, set, saved: store.available };
   }
   function updateSet(id, name, text) {
+    if (!OWN) return NO_OWN;
     const s = custom.find(x => x.id === id);
     if (!s) return { ok: false, error: 'Built-in packs cannot be changed. Save a copy instead.' };
     if (text != null) {
@@ -359,6 +367,7 @@ CGB.bank = (() => {
     return { ok: true, set: s };
   }
   function deleteSet(id) {
+    if (!OWN) return false;
     const before = custom.length;
     custom = custom.filter(s => s.id !== id);
     if (custom.length === before) return false;
@@ -437,6 +446,7 @@ CGB.bank = (() => {
   }
   /* Merge a backup into this device. Nothing already here is deleted. */
   function importData(data) {
+    if (!OWN) return NO_OWN;
     if (!data || data.format !== 'classroom-gameshow-bundle-backup') return { ok: false, error: 'This file is not a Showtime: Classroom Gameshows backup.' };
     let added = 0, updated = 0, entries = 0;
     (Array.isArray(data.sets) ? data.sets : []).forEach(s => {
@@ -473,7 +483,7 @@ CGB.bank = (() => {
     parse, toText, TIERS, difficultyOf, tierOf: difficultyOf, estimateTier, all, get, active, available, packs, courses, ownSets, summary, addSet, updateSet, deleteSet, setSubjectOf,
     selection, setSelection, toggle, higher: () => higher, setHigher, tiered,
     COURSES, course: () => course, setCourse, hasCourses, combined: combinedNow, specs: () => Object.assign({}, DATA.specs),
-    SUBJECTS, BOARDS, edition: () => EDITION, subject: () => subject, board: () => board, setSubject, setBoard, subjectNote,
+    SUBJECTS, BOARDS, edition: () => EDITION, ownAllowed: OWN, subject: () => subject, board: () => board, setSubject, setBoard, subjectNote,
     subjectLabel: k => label(ALL_SUBJECTS, k || subject), boardLabel: k => label(BOARDS, k || board),
     logWrong, unlogWrong, wrongLog, weakTopics, clearHistory, players, createPicker,
     exportData, importData, onChange(fn) { listeners.push(fn); },

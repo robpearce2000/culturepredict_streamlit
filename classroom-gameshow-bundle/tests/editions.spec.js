@@ -35,7 +35,7 @@ for (const ed of EDITIONS) {
     await expect(page.locator('#wordmark .l-edition')).toHaveText(ed.name);
     // the picker: exactly the edition's subjects, plus Other for the teacher's own sets
     const r = await page.evaluate(() => ({ subjects: CGB.bank.SUBJECTS.map(s => s.id), subject: CGB.bank.subject(), builtin: CGB.bank.all().filter(s => s.builtin && !s.combined).map(s => ({ id: s.id, n: s.questions.length })) }));
-    expect(r.subjects).toEqual(ed.subjects.concat('other'));
+    expect(r.subjects).toEqual(ed.own === false ? ed.subjects : ed.subjects.concat('other'));   // the taster has no Other (your own sets)
     expect(r.subject).toBe(ed.subjects[0]);
     if (ed.subjects.length === 1) {
       await expect(page.locator('#subjectSelect')).toBeHidden();
@@ -46,7 +46,7 @@ for (const ed of EDITIONS) {
       expect(await page.evaluate(() => CGB.bank.subject())).toBe(ed.subjects[0]);
     } else {
       const opts = await page.locator('#subjectSelect option').allTextContents();
-      expect(opts).toEqual(ed.subjects.map(s => LABEL[s]).concat('Other'));
+      expect(opts).toEqual(ed.subjects.map(s => LABEL[s]).concat(ed.own === false ? [] : ['Other']));
     }
     // every built-in pack belongs to the edition, and none is missing
     const want = packs.filter(p => includes(ed, p));
@@ -197,4 +197,77 @@ test('the upgrade line is true, and only the taster says it', async ({ page }) =
     await page.waitForFunction(() => window.CGB && CGB.app);
     expect(await page.evaluate(() => [CGB.upgradeText(), CGB.REVIEW_NOTE.includes('cgb-upgrade')]), ed.name).toEqual(['', false]);
   }
+});
+
+test('the free taster has no way to write, import or keep your own questions, by mouse, keyboard or address', async ({ page }) => {
+  test.setTimeout(300000);
+  // another edition saved one of its teacher's own sets in this browser first: the taster must neither show nor touch it
+  const saved = JSON.stringify([{ id: 'set-colleague', name: 'Colleague quiz', subject: 'biology', created: '2026-01-01', questions: [{ subject: 'Biology', topic: 'Cells', q: 'Which organelle controls the cell?', a: 'Nucleus' }] }]);
+  await page.addInitScript(v => { try { if (!localStorage.getItem('cgb.sets')) localStorage.setItem('cgb.sets', v); } catch (e) { /* storage blocked */ } }, saved);
+  const log = await openBundle(page, '', { file: productOf(taster) });
+  const GONE = '#openBank, #bankModal, #bankForm, #bankText, #bankName, #bankSave, #bankImport, #bankExport, #subjectOwn';
+  const visibleModals = () => page.locator('.modal:not([hidden])').count();
+  const sets = () => page.evaluate(() => localStorage.getItem('cgb.sets'));
+
+  // 1. nothing of it is in the page: no button, no editor, no backup, no Other subject, no words about it
+  expect(await page.locator(GONE).count(), 'no Question bank, editor, import or Own sets button in the page').toBe(0);
+  const words = await page.evaluate(() => { const c = document.body.cloneNode(true); c.querySelectorAll('script, style').forEach(e => e.remove()); return c.textContent.replace(/\s+/g, ' '); });
+  expect(words).not.toMatch(/question bank|your own (set|question)|own sets|own question|backup file|add your own|write your own/i);
+  expect(await page.evaluate(() => CGB.bank.SUBJECTS.map(s => s.id))).toEqual(taster.subjects);
+  expect(await page.locator('#subjectSelect option').allTextContents()).not.toContain('Other');
+
+  // 2. the bank refuses everything: no adding, editing, deleting, moving or importing, and the saved set is untouched
+  const r = await page.evaluate(() => {
+    const B = CGB.bank, txt = 'Subject: Biology\nTopic: Cells\nQ: A question?\nA: An answer';
+    return {
+      add: B.addSet('Mine', txt, 'biology'), update: B.updateSet('set-colleague', 'x', txt), del: B.deleteSet('set-colleague'), move: B.setSubjectOf('set-colleague', 'chemistry'),
+      imp: B.importData({ format: 'classroom-gameshow-bundle-backup', sets: [{ id: 'set-new', name: 'New', questions: [{ q: 'Q?', a: 'A' }] }], history: {} }),
+      other: B.setSubject('other'), subject: B.subject(), own: B.ownSets().length, builtinOnly: B.all().every(s => s.builtin || s.combined), own2: B.ownSets('biology').length, allowed: B.ownAllowed
+    };
+  });
+  expect(r.add.ok).toBe(false); expect(r.update.ok).toBe(false); expect(r.imp.ok).toBe(false);
+  expect([r.del, r.move, r.other]).toEqual([false, false, false]);
+  expect([r.own, r.own2, r.builtinOnly, r.allowed]).toEqual([0, 0, true, false]);
+  expect(await sets(), "another edition's saved set is left exactly as it was").toBe(saved);
+  await page.evaluate(() => { CGB.bankUI.open(); });
+  expect(await visibleModals(), 'opening the editor from code does nothing').toBe(0);
+
+  // 3. the topic menus (launcher and a game's setup card) offer built-in packs only
+  await page.click('#packBtn');
+  await expect(page.locator('#packMenu')).not.toContainText(/own sets|Colleague quiz/i);
+  await page.keyboard.press('Escape');
+  await page.click('[data-play="category-clash"]');
+  await page.click('#game-category-clash [data-pack="change"]');
+  await expect(page.locator('#gamePackMenu')).not.toContainText(/own sets|Colleague quiz/i);
+  await page.keyboard.press('Escape');
+  await page.evaluate(() => CGB.app.show('launcher'));
+
+  // 4. keyboard: Tab through the whole launcher, and press every letter and number: nothing opens an editor
+  const reached = new Set();
+  for (let i = 0; i < 70; i++) { await page.keyboard.press('Tab'); reached.add(await page.evaluate(() => { const a = document.activeElement; return a ? (a.id + '|' + (a.textContent || '').trim().slice(0, 40)) : ''; })); }
+  for (const t of reached) expect(t, 'focus never lands on a bank or own-sets control').not.toMatch(/bank|own sets/i);
+  for (const k of 'abcdefghijklmnopqrstuvwxyz0123456789'.split('')) {
+    await page.keyboard.press(k);
+    expect(await visibleModals(), `key ${k}`).toBe(0);
+    if (await page.evaluate(() => !!document.fullscreenElement)) await page.evaluate(() => document.exitFullscreen());
+  }
+  for (const combo of ['Control+b', 'Control+e', 'Control+o', 'Control+i', 'Alt+b', 'Shift+?']) { await page.keyboard.press(combo); expect(await visibleModals(), combo).toBe(0); }
+
+  // 5. address: no hash, query or route opens or leads to an editor
+  for (const h of ['#bank', '#question-bank', '#bankModal', '#bankForm', '#own', '#editor', '#add', '#sets', '#import', '#backup', '#question-sets']) {
+    await page.goto('file://' + productOf(taster) + h + '?bank=1&open=bank');
+    await page.waitForFunction(() => window.CGB && CGB.app);
+    await expect(page.locator('#launcher')).toBeVisible();
+    expect(await visibleModals(), h).toBe(0);
+    expect(await page.locator(GONE).count(), h).toBe(0);
+  }
+  expect(await sets(), 'after all of that, the saved set is still untouched').toBe(saved);
+  expect(log.errors).toEqual([]);
+  expect(log.requests).toEqual([]);
+
+  // every other edition still has the Question bank and the Other subject
+  await page.goto('file://' + productOf(EDITIONS.find(e => e.id === 'mega-bundle')));
+  await page.waitForFunction(() => window.CGB && CGB.app);
+  expect(await page.locator('#openBank, #bankModal').count()).toBe(2);
+  expect(await page.evaluate(() => CGB.bank.SUBJECTS.map(s => s.id))).toContain('other');
 });

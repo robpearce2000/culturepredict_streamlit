@@ -6,6 +6,8 @@
  *   file      the edition's single HTML file in dist/editions/
  *   name      shown on the launcher and in the About panel ("Showtime: <name>")
  *   subjects  the subjects in the picker (Other, for the teacher's own sets, is always added)
+ *   own       false: no way to write, import or keep the teacher's own questions (the free taster): the Question
+ *             bank, the Other subject and every own-set feature are left out of the file (build.js, bank.js)
  *   packs     optional: only these built-in packs (pack ids from tools/packs.js); default: every
  *             pack of the edition's subjects
  */
@@ -23,7 +25,7 @@ const TASTER = [
 ];
 
 const EDITIONS = [
-  { id: 'free-taster', file: 'showtime-free-taster.html', name: 'Free taster', subjects: ALL, packs: TASTER, taster: true },
+  { id: 'free-taster', file: 'showtime-free-taster.html', name: 'Free taster', subjects: ALL, packs: TASTER, taster: true, own: false },
   { id: 'biology', file: 'showtime-biology.html', name: 'Biology edition', subjects: ['biology'] },
   { id: 'chemistry', file: 'showtime-chemistry.html', name: 'Chemistry edition', subjects: ['chemistry'] },
   { id: 'physics', file: 'showtime-physics.html', name: 'Physics edition', subjects: ['physics'] },
@@ -44,6 +46,6 @@ function moreOver() {
   require('./packs.js').loadAll().packs.forEach(p => { per[p.subject] = (per[p.subject] || 0) + p.questions.length; });
   return Math.floor(Math.min(...ALL.map(k => per[k])) / 100) * 100;
 }
-const runtime = ed => Object.assign({ id: ed.id, name: ed.name, subjects: ed.subjects, taster: !!ed.taster, all: !!ed.all }, ed.taster ? { moreOver: moreOver() } : {});
+const runtime = ed => Object.assign({ id: ed.id, name: ed.name, subjects: ed.subjects, taster: !!ed.taster, all: !!ed.all, own: ed.own !== false }, ed.taster ? { moreOver: moreOver() } : {});
 
 module.exports = { EDITIONS, TASTER, ALL, includes, runtime, byId: id => EDITIONS.find(e => e.id === id) };

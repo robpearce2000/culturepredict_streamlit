@@ -126,6 +126,8 @@ CGB.settings.onChange(() => {
 
 /* ---------- Question bank manager ---------- */
 CGB.bankUI = (() => {
+  // the free taster has no Question bank (build.js leaves its markup out): there is nothing here to open or wire up
+  if (!document.getElementById('bankModal')) return { init() {}, open() {}, renderList() {} };
   const B = CGB.bank, esc = CGB.escapeHtml;
   let editing = null;   // id of the set being edited, or null when adding
   const $ = id => document.getElementById(id);
@@ -308,7 +310,7 @@ CGB.renderPackLine = function (el) {
   el.classList.add('packline');
   el.innerHTML = a
     ? `<span class="lab">Questions</span><span class="pk"><b title="${esc(a.name)}">${esc(a.short || a.name)}</b> <span class="n">${where} · ${a.questions.length} questions</span></span><button class="linkish" type="button" data-pack="change">Change</button>`
-    : `<span class="lab">Questions</span><span class="pk"><b>No ${esc(B.subjectLabel())} questions yet</b> <span class="n">Add your own in the Question bank, or choose another subject.</span></span><button class="linkish" type="button" data-pack="change">Change</button>`;
+    : `<span class="lab">Questions</span><span class="pk"><b>No ${esc(B.subjectLabel())} questions yet</b> <span class="n">${B.ownAllowed ? 'Add your own in the Question bank, or choose another subject.' : 'Choose another subject.'}</span></span><button class="linkish" type="button" data-pack="change">Change</button>`;
   el.classList.toggle('empty', !a);
   if (CGB.answerTimeField) CGB.answerTimeField(el);
   // "Change" opens the topic dropdown right here; with no questions at all the subject must change on the main screen
@@ -377,8 +379,9 @@ CGB.app = (() => {
     // a one-subject edition: the subject as a label, with a button for the teacher's own sets (Other)
     const one = B.edition().subjects.length === 1 ? B.edition().subjects[0] : null;
     $('subjectSelect').hidden = !!one;
-    $('subjectFixed').hidden = $('subjectOwn').hidden = !one;
-    if (one) {
+    $('subjectFixed').hidden = !one;
+    if ($('subjectOwn')) $('subjectOwn').hidden = !one;
+    if (one && $('subjectOwn')) {
       $('subjectFixed').textContent = sj === 'other' ? 'Your own sets' : B.subjectLabel(one);
       $('subjectOwn').textContent = sj === 'other' ? B.subjectLabel(one) : 'Own sets';
       $('subjectOwn').title = sj === 'other' ? `Back to the ${B.subjectLabel(one)} packs` : 'Your own question sets (Other)';
@@ -506,9 +509,9 @@ CGB.app = (() => {
     paintHello();
     CGB.hostListeners.push(paintHello);
     document.querySelectorAll('[data-play]').forEach(b => b.addEventListener('click', () => show(b.dataset.play)));
-    $('openBank').addEventListener('click', () => CGB.bankUI.open());
+    if ($('openBank')) $('openBank').addEventListener('click', () => CGB.bankUI.open());
     $('subjectSelect').addEventListener('change', e => CGB.bank.setSubject(e.target.value));
-    $('subjectOwn').addEventListener('click', () => { const B = CGB.bank; B.setSubject(B.subject() === 'other' ? B.edition().subjects[0] : 'other'); });
+    if ($('subjectOwn')) $('subjectOwn').addEventListener('click', () => { const B = CGB.bank; B.setSubject(B.subject() === 'other' ? B.edition().subjects[0] : 'other'); });
     $('boardSelect').addEventListener('change', e => CGB.bank.setBoard(e.target.value));
     $('courseSelect').addEventListener('change', e => CGB.bank.setCourse(e.target.value));
     wirePacks();
@@ -531,7 +534,7 @@ CGB.app = (() => {
   /* "Change" on a setup card: back to the main screen with the subject panel in focus */
   function chooseSubject() {
     show('launcher');
-    ($('subjectSelect').hidden ? $('subjectOwn') : $('subjectSelect')).focus();
+    ($('subjectSelect').hidden && $('subjectOwn') ? $('subjectOwn') : $('subjectSelect')).focus();
   }
   return { init, show, requestLauncher, chooseSubject, openGamePacks, closeGamePacks, endGame, inGame, get current() { return current; } };
 })();

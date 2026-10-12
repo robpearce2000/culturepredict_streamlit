@@ -34,6 +34,9 @@
   .note { background: #E3F6F5; border-left: 5px solid var(--teal); border-radius: 8px; padding: 6px 10px; margin: 6px 0; }
   .warn { background: #FDE7D6; border-left: 5px solid var(--tan); border-radius: 8px; padding: 6px 10px; margin: 6px 0; }
   .small { font-size: 8.8pt; color: var(--soft); }
+  html.taster .own-only { display: none !important; }
+  html.taster .free-only { display: inline !important; }
+  .free-only { display: none; }
   .foot { font-size: 8pt; color: var(--soft); margin-top: 8px; }
 </style>
 </head>
@@ -44,7 +47,7 @@
   <div class="hero">
     <div>
       <div id="wm"></div>
-      <div class="sub">Teacher guide · version 1.8.1</div>
+      <div class="sub">Teacher guide · version 1.8.2</div>
       <p>Four whole-class revision games, inspired by classic TV quiz formats. One file, no internet, no logins, no installs.</p>
     </div>
     <img id="mascot" src="mascot.png" alt="" style="width:100%">
@@ -61,7 +64,7 @@
 
   <h2>Getting started</h2>
   <ol>
-    <li>Save <strong>showtime-classroom-gameshows.html</strong> on your computer and keep using that copy and browser (your own sets are saved there).</li>
+    <li>Save <strong>showtime-classroom-gameshows.html</strong> on your computer and keep using that copy and browser<span class="own-only"> (your own sets are saved there)</span>.</li>
     <li>Double-click it. Choose your <strong>subject</strong>, <strong>exam board</strong> and, for sciences, <strong>Separate</strong> or <strong>Combined Science</strong>. Under <strong>Questions</strong> tick your topics, or leave <strong>Mixed</strong>. Untick <strong>Higher tier only</strong> for a Foundation class.</li>
     <li>Pick a game, choose the number of teams (2 to 6) and press <strong>Start</strong>. The game starts at once, so hand out whiteboards first.</li>
   </ol>
@@ -94,6 +97,7 @@
     <div><img class="shot" src="../dist/listing/hex-hunt.png" alt="Hex Hunt with two halves of the class"></div>
   </div>
 
+  <div class="own-only">
   <h2>Adding your own questions</h2>
   <p>Open <strong>Question bank</strong>, name the set, paste your questions in this format and press <strong>Save as new set</strong>:</p>
   <pre>Subject: Chemistry
@@ -110,13 +114,14 @@ Note: Not "heat it up" on its own</pre>
     <li>Built-in packs cannot be changed, but <strong>Copy to edit</strong> makes your own copy.</li>
     <li><strong>Save backup file</strong> keeps your sets and team history (saved by team name) in one file; <strong>Load backup file</strong> adds them on another computer without deleting anything.</li>
       </ul>
+  </div>
 
   <h2>Settings</h2>
   <p><strong>Large</strong> text suits the back of the room. <strong>Reduced motion</strong> turns off camera moves, shake, confetti and flashes. <strong>Graphics: Low</strong> suits older PCs. <strong>Music</strong> plays on the main screen only.</p>
 
   <h2>Privacy</h2>
   <div class="note">
-    <p><strong>No data leaves the computer.</strong> Showtime makes no network connections: no analytics, tracking, accounts or adverts. Question sets, team names, history and settings stay in this browser only, and the school stays in control under UK GDPR. If you use pupils' names, treat backup files like any file containing pupil data, or use team names or initials.</p>
+    <p><strong>No data leaves the computer.</strong> Showtime makes no network connections: no analytics, tracking, accounts or adverts. <span class="own-only">Question sets, team names, history and settings</span><span class="free-only">Team names, history and settings</span> stay in this browser only, and the school stays in control under UK GDPR. If you use pupils' names, <span class="own-only">treat backup files like any file containing pupil data, or </span>use team names or initials<span class="free-only"> rather than full names</span>.</p>
   </div>
 
   <h2>Troubleshooting</h2>
@@ -124,10 +129,10 @@ Note: Not "heat it up" on its own</pre>
     <tr><th style="width:36%">Problem</th><th>Try</th></tr>
     <tr><td>The file opens as text or in a preview</td><td>Copy it to your computer, then double-click it. Email and OneDrive previews cannot run it.</td></tr>
     <tr><td>"3D graphics are switched off", or it is jerky</td><td>Set <strong>Graphics</strong> to <strong>Low</strong>, close other tabs, or try another browser. Ask IT to turn on hardware acceleration.</td></tr>
-    <tr><td>My question sets have gone</td><td>Sets live in one browser on one computer. Private windows and some school log-offs clear them: keep a backup file.</td></tr>
+    <tr class="own-only"><td>My question sets have gone</td><td>Sets live in one browser on one computer. Private windows and some school log-offs clear them: keep a backup file.</td></tr>
   </table>
 
-  <p class="foot"><strong>Showtime: Classroom Gameshows &copy; Rob Pearce. Licensed for use in one teacher's classroom. A School Licence covers up to 25 colleagues. Please don't share or resell.</strong><br>Showtime: Classroom Gameshows, version 1.8.1. Every edition has the four games and your own sets; only the built-in packs differ (its name is in <strong>About</strong>). Game design and question packs by Rob Pearce. The games are original works inspired by classic TV quiz formats and are not connected with any television programme or broadcaster. AQA is a registered trade mark of AQA Education and Edexcel of Pearson Education; the built-in packs are AQA-style and Edexcel-style practice questions written for Showtime and are not endorsed by AQA or Pearson. Built with three.js (MIT); fonts Lilita One and Nunito (OFL 1.1): licences in About.</p>
+  <p class="foot"><strong>Showtime: Classroom Gameshows &copy; Rob Pearce. Licensed for use in one teacher's classroom. A School Licence covers up to 25 colleagues. Please don't share or resell.</strong><br>Showtime: Classroom Gameshows, version 1.8.2. Every edition has the four games<span class="own-only"> and your own sets</span>; only the built-in packs differ (its name is in <strong>About</strong>). Game design and question packs by Rob Pearce. The games are original works inspired by classic TV quiz formats and are not connected with any television programme or broadcaster. AQA is a registered trade mark of AQA Education and Edexcel of Pearson Education; the built-in packs are AQA-style and Edexcel-style practice questions written for Showtime and are not endorsed by AQA or Pearson. Built with three.js (MIT); fonts Lilita One and Nunito (OFL 1.1): licences in About.</p>
 </section>
 
 <script src="../src/vendor/three.min.js"></script>

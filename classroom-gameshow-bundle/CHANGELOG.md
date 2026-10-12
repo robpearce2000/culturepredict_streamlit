@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.2 – Free taster has no way to add your own questions (October 2026)
+
+- **The free taster no longer has a Question bank or any way to write, paste, import or keep your own questions.** The button, the editor, the backup and the "Other" subject are not in the file at all (the build leaves their markup out), the bank code refuses every add, edit, delete, move and import, and nothing in the taster ever writes to saved question sets, so sets another edition saved in the same browser are neither shown nor touched. Nothing opens an editor by keyboard (Tab or any key) or by address (#bank, #question-bank and every other hash or query). Every other edition keeps the Question bank.
+- The taster's teacher guide (inside its zip) and listing text no longer mention your own questions, and its listing pictures no longer include the Question bank.
+- Wording that mentioned the bank is generic: "use the same questions".
+
 ## 1.8.1 – Free taster improvements (October 2026)
 
 - **Taster Maths is now Number** (AQA and Edexcel) instead of Probability: the most widely taught Maths topic, and with number letters it gives Hex Hunt 62 and 58 questions. The taster has 861 questions (was 842).

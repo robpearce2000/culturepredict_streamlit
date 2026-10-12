@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /*
- * Prints docs/teacher-guide.html to dist/teacher-guide.pdf (A4).
+ * Prints docs/teacher-guide.html to dist/teacher-guide.pdf (A4); with --taster, to dist/teacher-guide-taster.pdf
+ * without the parts about writing your own questions (the free taster has none).
  * Run tools/make-listing.js first: the guide uses its screenshots.
  */
 'use strict';
@@ -13,13 +14,15 @@ const ROOT = path.join(__dirname, '..');
   const browser = await chromium.launch();
   const page = await browser.newPage();
   await page.goto('file://' + path.join(ROOT, 'docs', 'teacher-guide.html'));
+  const TASTER = process.argv.includes('--taster');
+  if (TASTER) await page.evaluate(() => document.documentElement.classList.add('taster'));   // leaves out everything about your own questions
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(500);
-  const out = path.join(ROOT, 'dist', 'teacher-guide.pdf');
+  const out = path.join(ROOT, 'dist', TASTER ? 'teacher-guide-taster.pdf' : 'teacher-guide.pdf');
   await page.pdf({ path: out, format: 'A4', printBackground: true, preferCSSPageSize: true });
   await browser.close();
   let pages = '?';
   try { pages = execFileSync('pdfinfo', [out], { encoding: 'utf8' }).match(/Pages:\s+(\d+)/)[1]; } catch (e) { /* pdfinfo not installed */ }
-  console.log(`Wrote dist/teacher-guide.pdf (${pages} pages)`);
+  console.log(`Wrote ${path.relative(ROOT, out)} (${pages} pages)`);
   if (pages !== '?' && (+pages < 2 || +pages > 5)) { console.error('The guide must be 2 to 5 pages.'); process.exit(1); }
 })().catch(e => { console.error(e); process.exit(1); });

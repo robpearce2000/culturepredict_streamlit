@@ -27,7 +27,7 @@
         <div class="l-row">
           <label class="lab" for="subjectSelect">Subject</label>
           <select class="cgb-select l-pick" id="subjectSelect"></select>
-          <span class="l-fixed" id="subjectFixed" hidden></span><button class="btn plain sm l-own" type="button" id="subjectOwn" hidden></button>
+          <span class="l-fixed" id="subjectFixed" hidden></span><!-- @own --><button class="btn plain sm l-own" type="button" id="subjectOwn" hidden></button><!-- @/own -->
         </div>
         <div class="l-row">
           <label class="lab" for="boardSelect">Exam board</label>
@@ -44,7 +44,7 @@
             <div class="pk-menu" id="packMenu" hidden role="group" aria-label="Question packs: tick one or more"></div>
           </div>
         </div>
-        <div class="l-tools"><button class="btn go sm" type="button" id="openBank">Question bank</button><button class="btn plain sm" type="button" data-fullscreen id="fsLauncher">Full screen</button></div>
+        <div class="l-tools"><!-- @own --><button class="btn go sm" type="button" id="openBank">Question bank</button><!-- @/own --><button class="btn plain sm" type="button" data-fullscreen id="fsLauncher">Full screen</button></div>
         <p class="l-note" id="subjectNote" role="status"></p>
       </section>
       <h1 class="l-wordmark" id="wordmark" style="margin:0"></h1>
@@ -89,7 +89,7 @@
       </article>
       <article class="gcard soon" aria-label="More shows coming soon">
         <h3>More shows coming soon</h3>
-        <p>New games will appear here and use the same question bank.</p>
+        <p>New games will appear here and use the same questions.</p>
       </article>
     </section>
 
@@ -108,6 +108,7 @@
 <!-- @include games/hex-hunt/game.html -->
 
 <!-- ================= MODALS ================= -->
+<!-- @own -->
 <div class="modal" id="bankModal" role="dialog" aria-modal="true" aria-labelledby="bankTitle" hidden>
   <div class="cgb-panel">
     <div class="modal-head"><h2 id="bankTitle">Question bank</h2><button class="btn plain sm" type="button" data-close="bankModal">Close <span class="kbd">Esc</span></button></div>
@@ -148,6 +149,7 @@ Note: Not "covalent": a common mistake</div>
     </div>
   </div>
 </div>
+<!-- @/own -->
 
 <div class="modal" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" hidden>
   <div class="cgb-panel">
@@ -193,11 +195,11 @@ Note: Not "covalent": a common mistake</div>
       <p><strong>Showtime: Classroom Gameshows</strong>, <span id="aboutEdition"></span>, version <span id="aboutVersion"></span>.</p>
       <p id="aboutTaster" hidden>This free version includes one topic per subject. Full subject packs are available on Tes.</p>
       <p>Four revision games for the classroom, inspired by classic TV quiz formats: Over the Edge, Outpace, Category Clash and Hex Hunt. Game design and question packs by Rob Pearce.</p>
-      <p>The built-in question packs are AQA-style and Edexcel-style GCSE practice questions, one pack for each topic of the exam board's specification (the specification code and version are shown in the Question bank). They were written for Showtime and are not produced or endorsed by AQA or Pearson.</p>
+      <p>The built-in question packs are AQA-style and Edexcel-style GCSE practice questions, one pack for each topic of the exam board's specification <!-- @own -->(the specification code and version are shown in the Question bank)<!-- @/own -->. They were written for Showtime and are not produced or endorsed by AQA or Pearson.</p>
       <p>Showtime: Classroom Gameshows &copy; Rob Pearce. Licensed for use in one teacher's classroom. A School Licence covers up to 25 colleagues. Please don't share or resell.</p>
       <p id="aboutMore" hidden>Other subjects, and the mega bundle with every subject, are available on Tes.</p>
       <h3>Privacy</h3>
-      <p>Showtime makes no network connections. Question sets, team names, wrong-answer history and settings are saved only in this browser on this computer (localStorage). Use the backup in the Question bank to move them, and clear a team's history there at any time.</p>
+      <p>Showtime makes no network connections. <!-- @own -->Question sets, team names, wrong-answer history and settings<!-- @/own --><!-- @free -->Team names, wrong-answer history and settings<!-- @/free --> are saved only in this browser on this computer (localStorage).<!-- @own --> Use the backup in the Question bank to move them, and clear a team's history there at any time.<!-- @/own --></p>
       <h3>Third-party software and fonts</h3>
       <p>three.js r128 and its post-processing examples (MIT licence). Lilita One by Juan Montoreano and Nunito by The Nunito Project Authors (SIL Open Font License 1.1).</p>
       <pre><!-- @text vendor/three-LICENSE.txt --></pre>

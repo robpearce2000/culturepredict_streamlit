@@ -78,7 +78,7 @@ Hex Hunt: two halves race to link their edges across lettered hexagons.
 
 ${includes}
 
-One file that works offline: no logins, no installs, and no data leaves your computer. Every game ends with the questions the class found hardest, so you know what to reteach. You can add your own questions too.
+One file that works offline: no logins, no installs, and no data leaves your computer. Every game ends with the questions the class found hardest, so you know what to reteach. ${ed.own === false ? '' : 'You can add your own questions too.'}
 
 ${more}
 
@@ -116,7 +116,8 @@ async function loadTimes() {
 
 (async () => {
   const guide = path.join(DIST, 'teacher-guide.pdf');
-  if (!fs.existsSync(guide)) throw new Error('Run node tools/make-guide.js first');
+  const tasterGuide = path.join(DIST, 'teacher-guide-taster.pdf');
+  if (!fs.existsSync(guide) || !fs.existsSync(tasterGuide)) throw new Error('Run node tools/make-guide.js and node tools/make-guide.js --taster first');
   fs.mkdirSync(path.join(DIST, 'downloads'), { recursive: true });
   for (const ed of EDITIONS) {
     const dir = path.join(DIST, 'listings', ed.id);
@@ -124,7 +125,12 @@ async function loadTimes() {
     fs.writeFileSync(path.join(dir, 'description.md'), description(ed));
     const zip = path.join(DIST, 'downloads', ed.file.replace(/\.html$/, '.zip'));
     if (fs.existsSync(zip)) fs.unlinkSync(zip);
-    execFileSync('zip', ['-j', '-q', '-X', zip, path.join(DIST, 'editions', ed.file), guide]);
+    // the taster has no way to add your own questions, so its guide leaves that out; it is named teacher-guide.pdf inside the zip
+    const tmp = path.join(DIST, 'tmp-zip'); fs.rmSync(tmp, { recursive: true, force: true }); fs.mkdirSync(tmp);
+    fs.copyFileSync(path.join(DIST, 'editions', ed.file), path.join(tmp, ed.file));
+    fs.copyFileSync(ed.own === false ? tasterGuide : guide, path.join(tmp, 'teacher-guide.pdf'));
+    execFileSync('zip', ['-j', '-q', '-X', zip, path.join(tmp, ed.file), path.join(tmp, 'teacher-guide.pdf')]);
+    fs.rmSync(tmp, { recursive: true, force: true });
   }
   const ms = await loadTimes();
   const rows = EDITIONS.map(ed => {

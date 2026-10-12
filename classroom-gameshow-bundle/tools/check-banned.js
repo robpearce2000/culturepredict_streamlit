@@ -34,7 +34,7 @@ function pdfText(file) {
 }
 const targets = [
   ['dist/showtime-classroom-gameshows.html', 'text'],
-  ['dist/teacher-guide.pdf', 'pdf'],
+  ['dist/teacher-guide.pdf', 'pdf'], ['dist/teacher-guide-taster.pdf', 'pdf'],
   ['dist/listing/description.md', 'text'],
   ['docs/teacher-guide.html', 'text'],
   ['README.md', 'text'], ['CHANGELOG.md', 'text'], ['DECISIONS.md', 'text'], ['LICENSES.md', 'text'],

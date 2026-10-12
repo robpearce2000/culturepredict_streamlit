@@ -21,7 +21,7 @@ Hex Hunt: two halves race to link their edges across lettered hexagons.
 
 Free: all four games, fully working, with one popular topic for each subject (Biology, Chemistry, Physics, Maths, History and Geography), 861 questions in all. The science topics are in Separate and Combined Science. Each full subject pack has over 800 questions.
 
-One file that works offline: no logins, no installs, and no data leaves your computer. Every game ends with the questions the class found hardest, so you know what to reteach. You can add your own questions too.
+One file that works offline: no logins, no installs, and no data leaves your computer. Every game ends with the questions the class found hardest, so you know what to reteach. 
 
 Enjoyed the taster? Try the Science mega pack for every Biology, Chemistry and Physics topic.
 

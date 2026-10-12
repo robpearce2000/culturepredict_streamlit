@@ -72,6 +72,12 @@ function buildHtml(ed) {
   // an edition: its name, and only its built-in packs (tools/editions.js)
   let html = read('index.html');
   html = html.replace(/<!-- @include ([^ ]+) -->/g, (m, p) => read(p));
+  // markup only for editions where teachers write their own questions (the free taster has none): the Question bank
+  // button and editor, the Other subject's button, and the sentences that mention them
+  // (<!-- @free -->...<!-- @/free --> is the opposite: wording only for editions without them)
+  html = ed.own === false
+    ? html.replace(/<!-- @own -->[\s\S]*?<!-- @\/own -->/g, '').replace(/<!-- @\/?free -->/g, '')
+    : html.replace(/<!-- @\/?own -->/g, '').replace(/<!-- @free -->[\s\S]*?<!-- @\/free -->/g, '');
   // The built-in question packs (packs/, checked by tools/packs.js) as one data script
   html = html.replace('<!-- @packdata -->', () => {
     const data = JSON.stringify(require('./tools/packs.js').bundleData(p => editions.includes(ed, p))).replace(/<\/(script)/gi, '<\\/$1');
