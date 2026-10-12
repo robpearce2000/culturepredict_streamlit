@@ -42,61 +42,55 @@ const total = c => c.reduce((s, x) => s + x.questions, 0);
 
 function description(ed) {
   const c = contents(ed), q = total(c), subjects = list(c.map(x => x.label));
+  const sciences = c.filter(x => SCIENCE.includes(x.sj));
   const others = EDITIONS.filter(e => e.id !== ed.id && e.id !== 'free-taster').map(e => e.name);
-  const what = c.map(x => {
-    if (ed.taster) return `- **${x.label}:** ${list(x.names)} (${n(x.questions)} questions${SCIENCE.includes(x.sj) ? ', with the Combined Science version of the same topic' : ''})`;
-    const base = `- **${x.label}:** ${x.topics} topic packs, ${n(x.questions)} questions (${x.specs.join(', ')})`;
-    return SCIENCE.includes(x.sj) ? `${base}; Combined Science: ${x.combTopics} topics, ${n(x.combQuestions)} questions (${x.combSpecs.join(', ')})` : base;
-  }).join('\n');
-  const title = ed.taster ? 'Showtime: Classroom Gameshows, Free taster (4 revision games)' : `Showtime: Classroom Gameshows, ${ed.name} (4 revision games)`;
+  const title = ed.taster ? 'FREE GCSE Revision Games: 4 Whole-Class Quiz Shows (Taster Pack)' : `Showtime: Classroom Gameshows, ${ed.name} (4 revision games)`;
+  const sep = sciences.length ? ' for separate and Combined Science' : '';
   const summary = ed.taster
-    ? `Try all four whole-class revision games free: up to six teams answer every question on mini whiteboards. This free version includes one topic per subject (${subjects}), AQA-style and Edexcel-style, ${n(q)} questions. Full subject packs are available on Tes. One file, works offline.`
-    : `Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE ${subjects} packs, one for every specification topic${ed.subjects.some(s => SCIENCE.includes(s)) ? ', for separate sciences and Combined Science' : ''} (${n(q)} questions). One file, works offline.`;
+    ? `Four whole-class revision games, free: one popular topic for each of ${subjects}, ${n(q)} questions, AQA-style and Edexcel-style. One file, works offline.`
+    : `Four whole-class revision games: ${n(q)} AQA-style and Edexcel-style GCSE ${subjects} questions${sep}. One file, works offline.`;
+  const includes = ed.taster
+    ? `Free: all four games, fully working, with one popular topic for each subject (${subjects}), ${n(q)} questions in all. The science topics are in Separate and Combined Science. Each full subject pack has over 800 questions.`
+    : `${n(q)} questions covering every topic of the AQA-style and Edexcel-style GCSE ${subjects} specifications${sep}. Each question is tied to a specification point and tagged by difficulty; Foundation classes can leave out Higher-only questions.`;
+  const more = ed.taster
+    ? 'Enjoyed the taster? Try the Science mega pack for every Biology, Chemistry and Physics topic.'
+    : `Also on Tes: ${list(others)}, and a free taster.`;
   return `# Tes listing: ${ed.name}
 
-## Short title
+Plain text: paste each field into Tes as it is.
+
+## Title
 
 ${title}
 
-## Summary line
+## Summary
 
 ${summary}
 
 ## Description
 
-Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains four original quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
+Turn revision into a game show. Showtime: Classroom Gameshows is four whole-class quiz games for the front of the room. Split the class into 2 to 6 teams with mini whiteboards: every team answers every question and you mark them with one key.
 
-**What's in the ${ed.name}**
-${what}
+Over the Edge: win counters and push the pile over the edge, then play for the jackpot.
+Outpace: the class is one runner, racing home before the Hunter.
+Category Clash: pick a topic and points value. One hidden star tile scores double.
+Hex Hunt: two halves race to link their edges across lettered hexagons.
 
-Every built-in question is tied to a specification point, tagged by difficulty, and marked if it is Higher tier only${c.some(x => ['history', 'geography'].includes(x.sj)) && c.length === 1 ? ' where the subject is tiered' : ''}, so a Foundation class can leave those out.${ed.subjects.some(s => SCIENCE.includes(s)) ? ' Choose Separate science or Combined Science on the menu: a Combined Science class only sees Combined Science content.' : ''}
+${includes}
 
-**In every edition**
-- All four games: **Over the Edge** (2 to 6 teams win counters and push them over the edge of a moving shelf), **Outpace** (the whole class is one runner, answering its way home before the Hunter catches it, with a 90-second Final Sprint), **Category Clash** (a board of topics and points values from 100 to 300) and **Hex Hunt** (two halves of the class race across a board of lettered hexagons, best of three rounds)
-- Whole-class play: split the class into 2 to 6 teams with mini whiteboards; every team answers every question, and you mark each team right or wrong with one key. No pupil devices are needed
-- Pause at any time, end a game early and still show the results, and a results screen listing the questions the class found hardest
-- Write your own questions for any subject by pasting simple text, and a full question bank to manage, copy and back up your sets
-- Wrong answers are saved for each team, so weak topics come round again more often
-- Works offline from one file in Chrome, Edge, Firefox or Safari; keyboard shortcuts, mouse and touch for interactive whiteboards; large text and reduced motion options
-- No data leaves your computer: no accounts, no tracking, no analytics
-- Short teacher guide (PDF)
+One file that works offline: no logins, no installs, and no data leaves your computer. Every game ends with the questions the class found hardest, so you know what to reteach. You can add your own questions too.
 
-**Also available**
-${ed.taster ? `The full editions on Tes: ${list(others)}.` : `Other editions on Tes: ${list(others)}, and a free taster with one topic per subject.`}
+${more}
 
-**What's included**
-- ${ed.file} (the games)
-- teacher-guide.pdf
+The question packs are AQA-style and Edexcel-style practice questions written for Showtime. They are not produced or endorsed by AQA or Pearson.
 
-The question packs are AQA-style and Edexcel-style practice questions written for Showtime to match the AQA and Pearson Edexcel GCSE specifications. They are not produced or endorsed by AQA or Pearson. The games are original works and are not connected with any television programme or broadcaster.
+## Tags
 
-## Suggested tags
+revision game, quiz, game show, whole class, mini whiteboards, interactive whiteboard, ${c.map(x => 'GCSE ' + x.label.toLowerCase()).join(', ')}, retrieval practice, starter, plenary, KS4
 
-revision game, quiz, gameshow, interactive whiteboard, ${c.map(x => 'GCSE ' + x.label.toLowerCase()).join(', ')}, retrieval practice, team game, mini whiteboards, whole class, starter, plenary, KS4, offline
+## Files
 
-## Images
-
-cover.png, over-the-edge.png, outpace.png, category-clash.png, hex-hunt.png, question-bank.png (in this folder)
+${ed.file} and teacher-guide.pdf (together as ${ed.file.replace(/\.html$/, '.zip')}), and the pictures in this folder.
 `;
 }
 

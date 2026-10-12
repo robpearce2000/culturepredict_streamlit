@@ -1,61 +1,52 @@
-# Tes listing: Free taster
+# Tes listing: Free taster (counts from version 1.8.1)
 
-Everything below the lines marked FIELD is typed into Tes as plain text (no formatting symbols). Counts are from version 1.8.0; if the packs change, run `node tools/make-editions.js` and check `dist/editions/README.md`.
+Plain text: paste each field into Tes as it is.
 
-## FIELD: Title (64 characters)
+## Title
 
 FREE GCSE Revision Games: 4 Whole-Class Quiz Shows (Taster Pack)
 
-## FIELD: Description (plain text)
+## Summary
 
-Turn any revision lesson into a game show. Showtime: Classroom Gameshows is four original quiz games for the front of the classroom. Split your class into 2 to 6 teams, give each a mini whiteboard, and every team answers every question. This free taster lets you run a full lesson of every game.
+Four whole-class revision games, free: one popular topic for each of Biology, Chemistry, Physics, Maths, History and Geography, 861 questions, AQA-style and Edexcel-style. One file, works offline.
 
-THE FOUR GAMES
-Over the Edge: right answers win counters to drop onto a moving shelf. Push the pile over the edge, then play for the jackpot together.
-Outpace: the whole class is one runner. Answer your way home before the Hunter catches you, then beat the Final Sprint.
-Category Clash: teams take turns to pick a topic and a points value. Harder questions are worth more, and one hidden star tile is worth double.
-Hex Hunt: two halves of the class race to link their edges across a board of lettered hexagons.
+## Description
 
-WHAT IS INCLUDED FREE
-All four games, fully working: no time limits, no watermark. One popular topic for each subject, 861 questions in all, each tied to a specification point and tagged by difficulty:
-Biology: Cell biology (AQA-style) and Key concepts in biology (Edexcel-style)
-Chemistry: Atomic structure and the periodic table (AQA-style) and Key concepts in chemistry (Edexcel-style)
-Physics: Energy (AQA-style) and Conservation of energy (Edexcel-style)
-Maths: Number (AQA-style and Edexcel-style)
-History: Germany, 1890 to 1945 (AQA-style) and Weimar and Nazi Germany, 1918 to 1939 (Edexcel-style)
-Geography: natural hazards (AQA-style) and weather hazards and Hazardous Earth (Edexcel-style)
-The science topics are in both Separate science and Combined Science, and Higher tier only questions can be left out for a Foundation class. You can also add your own questions by pasting simple text.
+Turn revision into a game show. Showtime: Classroom Gameshows is four whole-class quiz games for the front of the room. Split the class into 2 to 6 teams with mini whiteboards: every team answers every question and you mark them with one key.
 
-WHAT THE FULL PACKS ADD
-Every topic of the specification, not just one: each full subject pack has over 800 questions across both exam boards, and the Science mega pack covers Biology, Chemistry and Physics with over 4,000. There is also a Mega bundle with every subject.
+Over the Edge: win counters and push the pile over the edge, then play for the jackpot.
+Outpace: the class is one runner, racing home before the Hunter.
+Category Clash: pick a topic and points value. One hidden star tile scores double.
+Hex Hunt: two halves race to link their edges across lettered hexagons.
 
-HOW IT WORKS
-One file that opens in your browser. No logins, no installs, no internet needed, and no data leaves your computer. No pupil devices are required: just mini whiteboards and the board at the front. Every game ends with a list of the questions the class found hardest, so you know what to reteach.
+Free: all four games, fully working, with one popular topic for each subject (Biology, Chemistry, Physics, Maths, History and Geography), 861 questions in all. The science topics are in Separate and Combined Science. Each full subject pack has over 800 questions.
+
+One file that works offline: no logins, no installs, and no data leaves your computer. Every game ends with the questions the class found hardest, so you know what to reteach. You can add your own questions too.
+
+Enjoyed the taster? Try the Science mega pack for every Biology, Chemistry and Physics topic.
 
 The question packs are AQA-style and Edexcel-style practice questions written for Showtime. They are not produced or endorsed by AQA or Pearson.
 
-Enjoy the taster? Try the Science mega pack for the full set of Biology, Chemistry and Physics topics.
+## Tags
 
-## FIELD: Tags
+revision game, quiz, game show, whole class, mini whiteboards, interactive whiteboard, GCSE biology, GCSE chemistry, GCSE physics, GCSE maths, GCSE history, GCSE geography, retrieval practice, starter, plenary, KS4
 
-revision game, quiz, game show, whole class, mini whiteboards, interactive whiteboard, GCSE revision, GCSE science, GCSE biology, GCSE chemistry, GCSE physics, GCSE maths, GCSE history, GCSE geography, combined science, retrieval practice, starter, plenary, team game, KS4, free
-
-## FIELD: Age range
+## Age range
 
 14-16
 
-## FIELD: Subject
+## Subject
 
 Science (Biology, Chemistry, Physics), Maths, History, Geography
 
-## FIELD: Exam board
+## Exam board
 
 AQA, Edexcel
 
-## FIELD: Resource type
+## Resource type
 
 Game, Revision, Whole-class activity
 
-## FIELD: Files to upload
+## Files
 
-showtime-free-taster.html and teacher-guide.pdf (together as dist/downloads/showtime-free-taster.zip), and the images in dist/listings/free-taster/ (cover as marketing/video/tes-cover.png style, 4:3)
+showtime-free-taster.html and teacher-guide.pdf (together as showtime-free-taster.zip), and the pictures in this folder.

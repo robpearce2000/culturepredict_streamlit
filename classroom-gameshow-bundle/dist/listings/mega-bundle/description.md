@@ -1,50 +1,36 @@
 # Tes listing: Mega bundle
 
-## Short title
+Plain text: paste each field into Tes as it is.
+
+## Title
 
 Showtime: Classroom Gameshows, Mega bundle (4 revision games)
 
-## Summary line
+## Summary
 
-Four whole-class revision games for your interactive whiteboard: up to six teams answer every question on mini whiteboards. Built-in AQA-style and Edexcel-style GCSE Biology, Chemistry, Physics, Maths, History and Geography packs, one for every specification topic, for separate sciences and Combined Science (7,969 questions). One file, works offline.
+Four whole-class revision games: 7,969 AQA-style and Edexcel-style GCSE Biology, Chemistry, Physics, Maths, History and Geography questions for separate and Combined Science. One file, works offline.
 
 ## Description
 
-Turn any revision lesson into a gameshow. **Showtime: Classroom Gameshows** contains four original quiz games, inspired by classic TV quiz formats, built for the front of the classroom and run from a single file. There is nothing to install, no logins and no internet connection needed.
+Turn revision into a game show. Showtime: Classroom Gameshows is four whole-class quiz games for the front of the room. Split the class into 2 to 6 teams with mini whiteboards: every team answers every question and you mark them with one key.
 
-**What's in the Mega bundle**
-- **Biology:** 16 topic packs, 1,006 questions (AQA-style 8461, Edexcel-style 1BI0); Combined Science: 16 topics, 696 questions (AQA-style 8464, Edexcel-style 1SC0)
-- **Chemistry:** 19 topic packs, 1,424 questions (AQA-style 8462, Edexcel-style 1CH0); Combined Science: 17 topics, 1,048 questions (AQA-style 8464, Edexcel-style 1SC0)
-- **Physics:** 23 topic packs, 1,580 questions (AQA-style 8463, Edexcel-style 1PH0); Combined Science: 20 topics, 1,119 questions (AQA-style 8464, Edexcel-style 1SC0)
-- **Maths:** 12 topic packs, 868 questions (AQA-style 8300, Edexcel-style 1MA1)
-- **History:** 33 topic packs, 1,698 questions (AQA-style 8145, Edexcel-style 1HI0)
-- **Geography:** 32 topic packs, 1,393 questions (AQA-style 8035, Edexcel-style 1GA0, Edexcel-style 1GB0)
+Over the Edge: win counters and push the pile over the edge, then play for the jackpot.
+Outpace: the class is one runner, racing home before the Hunter.
+Category Clash: pick a topic and points value. One hidden star tile scores double.
+Hex Hunt: two halves race to link their edges across lettered hexagons.
 
-Every built-in question is tied to a specification point, tagged by difficulty, and marked if it is Higher tier only, so a Foundation class can leave those out. Choose Separate science or Combined Science on the menu: a Combined Science class only sees Combined Science content.
+7,969 questions covering every topic of the AQA-style and Edexcel-style GCSE Biology, Chemistry, Physics, Maths, History and Geography specifications for separate and Combined Science. Each question is tied to a specification point and tagged by difficulty; Foundation classes can leave out Higher-only questions.
 
-**In every edition**
-- All four games: **Over the Edge** (2 to 6 teams win counters and push them over the edge of a moving shelf), **Outpace** (the whole class is one runner, answering its way home before the Hunter catches it, with a 90-second Final Sprint), **Category Clash** (a board of topics and points values from 100 to 300) and **Hex Hunt** (two halves of the class race across a board of lettered hexagons, best of three rounds)
-- Whole-class play: split the class into 2 to 6 teams with mini whiteboards; every team answers every question, and you mark each team right or wrong with one key. No pupil devices are needed
-- Pause at any time, end a game early and still show the results, and a results screen listing the questions the class found hardest
-- Write your own questions for any subject by pasting simple text, and a full question bank to manage, copy and back up your sets
-- Wrong answers are saved for each team, so weak topics come round again more often
-- Works offline from one file in Chrome, Edge, Firefox or Safari; keyboard shortcuts, mouse and touch for interactive whiteboards; large text and reduced motion options
-- No data leaves your computer: no accounts, no tracking, no analytics
-- Short teacher guide (PDF)
+One file that works offline: no logins, no installs, and no data leaves your computer. Every game ends with the questions the class found hardest, so you know what to reteach. You can add your own questions too.
 
-**Also available**
-Other editions on Tes: Biology edition, Chemistry edition, Physics edition, Maths edition, History edition, Geography edition and Science mega pack, and a free taster with one topic per subject.
+Also on Tes: Biology edition, Chemistry edition, Physics edition, Maths edition, History edition, Geography edition and Science mega pack, and a free taster.
 
-**What's included**
-- showtime-mega-bundle.html (the games)
-- teacher-guide.pdf
+The question packs are AQA-style and Edexcel-style practice questions written for Showtime. They are not produced or endorsed by AQA or Pearson.
 
-The question packs are AQA-style and Edexcel-style practice questions written for Showtime to match the AQA and Pearson Edexcel GCSE specifications. They are not produced or endorsed by AQA or Pearson. The games are original works and are not connected with any television programme or broadcaster.
+## Tags
 
-## Suggested tags
+revision game, quiz, game show, whole class, mini whiteboards, interactive whiteboard, GCSE biology, GCSE chemistry, GCSE physics, GCSE maths, GCSE history, GCSE geography, retrieval practice, starter, plenary, KS4
 
-revision game, quiz, gameshow, interactive whiteboard, GCSE biology, GCSE chemistry, GCSE physics, GCSE maths, GCSE history, GCSE geography, retrieval practice, team game, mini whiteboards, whole class, starter, plenary, KS4, offline
+## Files
 
-## Images
-
-cover.png, over-the-edge.png, outpace.png, category-clash.png, hex-hunt.png, question-bank.png (in this folder)
+showtime-mega-bundle.html and teacher-guide.pdf (together as showtime-mega-bundle.zip), and the pictures in this folder.
