@@ -21,8 +21,8 @@ take recorded frame by frame on a controlled clock, so each one can be re-render
 
 | Time | Shot | Camera | Caption |
 |---|---|---|---|
-| 0–5.5 s | A counter hangs over the front edge, tilting, as the shelf pushes the pile behind it | Low at the front, slow push-in from 4 m to 2 m (keys in `shots/reel-1-will-it-fall.json`) | "Will it fall?" (0–5.6 s) |
-| 5.5–8 s | It tips; five more follow it over the edge | Pulls back and tilts down to follow the fall | none |
+| 0–5.5 s | A counter hangs over the front edge, tilting, as the shelf pushes the pile behind it | Low at the front, slow push-in (keys in `shots/reel-1-will-it-fall.json`) | "Will it fall?" (0–5.5 s) |
+| 5.35–8 s | It tips; five more follow it over the edge into the chute | Rises and pulls back just before the fall, so the drop is in view | none |
 | 8–8.5 s | Freeze, then the loop cuts back to the teeter | Held | none |
 
 Seed 11, six questions played (every team right, random lanes), recorded physics frames 3450–3930; the counter falls
@@ -46,8 +46,9 @@ Built by `montage.py` (cut list at the top of the script); the caption layer com
 ## 3. oddly satisfying (`reel-3-oddly-satisfying`, looping)
 
 Half-speed slow motion (the game's frame clock runs at half speed, so every frame is a real render), a low, close view
-along the front edge as seven counters tumble over one after another. Counter sounds only, no music; small lower-case
-caption. Seed 3, physics frames 5031–5361 (the cascade starts at 5211, x = 128). Camera slides slowly sideways.
+along the front edge (camera about 3 m back, just above the tray) as seven counters tumble over one after another. Counter
+sounds only, no music, so the main file and the `-sfx-only` file are the same; small lower-case caption. Seed 3, physics
+frames 5031–5361 (the cascade starts at 5211, x = 128). Camera slides slowly sideways.
 
 ## 4. The Hunter is coming (`reel-4-hunter`)
 
@@ -61,6 +62,18 @@ mark in the last second. Script: `render-outpace.js 3` (plan and cut lengths at 
 
 The final round (test shortcut straight to it), seed 2, the gold counter placed 0.6 of its radius short of falling;
 every team right and random lanes, so everyone's counters push in behind it. It hangs for about 20 s of play; the reel
-keeps the last 6.5 s before it goes, then the fall, "+£5,000" and confetti (recording-only overlay), with the
-"Showtime" mark in the last second. Physics frames 877–1467; camera low and close, pulling back for the fall.
-Caption "£5,000 jackpot. Last question." until the fall.
+keeps the last 6.7 s before it goes, then the fall, "+£5,000" and confetti (recording-only overlay), with the
+"Showtime" mark in the last second. Physics frames 877–1467; camera low and close, rising and pulling back just before
+the fall so the gold counter tips over in full view. Caption "£5,000 jackpot. / Last question." until the fall.
+
+## Files
+
+| Reel | Length | With music | Game sounds only | Cover |
+|---|---|---|---|---|
+| 1. Will it fall? | 8.5 s | reel-1-will-it-fall.mp4 (5.7 MB) | reel-1-will-it-fall-sfx-only.mp4 (5.6 MB) | reel-1-will-it-fall-cover.jpg |
+| 2. POV: game show | 12.9 s | reel-2-pov-game-show.mp4 (8.4 MB) | reel-2-pov-game-show-sfx-only.mp4 (8.3 MB) | reel-2-pov-game-show-cover.jpg |
+| 3. oddly satisfying | 11.0 s | reel-3-oddly-satisfying.mp4 (4.3 MB, no music by design) | reel-3-oddly-satisfying-sfx-only.mp4 (the same) | reel-3-oddly-satisfying-cover.jpg |
+| 4. The Hunter is coming | 11.85 s | reel-4-hunter.mp4 (7.4 MB) | reel-4-hunter-sfx-only.mp4 (7.2 MB) | reel-4-hunter-cover.jpg |
+| 5. The £5,000 jackpot | 10.2 s | reel-5-jackpot.mp4 (8.0 MB) | reel-5-jackpot-sfx-only.mp4 (7.9 MB) | reel-5-jackpot-cover.jpg |
+
+All H.264 1080×1920 at 60 fps with AAC audio. Safe-zone contact sheets: `check/`.

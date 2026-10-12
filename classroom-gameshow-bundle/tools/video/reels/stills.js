@@ -14,11 +14,11 @@ const WORK = path.join(ROOT, 'marketing', 'reels', 'work');
 const OUT = path.join(ROOT, 'marketing', 'reels');
 
 const COVERS = [
-  { name: 'reel-1-will-it-fall', cue: 'fall', off: -40, title: 'Will it fall?', sub: '' },
+  { name: 'reel-1-will-it-fall', crop: 2750, cue: 'fall', off: -40, title: 'Will it fall?', sub: '' },
   { name: 'reel-2-pov-game-show', frame: 70, title: 'POV:', sub: 'you turned GCSE revision into a game show' },
-  { name: 'reel-3-oddly-satisfying', cue: 'fall', off: 60, title: 'oddly satisfying', sub: '', small: true },
-  { name: 'reel-4-hunter', frame: 150, title: "One wrong answer…", sub: "and it's over" },
-  { name: 'reel-5-jackpot', cue: 'fall', off: -30, title: '£5,000', sub: 'jackpot · last question' }
+  { name: 'reel-3-oddly-satisfying', crop: 2600, cue: 'fall', off: 60, title: 'oddly satisfying', sub: '', small: true },
+  { name: 'reel-4-hunter', crop: 2750, frame: 150, title: "One wrong answer…", sub: "and it's over" },
+  { name: 'reel-5-jackpot', crop: 2750, cue: 'fall', off: -30, title: '£5,000', sub: 'jackpot · last question' }
 ];
 
 const STYLE = `html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:transparent}
@@ -34,10 +34,14 @@ const STYLE = `html,body{margin:0;width:1080px;height:1920px;overflow:hidden;bac
   await page.goto('file://' + path.join(ROOT, 'test-build', 'showtime-test.html'));
   await page.waitForFunction(() => window.CGB && CGB.app);
   await page.addStyleTag({ content: STYLE });
-  const draw = (bg, html) => page.evaluate(([bg, html]) => {
+  const draw = (bg, html, crop) => page.evaluate(async ([bg, html, crop]) => {
     let st = document.getElementById('st'); if (!st) { st = document.createElement('div'); st.id = 'st'; document.body.appendChild(st); }
+    if (bg) await new Promise(r => { const i = new Image(); i.onload = i.onerror = r; i.src = bg; });   // the frame is loaded before the picture is taken
     st.style.backgroundImage = bg ? `url("${bg}")` : 'none'; st.innerHTML = html;
-  }, [bg, html]);
+    // frames that carry their own caption at the top are enlarged from the bottom, so the caption is cropped away
+    st.style.backgroundSize = crop ? `auto ${crop}px` : 'cover'; st.style.backgroundPosition = crop ? 'center bottom' : 'center';
+    await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  }, [bg, html, crop]);
   await page.evaluate(() => document.fonts.ready);
   // reel 2's caption layer: on screen all the way through, inside the safe zone
   await page.evaluate(() => { document.body.style.background = 'transparent'; document.querySelectorAll('body > :not(#st)').forEach(e => { e.style.visibility = 'hidden'; }); });
@@ -51,7 +55,7 @@ const STYLE = `html,body{margin:0;width:1080px;height:1920px;overflow:hidden;bac
     if (!fs.existsSync(src)) { console.log('missing', src); continue; }
     const text = c.small ? `<div class="t small" style="top:860px">${c.title}</div>`
       : `<div class="t" style="top:${c.sub ? 760 : 840}px"><div class="box big">${c.title}</div>${c.sub ? `<br><span class="sub">${c.sub}</span>` : ''}</div>`;
-    await draw('file://' + src, text);
+    await draw('data:image/jpeg;base64,' + fs.readFileSync(src).toString('base64'), text, c.crop || 0);
     await page.screenshot({ path: path.join(OUT, c.name + '-cover.jpg'), type: 'jpeg', quality: 92 });
     console.log('cover', c.name, 'from frame', frame);
   }

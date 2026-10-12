@@ -16,7 +16,7 @@ def beats(n): return round(n * BEAT * FPS)
 # (source shot, cue in its log ('' = frame 0), frames after the cue, length in beats): every cut lands on a beat
 CUTS = [
     ('reel-1-will-it-fall', 'fall', -12, 4),   # the counter tips and the cascade goes
-    ('reel-5-jackpot', 'fall', -60, 4),        # the jackpot falls
+    ('reel-5-jackpot', 'fall', -2, 4),         # the jackpot falls (from just after its own caption goes)
     ('reel-4-hunter', 'escape', 10, 4),        # the class bursts through the HOME arch
     ('board-cc-star', '', 24, 4),              # the star tile spins: double points
     ('board-hh-path', '', 24, 4),              # the winning path lights up

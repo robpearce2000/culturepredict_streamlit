@@ -603,3 +603,9 @@ Rob asked for every flag to be settled by judgement, and for Hex Hunt letter fla
 
 ## Hex Hunt number answers (1.8.0)
 - Rob's idea: a number answer's letter is the first letter of the number said in words. "Zero", not "nought", for 0 (and 0.x), as the default; one word table in `src/shared/hexletter.js` if Rob prefers "nought". Fractions are said "one half", "three quarters"; standard form by its first number; money and units do not change the letter (£15 "fifteen"). Not for History or Geography, where a number is usually a year and years are said differently ("ten sixty-six").
+
+## Reels (marketing/reels)
+- The recording tools never change the game: the reel camera wraps the page's WebGL renderer (set before the game's scripts load) and moves the camera just before each frame is drawn; panels are hidden with CSS; confetti and the "+£5,000" for the jackpot reel are a recording-only overlay drawn on the same clock.
+- Takes replay exactly: Math.random and the game's random source are seeded, the page clock is Playwright's fake clock (paused, moved only by the script) and Over the Edge's physics steps once per frame through its test-only manual clock. Search and render share the same code path; renders log where counters fall so a replay can be checked against its search.
+- Music: the Showtime theme is the launcher loop Rob chose (draft B), so the reels and the app sound the same. Reel 3 has no music by design (brief), so its two files are identical.
+- Rendered on software 3D (about 2–3 s a frame at 1080×1920); the whole set takes about 2 hours with `build.sh`. Videos are plain git files (each under 9 MB), so Git LFS was not needed.
