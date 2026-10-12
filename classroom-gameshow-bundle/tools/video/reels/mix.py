@@ -78,6 +78,7 @@ def main():
     ap.add_argument('--music', action='store_true'); ap.add_argument('--speed', type=float, default=1.0)
     ap.add_argument('--music-offset', type=float, default=0.0); ap.add_argument('--sfx-gain', type=float, default=1.6)
     ap.add_argument('--overlay', default=None, help='PNG laid over every frame (a caption layer)')
+    ap.add_argument('--overlay-until', type=int, default=None, help='the overlay stays only on frames before this one (the call to action that follows has its own text)')
     ap.add_argument('--frames', default=None, help='ffmpeg input pattern (default work/<name>/%%05d.jpg)')
     a = ap.parse_args()
     d = os.path.join(WORK, a.name)
@@ -102,7 +103,8 @@ def main():
     with wv.open(wav, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes())
     frames = a.frames or os.path.join(d, '%05d.jpg')
     vin = ['-framerate', str(fps), '-i', frames] + (['-i', a.overlay] if a.overlay else [])
-    vf = ['-filter_complex', '[0:v][1:v]overlay=0:0[v]', '-map', '[v]', '-map', '2:a'] if a.overlay else []
+    on = f":enable='lt(n\\,{a.overlay_until})'" if a.overlay_until else ''
+    vf = ['-filter_complex', f'[0:v][1:v]overlay=0:0{on}[v]', '-map', '[v]', '-map', '2:a'] if a.overlay else []
     subprocess.run(['ffmpeg', '-y', '-v', 'error'] + vin + ['-i', wav] + vf + ['-c:v', 'libx264', '-preset', 'slow', '-crf', '19',
                     '-pix_fmt', 'yuv420p', '-profile:v', 'high', '-r', str(fps), '-c:a', 'aac', '-b:a', '192k', '-ac', '2', '-shortest', '-movflags', '+faststart', a.out], check=True)
     print('wrote', a.out, f'{length:.2f}s')

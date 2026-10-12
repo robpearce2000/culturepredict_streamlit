@@ -2,8 +2,8 @@
 
 Post each reel natively on Instagram Reels, TikTok and YouTube Shorts (upload the mp4 itself; don't share links between
 apps). Use the version with music, or the `-sfx-only` version and add a trending sound inside the app, which often helps
-reach. Put the call to action in the caption, not the video: "Free taster on Tes, link in bio" (or your Tes shop link
-where the platform allows one). Pin a comment answering the question you ask.
+reach. Every reel now ends with a 4-second call to action in the video itself ("Turn your classroom into a game show", "Play free now on Tes", "Link in bio", the host waving bottom right). Repeat it in the caption: "Free taster on Tes, link in bio" (or your Tes shop link
+where the platform allows one). The end card sits over the platforms' bottom buttons by design (the host is there on purpose), so keep the caption short. Pin a comment answering the question you ask.
 
 Covers are in this folder (`*-cover.jpg`): the text sits inside the centre square, so they still read on a profile grid.
 

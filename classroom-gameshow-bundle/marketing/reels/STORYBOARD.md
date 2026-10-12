@@ -70,10 +70,12 @@ the fall so the gold counter tips over in full view. Caption "£5,000 jackpot. /
 
 | Reel | Length | With music | Game sounds only | Cover |
 |---|---|---|---|---|
-| 1. Will it fall? | 8.5 s | reel-1-will-it-fall.mp4 (5.7 MB) | reel-1-will-it-fall-sfx-only.mp4 (5.6 MB) | reel-1-will-it-fall-cover.jpg |
-| 2. POV: game show | 12.9 s | reel-2-pov-game-show.mp4 (8.4 MB) | reel-2-pov-game-show-sfx-only.mp4 (8.3 MB) | reel-2-pov-game-show-cover.jpg |
-| 3. oddly satisfying | 11.0 s | reel-3-oddly-satisfying.mp4 (4.3 MB, no music by design) | reel-3-oddly-satisfying-sfx-only.mp4 (the same) | reel-3-oddly-satisfying-cover.jpg |
-| 4. The Hunter is coming | 11.85 s | reel-4-hunter.mp4 (7.4 MB) | reel-4-hunter-sfx-only.mp4 (7.2 MB) | reel-4-hunter-cover.jpg |
-| 5. The £5,000 jackpot | 10.2 s | reel-5-jackpot.mp4 (8.0 MB) | reel-5-jackpot-sfx-only.mp4 (7.9 MB) | reel-5-jackpot-cover.jpg |
+| 1. Will it fall? | 12.5 s | reel-1-will-it-fall.mp4 (6.7 MB) | reel-1-will-it-fall-sfx-only.mp4 (6.5 MB) | reel-1-will-it-fall-cover.jpg |
+| 2. POV: game show | 16.9 s | reel-2-pov-game-show.mp4 (9.5 MB) | reel-2-pov-game-show-sfx-only.mp4 (9.3 MB) | reel-2-pov-game-show-cover.jpg |
+| 3. oddly satisfying | 15.0 s | reel-3-oddly-satisfying.mp4 (5.3 MB, no music by design) | reel-3-oddly-satisfying-sfx-only.mp4 (the same) | reel-3-oddly-satisfying-cover.jpg |
+| 4. The Hunter is coming | 15.85 s | reel-4-hunter.mp4 (8.5 MB) | reel-4-hunter-sfx-only.mp4 (8.2 MB) | reel-4-hunter-cover.jpg |
+| 5. The £5,000 jackpot | 14.23 s | reel-5-jackpot.mp4 (9.1 MB) | reel-5-jackpot-sfx-only.mp4 (8.9 MB) | reel-5-jackpot-cover.jpg |
+
+Each length includes a 4 s call to action (`tools/video/reels/cta.js` and `cta.py`): the last frame dims and blurs, then the wordmark, a hook for that reel, "Turn your classroom into a game show", the gold "Play free now on Tes" button and "Link in bio" pop in, and the host slides up bottom right and waves. The tail breaks the loops of reels 1 and 3.
 
 All H.264 1080×1920 at 60 fps with AAC audio. Safe-zone contact sheets: `check/`.

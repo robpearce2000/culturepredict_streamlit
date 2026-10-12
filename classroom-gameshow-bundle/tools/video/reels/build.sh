@@ -20,14 +20,17 @@ node $R/render-boards.js cc-star 5
 node $R/render-boards.js hh-path 5
 python3 $R/montage.py
 node $R/stills.js
+# the call to action at the end of every reel (4 s: headline for that reel, "Play free now on Tes"), added to each reel's frames
+node $R/cta.js
+python3 $R/cta.py
 # mix and encode: with the Showtime theme, and game sounds only
-python3 $R/mix.py reel-1-will-it-fall $OUT/reel-1-will-it-fall.mp4 --music
-python3 $R/mix.py reel-1-will-it-fall $OUT/reel-1-will-it-fall-sfx-only.mp4
-python3 $R/mix.py reel-2-pov-game-show $OUT/reel-2-pov-game-show.mp4 --music --overlay $OUT/work/caption-reel-2.png
-python3 $R/mix.py reel-2-pov-game-show $OUT/reel-2-pov-game-show-sfx-only.mp4 --overlay $OUT/work/caption-reel-2.png
-python3 $R/mix.py reel-3-oddly-satisfying $OUT/reel-3-oddly-satisfying.mp4 --sfx-gain 2.2
-python3 $R/mix.py reel-3-oddly-satisfying $OUT/reel-3-oddly-satisfying-sfx-only.mp4 --sfx-gain 2.2
-python3 $R/mix.py reel-4-hunter $OUT/reel-4-hunter.mp4 --music
-python3 $R/mix.py reel-4-hunter $OUT/reel-4-hunter-sfx-only.mp4
-python3 $R/mix.py reel-5-jackpot $OUT/reel-5-jackpot.mp4 --music
-python3 $R/mix.py reel-5-jackpot $OUT/reel-5-jackpot-sfx-only.mp4
+python3 $R/mix.py reel-1-will-it-fall-cta $OUT/reel-1-will-it-fall.mp4 --music
+python3 $R/mix.py reel-1-will-it-fall-cta $OUT/reel-1-will-it-fall-sfx-only.mp4
+python3 $R/mix.py reel-2-pov-game-show-cta $OUT/reel-2-pov-game-show.mp4 --music --overlay $OUT/work/caption-reel-2.png --overlay-until 774
+python3 $R/mix.py reel-2-pov-game-show-cta $OUT/reel-2-pov-game-show-sfx-only.mp4 --overlay $OUT/work/caption-reel-2.png --overlay-until 774
+python3 $R/mix.py reel-3-oddly-satisfying-cta $OUT/reel-3-oddly-satisfying.mp4 --sfx-gain 2.2
+python3 $R/mix.py reel-3-oddly-satisfying-cta $OUT/reel-3-oddly-satisfying-sfx-only.mp4 --sfx-gain 2.2
+python3 $R/mix.py reel-4-hunter-cta $OUT/reel-4-hunter.mp4 --music
+python3 $R/mix.py reel-4-hunter-cta $OUT/reel-4-hunter-sfx-only.mp4
+python3 $R/mix.py reel-5-jackpot-cta $OUT/reel-5-jackpot.mp4 --music
+python3 $R/mix.py reel-5-jackpot-cta $OUT/reel-5-jackpot-sfx-only.mp4

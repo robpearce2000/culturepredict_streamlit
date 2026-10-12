@@ -643,3 +643,7 @@ Rob asked for every flag to be settled by judgement, and for Hex Hunt letter fla
 - **Order:** (1) questions a playing team got wrong last time, and questions no game has asked, half and half when both exist, (2) only then the one asked longest ago. Within a game nothing repeats until the topic is used up (unchanged). The 0.5 share (`RETRY_SHARE`) is a judgement: new questions still dominate a lesson, but a wrong answer is seen again within a couple of questions.
 - **"Wrong last time" settles itself:** a wrong answer is logged with the counter of the moment (`at`); a question counts as to come back to only while the wrong answer is not older than the last time it was asked. So it stops once the class gets it right, and class-mode Undo removes it. Wrong answers logged before this version have no counter and count until the question is next asked.
 - **Not done:** no button to forget what has been asked (it cycles by itself once everything has been asked); and it is per browser, like the rest of the saved data.
+
+## Reels end with a call to action (1.8.3)
+
+The five reels now carry a 4 s call to action in the video ("Turn your classroom into a game show", "Play free now on Tes", "Link in bio", the host waving bottom right) at the owner's request, replacing the earlier plan to leave it to the caption. Cost: reels 1 and 3 no longer loop cleanly, and the host and "Link in bio" sit inside the platforms' bottom 450 px (the host was placed there on purpose). Recording tools only; no shipped game code changed.
