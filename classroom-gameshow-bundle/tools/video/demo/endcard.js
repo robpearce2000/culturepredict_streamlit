@@ -2,6 +2,7 @@
  * The demo's end card (recording only), 5 s at 60 fps on the controlled clock: the Showtime wordmark, a still
  * from each of the four games, "Try it free on Tes", "No logins · Works offline", and the host waving. Drawn by
  * the app over the launcher's own background, in its fonts and colours. Also the YouTube thumbnail.
+ *   THUMB_ONLY=1 node tools/video/demo/endcard.js  redraws only thumbnail.png
  *   node tools/video/demo/endcard.js            ->  marketing/video/work/endcard/ (frames) and marketing/video/thumbnail.png
  * The stills are frames of the rendered shots (see STILLS), so render the shots first.
  */
@@ -69,6 +70,7 @@ const CSS = `
     requestAnimationFrame(tick);
   }, stills);
   await page.evaluate(() => document.fonts.ready);
+  if (!process.env.THUMB_ONLY) {
   const s = new L.Shot(page, 'endcard'); await s.start();
   await s.run(0.4);
   await page.evaluate(() => { window.__endHost.gesture('wave', 2600); window.__endHost.talk(1200); });
@@ -76,6 +78,7 @@ const CSS = `
   await page.evaluate(() => { window.__endHost.gesture('present', 2000); });
   await s.run(1.8);
   await s.done({});
+  }
   // the YouTube thumbnail (1280×720): the most dramatic Over the Edge frame, big words, the host
   await page.setViewportSize({ width: 1280, height: 720 });
   await page.evaluate(img => {
@@ -84,7 +87,7 @@ const CSS = `
     e.innerHTML = `<div style="position:absolute;inset:0;background:url('${img}') center/cover"></div>
       <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(14,16,44,0.9) 0%, rgba(14,16,44,0.65) 45%, rgba(14,16,44,0) 70%)"></div>
       <div style="position:absolute;left:44px;top:40px;width:760px;font-family:var(--display,'Lilita One'),sans-serif;color:#fff;font-size:150px;line-height:0.92;text-shadow:0 8px 0 rgba(0,0,0,0.5);-webkit-text-stroke:6px #1B1F3B;paint-order:stroke fill">4 GAME<br><span style="color:#FFC93C">SHOWS</span></div>
-      <div style="position:absolute;left:52px;top:388px"><span class="box" style="font-size:84px;padding:10px 36px 16px">GCSE Science</span></div>
+      <div style="position:absolute;left:52px;top:388px"><span class="box" style="font-size:84px;padding:10px 36px 16px">GCSE Revision</span></div>
       <div style="position:absolute;left:52px;top:536px;width:520px"><div class="wm" style="position:static;width:330px">${CGB.brand.wordmark()}</div></div>
       <div id="pip2" style="position:absolute;left:930px;top:150px;width:330px;height:600px"></div>`;
     document.body.appendChild(e);
