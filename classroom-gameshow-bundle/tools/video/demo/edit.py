@@ -49,8 +49,8 @@ MAIN = {
         ('outpace', ('escape', 0), S(30.0) - S(22.0) - 336, {}),   # HOME: the burst through the arch
         ('cc', ('pick', -36), S(3.6), {'layout': 'inset', 'punch': True}),     # Category Clash: the star tile
         ('cc', ('mark', -6), S(37.0) - S(30.0) - S(3.6), {'layout': 'inset'}),  # marked, the scores jump
-        ('hh', ('pick', 0), S(2.6), {'layout': 'inset', 'punch': True}),       # Hex Hunt: a hexagon changes colour
-        ('hh', ('win', -66), S(44.0) - S(37.0) - S(2.6), {'layout': 'inset'}),  # the winning path lights up
+        ('hh', ('pick', 0), S(2.6), {'layout': 'inset', 'punch': True, 'zoom': (1.15, 1.15, 960, 520)}),       # Hex Hunt: a hexagon changes colour
+        ('hh', ('win', -66), S(44.0) - S(37.0) - S(2.6), {'layout': 'inset', 'zoom': (1.15, 1.15, 960, 520)}),  # the winning path lights up
         ('launcher', ('subject', -20), S(6.0), {}),                # the launcher: subject, board, course, topics, play
         ('results', ('results', 30), S(5.0), {'zoom': (1.0, 1.08, 960, 650)}),  # the results: reteach these
         ('endcard', 0, S(5.0), {}),                                # the end card
@@ -113,8 +113,8 @@ CLIPS = {
         ('cc', ('board', 0), ('end', 0), {'layout': 'inset'}),
     ], [('cc', 0.1, 12.4)]),
     'clip-hex-hunt': clip('Hex Hunt', [
-        ('hh', ('pick', 0), ('lastpick', 0), {'layout': 'inset'}),
-        ('hh', ('lastpick', 0), ('end', 0), {'layout': 'inset'}),
+        ('hh', ('pick', 0), ('lastpick', 0), {'layout': 'inset', 'zoom': (1.15, 1.15, 960, 520)}),
+        ('hh', ('lastpick', 0), ('end', 0), {'layout': 'inset', 'zoom': (1.15, 1.15, 960, 520)}),
     ], [('hh', 0.1, 12.4)]),
 }
 
