@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /*
  * Makes the Tes listing images from the built bundle (run `node build.js` first):
- *   dist/listing/cover.png                1600×1000  wordmark, mascot and all four games
- *   dist/listing/over-the-edge.png        1920×1080  whole-class game, six teams
- *   dist/listing/outpace.png              1920×1080  whole-class game, six teams
- *   dist/listing/category-clash.png       1920×1080  whole-class game, six teams
- *   dist/listing/hex-hunt.png             1920×1080  whole-class game, two halves
- *   dist/listing/question-bank.png        1920×1080  the shared question bank
+ *   dist/listing/cover.png                1600×1200  (4:3, the shape Tes crops to)  wordmark, host and all four games
+ *   dist/listing/over-the-edge.png        1600×1200  whole-class game, six teams
+ *   dist/listing/outpace.png              1600×1200  whole-class game, six teams
+ *   dist/listing/category-clash.png       1600×1200  whole-class game, six teams
+ *   dist/listing/hex-hunt.png             1600×1200  whole-class game, two halves
+ *   dist/listing/question-bank.png        1600×1200  the shared question bank
  *
  *   node tools/make-listing.js --edition <id>   the same images for one edition (tools/editions.js),
  *     from dist/editions/<file> into dist/listings/<id>/, showing that edition's subject in every
@@ -48,7 +48,7 @@ async function until(page, fn, ms, arg) {
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
   const browser = await chromium.launch({ args: ARGS });
-  const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
+  const ctx = await browser.newContext({ viewport: { width: 1600, height: 1200 }, deviceScaleFactor: 1 });
   const page = await ctx.newPage();
   await page.goto(URL);
   await page.waitForFunction(() => window.CGB && CGB.app);
@@ -104,7 +104,6 @@ async function until(page, fn, ms, arg) {
   await page.waitForTimeout(1500);
   await page.click('#ote-segTeams button[data-v="6"]');
   await page.click('#ote-startBtn');
-  await page.click('#game-over-the-edge .start-gate-btn');
   await page.waitForTimeout(3500);
   await markRound('over-the-edge', ['c', '4']);
   await page.waitForTimeout(600);
@@ -112,28 +111,26 @@ async function until(page, fn, ms, arg) {
   await page.waitForTimeout(1600);
   await page.screenshot({ path: path.join(OUT, 'over-the-edge.png') });
   oteShot = await page.screenshot({ type: 'jpeg', quality: 88 });
-  await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+  await page.evaluate(() => CGB.app.show('launcher'));
 
   // Outpace: the whole class as one runner, four of six groups right
   await page.click('[data-play="outpace"]');
   await page.waitForTimeout(1000);
   await page.click('#op-segGroups button[data-v="6"]');
   await page.click('#op-startBtn');
-  await page.click('#game-outpace .start-gate-btn');
   await page.keyboard.press('2');
   await page.waitForTimeout(1200);
   await markRound('outpace', ['1', '2', '4', '5']);
   await page.waitForTimeout(1800);
   await page.screenshot({ path: path.join(OUT, 'outpace.png') });
   opShot = await page.screenshot({ type: 'jpeg', quality: 88 });
-  await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+  await page.evaluate(() => CGB.app.show('launcher'));
 
   // Category Clash: six teams part-way through a board, a question just marked
   await page.click('[data-play="category-clash"]');
   await page.waitForTimeout(600);
   await page.click('#cc-segTeams button[data-v="6"]');
   await page.click('#cc-startBtn');
-  await page.click('#game-category-clash .start-gate-btn');
   const ccMarks = [[0, 0, ['1', '2', '3']], [1, 0, ['c']], [2, 1, ['2', '5']], [3, 0, ['c', '6']], [0, 1, ['1', '3', '4', '5']], [3, 2, ['w', '2']]];
   for (const [c, r, keys] of ccMarks) {
     await page.locator(`#cc-board .cc-tile[data-c="${c}"][data-r="${r}"]`).click();
@@ -147,14 +144,13 @@ async function until(page, fn, ms, arg) {
   await page.waitForTimeout(700);
   await page.screenshot({ path: path.join(OUT, 'category-clash.png') });
   ccShot = await page.screenshot({ type: 'jpeg', quality: 88 });
-  await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+  await page.evaluate(() => CGB.app.show('launcher'));
 
   // Hex Hunt: two halves of the class part-way across the board
   await page.evaluate(() => CGB.store.setJSON('teams', ['Left half', 'Right half']));
   await page.click('[data-play="hex-hunt"]');
   await page.waitForTimeout(600);
   await page.click('#hh-startBtn');
-  await page.click('#game-hex-hunt .start-gate-btn');
   const hexMoves = [[[0, 1], '1'], [[1, 0], '2'], [[1, 2], '1'], [[2, 1], '2']];
   for (const [[c, r], side] of hexMoves) {
     await page.locator(`#hh-board .hh-hex[data-c="${c}"][data-r="${r}"]`).click();
@@ -168,50 +164,56 @@ async function until(page, fn, ms, arg) {
   await page.waitForTimeout(400);
   await page.screenshot({ path: path.join(OUT, 'hex-hunt.png') });
   hhShot = await page.screenshot({ type: 'jpeg', quality: 88 });
-  await page.keyboard.press('Escape'); await page.click('#leaveConfirm');
+  await page.evaluate(() => CGB.app.show('launcher'));
 
   }
 
-  // Cover: built in the same page so it uses the bundle's own fonts and artwork
-  await page.setViewportSize({ width: 1600, height: 1000 });
+  // Cover (1600×1200, the 4:3 shape Tes crops to): built in the same page so it uses the bundle's own fonts and artwork.
+  // The backdrop is a frame of the demo video (docs/cover-backdrop.jpg): the gold jackpot counter at the edge.
+  await page.setViewportSize({ width: 1600, height: 1200 });
   const b64 = buf => 'data:image/' + (buf[0] === 0x89 ? 'png' : 'jpeg') + ';base64,' + buf.toString('base64');
-  const nQ = await page.evaluate(() => CGB.bank.all().filter(s => s.builtin && !s.combined).reduce((n, s) => n + s.questions.length, 0));
-  const qChip = ED && ED.taster ? 'Free: one topic per subject' : `${(Math.floor(nQ / 100) * 100).toLocaleString('en-GB')}+ AQA and Edexcel-style GCSE questions`;
-  await page.evaluate(({ ote, op, cc, hh, mascot, edName, qChip }) => {
+  // (the counters carry atoms, so Maths, History and Geography get the plain Showtime stage instead)
+  const plain = !!ED && ['maths', 'history', 'geography'].includes(ED.id);
+  const backdrop = plain ? '' : 'data:image/jpeg;base64,' + fs.readFileSync(path.join(ROOT, 'docs', 'cover-backdrop.jpg')).toString('base64');
+  const NOTE = { 'free-taster': 'Free: one topic per subject', biology: 'Separate & Combined Science', chemistry: 'Separate & Combined Science', physics: 'Separate & Combined Science',
+    science: 'Biology · Chemistry · Physics', maths: 'Foundation & Higher', history: 'Every topic and option', geography: 'Every topic and option', 'mega-bundle': 'All six subjects' };
+  const pills = ['Every team answers', 'AQA & Edexcel', NOTE[ED ? ED.id : 'mega-bundle'], 'Works offline'];
+  await page.evaluate(({ ote, op, cc, hh, backdrop, edName, pills }) => {
     document.body.innerHTML = `
       <div id="cover">
-        <svg class="rays" viewBox="0 0 100 100" preserveAspectRatio="none"><g fill="rgba(255,255,255,0.05)"><path d="M50 -10 L30 110 L40 110 Z"/><path d="M50 -10 L55 110 L68 110 Z"/><path d="M50 -10 L80 110 L95 110 Z"/><path d="M50 -10 L5 110 L15 110 Z"/></g></svg>
+        <div class="bg"></div><div class="shade"></div>
         <div class="wm">${CGB.brand.wordmark()}</div>
-        <img class="mascot" src="${mascot}" alt="">
-        <div class="shots">
-          <figure class="s1"><img src="${ote}" alt=""><figcaption>${CGB.brand.oteLogo()}</figcaption></figure>
-          <figure class="s2"><img src="${op}" alt=""><figcaption>${CGB.brand.opLogo()}</figcaption></figure>
-          <figure class="s3"><img src="${cc}" alt=""><figcaption>${CGB.brand.ccLogo()}</figcaption></figure>
-          <figure class="s4"><img src="${hh}" alt=""><figcaption>${CGB.brand.hhLogo()}</figcaption></figure>
+        <div class="hl">Whole-class <b>GCSE revision</b></div>
+        ${edName ? `<div class="bdg">${edName}</div>` : ''}
+        <div id="pip"></div>
+        <div class="row">
+          ${[[ote, 'oteLogo'], [op, 'opLogo'], [cc, 'ccLogo'], [hh, 'hhLogo']].map(([im, f]) => `<div class="g"><img class="im" src="${im}" alt=""><div class="lg">${CGB.brand[f]()}</div></div>`).join('')}
         </div>
-        ${edName ? `<div class="edname">${edName}</div>` : ''}
-        <div class="chips"><span>Whole class: every team answers</span><span>4 games</span><span>${qChip}</span><span>Works offline</span></div>
+        <div class="pills">${pills.map(t => `<span class="pill">${t.replace(/&/g, '&amp;')}</span>`).join('')}</div>
       </div>`;
     const st = document.createElement('style');
     st.textContent = `
       html, body { overflow: hidden; background: #141834; }
-      #cover { position: fixed; inset: 0; background: radial-gradient(ellipse at 50% -10%, #3A3F86 0%, #1F2550 40%, #141834 80%); font-family: var(--body); }
-      #cover .rays { position: absolute; inset: 0; width: 100%; height: 100%; }
-      #cover .wm { position: absolute; left: 50%; top: 18px; transform: translateX(-50%); width: 820px; }
-      #cover .wm svg { width: 100%; height: auto; display: block; }
-      #cover .mascot { position: absolute; right: 30px; top: 40px; height: 330px; }
-      #cover .shots { position: absolute; left: 0; right: 0; top: 452px; display: grid; grid-template-columns: repeat(4, 368px); justify-content: center; gap: 20px; }
-      #cover figure { margin: 0; width: 368px; position: relative; }
-      #cover figure img { width: 100%; display: block; border: 6px solid #1B1F3B; border-radius: 20px; box-shadow: 0 12px 0 rgba(0,0,0,0.35); }
-      #cover .s1, #cover .s3 { transform: rotate(-2.5deg); } #cover .s2, #cover .s4 { transform: rotate(2.5deg); }
-      #cover figcaption { position: absolute; left: 50%; bottom: -96px; transform: translateX(-50%); width: 250px; }
-      #cover figcaption svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 6px 0 rgba(0,0,0,0.35)); }
-      #cover .edname { position: absolute; left: 50%; top: 372px; transform: translateX(-50%) rotate(-1.5deg); background: #FFC93C; color: #1B1F3B; border: 5px solid #1B1F3B; border-radius: 16px; padding: 4px 30px; font-family: var(--display); font-size: 44px; white-space: nowrap; box-shadow: 0 8px 0 rgba(0,0,0,0.35); z-index: 2; }
-      #cover .chips { position: absolute; left: 0; right: 0; bottom: 26px; display: flex; justify-content: center; gap: 14px; }
-      #cover .chips span { background: #FFF9F0; color: #1B1F3B; border: 4px solid #1B1F3B; border-radius: 999px; padding: 8px 18px; font-weight: 900; font-size: 22px; white-space: nowrap; }`;
+      #cover { position: fixed; inset: 0; overflow: hidden; background: #141834; font-family: var(--body); }
+      #cover .bg { position: absolute; inset: 0; background: ${backdrop ? `url('${backdrop}') 30% 60% / cover` : 'radial-gradient(ellipse at 50% -10%, #3A3F86 0%, #1F2550 40%, #141834 80%)'}; }
+      #cover .shade { position: absolute; inset: 0; ${backdrop ? '' : 'display: none;'} background: linear-gradient(180deg, rgba(14,16,44,0.86) 0%, rgba(14,16,44,0.55) 38%, rgba(14,16,44,0.86) 100%); }
+      #cover .wm { position: absolute; left: 60px; top: 28px; width: 780px; }
+      #cover .wm svg, #cover .lg svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 10px 0 rgba(0,0,0,0.4)); }
+      #cover .hl { position: absolute; left: 66px; top: 400px; font-family: var(--display); font-size: 88px; line-height: 1; color: #fff; text-shadow: 0 6px 0 rgba(0,0,0,0.45); }
+      #cover .hl b { font-weight: 400; color: #FFC93C; }
+      #cover .bdg { position: absolute; left: 66px; top: 520px; font-family: var(--display); font-size: 48px; color: #1B1F3B; background: #FFC93C; border: 5px solid #1B1F3B; border-radius: 16px; padding: 4px 26px 8px; box-shadow: 0 8px 0 rgba(0,0,0,0.35); transform: rotate(-2deg); }
+      #cover #pip { position: absolute; right: 60px; top: 30px; width: 420px; height: 620px; }
+      #cover .row { position: absolute; left: 40px; right: 40px; top: 660px; display: flex; gap: 20px; }
+      #cover .g { flex: 1; text-align: center; }
+      #cover .g .im { width: 100%; height: 270px; object-fit: cover; object-position: top left; display: block; border-radius: 18px; border: 6px solid #FFC93C; box-shadow: 0 10px 0 rgba(0,0,0,0.4); box-sizing: border-box; }
+      #cover .g .lg { width: 210px; margin: 18px auto 0; }
+      #cover .pills { position: absolute; left: 0; right: 0; bottom: 44px; display: flex; justify-content: center; gap: 14px; }
+      #cover .pill { font-weight: 900; font-size: 25px; color: #1B1F3B; background: #FFF9F0; border: 5px solid #1B1F3B; border-radius: 999px; padding: 6px 24px 9px; box-shadow: 0 6px 0 rgba(0,0,0,0.35); white-space: nowrap; }`;
     document.head.appendChild(st);
-  }, { ote: b64(oteShot), op: b64(opShot), cc: b64(ccShot), hh: b64(hhShot), mascot: b64(mascot), edName: ED ? ED.name : '', qChip });
-  await page.waitForTimeout(800);
+    CGB.createHost2D(document.getElementById('pip'), { className: 'host-launcher' }).gesture('wave', 600000);
+  }, { ote: b64(oteShot), op: b64(opShot), cc: b64(ccShot), hh: b64(hhShot), backdrop, edName: ED ? ED.name : '', pills });
+  await page.evaluate(() => document.fonts.ready);
+  await page.waitForTimeout(1500);
   await page.screenshot({ path: path.join(OUT, 'cover.png') });
   await browser.close();
   console.log(`Listing images written to ${path.relative(ROOT, OUT)}/`);
