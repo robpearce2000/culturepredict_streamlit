@@ -77,6 +77,8 @@ def main():
     ap.add_argument('name'); ap.add_argument('out')
     ap.add_argument('--music', action='store_true'); ap.add_argument('--speed', type=float, default=1.0)
     ap.add_argument('--music-offset', type=float, default=0.0); ap.add_argument('--sfx-gain', type=float, default=1.6)
+    ap.add_argument('--music-wav', default=None, help='a score made for this reel (score.py) instead of the looped theme; implies --music')
+    ap.add_argument('--music-level', type=float, default=0.14, help='RMS level of the music under the game sounds')
     ap.add_argument('--overlay', default=None, help='PNG laid over every frame (a caption layer)')
     ap.add_argument('--overlay-until', type=int, default=None, help='the overlay stays only on frames before this one (the call to action that follows has its own text)')
     ap.add_argument('--frames', default=None, help='ffmpeg input pattern (default work/<name>/%%05d.jpg)')
@@ -91,10 +93,14 @@ def main():
     nz = np.abs(sfx) > 1e-4
     loud = np.percentile(np.abs(sfx[nz]), 99.5) if nz.any() else 1.0
     mix = sfx * (0.42 * a.sfx_gain / 1.6 / max(loud, 1e-6))
-    if a.music:
-        m = theme(length + a.music_offset)[int(a.music_offset * SR):][:len(mix)]
-        m = m * (0.14 / max(1e-6, np.sqrt((m ** 2).mean())))
-        fade = int(0.15 * SR); m[:fade] *= np.linspace(0, 1, fade) if rec.get('fadeIn') else 1; m[-fade:] *= np.linspace(1, 0, fade) if rec.get('fadeOut', True) else 1
+    if a.music or a.music_wav:
+        if a.music_wav:
+            raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', a.music_wav, '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'], capture_output=True, check=True).stdout
+            m = np.frombuffer(raw, dtype=np.float32).astype(np.float64); m = np.pad(m, (0, max(0, len(mix) - len(m))))[:len(mix)]
+        else:
+            m = theme(length + a.music_offset)[int(a.music_offset * SR):][:len(mix)]
+        m = m * (a.music_level / max(1e-6, np.sqrt((m ** 2).mean())))
+        fade = int(0.15 * SR); m[:fade] *= np.linspace(0, 1, fade) if rec.get('fadeIn') and not a.music_wav else 1; m[-fade:] *= np.linspace(1, 0, fade) if rec.get('fadeOut', True) and not a.music_wav else 1
         mix = mix + m
     mix = np.tanh(mix * 1.1) / np.tanh(1.1) * 0.8
     wav = os.path.join(d, 'mix.wav')

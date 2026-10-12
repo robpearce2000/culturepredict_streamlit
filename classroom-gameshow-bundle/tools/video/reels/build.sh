@@ -24,13 +24,15 @@ node $R/stills.js
 node $R/cta.js
 python3 $R/cta.py
 # mix and encode: with the Showtime theme, and game sounds only
-python3 $R/mix.py reel-1-will-it-fall-cta $OUT/reel-1-will-it-fall.mp4 --music
+python3 $R/score.py
+M=$OUT/work/music
+python3 $R/mix.py reel-1-will-it-fall-cta $OUT/reel-1-will-it-fall.mp4 --music-wav $M/reel-1.wav
 python3 $R/mix.py reel-1-will-it-fall-cta $OUT/reel-1-will-it-fall-sfx-only.mp4
-python3 $R/mix.py reel-2-pov-game-show-cta $OUT/reel-2-pov-game-show.mp4 --music --overlay $OUT/work/caption-reel-2.png --overlay-until 774
+python3 $R/mix.py reel-2-pov-game-show-cta $OUT/reel-2-pov-game-show.mp4 --music-wav $M/reel-2.wav --overlay $OUT/work/caption-reel-2.png --overlay-until 774
 python3 $R/mix.py reel-2-pov-game-show-cta $OUT/reel-2-pov-game-show-sfx-only.mp4 --overlay $OUT/work/caption-reel-2.png --overlay-until 774
-python3 $R/mix.py reel-3-oddly-satisfying-cta $OUT/reel-3-oddly-satisfying.mp4 --sfx-gain 2.2
+python3 $R/mix.py reel-3-oddly-satisfying-cta $OUT/reel-3-oddly-satisfying.mp4 --music-wav $M/reel-3.wav --music-level 0.09 --sfx-gain 2.2
 python3 $R/mix.py reel-3-oddly-satisfying-cta $OUT/reel-3-oddly-satisfying-sfx-only.mp4 --sfx-gain 2.2
-python3 $R/mix.py reel-4-hunter-cta $OUT/reel-4-hunter.mp4 --music
+python3 $R/mix.py reel-4-hunter-cta $OUT/reel-4-hunter.mp4 --music-wav $M/reel-4.wav
 python3 $R/mix.py reel-4-hunter-cta $OUT/reel-4-hunter-sfx-only.mp4
-python3 $R/mix.py reel-5-jackpot-cta $OUT/reel-5-jackpot.mp4 --music
+python3 $R/mix.py reel-5-jackpot-cta $OUT/reel-5-jackpot.mp4 --music-wav $M/reel-5.wav
 python3 $R/mix.py reel-5-jackpot-cta $OUT/reel-5-jackpot-sfx-only.mp4

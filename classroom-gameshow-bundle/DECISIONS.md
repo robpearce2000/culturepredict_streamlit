@@ -647,3 +647,7 @@ Rob asked for every flag to be settled by judgement, and for Hex Hunt letter fla
 ## Reels end with a call to action (1.8.3)
 
 The five reels now carry a 4 s call to action in the video ("Turn your classroom into a game show", "Play free now on Tes", "Link in bio", the host waving bottom right) at the owner's request, replacing the earlier plan to leave it to the caption. Cost: reels 1 and 3 no longer loop cleanly, and the host and "Link in bio" sit inside the platforms' bottom 450 px (the host was placed there on purpose). Recording tools only; no shipped game code changed.
+
+## Reel music made for each reel (1.8.3)
+
+The reels used the one launcher loop under every video, which did not follow the cuts or the new call to action. Each reel now has its own short original score (`tools/video/reels/score.py`), timed to its fall, escape or cuts and ending with a fanfare tag as the call to action starts. Reel 3 keeps its quiet, slow-motion feel with a soft pad and celesta instead of drums. The sfx-only versions are unchanged. Recording tools only.

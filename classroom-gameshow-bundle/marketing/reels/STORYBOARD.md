@@ -14,8 +14,7 @@ take recorded frame by frame on a controlled clock, so each one can be re-render
   frame is drawn; the game code is not changed. World units: Over the Edge's tray front edge is z = 5.5, its surface
   y = 0, x from −6 to 6 (physics x 0–480 maps to (x − 240) × 0.025). Outpace's track runs along x, HOME at about x = −1.4,
   each step 1.52 apart.
-- **Sound:** the games' own effects, recorded as they play (`sounds.json`) and rebuilt by `mix.py`; the music is the
-  Showtime theme (the launcher loop, draft B, 112 bpm) from `tools/music/loop.py`. Every reel has a version with game sounds only.
+- **Sound:** the games' own effects, recorded as they play (`sounds.json`) and rebuilt by `mix.py`; the music is a short original score for each reel (`tools/video/reels/score.py`, FluidSynth with the FluidR3_GM soundfont), timed to that reel's cuts: 1 suspense (drone, heartbeat, snare roll) then a stab on the fall; 2 a bouncy groove with a stab on every cut; 3 a calm pad and celesta, no drums; 4 a tense A minor chase that turns major as the class reaches HOME; 5 a long build to a fanfare on the jackpot. Each ends with the same fanfare when the call to action starts. Every reel has a version with game sounds only.
 
 ## 1. Will it fall? (`reel-1-will-it-fall`, looping)
 
@@ -72,7 +71,7 @@ the fall so the gold counter tips over in full view. Caption "£5,000 jackpot. /
 |---|---|---|---|---|
 | 1. Will it fall? | 12.5 s | reel-1-will-it-fall.mp4 (6.7 MB) | reel-1-will-it-fall-sfx-only.mp4 (6.5 MB) | reel-1-will-it-fall-cover.jpg |
 | 2. POV: game show | 16.9 s | reel-2-pov-game-show.mp4 (9.5 MB) | reel-2-pov-game-show-sfx-only.mp4 (9.3 MB) | reel-2-pov-game-show-cover.jpg |
-| 3. oddly satisfying | 15.0 s | reel-3-oddly-satisfying.mp4 (5.3 MB, no music by design) | reel-3-oddly-satisfying-sfx-only.mp4 (the same) | reel-3-oddly-satisfying-cover.jpg |
+| 3. oddly satisfying | 15.0 s | reel-3-oddly-satisfying.mp4 (5.3 MB, soft calm score) | reel-3-oddly-satisfying-sfx-only.mp4 (counter sounds only, 5.3 MB) | reel-3-oddly-satisfying-cover.jpg |
 | 4. The Hunter is coming | 15.85 s | reel-4-hunter.mp4 (8.5 MB) | reel-4-hunter-sfx-only.mp4 (8.2 MB) | reel-4-hunter-cover.jpg |
 | 5. The £5,000 jackpot | 14.23 s | reel-5-jackpot.mp4 (9.1 MB) | reel-5-jackpot-sfx-only.mp4 (8.9 MB) | reel-5-jackpot-cover.jpg |
 
