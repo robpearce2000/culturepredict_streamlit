@@ -1,10 +1,52 @@
 {
  "name": "reel-3-oddly-satisfying",
  "about": "Slow motion (half speed): a low, close view along the front edge as seven counters tumble over one after another. Counter sounds only, no music.",
- "seed": 3, "questions": 6, "from": 5031, "to": 5361, "slow": 2, "freeze": 0, "stage": "high",
+ "seed": 3,
+ "questions": 6,
+ "from": 5031,
+ "to": 5361,
+ "slow": 2,
+ "freeze": 0,
+ "stage": "high",
  "cam": [
-  { "at": 0, "pos": [-0.9, 0.42, 6.9], "look": [-3.0, -0.15, 5.35], "fov": 42 },
-  { "at": 11, "pos": [-1.5, 0.36, 6.6], "look": [-3.1, -0.3, 5.45], "fov": 42, "ease": "linear" }
+  {
+   "at": 0,
+   "pos": [
+    0.40000000000000036,
+    1.15,
+    9.3
+   ],
+   "look": [
+    -3.1999999999999997,
+    -0.45,
+    5.6
+   ],
+   "fov": 44
+  },
+  {
+   "at": 11,
+   "pos": [
+    -0.3999999999999999,
+    1.0,
+    9.0
+   ],
+   "look": [
+    -3.5,
+    -0.5,
+    5.6
+   ],
+   "fov": 44,
+   "ease": "linear"
+  }
  ],
- "captions": [ { "at": 0, "until": 99, "text": "oddly satisfying", "size": 58, "top": 300, "small": true } ]
+ "captions": [
+  {
+   "at": 0,
+   "until": 99,
+   "text": "oddly satisfying",
+   "size": 58,
+   "top": 300,
+   "small": true
+  }
+ ]
 }
