@@ -41,7 +41,7 @@ const STYLE = `html,body{margin:0;width:1080px;height:1920px;overflow:hidden;bac
   await page.evaluate(() => document.fonts.ready);
   // reel 2's caption layer: on screen all the way through, inside the safe zone
   await page.evaluate(() => { document.body.style.background = 'transparent'; document.querySelectorAll('body > :not(#st)').forEach(e => { e.style.visibility = 'hidden'; }); });
-  await draw('', `<div class="t" style="top:290px"><div class="box" style="font-size:84px">POV: you turned GCSE<br>revision into a game show</div></div>`);
+  await draw('', `<div class="t" style="top:290px"><div class="box" style="font-size:70px">POV: you turned GCSE<br>revision into a game show</div></div>`);
   await page.screenshot({ path: path.join(WORK, 'caption-reel-2.png'), omitBackground: true });
   for (const c of COVERS) {
     const d = path.join(WORK, c.name);

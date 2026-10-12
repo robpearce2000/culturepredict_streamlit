@@ -16,7 +16,7 @@ const LAYOUT = `
 #game-category-clash #cc-play { padding: 400px 40px 470px !important; box-sizing: border-box; height: 100vh; display: flex; flex-direction: column; }
 #game-category-clash #cc-board { grid-template-rows: minmax(56px, auto) repeat(3, minmax(0, 1fr)) !important; }
 #game-hex-hunt #hh-play { padding-top: 380px !important; padding-bottom: 470px !important; }
-#game-hex-hunt #hh-board { scale: 1.16; }
+#game-hex-hunt #hh-board { scale: 1; }
 `;
 
 async function boot(game) {
