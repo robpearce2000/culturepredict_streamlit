@@ -4,7 +4,8 @@
  *   node tools/video/reels/render-ote.js <shot.json>
  * shot.json: { name, seed, questions, from, to, slow (1 = real time, 2 = half speed), cam: [{at, pos, look, fov}],
  *              captions: [{at, until, text, size, top, small}], freeze (seconds held on the last frame), mark (seconds of
- *              "Showtime" mark at the end), stage: 'high'|'low' }
+ *              "Showtime" mark at the end), stage: 'high'|'low', width/height (default 1080×1920), work (output folder
+ *              under the repo, default marketing/reels/work), pop: {text, confetti, hold} at the first fall }
  * Camera keys are in world units (the tray's front edge is z = 5.5, its surface y = 0, x from -6 to 6); `at` is
  * seconds from the start of the shot; positions ease between keys.
  */
@@ -30,12 +31,12 @@ function camAt(keys, t) {
 (async () => {
   const shot = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
   const slow = shot.slow || 1;
-  const { browser, page } = await open({ seed: shot.seed, quality: shot.stage || 'high', css: STAGE_CSS });
+  const { browser, page } = await open({ seed: shot.seed, quality: shot.stage || 'high', css: STAGE_CSS, width: shot.width, height: shot.height });
   // slow motion: the game's frame clock (the time requestAnimationFrame hands it) can run slower than real time;
   // physics, falling counters and camera all slow together, and every video frame is a real render
   const T = ote.timer(page, true);
   await ote.setup(page, T);
-  const reel = new Reel(page, shot.name);
+  const reel = new Reel(page, shot.name, shot.work ? path.join(__dirname, '..', '..', '..', shot.work) : undefined);
   let recording = false, vf = 0;
   await page.evaluate(() => {
     window.__reelCamKey = null;
@@ -78,7 +79,10 @@ function camAt(keys, t) {
         reel._jf = true; (reel._cues = reel._cues || {}).fall = vf; console.log('jackpot fell at physics frame', fr, '(video', (vf / FPS).toFixed(2) + 's)');
         await page.evaluate(() => { window.__reelConfetti(340); window.__reelPop('+£5,000'); });
       }
-      if (reel._n != null && m < reel._n && !(reel._cues = reel._cues || {}).fall) reel._cues.fall = vf;
+      if (reel._n != null && m < reel._n && !(reel._cues = reel._cues || {}).fall) {
+        reel._cues.fall = vf;
+        if (shot.pop) await page.evaluate(p => { window.__reelPop(p.text, p.hold); if (p.confetti) window.__reelConfetti(p.confetti); }, shot.pop);
+      }
       if (reel._n != null && m < reel._n) console.log('fall at physics frame', fr, '(video', (vf / FPS).toFixed(2) + 's)', reel._n - m);
       reel._n = m;
       for (let s = 0; s < slow; s++) {

@@ -1,0 +1,13 @@
+{
+ "name": "jackpot",
+ "about": "The final (the reel 5 take): the gold £5,000 jackpot counter hangs over the edge while every team's counters push in behind it; it falls, with confetti and +£5,000.",
+ "seed": 2, "final": true, "near": 0.6, "questions": 3, "from": 877, "to": 1467, "slow": 1, "freeze": 0, "stage": "high",
+ "width": 1920, "height": 1080, "work": "marketing/video/work",
+ "cam": [
+  { "at": 0, "pos": [1.9, 1.35, 9.6], "look": [0, 0.1, 5.0], "fov": 36 },
+  { "at": 5.6, "pos": [0.9, 0.7, 7.7], "look": [0, 0.15, 5.3], "fov": 36, "ease": "linear" },
+  { "at": 6.5, "pos": [0.5, 3.0, 11.6], "look": [0, -0.7, 5.8], "fov": 46 },
+  { "at": 10.3, "pos": [0.5, 3.3, 12.2], "look": [0, -0.8, 5.8], "fov": 46 }
+ ],
+ "captions": []
+}

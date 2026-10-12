@@ -112,7 +112,7 @@ const CSS = `
 async function open(opts) {
   opts = opts || {};
   const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--hide-scrollbars'] });
-  const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
+  const ctx = await browser.newContext({ viewport: { width: opts.width || W, height: opts.height || H }, deviceScaleFactor: 1 });
   const page = await ctx.newPage();
   page.on('pageerror', e => console.log('pageerror:', e.message));
   await page.addInitScript(INIT, [opts.seed || 20261004, opts.quality || 'high']);
@@ -120,9 +120,9 @@ async function open(opts) {
   // (paused: time moves only when the script says so)
   await page.clock.install({ time: 0 });
   await page.clock.pauseAt(1000);
-  await page.goto(FILE + (opts.hash || ''));
+  await page.goto((opts.file ? 'file://' + opts.file : FILE) + (opts.hash || ''));
   await page.waitForFunction(() => window.CGB && CGB.app);
-  await page.addStyleTag({ content: CSS + (opts.css || '') });
+  await page.addStyleTag({ content: (opts.baseCss != null ? opts.baseCss : CSS) + (opts.css || '') });
   await page.evaluate(([safe]) => {
     const c = document.createElement('div'); c.id = 'reel-cap'; c.innerHTML = '<div class="rc"></div>'; document.body.appendChild(c);
     const m = document.createElement('div'); m.id = 'reel-mark'; m.textContent = 'Showtime'; document.body.appendChild(m);
@@ -136,10 +136,11 @@ async function open(opts) {
     // a big gold label that pops in (the jackpot's "+£5,000"), animated on the same clock
     const pop = document.createElement('div'); pop.id = 'reel-pop';
     pop.style.cssText = "position:fixed;left:0;right:0;top:42%;text-align:center;z-index:99998;pointer-events:none;font-family:var(--display,'Lilita One'),sans-serif;font-size:170px;color:#FFC93C;-webkit-text-stroke:8px #1B1F3B;paint-order:stroke fill;text-shadow:0 10px 0 rgba(0,0,0,0.4);opacity:0";
-    document.body.appendChild(pop); let popT = -1;
-    window.__reelPop = text => { pop.textContent = text; popT = 0; };
+    document.body.appendChild(pop); let popT = -1, popHold = 0;
+    // hold: seconds on screen before it fades away (0 = it stays)
+    window.__reelPop = (text, hold) => { pop.textContent = text; popT = 0; popHold = hold || 0; };
     const tick = t => { const dt = last === null ? 0 : Math.min(0.05, (t - last) / 1000); last = t; g.clearRect(0, 0, cv.width, cv.height);
-      if (popT >= 0) { popT += dt; const k = Math.min(1, popT / 0.35), sc = k < 1 ? 0.3 + 0.9 * Math.sin(k * Math.PI / 2) * (1 + 0.25 * Math.sin(k * Math.PI)) : 1 + 0.03 * Math.sin(popT * 6); pop.style.opacity = Math.min(1, popT / 0.12); pop.style.transform = `scale(${sc.toFixed(3)}) rotate(${(-4 * (1 - k)).toFixed(2)}deg)`; }
+      if (popT >= 0) { popT += dt; const k = Math.min(1, popT / 0.35), sc = k < 1 ? 0.3 + 0.9 * Math.sin(k * Math.PI / 2) * (1 + 0.25 * Math.sin(k * Math.PI)) : 1 + 0.03 * Math.sin(popT * 6); pop.style.opacity = Math.max(0, Math.min(1, popT / 0.12, popHold ? (popHold + 0.3 - popT) / 0.3 : 1)); pop.style.transform = `scale(${sc.toFixed(3)}) rotate(${(-4 * (1 - k)).toFixed(2)}deg)`; }
       bits = bits.filter(b => b.y < innerHeight + 40); for (const b of bits) { b.vy += 1400 * dt; b.vx *= 0.99; b.x += b.vx * dt; b.y += b.vy * dt; b.r += b.vr * dt;
         g.save(); g.translate(b.x, b.y); g.rotate(b.r); g.fillStyle = b.c; g.fillRect(-b.w / 2, -b.h / 2, b.w, b.h); g.restore(); }
       requestAnimationFrame(tick); };
@@ -151,8 +152,8 @@ async function open(opts) {
 }
 
 class Reel {
-  constructor(page, name) {
-    this.page = page; this.name = name; this.dir = path.join(WORK, name); this.n = 0; this.ticks = 0; this.simMs = 0; this.t0 = null;
+  constructor(page, name, work) {
+    this.page = page; this.name = name; this.dir = path.join(work || WORK, name); this.n = 0; this.ticks = 0; this.simMs = 0; this.t0 = null;
     fs.rmSync(this.dir, { recursive: true, force: true }); fs.mkdirSync(this.dir, { recursive: true });
     this.keepEvery = +(process.env.PREVIEW || 1);
   }
@@ -194,4 +195,4 @@ class Reel {
   }
 }
 
-module.exports = { open, Reel, WORK, ROOT, W, H, FPS, SAFE };
+module.exports = { open, Reel, WORK, ROOT, W, H, FPS, SAFE, CSS };
