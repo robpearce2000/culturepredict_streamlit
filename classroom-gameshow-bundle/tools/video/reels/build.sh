@@ -16,11 +16,14 @@ wait
 node $R/render-ote.js $R/shots/reel-5-jackpot.json &
 node $R/render-outpace.js 3 &
 wait
+node $R/render-ote.js $R/shots/reel-6-footage.json
 node $R/render-boards.js cc-star 5
 node $R/render-boards.js hh-path 5
 python3 $R/montage.py
 node $R/stills.js
 # the call to action at the end of every reel (4 s: headline for that reel, "Play free now on Tes"), added to each reel's frames
+node $R/reel6.js
+python3 $R/reel6.py
 node $R/cta.js
 python3 $R/cta.py
 # mix and encode: with the Showtime theme, and game sounds only
@@ -36,3 +39,5 @@ python3 $R/mix.py reel-4-hunter-cta $OUT/reel-4-hunter.mp4 --music-wav $M/reel-4
 python3 $R/mix.py reel-4-hunter-cta $OUT/reel-4-hunter-sfx-only.mp4
 python3 $R/mix.py reel-5-jackpot-cta $OUT/reel-5-jackpot.mp4 --music-wav $M/reel-5.wav
 python3 $R/mix.py reel-5-jackpot-cta $OUT/reel-5-jackpot-sfx-only.mp4
+python3 $R/mix.py reel-6-answer-cta $OUT/reel-6-answer.mp4 --music-wav $M/reel-5.wav
+python3 $R/mix.py reel-6-answer-cta $OUT/reel-6-answer-sfx-only.mp4

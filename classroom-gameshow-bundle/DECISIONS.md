@@ -651,3 +651,7 @@ The five reels now carry a 4 s call to action in the video ("Turn your classroom
 ## Reel music made for each reel (1.8.3)
 
 The reels used the one launcher loop under every video, which did not follow the cuts or the new call to action. Each reel now has its own short original score (`tools/video/reels/score.py`), timed to its fall, escape or cuts and ending with a fanfare tag as the call to action starts. Reel 3 keeps its quiet, slow-motion feel with a soft pad and celesta instead of drums. The sfx-only versions are unchanged. Recording tools only.
+
+## Reel 6: a question-and-countdown reel (1.8.3)
+
+Reel 6 ("Answer before it falls") is built for sharing rather than for explaining the product: a named audience on frame 1, a famous question with a countdown that ends on the jackpot fall, a reveal with the real science, and two prompts (comment, then tag a friend) before the usual call to action. It reuses the jackpot take with its caption removed and the reel 5 score. Recording tools only; no shipped game code changed.

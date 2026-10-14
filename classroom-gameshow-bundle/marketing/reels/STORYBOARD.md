@@ -74,7 +74,18 @@ the fall so the gold counter tips over in full view. Caption "£5,000 jackpot. /
 | 3. oddly satisfying | 15.0 s | reel-3-oddly-satisfying.mp4 (5.3 MB, soft calm score) | reel-3-oddly-satisfying-sfx-only.mp4 (counter sounds only, 5.3 MB) | reel-3-oddly-satisfying-cover.jpg |
 | 4. The Hunter is coming | 15.85 s | reel-4-hunter.mp4 (8.5 MB) | reel-4-hunter-sfx-only.mp4 (8.2 MB) | reel-4-hunter-cover.jpg |
 | 5. The £5,000 jackpot | 14.23 s | reel-5-jackpot.mp4 (9.1 MB) | reel-5-jackpot-sfx-only.mp4 (8.9 MB) | reel-5-jackpot-cover.jpg |
+| 6. Answer before it falls | 14.23 s | reel-6-answer.mp4 (7.0 MB) | reel-6-answer-sfx-only.mp4 (6.9 MB) | none yet |
 
 Each length includes a 4 s call to action (`tools/video/reels/cta.js` and `cta.py`): the last frame dims and blurs, then the wordmark, a hook for that reel, "Turn your classroom into a game show", the gold "Play free now on Tes" button and "Link in bio" pop in, and the host slides up bottom right and waves. The tail breaks the loops of reels 1 and 3.
 
 All H.264 1080×1920 at 60 fps with AAC audio. Safe-zone contact sheets: `check/`.
+
+## Reel 6: Answer before it falls (14.2 s)
+
+The jackpot take again (`shots/reel-6-footage.json`: reel 5's take with no caption and no end mark), with the text laid
+over it by `reel6.js` and `reel6.py`: the hook "Year 11s: Answer before it falls" on frame 1; the question "The
+mitochondria is the ___ of the cell" popping in at 0.1 s; a timer ring and numbers 7 to 1 that hit zero as the counter
+falls (a tick each second, an extra-loud last one); on the fall a white flash, "✓ Powerhouse" and "Site of aerobic
+respiration"; then "Be honest: did you get it?" and "Tag the friend who forgot", fading out before the call to action
+(cta.py 6, "Try this with your class"). Music: the reel 5 score, which builds to the same fall. Why it is built this
+way is in `POSTING.md`.

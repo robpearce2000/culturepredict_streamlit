@@ -19,7 +19,8 @@ const REELS = {
   2: { head: ALL, sub: 'No logins · Works offline' },
   3: { head: 'Revision this satisfying?', sub: ALL },
   4: { head: 'Can your class outrun the Hunter?', sub: ALL },
-  5: { head: 'Win the jackpot with your class', sub: ALL }
+  5: { head: 'Win the jackpot with your class', sub: ALL },
+  6: { head: 'Try this with your class', sub: ALL }
 };
 const BUTTON = 'Play free now on Tes';
 

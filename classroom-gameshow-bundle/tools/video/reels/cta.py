@@ -5,7 +5,7 @@ layers from cta.js (wordmark, a headline for that reel, a line under it, the "Pl
 after another, the button pulsing, and the host slides up from the bottom right corner, waving. Builds work/<reel>-cta/ (the reel's own frames, then the CTA frames) and its
 sounds.json (frames extended; every game sound where it was), for mix.py.
 
-  python3 tools/video/reels/cta.py        (after cta.js and montage.py)
+  python3 tools/video/reels/cta.py [reel ...]       (after cta.js and montage.py; reel 6 after reel6.py)
 
 The card stays 4 s: long enough to read the headline (6 words), the button (5) and the line under it.
 """
@@ -17,7 +17,7 @@ WORK = os.path.abspath(os.path.join(HERE, '..', '..', '..', 'marketing', 'reels'
 CTA = os.path.join(WORK, 'cta')
 FPS = 60
 TAIL = 4 * FPS
-REELS = {1: 'reel-1-will-it-fall', 2: 'reel-2-pov-game-show', 3: 'reel-3-oddly-satisfying', 4: 'reel-4-hunter', 5: 'reel-5-jackpot'}
+REELS = {1: 'reel-1-will-it-fall', 2: 'reel-2-pov-game-show', 3: 'reel-3-oddly-satisfying', 4: 'reel-4-hunter', 5: 'reel-5-jackpot', 6: 'reel-6-answer'}
 # when each layer arrives (frame in the tail) and how it moves in
 ARRIVE = {'wm': 4, 'head': 10, 'sub': 22, 'btn': 30, 'bio': 44}
 PIP_AT = 52   # the host slides up from the bottom right corner and waves
@@ -80,4 +80,6 @@ def build(n, name):
     print(name + '-cta', N + TAIL, 'frames', f'{(N + TAIL) / FPS:.2f}s')
 
 if __name__ == '__main__':
-    for n, name in REELS.items(): build(n, name)
+    import sys
+    for n, name in REELS.items():
+        if not sys.argv[1:] or str(n) in sys.argv[1:]: build(n, name)

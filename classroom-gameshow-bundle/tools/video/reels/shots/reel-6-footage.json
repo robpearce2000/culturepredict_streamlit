@@ -1,0 +1,74 @@
+{
+ "name": "reel-6-footage",
+ "about": "Reel 6 footage: the reel 5 take with no caption baked in (the question, timer and answer are laid over it by reel6.py).",
+ "seed": 2,
+ "final": true,
+ "near": 0.6,
+ "questions": 3,
+ "from": 877,
+ "to": 1467,
+ "slow": 1,
+ "freeze": 0.4,
+ "stage": "high",
+ "mark": 0,
+ "cam": [
+  {
+   "at": 0,
+   "pos": [
+    1.6,
+    1.25,
+    9.2
+   ],
+   "look": [
+    0,
+    0.1,
+    5.0
+   ],
+   "fov": 42
+  },
+  {
+   "at": 5.6,
+   "pos": [
+    0.8,
+    0.62,
+    7.5
+   ],
+   "look": [
+    0,
+    0.15,
+    5.3
+   ],
+   "fov": 42,
+   "ease": "linear"
+  },
+  {
+   "at": 6.5,
+   "pos": [
+    0.5,
+    3.3,
+    11.4
+   ],
+   "look": [
+    0,
+    -0.8,
+    5.8
+   ],
+   "fov": 50
+  },
+  {
+   "at": 10.3,
+   "pos": [
+    0.5,
+    3.5,
+    11.8
+   ],
+   "look": [
+    0,
+    -0.9,
+    5.8
+   ],
+   "fov": 50
+  }
+ ],
+ "captions": []
+}
